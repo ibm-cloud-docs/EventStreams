@@ -9,6 +9,7 @@ IBM Message Hub
 	messagehub010.md
 	 	messagehub107.md
 	 	messagehub073.md
+	 	messagehub106.md
 	 	messagehub070.md
 	 	messagehub085.md
 
@@ -37,6 +38,17 @@ IBM Message Hub
 			messagehub104.md
 			messagehub095.md
 			messagehub096.md
+		messagehub075.md
+			messagehub098.md
+				messagehub079.md
+			messagehub099.md
+			messagehub102.md
+			messagehub103.md
+			messagehub101.md
+			messagehub081.md
+			messagehub082.md
+			messagehub080.md
+			messagehub083.md
 		messagehub025.md
 			messagehub094.md
 				messagehub066.md
@@ -45,6 +57,10 @@ IBM Message Hub
 		messagehub090.md
 			messagehub091.md
 		messagehub092.md
+		messagehub093.md
+	messagehub088.md
+		messagehub089.md
+		messagehub105.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
