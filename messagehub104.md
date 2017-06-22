@@ -13,7 +13,7 @@ lastupdated: "2017-05-11"
 # Using the Kafka Java client
 {: #kafka_using}
 
-## To do: instructions for getting started, with links for more info
+## To do: instructions for getting started, with links for more information
 {: notoc}
 
 ## To do: simple send source and receive source in-line
