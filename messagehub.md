@@ -82,7 +82,8 @@ Complete the following steps:
 
 6. Start the consumer on your console by running the following command:
 
-    <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar <var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -consumer</pre>
+    <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar
+ <var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -consumer</pre>
 	{: codeblock}
     
     The sample uses a topic named `kafka-java-console-sample-topic`. If the topic does
