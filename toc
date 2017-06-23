@@ -32,27 +32,27 @@ IBM Message Hub
 		messagehub087.md
 		messagehub108.md
 		messagehub071.md
-		messagehub050.md
-			messagehub062.md
-				messagehub063.md
-			messagehub104.md
-			messagehub095.md
-			messagehub096.md
-		messagehub075.md
-			messagehub098.md
-				messagehub079.md
-			messagehub099.md
-			messagehub102.md
-			messagehub103.md
-			messagehub101.md
-			messagehub081.md
-			messagehub082.md
-			messagehub080.md
-			messagehub083.md
-		messagehub025.md
-			messagehub094.md
-				messagehub066.md
-			messagehub097.md
+	messagehub050.md
+		messagehub062.md
+			messagehub063.md
+		messagehub104.md
+		messagehub095.md
+		messagehub096.md
+	messagehub075.md
+		messagehub098.md
+			messagehub079.md
+		messagehub099.md
+		messagehub102.md
+		messagehub103.md
+		messagehub101.md
+		messagehub081.md
+		messagehub082.md
+		messagehub080.md
+		messagehub083.md
+	messagehub025.md
+		messagehub094.md
+			messagehub066.md
+		messagehub097.md
 	messagehub037.md
 		messagehub090.md
 			messagehub091.md
