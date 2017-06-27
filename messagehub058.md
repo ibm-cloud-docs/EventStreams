@@ -19,7 +19,6 @@ lastupdated: "2016-11-22"
 
 *  Connections to the Kafka native and REST interfaces must be
    made using TLS 1.2.
-
 *  Connections are restricted to the following strong cipher
    suites:
 
