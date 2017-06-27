@@ -16,8 +16,8 @@ IBM Message Hub
 	{: .topicgroup}
 	Related links
 	 	[Message Hub Java Kafka sample](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-console-sample)
-	 	[IBM Message Hub on developerWorks](https://developer.ibm.com/messaging/message-hub/)
 	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
+		[IBM Message Hub on developerWorks](https://developer.ibm.com/messaging/message-hub/)
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
