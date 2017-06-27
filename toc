@@ -1,11 +1,11 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="MessageHub" audience="service" href="/docs/MessageHub/messagehub.html}
+{: .toc subcollection="MessageHub" audience="service" href="/docs/MessageHub/index.html}
 IBM Message Hub
 
 	{: .navgroup id="learn"}
-	messagehub.md
+	index.md
 	messagehub010.md
 	 	messagehub107.md
 	 	messagehub073.md
