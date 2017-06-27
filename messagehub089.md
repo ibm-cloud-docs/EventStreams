@@ -86,26 +86,26 @@ To partition data by Kafka message offset, complete the following steps:
 1. Configure a bridge without the `"inputFormat"` property.
 2. Specify an object with a `"type"` property of the value `"kafkaOffset"` in the `"partitioning"` array. 
 
-For example:
+    For example:
 
 <pre class="pre">
-    ```
-    {
-      "topic": "topic1",
-      "type": "objectStorageOut",
-      "name": "bridge1",
-      "configuration" : {
-        "credentials" : { ... },
-        "container" : "container1",
-        "uploadDurationThresholdSeconds" : "1000",
-        "uploadSizeThresholdKB" : "1000",
-        "partitioning" : [ {
-            "type" : "kafkaOffset"
+        ```
+        {
+          "topic": "topic1",
+          "type": "objectStorageOut",
+          "name": "bridge1",
+          "configuration" : {
+            "credentials" : { ... },
+            "container" : "container1",
+            "uploadDurationThresholdSeconds" : "1000",
+            "uploadSizeThresholdKB" : "1000",
+            "partitioning" : [ {
+                "type" : "kafkaOffset"
+              }
+            ]
           }
-        ]
-      }
-    }
-    ```
+        }
+        ```
 </pre>
 {:pre}
 
@@ -118,12 +118,12 @@ the range 0 - 999, `<object_c>` contains messages with offsets in the range 1000
 1999, and so on.
 
 <pre class="pre">
-    ```
-    <container_name>/offset=0/<object_a>
-    <container_name>/offset=0/<object_b>
-    <container_name>/offset=1000/<object_c>
-    <container_name>/offset=2000/<object_d>
-    ```
+        ```
+        <container_name>/offset=0/<object_a>
+        <container_name>/offset=0/<object_b>
+        <container_name>/offset=1000/<object_c>
+        <container_name>/offset=2000/<object_d>
+        ```
 </pre>
 {:pre}
 
