@@ -10,7 +10,7 @@ lastupdated: "2017-03-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# About {{site.data.keyword.messagehub}}
+# MQ bridge
 {: #mq_bridge}
 
 # MQ bridge
