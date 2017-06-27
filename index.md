@@ -11,7 +11,7 @@ lastupdated: "2017-03-02"
 {:pre: .pre}
 
 # Getting started with Message Hub
-{: #getting_started}
+{: #messagehub}
 
 
 {{site.data.keyword.messagehub_full}} is a scalable,
