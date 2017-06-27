@@ -48,6 +48,6 @@ partitions.</li>
 </dd>
 </dl>
 
-To learn more, see [Apache Kafka documentation ![External link icon](images/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} and [Message Hub Kafka Java&trade; API developerWorks&reg; article ![External link icon](images/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2016/03/03/message-hub-kafka-java-api/){:new_window}.
+To learn more, see [Apache Kafka documentation ![External link icon](../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} and [Message Hub Kafka Java&trade; API developerWorks&reg; article ![External link icon](../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2016/03/03/message-hub-kafka-java-api/){:new_window}.
 
 
