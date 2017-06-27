@@ -17,7 +17,7 @@ lastupdated: "2017-03-14"
 {: #monitoring}
 
 
-{{site.data.keyword.Bluemix_short}} automatically collects metrics and events so that you
+{{site.data.keyword.messagehub}} automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
