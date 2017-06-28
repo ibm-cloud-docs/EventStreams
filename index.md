@@ -55,8 +55,8 @@ Complete the following steps:
 
 2. If you don't already have them, install the following prerequisites:
 
-    * [git ![External link icon](../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
-	* [Gradle ![External link icon](../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
+    * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
+	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
     * Java 7 or higher
  
 3. Clone the message-hub-samples git repository by running the following command from the command line:
@@ -137,9 +137,9 @@ is some sample output:
 following: ```Ctrl+C```
 
 
-To find out more about running a {{site.data.keyword.messagehub}} sample using Python, see [Python console sample application ![External link icon](../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2017/02/09/new-message-hub-sample-python-console-application/){:new_window}. You can also find samples
-that demonstrate other APIs and features at [{{site.data.keyword.messagehub}} samples ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples){:new_window}.
+To find out more about running a {{site.data.keyword.messagehub}} sample using Python, see [Python console sample application ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2017/02/09/new-message-hub-sample-python-console-application/){:new_window}. You can also find samples
+that demonstrate other APIs and features at [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples){:new_window}.
 
 To watch a video that walks
-you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){:new_window}.
+you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){:new_window}.
 
