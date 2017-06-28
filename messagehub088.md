@@ -45,7 +45,7 @@ You might find bridges useful in the following two common scenarios:
 * Object naming conventions that are currently used by the {{site.data.keyword.objectstorageshort}} bridge might change in future.
 * The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of dataas it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
 
-However, you can use the [{{site.data.keyword.SecureGatewayfull}}![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/secure_gateway.html){:new_window} service to send your data
+However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/secure_gateway.html){:new_window} service to send your data
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
 and a {{site.data.keyword.SecureGateway}} client that you can
 install on-premises. In this configuration, the communication on either end of the tunnel is not
