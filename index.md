@@ -61,29 +61,29 @@ Complete the following steps:
  
 3. Clone the message-hub-samples git repository by running the following command from the command line:
 
-    ```
+    <pre class="pre">
     git clone https://github.com/ibm-messaging/message-hub-samples.git
-    ```
+    </pre>
 	{: codeblock}
 
 4. Change directory to the java console sample by running the following command:
 
-    ```
+    <pre class="pre">
     cd message-hub-samples/kafka-java-console-sample
-    ```
+    </pre>
 	{: codeblock}
 
 5. Run the following build commands:
 
-    ```
+    <pre class="pre">
     gradle clean && gradle build
-    ```
+    </pre>
 	{: codeblock}
 
 6. Start the consumer on your console by running the following command:
 
-    <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar <var class="keyword varname">kafka_brokers_sasl</var> 
-    <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -consumer</pre>
+    <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
+	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -consumer</pre>
     {: codeblock}
     
     The sample uses a topic named `kafka-java-console-sample-topic`. If the topic does
@@ -95,16 +95,17 @@ Complete the following steps:
     
 	**Important:** *kafka_brokers_sasl* must be a single string and you must enclose it in quotes. For example:
 
-    ```
+    <pre class="pre">
     "host1:port1,host2:port2"
-    ```
+    </pre>
 	{: codeblock}
 
     We recommend using all the Kafka hosts listed in the **Credentials** that you selected.
 
 7. Start the producer on your console by running the following command:
    
-    <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar <var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -producer</pre>
+    <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
+	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -producer</pre>
  {: codeblock}
   
 8. You should now see the messages sent by the producer appearing in the consumer. The following
