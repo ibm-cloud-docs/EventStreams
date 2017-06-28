@@ -82,4 +82,4 @@ client = mqlight.Client(service=service,
 </dl>
 
 For more information about the {{site.data.keyword.mql}} APIs,
-see: [{{site.data.keyword.mql}} developerWorks&reg; site ![External link icon](images/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-light/){:new_window}.
+see: [{{site.data.keyword.mql}} developerWorks&reg; site ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-light/){:new_window}.

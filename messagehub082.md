@@ -23,4 +23,4 @@ messages to the front end. This sample shows how easy it is to get apps talking 
 the {{site.data.keyword.mql}} API. You can also use the {{site.data.keyword.mql}} API to perform worker offload; a key capability
 required for building scalable, loosely coupled, and distributed apps.
 
-You can find the sample code in the [message-hub-samples GitHub project ![External link icon](images/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples/tree/master/mqlight){:new_window}.
+You can find the sample code in the [message-hub-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples/tree/master/mqlight){:new_window}.

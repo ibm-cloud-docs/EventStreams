@@ -17,7 +17,7 @@ lastupdated: "2016-11-22"
 
 {{site.data.keyword.messagehub}} integrates well with the following service:
 
- [{{site.data.keyword.streaminganalyticsshort}} ![External link icon](images/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2015/12/07/streaminganalyticsmessagehub/){:new_window} 
+ [{{site.data.keyword.streaminganalyticsshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2015/12/07/streaminganalyticsmessagehub/){:new_window} 
  
  
  

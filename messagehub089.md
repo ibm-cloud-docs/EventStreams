@@ -13,7 +13,7 @@ lastupdated: "2017-03-10"
 # Object Storage bridge 
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
-to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} [{{site.data.keyword.objectstorageshort}} service ![External link icon](images/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}. The bridge consumes
+to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} [{{site.data.keyword.objectstorageshort}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}. The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a container in the
 {{site.data.keyword.objectstorageshort}} service. By configuring
 the {{site.data.keyword.objectstorageshort}} bridge, you can
