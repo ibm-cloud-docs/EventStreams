@@ -21,3 +21,35 @@ lastupdated: "2016-11-22"
 privacy of your data:
 {:shortdesc}
 
+## Cryptographic protocols
+{: #cryptographic notoc}
+
+
+*  Connections to the Kafka native and REST interfaces must be
+   made using TLS 1.2.
+*  Connections are restricted to the following strong cipher
+   suites:
+
+      * ECDHE-RSA-AES128-GCM-SHA256
+      * ECDHE-RSA-AES256-GCM-SHA384
+      * DHE-RSA-AES128-GCM-SHA256
+      * kEDH+AESGCM
+      * ECDHE-RSA-AES128-SHA256
+      * ECDHE-RSA-AES256-SHA384
+      * DHE-RSA-AES128-SHA256
+      * DHE-RSA-AES256-SHA256
+
+
+
+*  To access the {{site.data.keyword.messagehub}} dashboard, you must use a browser
+   that supports TLS 1.2.
+   
+## Encryption of message payloads
+{: #encryption_payloads notoc}
+
+Message data is encrypted for transmission between {{site.data.keyword.messagehub}}
+and clients as a result of TLS. {{site.data.keyword.messagehub}} stores message data
+at rest and message logs on encrypted disks.
+
+
+
