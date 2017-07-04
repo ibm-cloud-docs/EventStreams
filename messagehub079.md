@@ -16,7 +16,8 @@ lastupdated: "2017-02-13"
 To connect an app to the service, the app must use the ```user```,
 ```password```, and ```mqlight_lookup_url``` details from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub075.html#vcap). Use the following guidance for your chosen language:
 
-<dl><dt>For Java</dt>
+<dl>
+<dt>For Java</dt>
 <dd>If you specify ‘null’ as the endpointService parameter of the create() call, this instructs the
 client to read the ```user```, ```password``` and,
 ```mqlight_lookup_url``` details from VCAP_SERVICES:
