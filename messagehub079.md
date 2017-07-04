@@ -14,7 +14,7 @@ lastupdated: "2017-02-13"
 {: #mql_connect}
 
 To connect an app to the service, the app must use the ```user```,
-```password```, and ```mqlight_lookup_url``` details from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub075.html#vcap). Use the following guidance for your chosen language:
+```password```, and ```mqlight_lookup_url``` details from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub071.html). Use the following guidance for your chosen language:
 
 <dl>
 <dt>For Java</dt>
