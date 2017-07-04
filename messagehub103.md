@@ -25,7 +25,7 @@ Add the following reference to the ```Gemfile```:
 And add the following require statement to your source
 file:
 
-```<code>require ‘mqlight’```
+```require ‘mqlight’```
 
 {: codeblock}
 
