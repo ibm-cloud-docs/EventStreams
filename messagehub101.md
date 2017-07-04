@@ -17,12 +17,18 @@ lastupdated: "2016-11-22"
 To use the API, add a reference to the latest available {{site.data.keyword.mql}} client API for Python as follows:
 
 Add the following reference to your ```requirements.txt```
-file:<pre><code>git+git://github.com/mqlight/python-mqlight.git@readthedocs</code></pre>
-{:pre}
+file:
+
+```git+git://github.com/mqlight/python-mqlight.git@readthedocs```
+
+{:codeblock}
 
 And the add following import statement to your source
-file:<pre><code>import mqlight</code></pre>
-{:pre}
+file:
+
+```import mqlight```
+
+{:codeblock}
 
 <!-- Comment from Andrew
 Instructions for getting started, with links for more info
