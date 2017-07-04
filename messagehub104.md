@@ -60,6 +60,7 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
     };
 </pre>
 {: codeblock}
+
 </li>
 
 <li>Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```</li>
