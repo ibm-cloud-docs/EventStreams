@@ -16,15 +16,17 @@ lastupdated: "2016-11-22"
 
 To use the API, add a reference to the latest available {{site.data.keyword.mql}} client API for Ruby as follows:
 
-Add the following reference to the
-```Gemfile```:
+Add the following reference to the ```Gemfile```:
 
-<pre class="pre"><code>gem 'mqlight', '~> 1.0'</code></pre>
-{:pre}
+```gem 'mqlight', '~> 1.0'```
+
 {: codeblock}
 
 And add the following require statement to your source
-file:<pre class="pre"><code>require ‘mqlight’</code></pre>
+file:
+
+```<code>require ‘mqlight’```
+
 {: codeblock}
 
 <!-- Comment from Andrew
