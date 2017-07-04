@@ -13,7 +13,8 @@ lastupdated: "2016-11-22"
 # What's required to use the Kafka REST API with Message Hub?
 {: #rest_reqs}
 
-The following requirements are needed to use the Kafka REST API with {{site.data.keyword.messagehub}}: TBD
+The following requirements are needed to use the Kafka REST API with {{site.data.keyword.messagehub}}: 
+TBD
 
 <!-- TBC. Reqs needed here -->
 
