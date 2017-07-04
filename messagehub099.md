@@ -17,14 +17,15 @@ lastupdated: "2016-11-22"
 To use the API, add a reference to the latest available {{site.data.keyword.mql}} client API for Java as follows:
 
 Add the following reference to your ```Maven pom``` file:
-<pre class="pre">
-<code>&lt;dependency&gt;
+
+```
+&lt;dependency&gt;
     &lt;groupId&gt;com.ibm.mqlight&lt;/groupId&gt;
     &lt;artifactId&gt;mqlight-api&lt;/artifactId&gt;
     &lt;version&gt;LATEST&lt;/version&gt;
-    &lt;/dependency&gt;
-</code></pre>
-{:pre}
+&lt;/dependency&gt;
+```
+{:codeblock}
 
 <!-- Comment from Andrew
 Instructions for getting started, with links for more info
