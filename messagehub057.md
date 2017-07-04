@@ -67,7 +67,7 @@ limiting for each ApiKey. When this limiting occurs, the API
 responds with the following HTTP error:
 
 ```429 Too Many Requests```
- {:codeblock}
+ {:screen}
 
 If you see this error, wait and submit the request again.
 
@@ -82,7 +82,7 @@ recreate your Kafka consumer instances. If this is the case, the
 REST API returns the following JSON:
 
 ```'{"error_code":40403,"message":"Consumer instance not found."}'```
-{:codeblock}
+{:screen}
 
 ## Kafka high-level consumer API
 {: #kafka_consumer notoc}
