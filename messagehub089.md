@@ -132,7 +132,7 @@ To partition data by Kafka message offset, complete the following steps:
 
 To partition data by the ISO 8601 date, complete the following steps:
 
-1. Configure a bridge with the `"inputFormat"` property set to `"json"`.You cannot use an `"inputFormat"` property other than
+1. Configure a bridge with the `"inputFormat"` property set to `"json"`. You cannot use an `"inputFormat"` property other than
 `"json"`.
 2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. For
 example:
@@ -161,15 +161,17 @@ example:
 </pre>
 {:pre}
 
-<p>
+
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
 	`"propertyName"` in the JSON used to configure the bridge must correspond to the ISO
 	8601 date field in each Kafka message. In this example, the `"timestamp"` field must
-	contain a valid ISO 8601 date value. Messages are then partitioned according to their dates. A bridge configured like this example generates objects with names specified as follows:
+	contain a valid ISO 8601 date value. Messages are then partitioned according to their dates.
+	
+	A bridge configured like this example generates objects with names specified as follows:
 	`<object_a>` contains JSON messages with `"timestamp"` fields with
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
-</p>
+
 	
 <pre class="pre">
     ```
