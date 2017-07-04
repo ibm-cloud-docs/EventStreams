@@ -25,9 +25,7 @@ space.
 {: #topics_partitions notoc}
 
 *  Topic names are restricted to a maximum of 100 characters.
-
 *  The default number of partitions for a topic is one.
-
 *  Each {{site.data.keyword.Bluemix_notm}} space has a limit of 100 partitions. To create
    more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
 
@@ -56,7 +54,6 @@ of topics, or on the rapid deletion and re-creation of topics.
 
 *  Only the binary embedded format is supported for requests and
    responses. The Avro embedded format is not supported.
-
 *  Concurrent requests are not supported for a consumer instance.
    Read, commit, or delete requests corresponding to a consumer
    instance should be sent only after a response is received for
