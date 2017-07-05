@@ -30,6 +30,7 @@ client to read the ```user```, ```password``` and,
 }, null);</code>
 </pre>
 {:codeblock}
+<br>
 
 **For Node.js**
 
@@ -47,7 +48,7 @@ var mqlightClient = mqlight.createClient(opts, function(err) {
 ...</code>
 </pre>
 {:codeblock}
-
+<br>
 
 **For Ruby**
 
@@ -65,6 +66,7 @@ set :client, Mqlight::BlockingClient.new(service, opts)
 ...</code>
 </pre>
 {:codeblock}
+<br>
 
 **For Python**
 
