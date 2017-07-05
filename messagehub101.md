@@ -19,13 +19,17 @@ To use the API, add a reference to the latest available {{site.data.keyword.mql}
 Add the following reference to your ```requirements.txt```
 file:
 
-```git+git://github.com/mqlight/python-mqlight.git@readthedocs```
+```
+git+git://github.com/mqlight/python-mqlight.git@readthedocs
+```
 {:codeblock}
 
 And the add following import statement to your source
 file:
 
-```import mqlight```
+```
+import mqlight
+```
 {:codeblock}
 
 <!-- Comment from Andrew
