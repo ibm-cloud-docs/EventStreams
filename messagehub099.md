@@ -19,11 +19,11 @@ To use the API, add a reference to the latest available {{site.data.keyword.mql}
 Add the following reference to your ```Maven pom``` file:
 
 ```
-&lt;dependency&gt;
-    &lt;groupId&gt;com.ibm.mqlight&lt;/groupId&gt;
-    &lt;artifactId&gt;mqlight-api&lt;/artifactId&gt;
-    &lt;version&gt;LATEST&lt;/version&gt;
-&lt;/dependency&gt;
+<dependency>
+    <groupId>com.ibm.mqlight</groupId>
+    <artifactId>mqlight-api</artifactId>
+    <version>LATEST</version>
+</dependency>
 ```
 {:codeblock}
 
