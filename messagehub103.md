@@ -25,13 +25,15 @@ client.disconnect()
 ```
 {: codeblock}
 
-```gem 'mqlight', '~> 1.0'```
+```gem 'mqlight', '~> 1.0'
+```
 {: codeblock}
 
 And add the following require statement to your source
 file:
 
-```require ‘mqlight’```
+```require ‘mqlight’
+```
 {: codeblock}
 
 <!-- Comment from Andrew
