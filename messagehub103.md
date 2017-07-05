@@ -19,14 +19,12 @@ To use the API, add a reference to the latest available {{site.data.keyword.mql}
 Add the following reference to the ```Gemfile```:
 
 ```gem 'mqlight', '~> 1.0'```
-
 {: codeblock}
 
 And add the following require statement to your source
 file:
 
 ```require ‘mqlight’```
-
 {: codeblock}
 
 <!-- Comment from Andrew
