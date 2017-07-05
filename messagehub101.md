@@ -24,8 +24,8 @@ git+git://github.com/mqlight/python-mqlight.git@readthedocs
 ```
 {:codeblock}
 
-And the add following import statement to your source
-file:
+<br>
+And add the following import statement to your source file:
 
 ```
 import mqlight
