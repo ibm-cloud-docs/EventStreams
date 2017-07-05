@@ -20,14 +20,12 @@ Add the following reference to your ```requirements.txt```
 file:
 
 ```git+git://github.com/mqlight/python-mqlight.git@readthedocs```
-
 {:codeblock}
 
 And the add following import statement to your source
 file:
 
 ```import mqlight```
-
 {:codeblock}
 
 <!-- Comment from Andrew
