@@ -49,7 +49,6 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
 2. Change your ```jaas.conf``` file to the following: 
-<!-- 
     ```
         KafkaClient {
           org.apache.kafka.common.security.plain.PlainLoginModule required
@@ -58,7 +57,7 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
             password="<your password>";
         };
     ```
-{: codeblock} -->
+    {: codeblock}
 
 3. Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```
 <!-- 
