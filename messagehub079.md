@@ -29,7 +29,7 @@ client to read the ```user```, ```password``` and,
     }
 }, null);</code>
 </pre>
-{:pre}
+{:codeblock}
 
 **For Node.js**
 
@@ -46,7 +46,7 @@ opts.password = mqlightService.credentials.password;
 var mqlightClient = mqlight.createClient(opts, function(err) {
 ...</code>
 </pre>
-{:pre}
+{:codeblock}
 
 
 **For Ruby**
@@ -64,7 +64,7 @@ opts[:password] = credentials['password']
 set :client, Mqlight::BlockingClient.new(service, opts)
 ...</code>
 </pre>
-{:pre}
+{:codeblock}
 
 **For Python**
 
@@ -83,7 +83,7 @@ client = mqlight.Client(service=service,
                         security_options=security_options,
                         on_started=on_started)</code>
 </pre>
-{:pre}
+{:codeblock}
 
 
 For more information about the {{site.data.keyword.mql}} APIs,
