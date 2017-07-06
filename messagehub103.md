@@ -21,7 +21,7 @@ Add the following reference to the ```Gemfile```:
 The final step is to disconnect the Python client application from the service instance:
 
 ```python
-client.disconnect()
+'client'.disconnect()
 ```
 {: codeblock}
 
