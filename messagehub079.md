@@ -30,6 +30,7 @@ client to read the ```user```, ```password``` and,
 }, null);</code>
 </pre>
 {:codeblock}
+
 <br>
 
 **For Node.js**
@@ -48,6 +49,7 @@ var mqlightClient = mqlight.createClient(opts, function(err) {
 ...</code>
 </pre>
 {:codeblock}
+
 <br>
 
 **For Ruby**
@@ -66,6 +68,7 @@ set :client, Mqlight::BlockingClient.new(service, opts)
 ...</code>
 </pre>
 {:codeblock}
+
 <br>
 
 **For Python**
@@ -87,6 +90,7 @@ client = mqlight.Client(service=service,
 </pre>
 {:codeblock}
 
+<br>
 
 For more information about the {{site.data.keyword.mql}} APIs,
 see: [{{site.data.keyword.mql}} developerWorks&reg; site ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-light/){:new_window}.
