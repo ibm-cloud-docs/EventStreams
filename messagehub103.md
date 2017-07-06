@@ -29,6 +29,10 @@ The final step is to disconnect the Python client application from the service i
 ```
 {: codeblock}
 
+```gem 'mqlight', '~> 1.0'
+```
+{: codeblock}
+
 And add the following require statement to your source
 file:
 
