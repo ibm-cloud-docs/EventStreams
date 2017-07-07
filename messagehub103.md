@@ -22,10 +22,7 @@ The final step is to disconnect the Python client application from the service i
 
 ```python
 'client'.disconnect()
-```
-{: codeblock}
-
-```gem 'mqlight', '~> 1.0'
+`gem 'mqlight', '~> 1.0'
 ```
 {: codeblock}
 
