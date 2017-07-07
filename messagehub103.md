@@ -20,7 +20,7 @@ Add the following reference to the ```Gemfile```:
 
 The final step is to disconnect the Python client application from the service instance:
 
-```'client'.disconnect()
+```'client'.disconnect(new)
 `gem 'mqlight', '~> 1.0'
 ```
 {: codeblock}
