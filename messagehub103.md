@@ -18,14 +18,10 @@ To use the API, add a reference to the latest available {{site.data.keyword.mql}
 
 Add the following reference to the ```Gemfile```:
 
-The final step is to disconnect the Python client application from the service instance:
-
 ```
-`gem 'mqlight', '~> 1.0'
+gem 'mqlight', '~> 1.0'
 ```
 {: codeblock}
-
-<br>
 
 And add the following require statement to your source file:
 
