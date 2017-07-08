@@ -168,9 +168,9 @@ To partition data by the ISO 8601 date, complete the following steps:
 
 	<pre class="pre"><code>
     ```
-    <container_name>/dt=2016-12-07/<object_a>
-    <container_name>/dt=2016-12-08/<object_b>
-    <container_name>/dt=2016-12-08/<object_c>
+    &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
+    &lt;container_name&gt;/dt=2016-12-08/&lt;object_b&gt;
+    &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
     ```
     </code></pre>
     {:codeblock}
