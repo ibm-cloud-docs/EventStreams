@@ -124,8 +124,7 @@ To partition data by Kafka message offset, complete the following steps:
         &lt;container_name&gt;/offset=2000/&lt;object_d&gt;
         ```
     </code>
-    {:codeblock}
-
+   
 ## Partitioning by ISO 8601 date
 {: notoc}
 
