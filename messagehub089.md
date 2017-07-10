@@ -116,12 +116,14 @@ To partition data by Kafka message offset, complete the following steps:
     the range 0 - 999, `<object_c>` contains messages with offsets in the range 1000 -
     1999, and so on.
 
+   <code>
        ```
         <container_name>/offset=0/<object_a>
         <container_name>/offset=0/<object_b>
         <container_name>/offset=1000/<object_c>
         <container_name>/offset=2000/<object_d>
         ```
+    </code>
     {:codeblock}
 
 ## Partitioning by ISO 8601 date
@@ -168,7 +170,7 @@ To partition data by the ISO 8601 date, complete the following steps:
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
 
-   <pre class="pre">
+   
    <code>
     ```
     &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
@@ -176,7 +178,6 @@ To partition data by the ISO 8601 date, complete the following steps:
     &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
     ```
     </code>
-    </pre>
     {:codeblock}
     
     Any message data that is valid JSON but without a valid date field or value is written into an object
