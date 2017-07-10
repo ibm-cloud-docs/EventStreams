@@ -178,8 +178,7 @@ To partition data by the ISO 8601 date, complete the following steps:
     &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
     ```
     </code>
-    {:codeblock}
-    
+        
     Any message data that is valid JSON but without a valid date field or value is written into an object
     with the prefix `"dt=1970-01-01"`.
 
