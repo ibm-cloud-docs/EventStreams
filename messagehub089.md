@@ -118,10 +118,10 @@ To partition data by Kafka message offset, complete the following steps:
 
    <code>
        ```
-        <container_name>/offset=0/<object_a>
-        <container_name>/offset=0/<object_b>
-        <container_name>/offset=1000/<object_c>
-        <container_name>/offset=2000/<object_d>
+        &lt;container_name&gt;/offset=0/&lt;object_a&gt;
+        &lt;container_name&gt;/offset=0/&lt;object_b&gt;
+        &lt;container_name&gt;/offset=1000/&lt;object_c&gt;
+        &lt;container_name&gt;/offset=2000/&lt;object_d&gt;
         ```
     </code>
     {:codeblock}
