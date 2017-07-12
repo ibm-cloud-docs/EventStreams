@@ -88,10 +88,7 @@ For example:
     ```
     {: codeblock}
 
-Where BOOTSTRAP_SERVERS, USERNAME and PASSWORD are the values from your Message Hub service Credentials page in Bluemix.
-
-If you have any questions, let us know in the comments or on StackOverflow using the message-hub tag.
-
+where BOOTSTRAP_SERVERS, USERNAME and PASSWORD are the values from your Message Hub service Credentials page in Bluemix.
 
 <!-- 
 new topic that includes content from existing topics about samples and migration
