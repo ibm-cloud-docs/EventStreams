@@ -1,6 +1,6 @@
 copyright:
   years: 2015, 2017
-lastupdated: "2017-05-11"
+lastupdated: "2017-07-12"
 
 ---
 
@@ -60,6 +60,39 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
     {: codeblock}
 
 3. Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```
+
+## Topic Admin APIs
+{: #topic_admin notoc}
+
+If you're using 0.10.2.1 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when creating topics. Currently the only settings allowed are:
+– cleanup.policy: Can be set to delete (default), compact or delete,compact
+– retention.ms: Default is 24 hours. Minimum is 1 hour. Maximum is 30 days. It must be in muliples of hours.
+Note:
+If the cleanup policy is only compact, we automatically add delete but disable deletion based on time. Messages in the topic will be compacted up to 1GB before being deleted.
+
+
+## Kafka Streams support
+
+The updated Streams library takes advantage of the topic APIs and now works out of the box with Message Hub. All you need to do is specify your SASL credentials via sasl.jaas.config or a JAAS file and set replication.factor to 3.
+
+For example:
+
+    ```
+    props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
+    props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
+    props.put("security.protocol","SASL_SSL");
+    props.put("sasl.mechanism","PLAIN");
+    props.put("ssl.protocol","TLSv1.2");
+    props.put("ssl.enabled.protocols","TLSv1.2");
+    props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";");
+    ```
+    {: codeblock}
+
+Where BOOTSTRAP_SERVERS, USERNAME and PASSWORD are the values from your Message Hub service Credentials page in Bluemix.
+
+If you have any questions, let us know in the comments or on StackOverflow using the message-hub tag.
+
+
 <!-- 
 new topic that includes content from existing topics about samples and migration
 -->
