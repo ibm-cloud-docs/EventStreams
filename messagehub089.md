@@ -171,13 +171,13 @@ To partition data by the ISO 8601 date, complete the following steps:
 	`<object_a>` contains JSON messages with `"timestamp"` fields with
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
-   
+
    <pre class="pre"><code>
-    ```
-    &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
-    &lt;container_name&gt;/dt=2016-12-08/&lt;object_b&gt;
-    &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
-    ```
+        ```
+        &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
+        &lt;container_name&gt;/dt=2016-12-08/&lt;object_b&gt;
+        &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
+        ```       
     </code></pre>
     {:codeblock}
 
