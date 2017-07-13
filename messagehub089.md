@@ -179,6 +179,9 @@ To partition data by the ISO 8601 date, complete the following steps:
         &lt;container_name&gt;/offset=0/&lt;object_b&gt;
         &lt;container_name&gt;/offset=1000/&lt;object_c&gt;
         &lt;container_name&gt;/offset=2000/&lt;object_d&gt;
+        &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
+        &lt;container_name&gt;/dt=2016-12-08/&lt;object_b&gt;
+        &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
         ```       
     </code></pre>
     {:codeblock}
