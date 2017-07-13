@@ -118,30 +118,14 @@ To partition data by Kafka message offset, complete the following steps:
     the range 0 - 999, `<object_c>` contains messages with offsets in the range 1000 -
     1999, and so on.
 
- <pre class="pre"><code>
+    <pre class="pre"><code>
         ```
-        {
-          "topic": "topic1",
-          "type": "objectStorageOut",
-          "name": "bridge1",
-          "configuration" : {
-            "credentials" : { ... },
-            "container" : "container1",
-            "uploadDurationThresholdSeconds" : "1000",
-            "uploadSizeThresholdKB" : "1000",
-            "partitioning" : [ {
-                "type" : "kafkaOffset"
-              }
-            ]
-          }
-        }
-	
-	&lt;container_name&gt;/offset=0/&lt;object_a&gt;
+        &lt;container_name&gt;/offset=0/&lt;object_a&gt;
         &lt;container_name&gt;/offset=0/&lt;object_b&gt;
         &lt;container_name&gt;/offset=1000/&lt;object_c&gt;
         &lt;container_name&gt;/offset=2000/&lt;object_d&gt;
         ```       
-     	</code></pre>
+    </code></pre>
     {:codeblock}
   
     
@@ -153,8 +137,7 @@ To partition data by the ISO 8601 date, complete the following steps:
 1. Configure a bridge with the `"inputFormat"` property set to `"json"`. You cannot use an `"inputFormat"` property other than
 `"json"`.
 2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. For example:
-    <pre class="pre">
-    <code>
+    <pre class="pre"><code>
     ```
     {
       "topic": "topic2",
@@ -175,8 +158,7 @@ To partition data by the ISO 8601 date, complete the following steps:
       }
     }
     ```
-    </code>
-    </pre>
+    </code></pre>
     {:codeblock}
 
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
@@ -190,14 +172,16 @@ To partition data by the ISO 8601 date, complete the following steps:
 	2016-12-08.
 
    
-   <code>
+   <pre class="pre"><code>
     ```
     &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
     &lt;container_name&gt;/dt=2016-12-08/&lt;object_b&gt;
     &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
     ```
-    </code>
-        
+    </code></pre>
+    {:codeblock}
+
+	
     Any message data that is valid JSON but without a valid date field or value is written into an object
     with the prefix `"dt=1970-01-01"`.
 
