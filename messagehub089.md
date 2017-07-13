@@ -136,7 +136,8 @@ To partition data by the ISO 8601 date, complete the following steps:
 
 1. Configure a bridge with the `"inputFormat"` property set to `"json"`. You cannot use an `"inputFormat"` property other than
 `"json"`.
-2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. For example:
+2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. 
+    For example:
     <pre class="pre"><code>
     ```
     {
@@ -170,7 +171,6 @@ To partition data by the ISO 8601 date, complete the following steps:
 	`<object_a>` contains JSON messages with `"timestamp"` fields with
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
-
    
    <pre class="pre"><code>
     ```
@@ -181,9 +181,8 @@ To partition data by the ISO 8601 date, complete the following steps:
     </code></pre>
     {:codeblock}
 
-	
-    Any message data that is valid JSON but without a valid date field or value is written into an object
-    with the prefix `"dt=1970-01-01"`.
+	Any message data that is valid JSON but without a valid date field or value is written into an object
+	with the prefix `"dt=1970-01-01"`.
 
 ## {{site.data.keyword.objectstorageshort}} bridge metrics
 {: notoc}
