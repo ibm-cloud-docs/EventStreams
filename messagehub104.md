@@ -73,9 +73,9 @@ Note:
 If the cleanup policy is only compact, we automatically add delete but disable deletion based on time. Messages in the topic will be compacted up to 1GB before being deleted.
 
 
-## Support for Kafka streams
+## Support for Kafka Streams
 
-The updated Streams library takes advantage of the topic APIs and now works out of the box with Message Hub. All you need to do is specify your SASL credentials via sasl.jaas.config or a JAAS file and set replication.factor to 3.
+The updated Streams library takes advantage of the topic APIs and now works out of the box with {{site.data.keyword.messagehub}}. Specify your SASL credentials via sasl.jaas.config or a JAAS file and set replication.factor to 3.
 
 For example:
 
@@ -90,7 +90,7 @@ For example:
     ```
     {: codeblock}
 
-where BOOTSTRAP_SERVERS, USERNAME and PASSWORD are the values from your Message Hub service Credentials page in Bluemix.
+where BOOTSTRAP_SERVERS, USERNAME and PASSWORD are the values from your Message Hub service Credentials page in {{site.data.keyword.Bluemix_short}}.
 
 <!-- 
 new topic that includes content from existing topics about samples and migration
