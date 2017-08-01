@@ -64,23 +64,25 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 3. Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```
 
 
-## sasl.jaas.config property
+## Using the sasl.jaas.config property
 If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaas.config``` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set ```sasl.jaas.config``` as follows:
 
-```
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
-username="USERNAME" \
-password="PASSWORD";
-```
+    ```
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
+    username="USERNAME" \
+    password="PASSWORD";
+    ```
+    {: codeblock}
 
-where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
+    where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
+
 If you use ```sasl.jaas.config```, clients running in the same JVM can use different credentials. For more information, see
-[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2017/06/28/messagehub-now-runs-kafka-0-10-2-1-supports-streams/){:new_window}
+[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
 
 ## APIs for topic administration
 {: #topic_admin notoc}
 
-If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when creating topics. Currently, you can modify the following settings:
+If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when creating topics. Currently, you can modify the following settings only:
 
 <dl>
 <dt>cleanup.policy</dt>
@@ -96,11 +98,11 @@ If the cleanup policy is <code>compact</code> only, we automatically add delete 
 
 ## Support for Kafka Streams
 
-The updated Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set replication.factor to 3.
+The updated Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
 
 For example:
 
-```
+    ```
     props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
     props.put("security.protocol","SASL_SSL");
@@ -108,11 +110,11 @@ For example:
     props.put("ssl.protocol","TLSv1.2");
     props.put("ssl.enabled.protocols","TLSv1.2");
     props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";");
-```
+    ```
+   {: codeblock}
 
-
-where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in
-{{site.data.keyword.Bluemix_notm}}.
+    where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in
+    {{site.data.keyword.Bluemix_notm}}.
 
 <!--
 new topic that includes content from existing topics about samples and migration
