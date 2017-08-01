@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-07-12"
+lastupdated: "2017-08-01"
 
 ---
 
@@ -50,7 +50,7 @@ the publicly available 0.10.x Kafka clients. You are strongly encouraged to move
 latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
-2. Change your ```jaas.conf``` file to the following: 
+2. Change your ```jaas.conf``` file to the following:
     ```
         KafkaClient {
           org.apache.kafka.common.security.plain.PlainLoginModule required
@@ -63,6 +63,20 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 3. Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```
 
+
+## sasl.jaas.config property
+If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaas.config``` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set ```sasl.jaas.config``` as follows:
+
+```
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
+username="USERNAME" \
+password="PASSWORD";
+```
+
+where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
+If you use ```sasl.jaas.config```, clients running in the same JVM can use different credentials. For more information, see
+[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2017/06/28/messagehub-now-runs-kafka-0-10-2-1-supports-streams/){:new_window}
+
 ## APIs for topic administration
 {: #topic_admin notoc}
 
@@ -70,20 +84,23 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create 
 
 <dl>
 <dt>cleanup.policy</dt>
-<dd>Can be set to delete (default), compact or delete,compact</dd>
+<dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code></dd>
 <dt>retention.ms</dt>
-<dd>Default is 24 hours. The minimum is 1 hour and the maximum is 30 days. It must be in muliples of hours.
-Note:
-If the cleanup policy is compact only, we automatically add delete but disable deletion based on time. Messages in the topic will be compacted up to 1 GB before being deleted.</dd>
+<dd>The default is 24 hours. The minimum is 1 hour and the maximum is
+30 days. Specify as multiples of hours.
+
+<p>**Note:**
+If the cleanup policy is <code>compact</code> only, we automatically add delete but disable deletion based on time. Messages in the topic are compacted up to 1 GB before being deleted.</p>
+</dd>
 </dl>
 
 ## Support for Kafka Streams
 
-The updated Streams library takes advantage of the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials via sasl.jaas.config or a JAAS file and set replication.factor to 3.
+The updated Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set replication.factor to 3.
 
 For example:
 
-    ```
+```
     props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
     props.put("security.protocol","SASL_SSL");
@@ -91,11 +108,12 @@ For example:
     props.put("ssl.protocol","TLSv1.2");
     props.put("ssl.enabled.protocols","TLSv1.2");
     props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";");
-    ```
-    
+```
 
-where BOOTSTRAP_SERVERS, USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_short}}.
 
-<!-- 
+where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in
+{{site.data.keyword.Bluemix_notm}}.
+
+<!--
 new topic that includes content from existing topics about samples and migration
 -->
