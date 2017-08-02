@@ -90,7 +90,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create 
 <dt>cleanup.policy</dt>
 <dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code></dd>
 <dt>retention.ms</dt>
-<dd>The default is 24 hours. The minimum is 1 hour and the maximum is
+<dd>The default period of time is 24 hours. The minimum is 1 hour and the maximum is
 30 days. Specify as multiples of hours.
 
 <p>**Note:**
