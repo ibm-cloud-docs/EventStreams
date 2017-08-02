@@ -66,16 +66,14 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 ## Using the sasl.jaas.config property
 If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaas.config``` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set ```sasl.jaas.config``` as follows:
-    ```
-        KafkaClient {
-          org.apache.kafka.common.security.plain.PlainLoginModule required
-           password="<your password>";
-        };
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
+<pre>
+<code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
     username="USERNAME" \
-    password="PASSWORD";
-    ```
-    {: codeblock}
+    password="PASSWORD";</code>
+</pre>
+{:codeblock}
+
+<br>
 
 	
     where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
