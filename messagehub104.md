@@ -75,8 +75,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaa
 
 <br>
 
-	
-    where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
+where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
 
 If you use ```sasl.jaas.config```, clients running in the same JVM can use different credentials. For more information, see
 [Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
@@ -94,7 +93,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create 
 30 days. Specify as multiples of hours.
 
 <p>**Note:**
-If the cleanup policy is <code>compact</code> only, we automatically add delete but disable deletion based on time. Messages in the topic are compacted up to 1 GB before being deleted.</p>
+If the cleanup policy is <code>compact</code> only, we automatically add <code>delete</code> but disable deletion based on time. Messages in the topic are compacted up to 1 GB before being deleted.</p>
 </dd>
 </dl>
 
@@ -104,7 +103,8 @@ The updated Streams library uses the topic APIs and now works with {{site.data.k
 
 For example:
 
-    ```
+<pre>
+<code>
     props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
     props.put("security.protocol","SASL_SSL");
@@ -112,11 +112,12 @@ For example:
     props.put("ssl.protocol","TLSv1.2");
     props.put("ssl.enabled.protocols","TLSv1.2");
     props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";");
-    ```
-   {: codeblock}
+</code>
+</pre>
+{:codeblock}
 
-    where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in
-    {{site.data.keyword.Bluemix_notm}}.
+where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in
+{{site.data.keyword.Bluemix_notm}}.
 
 <!--
 new topic that includes content from existing topics about samples and migration
