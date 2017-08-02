@@ -69,23 +69,15 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaa
     ```
         KafkaClient {
           org.apache.kafka.common.security.plain.PlainLoginModule required
-          serviceName="kafka"
-            username="<your username>"
-            password="<your password>";
+           password="<your password>";
         };
-	sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
-    username="USERNAME" \
-    password="PASSWORD";
-    ```
-    {: codeblock}
-
-    ```
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
     username="USERNAME" \
     password="PASSWORD";
     ```
     {: codeblock}
 
+	
     where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
 
 If you use ```sasl.jaas.config```, clients running in the same JVM can use different credentials. For more information, see
