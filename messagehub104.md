@@ -73,9 +73,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaa
 </pre>
 {:codeblock}
 
-<br>
-
-where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in {{site.data.keyword.Bluemix_notm}}.
+where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
 If you use ```sasl.jaas.config```, clients running in the same JVM can use different credentials. For more information, see
 [Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
@@ -89,8 +87,8 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create 
 <dt>cleanup.policy</dt>
 <dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code></dd>
 <dt>retention.ms</dt>
-<dd>The default period of time is 24 hours. The minimum is 1 hour and the maximum is
-30 days. Specify as multiples of hours.
+<dd>The default retention period is 24 hours. The minimum is 1 hour and the maximum is
+30 days. Specify this value as multiples of hours.
 
 <p>**Note:**
 If the cleanup policy is <code>compact</code> only, we automatically add <code>delete</code> but disable deletion based on time. Messages in the topic are compacted up to 1 GB before being deleted.</p>
@@ -99,7 +97,7 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 
 ## Support for Kafka Streams
 
-The updated Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
+The Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
 
 For example:
 
@@ -116,7 +114,7 @@ For example:
 </pre>
 {:codeblock}
 
-where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} service Credentials page in
+where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
 {{site.data.keyword.Bluemix_notm}}.
 
 <!--
