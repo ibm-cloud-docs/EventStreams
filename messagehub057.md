@@ -68,7 +68,8 @@ Applications using the Kafka REST API can be subject to rate
 limiting for each ApiKey. When this limiting occurs, the API
 responds with the following HTTP error:
 
-```429 Too Many Requests```
+```429 Too Many Requests
+```
  {:screen}
 
 If you see this error, wait and submit the request again.
@@ -83,7 +84,8 @@ request. After the REST API has restarted, you will have to
 recreate your Kafka consumer instances. If this is the case, the
 REST API returns the following JSON:
 
-```'{"error_code":40403,"message":"Consumer instance not found."}'```
+```'{"error_code":40403,"message":"Consumer instance not found."}'
+```
 {:screen}
 
 ## Kafka high-level consumer API
