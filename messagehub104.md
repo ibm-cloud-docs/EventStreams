@@ -65,6 +65,7 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 
 ## Using the sasl.jaas.config property
+{: #sasl_prop notoc}
 If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaas.config``` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set ```sasl.jaas.config``` as follows:
 <pre>
 <code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
@@ -96,6 +97,7 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 </dl>
 
 ## Support for Kafka Streams
+{: #kafka_streams notoc}
 
 The Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
 
