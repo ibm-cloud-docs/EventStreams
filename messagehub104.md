@@ -82,7 +82,7 @@ If you use ```sasl.jaas.config```, clients running in the same JVM can use diffe
 ## APIs for topic administration
 {: #topic_admin notoc}
 
-If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when creating topics. Currently, you can modify the following settings only:
+If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 
 <dl>
 <dt>cleanup.policy</dt>
