@@ -82,7 +82,7 @@ If you use ```sasl.jaas.config```, clients running in the same JVM can use diffe
 ## APIs for topic administration
 {: #topic_admin notoc}
 
-If you're using a Kafka client at 0.10.2.1 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
+If you're using a Kafka client at 0.11 or later, or Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 
 <dl>
 <dt>cleanup.policy</dt>
@@ -99,7 +99,7 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 ## Support for Kafka Streams
 {: #kafka_streams notoc}
 
-The Streams library uses the topic APIs and now works with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
+Starting from Streams library 0.10.2.0, the topic APIs are used and now work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
 
 For example:
 
