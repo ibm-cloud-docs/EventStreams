@@ -15,8 +15,13 @@ lastupdated: "2017-08-08"
 # {{site.data.keyword.messagehub}} FAQs
 {: #faqs}
 
+Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
 
-## {{site.data.keyword.messagehub}} availability behavior
+## What's the default for Kafka `offsets.retention.minutes`?
+{: #offsets}
+The default is 24 hours. 
+
+## What's {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability notoc}
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
@@ -26,7 +31,7 @@ If you write {{site.data.keyword.messagehub}} apps, use this information to unde
 
 Write your apps to expect connection breakages and the delivery interruptions caused by those breakages.
 
-## {{site.data.keyword.messagehub}} bridges
+## Writing {{site.data.keyword.messagehub}} apps to use with bridges
 {: #bridge_availability notoc}
 
 Write your apps to handle the possibility that bridges might restart from time to time.
