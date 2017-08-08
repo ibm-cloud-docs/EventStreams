@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-05-19"
+lastupdated: "2017-08-08"
 
 ---
 
@@ -12,8 +12,12 @@ lastupdated: "2017-05-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.messagehub}} availability behavior
-{: #availability}
+# {{site.data.keyword.messagehub}} FAQs
+{: #faqs}
+
+
+## {{site.data.keyword.messagehub}} availability behavior
+{: #availability notoc}
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
 
