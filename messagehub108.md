@@ -31,7 +31,9 @@ If you write {{site.data.keyword.messagehub}} apps, use this information to unde
 ### APIs
 {: #api_availability notoc}
 
-Write your apps to expect connection breakages and the delivery interruptions caused by those breakages.
+As part of the regular operation of Message Hub, the nodes of the Kafka clusters are occasionally restarted.
+In some cases, your apps will be aware as the cluster reassigns resources. Write your apps to be resilient
+to these changes and be able to reconnect and retry operations.
 
 ### {{site.data.keyword.messagehub}} bridges
 {: #bridge_availability notoc}
