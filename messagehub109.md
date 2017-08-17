@@ -17,10 +17,10 @@ lastupdated: "2017-08-17"
 # Reporting a problem to the {{site.data.keyword.messagehub}} team
 {: #report_problem}
 
-If you're experiencing a problem with {{site.data.keyword.messagehub}} and you'd like help from the {{site.data.keyword.messagehub}} team, please have answers to as many of the following questions as possible:
+If you're experiencing a problem with {{site.data.keyword.messagehub}} and you'd like help from the {{site.data.keyword.messagehub}} team, please gather as much of the following information as possible:
 {:shortdesc}
 
-1. Which {{site.data.keyword.Bluemix}} region is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, US-South or London. 
+1. Which {{site.data.keyword.Bluemix_notm}} region is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, US-South or London. 
 
 2. Which interface are you seeing issues with? REST, Kafka, AMQP, or bridges?
 
@@ -38,7 +38,7 @@ If you're experiencing a problem with {{site.data.keyword.messagehub}} and you'd
 
 9. What is the issue you are seeing? Which topics, client IDs, and group IDs are affected?
 
-10. What impact is it having on your service?
+10. What impact is the problem having on your service?
 
 
 
