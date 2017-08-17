@@ -64,6 +64,7 @@ IBM Message Hub
 
 	{: .navgroup id="help"}
 	ts_overview.md
+		messagehub109.md
 		messagehub057.md
 		messagehub059.md
 	{: .navgroup-end}
