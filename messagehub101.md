@@ -18,7 +18,7 @@ lastupdated: "2016-11-22"
 
 To use the API, add a reference to the latest available {{site.data.keyword.mql}} client API for Python as follows:
 
-Add the following reference to your ```requirements.txt```
+Add the following reference to your <code>requirements.txt</code>
 file:
 
 ```

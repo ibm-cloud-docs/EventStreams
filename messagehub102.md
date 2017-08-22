@@ -18,7 +18,7 @@ lastupdated: "2016-11-22"
 
 To use the API, add a reference to the latest available {{site.data.keyword.mql}} client API for Node.js as follows:
 
-Add the following reference to the dependency section of your ```package.json``` file:
+Add the following reference to the dependency section of your <code>package.json</code> file:
 
 <pre class="pre"><code>"mqlight" : "1.0.x"</code></pre>
 {: codeblock}

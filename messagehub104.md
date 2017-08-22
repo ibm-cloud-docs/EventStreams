@@ -50,7 +50,7 @@ the publicly available 0.10.x Kafka clients. You are strongly encouraged to move
 latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
-2. Change your ```jaas.conf``` file to the following:
+2. Change your <code>jaas.conf</code> file to the following:
     ```
         KafkaClient {
           org.apache.kafka.common.security.plain.PlainLoginModule required
@@ -61,12 +61,12 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
     ```
     {: codeblock}
 
-3. Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```
+3. Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code>
 
 
 ## Using the sasl.jaas.config property
 {: #sasl_prop notoc}
-If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaas.config``` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set ```sasl.jaas.config``` as follows:
+If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
 <pre>
 <code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
     username="USERNAME" \
@@ -76,7 +76,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the ```sasl.jaa
 
 where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
-If you use ```sasl.jaas.config```, clients running in the same JVM can use different credentials. For more information, see
+If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
 [Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
 
 ## APIs for topic administration
@@ -99,7 +99,7 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 ## Support for Kafka Streams
 {: #kafka_streams notoc}
 
-Starting from the Streams library 0.10.2.0, the topic APIs now work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
+Starting from the Streams library 0.10.2.0, the topic APIs now work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using <code>sasl.jaas.config</code> or a JAAS file and set <code>replication.factor</code> to 3.
 
 For example:
 
