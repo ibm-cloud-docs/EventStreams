@@ -24,7 +24,7 @@ The choice between using a Kafka client or the {{site.data.keyword.mql}} API dep
 want to build:
 
 * With Kafka, you use a small number of topics and can have multiple partitions for each topic for additional scalability. You can share messages among consumers by using consumer groups, but each consumer must be able to keep up with the rate of messages for the partitions assigned to it.
-* With the {{site.data.keyword.mql}} API, you can use a much larger number of topics and the topic names are hierarchical (for example: ```‘/sports/football’``` and ```‘/sports/tiddlywinks’```). Sharing messages among consumers is much simpler.
+* With the {{site.data.keyword.mql}} API, you can use a much larger number of topics and the topic names are hierarchical (for example: <code>‘/sports/football’</code> and <code>‘/sports/tiddlywinks’</code>). Sharing messages among consumers is much simpler.
 
 The topics in the {{site.data.keyword.mql}} API are not the same
 as Kafka topics. Instead, the {{site.data.keyword.mql}} API uses a
