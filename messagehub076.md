@@ -20,8 +20,8 @@ level of abstraction than the Kafka API. {{site.data.keyword.mql}} enables apps 
 {:shortdesc}
 
 Apps exchange messages using dynamically created
-destinations, which you can hierarchically structure (for example, ```‘/sports/football’```), group using wildcards (for example,
-```‘/sports/#’```) and have simple controls for delivery assurance and message expiry.
+destinations, which you can hierarchically structure (for example, <code>‘/sports/football’</code>), group using wildcards (for example,
+<code>‘/sports/#’</code>) and have simple controls for delivery assurance and message expiry.
 This enables you to implement scenarios such as worker offload, event notification, and batch
 processing straightforwardly.
 

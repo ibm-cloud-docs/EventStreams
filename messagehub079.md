@@ -15,14 +15,14 @@ lastupdated: "2017-02-13"
 # How to connect and authenticate
 {: #mql_connect}
 
-To connect an app to the service, the app must use the ```user```,
-```password```, and ```mqlight_lookup_url``` details from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub071.html). Use the following guidance for your chosen language:
+To connect an app to the service, the app must use the <code>user</code>,
+<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub071.html). Use the following guidance for your chosen language:
 
 **For Java**
 
 If you specify ‘null’ as the endpointService parameter of the create() call, this instructs the
-client to read the ```user```, ```password``` and,
-```mqlight_lookup_url``` details from VCAP_SERVICES:
+client to read the <code>user</code>, <code>password</code> and,
+<code>mqlight_lookup_url</code> details from VCAP_SERVICES:
 
 <pre>
 <code>NonBlockingClient.create(null, new NonBlockingClientAdapter<Void>() {
@@ -37,8 +37,8 @@ client to read the ```user```, ```password``` and,
 
 **For Node.js**
 
-Retrieve the ```user```, ```password```, and
-```mqlight_lookup_url``` details from VCAP_SERVICES and use them to create the client as
+Retrieve the <code>user</code>, <code>password</code>, and
+<code>mqlight_lookup_url</code> details from VCAP_SERVICES and use them to create the client as
 follows:
 
 <pre>
@@ -56,8 +56,8 @@ var mqlightClient = mqlight.createClient(opts, function(err) {
 
 **For Ruby**
 
-Retrieve the ```user```, ```password```, and
-```mqlight_lookup_url``` details from VCAP_SERVICES and use them to create the client as
+Retrieve the <code>user</code>, <code>password</code>, and
+<code>mqlight_lookup_url</code> details from VCAP_SERVICES and use them to create the client as
 follows:
 <pre>
 <code>vcap_services = JSON.parse(ENV['VCAP_SERVICES'])
@@ -75,8 +75,8 @@ set :client, Mqlight::BlockingClient.new(service, opts)
 
 **For Python**
 
-Retrieve the ```user```, ```password```, and
-```mqlight_lookup_url``` details from VCAP_SERVICES and use them to create the client as
+Retrieve the <code>user</code>, <code>password</code>, and
+<code>mqlight_lookup_url</code> details from VCAP_SERVICES and use them to create the client as
 follows:
 <pre>
 <code>vcap_services = json.loads(os.environ.get('VCAP_SERVICES'))

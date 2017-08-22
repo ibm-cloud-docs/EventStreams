@@ -19,7 +19,7 @@ lastupdated: "2016-11-22"
 To use the API, add a reference to the latest available {{site.data.keyword.mql}} client API for your chosen language as follows:
 
 <dl><dt>For Java</dt>
-<dd>Add the following reference to your ```Maven pom``` file:
+<dd>Add the following reference to your <code>Maven pom</code> file:
 <pre>
 <code>&lt;dependency&gt;
     &lt;groupId&gt;com.ibm.mqlight&lt;/groupId&gt;
@@ -31,7 +31,7 @@ To use the API, add a reference to the latest available {{site.data.keyword.mql}
 
 </dd>
 <dt>For Node.js</dt>
-<dd>Add the following reference to the dependency section of your ```package.json```
+<dd>Add the following reference to the dependency section of your <code>package.json</code>
 file:<pre><code>"mqlight" : "1.0.x"</code></pre>
 
 And add the following require statement to your source
@@ -39,14 +39,14 @@ file:<pre><code>var mqlight = require(‘mqlight’);</code></pre>
 </dd>
 <dt>For Ruby</dt>
 <dd>Add the following reference to the
-```Gemfile```:<pre><code>gem 'mqlight', '~> 1.0'</code></pre>
+<code>Gemfile</code>:<pre><code>gem 'mqlight', '~> 1.0'</code></pre>
 {:pre}
 
 And add the following require statement to your source
 file:<pre><code>require ‘mqlight’</code></pre>
 </dd>
 <dt>For Python</dt>
-<dd>Add the following reference to your ```requirements.txt```
+<dd>Add the following reference to your <code>requirements.txt</code>
 file:<pre><code>git+git://github.com/mqlight/python-mqlight.git@readthedocs</code></pre>
 {:pre}
 

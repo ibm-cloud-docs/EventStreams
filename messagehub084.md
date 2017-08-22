@@ -22,7 +22,7 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 <ol>
 <li>Delete the {{site.data.keyword.messagehub}} login jar module.</li>
-<li>Change your ```jaas.conf``` file to the following:
+<li>Change your <code>jaas.conf</code> file to the following:
 
 <pre class="pre">
     KafkaClient {
@@ -35,5 +35,5 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 {: codeblock}
 </li>
 
-<li>Add this line to your consumer and producer properties: ```sasl.mechanism=PLAIN```</li>
+<li>Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code></li>
 </ol>

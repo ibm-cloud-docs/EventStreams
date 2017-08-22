@@ -135,7 +135,7 @@ is some sample output:
 	{: codeblock}
 	
 9. The sample runs indefinitely until you stop it. To stop the process, run a command like the
-following: ```Ctrl+C```
+following: <code>Ctrl+C</code>
 
 
 To find out more about running a {{site.data.keyword.messagehub}} sample using Python, see [Python console sample application ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2017/02/09/new-message-hub-sample-python-console-application/){:new_window}. You can also find samples
