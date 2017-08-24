@@ -26,11 +26,7 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 <pre class="pre">
     KafkaClient {
-      org.apache.kafka.common.security.plain.PlainLoginModule required
-      serviceName="kafka"
-        username="&lt;your username&gt;"
-        password="&lt;your password&gt;";
-    };
+      
 </pre>
 {: codeblock}
 </li>
