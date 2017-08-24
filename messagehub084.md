@@ -34,19 +34,4 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 
 3. Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code>
 
-<ol>
-<li>Delete the {{site.data.keyword.messagehub}} login jar module.</li>
-<li>Change your jaas.conf file to the following:
-
-<pre class="pre">
-<code>
-    KafkaClient {
-      
-</code>
-</pre>
-{: codeblock}
-</li>
-
-<li>Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code></li>
-</ol>
 
