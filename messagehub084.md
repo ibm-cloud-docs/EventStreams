@@ -25,8 +25,10 @@ latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
 <li>Change your jaas.conf file to the following:
 
 <pre class="pre">
+<code>
     KafkaClient {
       
+</code>
 </pre>
 {: codeblock}
 </li>
