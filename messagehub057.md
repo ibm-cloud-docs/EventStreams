@@ -68,9 +68,8 @@ Applications using the Kafka REST API can be subject to rate
 limiting for each ApiKey. When this limiting occurs, the API
 responds with the following HTTP error:
 
-```429 Too Many Requests
-```
- {:screen}
+<code>429 Too Many Requests</code>
+{:screen}
 
 If you see this error, wait and submit the request again.
 
