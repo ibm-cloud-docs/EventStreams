@@ -28,6 +28,17 @@ Offset retention is system wide so you cannot set it at an individual topic leve
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
 
+* **APIs**
+
+    As part of the regular operation of {{site.data.keyword.messagehub}}, the nodes of the Kafka clusters are occasionally restarted.
+    In some cases, your apps will be aware as the cluster reassigns resources. Write your apps to be resilient
+    to these changes and to be able to reconnect and retry operations.
+	
+* **{{site.data.keyword.messagehub}} bridges**
+
+    Write your apps to handle the possibility that bridges might restart from time to time.
+
+
 ### APIs
 {: #api_availability notoc}
 
@@ -42,6 +53,7 @@ Write your apps to handle the possibility that bridges might restart from time t
 
 ## What's {{site.data.keyword.messagehub}}'s replication factor? 
 {: #replication notoc}
+
 The replication factor is 3 and replication has no impact on cost. 
 
 ## How many insync replicas are supported? 
