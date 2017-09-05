@@ -39,11 +39,11 @@ If you write {{site.data.keyword.messagehub}} apps, use this information to unde
     Write your apps to handle the possibility that bridges might restart from time to time.
 
 ## What's {{site.data.keyword.messagehub}}'s replication factor? 
-{: #replication notoc}
+{: #replication}
 
 The replication factor is 3 and replication has no impact on cost. 
 
 ## How many insync replicas are supported? 
-{: #replicas notoc}
+{: #replicas}
 
 You can set a maximum of 2 insync replicas when producing messages.
