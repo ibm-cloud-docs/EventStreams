@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-08-16"
+lastupdated: "2017-09-05"
 
 ---
 
@@ -39,3 +39,12 @@ to these changes and to be able to reconnect and retry operations.
 {: #bridge_availability notoc}
 
 Write your apps to handle the possibility that bridges might restart from time to time.
+
+## What's {{site.data.keyword.messagehub}}'s replication factor? 
+{: #replication notoc}
+The replication factor is 3 and replication has no impact on cost. 
+
+## How many insync replicas are supported? 
+{: #replicas notoc}
+
+You can set a maximum of 2 insync replicas when producing messages.
