@@ -18,6 +18,7 @@ lastupdated: "2017-08-18"
 {: #report_problem}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://status.ng.bluemix.net/){:new_window}. 
+If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}. 
 
 If you'd like help from the {{site.data.keyword.messagehub}} team, please gather as much of the following information as possible:
 {:shortdesc}
@@ -35,7 +36,7 @@ You can find this ID by looking at the "instance_id" field in the service's VCAP
 10. What impact is the problem having on your service?
 
 
-
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request](https://console.bluemix.net/docs/services/MessageHub/messagehub109.html#report_problem).
 
 
 
