@@ -18,7 +18,7 @@ lastupdated: "2017-05-05"
 
 
 ## Number of {{site.data.keyword.messagehub}} instances for each {{site.data.keyword.Bluemix_notm}} space
-{: #instances_space notoc}
+{: #instances_space}
 
 You can have only one {{site.data.keyword.messagehub}} instance for each {{site.data.keyword.Bluemix_notm}}
 space.
@@ -32,7 +32,7 @@ space.
    more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
 
 ## Message retention
-{: #message_retention notoc}
+{: #message_retention}
 
 By default, messages are retained in Kafka for up to 24 hours and
 each partition is capped at 1 GB. If the 1 GB cap is reached, the
@@ -55,7 +55,7 @@ of topics, or on the rapid deletion and re-creation of topics.
 {: #trouble_rest notoc}
 
 *  Only the binary embedded format is supported for requests and
-   responses. The Avro embedded format is not supported.
+   responses. The Avro and JSON embedded formats are not supported.
 *  Concurrent requests are not supported for a consumer instance.
    Read, commit, or delete requests corresponding to a consumer
    instance should be sent only after a response is received for
