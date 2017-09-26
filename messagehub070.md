@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-09"
+lastupdated: "2017-09-26"
 
 ---
 
@@ -23,6 +23,6 @@ the following two methods:
 {:shortdesc}
 
 To use the {{site.data.keyword.mql}} API, you must create a
-Kafka topic called "MQLight". However, the topics used in the {{site.data.keyword.mql}} API are automatically created as you use them.
+Kafka topic called "MQLight". The topics used in the {{site.data.keyword.mql}} API are automatically created as you use them, but all of the messages are actually on the single "MQLight" Kafka topic.
 
 For a video that demonstrates how you can use the {{site.data.keyword.messagehub}} dashboard in the Bluemix console, see [{{site.data.keyword.IBM_notm}} {{site.data.keyword.messagehub}} - User Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=lZulxqv_rHc){:new_window}.
