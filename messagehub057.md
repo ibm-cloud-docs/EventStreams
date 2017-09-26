@@ -52,7 +52,7 @@ avoid usage patterns that rely on the rapid creation and deletion
 of topics, or on the rapid deletion and re-creation of topics.
 
 ## Kafka REST API
-{: #trouble_rest notoc}
+{: #trouble_rest}
 
 *  Only the binary embedded format is supported for requests and
    responses. The Avro and JSON embedded formats are not supported.
@@ -62,7 +62,7 @@ of topics, or on the rapid deletion and re-creation of topics.
    any outstanding requests of that instance.
 
 ## Kafka REST API rate limitation
-{: #kafka_rate notoc}
+{: #kafka_rate}
 
 Applications using the Kafka REST API can be subject to rate
 limiting for each ApiKey. When this limiting occurs, the API
@@ -74,7 +74,7 @@ responds with the following HTTP error:
 If you see this error, wait and submit the request again.
 
 ## Kafka REST API daily restart
-{: #rest_restart notoc}
+{: #rest_restart}
 
 The Kafka REST API restarts once a day for a short period of
 time. During this period, the Kafka REST API might become
@@ -88,7 +88,7 @@ REST API returns the following JSON:
 {:screen}
 
 ## Kafka high-level consumer API
-{: #kafka_consumer notoc}
+{: #kafka_consumer}
 
 You cannot use the Apache Kafka 0.8.2 simple or high-level
 consumer API with {{site.data.keyword.messagehub}}. Instead, use the new Kafka 0.9
