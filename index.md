@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-03-02"
+lastupdated: "2017-09-26"
 
 ---
 
@@ -15,25 +15,20 @@ lastupdated: "2017-03-02"
 # Getting started with Message Hub
 {: #messagehub}
 
-
 {{site.data.keyword.messagehub_full}} is a scalable,
-distributed, high throughput message bus to unite your on-premises and off-premises cloud
-technologies.
+distributed, high throughput messaging service that enables applications and services to communicate easily and reliably.
 {:shortdesc}
 
 Using {{site.data.keyword.messagehub}}, you can
 complete the following tasks:
 
-* Wire microservices together by using open protocols
+* Offload work to back-end worker processes
 * Connect stream data to analytics to realize powerful insights
 * Feed event data to multiple applications to react in real time
-
-For example, you can use {{site.data.keyword.messagehub}} to
-publish inventory changes, create a centralized bus for real-time data, or enable apps to offload
-work to back-end worker processes.
+* Transfer data into another service such as long-term storage
 
 To get started with {{site.data.keyword.messagehub}}
-and start sending and receiving messages, use the Java™ sample. The sample shows how a producer sends
+and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
 
