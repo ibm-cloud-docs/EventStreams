@@ -27,7 +27,6 @@ IBM Message Hub
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	messagehub108.md
 	messagehub086.md
 		messagehub087.md
 		messagehub071.md
@@ -60,9 +59,11 @@ IBM Message Hub
 	messagehub088.md
 		messagehub089.md
 		messagehub105.md
+	messagehub110.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
+	messagehub108.md
 	messagehub109.md
 	ts_overview.md
 		messagehub057.md
