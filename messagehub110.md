@@ -18,7 +18,7 @@ lastupdated: "2017-09-26"
 To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
 
 1. Create a configuration file. For example:
-```
+    <pre class="pre">
     bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
     application.id=ksql_server_quickstart
     ksql.command.topic.suffix=commands
@@ -29,13 +29,15 @@ To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
     ssl.enabled.protocols=TLSv1.2
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
     ksql.sink.replications.default=3
-```
-2. Using the {{site.data.keyword.messagehub}} UI, create a topic called ```ksql__commands``` with a single partition.
+    </pre>
+    {: codeblock}
+2. Use the {{site.data.keyword.messagehub}} UI to create a topic called ```ksql__commands``` with a single partition.
 
 3. Start KSQL using the following command:
-```
-/bin/ksql-cli local --properties-file ./config/ksqlserver.properties
-```
+    <pre class="pre">
+    /bin/ksql-cli local --properties-file ./config/ksqlserver.properties
+    </pre>
+    {: codeblock}
 
 4. To populate data, edit the ```DataGen``` ```class in io.confluent.ksql.datagen;``` in the ksql-examples project:
 
