@@ -17,10 +17,11 @@ lastupdated: "2017-09-26"
 
 To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
 
-1. Create a configuration file. For example:
+1. Create a KSQL configuration file. For example:
 
     <pre class="pre">
-    bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
+    bootstrap.servers=
+    kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
     application.id=ksql_server_quickstart
     ksql.command.topic.suffix=commands
     listeners=http://localhost:8080
@@ -28,7 +29,8 @@ To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
     sasl.mechanism=PLAIN
     ssl.protocol=TLSv1.2
     ssl.enabled.protocols=TLSv1.2
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule
+     required username="USERNAME" password="PASSWORD";
     ksql.sink.replications.default=3
     </pre>
     {: codeblock}
@@ -41,7 +43,7 @@ To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
     </pre>
     {: codeblock}
 
-4. To populate data, edit the ```DataGen``` ```class in io.confluent.ksql.datagen;``` in the ksql-examples project:
+4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ksql-examples project. For example:
 
     <pre class="pre">
     Properties props = new Properties();
@@ -55,7 +57,7 @@ To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
     </pre>
     {: codeblock}
 
-5. Using the {{site.data.keyword.messagehub}} UI, create 2 topics with 1 partition each: ```users``` and ```pageviews```. Then start DataGen twice as follows:
+5. Use the {{site.data.keyword.messagehub}} UI to create two topics with onebbbb partition each: ```users``` and ```pageviews```. Then start DataGen twice as follows:
 
     i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating users events
     ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating pageviews events
