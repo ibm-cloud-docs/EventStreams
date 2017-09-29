@@ -34,9 +34,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
      required username="USERNAME" password="PASSWORD";
     ksql.sink.replications.default=3
     </pre>
-    {: codeblock}
+    {: pre}
 	
-2. Use the {{site.data.keyword.messagehub}} UI to create a topic called ```ksql__commands``` with a single partition and the default retention period.
+2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 
 3. From a Docker terminal, start KSQL using the following command:
     <pre class="pre">
@@ -58,12 +58,12 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     </pre>
     {: codeblock}
 
-5. Use the {{site.data.keyword.messagehub}} UI to create two topics with one partition each: ```users``` and ```pageviews```. 
+5. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: ```users``` and ```pageviews```. 
 
-Then start ```DataGen``` twice as follows:
+Then start <code>DataGen</code> twice as follows:
 
     i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating users events.
-	
+
     ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating pageviews events.
 
 When you have completed these steps, you can run all queries listed in the [Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
