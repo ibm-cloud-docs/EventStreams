@@ -15,9 +15,10 @@ lastupdated: "2017-09-26"
 # Using KSQL with Message Hub
 {: #ksql_using}
 
-To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
+You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Complete the following steps:
 
-1. Create a KSQL configuration file. For example:
+
+1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 
     <pre class="pre">
     bootstrap.servers=
@@ -35,9 +36,9 @@ To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
     </pre>
     {: codeblock}
 	
-2. Use the {{site.data.keyword.messagehub}} UI to create a topic called ```ksql__commands``` with a single partition.
+2. Use the {{site.data.keyword.messagehub}} UI to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 
-3. Start KSQL using the following command:
+3. From a Docker tewrminal, start KSQL using the following command:
     <pre class="pre">
     /bin/ksql-cli local --properties-file ./config/ksqlserver.properties
     </pre>
@@ -57,10 +58,11 @@ To use KSQL with {{site.data.keyword.messagehub}}, complete the following steps:
     </pre>
     {: codeblock}
 
-5. Use the {{site.data.keyword.messagehub}} UI to create two topics with onebbbb partition each: ```users``` and ```pageviews```. Then start DataGen twice as follows:
+5. Use the {{site.data.keyword.messagehub}} UI to create two topics with one partition each: ```users``` and ```pageviews```. Then start ```DataGen``` twice as follows:
 
-    i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating users events
-    ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating pageviews events
+    i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating users events.
+	
+    ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating pageviews events.
 
 When you have completed these steps, you can run all queries listed in the [Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
 
