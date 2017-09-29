@@ -38,9 +38,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 	
 2. Use the {{site.data.keyword.messagehub}} UI to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 
-3. From a Docker tewrminal, start KSQL using the following command:
+3. From a Docker terminal, start KSQL using the following command:
     <pre class="pre">
-    /bin/ksql-cli local --properties-file ./config/ksqlserver.properties
+    /bin/ksql-cli local --<var class="keyword varname">messagehub-ksql-</var>properties-file ./config/ksqlserver.properties
     </pre>
     {: codeblock}
 
@@ -58,7 +58,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     </pre>
     {: codeblock}
 
-5. Use the {{site.data.keyword.messagehub}} UI to create two topics with one partition each: ```users``` and ```pageviews```. Then start ```DataGen``` twice as follows:
+5. Use the {{site.data.keyword.messagehub}} UI to create two topics with one partition each: ```users``` and ```pageviews```. 
+
+Then start ```DataGen``` twice as follows:
 
     i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating users events.
 	
