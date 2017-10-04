@@ -93,8 +93,3 @@ REST API returns the following JSON:
 You cannot use the Apache Kafka 0.8.2 simple or high-level
 consumer API with {{site.data.keyword.messagehub}}. Instead, use the new Kafka 0.9
 consumer API.
-
-## Can I invite others to collaborate in my Standard account?
-{: #inviteothers}
-
-Yes, you can invite friends and colleagues to work with you on your projects in your account. In your Standard account, to invite other users click **Manage** &gt; **Account** &gt; **Users** &gt; **Invite users** and complete the relevant details.  
