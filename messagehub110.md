@@ -21,6 +21,19 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
       $ openFirewallPorts.sh -ports <PORT>:<PROTOCOL>,... -persist true|false
   ```
   {: codeblock}
+  
+  <pre>
+<code>
+    props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
+    props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
+    props.put("security.protocol","SASL_SSL");
+    props.put("sasl.mechanism","PLAIN");
+    props.put("ssl.protocol","TLSv1.2");
+    props.put("ssl.enabled.protocols","TLSv1.2");
+    props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";");
+</code>
+</pre>
+{:codeblock}
 
 1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 
