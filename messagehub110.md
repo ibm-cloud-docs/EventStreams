@@ -17,6 +17,10 @@ lastupdated: "2017-09-26"
 
 You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Complete the following steps:
 
+```
+      $ openFirewallPorts.sh -ports <PORT>:<PROTOCOL>,... -persist true|false
+  ```
+  {: codeblock}
 
 1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 
