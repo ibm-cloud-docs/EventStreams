@@ -32,6 +32,23 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
 1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 
+<pre>
+<code>
+    bootstrap.servers=
+    kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
+    application.id=ksql_server_quickstart
+    ksql.command.topic.suffix=commands
+    listeners=http://localhost:8080
+    security.protocol=SASL_SSL
+    sasl.mechanism=PLAIN
+    ssl.protocol=TLSv1.2
+    ssl.enabled.protocols=TLSv1.2
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+    ksql.sink.replications.default=3
+</code>
+</pre>
+{:codeblock}
+
     <pre class="pre">
     bootstrap.servers=
     kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
