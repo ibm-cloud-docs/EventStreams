@@ -17,12 +17,7 @@ lastupdated: "2017-09-26"
 
 You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Complete the following steps:
 
-```
-      $ openFirewallPorts.sh -ports <PORT>:<PROTOCOL>,... -persist true|false
-  ```
-  {: codeblock}
-  
-  <pre>
+<pre>
 <code>
     props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
     props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
@@ -79,9 +74,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
     Then start <code>DataGen</code> twice as follows:
 
-        a. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating users events.
+    a. With <code>bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000</code> to start creating users events.
 
-        b. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating pageviews events.
+    b. With <code>bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000</code> to start creating pageviews events.
 
 When you have completed these steps, you can run all queries listed in the [Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
 
