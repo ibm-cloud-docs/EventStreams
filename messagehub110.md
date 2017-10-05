@@ -41,7 +41,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 3. From a Docker terminal, start KSQL using the following command:
 <pre>
 <code>
-    /bin/ksql-cli local --<var class="keyword varname">messagehub-ksql-</var>properties-file ./config/ksqlserver.properties
+    /bin/ksql-cli local --<var class="keyword varname">messagehub-ksql-properties-file</var> ./config/ksqlserver.properties
 </code>
 </pre>
 {:codeblock}
