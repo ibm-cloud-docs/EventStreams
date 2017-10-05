@@ -24,8 +24,31 @@ the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub071
 {: #kafka_notjava notoc}
 
 The {{site.data.keyword.messagehub}} service currently
-authenticates clients by using SASL PLAIN. Credentials are carried over an encrypted connection.
-This is a new feature added in Kafka 0.10.0.X. Any client that supports Kafka 0.10 with SASL PLAIN
+authenticates clients by using SASL PLAIN over TLS. Credentials are carried over an encrypted connection.
+This is a new feature added in Kafka 0.10.0.X. 
+
+An example configuration, consumer.properties:
+
+```
+key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+#
+client.id=kafka-java-console-sample-consumer
+group.id=kafka-java-console-sample-group
+#
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+ssl.protocol=TLSv1.2
+ssl.enabled.protocols=TLSv1.2
+ssl.endpoint.identification.algorithm=HTTPS
+#
+# please read the Kafka docs about this setting
+auto.offset.reset=latest
+```
+{: codeblock}
+
+Any client that supports Kafka 0.10 with SASL PLAIN
 should work with {{site.data.keyword.messagehub}}. Example clients are as follows:
 
 * [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window} 
