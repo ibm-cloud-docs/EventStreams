@@ -17,12 +17,6 @@ lastupdated: "2017-05-05"
 {: #restrictions}
 
 
-## Number of {{site.data.keyword.messagehub}} instances for each {{site.data.keyword.Bluemix_notm}} space
-{: #instances_space}
-
-You can have only one {{site.data.keyword.messagehub}} instance for each {{site.data.keyword.Bluemix_notm}}
-space.
-
 ##Topics and partitions
 {: #topics_partitions notoc}
 
