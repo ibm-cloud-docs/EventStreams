@@ -15,11 +15,11 @@ lastupdated: "2017-09-26"
 # Using KSQL with Message Hub
 {: #ksql_using}
 
+
 You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Complete the following steps:
 
 <ol>
 <li>Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
-
 <pre>
 <code>
     bootstrap.servers=
@@ -36,12 +36,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 </code>
 </pre>
 {:codeblock}
-
 </li>
-
 <li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 </li>
-
 <li>From a Docker terminal, start KSQL using the following command:
 <pre>
 <code>
@@ -49,11 +46,8 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 </code>
 </pre>
 {:codeblock}
-
 </li>
-
 <li>To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ksql-examples project. For example:
-
 <pre>
 <code>
     Properties props = new Properties();
@@ -67,9 +61,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 </code>
 </pre>
 {:codeblock}
-
 </li>
-
 <li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: ```users``` and ```pageviews```. 
 
     Then start <code>DataGen</code> twice as follows:
@@ -77,11 +69,11 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     a. With <code>bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000</code> to start creating <code>users</code> events.
 
     b. With <code>bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000</code> to start creating <code>pageviews</code> events.
-
 </li>
 </ol>
-
+<p>
 When you have completed these steps, you can run all queries listed in the [Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
+</p>
 
 
 
