@@ -18,21 +18,6 @@ lastupdated: "2017-09-26"
 
 You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Complete the following steps:
 <ol>
-<li> item 1 item 1</li>
-<li>item 2 item 2</li>
-<li>item 3 item 3
-<ol>
-<li>item 3a item 3a</li>
-<li>item 3b item 3b</li>
-<li>item 3c item 3c</li>
-</ol>
-</li>
-</ol>
-
-
-
-
-<ol>
 <li>Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 <pre>
 <code>
@@ -51,6 +36,21 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 </pre>
 {:codeblock}
 </li>
+<li>item 2 item 2</li>
+<li>item 3 item 3
+<ol>
+<li>item 3a item 3a</li>
+<li>item 3b item 3b</li>
+<li>item 3c item 3c</li>
+</ol>
+</li>
+</ol>
+
+
+
+
+<ol>
+
 <li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 </li>
 <li>From a Docker terminal, start KSQL using the following command:
