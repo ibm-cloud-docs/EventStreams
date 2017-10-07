@@ -26,7 +26,8 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 </li>
 <li>item 3 item 3
 <ol>
-<li>item 3a item 3a</li>
+<li>item 3a item 3a
+With <code>bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000</code> to start creating <code>users</code> events.</li>
 <li>item 3b item 3b</li>
 <li>item 3c item 3c</li>
 </ol>
