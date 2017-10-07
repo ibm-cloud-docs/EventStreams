@@ -20,7 +20,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 <ol>
 <li>Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 </li>
-<li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
+<li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called </code>ksql__commands<code> with a single partition and the default retention period.
 </li>
 <li>From a Docker terminal, start KSQL using the following command:
 <pre>
