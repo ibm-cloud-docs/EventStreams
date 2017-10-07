@@ -24,8 +24,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 </li>
 <li>From a Docker terminal, start KSQL using the following command:
 </li>
-<li>item 3 item 3
-    Then start <code>DataGen</code> twice as follows:
+<li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: <code>users</code> and <code>pageviews</code>. 
+
+Then start <code>DataGen</code> twice as follows:
 <ol>
 <li>
 With <code>bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000</code> to start creating <code>users</code> events.</li>
