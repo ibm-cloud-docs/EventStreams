@@ -23,9 +23,9 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 <li>
 </li>
 <li>From a Docker terminal, start KSQL using the following command:
-```
+
     /bin/ksql-cli local --<var class="keyword varname">messagehub-ksql-properties-file</var> ./config/ksqlserver.properties
-```
+
 {:codeblock}
 </li>
 <li>Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: <code>users</code> and <code>pageviews</code>. 
