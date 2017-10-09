@@ -32,7 +32,6 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
       required username="USERNAME" password="PASSWORD";
      ksql.sink.replications.default=3
 ```
-{: codeblock}
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 ```
