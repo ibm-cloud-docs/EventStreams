@@ -32,7 +32,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
       required username="USERNAME" password="PASSWORD";
      ksql.sink.replications.default=3
 ```
-    {: pre}
+{: codeblock}
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 ```
@@ -60,3 +60,10 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
      ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating ```pageviews``` events.
 
 When you have completed these steps, you can run all queries listed in the [Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
+
+This example command gives information about the model, and checks the status of the training that was begun in the [Training your translation model](#training) section. This command uses an empty body request.
+
+```curl
+curl -u "{username}":"{password}" "https://gateway.watsonplatform.net/language-translator/api/v2/models/3e7dfdbe-f757-4150-afee-458e71eb93fb"
+```
+{: codeblock}
