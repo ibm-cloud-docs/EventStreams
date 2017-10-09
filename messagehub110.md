@@ -32,14 +32,14 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
       required username="USERNAME" password="PASSWORD";
      ksql.sink.replications.default=3
 ```
-    {: codeblock}
+    {: pre}
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 ```
      /bin/ksql-cli local --messagehub-ksql-properties-file ./config/ksqlserver.properties
 ```
     {: codeblock}
-4. To populate data, edit the DataGen class in io.confluent.ksql.datagen; in the ksql-examples project. For example:
+4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ```ksql-examples``` project. For example:
 ```
      Properties props = new Properties();
         props.put("bootstrap.servers", arguments.bootstrapServer);
@@ -53,7 +53,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     {: codeblock}
 5. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: ```users``` and ```pageviews```.
 
-    Then start <code>DataGen</code> twice as follows:
+    Then start ```DataGen``` twice as follows:
 
      i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating ```users``` events.
 
