@@ -19,8 +19,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
 1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 ```
-     bootstrap.servers=
-     kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
+     bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
      application.id=ksql_server_quickstart
      ksql.command.topic.suffix=commands
      listeners=http://localhost:8080
@@ -28,14 +27,13 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
      sasl.mechanism=PLAIN
      ssl.protocol=TLSv1.2
      ssl.enabled.protocols=TLSv1.2
-     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule
-      required username="USERNAME" password="PASSWORD";
+     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
      ksql.sink.replications.default=3
 ```
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 ```
-     /bin/ksql-cli local --messagehub-ksql-properties-file ./config/ksqlserver.properties
+     /bin/ksql-cli local --<var class="keyword varname">messagehub-ksql-properties-file</var> ./config/ksqlserver.properties
 ```
     {: codeblock}
 4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ```ksql-examples``` project. For example:
@@ -54,11 +52,11 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
     Then start ```DataGen``` twice as follows:
 
-     i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating ```users``` events.
+       i. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=users format=json topic=users maxInterval=10000``` to start creating ```users``` events.
 
-     ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating ```pageviews``` events.
+       ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating ```pageviews``` events.
 
-When you have completed these steps, you can run all queries listed in the [Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
+When you have completed these steps, you can run all queries listed in the [KSQL Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
 
 This example command gives information about the model, and checks the status of the training that was begun in the [Training your translation model](#training) section. This command uses an empty body request.
 
