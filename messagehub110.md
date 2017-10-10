@@ -54,5 +54,5 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 	
     ii. With ```bootstrap-server=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093 quickstart=pageviews format=delimited topic=pageviews maxInterval=10000``` to start creating ```pageviews``` events.
 
-When you have completed these steps, you can run all queries listed in the [KSQL Quick Start guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
+When you have completed these steps, you can run all queries listed in the [KSQL Quick Start Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
 
