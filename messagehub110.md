@@ -19,16 +19,16 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
 1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
 ```
-     bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
-     application.id=ksql_server_quickstart
-     ksql.command.topic.suffix=commands
-     listeners=http://localhost:8080
-     security.protocol=SASL_SSL
-     sasl.mechanism=PLAIN
-     ssl.protocol=TLSv1.2
-     ssl.enabled.protocols=TLSv1.2
-     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
-     ksql.sink.replications.default=3
+	bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
+	application.id=ksql_server_quickstart
+	ksql.command.topic.suffix=commands
+	listeners=http://localhost:8080
+	security.protocol=SASL_SSL
+	sasl.mechanism=PLAIN
+	ssl.protocol=TLSv1.2
+	ssl.enabled.protocols=TLSv1.2
+	sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+	ksql.sink.replications.default=3
 ```
 {: codeblock}
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
