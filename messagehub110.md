@@ -32,7 +32,8 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 ```
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
-<pre class="pre">/bin/ksql-cli local --<var class="keyword varname">messagehub-ksql-properties-file</var> ./config/ksqlserver.properties
+<pre class="pre">/bin/ksql-cli local 
+--<var class="keyword varname">messagehub-ksql-properties-file</var> ./config/ksqlserver.properties
 </pre>
 4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ```ksql-examples``` project. For example:
 ```
