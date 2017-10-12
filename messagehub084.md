@@ -18,7 +18,7 @@ lastupdated: "2017-05-11"
 
 If you're using the Java clients, you can now use
 the publicly available 0.10.x Kafka clients. You are strongly encouraged to move from 0.9.x to the
-latest 0.10.x version (currently 0.10.2.1). Complete the following steps:
+latest 0.10.x version (we support all newer versions). Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
 2. Change your <code>jaas.conf</code> file to the following:
