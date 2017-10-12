@@ -12,7 +12,7 @@ lastupdated: "2017-08-03"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Support for Kafka Streams
+# Using Kafka Streams with {{site.data.keyword.messagehub}}
 {: #kafka_streams }
 
 Starting from the Streams library 0.10.2.0, the topic APIs now work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using <code>sasl.jaas.config</code> or a JAAS file and set <code>replication.factor</code> to 3.

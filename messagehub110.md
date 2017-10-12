@@ -17,8 +17,10 @@ lastupdated: "2017-09-26"
 
 You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Complete the following steps:
 
-1. Create a {{site.data.keyword.messagehub}} KSQL configuration file. For example:
-```
+1. Create a {{site.data.keyword.messagehub}} KSQL configuration file.
+
+    For example:
+    ```
     bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
     application.id=ksql_server_quickstart
     ksql.command.topic.suffix=commands
@@ -29,7 +31,8 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     ssl.enabled.protocols=TLSv1.2
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
     ksql.sink.replications.default=3
-```
+    ```
+    Ensure that you edit the sasl.jaas.config line to insert your own user and password pair. 
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 <pre class="pre">/bin/ksql-cli local 
