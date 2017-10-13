@@ -32,4 +32,3 @@ You should also note the following information:
 
 * Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/services/MessageHub/messagehub083.html).
 * JMS is not supported.
-* You can have only one {{site.data.keyword.messagehub}} instance for each {{site.data.keyword.Bluemix_notm}} space.
