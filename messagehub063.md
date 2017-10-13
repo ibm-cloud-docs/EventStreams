@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-05-11"
+lastupdated: "2017-10-13"
 
 ---
 
@@ -27,7 +27,7 @@ The {{site.data.keyword.messagehub}} service currently
 authenticates clients by using SASL PLAIN over TLS. Credentials are carried over an encrypted connection.
 This is a new feature added in Kafka 0.10.0.X. 
 
-For example, the following sample configuration file named consumer.properties:
+The following example is a sample configuration file named ```consumer.properties```:
 
 ```
 key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
