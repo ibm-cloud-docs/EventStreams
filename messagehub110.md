@@ -21,7 +21,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
     For example:
     ```
-    bootstrap.servers=kafka01-prod01.messagehub.services.us-south.bluemix.net:9093
+    bootstrap.servers=BOOTSTRAP_SERVERS
     application.id=ksql_server_quickstart
     ksql.command.topic.suffix=commands
     listeners=http://localhost:8080
@@ -32,7 +32,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
     ksql.sink.replications.default=3
     ```
-    Ensure that you edit the ```sasl.jaas.config``` line to insert your own username and password pair. 
+    where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 <pre class="pre">/bin/ksql-cli local 
