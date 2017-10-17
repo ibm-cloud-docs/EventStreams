@@ -35,7 +35,7 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 </dd>
 </dl>
 
-## How long does Message Hub set the log retention window for the consumer offsets topic?
+## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
 {: #offsets notoc}
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
 
