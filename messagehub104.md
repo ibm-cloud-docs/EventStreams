@@ -79,6 +79,7 @@ where USERNAME and PASSWORD are the values from your {{site.data.keyword.message
 If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
 [Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
 
+<!--17/10/17 - Karen: following info duplicated at messagehub108 -->
 ## APIs for topic administration
 {: #topic_admin notoc}
 
