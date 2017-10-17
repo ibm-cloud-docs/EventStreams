@@ -17,6 +17,23 @@ lastupdated: "2017-09-26"
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
 
+<!--17/10/17 - Karen: same info duplicated at messagehub104 -->
+## How do I use Kafka APIs to create and delete topics?
+{: #topic_admin notoc}
+
+If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
+
+<dl>
+<dt>cleanup.policy</dt>
+<dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code></dd>
+<dt>retention.ms</dt>
+<dd>The default retention period is 24 hours. The minimum is 1 hour and the maximum is
+30 days. Specify this value as multiples of hours.
+
+<p>**Note:**
+If the cleanup policy is <code>compact</code> only, we automatically add <code>delete</code> but disable deletion based on time. Messages in the topic are compacted up to 1 GB before being deleted.</p>
+</dd>
+</dl>
 ## How long does Message Hub set the log retention window for the consumer offsets topic?
 {: #offsets notoc}
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
