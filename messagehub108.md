@@ -34,6 +34,7 @@ If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or
 If the cleanup policy is <code>compact</code> only, we automatically add <code>delete</code> but disable deletion based on time. Messages in the topic are compacted up to 1 GB before being deleted.</p>
 </dd>
 </dl>
+
 ## How long does Message Hub set the log retention window for the consumer offsets topic?
 {: #offsets notoc}
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
