@@ -33,10 +33,10 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     ksql.sink.replications.default=3
     ```
     Ensure that you edit the following lines to insert your own data:
-	- ```sasl.jaas.config``` - insert your own username and password pair
 	- ```bootstrap.servers``` - insert all the Kafka hosts listed in the **Service Credentials** page.  To find this information, go to your
 	{{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the
 	**Credentials** that you want to use.
+	- ```sasl.jaas.config``` - insert your own username and password pair
 	
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
