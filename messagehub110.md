@@ -46,13 +46,13 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ```ksql-examples``` project. For example:
 ```
      Properties props = new Properties();
-        props.put("bootstrap.servers", arguments.bootstrapServer);
-        props.put("client.id", "KSQLDataGenProducer");
-        props.put("security.protocol", "SASL_SSL");
-        props.put("sasl.mechanism", "PLAIN");
-        props.put("ssl.protocol", "TLSv1.2");
-        props.put("ssl.enabled.protocols", "TLSv1.2");
-        props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";"); 
+     props.put("bootstrap.servers", arguments.bootstrapServer);
+     props.put("client.id", "KSQLDataGenProducer");
+     props.put("security.protocol", "SASL_SSL");
+     props.put("sasl.mechanism", "PLAIN");
+     props.put("ssl.protocol", "TLSv1.2");
+     props.put("ssl.enabled.protocols", "TLSv1.2");
+     props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";"); 
 ```
     {: codeblock}
 5. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: ```users``` and ```pageviews```.
