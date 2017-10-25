@@ -42,9 +42,9 @@ curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Con
 {: codeblock}
 
 For example, for CURL, use the following to consume:
-<pre class="pre">
+<pre class="pre"><code>
 curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Accept: application/vnd.kafka.binary.v1+json" <<var class="keyword varname">kafka-rest endpoint</var>/topic/<var class="keyword varname">topic name</var>/partitions/<var class="keyword varname">number of partition</var>/messages?offset=<var class="keyword varname">offset to start from</var>
-</pre>
+</code></pre>
 {: codeblock}
 
 ### Non-secure event POST request
