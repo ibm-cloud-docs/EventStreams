@@ -12,7 +12,7 @@ lastupdated: "2017-02-08"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Differences between Message Hub in Bluemix Public and Bluemix Dedicated environments
+# Differences between Message Hub in {{site.data.keyword.Bluemix_notm}} Public and Dedicated environments
 {: #public_dedicated}
 
 {{site.data.keyword.Bluemix}} is an open-standards,
