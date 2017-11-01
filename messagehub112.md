@@ -62,7 +62,6 @@ The producer can explicitly specify a partition number when it publishes a messa
 If the producer does not specify a partition number, the selection of partition is made by a partitioner. The default partitioner that is built into the Kafka producer works as follows:
 
 * If the record does not have a key, select the partition in a round-robin fashion.
-
 * If the record does have a key, select the partition by calculating a hash value for the key.
 
  
@@ -87,9 +86,7 @@ It's normal practice with Kafka to write the applications to handle occasional m
 When you publish a message, you can choose the level of acknowledgements required using the `acks` producer configuration. There are three levels as follows:
 
 * acks=0. The producer gets no acknowledgement from the leader at all. As a result, the record's offset is not returned to the producer.
-
 * acks=1 (the default). The message is acknowledged to the producer as soon as the partition leader has successfully written its record to the partition. Because the acknowledgement occurs before the record is known to have reached the in-sync replicas, the message could be lost if the leader fails but the followers do not yet have the message.
-
 * acks=all. The message is acknowledged to the producer when the partition leader has successfully written its record and all in-sync replicas have done the same. The message is not lost provided that at least one in-sync replica is available.
 
 Even if you do not wait for messages to be acknowledged to the producer, messages are still only available to be consumed when committed, and that means replication to the in-sync replicas is complete.
