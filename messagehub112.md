@@ -35,7 +35,7 @@ Each message is represented as a record which comprises two parts: key and value
 Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose. {{site.data.keyword.messagehub}} is currently based on Kafka 0.10.2.1, so it does not yet support record headers.
 
 ##Configuration settings
-{: #config_settings }
+{: #config_settings notoc}
 
 There are many configuration settings for the producer. You can control aspects of the producer including batching, retries, and message acknowledgement. Here are the most important ones:
 
@@ -52,7 +52,7 @@ There are many configuration settings for the producer. You can control aspects 
 Many more configuration settings are available, but ensure you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){:new_window} thoroughly before experimenting with them.
 
 ## Partitioning
-{: #partitioning }
+{: #partitioning notoc}
 
 When the producer publishes a message on a topic, the producer can choose which partition to use. If ordering is important, you must remember that a partition is an ordered sequence of records, but a topic comprises one or more partitions. If you want a set of messages to be delivered in order, ensure that they all go on the same partition. The most straightforward way to achieve this is to give all of those messages the same key. 
  
@@ -69,7 +69,7 @@ If the producer does not specify a partition number, the selection of partition 
 You can also write your own custom partitioner. A custom partitioner can choose any scheme to assign records to partitions, maybe using just a subset of the information in the key or an application-specific identifier.
 
 ## Message ordering
-{: #message_ordering }
+{: #message_ordering notoc}
 
 Kafka generally writes messages in the order that they are sent by the producer. However, there are situations where retries can cause messages to be duplicated or reordered.
  
@@ -84,7 +84,7 @@ By restricting the number of requests in-flight to each broker to just 1, you ca
 It's normal practice with Kafka to write the applications to handle occasional message duplicates because the performance impact of only having a single request in-flight is significant.
 
 ## Message acknowledgements
-{: #message_acknowledgements }
+{: #message_acknowledgements notoc}
 
 When you publish a message, you can choose the level of acknowledgements required using the `acks` producer configuration. There are three levels as follows:
 
@@ -99,7 +99,7 @@ Even if you do not wait for messages to be acknowledged to the producer, message
 Wherever possible avoid waiting for the acknowledgement of a message before publishing the next message, because this prevents the producer from being able to batch together messages and also reduces the rate at which messages can be published to below the round-trip latency of the network.
 
 ## Batching, throttling, and compression
-{: #batching }
+{: #batching notoc}
 
 For efficiency purposes, the producer actually collects batches of records together for sending to the servers. If you enable compression, the producer compresses each batch, which can improve performance by requiring less data to be transferred over the network.
 
@@ -110,7 +110,7 @@ There is another factor that has an impact here. To prevent individual producers
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 
 ## Code snippets
-{: #code_snippets }
+{: #code_snippets notoc}
 
 To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need at least these properties, where KAFKA_BROKERS_SASL, USER, and PASSWORD are replaced with your own service credentials:
 
