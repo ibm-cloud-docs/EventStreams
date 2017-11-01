@@ -58,8 +58,8 @@ IBM Message Hub
 		messagehub092.md
 		messagehub093.md
 	messagehub088.md
-		messagehub089.md
 		messagehub105.md
+		messagehub089.md
 	messagehub111.md
 	messagehub110.md
 	{: .navgroup-end}
