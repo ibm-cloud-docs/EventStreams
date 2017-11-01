@@ -43,7 +43,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 <pre class="pre">/bin/ksql-cli local 
 --<var class="keyword varname">properties-file</var> ./config/ksqlserver.properties
 </pre>
-4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen;``` in the ```ksql-examples``` project. For example:
+4. To populate data, edit the ```DataGen``` class in ```io.confluent.ksql.datagen``` in the ```ksql-examples``` project. For example:
 ```
      Properties props = new Properties();
      props.put("bootstrap.servers", arguments.bootstrapServer);
