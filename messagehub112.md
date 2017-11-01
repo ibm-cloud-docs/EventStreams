@@ -16,21 +16,21 @@ lastupdated: "2017-10-31"
 {: #producing_messages }
 
 
-A producer is an application that publishes streams of messages to Kafka topics. This description focuses on the Java programming interface that is part of the Apache Kafka project. The concepts apply to other languages too, but the names are sometimes a little different.
+A producer is an application that publishes streams of messages to Kafka topics. This information focuses on the Java programming interface that is part of the Apache Kafka project. The concepts apply to other languages too, but the names are sometimes a little different.
 
-In the programming interfaces, a message is actually called a record. For example, the Java class org.apache.kafka.clients.producer.ProducerRecord is used to represent a message from the point of view of the producer API. The terms 'record' and 'message' can be used interchangeably, but essentially a record is used to represent a message.
+In the programming interfaces, a message is actually called a record. For example, the Java class org.apache.kafka.clients.producer.ProducerRecord is used to represent a message from the point of view of the producer API. The terms _record_ and _message_ can be used interchangeably, but essentially a record is used to represent a message.
 
-Each topic comprises one or more partitions. Each partition is an ordered list of messages. If a topic has more than one partition, it allows data to be distributed across the partitions to increase throughput. The number of partitions also influences the balancing of workload among consumers.
+Each topic comprises one or more partitions. Each partition is an ordered list of messages. If a topic has more than one partition, data can be distributed across the partitions to increase throughput. The number of partitions also influences the balancing of workload among consumers.
 
-The Kafka cluster comprises several servers. The load is balanced across the cluster by distributing the work amongst the servers. Each partition has one server that acts as the partition's leader and other servers that act as the followers. All produce and consume requests for the partition are handled by the leader. The followers replicate the partition data from the leader with the aim of keeping up with the leader. If a follower is keeping up with the leader of a partition, its replica is "in-sync". When the leader for a partition fails, one of the followers with an in-sync replica automatically takes over as the partition's leader. In practice, a server is the leader for some partitions and the follower for others. The leadership of partitions is dynamic and changes as servers come and go.
+The Kafka cluster comprises several servers. The load is balanced across the cluster by distributing the work amongst the servers. Each partition has one server that acts as the partition's leader and other servers that act as the followers. All produce and consume requests for the partition are handled by the leader. The followers replicate the partition data from the leader with the aim of keeping up with the leader. If a follower is keeping up with the leader of a partition, the follower's replica is in sync. When the leader for a partition fails, one of the followers with an in-sync replica automatically takes over as the partition's leader. In practice, a server is the leader for some partitions and the follower for others. The leadership of partitions is dynamic and changes as servers come and go.
 
 A producer does not need to take specific actions to handle the change in the leadership of a partition. The producer automatically reconnects to the new leader, although you will see increased latency while the cluster settles.
  
-When a producer connects to Kafka, it makes an initial bootstrap connection, which can be to any of the servers in the cluster. The producer requests the partition and leadership information about the topic to which it wants to publish. Then the producer establishes another connection to the partition leader and can begin to publish messages. These actions happen automatically behind the scenes when your producer connects to the Kafka cluster.
+When a producer connects to Kafka, it makes an initial bootstrap connection, which can be to any of the servers in the cluster. The producer requests the partition and leadership information about the topic that it wants to publish to. Then the producer establishes another connection to the partition leader and can begin to publish messages. These actions happen automatically behind the scenes when your producer connects to the Kafka cluster.
  
-When a message is sent to the partition leader, it's not immediately available to consumers. The leader appends the record for the message to the partition, assigning it the next offset number for that partition. After all the followers for the in-sync replicas have replicated the record and acknowledged that they've written it to their replicas, the record is now committed. The message is available for consumers.
+When a message is sent to the partition leader, that message is not immediately available to consumers. The leader appends the record for the message to the partition, assigning it the next offset number for that partition. After all the followers for the in-sync replicas have replicated the record and acknowledged that they've written the record to their replicas, the record is now committed. The message is available for consumers.
 
-Each message is represented as a record which comprises two parts: key and value. The key is commonly used for data about the message, while the value is the body of the message. Because many tools in the Kafka ecosystem such as connectors to other systems only use the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.
+Each message is represented as a record which comprises two parts: key and value. The key is commonly used for data about the message, while the value is the body of the message. Because many tools in the Kafka ecosystem such as connectors to other systems use only the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.
 
 Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose. {{site.data.keyword.messagehub}} is currently based on Kafka 0.10.2.1, so it does not yet support record headers.
 
@@ -56,63 +56,61 @@ Many more configuration settings are available, but ensure you read the [Apache 
 
 When the producer publishes a message on a topic, the producer can choose which partition to use. If ordering is important, you must remember that a partition is an ordered sequence of records, but a topic comprises one or more partitions. If you want a set of messages to be delivered in order, ensure that they all go on the same partition. The most straightforward way to achieve this is to give all of those messages the same key. 
  
-The producer can explicitly specify a partition number when it publishes a message. This gives direct control, but it makes the producer code more complex because it takes on the responsibility for managing the partition selection (see the method call Producer.partitionsFor. For example, for 
+The producer can explicitly specify a partition number when it publishes a message. This gives direct control, but it makes the producer code more complex because it takes on the responsibility for managing the partition selection. For more information, see the method call Producer.partitionsFor. For example, the call is described for 
 [Kafka 0.11.0.1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/0110/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){:new_window}
  
-If the producer does not specify a partition number, the selection of partition is made by a partitioner. The default partitioner built into the Kafka producer works as follows:
+If the producer does not specify a partition number, the selection of partition is made by a partitioner. The default partitioner that is built into the Kafka producer works as follows:
 
 * If the record does not have a key, select the partition in a round-robin fashion.
 
 * If the record does have a key, select the partition by calculating a hash value for the key.
 
  
-You can also write your own custom partitioner. A custom partitioner can choose any scheme to assign records to partitions, maybe using just a subset of the information in the key or an application-specific identifier.
+You can also write your own custom partitioner. A custom partitioner can choose any scheme to assign records to partitions, for example, use just a subset of the information in the key or an application-specific identifier.
 
 ## Message ordering
 {: #message_ordering notoc}
 
 Kafka generally writes messages in the order that they are sent by the producer. However, there are situations where retries can cause messages to be duplicated or reordered.
  
-If you want a sequence of messages to be sent in order, it's very important to ensure that they are all written to the same partition. The usual way to do this is use the same key for all the messages.
+If you want a sequence of messages to be sent in order, it's very important to ensure that they are all written to the same partition. The typical way to do this is use the same key for all the messages.
  
 The producer is also able to retry sending messages automatically. It's often a good idea to enable this retry feature because the alternative is that your application code has to perform any retries itself. The combination of batching in Kafka and automatic retries can have the effect of duplicating messages and reordering them.
  
-For example, if you publish a sequence of three messages <M1, M2, M3> on a topic. The records might all fit within the same batch, so they're actually all sent to the partition leader together. The leader then writes them to the partition and replicates them as separate records. So, in the case of a failure, it's possible that M1 and M2 are added to the partition, but M3 is not. The producer doesn't receive an acknowledgement, so it retries sending <M1, M2, M3>. The new leader simply writes M1, M2 and M3 onto the partition. That now contains <M1, M2, M1, M2, M3>, in which the duplicated M1 actually follows the original M2.
-
-By restricting the number of requests in-flight to each broker to just 1, you can prevent the reordering above. You might still find a single record is duplicated such as <M1, M2, M2, M3>, but you'll never get out of order sequences. In Kafka 0.11 (not yet available in {{site.data.keyword.messagehub}}), you can use the idempotent producer feature to prevent the duplication of M1 also.
+For example, if you publish a sequence of three messages <M1, M2, M3> on a topic. The records might all fit within the same batch, so they're actually all sent to the partition leader together. The leader then writes them to the partition and replicates them as separate records. In the case of a failure, it's possible that M1 and M2 are added to the partition, but M3 is not. The producer doesn't receive an acknowledgement, so it retries sending <M1, M2, M3>. The new leader simply writes M1, M2 and M3 onto the partition, which now contains <M1, M2, M1, M2, M3>, where the duplicated M1 actually follows the original M2. if you restrict the number of requests inflight to each broker to just one, you can prevent this reordering. You might still find a single record is duplicated such as <M1, M2, M2, M3>, but you'll never get out of order sequences. In Kafka 0.11 (not yet available in {{site.data.keyword.messagehub}}), you can use the idempotent producer feature to prevent the duplication of M1 also.
  
-It's normal practice with Kafka to write the applications to handle occasional message duplicates because the performance impact of only having a single request in-flight is significant.
+It's normal practice with Kafka to write the applications to handle occasional message duplicates because the performance impact of only having a single request in flight is significant.
 
 ## Message acknowledgements
 {: #message_acknowledgements notoc}
 
 When you publish a message, you can choose the level of acknowledgements required using the `acks` producer configuration. There are three levels as follows:
 
-* acks=0 - the producer gets no acknowledgement from the leader at all. As a result, the record's offset is not returned to the producer.
+* acks=0. The producer gets no acknowledgement from the leader at all. As a result, the record's offset is not returned to the producer.
 
-* acks=1 (the default) - the message is acknowledged to the producer as soon as the partition leader has successfully written its record to the partition. Because the acknowledgement occurs before the record is known to have reached the in-sync replicas, the message could be lost if the leader fails but the followers do not yet have it.
+* acks=1 (the default). The message is acknowledged to the producer as soon as the partition leader has successfully written its record to the partition. Because the acknowledgement occurs before the record is known to have reached the in-sync replicas, the message could be lost if the leader fails but the followers do not yet have the message.
 
-* acks=all - the message is acknowledged to the producer when the partition leader has successfully written its record and all in-sync replicas have done the same. The message will not be lost provided that at least one in-sync replica is available.
+* acks=all. The message is acknowledged to the producer when the partition leader has successfully written its record and all in-sync replicas have done the same. The message is not lost provided that at least one in-sync replica is available.
 
 Even if you do not wait for messages to be acknowledged to the producer, messages are still only available to be consumed when committed, and that means replication to the in-sync replicas is complete.
 
-Wherever possible avoid waiting for the acknowledgement of a message before publishing the next message, because this prevents the producer from being able to batch together messages and also reduces the rate at which messages can be published to below the round-trip latency of the network.
+If possible, avoid waiting for the acknowledgement of a message before publishing the next message, because this prevents the producer from being able to batch together messages and also reduces the rate that messages can be published to below the round-trip latency of the network.
 
 ## Batching, throttling, and compression
 {: #batching notoc}
 
 For efficiency purposes, the producer actually collects batches of records together for sending to the servers. If you enable compression, the producer compresses each batch, which can improve performance by requiring less data to be transferred over the network.
 
-If you try to publish messages faster than they can be sent to a server, the producer automatically buffers them up into batched requests. The producer maintains a buffer of unsent records for each partition. Of course, there comes a point at which even batching does not allow the desired rate to be achieved.
+If you try to publish messages faster than they can be sent to a server, the producer automatically buffers them up into batched requests. The producer maintains a buffer of unsent records for each partition. Of course, there comes a point when even batching does not allow the desired rate to be achieved.
  
-There is another factor that has an impact here. To prevent individual producers or consumers from swamping the cluster, {{site.data.keyword.messagehub}} applies throughput quotas. The rate at which each producer is sending data is calculated and any producer that attempts to exceed its quota is throttled. The throttling is applied by slightly delaying the sending of responses to the producer. Usually, this just acts as a natural brake.
+There is another factor that has an impact. To prevent individual producers or consumers from swamping the cluster, {{site.data.keyword.messagehub}} applies throughput quotas. The rate that each producer is sending data at is calculated and any producer that attempts to exceed its quota is throttled. The throttling is applied by slightly delaying the sending of responses to the producer. Usually, this just acts as a natural brake.
  
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 
 ## Code snippets
 {: #code_snippets notoc}
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need at least these properties, where KAFKA_BROKERS_SASL, USER, and PASSWORD are replaced with your own service credentials:
+To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need at least these properties. Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with your own service credentials:
 
 ```
 Properties props = new Properties();
@@ -132,7 +130,7 @@ To send a message, you'll also need to specify serializers for the keys and valu
  props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 ```
 
-Then you use a KafkaProducer to send messages, each message being represented by a ProducerRecord. Don't forget to close the KafkaProducer when you're finished. This code just sends the message but it doesn't wait to see whether the send succeeded.
+Then use a KafkaProducer to send messages, where each message is represented by a ProducerRecord. Don't forget to close the KafkaProducer when you're finished. This code just sends the message but it doesn't wait to see whether the send succeeded.
 
 ```
  Producer<String, String> producer = new KafkaProducer<>(props);
