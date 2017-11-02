@@ -45,8 +45,8 @@ The following example lists the properties that you must provide in your propert
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
-{{site.data.keyword.Bluemix_notm}}.
+Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the 
+{{site.data.keyword.Bluemix_notm}} console.
 
 ### Sink connector
 {: #sink_connector }
@@ -66,8 +66,9 @@ The following example lists the properties that you must provide in your propert
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
-{{site.data.keyword.Bluemix_notm}}.
+Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the
+
+{{site.data.keyword.Bluemix_notm}} console.
 
 ## Distributed worker configuration
 {: #distributed_worker notoc}
@@ -87,8 +88,7 @@ You must provide the bootstrap servers and SASL credentials information in the p
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
-{{site.data.keyword.Bluemix_notm}}.
+Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
 If you are want to use a source connector, you must also specify the SSL and SASL configuration for the producer as follows:
 
