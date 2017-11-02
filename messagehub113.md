@@ -15,7 +15,7 @@ lastupdated: "2017-11-02"
 # Using Kafka Connect with {{site.data.keyword.messagehub}}
 {: #kafka_connect }
 
-You can use Kafka Connect with {{site.data.keyword.messagehub}}. You can run the workers inside or outside IBM Cloud.
+You can use Kafka Connect with {{site.data.keyword.messagehub}} and can run the workers inside or outside {{site.data.keyword.Bluemix_short}}.
 
 Kafka Connect can run in either standalone or distributed mode. Standalone mode is intended for testing and temporary connections between systems. Distributed mode is more appropriate for production use. The configuration required to use {{site.data.keyword.messagehub}} with these two modes is slightly different.
 {:shortdesc}
@@ -23,14 +23,14 @@ Kafka Connect can run in either standalone or distributed mode. Standalone mode 
 ## Standalone worker configuration
 {: #standalone_worker notoc}
 
-You must provide the bootstrap servers and SASL credentials information in the worker properties file that you supply when starting a Kafka Connect standalone worker.
+You must provide the bootstrap servers and SASL credentials information in the worker properties file that you supply when you start a Kafka Connect standalone worker.
 
 The standalone worker does not use any internal topics. Instead, it uses a file for storing offset information.
 
 ### Source connector
 {: #source_connector notoc }
 
-The following example gives the properties you must provide in your properties file:
+The following example lists the properties that you must provide in your properties file:
 
 <pre>
 <code>
@@ -51,7 +51,7 @@ Replace KAFKA_BROKERS_SASL, USER and PASSWORD with the values from your {{site.d
 ### Sink connector
 {: #sink_connector }
 
-The following example gives the properties you must provide in your properties file:
+The following example lists the properties that you must provide in your properties file:
 
 <pre>
 <code>
@@ -72,7 +72,7 @@ Replace KAFKA_BROKERS_SASL, USER and PASSWORD with the values from your {{site.d
 ## Distributed worker configuration
 {: #distributed_worker notoc}
 
-You must provide the bootstrap servers and SASL credentials information in the properties file you supply when starting the Kafka Connect distributed workers. The following example gives the properties you must provide in your properties file:
+You must provide the bootstrap servers and SASL credentials information in the properties file that you supply when you start the Kafka Connect distributed workers. The following example lists the properties that you must provide in your properties file:
 
 <pre>
 <code>
@@ -90,7 +90,7 @@ You must provide the bootstrap servers and SASL credentials information in the p
 Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
 {{site.data.keyword.Bluemix_notm}}.
 
-If you are going to use a source connector, you must also specify the SSL and SASL configuration for the producer as follows:
+If you are want to use a source connector, you must also specify the SSL and SASL configuration for the producer as follows:
 
 <pre>
 <code>
@@ -104,7 +104,7 @@ If you are going to use a source connector, you must also specify the SSL and SA
 </pre>
 {:codeblock}
 
-If you are going to use a sink connector, you must also specify the SSL and SASL configuration for the consumer as follows:
+If you want to use a sink connector, you must also specify the SSL and SASL configuration for the consumer as follows:
 
 <pre>
 <code>
@@ -118,7 +118,7 @@ If you are going to use a sink connector, you must also specify the SSL and SASL
 </pre>
 {:codeblock}
 
-In addition, Kafka Connect in distributed mode uses three topics internally. These topics are automatically created as a worker starts up, provided that you use Kafka Connect in Apache Kafka version 0.11 or later. You provide the names of the topics as configuration parameters and the values should be the same for all workers with the same `group.id` configuration value.
+In addition, Kafka Connect in distributed mode uses three topics internally. These topics are created automatically when a worker starts up, provided that you use Kafka Connect in Apache Kafka version 0.11 or later. You provide the names of the topics as configuration parameters. Ensure that the values are the same for all workers with the same `group.id` configuration value.
 
 | Configuration               | Description                                                         |
 | --------------------------- | ------------------------------------------------------------------- |
@@ -128,7 +128,7 @@ In addition, Kafka Connect in distributed mode uses three topics internally. The
 | `status.storage.topic`      | Connector status topic                                              |
 | `status.storage.partitions` | Number of partitions for connector status topic (default 5)          |
 
-For example, you could use the following in your properties file:
+For example, you can use the following key-value pairs in your properties file:
 
 <pre>
 <code>
