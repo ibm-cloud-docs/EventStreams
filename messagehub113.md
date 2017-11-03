@@ -66,8 +66,7 @@ The following example lists the properties that you must provide in your propert
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the
-
+Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the 
 {{site.data.keyword.Bluemix_notm}} console.
 
 ## Distributed worker configuration
