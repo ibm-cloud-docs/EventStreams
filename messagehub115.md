@@ -69,6 +69,7 @@ unsuitable for messages that contain embedded newline characters and for binary 
 {: notoc}
 
 To create a new Cloud Object Storage bridge, use JSON like the following:
+Ensure that your bucket names are globally unique not just within your COS instance
 
 <pre class="pre"><code>
 {
@@ -92,7 +93,6 @@ To create a new Cloud Object Storage bridge, use JSON like the following:
 }
      	</code></pre>
     {:codeblock}
-
 
 
 ## How the Cloud Object Storage bridge partitions data into objects
