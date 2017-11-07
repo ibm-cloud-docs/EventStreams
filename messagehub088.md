@@ -43,7 +43,7 @@ You might find bridges useful in the following two common scenarios:
   - Using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console.
 * You can associate a maximum of two bridges of any type with an instance of the {{site.data.keyword.messagehub}} service. We will continue to review this limitation as we continue to develop bridges.
 * There is no additional charge for using bridges beyond their messaging operations.
-* The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of dataas it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
+* The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of data as it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
 * The {{site.data.keyword.objectstorageshort}} bridge concatenates messages using newline characters as separators as it writes the data into {{site.data.keyword.objectstorageshort}}. This makes it unsuitable for messages that contain embedded newline characters and for binary message data.
 * Object naming conventions that are currently used by the {{site.data.keyword.objectstorageshort}} bridge might change in future.
 
