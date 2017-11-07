@@ -36,9 +36,8 @@ You might find bridges useful in the following two common scenarios:
 
 * We provide the following types of bridge: 
   - MQ bridge, which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
-  - Cloud Object Storage bridge, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
-  The Cloud Object Storage bridge provides a way of reading data from a Messagehub Kafka topic
-and placing it into the object store. Cloud Object Storage is designed for high data durability
+  - Cloud Object Storage bridge, which provides a way of reading data from a {{site.data.keyword.messagehub}} Kafka topic
+and placing the data into the object store. Cloud Object Storage is designed for high data durability that is 
 split either in or cross region and provides encryption at rest for stored objects.
   - {{site.data.keyword.objectstorageshort}} bridge, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
