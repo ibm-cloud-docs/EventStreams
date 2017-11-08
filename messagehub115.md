@@ -19,7 +19,7 @@ The {{site.data.keyword.IBM}} Cloud Object Storage (COS) bridge provides a way o
 and placing the data into the object store. The Cloud Object Storage service is designed for high-data durability that is split either in region or cross region, and provides encryption at rest for stored objects.
 
 The COS bridge allows you
-to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [COS service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window} The bridge consumes
+to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [COS service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window}. The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a container in the
 COS service. By configuring
 the COS bridge, you can
@@ -34,7 +34,7 @@ The output format of the bridge is an object storage service object that contain
 records concatenated with newline characters as separators.
 
 ## How data is transferred using the COS bridge
-b{: #data_transfer notoc}
+{: #data_transfer notoc}
 
 The COS bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
@@ -93,28 +93,6 @@ To create a new COS bridge, use JSON like the following example. Ensure that you
 }
 </code></pre>
 {: codeblock}
-
-```
-{
-  "name": "cosbridge",
-  "topic": "kafka-java-console-sample-topic",
-  "type": "objectStorageS3Out",
-  "configuration" : {
-    "credentials" : {
-      "endpoint" : "https://s3-api.us-geo.objectstorage.softlayer.net",
-      "resourceInstanceId" : "crn::",
-      "apiKey" : "your_api_key"
-    },
-    "bucket" : "cosbridge0",
-    "uploadDurationThresholdSeconds" : 600,
-    "uploadSizeThresholdKB" : 1024,
-    "partitioning" : [ {
-        "type" : "kafkaOffset"
-      }
-    ]
-  }
-}
-```
 
 
 ## How the COS bridge partitions data into objects
