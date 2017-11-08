@@ -34,7 +34,7 @@ The output format of the bridge is an object storage service object that contain
 records concatenated with newline characters as separators.
 
 ## How data is transferred using the Cloud Object Storage bridge
-{: notoc}
+{: #data_transfer notoc}
 
 The COS bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
