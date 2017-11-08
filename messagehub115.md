@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-11-07"
+lastupdated: "2017-11-08"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2017-11-07"
 {: #cloud_object_storage_bridge }
 
 The {{site.data.keyword.IBM}} Cloud Object Storage bridge provides a way of reading data from a {{site.data.keyword.messagehub}} Kafka topic
-and placing it into the object store. Cloud Object Storage (COS) is designed for high-data durability that is split either in region or cross region and provides encryption at rest for stored objects.
+and placing the data into the object store. The Cloud Object Storage (COS) service is designed for high-data durability that is split either in region or cross region, and provides encryption at rest for stored objects.
 
 The Cloud Object Storage bridge allows you
-to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm-public-cos.github.io/crs-docs/){:new_window} or [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window} The bridge consumes
+to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window} The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a container in the
 Cloud Object Storage service. By configuring
 the Cloud Object Storage bridge, you can
@@ -36,41 +36,40 @@ records concatenated with newline characters as separators.
 ## How data is transferred using the Cloud Object Storage bridge
 {: notoc}
 
-The Cloud Object Storage bridge works by
+The COS bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
-object. This object is uploaded to an instance of the Cloud Object Storage service. Each Cloud Object Storage bridge reads message data from a
+object. This object is uploaded to an instance of the COS service. Each COS bridge reads message data from a
 single Kafka topic, although it is possible for one topic to have multiple bridges reading data from
-it. A new instance of the Cloud Object Storage
-bridge always starts reading from the earliest offset present in the Kafka topic. The Cloud Object Storage bridge uses Kafka's consumer offset
+it. A new instance of the COS
+bridge always starts reading from the earliest offset present in the Kafka topic. The COS bridge uses Kafka's consumer offset
 management to transfer data reliably from Kafka without loss, but with a small chance of
 duplication.
 
-You can control how many records are read from Kafka before data is written into the Cloud Object Storage service instance using the
+You can control how many records are read from Kafka before data is written into the COS service instance using the
 following properties. Specify these properties when you create or update a bridge:
 <dl><dt>`"uploadDurationThresholdSeconds"`</dt> 
 <dd>Defines a period of time in seconds after which the data accumulated from Kafka is uploaded to
-the Cloud Object Storage service.</dd>
+the COS service.</dd>
 <dt>`"uploadSizeThresholdKB"`</dt>
 <dd>Controls the amount of data in kilobytes that is accumulated from Kafka before the data is
-uploaded to the Cloud Object Storage
+uploaded to the COS
 service.</dd>
 </dl>
 
-The trigger for the Cloud Object Storage
-bridge to upload data read from Kafka into the Cloud Object Storage service is when either of these
-values is first reached. The Cloud Object Storage bridge does not guarantee to transfer data into the Cloud Object Storage service at exactly the point one of
+The trigger for the COS
+bridge to upload data read from Kafka into the COS service is when either of these
+values is first reached. The COS bridge does not guarantee to transfer data into the COS service at exactly the point one of
 these thresholds is reached. Therefore, the data transferred can arrive later or be larger than the
 values specified by these properties.
 
-The Cloud Object Storage bridge concatenates
-messages using newline characters as separators as it writes the data into Cloud Object Storage. These separators make the bridge
+The COS bridge concatenates
+messages using newline characters as separators as it writes the data into COS. These separators make the bridge
 unsuitable for messages that contain embedded newline characters and for binary message data.
 
-## Creating a Cloud Object Storage bridge
+## Creating a COS bridge
 {: notoc}
 
-To create a new Cloud Object Storage bridge, use JSON like the following:
-Ensure that your bucket names are globally unique not just within your COS instance
+To create a new COS bridge, use JSON like the following example. Ensure that your bucket names are globally unique not just unique within your COS instance.
 
 <pre class="pre"><code>
 {
@@ -118,20 +117,20 @@ Ensure that your bucket names are globally unique not just within your COS insta
 ```
 
 
-## How the Cloud Object Storage bridge partitions data into objects
+## How the COS bridge partitions data into objects
 {: notoc}
 
-One of the features of the Cloud Object Storage bridge is its ability to partition
+One of the features of the COS bridge is its ability to partition
 Kafka messages and store them as objects named with a common prefix. A group of objects named with a
-common prefix is called a partition. Cloud Object Storage bridge partitioning is a different
+common prefix is called a partition. COS bridge partitioning is a different
 concept from Kafka partitioning.
 
-Each time the Cloud Object Storage bridge
-has a batch of data to upload to the Cloud Object Storage service, it creates one or more
+Each time the COS bridge
+has a batch of data to upload to the COS service, it creates one or more
 objects containing the data. The decision about how to partition messages and name the resulting
 objects depends on how the bridge is configured. Object names can contain Kafka metadata and
 possibly data from the messages themselves. Currently, the bridge supports the following two ways to
-partition Kafka messages into Cloud Object Storage objects:
+partition Kafka messages into COS objects:
 
 * By Kafka message offset.
 * By an ISO 8601 date present in each Kafka message. This requires the Kafka messages to comprise a valid JSON format object.
@@ -241,10 +240,10 @@ To partition data by the ISO 8601 date, complete the following steps:
 	Any message data that is valid JSON but without a valid date field or value is written into an object
 	with the prefix `"dt=1970-01-01"`.
 
-## Cloud Object Storage bridge metrics
+## COS bridge metrics
 {: notoc}
 
-The Cloud Object Storage bridge reports
+The COS bridge reports
 metrics, which can be displayed on your dashboard using Grafana. Metrics of interest include the following:
 <dl>
 <dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.bytes-consumed-rate</code></dt>
