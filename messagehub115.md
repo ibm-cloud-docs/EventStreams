@@ -91,9 +91,9 @@ To create a new COS bridge, use JSON like the following example. Ensure that you
     ]
   }
 }
-     	</code></pre>
-    {:codeblock}
-	
+</code></pre>
+{: codeblock}
+
 ```
 {
   "name": "cosbridge",
