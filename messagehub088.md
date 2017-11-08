@@ -37,8 +37,7 @@ You might find bridges useful in the following two common scenarios:
 * We provide the following types of bridge: 
   - MQ bridge, which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
   - Cloud Object Storage bridge, which provides a way of reading data from a {{site.data.keyword.messagehub}} Kafka topic
-and placing the data into the object store. Cloud Object Storage is designed for high data durability that is 
-split either in or cross region and provides encryption at rest for stored objects.
+and placing the data into the object store. 
   - {{site.data.keyword.objectstorageshort}} bridge, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
 * You can administer bridges in the following two ways:
@@ -47,8 +46,8 @@ split either in or cross region and provides encryption at rest for stored objec
 * You can associate a maximum of two bridges of any type with an instance of the {{site.data.keyword.messagehub}} service. We will continue to review this limitation as we continue to develop bridges.
 * There is no additional charge for using bridges beyond their messaging operations.
 * The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of data as it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
-* The {{site.data.keyword.objectstorageshort}} and Cloud Object Storage bridges concatenate messages using newline characters as separators as they write the data into {{site.data.keyword.objectstorageshort}}. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
-* Object naming conventions that are currently used by the {{site.data.keyword.objectstorageshort}} and Cloud Object Storage bridges might change in future.
+* The Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges concatenate messages using newline characters as separators as they write the data into Cloud Object Storage or {{site.data.keyword.objectstorageshort}} respectively. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
+* Object naming conventions that are currently used by the Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges might change in future.
 
 However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/secure_gateway.html){:new_window} service to send your data
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
