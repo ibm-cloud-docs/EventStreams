@@ -15,26 +15,26 @@ lastupdated: "2017-11-08"
 # Cloud Object Storage bridge 
 {: #cloud_object_storage_bridge }
 
-The {{site.data.keyword.IBM}} Cloud Object Storage bridge provides a way of reading data from a {{site.data.keyword.messagehub}} Kafka topic
-and placing the data into the object store. The Cloud Object Storage (COS) service is designed for high-data durability that is split either in region or cross region, and provides encryption at rest for stored objects.
+The {{site.data.keyword.IBM}} Cloud Object Storage (COS) bridge provides a way of reading data from a {{site.data.keyword.messagehub}} Kafka topic
+and placing the data into the object store. The Cloud Object Storage service is designed for high-data durability that is split either in region or cross region, and provides encryption at rest for stored objects.
 
-The Cloud Object Storage bridge allows you
-to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window} The bridge consumes
+The COS bridge allows you
+to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [COS service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window} The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a container in the
-Cloud Object Storage service. By configuring
-the Cloud Object Storage bridge, you can
-control how the data is uploaded as objects to Cloud Object Storage. For example, the properties that
+COS service. By configuring
+the COS bridge, you can
+control how the data is uploaded as objects to COS. For example, the properties that
 you can configure are as follows:
 
 * The container name that the objects are written into.
-* How frequently objects are uploaded to the Cloud Object Storage service.
-* How much data is written to each object before it is uploaded to the Cloud Object Storage service.
+* How frequently objects are uploaded to the COS service.
+* How much data is written to each object before it is uploaded to the COS service.
 
 The output format of the bridge is an object storage service object that contains one or more
 records concatenated with newline characters as separators.
 
-## How data is transferred using the Cloud Object Storage bridge
-{: #data_transfer notoc}
+## How data is transferred using the COS bridge
+b{: #data_transfer notoc}
 
 The COS bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
