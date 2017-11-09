@@ -163,7 +163,7 @@ To partition data by Kafka message offset, complete the following steps:
   
     
 ## Partitioning by ISO 8601 date
-{: notoc}
+{: #partition_iso notoc}
 
 To partition data by the ISO 8601 date, complete the following steps:
 
