@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-11-08"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -36,8 +36,8 @@ You might find bridges useful in the following two common scenarios:
 
 * We provide the following types of bridge: 
   - [MQ bridge](/docs/services/MessageHub/messagehub105.html){:new_window}, which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
-  - [Cloud Object Storage bridge](/docs/services/MessageHub/messagehub115.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window} . 
-  - [{{site.data.keyword.objectstorageshort}} bridge](/docs/services/MessageHub/messagehub089.html){:new_window} bridge, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
+  - [Cloud Object Storage bridge](/docs/services/MessageHub/messagehub115.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window}. Cloud Object Storage service is the preferred object storage service in {{site.data.keyword.Bluemix_short}}. 
+  - [{{site.data.keyword.objectstorageshort}} bridge](/docs/services/MessageHub/messagehub089.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
 * You can administer bridges in the following two ways:
   - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs){:new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also find examples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
