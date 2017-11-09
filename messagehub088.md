@@ -36,7 +36,7 @@ You might find bridges useful in the following two common scenarios:
 
 * We provide the following types of bridge: 
   - [MQ bridge](/docs/services/MessageHub/messagehub105.html){:new_window}, which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
-  - [Cloud Object Storage bridge](/docs/services/MessageHub/messagehub115.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window}. 
+  - [Cloud Object Storage bridge](/docs/services/MessageHub/messagehub115.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window} service. 
     
     Cloud Object Storage service is the preferred object storage service in {{site.data.keyword.Bluemix_short}}. 
   - [{{site.data.keyword.objectstorageshort}} bridge](/docs/services/MessageHub/messagehub089.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
