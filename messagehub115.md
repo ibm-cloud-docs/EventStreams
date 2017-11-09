@@ -16,7 +16,7 @@ lastupdated: "2017-11-08"
 {: #cloud_object_storage_bridge }
 
 The {{site.data.keyword.IBM}} Cloud Object Storage (COS) bridge provides a way of reading data from a {{site.data.keyword.messagehub}} Kafka topic
-and placing the data into the object store. The Cloud Object Storage service is designed for high-data durability that is split either in region or cross region, and provides encryption at rest for stored objects.
+and placing the data into {{site.data.keyword.IBM_notm}} [Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window} The Cloud Object Storage service is designed for high-data durability that is split either in region or cross region, and provides encryption at rest for stored objects.
 
 The COS bridge allows you
 to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [COS service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window}. The bridge consumes
