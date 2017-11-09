@@ -20,13 +20,13 @@ and placing the data into the object store. The Cloud Object Storage service is 
 
 The COS bridge allows you
 to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [COS service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/index.html){:new_window}. The bridge consumes
-batches of messages from Kafka and uploads the message data as objects to a container in the
+batches of messages from Kafka and uploads the message data as objects to a bucket in the
 COS service. By configuring
 the COS bridge, you can
 control how the data is uploaded as objects to COS. For example, the properties that
 you can configure are as follows:
 
-* The container name that the objects are written into.
+* The bucket name that the objects are written into.
 * How frequently objects are uploaded to the COS service.
 * How much data is written to each object before it is uploaded to the COS service.
 
@@ -69,7 +69,7 @@ unsuitable for messages that contain embedded newline characters and for binary 
 ## Creating a COS bridge
 {: notoc}
 
-To create a new COS bridge, use JSON like the following example. Ensure that your bucket names are globally unique not just unique within your COS instance.
+To create a new COS bridge, use JSON like the following example. Ensure that your bucket names are globally unique, not just unique within your COS instance.
 
 <pre class="pre"><code>
 {
@@ -130,7 +130,7 @@ To partition data by Kafka message offset, complete the following steps:
           "name": "bridge1",
           "configuration" : {
             "credentials" : { ... },
-            "container" : "container1",
+            "bucket" : "bucket1",
             "uploadDurationThresholdSeconds" : "1000",
             "uploadSizeThresholdKB" : "1000",
             "partitioning" : [ {
@@ -153,10 +153,10 @@ To partition data by Kafka message offset, complete the following steps:
 
     <pre class="pre"><code>
         ```
-        &lt;container_name&gt;/offset=0/&lt;object_a&gt;
-        &lt;container_name&gt;/offset=0/&lt;object_b&gt;
-        &lt;container_name&gt;/offset=1000/&lt;object_c&gt;
-        &lt;container_name&gt;/offset=2000/&lt;object_d&gt;
+        &lt;bucket_name&gt;/offset=0/&lt;object_a&gt;
+        &lt;bucket_name&gt;/offset=0/&lt;object_b&gt;
+        &lt;bucket_name&gt;/offset=1000/&lt;object_c&gt;
+        &lt;bucket_name&gt;/offset=2000/&lt;object_d&gt;
         ```       
     </code></pre>
     {:codeblock}
@@ -180,7 +180,7 @@ To partition data by the ISO 8601 date, complete the following steps:
       "name": "bridge2",
       "configuration" : {
         "credentials" : { ... },
-        "container" : "container2",
+        "bucket" : "bucket2",
         "inputFormat" : "json",
         "uploadDurationThresholdSeconds" : "1000",
         "uploadSizeThresholdKB" : "1000",
@@ -208,9 +208,9 @@ To partition data by the ISO 8601 date, complete the following steps:
 
     <pre class="pre"><code>
         ```
-        &lt;container_name&gt;/dt=2016-12-07/&lt;object_a&gt;
-        &lt;container_name&gt;/dt=2016-12-08/&lt;object_b&gt;
-        &lt;container_name&gt;/dt=2016-12-08/&lt;object_c&gt;
+        &lt;bucket_name&gt;/dt=2016-12-07/&lt;object_a&gt;
+        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_b&gt;
+        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_c&gt;
         ```       
     </code></pre>
     {:codeblock}
