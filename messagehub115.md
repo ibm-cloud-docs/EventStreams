@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-14"
 
 ---
 
@@ -72,12 +72,12 @@ unsuitable for messages that contain embedded newline characters and for binary 
 
 You need to supply credentials to allow the Cloud Object Storage bridge to connect into your Cloud Object Storage instance.
 
-The easiest way to achieve this is for the owner or administrator of your Cloud Object Storage instance to create
+Request that the owner or administrator of your Cloud Object Storage instance to create
 the credentials using the Cloud Object Storage UI. 
 
 1. Select the **Service credentials** and add a **New credential**. 
 2. Select an **Access Role** of **Writer** and select a **Service ID** of **Auto Generate**.
-   This creates a credential and you can copy the resulting JSON into the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console during bridge creation. Alternatively, you can take the ```apikey``` and ```resource_instance_id``` fields and input them in the UI or set them in the bridge create JSON if creating directly using a REST
+   This creates a credential and you can copy the resulting JSON into the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console when you create a bridge. Alternatively, you can take the ```apikey``` and ```resource_instance_id``` fields and input them in the UI or set them in the bridge create JSON if creating directly using a REST
    call.
 
 The credential that you create grants writer access to the entire Cloud Object Storage instance,
