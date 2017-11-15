@@ -70,24 +70,23 @@ unsuitable for messages that contain embedded newline characters and for binary 
 ## Getting credentials to use with the Cloud Object Storage bridge
 {: notoc}
 
-You need to supply credentials to allow the Cloud Object Storage bridge to connect into your Cloud Object Storage instance.
+You must supply credentials to allow the Cloud Object Storage bridge to connect into your Cloud Object Storage instance. Request that the owner or administrator of your Cloud Object Storage instance creates
+the credentials using the Cloud Object Storage UI as follows: 
 
-Request that the owner or administrator of your Cloud Object Storage instance to create
-the credentials using the Cloud Object Storage UI. 
-
-1. Select the **Service credentials** and add a **New credential**. 
-2. Select an **Access Role** of **Writer** and select a **Service ID** of **Auto Generate**.
-   This creates a credential and you can copy the resulting JSON into the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console when you create a bridge. Alternatively, you can take the ```apikey``` and ```resource_instance_id``` fields and input them in the UI or set them in the bridge create JSON if creating directly using a REST
-   call.
+1. Select **Service credentials** then add a **New credential**. 
+2. For the **New credential**, select an **Access Role** of **Writer** and a **Service ID** of **Auto Generate**.
+   
+   You can copy the resulting JSON from this new credential into the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console when you create a bridge. 
+   
+   Alternatively, you can take the ```apikey``` and ```resource_instance_id``` fields and input them in the UI or set them in the create bridge create JSON if you are creating the bridge directly using a REST call.
 
 The credential that you create grants writer access to the entire Cloud Object Storage instance,
-therefore you might want to further restrict this access to the specific bucket that the bridge is to interact with.
+therefore you might want to restrict this access to the specific bucket that the bridge will interact with.
 1. Go to the [Identity & Access Management page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/iam/?env_id=ibm%3Ayp%3Aus-south#/serviceids){:new_window}.
 2. You should see the auto generated service ID on this page. When you have identified the specific ID, select
 the **Manage service ID** action. 
-3 Edit the policy to
-further restrict it to a specific **Resource type**, in this case bucket and a **Resource ID**, which
-is the name of the bucket.
+3. Select the **Edit policy** action to further restrict it to a specific **Resource type**, which is bucket and a **Resource ID**, which
+is the name of the bucket. Click **Save**.
 
 
 ## Creating a Cloud Object Storage bridge
