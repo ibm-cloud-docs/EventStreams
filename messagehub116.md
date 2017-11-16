@@ -18,7 +18,7 @@ lastupdated: "2017-11-16"
 
 Apache Kafka comes with a variety of console tools for simple administration and messaging operations. Many of them can be used with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka has matured, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 
-You provide the SASL credentials to these tools using a properties file. Create a properties file based on the following example:
+Provide the SASL credentials to these tools using a properties file. Create a properties file based on the following example:
 
 <pre>
 <code>
@@ -36,6 +36,7 @@ Replace USER and PASSWORD with the values from your {{site.data.keyword.messageh
 
 
 ## Console producer
+{: #console_producer }
 
 You can use the Kafka console producer with {{site.data.keyword.messagehub}}. You must provide a list of brokers and SASL credentials.
 
@@ -48,10 +49,13 @@ After you've created the properties file described previously, you can run the c
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). Replace CONFIG_FILE with the path of the configuration file. You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
+Replace the following variables in the example with your own values:
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+* CONFIG_FILE with the path of the configuration file. You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
 
 
 ## Console consumer
+{: #console_consumer }
 
 You can use the Kafka console consumer with {{site.data.keyword.messagehub}}. You must provide a bootstrap server and SASL credentials.
 
@@ -64,10 +68,13 @@ After you've created the properties file described above, you can run the consol
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). Replace CONFIG_FILE with the path of the configuration file. You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
+Replace the following variables in the example with your own values:
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+* CONFIG_FILE with the path of the configuration file. You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
 
 
 ## Consumer groups tool
+{: #consumer_groups_tool }
 
 You can use the Kafka consumer groups tool with {{site.data.keyword.messagehub}}. Because {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster, some of the options are not available.
 
@@ -80,9 +87,12 @@ After you've created the properties file described above, you can run the consum
 </pre>
 {:codeblock}
 
-Replace KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). Replace CONFIG_FILE with the path of the configuration file.
+Replace the following variables in the example with your own values:
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+* CONFIG_FILE with the path of the configuration file.
 
 
 ## Topics tool
+{: #topics_tool }
 
 You cannot use the Kafka topics tool `kafka-topics` with {{site.data.keyboard.messagehub}} because the tool requires access to ZooKeeper.
