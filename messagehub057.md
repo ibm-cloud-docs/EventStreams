@@ -17,8 +17,8 @@ lastupdated: "2017-10-05"
 {: #restrictions}
 
 
-##Topics and partitions
-{: #topics_partitions notoc}
+## Topics and partitions
+{: #topics_partitions}
 
 *  Topic names are restricted to a maximum of 100 characters.
 *  The default number of partitions for a topic is one.
@@ -38,7 +38,7 @@ administration API. The time limit is a minimum of an hour and a
 maximum of 30 days.
 
 ## Creating and deleting topics in Kafka
-{: #create_delete notoc}
+{: #create_delete}
 
 In Kafka, topic creation and deletion are asynchronous operations
 that might take some time to complete. You are recommended to
