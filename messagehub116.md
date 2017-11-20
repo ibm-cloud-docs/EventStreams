@@ -18,7 +18,7 @@ lastupdated: "2017-11-16"
 
 Apache Kafka comes with a variety of console tools for simple administration and messaging operations. Many of them can be used with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka has matured, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 
-Provide the SASL credentials to these tools using a properties file. Create a properties file based on the following example:
+Provide the SASL credentials to these tools using a properties file by creating a properties file based on the following example:
 
 <pre>
 <code>
@@ -63,7 +63,7 @@ After you've created the properties file described above, you can run the consol
 
 <pre>
 <code>
-  $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME
+  $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
 </code>
 </pre>
 {:codeblock}
@@ -82,7 +82,7 @@ After you've created the properties file described above, you can run the consum
 
 <pre>
 <code>
-  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
+  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list --describe
 </code>
 </pre>
 {:codeblock}
@@ -91,8 +91,41 @@ Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
 * CONFIG_FILE with the path of the configuration file.
 
+If you use the ```--describe``` parameter, you can view more details about the consumer group, including offset information.
+
+Using this tool, you can also display details like the current positions of the consumers, their lag and client-id per partition for a group:
+
+<pre>
+<code>
+  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
+</code>
+</pre>
+{:codeblock}
+
+Replace GROUP with the group name you want to retrieve details for. 
+
 
 ## Topics tool
 {: #topics_tool }
 
-You cannot use the Kafka topics tool `kafka-topics` with {{site.data.keyboard.messagehub}} because the tool requires access to ZooKeeper.
+You cannot use the Kafka topics tool `kafka-topics` with {{site.data.keyword.messagehub}} because the tool requires access to ZooKeeper.
+
+However, you can administer topics using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console or the REST API.
+
+
+## Kafka Streams Reset tool
+
+You can use this tool can be used with {{site.data.keyboard.messagehub}} to reset the processing state of a Kafka Streams application so you can reprocess its input from scratch. Before running this tool ensure that your Streams application is fully stopped.
+
+<pre>
+<code>
+  $ kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
+</code>
+</pre>
+{:codeblock}
+
+Replace the following variables in the example with your own values:
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console as a list of host:port pairs separated commas (like `host1:port1,host2:port2`). 
+* CONFIG_FILE with the path of the configuration file. 
+* APP_ID with your Streams application ID.
+
