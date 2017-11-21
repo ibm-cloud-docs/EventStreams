@@ -40,7 +40,7 @@ Replace USER and PASSWORD with the values from your {{site.data.keyword.messageh
 
 You can use the Kafka console producer tool with {{site.data.keyword.messagehub}}. You must provide a list of brokers and SASL credentials.
 
-After you've created the properties file described previously, you can run the console producer in a terminal as follows:
+After you've created the properties file as described previously, you can run the console producer in a terminal as follows:
 
 <pre>
 <code>
@@ -61,7 +61,7 @@ You can use many of the other options of this tool, with the exception of those 
 
 You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}}. You must provide a bootstrap server and SASL credentials.
 
-After you've created the properties file described previously, you can run the console consumer in a terminal as follows:
+After you've created the properties file as described previously, you can run the console consumer in a terminal as follows:
 
 <pre>
 <code>
@@ -82,7 +82,7 @@ You can use many of the other options of this tool, with the exception of those 
 
 You can use the Kafka consumer groups tool with {{site.data.keyword.messagehub}}. Because {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster, some of the options are not available.
 
-After you've created the properties file described previously, you can run the consumer groups tools in a terminal. For example, you can list the consumer groups as follows:
+After you've created the properties file as described previously, you can run the consumer groups tools in a terminal. For example, you can list the consumer groups as follows:
 
 <pre>
 <code>
@@ -115,10 +115,12 @@ You cannot use the Kafka topics tool `kafka-topics` with {{site.data.keyword.mes
 However, you can administer topics using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console or using the REST API.
 
 
-## Kafka Streams Reset
+## Kafka Streams reset
 {: #kafka_streams_reset }
 
-You can use this tool with {{site.data.keyboard.messagehub}} to reset the processing state of a Kafka Streams application, so you can reprocess its input from scratch. Before you run this tool, ensure that your Streams application is fully stopped.
+You can use this tool with {{site.data.keyword.messagehub}} to reset the processing state of a Kafka Streams application, so you can reprocess its input from scratch. Before you run this tool, ensure that your Streams application is fully stopped.
+
+For example:
 
 <pre>
 <code>
@@ -128,7 +130,7 @@ You can use this tool with {{site.data.keyboard.messagehub}} to reset the proces
 {:codeblock}
 
 Replace the following variables in the example with your own values:
-* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated commas (like `host1:port1,host2:port2`). 
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). 
 * CONFIG_FILE with the path of the configuration file. 
 * APP_ID with your Streams application ID.
 
