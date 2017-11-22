@@ -29,7 +29,7 @@ You might find it useful to read this information about consuming messages in co
 
 To start working with consumers, create a configuration of the required properties to pass as parameters to kafkaConsumer. Change these properties according to your requirements:
 
-```
+<pre class="pre"><code>
 props = new Properties();
         props.put("key.serializer","org.apache.kafka.common.serialization.ByteArraySerializer");
         props.put("value.serializer","org.apache.kafka.common.serialization.ByteArraySerializer");
@@ -46,7 +46,8 @@ props = new Properties();
         props.put("ssl.truststore.type","JKS");
         props.put("ssl.endpoint.identification.algorithm","HTTPS");
 		
-```
+</code></pre>
+{: codeblock}
 
 There are many configuration settings for the consumer. You can control aspects of the producer including batching, retries, and message acknowledgement. Here are the most important ones:
 
@@ -62,19 +63,14 @@ For more information about each property, see [Apache Kafka documentation ![Exte
 ## Subscribe and assign methods of message consumption
 {: #message_consumption }
 
-You can define two different methods to use for message consumption: subscribe or assign. Below is a summary about the remarkable points of each one of them and when to use it:
+You can define two different methods to use for message consumption: subscribe or assign. You cannot subscribe and assign at the same time using the same consumer instance.
 
-Use the subscribe method when you want to consume all messages from a topic
-This is automatically consumed from a topic, no matter in which partition(s) the messages are.
-After subscribing, a re-balancing (re-assigning partition to a member) occurs. A consumer coordinates with a group to assign partitions, this happens automatically when consuming the data starts.
-Define a List of strings of topics and then KafkaConsumer will subscribe to that list.
+Use the subscribe method when you want to automatically consume all messages from a topic regardless of which partition the messages are in. After subscribing, a re-balancing (re-assigning partition to a member) occurs. A consumer coordinates with a group to assign partitions, which happens automatically when consuming the data starts.
 
-Use the assign method when you want to define the topic and partition where messages are consumed from.
-This could be considered as a manual consumption as partition is programmatically defined for topic desired.
+Use the assign method when you want to define the topic and partition where messages are consumed from. This could be considered as a manual consumption as partition is programmatically defined for topic desired.
 Define a List of TopicPartition and then KafkaConsumer will assign to that list.
-It is not possible to subscribe and assign at the same time using the same consumer instance.
 
-=============================
+
 ## Consumer group rebalancing (DE)
 {: #consumer_group_rebalancing }
 
@@ -85,9 +81,11 @@ When one of the following changes happen to a consumer group, the group rebalanc
 * a consumer is considered no longer functioning by the group coordinator. For example, if the consumer has crashed
 * new partitions are added to an existing topic
 
-If you have a consumer group that has rebalanced, be aware that any consumer that has left the group will have its commits rejected until it rejoins the group. In this case, the consumer needs to rejoin the group, where it might be assigned a completely different partition(s) to the one it was previously consuming from
+If you have a consumer group that has rebalanced, be aware that any consumer that has left the group will have its commits rejected until it rejoins the group. In this case, the consumer needs to rejoin the group, where it might be assigned a completely different partition to the one it was previously consuming from.
 
-==============================
+The assignment of partitions to instances can change at every group rebalance.
+
+
 
 ## Consumer groups and offsets
 {: #consumer_groups }
@@ -97,8 +95,6 @@ When you create a consumer group, the group's offset setting is determined by th
 
 If there is a problem with the consumer and it crashes before it can commit an offset for messages that have been processed, another consumer duplicates this work. Therefore, if you commit offsets frequently, you'll see fewer duplicates after a crash.
 
-====================================
-
 
 ## Reading messages from consumer groups (MM)
 {: #reading_consumer_groups }
@@ -106,18 +102,15 @@ If there is a problem with the consumer and it crashes before it can commit an o
 If you use a consumer group and commit, the consumer group automatically restarts where it left off. 
 
 If it's the first time you've started your client (or with a new group), you can use `auto.offset.reset` to specify where to start from as follows:
-- `latest` (the default). Your consumer receives only messages that arrive after subscribing
-- `earliest`, you consumer consumes all messages from the beginning
+- `latest` (the default). Your consumer receives and consumes only messages that arrive after subscribing
+- `earliest`. Your consumer consumes all messages from the beginning
 
-
-=============================================================
 
 ##  Controlling the speed of message consumption (MM)
 {: #message_consumption_speed }
 
 If you want to set consumer options to control the speed of message consumption to prevent flooding of messages, which causes problems with message handling, you can use `fetch.max.bytes` to control how much data a call to `poll()` can return.
 
-=======================================================
 
 ## Application committing messages (EC)
 {: #apps_committing_messages }
