@@ -55,3 +55,66 @@ The Kibana and Grafana dashboards for monitoring the service are not supported i
 For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/cloud-computing/bluemix/dedicated/){:new_window}.
 
 
+### Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
+{: notoc}
+
+{{site.data.keyword.messagehub}} now implements Kafka quotas, that is throttling for producers and consumers.
+
+Kafka brokers can keep track of throughput values, in bytes per second for producers and consumers, measured over a window of about 30 seconds.
+
+If the value is found to exceed a configured threshold, Kafka brokers introduce a delay before sending responses to clients, so that the resulting throughput is lowered to stay within the set quota.
+
+{{site.data.keyword.messagehub}} implements this check by assigning a throughput quota, separate for producers and consumers, to each {{site.data.keyword.messagehub}} instance, proportional to the number of partitions, spread approximately evenly across the brokers.
+
+A base quota for each partition is set administratively by {{site.data.keyword.IBM}} and can be set to be arbitrarily high, turning off the quota mechanism completely.
+
+The throughput is _not_ measured for each partition, that is, it can be used all on one partition if the other ones are idle.
+
+Example:
+If a dedicated {{site.data.keyword.messagehub}} has:
+* 4 brokers
+* overall limit of 1000 partitions
+* base value for producers set to 5MB/s
+
+Then for a {{site.data.keyword.messagehub}} instance with a total of 500 partitions, all the producers connecting to that instance must share a throughput of
+
+5MB/s x 500 = 2.5 GB/s across 4 brokers
+
+That is, approximately 625 MB/s for each broker.
+
+### Checking for throttling in client applications
+
+Kafka brokers send the throttling information to clients, as part of produce and fetch responses, so clients can know whether they have been throttled.
+
+In the Java client, the following per-broker metrics are available:
+
+* produce-throttle-time-max
+* produce-throttle-time-avg
+* fetch-throttle-time-avg
+* fetch-throttle-time-max
+
+
+For more information, see [producer monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation/#producer_monitoring){:new_window} and 
+[new consumer monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation/#new_consumer_monitoring){:new_window}
+
+
+In the Node.js client node-rkafka, based on the C librdkafka library, client statisitcs are emitted as a big JSON string, see [statistics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/wiki/Statistics){:new_window}
+
+In a node-rdkafka application, you can access these metrics with code like the following:
+
+```
+var producer = new Kafka.Producer({
+  'metadata.broker.list': ''kafka01-prod01.messagehub.services.us-south.bluemix.net:9093,kafka02-prod01...',
+   ...,
+  'statistics.interval.ms' : 1000
+});
+...
+producer.on('event.stats', function(arg) {
+  var jmsg = JSON.parse(arg.message);
+  if (jmsg.brokers) {
+    console.log(jmsg.brokers['sasl_ssl://kafka01-prod01.messagehub.services.us-south.bluemix.net:9093/0'].throttle, ...)
+  }  
+});
+```
+
+If the throttle values are not zero, the client has been throttled by the broker.
