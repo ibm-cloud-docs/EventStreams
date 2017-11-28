@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-11-26"
+lastupdated: "2017-11-28"
 
 ---
 
@@ -56,7 +56,7 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 
 
 ### Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
-{: notoc}
+{: kafka_dedicated_quotas notoc}
 
 {{site.data.keyword.messagehub}} now implements Kafka quotas, that is throttling for producers and consumers.
 
@@ -82,6 +82,7 @@ a {{site.data.keyword.messagehub}} instance with a total of 500 partitions with 
 That is, approximately 625 MB/s for each broker.
 
 ### Checking for throttling in client applications
+{: throttling_apps notoc}
 
 Kafka brokers send the throttling information to clients as part of produce and fetch responses, so clients are aware whether they have been throttled.
 
