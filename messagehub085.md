@@ -60,23 +60,21 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 
 {{site.data.keyword.messagehub}} now implements Kafka quotas, that is throttling for producers and consumers.
 
-Kafka brokers can monitor throughput values in bytes per second for producers and consumers, measured over a window of about 30 seconds. If the value exceeds a configured threshold, Kafka brokers introduce a delay before sending responses to clients, so that the resulting throughput is lowered to stay within the set quota.
+Kafka brokers can monitor throughput values, in bytes per second, for producers and consumers. These values are measured over a window of about 30 seconds. If the value exceeds a configured threshold, Kafka brokers introduce a delay before sending responses to clients, so that the resulting throughput is lowered to stay within the set quota.
 
-{{site.data.keyword.messagehub}} implements this check by assigning a throughput quota to each {{site.data.keyword.messagehub}} instance, separately for producers and consumers. This quota is proportional to the number of partitions and is spread approximately evenly across the brokers.
-
-A base quota for each partition is set administratively by {{site.data.keyword.IBM}} and can be set to be arbitrarily high effectively turning off the quota mechanism completely.
+{{site.data.keyword.messagehub}} implements this check by assigning a throughput quota to each {{site.data.keyword.messagehub}} instance, separately for producers and consumers. This quota is proportional to the number of partitions and is spread approximately evenly across the brokers. A base quota for each partition is set administratively by {{site.data.keyword.IBM}} and can be set arbitrarily high to effectively turn off the quota mechanism completely.
 
 The throughput is _not_ measured for each partition, that is, it can be used all on one partition if the other partitions are idle.
 
 For example, if a dedicated {{site.data.keyword.messagehub}} has the following setup:
 * 4 brokers
 * an overall limit of 1000 partitions
-* a base value for producers set to 5MB/s
+* a base value for producers set to 5 MB/s
 
-a {{site.data.keyword.messagehub}} instance with a total of 500 partitions with all the producers connecting to that instance must share a throughput of the following:
+then a {{site.data.keyword.messagehub}} instance with a total of 500 partitions with all the producers connecting to that instance must share a throughput of the following:
 
 ```
-5MB/s x 500 = 2.5 GB/s across 4 brokers
+5 MB/s x 500 = 2.5 GB/s across 4 brokers
 ```
 
 That is, approximately 625 MB/s for each broker.
@@ -98,7 +96,7 @@ For more information, see [producer monitoring ![External link icon](../../icons
 [new consumer monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation/#new_consumer_monitoring){:new_window}.
 
 
-In the Node.js client node-rkafka (based on the C librdkafka library), client statisitcs are emitted as a big JSON string. For more information, see [statistics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/wiki/Statistics){:new_window}.
+In the Node.js client, node-rkafka client statisitcs are emitted as a big JSON string. node-rkafka is based on the C librdkafka library. For more information, see [statistics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/wiki/Statistics){:new_window}.
 
 In a node-rdkafka application, you can access these metrics with code like the following:
 
