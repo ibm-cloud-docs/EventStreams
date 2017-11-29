@@ -47,10 +47,10 @@ duplication.
 
 You can control how many records are read from Kafka before data is written into the Cloud Object Storage service instance using the
 following properties. Specify these properties when you create or update a bridge:
-<dl><dt>`"uploadDurationThresholdSeconds"`</dt> 
+<dl><dt>Upload Duration Threshold (seconds)</dt> 
 <dd>Defines a period of time in seconds after which the data accumulated from Kafka is uploaded to
 the Cloud Object Storage service.</dd>
-<dt>`"uploadSizeThresholdKB"`</dt>
+<dt>Upload Size Threshold (kB)</dt>
 <dd>Controls the amount of data in kilobytes that is accumulated from Kafka before the data is
 uploaded to the Cloud Object Storage
 service.</dd>
@@ -92,7 +92,7 @@ is the name of the bucket. Click **Save**.
 ## Creating a Cloud Object Storage bridge
 {: notoc}
 
-To create a new Cloud Object Storage bridge, use JSON like the following example. Ensure that your bucket names are globally unique, not just unique within your Cloud Object Storage instance.
+To create a new Cloud Object Storage bridge using the Kafka REST API, use JSON like the following example. Ensure that your bucket names are globally unique, not just unique within your Cloud Object Storage instance.
 
 <pre class="pre"><code>
 {
