@@ -249,8 +249,6 @@ metrics, which can be displayed on your dashboard using Grafana. Metrics of inte
 <dl>
 <dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.bytes-consumed-rate</code></dt>
 <dd>Measures the rate that the bridge consumes data (in bytes per second).</dd>
-<dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.bytes-consumed-rate</code></dt>
-<dd>Measures the rate that the bridge consumes data (in bytes per second).</dd>
 <dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.records-lag-max</code></dt>
 <dd>Measures the maximum lag in the number of records consumed by the bridge for any partition in
 this topic. An increasing value over time indicates that the bridge is not keeping up with producers
