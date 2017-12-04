@@ -20,7 +20,7 @@ lastupdated: "2017-12-04"
 
 Quotas work by measuring the throughput of producers and consumers, and then throttling those that exceed the quotas by slightly delaying the responses to their requests. The effect is to apply a gentle brake to producers and consumers that attempt to consume a lot of bandwidth.
 
-{{site.data.keyword.messagehub}} assigns a throughput quota to each {{site.data.keyword.messagehub}} service instance. A separate quota is used for producers and consumers. The quota is proportional to the number of partitions created for that service instance, although the quota is not applied to each partition.
+{{site.data.keyword.messagehub}} assigns a throughput quota to each {{site.data.keyword.messagehub}} service instance. A separate quota is used for producers and consumers. The quota is proportional to the number of partitions created for that service instance and is spread approximately evenly across the brokers, although the quota is not applied to each partition.
 
 For example, consider a service instance with 10 topics, each with 1 partition. The throughput quota for producers is as follows:
 
@@ -29,10 +29,3 @@ For example, consider a service instance with 10 topics, each with 1 partition. 
 ```
 
 The quota is applied across the nodes of the Kafka cluster. The precise value applied at a point in time depends on the current distribution of partition leaders on the nodes of the cluster.
-
-Kafka brokers can monitor throughput values, in bytes per second, for producers and consumers. These values are measured over a window of about 30 seconds. If the value exceeds a configured threshold, Kafka brokers introduce a delay before sending responses to clients, so that the resulting throughput is lowered to stay within the set quota.
-
-{{site.data.keyword.messagehub}} implements this check by assigning a throughput quota to each {{site.data.keyword.messagehub}} instance, separately for producers and consumers. This quota is proportional to the number of partitions and is spread approximately evenly across the brokers. A base quota for each partition is set administratively by {{site.data.keyword.IBM}} and can be set arbitrarily high to effectively turn off the quota mechanism completely.
-
-The throughput is _not_ measured for each partition, that is, it can be used all on one partition if the other partitions are idle.
-
