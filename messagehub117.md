@@ -22,7 +22,7 @@ Quotas work by measuring the throughput of producers and consumers, and then thr
 
 {{site.data.keyword.messagehub}} assigns a throughput quota to each {{site.data.keyword.messagehub}} service instance. A separate quota is used for producers and consumers. The quota is proportional to the number of partitions created for that service instance and is spread approximately evenly across the brokers, although the quota is not applied to each partition.
 
-For example, consider a service instance with 10 topics, each with 1 partition. The throughput quota for producers is as follows:
+For example, consider a service instance with 10 topics, each with 1 partition and each partition has a 5MB/s quota. The throughput quota for producers is as follows:
 
 ```
 10 x 5 MB/s = 50 MB/s
