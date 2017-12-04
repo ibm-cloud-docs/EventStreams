@@ -58,7 +58,7 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 ### Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
 {: kafka_dedicated_quotas notoc}
 
-{{site.data.keyword.messagehub}} now implements Kafka quotas, that is throttling for producers and consumers in Dedicated and Public environments. You are not recommended to remove quotas, although you can request to have them removed for your Dedicated environment.
+{{site.data.keyword.messagehub}} implements Kafka quotas, that is throttling for producers and consumers in Dedicated and Public environments. You are not recommended to remove quotas, although you can request to have them removed for your Dedicated environment.
 
 For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
 
