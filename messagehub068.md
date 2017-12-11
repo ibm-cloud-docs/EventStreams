@@ -44,12 +44,15 @@ privacy of your data:
 *  To access the {{site.data.keyword.messagehub}} dashboard, you must use a browser
    that supports TLS 1.2.
    
-## Encryption of message payloads
+## Encryption of message payloads, topic names, and consumer groups
 {: #encryption_payloads notoc}
 
 Message data is encrypted for transmission between {{site.data.keyword.messagehub}}
 and clients as a result of TLS. {{site.data.keyword.messagehub}} stores message data
 at rest and message logs on encrypted disks.
 
+Topic names and consumer groups are encrypted for transmission between 
+{{site.data.keyword.messagehub}} and clients as a result of TLS. However, 
+{{site.data.keyword.messagehub}} does not encrypt these values at rest.
 
 
