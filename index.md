@@ -12,7 +12,7 @@ lastupdated: "2017-09-26"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Getting started with Message Hub
+# Getting started with Message Hub tutorial
 {: #messagehub}
 
 {{site.data.keyword.messagehub_full}} is a scalable,
