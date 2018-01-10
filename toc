@@ -76,3 +76,7 @@ IBM Message Hub
 		messagehub059.md
 	{: .navgroup-end}
 
+	{: .navgroup id="Alpha users"}
+	index.md
+	{: .navgroup-end}
+
