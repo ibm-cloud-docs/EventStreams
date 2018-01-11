@@ -12,7 +12,7 @@ lastupdated: "2017-09-26"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Getting started with Message Hub tutorial
+# Getting started with Message Hub 
 {: #messagehub}
 
 {{site.data.keyword.messagehub_full}} is a scalable,
@@ -32,7 +32,9 @@ and start sending and receiving messages, you can use the Java™ sample. The sa
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
 
+<!-- 11/01/18 - Karen - removing diagram as requested by James
 ![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
+-->
 
 
 Complete the following steps:
