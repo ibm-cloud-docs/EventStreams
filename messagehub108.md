@@ -75,7 +75,7 @@ You can set a maximum of 2 insync replicas when producing messages.
 
 For example, if you create and delete 1 topic 10 times in a day, you are charged for a maximum of 1 topic. However, if you create 10 topics and delete them, you might be charged for either 0 or 10 topics depending when the sampling takes place.
 
-The maximum message size for {{site.data.keyword.messagehub}} is 1 MB, which is the Kafka default size. {{site.data.keyword.messagehub}} bills for each message or each 64k. A message up to 64 k counts as 1 billable message and messages larger than 64 k count for [_message_size_/ 64k] billable messages.
+The maximum message size for {{site.data.keyword.messagehub}} is 1 MB, which is the Kafka default size. {{site.data.keyword.messagehub}} bills either for each message or for each 64 k. A message up to 64 k counts as 1 billable message. Messages larger than 64 k count for _message_size_/ 64 k billable messages.
 
 
 
