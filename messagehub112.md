@@ -28,6 +28,8 @@ Each message is represented as a record which comprises two parts: key and value
 
 Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose. {{site.data.keyword.messagehub}} is currently based on Kafka 0.10.2.1, so it does not yet support record headers.
 
+You might find it useful to read this information in conjunction with [consuming messages](/docs/services/MessageHub/messagehub114.html) in {{site.data.keyword.messagehub}}.
+
 ## Configuration settings
 {: #config_settings notoc}
 

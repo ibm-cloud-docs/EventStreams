@@ -60,8 +60,8 @@ partitions.</li>
 
 To learn more, see the following information:
 - [Producing messages](/docs/services/MessageHub/messagehub112.html)
-- Consuming messages
--  [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
+- [Consuming messages](/docs/services/MessageHub/messagehub114.html) 
+- [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
 - [Message Hub Kafka Java&trade; API developerWorks&reg; article ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2016/03/03/message-hub-kafka-java-api/){:new_window}.
 
 
