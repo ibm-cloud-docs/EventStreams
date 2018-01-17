@@ -156,5 +156,5 @@ producer.send(new ProducerRecord<String,String>("T1","key","value", new Callback
 });
 ```
 
-For more information, see the [Javadoc for the Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/0102/javadoc/index.html){:new_window}, which is very comprehensive. 
+For more information, see the [Javadoc for the Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/0110/javadoc/index.html){:new_window}, which is very comprehensive. 
 
