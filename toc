@@ -7,6 +7,8 @@ IBM Message Hub
 
 	{: .navgroup id="learn"}
 	index.md
+	
+	{: .topicgroup}
 	messagehub010.md
 	 	messagehub107.md
 	 	messagehub073.md
@@ -79,6 +81,7 @@ IBM Message Hub
 	{: .navgroup-end}
 
 	{: .navgroup id="Alpha users"}
+	Alpha users
 	index.md
 	{: .navgroup-end}
 
