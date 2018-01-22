@@ -9,7 +9,8 @@ IBM Message Hub
 	index.md
 	
 	{: .topicgroup}
-	messagehub010.md
+	About Message Hub
+		messagehub010.md
 	 	messagehub107.md
 	 	messagehub073.md
 		messagehub112.md
