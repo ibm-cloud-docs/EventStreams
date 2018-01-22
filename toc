@@ -18,7 +18,6 @@ IBM Message Hub
 	 	messagehub106.md
 	 	messagehub070.md
 	 	messagehub085.md
-	{: .navgroup-end}
 
 	{: .topicgroup}
 	Related links
