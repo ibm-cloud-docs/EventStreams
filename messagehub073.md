@@ -20,7 +20,7 @@ and is designed to be fault-tolerant providing a high-throughput, low-latency pl
 real-time data feeds. These characteristics make it ideal for use in a cloud environment.
 {:shortdesc}
 
-![Kafka architecture diagram.](kafka_architecture.png "Diagram showing Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.") 
+![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.") 
 
 The following list defines some Apache Kafka concepts:
 
