@@ -78,7 +78,7 @@ the credentials using the Cloud Object Storage UI as follows:
    
    You can copy the resulting JSON from this new credential into the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console when you create a bridge. 
    
-   Alternatively, you can take the ```apikey``` and ```resource_instance_id``` fields and input them into the {{site.data.keyword.messagehub}} dashboard or set them in the create bridge JSON if you are creating the bridge directly using a REST call.
+   Alternatively, you can take the <code>apikey</code> and <code>resource_instance_id</code> fields and input them into the {{site.data.keyword.messagehub}} dashboard or set them in the create bridge JSON if you are creating the bridge directly using a REST call.
 
 The credential that you create grants writer access to the entire Cloud Object Storage instance,
 therefore you might want to restrict this access to the specific bucket that the bridge will interact with.
