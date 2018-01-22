@@ -136,7 +136,7 @@ Then use a KafkaProducer to send messages, where each message is represented by 
  producer.close();
  ```
  
-The send() method is asynchronous and returns a Future that you can use to check its completion:
+The `send()` method is asynchronous and returns a Future that you can use to check its completion:
 
 ```
  Future<RecordMetadata> f = producer.send(new ProducerRecord<String, String>("T1", "key", "value"));
