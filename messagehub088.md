@@ -54,4 +54,7 @@ secured using SSL/TLS.
 * The Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges concatenate messages using newline characters as separators as they write the data into Cloud Object Storage or {{site.data.keyword.objectstorageshort}} respectively. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
 * Object naming conventions that are currently used by the Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges might change in future.
 
+## Bridges from other services into {{site.data.keyword.messagehub}}
+* {{site.data.keyword.iot_short_notm}} provides its own bridge into {{site.data.keyword.messagehub}}.The bridge provides a unidirectional link into {{site.data.keyword.messagehub}} that allows you to store historical data.
+
 
