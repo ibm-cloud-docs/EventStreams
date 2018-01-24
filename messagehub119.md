@@ -16,9 +16,9 @@ lastupdated: "2018-01-24"
 # Watson IoT Platform bridge
 {: #consuming_messages }
 
-{{site.data.keyword.iot_full}} provides a managed bridge so that you can create a unidirectional link to {{site.data.keyword.messagehub_full}}.
+{{site.data.keyword.iot_full}} provides a managed bridge that allows you to create a unidirectional link to {{site.data.keyword.messagehub_full}}.
 
-Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}} allows you to use {{site.data.keyword.messagehub}} as an event pipeline to consume your device events from the {{site.data.keyword.iot_short_notm}} and to make the events available in real time to the rest of the platform. 
+Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}} means that you can use {{site.data.keyword.messagehub}} as an event pipeline to consume your device events from the {{site.data.keyword.iot_short_notm}} and to make the events available in real time to the rest of the platform. 
 
 A common pattern is to use the {{site.data.keyword.iot_short_notm}} bridge, {{site.data.keyword.messagehub}}, and the Cloud Object Storage bridge to create an end-to-end pipeline, which makes real-time and batch interactions easier.
 
