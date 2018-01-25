@@ -33,7 +33,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     ksql.sink.replications.default=3
     ```
     where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-	
+
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
 <pre class="pre">/bin/ksql-cli local 
