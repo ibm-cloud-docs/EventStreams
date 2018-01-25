@@ -57,6 +57,6 @@ secured using SSL/TLS.
 ## Bridges from other services into {{site.data.keyword.messagehub}}
 {: notoc}
 
-* {{site.data.keyword.iot_full}} provides its own bridge into {{site.data.keyword.messagehub}}. The bridge provides a unidirectional link into {{site.data.keyword.messagehub}} that allows you to store historical data. By connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}}, you can use Message Hub as an event pipeline to consume your device events from the Watson IoT Platform and make the events available in real time to the rest of the platform. 
+* {{site.data.keyword.iot_full}} provides its own [bridge into {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub119.html){:new_window}. The bridge provides a unidirectional link into {{site.data.keyword.messagehub}} that allows you to store historical data. By connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}}, you can use Message Hub as an event pipeline to consume your device events from the Watson IoT Platform and make the events available in real time to the rest of the platform. 
 
 
