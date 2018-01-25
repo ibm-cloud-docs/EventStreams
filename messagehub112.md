@@ -31,7 +31,7 @@ Many other messaging systems also have a way of carrying other information along
 You might find it useful to read this information in conjunction with [consuming messages](/docs/services/MessageHub/messagehub114.html) in {{site.data.keyword.messagehub}}.
 
 ## Configuration settings
-{: #config_settings notoc}
+{: #config_settings}
 
 There are many configuration settings for the producer. You can control aspects of the producer including batching, retries, and message acknowledgment. Here are the most important ones:
 
@@ -48,7 +48,7 @@ There are many configuration settings for the producer. You can control aspects 
 Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){:new_window} thoroughly before experimenting with them.
 
 ## Partitioning
-{: #partitioning notoc}
+{: #partitioning}
 
 When the producer publishes a message on a topic, the producer can choose which partition to use. If ordering is important, you must remember that a partition is an ordered sequence of records, but a topic comprises one or more partitions. If you want a set of messages to be delivered in order, ensure that they all go on the same partition. The most straightforward way to achieve this is to give all of those messages the same key. 
  
@@ -64,7 +64,7 @@ You can also write your own custom partitioner. A custom partitioner can choose 
 
 
 ## Message ordering
-{: #message_ordering notoc}
+{: #message_ordering}
 
 Kafka generally writes messages in the order that they are sent by the producer. However, there are situations where retries can cause messages to be duplicated or reordered. If you want a sequence of messages to be sent in order, it's very important to ensure that they are all written to the same partition.
  
@@ -75,7 +75,7 @@ For example, if you publish a sequence of three messages &lt;M1, M2, M3&gt; on a
 It's normal practice with Kafka to write the applications to handle occasional message duplicates because the performance impact of having only a single request in flight is significant.
 
 ## Message acknowledgments
-{: #message_acknowledgments notoc}
+{: #message_acknowledgments}
 
 When you publish a message, you can choose the level of acknowledgments required using the `acks` producer configuration. The choice represents a balance between throughput and reliability. There are three levels as follows:
 
@@ -93,7 +93,7 @@ Even if you do not wait for messages to be acknowledged to the producer, message
 If possible, avoid waiting for the acknowledgment of a message before publishing the next message. Waiting prevents the producer from being able to batch together messages and also reduces the rate that messages can be published to below the round-trip latency of the network.
 
 ## Batching, throttling, and compression
-{: #batching notoc}
+{: #batching}
 
 For efficiency purposes, the producer actually collects batches of records together for sending to the servers. If you enable compression, the producer compresses each batch, which can improve performance by requiring less data to be transferred over the network.
 
@@ -104,7 +104,7 @@ There is another factor that has an impact. To prevent individual producers or c
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 
 ## Code snippets
-{: #code_snippets notoc}
+{: #code_snippets}
 
 These code snippets are at a very high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in GitHub https://github.com/ibm-messaging/message-hub-samples.
 
