@@ -49,7 +49,6 @@ more topics and can optionally choose the partition that stores the data.<br/></
 <br/>
 <dt>Consumer group</dt>
 <dd>A named group of one or more consumers that together consume the messages from a set of topics. Each consumer in the group reads messages from specific partitions that it is assigned to. Each partition is assigned to one consumer in the group only.
-<p>Each partition is assigned to one consumer in the group only.</p> 
 <ul>
 <li>If there are more partitions than consumers in a group, some consumers have multiple
 partitions.</li>
