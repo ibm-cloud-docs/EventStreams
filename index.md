@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-09-26"
+  years: 2015, 2018
+lastupdated: "2018-01-22"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-09-26"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Getting started with Message Hub
+# Getting started with Message Hub 
 {: #messagehub}
 
 {{site.data.keyword.messagehub_full}} is a scalable,
@@ -32,7 +32,9 @@ and start sending and receiving messages, you can use the Java™ sample. The sa
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
 
+<!-- 11/01/18 - Karen - removing diagram as requested by James
 ![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
+-->
 
 
 Complete the following steps:
@@ -132,10 +134,10 @@ is some sample output:
 9. The sample runs indefinitely until you stop it. To stop the process, run a command like the
 following: <code>Ctrl+C</code>
 
-
-To find out more about running a {{site.data.keyword.messagehub}} sample using Python, see [Python console sample application ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2017/02/09/new-message-hub-sample-python-console-application/){:new_window}. You can also find samples
-that demonstrate other APIs and features at [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples){:new_window}.
-
 To watch a video that walks
 you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){:new_window}.
+
+To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples){:new_window}.
+
+
 

@@ -7,9 +7,15 @@ IBM Message Hub
 
 	{: .navgroup id="learn"}
 	index.md
-	messagehub010.md
+	
+	{: .topicgroup}
+	About Message Hub
+		messagehub010.md
 	 	messagehub107.md
 	 	messagehub073.md
+		messagehub112.md
+		messagehub114.md
+		messagehub118.md
 	 	messagehub106.md
 	 	messagehub070.md
 	 	messagehub085.md
@@ -33,6 +39,7 @@ IBM Message Hub
 	messagehub050.md
 		messagehub062.md
 		messagehub063.md
+		messagehub117.md
 		messagehub104.md
 		messagehub095.md
 		messagehub096.md
@@ -57,9 +64,13 @@ IBM Message Hub
 		messagehub092.md
 		messagehub093.md
 	messagehub088.md
-		messagehub089.md
 		messagehub105.md
+		messagehub115.md
+		messagehub089.md
+		messagehub119.md
+	messagehub113.md
 	messagehub111.md
+	messagehub116.md
 	messagehub110.md
 	{: .navgroup-end}
 
@@ -69,5 +80,10 @@ IBM Message Hub
 	ts_overview.md
 		messagehub057.md
 		messagehub059.md
+	{: .navgroup-end}
+
+	{: .navgroup id="Alpha users"}
+	Alpha users
+	index.md
 	{: .navgroup-end}
 

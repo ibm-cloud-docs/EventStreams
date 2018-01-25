@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-04-28"
+  years: 2015, 2018
+lastupdated: "2018-01-18"
 
 ---
 
@@ -34,21 +34,29 @@ You might find bridges useful in the following two common scenarios:
 ## {{site.data.keyword.messagehub}} bridges
 {: notoc}
 
-* We provide the following two types of bridge: 
-  - {{site.data.keyword.objectstorageshort}} bridge, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
-  - MQ bridge, which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
+* We provide the following types of bridge: 
+  - [MQ bridge](/docs/services/MessageHub/messagehub105.html){:new_window}, which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
+  - [Cloud Object Storage bridge](/docs/services/MessageHub/messagehub115.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window} service. 
+    
+    Cloud Object Storage service is the preferred object storage service in {{site.data.keyword.Bluemix_short}}. 
+  - [{{site.data.keyword.objectstorageshort}} bridge](/docs/services/MessageHub/messagehub089.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
 * You can administer bridges in the following two ways:
-  - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs){:new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also findexamples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
+  - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs){:new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also find examples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
   - Using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console.
 * You can associate a maximum of two bridges of any type with an instance of the {{site.data.keyword.messagehub}} service. We will continue to review this limitation as we continue to develop bridges.
 * There is no additional charge for using bridges beyond their messaging operations.
-* The {{site.data.keyword.objectstorageshort}} bridge concatenates messages using newline characters as separators as it writes the data into {{site.data.keyword.objectstorageshort}}. This makes it unsuitable for messages that contain embedded newline characters and for binary message data.
-* Object naming conventions that are currently used by the {{site.data.keyword.objectstorageshort}} bridge might change in future.
-* The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of dataas it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
-
-However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/secure_gateway.html){:new_window} service to send your data
+* The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of data as it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
+* However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/secure_gateway.html){:new_window} service to send your data
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
-and a {{site.data.keyword.SecureGateway}} client that you can
-install on-premises. In this configuration, the communication on either end of the tunnel is not
+and a {{site.data.keyword.SecureGateway}} client that you can install on-premises. In this configuration, the communication on either end of the tunnel is not
 secured using SSL/TLS.
+* The Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges concatenate messages using newline characters as separators as they write the data into Cloud Object Storage or {{site.data.keyword.objectstorageshort}} respectively. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
+* Object naming conventions that are currently used by the Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges might change in future.
+
+## Bridges from other services into {{site.data.keyword.messagehub}}
+{: notoc}
+
+* {{site.data.keyword.iot_full}} provides its own [bridge into {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub119.html){:new_window}. The bridge provides a unidirectional link into {{site.data.keyword.messagehub}} that allows you to store historical data. By connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}}, you can use Message Hub as an event pipeline to consume your device events from the Watson IoT Platform and make the events available in real time to the rest of the platform. 
+
+

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2017
-lastupdated: "2017-03-10"
+  years: 2015, 2018
+lastupdated: "2018-01-09"
 
 ---
 
@@ -13,12 +13,16 @@ lastupdated: "2017-03-10"
 {:pre: .pre}
 
 # Object Storage bridge 
+{: #object_storage_bridge }
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
 to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} [{{site.data.keyword.objectstorageshort}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}. The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a container in the
-{{site.data.keyword.objectstorageshort}} service. By configuring
-the {{site.data.keyword.objectstorageshort}} bridge, you can
+{{site.data.keyword.objectstorageshort}} service.
+
+Note that the preferred object storage service in {{site.data.keyword.Bluemix_short}} is now the [{{site.data.keyword.IBM_notm}} Cloud Object Storage service. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window}.
+
+By configuring the {{site.data.keyword.objectstorageshort}} bridge, you can
 control how the data is uploaded as objects to {{site.data.keyword.objectstorageshort}}. For example, the properties that
 you can configure are as follows:
 

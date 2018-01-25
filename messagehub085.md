@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2017
-lastupdated: "2017-02-08"
+lastupdated: "2017-12-04"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2017-02-08"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Differences between Message Hub in Bluemix Public and Bluemix Dedicated environments
+# Differences between Message Hub in {{site.data.keyword.Bluemix_notm}} Public and Dedicated environments
 {: #public_dedicated}
 
 {{site.data.keyword.Bluemix}} is an open-standards,
@@ -53,5 +53,13 @@ ensure the cluster doesn't run out of space.
 The Kibana and Grafana dashboards for monitoring the service are not supported in {{site.data.keyword.Bluemix_notm}} Dedicated.
 
 For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/cloud-computing/bluemix/dedicated/){:new_window}.
+
+
+### Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
+{: kafka_dedicated_quotas notoc}
+
+{{site.data.keyword.messagehub}} implements Kafka quotas, that is throttling for producers and consumers in Dedicated and Public environments. You are not recommended to remove quotas, although you can request to have them removed for your Dedicated environment.
+
+For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
 
 
