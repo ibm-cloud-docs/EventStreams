@@ -35,8 +35,8 @@ There are many configuration settings for the consumer, which control aspects of
 
 | Name     |Description   | Valid values   | Default   |
 |----------|---------|----------|---------|
-|key.serializer     | The class used to serialize keys. | Java class that implements Serializer interface, such as org.apache.kafka.common.serialization.StringSerializer  |No default - you must specify a value|
-|value.serializer     | The class used to serialize values. | Java class that implements Serializer interface, such as org.apache.kafka.common.serialization.StringSerializer  | No default - you must specify a value |
+|key.deserializer     | The class used to deserialize keys. | Java class that implements Deserializer interface, such as org.apache.kafka.common.serialization.StringDeserializer  |No default - you must specify a value|
+|value.deserializer     | The class used to deserialize values. | Java class that implements Deserializer interface, such as org.apache.kafka.common.serialization.StringDeserializer  | No default - you must specify a value |
 |group.id | An identifier for the consumer group that the consumer belongs to. | string |No default|
 |auto.offset.reset | The behavior when the consumer has no initial offset or the current offset is no longer available in the cluster. | latest, earliest, none | latest |
 |enable.auto.commit | Determines whether to commit the consumer's offset automatically in the background. | true, false | true |
