@@ -91,7 +91,7 @@ When a consumer starts and is assigned a partition to consume, it will start at 
 
 If a consumer fails after processing a message but before committing its offset, the committed offset information will not reflect the processing of the message. This means that the message will be processed again by the next consumer in that group to be assigned the partition.
 
-When committed offsets are next saved in Kafka and the consumers are restarted, consumers resume from the point they last stopped at. When there is a committed offset, the `auto.offset.reset` property is not used.
+When committed offsets are saved in Kafka and the consumers are restarted, consumers resume from the point they last stopped at. When there is a committed offset, the `auto.offset.reset` property is not used.
 
 ### Committing offsets automatically
 
@@ -144,11 +144,11 @@ Properties props = new Properties();
  props.put("ssl.endpoint.identification.algorithm", "HTTPS");
 ```
 
-To consume messages, you'll also need to specify serializers for the keys and values, for example:
+To consume messages, you'll also need to specify deserializers for the keys and values, for example:
 
 ```
- props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
- props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+ props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+ props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 ```
 
 Then, use a KafkaConsumer to consume messages, where each message is represented by a ConsumerRecord. The most common way to consume messages is to put the consumer in a consumer group by setting the group ID, and then call `subscribe()` for a list of topics. The consumer will be assigned some partitions to consume, although if there are more consumers in the group than partitions in the topic, the consumer might not be assigned any partitions. Next, call `poll()` in a loop, receiving a batch of messages to process, where each message is represented by a ConsumerRecord.
