@@ -21,7 +21,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
     For example:
     ```
-    bootstrap.servers=HOSTNAME:PORTNUMBER
+    bootstrap.servers=BOOTSTRAP_SERVERS
     application.id=ksql_server_quickstart
     ksql.command.topic.suffix=commands
     listeners=http://localhost:8080
@@ -32,11 +32,8 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
     ksql.sink.replications.default=3
     ```
-    Ensure that you edit the following lines to insert your own data:
-	- ```bootstrap.servers``` - insert all the Kafka hosts listed in the **Service Credentials** page.  To find this information, go to your
-	{{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the
-	**Credentials** that you want to use.
-	- ```sasl.jaas.config``` - insert your own username and password pair
+	where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
+	{{site.data.keyword.Bluemix_notm}}.
 	
 2. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called ```ksql__commands``` with a single partition and the default retention period.
 3. From a Docker terminal, start KSQL using the following command:
