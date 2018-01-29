@@ -67,9 +67,9 @@ Write your apps to handle the possibility that bridges might restart from time t
 {: #replication }
 
 {{site.data.keyword.messagehub}} is configured to provide strong availability and durability.
-The following configurations are set for all topics and cannot be changed:
-replication.factor = 3
-min.insync.replicas = 2
+The following configuration settings apply to all topics and cannot be changed:
+* replication.factor = 3
+* min.insync.replicas = 2
 
 ## How does {{site.data.keyword.messagehub}}'s billing work? 
 {: #billing }
