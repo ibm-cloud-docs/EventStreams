@@ -63,15 +63,13 @@ Write your apps to handle the possibility that bridges might restart from time t
 
 {{site.data.keyword.messagehub}}'s maximum message size is 1 MB, which is the Kafka default. 
 
-## What is {{site.data.keyword.messagehub}}'s replication factor? 
+## What are {{site.data.keyword.messagehub}}'s replication settings? 
 {: #replication }
 
-The replication factor is 3 and replication has no impact on cost. 
-
-## How many insync replicas are supported? 
-{: #replicas }
-
-You can set a maximum of 2 insync replicas when producing messages.
+{{site.data.keyword.messagehub}} is configured to provide strong availability and durability.
+The following configurations are set for all topics and cannot be changed:
+replication.factor = 3
+min.insync.replicas = 2
 
 ## How does {{site.data.keyword.messagehub}}'s billing work? 
 {: #billing }
