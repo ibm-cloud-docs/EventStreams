@@ -195,7 +195,7 @@ finally {
 
 # Exception handling
 
-Any robust application that uses the Kafka client needs to handle exceptions for certain expected situations. In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results using a `Future` or a callback. You can find example code in GitHub https://github.com/ibm-messaging/message-hub-samples which shows complete examples.
+Any robust application that uses the Kafka client needs to handle exceptions for certain expected situations. In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results using a `Future` or a callback. You can find example code in [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples) which shows complete examples.
 
 Here's a list of exceptions that you should handle in your code:
 
