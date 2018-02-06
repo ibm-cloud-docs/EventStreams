@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-09-26"
+lastupdated: "2018-02-06"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-09-26"
 # Using KSQL with Message Hub
 {: #ksql_using}
 
-You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use KSQL 0.4. 
+You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use KSQL 0.4, or later. 
 
 Complete the following steps:
 
