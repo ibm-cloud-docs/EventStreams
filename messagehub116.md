@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-08"
+lastupdated: "2018-02-12
 
 ---
 
@@ -88,7 +88,7 @@ After you've created the properties file as described previously, you can run th
 
 <pre>
 <code>
-  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list --describe
+  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
 </code>
 </pre>
 {:codeblock}
