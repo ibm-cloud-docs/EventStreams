@@ -111,7 +111,7 @@ The consumer lag for a partition is the difference between the offset of the mos
 
 If you observe that a consumer is processing messages successfully but occasionally appears to jump over a group of messages, it could be a sign that the consumer is not able to keep up. For topics that are not using log compaction, the amount of log space is managed by periodically deleting old log segments. If a consumer has fallen so far behind that it is consuming messages in a log segment that is deleted, it will suddenly jump forwards to the start of the next log segment. If it is important that the consumer processes all of the messages, this behavior indicates message loss from the point of view of this consumer.
 
-You can use the ```kafka-consumer-groups``` tool to see the consumer lag. You can also use the consumer API and the consumer metrics for the same purpose.
+You can use the <code>kafka-consumer-groups</code> tool to see the consumer lag. You can also use the consumer API and the consumer metrics for the same purpose.
 
 
 ## Controlling the speed of message consumption
@@ -200,7 +200,7 @@ Any robust application that uses the Kafka client needs to handle exceptions for
 Here's a list of exceptions that you should handle in your code:
 
 #### org.apache.kafka.common.errors.WakeupException
-Thrown by `Consumer.poll(...)` as a result of `Consumer.wakeup()` being called. This is the normal way to interrupt the consumer's polling loop. The polling loop should exit and `Consumer.close()` should be called to disconnect cleanly.
+Thrown by `Consumer.poll(...)` as a result of `Consumer.wakeup()` being called. This is the standard way to interrupt the consumer's polling loop. The polling loop should exit and `Consumer.close()` should be called to disconnect cleanly.
 #### org.apache.kafka.common.errors.NotLeaderForPartitionException
 Thrown as a result of `Producer.send(...)` when the leadership for a partition changes. The client automatically refreshes its metadata to find the up-to-date leader information. Retry the operation, which should succeed with the updated metadata.
 #### org.apache.kafka.common.errors.CommitFailedException
