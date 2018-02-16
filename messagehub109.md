@@ -35,7 +35,7 @@ You can find this ID by looking at the "instance_id" field in the service's VCAP
 10. What impact is the problem having on your service?
 
 
-You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.ng.bluemix.net/docs/support/index.html#open-ticket).
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support/howtogetsupport.html#open-ticket).
 
 
 
