@@ -25,27 +25,26 @@ Life of a user through cycle - APIs, feature sets
 # Alpha users
 {: #alpha_users }
 
-Use  the following information to get your application running with the Message Hub Alpha program
+Use  the following information to get your app running with the Message Hub Alpha program:
 
-------------------------------------------
+
 ## Getting started with the Alpha program
 {: alpha_getting_started}
 
-1. Navigate to the Message Hub catalog tile.
+1. Navigate to the experimental service Message Hub vNext tile in the catalog. https://console.stage1.bluemix.net/catalog/labs/?search=vnext
 
-2. Select Premium plan from the dropdown list. This plan is available to paid accounts only.
+2. Select the Premium pricing plan from the dropdown list. This plan is available to paid accounts only.
 
 3. Create the service for a single-tenant Message Hub cluster.
 
 The maximum cluster size and storage allocation is ...
 
-The cluster is provisioned with a single Kafka version, a fixed number of nodes, storage, maximum retention period, which you cannot change.
+The cluster is provisioned with a single Kafka version, a fixed number of nodes, storage, and maximum retention period, which you cannot change.
 
 Available in US-South only.
 
 ## Pricing plans
 {: pricing_plans}
-
 
 * No Lite plan
 
@@ -85,7 +84,7 @@ I want to consume Message Hub. Consuming a multi-tenant service with some perfor
 I want to consume Message Hub. I have performance and other functional requirements that go beyond the public service. I am happy to pay a premium for a single-tenant version of the service on shared network and shared compute.
 
 ### Message Hub Premium++
-I want to consume Message Hub. I require more isolation than the Message Hub Premium plan. I would like an isolated network and isolated compute by having the service deployed within my Bluemix Dedicated.next VPC.
+I want to consume Message Hub. I require more isolation than the Message Hub Premium plan. I would like an isolated network and isolated compute by having the service deployed within my IBM Cloud Dedicated.next VPC.
 
 
 ## Security
@@ -100,9 +99,6 @@ TLS certificate shared across a region.
 SNI support required.
 
 
-
-
-
 ## Availability zones
 {: availability_zones}
 
@@ -115,8 +111,6 @@ For Alpha, initially available in US-South only
 ## Catalog and tiles
 From the catalog page, select either single tenant or multi tenant Message Hub tile.
 
-Dallas only at first.
-
 
 ## Compatibility
 
@@ -127,7 +121,13 @@ Dallas only at first.
 New and existing applications can connect to both a multi-tenant and single-tenant resource. 
 
 
-## Kafka client support
+## Kafka
+
+Message Hub is based on Kafka 1.0
+
+No quotas enforced
+
+No multitenancy (contradicts info about "select either single tenant or multi tenant Message Hub tile.")
 
 The following Kafka client versions are supported:
 
@@ -135,11 +135,7 @@ The following Kafka client versions are supported:
 * 0.11
 * 0.10 
 
-0.9 is not supported
-
-## Samples
-
-Samples are different during the Alpha program, compared to the existing ones. You can find samples for the Alpha: ...
+0.9 clients are not supported.
 
 
 ## Administering Message Hub
@@ -150,48 +146,39 @@ Samples are different during the Alpha program, compared to the existing ones. Y
 
 * You cannot change your configuration or view the current configuration.
 
-* No metrics, logs, or usage information available.
+* No metrics, logs, or usage information are available.
 
 
 ### Administering Message Hub using the REST interface
 
-You can create, list, and delete topics.
-V1 is backwards compatible with existing Kafka REST admin
-V2 will allow cluster administration and options in future, but currently just topics
+* You can create, list, and delete topics.
+* V1 is backwards compatible with existing Kafka REST admin
+* V2 will allow cluster administration and options in future, but currently allows topics only.
 
 Uses TLS 1.2
 
 No authorization at topic level
 
-## Kafka
 
-Message Hub is based on Kafka 1.0
+## Samples
 
-No quotas enforced
-
-No multitenancy (contradicts info about "select either single tenant or multi tenant Message Hub tile.")
-
-
-
+Samples are different during the Alpha program, compared to the existing ones. You can find samples for the Alpha: ...
 
 
 ## Apps that use VCAP services
 
 If you have an existing app that uses VCAP services, you  must make the following code change to ensure it keeps working ...
 
-## Migration
-
-
-## Coexistence
+## Migration and coexistence
 
 
 ## Alpha limitations
 
 The current limitations of this Alpha program are as follows:
 
-- No options, clusters provisioned with a single kafka version, fixed number of nodes, storage, max retention period etc
+- No options: clusters are provisioned with a single Kafka version, with a fixed number of nodes, storage, and maximum retention period.
 
-- No authorization just authentication, that is user will not be able to apply fine-grained authorisation on topics.
+- No authorization just authentication, that is, you cannot apply fine-grained authorization on topics.
 
 - No CLI
 
@@ -207,7 +194,7 @@ The current limitations of this Alpha program are as follows:
 
 - No bridges
 
-- No Activity Tracker (AccessTrail) - Investigate integration
+- No Activity Tracker (previously AccessTrail) - Investigate integration
 
 - No VPC
 
