@@ -31,9 +31,9 @@ Use  the following information to get your app running with the Message Hub Alph
 ## Getting started with the Alpha program
 {: alpha_getting_started}
 
-1. Navigate to the experimental service Message Hub vNext tile in the catalog. https://console.stage1.bluemix.net/catalog/labs/?search=vnext
+1. Navigate to the *Message Hub vNext* tile, which is an experimental service in the catalog: https://console.stage1.bluemix.net/catalog/labs/?search=vnext
 
-2. Select the Premium pricing plan from the dropdown list. This plan is available to paid accounts only.
+2. Select the ```Premium``` pricing plan from the dropdown list. 
 
 3. Create the service for a single-tenant Message Hub cluster.
 
@@ -41,25 +41,21 @@ The maximum cluster size and storage allocation is ...
 
 The cluster is provisioned with a single Kafka version, a fixed number of nodes, storage, and maximum retention period, which you cannot change.
 
-Available in US-South only.
+The Alpha is available in US-South only.
 
-I have performance and other functional requirements that go beyond the public service. I am happy to pay a premium for a single-tenant version of the service on shared network and shared compute.
 
-## Pricing plans
-{: pricing_plans}
 
-* No Lite plan
+## Single tenant Premium plan
+{: premium_plan}
 
-* No Standard plan
+The premium plan is designed for users who have performance and other functional requirements that go beyond the public service. The premium plan provides a paid-for a single-tenant version of the service on shared network and shared compute.
+
+For the Alpha, there is no Lite or Standard plan.
 	
 For more information about account types, see https://console.bluemix.net/docs/account/index.html#liteaccount
-	
-	
-## Tenants
 
-### Single tenant (Premium plan)
 
- - you can define the number of partitions and storage (within maximum storage allocated to the cluster)
+You can define the number of partitions and storage (within maximum storage allocated to the cluster)
 
 No quotas or throttling.
 
@@ -81,13 +77,11 @@ Use REST admin interface to create, list, and delete topics
 ## Security
 {: security}
 
-IAM  service key and SASL are used as the authentication method to access Message Hub resources
+IAM  service key and SASL are used as the authentication method to access Message Hub resources.
 
-New and existing applications can connect to both a multi tenant & single tenant resource 
+New and existing applications can connect to both a multi-tenant and single-tenant resource 
 
-TLS certificate shared across a region.
-
-SNI support required.
+A TLS certificate is shared across a region and SNI support is required.
 
 
 ## Availability zones
@@ -95,40 +89,8 @@ SNI support required.
 
 For Alpha, available in US-South only.
 
-3 availability zones are used
-(A location within a region that IBM Containers runs in.)
-
-
-## Catalog and tiles
-From the catalog page, select either single tenant or multi tenant Message Hub tile.
 
 ## Resource controller management
-
-## Compatibility
-
-* UI
-
-* REST APIs
-
-New and existing applications can connect to both a multi-tenant and single-tenant resource. 
-
-
-## Kafka
-
-Message Hub is based on Kafka 1.0
-
-No quotas enforced
-
-No multitenancy (contradicts info about "select either single tenant or multi tenant Message Hub tile.")
-
-The following Kafka client versions are supported:
-
-* 1.0
-* 0.11
-* 0.10 
-
-0.9 clients are not supported.
-
 
 ## Administering Message Hub
 
@@ -156,12 +118,39 @@ No authorization at topic level
 
 Samples are different during the Alpha program, compared to the existing ones. You can find samples for the Alpha: ...
 
+## Compatibility
 
-## Apps that use VCAP services
+* UI
 
-If you have an existing app that uses VCAP services, you  must make the following code change to ensure it keeps working ...
+* REST APIs
+
+New and existing applications can connect to both a multi-tenant and single-tenant resource. 
+
+
+## Kafka
+
+Message Hub is based on Kafka 1.0
+
+No quotas enforced
+
+No multitenancy (contradicts info about "select either single tenant or multi tenant Message Hub tile.")
+
+The following Kafka client versions are supported:
+
+* 1.0
+* 0.11
+* 0.10 
+
+0.9 clients are not supported.
+
+
 
 ## Migration and coexistence
+
+### Apps that use VCAP services
+{: notoc}
+
+If you have an existing app that uses VCAP services, you  must make the following code change to ensure it keeps working ...
 
 
 ## Alpha limitations
@@ -185,8 +174,8 @@ The current limitations of this Alpha program are as follows:
 - No MQ Light API
 
 - No bridges
-
-- No Activity Tracker (previously AccessTrail) - Investigate integration
+-
+- No integration with the Activity Tracker service (previously known as AccessTrail)  cloudaccesstraillong:
 
 - No VPC
 
