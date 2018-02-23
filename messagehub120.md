@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-21"
+lastupdated: "2018-02-22"
 
 ---
 
@@ -43,6 +43,8 @@ The cluster is provisioned with a single Kafka version, a fixed number of nodes,
 
 Available in US-South only.
 
+I have performance and other functional requirements that go beyond the public service. I am happy to pay a premium for a single-tenant version of the service on shared network and shared compute.
+
 ## Pricing plans
 {: pricing_plans}
 
@@ -75,17 +77,6 @@ Use REST admin interface to create, list, and delete topics
 |Plan   |Lite, Standard   |Premium   |Premium++   |Premium++   |
 |Pricing   |Based on usage   |Subscription   |Subscription   |Subscription   |
 
-## Which plan is best for me?
-
-### Message Hub Public
-I want to consume Message Hub. Consuming a multi-tenant service with some performance limitations is not an issue for me.
-
-### Message Hub Premium
-I want to consume Message Hub. I have performance and other functional requirements that go beyond the public service. I am happy to pay a premium for a single-tenant version of the service on shared network and shared compute.
-
-### Message Hub Premium++
-I want to consume Message Hub. I require more isolation than the Message Hub Premium plan. I would like an isolated network and isolated compute by having the service deployed within my IBM Cloud Dedicated.next VPC.
-
 
 ## Security
 {: security}
@@ -102,7 +93,7 @@ SNI support required.
 ## Availability zones
 {: availability_zones}
 
-For Alpha, initially available in US-South only
+For Alpha, available in US-South only.
 
 3 availability zones are used
 (A location within a region that IBM Containers runs in.)
@@ -111,6 +102,7 @@ For Alpha, initially available in US-South only
 ## Catalog and tiles
 From the catalog page, select either single tenant or multi tenant Message Hub tile.
 
+## Resource controller management
 
 ## Compatibility
 
