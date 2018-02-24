@@ -31,7 +31,7 @@ Use  the following information to get your app running with the Message Hub Alph
 ## Getting started with the Alpha program
 {: alpha_getting_started}
 
-1. Navigate to the *Message Hub vNext* tile, which is an experimental service in the catalog: https://console.stage1.bluemix.net/catalog/labs/?search=vnext
+1. Navigate to the *Message Hub vNext - Integration* tile, which is an experimental service in the catalog: https://console.stage1.bluemix.net/catalog/labs/?search=vnext
 
 2. Select the ```Premium``` pricing plan from the dropdown list. 
 
@@ -48,49 +48,35 @@ The Alpha is available in US-South only.
 ## Single tenant Premium plan
 {: premium_plan}
 
-The premium plan is designed for users who have performance and other functional requirements that go beyond the public service. The premium plan provides a paid-for a single-tenant version of the service on shared network and shared compute.
+The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. The Premium plan provides a single-tenant version of the service on shared network and shared compute.
 
 For the Alpha, there is no Lite or Standard plan.
 	
-For more information about account types, see https://console.bluemix.net/docs/account/index.html#liteaccount
+* You can define the number of partitions and storage (within the maximum storage allocated to the cluster)
 
+* No quotas or throttling.
 
-You can define the number of partitions and storage (within maximum storage allocated to the cluster)
+* You can use Kafka clients from 0.10 and later and it supports Kafka Streams and KSQL.
 
-No quotas or throttling.
-
-Kafka clients from 0.10 and later
-
-Supports Kafka Streams, Kafka Connect, and KSQL.
-
-Use REST admin interface to create, list, and delete topics
-
-
-
-|   |Public   |Public   |Public   |Dedicated   |
-|---|---|---|---|---|
-|Cluster tenancy   |Multi tenant   |Single tenant   |Single tenant   |Single tenant   |
-|Plan   |Lite, Standard   |Premium   |Premium++   |Premium++   |
-|Pricing   |Based on usage   |Subscription   |Subscription   |Subscription   |
+* You can use the Kafka REST admin interface to create, list, and delete topics.
 
 
 ## Security
 {: security}
 
-IAM  service key and SASL are used as the authentication method to access Message Hub resources.
+The authentication method used to access Message Hub resources is IAM service key and SASL. A TLS certificate is shared across a region and SNI support is required.
 
-New and existing applications can connect to both a multi-tenant and single-tenant resource 
+You can connect new and existing applications to both a multi-tenant and single-tenant resources.
 
-A TLS certificate is shared across a region and SNI support is required.
+## Resource controller management
 
+TBD
 
 ## Availability zones
 {: availability_zones}
 
-For Alpha, available in US-South only.
+The Alpha is available in US-South only.
 
-
-## Resource controller management
 
 ## Administering Message Hub
 
@@ -103,20 +89,18 @@ For Alpha, available in US-South only.
 * No metrics, logs, or usage information are available.
 
 
-### Administering Message Hub using the REST interface
+### Administering Message Hub using the Kafka REST interface
 
 * You can create, list, and delete topics.
 * V1 is backwards compatible with existing Kafka REST admin
 * V2 will allow cluster administration and options in future, but currently allows topics only.
 
-Uses TLS 1.2
-
-No authorization at topic level
+This interface uses TLS 1.2 and there is no authorization at topic level.
 
 
 ## Samples
 
-Samples are different during the Alpha program, compared to the existing ones. You can find samples for the Alpha: ...
+Samples are specific to the Alpha program. You can find samples for the Alpha: ...
 
 ## Compatibility
 
@@ -127,13 +111,13 @@ Samples are different during the Alpha program, compared to the existing ones. Y
 New and existing applications can connect to both a multi-tenant and single-tenant resource. 
 
 
-## Kafka
+## Kafka information
 
-Message Hub is based on Kafka 1.0
+Message Hub is based on Kafka 1.0.
 
-No quotas enforced
+* No quotas are enforced.
 
-No multitenancy (contradicts info about "select either single tenant or multi tenant Message Hub tile.")
+* No multitenancy 
 
 The following Kafka client versions are supported:
 
@@ -157,7 +141,7 @@ If you have an existing app that uses VCAP services, you  must make the followin
 
 The current limitations of this Alpha program are as follows:
 
-- No options: clusters are provisioned with a single Kafka version, with a fixed number of nodes, storage, and maximum retention period.
+- No options: clusters are provisioned with a single Kafka version, with a fixed number of nodes, storage, and a maximum retention period.
 
 - No authorization just authentication, that is, you cannot apply fine-grained authorization on topics.
 
@@ -165,7 +149,7 @@ The current limitations of this Alpha program are as follows:
 
 - No user-controlled scaling
 
-- No config personalization
+- No configuration personalization
 
 - No Kafka REST 1.0
 
@@ -180,6 +164,8 @@ The current limitations of this Alpha program are as follows:
 - No VPC
 
 - No BYOK
+
+- No Kafka Connect
 
 
 
