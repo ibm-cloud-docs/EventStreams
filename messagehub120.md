@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-24"
+lastupdated: "2018-02-25"
 
 ---
 
@@ -107,7 +107,7 @@ You can connect new and existing applications to a single-tenant resource.
 
 Message Hub in Alpha is based on Kafka 1.0.
 
-* No quotas are enforced.
+* No quotas are enforced
 
 * No multitenancy 
 
