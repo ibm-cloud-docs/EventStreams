@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-25"
+lastupdated: "2018-02-26"
 
 ---
 
@@ -25,16 +25,50 @@ Life of a user through cycle - APIs, feature sets
 # Alpha users
 {: #alpha_users }
 
-Use  the following information to get your app running with the Message Hub Alpha program:
+The {{site.data.keyword.messagehub}} Alpha program provides early access to the next version of the service. 
+
+Use  the following information to get your app running with the {{site.data.keyword.messagehub}} Alpha program:
 
 
-## Getting started with the Alpha program
-{: alpha_getting_started}
+## Create the Message Hub service
+{: alpha_create}
 
-1. Click the **Message Hub vNext - Integration** tile, which is an experimental service in the catalog: https://console.stage1.bluemix.net/catalog/labs/?search=vnext
+1. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
+[catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/labs/?search=vnext).
 
-2. Create the service for a single-tenant Message Hub cluster that is provided by the ```Premium``` pricing plan. 
+2. Create the service for a single-tenant Message Hub cluster that is provided by the ```Premium``` pricing plan. The service will typically take 1-3 hours to provision.
 
+3. From the Dasboard, click **Create resource** (to start creating new app in SDK)
+
+3. Double-click on your newly created service and click on **Connections** tab on the left.
+
+4. Click **Create connection** button.
+
+
+
+## Create and connect a test app
+
+1. Create a test app. For example, using the **SDK for Node.js** service. 
+
+    Ensure that you select a region of US South when you create.
+
+2. When the app is running, click the **Connections** tab on the left.
+
+3. Click **Create connection** button.
+
+4. Select your new Message Hub service from the list of existing compatible services and click the **Connect** button.
+
+5. Leave the defaults as is and click **Connect**
+Ensure your Message Hub service is provisioned or this will not work.
+
+6. Go the the **Runtime** tab on the left and then select the **Environment variables** in the center. From the VCAP_SERVICES section, locate the kafka_admin_url line and api key.
+
+7. From a CURL window, create a topic
+```
+curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: ${APIKEY}" --data '{ "name": "newtop:"}' ${ADMINURL}/admin/topics
+```  
+
+## About your Alpha cluster
 
 The maximum cluster size and storage allocation created is ...
 
@@ -53,7 +87,7 @@ The Premium plan is designed for users who have performance and other functional
 	
 * You can define the number of partitions and storage (within the maximum storage allocated to the cluster).
 
-* No quotas or throttling.
+* There are no quotas or throttling.
 
 * You can use Kafka clients from 0.10 and later and it supports Kafka Streams and KSQL.
 
