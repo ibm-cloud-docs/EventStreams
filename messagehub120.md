@@ -27,10 +27,10 @@ Life of a user through cycle - APIs, feature sets
 
 The {{site.data.keyword.messagehub}} Alpha program provides early access to the next version of the service. 
 
-Use  the following information to get your app running with the {{site.data.keyword.messagehub}} Alpha program:
+Use  the following information to get an app running with the {{site.data.keyword.messagehub}} Alpha program:
 
 
-## Create the Message Hub service
+## 1. Create the Message Hub service
 {: alpha_create}
 
 1. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
@@ -38,7 +38,7 @@ Use  the following information to get your app running with the {{site.data.keyw
 
 2. Create the service for a single-tenant Message Hub cluster that is provided by the ```Premium``` pricing plan. The service will typically take 1-3 hours to provision.
 
-3. From the Dasboard, click **Create resource** (to start creating new app in SDK)
+3. From the Dashboard, click **Create resource** (to start creating new app in SDK)
 
 3. Double-click on your newly created service and click on **Connections** tab on the left.
 
@@ -46,11 +46,16 @@ Use  the following information to get your app running with the {{site.data.keyw
 
 
 
-## Create and connect a test app
+## 2. Create and connect a test app
 
-1. Create a test app. For example, using the **SDK for Node.js** service. 
+If you don't already have an app you can use, you can create a test app. For example, using the **SDK for Node.js** service. 
 
-    Ensure that you select a region of US South when you create.
+1. Navigate to the **SDK for Node.js** tile in the catalog. https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs
+
+[catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs)
+    
+
+2. Create the service. Ensure that you select a region of US South. 
 
 2. When the app is running, click the **Connections** tab on the left.
 
@@ -58,10 +63,10 @@ Use  the following information to get your app running with the {{site.data.keyw
 
 4. Select your new Message Hub service from the list of existing compatible services and click the **Connect** button.
 
-5. Leave the defaults as is and click **Connect**
+5. On the **Connect IAM-Enabled Service** panel, accept the defaults and click **Connect**
 Ensure your Message Hub service is provisioned or this will not work.
 
-6. Go the the **Runtime** tab on the left and then select the **Environment variables** in the center. From the VCAP_SERVICES section, locate the kafka_admin_url line and api key.
+6. Go the the **Runtime** tab on the left and then select the **Environment variables** tab in the center. From the VCAP_SERVICES section, locate the kafka_admin_url and api key information.
 
 7. From a CURL window, create a topic
 ```
@@ -184,7 +189,8 @@ The current limitations of this Alpha program are as follows:
 
 - No bridges
 
-- No integration with the Activity Tracker service (previously known as AccessTrail)  
+- No integration with the Activity Tracker service (previously known as AccessTrail) 
+{{site.data.keyword.cloudaccesstrailfull_notm}}
 
 - No VPC
 
