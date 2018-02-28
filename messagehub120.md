@@ -23,14 +23,14 @@ Life of a user through cycle - APIs, feature sets
 -->
 
 # Getting started with the Alpha program
-{: #alpha_program }
+{: #alpha_program}
 
 The Alpha program provides early access to the next version of the {{site.data.keyword.messagehub}} service. 
 
 Use the following information to get an app running with the {{site.data.keyword.messagehub}} Alpha:
 
 
-## 1. Create the Message Hub service
+## Create the Message Hub service
 {: alpha_create}
 
   a. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
@@ -39,7 +39,7 @@ Use the following information to get an app running with the {{site.data.keyword
   b. Create a Message Hub service. This service provides a single-tenant cluster under by the ```Premium``` pricing plan and typically takes 1-3 hours to provision.
 
 
-## 2. Create and connect a test app
+## Create and connect a test app
 
 If you don't already have an app you can use, create a test app. For example, using the **SDK for Node.js** service. 
 
@@ -59,7 +59,7 @@ Ensure your Message Hub service is provisioned so you can connect to it.
 g. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.
 
 
-## 3. Create a Message Hub topic and send messages
+## Create a Message Hub topic and send messages
 
 You can use CURL commands to create a topic and then produce and consume a message. For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_SERVICES environment variable.
 
