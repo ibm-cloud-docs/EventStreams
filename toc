@@ -74,6 +74,7 @@ IBM Message Hub
 	messagehub110.md
 	messagehub120.md
 		messagehub122.md
+	
 	{: .topicgroup}
 	{: .navgroup-end}
 

@@ -36,7 +36,7 @@ The cluster is provisioned with a single Kafka version, a fixed number of nodes,
 The Alpha program is available in the US-South region only.
 
 
-## Single tenant Premium plan for the Alpha
+## Single-tenant Premium plan
 {: premium_plan}
 
 The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. The Premium plan provides a single-tenant version of the service on a shared network and shared compute.
