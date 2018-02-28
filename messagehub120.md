@@ -23,7 +23,7 @@ Life of a user through cycle - APIs, feature sets
 -->
 
 # Getting started with the Alpha program
-{: #alpha_program}
+{: #alpha_program notoc}
 
 The Alpha program provides early access to the next version of the {{site.data.keyword.messagehub}} service. 
 
@@ -31,7 +31,7 @@ Use the following information to get an app running with the {{site.data.keyword
 
 
 ## Create the Message Hub service
-{: alpha_create}
+{: alpha_create notoc}
 
 <ol type="a">
   <li>Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
@@ -75,7 +75,6 @@ curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: <var class
 </code></pre>
 {: codeblock}
 </li>
-
 <li>To produce a message, use the following CURL command:
 
 <pre class="pre"><code>
@@ -93,7 +92,6 @@ curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Con
 </code></pre>
 {: codeblock}
 </li>
-
 <li>To consume the message, use the following CURL command: 
 
 <pre class="pre"><code>
@@ -101,8 +99,9 @@ curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Acce
 </code></pre>
 {: codeblock}
 </li>
-
 </ol>
+
+
 
 
 
