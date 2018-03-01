@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-01"
+lastupdated: "2018-03-01-a"
 
 ---
 
@@ -56,42 +56,37 @@ If you don't already have an app you can use, create a test app. For example, us
 
 You can use CURL commands to create a topic and then produce and consume a message. For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_SERVICES environment variable.
 
-<ol>
-<li>From the command line, create a {{site.data.keyword.messagehub}} topic using the following CURL command:
+1. From the command line, create a {{site.data.keyword.messagehub}} topic using the following CURL command:
 
-<pre class="pre"><code>
-curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: <var class="keyword varname">APIKEY</var>" --data '{ "name": "newtop:"}' <var class="keyword varname">KAFKA_ADMIN_URL</var>/admin/topics
-</code></pre>
+    <pre class="pre"><code>
+    curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: <var class="keyword varname">APIKEY</var>" --data '{ "name": "newtop:"}' <var class="keyword varname">KAFKA_ADMIN_URL</var>/admin/topics
+    </code></pre>
 {: codeblock}
-</li>
 
+2. To produce a message, use the following CURL command:
 
-<li>To produce a message, use the following CURL command:
+    <pre class="pre"><code>
+    curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Content-Type: application/vnd.kafka.binary.v1+json" <var class="keyword varname">KAFKA_ADMIN_URL</var>/topics/<var class="keyword varname">topic name</var> -d 
 
-<pre class="pre"><code>
-curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Content-Type: application/vnd.kafka.binary.v1+json" <var class="keyword varname">KAFKA_ADMIN_URL</var>/topics/<var class="keyword varname">topic name</var> -d 
-
-'
-{
-  "records": [
+    '
     {
-      "value": "<var class="keyword varname">A base 64 encoded value string</var>"
+      "records": [
+        {
+          "value": "<var class="keyword varname">A base 64 encoded value string</var>"
+        }
+      ]
     }
-  ]
-}
-'
-</code></pre>
+    '
+    </code></pre>
 {: codeblock}
-</li>
-<li>To consume the message, use the following CURL command: 
 
-<pre class="pre"><code>
-curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Accept: application/vnd.kafka.binary.v1+json" <var class="keyword varname">KAFKA_ADMIN_URL</var>/topics/<var class="keyword varname">topic name</var>/partitions/<var class="keyword varname">partition ID</var>/messages?offset=<var class="keyword varname">offset to start from</var>
-</code></pre>
+3. To consume the message, use the following CURL command: 
+
+    <pre class="pre"><code>
+    curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Accept: application/vnd.kafka.binary.v1+json" <var class="keyword varname">KAFKA_ADMIN_URL</var>/topics/<var class="keyword varname">topic name</var>/partitions/<var class="keyword varname">partition ID</var>/messages?offset=<var class="keyword varname">offset to start from</var>
+    </code></pre>
 {: codeblock}
-</li>
 
-</ol>
 
 
 
