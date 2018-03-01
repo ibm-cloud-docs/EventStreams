@@ -33,41 +33,39 @@ Use the following information to get an app running with the {{site.data.keyword
 ## Create the Message Hub service
 {: alpha_create notoc}
 
-<ol type="a">
-  <li>Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
+
+  1. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
 [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/labs/?search=vnext).</li>
 
-  <li>Create a Message Hub service. This service provides a single-tenant cluster under by the ```Premium``` pricing plan and typically takes 1-3 hours to provision.</li>
-</ol>  
+  2. Create a Message Hub service. This service provides a single-tenant cluster under by the ```Premium``` pricing plan and typically takes 1-3 hours to provision.
+ 
 
 
 ## Create and connect a test app
 
 If you don't already have an app you can use, create a test app. For example, using the **SDK for Node.js** service. 
 
-<ol type="a">
-<li>Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs).</li>
+  1. Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs).
    
-<li>Before you enter an app name, ensure that you select a region of US South. Create the app.</li>
+  Before you enter an app name, ensure that you select a region of US South. Create the app.
 
-<li>When the app is running, click the **Connections** tab on the left.</li>
+  2. When the app is running, click the **Connections** tab on the left.
 
-<li>Click **Create connection** button.</li>
+  3. Click **Create connection** button.
 
-<li>Select your new {{site.data.keyword.messagehub}} service from the list of existing compatible services and click the **Connect** button.</li>
+  4. Select your new {{site.data.keyword.messagehub}} service from the list of existing compatible services and click the **Connect** button.
 
-<li>In the **Connect IAM-Enabled Service** window, accept the defaults and click **Connect**
-Ensure your {{site.data.keyword.messagehub}} service is provisioned so you can connect to it.</li>
+  5. In the **Connect IAM-Enabled Service** window, accept the defaults and click **Connect**
+     Ensure your {{site.data.keyword.messagehub}} service is provisioned so you can connect to it.
 
-<li>Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.</li>
-</ol>
+  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.
 
 
 ## Create a Message Hub topic and send messages
 
 You can use CURL commands to create a topic and then produce and consume a message. For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_SERVICES environment variable.
 
-<ol type="a">
+<ol>
 <li>From the command line, create a {{site.data.keyword.messagehub}} topic using the following CURL command:
 
 <pre class="pre"><code>
@@ -75,6 +73,8 @@ curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: <var class
 </code></pre>
 {: codeblock}
 </li>
+
+<!--
 <li>To produce a message, use the following CURL command:
 
 <pre class="pre"><code>
@@ -99,7 +99,9 @@ curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Acce
 </code></pre>
 {: codeblock}
 </li>
+-->
 </ol>
+
 
 
 
