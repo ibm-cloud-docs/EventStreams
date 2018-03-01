@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-01-a"
+lastupdated: "2018-03-01-b"
 
 ---
 
@@ -58,14 +58,14 @@ You can use CURL commands to create a topic and then produce and consume a messa
 
 1. From the command line, create a {{site.data.keyword.messagehub}} topic using the following CURL command:
 
-    <pre class="pre"><code>
+    <pre class="pre">
     curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: <var class="keyword varname">APIKEY</var>" --data '{ "name": "newtop:"}' <var class="keyword varname">KAFKA_ADMIN_URL</var>/admin/topics
-    </code></pre>
+    </pre>
 {: codeblock}
 
 2. To produce a message, use the following CURL command:
 
-    <pre class="pre"><code>
+    <pre class="pre">
     curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Content-Type: application/vnd.kafka.binary.v1+json" <var class="keyword varname">KAFKA_ADMIN_URL</var>/topics/<var class="keyword varname">topic name</var> -d 
 
     '
@@ -77,7 +77,7 @@ You can use CURL commands to create a topic and then produce and consume a messa
       ]
     }
     '
-    </code></pre>
+    </pre>
 {: codeblock}
 
 3. To consume the message, use the following CURL command: 
