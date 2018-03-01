@@ -12,18 +12,9 @@ lastupdated: "2018-02-28"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-<!-- Notes from chat with Charlie 
-
-Different plan for provisioning
-
-Quality of service from each plan
-
-Life of a user through cycle - APIs, feature sets
-
--->
 
 # Getting started with the Alpha program
-{: #alpha_program notoc}
+{: #alpha_program}
 
 The Alpha program provides early access to the next version of the {{site.data.keyword.messagehub}} service. 
 
@@ -31,7 +22,7 @@ Use the following information to get an app running with the {{site.data.keyword
 
 
 ## Create the Message Hub service
-{: alpha_create notoc}
+{: alpha_create}
 
 
   1. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
@@ -42,6 +33,7 @@ Use the following information to get an app running with the {{site.data.keyword
 
 
 ## Create and connect a test app
+{: alpha_app}
 
 If you don't already have an app you can use, create a test app. For example, using the **SDK for Node.js** service. 
 
@@ -60,7 +52,6 @@ If you don't already have an app you can use, create a test app. For example, us
 
   6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.
 
-
 ## Create a Message Hub topic and send messages
 
 You can use CURL commands to create a topic and then produce and consume a message. For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_SERVICES environment variable.
@@ -74,7 +65,7 @@ curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: <var class
 {: codeblock}
 </li>
 
-<!--
+
 <li>To produce a message, use the following CURL command:
 
 <pre class="pre"><code>
@@ -99,13 +90,8 @@ curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Acce
 </code></pre>
 {: codeblock}
 </li>
--->
+
 </ol>
-
-
-
-
-
 
 
 
