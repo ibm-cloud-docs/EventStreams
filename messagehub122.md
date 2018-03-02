@@ -29,11 +29,11 @@ The Alpha program provides early access to the next version of the {{site.data.k
 
 ## About your Alpha cluster
 
-Your Alpha cluster provides a Premimum plan, which enables you to provision your own single-tenant Kafka cluster. The cluster includes 3 Kafka nodes, and is capable of 90,000 KB/sec, over y partitions, and stores data for a maximum of x hours  There are no quotas enforced and there is no multitenancy.
+Your Alpha cluster provides a Premium plan, which enables you to provision your own single-tenant Kafka cluster. The cluster includes 3 Kafka nodes, and is capable of 90,000 KB/sec, over y partitions, and stores data for a maximum of x hours  There are no quotas enforced and there is no multitenancy.
 
 The Kafka server is version x and supports clients from vx onwards, KSQL, and Kafka Streams. A REST API is available for creating, deleting and listing topics.
 
-Access to the instance is managed by IAM
+Access to the instance is managed by IAM.
 
 The Alpha program is available in the US-South region only.
 
