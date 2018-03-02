@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-02"
+lastupdated: "2018-03-02a"
 
 ---
 
@@ -31,7 +31,7 @@ The Alpha program provides early access to the next version of the {{site.data.k
 
 Your Alpha cluster provides a Premimum plan, which enables you to provision your own single-tenant Kafka cluster. The cluster includes 3 Kafka nodes, and is capable of 90,000 KB/sec, over y partitions, and stores data for a maximum of x hours  There are no quotas enforced and there is no multitenancy.
 
-The Kafka server is version x and will support clients from vx onwards, KSQL etc. A REST API is available for creating, deleting and listing topics.
+The Kafka server is version x and will support clients from vx onwards, KSQL, and Kafka Streams. A REST API is available for creating, deleting and listing topics.
 
 Access to the instance is managed by IAM
 
@@ -43,15 +43,9 @@ The Alpha program is available in the US-South region only.
 
 The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. The Premium plan provides a single-tenant version of the service on a shared network and shared compute.
 
-* For the Alpha, there is no Lite or Standard plan.
-	
 * You can define the number of partitions and storage (within the maximum storage allocated to the cluster).
 
 * There are no quotas or throttling.
-
-* You can use Kafka clients from 0.10 and later and it supports Kafka Streams and KSQL.
-
-* You can use the Kafka REST admin interface to create, list, and delete topics.
 
 
 ## Security
@@ -60,6 +54,8 @@ The Premium plan is designed for users who have performance and other functional
 The authentication method used to access Message Hub resources is an IAM service access key and SASL. A TLS certificate is shared across a region and SNI support is required.
 
 You can connect new and existing applications to a single-tenant resource.
+
+## Connecting your app
 
 ## Resource controller management
 
@@ -110,9 +106,9 @@ If you have an existing app that uses VCAP services, you must make the following
 The current limitations of this Alpha program are as follows:
 
 ### Not available yet, but coming soon
-- UI
+- A UI
 
-- Multi AZ support
+- Multi availability zone support
 
 - User-controlled scaling
 
@@ -124,7 +120,9 @@ The current limitations of this Alpha program are as follows:
 ### Not currently planned
 
 - Bridges
-- REST messaging and MQ Light APIs
+- REST messaging
+- MQ Light APIs
+- A Lite or Standard plan.
 
 
 
