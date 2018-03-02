@@ -31,7 +31,7 @@ The Alpha program provides early access to the next version of the {{site.data.k
 
 Your Alpha cluster provides a Premimum plan, which enables you to provision your own single-tenant Kafka cluster. The cluster includes 3 Kafka nodes, and is capable of 90,000 KB/sec, over y partitions, and stores data for a maximum of x hours  There are no quotas enforced and there is no multitenancy.
 
-The Kafka server is version x and will support clients from vx onwards, KSQL, and Kafka Streams. A REST API is available for creating, deleting and listing topics.
+The Kafka server is version x and supports clients from vx onwards, KSQL, and Kafka Streams. A REST API is available for creating, deleting and listing topics.
 
 Access to the instance is managed by IAM
 
@@ -47,6 +47,17 @@ The Premium plan is designed for users who have performance and other functional
 
 * There are no quotas or throttling.
 
+## Connecting your app
+
+If you want to connect one of your apps, your client must support the following features:
+
+* SASL Plain
+* SNI
+
+If you want to connect an existing app that works with the current version of Message Hub rather than the Alpha version, you must use different credential information from your VCAP_SERVICES environment variable. Use the ```api_key information``` instead of the ```username/password``` information.
+
+For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
+
 
 ## Security
 {: security}
@@ -54,8 +65,6 @@ The Premium plan is designed for users who have performance and other functional
 The authentication method used to access Message Hub resources is an IAM service access key and SASL. A TLS certificate is shared across a region and SNI support is required.
 
 You can connect new and existing applications to a single-tenant resource.
-
-## Connecting your app
 
 ## Resource controller management
 

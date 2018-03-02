@@ -73,7 +73,7 @@ IBM Message Hub
 	messagehub116.md
 	messagehub110.md
 	messagehub120.md
-		messagehub122.md
+	messagehub122.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
