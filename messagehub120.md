@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-02-a"
+lastupdated: "2018-03-02"
 
 ---
 
@@ -52,7 +52,7 @@ If you don't already have an app you can use, create a test app. For example, us
 
   6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.
 
-## Create a Message Hub topic and send messages
+## Create a Message Hub topic and send a message
 
 You can use CURL commands to create a topic and then produce and consume a message. 
 
@@ -91,7 +91,7 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     ```
     {: codeblock}
 	
-	Replace TOPIC_NAME with the name of the topic that you created in step 1.
+	Replace TOPIC_NAME with the name of the topic that you created in step 1 and OFFSET_TO_START_FROM with your offset ID.
 
 
 
