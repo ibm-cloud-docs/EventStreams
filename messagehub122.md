@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-02-28"
+lastupdated: "2018-03-02"
 
 ---
 
@@ -29,9 +29,11 @@ The Alpha program provides early access to the next version of the {{site.data.k
 
 ## About your Alpha cluster
 
-The maximum cluster size and storage allocation created is ...
+Your Alpha cluster provides a Premimum plan, which enables you to provision your own single-tenant Kafka cluster. The cluster includes 3 Kafka nodes, and is capable of 90,000 KB/sec, over y partitions, and stores data for a maximum of x hours  There are no quotas enforced and there is no multitenancy.
 
-The cluster is provisioned with a single Kafka version, a fixed number of nodes, storage, and maximum retention period, which you cannot change.
+The Kafka server is version x and will support clients from vx onwards, KSQL etc. A REST API is available for creating, deleting and listing topics.
+
+Access to the instance is managed by IAM
 
 The Alpha program is available in the US-South region only.
 
@@ -66,6 +68,7 @@ TBD
 
 ## Administering Message Hub
 
+<!--
 ### Administering Message Hub using the dashboard in the IBM Cloud console
 
 * You can create, list, and delete topics.
@@ -73,9 +76,9 @@ TBD
 * You cannot change your configuration or view the current configuration.
 
 * No metrics, logs, or usage information are available.
+-->
 
-
-### Administering Message Hub using the Kafka REST interface
+You can administer Message Hub using the Kafka REST interface:
 
 * You can create, list, and delete topics.
 
@@ -94,61 +97,35 @@ Samples are specific to the Alpha program. You can find samples for the Alpha: .
 
 You can connect new and existing applications to a single-tenant resource. 
 
-
-## Kafka information
-
-Message Hub in Alpha is based on Kafka 1.0.
-
-* No quotas are enforced
-
-* No multitenancy 
-
-The following Kafka client versions are supported:
-
-* 1.0
-* 0.11
-* 0.10 
-
-0.9 clients are not supported.
-
-
 ## Migration and coexistence
 
 ### Apps that use VCAP services
 {: notoc}
 
-If you have an existing app that uses VCAP services, you  must make the following code change to ensure it keeps working ...
+If you have an existing app that uses VCAP services, you must make the following code change to ensure it keeps working ...
 
 
 ## Alpha limitations
 
 The current limitations of this Alpha program are as follows:
 
-- No options: clusters are provisioned with a single Kafka version, with a fixed number of nodes, storage, and a maximum retention period.
+### Not available yet, but coming soon
+- UI
 
-- No authorization just authentication, that is, you cannot apply fine-grained authorization on topics.
+- Multi AZ support
 
-- No CLI
+- User-controlled scaling
 
-- No user-controlled scaling
+- Deeper access controls, including topics
 
-- No configuration personalization
+- Integration with the {{site.data.keyword.cloudaccesstrailfull_notm}} service (previously known as AccessTrail) 
 
-- No Kafka REST 1.0
 
-- No Schema Registry 
+### Not currently planned
 
-- No MQ Light API
+- Bridges
+- REST messaging and MQ Light APIs
 
-- No bridges
-
-- No integration with the {{site.data.keyword.cloudaccesstrailfull_notm}} service (previously known as AccessTrail) 
-
-- No VPC
-
-- No BYOK
-
-- No Kafka Connect
 
 
 
