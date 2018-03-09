@@ -32,7 +32,7 @@ Use the following information to get an app running with the {{site.data.keyword
  
 
 
-## Create and connect a test app
+## Get credentials - console option: create and connect a test app
 {: alpha_app}
 
 If you don't already have an app you can use, create a test app. For example, using the **SDK for Node.js** service. 
@@ -51,6 +51,20 @@ If you don't already have an app you can use, create a test app. For example, us
      Ensure your {{site.data.keyword.messagehub}} service is provisioned so you can connect to it.
 
   6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.
+  
+## Get credentials - command line option
+
+  1. Install the Bluemix command line tool, from [Bluemix command line](https://console.stage1.bluemix.net/docs/cli/index.html#overview)
+  
+  2. Login with the bx CLI.
+  3. Use the bx CLI to create a service key with the Manager role:
+  ```
+  bx resource service-key-create <NAME> Manager --instance-name <MESSAGEHUB_SERVICE_INSTANCE_NAME>
+  ```
+  4. The output contains the apikey, admin REST endpoint and broker list; this can be viewed again by doing:
+  ```
+  bx resource service-key <NAME>
+  ```
 
 ## Create a Message Hub topic and send a message
 
@@ -61,39 +75,22 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
   1. From the command line, create a {{site.data.keyword.messagehub}} topic using the following CURL command:
   
     ```
-    curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: APIKEY" --data '{ "name": "newtop:"}' KAFKA_ADMIN_URL/admin/topics
+    curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: APIKEY" --data '{ "name": "newtop"}' KAFKA_ADMIN_URL/admin/topics
     ```
     {: codeblock}
 
-  2. To produce a message, use the following CURL command:
-
-    ```
-    curl -X POST -H "X-Auth-Token: APIKEY" -H "Content-Type: application/vnd.kafka.binary.v1+json" KAFKA_ADMIN_URL/topics/TOPIC_NAME -d 
-
-    '
-    {
-      "records": [
-        {
-          "value": "A base 64 encoded value string"
-        }
-      ]
-    }
-    '
-    ```
-    {: codeblock}
-	
-	Replace TOPIC_NAME with the name of the topic that you created in the previous step.
-
-  3. To consume the message, use the following CURL command: 
-
-    ```
-    curl -X GET -H "X-Auth-Token:APIKEY" -H "Accept: application/vnd.kafka.binary.v1+json" KAFKA_ADMIN_URL/topics/TOPIC_NAME/partitions/partition_ID/messages?offset=OFFSET_TO_START_FROM
-    ```
-    {: codeblock}
-	
-	Replace TOPIC_NAME with the name of the topic that you created in step 1 and OFFSET_TO_START_FROM with your offset ID.
-
-
-
+  2. Install kafkacat from [kafkacat](https://github.com/edenhill/kafkacat#install) - this is a useful tool for a quick test of kafka
+  
+  3. For the following you will need to get your brokers list which will have been returned in your credentials `kafka_brokers_sasl` this will need to be a comma seperated list for kafkacat. You also need your <apikey>, the first 8 characters will form your sasl.username, the remainder the sasl.password
+  
+  4. Produce some messages:
+  ```
+  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<first_8_chars_from_apikey>' -X 'sasl.password=<remaining_chars_from_apikey>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
+  ```
+  
+  5. Consume the messages:
+  ```
+  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<first_8_chars_from_apikey>' -X 'sasl.password=<remaining_chars_from_apikey>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
+  ```
 
 
