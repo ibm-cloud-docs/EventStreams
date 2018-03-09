@@ -78,7 +78,7 @@ The Kafka client you use must support the following features:
 
 NB This method of retrieving the endpoint and credential information differs from the existing Message Hub service. Apps which currently run against Message Hub will require changes to reflect the alternative field names required from VCAP_SERVICES and to the username/password fields submitted to Kafka. These changes will not be required in future versions of the Alpha.
 
-__To connect a client to the REST API __
+__To connect a client to the REST API__
 
 * The URI for the REST API is provided in the ```kafka_admin_url```
 
