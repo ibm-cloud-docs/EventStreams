@@ -97,11 +97,11 @@ The only administration tasks required in a cluster are to create, list and dele
 
 * The admin REST API provided in the cluster.
 
-Further details of the create, list and delete functions provided by the admin REST API (which is compatible with the existing Message Hub admin API). You can download the full specification for the API from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+Further details of the create, list and delete functions provided by the admin REST API (which is compatible with the existing Message Hub admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
 
-To invoke the functions requires TLS v1.2 and a valid service api key. For a simple example demonstrating how to create a topic using curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
+For a simple example demonstrating how to create a topic using curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
 In the future, other configuration options will also be available.
 
@@ -111,10 +111,6 @@ In the future, other configuration options will also be available.
 Coming soon...for simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
 ## Alpha limitations
-
-The current limitations of this Alpha program are as follows:
-
-### Not available yet, but coming soon
 
 The current limitations of this Alpha program are as follows:
 
