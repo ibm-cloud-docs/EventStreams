@@ -27,7 +27,7 @@ Life of a user through cycle - APIs, feature sets
 
 The Alpha program provides early access to new features in the {{site.data.keyword.messagehub}} service. The current feature is the introduction of a new plan, the {{site.data.keyword.messagehub}} Premium plan.
 
-## The Premium plan
+## Premium plan
 {: premium_plan}
 
 The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. It provides a single-tenant version of the {{site.data.keyword.messagehub}} service where you have sole use of an Apache Kafka cluster, which allows you to:
