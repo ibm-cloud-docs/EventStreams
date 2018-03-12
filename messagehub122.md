@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-02"
+lastupdated: "2018-03-12"
 
 ---
 
@@ -30,33 +30,33 @@ The Alpha program provides early access to new features in the {{site.data.keywo
 ## The Premium plan
 {: premium_plan}
 
-The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. It provides a single-tenant version of the {{site.data.keyword.messagehub}} service where you have sole use of an Apache Kafka cluster, allowing you to:
+The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. It provides a single-tenant version of the {{site.data.keyword.messagehub}} service where you have sole use of an Apache Kafka cluster, which allows you to:
 
 * Take full advantage of the capacity and performance of the cluster
 
 * Have greatly increased limits and number of partitions
 
-* Benefit from zero management costs with a fully managed cluster which is automatically maintained and updated
+* Benefit from zero management costs with a fully managed cluster that is automatically maintained and updated
 
 ## About your Alpha cluster
 
-Your Alpha clusters is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90,000 KB/sec. 
+Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90,000 KB/sec. 
 
-A maximum of 1000 partitions can be created, with each partition retaining a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas, with the offset data for each partition (holding the position of the last successfully consumed message) being held for a maximum of 7 days.
+You can create a maximum of 1000 partitions, with each partition retaining a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas, with the offset data for each partition (holding the position of the last successfully consumed message) being held for a maximum of 7 days.
 
 Two APIs are supported:
 
-* For messaging, Kafka clients from version 0.10.x onwards are supported, including the use of KSQL, Kafka Streams and Kafka Connect.
+* For messaging, Kafka clients from version 0.10.x onwards are supported, including the use of KSQL, Kafka Streams, and Kafka Connect.
 
-* For administration, a REST API is available for creating, deleting and listing topics.
+* For administration, a REST API is available for creating, deleting, and listing topics.
 
 The Alpha program is available in the US-South region only, with access to clusters being managed using IAM
 
 ## Connecting to your cluster
 
-To connect to an API in the cluster you need its endpoint URL and an apikey for authentication. These details can be retrieved from IAM using one of the following methods:
+To connect to an API in the cluster you need its endpoint URL and an apikey for authentication. You can retrieve these details from IAM using one of the following methods:
 
-* For a Cloud Foundry application, click the 'Create connection' button that's in the 'Connections' tab for the app, on the left of the portal. Select the instance of the Message Hub service you'd like to connect to and click 'Connect', accepting the default options. Once complete, select the 'Runtime' tab for the app, then 'environment variables' to show VCAP_SERVICES.
+* For a Cloud Foundry application, click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. Select the instance of the Message Hub service you'd like to connect to and click **Connect**, accepting the default options. When complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
 
 * From the console for an external application, create a service apikey by using the following bx command ```bx resource service-key-create name-of-key Manager --instance-name name-of-your-service```. 
 
@@ -64,11 +64,11 @@ Copy the ```kafka_brokers_sasl```, ```kafka_admin_url``` and ```apikey``` fields
 
 __To connect a client to the Kafka API__
 
-* The clients ```bootstrap.servers``` property should be set to a comma seperated list of the brokers listed in ```kafka_brokers_sasl```
+* Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
 
-* The clients ```sasl.jaas.config``` USERNAME field should be set to the first eight characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
+* Set the clients ```sasl.jaas.config``` USERNAME field to the first eight characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
 
-The Kafka client you use must support the following features:
+The Kafka client that you use must support the following features:
 
 * Client version 0.10.x or newer
 
@@ -91,13 +91,13 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 ## Administering Message Hub
 
-The only administration tasks required in a cluster are to create, list and delete the topics you need. This can be achieved in one of two ways, either by using:
+The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can do this in one of two ways, either by using:
 
-* The Kafka client API directly from your application e.g. for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
+* The Kafka client API directly from your application for example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
 
 * The admin REST API provided in the cluster.
 
-Further details of the create, list and delete functions provided by the admin REST API (which is compatible with the existing Message Hub admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+Further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing Message Hub admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
 
