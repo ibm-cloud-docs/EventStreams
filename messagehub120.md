@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-02"
+lastupdated: "2018-03-12"
 
 ---
 
@@ -21,7 +21,7 @@ The Alpha program provides early access to the next version of the {{site.data.k
 Use the following information to get an app running with the {{site.data.keyword.messagehub}} Alpha:
 
 
-## Create the Message Hub service
+## Create the {{site.data.keyword.messagehub}} service
 {: alpha_create}
 
 
@@ -54,7 +54,7 @@ If you don't already have an app you can use, create a test app. For example, us
   
 ## Get credentials - command line option
 
-  1. Install the Bluemix command line tool, from [Bluemix command line](https://console.stage1.bluemix.net/docs/cli/index.html#overview)
+  1. Install the Bluemix command line tool, from [Bluemix command line ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/docs/cli/index.html#overview)
   
   2. Login with the bx CLI.
   3. Use the bx CLI to create a service key with the Manager role:
@@ -79,16 +79,16 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     ```
     {: codeblock}
 
-  2. Install kafkacat from [kafkacat](https://github.com/edenhill/kafkacat#install) - this is a useful tool for a quick test of kafka
+  2. Install kafkacat from [kafkacat ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install) - this is a useful tool for a quick test of kafka
   
-  3. For the following you will need to get your brokers list which will have been returned in your credentials `kafka_brokers_sasl` this will need to be a comma seperated list for kafkacat. You also need your <apikey>, the first 8 characters will form your sasl.username, the remainder the sasl.password
+  3. For the following you will need to get your brokers list which will have been returned in your credentials `kafka_brokers_sasl` this will need to be a comma-separated list for kafkacat. You also need your ```apikey```, the first 8 characters forms your sasl.username, the remainder forms the sasl.password
   
-  4. Produce some messages:
+  4. Produce some messages by running the following command:
   ```
   kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<first_8_chars_from_apikey>' -X 'sasl.password=<remaining_chars_from_apikey>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
   ```
   
-  5. Consume the messages:
+  5. Consume the messages by running the following command:
   ```
   kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<first_8_chars_from_apikey>' -X 'sasl.password=<remaining_chars_from_apikey>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
   ```
