@@ -39,9 +39,7 @@ If you don't already have an app you can use, create a test app. For example, us
 
   1. Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs).
    
-  Before you enter an app name, ensure that you select a region of US South. 
-  
-  Create the app.
+  Before you enter an app name, ensure that you select a region of US South. Create the app.
 
   2. When the app is running, click the **Connections** tab on the left.
 
@@ -52,14 +50,16 @@ If you don't already have an app you can use, create a test app. For example, us
   5. In the **Connect IAM-Enabled Service** window, accept the defaults and click **Connect**.
   Ensure your {{site.data.keyword.messagehub}} service is provisioned so you can connect to it.
 
-  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need for the next task.
+  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need to be able to send a message.
   
 ## Get credentials using the command line option
+Alternatively, you can get the credentials you need using the command line by completing the following steps:
 
-  1. Install the Bluemix command line tool from [Bluemix command line ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/docs/cli/index.html#overview)
+  1. Install the {{site.data.keyword.Bluemix_notm}} command line tool from [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/docs/cli/index.html#overview)
   
-  2. Log in to the bx CLI.
-  3. Use the bx CLI to create a service key with the Manager role using the following command:
+  2. Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
+  
+  3. Use the {{site.data.keyword.Bluemix_notm}} CLI to create a service key with the Manager role using the following command:
   ```
   bx resource service-key-create <NAME> Manager --instance-name <MESSAGEHUB_SERVICE_INSTANCE_NAME>
   ```
@@ -70,7 +70,7 @@ If you don't already have an app you can use, create a test app. For example, us
 
 ## Create a Message Hub topic and send a message
 
-You can use CURL commands to create a topic and then produce and consume a message. 
+You can use a CURL command to create a topic and then the kafkacat tool to produce and consume a message. 
 
 For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_SERVICES environment variable.
 
@@ -81,9 +81,9 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     ```
     {: codeblock}
 
-  2. Install kafkacat from [kafkacat ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install). kafkacat is a useful tool for a quick test of Kafka.
+  2. Install the [kafkacat tool![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install), which is useful for a quick test of Kafka.
   
-  3. To run the next commands, you will need to get your brokers list which will have been returned in your credentials `kafka_brokers_sasl` this will need to be a comma-separated list for kafkacat. You also need your ```apikey```, the first 8 characters forms your sasl.username and the remainder forms the sasl.password.
+  3. To run the next commands, you will need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list will need to be a comma-separated list for kafkacat. You also need your ```apikey```, the first 8 characters forms your sasl.username and the remainder of the ```apikey``` forms the sasl.password.
   
   4. Produce some messages by running the following command:
   ```

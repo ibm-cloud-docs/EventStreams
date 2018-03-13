@@ -30,7 +30,7 @@ The Alpha program provides early access to new features in the {{site.data.keywo
 ## Premium plan
 {: premium_plan}
 
-The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. It provides a single-tenant version of the {{site.data.keyword.messagehub}} service where you have sole use of an Apache Kafka cluster, which allows you to:
+The Premium plan is designed for users who have performance and other functional requirements that go beyond the public service. It provides a single-tenant version of the {{site.data.keyword.messagehub}} service where you have sole use of an Apache Kafka cluster. This version allows you to:
 
 * Take full advantage of the capacity and performance of the cluster
 
@@ -40,11 +40,11 @@ The Premium plan is designed for users who have performance and other functional
 
 ## About your Alpha cluster
 
-Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90,000 KB/sec. 
+Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90 000 KB/sec. 
 
 You can create a maximum of 1000 partitions, with each partition retaining a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas, with the offset data for each partition (holding the position of the last successfully consumed message) being held for a maximum of 7 days.
 
-Two APIs are supported:
+The following two APIs are supported:
 
 * For messaging, Kafka clients from version 0.10.x onwards are supported, including the use of KSQL, Kafka Streams, and Kafka Connect.
 
@@ -56,8 +56,10 @@ The Alpha program is available in the US-South region only, with access to clust
 
 To connect to an API in the cluster you need its endpoint URL and an apikey for authentication. You can retrieve these details from IAM using one of the following methods:
 
+### Cloud Foundry application
 * For a Cloud Foundry application, click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. Select the instance of the Message Hub service you'd like to connect to and click **Connect**, accepting the default options. When complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
 
+### console for an external application
 * From the console for an external application, create a service apikey by using the following bx command ```bx resource service-key-create name-of-key Manager --instance-name name-of-your-service```. 
 
 Copy the ```kafka_brokers_sasl```, ```kafka_admin_url``` and ```apikey``` fields from the generated info.
