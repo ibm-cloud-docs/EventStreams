@@ -28,7 +28,7 @@ Complete the following steps to get an app running with the {{site.data.keyword.
   1. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
 [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/labs/?search=vnext).</li>
 
-  2. Create a Message Hub service. This service provides a single-tenant cluster under by the ```Premium``` pricing plan and typically takes 1-3 hours to provision.
+  2. Create a {{site.data.keyword.messagehub}} service. This service provides a single-tenant cluster under by the ```Premium``` pricing plan and typically takes 1-3 hours to provision.
  
 
 
@@ -69,7 +69,7 @@ Alternatively, you can get the required credentials using the command line. Comp
   bx resource service-key <NAME>
   ```
 
-## Create a Message Hub topic and send a message
+## Create a {{site.data.keyword.messagehub}} topic and send a message
 
 You can use a CURL command to create a topic and then the kafkacat tool to produce and consume a message. 
 

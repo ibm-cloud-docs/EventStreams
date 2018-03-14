@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-12"
+lastupdated: "2018-03-14"
 
 ---
 
@@ -50,19 +50,21 @@ The following two APIs are supported:
 
 * For administration, a REST API is available for creating, deleting, and listing topics.
 
-The Alpha program is available in the US-South region only, with access to clusters being managed using IAM
+The Alpha program is available in the US-South region only, with access to clusters being managed using IAM.
 
 ## Connecting to your cluster
 
 To connect to an API in the cluster you need its endpoint URL and an apikey for authentication. You can retrieve these details from IAM using one of the following methods:
 
 ### Cloud Foundry application
-* For a Cloud Foundry application, click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. Select the instance of the Message Hub service you'd like to connect to and click **Connect**, accepting the default options. When complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
+For a Cloud Foundry application, click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. Select the instance of the {{site.data.keyword.messagehub}} service you'd like to connect to and click **Connect**, accepting the default options. When complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
 
-### console for an external application
-* From the console for an external application, create a service apikey by using the following bx command ```bx resource service-key-create name-of-key Manager --instance-name name-of-your-service```. 
+### Console for an external application
+From the console for an external application, create a service apikey by using the following bx command 
 
-Copy the ```kafka_brokers_sasl```, ```kafka_admin_url``` and ```apikey``` fields from the generated info.
+```bx resource service-key-create name-of-key Manager --instance-name name-of-your-service```. 
+
+Copy the ```kafka_brokers_sasl```, ```kafka_admin_url``` and ```apikey``` fields from the generated information.
 
 __To connect a client to the Kafka API__
 
@@ -78,20 +80,20 @@ The Kafka client that you use must support the following features:
 
 * The Service Name Identification (SNI) extension to the TLS v1.2 protocol
 
-NB This method of retrieving the endpoint and credential information differs from the existing Message Hub service. Apps which currently run against Message Hub will require changes to reflect the alternative field names required from VCAP_SERVICES and to the username/password fields submitted to Kafka. These changes will not be required in future versions of the Alpha.
+This method of retrieving the endpoint and credential information differs from the existing {{site.data.keyword.messagehub}} service. Apps that currently run against {{site.data.keyword.messagehub}} will require changes to reflect the alternative field names required from VCAP_SERVICES and to the username/password fields submitted to Kafka. These changes will not be required in future versions of the Alpha.
 
 __To connect a client to the REST API__
 
 * The URI for the REST API is provided in the ```kafka_admin_url```
 
-* The HTTP ```Content-Type``` header should be set to ```application/json```
+* Set the HTTP ```Content-Type``` header to ```application/json```
 
-* The HTTP ```X-Auth-Token``` header should be set to the value of ```apikey```
+* Set the HTTP ```X-Auth-Token``` header to the value of ```apikey```
 
 For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
 
-## Administering Message Hub
+## Administering {{site.data.keyword.messagehub}}
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can do this in one of two ways, either by using:
 
@@ -99,7 +101,7 @@ The only administration tasks required in a cluster are to create, list, and del
 
 * The admin REST API provided in the cluster.
 
-Further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing Message Hub admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+Further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
 
