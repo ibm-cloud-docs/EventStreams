@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-12"
+lastupdated: "2018-03-14"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-12"
 
 The Alpha program provides early access to the next version of the {{site.data.keyword.messagehub}} service. 
 
-Use the following information to get an app running with the {{site.data.keyword.messagehub}} Alpha:
+Complete the following steps to get an app running with the {{site.data.keyword.messagehub}} Alpha:
 
 
 ## Create the {{site.data.keyword.messagehub}} service
@@ -35,7 +35,8 @@ Use the following information to get an app running with the {{site.data.keyword
 ## Get credentials using the console option: create and connect a test app
 {: alpha_app}
 
-If you don't already have an app you can use, create a test app. For example, using the **SDK for Node.js** service. 
+You'll need credentials to work with {{site.data.keyword.messagehub}}. 
+If you don't already have an app you can use, create a test app and use the credentials it uses to connect to {{site.data.keyword.messagehub}}. For example, use the **SDK for Node.js** service. 
 
   1. Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs).
    
@@ -48,14 +49,14 @@ If you don't already have an app you can use, create a test app. For example, us
   4. Select your new {{site.data.keyword.messagehub}} service from the list of existing compatible services and click the **Connect** button.
 
   5. In the **Connect IAM-Enabled Service** window, accept the defaults and click **Connect**.
-  Ensure your {{site.data.keyword.messagehub}} service is provisioned so you can connect to it.
+  Ensure your {{site.data.keyword.messagehub}} service is provisioned so that you can connect to it.
 
-  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url``` and ```apikey``` information, which you will need to be able to send a message.
+  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url```, ```apikey```, and ```kafka_brokers_sasl``` information, which you will need to be able to send a message.
   
 ## Get credentials using the command line option
-Alternatively, you can get the credentials you need using the command line by completing the following steps:
+Alternatively, you can get the required credentials using the command line. Complete the following steps:
 
-  1. Install the {{site.data.keyword.Bluemix_notm}} command line tool from [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/docs/cli/index.html#overview)
+  1. Install the {{site.data.keyword.Bluemix_notm}} command line tool from [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/index.html#overview)
   
   2. Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
   
@@ -83,16 +84,16 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
 
   2. Install the [kafkacat tool![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install), which is useful for a quick test of Kafka.
   
-  3. To run the next commands, you will need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list will need to be a comma-separated list for kafkacat. You also need your ```apikey```, the first 8 characters forms your sasl.username and the remainder of the ```apikey``` forms the sasl.password.
+  3. To run the next commands, you need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. You also need your ```apikey```: the first 8 characters forms your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
   
   4. Produce some messages by running the following command:
   ```
-  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<first_8_chars_from_apikey>' -X 'sasl.password=<remaining_chars_from_apikey>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
+  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
   ```
   
   5. Consume the messages by running the following command:
   ```
-  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<first_8_chars_from_apikey>' -X 'sasl.password=<remaining_chars_from_apikey>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
+  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
   ```
 
 
