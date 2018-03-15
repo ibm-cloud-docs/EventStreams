@@ -36,7 +36,7 @@ Complete the following steps to get an app running with the {{site.data.keyword.
 {: alpha_app}
 
 You'll need credentials to work with {{site.data.keyword.messagehub}}. 
-If you don't already have an app you can use, create a test app and use the credentials it uses to connect to {{site.data.keyword.messagehub}}. For example, use the **SDK for Node.js** service. 
+If you don't already have an app you can use, create a test app and use the credentials the app uses to connect to {{site.data.keyword.messagehub}}. For example, use the **SDK for Node.js** service for a test app. 
 
   1. Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs).
    
@@ -51,12 +51,12 @@ If you don't already have an app you can use, create a test app and use the cred
   5. In the **Connect IAM-Enabled Service** window, accept the defaults and click **Connect**.
   Ensure your {{site.data.keyword.messagehub}} service is provisioned so that you can connect to it.
 
-  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url```, ```apikey```, and ```kafka_brokers_sasl``` information, which you will need to be able to send a message.
+  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url```, ```apikey```, and ```kafka_brokers_sasl``` information, which you'll need to be able to send a message.
   
 ## Get credentials using the command line option
 Alternatively, you can get the required credentials using the command line. Complete the following steps:
 
-  1. Install the {{site.data.keyword.Bluemix_notm}} command line tool from [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/index.html#overview)
+  1. Install the {{site.data.keyword.Bluemix_notm}} command line tool from [{{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/index.html#overview).
   
   2. Log in to the {{site.data.keyword.Bluemix_notm}} CLI.
   
@@ -64,7 +64,7 @@ Alternatively, you can get the required credentials using the command line. Comp
   ```
   bx resource service-key-create <NAME> Manager --instance-name <MESSAGEHUB_SERVICE_INSTANCE_NAME>
   ```
-  4. The output contains the apikey, admin REST endpoint, and broker list. You can view this information again by running the following command:
+  4. The output contains the apikey, the admin REST endpoint URL, and broker list. You can view this information again by running the following command:
   ```
   bx resource service-key <NAME>
   ```
@@ -84,7 +84,9 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
 
   2. Install the [kafkacat tool![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install), which is useful for a quick test of Kafka.
   
-  3. To run the next commands, you need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. You also need your ```apikey```: the first 8 characters form your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
+  3. To run the next commands, you need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. 
+  
+  You also need your ```apikey```: the first 8 characters form your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
   
   4. Produce some messages by running a command like the following:
   ```
