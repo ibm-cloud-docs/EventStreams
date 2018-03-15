@@ -92,11 +92,15 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
   ```
   kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
     ```
+	
+	<br/>
   After running the command, you can enter some text like ```HelloWorld``` in the producer terminal.
   
   5. Consume the messages by running a command like the following:
   ```
   kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
   ```
+	
+	<br/>
   You should see ```HelloWorld``` in the consumer terminal.
 
