@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-14"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -84,16 +84,17 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
 
   2. Install the [kafkacat tool![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install), which is useful for a quick test of Kafka.
   
-  3. To run the next commands, you need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. You also need your ```apikey```: the first 8 characters forms your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
+  3. To run the next commands, you need your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. You also need your ```apikey```: the first 8 characters form your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
   
-  4. Produce some messages by running the following command:
+  4. Produce some messages by running a command like the following:
   ```
   kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
-  ```
+    ```
+  After running the command, you can enter some text like ```HelloWorld``` in the producer terminal.
   
-  5. Consume the messages by running the following command:
+  5. Consume the messages by running a command like the following:
   ```
   kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=/etc/ssl/cert.pem" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
   ```
-
+  You should see ```HelloWorld``` in the consumer terminal.
 
