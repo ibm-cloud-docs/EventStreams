@@ -39,34 +39,39 @@ The Premium plan is designed for users who have performance and other functional
 * Benefit from zero management costs with a fully managed cluster that is automatically maintained and updated
 
 ## About your Alpha cluster
+{: alpha_cluster}
 
-Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90 000 KB/sec. 
+Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90 000 KB per second. 
 
-You can create a maximum of 1000 partitions, with each partition retaining a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas, with the offset data for each partition (holding the position of the last successfully consumed message) being held for a maximum of 7 days.
+You can create a maximum of 1000 partitions, with each partition retaining a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas and the the offset data for each partition (holding the position of the last successfully consumed message) is held for a maximum of 7 days.
 
 The following two APIs are supported:
 
-* For messaging, Kafka clients from version 0.10.x onwards are supported, including the use of KSQL, Kafka Streams, and Kafka Connect.
+* For messaging, Kafka clients from version 0.10.x and later are supported, including the option to use KSQL, Kafka Streams, and Kafka Connect.
 
 * For administration, a REST API is available for creating, deleting, and listing topics.
 
-The Alpha program is available in the US-South region only, with access to clusters being managed using IAM.
+The Alpha program is available in the US-South region only. Access to clusters is managed using IAM.
 
 ## Connecting to your cluster
+{: alpha_connect}
 
 To connect to an API in the cluster you need its endpoint URL and an apikey for authentication. You can retrieve these details from IAM using one of the following methods:
 
 ### Cloud Foundry application
-For a Cloud Foundry application, click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. Select the instance of the {{site.data.keyword.messagehub}} service you'd like to connect to and click **Connect**, accepting the default options. When complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
+For a Cloud Foundry application:
+1. Click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. 
+2. Select the instance of the {{site.data.keyword.messagehub}} service you want to connect to and click **Connect**, accepting the default options. 
+3. When the connection is complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
 
 ### Console for an external application
-From the console for an external application, create a service apikey by using the following bx command 
+From the console for an external application, create a service apikey by using the following **bx** command 
 
 ```bx resource service-key-create name-of-key Manager --instance-name name-of-your-service```. 
 
 Copy the ```kafka_brokers_sasl```, ```kafka_admin_url``` and ```apikey``` fields from the generated information.
 
-__To connect a client to the Kafka API__
+## Connecting a client to the Kafka API
 
 * Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
 
@@ -82,7 +87,7 @@ The Kafka client that you use must support the following features:
 
 This method of retrieving the endpoint and credential information differs from the existing {{site.data.keyword.messagehub}} service. Apps that currently run against {{site.data.keyword.messagehub}} will require changes to reflect the alternative field names required from VCAP_SERVICES and to the username/password fields submitted to Kafka. These changes will not be required in future versions of the Alpha.
 
-__To connect a client to the REST API__
+## Connecting a client to the REST API
 
 * The URI for the REST API is provided in the ```kafka_admin_url```
 
@@ -94,6 +99,7 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 
 ## Administering {{site.data.keyword.messagehub}}
+{: alpha_admin}
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can do this in one of two ways, either by using:
 
@@ -104,17 +110,19 @@ The only administration tasks required in a cluster are to create, list, and del
 Further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
-
-For a simple example demonstrating how to create a topic using curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
+For a simple example demonstrating how to create a topic using Curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
 In the future, other configuration options will also be available.
 
 
 ## Samples
 
-Coming soon...for simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
+Coming soon...
+
+For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
 ## Alpha limitations
+{: alpha_limitations}
 
 The current limitations of this Alpha program are as follows:
 
