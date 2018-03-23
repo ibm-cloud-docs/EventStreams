@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-16"
+lastupdated: "2018-03-23"
 
 ---
 
@@ -97,7 +97,7 @@ When committed offsets are saved in Kafka and the consumers are restarted, consu
 
 The easiest way to commit offsets is to let the Kafka consumer do it automatically. This is simple but it does give less control than committing manually. By default, a consumer automatically commits offsets every 5 seconds. This is irrespective of the progress the consumer is making towards processing the messages. In addition, when the consumer calls `poll()`, this also causes the latest offset returned from the previous call to `poll()` to be committed (because it's probably been processed).
 
-If the committed offset overtakes the processing of the messages, it is possible following a consumer failure for some messages to be skipped. This is because processing restarts at the committed offset, which is later than the last message to be processed before the failure. For this reason, if reliability is more important than simplicity, it's usually best to commit offsets manually.
+If the committed offset overtakes the processing of the messages and there is a consumer failure, it's possible that some messages might not be processed. This is because processing restarts at the committed offset, which is later than the last message to be processed before the failure. For this reason, if reliability is more important than simplicity, it's usually best to commit offsets manually.
 
 ### Committing offsets manually
 
