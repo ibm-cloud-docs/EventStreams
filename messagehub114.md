@@ -101,7 +101,7 @@ If the committed offset overtakes the processing of the messages and there is a 
 
 ### Committing offsets manually
 
-If `enable.auto.commit` is set to `false`, the consumer commits its offsets manually. It can do this either synchronously or asynchronously. A common pattern is to commit the offset of the latest processed message based on a periodic timer. This means that every message is processed at least once but the committed offset never overtakes. The frequency of the periodic timer controls the number of messages that could be reprocessed following a consumer failure. Messages are retrieved again from the last saved committed offset when the application restarts or when the group rebalances.
+If `enable.auto.commit` is set to `false`, the consumer commits its offsets manually. It can do this either synchronously or asynchronously. A common pattern is to commit the offset of the latest processed message based on a periodic timer. This pattern means that every message is processed at least once, but the committed offset never overtakes the progress of messages that are actively being processed. The frequency of the periodic timer controls the number of messages that can be reprocessed following a consumer failure. Messages are retrieved again from the last saved committed offset when the application restarts or when the group rebalances.
 
 The committed offset is the offset of the messages from which processing is resumed. This is usually the offset of the most recently processed message *plus one*.
 
