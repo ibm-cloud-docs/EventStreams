@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-22"
+lastupdated: "2018-03-26"
 
 ---
 
@@ -60,18 +60,22 @@ To connect to an API in the cluster you need its endpoint URL and an apikey for 
 
 ### Cloud Foundry application
 For a Cloud Foundry application:
-1. Click the **Create connection** button that's in the **Connections** tab for the app, on the left of the portal. 
-2. Select the instance of the {{site.data.keyword.messagehub}} service you want to connect to and click **Connect**, accepting the default options. 
-3. When the connection is complete, select the **Runtime** tab for the app, then **Environment variables** to show VCAP_SERVICES.
+1. In the **Connections** tab for the app (on the left), click the **Create connection** button. 
+2. Select the instance of the {{site.data.keyword.messagehub}} service that you want to connect to and click **Connect**. Accept the default options. 
+3. When the connection is complete, click the **Runtime** tab for the app, then click **Environment variables** to show **VCAP_SERVICES**.
 
 ### Console for an external application
-From the console for an external application, create a service apikey by using the following **bx** command 
+From the console for an external application, create a service apikey by using the following **bx** command: 
 
-```bx resource service-key-create name-of-key Manager --instance-name name-of-your-service```. 
+```
+bx resource service-key-create name-of-key Manager --instance-name name-of-your-service
+``` 
 
-Copy the ```kafka_brokers_sasl```, ```kafka_admin_url``` and ```apikey``` fields from the generated information.
+Copy the ```kafka_brokers_sasl```, ```kafka_admin_url```, and ```apikey``` fields from the generated information.
 
 ## Connecting a client to the Kafka API
+
+To connect a client to the Kafka API, complete the following steps:
 
 * Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
 
@@ -89,6 +93,8 @@ This method of retrieving the endpoint and credential information differs from t
 
 ## Connecting a client to the REST API
 
+To connect a client to the REST API, complete the following steps:
+
 * The URI for the REST API is provided in the ```kafka_admin_url```
 
 * Set the HTTP ```Content-Type``` header to ```application/json```
@@ -101,14 +107,14 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 ## Administering {{site.data.keyword.messagehub}}
 {: alpha_admin}
 
-The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can do this in one of two ways, either by using:
+The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can do administer in one of two ways, either by using:
 
-* The Kafka client API directly from your application for example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
+* The Kafka client API directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
 
 * The admin REST API provided in the cluster.
 
-Further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) can be found in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
-To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
+You can find further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+To view the swagger file use Swagger tools, for example [Swagger Editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
 For a simple example demonstrating how to create a topic using Curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
