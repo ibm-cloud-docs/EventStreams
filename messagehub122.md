@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-26"
+lastupdated: "2018-03-27"
 
 ---
 
@@ -77,9 +77,9 @@ Copy the ```kafka_brokers_sasl```, ```kafka_admin_url```, and ```apikey``` field
 
 To connect a client to the Kafka API, complete the following steps:
 
-* Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
+1. Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
 
-* Set the clients ```sasl.jaas.config``` USERNAME field to the first eight characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
+2. Set the clients ```sasl.jaas.config``` USERNAME field to the first eight characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
 
 The Kafka client that you use must support the following features:
 
@@ -89,7 +89,7 @@ The Kafka client that you use must support the following features:
 
 * The Service Name Identification (SNI) extension to the TLS v1.2 protocol
 
-This method of retrieving the endpoint and credential information differs from the existing {{site.data.keyword.messagehub}} service. Apps that currently run against {{site.data.keyword.messagehub}} will require changes to reflect the alternative field names required from VCAP_SERVICES and to the username/password fields submitted to Kafka. These changes will not be required in future versions of the Alpha.
+This method of retrieving the endpoint and credential information differs from the existing {{site.data.keyword.messagehub}} service. Apps that currently run against {{site.data.keyword.messagehub}} will require changes to reflect the alternative field names that are required from VCAP_SERVICES and to the username/password fields submitted to Kafka. These changes will not be required in future versions of the Alpha.
 
 ## Connecting a client to the REST API
 
@@ -107,7 +107,7 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 ## Administering {{site.data.keyword.messagehub}}
 {: alpha_admin}
 
-The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can do administer in one of two ways, either by using:
+The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
 
 * The Kafka client API directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
 
@@ -116,7 +116,7 @@ The only administration tasks required in a cluster are to create, list, and del
 You can find further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger Editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
-For a simple example demonstrating how to create a topic using Curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
+For a simple example that demonstrates how to create a topic using Curl, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
 In the future, other configuration options will also be available.
 
@@ -136,15 +136,15 @@ The current limitations of this Alpha program are as follows:
 
 * A UI
 
-* Multi availability zone support
+* Support for multiple availability zones
 
 * User-controlled scaling and load limits
 
-* Finer grained access controls, including topics
+* Finer-grained access controls, including topics
 
-* Integration with the IBM Cloud Activity Tracker service (previously known as AccessTrail) 
+* Integration with the {{site.data.keyword.cloudaccesstrailfull_notm}} service (previously known as AccessTrail) 
 
-### Not currently planned:
+### Not currently planned
 
 * Bridges
 
