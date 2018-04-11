@@ -17,7 +17,7 @@ lastupdated: "2017-10-26"
 
 The Kafka REST API provides a RESTful interface to a Kafka
 cluster. You can easily produce and consume messages and complete administration tasks by using the
-API. For reference documents, see [Confluent Platform docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.confluent.io/2.0.0/){:new_window}. Only the binary embedded format is supported for requests and responses in {{site.data.keyword.messagehub}}. The Avro and JSON embedded formats are not supported.
+API. For reference documents, see [Kafka REST Proxy docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/2.0.0/kafka-rest/docs/index.html){:new_window}. Only the binary embedded format is supported for requests and responses in {{site.data.keyword.messagehub}}. The Avro and JSON embedded formats are not supported.
 
 If you are using CURL, you can use an example like the following to produce:
 <pre class="pre"><code>
