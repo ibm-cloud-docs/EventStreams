@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-30"
+lastupdated: "2018-04-12"
 
 ---
 
@@ -79,6 +79,24 @@ The following configuration settings apply to all topics and cannot be changed:
 For example, if you create and delete 1 topic 10 times in a day, you are charged for a maximum of 1 topic. However, if you create 10 topics and delete them, you might be charged for either 0 or 10 topics depending when the sampling takes place.
 
 {{site.data.keyword.messagehub}} bills either for each message or for each 64 k. A message up to 64 k counts as 1 billable message. Messages larger than 64 k count as the following number of billable messages: <code><var class="keyword varname">message_size</var> &#247; 64 k</code>.
+
+<!--12/04/18 - Karen: same info duplicated at messagehub057 -->
+## How often does the Kafka REST API restart? 
+{: #REST_restart }
+
+The Kafka REST API restarts once a day for a short period of
+time. 
+
+During this period, the Kafka REST API might become
+unavailable. If this happens, you are recommended to retry your
+request. After the REST API has restarted, you will have to
+recreate your Kafka consumer instances. If this is the case, the
+REST API returns the following JSON:
+
+```'{"error_code":40403,"message":"Consumer instance not found."}'
+```
+{:screen}
+
 
 
 

@@ -67,6 +67,7 @@ responds with the following HTTP error:
 
 If you see this error, wait and submit the request again.
 
+<!--12/04/18 - Karen: same info duplicated at messagehub108 -->
 ## Kafka REST API daily restart
 {: #rest_restart}
 
