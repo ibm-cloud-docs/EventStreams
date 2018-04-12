@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-02-07"
+lastupdated: "2018-04-12"
 
 ---
 
@@ -42,3 +42,5 @@ in JSON format in the VCAP_SERVICES environment variable for your app. Here is a
 
 The environment variable's content is the same, regardless of the API that you use to connect to {{site.data.keyword.messagehub}}. Your {{site.data.keyword.Bluemix_notm}} app selects the appropriate credentials from the VCAP_SERVICES environment variable, depending on the interface in
  use.
+ 
+Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of you other brokers. 

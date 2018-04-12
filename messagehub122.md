@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-03-27"
+lastupdated: "2018-04-12"
 
 ---
 
@@ -43,7 +43,7 @@ The Premium plan is designed for users who have performance and other functional
 
 Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90 000 KB per second. 
 
-You can create a maximum of 1000 partitions, with each partition retaining a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas and the the offset data for each partition (holding the position of the last successfully consumed message) is held for a maximum of 7 days.
+You can create a maximum of 1000 partitions and  each partition can retain a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas and the the offset data for each partition (holding the position of the last successfully consumed message) is held for a maximum of 7 days.
 
 The following two APIs are supported:
 
@@ -72,6 +72,7 @@ bx resource service-key-create name-of-key Manager --instance-name name-of-your-
 ``` 
 
 Copy the ```kafka_brokers_sasl```, ```kafka_admin_url```, and ```apikey``` fields from the generated information.
+Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of you other brokers. 
 
 ## Connecting a client to the Kafka API
 
@@ -79,7 +80,7 @@ To connect a client to the Kafka API, complete the following steps:
 
 1. Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
 
-2. Set the clients ```sasl.jaas.config``` USERNAME field to the first eight characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
+2. Set the clients ```sasl.jaas.config``` USERNAME field to the first 8 characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
 
 The Kafka client that you use must support the following features:
 

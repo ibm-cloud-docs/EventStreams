@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-11"
+lastupdated: "2018-04-12"
 
 ---
 
@@ -87,6 +87,7 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
   3. To run the next commands, you need the following information:
   
     * Your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. 
+	Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of you other brokers. 
   
     * Your ```apikey```. The first 8 characters form your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
     * The location of your SSL certificates. For example, on Ubuntu the SSL_CERTS_DIRECTORY is ```/etc/ssl/certs/```
