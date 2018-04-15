@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-13b"
+lastupdated: "2018-04-15"
 
 ---
 
@@ -18,11 +18,12 @@ lastupdated: "2018-04-13b"
 {{site.data.keyword.messagehub}} permissions are configured using IAM policies. An IAM policy consists of the following information:
 
 * a service ID
-* an IBM Cloud resource defined by a service name, service instance, region, IAM resourceType and IAM resource.
+* an IBM Cloud resource defined by a service name, service instance, region, IAM resourceType, and IAM resource.
 * a role (Reader, Writer, Manager)
 
 For more information about IAM, see: 
 [IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview)
+
 
 For an example about how to set policies, see: 
 [Introducing IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
@@ -40,7 +41,7 @@ For an example about how to set policies, see:
 You can identify unique resources for topic, group, and txnid by setting the IAM resource. The cluster resourceType is a singleton, so it does not need to be uniquely identified.
 
 ## Common scenarios
-{: iam_scenrios}
+{: iam_scenarios}
 
 Producer to some topics (same for idempotent):
 * Reader on the cluster resourceType
