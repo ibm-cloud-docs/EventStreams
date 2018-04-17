@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-15"
+lastupdated: "2018-04-17"
 
 ---
 
@@ -42,35 +42,35 @@ You can identify unique resources for topic, group, and txnid by setting the IAM
 ## Common scenarios
 {: iam_scenarios}
 
-Here are some common {{site.data.keyword.messagehub}} scenarios and the permissions you need to grant:
+Here are some common {{site.data.keyword.messagehub}} scenarios and the permissions you need to grant in each case:
 
 Producer to some topics (same for idempotent):
-* Reader on the cluster resourceType
-* Writer on each topic resourceType and topic name resource
+* Reader role on the cluster resourceType
+* Writer role on each topic resourceType and topic name resource
 
 Transactional producer:
 * same as producer
-* Writer on txnid resourceType and transaction id resource
-* Reader on group resourceType and group id resource
+* Writer role on txnid resourceType and transaction ID resource
+* Reader role on group resourceType and group ID resource
 
 Consumer (no group):
-* Reader on the cluster resourceType
-* Reader on each topic resourceType and topic name resource
+* Reader role on the cluster resourceType
+* Reader role on each topic resourceType and topic name resource
 
 Consumer with group:
-* same as consumer
-* Reader on group resourceType and group id resource
+* Same as consumer
+* Reader role on group resourceType and group ID resource
 
 Create or delete topic:
-* Reader on the cluster resourceType
-* Manager on each topic resourceType and topic name resource
+* Reader role on the cluster resourceType
+* Manager role on each topic resourceType and topic name resource
 
 Delete consumer group:
-* Reader on the cluster resourceType
-* Manager on group resourceType and group id resource
+* Reader role on the cluster resourceType
+* Manager role on group resourceType and group ID resource
 
-List groups/topics/offsets, Describe group/topic/broker configs
-* Reader on the cluster resourceType
+List groups, topics and offsets and describe group, topic, and broker configurations
+* Reader role on the cluster resourceType
 
 
 
