@@ -72,9 +72,14 @@ IBM Message Hub
 	messagehub111.md
 	messagehub116.md
 	messagehub110.md
-	messagehub120.md
-	messagehub122.md
-	messagehub123.md
+	
+	{: .topicgroup}
+	Alpha program
+		messagehub120.md
+		messagehub122.md
+		messagehub123.md
+
+	{: .topicgroup}
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
