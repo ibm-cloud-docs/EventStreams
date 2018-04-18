@@ -78,8 +78,6 @@ IBM Message Hub
 		messagehub120.md
 		messagehub122.md
 		messagehub123.md
-
-	{: .topicgroup}
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
