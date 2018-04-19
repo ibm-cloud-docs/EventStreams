@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-18"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-04-18"
 {{site.data.keyword.messagehub}} permissions are configured using IAM policies. An IAM policy consists of the following information:
 
 * a service ID
-* an {{site.data.keyword.Bluemix_short}} resource defined by a service name, service instance, region, IAM resource type, and IAM resource
+* an {{site.data.keyword.Bluemix_short}} resource that is defined by a service name, service instance, region, IAM resource type, and IAM resource
 * a role (Reader, Writer, or Manager)
 
 For more information about IAM, see: 
@@ -42,7 +42,7 @@ You can identify unique resources for topic, group, and txnid by setting the IAM
 ## Common scenarios
 {: iam_scenarios}
 
-Here are some common {{site.data.keyword.messagehub}} scenarios and the permissions you need to grant in each case:
+Here are some common {{site.data.keyword.messagehub}} scenarios and the acess you need to assign:
 
 Producer to some topics (same for idempotent):
 * Reader role on the cluster resource type
