@@ -27,7 +27,7 @@ For more information about IAM, see:
 For an example about how to set policies, see: 
 [Introducing IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
 
-## {{site.data.keyword.messagehub}} IAM resources:
+## {{site.data.keyword.messagehub}} IAM resources
 {: iam_resources}
 
 {{site.data.keyword.messagehub}} exposes four IAM resource types:
