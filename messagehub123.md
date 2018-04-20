@@ -42,7 +42,7 @@ You can identify unique resources for topic, group, and txnid by setting the IAM
 ## Common scenarios
 {: iam_scenarios}
 
-Here are some common {{site.data.keyword.messagehub}} scenarios and the acess you need to assign:
+Here are some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
 
 Producer to some topics (same for idempotent):
 * Reader role on the cluster resource type
