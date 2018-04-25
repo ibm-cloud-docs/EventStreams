@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-04-25"
 
 ---
 
@@ -110,7 +110,7 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
 
-* Interactively by using the Web UI for the service instance available in the IBM Cloud portal
+* Interactively by using the Web UI for the service instance available in the IBM Cloud portal.
 
 * The Kafka client API directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
 
