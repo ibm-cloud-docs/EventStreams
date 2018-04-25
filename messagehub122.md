@@ -43,11 +43,11 @@ The Premium plan is designed for users who have performance and other functional
 
 Your Alpha cluster is deployed with Apache Kafka version 1.1 and is capable of delivering a maximum message throughput of 90 000 KB per second. 
 
-You can create a maximum of 1000 partitions and  each partition can retain a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas and the the offset data for each partition (holding the position of the last successfully consumed message) is held for a maximum of 7 days.
+You can create a maximum of 1000 partitions and  each partition can retain a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas and the committed offset for each partition is held for a maximum of 7 days.
 
 The following two APIs are supported:
 
-* For messaging, Kafka clients from version 0.10.x and later are supported, including the option to use KSQL, Kafka Streams, and Kafka Connect.
+* For messaging, Kafka clients from version 0.10.x and later are supported, including the option to use Kafka Streams, Kafka Connect and KSQL.
 
 * For administration, a REST API is available for creating, deleting, and listing topics.
 
@@ -109,6 +109,10 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 {: alpha_admin}
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
+
+
+
+* The Kafka admin APIs directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` methods from [AdminClient ![External link icon](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
 
 * Interactively by using the Web UI for the service instance available in the IBM Cloud portal.
 
