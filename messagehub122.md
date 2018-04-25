@@ -41,7 +41,7 @@ The Premium plan is designed for users who have performance and other functional
 ## About your Alpha cluster
 {: alpha_cluster}
 
-Your Alpha cluster is deployed with Apache Kafka version 1.0.1 and is capable of delivering a maximum message throughput of 90 000 KB per second. 
+Your Alpha cluster is deployed with Apache Kafka version 1.1 and is capable of delivering a maximum message throughput of 90 000 KB per second. 
 
 You can create a maximum of 1000 partitions and  each partition can retain a maximum of 1 GB data for up to 30 days. For resilience, data is stored across 3 replicas and the committed offset for each partition is held for a maximum of 7 days.
 
@@ -110,7 +110,12 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
 
+
 * The Kafka admin APIs directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` methods from [AdminClient ![External link icon](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
+
+* Interactively by using the Web UI for the service instance available in the IBM Cloud portal
+
+* The Kafka client API directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` functions.
 
 * The admin REST API provided in the cluster.
 
@@ -135,13 +140,9 @@ The current limitations of this Alpha program are as follows:
 
 ### Not available yet, but coming soon
 
-* A UI
-
 * Support for multiple availability zones
 
 * User-controlled scaling and load limits
-
-* Finer-grained access controls, including topics
 
 * Integration with the {{site.data.keyword.cloudaccesstrailfull_notm}} service (previously known as AccessTrail) 
 
