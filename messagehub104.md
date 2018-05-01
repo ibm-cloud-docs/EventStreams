@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-05-01"
 
 ---
 
@@ -41,13 +41,16 @@ The application also serves up a web front end that you can use for administrati
 
 You can find the sample code in the [message-hub-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-liberty-sample){:new_window}.
 
-## How to migrate the Kafka client from 0.9.X to 0.10.X
+<!--
+23/04/18 - Karen: following info on production in messagehub084 
+-->
+# How to migrate the Kafka client from 0.9.X to 0.10.X or 0.11.X
 {: #kafka_migrate notoc}
 
 
-If you're using the Java clients, you can now use
-the publicly available 0.10.X Kafka clients. You are strongly encouraged to move from 0.9.X to the
-latest 0.10.X version (currently 0.10.2.1). Complete the following steps:
+If you're using the Java clients, you can use
+the publicly available Kafka clients at 0.10 or later. You are strongly encouraged to move from 0.9.X to the
+latest 0.10.X or 0.11.X version (we support all newer versions). Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
 2. Change your <code>jaas.conf</code> file to the following:
