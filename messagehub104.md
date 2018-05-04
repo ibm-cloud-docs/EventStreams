@@ -42,11 +42,32 @@ The application also serves up a web front end that you can use for administrati
 You can find the sample code in the [message-hub-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-liberty-sample){:new_window}.
 
 <!--
+17/10/17 - Karen: following info duplicated at messagehub063 
+-->
+
+## Using the sasl.jaas.config property
+{: #sasl_prop notoc}
+If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
+<pre>
+<code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
+    username="USERNAME" \
+    password="PASSWORD";</code>
+</pre>
+{:codeblock}
+
+where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
+
+If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
+[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
+
+For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
+
+<!--
 23/04/18 - Karen: following info on production in messagehub084 
 -->
 
 ## Migrating a Kafka client from 0.9.X or 0.10.X to later client versions
-{: #kafka_migrate notoc}
+{: #kafka_migrate}
 
 
 If you're using the Java clients, you can use
@@ -80,35 +101,16 @@ Complete the following steps:
 2. Add the following to the client's properties:
     ```
 	sasl.mechanism=PLAIN
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="<your username>" password="<your password>";
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
 	```
-
-where &lt;your username&gt; and &lt;your password&gt; are from the VCAP_SERVICES environment variable.
-
-
-<!--
-17/10/17 - Karen: following info duplicated at messagehub063 
--->
-
-## Using the sasl.jaas.config property
-{: #sasl_prop notoc}
-If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
-<pre>
-<code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
-    username="USERNAME" \
-    password="PASSWORD";</code>
-</pre>
-{:codeblock}
 
 where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
-If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
-[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
 
-For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
 <!-- 
 17/10/17 - Karen: following info duplicated at messagehub108
  -->
+ 
 ## APIs for topic administration
 {: #topic_admin notoc}
 
