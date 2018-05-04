@@ -71,7 +71,7 @@ From the console for an external application, create a service apikey by using t
 bx resource service-key-create name-of-key Manager --instance-name name-of-your-service
 ``` 
 
-Copy the ```kafka_brokers_sasl```, ```kafka_admin_url```, and ```apikey``` fields from the generated information.
+Copy the <code>kafka_brokers_sasl</code>, <code>kafka_admin_url</code>, and <code>apikey</code> fields from the generated information.
 Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of you other brokers. 
 
 ## Connecting a client to the Kafka API
