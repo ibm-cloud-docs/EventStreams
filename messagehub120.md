@@ -51,7 +51,7 @@ If you don't already have an app you can use, create a test app and use the cred
   5. In the **Connect IAM-Enabled Service** window, accept the defaults and click **Connect**.
   Ensure your {{site.data.keyword.messagehub}} service is provisioned so that you can connect to it.
 
-  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the ```kafka_admin_url```, ```apikey```, and ```kafka_brokers_sasl``` information, which you'll need to be able to send a message.
+  6. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. In the **VCAP_SERVICES** section, locate the <code>kafka_admin_url</code>, <code>apikey</code>, and <code>kafka_brokers_sasl</code> information, which you'll need to be able to send a message.
   
 ## Get credentials using the command line option
 Alternatively, you can get the required credentials using the command line. Complete the following steps:
@@ -89,8 +89,8 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     * Your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. 
 	Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of you other brokers. 
   
-    * Your ```apikey```. The first 8 characters form your sasl.username and the remainder of the ```apikey``` forms your sasl.password.
-    * The location of your SSL certificates. For example, on Ubuntu the SSL_CERTS_DIRECTORY is ```/etc/ssl/certs/```
+    * Your <code>apikey</code>. The first 8 characters form your sasl.username and the remainder of the <code>apikey</code> forms your sasl.password.
+    * The location of your SSL certificates. For example, on Ubuntu the SSL_CERTS_DIRECTORY is <code>/etc/ssl/certs/</code>
   
   4. Produce some messages by running a command like the following:
   ```
@@ -98,7 +98,7 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     ```
 		
 	<br/>
-  After running the command, you can enter some text like ```HelloWorld``` in the producer terminal.
+  After running the command, you can enter some text like <code>HelloWorld</code> in the producer terminal.
   
   5. Consume the messages by running a command like the following:
   ```
@@ -106,5 +106,5 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
   ```
 	
 	<br/>
-  You should see ```HelloWorld``` in the consumer terminal.
+  You should see <code>HelloWorld</code> in the consumer terminal.
 

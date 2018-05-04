@@ -78,9 +78,9 @@ Only your first five brokers are listed in VCAP_SERVICES. If you have more than 
 
 To connect a client to the Kafka API, complete the following steps:
 
-1. Set the clients ```bootstrap.servers``` property to a comma-separated list of the brokers listed in ```kafka_brokers_sasl```
+1. Set the clients <code>bootstrap.servers</code> property to a comma-separated list of the brokers listed in <code>kafka_brokers_sasl</code>.
 
-2. Set the clients ```sasl.jaas.config``` USERNAME field to the first 8 characters of the ```apikey```, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
+2. Set the clients <code>sasl.jaas.config</code> USERNAME field to the first 8 characters of the <code>apikey</code>, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
 
 The Kafka client that you use must support the following features:
 
@@ -96,11 +96,11 @@ This method of retrieving the endpoint and credential information differs from t
 
 To connect a client to the REST API, complete the following steps:
 
-* The URI for the REST API is provided in the ```kafka_admin_url```
+* The URI for the REST API is provided in the <code>kafka_admin_url</code>
 
-* Set the HTTP ```Content-Type``` header to ```application/json```
+* Set the HTTP <code>Content-Type</code> header to <code>application/json</code>
 
-* Set the HTTP ```X-Auth-Token``` header to the value of ```apikey```
+* Set the HTTP <code>X-Auth-Token</code> header to the value of <code>apikey</code>
 
 For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/services/MessageHub/messagehub120.html).
 
@@ -110,7 +110,7 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
 
-* The Kafka admin APIs directly from your application. For example for Java, by using the ```createTopics()```, ```deleteTopics()``` or ```listTopics()``` methods from [AdminClient ![External link icon](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
+* The Kafka admin APIs directly from your application. For example for Java, by using the <code>createTopics()</code>, <code>deleteTopics()</code> or <code>listTopics()</code> methods from [AdminClient ![External link icon](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
 
 * Interactively by using the Web UI for the service instance available in the IBM Cloud portal.
 
