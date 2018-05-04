@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-01"
+lastupdated: "2018-05-04"
 
 ---
 
@@ -44,13 +44,17 @@ You can find the sample code in the [message-hub-samples GitHub project ![Extern
 <!--
 23/04/18 - Karen: following info on production in messagehub084 
 -->
-# How to migrate the Kafka client from 0.9.X to 0.10.X or 0.11.X
+
+## Migrating a Kafka client from 0.9.X or 0.10.X to later client versions
 {: #kafka_migrate notoc}
 
 
 If you're using the Java clients, you can use
 the publicly available Kafka clients at 0.10 or later. You are strongly encouraged to move from 0.9.X to the
-latest 0.10.X or 0.11.X version (we support all newer versions). Complete the following steps:
+latest 0.10.X or 0.11.X version (we support all newer versions). 
+
+### Migrating a Kafka client from 0.9.X, 0.10.0.X, or 0.10.1.X to later versions
+Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
 2. Change your <code>jaas.conf</code> file to the following:
@@ -65,6 +69,22 @@ latest 0.10.X or 0.11.X version (we support all newer versions). Complete the fo
     {: codeblock}
 
 3. Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code>
+
+### Migrating a Kafka client from 0.10.2.X or later
+
+From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplicifcation allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
+
+Complete the following steps:
+
+1. Delete the JAAS file. Note that the JVM property java.security.auth.login.config=<PATH TO JAAS> is also no longer required.
+2. Add the following to the client's properties:
+    ```
+	sasl.mechanism=PLAIN
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="<your username>" password="<your password>";
+	```
+
+where &lt;your username&gt; and &lt;your password&gt; are from the VCAP_SERVICES environment variable.
+
 
 <!--
 17/10/17 - Karen: following info duplicated at messagehub063 
