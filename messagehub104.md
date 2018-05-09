@@ -63,7 +63,7 @@ If you use <code>sasl.jaas.config</code>, clients running in the same JVM can us
 For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
 
 <!--
-23/04/18 - Karen: following info on production in messagehub084 
+23/04/18 - Karen: following migration info on production in messagehub084 
 -->
 
 ## Migrating a Kafka client from 0.9.X or 0.10.X to later client versions
@@ -72,9 +72,31 @@ For an earlier Kafka client, you must use a JAAS configuration file to specify t
 
 If you're using the Java clients, you can use
 the publicly available Kafka clients at 0.10 or later. You are strongly encouraged to move from 0.9.X to the
-latest 0.10.X or 0.11.X version (we support all newer versions). 
+latest version. You can download a Kafka client from 
+[https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/downloads){:new_window} 
 
-### Migrating a Kafka client from 0.9.X, 0.10.0.X, or 0.10.1.X to later versions
+
+
+### Migrating a Kafka client to 0.10.2.X or later versions
+
+From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplicifcation allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
+
+Complete the following steps:
+
+1. Delete the JAAS file. Note that the JVM property java.security.auth.login.config=<PATH TO JAAS> is also no longer required.
+2. If you're migrating from 0.9.X, delete the {{site.data.keyword.messagehub}} login jar module.
+2. Add the following to the client's properties:
+    ```
+	sasl.mechanism=PLAIN
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+	```
+
+	where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
+	
+	
+
+### Migrating a Kafka client from 0.9.X to 0.10.0.X or 0.10.1.X
+
 Complete the following steps:
 
 1. Delete the {{site.data.keyword.messagehub}} login jar module.
@@ -83,29 +105,15 @@ Complete the following steps:
         KafkaClient {
           org.apache.kafka.common.security.plain.PlainLoginModule required
           serviceName="kafka"
-            username="<your username>"
-            password="<your password>";
+            username="USERNAME"
+            password="PASSWORD";
         };
     ```
     {: codeblock}
 
+	where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
+	
 3. Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code>
-
-### Migrating a Kafka client from 0.10.2.X or later
-
-From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplicifcation allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
-
-Complete the following steps:
-
-1. Delete the JAAS file. Note that the JVM property java.security.auth.login.config=<PATH TO JAAS> is also no longer required.
-2. Add the following to the client's properties:
-    ```
-	sasl.mechanism=PLAIN
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
-	```
-
-where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-
 
 <!-- 
 17/10/17 - Karen: following info duplicated at messagehub108
