@@ -40,8 +40,7 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Public ![External 
 {: notoc}
 
 {{site.data.keyword.Bluemix_notm}} Dedicated provides a more
-isolated environment where your infrastructure is not shared and is hosted in a separate SoftLayer
-account managed by {{site.data.keyword.IBM_notm}}. This environment is securely connected to {{site.data.keyword.Bluemix_notm}} Public and your own network.
+isolated environment where your infrastructure is not shared and is hosted in a separate account managed by {{site.data.keyword.IBM_notm}}. This environment is securely connected to {{site.data.keyword.Bluemix_notm}} Public and your own network.
 
 In a dedicated instance of {{site.data.keyword.messagehub}}, you
 pay for the service rather than how much you use it. You can have up to 75 partitions across the
