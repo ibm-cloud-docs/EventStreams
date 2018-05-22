@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-05-22"
 
 ---
 
@@ -25,8 +25,8 @@ Complete the following steps to get an app running with the {{site.data.keyword.
 {: alpha_create}
 
 
-  1. Click the **Message Hub** tile, which is a service in the 
-[catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/services/message-hub).</li>
+  1. Click the **Message Hub** tile in the 
+[catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/services/message-hub).
 
   2. Create a {{site.data.keyword.messagehub}} service using the <code>Premium</code> pricing plan. This service provides a single-tenant cluster and typically takes 1-3 hours to provision.
  
