@@ -25,10 +25,10 @@ Complete the following steps to get an app running with the {{site.data.keyword.
 {: alpha_create}
 
 
-  1. Click the **Message Hub vNext - Production** tile, which is an experimental service in the 
-[catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/labs/?search=vnext).</li>
+  1. Click the **Message Hub** tile, which is a service in the 
+[catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/services/message-hub).</li>
 
-  2. Create a {{site.data.keyword.messagehub}} service. This service provides a single-tenant cluster under by the <code>Premium</code> pricing plan and typically takes 1-3 hours to provision.
+  2. Create a {{site.data.keyword.messagehub}} service using the <code>Premium</code> pricing plan. This service provides a single-tenant cluster and typically takes 1-3 hours to provision.
  
 
 
