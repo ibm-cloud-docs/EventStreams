@@ -16,7 +16,6 @@ IBM Message Hub
 		messagehub112.md
 		messagehub114.md
 		messagehub118.md
-	 	messagehub106.md
 	 	messagehub070.md
 	 	messagehub085.md
 
@@ -44,6 +43,7 @@ IBM Message Hub
 		messagehub095.md
 		messagehub096.md
 	messagehub075.md
+	 	messagehub106.md
 		messagehub098.md
 		messagehub079.md
 		messagehub099.md
