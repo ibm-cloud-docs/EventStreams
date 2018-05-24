@@ -14,7 +14,7 @@ lastupdated: "2018-05-24"
 
 
 
-# Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard plan
+# Reporting a problem to the {{site.data.keyword.messagehub}} team - Enterprise plan
 {: #report_problem}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}. 
