@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -15,6 +15,10 @@ lastupdated: "2016-11-22"
 
 # Exchanging messages between the MQ Light API and the Kafka or Kafka REST APIs
 {: #mql_exchange}
+
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 {{site.data.keyword.mql}} messages are stored in a single underlying Kafka topic named "MQLight" and are encoded as detailed in the following table. This encoding can also be used by other API types, such as Kafka or Kafka REST, to exchange messages with applications using the
 {{site.data.keyword.mql}} API.

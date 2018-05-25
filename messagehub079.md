@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-02-13"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2017-02-13"
 
 # How to connect and authenticate
 {: #mql_connect}
+
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 To connect an app to the service, the app must use the <code>user</code>,
 <code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub071.html). Use the following guidance for your chosen language:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-02-01"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2017-02-01"
 
 # How to connect existing MQ Light applications
 {: #mql_exist_apps}
+
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 You can connect existing applications that currently run against either {{site.data.keyword.IBM_notm}} MQ or the {{site.data.keyword.mql}}
 {{site.data.keyword.Bluemix_notm}} service to the service. The apps continue to work in the same way.

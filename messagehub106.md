@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-04-28"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2017-04-28"
 
 # What is the MQ Light API and how is it different?
 {: #mqlight}
+
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 The {{site.data.keyword.mql}} API provides a higher level of
 abstraction for messaging compared to Kafka, which makes it easier to learn and easier to use in
