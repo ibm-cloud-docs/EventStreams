@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2016-11-22"
 
 # How to connect and authenticate
 {: #rest_connect}
+
+<br/>
+** The Kafka REST API is available as part of the Standard plan only.**
+<br/>
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka REST API uses the <code>api_key</code> and <code>kafka_rest_url</code>
 credentials from the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub071.html).

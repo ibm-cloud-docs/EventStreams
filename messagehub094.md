@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2016-11-22"
 
 # What's required to use the Kafka REST API with Message Hub?
 {: #rest_reqs}
+
+<br/>
+** The Kafka REST API is available as part of the Standard plan only.**
+<br/>
 
 The following requirements are needed to use the Kafka REST API with {{site.data.keyword.messagehub}}: 
 TBD

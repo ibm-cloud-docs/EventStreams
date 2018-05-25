@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-11"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2018-04-11"
 
 # Using the Kafka REST API
 {: #rest_using}
+
+<br/>
+** The Kafka REST API is available as part of the Standard plan only.**
+<br/>
 
 The Kafka REST API provides a RESTful interface to a Kafka
 cluster. You can easily produce and consume messages and complete administration tasks by using the

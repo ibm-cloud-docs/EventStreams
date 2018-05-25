@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-02-27"
+lastupdated: "2018-05-25"
 
 ---
 
@@ -15,6 +15,9 @@ lastupdated: "2017-02-27"
 # How to use the Kafka REST API
 {: #rest_how}
 
+<br/>
+** The Kafka REST API is available as part of the Standard plan only.**
+<br/>
 
 ## To do: examples
 {: notoc}
