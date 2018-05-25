@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-09-26"
+lastupdated: "2018-05-24"
 
 ---
 
@@ -23,8 +23,11 @@ Apache Kafka project, a highly scalable, high-performing messaging backbone prov
 production environments. For more information, see [{{site.data.keyword.messagehub}} and Apache Kafka](/docs/services/MessageHub/messagehub073.html).
 Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 
+{{site.data.keyword.messagehub}} is available in two different plans depending on your requirements: Standard and Enterprise.
+
 {{site.data.keyword.messagehub}} has three APIs: the Kafka API, Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Creating messaging applications](/docs/services/MessageHub/messagehub086.html).
 
+## {{site.data.keyword.messagehub}} Standard plan
 {{site.data.keyword.messagehub}} also
 supports bridges to a selection of other systems. A bridge is a unidirectional link to another
 system. A bridge can take messages from the other system and publish them onto a topic, or consume
