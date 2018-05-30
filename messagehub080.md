@@ -15,7 +15,6 @@ lastupdated: "2018-05-25"
 # How to connect existing MQ Light applications
 {: #mql_exist_apps}
 
-<br/>
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 

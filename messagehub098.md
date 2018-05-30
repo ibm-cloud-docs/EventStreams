@@ -15,7 +15,6 @@ lastupdated: "2018-05-30"
 # What's required to use the MQ Light API with Message Hub?
 {: #mql_reqs}
 
-<br/>
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 

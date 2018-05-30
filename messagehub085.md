@@ -62,35 +62,24 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 
 For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
 
-| Standard     |Enterprise   |
-|----------|---------|
-|key.serializer     | The class used to serialize keys. | 
-|value.serializer     | The class used to serialize values. | 
-|acks     | The number of servers required to acknowledge each message published. This controls the durability guarantees that the producer requires. | 
-|retries     | The number of times that the client resends a message when the send encounters an error. |
-|max.block.ms     | The number of milliseconds that a send or metadata request can block waiting. |
-|max.in.flight.requests.per.connection     | The maximum number of unacknowledged requests that the client sends on a connection before blocking further requests| 
-|request.timeout.ms     | The maximum amount of time the producer waits for a response to a request. If the response is not received before the timeout elapses, the request is retried or fails if the number of retries has been exhausted.|
-
-
 <table>
     <caption>Table 1. Support in each plan</caption>
       <tr>
         <th>Plan</th>
-		    <th>Available APIs</th>
+		    <th>APIs</th>
 		    <th>Available in which regions</th>
         </tr>
       <tr>
-        <td>Standard</td>
-		    <td>Kafka API, Kafka REST API, MQLight API</td>
-		    <td>US South, US East, United Kingdom, Sydney, Germany </td>
-        <td>No</td>
-      </tr>
-      <tr>
         <td>Enterprise</td>
 		    <td>Kafka API</td>
-		    <td>Yes</td>
+		    <td>US South, United Kingdom, Sydney, Germany</td>
       </tr>
+      <tr>
+        <td>Standard</td>
+		    <td>Kafka API, Kafka REST API, MQLight API</td>
+		    <td>US South, United Kingdom, Sydney, Germany </td>
+       </tr>
+
 </table>
 
 
