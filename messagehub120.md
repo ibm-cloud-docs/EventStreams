@@ -38,7 +38,7 @@ Complete the following steps to get an app running with the {{site.data.keyword.
 You'll need credentials to work with {{site.data.keyword.messagehub}}. 
 If you don't already have an app you can use, create a test app and use the credentials the app uses to connect to {{site.data.keyword.messagehub}}. For example, use the **SDK for Node.js** service for a test app. 
 
-  1. Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs).
+  1. Navigate to the **SDK for Node.js** tile in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/starters/sdk-for-nodejs){:new_window}.
    
   Before you enter an app name, ensure that you select a region of US South. Create the app.
 
@@ -82,7 +82,7 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     ```
     {: codeblock}
 
-  2. Install the [kafkacat tool![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install), which is useful for a quick test of Kafka.
+  2. Install the [kafkacat tool![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/kafkacat#install){:new_window}, which is useful for a quick test of Kafka.
   
   3. To run the next commands, you need the following information:
   

@@ -110,7 +110,7 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
 
-* The Kafka admin APIs directly from your application. For example for Java, by using the <code>createTopics()</code>, <code>deleteTopics()</code> or <code>listTopics()</code> methods from [AdminClient ![External link icon](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
+* The Kafka admin APIs directly from your application. For example for Java, by using the <code>createTopics()</code>, <code>deleteTopics()</code> or <code>listTopics()</code> methods from [AdminClient ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
 
 * Interactively by using the Web UI for the service instance available in the IBM Cloud portal.
 
