@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-22-11"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2016-22-11"
 
 # Maximum limits
 {: #max_limits}
+
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 The following limits are enforced for the {{site.data.keyword.mql}} API:
 {:shortdesc}
