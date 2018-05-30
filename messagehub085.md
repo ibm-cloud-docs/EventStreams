@@ -62,6 +62,9 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 
 For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
 
+
+## What's supported in the Standard and Enterprise plans
+
 <table>
     <caption>Table 1. Support in each plan</caption>
       <tr>
