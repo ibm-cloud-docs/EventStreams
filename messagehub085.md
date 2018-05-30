@@ -86,11 +86,11 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
         <td>Standard</td>
 		    <td>Kafka API</br>
 			Kafka REST API</br>
-			MQLight API</br>
+			MQ Light API</br>
 		    <td>US South</br>
 			United Kingdom</br>
 			Sydney</br>
-			Germany </td>
+			Germany (no MQ Light API) </td>
 			<td> </td>
        </tr>
 
