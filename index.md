@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-22"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-01-22"
 {: #messagehub}
 
 {{site.data.keyword.messagehub_full}} is a scalable,
-distributed, high throughput messaging service that enables applications and services to communicate easily and reliably.
+distributed, high throughput messaging service that enables applications and services to communicate easily and reliably. {{site.data.keyword.messagehub}} is built on Apache Kafka.
 {:shortdesc}
 
 Using {{site.data.keyword.messagehub}}, you can
