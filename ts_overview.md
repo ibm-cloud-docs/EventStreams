@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-05-10"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -37,7 +37,7 @@ community.
 *  [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window}
 *  [Apache Kafka 0.10.2.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0102/javadoc/index.html){: new_window}
 *  [A Comprehensive, Open Source REST Proxy for Kafka. ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.confluent.io/blog/a-comprehensive-open-source-rest-proxy-for-kafka/){: new_window} 
-	This blog provides a good introduction to the strengths and weaknesses of the Kafka REST API.
+	This blog provides a good introduction to the strengths and weaknesses of the Kafka REST API. The Kafka REST API is available as part of the Standard plan only.
 *  [{{site.data.keyword.Bluemix_notm}} pricing sheet ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ng.bluemix.net/#/pricing){: new_window}
 *  [{{site.data.keyword.Bluemix_notm}} prerequisites ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/support/#prereqs/){: new_window}
 

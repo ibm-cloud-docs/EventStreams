@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2016-11-22"
 
 # Why use the {{site.data.keyword.mql}} API?
 {: #why_mql}
+
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 The {{site.data.keyword.mql}} API provides a higher
 level of abstraction than the Kafka API. {{site.data.keyword.mql}} enables apps to be written quickly and portably in a unified messaging model that supports both queue and publish/subscribe messaging patterns. 

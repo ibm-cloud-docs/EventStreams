@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2016-11-22"
 
 # Why use the Kafka REST API?
 {: #why_rest}
+
+<br/>
+** The Kafka REST API is available as part of the Standard plan only.**
+<br/>
 
 The Kafka REST API is a convenient interface that can be used in the following situations:  
 

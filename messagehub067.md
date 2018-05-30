@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-02-27"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -14,6 +14,10 @@ lastupdated: "2017-02-27"
 
 # How to use, download, and set up the Kafka REST API sample
 {: #rest_sample}
+
+<br/>
+** The Kafka REST API is available as part of the Standard plan only.**
+<br/>
 
 The {{site.data.keyword.messagehub}} Kafka REST API sample is a Node.js application, which connects to {{site.data.keyword.messagehub}} over the Kafka REST API to produce and consume messages.
 
