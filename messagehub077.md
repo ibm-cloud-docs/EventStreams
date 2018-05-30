@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -15,6 +15,9 @@ lastupdated: "2016-11-22"
 # Enabling the {{site.data.keyword.mql}} API in {{site.data.keyword.messagehub}}
 {: #mql_enable}
 
+<br/>
+** The MQ Light API is available as part of the Standard plan only.**
+<br/>
 
 **You must explicitly create a Kafka topic named "MQLight" before you can use the API because all messages go through the "MQLight" topic. This topic must have a single partition. Creating this topic enables the MQ Light API for your service instance. **  For more information about how to create topics in {{site.data.keyword.messagehub}}, see [Managing topics](/docs/services/MessageHub/messagehub070.html).
 
