@@ -68,16 +68,27 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
         <th>Plan</th>
 		    <th>APIs</th>
 		    <th>Available in which regions</th>
+			<th>Kafka versionon cluster</th>
         </tr>
       <tr>
         <td>Enterprise</td>
 		    <td>Kafka API</td>
-		    <td>US South, United Kingdom, Sydney, Germany</td>
+		    <td>US South</br>
+			United Kingdom</br>
+			Sydney</br>
+			Germany</td>
+			<td>Kafka 1.1</td>
       </tr>
       <tr>
         <td>Standard</td>
-		    <td>Kafka API, Kafka REST API, MQLight API</td>
-		    <td>US South, United Kingdom, Sydney, Germany </td>
+		    <td>Kafka API</br>
+			Kafka REST API</br>
+			MQLight API</br>
+		    <td>US South</br>
+			United Kingdom</br>
+			Sydney</br>
+			Germany </td>
+			<td> </td>
        </tr>
 
 </table>
