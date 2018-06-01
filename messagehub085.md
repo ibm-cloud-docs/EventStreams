@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-12-04"
+lastupdated: "2018-05-30"
 
 ---
 
@@ -66,12 +66,12 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
 ## What's supported in the Standard and Enterprise plans
 
 <table>
-    <caption>Table 1. Support in each plan</caption>
+    <caption>Table 1. Support in Standard and Enterprise plans</caption>
       <tr>
         <th>Plan</th>
 		    <th>APIs</th>
 		    <th>Available in which regions</th>
-			<th>Kafka versionon cluster</th>
+			<th>Kafka version on cluster</th>
         </tr>
       <tr>
         <td>Enterprise</td>
@@ -86,11 +86,11 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
         <td>Standard</td>
 		    <td>Kafka API</br>
 			Kafka REST API</br>
-			MQLight API</br>
+			MQ Light API</br>
 		    <td>US South</br>
 			United Kingdom</br>
 			Sydney</br>
-			Germany </td>
+			Germany (no MQ Light API) </td>
 			<td> </td>
        </tr>
 
