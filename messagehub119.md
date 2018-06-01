@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-24"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -15,6 +15,9 @@ lastupdated: "2018-01-24"
 
 # Watson IoT Platform bridge
 {: #consuming_messages }
+
+** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+<br/>
 
 {{site.data.keyword.iot_full}} provides a managed bridge that allows you to create a unidirectional link to {{site.data.keyword.messagehub_full}}.
 

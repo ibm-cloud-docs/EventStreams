@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-09"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -14,6 +14,9 @@ lastupdated: "2018-01-09"
 
 # Object Storage bridge 
 {: #object_storage_bridge }
+
+** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+<br/>
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
 to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} [{{site.data.keyword.objectstorageshort}} service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}. The bridge consumes

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-01-18"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -14,6 +14,15 @@ lastupdated: "2018-01-18"
 
 # Linking to other services using bridges
 {: #bridges}
+
+** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+<br/>
+
+## Bridges - {{site.data.keyword.messagehub}} Standard plan
+The {{site.data.keyword.messagehub}} Standard plan also
+supports bridges to a selection of other systems. A bridge is a unidirectional link to another
+system. A bridge can take messages from the other system and publish them onto a topic, or consume
+messages from a topic and send them to the other system. In this way, you can use {{site.data.keyword.messagehub}} to integrate with other systems without writing code. (For more information, see [Linking to other services using bridges](/docs/services/MessageHub/messagehub088.html).)
 
 Bridges are unidirectional links between {{site.data.keyword.messagehub}} and another service. Bridges allow either
 data to be read from {{site.data.keyword.messagehub}} and written

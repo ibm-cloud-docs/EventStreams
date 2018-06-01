@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-12"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -53,7 +53,7 @@ As part of the regular operation of {{site.data.keyword.messagehub}}, the nodes 
 In some cases, your apps will be aware as the cluster reassigns resources. Write your apps to be resilient
 to these changes and to be able to reconnect and retry operations.
 
-### {{site.data.keyword.messagehub}} bridges
+### {{site.data.keyword.messagehub}} bridges (Standard plan only)
 {: #bridge_availability }
 
 Write your apps to handle the possibility that bridges might restart from time to time.

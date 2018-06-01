@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-03-10"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -14,6 +14,9 @@ lastupdated: "2017-03-10"
 
 # MQ bridge
 {: #mq_bridge}
+
+** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+<br/>
 
 The MQ bridge allows you to transfer message data from an {{site.data.keyword.IBM_notm}}
  MQ queue to a {{site.data.keyword.messagehub}} Kafka topic. The MQ bridge enables you to efficiently perform cloud-style workloads (for example, data analytics) against {{site.data.keyword.IBM_notm}} MQ message data generated within your enterprise.

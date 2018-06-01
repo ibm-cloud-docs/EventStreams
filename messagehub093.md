@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2016-11-22"
+lastupdated: "2018-06-01"
 
 ---
 
@@ -14,6 +14,9 @@ lastupdated: "2016-11-22"
 
 # Administering bridges
 {: #admin_api_bridges}
+
+** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+<br/>
 
 TBD
 
