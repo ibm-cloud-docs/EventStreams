@@ -18,15 +18,11 @@ lastupdated: "2018-06-01"
 ** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
 <br/>
 
-## Bridges - {{site.data.keyword.messagehub}} Standard plan
 The {{site.data.keyword.messagehub}} Standard plan also
-supports bridges to a selection of other systems. A bridge is a unidirectional link to another
-system. A bridge can take messages from the other system and publish them onto a topic, or consume
-messages from a topic and send them to the other system. In this way, you can use {{site.data.keyword.messagehub}} to integrate with other systems without writing code. (For more information, see [Linking to other services using bridges](/docs/services/MessageHub/messagehub088.html).)
-
-Bridges are unidirectional links between {{site.data.keyword.messagehub}} and another service. Bridges allow either
+supports bridges to a selection of other systems. Bridges are unidirectional links between {{site.data.keyword.messagehub}} and another service. Bridges allow either
 data to be read from {{site.data.keyword.messagehub}} and written
-into another service, or data to be read from another service and written into {{site.data.keyword.messagehub}}. 
+into another service, or data to be read from another service and written into {{site.data.keyword.messagehub}}. A bridge can take messages from the other system and publish them onto a topic, or consume
+messages from a topic and send them to the other system. In this way, you can use {{site.data.keyword.messagehub}} to integrate with other systems without writing code.
 {:shortdesc}
 
 The key benefits of using {{site.data.keyword.messagehub}} bridges are the following:  
