@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-06-04"
 
 ---
 
@@ -104,6 +104,60 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
 			<td>Yes </td>
 			<td>Yes </td>
        </tr>
+
+</table>
+
+
+--------------------
+
+<table>
+    <caption>Table 1. Support in Enterprise and Standard plans</caption>
+      <tr>
+	        <th></th>
+		    <th>Enterprise Plan</th>
+		    <th>Standard Plan</th>
+        </tr>
+      <tr>
+     	    <td>APIs supported</td>
+			<td>Kafka API</td>
+			<td>Kafka API</br>
+			Kafka REST API</br>
+			MQ Light API</br>
+		    </td>
+		</tr>
+		<tr>
+			<td>Available in which regions</td>
+			<td>US South only</td>
+			<td>US South</br>
+			United Kingdom</br>
+			Sydney</br>
+			Germany (no MQ Light API)</td>
+		</tr>
+		<tr>
+			<td>Kafka version on cluster</td>
+			<td>Kafka 1.1</td>
+			<td>Kafka 0.10.2 </td>
+		</tr>
+		<tr>
+			<td>Quotas supported?</td>
+			<td>No</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>Bridges supported?</td>
+			<td>No</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
 
 </table>
 
