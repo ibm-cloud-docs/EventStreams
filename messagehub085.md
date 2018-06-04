@@ -65,7 +65,7 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
 
 ## What's supported in the Standard and Enterprise plans
 
-This table defines what is supported by the Enterprise and Standard plans:
+The following table summarizes what is supported by the Enterprise and Standard plans:
 
 <table>
     <caption>Table 1. Support in Enterprise and Standard plans</caption>
