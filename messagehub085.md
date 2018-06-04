@@ -66,32 +66,43 @@ For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/do
 ## What's supported in the Standard and Enterprise plans
 
 <table>
-    <caption>Table 1. Support in Standard and Enterprise plans</caption>
+    <caption>Table 1. Support in Enterprise plan</caption>
       <tr>
-        <th>Plan</th>
+            <th>APIs</th>
+		    <th>Available in which regions</th>
+			<th>Kafka version on cluster</th>
+			<th>Quotas supported?</th>
+			<th>Bridges supported?</th>
+        </tr>
+      <tr>
+            <td>Kafka API</td>
+		    <td>US South</td>
+			<td>Kafka 1.1</td>
+			<td>No</td>
+			<td>No</td>
+      </tr>
+</table>
+
+<table>
+    <caption>Table 1. Support in Standard plan</caption>
+      <tr>
 		    <th>APIs</th>
 		    <th>Available in which regions</th>
 			<th>Kafka version on cluster</th>
+			<th>Quotas supported?</th>
+			<th>Bridges supported?</th>
         </tr>
       <tr>
-        <td>Enterprise</td>
-		    <td>Kafka API</td>
-		    <td>US South</br>
-			United Kingdom</br>
-			Sydney</br>
-			Germany</td>
-			<td>Kafka 1.1</td>
-      </tr>
-      <tr>
-        <td>Standard</td>
-		    <td>Kafka API</br>
+     	    <td>Kafka API</br>
 			Kafka REST API</br>
 			MQ Light API</br>
 		    <td>US South</br>
 			United Kingdom</br>
 			Sydney</br>
 			Germany (no MQ Light API) </td>
-			<td> </td>
+			<td>Kafka 0.10.2 </td>
+			<td>Yes </td>
+			<td>Yes </td>
        </tr>
 
 </table>
