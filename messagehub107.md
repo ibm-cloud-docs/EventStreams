@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-06-05"
 
 ---
 
@@ -13,6 +13,10 @@ lastupdated: "2018-06-04"
 {:pre: .pre}
 
 # What is Message Hub?
+
+{{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into IBM Cloud and event stream distribution between your services and applications.
+
+By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
 
 {{site.data.keyword.messagehub}} implements publish/subscribe
 messaging using topics. Unlike other messaging systems, {{site.data.keyword.messagehub}} provides topics but not queues. 
