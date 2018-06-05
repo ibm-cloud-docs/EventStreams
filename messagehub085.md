@@ -13,7 +13,7 @@ lastupdated: "2018-06-05"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Differences between Message Hub in {{site.data.keyword.Bluemix_notm}} Public and Dedicated environments
+# Choosing your Message Hub plan and environment 
 {: #public_dedicated}
 
 {{site.data.keyword.Bluemix}} is an open-standards,

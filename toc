@@ -12,13 +12,14 @@ IBM Message Hub
 	About Message Hub
 		messagehub010.md
 	 	messagehub107.md
+	 	messagehub085.md
+		messagehub124.md
 	 	messagehub073.md
 		messagehub112.md
 		messagehub114.md
 		messagehub118.md
-		messagehub124.md
 	 	messagehub070.md
-	 	messagehub085.md
+
 
 	{: .topicgroup}
 	Related links
