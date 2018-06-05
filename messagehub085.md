@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-04"
+lastupdated: "2018-06-05"
 
 ---
 
@@ -63,7 +63,7 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
 
 
-## What's supported in the Standard and Enterprise plans
+## What's supported by the Enterprise and Standard plans
 
 The following table summarizes what is supported by the Enterprise and Standard plans:
 
@@ -74,7 +74,26 @@ The following table summarizes what is supported by the Enterprise and Standard 
 		    <th>Enterprise Plan</th>
 		    <th>Standard Plan</th>
         </tr>
-      <tr>
+		<tr>
+			<td>**Tenants**</td>
+			<td>Single tenant</td>
+			<td>Multi-tenants</td>
+		</tr>
+        <tr>
+			<td>**Availability zones**</td>
+			<td>3</td>
+			<td>Not supported</td>
+		</tr>
+	  		<tr>
+			<td>**Kafka version on cluster**</td>
+			<td>Kafka 1.1</td>
+			<td>Kafka 0.10.2 </td>
+		</tr>
+		<tr>
+			<td>**IAM supported?**</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
      	    <td>**APIs supported**</td>
 			<td>Kafka API</td>
 			<td>Kafka API</br>
@@ -84,16 +103,16 @@ The following table summarizes what is supported by the Enterprise and Standard 
 		</tr>
 		<tr>
 			<td>**Available in which regions**</td>
-			<td>US South only</td>
+			<td>US South currently</br>
+			Coming soon: US East</br>
+			United Kingdom</br>
+			Germany</br>
+			AP North
+			</td>
 			<td>US South</br>
 			United Kingdom</br>
 			Sydney</br>
 			Germany (no MQ Light API)</td>
-		</tr>
-		<tr>
-			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
-			<td>Kafka 0.10.2 </td>
 		</tr>
 		<tr>
 			<td>**Quotas supported?**</td>
@@ -101,7 +120,7 @@ The following table summarizes what is supported by the Enterprise and Standard 
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>**Bridges supported?**</td>
+			<td>**Cloud Object Storage bridge and MQ bridge supported?**</td>
 			<td>No</td>
 			<td>Yes</td>
 		</tr>
