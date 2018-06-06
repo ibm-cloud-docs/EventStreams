@@ -15,7 +15,6 @@ lastupdated: "2018-05-25"
 # How to connect and authenticate
 {: #rest_connect}
 
-<br/>
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
 

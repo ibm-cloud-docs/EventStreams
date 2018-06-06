@@ -15,7 +15,6 @@ lastupdated: "2018-05-25"
 # What's required to use the Kafka REST API with Message Hub?
 {: #rest_reqs}
 
-<br/>
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
 

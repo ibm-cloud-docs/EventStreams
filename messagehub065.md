@@ -15,7 +15,6 @@ lastupdated: "2018-05-30"
 # Why use the Kafka REST API?
 {: #why_rest}
 
-<br/>
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
 

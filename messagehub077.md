@@ -15,7 +15,6 @@ lastupdated: "2018-05-30"
 # Enabling the {{site.data.keyword.mql}} API in {{site.data.keyword.messagehub}}
 {: #mql_enable}
 
-<br/>
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 

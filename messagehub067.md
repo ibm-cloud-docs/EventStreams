@@ -15,7 +15,6 @@ lastupdated: "2018-05-30"
 # How to use, download, and set up the Kafka REST API sample
 {: #rest_sample}
 
-<br/>
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
 

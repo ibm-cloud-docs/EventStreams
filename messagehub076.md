@@ -15,7 +15,6 @@ lastupdated: "2018-05-30"
 # Why use the {{site.data.keyword.mql}} API?
 {: #why_mql}
 
-<br/>
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
