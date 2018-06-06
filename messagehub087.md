@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-06-06"
 
 ---
 
@@ -20,7 +20,8 @@ lastupdated: "2018-05-30"
 ## Why use the Kafka API?
 {: #why_kafka notoc}
 
-The Kafka API is available on the Standard and Enterprise plans.
+** The Kafka API is available as part of both the Enterprise and Standard plans.**
+<br/>
 
 There are a few reasons that you might choose to use the Kafka API over the other interfaces provided by {{site.data.keyword.messagehub}}. These reasons include the following:
 {:shortdesc}
@@ -34,7 +35,6 @@ There are a few reasons that you might choose to use the Kafka API over the othe
 ## Why use the {{site.data.keyword.mql}} API?
 {: #why_mql notoc}
 
-<br/>
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
@@ -53,7 +53,6 @@ As well as sending messages between other apps using the {{site.data.keyword.mql
 ## Why use the Kafka REST API?
 {: #why_rest notoc}
 
-<br/>
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
 
