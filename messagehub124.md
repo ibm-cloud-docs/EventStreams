@@ -12,10 +12,10 @@ lastupdated: "2018-05-24"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using {{site.data.keyword.iamshort}} (IAM) with the {{site.data.keyword.messagehub}} Enterprise plan
+# Securing your {{site.data.keyword.messagehub}} resources - Enterprise plan
 {: #alpha_iam }
 
-{{site.data.keyword.messagehub}} permissions are configured using IAM policies. An IAM policy consists of the following information:
+{{site.data.keyword.messagehub}} permissions are configured using {{site.data.keyword.iamshort}} IAM policies. An IAM policy consists of the following information:
 
 * a service ID
 * an {{site.data.keyword.Bluemix_short}} resource that is defined by a service name, service instance, region, IAM resource type, and IAM resource
