@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-06-06"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-06-05"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Choosing your Message Hub plan and environment 
+# Choosing your plan and environment 
 {: #public_dedicated}
 
 {{site.data.keyword.Bluemix}} is an open-standards,
@@ -77,7 +77,7 @@ The following table summarizes what is supported by the Enterprise and Standard 
 		<tr>
 			<td>**Tenants**</td>
 			<td>Single tenant</td>
-			<td>Multi-tenants</td>
+			<td>Multi-tenant</td>
 		</tr>
         <tr>
 			<td>**Availability zones**</td>
@@ -102,7 +102,7 @@ The following table summarizes what is supported by the Enterprise and Standard 
 		    </td>
 		</tr>
 		<tr>
-			<td>**Available in which regions**</td>
+			<td>**Region availablity**</td>
 			<td>US South currently</br>
 			Coming soon: US East</br>
 			United Kingdom</br>
@@ -114,13 +114,8 @@ The following table summarizes what is supported by the Enterprise and Standard 
 			Sydney</br>
 			Germany (no MQ Light API)</td>
 		</tr>
-		<tr>
-			<td>**Quotas supported?**</td>
-			<td>No</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>**Cloud Object Storage bridge and MQ bridge supported?**</td>
+			<td>**Cloud Object Storage bridge and<br/>
+			MQ bridge supported?**</td>
 			<td>No</td>
 			<td>Yes</td>
 		</tr>
