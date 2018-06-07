@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-06"
+lastupdated: "2018-06-07"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-06-06"
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# Choosing your plan and environment 
+# Choosing your plan 
 {: #public_dedicated}
 
 {{site.data.keyword.Bluemix}} is an open-standards,
@@ -21,6 +21,83 @@ cloud-based platform for building, running, and managing applications. {{site.da
 models. {{site.data.keyword.messagehub}} is available in both
 environments.
 
+
+
+
+
+## What's supported by the Enterprise and Standard plans
+
+The following table summarizes what is supported by the Enterprise and Standard plans:
+
+<table>
+    <caption>Table 1. Support in Enterprise and Standard plans</caption>
+      <tr>
+	        <th></th>
+		    <th>Enterprise Plan</th>
+		    <th>Standard Plan</th>
+        </tr>
+		<tr>
+			<td>**Tenancy**</td>
+			<td>Single tenant</td>
+			<td>Multi-tenant</td>
+		</tr>
+        <tr>
+			<td>**Availability zones**</td>
+			<td>3</td>
+			<td>Not supported</td>
+		</tr>
+	  		<tr>
+			<td>**Kafka version on cluster**</td>
+			<td>Kafka 1.1</td>
+			<td>Kafka 0.10.2 </td>
+		</tr>
+		<tr>
+			<td>**Fine-grained access control?**</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>**Region availability**</td>
+			<td>US South currently</br>
+			Coming soon:</br>
+			US East</br>
+			United Kingdom</br>
+			Germany</br>
+			Sydney<br/>
+			AP North
+			</td>
+			<td>US South</br>
+			United Kingdom</br>
+			Sydney</br>
+			Germany (no MQ Light API)</td>
+		</tr>
+		<tr>
+     	    <td>**APIs supported**</td>
+			<td>Kafka API</td>
+			<td>Kafka API</br>
+			Kafka REST API</br>
+			MQ Light API</br>
+		    </td>
+		</tr>
+			<td>**Cloud Object Storage bridge and<br/>
+			MQ bridge supported?**</td>
+			<td>No</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+</table>
+
+<!--
 ## {{site.data.keyword.Bluemix_notm}} Public environment
 {: notoc}
 
@@ -35,7 +112,7 @@ charge for message data while it is retained on the topics, but the data that ea
 is capped at 1 GB.
 
 For more information, see [{{site.data.keyword.Bluemix_notm}} Public ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/public){:new_window}.
-
+-->
 
 ## {{site.data.keyword.Bluemix_notm}} Dedicated environment
 {: notoc}
@@ -61,75 +138,3 @@ For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![Extern
 {{site.data.keyword.messagehub}} implements Kafka quotas, that is throttling for producers and consumers in Dedicated and Public environments. You are not recommended to remove quotas, although you can request to have them removed for your Dedicated environment.
 
 For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
-
-
-## What's supported by the Enterprise and Standard plans
-
-The following table summarizes what is supported by the Enterprise and Standard plans:
-
-<table>
-    <caption>Table 1. Support in Enterprise and Standard plans</caption>
-      <tr>
-	        <th></th>
-		    <th>Enterprise Plan</th>
-		    <th>Standard Plan</th>
-        </tr>
-		<tr>
-			<td>**Tenants**</td>
-			<td>Single tenant</td>
-			<td>Multi-tenant</td>
-		</tr>
-        <tr>
-			<td>**Availability zones**</td>
-			<td>3</td>
-			<td>Not supported</td>
-		</tr>
-	  		<tr>
-			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
-			<td>Kafka 0.10.2 </td>
-		</tr>
-		<tr>
-			<td>**IAM supported?**</td>
-			<td>Yes</td>
-			<td>No</td>
-		</tr>
-     	    <td>**APIs supported**</td>
-			<td>Kafka API</td>
-			<td>Kafka API</br>
-			Kafka REST API</br>
-			MQ Light API</br>
-		    </td>
-		</tr>
-		<tr>
-			<td>**Region availablity**</td>
-			<td>US South currently</br>
-			Coming soon: US East</br>
-			United Kingdom</br>
-			Germany</br>
-			AP North
-			</td>
-			<td>US South</br>
-			United Kingdom</br>
-			Sydney</br>
-			Germany (no MQ Light API)</td>
-		</tr>
-			<td>**Cloud Object Storage bridge and<br/>
-			MQ bridge supported?**</td>
-			<td>No</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-
-</table>
-
-
