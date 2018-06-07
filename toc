@@ -14,8 +14,6 @@ IBM Message Hub
 	 	messagehub085.md
 		messagehub124.md
 	 	messagehub073.md
-		messagehub112.md
-		messagehub114.md
 		messagehub118.md
 	 	messagehub070.md
 
@@ -34,6 +32,8 @@ IBM Message Hub
 
 	{: .navgroup id="howto"}
 	messagehub086.md
+		messagehub112.md
+		messagehub114.md
 		messagehub087.md
 		messagehub071.md
 	messagehub050.md
