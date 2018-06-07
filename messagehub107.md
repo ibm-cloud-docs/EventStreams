@@ -18,9 +18,6 @@ lastupdated: "2018-06-05"
 
 By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
 
-{{site.data.keyword.messagehub}} implements publish/subscribe
-messaging using topics. Unlike other messaging systems, {{site.data.keyword.messagehub}} provides topics but not queues. 
-
 {{site.data.keyword.messagehub}} is based on the open-source
 Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
 production environments. For more information, see [{{site.data.keyword.messagehub}} and Apache Kafka](/docs/services/MessageHub/messagehub073.html).
