@@ -12,7 +12,7 @@ lastupdated: "2016-11-22"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Creating messaging applications 
+# Creating applications 
 {: #create_apps}
 
 TBD

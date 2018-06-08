@@ -15,18 +15,6 @@ lastupdated: "2018-05-30"
 # Getting started with Message Hub 
 {: #messagehub}
 
-{{site.data.keyword.messagehub_full}} is a scalable,
-distributed, high throughput messaging service that enables applications and services to communicate easily and reliably. {{site.data.keyword.messagehub}} is built on Apache Kafka.
-{:shortdesc}
-
-Using {{site.data.keyword.messagehub}}, you can
-complete the following tasks:
-
-* Offload work to back-end worker processes
-* Connect stream data to analytics to realize powerful insights
-* Feed event data to multiple applications to react in real time
-* Transfer data into another service such as long-term storage
-
 To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
 messages to a consumer using a topic. The same sample program is used to consume messages and
@@ -35,7 +23,6 @@ produce messages.
 <!-- 11/01/18 - Karen - removing diagram as requested by James
 ![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
 -->
-
 
 Complete the following steps:
 {: #getting_started_steps}
@@ -46,7 +33,9 @@ Complete the following steps:
   
   b. Click **CATALOG**.
   
-  c. In the **Application Services** section, click **{{site.data.keyword.messagehub}}**. The {{site.data.keyword.messagehub}} service instance page opens.
+  c. In the **Application Services** section, select **{{site.data.keyword.messagehub}}** Standard plan. The {{site.data.keyword.messagehub}} service instance page opens.
+  
+  For more information about {{site.data.keyword.messagehub}} plans, see [Choosing your plan ](/docs/services/MessageHub/messagehub085.html)
   
   d. Leave the service unbound in the **Connect to** menu and enter names for your service and your credentials. You can use the default values.
   
