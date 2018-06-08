@@ -16,6 +16,7 @@ IBM Message Hub
 	 	messagehub073.md
 		messagehub118.md
 	 	messagehub070.md
+	 	messagehub126.md
 
 
 	{: .topicgroup}
@@ -83,8 +84,8 @@ IBM Message Hub
 
 	{: .navgroup id="help"}
 	messagehub108.md
-	messagehub109.md
 	messagehub125.md
+	messagehub109.md
 	ts_overview.md
 		messagehub057.md
 		messagehub059.md
