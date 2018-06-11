@@ -13,7 +13,6 @@ IBM Message Hub
 		messagehub010.md
 	 	messagehub085.md
 		messagehub124.md
-	 	messagehub073.md
 		messagehub118.md
 	 	messagehub070.md
 	 	messagehub126.md
