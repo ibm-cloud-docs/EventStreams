@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-30"
+lastupdated: "2018-06-09"
 
 ---
 
@@ -20,6 +20,8 @@ and start sending and receiving messages, you can use the Java™ sample. The sa
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
 
+To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub010.html).
+
 <!-- 11/01/18 - Karen - removing diagram as requested by James
 ![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
 -->
@@ -33,9 +35,9 @@ Complete the following steps:
   
   b. Click **CATALOG**.
   
-  c. In the **Application Services** section, select **{{site.data.keyword.messagehub}}** Standard plan. The {{site.data.keyword.messagehub}} service instance page opens.
+  c. In the **Application Services** section, select **{{site.data.keyword.messagehub}} Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
-  For more information about {{site.data.keyword.messagehub}} plans, see [Choosing your plan ](/docs/services/MessageHub/messagehub085.html)
+  For more information about {{site.data.keyword.messagehub}} plans, see [Choosing your plan ](/docs/services/MessageHub/messagehub085.html).
   
   d. Leave the service unbound in the **Connect to** menu and enter names for your service and your credentials. You can use the default values.
   
