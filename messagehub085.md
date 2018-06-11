@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-07"
+lastupdated: "2018-06-11"
 
 ---
 
@@ -16,12 +16,15 @@ lastupdated: "2018-06-07"
 # Choosing your plan 
 {: #public_dedicated}
 
-{{site.data.keyword.Bluemix}} is an open-standards,
-cloud-based platform for building, running, and managing applications. {{site.data.keyword.Bluemix_notm}} provides public and dedicated deployment
-models. {{site.data.keyword.messagehub}} is available in both
-environments.
+{{site.data.keyword.messagehub}} is available as part of two different plans: Enterprise and Standard.
 
+## Enterprise plan
 
+Choose the Enterprise plan
+
+## Standard plan
+
+Choose the Standard plan
 
 
 
