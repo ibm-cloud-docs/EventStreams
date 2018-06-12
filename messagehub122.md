@@ -80,7 +80,7 @@ To connect a client to the Kafka API, complete the following steps:
 
 1. Set the clients <code>bootstrap.servers</code> property to a comma-separated list of the brokers listed in <code>kafka_brokers_sasl</code>.
 
-2. Set the clients <code>sasl.jaas.config</code> USERNAME field to the first 8 characters of the <code>apikey</code>, and the PASSWORD field to the remaining characters (this split will not be needed in future versions)
+2. Set the clients <code>sasl.jaas.config</code> USERNAME field to your <code>token</code>, and the PASSWORD field to your <code>apikey</code> 
 
 The Kafka client that you use must support the following features:
 

@@ -89,12 +89,12 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
     * Your brokers list, which was returned in your credentials `kafka_brokers_sasl`. Your brokers list must be a comma-separated list for kafkacat. 
 	Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of you other brokers. 
   
-    * Your <code>apikey</code>. The first 8 characters form your sasl.username and the remainder of the <code>apikey</code> forms your sasl.password.
+    * Your <code>apikey</code>. The <code>apikey</code> forms your sasl.password.
     * The location of your SSL certificates. For example, on Ubuntu the SSL_CERTS_DIRECTORY is <code>/etc/ssl/certs/</code>
   
   4. Produce some messages by running a command like the following:
   ```
-  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=<SSL_CERTS_DIRECTORY>" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
+  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<TOKEN>' -X 'sasl.password=<ALL_CHARS_FROM_APIKEY>' -X "ssl.ca.location=<SSL_CERTS_DIRECTORY>" -b <BROKERS_LIST> -P -t <TOPIC_NAME>
     ```
 		
 	<br/>
@@ -102,7 +102,7 @@ For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_
   
   5. Consume the messages by running a command like the following:
   ```
-  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<FIRST_8_CHARS_FROM_APIKEY>' -X 'sasl.password=<REMAINING_CHARS_FROM_APIKEY>' -X "ssl.ca.location=<SSL_CERTS_DIRECTORY>" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
+  kafkacat -X "security.protocol=sasl_ssl" -X 'sasl.mechanisms=PLAIN' -X 'sasl.username=<TOKEN>' -X 'sasl.password=<ALL_CHARS_FROM_APIKEY>' -X "ssl.ca.location=<SSL_CERTS_DIRECTORY>" -b <BROKERS_LIST> -C -t <TOPIC_NAME> -f 'Topic %t [%p] at offset %o: key %k: %s\n'
   ```
 	
 	<br/>
