@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-11"
+lastupdated: "2018-06-12"
 
 ---
 
@@ -16,21 +16,22 @@ lastupdated: "2018-06-11"
 # Choosing your plan 
 {: #public_dedicated}
 
-{{site.data.keyword.messagehub}} is available as part of two different plans: Enterprise and Standard.
+## Message Hub plans
+{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
 
 ## Enterprise plan
 
-Choose the Enterprise plan
+The Enterprise plan is appropriate if data isolation, predictable performance, and being a single tenant are important considerations. 
 
 ## Standard plan
 
-Choose the Standard plan
+The Standard plan is appropriate if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
 
-
+Depending on which plan you're using {{site.data.keyword.messagehub}} offers different APIs. On the Enterprise plan, you can use the Kafka API. On the Standard plan, you can choose from the Kafka API, the Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Creating messaging applications](/docs/services/MessageHub/messagehub086.html).
 
 ## What's supported by the Enterprise and Standard plans
 
-The following table summarizes what is supported by the Enterprise and Standard plans:
+The following table summarizes what is supported by the plans:
 
 <table>
     <caption>Table 1. Support in Enterprise and Standard plans</caption>

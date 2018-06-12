@@ -12,7 +12,7 @@ lastupdated: "2018-06-06"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Choosing between the three APIs - {{site.data.keyword.messagehub}} Standard plan
+# Choosing between the three APIs (Standard plan)
 {: #choose_api}
 
 {{site.data.keyword.messagehub}} supports three APIs on the Standard plan. Here's some information to help you choose which is most appropriate:
