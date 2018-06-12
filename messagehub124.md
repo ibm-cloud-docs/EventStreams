@@ -13,9 +13,9 @@ lastupdated: "2018-06-12"
 {:pre: .pre}
 
 # Securing your {{site.data.keyword.messagehub}} resources (Enterprise plan)
-{: #alpha_iam }
+{: #security }
 
-You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner.
+You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner depending on what access you want to grant each user to each resource.
 
 
 ## What can I secure?
@@ -56,12 +56,13 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 
 ## Common scenarios
 
+| Resource  | Read | Write | Manage |
+|---------|----------------|
+| Cluster |    |  |     |
+| Topic |       |  |      |
+| Groups |      |  |      |
+| Transactions  |      |  |      |
 
-Resource Read Write Manage 
-Cluster     create/delete authority to cluster 
-Topic ability to consume ability to produce create/ delete topic 
-Groups n/a     
-Transactions       
 
   
 * To allow full access to all resources [Manager role on the service instance] 
@@ -101,7 +102,7 @@ Transactions
 You can identify unique resources for topic, group, and txnid by setting the IAM resource. The cluster resource type is a singleton, so it does not need to be uniquely identified.
 
 ## Common scenarios
-{: iam_scenarios}
+{: security_scenarios}
 
 Here are some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
 
