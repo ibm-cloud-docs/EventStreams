@@ -28,8 +28,6 @@ ensure the cluster doesn't run out of space.
 
 The Kibana and Grafana dashboards for monitoring the service are not supported in {{site.data.keyword.Bluemix_notm}} Dedicated.
 
-For more information, see [{{site.data.keyword.Bluemix_notm}} Dedicated ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ibm.com/cloud-computing/bluemix/dedicated/){:new_window}.
-
 
 ### Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
 {: kafka_dedicated_quotas notoc}
