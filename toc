@@ -28,14 +28,12 @@ IBM Message Hub
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	Creating applications
+	messagehub086.md
 		messagehub112.md
 		messagehub114.md
 		messagehub118.md
 		messagehub087.md
 		messagehub071.md
-
-		{: .topicgroup}
 	messagehub050.md
 		messagehub062.md
 		messagehub063.md
