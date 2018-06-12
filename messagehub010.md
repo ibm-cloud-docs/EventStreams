@@ -48,7 +48,8 @@ The following list defines some Apache Kafka concepts:
 <dt>Partition</dt>
 <dd>Each topic comprises one or more partitions. Each partition is an ordered list of messages. The messages on a partition are each given a monotonically increasing number called the offset. 
 
-<p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p></dd>
+<p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p>
+<p>For more information, see [Partition leadership](/docs/services/MessageHub/messagehub118.html).</dd>
 <dt>Message</dt>
 <dd>The unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
 

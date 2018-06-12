@@ -13,9 +13,7 @@ IBM Message Hub
 		messagehub010.md
 	 	messagehub085.md
 		messagehub124.md
-		messagehub118.md
 	 	messagehub126.md
-
 
 	{: .topicgroup}
 	Related links
@@ -33,6 +31,7 @@ IBM Message Hub
 	messagehub086.md
 		messagehub112.md
 		messagehub114.md
+		messagehub118.md
 		messagehub087.md
 		messagehub071.md
 	messagehub050.md

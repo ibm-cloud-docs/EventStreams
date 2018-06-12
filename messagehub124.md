@@ -12,7 +12,7 @@ lastupdated: "2018-06-12"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Securing your {{site.data.keyword.messagehub}} resources - Enterprise plan
+# Securing your {{site.data.keyword.messagehub}} resources (Enterprise plan)
 {: #alpha_iam }
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner.
@@ -55,6 +55,13 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 
 
 ## Common scenarios
+
+
+Resource Read Write Manage 
+Cluster     create/delete authority to cluster 
+Topic ability to consume ability to produce create/ delete topic 
+Groups n/a     
+Transactions       
 
   
 * To allow full access to all resources [Manager role on the service instance] 
