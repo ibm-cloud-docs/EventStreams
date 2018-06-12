@@ -31,15 +31,11 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 * Publish event data to multiple applications to react in real time.
 * Transfer data into another service. For example, to long-term storage.
 
-## Message Hub and Apache Kafka
-{: #apache_kafka}
+![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.") 
 
 {{site.data.keyword.messagehub}} is based on the open-source
 Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
 production environments. Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
-{:shortdesc}
-
-![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.") 
 
 The following list defines some Apache Kafka concepts:
 
@@ -89,7 +85,7 @@ To learn more, see the following information:
 * Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 
 * Choose the Standard plan if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
 
-Depending on which plan you're using {{site.data.keyword.messagehub}} offers different APIs. On the Enterprise plan, you can use the Kafka API. On the Standard plan, you can choose from the Kafka API, the Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Creating messaging applications](/docs/services/MessageHub/messagehub086.html).
+For more information, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
 
 
 
