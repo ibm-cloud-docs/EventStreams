@@ -14,7 +14,6 @@ IBM Message Hub
 	 	messagehub085.md
 		messagehub124.md
 		messagehub118.md
-	 	messagehub070.md
 	 	messagehub126.md
 
 
@@ -73,6 +72,7 @@ IBM Message Hub
 	messagehub111.md
 	messagehub116.md
 	messagehub110.md
+	messagehub070.md
 	
 	{: .topicgroup}
 	Alpha program
