@@ -14,7 +14,7 @@ lastupdated: "2018-06-12"
 {:table: .aria-labeledby="caption"}
 
 # Choosing your plan 
-{: #public_dedicated}
+{: #plan_choose}
 
 ## Message Hub plans
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
