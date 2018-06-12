@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-11"
+lastupdated: "2018-06-12"
 
 ---
 
@@ -15,54 +15,28 @@ lastupdated: "2018-06-11"
 # About Message Hub
 {: #about}
 
-{{site.data.keyword.messagehub_full}} is a scalable,
-distributed, high throughput messaging service that enables applications and services to communicate
-easily and reliably.
+{{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications.
+
+By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
 {:shortdesc}
 
-In {{site.data.keyword.messagehub}}, applications send data by
-creating a message and sending it to a topic. To receive messages, applications subscribe to a topic
+In {{site.data.keyword.messagehub}}, applications send data by creating a message and sending it to a topic. To receive messages, applications subscribe to a topic
 and choose to either receive all the topic's messages or to share the messages between them.
-{{site.data.keyword.messagehub}} hosts and maintains the messages
-in an ordered sequence. In contrast to traditional messaging systems, {{site.data.keyword.messagehub}} provides topics but not queues. However,
-{{site.data.keyword.messagehub}} offers ways to share messages
-between receiving applications, which results in behavior similar to queues.
+{{site.data.keyword.messagehub}} hosts and maintains the messages in an ordered sequence. 
 
-You can use {{site.data.keyword.messagehub}} to complete the
-following tasks:
+You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 
 * Offload work to back-end worker processes.
 * Connect stream data to analytics to realize powerful insights.
 * Publish event data to multiple applications to react in real time.
 * Transfer data into another service. For example, to long-term storage.
 
-
-
-## From "What is Message Hub?"
-
-{{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications.
-
-By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
+## Message Hub and Apache Kafka
+{: #apache_kafka}
 
 {{site.data.keyword.messagehub}} is based on the open-source
 Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
-production environments. For more information, see [{{site.data.keyword.messagehub}} and Apache Kafka](/docs/services/MessageHub/messagehub073.html).
-Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
-
-{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
-
-* Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 
-* Choose the Standard plan if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
-
-Depending on which plan you're using {{site.data.keyword.messagehub}} offers different APIs. On the Enterprise plan, you can use the Kafka API. On the Standard plan, you can choose from the Kafka API, the Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Creating messaging applications](/docs/services/MessageHub/messagehub086.html).
-
-----------------------------------------
-## From Message Hub and Apache Kafka
-{: #apache_kafka}
-
-Apache Kafka forms the reliable messaging core of {{site.data.keyword.messagehub}}. It is a publish-subscribe messaging system
-and is designed to be fault-tolerant providing a high-throughput, low-latency platform for handling
-real-time data feeds. These characteristics make it ideal for use in a cloud environment.
+production environments. Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 {:shortdesc}
 
 ![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.") 
@@ -107,9 +81,15 @@ To learn more, see the following information:
 - [Consuming messages](/docs/services/MessageHub/messagehub114.html) 
 - [Partition leadership](/docs/services/MessageHub/messagehub118.html) 
 - [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
-- [Message Hub Kafka Java&trade; API developerWorks&reg; article ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/2016/03/03/message-hub-kafka-java-api/){:new_window}.
 
 
+## Message Hub plans
+{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
+
+* Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 
+* Choose the Standard plan if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
+
+Depending on which plan you're using {{site.data.keyword.messagehub}} offers different APIs. On the Enterprise plan, you can use the Kafka API. On the Standard plan, you can choose from the Kafka API, the Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Creating messaging applications](/docs/services/MessageHub/messagehub086.html).
 
 
 
