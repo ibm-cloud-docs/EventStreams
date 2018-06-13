@@ -26,6 +26,8 @@ The Enterprise plan is appropriate if data isolation, predictable performance, a
 
 The Standard plan is appropriate if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
 
+## APIs
+
 Depending on which plan you're using {{site.data.keyword.messagehub}} offers different APIs. On the Enterprise plan, you can use the Kafka API. On the Standard plan, you can choose from the Kafka API, the Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Creating messaging applications](/docs/services/MessageHub/messagehub086.html).
 
 ## What's supported by the Enterprise and Standard plans
