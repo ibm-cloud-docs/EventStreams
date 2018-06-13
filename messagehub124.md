@@ -64,8 +64,6 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 | Groups |      |  |      |
 | Transactions  |      |  |      |
 
-
-  
 * To allow full access to all resources, assign [Manager role on the service instance] 
 * To allow a user access to the UI, assign [Reader role on the 'cluster' resource &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;] 
 * To allow an application to connect to the cluster, assign [Reader role on the 'cluster' resource] 
@@ -78,42 +76,37 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 &lt;&lt; Do we need to cover Creating/Deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt; 
 
 
-
------------------------------------
-You can identify unique resources for topic, group, and txnid by setting the IAM resource. The cluster resource type is a singleton, so it does not need to be uniquely identified.
-
-## Common scenarios
-{: security_scenarios}
-
 Here are some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
 
-Producer to some topics (same for idempotent):
-* Reader role on the cluster resource type
-* Writer role on each topic resource type and topic name resource
-
-Transactional producer:
-* Same as producer
-* Writer role on txnid resource type and transaction ID resource
-* Reader role on group resource type and group ID resource
-
-Consumer (no group):
-* Reader role on the cluster resource type
-* Reader role on each topic resource type and topic name resource
-
-Consumer with group:
-* Same as consumer (no group)
-* Reader role on group resource type and group ID resource
-
-Create or delete topic:
+If you want a user to create or delete a topic, assign the following:
 * Reader role on the cluster resource type
 * Manager role on each topic resource type and topic name resource
 
-Delete consumer group:
+If you want a user to be able to list groups, topics, and offsets, and describe group, topic, and broker configurations, assign the following:
+* Reader role on the cluster resource type
+
+If you want a user to be able to be producer to some topics (same for idempotent), assign the following:
+* Reader role on the cluster resource type
+* Writer role on each topic resource type and topic name resource
+
+If you want a user to be able to be a transactional producer, assign the following:
+* Same access as producer plus
+* Writer role on txnid resource type and transaction ID resource
+* Reader role on group resource type and group ID resource
+
+If you want a user to be able to be a consumer (no consumer group), assign the following:
+* Reader role on the cluster resource type
+* Reader role on each topic resource type and topic name resource
+
+If you want a user to be able to be a consumer with consumer group, assign the following:
+* Same access as consumer (no group)
+* Reader role on group resource type and group ID resource
+
+If you want a user to be able to delete a consumer group, assign the following:
 * Reader role on the cluster resource type
 * Manager role on group resource type and group ID resource
 
-List groups, topics and offsets and describe group, topic, and broker configurations
-* Reader role on the cluster resource type
+
 
 
 For more information about IAM, see: 
