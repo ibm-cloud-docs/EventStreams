@@ -17,7 +17,6 @@ lastupdated: "2018-06-13"
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained method to manage the access that you want to grant each user to each resource.
 
-
 ## What can I secure?
 
 Within a service instance, you can secure access the following resources:
@@ -57,10 +56,10 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 ## Common scenarios
 {: #security_scenarios }
 
-| Resource  | Read | Write | Manage |
+| Resource  | Reader | Writer | Manager |
 |---------|----------------|
-| Cluster |    |  |     |
-| Topic |       |  |      |
+| Create or delete topic |Cluster resource    |  |<ul><li>Each topic resource type</li><li>Topic name resource</li></ul> |
+| List groups, topics, and offsets, and describe group, topic, and broker configurations | cluster resource type      |  |      |
 | Groups |      |  |      |
 | Transactions  |      |  |      |
 
