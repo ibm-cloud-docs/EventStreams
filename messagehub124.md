@@ -19,7 +19,7 @@ You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained
 
 ## What can I secure?
 
-Within a service instance, you can secure access the following resources:
+Within a service instance, you can secure access to the following resources:
 * Cluster (cluster): you can control which applications and users can connect to the service [and access the UI] 
 * Topics (topic): you can control the ability of users and applications to create, delete, read, and write to a topic 
 * Consumer groups (group): you can control an application's ability to join a consumer group 
@@ -56,10 +56,10 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 ## Common scenarios
 {: #security_scenarios }
 
-| Resource  | Reader | Writer | Manager |
+| Action | Reader role | Writer role | Manager role |
 |---------|----------------|
-| Create or delete topic |Cluster resource    |  |<ul><li>Each topic resource type</li><li>Topic name resource</li></ul> |
-| List groups, topics, and offsets, and describe group, topic, and broker configurations | cluster resource type      |  |      |
+| Create or delete topic |Cluster resource type    |  |<ul><li>Each topic resource type</li><li>Each topic name resource</li></ul> |
+| List groups, topics, and offsets, and describe group, topic, and broker configurations | Cluster resource type      |  |      |
 | Groups |      |  |      |
 | Transactions  |      |  |      |
 
@@ -77,9 +77,9 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 
 Here are some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
 
-If you want a user to create or delete a topic, assign the following:
-* Reader role on the cluster resource type
-* Manager role on each topic resource type and topic name resource
+* If you want a user to create or delete a topic, assign the following:
+    * Reader role on the cluster resource type
+    * Manager role on each topic resource type and topic name resource
 
 If you want a user to be able to list groups, topics, and offsets, and describe group, topic, and broker configurations, assign the following:
 * Reader role on the cluster resource type
@@ -90,7 +90,7 @@ If you want a user to be able to be producer to some topics (same for idempotent
 
 If you want a user to be able to be a transactional producer, assign the following:
 * Same access as producer plus
-* Writer role on txnid resource type and transaction ID resource
+* Writer role on transaction ID resource type and transaction ID resource
 * Reader role on group resource type and group ID resource
 
 If you want a user to be able to be a consumer (no consumer group), assign the following:
