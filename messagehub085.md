@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-12"
+lastupdated: "2018-06-13"
 
 ---
 
@@ -16,7 +16,6 @@ lastupdated: "2018-06-12"
 # Choosing your plan 
 {: #plan_choose}
 
-## Message Hub plans
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
 
 ## Enterprise plan
