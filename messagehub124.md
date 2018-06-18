@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-14"
+lastupdated: "2018-06-18"
 
 ---
 
@@ -58,10 +58,11 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
+| Allow full access to all resources|   |  |Service instance|
 | Create or delete topic |Cluster resource type    |  |<ul><li>Each topic resource type</li><li>Each topic name resource</li></ul> |
 | List groups, topics, and offsets, and describe group, topic, and broker configurations | Cluster resource type      |  |      |
-| Groups |      |  |      |
-| Transactions  |      |  |      |
+| Delete consumer group |cluster resource type |  |Group resource type and group ID resource      |
+| Act as a producer to topics  |Cluster resource type|<ul><li>Each topic resource type</li><li>Each topic name resource</li></ul>|      |
 
 * To allow full access to all resources, assign [Manager role on the service instance] 
 * To allow a user access to the UI, assign [Reader role on the 'cluster' resource &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;] 
