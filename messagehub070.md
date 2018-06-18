@@ -25,3 +25,6 @@ the following two methods:
 <!-- 07/06/18 - Karen: removing until a newer version available
 For a video that demonstrates how you can use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console, see [{{site.data.keyword.IBM_notm}} {{site.data.keyword.messagehub}} - User Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=lZulxqv_rHc){:new_window}.
 -->
+<!--
+Examples and walkthrough needed for both - create, delete, secure topic
+-->
