@@ -66,6 +66,7 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 | Allow an app to connect to the cluster  |Cluster resource type|      |      |
 | Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
 | Allow an app to consume a topic (no consumer group)  |Cluster resource type|Topic resource       |     |
+| Allow an app to consume a topic (in a consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource|      |     |
 
 * To allow full access to all resources, assign [Manager role on the service instance] 
 * To allow a user access to the UI, assign [Reader role on the 'cluster' resource &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;] 
