@@ -59,10 +59,13 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
 | Allow full access to all resources|   |  |Service instance|
-| Create or delete topic |Cluster resource type    |  |<ul><li>Each topic resource type</li><li>Each topic name resource</li></ul> |
-| List groups, topics, and offsets, and describe group, topic, and broker configurations | Cluster resource type      |  |      |
-| Delete consumer group |cluster resource type |  |Group resource type and group ID resource      |
-| Act as a producer to topics  |Cluster resource type|<ul><li>Each topic resource type</li><li>Each topic name resource</li></ul>|      |
+| Create or delete topic |Cluster resource type    |  |Each topic resource type <br/>Each topic name resource |
+| List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Cluster resource type      |  |      |
+| Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
+| Act as a producer to topics  |Cluster resource type|Each topic resource type <br/>Each topic name resource|      |
+| Allow an app to connect to the cluster  |Cluster resource type|      |      |
+| Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
+| Allow an app to consume a topic (no consumer group)  |Cluster resource type|Topic resource       |     |
 
 * To allow full access to all resources, assign [Manager role on the service instance] 
 * To allow a user access to the UI, assign [Reader role on the 'cluster' resource &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;] 
@@ -107,10 +110,10 @@ Here are some common {{site.data.keyword.messagehub}} scenarios and the access y
     * Manager role on group resource type and group ID resource
 
 
-For more information about IAM, see: 
+For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview).
 
-For an example about how to set policies, see: 
+For an example about how to set policies, see 
 [Introducing IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
 
 
