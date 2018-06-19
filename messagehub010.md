@@ -17,7 +17,7 @@ lastupdated: "2018-06-12"
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications.
 
-By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
+By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
 {:shortdesc}
 
 In {{site.data.keyword.messagehub}}, applications send data by creating a message and sending it to a topic. To receive messages, applications subscribe to a topic
@@ -83,10 +83,10 @@ To learn more, see the following information:
 
 
 ## Message Hub plans
-{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
+{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 
-* Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 
 * Choose the Standard plan if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
+* Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 
 
 For more information, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
 

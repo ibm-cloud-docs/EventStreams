@@ -16,24 +16,21 @@ lastupdated: "2018-06-18"
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
-
-## Enterprise plan
-
-The Enterprise plan is appropriate if data isolation, predictable performance, and being a single tenant are important considerations. 
+{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 
 ## Standard plan
 
 The Standard plan is appropriate if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
 
-## APIs
 
-Depending on which plan you're using {{site.data.keyword.messagehub}} offers different APIs. On the Enterprise plan, you can use the Kafka API. On the Standard plan, you can choose from the Kafka API, the Kafka REST API, and the {{site.data.keyword.mql}} API. In most cases, the Kafka API is the best choice. For more information, see [Choosing between the three APIs (Standard plan)](/docs/services/MessageHub/messagehub087.html).
+## Enterprise plan
 
-## What's supported by the Enterprise and Standard plans
+The Enterprise plan is appropriate if data isolation, predictable performance, and being a single tenant are important considerations. 
+
+## What's supported by the Standard and Enterprise plans
 
 The following table summarizes what is supported by the plans:
-
+ old
 <table>
     <caption>Table 1. Support in Enterprise and Standard plans</caption>
       <tr>
@@ -102,6 +99,69 @@ The following table summarizes what is supported by the plans:
 
 </table>
 
+NEW
+<table>
+    <caption>Table 1. Support in Standard and Enterprise plans</caption>
+      <tr>
+	        <th></th>
+		    <th>Standard Plan</th>
+		    <th>Enterprise Plan</th>
+        </tr>
+		<tr>
+			<td>**Tenancy**</td>
+			<td>Multi-tenant </td>
+			<td>Single tenant</td>
+		</tr>
+        <tr>
+			<td>**Availability zones**</td>
+			<td>Not supported</td>
+			<td>3</td>
+		</tr>
+	  		<tr>
+			<td>**Kafka version on cluster**</td>
+			<td>Kafka 0.10.2</td>
+			<td>Kafka 1.1</td>
+		</tr>
+		<tr>
+			<td>**Fine-grained access control?**</td>
+			<td>No</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>**Region availability**</td>
+			<td>US South</br>
+			United Kingdom</br>
+			Sydney</br>
+			Germany (no MQ Light API)</td>
+			<td>US South currently</br>
+			Coming soon:</br>
+			US East</br>
+			United Kingdom</br>
+			Germany</br>
+			Sydney<br/>
+			AP North
+			</td>
+		</tr>
+		<tr>
+     	    <td>**APIs supported**</td>
+			<td>Kafka API</br>
+			Kafka REST API</br>
+			MQ Light API</br>
+		    </td>
+			<td>Kafka API</td>
+		</tr>
+			<td>**Cloud Object Storage bridge and<br/>
+			MQ bridge supported?**</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+</table>
 <!--
 ## {{site.data.keyword.Bluemix_notm}} Public environment
 {: notoc}
