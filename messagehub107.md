@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-05"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -20,10 +20,10 @@ By being built with Apache Kafka, it directly benefits from all the innovation o
 
 {{site.data.keyword.messagehub}} is based on the open-source
 Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
-production environments. For more information, see [{{site.data.keyword.messagehub}} and Apache Kafka](/docs/services/MessageHub/messagehub073.html).
+production environments. For more information, see [About {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub010.html).
 Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 
-{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Enterprise and Standard.
+{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 
 * Choose the Standard plan if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
 * Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 

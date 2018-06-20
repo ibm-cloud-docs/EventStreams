@@ -13,12 +13,6 @@ IBM Message Hub
 		messagehub010.md
 	 	messagehub085.md
 		messagehub124.md
-
-	{: .topicgroup}
-	Related links
-	 	[Message Hub Java Kafka sample](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-console-sample)
-	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
-		[IBM Message Hub on developerWorks](https://developer.ibm.com/messaging/message-hub/)
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
@@ -89,6 +83,12 @@ IBM Message Hub
 	ts_overview.md
 		messagehub057.md
 		messagehub059.md
+		
+	{: .topicgroup}
+	Related links
+	 	[Message Hub Java Kafka sample](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-console-sample)
+	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
+		[IBM Message Hub on developerWorks](https://developer.ibm.com/messaging/message-hub/)
 	{: .navgroup-end}
 
 
