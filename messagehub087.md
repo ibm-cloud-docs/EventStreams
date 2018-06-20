@@ -20,7 +20,7 @@ lastupdated: "2018-06-06"
 ## Why use the Kafka API?
 {: #why_kafka notoc}
 
-** The Kafka API is available as part of both the Enterprise and Standard plans.**
+** The Kafka API is available as part of both the Standard and Enterprise plans.**
 <br/>
 
 There are a few reasons that you might choose to use the Kafka API over the other interfaces provided by {{site.data.keyword.messagehub}}. These reasons include the following:
