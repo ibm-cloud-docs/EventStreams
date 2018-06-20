@@ -43,7 +43,7 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 
 By default, when a service instance is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' Message Hub service instances' in the same account also has full access. &lt;&lt;is this actually manager role or admin role?&gt;&gt;
 
-You can then apply additional policies to extend access to other users. You can either scope a policy to apply to the service instance as a whole or to individual resources within the service instance. For more information, see common scenarios.
+You can then apply additional policies to extend access to other users. You can either scope a policy to apply to the service instance as a whole or to individual resources within the service instance. For more information, see [Common scenarios](#security_scenarios).
 
 You can only assign policies by users with an administration role for an account. They can either be assigned using the portal &lt;&lt;link&gt;&gt; or by using the bx command &lt;&lt;details&gt;&gt;
 
@@ -67,6 +67,7 @@ Further details on IAM &lt;&lt;link&gt;&gt;
 | Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
 | Allow an app to consume a topic (no consumer group)  |Cluster resource type|Topic resource       |     |
 | Allow an app to consume a topic (in a consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource|      |     |
+| Allow an app to consume a specific topic (no consumer group)  |Cluster resource type <br/>Topic resource <br/>|      |     |
 
 * To allow full access to all resources, assign [Manager role on the service instance] 
 * To allow a user access to the UI, assign [Reader role on the 'cluster' resource &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;] 
@@ -109,6 +110,19 @@ Here are some common {{site.data.keyword.messagehub}} scenarios and the access y
 * If you want a user to be able to delete a consumer group, assign the following:
     * Reader role on the cluster resource type
     * Manager role on group resource type and group ID resource
+
+## Examples
+
+I want to give a user access to create or delete a topic:
+
+1. From the dashboard, go to **Manage** &gt; **Security** &gt; **Identity and Access**, and then select **Users**.
+2. Click **Invite users**.
+3. Specify the email address of the user that you want to invite.
+4. In the **Access** section, expand the **Services** option.
+5. Choose to assign access to a **Resource**.
+6. Depending on your selection, follow the prompts to specify the access to **Message Hub** 
+7. If you have permission, you can also assign Cloud Foundry or infrastructure access on the invitation.
+8. Click **Invite users**.
 
 
 For more information about IAM, see 
