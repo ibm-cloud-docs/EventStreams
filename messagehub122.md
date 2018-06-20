@@ -65,10 +65,10 @@ For a Cloud Foundry application:
 3. When the connection is complete, click the **Runtime** tab for the app, then click **Environment variables** to show **VCAP_SERVICES**.
 
 ### Console for an external application
-From the console for an external application, create a service apikey by using the following **bx** command: 
+From the console for an external application, create a service apikey by using the following **ibmcloud** command: 
 
 ```
-bx resource service-key-create name-of-key Manager --instance-name name-of-your-service
+ibmcloud resource service-key-create name-of-key Manager --instance-name name-of-your-service
 ``` 
 
 Copy the <code>kafka_brokers_sasl</code>, <code>kafka_admin_url</code>, and <code>apikey</code> fields from the generated information.

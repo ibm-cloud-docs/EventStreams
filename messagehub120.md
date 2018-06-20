@@ -62,11 +62,11 @@ Alternatively, you can get the required credentials using the command line. Comp
   
   3. Use the {{site.data.keyword.Bluemix_notm}} CLI to create a service key with the Manager role using the following command:
   ```
-  bx resource service-key-create <NAME> Manager --instance-name <MESSAGEHUB_SERVICE_INSTANCE_NAME>
+  ibmcloud resource service-key-create <NAME> Manager --instance-name <MESSAGEHUB_SERVICE_INSTANCE_NAME>
   ```
   4. The output contains the apikey, the admin REST endpoint URL, and broker list. You can view this information again by running the following command:
   ```
-  bx resource service-key <NAME>
+  ibmcloud resource service-key <NAME>
   ```
 
 ## Create a {{site.data.keyword.messagehub}} topic and send a message
