@@ -20,12 +20,11 @@ lastupdated: "2018-06-20"
 
 ## Standard plan
 
-The Standard plan is appropriate if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
-
+The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Enterprise plan
 
-The Enterprise plan is appropriate if data isolation, predictable performance, and being a single tenant are important considerations. 
+The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
 
 ## What's supported by the Standard and Enterprise plans
 
@@ -56,6 +55,11 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Fine-grained access control?**</td>
 			<td>No</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>**Kafka Connect and Kafka Streams supported? **</td>
+			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>

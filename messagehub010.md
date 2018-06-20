@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-12"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -49,7 +49,7 @@ The following list defines some Apache Kafka concepts:
 <br/>
 <dt>Partition</dt>
 <dd>Each topic comprises one or more partitions. Each partition is an ordered list of messages. The messages on a partition are each given a monotonically increasing number called the offset. 
-
+<p>Each partition has one server in the cluster that acts as the partition's leader and other servers that act as the followers.<p>
 <p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p>
 <p>For more information, see [Partition leadership](/docs/services/MessageHub/messagehub118.html).</dd>
 <dt>Message</dt>
@@ -85,8 +85,8 @@ To learn more, see the following information:
 ## Message Hub plans
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 
-* Choose the Standard plan if you want an economical public cloud service where you pay for what you use and share infrastructure with others.
-* Choose the Enterprise plan if data isolation, predictable performance, and being a single tenant are important considerations. 
+* Choose the Standard plan if you want event ingest and distribution capabilities where you pay for what you use and share infrastructure with others.
+* Choose the Enterprise plan if data isolation, guaranteed performance, and increased retention are important considerations. 
 
 For more information, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
 
