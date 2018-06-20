@@ -19,13 +19,13 @@ You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained
 
 ## What can I secure?
 
-Within a service instance, you can secure access to the following resources:
+Within {{site.data.keyword.messagehub}}, you can secure access to the following resources:
 * Cluster (cluster): you can control which applications and users can connect to the service [and access the UI] 
 * Topics (topic): you can control the ability of users and applications to create, delete, read, and write to a topic 
 * Consumer groups (group): you can control an application's ability to join a consumer group 
 * Producer transactions (txnid): you can control the ability to use the transactional producer capability in Kafka 
 
-The levels of access (role) that you can assign to a user to each resource are as follows:
+The levels of access (also known as a role) that you can assign to a user to each resource are as follows:
 * read
 * write
 * manage
@@ -38,7 +38,7 @@ KR: I think they do inherit the lower level access https://console.bluemix.net/d
 
 ## How do I assign access?
 
-Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access (service role) a particular user should have and to which resource or set of resources. A policy consists of the following information: 
+Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
 * The type of service the policy applies to. For example, Message Hub. You can scope a policy to include all service types. 
 * The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
 * The type of resource to be secured. For example, <code>cluster</code>, <code>topic</code>, <code>group</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify it, the policy then applies to all resources in the service instance. 
@@ -46,11 +46,11 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 
 ## What are the default security settings?
 
-By default, when a service instance is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' Message Hub service instances' in the same account also has full access. &lt;&lt;is this actually manager role or admin role?&gt;&gt;
+By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' Message Hub service instances' in the same account also has full access. &lt;&lt;is this actually manager role or admin role?&gt;&gt;
 
-You can then apply additional policies to extend access to other users. You can either scope a policy to apply to the service instance as a whole or to individual resources within the service instance. For more information, see [Common scenarios](#security_scenarios).
+You can then apply additional policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
 
-You can only assign policies by users with an administration role for an account. They can either be assigned using the portal &lt;&lt;link&gt;&gt; or by using the bx command &lt;&lt;details&gt;&gt;
+Only users with an administration role for an account can assign policies to users . Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands. For example steps for {{site.data.keyword.messagehub}}, see [Examples](#security_examples).
 
 
 ## Common scenarios
@@ -59,40 +59,25 @@ You can only assign policies by users with an administration role for an account
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
 | Allow full access to all resources|   |  |Service instance|
-| Create or delete topic |Cluster resource type    |  |Each topic resource type <br/>Each topic name resource |
+| Allow an app or user to create or delete topic |Cluster resource type    |  |Each topic resource type <br/>Each topic name resource |
 | List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Cluster resource type      |  |      |
-| Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
-| Act as a producer to topics  |Cluster resource type|Each topic resource type <br/>Each topic name resource|      |
 | Allow an app to connect to the cluster  |Cluster resource type|      |      |
+| Allow an app to produce to topics  |Cluster resource type|Each topic resource type <br/>Each topic name resource|      |
 | Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
-| Allow an app to consume a topic (no consumer group)  |Cluster resource type|Topic resource       |     |
+| Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type| Named topic resource       |     |
 | Allow an app to consume a topic (in a consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource|      |     |
 | Allow an app to consume a specific topic (no consumer group)  |Cluster resource type <br/>Topic resource <br/>|      |     |
+| Allow a user access to the UI|Cluster resource type - &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;     |  |
+| Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
 
-* To allow full access to all resources, assign [Manager role on the service instance] 
-* To allow a user access to the UI, assign [Reader role on the 'cluster' resource &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;] 
-* To allow an application to connect to the cluster, assign [Reader role on the 'cluster' resource] 
-* To allow a user or app to create and delete topics, assign [Reader role on the 'cluster' resource and (manager role on the 'topic' resource)] 
-* To allow an application to connect and consume (no group) from a particular topic, assign [Reader role on the 'cluster' resource and named 'topic' resource] 
+ 
 * To allow an application to connect and consume (no group) from any topic, assign [Reader role on the 'cluster' resource and 'topic' resource] 
 * To allow an application to connect and consume (group) from a topic, assign [Reader role on the 'cluster' resource, 'topic' resource and 'group' resource] 
-* To allow an application to write to a topic, assign [Reader role on the 'cluster' resource and writer role on the 'topic' resource] 
 * To use streams &lt;&lt;need to check what this needs&gt;&gt; 
 &lt;&lt; Do we need to cover Creating/Deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt; 
 
 
 Here are some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
-
-* If you want a user to create or delete a topic, assign the following:
-    * Reader role on the cluster resource type
-    * Manager role on each topic resource type and topic name resource
-
-* If you want a user to be able to list groups, topics, and offsets, and describe group, topic, and broker configurations, assign the following:
-    * Reader role on the cluster resource type
-
-* If you want a user to be able to be producer to some topics (same for idempotent), assign the following:
-    * Reader role on the cluster resource type
-    * Writer role on each topic resource type and topic name resource
 
 * If you want a user to be able to be a transactional producer, assign the following:
     * Same access as producer plus
@@ -107,15 +92,12 @@ Here are some common {{site.data.keyword.messagehub}} scenarios and the access y
     * Same access as consumer (no group)
     * Reader role on group resource type and group ID resource
 
-* If you want a user to be able to delete a consumer group, assign the following:
-    * Reader role on the cluster resource type
-    * Manager role on group resource type and group ID resource
-
 ## Examples
+{: #security_examples }
 
 I want to give a user access to create or delete a topic:
 
-1. From the dashboard, go to **Manage** &gt; **Security** &gt; **Identity and Access**, and then select **Users**.
+1. From the IBM Cloud dashboard, go to the **Manage** tab &gt; **Security** &gt; **Identity and Access**, and then select **Users**.
 2. Click **Invite users**.
 3. Specify the email address of the user that you want to invite.
 4. In the **Access** section, expand the **Services** option.
