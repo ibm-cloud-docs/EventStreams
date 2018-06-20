@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-18"
+lastupdated: "2018-06-20"
 
 ---
 
@@ -28,7 +28,12 @@ Within a service instance, you can secure access to the following resources:
 The levels of access (role) that you can assign to a user to each resource are as follows:
 * read
 * write
-* manage. &lt;&lt;need to confirm if hierarchical e.g. write includes read - and doc. I think they do inherit the lower level access https://console.bluemix.net/docs/iam/users_roles.html#iamusermanrol &gt;&gt;
+* manage
+
+<!-- comment from Charlie and my reply 
+CM: need to confirm if hierarchical e.g. write includes read - and doc. 
+KR: I think they do inherit the lower level access https://console.bluemix.net/docs/iam/users_roles.html#iamusermanrol 
+-->
 
 
 ## How do I assign access?
@@ -46,11 +51,6 @@ By default, when a service instance is provisioned, the user who provisioned it 
 You can then apply additional policies to extend access to other users. You can either scope a policy to apply to the service instance as a whole or to individual resources within the service instance. For more information, see [Common scenarios](#security_scenarios).
 
 You can only assign policies by users with an administration role for an account. They can either be assigned using the portal &lt;&lt;link&gt;&gt; or by using the bx command &lt;&lt;details&gt;&gt;
-
-Further details on IAM &lt;&lt;link&gt;&gt; 
-
-## Recommendations
-
 
 
 ## Common scenarios
@@ -121,8 +121,8 @@ I want to give a user access to create or delete a topic:
 4. In the **Access** section, expand the **Services** option.
 5. Choose to assign access to a **Resource**.
 6. Depending on your selection, follow the prompts to specify the access to **Message Hub** 
-7. If you have permission, you can also assign Cloud Foundry or infrastructure access on the invitation.
-8. Click **Invite users**.
+7. Click **Invite users**.
+8. 
 
 
 For more information about IAM, see 
