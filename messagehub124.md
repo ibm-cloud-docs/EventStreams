@@ -56,6 +56,8 @@ Only users with an administration role for an account can assign policies to use
 ## Common scenarios
 {: #security_scenarios }
 
+This table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
+
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
 | Allow full access to all resources|   |  |Service instance|
@@ -64,10 +66,10 @@ Only users with an administration role for an account can assign policies to use
 | Allow an app to connect to the cluster  |Cluster resource type|      |      |
 | Allow an app to produce to topics  |Cluster resource type|Each topic resource type <br/>Each topic name resource|      |
 | Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
-| Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type| Named topic resource       |     |
+| Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type <br/>Named topic resource |       |     |
 | Allow an app to connect and consume from any topic (no consumer group)  | Cluster resource <br/>Topic resource |     |     |
-| Allow an app to consume a topic (consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource|      |     |
-| Allow an app to consume a specific topic (no consumer group)  |Cluster resource type <br/>Topic resource <br/>Topic resource type<br/>|      |     |
+| Allow an app to consume a topic (consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource<br/>Group ID resource|      |     |
+| Allow an app to produce to a topic transactionally  |Cluster resource type Group resource type<br/>Group ID resource|Each topic resource type <br/>Each topic name resource <br/>Transaction ID resource type <br/>Transaction ID resource|     |
 | Allow a user access to the UI|Cluster resource type - &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;     |  |
 | Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
 
@@ -75,17 +77,6 @@ Only users with an administration role for an account can assign policies to use
 * To use streams &lt;&lt;need to check what this needs&gt;&gt; 
 &lt;&lt; Do we need to cover Creating/Deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt; 
 
-
-Here are some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
-
-* If you want a user to be able to be a transactional producer, assign the following:
-    * Same access as producer plus
-    * Writer role on transaction ID resource type and transaction ID resource
-    * Reader role on group resource type and group ID resource
-
-* If you want a user to be able to be a consumer with consumer group, assign the following:
-    * Same access as consumer (no group)
-    * Reader role on group resource type and group ID resource
 
 ## Examples
 {: #security_examples }
