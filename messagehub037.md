@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-05-05"
+lastupdated: "2018-06-21"
 
 ---
 
@@ -14,6 +14,9 @@ lastupdated: "2017-05-05"
 
 # Using the administration API
 {: #admin_api}
+<br/>
+** The administration API is available as part of the Standard plan only.**
+<br/>
 
 {{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.
 {: shortdesc}

@@ -14,7 +14,6 @@ lastupdated: "2018-05-25"
 
 # Using the Kafka REST API
 {: #rest_using}
-
 <br/>
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
