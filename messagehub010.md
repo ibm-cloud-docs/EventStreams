@@ -85,7 +85,7 @@ To learn more, see the following information:
 ## Message Hub plans
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 
-* Choose the Standard plan if you want event ingest and distribution capabilities where you pay for what you use and share infrastructure with others.
+* Choose the Standard plan if you want event ingest and distribution capabilities, where you pay for what you use and share infrastructure with others.
 * Choose the Enterprise plan if data isolation, guaranteed performance, and increased retention are important considerations. 
 
 For more information, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
