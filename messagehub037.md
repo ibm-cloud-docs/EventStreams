@@ -14,7 +14,7 @@ lastupdated: "2018-06-21"
 
 # Using the administration API
 {: #admin_api}
-<br/>
+
 ** The administration API is available as part of the Standard plan only.**
 <br/>
 
