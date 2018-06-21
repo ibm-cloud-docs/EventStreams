@@ -15,7 +15,7 @@ lastupdated: "2018-06-21"
 # Securing your {{site.data.keyword.messagehub}} resources (Enterprise plan)
 {: #security }
 
-You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained method to manage the access that you want to grant each user to each resource.
+You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
 
 ## What can I secure?
 
@@ -61,10 +61,10 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
 | Allow full access to all resources|   |  |Service instance|
-| Allow an app or user to create or delete topic |Cluster resource type    |  |Each topic resource type <br/>Each topic name resource |
+| Allow an app or user to create or delete topic |Cluster resource type    |  |Each topic resource type <br/><br/>Each topic name resource |
 | List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Cluster resource type      |  |      |
 | Allow an app to connect to the cluster  |Cluster resource type|      |      |
-| Allow an app to produce to topics  |Cluster resource type|Each topic resource type <br/>Each topic name resource|      |
+| Allow an app to produce to topics  |Cluster resource type|Each topic resource type <br/><br/>Each topic name resource|      |
 | Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
 | Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type <br/>Named topic resource |       |     |
 | Allow an app to connect and consume from any topic (no consumer group)  | Cluster resource <br/>Topic resource |     |     |
@@ -72,10 +72,8 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app to produce to a topic transactionally  |Cluster resource type Group resource type<br/>Group ID resource|Each topic resource type <br/>Each topic name resource <br/>Transaction ID resource type <br/>Transaction ID resource|     |
 | Allow a user access to the UI|Cluster resource type - &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;     |  |
 | Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
-
- 
-* To use streams &lt;&lt;need to check what this needs&gt;&gt; 
-&lt;&lt; Do we need to cover Creating/Deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt; 
+| To use streams |?| ? |?     |
+| Do we need to cover creating/deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt;   |? | ? |?     |
 
 
 ## Examples
@@ -88,16 +86,20 @@ I want to give a user access to create or delete a topic:
 3. Specify the email address of the user that you want to invite.
 4. In the **Access** section, expand the **Services** option.
 5. Choose to assign access to a **Resource**.
-6. Depending on your selection, follow the prompts to specify the access to **Message Hub** 
-7. Click **Invite users**.
+6. In the **Services** section, select **Message Hub**
+7. In the **Region** section, make your selection.
+8. In the **Service instance** section, locate your instance and select it.
+9. In the **Resource type** section, enter **cluster**.
+10. In the **Select roles** section, check the **Reader** box.
+11. In the **Resource type** section, enter **topic**.
+12. In the **Select roles** section, check the **Manager** box.
+13. Click **Invite users**.
 
 
 
 For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview).
 
-For an example about how to set policies, see 
-[Introducing IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
 
 
 
