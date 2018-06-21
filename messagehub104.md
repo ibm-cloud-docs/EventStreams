@@ -15,14 +15,17 @@ lastupdated: "2018-05-04"
 # Using the Kafka Java client
 {: #kafka_using}
 
+<!-- 21/06/18 - removing until some content ready
+
 ## To do: instructions for getting started, with links for more information
-{: notoc}
+
 
 ## To do: simple send source and receive source in-line
-{: notoc}
+
 
 ## How to use, download, and run the Java Kafka API sample
-{: notoc}
+
+-->
 
 The Java&trade; Kafka API sample is an example producer and consumer that is written in Java, which directly uses the Kafka API. You can run this sample locally or in {{site.data.keyword.Bluemix_short}}.
 
