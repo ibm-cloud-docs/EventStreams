@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-06-21"
 
 ---
 
@@ -65,14 +65,13 @@ Only users with an administration role for an account can assign policies to use
 | Allow an app to produce to topics  |Cluster resource type|Each topic resource type <br/>Each topic name resource|      |
 | Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
 | Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type| Named topic resource       |     |
-| Allow an app to consume a topic (in a consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource|      |     |
-| Allow an app to consume a specific topic (no consumer group)  |Cluster resource type <br/>Topic resource <br/>|      |     |
+| Allow an app to connect and consume from any topic (no consumer group)  | Cluster resource <br/>Topic resource |     |     |
+| Allow an app to consume a topic (consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource|      |     |
+| Allow an app to consume a specific topic (no consumer group)  |Cluster resource type <br/>Topic resource <br/>Topic resource type<br/>|      |     |
 | Allow a user access to the UI|Cluster resource type - &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;     |  |
 | Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
 
  
-* To allow an application to connect and consume (no group) from any topic, assign [Reader role on the 'cluster' resource and 'topic' resource] 
-* To allow an application to connect and consume (group) from a topic, assign [Reader role on the 'cluster' resource, 'topic' resource and 'group' resource] 
 * To use streams &lt;&lt;need to check what this needs&gt;&gt; 
 &lt;&lt; Do we need to cover Creating/Deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt; 
 
@@ -83,10 +82,6 @@ Here are some common {{site.data.keyword.messagehub}} scenarios and the access y
     * Same access as producer plus
     * Writer role on transaction ID resource type and transaction ID resource
     * Reader role on group resource type and group ID resource
-
-* If you want a user to be able to be a consumer (no consumer group), assign the following:
-    * Reader role on the cluster resource type
-    * Reader role on each topic resource type and topic name resource
 
 * If you want a user to be able to be a consumer with consumer group, assign the following:
     * Same access as consumer (no group)
@@ -104,7 +99,7 @@ I want to give a user access to create or delete a topic:
 5. Choose to assign access to a **Resource**.
 6. Depending on your selection, follow the prompts to specify the access to **Message Hub** 
 7. Click **Invite users**.
-8. 
+
 
 
 For more information about IAM, see 
