@@ -16,10 +16,10 @@ lastupdated: "2018-06-22"
 {: #kafka_connect}
 
 
-To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following: 
+To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
 the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub127.html#vcap).
-* service key from [Connecting using IAM](/docs/services/MessageHub/messagehub127.html#enterprise_connect).
+* the service key. For more information, see [Connecting to your cluster](/docs/services/MessageHub/messagehub127.html#enterprise_connect).
 
 
 <!--17/10/17 - Karen: following info duplicated at messagehub104 -->
