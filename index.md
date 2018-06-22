@@ -47,7 +47,7 @@ Complete the following steps:
 
     * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
 	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
-    * Java 7 or higher
+    * Java 8 or higher
  
 3. Clone the message-hub-samples git repository by running the following command from the command line:
 
