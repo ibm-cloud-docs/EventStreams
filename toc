@@ -27,7 +27,6 @@ IBM Message Hub
 		messagehub114.md
 		messagehub118.md
 		messagehub087.md
-		messagehub071.md
 
 	{: .topicgroup}
 	messagehub070.md
