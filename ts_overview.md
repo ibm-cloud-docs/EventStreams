@@ -17,9 +17,6 @@ lastupdated: "2018-05-30"
 #Troubleshooting and useful links
 {: #troubleshooting}
 
-
-
-
 If you have a question about {{site.data.keyword.messagehub}}, have a look at the
 dedicated [Stack Overflow channel ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/questions/tagged/message-hub){: new_window} to see if it's already been answered.
 If not, post your question and it'll be answered either by a
