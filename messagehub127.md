@@ -16,7 +16,9 @@ lastupdated: "2018-06-22"
 # Connecting to your cluster
 {: #dedicated}
 
-## {{site.data.keyword.messagehub}} Standard plan using the VCAP_SERVICES environment variable
+How you connect to your cluster varies according to whether you're using the Standard or Enterprise plan.
+
+## {{site.data.keyword.messagehub}} Standard plan 
 {: #vcap}
 
 When your application is bound to the {{site.data.keyword.messagehub}} service, details of the service are stored
