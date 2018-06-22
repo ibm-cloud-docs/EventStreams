@@ -29,10 +29,10 @@ IBM Message Hub
 	Creating apps
 		messagehub112.md
 		messagehub114.md
-		messagehub118.md
 		messagehub087.md
 
 	{: .topicgroup}
+	messagehub118.md
 	messagehub070.md
 	messagehub050.md
 		messagehub062.md
