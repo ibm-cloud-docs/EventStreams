@@ -76,6 +76,9 @@ IBM Message Hub
 	messagehub108.md
 	messagehub109.md
 	messagehub125.md
+	
+	{: .topicgroup}
+	Troubleshooting
 	ts_overview.md
 		messagehub057.md
 		messagehub059.md

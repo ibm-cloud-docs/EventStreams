@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-10-05"
+lastupdated: "2018-06-22"
 
 ---
 
@@ -15,6 +15,57 @@ lastupdated: "2017-10-05"
 
 # Known restrictions
 {: #restrictions}
+
+If you are using {{site.data.keyword.messagehub}} and encounter an issue, review theses known problems and workarounds. The following sections describe known restrictions in {{site.data.keyword.messagehub}}:
+
+## Java Kafka calls don’t failover if a Kafka bootstrap server fails
+{: #calls_failover}
+
+### Problem
+
+The Java Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an IP address for a hostname, it caches the IP address for a specified period of time, known as the time-to-live (TTL). Some Java configurations, an example is one which has a security manager, sets the JVM TTL so that it never refreshes a hostname’s IP address until the JVM is restarted.
+
+### Workaround
+
+Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for High Availability, not all the broker IPs may be known to the Kafka client preventing failover to a working broker. In these cases, failover requires re-querying the IPs for the broker URLs to get a working IP. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This ensures that when a bootstrap server’s IP has issues, the Kafka client will be able to lookup and use a new IP address by querying the DNS.
+
+From the java.security file 
+
+```
+# The Java-level namelookup cache policy for successful lookups:
+#
+# any negative value: caching forever
+# any positive value: the number of seconds to cache an address for
+# zero: do not cache
+#
+# default value is forever (FOREVER). For security reasons, this
+# caching is made forever when a security manager is set. When a security
+# manager is not set, the default behavior in this implementation
+# is to cache for 30 seconds.
+#
+# NOTE: setting this to anything other than the default value can have
+#       serious security implications. Do not set it unless
+#       you are sure you are not exposed to DNS spoofing attack.
+#
+#networkaddress.cache.ttl=-1
+```
+
+### How to modify the JVM's TTL
+* To modify the JVM's TTL for all applications, set the networkaddress.cache.ttl value in the $JAVA_HOME/jre/lib/security/java.security file:.
+* To modify the JVM TTL for a given application, set the networkaddress.cache.ttl in your application code using: java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
+
+
+## Java Kafka calls might time out
+{: #calls_timeout}
+
+### Problem
+
+Sometimes a Kafka Java client call will fail to find Kafka. The cause of failure is the Kafka client determined the same failing IP for each of the bootstrap.servers. The Kafka client will try each broker’s IP (which is the same failing IP) and incorrectly determine that Kafka is down. Note that the Kafka client uses the first IP returned in the list if multiple IPs are returned in the DNS query.
+
+### Workaround
+
+Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP will hopefully be returned from the DNS query and used. 
+A Kafka Improvement Proposal (KIP) #302 has been created so the Kafka clients will try all available broker IPs. This will ensure that the client tries all broker IPs and not a subset, so a failure in a single IP wouldn’t cause a failure.
 
 
 ## Topics and partitions
