@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-20"
+lastupdated: "2018-06-22"
 
 ---
 
@@ -63,6 +63,16 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 		</tr>
 		<tr>
+			<td>**Maximum number of partitions**</td>
+			<td>100</td>
+			<td>1000</td>
+		</tr>
+		<tr>
+			<td>**Maximum retention period**</td>
+			<td>1 GB per partition for up to 30 days </td>
+			<td>Unlimited up to the storage limit </td>
+		</tr>
+		<tr>
 			<td>**Region availability**</td>
 			<td>US South</br>
 			United Kingdom</br>
@@ -81,10 +91,12 @@ The following table summarizes what is supported by the plans:
 		<tr>
      	    <td>**APIs supported**</td>
 			<td>Kafka API</br>
+			Admin REST API<br/>
 			Kafka REST API</br>
 			MQ Light API</br>
 		    </td>
-			<td>Kafka API</td>
+			<td>Kafka API<br/>
+			Admin REST API</td>
 		</tr>
 			<td>**Cloud Object Storage bridge and<br/>
 			MQ bridge supported?**</td>
