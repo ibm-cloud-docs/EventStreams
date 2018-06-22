@@ -79,7 +79,7 @@ IBM Message Hub
 	
 	{: .topicgroup}
 	Troubleshooting
-	ts_overview.md
+		ts_overview.md
 		messagehub057.md
 		messagehub059.md
 		
