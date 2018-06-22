@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-04"
+lastupdated: "2018-06-22"
 
 ---
 
@@ -139,37 +139,35 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 30 days. Specify this value as multiples of hours.
 
 <p>**Note:**
-In premium, this can be set to any value.</p>
+In the Enterprise plan, you can se this to any value.</p>
 </dd>
 
 <dt>retention.bytes</dt>
 <dd>The maximum size a partition (which consists of log segments) can grow to before we will discard old log segments to free up space.
 
 <p>**Note:**
-Premium only. This can be set to any value larger than 1MB.</p>
+Enterprise plan only. Set to any value larger than 1MB.</p>
 </dd>
 
 <dt>segment.bytes</dt>
 <dd>The segment file size for the log.
 
 <p>**Note:**
-Premium only. This can be set to any value larger than 100kB.</p>
+Enterprise plan only. Set to any value larger than 100kB.</p>
 </dd>
 
 <dt>segment.index.bytes</dt>
 <dd>The size of the index that maps offsets to file positions. 
 
 <p>**Note:**
-Premium only. This can be set to any value between 100kB and 2GB.</p>
+Enterprise plan only. Set to any value between 100kB and 2GB.</p>
 </dd>
 
 <dt>segment.ms</dt>
 <dd>The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
 
 <p>**Note:**
-Premium only. This can be set to any value between 5 minutes and 30 days</p>
+Enterprise plan only. Set to any value between 5 minutes and 30 days</p>
 </dd>
 </dl>
-<!--
-new topic that includes content from existing topics about samples and migration
--->
+
