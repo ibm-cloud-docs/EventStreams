@@ -32,4 +32,34 @@ The Enterprise plan supports Apache Kafka version 1.1 with Kafka client version 
 
 The Kafka client must support authentication using the SASL Plain mechanism and use the Service Name Identifaction (SNI) extension to the TLSv1.2 protocol.
 
+<table>
+    <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
+      <tr>
+	        <th></th>
+		    <th>Standard Plan</th>
+		    <th>Enterprise Plan</th>
+        </tr>
+	  		<tr>
+			<td>**Kafka version on cluster**</td>
+			<td>Kafka 0.10.2</td>
+			<td>Kafka 1.1</td>
+		</tr>
+	  		<tr>
+			<td>**Supported client versions**</td>
+			<td>Kafka 0.10.x, or later</td>
+			<td>Kafka 0.10.x, or later</td>
+		</tr>
+		<tr>
+			<td>**Kafka Connect, Kafka Streams, and KSQL supported? **</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+
+			<td>**Authentication requirements**</td>
+			<td>Client must support authentication using the SASL Plain mechanism</td>
+			<td>Client must support authentication using the SASL Plain mechanism and use the Service Name Identifaction (SNI) extension to the TLSv1.2 protocol.</td>
+		</tr>
+
+</table>
+
 
