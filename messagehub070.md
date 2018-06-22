@@ -18,6 +18,7 @@ lastupdated: "2018-05-24"
 You can manage topics in {{site.data.keyword.messagehub}} using
 the following two methods:
 
+* Use the [Kafka Admin API](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html) - requires a Kafka Java client at version 0.11 or later
 * {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console
 * [{{site.data.keyword.messagehub}} Administration API](/docs/services/MessageHub/messagehub037.html)
 {:shortdesc}
