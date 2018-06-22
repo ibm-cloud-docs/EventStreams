@@ -23,17 +23,13 @@ Within {{site.data.keyword.messagehub}}, you can secure access to the following 
 * Cluster (cluster): you can control which applications and users can connect to the service [and access the UI] 
 * Topics (topic): you can control the ability of users and applications to create, delete, read, and write to a topic 
 * Consumer groups (group): you can control an application's ability to join a consumer group 
-* Producer transactions (txnid): you can control the ability to use the transactional producer capability in Kafka 
+* Producer transactions (txnid): you can control the ability to use the transactional producer capability in Kafka (atomic writes across multiple partitions)
 
 The levels of access (also known as a role) that you can assign to a user to each resource are as follows:
-* read
-* write
-* manage
 
-| Access role | Description of actions | Example actions for {{site.data.keyword.messagehub}} |
+| Access role | Description of actions | Example actions |
 |:-----------------|:-----------------|:-----------------|
-|  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing service-specific resources | Allow an app to connect to a cluster by assigning read access to cluster resource type
- |
+|  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing service-specific resources | Allow an app to connect to a cluster by assigning read access to cluster resource type |
 | Writer | Writers have permissions beyond the reader role, including creating and editing {{site.data.keyword.messagehub}}resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
 | Manager | Managers have permissions beyond the writer role to complete privileged actions as defined by {{site.data.keyword.messagehub}}. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance|
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="top"}
