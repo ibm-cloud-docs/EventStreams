@@ -18,9 +18,7 @@ lastupdated: "2018-05-25"
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
-The {{site.data.keyword.mql}} API provides a higher level of
-abstraction for messaging compared to Kafka, which makes it easier to learn and easier to use in
-your applications.
+The {{site.data.keyword.mql}} API provides a higher level of abstraction for messaging compared to Kafka.
 {:shortdesc}
 
 The choice between using a Kafka client or the {{site.data.keyword.mql}} API depends on the messaging topology that you

@@ -31,9 +31,9 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 * Publish event data to multiple applications to react in real time.
 * Transfer data into another service. For example, to long-term storage.
 
-<!-- 18/06/18 Karen - removing diagram as per feedback from James
+
 ![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.")
---> 
+
 
 {{site.data.keyword.messagehub}} is based on the open-source
 Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
@@ -44,6 +44,12 @@ The following list defines some Apache Kafka concepts:
 <dl><dt>Cluster</dt>
 <dd>Kafka runs as a cluster of one or more servers. The load is balanced across the cluster by distributing it amongst the servers.</dd>
 <br/>
+<dt>Message</dt>
+<dd>The unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
+
+<p>Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose. {{site.data.keyword.messagehub}} is currently based on Kafka 0.10.2.1, so it does not yet support record headers.</p> 
+
+<p>Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.</p>   </dd>
 <dt>Topic</dt>
 <dd>A named stream of messages.</dd>
 <br/>
@@ -52,12 +58,6 @@ The following list defines some Apache Kafka concepts:
 <p>Each partition has one server in the cluster that acts as the partition's leader and other servers that act as the followers.<p>
 <p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p>
 <p>For more information, see [Partition leadership](/docs/services/MessageHub/messagehub118.html).</dd>
-<dt>Message</dt>
-<dd>The unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
-
-<p>Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose. {{site.data.keyword.messagehub}} is currently based on Kafka 0.10.2.1, so it does not yet support record headers.</p> 
-
-<p>Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.</p>   </dd>
 <dt>Producer</dt>
 <dd>A process that publishes streams of messages to Kafka topics. A producer can publish to one or
 more topics and can optionally choose the partition that stores the data.<br/></dd>
