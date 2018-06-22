@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-10-17"
+lastupdated: "2018-06-22"
 
 ---
 
@@ -16,9 +16,11 @@ lastupdated: "2017-10-17"
 {: #kafka_connect}
 
 
-To connect to {{site.data.keyword.messagehub}}, the
-Kafka API uses the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
-the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub127.html).
+To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following: 
+* the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
+the [VCAP_SERVICES environment variable](/docs/services/MessageHub/messagehub127.html#vcap).
+* service key from [Connecting using IAM](/docs/services/MessageHub/messagehub127.html#enterprise_connect)
+
 
 <!--17/10/17 - Karen: following info duplicated at messagehub104 -->
 ## Using the sasl.jaas.config property (connecting and authenticating in a Java application)

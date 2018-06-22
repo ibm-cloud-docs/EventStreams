@@ -16,8 +16,6 @@ lastupdated: "2018-06-22"
 # Connecting to your cluster
 {: #dedicated}
 
-{{site.data.keyword.messagehub}} 
-
 ## {{site.data.keyword.messagehub}} Standard plan using the VCAP_SERVICES environment variable
 {: #vcap}
 
@@ -53,7 +51,7 @@ Only your first five brokers are listed in VCAP_SERVICES. If you have more than 
 
 
 ## {{site.data.keyword.messagehub}} Enterprise plan
-{: enterprise_connect}
+{: #enterprise_connect}
 
 
 To connect to an API in the cluster you need its endpoint URL and an apikey for authentication. You can retrieve these details from IAM using one of the following methods:
