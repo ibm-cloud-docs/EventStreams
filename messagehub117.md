@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-12-04"
+lastupdated: "2018-06-22"
 
 ---
 
@@ -15,6 +15,9 @@ lastupdated: "2017-12-04"
 
 # Kafka quotas
 {: #kafka_quotas }
+
+** Kafka quotas apply to the Standard plan only.**
+<br/>
 
 {{site.data.keyword.messagehub}} uses throughput quotas to control the network bandwidth that is used by clients. The quotas are in place to minimize the impact of clients on each other. {{site.data.keyword.messagehub}} now implements Kafka quotas, that is throttling for producers and consumers.
 
