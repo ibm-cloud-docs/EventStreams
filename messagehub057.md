@@ -16,18 +16,19 @@ lastupdated: "2018-06-22"
 # Known restrictions
 {: #restrictions}
 
-If you are using {{site.data.keyword.messagehub}} and encounter an issue, review theses known problems and workarounds. The following sections describe known restrictions in {{site.data.keyword.messagehub}}:
+If you are using {{site.data.keyword.messagehub}} and find a problem, review theses known restrictions and workarounds. 
+
 
 ## Java Kafka calls don’t failover if a Kafka bootstrap server fails
 {: #calls_failover}
 
 ### Problem
 
-The Java Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an IP address for a hostname, it caches the IP address for a specified period of time, known as the time-to-live (TTL). Some Java configurations, an example is one which has a security manager, sets the JVM TTL so that it never refreshes a hostname’s IP address until the JVM is restarted.
+The Java Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an IP address for a host name, it caches the IP address for a specified period of time, known as the time-to-live (TTL). Some Java configurations set the JVM TTL so that it never refreshes a host name’s IP address until the JVM is restarted. An example configuration is one that has a security manager.
 
 ### Workaround
 
-Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for High Availability, not all the broker IPs may be known to the Kafka client preventing failover to a working broker. In these cases, failover requires re-querying the IPs for the broker URLs to get a working IP. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This ensures that when a bootstrap server’s IP has issues, the Kafka client will be able to lookup and use a new IP address by querying the DNS.
+Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for High Availability, not all the broker IPs are known to the Kafka client preventing failover to a working broker. In these cases, failover requires re-querying the IPs for the broker URLs to get a working IP. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This ensures that when a bootstrap server’s IP has issues, the Kafka client will be able to look up and use a new IP address by querying the DNS.
 
 From the java.security file 
 
@@ -51,20 +52,22 @@ From the java.security file
 ```
 
 ### How to modify the JVM's TTL
-* To modify the JVM's TTL for all applications, set the networkaddress.cache.ttl value in the $JAVA_HOME/jre/lib/security/java.security file:.
-* To modify the JVM TTL for a given application, set the networkaddress.cache.ttl in your application code using: java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
-
+* To modify the JVM's TTL for all applications, set the networkaddress.cache.ttl value in the $JAVA_HOME/jre/lib/security/java.security file.
+* To modify the JVM TTL for a given application, set the networkaddress.cache.ttl in your application code using:
+```
+java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
+```
 
 ## Java Kafka calls might time out
 {: #calls_timeout}
 
 ### Problem
 
-Sometimes a Kafka Java client call will fail to find Kafka. The cause of failure is the Kafka client determined the same failing IP for each of the bootstrap.servers. The Kafka client will try each broker’s IP (which is the same failing IP) and incorrectly determine that Kafka is down. Note that the Kafka client uses the first IP returned in the list if multiple IPs are returned in the DNS query.
+Sometimes a Kafka Java client call will fail to find Kafka. The cause of failure is that the Kafka client determined the same failing IP for each of the bootstrap.servers. The Kafka client will try each broker’s IP (which is the same failing IP) and incorrectly determine that Kafka is down. Note that the Kafka client uses the first IP returned in the list if multiple IPs are returned in the DNS query.
 
 ### Workaround
 
-Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP will hopefully be returned from the DNS query and used. 
+Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP should be returned from the DNS query and used. 
 A Kafka Improvement Proposal (KIP) #302 has been created so the Kafka clients will try all available broker IPs. This will ensure that the client tries all broker IPs and not a subset, so a failure in a single IP wouldn’t cause a failure.
 
 
