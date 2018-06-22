@@ -13,6 +13,10 @@ IBM Message Hub
 		messagehub010.md
 	 	messagehub085.md
 		messagehub124.md
+
+	{: .topicgroup}
+	Connecting to your cluster
+		messagehub127.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
