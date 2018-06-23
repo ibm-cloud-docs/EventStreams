@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-22"
+lastupdated: "2018-06-23"
 
 ---
 
@@ -29,9 +29,9 @@ The levels of access (also known as a role) that you can assign to a user to eac
 
 | Access role | Description of actions | Example actions |
 |:-----------------|:-----------------|:-----------------|
-|  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing service-specific resources | Allow an app to connect to a cluster by assigning read access to cluster resource type |
-| Writer | Writers have permissions beyond the reader role, including creating and editing {{site.data.keyword.messagehub}}resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
-| Manager | Managers have permissions beyond the writer role to complete privileged actions as defined by {{site.data.keyword.messagehub}}. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance|
+|  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing resources | Allow an app to connect to a cluster by assigning read access to cluster resource type |
+| Writer | Writers have permissions beyond the reader role, including creating and editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
+| Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance|
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="top"}
 
 <!-- comment from Charlie and my reply 
