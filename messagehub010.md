@@ -31,8 +31,9 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 * Publish event data to multiple applications to react in real time.
 * Transfer data into another service. For example, to long-term storage.
 
-
+<!-- 25/06/18 removing until new diagram available
 ![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.")
+-->
 
 
 {{site.data.keyword.messagehub}} is based on the open-source
