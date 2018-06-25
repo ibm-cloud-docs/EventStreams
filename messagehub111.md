@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-08-03"
+lastupdated: "2018-06-25"
 
 ---
 
@@ -15,7 +15,9 @@ lastupdated: "2017-08-03"
 # Using Kafka Streams with {{site.data.keyword.messagehub}}
 {: #kafka_streams }
 
-Starting from the Streams library 0.10.2.0, the topic APIs now work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using <code>sasl.jaas.config</code> or a JAAS file and set <code>replication.factor</code> to 3.
+The topic APIs work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using <code>sasl.jaas.config</code> or a JAAS file and set <code>replication.factor</code> to 3.
+
+Ensure that you are using Streams at 0.10.2, or later.   
 
 For example:
 
