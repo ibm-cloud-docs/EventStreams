@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-25"
+lastupdated: "2018-06-26"
 
 ---
 
@@ -24,7 +24,7 @@ If you find a problem while using {{site.data.keyword.messagehub}}, review these
 
 ### Problem
 
-The Java Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an IP address for a host name, it caches the IP address for a specified period of time, known as the time-to-live (TTL). Some Java configurations set the JVM TTL so that it never refreshes a host name’s IP address until the JVM is restarted. An example configuration is one that has a security manager.
+The Java Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an IP address for a host name, it caches the IP address for a specified period of time, known as the time to live (TTL). Some Java configurations set the JVM TTL so that it never refreshes a host name’s IP address until the JVM is restarted. An example configuration is one that has a security manager.
 
 ### Workaround
 
@@ -63,13 +63,13 @@ java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
 
 ### Problem
 
-Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is that the Kafka client has determined the same failing IP address for each of the bootstrap.servers. The Kafka client tries each broker’s IP address (which is the same failing IP address) and incorrectly determines that Kafka is down. Note that the Kafka client uses the first IP address returned in the list if multiple IP addresses are returned in the DNS query.
+Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is that the Kafka client has determined the same failing IP address for each of the bootstrap servers. The Kafka client tries each broker’s IP address (which is the same failing IP address) and incorrectly determines that Kafka is down. Note that the Kafka client uses the first IP address returned in the list if multiple IP addresses are returned in the DNS query.
 
 ### Workaround
 
 Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address should be returned from the DNS query and used. 
 
-A Kafka Improvement Proposal (KIP) #302 has been created so the Kafka clients will try all available broker IP addresses. This will ensure that the client tries all broker IP address and not a subset, so a failure in a single IP address won't cause a failure.
+A Kafka Improvement Proposal (KIP) #302 has been created to ensure that Kafka clients try all available broker IP addresses and not a subset, so a failure in a single IP address won't cause a failure.
 
 
 ## Topics and partitions
