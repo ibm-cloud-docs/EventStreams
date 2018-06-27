@@ -31,27 +31,40 @@ IBM Message Hub
 	{: .topicgroup}
 	messagehub118.md
 	messagehub070.md
-	messagehub050.md
-		messagehub062.md
-		messagehub063.md
-		messagehub117.md
-		messagehub104.md
-	messagehub075.md
-	 	messagehub106.md
-		messagehub098.md
-		messagehub079.md
-		messagehub099.md
-		messagehub102.md
-		messagehub103.md
-		messagehub101.md
-		messagehub081.md
-		messagehub082.md
-		messagehub080.md
-		messagehub083.md
-	messagehub025.md
-		messagehub066.md
-		messagehub097.md
+	
+	{: .topicgroup}
+	Using a Kafka client
+		messagehub050.md
+			messagehub062.md
+			messagehub063.md
+			messagehub117.md
+			messagehub104.md
+			
+	{: .topicgroup}
+	Using an MQ Light client
+		messagehub075.md
+			messagehub106.md
+			messagehub098.md
+			messagehub079.md
+			messagehub099.md
+			messagehub102.md
+			messagehub103.md
+			messagehub101.md
+			messagehub081.md
+			messagehub082.md
+			messagehub080.md
+			messagehub083.md
+			
+	{: .topicgroup}
+	Using the Kafka REST API
+		messagehub025.md
+			messagehub066.md
+			messagehub097.md
+	
 	messagehub037.md
+	
+	{: .topicgroup}
+	Linking to other services using bridges
 	messagehub088.md
 		messagehub105.md
 		messagehub115.md
