@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-23"
+lastupdated: "2018-06-26"
 
 ---
 
@@ -45,8 +45,8 @@ KR: I think they do inherit the lower level access https://console.bluemix.net/d
 Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
 * The type of service the policy applies to. For example, Message Hub. You can scope a policy to include all service types. 
 * The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
-* The type of resource to be secured. For example, <code>cluster</code>, <code>topic</code>, <code>group</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify it, the policy then applies to all resources in the service instance. 
-* The resource to be secured. This can be specified for resources of type <code>topic</code>, <code>group</code> and <code>txnid</code>. If you do not specify it, the policy then applies to all resources of the type specified in the service instance. 
+* The type of resource to be secured. For example, <code>cluster</code>, <code>topic</code>, <code>group</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance. 
+* The resource to be secured. Specify for resources of type <code>topic</code>, <code>group</code> and <code>txnid</code>. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
 * The role assigned to the user. For example, Reader, Writer, or Manager. 
 
 ## What are the default security settings?
