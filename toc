@@ -12,7 +12,6 @@ IBM Message Hub
 	About Message Hub
 		messagehub010.md
 	 	messagehub085.md
-		messagehub124.md
 		messagehub127.md
 	{: .navgroup-end}
 
@@ -31,6 +30,7 @@ IBM Message Hub
 	{: .topicgroup}
 	messagehub118.md
 	messagehub070.md
+	messagehub124.md
 	
 	{: .topicgroup}
 	Using a Kafka client
