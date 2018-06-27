@@ -80,12 +80,6 @@ The following table summarizes what is supported by the plans:
 			Germany (no MQ Light API)</td>
 			<td>US South currently</br>
 			<br/>
-			Coming soon:</br>
-			US East</br>
-			United Kingdom</br>
-			Germany</br>
-			Sydney<br/>
-			AP North
 			</td>
 		</tr>
 		<tr>
