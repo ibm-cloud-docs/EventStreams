@@ -17,13 +17,6 @@ lastupdated: "2018-06-20"
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications.
 
-By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
-{:shortdesc}
-
-In {{site.data.keyword.messagehub}}, applications send data by creating a message and sending it to a topic. To receive messages, applications subscribe to a topic
-and choose to either receive all the topic's messages or to share the messages between them.
-{{site.data.keyword.messagehub}} hosts and maintains the messages in an ordered sequence. 
-
 You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 
 * Offload work to back-end worker processes.
@@ -31,14 +24,18 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 * Publish event data to multiple applications to react in real time.
 * Transfer data into another service. For example, to long-term storage.
 
+By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
+{:shortdesc}
+
+Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
+
+In {{site.data.keyword.messagehub}}, applications send data by creating a message and sending it to a topic. To receive messages, applications subscribe to a topic
+and choose to either receive all the topic's messages or to share the messages between them.
+{{site.data.keyword.messagehub}} hosts and maintains the messages in an ordered sequence. 
+
 <!-- 25/06/18 removing until new diagram available
 ![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.")
 -->
-
-
-{{site.data.keyword.messagehub}} is based on the open-source
-Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
-production environments. Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 
 The following list defines some Apache Kafka concepts:
 
