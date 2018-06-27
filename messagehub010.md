@@ -85,6 +85,8 @@ To learn more, see the following information:
 - [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
 
 
+<!-- 27/06/18 Karen: removing - suggestion from James
+
 ## Message Hub plans
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 
@@ -92,6 +94,7 @@ To learn more, see the following information:
 * Choose the Enterprise plan if data isolation, guaranteed performance, and increased retention are important considerations. 
 
 For more information, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
+-->
 
 
 
