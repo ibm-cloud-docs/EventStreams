@@ -12,7 +12,7 @@ lastupdated: "2018-06-23"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using a Kafka client
+# Using the Kafka API
 {: #kafka_using}
 
 If you're using the Java clients, you can use the publicly available Kafka clients at 0.10.x or later. 
