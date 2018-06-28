@@ -22,14 +22,19 @@ IBM Message Hub
 
 	{: .navgroup id="howto"}
 	{: .topicgroup}
-	Creating apps
+	Administering Message Hub
+		messagehub070.md
+		messagehub037.md
+	
+	
+	{: .topicgroup}
+	Developing apps
 		messagehub112.md
 		messagehub114.md
 		messagehub087.md
 
 	{: .topicgroup}
 	messagehub118.md
-	messagehub070.md
 	messagehub124.md
 	
 	{: .topicgroup}
@@ -45,9 +50,7 @@ IBM Message Hub
 		messagehub025.md
 		messagehub066.md
 		messagehub097.md
-	
-	messagehub037.md
-	
+
 	{: .topicgroup}
 	Using an MQ Light client
 		messagehub075.md
@@ -73,7 +76,6 @@ IBM Message Hub
 			
 	messagehub113.md
 	messagehub111.md
-	messagehub116.md
 	messagehub110.md
 	
 	{: .topicgroup}
