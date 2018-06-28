@@ -16,6 +16,9 @@ IBM Message Hub
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
+	messagehub112.md
+	messagehub114.md
+	messagehub118.md
 	messagehub068.md
 	messagehub072.md
 	{: .navgroup-end}
@@ -29,15 +32,12 @@ IBM Message Hub
 	
 	{: .topicgroup}
 	Developing apps
-		messagehub112.md
-		messagehub114.md
 		messagehub087.md
 		messagehub113.md
 		messagehub111.md
 		messagehub110.md
 
 	{: .topicgroup}
-	messagehub118.md
 	messagehub124.md
 	
 	{: .topicgroup}
