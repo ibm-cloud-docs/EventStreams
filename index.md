@@ -39,8 +39,6 @@ Complete the following steps:
   
   c. In the **Application Services** section, select **{{site.data.keyword.messagehub}} Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
-  For more information about {{site.data.keyword.messagehub}} plans, see [Choosing your plan ](/docs/services/MessageHub/messagehub085.html).
-  
   d. Leave the service unbound in the **Connect to** menu and enter names for your service and your credentials. You can use the default values.
   
   e. Click **Create**.
@@ -75,7 +73,7 @@ Complete the following steps:
 6. Start the consumer on your console by running the following command:
 
     <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
-	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -consumer</pre>
+	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> token<var class="keyword varname">:api_key</var> -consumer</pre>
     {: codeblock}
     
     The sample uses a topic named `kafka-java-console-sample-topic`. If the topic does
@@ -84,6 +82,8 @@ Complete the following steps:
 
     To find the values for *kafka_brokers_sasl*, *kafka_admin_url*,
     and *api_key*, go to your {{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the **Credentials** that you want to use.
+	
+	Specify token as your user name and the api_key as your password, separated with a colon.
     
 	**Important:** *kafka_brokers_sasl* must be a single string and you must enclose it in quotes. For example:
 
