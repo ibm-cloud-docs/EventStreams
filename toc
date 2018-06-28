@@ -12,7 +12,6 @@ IBM Message Hub
 	About Message Hub
 		messagehub010.md
 	 	messagehub085.md
-		messagehub127.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
@@ -67,13 +66,14 @@ IBM Message Hub
 		messagehub083.md
 			
 	{: .topicgroup}
-	Linking to other services using bridges
+	Integrating with other services
 		messagehub088.md
 		messagehub105.md
 		messagehub115.md
 		messagehub089.md
 		messagehub119.md
 			
+	messagehub127.md
 	messagehub113.md
 	messagehub111.md
 	messagehub110.md
