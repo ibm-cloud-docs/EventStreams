@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-27"
+lastupdated: "2018-06-28"
 
 ---
 
@@ -83,7 +83,7 @@ Complete the following steps:
     To find the values for *kafka_brokers_sasl*, *kafka_admin_url*,
     and *api_key*, go to your {{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the **Credentials** that you want to use.
 	
-	Specify token as your user name and the api_key as your password, separated with a colon.
+	Specify ```token``` as your user name and the <var class="keyword varname">api_key</var> as your password. Separate token and the <var class="keyword varname">api_key</var> with a colon.
     
 	**Important:** *kafka_brokers_sasl* must be a single string and you must enclose it in quotes. For example:
 
