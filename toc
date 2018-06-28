@@ -50,9 +50,6 @@ IBM Message Hub
 		messagehub115.md
 		messagehub089.md
 		messagehub119.md
-		
-	{: .topicgroup}
-	messagehub124.md
 
 	{: .topicgroup}
 	Using the Kafka REST API
@@ -75,7 +72,10 @@ IBM Message Hub
 		messagehub080.md
 		messagehub083.md
 
-			
+		
+	{: .topicgroup}
+	messagehub124.md
+
 	messagehub127.md
 
 	
