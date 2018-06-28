@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-22"
+lastupdated: "2018-06-28"
 
 ---
 
@@ -53,12 +53,12 @@ The following table summarizes what is supported by the plans:
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
-			<td>**Fine-grained access control?**</td>
+			<td>**Fine-grained access control**</td>
 			<td>No</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>**Kafka Connect and Kafka Streams supported? **</td>
+			<td>**Kafka Connect and Kafka Streams supported **</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -70,7 +70,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Maximum retention period**</td>
 			<td>1 GB per partition for up to 30 days </td>
-			<td>Unlimited up to the storage limit </td>
+			<td>Unlimited up to the storage limit of your plan </td>
 		</tr>
 		<tr>
 			<td>**Region availability**</td>
@@ -93,7 +93,7 @@ The following table summarizes what is supported by the plans:
 			Admin REST API</td>
 		</tr>
 			<td>**Cloud Object Storage bridge and<br/>
-			MQ bridge supported?**</td>
+			MQ bridge supported**</td>
 			<td>Yes</td>
 			<td>No</td>
 		</tr>
