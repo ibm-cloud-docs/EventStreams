@@ -31,7 +31,7 @@ IBM Message Hub
 	
 	
 	{: .topicgroup}
-	Developing apps
+	Developing apps with Message Hub
 		messagehub050.md
 			messagehub062.md
 			messagehub063.md
