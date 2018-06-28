@@ -33,10 +33,10 @@ IBM Message Hub
 	{: .topicgroup}
 	Developing apps
 		messagehub050.md
-		messagehub062.md
-		messagehub063.md
-		messagehub117.md
-		messagehub104.md
+			messagehub062.md
+			messagehub063.md
+			messagehub117.md
+			messagehub104.md
 
 		messagehub087.md
 		messagehub113.md
