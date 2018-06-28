@@ -32,6 +32,12 @@ IBM Message Hub
 	
 	{: .topicgroup}
 	Developing apps
+		messagehub050.md
+		messagehub062.md
+		messagehub063.md
+		messagehub117.md
+		messagehub104.md
+
 		messagehub087.md
 		messagehub113.md
 		messagehub111.md
@@ -39,14 +45,6 @@ IBM Message Hub
 
 	{: .topicgroup}
 	messagehub124.md
-	
-	{: .topicgroup}
-	Using a Kafka client
-		messagehub050.md
-		messagehub062.md
-		messagehub063.md
-		messagehub117.md
-		messagehub104.md
 
 	{: .topicgroup}
 	Using the Kafka REST API

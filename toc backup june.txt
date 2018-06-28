@@ -1,0 +1,108 @@
+<!-- Markdown Navigation -->
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="messagehub" audience="service" href="/docs/MessageHub/index.html"}
+IBM Message Hub
+
+	{: .navgroup id="learn"}
+	index.md
+	
+	{: .topicgroup}
+	About Message Hub
+		messagehub010.md
+		messagehub073.md
+	 	messagehub085.md
+	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	messagehub112.md
+	messagehub114.md
+	messagehub118.md
+	messagehub068.md
+	messagehub072.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	{: .topicgroup}
+	Administering Message Hub
+		messagehub070.md
+		messagehub037.md
+	
+	
+	{: .topicgroup}
+	Developing apps
+		messagehub087.md
+		messagehub113.md
+		messagehub111.md
+		messagehub110.md
+
+	{: .topicgroup}
+	messagehub124.md
+	
+	{: .topicgroup}
+	Using a Kafka client
+		messagehub050.md
+		messagehub062.md
+		messagehub063.md
+		messagehub117.md
+		messagehub104.md
+
+	{: .topicgroup}
+	Using the Kafka REST API
+		messagehub025.md
+		messagehub066.md
+		messagehub097.md
+
+	{: .topicgroup}
+	Using an MQ Light client
+		messagehub075.md
+		messagehub106.md
+		messagehub098.md
+		messagehub079.md
+		messagehub099.md
+		messagehub102.md
+		messagehub103.md
+		messagehub101.md
+		messagehub081.md
+		messagehub082.md
+		messagehub080.md
+		messagehub083.md
+			
+	{: .topicgroup}
+	Integrating with other services
+		messagehub088.md
+		messagehub105.md
+		messagehub115.md
+		messagehub089.md
+		messagehub119.md
+			
+	messagehub127.md
+
+	
+	{: .topicgroup}
+	Alpha program
+		messagehub120.md
+		messagehub122.md
+		messagehub123.md
+	{: .navgroup-end}
+
+	{: .navgroup id="help"}
+	messagehub108.md
+	
+	{: .topicgroup}
+	Troubleshooting
+		ts_overview.md
+		messagehub057.md
+		messagehub109.md
+		messagehub125.md
+		messagehub059.md
+		
+	{: .topicgroup}
+	Related links
+	 	[Message Hub Java Kafka sample](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-console-sample)
+	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
+		[IBM Message Hub on developerWorks](https://developer.ibm.com/messaging/message-hub/)
+	{: .navgroup-end}
+
+
