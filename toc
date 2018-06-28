@@ -32,13 +32,28 @@ IBM Message Hub
 	
 	{: .topicgroup}
 	Developing apps with Message Hub
+		messagehub087.md
 		messagehub050.md
 			messagehub062.md
 			messagehub063.md
 			messagehub117.md
 			messagehub104.md
+			
+	{: .topicgroup}
+	messagehub075.md
+		messagehub106.md
+		messagehub098.md
+		messagehub079.md
+		messagehub099.md
+		messagehub102.md
+		messagehub103.md
+		messagehub101.md
+		messagehub081.md
+		messagehub082.md
+		messagehub080.md
+		messagehub083.md
 
-		messagehub087.md
+
 		messagehub113.md
 		messagehub111.md
 		messagehub110.md
@@ -56,21 +71,6 @@ IBM Message Hub
 		messagehub025.md
 		messagehub066.md
 		messagehub097.md
-
-	{: .topicgroup}
-	Using an MQ Light client
-		messagehub075.md
-		messagehub106.md
-		messagehub098.md
-		messagehub079.md
-		messagehub099.md
-		messagehub102.md
-		messagehub103.md
-		messagehub101.md
-		messagehub081.md
-		messagehub082.md
-		messagehub080.md
-		messagehub083.md
 
 		
 	{: .topicgroup}
