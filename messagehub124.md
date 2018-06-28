@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-26"
+lastupdated: "2018-06-28"
 
 ---
 
@@ -55,7 +55,10 @@ By default, when {{site.data.keyword.messagehub}} is provisioned, the user who p
 
 You can then apply additional policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
 
-Only users with an administration role for an account can assign policies to users . Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands. For example steps for {{site.data.keyword.messagehub}}, see [Examples](#security_examples).
+Only users with an administration role for an account can assign policies to users . Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands. 
+<!--
+For example steps for {{site.data.keyword.messagehub}}, see [Examples](#security_examples).
+-->
 
 
 ## Common scenarios
@@ -65,21 +68,22 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
-| Allow full access to all resources|   |  |Service instance|
-| Allow an app or user to create or delete topic |Cluster resource type    |  |Each topic resource type <br/><br/>Each topic name resource |
-| List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Cluster resource type      |  |      |
-| Allow an app to connect to the cluster  |Cluster resource type|      |      |
+| Allow full access to all resources|Not applicable   |Not applicable  |Service instance|
+| Allow an app or user to create or delete topic |Cluster resource type    |Not applicable  |Each topic resource type <br/><br/>Each topic name resource |
+| List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Cluster resource type      |Not applicable  |Not applicable      |
+| Allow an app to connect to the cluster  |Cluster resource type| Not applicable     |Not applicable      |
 | Allow an app to produce to topics  |Cluster resource type|Each topic resource type <br/><br/>Each topic name resource|      |
-| Allow an app to write to a topic  |Cluster resource type|Topic resource       |     |
-| Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type <br/>Named topic resource |       |     |
-| Allow an app to connect and consume from any topic (no consumer group)  | Cluster resource <br/>Topic resource |     |     |
-| Allow an app to consume a topic (consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource<br/>Group ID resource|      |     |
-| Allow an app to produce to a topic transactionally  |Cluster resource type Group resource type<br/>Group ID resource|Each topic resource type <br/>Each topic name resource <br/>Transaction ID resource type <br/>Transaction ID resource|     |
+| Allow an app to write to a topic  |Cluster resource type|Topic resource       |Not applicable     |
+| Allow an app to connect and consume from a specific topic (no consumer group)  |Cluster resource type <br/>Named topic resource |Not applicable       |Not applicable     |
+| Allow an app to connect and consume from any topic (no consumer group)  | Cluster resource <br/>Topic resource |Not applicable     |Not applicable     |
+| Allow an app to consume a topic (consumer group)  |Cluster resource type <br/>Topic resource <br/> Group resource<br/>Group ID resource|Not applicable      |Not applicable     |
+| Allow an app to produce to a topic transactionally  |Cluster resource type Group resource type<br/>Group ID resource|Each topic resource type <br/>Each topic name resource <br/>Transaction ID resource type <br/>Transaction ID resource|Not applicable     |
 | Allow a user access to the UI|Cluster resource type - &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;     |  |
-| Delete consumer group |Cluster resource type |  |Group resource type <br/>Group ID resource      |
+| Delete consumer group |Cluster resource type |Not applicable  |Group resource type <br/>Group ID resource      |
 | To use streams |?| ? |?     |
-| Do we need to cover creating/deleting an instance of Message Hub?? [this is slightly different as not a service role as in everything else here, but a platform role] &gt;&gt;   |? | ? |?     |
 
+
+<!-- 28/06/18 - Karen: draft info only
 
 ## Examples
 {: #security_examples }
@@ -100,6 +104,7 @@ I want to give a user access to create or delete a topic:
 12. In the **Select roles** section, check the **Manager** box.
 13. Click **Invite users**.
 
+-->
 
 
 For more information about IAM, see 
