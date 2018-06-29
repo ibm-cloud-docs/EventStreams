@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-28"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -19,26 +19,25 @@ lastupdated: "2018-06-28"
 How you connect to your cluster varies according to whether you're using the Standard or Enterprise plan, and also whether you're connecting from a Cloud Foundry application or from any other external client. You need to collect two pieces of information to connect to any of our APIs:
 
 * The endpoint URLs for the APIs
-* An API key for authentication
+* Credentials for authentication
 
-Refer to the instructions below to obtain these:
+Read the following information for how to obtain these details.
 
 ## Provision a Message Hub instance
 
-It is a prerequisite to first provision a Message Hub service instance. Please make sure you have already done so, noting your plan of choice. Provisioning a Message Hub instance might incur a charge. Next, obtain our API connection details by reading the following information:
+As a prerequisite, you must first provision a Message Hub service instance for either the Standard or Enterprise plan. Provisioning a Message Hub instance might incur a charge. Next, obtain Message Hub API connection details by completing the following tasks:
 
 ## Standard plan
 {: #connect_standard}
 
-Services provisioned using the Standard Plan are Cloud Foundry services, which means that they are deployed into a Cloud Foundry organization and space and are grouped in the dashboard under the heading **Cloud Foundry Services**. To connect an application, the method you use depends on where the application is deployed:
+Services that are provisioned using the Standard Plan are Cloud Foundry services. This means that they are deployed into a Cloud Foundry organization and space and are grouped in the dashboard under the heading **Cloud Foundry Services**. The method you use to connect an application depends on where the application is deployed.
 
 
 ### Cloud Foundry applications
 
-Your application must be bound to the Message Hub service instance. When bound, the connection details are then made available to the application in JSON format in the VCAP_SERVICES environment variable. You can bind an application and service using either the IBM Cloud console or the IBM Cloud CLI.
+Bind your application to the Message Hub service instance. When bound, the connection details are then made available to the application in JSON format in the VCAP_SERVICES environment variable. You can bind an application and service using either the IBM Cloud console or the IBM Cloud CLI.
 
-When your application is bound to the {{site.data.keyword.messagehub}} service, details of the service are stored
-in JSON format in the VCAP_SERVICES environment variable for your app. Here is an example:
+Here is an example:
 
 ```
 {
@@ -70,104 +69,113 @@ Only your first five brokers are listed in VCAP_SERVICES. If you have more than 
 
 #### IBM Cloud console
 
-1. Ensure you're in the intended Cloud Foundry organization and space.
+1. Ensure that you're in the intended Cloud Foundry organization and space.
 2. Locate your Cloud Foundry Application on the Dashboard. If you don't yet have a Cloud Foundry application, you can create one by clicking the **Create Resource** button
-3. Click on your application tile.
+3. Click your application tile.
 4. Select **Connections**.
 5. Click **Create Connection**.
 6. Select the Message Hub service tile you would like to bind to and click **Connect**. You might need to restage your application for the changes to take effect.
-7. Click the **Runtime" tab on the left and select the "Environment variables" tab in the center. You can now view your VCAP_SERVICES information. You need to make sure the application parses this from the environment.
+7. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. You can now view your VCAP_SERVICES information. 
+
+	You need to make sure the application parses this from the environment.
 
 #### IBM Cloud CLI
 
-1. Make sure you're in the desired Cloud Foundry organization and space, you can navigate interactively by issuing ibmcloud target -cf
-2. Find your app: ibmcloud app list. If you have a manifest file, you can create a new app by running ibmcloud app push
-3. Find your service: ibmcloud service list
-4. Issue the bind call: ibmcloud service bind <your app's name> <your service's name>
-5. Verify that the VCAP_SERVICES environment variable is available in your application runtime. You can do this by calling ibmcloud app env <your app's name>. You need to make sure the application parses this from the environment. You might need to restage your application for the changes to take effect.
+1. Ensure that you're in the intended Cloud Foundry organization and space. You can navigate interactively by running the following command: 
+```ibmcloud target -cf```
+2. Find your app by running the following command: ```ibmcloud app list```. If you have a manifest file, you can create a new app by running ```ibmcloud app push```
+3. Find your service: ```ibmcloud service list```
+4. Issue the bind call: ```ibmcloud service bind <var class="keyword varname">your app's name</var> <var class="keyword varname">your service's name</var>```
+5. Verify that the VCAP_SERVICES environment variable is available in your application runtime. You can do this by calling ```ibmcloud app env <var class="keyword varname">your app's name</var>```. You might need to restage your application for the changes to take effect.
+	You need to make sure the application parses this from the environment. 
 
 ### External Applications
 
-For applications running outside Cloud Foundry, credentials are generated by creating a Service Key. When obtained, manually pass the details of the key to your application via mechanisms of your own choice:
+For applications running outside Cloud Foundry, credentials are generated by creating a Service Key. When you have obtained a Service Key, manually pass the details of the key to your application using your chosen method.
 
 #### IBM Cloud console
 
-1. Make sure you're in the intended Cloud Foundry organization and space.
+1. Ensure that you're in the intended Cloud Foundry organization and space.
 2. Locate your Cloud Foundry Message Hub service on the Dashboard.
 3. Click on your service tile.
 4. Select **Service Credentials**.
 5. Click **New Credential**.
 6. Enter the details for your new credential such as name and click **Add**. A new credential appears in the credentials list.
-7. By clicking on this credential (view credential), the details are revealed in JSON format.
+7. By clicking on this credential (**View credential**), the details are revealed in JSON format.
 8. Pass these credentials to your application. Make sure your application parses the details.
 
 #### IBM Cloud CLI
 
-1. Make sure you're in the intended Cloud Foundry organization and space. You can navigate interactively by issuing the following command```ibmcloud target -cf```
+1. Ensure that you're in the intended Cloud Foundry organization and space. You can navigate interactively by running the following command ```ibmcloud target -cf```
 2. Find your service: ```ibmcloud service list```
-3. Either create a service key as follows: ```ibmcloud service key-create <your service's name> <name of new service key>``` or list all keys with the following command: 
-```ibmcloud service keys <your service's name>```
+3. You can either create a service key as follows: ```ibmcloud service key-create <var class="keyword varname">your service's name</var> <var class="keyword varname">name of new service key</var>``` or list all keys with the following command: 
+```ibmcloud service keys <var class="keyword varname">your service's name</var>```
 4. Get the details for the key: 
 ```ibmcloud service key-show <your service's name> <name of service key>``` . This returns the service key details in JSON format.
-5. Pass these credentials to your application.Ensure your application parses the details.
+5. Pass these credentials to your application. Ensure your application parses the details.
 
 
 ## Enterprise Plan
 {: #connect_enterprise}
 
-Services provisioned using the Enterprise Plan are grouped in the dashboard under the heading 'Services'. The Enterprise Plan is IAM enabled. You don't need to understand IAM to get started but some knowledge is recommended, should you wish to secure your Message Hub service
+Services provisioned using the Enterprise Plan are grouped in the dashboard under the heading **Services**. The Enterprise plan is IAM enabled. You don't need to understand IAM to get started but some knowledge is recommended, if you want to secure your Message Hub service
 
-In this section, we're going to explain the steps involved in binding your application and/or obtaining Service Keys for your service. Please note that in order to be authorized to create topics, your application or Service Key has to be of Manager access role.
+Complete the following steps to bind your application and obtain Service Keys for your service. To be authorized to create topics, your application or Service Key has to have a Manager access role.
 
-To connect an application, the method used depends on where the application is deployed:
-Cloud Foundry Applications
+To connect an application, the method used depends on where the application is deployed.
 
-Your application must be bound to the Message Hub service instance. In order to bind a Cloud Foundry Application to a new One Cloud style, non-Cloud Foundry Service, a Cloud Foundry Service Alias is to be created first and this alias is to be referenced from your Cloud Foundry Application when binding.
+### Cloud Foundry Applications
 
-Once bound, the connection details are then made available to the application in JSON format in the VCAP_SERVICES environment variable. Binding an application and service can be achieved using either the web portal or the IBM Cloud CLI.
+Your application must be bound to the Message Hub service instance. To bind a Cloud Foundry Application to a new One Cloud style, non-Cloud Foundry Service, create a Cloud Foundry Service Alias first and reference this alias from your Cloud Foundry Application when binding.
+
+When bound, the connection details are then made available to the application in JSON format in the VCAP_SERVICES environment variable. You can bind an application and service using either the IBM Cloud console or the IBM Cloud CLI.
 
 #### IBM Cloud console
 
-1. Make sure you're in the desired Cloud Foundry organization and space
-2. Locate your Cloud Foundry Application on the Dashboard or create one if you have not got one already by clicking on the "Create Resource" button
-3. Click on your application tile
-4. Select "Connections"
-5. Click "Create Connection"
-6. Select the Message Hub service tile you would like to bind to and click "Connect"
-7. The above step will create a Cloud Foundry Service Alias for your Message Hub service first and binds your application to this alias afterwards. On the portal, this happens automatically but on the IBM Cloud CLI, this is a separate manual step. You might need to restage your application for the changes to take effect.
-8. Click the "Runtime" tab on the left and select the "Environment variables" tab in the center. You can now view your VCAP_SERVICES information. You need to make sure the application parses this from the environment.
+1. Ensure that you're in the intended Cloud Foundry organization and space.
+2. Locate your Cloud Foundry Application on the Dashboard or create an application by clicking the **Create Resource** button.
+3. Click your application tile.
+4. Select **Connections**.
+5. Click **Create Connection**.
+6. Select the Message Hub service tile that you want to bind to and click **Connect**.
+7. The previous step creates a Cloud Foundry Service Alias for your Message Hub service first and then binds your application to this alias. On the IBM Cloud console, this happens automatically but on the IBM Cloud CLI, this is a separate manual step. You might need to restage your application for the changes to take effect.
+8. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. You can now view your VCAP_SERVICES information. You need to make sure the application parses this from the environment.
 
 #### IBM Cloud CLI
 
-1. Make sure you're in the desired Cloud Foundry organization and space, you can navigate interactively by issuing ibmcloud target -cf
-2. Find your app: ```ibmcloud app list```. If you have a manifest file, you can create a new app by running ```ibmcloud app push```. Bewcause the app is not bound to Message Hub yet, it will not be able to establish a connection. Therefore you consider pushing the application with the --no-start parameter to avoid unnecessary connection failures.
-3. Find your service using the following command: ```ibmcloud resource service-instances```
-4. Create a Cloud Foundry Service Alias: ```ibmcloud resource service-alias-create <alias_name> --instance-name <your service's name>```
-5. Issue the bind call to the Service Alias created above: ```ibmcloud service bind <your app's name> <alias_name>```. Alternatively you can update your manifest file and re-push the application.
-6. Verify that the VCAP_SERVICES environment variable is available in your application runtime. You can do this by calling ```ibmcloud app env <your app's name>```. Ensure that the application parses this from the environment. You might need to restage your application for the changes to take effect.
+1. Ensure that you're in the intended Cloud Foundry organization and space. You can navigate interactively by running the following command: ```ibmcloud target -cf```
+2. Locate your app by running the following command: ```ibmcloud app list```. If you have a manifest file, you can create a new app by running: ```ibmcloud app push```. Because the app is not bound to Message Hub yet, the app cannot to establish a connection. Therefore, consider pushing the application with the ```--no-start``` parameter to avoid unnecessary connection failures.
+3. Locate your service using the following command: ```ibmcloud resource service-instances```
+4. Create a Cloud Foundry Service Alias: ```ibmcloud resource service-alias-create <var class="keyword varname">alias_name</var> --instance-name <var class="keyword varname">your service's name</var>```
+5. Issue the bind call to the Service Alias created above: ```ibmcloud service bind <var class="keyword varname">your app's name</var> <var class="keyword varname">alias_name</var>```. Alternatively you can update your manifest file and push the application again.
+6. Verify that the VCAP_SERVICES environment variable is available in your application runtime. You can do this by running the following command:  ```ibmcloud app env <var class="keyword varname">your app's name</var>```. Ensure that the application parses this from the environment. You might need to restage your application for the changes to take effect.
 
 ### External applications
 
-For applications running outside Cloud Foundry, credentials are generated by creating a Service Key. When obtained, the details of the key then need to be manually passed to your application using mechanisms of your own choice:
+For applications running outside Cloud Foundry, credentials are generated by creating a Service Key. When you obtain the Service Key, manually pass the details of the key to your application using your chosen method.
 
 #### IBM Cloud console
 
 1. Locate your Message Hub service on the Dashboard.
-2. Click on your service tile.
+2. Click your service tile.
 3. Select **Service Credentials**.
 4. Click **New Credential**. 
-5. Fill in the details for your new credential such as name, role and click "Add". A new credential appears in the credentials list.
-6. By clicking on this credential (view credential), the details are revealed in JSON format.
-7. Pass these credentials to your application. Make sure your application parses the details.
+5. Complete the details for your new credential such as name, role and click **Add**. A new credential appears in the credentials list.
+6. By clicking on this credential (**View Credential**), the details are revealed in JSON format.
+7. Pass these credentials to your application. Ensure your application parses the details.
 
 #### IBM Cloud CLI
 
-1. Find your service: ```ibmcloud resource service-instances```
-2. Create a Service Key: ```ibmcloud resource service-key-create <key_name> <key_role> --instance-name <your_service_name>```
-3. Print the Service Key: ```ibmcloud resource service-key <key_name>```
+1. Locate your service: ```ibmcloud resource service-instances```
+2. Create a Service Key: ```ibmcloud resource service-key-create <var class="keyword varname">key_name</var> <var class="keyword varname">key_role</var> --instance-name <var class="keyword varname">your_service_name</var>```
+3. Print the Service Key: ```ibmcloud resource service-key <var class="keyword varname">key_name>```
 4. Pass these credentials to your application. Make sure your application parses the details.
 
-TODO - Karen ==> Charlie gave me the instructions below, however, I'm not sure it's supposed to be in this section as it's not about how to use IBM Cloud but about how to use Kafka? Maybe the section he highlights could be copied over and referenced/linked from here? I think this is too specific...
+
+### What to do next
+Pick client
+
+
 
 Charlie said:
 
@@ -190,40 +198,6 @@ Charlie said:
 
 
 -------------------------------------------------------------------
-
-## {{site.data.keyword.messagehub}} Standard plan 
-
-
-When your application is bound to the {{site.data.keyword.messagehub}} service, details of the service are stored
-in JSON format in the VCAP_SERVICES environment variable for your app. Here is an example:
-
-```
-{
-  "credentials": {
-    "mqlight_lookup_url": "https://mqlight-lookup.messagehub.services.us-south.bluemix.net/Lookup?serviceId=584e8436-e7f5-43db-96ac-2864fccae5ae",
-    "api_key": "d9JSx1SYsmLzNRbbgUFneDm2DtkedlVeViObYJIvrPAf2kJA",
-    "kafka_admin_url": "https://kafka-admin.messagehub.services.us-south.bluemix.net:443",
-    "kafka_rest_url": "https://kafka-rest.messagehub.services.us-south.bluemix.net:443",
-    "kafka_brokers_sasl": [
-      "kafka01.messagehub.services.us-south.bluemix.net:9093",
-      "kafka02.messagehub.services.us-south.bluemix.net:9093",
-      "kafka03.messagehub.services.us-south.bluemix.net:9093",
-      "kafka04.messagehub.services.us-south.bluemix.net:9093",
-      "kafka05.messagehub.services.us-south.bluemix.net:9093"
-    ],
-    "user": "d9JSx1SYsmLzNRbb",
-    "password": "gUFneDm2DtkedlVeViObYJIvrPAf2kJA"
-  }
-}
-```
-
-{: codeblock}
-
-The environment variable's content is the same, regardless of the API that you use to connect to {{site.data.keyword.messagehub}}. Your {{site.data.keyword.Bluemix_notm}} app selects the appropriate credentials from the VCAP_SERVICES environment variable, depending on the interface in
- use.
- 
-Only your first five brokers are listed in VCAP_SERVICES. If you have more than five brokers, use a Kafka client to retrieve the details of your other brokers. 
-
 
 ## {{site.data.keyword.messagehub}} Enterprise plan
 
