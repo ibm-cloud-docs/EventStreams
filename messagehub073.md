@@ -15,7 +15,9 @@ lastupdated: "2018-06-29"
 # Apache Kafka concepts
 {: #apache_kafka}
 
-![Kafka architecture diagram.](kafka_overview.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.")
+![Kafka architecture diagram.](kafka_overview.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers.")
+
+
 The following list defines some Apache Kafka concepts:
 
 <dl>
