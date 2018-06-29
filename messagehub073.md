@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-28"
+lastupdated: "2018-06-29"
 
 ---
 
@@ -15,9 +15,8 @@ lastupdated: "2018-06-28"
 # Apache Kafka concepts
 {: #apache_kafka}
 
-<!-- 25/06/18 removing until new diagram available
-![Kafka architecture diagram.](kafka_architecture.png "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.")
--->
+![Kafka architecture diagram.](kafka_overview.svg "Diagram that shows a Kafka architecture. Producers are feeding into a Kafka cluster and the messages are then being subscribed to by consumers.")
+
 
 The following list defines some Apache Kafka concepts:
 
