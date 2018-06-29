@@ -72,13 +72,12 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app or user to create or delete topic |Resource type: ```cluster```    |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <var class="keyword varname">name_of_topic</var> |
 | List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: ```cluster```      |Not applicable  |Not applicable      |
 | Allow an app to connect to the cluster  |Resource type: ```cluster```| Not applicable     |Not applicable      |
-| Allow an app to produce to topics  |Resource type: ```cluster```|Each topic resource type <br/><br/>Each topic name resource|      |
+| Allow an app to produce to any topic  |Resource type: ```cluster```|Resource type: ```topic``` <br/>Resource ID: <var class="keyword varname">name of topic</varname>|Not applicable     |
 | Allow an app to write to a topic  |Resource type: ```cluster```|Topic resource       |Not applicable     |
 | Allow an app to connect and consume from a specific topic (no consumer group)  |Resource type: ```cluster``` <br/>Named topic resource |Not applicable       |Not applicable     |
 | Allow an app to connect and consume from any topic (no consumer group)  | Resource type: ```cluster``` <br/>Topic resource |Not applicable     |Not applicable     |
-| Allow an app to consume a topic (consumer group)  |Resource type: ```cluster``` <br/>Topic resource <br/> Group resource<br/>Group ID resource|Not applicable      |Not applicable     |
-| Allow an app to produce to a topic transactionally  |Resource type: ```cluster``` <br/> Resource type: ```group```<br/>Group ID resource|Each topic resource type <br/>Each topic name resource <br/>Transaction ID resource type <br/>Transaction ID resource|Not applicable     |
-| Allow a user access to the UI|Resource type: ```cluster``` - &lt;&lt;is this true, it looks like if you have the operator platform role you may see the UI but *may* not be able to see the list of topics - which would be a defect!&gt;&gt;     |  |
+| Allow an app to consume a topic (consumer group)  |Resource type: ```cluster``` <br/>Resource type: ```topic```<br/> |Not applicable      |Not applicable     |
+| Allow an app to produce to a topic transactionally  |Resource type: ```cluster``` <br/> Resource type: ```group```<br/>Group ID resource|Resource type: ```topic``` <br/>Resource ID: <var class="keyword varname">name of topic</varname> <br/>Resource type: ```txnid``` |Not applicable     |
 | Delete consumer group |Resource type: ```cluster``` |Not applicable  |Resource type: ```group``` <br/>Resource ID: <var class="keyword varname">group ID</var>      |
 | To use streams |Resource type: ```cluster```</br>Resouce type: ```group```| Not applicable  |Resouce type: ```topic```    |
 
