@@ -79,7 +79,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app to consume a topic (consumer group)  |Resource type: ```cluster``` <br/>Resource type: ```topic```<br/> Resource type: ```group``` |Not applicable      |Not applicable     |
 | Allow an app to produce to a topic transactionally  |Resource type: ```cluster``` <br/> Resource type: ```group```|Resource type: ```topic``` <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: ```txnid``` |Not applicable     |
 | Delete consumer group |Resource type: ```cluster``` |Not applicable  |Resource type: ```group``` <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
-| To use streams |Resource type: ```cluster```</br>Resouce type: ```group```| Not applicable  |Resouce type: ```topic```    |
+| To use Streams |Resource type: ```cluster```</br>Resouce type: ```group```| Not applicable  |Resouce type: ```topic```    |
 
 
 <!-- 28/06/18 - Karen: draft info only
