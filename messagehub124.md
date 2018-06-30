@@ -68,7 +68,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
-| Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <var class="keyword varname">your service instance</var>|
+| Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <var class="keyword varname">your_service_instance</var>|
 | Allow an app or user to create or delete topic |Resource type: ```cluster```    |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <var class="keyword varname">name_of_topic</var> |
 | List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: ```cluster```      |Not applicable  |Not applicable      |
 | Allow an app to connect to the cluster  |Resource type: ```cluster```| Not applicable     |Not applicable      |
