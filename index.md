@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-28"
+lastupdated: "2018-07-01"
 
 ---
 
@@ -97,7 +97,7 @@ Complete the following steps:
 7. Start the producer on your console by running the following command:
    
     <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
-	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> <var class="keyword varname">api_key</var> -producer</pre>
+	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> token<var class="keyword varname">:api_key</var> -producer</pre>
  {: codeblock}
   
 8. You should now see the messages sent by the producer appearing in the consumer. The following
