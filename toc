@@ -24,6 +24,8 @@ IBM Message Hub
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
+	messagehub127.md
+		
 	{: .topicgroup}
 	Administering Message Hub
 		messagehub070.md
@@ -68,9 +70,6 @@ IBM Message Hub
 		
 	{: .topicgroup}
 	messagehub124.md
-
-	messagehub127.md
-
 	
 	{: .topicgroup}
 	Alpha program
