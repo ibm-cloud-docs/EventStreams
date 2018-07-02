@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-28"
+lastupdated: "2018-07-02"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-06-28"
 
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
-## Enterprise plan
+## Enterprise plan (currently restricted access to this plan)
 
 The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
 
