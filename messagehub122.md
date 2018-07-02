@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-04-25"
+lastupdated: "2018-07-02"
 
 ---
 
@@ -25,8 +25,9 @@ Life of a user through cycle - APIs, feature sets
 # About the Alpha program
 {: #alpha_about }
 
-The Alpha program provides early access to new features in the {{site.data.keyword.messagehub}} service. The current feature is the introduction of a new plan, the {{site.data.keyword.messagehub}} Premium plan.
+The Alpha program provides early access to new features in the {{site.data.keyword.messagehub}} service. The Alpha program is not currently active.
 
+<!--
 ## Premium plan
 {: premium_plan}
 
@@ -150,6 +151,7 @@ The current limitations of this Alpha program are as follows:
 * REST messaging
 
 * MQ Light APIs
+-->
 
 
 
