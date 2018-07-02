@@ -33,7 +33,7 @@ As a prerequisite, you must first provision a {{site.data.keyword.messagehub}} s
 Services that are provisioned using the Standard Plan are Cloud Foundry services. This means that they are deployed into a Cloud Foundry Organization and Space, and are grouped in the dashboard under the heading **Cloud Foundry Services**. The method you use to connect an application depends on where the application is deployed, that is in Cloud Foundry or outside it.
 
 
-## Cloud Foundry apps on the Standard plan
+## Cloud Foundry applications on the Standard plan
 {: #connect_standard_cf}
 
 For apps running inside Cloud Foundry, bind your app to the {{site.data.keyword.messagehub}} service instance. When bound, the connection details are made available to the app in JSON format in the VCAP_SERVICES environment variable. You can bind an app and service using either the IBM Cloud console or the IBM Cloud CLI.
