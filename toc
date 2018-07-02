@@ -69,9 +69,7 @@ IBM Message Hub
 
 		{: .topicgroup}
 	Alpha program
-		messagehub120.md
 		messagehub122.md
-		messagehub123.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
