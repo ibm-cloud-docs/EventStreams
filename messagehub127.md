@@ -226,6 +226,9 @@ If you're using the Standard plan, see
 
 If you're using the Enterprise plan, see [Using the Kafka API](/docs/services/MessageHub/messagehub050.html).
 
+The internal Kafka ```__consumer_offsets``` topic is visible to you as read-only 
+if you're using the Enterprise plan. You are strongly recommended not to attempt to manage the topic in any way. 
+
 <!--
 Charlie said:
 
