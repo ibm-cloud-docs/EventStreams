@@ -39,7 +39,7 @@ There are a few reasons that you might choose to use the Kafka API over the othe
 
 The Kafka REST API is a convenient interface that can be used in the following situations:  
 
-* Where a developer wants to quickly get started using {{site.data.keyword.messagehub}}
+* Where a developer wants to get started using {{site.data.keyword.messagehub}}
 * In certain low throughput use cases where latency is not a critical factor
 * For debugging and fault finding
 
@@ -51,9 +51,9 @@ The Kafka REST API is not intended as a high throughput, low latency interface.�
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
-The {{site.data.keyword.mql}} API provides a simple AMQP-based messaging interface for Java™, Node.js, Python, and Ruby. The API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service.
+The {{site.data.keyword.mql}} API provides an AMQP-based messaging interface for Java™, Node.js, Python, and Ruby. The API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service.
 
-In most cases, Message Hub is best used with a Kafka client. The {{site.data.keyword.mql}} API is simple to learn but has very limited scalability and does not offer interoperability with other Message Hub APIs. The {{site.data.keyword.mql}} API is available in the following IBM® Cloud regions only: US South, United Kingdom, and Sydney. The {{site.data.keyword.mql}} API not available in the Germany region or in IBM Cloud Dedicated.
+
 
 
 
