@@ -18,7 +18,7 @@ lastupdated: "2018-05-30"
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
-**You must explicitly create a Kafka topic named "MQLight" before you can use the API because all messages go through the "MQLight" topic. This topic must have a single partition. Creating this topic enables the MQ Light API for your service instance. **  For more information about how to create topics in {{site.data.keyword.messagehub}}, see [Managing topics](/docs/services/MessageHub/messagehub070.html).
+**You must explicitly create a Kafka topic named "MQLight" before you can use the API because all messages go through the "MQLight" topic. This topic must have a single partition. Creating this topic enables the MQ Light API for your service instance. **  
 
 The "MQLight" topic is used by the MQ Light API to store its message data and interact with other Kafka clients. Be aware that when this topic is
 created, it incurs charges at the standard rate outlined in the services payment plan.

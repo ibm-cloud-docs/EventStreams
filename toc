@@ -28,18 +28,24 @@ IBM Message Hub
 		
 	{: .topicgroup}
 	Administering Message Hub
-		messagehub070.md
+		messagehub124.md
 		messagehub037.md
 		messagehub116.md
 	
 	{: .topicgroup}
 	Developing apps with Message Hub
-		messagehub087.md
 		messagehub050.md
 			messagehub062.md
 			messagehub063.md
 			messagehub117.md
 			messagehub104.md
+		messagehub113.md
+		messagehub111.md
+		messagehub110.md
+		messagehub087.md
+		messagehub025.md
+			messagehub066.md
+			messagehub097.md
 		messagehub075.md
 			messagehub106.md
 			messagehub098.md
@@ -52,13 +58,6 @@ IBM Message Hub
 			messagehub082.md
 			messagehub080.md
 			messagehub083.md
-		messagehub025.md
-			messagehub066.md
-			messagehub097.md
-
-		messagehub113.md
-		messagehub111.md
-		messagehub110.md
 
 	{: .topicgroup}
 	Integrating with other services
@@ -67,11 +66,8 @@ IBM Message Hub
 		messagehub115.md
 		messagehub089.md
 		messagehub119.md
-		
-	{: .topicgroup}
-	messagehub124.md
-	
-	{: .topicgroup}
+
+		{: .topicgroup}
 	Alpha program
 		messagehub120.md
 		messagehub122.md
