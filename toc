@@ -42,7 +42,6 @@ IBM Message Hub
 		messagehub113.md
 		messagehub111.md
 		messagehub110.md
-		messagehub087.md
 		messagehub025.md
 			messagehub066.md
 			messagehub097.md
@@ -58,6 +57,7 @@ IBM Message Hub
 			messagehub082.md
 			messagehub080.md
 			messagehub083.md
+		messagehub087.md
 
 	{: .topicgroup}
 	Integrating with other services
