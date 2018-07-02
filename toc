@@ -28,9 +28,9 @@ IBM Message Hub
 		
 	{: .topicgroup}
 	Administering Message Hub
-		messagehub124.md
 		messagehub037.md
 		messagehub116.md
+		messagehub124.md
 	
 	{: .topicgroup}
 	Developing apps with Message Hub
