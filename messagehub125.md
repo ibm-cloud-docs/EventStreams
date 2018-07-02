@@ -23,8 +23,8 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
 1. What is the CRN ID of the {{site.data.keyword.messagehub}} service you are
    using?  You can provide this ID by pasting the full
    {{site.data.keyword.Bluemix_notm}} console URL after clicking on the
-   service, or by pasting the output from the `ibmcloud resource
-   service-instance NAME` CLI command.
+   service, or by pasting the output from the CLI command:<br/>
+   ```ibmcloud resource service-instance NAME``` 
 1. When did the problem first occur (specifically time, date, and timezone)?
    How long was your app running before this?
 1. Is the problem still occurring? Can you replicate it?
