@@ -20,7 +20,6 @@ lastupdated: "2018-05-30"
 
 The Kafka REST API is a convenient interface that can be used in the following situations:  
 
-* Where a developer wants to quickly get started using {{site.data.keyword.messagehub}}
 * In certain low throughout use cases where latency is not a critical factor
 * For debugging and fault finding
 

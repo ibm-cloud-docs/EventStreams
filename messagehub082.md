@@ -23,7 +23,7 @@ If you don't already have an app, try the {{site.data.keyword.mql}} API out with
 
 The sample app actually consists of two simple apps: a web front end that sends messages to a
 back end and a back end that processes the messages, capitalizes the words, and then returns the
-messages to the front end. This sample shows how easy it is to get apps talking to each other using
+messages to the front end. This sample shows how you can get apps talking to each other using
 the {{site.data.keyword.mql}} API. You can also use the {{site.data.keyword.mql}} API to perform worker offload; a key capability
 required for building scalable, loosely coupled, and distributed apps.
 
