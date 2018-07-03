@@ -18,9 +18,7 @@ lastupdated: "2018-06-21"
 {{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.
 {: shortdesc}
 
-<!-- begin STAGING ONLY -->
 To discover the Administration RESTful API's endpoint, your {{site.data.keyword.Bluemix_short}} application can use the `kafka_admin_url` property in your application's VCAP_SERVICES environment variable.
-<!-- end STAGING ONLY -->
 
 You can download the full specification for the API from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
