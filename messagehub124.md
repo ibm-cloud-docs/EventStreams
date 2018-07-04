@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-02"
+lastupdated: "2018-07-04"
 
 ---
 
@@ -81,6 +81,16 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
 | To use Streams |Resource type: <code>cluster</code></br>Resouce type: <code>group</code>| Not applicable  |Resouce type: <code>topic</code>    |
 
+For more information about IAM, see 
+[IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview).
+
+For an example of how to set policies, see: https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/.
+
+## Connecting to Message Hub
+{: #connect_message_enterprise }
+
+For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
+[Connecting to Message Hub](/docs/services/MessageHub/messagehub127.html#connect_messagehub).
 
 <!-- 28/06/18 - Karen: draft info only
 
@@ -105,9 +115,6 @@ I want to give a user access to create or delete a topic:
 
 -->
 
-
-For more information about IAM, see 
-[IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview).
 
 
 
