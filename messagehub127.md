@@ -85,6 +85,7 @@ Only your first five brokers are listed in VCAP_SERVICES. If you have more than 
 <code>ibmcloud target -cf</code>
 </li>
 <li>Find your app:<br/> <code>ibmcloud app list</code> <br/>
+</br>
 If you have a manifest file, you can create a new app by running:</br>
 <code>ibmcloud app push</code>
 </li>
@@ -94,7 +95,7 @@ If you have a manifest file, you can create a new app by running:</br>
 <li>Bind your app to the service:</br>
 <code>ibmcloud service bind <var class="keyword varname">your_app_name</var> <var class="keyword varname">your_service_name</var></code>
 </li>
-<li>Verify that the VCAP_SERVICES environment variable is available in your application runtime. You can do this by running:</br> 
+<li>Verify that the VCAP_SERVICES environment variable is available in your application runtime by running:</br> 
  <code>ibmcloud app env <var class="keyword varname">your_app_name</var></code>. 
 </li>
 <li>Pass these credentials to your application. You might need to restage your application for the changes to take effect.</li>
@@ -132,7 +133,7 @@ or use an existing service key: <br/>
 <code>ibmcloud service keys <var class="keyword varname">your_service_name</var></code> 
 </li>
 <li>Get the details for the key:</br>
-<code>ibmcloud service key-show <var class="keyword varname">your_service_name</var> <var class="keyword varname">service _key_name</var></code>
+<code>ibmcloud service key-show <var class="keyword varname">your_service_name</var> <var class="keyword varname">service _key_name</var></code></br>
 This returns the service key details in JSON format.</li>
 <li>Pass these credentials to your application. </li>
 </ol>
@@ -173,6 +174,7 @@ When bound, the connection details are then made available to the application in
  <code>ibmcloud target -cf</code></li>
 <li>Locate your app:</br>
 <code>ibmcloud app list</code><br/>
+<br/>
 If you have a manifest file, you can create a new app by running:<br/>
 <code>ibmcloud app push</code><br/>
 <br/>
@@ -182,7 +184,7 @@ Because the app is not bound to {{site.data.keyword.messagehub}} yet, the app ca
 <li>Create a Cloud Foundry service alias:<br/>
 <code>ibmcloud resource service-alias-create <var class="keyword varname">alias_name</var> --instance-name <var class="keyword varname">your_service_name</var></code></li>
 <li>Bind your app to the service alias created previously:<br/>
-<code>ibmcloud service bind <var class="keyword varname">your_ app_name</var> <var class="keyword varname">alias_name</var></code>.
+<code>ibmcloud service bind <var class="keyword varname">your_ app_name</var> <var class="keyword varname">alias_name</var></code>.<br/>
 <br/>
 Alternatively, you can update your manifest file and push the application again.</li>
 <li>Verify that the VCAP_SERVICES environment variable is available in your application runtime:<br/>
@@ -225,7 +227,6 @@ Now you have connection and credential information, you can choose a {{site.data
 
 * If you're using the Standard plan, see 
 [Choosing between the three APIs](/docs/services/MessageHub/messagehub087.html) for information about which client to choose and how to connect.
-
 * If you're using the Enterprise plan, see [Using the Kafka API](/docs/services/MessageHub/messagehub050.html).
 
 	The internal Kafka <code>__consumer_offsets</code> topic is visible to you as read-only 
