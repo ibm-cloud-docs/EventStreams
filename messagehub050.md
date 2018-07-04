@@ -51,5 +51,5 @@ Kafka clients exist in multiple languages and we provide instructions for some o
 
 For information about the Producer and Consumer APIs, see 
 [Kafka Producer API 0.11.0.X ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0110/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 0.11.0.X ![External link icon](../../icons/launch-glyph.svg "External link icon")](ttp://kafka.apache.org/0110/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+[Kafka Consumer API 0.11.0.X ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0110/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 
