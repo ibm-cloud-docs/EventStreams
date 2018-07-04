@@ -23,10 +23,12 @@ If you find a problem while using {{site.data.keyword.messagehub}}, review these
 {: #calls_failover}
 
 ### Problem
+{: #calls_failover_problem notoc}
 
 The Java Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an IP address for a host name, it caches the IP address for a specified period of time, known as the time to live (TTL). Some Java configurations set the JVM TTL so that it never refreshes a host name’s IP address until the JVM is restarted. An example configuration is one that has a security manager.
 
 ### Workaround
+{: #calls_failover_workaround notoc}
 
 Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for high availability, not all the broker IP addresses are known to the Kafka client, which prevents failover to a working broker. In these cases, failover requires a re-query of the IP addresses for the broker URLs to get a working IP address. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This value ensures that if a bootstrap server’s IP address has issues, the Kafka client will be able to look up and use a new IP address by querying the DNS.
 
@@ -62,10 +64,12 @@ java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
 {: #calls_timeout}
 
 ### Problem
+{: #calls_timeout_problem notoc}
 
 Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is that the Kafka client has determined the same failing IP address for each of the bootstrap servers. The Kafka client tries each broker’s IP address (which is the same failing IP address) and incorrectly determines that Kafka is down. Note that the Kafka client uses the first IP address returned in the list if multiple IP addresses are returned in the DNS query.
 
 ### Workaround
+{: #calls_timeout_workaround notoc}
 
 Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address should be returned from the DNS query and used. 
 
