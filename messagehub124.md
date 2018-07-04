@@ -84,7 +84,9 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview).
 
-For an example of how to set policies, see: https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/.
+For an example of how to set policies, see: 
+[IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
+
 
 ## Connecting to Message Hub
 {: #connect_message_enterprise }
