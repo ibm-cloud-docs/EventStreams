@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-01"
+lastupdated: "2018-07-04"
 
 ---
 
@@ -71,10 +71,10 @@ The following configuration settings apply to all topics and cannot be changed:
 * replication.factor = 3
 * min.insync.replicas = 2
 
-## How does {{site.data.keyword.messagehub}}'s billing work? 
+## How does {{site.data.keyword.messagehub}}'s billing work on the Standard plan? 
 {: #billing }
 
-{{site.data.keyword.messagehub}} regularly samples a user's topic count and {{site.data.keyword.Bluemix_notm}} records the maximum sample value each day. {{site.data.keyword.messagehub}} bills for the maximum number of concurrent partitions seen and for the sum of messages that are sent and received daily.
+{{site.data.keyword.messagehub}} on the Standard plan, regularly samples a user's topic count and {{site.data.keyword.Bluemix_notm}} records the maximum sample value each day. {{site.data.keyword.messagehub}} bills for the maximum number of concurrent partitions seen and for the sum of messages that are sent and received daily.
 
 For example, if you create and delete 1 topic 10 times in a day, you are charged for a maximum of 1 topic. However, if you create 10 topics and delete them, you might be charged for either 0 or 10 topics depending when the sampling takes place.
 
