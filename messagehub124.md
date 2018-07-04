@@ -69,17 +69,17 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Action | Reader role | Writer role | Manager role |
 |---------|----------------|
 | Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <var class="keyword varname">your_service_instance</var>|
-| Allow an app or user to create or delete topic |Resource type: ```cluster```    |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <var class="keyword varname">name_of_topic</var> |
-| List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: ```cluster```      |Not applicable  |Not applicable      |
-| Allow an app to connect to the cluster  |Resource type: ```cluster```| Not applicable     |Not applicable      |
-| Allow an app to produce to any topic  |Resource type: ```cluster```|Resource type: ```topic``` |Not applicable     |
-| Allow an app to produce to a specific topic  |Resource type: ```cluster```|Resource type: ```topic```<br/>Resource ID: <var class="keyword varname">name_of_topic</var>      |Not applicable     |
-| Allow an app to connect and consume from any topic (no consumer group)  |Resource type: ```cluster``` <br/>Resource type: ```topic``` |Resource type: ```topic```|Not applicable     |
-| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: ```cluster``` <br/>Resource type: ```topic```<br/>Resource ID: <var class="keyword varname">name_of_topic</var> |Not applicable     |Not applicable     |
-| Allow an app to consume a topic (consumer group)  |Resource type: ```cluster``` <br/>Resource type: ```topic```<br/> Resource type: ```group``` |Not applicable      |Not applicable     |
-| Allow an app to produce to a topic transactionally  |Resource type: ```cluster``` <br/> Resource type: ```group```|Resource type: ```topic``` <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: ```txnid``` |Not applicable     |
-| Delete consumer group |Resource type: ```cluster``` |Not applicable  |Resource type: ```group``` <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
-| To use Streams |Resource type: ```cluster```</br>Resouce type: ```group```| Not applicable  |Resouce type: ```topic```    |
+| Allow an app or user to create or delete topic |Resource type: <code>cluster</code>   |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <var class="keyword varname">name_of_topic</var> |
+| List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: <code>cluster</code>      |Not applicable  |Not applicable      |
+| Allow an app to connect to the cluster  |Resource type: <code>cluster</code>| Not applicable     |Not applicable      |
+| Allow an app to produce to any topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code> |Not applicable     |
+| Allow an app to produce to a specific topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code><br/>Resource ID: <var class="keyword varname">name_of_topic</var>      |Not applicable     |
+| Allow an app to connect and consume from any topic (no consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code> |Resource type: <code>topic</code>|Not applicable     |
+| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/>Resource ID: <var class="keyword varname">name_of_topic</var> |Not applicable     |Not applicable     |
+| Allow an app to consume a topic (consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/> Resource type: <code>group</code> |Not applicable      |Not applicable     |
+| Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: <code>txnid</code> |Not applicable     |
+| Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
+| To use Streams |Resource type: <code>cluster</code></br>Resouce type: <code>group</code>| Not applicable  |Resouce type: <code>topic</code>    |
 
 
 <!-- 28/06/18 - Karen: draft info only
