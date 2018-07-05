@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-21"
+lastupdated: "2018-07-05"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-06-21"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the administration API
+# Using the Administration REST API
 {: #admin_api}
 
 {{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.

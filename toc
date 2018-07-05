@@ -30,6 +30,7 @@ IBM Message Hub
 	Administering Message Hub
 		messagehub037.md
 		messagehub116.md
+		messagehub128.md
 		messagehub124.md
 	
 	{: .topicgroup}
