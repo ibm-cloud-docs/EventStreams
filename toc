@@ -71,9 +71,8 @@ IBM Message Hub
 	{: .topicgroup}
 	Tutorials
 	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://console.bluemix.net/docs/tutorials/pub-sub-object-storage.html#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
-	{: .navgroup-end}
 
-		{: .topicgroup}
+	{: .topicgroup}
 	Alpha program
 		messagehub122.md
 	{: .navgroup-end}
