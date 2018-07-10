@@ -102,11 +102,6 @@ The following table summarizes what is supported by the plans:
 			<td>Instantaneous provisioning</td>
 			<td>Expect provisioning to take up to 3 hours</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
 
 </table>
 
