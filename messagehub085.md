@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-02"
+lastupdated: "2018-07-10"
 
 ---
 
@@ -97,7 +97,7 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 			<td>No</td>
 		</tr>
-		</tr>
+		<tr>
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
 			<td>Expect provisioning to take up to 3 hours</td>
