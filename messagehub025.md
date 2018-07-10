@@ -20,7 +20,7 @@ lastupdated: "2018-05-25"
 
 The Kafka REST API provides a RESTful interface to a Kafka
 cluster. You can produce and consume messages by using the
-API. For reference documents, see [Kafka REST Proxy docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/2.0.0/kafka-rest/docs/index.html){:new_window}. Only the binary embedded format is supported for requests and responses in {{site.data.keyword.messagehub}}. The Avro and JSON embedded formats are not supported.
+API. For more information including the API reference documentation, see [Kafka REST Proxy docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/2.0.0/kafka-rest/docs/index.html){:new_window}. Only the binary embedded format is supported for requests and responses in {{site.data.keyword.messagehub}}. The Avro and JSON embedded formats are not supported.
 
 If you are using CURL, you can use an example like the following to produce:
 <pre class="pre"><code>
@@ -37,14 +37,16 @@ curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Con
 '
 </code></pre>
 {: codeblock}
-
+<br/>
+<br/>
 If you are using CURL, you can use an example like the following to consume:
 <pre class="pre"><code>
 curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Accept: application/vnd.kafka.binary.v1+json" <var class="keyword varname">kafka-rest endpoint</var>/topics/<var class="keyword varname">topic name</var>/partitions/<var class="keyword varname">partition ID</var>/messages?offset=<var class="keyword varname">offset to start from</var>
 </code></pre>
 {: codeblock}
 
-
+<br/>
+<br/>
 For CURL, you can also adapt the code
 examples detailed in the [Confluent docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://docs.confluent.io/2.0.0/){:new_window} by adding the following line to the command line:
 <pre class="pre">-H "X-Auth-Token: <var class="keyword varname">APIKEY</var>"</pre>
