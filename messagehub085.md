@@ -97,6 +97,11 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 			<td>No</td>
 		</tr>
+		</tr>
+			<td>**Deployment timeframe**</td>
+			<td>Instantaneous provisioning</td>
+			<td>Expect provisioning to take up to 3 hours</td>
+		</tr>
 		<tr>
 			<td></td>
 			<td></td>
