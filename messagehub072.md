@@ -21,7 +21,7 @@ lastupdated: "2018-07-12"
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
-**Note:** Metrics and events are available in the {{site.data.keyword.messagehub}} Standard plan in US South, United Kingdom, and Sydney only. 
+**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in US South, United Kingdom, and Sydney only. 
 
 
 You can monitor the following log information:
