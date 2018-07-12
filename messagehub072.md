@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-03-14"
+lastupdated: "2018-07-12"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2017-03-14"
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
-**Note:** Metrics and events are not available in {{site.data.keyword.messagehub}} in
-{{site.data.keyword.Bluemix_short}} Dedicated environments.
+**Note:** Metrics and events are available in the {{site.data.keyword.messagehub}} Standard plan in US South, United Kingdom, and Sydney only. 
+
 
 You can monitor the following log information:
 
