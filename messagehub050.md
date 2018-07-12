@@ -17,7 +17,7 @@ lastupdated: "2018-07-02"
 
 If you're using the Java clients, you can use the publicly available Kafka clients at 0.10.x or later. 
 
-Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Service Name Identifaction (SNI) extension to the TLSv1.2 protocol.
+Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
 <table>
     <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
