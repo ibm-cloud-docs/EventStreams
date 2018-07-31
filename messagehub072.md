@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-18"
+lastupdated: "2018-07-31"
 
 ---
 
@@ -16,8 +16,8 @@ lastupdated: "2018-07-18"
 #Monitoring and logging
 {: #monitoring}
 
-## Standard Plan
-{{site.data.keyword.messagehub}} automatically collects metrics and events so that you
+## Standard plan
+{{site.data.keyword.messagehub}} on the Standard plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
@@ -43,8 +43,8 @@ because {{site.data.keyword.messagehub}} makes updates that might overwrite your
 changes. However, you can include these metrics and events in
 your own dashboards.
 
-## Enterprise Plan
-{{site.data.keyword.messagehub}} automatically generates events so you can track activity on your service.
+## Enterprise plan
+{{site.data.keyword.messagehub}} on the Enterprise plan automatically generates events so that you can track activity on your service.
 
 The following table lists the actions that generate events.
 
