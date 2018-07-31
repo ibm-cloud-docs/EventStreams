@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-05"
+lastupdated: "2018-07-31"
 
 ---
 
@@ -129,6 +129,13 @@ REST API returns the following JSON:
 ```'{"error_code":40403,"message":"Consumer instance not found."}'
 ```
 {:screen}
+
+## Where can I find a comparison of the {{site.data.keyword.messagehub}} Standard and Enterprise plans?
+{: #plan_compare }
+
+To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
+
+
 
 
 
