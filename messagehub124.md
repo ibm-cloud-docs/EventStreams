@@ -20,7 +20,7 @@ You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained
 ## What can I secure?
 
 Within {{site.data.keyword.messagehub}}, you can secure access to the following resources:
-* Cluster (cluster): you can control which applications and users can connect to the service [and access the UI] 
+* Cluster (cluster): you can control which applications and users can connect to the service
 * Topics (topic): you can control the ability of users and applications to create, delete, read, and write to a topic 
 * Consumer groups (group): you can control an application's ability to join a consumer group 
 * Producer transactions (txnid): you can control the ability to use the transactional producer capability in Kafka (that is, single, atomic writes across multiple partitions)
