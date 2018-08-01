@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-31"
+lastupdated: "2018-08-01"
 
 ---
 
@@ -130,7 +130,7 @@ REST API returns the following JSON:
 ```
 {:screen}
 
-## Where can I find a comparison of the {{site.data.keyword.messagehub}} Standard and Enterprise plans?
+## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
 {: #plan_compare }
 
 To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
