@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2017-12-08"
+lastupdated: "2018-08-02"
 
 ---
 
@@ -53,6 +53,7 @@ at rest and message logs on encrypted disks.
 
 Topic names and consumer groups are encrypted for transmission between 
 {{site.data.keyword.messagehub}} and clients as a result of TLS. However, 
-{{site.data.keyword.messagehub}} does not encrypt these values at rest.
+{{site.data.keyword.messagehub}} does not encrypt these values at rest. Therefore, you are not recommended to use confidential information in your topic names.
+
 
 
