@@ -21,6 +21,7 @@ IBM Message Hub
 	messagehub118.md
 	messagehub068.md
 	messagehub072.md
+	messagehub129.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
