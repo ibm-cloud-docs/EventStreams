@@ -13,10 +13,9 @@ lastupdated: "2018-07-31"
 {:pre: .pre}
 
 
-#Monitoring and logging
+#Monitoring and logging (Standard plan)
 {: #monitoring}
 
-## Standard plan
 {{site.data.keyword.messagehub}} on the Standard plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
@@ -43,13 +42,4 @@ because {{site.data.keyword.messagehub}} makes updates that might overwrite your
 changes. However, you can include these metrics and events in
 your own dashboards.
 
-## Enterprise plan
-{{site.data.keyword.messagehub}} on the Enterprise plan automatically generates events so that you can track activity on your service.
 
-The following table lists the actions that generate events.
-
-| Action | Description |
-|:-------|:------------|
-| messagehub.topic.create | An event is created when you create a topic|
-| messagehub.topic.delete | An event is created when you delete a topic|
-{: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
