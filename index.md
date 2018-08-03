@@ -43,7 +43,7 @@ Complete the following steps:
   
   e. Click **Create**.
 
-2. Create some {{site.data.keyword.messagehub}} credentials. Complete these steps to obtain them: [get credentials and connect using the IBM Cloud console](/docs/services/MessageHub/messagehub127.html#connect_standard_cf_console).   
+2. Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/MessageHub/messagehub127.html#connect_standard_cf_console). You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for step 7 of this task.   
 
 3. If you don't already have them, install the following prerequisites:
 
@@ -82,8 +82,8 @@ Complete the following steps:
     not already exist, the sample creates it using the {{site.data.keyword.messagehub}} Administration API. To send and receive
     messages, the sample uses the Apache Kafka Java API.
 
-    To find the values for *kafka_brokers_sasl*, *kafka_admin_url*,
-    and *api_key*, go to your {{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the **Credentials** that you want to use.
+    Use the values for *kafka_brokers_sasl*, *kafka_admin_url*,
+    and *api_key* from the credentials you created in step 2.
 	
 	Specify <code>token</code> as your user name and the <var class="keyword varname">api_key</var> as your password. Separate <code>token</code> and the <var class="keyword varname">api_key</var> with a colon.
     
