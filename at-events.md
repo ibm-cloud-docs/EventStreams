@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated: "2018-08-03"
+lastupdated: "2018-08-06"
 
 ---
 
@@ -45,9 +45,9 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 
 <!-- For example, choose one of the following two options. -->
 
-<!-- Option 1: Add the following sentence if your service is provisioned within a Cloud Foundry org and space. -->
+<!-- Option 2: Add the following sentence if your service sends events to the account domain. -->
 
-{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **space domain** that is associated with the Cloud Foundry space where the {{site.data.keyword.cloudaccesstrailshort}} service is provisioned.
+{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} account domain that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
 
 
 
