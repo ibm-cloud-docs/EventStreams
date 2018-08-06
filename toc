@@ -87,7 +87,6 @@ IBM Message Hub
 		messagehub057.md
 		messagehub109.md
 		messagehub125.md
-		messagehub059.md
 		
 	{: .topicgroup}
 	Related links
