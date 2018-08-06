@@ -20,7 +20,7 @@ lastupdated: "2018-08-06"
 # {{site.data.keyword.cloudaccesstrailshort}} events (Enterprise plan)
 {: #at_events}
 
-Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service in {{site.data.keyword.Bluemix}}. 
+Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service (Enterprise plan) in {{site.data.keyword.Bluemix}}. 
 {: shortdesc}
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.Bluemix_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}}](/docs/services/cloud-activity-tracker/index.html#getting-started-with-cla).
@@ -47,7 +47,7 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 
 <!-- Option 2: Add the following sentence if your service sends events to the account domain. -->
 
-{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} account domain that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
+{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
 
 
 
