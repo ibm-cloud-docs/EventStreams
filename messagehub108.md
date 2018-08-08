@@ -135,10 +135,10 @@ REST API returns the following JSON:
 
 To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
 
-## How does {{site.data.keyword.messagehub}} handle disaster recovery?
+## How do I handle disaster recovery?
 {: #disaster_recovery }
 
-Currently it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between a {{site.data.keyword.messagehub}} instance in one region and another instance in a different region. However, it is the responsibility of the user to provision a remote {{site.data.keyword.messagehub}} instance and manage the replication.
+Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between a {{site.data.keyword.messagehub}} instance in one region and another instance in a different region. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
 
 
 
