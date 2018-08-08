@@ -140,6 +140,8 @@ To find out more information about the two different {{site.data.keyword.message
 
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between a {{site.data.keyword.messagehub}} instance in one region and another instance in a different region. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
 
+{{site.data.keyword.messagehub}} backs up topic data only and this data is unencrypted.
+
 
 
 
