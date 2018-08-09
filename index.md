@@ -43,7 +43,8 @@ Complete the following steps:
   
   e. Click **Create**.
 
-2. Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/MessageHub/messagehub127.html#connect_standard_cf_console). You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for step 7 of this task.   
+2. {: #create_credentials_step notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/MessageHub/messagehub127.html#connect_standard_cf_console).
+   <br/>You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for [step 7](/docs/services/MessageHub/index.html#start_consumer_step) of this task.   
 
 3. If you don't already have them, install the following prerequisites:
 
@@ -72,7 +73,7 @@ Complete the following steps:
     </pre>
 	{: codeblock}
 
-7. Start the consumer on your console by running the following command:
+7. {: #start_consumer_step notoc} Start the consumer on your console by running the following command:
 
     <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
 	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> token<var class="keyword varname">:api_key</var> -consumer</pre>
