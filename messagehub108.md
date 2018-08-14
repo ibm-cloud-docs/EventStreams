@@ -16,6 +16,7 @@ lastupdated: "2018-08-08"
 {: #faqs}
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
+{: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
 ## How do I use Kafka APIs to create and delete topics?
