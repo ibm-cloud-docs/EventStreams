@@ -12,7 +12,7 @@ lastupdated: "2018-08-08"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.messagehub}} FAQs
+# FAQs
 {: #faqs}
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
