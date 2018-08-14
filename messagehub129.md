@@ -17,7 +17,7 @@ lastupdated: "2018-08-03"
 
 <!-- Name your file `at-events.md` and include it in the Reference nav group in your toc file. -->
 
-# {{site.data.keyword.cloudaccesstrailshort}} events in {{site.data.keyword.messagehub}} Enterprise plan
+# {{site.data.keyword.cloudaccesstrailshort}} events (Enterprise plan)
 {: #at_events}
 
 Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service in {{site.data.keyword.Bluemix}}. 
