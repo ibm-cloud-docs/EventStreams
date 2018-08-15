@@ -12,7 +12,7 @@ lastupdated: "2018-07-04"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Securing your {{site.data.keyword.messagehub}} resources (Enterprise plan)
+# Managing access to your {{site.data.keyword.messagehub}} resources (Enterprise plan)
 {: #security }
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
