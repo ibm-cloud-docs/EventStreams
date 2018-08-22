@@ -43,7 +43,7 @@ KR: I think they do inherit the lower level access https://console.bluemix.net/d
 ## How do I assign access?
 
 Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
-* The type of service the policy applies to. For example, Message Hub. You can scope a policy to include all service types. 
+* The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
 * The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
 * The type of resource to be secured. The valid values are <code>cluster</code>, <code>topic</code>, <code>group</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance. 
 * The resource to be secured. Specify for resources of type <code>topic</code>, <code>group</code> and <code>txnid</code>. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
@@ -51,7 +51,7 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 
 ## What are the default security settings?
 
-By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' Message Hub service instances' in the same account also has full access. 
+By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access. 
 
 You can then apply additional policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
 
@@ -88,11 +88,11 @@ For an example of how to set policies, see:
 [IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
 
 
-## Connecting to Message Hub
+## Connecting to {{site.data.keyword.messagehub}}
 {: #connect_message_enterprise }
 
 For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
-[Connecting to Message Hub](/docs/services/MessageHub/messagehub127.html#connect_messagehub).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub127.html#connect_messagehub).
 
 <!-- 28/06/18 - Karen: draft info only
 
@@ -106,7 +106,7 @@ I want to give a user access to create or delete a topic:
 3. Specify the email address of the user that you want to invite.
 4. In the **Access** section, expand the **Services** option.
 5. Choose to assign access to a **Resource**.
-6. In the **Services** section, select **Message Hub**
+6. In the **Services** section, select **{{site.data.keyword.messagehub}}**
 7. In the **Region** section, make your selection.
 8. In the **Service instance** section, locate your instance and select it.
 9. In the **Resource type** section, enter **cluster**.

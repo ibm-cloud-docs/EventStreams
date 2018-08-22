@@ -12,7 +12,7 @@ lastupdated: "2018-08-09"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Getting started with Message Hub 
+# Getting started with {{site.data.keyword.messagehub}} 
 {: #messagehub}
 
 To get started with {{site.data.keyword.messagehub}}
@@ -37,7 +37,7 @@ Complete the following steps:
   
   b. Click **Catalog**.
   
-  c. In the **Integration** section, select **Message Hub Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+  c. In the **Integration** section, select **{{site.data.keyword.messagehub}} Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
   d. Enter a name for your service. You can use the default value.
   

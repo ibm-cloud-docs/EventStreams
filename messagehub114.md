@@ -81,7 +81,7 @@ You can configure the maximum polling interval using the `max.poll.interval.ms` 
 
 For each consumer group, Kafka maintains the committed offset for each partition being consumed. When a consumer processes a message, it doesn't remove it from the partition. Instead, it just updates its current offset using a process called committing the offset.
 
-Message Hub retains committed offset information for 7 days.
+{{site.data.keyword.messagehub}} retains committed offset information for 7 days.
 
 ### What if there is no existing committed offset?
 When a consumer starts and is assigned a partition to consume, it will start at its group's committed offset. If there is no existing committed offset, the consumer can choose whether to start with the earliest or latest available message based on the setting of the `auto.offset.reset` property as follows:

@@ -12,7 +12,7 @@ lastupdated: "2018-06-28"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# What is Message Hub?
+# What is {{site.data.keyword.messagehub}}?
 {: #about}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications.

@@ -23,14 +23,14 @@ Life of a user through cycle - APIs, feature sets
 -->
 
 
-## Getting started with Message Hub vNext
+## Getting started with {{site.data.keyword.messagehub}} vNext
 {: vnext_started}
 
-1. Navigate to the experimental service Message Hub vNext tile in the catalog. https://console.stage1.bluemix.net/catalog/labs/?search=vnext
+1. Navigate to the experimental service {{site.data.keyword.messagehub}} vNext tile in the catalog. https://console.stage1.bluemix.net/catalog/labs/?search=vnext
 
 2. Select the Premium pricing plan from the dropdown list. This plan is available to paid accounts only.
 
-3. Create the service for a single-tenant Message Hub cluster.
+3. Create the service for a single-tenant {{site.data.keyword.messagehub}} cluster.
 
 The maximum cluster size and storage allocation is ...
 
@@ -72,20 +72,20 @@ Use REST admin interface to create, list, and delete topics
 
 ## Which plan is best for me?
 
-### Message Hub Public
-I want to consume Message Hub. Consuming a multi-tenant service with some performance limitations is not an issue for me.
+### {{site.data.keyword.messagehub}} Public
+I want to consume {{site.data.keyword.messagehub}}. Consuming a multi-tenant service with some performance limitations is not an issue for me.
 
-### Message Hub Premium
-I want to consume Message Hub. I have performance and other functional requirements that go beyond the public service. I am happy to pay a premium for a single-tenant version of the service on shared network and shared compute.
+### {{site.data.keyword.messagehub}} Premium
+I want to consume {{site.data.keyword.messagehub}}. I have performance and other functional requirements that go beyond the public service. I am happy to pay a premium for a single-tenant version of the service on shared network and shared compute.
 
-### Message Hub Premium++
-I want to consume Message Hub. I require more isolation than the Message Hub Premium plan. I would like an isolated network and isolated compute by having the service deployed within my IBM Cloud Dedicated.next VPC.
+### {{site.data.keyword.messagehub}} Premium++
+I want to consume {{site.data.keyword.messagehub}}. I require more isolation than the {{site.data.keyword.messagehub}} Premium plan. I would like an isolated network and isolated compute by having the service deployed within my IBM Cloud Dedicated.next VPC.
 
 
 ## Security
 {: security}
 
-IAM  service key and SASL are used as the authentication method to access Message Hub resources
+IAM  service key and SASL are used as the authentication method to access {{site.data.keyword.messagehub}} resources
 
 New and existing applications can connect to both a multi tenant & single tenant resource 
 
@@ -102,7 +102,7 @@ SNI support required.
 
 
 ## Catalog and tiles
-From the catalog page, select either single tenant or multi tenant Message Hub tile.
+From the catalog page, select either single tenant or multi tenant {{site.data.keyword.messagehub}} tile.
 
 ## Resource controller management
 
@@ -117,11 +117,11 @@ New and existing applications can connect to both a multi-tenant and single-tena
 
 ## Kafka
 
-Message Hub is based on Kafka 1.0
+{{site.data.keyword.messagehub}} is based on Kafka 1.0
 
 No quotas enforced
 
-No multitenancy (contradicts info about "select either single tenant or multi tenant Message Hub tile.")
+No multitenancy (contradicts info about "select either single tenant or multi tenant {{site.data.keyword.messagehub}} tile.")
 
 The following Kafka client versions are supported:
 
@@ -132,9 +132,9 @@ The following Kafka client versions are supported:
 0.9 clients are not supported.
 
 
-## Administering Message Hub
+## Administering {{site.data.keyword.messagehub}}
 
-### Administering Message Hub using the dashboard in the IBM Cloud console
+### Administering {{site.data.keyword.messagehub}} using the dashboard in the IBM Cloud console
 
 * You can create, list, and delete topics.
 
@@ -143,7 +143,7 @@ The following Kafka client versions are supported:
 * No metrics, logs, or usage information are available.
 
 
-### Administering Message Hub using the REST interface
+### Administering {{site.data.keyword.messagehub}} using the REST interface
 
 * You can create, list, and delete topics.
 * V1 is backwards compatible with existing Kafka REST admin
