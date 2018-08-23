@@ -16,7 +16,7 @@ lastupdated: "2018-08-23"
 # Connecting to {{site.data.keyword.messagehub}}
 {: #connecting}
 
-The way you connect to {{site.data.keyword.messagehub}} varies according to whether you're using the Standard or Enterprise plan, and also whether you're connecting from a Cloud Foundry application or from any other external client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:
+The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're using the Standard or Enterprise plan, and also whether you're connecting from a Cloud Foundry application or from any other external client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:
 
 * The endpoint URLs for the APIs
 * Credentials for authentication
