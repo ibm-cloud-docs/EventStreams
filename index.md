@@ -13,7 +13,7 @@ lastupdated: "2018-08-09"
 {:pre: .pre}
 
 # Getting started with {{site.data.keyword.messagehub}} 
-{: #messagehub}
+{: #getting_started}
 
 To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
