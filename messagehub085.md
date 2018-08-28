@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-10"
+lastupdated: "2018-08-28"
 
 ---
 
@@ -78,7 +78,8 @@ The following table summarizes what is supported by the plans:
 			United Kingdom</br>
 			Sydney</br>
 			Germany (no MQ Light API)</td>
-			<td>US South currently</br>
+			<td>US South</br>
+			US East<br/>
 			<br/>
 			</td>
 		</tr>
