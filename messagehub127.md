@@ -101,7 +101,7 @@ If you have a manifest file, you can create a new app by running:</br>
 <li>Verify that the VCAP_SERVICES environment variable is available in your application runtime by running:</br> 
  <code>ibmcloud app env <var class="keyword varname">your_app_name</var></code>. 
 </li>
-<li>Pass these credentials to your application. For more information, see [Configuring your client](/docs/services/MessageHub/messagehub063.html).
+<li>Pass these credentials to your application. Specify <code>token</code> as your user name and the <var class="keyword varname">api_key</var> as your password. Separate <code>token</code> and the <var class="keyword varname">api_key</var> with a colon. For more information, see [Configuring your client](/docs/services/MessageHub/messagehub063.html).
 <p>You might need to restage your application for the changes to take effect.</p></li>
 </ol>
 
