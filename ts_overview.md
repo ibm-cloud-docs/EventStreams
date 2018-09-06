@@ -28,7 +28,7 @@ community.
 {: #troubleshooting_links notoc}
 
 *  [{{site.data.keyword.Bluemix_short}} free trial ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://apps.admin.ibmcloud.com/manage/trial/bluemix.html){: new_window}
-*  [{{site.data.keyword.messagehub}} Java Kafka sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-console-sample){: new_window}
+*  [{{site.data.keyword.messagehub}} Java Kafka sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: new_window}
 *  [Creating web applications with {{site.data.keyword.IBM_notm}} {{site.data.keyword.Bluemix_notm}} and deploying your
    app with Cloud Foundry ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.ng.bluemix.net/docs/starters/install_cli.html){: new_window}
 *  [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window}

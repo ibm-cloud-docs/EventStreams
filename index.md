@@ -22,7 +22,7 @@ produce messages.
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub010.html).
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-samples){:new_window}.
+To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
 <!-- 11/01/18 - Karen - removing diagram as requested by James
 ![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
