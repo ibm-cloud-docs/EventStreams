@@ -27,7 +27,10 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
 3. When did the problem first occur (specifically time, date, and timezone)? How long was your app running before this?
 4. Is the problem still occurring? Can you replicate it?
 5. What is the Instance ID of the {{site.data.keyword.messagehub}} service you are using? 
-You can find this ID by looking at the "instance_id" field in the service's VCAP_SERVICES JSON. For example ```"instance_id": "e662a61b-d1ff-4cce-aab9-5eae9adb9827"```
+You can find this ID by looking at the "instance_id" field in the service's VCAP_SERVICES JSON. For example:
+ ```
+ "instance_id": "e662a61b-d1ff-4cce-aab9-5eae9adb9827"
+ ```
 6. Which Kafka or REST client is your application using? What are the version details?
 7. What are your client configuration details?
 8. Do you have application log snippets that display the problem?
