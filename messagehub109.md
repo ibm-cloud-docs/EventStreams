@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-24"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-05-24"
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}. 
 
-If you'd like help from the {{site.data.keyword.messagehub}} team, please gather as much of the following information as possible:
+If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently your problem can be determined:
 {:shortdesc}
 
 1. Which {{site.data.keyword.Bluemix_notm}} region is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, US South or United Kingdom. 
