@@ -56,7 +56,7 @@ Complete the following steps:
 4. Clone the message-hub-samples git repository by running the following command from the command line:
 
     <pre class="pre">
-    git clone https://github.com/ibm-messaging/message-hub-samples.git
+    git clone https://github.com/ibm-messaging/event-streams-samples.git
     </pre>
 	{: codeblock}
 
