@@ -80,6 +80,7 @@ The following table summarizes what is supported by the plans:
 			Germany (no MQ Light API)</td>
 			<td>US South</br>
 			US East<br/>
+			Germany<br/>
 			<br/>
 			</td>
 		</tr>
