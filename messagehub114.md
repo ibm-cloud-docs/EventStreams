@@ -193,7 +193,7 @@ finally {
 }
 ```
 
-# Exception handling
+## Exception handling
 
 Any robust application that uses the Kafka client needs to handle exceptions for certain expected situations. In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results using a `Future` or a callback. You can find example code in [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples) which shows complete examples.
 
