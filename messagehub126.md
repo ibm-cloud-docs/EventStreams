@@ -29,7 +29,7 @@ ensure the cluster doesn't run out of space.
 The Kibana and Grafana dashboards for monitoring the service are not supported in {{site.data.keyword.Bluemix_notm}} Dedicated.
 
 
-### Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
+## Kafka quotas in {{site.data.keyword.messagehub}} Dedicated
 {: kafka_dedicated_quotas notoc}
 
 {{site.data.keyword.messagehub}} implements Kafka quotas, that is throttling for producers and consumers in Dedicated and Public environments. You are not recommended to remove quotas, although you can request to have them removed for your Dedicated environment.

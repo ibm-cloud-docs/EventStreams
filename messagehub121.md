@@ -23,7 +23,7 @@ Life of a user through cycle - APIs, feature sets
 -->
 
 
-## Getting started with {{site.data.keyword.messagehub}} vNext
+# Getting started with {{site.data.keyword.messagehub}} vNext
 {: vnext_started}
 
 1. Navigate to the experimental service {{site.data.keyword.messagehub}} vNext tile in the catalog. https://console.stage1.bluemix.net/catalog/labs/?search=vnext
