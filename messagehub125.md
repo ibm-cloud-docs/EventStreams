@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-02"
+lastupdated: "2018-09-11"
 
 ---
 
@@ -17,23 +17,25 @@ lastupdated: "2018-07-02"
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}.
 
-If you'd like help from the {{site.data.keyword.messagehub}} team, please gather as much of the following information as possible:
+If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently the team can help with the problem:
 {:shortdesc}
 
 1. What is the CRN ID of the {{site.data.keyword.messagehub}} service you are
    using?  You can provide this ID by pasting the full
    {{site.data.keyword.Bluemix_notm}} console URL after clicking on the
-   service, or by pasting the output from the CLI command:<br/>
-   <code>ibmcloud resource service-instance NAME</code>
-1. When did the problem first occur (specifically time, date, and timezone)?
+   service, or by pasting the output from the following CLI command:<br/>
+   ```
+   ibmcloud resource service-instance NAME
+   ```
+2. When did the problem first occur (specifically time, date, and timezone)?
    How long was your app running before this?
-1. Is the problem still occurring? Can you replicate it?
-1. Which Kafka client is your application using? What are the version details?
-1. What are your client configuration details?
-1. Do you have application log snippets that display the problem?
-1. What is the issue you are seeing? Which topics, client IDs, group IDs, and
+3. Is the problem still occurring? Can you replicate it?
+4. Which Kafka client is your application using? What are the version details?
+5. What are your client configuration details?
+6. Do you have application log snippets that display the problem?
+7. What is the issue you are seeing? Which topics, client IDs, group IDs, and
    transaction IDs are affected?
-1. What impact is the problem having on your service?
+8. What impact is the problem having on your service?
 
 You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support/howtogetsupport.html#open-case).
 
