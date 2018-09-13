@@ -19,11 +19,11 @@ lastupdated: "2018-09-11"
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}. 
 
-If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently your problem can be determined:
+If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently the team can help with the problem:
 {:shortdesc}
 
 1. Which {{site.data.keyword.Bluemix_notm}} region is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, US South or United Kingdom. 
-2. Which interface are you seeing issues with? REST, Kafka, AMQP, or bridges?
+2. Which interface are you seeing issues with? Kafka, REST, AMQP, or bridges?
 3. When did the problem first occur (specifically time, date, and timezone)? How long was your app running before this?
 4. Is the problem still occurring? Can you replicate it?
 5. What is the Instance ID of the {{site.data.keyword.messagehub}} service you are using? 
