@@ -24,7 +24,7 @@ member of the {{site.data.keyword.messagehub}} development team or the wider
 community.
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}. If you'd then 
-like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard plan](/docs/services/MessageHub/messagehub109.html) or [Reporting a problem to the {{site.data.keyword.messagehub}} team - Enterprise plan](/docs/services/MessageHub/messagehub125.html).
+like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in either [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard plan](/docs/services/MessageHub/messagehub109.html) or [Reporting a problem to the {{site.data.keyword.messagehub}} team - Enterprise plan](/docs/services/MessageHub/messagehub125.html).
 {:shortdesc}
 
 ## Useful links
