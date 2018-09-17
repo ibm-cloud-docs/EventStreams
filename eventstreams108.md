@@ -134,7 +134,7 @@ REST API returns the following JSON:
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
 {: #plan_compare }
 
-To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/MessageHub/messagehub085.html).
+To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams/eventstreams085.html).
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery }
