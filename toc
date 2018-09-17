@@ -75,18 +75,18 @@ IBM Event Streams
 
 	{: .topicgroup}
 	Alpha program
-		messagehub122.md
+		eventstreams122.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
-	messagehub108.md
+	eventstreams108.md
 	
 	{: .topicgroup}
 	Troubleshooting
 		ts_overview.md
-		messagehub057.md
-		messagehub109.md
-		messagehub125.md
+		eventstreams057.md
+		eventstreams109.md
+		eventstreams125.md
 		
 	{: .topicgroup}
 	Related links
