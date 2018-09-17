@@ -10,9 +10,9 @@ IBM Event Streams
 	
 	{: .topicgroup}
 	About Event Streams
-		messagehub010.md
-		messagehub073.md
-	 	messagehub085.md
+		eventstreams010.md
+		eventstreams073.md
+	 	eventstreams085.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
