@@ -2,8 +2,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="messagehub" audience="service" arm="285" href="/docs/MessageHub/index.html"}
-IBM Message Hub
+{: .toc subcollection="eventstreams" audience="service" arm="285" href="/docs/EventStreams/index.html"}
+IBM Event Streams
 
 	{: .navgroup id="learn"}
 	index.md
