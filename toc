@@ -9,7 +9,7 @@ IBM Event Streams
 	index.md
 	
 	{: .topicgroup}
-	About Message Hub
+	About Event Streams
 		messagehub010.md
 		messagehub073.md
 	 	messagehub085.md
@@ -28,14 +28,14 @@ IBM Event Streams
 	messagehub127.md
 		
 	{: .topicgroup}
-	Administering Message Hub
+	Administering Event Streams
 		messagehub037.md
 		messagehub128.md
 		messagehub116.md
 		messagehub124.md
 	
 	{: .topicgroup}
-	Developing apps with Message Hub
+	Developing apps with Event Streams
 		messagehub050.md
 			messagehub062.md
 			messagehub063.md
@@ -90,9 +90,9 @@ IBM Event Streams
 		
 	{: .topicgroup}
 	Related links
-	 	[Message Hub Java Kafka sample](https://github.com/ibm-messaging/message-hub-samples/tree/master/kafka-java-console-sample)
+	 	[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
 	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
-		[IBM Message Hub on developerWorks](https://developer.ibm.com/messaging/message-hub/)
+		[IBM Event Streams on developerWorks](https://developer.ibm.com/messaging/message-hub/)
 	{: .navgroup-end}
 
 
