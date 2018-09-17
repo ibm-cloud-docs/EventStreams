@@ -16,23 +16,23 @@ IBM Event Streams
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
-	messagehub112.md
-	messagehub114.md
-	messagehub118.md
-	messagehub068.md
-	messagehub072.md
+	eventstreams112.md
+	eventstreams114.md
+	eventstreams118.md
+	eventstreams068.md
+	eventstreams072.md
 	at-events.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
-	messagehub127.md
+	eventstreams127.md
 		
 	{: .topicgroup}
 	Administering Event Streams
-		messagehub037.md
-		messagehub128.md
-		messagehub116.md
-		messagehub124.md
+		eventstreams037.md
+		eventstreams128.md
+		eventstreams116.md
+		eventstreams124.md
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
