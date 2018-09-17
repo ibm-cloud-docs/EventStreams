@@ -19,10 +19,10 @@ lastupdated: "2018-06-01"
 <br/>
 
 The MQ bridge allows you to transfer message data from an {{site.data.keyword.IBM_notm}}
- MQ queue to a {{site.data.keyword.messagehub}} Kafka topic. The MQ bridge enables you to efficiently perform cloud-style workloads (for example, data analytics) against {{site.data.keyword.IBM_notm}} MQ message data generated within your enterprise.
+ MQ queue to an {{site.data.keyword.messagehub}} Kafka topic. The MQ bridge enables you to efficiently perform cloud-style workloads (for example, data analytics) against {{site.data.keyword.IBM_notm}} MQ message data generated within your enterprise.
  {:shortdesc}
 
-The MQ bridge connects to an {{site.data.keyword.IBM_notm}} MQ queue manager as an MQ client and consumes MQ message data from an MQ queue. The bridge converts each MQ message into a Kafka record and sends the message to a {{site.data.keyword.messagehub}} Kafka topic.
+The MQ bridge connects to an {{site.data.keyword.IBM_notm}} MQ queue manager as an MQ client and consumes MQ message data from an MQ queue. The bridge converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 
 ## Supported versions of {{site.data.keyword.IBM_notm}} MQ
 {: #mq_support}
@@ -77,7 +77,7 @@ distributed evenly across the partitions in the Kafka topic.</dd>
 ## Message size restrictions
 {: #mq_message}
 
-You can configure {{site.data.keyword.IBM_notm}} MQ to store messages that are too large to fit into a {{site.data.keyword.messagehub}} Kafka record. The maximum Kafka record size
+You can configure {{site.data.keyword.IBM_notm}} MQ to store messages that are too large to fit into an {{site.data.keyword.messagehub}} Kafka record. The maximum Kafka record size
 is 1 000 000 bytes, although some of this capacity is used when the bridge is configured to perform
 Kafka partition assignment based on MQ Correlation identifier, or MQ Group identifier. We recommend
 sending messages that are no larger than 950 kilobytes using the MQ bridge.

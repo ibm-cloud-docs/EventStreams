@@ -19,7 +19,7 @@ You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External l
 
 Complete the following steps:
 
-1. Create a {{site.data.keyword.messagehub}} KSQL configuration file.
+1. Create an {{site.data.keyword.messagehub}} KSQL configuration file.
 
     For example:
     ```

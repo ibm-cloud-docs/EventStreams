@@ -28,7 +28,7 @@ Complete the following steps to get an app running with the {{site.data.keyword.
   1. Click the **{{site.data.keyword.messagehub}}** tile in the 
 [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.stage1.bluemix.net/catalog/services/message-hub).
 
-  2. Create a {{site.data.keyword.messagehub}} service using the <code>Premium</code> pricing plan. This service provides a single-tenant cluster and typically takes 1-3 hours to provision.
+  2. Create an {{site.data.keyword.messagehub}} service using the <code>Premium</code> pricing plan. This service provides a single-tenant cluster and typically takes 1-3 hours to provision.
  
 
 
@@ -69,13 +69,13 @@ Alternatively, you can get the required credentials using the command line. Comp
   ibmcloud resource service-key <NAME>
   ```
 
-## Create a {{site.data.keyword.messagehub}} topic and send a message
+## Create an {{site.data.keyword.messagehub}} topic and send a message
 
 You can use a CURL command to create a topic and then the kafkacat tool to produce and consume a message. 
 
 For each command, replace APIKEY and KAFKA_ADMIN_URL with values from your VCAP_SERVICES environment variable.
 
-  1. From the command line, create a {{site.data.keyword.messagehub}} topic using the following CURL command:
+  1. From the command line, create an {{site.data.keyword.messagehub}} topic using the following CURL command:
   
     ```
     curl -i -X POST -H "Content-Type: application/json" -H "X-Auth-Token: APIKEY" --data '{ "name": "newtop"}' KAFKA_ADMIN_URL/admin/topics

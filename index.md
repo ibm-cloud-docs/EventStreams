@@ -31,7 +31,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 Complete the following steps:
 {: #getting_started_steps}
  
-1. Create a {{site.data.keyword.messagehub}} service instance:
+1. Create an {{site.data.keyword.messagehub}} service instance:
 
   a. Log in to the {{site.data.keyword.Bluemix_notm}} console. 
   
