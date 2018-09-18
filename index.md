@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-08-09"
+lastupdated: "2018-09-18"
 
 ---
 
@@ -20,7 +20,7 @@ and start sending and receiving messages, you can use the Java™ sample. The sa
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
 
-To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams010.html).
+To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams010.html). {{site.data.keyword.messagehub}} was previously called Message Hub.
 
 To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
