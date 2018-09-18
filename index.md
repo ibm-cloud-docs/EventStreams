@@ -53,7 +53,7 @@ Complete the following steps:
 	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
     * Java 8 or higher
  
-4. Clone the message-hub-samples git repository by running the following command from the command line:
+4. Clone the event-streams-samples git repository by running the following command from the command line:
 
     <pre class="pre">
     git clone https://github.com/ibm-messaging/event-streams-samples.git
@@ -63,7 +63,7 @@ Complete the following steps:
 5. Change directory to the java console sample by running the following command:
 
     <pre class="pre">
-    cd message-hub-samples/kafka-java-console-sample
+    cd event-streams-samples//kafka-java-console-sample
     </pre>
 	{: codeblock}
 
