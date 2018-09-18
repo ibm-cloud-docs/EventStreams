@@ -47,19 +47,19 @@ IBM Event Streams
 		eventstreams025.md
 			eventstreams066.md
 			eventstreams097.md
-		messagehub075.md
-			messagehub106.md
-			messagehub098.md
-			messagehub079.md
-			messagehub099.md
-			messagehub102.md
-			messagehub103.md
-			messagehub101.md
-			messagehub081.md
-			messagehub082.md
-			messagehub080.md
-			messagehub083.md
-		messagehub087.md
+		eventstreams075.md
+			eventstreams106.md
+			eventstreams098.md
+			eventstreams079.md
+			eventstreams099.md
+			eventstreams102.md
+			eventstreams103.md
+			eventstreams101.md
+			eventstreams081.md
+			eventstreams082.md
+			eventstreams080.md
+			eventstreams083.md
+		eventstreams087.md
 
 	{: .topicgroup}
 	Integrating with other services
@@ -92,7 +92,7 @@ IBM Event Streams
 	Related links
 	 	[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
 	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
-		[IBM Event Streams on developerWorks](https://developer.ibm.com/messaging/message-hub/)
+		[IBM Event Streams on developerWorks](https://www.ibm.com/cloud/message-hub)
 	{: .navgroup-end}
 
 
