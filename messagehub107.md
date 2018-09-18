@@ -20,7 +20,7 @@ By being built with Apache Kafka, it directly benefits from all the innovation o
 
 {{site.data.keyword.messagehub}} is based on the open-source
 Apache Kafka project, a highly scalable, high-performing messaging backbone proven in many
-production environments. For more information, see [About {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub010.html).
+production environments. For more information, see [About {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams010.html).
 Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.

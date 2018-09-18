@@ -60,9 +60,9 @@ partitions.</li>
 </dl>
 
 To learn more, see the following information:
-- [Producing messages](/docs/services/MessageHub/messagehub112.html)
-- [Consuming messages](/docs/services/MessageHub/messagehub114.html) 
-- [Partition leadership](/docs/services/MessageHub/messagehub118.html) 
+- [Producing messages](/docs/services/EventStreams/eventstreams112.html)
+- [Consuming messages](/docs/services/EventStreams/eventstreams114.html) 
+- [Partition leadership](/docs/services/EventStreams/eventstreams118.html) 
 - [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
 
 

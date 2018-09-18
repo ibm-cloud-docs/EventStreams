@@ -92,7 +92,7 @@ For an example of how to set policies, see:
 {: #connect_message_enterprise }
 
 For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub127.html#connect_messagehub).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams127.html#connect_messagehub).
 
 <!-- 28/06/18 - Karen: draft info only
 

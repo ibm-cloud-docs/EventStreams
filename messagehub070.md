@@ -20,7 +20,7 @@ the following three methods:
 
 * You are recommended to use the [Kafka Admin API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}. This API requires a Kafka Java client at version 0.11 or later
 * {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console
-* [{{site.data.keyword.messagehub}} Administration API](/docs/services/MessageHub/messagehub037.html)
+* [{{site.data.keyword.messagehub}} Administration API](/docs/services/EventStreams/eventstreams037.html)
 {:shortdesc}
 
 

@@ -149,7 +149,7 @@ This returns the service key details in JSON format.</li>
 {: #connect_enterprise}
 
 Services provisioned using the Enterprise Plan are grouped in the dashboard under the heading **Services**. The Enterprise plan is [IAM enabled ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/iam/quickstart.html#getstarted){:new_window}. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see 
-[Securing your {{site.data.keyword.messagehub}} resources](/docs/services/MessageHub/messagehub124.html)
+[Securing your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams/eventstreams124.html)
 
 Complete the following steps to bind your application and obtain Service Keys for your service. To be authorized to create topics, your application or Service Key must have a Manager access role.
 
@@ -253,7 +253,7 @@ Now you have connection and credential information, you can choose an {{site.dat
 <!--
 Charlie said:
 
-"Add some info describing how to take the information made available from above e.g. like the info in the Connecting a client to the Kafka API section of the alpha docs on stage 1? https://console.stage1.bluemix.net/docs/services/MessageHub/messagehub122.html#alpha_about "
+"Add some info describing how to take the information made available from above e.g. like the info in the Connecting a client to the Kafka API section of the alpha docs on stage 1? https://console.stage1.bluemix.net/docs/services/EventStreams/eventstreams122.html#alpha_about "
 -->
 
 
