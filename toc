@@ -41,12 +41,12 @@ IBM Event Streams
 			eventstreams063.md
 			eventstreams117.md
 			eventstreams104.md
-		messagehub113.md
-		messagehub111.md
-		messagehub110.md
-		messagehub025.md
-			messagehub066.md
-			messagehub097.md
+		eventstreams113.md
+		eventstreams111.md
+		eventstreams110.md
+		eventstreams025.md
+			eventstreams066.md
+			eventstreams097.md
 		messagehub075.md
 			messagehub106.md
 			messagehub098.md
