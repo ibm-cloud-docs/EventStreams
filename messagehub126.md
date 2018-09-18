@@ -34,7 +34,7 @@ The Kibana and Grafana dashboards for monitoring the service are not supported i
 
 {{site.data.keyword.messagehub}} implements Kafka quotas, that is throttling for producers and consumers in Dedicated and Public environments. You are not recommended to remove quotas, although you can request to have them removed for your Dedicated environment.
 
-For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/MessageHub/messagehub117.html).
+For more information, see [Kafka quotas in {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams117.html).
 
 
 

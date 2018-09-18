@@ -36,11 +36,11 @@ IBM Event Streams
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
-		messagehub050.md
-			messagehub062.md
-			messagehub063.md
-			messagehub117.md
-			messagehub104.md
+		eventstreams050.md
+			eventstreams062.md
+			eventstreams063.md
+			eventstreams117.md
+			eventstreams104.md
 		messagehub113.md
 		messagehub111.md
 		messagehub110.md
@@ -63,11 +63,11 @@ IBM Event Streams
 
 	{: .topicgroup}
 	Integrating with other services
-		messagehub088.md
-		messagehub105.md
-		messagehub115.md
-		messagehub089.md
-		messagehub119.md
+		eventstreams088.md
+		eventstreams105.md
+		eventstreams115.md
+		eventstreams089.md
+		eventstreams119.md
 
 	{: .topicgroup}
 	Tutorials
