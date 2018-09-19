@@ -20,9 +20,9 @@ lastupdated: "2018-07-05"
 
 To discover the Administration RESTful API's endpoint, your {{site.data.keyword.Bluemix_short}} application can use the `kafka_admin_url` property in your application's VCAP_SERVICES environment variable.
 
-You can download the full specification for the API from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+You can download the full specification for the API from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
-The [{{site.data.keyword.messagehub}} admin-rest-api ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/message-hub-docs/tree/master/admin-rest-api){:new_window} directory also contains a useful set of examples of how to call the Administration RESTful API.
+The [{{site.data.keyword.messagehub}} admin-rest-api ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window} directory also contains a useful set of examples of how to call the Administration RESTful API.
 
 
