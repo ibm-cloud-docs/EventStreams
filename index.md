@@ -63,7 +63,7 @@ Complete the following steps:
 5. Change directory to the java console sample by running the following command:
 
     <pre class="pre">
-    cd event-streams-samples//kafka-java-console-sample
+    cd event-streams-samples/kafka-java-console-sample
     </pre>
 	{: codeblock}
 
