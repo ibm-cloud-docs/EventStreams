@@ -38,7 +38,7 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
    transaction IDs are affected?
 8. What impact is the problem having on your service?
 
-You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support/howtogetsupport.html#open-case).
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support/howtogetsupport.html#using-avatar).
 
 
 
