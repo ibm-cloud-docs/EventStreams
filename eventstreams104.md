@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-22"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -74,7 +74,9 @@ For an earlier Kafka client, you must use a JAAS configuration file to specify t
 
 
 If you're using the Java clients, you can use
-the publicly available Kafka clients at 0.10 or later. You are strongly encouraged to move from 0.9.X to the
+the publicly available Kafka clients at 0.10 or later. 
+
+Because 0.9.X is no longer supported by {{site.data.keyword.messagehub}}, you must move from 0.9.X to the
 latest version. You can download a Kafka client from 
 [https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/downloads){:new_window} 
 
@@ -82,7 +84,7 @@ latest version. You can download a Kafka client from
 
 ### Migrating a Kafka client to 0.10.2.X or later versions
 
-From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplicifcation allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
+From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplification allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
 
 Complete the following steps:
 
