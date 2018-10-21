@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-17"
+lastupdated: "2018-10-21"
 
 ---
 
@@ -43,33 +43,27 @@ lastupdated: "2018-10-17"
 
 ## Recommended client
 
-### node-rdkafka - a NodeJS client for Apache Kafka that wraps the native librdkafka library. 
-We recommend using the [node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka/blob/master/README.md){:new_window} client at 0.10.x, or later. This client is well tested with {{site.data.keyword.messagehub}} and demonstrates good performance. 
+### node-rdkafka - 
+A NodeJS client for Apache Kafka that wraps the native librdkafka library. 
+We recommend using the [node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka/blob/master/README.md){:new_window} client at 0.10.x, or later. This client is well tested with {{site.data.keyword.messagehub}} and demonstrates good performance with large amounts of traffic. 
 
-However, the node-rdkafka client is not well supported on Windows.
+However, the node-rdkafka client is not well supported on Windows and is not a pure JS client.
 
- but that's not pure JS.
-
-I think node-rdkafka would remain the customer-recommended option for deployment of node.js production applications that are pushing significant amounts of traffic, because it naturally receives more battle testing within Confluent (benefiting from all the other clients that share the common librdkafka) and Blizzard. 
-
-You do need a client that fully supports SASL authentication and node-rdkafka is the only reliable one of those for nodejs
 
 ## Unsupported clients
 
 ### kafka-node
-The kafka-node client does not support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
-
+The kafka-node client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
 
 
 ### no-kafka 
-The no-kafka client does not support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
+The no-kafka client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
 
-no-kafka is not a supported Kafka client in {{site.data.keyword.messagehub}} because it does not support SASL authentication.
+### sarama
 
 
-To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams010.html).
+For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Java and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
 
 
