@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-22"
+lastupdated: "2018-10-23"
 
 ---
 
@@ -12,10 +12,10 @@ lastupdated: "2018-10-22"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Kafka client support and recommendation
+# Kafka client support and recommendations
 {: #client_support}
 
-## Overview of Kafka client support
+## Official Apache Kafka Client (Java) support
 
 <table>
     <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
@@ -41,14 +41,17 @@ lastupdated: "2018-10-22"
 
 </table>
 
-## Recommended client
+## Recommended third party clients
 
-### node-rdkafka 
-node-rdkafka is a NodeJS client for Apache Kafka that wraps the native librdkafka library. 
-We recommend using the [node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka/blob/master/README.md){:new_window} client at 0.10.x, or later. This client is well tested with {{site.data.keyword.messagehub}} and demonstrates good performance with large amounts of traffic. 
+If you can't run the official Java clients, we recommend running one of the following clients 0.10.x, or later, which are well-tested with {{site.data.keyword.messagehub}}:
 
-However, the node-rdkafka client is not well supported on Windows and is not a pure JavaScript client.
+* [node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window}  
 
+* [confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window}
+
+* [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}  
+
+Other third party clients might work with {{site.data.keyword.messagehub}} but we can't guarantee anything.
 
 ## Unsupported clients
 
@@ -58,9 +61,6 @@ The kafka-node client does not fully support SASL authentication so cannot curre
 
 ### no-kafka 
 The no-kafka client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
-
-### sarama
-*** Unsure what we want to say about this client?  ***
 
 For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
 
