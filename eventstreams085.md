@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-12"
+lastupdated: "2018-10-26"
 
 ---
 
@@ -74,13 +74,14 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Region availability**</td>
-			<td>US South</br>
-			United Kingdom</br>
-			Sydney</br>
-			Germany (no MQ Light API)</td>
-			<td>US South</br>
-			US East<br/>
-			Germany<br/>
+			<td>US South (Dallas)</br>
+			UK South (London)</br>
+			AP South (Sydney)</br>
+			EU Central (Frankfurt) (no MQ Light API)</td>
+			<td>US South (Dallas)</br>
+			US East (Washington)<br/>
+			EU Central (Frankfurt)<br/>
+			AP North (Tokyo)<br/>
 			<br/>
 			</td>
 		</tr>
