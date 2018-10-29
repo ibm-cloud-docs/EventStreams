@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-05-25"
+lastupdated: "2018-10-29"
 
 ---
 
@@ -32,7 +32,7 @@ as Kafka topics. Instead, the {{site.data.keyword.mql}} API uses a
 single Kafka topic called "MQLight" and all the messages sent and received using the {{site.data.keyword.mql}} API go through that one Kafka topic.
 
 The {{site.data.keyword.mql}} is available in the following
-{{site.data.keyword.Bluemix_notm}} regions only: US South, United Kingdom, and Sydney. The MQ Light API not available in the Germany region or in
+{{site.data.keyword.Bluemix_notm}} regions only: US South (Dallas), UK South (London), and AP South (Sydney). The MQ Light API not available in the EU Central (Frankfurt) region or in
 {{site.data.keyword.Bluemix_notm}} Dedicated.
 
 <!-- begin STAGING ONLY -->
