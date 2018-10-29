@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-23"
+lastupdated: "2018-10-29"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-10-23"
 # Kafka client support and recommendations
 {: #client_support}
 
-## Official Apache Kafka Client (Java) support
+## Support for the official Apache Kafka client (Java) 
 
 <table>
     <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
@@ -43,13 +43,15 @@ lastupdated: "2018-10-23"
 
 ## Recommended third-party clients
 
-If you can't run the official Java clients, we recommend running one of the following clients, which are well-tested with {{site.data.keyword.messagehub}}:
+If you can't run the official Java clients, we recommend running one of the following third-party clients, which are well-tested with {{site.data.keyword.messagehub}}:
 
-* [node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window} - tested up to V2.3.3. 
+* [node-rdkafka (Node.js) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window} - tested up to V2.3.3. 
+
 * [confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window}
+
 * [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}  
 
-Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't guarantee that they will.
+Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't make any guarantees.
 
 ## Unsupported clients
 
