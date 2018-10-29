@@ -37,11 +37,11 @@ IBM Event Streams
 	{: .topicgroup}
 	Developing apps with Event Streams
 		eventstreams050.md
-			eventstreams062.md
-			eventstreams131.md
-			eventstreams063.md
-			eventstreams117.md
-			eventstreams104.md
+		eventstreams062.md
+		eventstreams131.md
+		eventstreams063.md
+		eventstreams117.md
+		eventstreams104.md
 		eventstreams113.md
 		eventstreams111.md
 		eventstreams110.md
