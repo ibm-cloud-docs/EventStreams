@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-07-31"
+lastupdated: "2018-10-29"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-07-31"
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
-**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in US South, United Kingdom, and Sydney only. 
+**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in US South, (Dallas), UK South (London), and AP South (Sydney) only. 
 
 
 You can monitor the following log information:
