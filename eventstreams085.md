@@ -77,7 +77,7 @@ The following table summarizes what is supported by the plans:
 			<td>US South (Dallas)</br>
 			UK South (London)</br>
 			AP South (Sydney)</br>
-			EU Central (Frankfurt) (no MQ Light API)</td>
+			EU Central (Frankfurt) - no {{site.data.keyword.mql}} API </td>
 			<td>US South (Dallas)</br>
 			US East (Washington)<br/>
 			EU Central (Frankfurt)<br/>
