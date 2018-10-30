@@ -21,7 +21,25 @@ lastupdated: "2018-07-02"
 The {{site.data.keyword.mql}} API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service. The API provides an AMQP-based messaging interface for Java&trade;, Node.js, Python, and Ruby. 
 {:shortdesc}
 
-<!-- 02/07/18 - removing words to help deprecate MQ Light
-In most cases, {{site.data.keyword.messagehub}} is best used with a Kafka client. The {{site.data.keyword.mql}} API is simple to learn but has very limited scalability and does not offer interoperability with other {{site.data.keyword.messagehub}} APIs.
-The {{site.data.keyword.mql}} API is available in the following {{site.data.keyword.Bluemix_short}} regions only: US South, United Kingdom, and Sydney. The {{site.data.keyword.mql}} API not available in the Germany region or in {{site.data.keyword.Bluemix_notm}} Dedicated.
--->
+
+## What is the MQ Light API and how is it different?
+{: #mqlight}
+
+<!-- 30/10/18: info was in eventstreams106.md, moved because of doc app changes -->
+
+The {{site.data.keyword.mql}} API provides a higher level of abstraction for messaging compared to Kafka.
+
+The choice between using a Kafka client or the {{site.data.keyword.mql}} API depends on the messaging topology that you
+want to build:
+
+* With Kafka, you use a small number of topics and can have multiple partitions for each topic for additional scalability. You can share messages among consumers by using consumer groups, but each consumer must be able to keep up with the rate of messages for the partitions assigned to it.
+* With the {{site.data.keyword.mql}} API, you can use a much larger number of topics and the topic names are hierarchical (for example: <code>‘/sports/football’</code> and <code>‘/sports/tiddlywinks’</code>). 
+
+The topics in the {{site.data.keyword.mql}} API are not the same
+as Kafka topics. Instead, the {{site.data.keyword.mql}} API uses a
+single Kafka topic called "MQLight" and all the messages sent and received using the {{site.data.keyword.mql}} API go through that one Kafka topic.
+
+The {{site.data.keyword.mql}} is available in the following
+{{site.data.keyword.Bluemix_notm}} regions only: US South (Dallas), UK South (London), and AP South (Sydney). The MQ Light API not available in the EU Central (Frankfurt) region or in
+{{site.data.keyword.Bluemix_notm}} Dedicated.
+

@@ -15,6 +15,8 @@ lastupdated: "2018-10-29"
 # What is the MQ Light API and how is it different?
 {: #mqlight}
 
+<!-- 30/10/18: info moved to eventstreams075.md because of doc app changes -->
+
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
