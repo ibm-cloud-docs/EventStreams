@@ -53,16 +53,3 @@ For information about the Producer and Consumer APIs, see
 [Kafka Producer API 0.11.0.X ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0110/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
 [Kafka Consumer API 0.11.0.X ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0110/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 
-
-## What's required to use the Kafka API with {{site.data.keyword.messagehub}}?
-{: #kafka_reqs}
-
-The following requirements are needed to use the Kafka API with {{site.data.keyword.messagehub}}:
-
-* One of the following Apache Kafka clients:
-	* [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}
-	* [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
-	* [Apache Kafka 0.10.2.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.2.1/kafka_2.11-0.10.2.1.tgz){:new_window} 
-	
-* [Javadoc for the API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0102/javadoc/index.html){:new_window} 
-
