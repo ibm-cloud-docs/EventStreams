@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-10-30"
 
 ---
 
@@ -41,7 +41,7 @@ lastupdated: "2018-10-29"
 
 </table>
 
-To use the Kafka API with {{site.data.keyword.messagehub}}, either choose one of the following official Java clients or choose one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#third_party_clients).
+To use the Kafka API with {{site.data.keyword.messagehub}}, either choose one of the following official Java clients or one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#third_party_clients).
 
 * [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}
 * [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
@@ -64,12 +64,17 @@ Other third-party clients might work with {{site.data.keyword.messagehub}} but w
 
 ## Unsupported clients
 
+The following clients are not supported by {{site.data.keyword.messagehub}}:
+
 ### kafka-node
 The kafka-node client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
 
 
 ### no-kafka 
 The no-kafka client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
+
+## Connecting your client to {{site.data.keyword.messagehub}}
+{: #connect_client}
 
 For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
 

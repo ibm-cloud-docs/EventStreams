@@ -12,7 +12,7 @@ lastupdated: "2018-06-22"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuring your client
+# Configuring your Kafka API client
 {: #kafka_connect}
 
 
@@ -75,4 +75,5 @@ should work with {{site.data.keyword.messagehub}}. Example clients are as follow
 
 If you are using the earlier Kafka 0.9.0.0 client, you need to use a custom login module, which you
 can download from [{{site.data.keyword.messagehub}} login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library/messagehub.login-1.0.0.jar){:new_window}. 
+
 
