@@ -41,18 +41,14 @@ lastupdated: "2018-10-29"
 
 </table>
 
-To use the Kafka API with {{site.data.keyword.messagehub}} either choose one of official Java clients or a one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#third_party_clients).
+To use the Kafka API with {{site.data.keyword.messagehub}}, either choose one of the following official Java clients or choose one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#third_party_clients).
 
-* Supported official Apache Kafka clients:
-	* [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}
-	* [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
-	* [Apache Kafka 0.10.2.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.2.1/kafka_2.11-0.10.2.1.tgz){:new_window} 
+* [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}
+* [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
+* [Apache Kafka 0.10.2.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.2.1/kafka_2.11-0.10.2.1.tgz){:new_window} 
 	
 
-<!--
-* [Javadoc for the API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/0102/javadoc/index.html){:new_window} 
--->
-
+	
 ## Recommended third-party clients
 {: #third_party_clients}
 
