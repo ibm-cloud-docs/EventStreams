@@ -44,7 +44,7 @@ The {{site.data.keyword.mql}} is available in the following
 {{site.data.keyword.Bluemix_notm}} Dedicated.
 
 
-# What's required to use the MQ Light API with {{site.data.keyword.messagehub}}?
+## What's required to use the MQ Light API with {{site.data.keyword.messagehub}}?
 {: #mql_reqs}
 
 <!-- 30/10/18: info was in eventstreams098.md, moved because of doc app changes -->
