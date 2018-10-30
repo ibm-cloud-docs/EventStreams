@@ -40,7 +40,6 @@ IBM Event Streams
 		eventstreams062.md
 		eventstreams063.md
 		eventstreams104.md
-		eventstreams117.md
 		eventstreams113.md
 		eventstreams111.md
 		eventstreams110.md
@@ -60,7 +59,8 @@ IBM Event Streams
 			eventstreams080.md
 			eventstreams083.md
 		eventstreams087.md
-
+		eventstreams117.md
+	
 	{: .topicgroup}
 	Integrating with other services
 		eventstreams088.md
