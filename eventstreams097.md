@@ -15,6 +15,8 @@ lastupdated: "2018-08-30"
 # How to use the Kafka REST API
 {: #rest_how}
 
+<!-- info moved to eventstreams025.md because of doc app changes -->
+
 ** The Kafka REST API is available as part of the Standard plan only.**
 <br/>
 

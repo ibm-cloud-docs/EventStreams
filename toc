@@ -44,8 +44,6 @@ IBM Event Streams
 		eventstreams111.md
 		eventstreams110.md
 		eventstreams025.md
-			eventstreams066.md
-			eventstreams097.md
 		eventstreams075.md
 			eventstreams106.md
 			eventstreams098.md
