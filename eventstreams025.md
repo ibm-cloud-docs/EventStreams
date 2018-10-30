@@ -52,7 +52,7 @@ examples detailed in the [Confluent docs ![External link icon](../../icons/launc
 <pre class="pre">-H "X-Auth-Token: <var class="keyword varname">APIKEY</var>"</pre>
 {: codeblock}
 
-
+<br/>
 ## How to connect and authenticate
 {: #rest_connect}
 
@@ -63,7 +63,8 @@ credentials from the [VCAP_SERVICES environment variable](/docs/services/EventSt
 
 To authenticate with the {{site.data.keyword.messagehub}} Kafka REST API, you must specify the <code>api_key</code> in the X-Auth-Token header of your requests.
 
-## How to use the Kafka REST API
+
+## How to use the API
 {: #rest_how}
 
 <!-- info was in eventstreams097.md -->
