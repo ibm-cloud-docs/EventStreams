@@ -58,13 +58,11 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, either choose an off
 If you can't run the official Java clients, we recommend running one of the following third-party clients, which are all well-tested with {{site.data.keyword.messagehub}}:
 
 * [node-rdkafka (Node.js) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window}. This client is tested up to V2.3.3. 
-
 	If you want to run an {{site.data.keyword.messagehub}} Node.js sample, see 
-[Node.js sample) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window}
+[Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window}.
 
-* [confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window}
-
-	If you want to run an {{site.data.keyword.messagehub}} Python sample, see [Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample){:new_window} 
+* [confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window}.
+	If you want to run an {{site.data.keyword.messagehub}} Python sample, see [Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample){:new_window}. 
 
 * [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}  
 
