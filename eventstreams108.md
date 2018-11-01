@@ -11,6 +11,7 @@ lastupdated: "2018-08-08"
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:faq: data-hd-content-type='faq'}
 
 # FAQs
 {: #faqs}
@@ -21,6 +22,7 @@ Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyw
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
 ## How do I use Kafka APIs to create and delete topics?
 {: #topic_admin}
+{: faq}
 
 If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 
@@ -71,12 +73,15 @@ Enterprise plan only. Set to any value between 5 minutes and 30 days</p>
 
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
 {: #offsets }
+{: faq}
+
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
 
 Offset retention is system-wide so you cannot set it at an individual topic level. All consumer groups get only 7 days of stored offsets even if using a topic with a log retention that has been increased to the maximum of 30 days. 
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability}
+{: faq}
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
 
@@ -94,11 +99,13 @@ Write your apps to handle the possibility that bridges might restart from time t
 
 ## What is {{site.data.keyword.messagehub}}'s maximum message size? 
 {: #max_message_size }
+{: faq}
 
 {{site.data.keyword.messagehub}}'s maximum message size is 1 MB, which is the Kafka default. 
 
 ## What are {{site.data.keyword.messagehub}}'s replication settings? 
 {: #replication }
+{: faq}
 
 {{site.data.keyword.messagehub}} is configured to provide strong availability and durability.
 The following configuration settings apply to all topics and cannot be changed:
@@ -107,6 +114,7 @@ The following configuration settings apply to all topics and cannot be changed:
 
 ## How does {{site.data.keyword.messagehub}}'s billing work on the Standard plan? 
 {: #billing }
+{: faq}
 
 {{site.data.keyword.messagehub}} on the Standard plan regularly samples a user's topic count and {{site.data.keyword.Bluemix_notm}} records the maximum sample value each day. {{site.data.keyword.messagehub}} bills for the maximum number of concurrent partitions seen and for the sum of messages that are sent and received daily.
 
@@ -117,6 +125,7 @@ For example, if you create and delete 1 topic 10 times in a day, you are charged
 <!--12/04/18 - Karen: same info duplicated at messagehub057 -->
 ## How often does the Kafka REST API restart? 
 {: #REST_restart }
+{: faq}
 
 The Kafka REST API restarts once a day for a short period of
 time. 
@@ -133,11 +142,13 @@ REST API returns the following JSON:
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
 {: #plan_compare }
+{: faq}
 
 To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams/eventstreams085.html).
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery }
+{: faq}
 
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one region and another instance in a different region. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
 
