@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-31"
+lastupdated: "2018-11-01"
 
 ---
 
@@ -55,7 +55,7 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, either choose an off
 ## Recommended third-party clients
 {: #third_party_clients}
 
-If you can't run the official Java clients, we recommend running one of the following third-party clients, which are all well-tested with {{site.data.keyword.messagehub}}:
+If you can't run the official Java clients, we recommend running one of the following third-party clients, which are all well-tested with {{site.data.keyword.messagehub}}. The minimum Kafka protocol that we support is 0.10.
 
 * [node-rdkafka (Node.js) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window}. This client is tested up to V2.3.3. 
 	If you want to run an {{site.data.keyword.messagehub}} Node.js sample, see 
