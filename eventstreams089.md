@@ -15,7 +15,7 @@ lastupdated: "2018-06-01"
 # Object Storage bridge 
 {: #object_storage_bridge }
 
-** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+** The {{site.data.keyword.objectstorageshort}} bridge is available as part of the Standard plan only.**
 <br/>
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
