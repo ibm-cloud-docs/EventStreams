@@ -15,7 +15,7 @@ lastupdated: "2018-06-01"
 # MQ bridge
 {: #mq_bridge}
 
-** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
+** The MQ bridge is available as part of the Standard plan only.**
 <br/>
 
 The MQ bridge allows you to transfer message data from an {{site.data.keyword.IBM_notm}}

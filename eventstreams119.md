@@ -16,9 +16,6 @@ lastupdated: "2018-06-01"
 # Watson IoT Platform bridge
 {: #consuming_messages }
 
-** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
-<br/>
-
 {{site.data.keyword.iot_full}} provides a managed bridge that allows you to create a unidirectional link to {{site.data.keyword.messagehub_full}}.
 
 Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}} means that you can use {{site.data.keyword.messagehub}} as an event pipeline to consume your device events from the {{site.data.keyword.iot_short_notm}} and to make the events available in real time to the rest of the platform. 
