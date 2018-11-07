@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-04"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -25,12 +25,12 @@ Read the following information for how to obtain these details. The steps can va
 
 ## Provision an {{site.data.keyword.messagehub}} instance
 
-As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} service instance for either the Standard or Enterprise plan. Provisioning an {{site.data.keyword.messagehub}} instance might incur a charge. Next, obtain {{site.data.keyword.messagehub}} API connection details by completing the following tasks.
+As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} service instance for either the Standard or Enterprise plan. Next, obtain {{site.data.keyword.messagehub}} API connection details by completing the following tasks.
 
 ## Standard plan overview
 {: #connect_standard}
 
-Services that are provisioned using the Standard Plan are Cloud Foundry services. This means that they are deployed into a Cloud Foundry Organization and Space, and are grouped in the dashboard under the heading **Cloud Foundry Services**. The method you use to connect an application depends on where the application is deployed, that is in Cloud Foundry or outside it.
+Services that are provisioned using the Standard Plan are Cloud Foundry services. This means that they are deployed into a Cloud Foundry Organization and Space, and are grouped in the dashboard under the heading **Cloud Foundry Services**. The method you use to connect an application depends on where the application is deployed, that is in Cloud Foundry or deployed outside Cloud Foundry, for example in the Kubernetes Service.
 
 
 ## Cloud Foundry applications on the Standard plan
@@ -153,12 +153,12 @@ Services provisioned using the Enterprise Plan are grouped in the dashboard unde
 
 Complete the following steps to bind your application and obtain Service Keys for your service. To be authorized to create topics, your application or Service Key must have a Manager access role.
 
-To connect an application, the method used depends on where the application is deployed, that is in Cloud Foundry or outside it.
+To connect an application, the method used depends on where the application is deployed, that is in Cloud Foundry or deployed outside Cloud Foundry, for example in the Kubernetes Service.
 
 ## Cloud Foundry applications on the Enterprise plan
 {: #connect_enterprise_cf}
 
-Your application must be bound to the {{site.data.keyword.messagehub}} service instance. To bind a Cloud Foundry application to a non-Cloud Foundry service with One Cloud, create a Cloud Foundry service alias first and then reference this alias from your Cloud Foundry application when binding.
+Your application must be bound to the {{site.data.keyword.messagehub}} service instance. To bind a Cloud Foundry application to a non-Cloud Foundry service, create a Cloud Foundry service alias first and then reference this alias from your Cloud Foundry application when binding.
 
 When bound, the connection details are then made available to the application in JSON format using the VCAP_SERVICES environment variable. You can bind an application and service using either the IBM Cloud console or the IBM Cloud CLI.
 

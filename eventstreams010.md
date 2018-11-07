@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-18"
+lastupdated: "2018-11-07"
 
 ---
 
@@ -20,10 +20,10 @@ lastupdated: "2018-09-18"
 
 You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 
-* Offload work to back-end worker processes.
-* Connect stream data to analytics to realize powerful insights.
+* Offload work to back-end worker applications.
+* Connect event streams to streaming analytics to realize powerful insights.
 * Publish event data to multiple applications to react in real time.
-* Transfer data into another service. For example, to long-term storage.
+* Transfer data into another service. For example, to Cloud Object Storage.
 
 By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
 {:shortdesc}
