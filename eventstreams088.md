@@ -44,7 +44,7 @@ You might find bridges useful in the following two common scenarios:
   - [Cloud Object Storage bridge](/docs/services/EventStreams/eventstreams115.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window} service. 
     
     Cloud Object Storage service is the preferred object storage service in {{site.data.keyword.Bluemix_short}}. 
-  - [{{site.data.keyword.objectstorageshort}} bridge](/docs/services/EventStreams/eventstreams089.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window}.
+  - The [{{site.data.keyword.objectstorageshort}} bridge](/docs/services/EventStreams/eventstreams089.html){:new_window}, which transfers {{site.data.keyword.messagehub}} data to an instance of the [Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/ObjectStorage/index.html){:new_window} is deprecated from August 1st 2018. For more information, see [End of Marketing for {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS). ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
 * You can administer bridges in the following two ways:
   - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also find examples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
@@ -56,8 +56,8 @@ You might find bridges useful in the following two common scenarios:
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
 and a {{site.data.keyword.SecureGateway}} client that you can install on-premises. In this configuration, the communication on either end of the tunnel is not
 secured using SSL/TLS.
-* The Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges concatenate messages using newline characters as separators as they write the data into Cloud Object Storage or {{site.data.keyword.objectstorageshort}} respectively. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
-* Object naming conventions that are currently used by the Cloud Object Storage and {{site.data.keyword.objectstorageshort}} bridges might change in future.
+* The Cloud Object Storage bridge concatenate messages using newline characters as separators as they write the data into Cloud Object Storage. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
+* Object naming conventions that are currently used by the Cloud Object Storage bridge might change in future.
 
 ## Bridges from other services into {{site.data.keyword.messagehub}}
 {: notoc}
