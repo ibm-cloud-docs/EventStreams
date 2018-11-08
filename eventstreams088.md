@@ -55,7 +55,7 @@ You might find bridges useful in the following two common scenarios:
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
 and a {{site.data.keyword.SecureGateway}} client that you can install on-premises. In this configuration, the communication on either end of the tunnel is not
 secured using SSL/TLS.
-* The Cloud Object Storage bridge concatenate messages using newline characters as separators as they write the data into Cloud Object Storage. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
+* The Cloud Object Storage bridge concatenates messages using newline characters as separators as they write the data into Cloud Object Storage. This makes these bridges unsuitable for messages that contain embedded newline characters and for binary message data.
 * Object naming conventions that are currently used by the Cloud Object Storage bridge might change in future.
 
 ## Bridges from other services into {{site.data.keyword.messagehub}}
