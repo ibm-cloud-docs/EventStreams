@@ -19,7 +19,9 @@ lastupdated: "2018-11-08"
 ** The {{site.data.keyword.objectstorageshort}} bridge is deprecated from August 1st 2018.**
 <br/>
 
-Because the underlying service that the {{site.data.keyword.objectstorageshort}} bridge connects to is deprecated, the {{site.data.keyword.objectstorageshort}} bridge is also deprecated from August 1st 2018. For more information, see [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}. When the {{site.data.keyword.objectstorageshort}} service reaches its end of life and is decommissioned, all instances of the {{site.data.keyword.objectstorageshort}} bridge will also be decommissioned. For more information, see the deprecation announcement. 
+Because the underlying service that the {{site.data.keyword.objectstorageshort}} bridge connects to is deprecated, the {{site.data.keyword.objectstorageshort}} bridge is also deprecated from August 1st 2018. 
+
+When the {{site.data.keyword.objectstorageshort}} service reaches its end of life and is decommissioned, all instances of the {{site.data.keyword.objectstorageshort}} bridge will also be decommissioned. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}. 
 
 As an alternative, you can use the [Cloud Object Storage bridge](/docs/services/EventStreams/eventstreams115.html){:new_window}. 
 {:deprecated}
