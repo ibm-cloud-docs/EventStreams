@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-01"
+lastupdated: "2018-11-09"
 
 ---
 
@@ -15,7 +15,16 @@ lastupdated: "2018-11-01"
 # Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_reqs}
 
-## Support for the official Apache Kafka client (Java) 
+## Support summary for the official Apache Kafka client (Java) 
+
+To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
+
+* an official Java client at 1.1 or later, for example, [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}.
+	The official Java client has the most functionality and contains the latest features available for Apache Kafka.
+
+* one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#third_party_clients).
+
+For both types of client, we recommend choosing the latest client version that matches the server version, which is currently Kafka 1.1.
 
 <table>
     <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
@@ -41,9 +50,6 @@ lastupdated: "2018-11-01"
 
 </table>
 
-To use the Kafka API with {{site.data.keyword.messagehub}}, either choose an official Java client at 1.1 or later, or one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#third_party_clients).
-
-* For example, [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}
 
 <!--
 * [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
