@@ -75,6 +75,57 @@ If you can't run the official Java clients, we recommend running one of the foll
 
 Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't make any guarantees.
 
+
+<table>
+    <caption>Table 1. Client support summary</caption>
+      <tr>
+		    <th>Client</th>
+		    <th>Language</th>
+			<th>Recommended version</th>
+		    <th>Minimum version</th>
+			<th>Link to sample</th>
+        </tr>
+	  		<tr>
+			<td>[Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}</td>
+			<td>Java</td>
+			<td>Latest</td>
+			<td>0.10.2</td>
+			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){:new_window}<br/>
+			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample){:new_window}
+			</td>
+		</tr>
+	  		<tr>
+			<td>[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window}</td>
+			<td>Node.js</td>
+			<td>Latest</td>
+			<td>2.3.3</td>
+			<td>[Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window}</td>
+		</tr>
+		<tr>
+			<td>[confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window}</td>
+			<td>Python</td>
+			<td>Latest</td>
+			<td>0.11.6</td>
+			<td>[Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample){:new_window}.</td>
+		</tr>
+		<tr>
+			<td>[confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go){:new_window}</td>
+			<td>Golang</td>
+			<td>Latest</td>
+			<td>0.11.6</td>
+			<td>Not applicable</td>
+		</tr>
+		<tr>
+			<td>[librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka){:new_window}</td>
+			<td>C or C++</td>
+			<td>Latest</td>
+			<td>0.11.6</td>
+			<td>Not applicable</td>
+		</tr>
+
+</table>
+
+
 ## Unsupported clients
 
 The following clients are not supported by {{site.data.keyword.messagehub}}:
