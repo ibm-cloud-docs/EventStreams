@@ -50,7 +50,7 @@ You might find bridges useful in the following two common scenarios:
 * You can associate a maximum of two bridges of any type with an instance of the {{site.data.keyword.messagehub}} service. We will continue to review this limitation as we continue to develop bridges.
 * There is no additional charge for using bridges beyond their messaging operations.
 * The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of data as it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
-* However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/secure_gateway.html){:new_window} service to send your data
+* However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/SecureGateway/index.html#getting-started-with-sg){:new_window} service to send your data
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
 and a {{site.data.keyword.SecureGateway}} client that you can install on-premises. In this configuration, the communication on either end of the tunnel is not
 secured using SSL/TLS.
