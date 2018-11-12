@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-06-26"
+lastupdated: "2018-10-19"
 
 ---
 
@@ -147,4 +147,4 @@ REST API returns the following JSON:
 {: #kafka_consumer}
 
 You cannot use the Apache Kafka 0.8.2 simple or high-level
-consumer API with {{site.data.keyword.messagehub}}. Instead, you can use the earliest supported Kafka consumer API, which is 0.9.
+consumer API with {{site.data.keyword.messagehub}}. Instead, you can use the earliest supported Kafka consumer API, which is 0.10.
