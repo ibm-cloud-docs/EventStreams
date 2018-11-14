@@ -60,12 +60,14 @@ For both types of client, we recommend choosing the latest client version.
 
 If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. The minimum Kafka protocol that we support is 0.10.
 
-* [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}  
+<!--
+* [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}
+-->  
 
 Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't make any guarantees.
 
 <table id="clients_table">
-    <caption>Table 1. Client support summary</caption>
+    <caption>Table 2. Client support summary</caption>
       <tr>
 		    <th>Client</th>
 		    <th>Language</th>
