@@ -66,6 +66,9 @@ If you can't run the official Java clients, we recommend running one of the [rec
 
 Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't make any guarantees.
 
+## Support summary all supported clients
+{: #client_summary}
+
 <table id="clients_table">
     <caption>Table 2. Client support summary</caption>
       <tr>
