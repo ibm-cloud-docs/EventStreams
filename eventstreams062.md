@@ -119,7 +119,7 @@ Other third-party clients might work with {{site.data.keyword.messagehub}} but w
 
 </table>
 
-
+<!--
 ## Unsupported clients
 
 The following clients are not supported by {{site.data.keyword.messagehub}}:
@@ -130,6 +130,8 @@ The kafka-node client does not fully support SASL authentication with the PLAIN 
 
 ### no-kafka 
 The no-kafka client does not fully support SASL authentication with the PLAIN mechanism so cannot currently be used with {{site.data.keyword.messagehub}}.
+
+-->
 
 ## Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
