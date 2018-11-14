@@ -22,7 +22,7 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 
 * one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table).
 
-For both types of client, we recommend choosing the latest client version that matches the server version, which is currently Kafka 1.1.
+For both types of client, we recommend choosing the latest client version. 
 
 ## Support summary for the official Apache Kafka client (Java)
 
@@ -107,14 +107,14 @@ Other third-party clients might work with {{site.data.keyword.messagehub}} but w
 			<td>Golang</td>
 			<td>Latest</td>
 			<td>0.11.6</td>
-			<td>Not applicable</td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>[librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka)</td>
 			<td>C or C++</td>
 			<td>Latest</td>
 			<td>0.11.6</td>
-			<td>Not applicable</td>
+			<td></td>
 		</tr>
 
 </table>
