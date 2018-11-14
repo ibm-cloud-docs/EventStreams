@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-13"
+lastupdated: "2018-11-14"
 
 ---
 
@@ -40,10 +40,8 @@ For both types of client, we recommend choosing the latest client version that m
 	  		<tr>
 			<td>**Supported client versions**</td>
 			<td>Kafka 1.1, or later</td>
-			<td>Kafka 1.1, or later</td>
 		</tr>
 			<td>**Authentication requirements**</td>
-			<td>Client must support authentication using the SASL Plain mechanism</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
 		</tr>
 
