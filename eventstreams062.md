@@ -76,6 +76,9 @@ Other third-party clients might work with {{site.data.keyword.messagehub}} but w
 		    <th>Minimum version supported</th>
 			<th>Link to sample</th>
         </tr>
+			<tr>
+			<td colspan="3">**Official client**</td>
+			</tr>
 	  		<tr>
 			<td>[Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz)</td>
 			<td>Java</td>
@@ -84,7 +87,10 @@ Other third-party clients might work with {{site.data.keyword.messagehub}} but w
 			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
-		</tr>
+			</tr>
+			<tr>
+			<td colspan="3">**Third-party clients**</td>
+			</tr>
 	  		<tr>
 			<td>[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)</td>
 			<td>Node.js</td>
