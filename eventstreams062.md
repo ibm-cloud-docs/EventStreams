@@ -30,7 +30,7 @@ For both types of client, we recommend choosing the latest client version that m
     <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
       <tr>
 	        <th></th>
-		    <th>Standard Plan and Enterprise Plan</th>
+		    <th>Standard and Enterprise Plans</th>
 		    <th></th>
         </tr>
 	  		<tr>
