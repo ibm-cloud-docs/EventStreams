@@ -171,6 +171,35 @@ You should also note the following information:
 * Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/services/EventStreams/eventstreams075.html#max_limits).
 * JMS is not supported.
 
+<!-- 15/11/18: info was in eventstreams081.md, moved because of doc app changes -->
+
+## Exchanging messages between the MQ Light API and the Kafka or Kafka REST APIs
+{: #mql_exchange}
+
+{{site.data.keyword.mql}} messages are stored in a single underlying Kafka topic named "MQLight" and are encoded as detailed in the following table. This encoding can also be used by other API types, such as Kafka or Kafka REST, to exchange messages with applications using the
+{{site.data.keyword.mql}} API.
+
+### Kafka message format
+{: #kafka_format notoc}
+
+<table border='1'>
+<caption>Table 1. Kafka message format</caption>
+  <tr>
+    <th> Key </th>
+    <th> Value </th>
+  </tr>
+  <tr>
+    <td> Optional (not used by the API)
+	<p></p>
+	</td>
+    <td>**1 byte**
+	<p>		     MQ Light API eye catcher, which is always 0xFA.</p>
+    <p><var class="keyword varname">**n**</var> **bytes**</p>
+    <p>		    AMQP encoded message (formatted based on the AMQP wire format). </p></td>
+  </tr>
+</table>
+
+
 <!-- 15/11/18: info was in eventstreams082.md, moved because of doc app changes -->
 
 ## MQ Light API samples
