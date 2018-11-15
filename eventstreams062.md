@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-14"
+lastupdated: "2018-11-15"
 
 ---
 
@@ -22,7 +22,7 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 
 * one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table).
 
-For both types of client, we recommend choosing the latest client version. 
+For both types of client, we recommend always choosing the latest client version. 
 
 ## Support summary for the official Apache Kafka client (Java)
 
@@ -141,7 +141,7 @@ The no-kafka client does not fully support SASL authentication with the PLAIN me
 ## Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
 
-For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
+For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
 
 
 
