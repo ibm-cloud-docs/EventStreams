@@ -156,7 +156,6 @@ see: [{{site.data.keyword.mql}} developerWorks&reg; site ![External link icon](.
 
 You can connect existing applications that currently run against either {{site.data.keyword.IBM_notm}} MQ or the {{site.data.keyword.mql}}
 {{site.data.keyword.Bluemix_notm}} service to the service. The apps continue to work in the same way.
-{:shortdesc}
 
 To connect existing apps, complete the following checks:
 
@@ -171,3 +170,35 @@ You should also note the following information:
 
 * Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/services/EventStreams/eventstreams083.html).
 * JMS is not supported.
+
+<!-- 15/11/18: info was in eventstreams082.md, moved because of doc app changes -->
+
+## MQ Light API samples
+{: #mql_samples}
+
+If you don't already have an app, try the {{site.data.keyword.mql}} API out with one of the samples.
+
+The sample app actually consists of two simple apps: a web front end that sends messages to a
+back end and a back end that processes the messages, capitalizes the words, and then returns the
+messages to the front end. This sample shows how you can get apps talking to each other using
+the {{site.data.keyword.mql}} API. You can also use the {{site.data.keyword.mql}} API to perform worker offload; a key capability
+required for building scalable, loosely coupled, and distributed apps.
+
+You can find the sample code in the [event-streams-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/mqlight){:new_window}.
+
+
+<!-- 15/11/18: info was in eventstreams083.md, moved because of doc app changes -->
+
+## Maximum limits
+{: #max_limits}
+
+The following limits are enforced for the {{site.data.keyword.mql}} API:
+
+* The maximum amount of data that can be stored is consistent with a single Kafka partition for your payment plan (typically 1 GB). If this data limit is exceeded, the oldest messages in the partition are removed as new messages are sent.
+* The maximum time a message is stored is consistent with a single Kafka partition for your payment plan (typically 24 hours). You cannot retrieve messages that are older than this time period.
+* The maximum size of a message (excluding headers) is 1 MB.
+* The maximum number of clients that can be connected at a single time is 25.
+* The maximum number of destinations that can be active at a single time is 25. An active destination is defined as follows:
+  - A destination with a TimeToLive > 0 both with or without a client currently connected.
+  - A destination with a TimeToLive = 0 (the default) where a client is connected. 
+  <p>A destination that is shared between clients counts as a single destination.</p>

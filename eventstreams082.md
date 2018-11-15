@@ -12,6 +12,8 @@ lastupdated: "2018-05-25"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
+<!-- 15/11/18: info moved to eventstreams075.md, moved because of doc app changes -->
+
 # MQ Light API samples
 {: #mql_samples}
 
