@@ -13,7 +13,7 @@ lastupdated: "2018-11-15"
 {:pre: .pre}
 
 # Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
-{: #kafka_reqs}
+{: #kafka_clients}
 
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
 
