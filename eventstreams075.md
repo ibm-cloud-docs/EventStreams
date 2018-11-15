@@ -168,7 +168,7 @@ To connect existing apps, complete the following checks:
 
 You should also note the following information:
 
-* Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/services/EventStreams/eventstreams083.html).
+* Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/services/EventStreams/eventstreams075.html#max_limits).
 * JMS is not supported.
 
 <!-- 15/11/18: info was in eventstreams082.md, moved because of doc app changes -->
