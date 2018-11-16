@@ -19,7 +19,6 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 
 * An official Java client at 1.1 or later, for example, [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}.
 	The official Java client is the best choice because it contains the latest features available for Apache Kafka.
-
 * One of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table).
 
 For both types of client, we recommend always choosing the latest client version. 
@@ -71,7 +70,7 @@ If you can't run the official Java clients, we recommend running one of the [rec
 * [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}
 -->  
 
-Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}, however we only test with and have experience of the recommended third-party clients.
+Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}. However, we only test with and have experience of the recommended third-party clients.
 
 ## Support summary for all recommended clients
 {: #client_summary}
