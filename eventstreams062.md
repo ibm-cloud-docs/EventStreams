@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-11-15"
+lastupdated: "2018-11-16"
 
 ---
 
@@ -24,6 +24,13 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 
 For both types of client, we recommend always choosing the latest client version. 
 
+## Client requirements for connecting to Event Streams
+
+To connect to {{site.data.keyword.messagehub}}, clients must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
+
+The minimum Kafka protocol that we support is 0.10.
+
+<!--
 ## Support summary for the official Apache Kafka client (Java)
 
 <table>
@@ -46,7 +53,7 @@ For both types of client, we recommend always choosing the latest client version
 		</tr>
 
 </table>
-
+-->
 
 <!--
 * [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
@@ -58,13 +65,13 @@ For both types of client, we recommend always choosing the latest client version
 ## Third-party clients
 {: #third_party_clients}
 
-If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. The minimum Kafka protocol that we support is 0.10.
+If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
 
 <!--
 * [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}
 -->  
 
-Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't make any guarantees.
+Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}, however we only test with and have experience of the recommended third-party clients.
 
 ## Support summary for all recommended clients
 {: #client_summary}
