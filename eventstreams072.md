@@ -20,7 +20,7 @@ lastupdated: "2018-10-29"
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
-**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in US South, (Dallas), UK South (London), and AP South (Sydney) only. 
+**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in Dallas (us-south), London (eu-gb), and Sydney (au-syd) only. 
 
 
 You can monitor the following log information:

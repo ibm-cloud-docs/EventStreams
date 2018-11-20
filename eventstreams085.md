@@ -73,16 +73,16 @@ The following table summarizes what is supported by the plans:
 			<td>Unlimited up to the storage limit of your plan </td>
 		</tr>
 		<tr>
-			<td>**Region availability**</td>
-			<td>US South (Dallas)</br>
-			UK South (London)</br>
-			AP South (Sydney)</br>
-			EU Central (Frankfurt) - no {{site.data.keyword.mql}} API </td>
-			<td>US South (Dallas)</br>
-			US East (Washington)<br/>
-			EU Central (Frankfurt)<br/>
-			AP North (Tokyo)<br/>
-			UK South (London)<br/>
+			<td>**Location (region) availability**</td>
+			<td>Dallas (us-south)</br>
+			London (eu-gb)</br>
+			Sydney (au-syd))</br>
+			Frankfurt (eu-de) - no {{site.data.keyword.mql}} API </td>
+			<td>Dallas (us-south)</br>
+			Washington (us-east))<br/>
+			Frankfurt (eu-de)<br/>
+			Tokyo (jp-tok)<br/>
+			London (eu-gb)<br/>
 			<br/>
 			</td>
 		</tr>

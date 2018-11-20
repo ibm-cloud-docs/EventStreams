@@ -150,9 +150,9 @@ To find out more information about the two different {{site.data.keyword.message
 {: #disaster_recovery }
 {: faq}
 
-Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one region and another instance in a different region. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
+Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
 
-The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a region-wide failure. 
+The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 
 Topic names are backed up by {{site.data.keyword.messagehub}}.
 

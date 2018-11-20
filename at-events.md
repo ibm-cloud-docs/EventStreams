@@ -47,7 +47,7 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 
 <!-- Option 2: Add the following sentence if your service sends events to the account domain. -->
 
-{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} region where the events are generated.
+{{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.Bluemix_notm}} location (region) where the events are generated.
 
 
 

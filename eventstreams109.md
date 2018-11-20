@@ -22,7 +22,7 @@ If you're experiencing a problem with {{site.data.keyword.messagehub}}, first ch
 If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently the team can help with the problem:
 {:shortdesc}
 
-1. Which {{site.data.keyword.Bluemix_notm}} region is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, US South or United Kingdom. 
+1. Which {{site.data.keyword.Bluemix_notm}} location (region) is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, Dallas or London. 
 2. Which interface are you seeing issues with? Kafka, REST, AMQP, or bridges?
 3. When did the problem first occur (specifically time, date, and timezone)? How long was your app running before this?
 4. Is the problem still occurring? Can you replicate it?
