@@ -80,9 +80,10 @@ The following table summarizes what is supported by the plans:
 			Frankfurt (eu-de) - no {{site.data.keyword.mql}} API </td>
 			<td>Dallas (us-south)</br>
 			Washington (us-east))<br/>
+			London (eu-gb)<br/>
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
-			London (eu-gb)<br/>
+
 			<br/>
 			</td>
 		</tr>
