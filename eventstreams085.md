@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-29"
+lastupdated: "2018-11-20"
 
 ---
 
@@ -82,6 +82,7 @@ The following table summarizes what is supported by the plans:
 			US East (Washington)<br/>
 			EU Central (Frankfurt)<br/>
 			AP North (Tokyo)<br/>
+			UK South (London)<br/>
 			<br/>
 			</td>
 		</tr>
