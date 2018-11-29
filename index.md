@@ -55,10 +55,9 @@ Complete the following steps:
  
 4. Clone the event-streams-samples git repository by running the following command from the command line:
 
-    ```
+    <pre class="pre">
     git clone https://github.com/ibm-messaging/event-streams-samples.git
-    ```
-	{: codeblock}
+    </pre>
 
 5. Change directory to the java console sample by running the following command:
 
