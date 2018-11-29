@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-10-17"
+lastupdated: "2018-11-29"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-10-17"
 # Using the Kafka API
 {: #kafka_using}
 
-If you're using the Java clients, you can use the publicly available Kafka clients at 0.10.x or later. The recommended client to use with {{site.data.keyword.messagehub}} is node-rdkafka. For more information, see [Kafka client support {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams131.html).
+If you're using the Java clients, you can use the publicly available Kafka clients at 0.10.x or later. For more information, see [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams062.html#kafka_clients).
 
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
@@ -43,7 +43,7 @@ Kafka clients exist in multiple languages and we provide instructions for some o
 		</tr>
 
 			<td>**Authentication requirements**</td>
-			<td>Client must support authentication using the SASL Plain mechanism</td>
+			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
 		</tr>
 

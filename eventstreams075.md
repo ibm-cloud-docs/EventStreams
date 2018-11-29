@@ -33,7 +33,7 @@ The choice between using a Kafka client or the {{site.data.keyword.mql}} API dep
 want to build:
 
 * With Kafka, you use a small number of topics and can have multiple partitions for each topic for additional scalability. You can share messages among consumers by using consumer groups, but each consumer must be able to keep up with the rate of messages for the partitions assigned to it.
-* With the {{site.data.keyword.mql}} API, you can use a much larger number of topics and the topic names are hierarchical (for example: <code>‘/sports/football’</code> and <code>‘/sports/tiddlywinks’</code>). 
+* With the {{site.data.keyword.mql}} API, you can use a much larger number of topics and the topic names are hierarchical (for example: <code>&lsquo;/sports/football&rsquo;</code> and <code>&lsquo;/sports/tiddlywinks&rsquo;</code>). 
 
 The topics in the {{site.data.keyword.mql}} API are not the same
 as Kafka topics. Instead, the {{site.data.keyword.mql}} API uses a
@@ -70,14 +70,14 @@ To connect an app to the service, the app must use the <code>user</code>,
 
 **For Java**
 
-If you specify ‘null’ as the endpointService parameter of the create() call, this instructs the
+If you specify &lsquo;null&rsquo; as the endpointService parameter of the create() call, this instructs the
 client to read the <code>user</code>, <code>password</code> and,
 <code>mqlight_lookup_url</code> details from VCAP_SERVICES:
 
 <pre>
 <code>NonBlockingClient.create(null, new NonBlockingClientAdapter<Void>() {
     public void onStarted(NonBlockingClient client, Void context) {
-        client.send("my/topic", "Hello World!", null);
+        client.send("my/topic", "Hello World!", null);
     }
 }, null);</code>
 </pre>
