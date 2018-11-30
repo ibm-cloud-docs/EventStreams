@@ -35,30 +35,29 @@ To achieve high levels of availability from the application perspective, conside
 ### Connectivity
 
 Because of the dynamic nature of the cloud, applications must expect connection breakages. A connection breakage is not considered a failure of service.
-* **Retries**:
+
+* **Retries**:<br/>
 Kafka clients provide re-connect logic, but you must explicitly enable reconnects for producers (See the producers 'retries' property). Connections are remade within 60 seconds.    
-* **Duplicates**:
-Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and hence must re-send it when reconnected. You are recommended to architect applications to expect duplicate messages. If duplicates cannot be tolerated, you can use the idempotent producer feature (from Kafka 1.1) to prevent duplicates during retries (See the producers 'enable.idempotency' property).
+* **Duplicates**:<br/>
+Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send it again when reconnected. You are recommended to architect applications to expect duplicate messages. If duplicates cannot be tolerated, you can use the idempotent producer feature (from Kafka 1.1) to prevent duplicates during retries (See the producers 'enable.idempotency' property).
 
 ### Throughput
 
 Expressed as the number of bytes per second that can be both sent and received in a cluster. 
-* **Recommended**:
+* **Recommended**:<br/>
 40 MB/sec, max peak limit: 90MB/sec
 The recommended figure is based on a typical workload. For example, messages with a small (<10 K) payload taking in to account the possible impact of operational actions such as internal updates or failure modes such as the loss of an availability zone. If the average throughput exceeds this figure you might experience a loss in performance during these conditions.
 
-* **Measurement**:
+* **Measurement**:<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent/received, message sizes, return codes etc. Understanding an application's usage will help you configure its resources appropriately, such as the retention time for messages on topics.
 
-* **Saturation**:
-As the limit of the traffic which can be produced in to the cluster is approached, producers will start to be throttled, latency will increase and ultimately errors, such as timeout errors, will be seen. Depending on the configuration, message consistency and durability might also be impacted, see the following additional information.
+* **Saturation**:<br/>
+As the limit of the traffic which can be produced in to the cluster is approached, producers start to be throttled, latency increases and ultimately errors, such as timeout errors, are seen. Depending on the configuration, message consistency and durability might also be impacted. For more information, see the following additional information. [Consistency and durability of messages](/docs/services/EventStreams/eventstreams132.html#message_consistency).
 
 ### Consistency and durability of messages
+{: #message_consistency}
 
 Kafka achieves its availability and durability by replicating the messages it receives across other nodes in the cluster, which can then be used in case of failure. {{site.data.keyword.messagehub}} uses three replicas (default.replication.factor = 3) meaning that each message received by a node is replicated to two other nodes in different availability zones. In this way, the loss of a node or availability zone can be tolerated without loss of data or function.
 
 * **Producer Acks Mode**:
-Although replication is performed for all messages, applications can control how robustly the messages they produce are transferred to the service by using the producer's acks mode property. This property provides a choice between speed versus risk of message loss. The default setting is acks=1 meaning that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is acks=all where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step which prevents message loss if a failure causes a switch to a replica. See xx and 'unclean.leader.election' for more details. 
-
-
-{{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
+Although replication is performed for all messages, applications can control how robustly the messages they produce are transferred to the service by using the producer's acks mode property. This property provides a choice between speed versus risk of message loss. The default setting is ```acks=1``` meaning that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is ```acks=all``` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step which prevents message loss if a failure causes a switch to a replica. See xx and 'unclean.leader.election' for more details. 
