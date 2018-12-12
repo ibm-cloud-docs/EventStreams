@@ -88,7 +88,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td colspan="3">**Official client**</td>
 			</tr>
 	  		<tr>
-			<td>[Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz)</td>
+			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz)</td>
 			<td>Java</td>
 			<td>Latest</td>
 			<td>0.10.2 <sup>1</sup> <sup>2</sup><p> For information about older clients, see [backwards compatability](/docs/services/EventStreams/eventstreams062.html#compatability)</p></td>
