@@ -91,7 +91,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz)</td>
 			<td>Java</td>
 			<td>Latest</td>
-			<td>0.10.2<sup>1</sup></td>
+			<td>0.10.2 <sup>1</sup> <sup>2</sup></td>
 			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
@@ -129,8 +129,9 @@ Other third-party clients that support the minimum set of client requirements mi
 		</tr>
 
 </table>
-1. For backwardly compatibility, the Apache Kafka v0.9 Java client can be used with the Standard plan, but, due to its age, its use is strongly discouraged. NB The use of this client also requires an additional login module (https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library).
-2. Client version before 0.11 may experience degraded performance due to additional protocol conversions required to connect to newer Kafka server versions
+**Key**
+1. For backwards compatibility, you can use the Apache Kafka V0.9 Java client with the Standard plan. However, because of the client's age, its use is strongly discouraged. NB The use of this client also requires an additional login module (https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library).
+2. Client versions before 0.11 might experience degraded performance because of additional protocol conversions required to connect to newer Kafka server versions
 <!--
 ## Unsupported clients
 
