@@ -91,7 +91,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz)</td>
 			<td>Java</td>
 			<td>Latest</td>
-			<td>0.10.2 <sup>1</sup> <sup>2</sup><p> For information about older clients, see [backwards compatability](/docs/services/EventStreams/eventstreams062.html#compatability)</p></td>
+			<td>0.10.2 <p> For information about older clients, see [backwards compatability](/docs/services/EventStreams/eventstreams062.html#compatability).</p></td>
 			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
@@ -132,8 +132,11 @@ Other third-party clients that support the minimum set of client requirements mi
 ## Backwards compatability - Standard p]an
 {: #compatability}
 
-1. For backwards compatibility, you can use the Apache Kafka V0.9 Java client with the Standard plan. However, because of the client's age, its use is strongly discouraged. NB The use of this client also requires an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library).
-2. Client versions before 0.11 might experience degraded performance because of additional protocol conversions required to connect to newer Kafka server versions.
+For backwards compatibility, you can use the Apache Kafka V0.9 Java client with the Standard plan. However, because of the client's age, you are strongly discouraged from using it. 
+
+You need an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")] (https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library) to use this client.
+
+Client versions earlier than 0.11 might experience degraded performance because of additional protocol conversions required to connect to newer Kafka server versions.
 <!--
 ## Unsupported clients
 
