@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-12"
+lastupdated: "2018-12-13"
 
 ---
 
@@ -129,14 +129,15 @@ Other third-party clients that support the minimum set of client requirements mi
 		</tr>
 
 </table>
-## Backwards compatability - Standard p]an
+## Backwards compatability - Standard plan
 {: #compatability}
 
-For backwards compatibility, you can use the Apache Kafka V0.9 Java client with the Standard plan. However, because of the client's age, you are strongly discouraged from using it. 
+For backwards compatibility, you can use the Apache Kafka V0.9 Java client with the {{site.data.keyword.messagehub}} Standard plan. However, because of this client's age, you are strongly discouraged from using it. 
 
 You need an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")] (https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library) to use this client.
 
 Client versions earlier than 0.11 might experience degraded performance because of additional protocol conversions required to connect to newer Kafka server versions.
+
 <!--
 ## Unsupported clients
 
