@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-09-11"
+lastupdated: "2018-12-17"
 
 ---
 
@@ -32,7 +32,7 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
    How long was your app running before this?
 3. Is the problem still occurring? Can you replicate it?
 4. Which Kafka client is your application using? What are the version details?
-5. What are your client configuration details?
+5. What are your client configuration details? We need to know your producer and consumer settings, so please list any non-default options you have passed to your producer or consumer creation.
 6. Do you have application log snippets that display the problem?
 7. What is the issue you are seeing? Which topics, client IDs, group IDs, and
    transaction IDs are affected?
