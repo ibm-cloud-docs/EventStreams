@@ -17,8 +17,7 @@ lastupdated: "2018-12-17"
 
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
 
-* An official Java client at 1.1 or later, for example, [Apache Kafka 1.1 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz){:new_window}.
-	The official Java client is the best choice because it contains the latest features available for Apache Kafka.
+* The official Java client. It is the best choice because it contains the latest features available for Apache Kafka.
 * One of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table).
 
 For both types of client, we recommend always choosing the latest client version. 
@@ -53,22 +52,11 @@ The minimum Kafka protocol that we support is 0.10.
 
 </table>
 -->
-
-<!--
-* [Apache Kafka 0.11.0.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.11.0.1/kafka_2.11-0.11.0.1.tgz){:new_window}
-* [Apache Kafka 0.10.2.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.2.1/kafka_2.11-0.10.2.1.tgz){:new_window} 
--->
-	
-
 	
 ## Third-party clients
 {: #third_party_clients}
 
 If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
-
-<!--
-* [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}
--->  
 
 Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}. However, we only test with and have experience of the recommended third-party clients.
 
@@ -88,7 +76,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td colspan="3">**Official client**</td>
 			</tr>
 	  		<tr>
-			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/1.1.0/kafka_2.11-1.1.0.tgz)</td>
+			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
 			<td>Java</td>
 			<td>Latest</td>
 			<td>0.10.2 <p> For information about older clients, see [backward compatability](/docs/services/EventStreams/eventstreams062.html#compatability).</p></td>
