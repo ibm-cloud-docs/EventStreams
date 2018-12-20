@@ -117,7 +117,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		</tr>
 
 </table>
-1. Represents the earliest version that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but might be newer if significant issues are known to exist
+1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
 ## Backward compatability - Standard plan
 {: #compatability}
