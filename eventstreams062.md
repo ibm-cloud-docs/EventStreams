@@ -69,7 +69,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th>Client</th>
 		    <th>Language</th>
 			<th>Recommended version</th>
-		    <th>Minimum version supported <sup>1</sup></th>
+		    <th>Minimum version supported <sup>1</sup>[step 2](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
 			<th>Link to sample</th>
         </tr>
 			<tr>
@@ -117,7 +117,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		</tr>
 
 </table>
-1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
 ## Backward compatability - Standard plan
 {: #compatability}
