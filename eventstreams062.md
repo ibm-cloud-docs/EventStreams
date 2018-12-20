@@ -69,7 +69,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th>Client</th>
 		    <th>Language</th>
 			<th>Recommended version</th>
-		    <th>Minimum version supported<sup>1</sup></th>
+		    <th>Minimum version supported <sup>1</sup></th>
 			<th>Link to sample</th>
         </tr>
 			<tr>
@@ -98,21 +98,21 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python)</td>
 			<td>Python</td>
 			<td>Latest</td>
-			<td>0.11.6</td>
+			<td>0.11.0</td>
 			<td>[Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample)</td>
 		</tr>
 		<tr>
 			<td>[confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go)</td>
 			<td>Golang</td>
 			<td>Latest</td>
-			<td>0.11.6</td>
+			<td>0.11.4</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>[librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka)</td>
 			<td>C or C++</td>
 			<td>Latest</td>
-			<td>0.11.6</td>
+			<td>0.11.0</td>
 			<td></td>
 		</tr>
 
