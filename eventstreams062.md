@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-17"
+lastupdated: "2018-12-20"
 
 ---
 
@@ -69,7 +69,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th>Client</th>
 		    <th>Language</th>
 			<th>Recommended version</th>
-		    <th>Minimum version supported</th>
+		    <th>Minimum version supported<sup>1</sup></th>
 			<th>Link to sample</th>
         </tr>
 			<tr>
@@ -117,6 +117,8 @@ Other third-party clients that support the minimum set of client requirements mi
 		</tr>
 
 </table>
+1. Represents the earliest version that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but might be newer if significant issues are known to exist
+
 ## Backward compatability - Standard plan
 {: #compatability}
 
