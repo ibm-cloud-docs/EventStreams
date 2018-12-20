@@ -69,7 +69,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th>Client</th>
 		    <th>Language</th>
 			<th>Recommended version</th>
-		    <th>Minimum version supported <sup>1</sup>[step 2](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
+		    <th>Minimum version supported [<sup>1</sup>](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
 			<th>Link to sample</th>
         </tr>
 			<tr>
