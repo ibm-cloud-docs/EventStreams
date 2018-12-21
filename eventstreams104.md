@@ -78,8 +78,9 @@ the publicly available Kafka clients at 0.10 or later.
 
 You are strongly encouraged to move from 0.9.X to the
 latest version. You can download a Kafka client from 
-[https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/downloads){:new_window} 
-For information about continuing to use a 0.9.X client, see 
+[https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")].(https://kafka.apache.org/downloads){:new_window} 
+
+For information about the implications of using a 0.9.X client, see 
 [Backward compatability](/docs/services/EventStreams/eventstreams062.html#compatability).
 
 
