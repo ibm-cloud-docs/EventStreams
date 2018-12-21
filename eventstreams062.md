@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-20"
+lastupdated: "2018-12-21"
 
 ---
 
@@ -105,7 +105,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go)</td>
 			<td>Golang</td>
 			<td>Latest</td>
-			<td>0.11.4</td>
+			<td>0.11.0</td>
 			<td></td>
 		</tr>
 		<tr>
