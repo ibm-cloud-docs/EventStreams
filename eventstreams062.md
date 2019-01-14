@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2018
-lastupdated: "2018-12-21"
+lastupdated: "2019-01-14"
 
 ---
 
@@ -21,6 +21,7 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 * One of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table).
 
 For both types of client, we recommend always choosing the latest client version. 
+{: shortdesc}
 
 ## Client requirements for connecting to Event Streams
 
@@ -91,7 +92,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)</td>
 			<td>Node.js</td>
 			<td>Latest</td>
-			<td>2.3.3</td>
+			<td>2.2.2</td>
 			<td>[Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)</td>
 		</tr>
 		<tr>
