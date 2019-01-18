@@ -16,6 +16,7 @@ lastupdated: "2018-07-04"
 {: #security }
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
+{: shortdesc}
 
 ## What can I secure?
 
@@ -92,7 +93,7 @@ For an example of how to set policies, see:
 {: #connect_message_enterprise }
 
 For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams127.html#connect_messagehub).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams127.html).
 
 <!-- 28/06/18 - Karen: draft info only
 
