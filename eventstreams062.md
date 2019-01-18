@@ -67,10 +67,10 @@ Other third-party clients that support the minimum set of client requirements mi
 <table id="clients_table">
     <caption>Table 2. Client support summary</caption>
       <tr>
-		    <th>Client</th>
-		    <th>Language</th>
-			<th>Recommended version</th>
-		    <th>Minimum version supported [<sup>1</sup>](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
+		    <th id="client" scope="col">Client</th>
+		    <th id="language" scope="col">Language</th>
+			<th id="version" scope="col">Recommended version</th>
+		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
 			<th>Link to sample</th>
         </tr>
 			<tr>
