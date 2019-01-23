@@ -31,7 +31,7 @@ The following list defines some Apache Kafka concepts:
 <dt>Message</dt>
 <dd>The unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
 
-<p>Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose, which are supported by the {{site.data.keyword.messagehub}} Enterprise plan. The {{site.data.keyword.messagehub}} Standard plan is currently based on Kafka 0.10.2.1, so it does not yet support record headers. </p> 
+<p>Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose, which are supported by {{site.data.keyword.messagehub}}.  </p> 
 
 <p>Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.</p>   </dd>
 <dt>Topic</dt>
