@@ -71,12 +71,13 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th id="language" scope="col">Language</th>
 			<th id="version" scope="col">Recommended version</th>
 		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
-			<th>Link to sample</th>
+			<th id="sample link" scope="col">Link to sample</th>
         </tr>
 			<tr>
 			<td colspan="3">**Official client**</td>
 			</tr>
 	  		<tr>
+			  <th scope="row">
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
 			<td>Java</td>
 			<td>Latest</td>
@@ -89,6 +90,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td colspan="3">**Third-party clients**</td>
 			</tr>
 	  		<tr>
+			  <th scope="row">
 			<td>[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)</td>
 			<td>Node.js</td>
 			<td>Latest</td>
