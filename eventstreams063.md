@@ -22,6 +22,13 @@ the [VCAP_SERVICES environment variable](/docs/services/EventStreams/eventstream
 * the service key. For more information, see [Connecting to your cluster](/docs/services/EventStreams/eventstreams127.html).
 {: shortdesc}
 
+
+
+where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
+
+If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
+[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
+
 The following example is a sample configuration file named <code>consumer.properties</code>:
 
 ```
@@ -53,11 +60,6 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.
     password="PASSWORD";</code>
 </pre>
 {:codeblock}
-
-where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-
-If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
-[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
 
 For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
 ## Connecting and authenticating in an application other than Java
