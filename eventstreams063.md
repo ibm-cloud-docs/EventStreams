@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-06-22"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -21,6 +21,27 @@ To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the fo
 the [VCAP_SERVICES environment variable](/docs/services/EventStreams/eventstreams127.html#connect_standard_cf).
 * the service key. For more information, see [Connecting to your cluster](/docs/services/EventStreams/eventstreams127.html).
 {: shortdesc}
+
+The following example is a sample configuration file named <code>consumer.properties</code>:
+
+```
+key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+#
+client.id=kafka-java-console-sample-consumer
+group.id=kafka-java-console-sample-group
+#
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+ssl.protocol=TLSv1.2
+ssl.enabled.protocols=TLSv1.2
+ssl.endpoint.identification.algorithm=HTTPS
+#
+# please read the Kafka docs about this setting
+auto.offset.reset=latest
+```
+{: codeblock}
 
 <!--17/10/17 - Karen: following info duplicated at messagehub104 -->
 ## Using the sasl.jaas.config property (connecting and authenticating in a Java application)
@@ -45,27 +66,6 @@ For an earlier Kafka client, you must use a JAAS configuration file to specify t
 The {{site.data.keyword.messagehub}} service currently
 authenticates clients by using SASL PLAIN over TLS. Credentials are carried over an encrypted connection.
 This is a new feature added in Kafka 0.10.0.X. 
-
-The following example is a sample configuration file named <code>consumer.properties</code>:
-
-```
-key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
-value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
-#
-client.id=kafka-java-console-sample-consumer
-group.id=kafka-java-console-sample-group
-#
-security.protocol=SASL_SSL
-sasl.mechanism=PLAIN
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
-ssl.protocol=TLSv1.2
-ssl.enabled.protocols=TLSv1.2
-ssl.endpoint.identification.algorithm=HTTPS
-#
-# please read the Kafka docs about this setting
-auto.offset.reset=latest
-```
-{: codeblock}
 
 Any client that supports Kafka 0.10 with SASL PLAIN
 should work with {{site.data.keyword.messagehub}}. Example clients are as follows:
