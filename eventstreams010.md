@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-07"
+lastupdated: "2019-02-03"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-11-07"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# What is IBM Event Streams for IBM Cloud?
+# What is {{site.data.keyword.messagehub}}?
 {: #about}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
@@ -26,7 +26,6 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 * Transfer data into another service. For example, to Cloud Object Storage.
 
 By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
-{:shortdesc}
 
 Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 
