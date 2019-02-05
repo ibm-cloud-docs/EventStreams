@@ -20,15 +20,12 @@ For more information about the SLA for {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-14/$file/i126-6605-14_08-2018_en_US.pdf){:new_window}.
 
 ## What does 99.95% availability mean?
-
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 
 ## How do we measure it?
-
 Service instances are continuously monitored for performance, error rates, and response to synthetic operations. Outages are recorded.
 
 ## What do you need to consider to achieve this availability?
-
 To achieve high levels of availability from the application perspective, consider the following three aspects. Users are responsible for designing their applications to optimize these aspects for their business.
 
 ### Connectivity
@@ -45,14 +42,14 @@ If duplicates cannot be tolerated, you can use the ```idempotent``` producer fea
 ### Throughput
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster. 
 
-* **Recommendation**<br/>
-40 MB/sec, max peak limit: 90MB/sec. 
+**Recommendation**<br/>
+40 MB/sec with a maximum peak limit of 90MB/sec. <br/>
 The recommended figure is based on a typical workload. For example, messages with a small payload (<10 K), which takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone. If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
 
-* **Measurement**<br/>
+**Measurement**<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
 
-* **Saturation**<br/>
+**Saturation**<br/>
 As the limit of the traffic that can be produced in to the cluster is approached, producers start to be throttled, latency increases, and ultimately errors such as timeout errors are seen. Depending on the configuration, message consistency and durability might also be impacted. For more information, see [Consistency and durability of messages](/docs/services/EventStreams/eventstreams132.html#message_consistency).
 
 ### Consistency and durability of messages
@@ -60,7 +57,7 @@ As the limit of the traffic that can be produced in to the cluster is approached
 
 Kafka achieves its availability and durability by replicating the messages it receives across other nodes in the cluster, which can then be used in case of failure. {{site.data.keyword.messagehub}} uses three replicas (default.replication.factor = 3) meaning that each message received by a node is replicated to two other nodes in different availability zones. In this way, the loss of a node or availability zone can be tolerated without loss of data or function.
 
-* **Producer acks mode**<br/>
-Although replication is performed for all messages, applications can control how robustly the messages they produce are transferred to the service by using the producer's ```acks``` mode property. This property provides a choice between speed versus the risk of message loss. The default setting is ```acks=1``` meaning that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is ```acks=all``` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step which prevents message loss if a failure causes a switch to a replica. <!-- See xx and 'unclean.leader.election' for more details. -->
+**Producer ```acks``` mode**<br/>
+Although replication is performed for all messages, applications can control how robustly the messages they produce are transferred to the service by using the producer's ```acks``` mode property. This property provides a choice between speed versus the risk of message loss. The default setting is ```acks=1``` meaning that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is ```acks=all``` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step which prevents message loss if a failure causes a switch to a replica.
 
 
