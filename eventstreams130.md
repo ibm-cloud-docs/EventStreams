@@ -125,8 +125,7 @@ kubectl logs kafka-nodejs-console-sample --follow
 
     <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
 	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> token<var class="keyword varname">:api_key</var> -consumer</pre>
-    {: codeblock}
-    
+     
     The sample uses a topic named `kafka-java-console-sample-topic`. If the topic does
     not already exist, the sample creates it using the {{site.data.keyword.messagehub}} Administration API. To send and receive
     messages, the sample uses the Apache Kafka Java API.
