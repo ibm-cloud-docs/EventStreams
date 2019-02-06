@@ -29,7 +29,7 @@ Service instances are continuously monitored for performance, error rates, and t
 To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/services/EventStreams/eventstreams132.html#connectivity), [throughput](/docs/services/EventStreams/eventstreams132.html#throughput), and [consistency and durability of messages](/docs/services/EventStreams/eventstreams132.html#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
 
 ### Connectivity
-{: #connectivity notoc}
+{: #connectivity}
 
 Because of the dynamic nature of the cloud, applications must expect connection breakages. A connection breakage is not considered a failure of service.
 
@@ -42,7 +42,7 @@ Enabling retries might result in duplicate messages. Depending on when a connect
 If duplicates cannot be tolerated, you can use the ```idempotent``` producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ ```enable.idempotence``` property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}.
 
 ### Throughput
-{: #throughput notoc}
+{: #throughput}
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster. 
 
