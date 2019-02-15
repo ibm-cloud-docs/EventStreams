@@ -21,6 +21,6 @@ lastupdated: "2018-05-25"
 <br/>
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka REST API uses the <code>api_key</code> and <code>kafka_rest_url</code>
-credentials from the [VCAP_SERVICES environment variable](/docs/services/EventStreams/eventstreams127.html).
+credentials from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 To authenticate with the {{site.data.keyword.messagehub}} Kafka REST API, you must specify the <code>api_key</code> in the X-Auth-Token header of your requests.

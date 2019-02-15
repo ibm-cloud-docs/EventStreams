@@ -96,7 +96,7 @@ create a topic using either the user interface or the
 administration API. The time limit is a minimum of an hour and a
 maximum of 30 days.
 
-For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [APIs for topic administration](/docs/services/EventStreams/eventstreams104.html).
+For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [APIs for topic administration](/docs/services/EventStreams?topic=eventstreams-kafka_using).
 
 ## Creating and deleting topics in Kafka
 {: #create_delete}

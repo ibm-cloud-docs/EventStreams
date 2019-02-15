@@ -23,7 +23,7 @@ Because the underlying service that the {{site.data.keyword.objectstorageshort}}
 
 When the {{site.data.keyword.objectstorageshort}} service reaches its end of life and is decommissioned, all instances of the {{site.data.keyword.objectstorageshort}} bridge will also be decommissioned. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}. 
 
-As an alternative, you can use the [Cloud Object Storage bridge](/docs/services/EventStreams/eventstreams115.html){:new_window}. 
+As an alternative, you can use the [Cloud Object Storage bridge](/docs/services/EventStreams?topic=eventstreams-cloud_object_storage_bridge){:new_window}. 
 {:deprecated}
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
@@ -31,7 +31,7 @@ to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an 
 batches of messages from Kafka and uploads the message data as objects to a container in the
 {{site.data.keyword.objectstorageshort}} service.
 
-Note that the preferred object storage service in {{site.data.keyword.Bluemix_short}} is now the [{{site.data.keyword.IBM_notm}} Cloud Object Storage service. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage/about-cos.html){:new_window}.
+Note that the preferred object storage service in {{site.data.keyword.Bluemix_short}} is now the [{{site.data.keyword.IBM_notm}} Cloud Object Storage service. ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about-ibm-cloud-object-storage){:new_window}.
 
 By configuring the {{site.data.keyword.objectstorageshort}} bridge, you can
 control how the data is uploaded as objects to {{site.data.keyword.objectstorageshort}}. For example, the properties that

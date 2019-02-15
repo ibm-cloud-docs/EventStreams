@@ -62,7 +62,7 @@ The kafka-node client does not fully support SASL authentication so cannot curre
 ### no-kafka 
 The no-kafka client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
 
-For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
+For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_connect).
 
 
 

@@ -38,6 +38,6 @@ The {{site.data.keyword.mql}} is available in the following
 {{site.data.keyword.Bluemix_notm}} Dedicated.
 
 <!-- begin STAGING ONLY -->
-For more information about choosing between the APIs, see [Choosing between the three APIs](/docs/services/EventStreams/eventstreams087.html).
+For more information about choosing between the APIs, see [Choosing between the three APIs](/docs/services/EventStreams?topic=eventstreams-choose_api).
 <!-- end STAGING ONLY -->
 

@@ -20,7 +20,7 @@ and start sending and receiving messages, you can use the Node.js sample. By com
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
 
-To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams010.html).
+To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-about).
 
 To access other {{site.data.keyword.messagehub}} samples, including samples for Java and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
@@ -90,9 +90,9 @@ kubectl logs kafka-nodejs-console-sample --follow
   
   e. Click **Create**.
 
-2. {: #create_credentials_step notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/EventStreams/eventstreams127.html#connect_standard_cf_console).
+2. {: #create_credentials_step notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf_console).
    <br/>
-   <br/>You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for [step 7](/docs/services/EventStreams/index.html#start_consumer_step) of this task.   
+   <br/>You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for [step 7](/docs/services/EventStreams?topic=eventstreams-getting_started#start_consumer_step) of this task.   
 
 3. If you don't already have them, install the following prerequisites:
 
@@ -131,7 +131,7 @@ kubectl logs kafka-nodejs-console-sample --follow
     messages, the sample uses the Apache Kafka Java API.
 
     Use the values for *kafka_brokers_sasl*, *kafka_admin_url*,
-    and *api_key* from the credentials you created in [step 2](/docs/services/EventStreams/index.html#create_credentials_step).
+    and *api_key* from the credentials you created in [step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step).
 	
 	Specify <code>token</code> as your user name and the <var class="keyword varname">api_key</var> as your password. Separate <code>token</code> and the <var class="keyword varname">api_key</var> with a colon.
     

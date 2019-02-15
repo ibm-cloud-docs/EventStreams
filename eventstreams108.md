@@ -144,7 +144,7 @@ REST API returns the following JSON:
 {: #plan_compare }
 {: faq}
 
-To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams/eventstreams085.html).
+To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery }
