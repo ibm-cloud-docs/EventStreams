@@ -83,7 +83,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | To use Streams |Resource type: <code>cluster</code></br>Resouce type: <code>group</code>| Not applicable  |Resouce type: <code>topic</code>    |
 
 For more information about IAM, see 
-[IBM Cloud Identity and Access Management](/docs/iam/index.html#iamoverview).
+[IBM Cloud Identity and Access Management](/docs/iam?topic=iam-iamoverview#iamoverview).
 
 For an example of how to set policies, see: 
 [IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2017/10/introducing-ibm-cloud-iam-service-ids-api-keys/){:new_window}.
@@ -93,7 +93,7 @@ For an example of how to set policies, see:
 {: #connect_message_enterprise }
 
 For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams/eventstreams127.html).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 <!-- 28/06/18 - Karen: draft info only
 

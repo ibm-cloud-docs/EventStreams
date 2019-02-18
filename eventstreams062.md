@@ -18,7 +18,7 @@ lastupdated: "2019-01-14"
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
 
 * The official Java client. It is the best choice because it contains the latest features available for Apache Kafka.
-* One of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table).
+* One of the [recommended third-party clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#clients_table).
 
 For both types of client, we recommend always choosing the latest client version. 
 {: shortdesc}
@@ -57,7 +57,7 @@ The minimum Kafka protocol that we support is 0.10.
 ## Third-party clients
 {: #third_party_clients}
 
-If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams/eventstreams062.html#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
+If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
 
 Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}. However, we only test with and have experience of the recommended third-party clients.
 
@@ -70,7 +70,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th id="client" scope="col">Client</th>
 		    <th id="language" scope="col">Language</th>
 			<th id="version" scope="col">Recommended version</th>
-		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams/eventstreams062.html#footnote1)</th>
+		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-kafka_clients#footnote1)</th>
 			<th id="sample link" scope="col">Link to sample</th>
         </tr>
 			<tr>
@@ -80,7 +80,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
 			<td>Java</td>
 			<td>Latest</td>
-			<td>0.10.2 <p> For information about older clients, see [backward compatability](/docs/services/EventStreams/eventstreams062.html#compatability).</p></td>
+			<td>0.10.2 <p> For information about older clients, see [backward compatability](/docs/services/EventStreams?topic=eventstreams-kafka_clients#compatability).</p></td>
 			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
@@ -145,7 +145,7 @@ The no-kafka client does not fully support SASL authentication with the PLAIN me
 ## Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
 
-For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams/eventstreams063.html).
+For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_connect).
 
 
 

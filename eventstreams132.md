@@ -26,7 +26,7 @@ Availability refers to the ability of applications to produce and consume messag
 Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded.
 
 ## What do you need to consider to achieve this availability?
-To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/services/EventStreams/eventstreams132.html#connectivity), [throughput](/docs/services/EventStreams/eventstreams132.html#throughput), and [consistency and durability of messages](/docs/services/EventStreams/eventstreams132.html#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
+To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/services/EventStreams?topic=eventstreams-sla#connectivity), [throughput](/docs/services/EventStreams?topic=eventstreams-sla#throughput), and [consistency and durability of messages](/docs/services/EventStreams?topic=eventstreams-sla#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
 
 ### Connectivity
 {: #connectivity}
@@ -54,7 +54,7 @@ The recommended figure is based on a typical workload and takes into account the
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
 
 **Saturation**<br/>
-As the limit of the traffic that can be produced in to the cluster is approached, producers start to be throttled, latency increases, and ultimately errors such as timeout errors occur. Depending on the configuration, message consistency and durability might also be impacted. For more information, see [Consistency and durability of messages](/docs/services/EventStreams/eventstreams132.html#message_consistency).
+As the limit of the traffic that can be produced in to the cluster is approached, producers start to be throttled, latency increases, and ultimately errors such as timeout errors occur. Depending on the configuration, message consistency and durability might also be impacted. For more information, see [Consistency and durability of messages](/docs/services/EventStreams?topic=eventstreams-sla#message_consistency).
 
 ### Consistency and durability of messages
 {: #message_consistency}
