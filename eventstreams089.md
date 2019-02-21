@@ -27,7 +27,7 @@ As an alternative, you can use the [Cloud Object Storage bridge](/docs/services/
 {:deprecated}
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
-to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} service . The bridge consumes
+to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} service. The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a container in the
 {{site.data.keyword.objectstorageshort}} service.
 
