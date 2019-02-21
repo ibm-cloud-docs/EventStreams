@@ -22,6 +22,7 @@ dedicated [Stack Overflow channel ![External link icon](../../icons/launch-glyph
 If not, post your question and it'll be answered either by a
 member of the {{site.data.keyword.messagehub}} development team or the wider
 community.
+{: shortdesc}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}. If you'd then 
 like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in either [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard plan](/docs/services/EventStreams?topic=eventstreams-report_problem) or [Reporting a problem to the {{site.data.keyword.messagehub}} team - Enterprise plan](/docs/services/EventStreams?topic=eventstreams-report_problem).

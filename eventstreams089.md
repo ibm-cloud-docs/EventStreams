@@ -20,6 +20,7 @@ lastupdated: "2018-11-08"
 <br/>
 
 Because the underlying service that the {{site.data.keyword.objectstorageshort}} bridge connects to is deprecated, the {{site.data.keyword.objectstorageshort}} bridge is also deprecated from August 1st 2018. 
+{: shortdesc}
 
 When the {{site.data.keyword.objectstorageshort}} service reaches its end of life and is decommissioned, all instances of the {{site.data.keyword.objectstorageshort}} bridge will also be decommissioned. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}. 
 

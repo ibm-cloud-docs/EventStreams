@@ -17,7 +17,7 @@ lastupdated: "2018-10-19"
 {: #restrictions}
 
 If you find a problem while using {{site.data.keyword.messagehub}}, review these known restrictions and workarounds. 
-
+{: shortdesc}
 
 ## Java Kafka calls don’t failover if a Kafka bootstrap server fails
 {: #calls_failover}
