@@ -66,7 +66,7 @@ To disable the MQ Light API, delete the "MQLight" topic. Note that all data is d
 {: #mql_connect}
 
 To connect an app to the service, the app must use the <code>user</code>,
-<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting). Use the following guidance for your chosen language:
+<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf). Use the following guidance for your chosen language:
 
 **For Java**
 

@@ -18,7 +18,7 @@ lastupdated: "2018-02-12"
 
 Apache Kafka comes with a variety of console tools for simple administration and messaging operations. You can use many of them with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka has developed, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 
-You can find these console tools in the <code>bin</code> directory of your Kafka download. For example, [Apache Kafka 0.10.2.X client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.2.1/kafka_2.11-0.10.2.1.tgz){:new_window}.
+You can find these console tools in the <code>bin</code> directory of your Kafka download. For example, [Apache Kafka 1.1.0 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://archive.apache.org/dist/kafka/1.1.0/kafka-1.1.0-src.tgz){:new_window}.
 
 To provide the SASL credentials to these tools, create a properties file based on the following example:
 

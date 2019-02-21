@@ -80,7 +80,7 @@ IBM Event Streams
 	{: .topicgroup}
 	Related links
 	 	[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
-	 	[Apache Kafka 0.10.2.1 client](http://kafka.apache.org/0102/javadoc/index.html)
+	 	[Apache Kafka 1.1.0 client](https://archive.apache.org/dist/kafka/1.1.0/kafka-1.1.0-src.tgz)
 		[IBM Event Streams on developerWorks](https://www.ibm.com/cloud/message-hub)
 	{: .navgroup-end}
 

@@ -13,7 +13,7 @@ lastupdated: "2018-12-17"
 {:pre: .pre}
 
 # Reporting a problem to the {{site.data.keyword.messagehub}} team - Enterprise plan
-{: #report_problem}
+{: #report_problem_enterprise}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/status){:new_window}.
 
@@ -38,7 +38,7 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
    transaction IDs are affected?
 8. What impact is the problem having on your service?
 
-You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar).
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
 
 
 
