@@ -4,6 +4,8 @@ copyright:
   years: 2015, 2019
 lastupdated: "2019-03-05"
 
+subcollection: eventstreams
+
 ---
 
 {:new_window: target="_blank"}
