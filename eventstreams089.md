@@ -98,7 +98,7 @@ partition Kafka messages into {{site.data.keyword.objectstorageshort}} objects:
 * By Kafka message offset.
 * By an ISO 8601 date present in each Kafka message. This requires the Kafka messages to comprise a valid JSON format object.
 
-## Partitioning by Kafka message offset
+## Partitioning by using the Kafka message offset
 {: notoc}
 
 To partition data by Kafka message offset, complete the following steps:
