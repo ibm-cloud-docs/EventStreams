@@ -12,25 +12,24 @@ lastupdated: "2019-03-05"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-#{{site.data.keyword.messagehub}} CLI
+# Using the {{site.data.keyword.messagehub}} CLI
 {: #cli}
 
    1.  Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
 
-    2. Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-
-```
+    2.  Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+    ```
     ibmcloud login -a cloud.ibm.com
-```
+    ```
 
     3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise plan. The CLI does not support the Standard plan.
 
     To create an instance from the Web UI, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
     To create an instance from the CLI, run the following command:
-```
+    ```
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
-```
+    ```
     Note: provisioning a new instance might take up to 3 hours.
 
     4. Create a service API key for this instance.
@@ -38,17 +37,17 @@ lastupdated: "2019-03-05"
     To create an API key from Web UI, enter the Service credentials from the instance page, and click **New Credentials**.
 
     To create an API key from the CLI, run this command:
-```
+    ```
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-```
+    ```
 
     Valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in 
     [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
 
    5.  Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
-```
+    ```
     ibmcloud plugin install event-streams
-```
+    ```
   
 
 Below section is generated from commands help messages.
