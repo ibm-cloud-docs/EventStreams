@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Getting started with {{site.data.keyword.messagehub}} 
+# Getting started tutorial
 {: #getting_started}
 
 To get started with {{site.data.keyword.messagehub}}
