@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-05"
+lastupdated: "2019-03-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,10 +20,11 @@ subcollection: eventstreams
 {: #cli}
 1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview)
 
-2.  Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+2. Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
     ```
     ibmcloud login -a cloud.ibm.com
     ```
+
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise plan. The CLI does not support the Standard plan.
 
     To create an instance from the Web UI, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
@@ -36,12 +37,12 @@ subcollection: eventstreams
     
 4. Create a service API key for this instance.
 
-    To create an API key from Web UI, enter the Service credentials from the instance page, and click **New Credentials**.
+To create an API key from Web UI, enter the Service credentials from the instance page, and click **New Credentials**.
 
-    To create an API key from the CLI, run this command:
-    ```
+To create an API key from the CLI, run this command:
+```
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-    ```
+```
 
     Valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in 
     [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
