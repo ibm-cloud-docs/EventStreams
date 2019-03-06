@@ -20,12 +20,10 @@ subcollection: eventstreams
 {: #cli}
 
    1.  Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
-
     2.  Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
     ```
     ibmcloud login -a cloud.ibm.com
     ```
-
     3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise plan. The CLI does not support the Standard plan.
 
     To create an instance from the Web UI, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
@@ -35,7 +33,6 @@ subcollection: eventstreams
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
     ```
     Note: provisioning a new instance might take up to 3 hours.
-
     4. Create a service API key for this instance.
 
     To create an API key from Web UI, enter the Service credentials from the instance page, and click **New Credentials**.
