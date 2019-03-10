@@ -31,7 +31,7 @@ When a message is sent to the partition leader, that message is not immediately 
 
 Each message is represented as a record which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.
 
-Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose, which are supported by the {{site.data.keyword.messagehub}} Enterprise plan. The {{site.data.keyword.messagehub}} Standard plan is currently based on Kafka 0.10.2.1, so it does not yet support record headers. 
+Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose.
 
 You might find it useful to read this information in conjunction with [consuming messages](/docs/services/EventStreams?topic=eventstreams-consuming_messages) in {{site.data.keyword.messagehub}}.
 
