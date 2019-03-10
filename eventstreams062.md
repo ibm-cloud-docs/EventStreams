@@ -84,7 +84,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
 			<td>Java</td>
 			<td>Latest</td>
-			<td>0.10.2 <p> For information about older clients, see [backward compatability](/docs/services/EventStreams?topic=eventstreams-kafka_clients#compatability).</p></td>
+			<td>0.10.2 <p> For information about older clients, see [backward compatibility](/docs/services/EventStreams?topic=eventstreams-kafka_clients#compatibility).</p></td>
 			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
@@ -125,8 +125,8 @@ Other third-party clients that support the minimum set of client requirements mi
 ### Footnote
 1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
-## Backward compatability - Standard plan
-{: #compatability}
+## Backward compatibility - Standard plan
+{: #compatibility}
 
 For backward compatibility, you can use the Apache Kafka 0.9 Java client with the {{site.data.keyword.messagehub}} Standard plan. However, because of this client's age, we strongly discourage its use. If you choose to use this client version, you need an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library).
 
