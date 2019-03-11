@@ -23,6 +23,7 @@ IBM Event Streams
 	eventstreams068.md
 	eventstreams072.md
 	at-events.md
+	eventstreams-cli.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
