@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-12"
+lastupdated: "2019-03-12a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -56,7 +56,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     ```
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
     ```
-{:codeblock}
+    {:codeblock}
 
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     <pre class="pre">
