@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-07"
+lastupdated: "2019-03-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the {{site.data.keyword.messagehub}} CLI
+# Using the {{site.data.keyword.messagehub}} CLI on the Enterprise and Standard++ plans
 {: #cli}
 1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview){:new_window}.
 
@@ -25,15 +25,21 @@ subcollection: eventstreams
     ibmcloud login -a cloud.ibm.com
     ```
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise plan. The CLI does not support the Standard plan.
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise plan. (The CLI does not support the Standard plan.)
 
     * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
-    * To create an instance from the CLI, run the following command:
+    * To create an instance from the CLI on the Enterprise plan, run the following command:
     ```
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
     ```
-    Note: provisioning a new instance might take up to 3 hours.
+    Provisioning a new Enterprise instance might take up to 3 hours.
+    
+        * To create an instance from the CLI on the Standard++ plan, run the following command:
+    ```
+    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.standard.v2 <REGION>
+    ```
+    Provisioning a new Standard++ instance is instantaneous.
     
 4. Create a service API key for this instance.
 
@@ -52,7 +58,6 @@ subcollection: eventstreams
     ibmcloud plugin install event-streams
     ```
 
-Below section is generated from commands help messages.
 
 ## ibmcloud api
 {: #ibmcloud_api}
