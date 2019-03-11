@@ -24,6 +24,7 @@ IBM Event Streams
 	eventstreams072.md
 	at-events.md
 	Standard Plan
+	 	eventstreams085.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
