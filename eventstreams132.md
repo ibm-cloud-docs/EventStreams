@@ -38,12 +38,12 @@ To achieve high levels of availability from the application perspective, you sho
 Because of the dynamic nature of the cloud, applications must expect connection breakages. A connection breakage is not considered a failure of service.
 
 **Retries**<br/>
-Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [ ```retries``` property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}. Connections are remade within 60 seconds.   
+Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [ <code>retries</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}. Connections are remade within 60 seconds.   
  
 **Duplicates**<br/>
 Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send the message again when reconnected. You are recommended to architect applications to expect duplicate messages. 
 
-If duplicates cannot be tolerated, you can use the ```idempotent``` producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ ```enable.idempotence``` property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}.
+If duplicates cannot be tolerated, you can use the <code>idempotent</code> producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ <code>enable.idempotence</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}.
 
 ### Throughput
 {: #throughput}
@@ -65,7 +65,7 @@ As the limit of the traffic that can be produced in to the cluster is approached
 
 Kafka achieves its availability and durability by replicating the messages it receives across other nodes in the cluster, which can then be used in case of failure. {{site.data.keyword.messagehub}} uses three replicas (default.replication.factor = 3) meaning that each message received by a node is replicated to two other nodes in different availability zones. In this way, the loss of a node or availability zone can be tolerated without loss of data or function.
 
-**Producer ```acks``` mode**<br/>
-Although all message are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's ```acks``` mode property. This property provides a choice between speed and the risk of message loss. The default setting is ```acks=1```, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is ```acks=all``` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
+**Producer <code>acks</code> mode**<br/>
+Although all message are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's <code>acks</code> mode property. This property provides a choice between speed and the risk of message loss. The default setting is <code>acks=1</code>, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is <code>acks=all</code> where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
 
 
