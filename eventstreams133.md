@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the {{site.data.keyword.messagehub}} CLI on the Enterprise and Standard++ plans
+# Using the {{site.data.keyword.messagehub}} CLI (Enterprise and Standard++ plans)
 {: #cli}
 
 To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterprise and Standard++ plans, complete the following steps:
@@ -28,14 +28,14 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     ibmcloud login -a cloud.ibm.com
     </pre>
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard++ plans. (The CLI does not support the Standard plan.)
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard++ plans. (The CLI does not support the Standard plan.) Select one of the following methods:
 
     * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
-     ```
+    <pre class="pre">
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
-    ```
+    </pre>
     
     Provisioning a new Enterprise instance might take up to 3 hours.
     
@@ -46,7 +46,9 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     </pre>
     Provisioning a new Standard++ instance is instantaneous.
     
-4. Create a service API key for this instance.
+4. Create a service API key for this instance. 
+<br/>
+The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
 
     * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
@@ -55,14 +57,13 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
     </pre>
 
-The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
-
-5.  Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
+5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     <pre class="pre">
     ibmcloud plugin install event-streams
     </pre>
 
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard++ plans ](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference)
+<br/>
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard++ plans ](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 
 .
