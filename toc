@@ -23,6 +23,7 @@ IBM Event Streams
 	eventstreams068.md
 	eventstreams072.md
 	at-events.md
+	Standard Plan
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
