@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-03-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -64,7 +64,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     </pre>
 
 <br/>
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard++ plans ](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard++ plans](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 
 .
