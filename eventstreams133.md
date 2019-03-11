@@ -28,14 +28,15 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     ibmcloud login -a cloud.ibm.com
     </pre>
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise plan. (The CLI does not support the Standard plan.)
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard++ plans. (The CLI does not support the Standard plan.)
 
     * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
-     <pre class="pre">
+     ```
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
-    </pre>
+    ```
+    
     Provisioning a new Enterprise instance might take up to 3 hours.
     
     * To create an instance from the CLI on the Standard++ plan, run the following command:
