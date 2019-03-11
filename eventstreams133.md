@@ -55,7 +55,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     * To create an API key from the CLI, run this command:
     ```
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-    ````
+    ```
 {:codeblock}
 
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
