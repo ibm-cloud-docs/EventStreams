@@ -19,6 +19,7 @@ subcollection: eventstreams
 # Using the {{site.data.keyword.messagehub}} CLI on the Enterprise and Standard++ plans
 {: #cli}
 
+To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterprise and Standard++ plans, complete the following steps:
 
 1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview){:new_window}.
 
@@ -37,7 +38,8 @@ subcollection: eventstreams
     </pre>
     Provisioning a new Enterprise instance might take up to 3 hours.
     
-        * To create an instance from the CLI on the Standard++ plan, run the following command:
+    * To create an instance from the CLI on the Standard++ plan, run the following command:
+
     <pre class="pre">
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.standard.v2 <REGION>
     </pre>
@@ -45,7 +47,7 @@ subcollection: eventstreams
     
 4. Create a service API key for this instance.
 
-    * To create an API key from the  IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
+    * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
     * To create an API key from the CLI, run this command:
     <pre class="pre">
