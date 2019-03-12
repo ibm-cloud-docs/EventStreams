@@ -19,13 +19,14 @@ subcollection: eventstreams
 <!-- 12/11/18: info moved to eventstreams075.md, moved because of doc app changes -->
 
 # How to connect and authenticate
-{: #mql_connect}
+{: #mql_connect_authenticate}
 
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
 To connect an app to the service, the app must use the <code>user</code>,
 <code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting). Use the following guidance for your chosen language:
+{: shortdesc}
 
 **For Java**
 

@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 # Using the Kafka Java client
-{: #kafka_using}
+{: #kafka_java_using}
 
 <!-- 21/06/18 - removing until some content ready
 
@@ -32,6 +32,7 @@ subcollection: eventstreams
 -->
 
 The Java&trade; Kafka API sample is an example producer and consumer that is written in Java, which directly uses the Kafka API. You can run this sample locally or in {{site.data.keyword.Bluemix_short}}.
+{: shortdesc}
 
 The sample code is in the [event-streams-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){:new_window}. Although the sample uses
 the Kafka API to send and receive messages, the sample uses the {{site.data.keyword.messagehub}} Administration API to create the topic it sends messages to and receives messages from.

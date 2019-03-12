@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 # What is the MQ Light API and how is it different?
-{: #mqlight}
+{: #mqlight_api}
 
 <!-- 30/10/18: info moved to eventstreams075.md because of doc app changes -->
 

@@ -19,7 +19,7 @@ subcollection: eventstreams
 <!-- 14/11/18: info moved to eventstreams075.md, moved because of doc app changes -->
 
 # How to connect existing MQ Light applications
-{: #mql_exist_apps}
+{: #mql_exist_mql_apps}
 
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>

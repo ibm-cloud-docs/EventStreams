@@ -20,13 +20,14 @@ subcollection: eventstreams
 <!-- 15/11/18: info moved to eventstreams075.md, moved because of doc app changes -->
 
 # Exchanging messages between the MQ Light API and the Kafka or Kafka REST APIs
-{: #mql_exchange}
+{: #mql_exchange_rest}
 
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
 
 {{site.data.keyword.mql}} messages are stored in a single underlying Kafka topic named "MQLight" and are encoded as detailed in the following table. This encoding can also be used by other API types, such as Kafka or Kafka REST, to exchange messages with applications using the
 {{site.data.keyword.mql}} API.
+{: shortdesc}
 
 ## Kafka message format
 {: #kafka_format notoc}

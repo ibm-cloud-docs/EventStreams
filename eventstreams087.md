@@ -20,6 +20,7 @@ subcollection: eventstreams
 {: #choose_api}
 
 {{site.data.keyword.messagehub}} supports three APIs on the Standard plan. Here's some information to help you choose which is most appropriate:
+{: shortdesc}
 
 ## Why use the Kafka API?
 {: #why_kafka notoc}

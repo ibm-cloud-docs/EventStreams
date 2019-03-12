@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 # What's required to use the MQ Light API with {{site.data.keyword.messagehub}}?
-{: #mql_reqs}
+{: #mql_api_reqs}
 
 <!-- 30/10/18: info moved to eventstreams075.md because of doc app changes -->
 
@@ -27,6 +27,7 @@ subcollection: eventstreams
 The following requirements are needed to use the {{site.data.keyword.mql}} API with {{site.data.keyword.messagehub}}: 
 
 **You must explicitly create a Kafka topic named "MQLight" before you can use the API because all messages go through the "MQLight" topic. This topic must have a single partition. Creating this topic enables the MQ Light API for your service instance. The topics used in the MQ Light API are automatically created as you use them, but all of the messages are actually on the single "MQLight" Kafka topic.** 
+{: shortdesc}
 
 The "MQLight" topic is used by the MQ Light API to store its message data and interact with other Kafka clients. Be aware that when this topic is
 created, it incurs charges at the standard rate outlined in the services payment plan.

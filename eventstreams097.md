@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 # How to use the Kafka REST API
-{: #rest_how}
+{: #rest_api_how}
 
 <!-- info moved to eventstreams025.md because of doc app changes -->
 
@@ -36,6 +36,7 @@ subcollection: eventstreams
 -->
 
 The {{site.data.keyword.messagehub}} Kafka REST API sample is a Node.js application, which connects to {{site.data.keyword.messagehub}} over the Kafka REST API to produce and consume messages.
+{: shortdesc}
 
 The sample code is in the [event-streams-samples github project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window}.
 
