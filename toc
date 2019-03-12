@@ -24,10 +24,11 @@ IBM Event Streams
 	eventstreams072.md
 	at-events.md
 	eventstreams-cli.md
-	
+
 	{: .topicgroup}
-	About Event Streams
-		eventstreams010.md
+	Standard Plan
+		eventstreams085.md
+		eventstreams127.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
