@@ -18,7 +18,7 @@ subcollection: eventstreams
 
 
 
-#Troubleshooting and useful links
+# Troubleshooting and useful links
 {: #troubleshooting}
 
 If you have a question about {{site.data.keyword.messagehub}}, have a look at the

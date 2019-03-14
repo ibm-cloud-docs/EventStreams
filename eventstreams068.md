@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-#Data security and privacy
+# Data security and privacy
 {: #data_security}
 
 
