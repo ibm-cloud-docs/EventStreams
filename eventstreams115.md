@@ -90,7 +90,7 @@ the credentials using the Cloud Object Storage UI as follows:
 
 The credential that you create grants writer access to the entire Cloud Object Storage instance,
 therefore you might want to restrict this access to the specific bucket that the bridge will interact with.
-1. Go to the [Identity & Access Management page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/iam/?env_id=ibm%3Ayp%3Aus-south#/serviceids){:new_window}.
+1. Go to the [Manage access and users page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/iam#/overview){:new_window}.
 2. You should see the auto generated service ID on this page. When you have identified the specific ID, select
 the **Manage service ID** action. 
 3. Select the **Edit policy** action to further restrict it to a specific **Resource type**, which is bucket and a **Resource ID**, which

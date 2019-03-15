@@ -30,7 +30,7 @@ subcollection: eventstreams
 {: shortdesc}
 
 ## Kafka message format
-{: #kafka_format notoc}
+{: #kafka_message_format notoc}
 
 <table border='1'>
 <caption>Table 1. Kafka message format</caption>

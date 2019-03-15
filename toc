@@ -67,7 +67,7 @@ IBM Event Streams
 
 	{: .topicgroup}
 	Tutorials
-	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://console.bluemix.net/docs/tutorials/pub-sub-object-storage.html#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
+	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
 
 	{: .topicgroup}
 	Alpha program

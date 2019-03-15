@@ -35,7 +35,7 @@ Complete the following steps:
 Complete the following tasks before running the sample
 
 1. Obtain this repository's contents, either use git or just download the samples as a ZIP
-2. Install the IBM Cloud CLI by completing the tasks https://console.bluemix.net/docs/cli/reference/ibmcloud/download_cli.html#install_use
+2. Install the IBM Cloud CLI by completing the tasks https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli#install_use
 3. Install the Kubernetes CLI by completing the tasks https://kubernetes.io/docs/tasks/tools/install-kubectl/
 4. Provision an Event Streams Service Instance in IBM Cloud®
   a. Log in to the {{site.data.keyword.Bluemix_notm}} console. 
