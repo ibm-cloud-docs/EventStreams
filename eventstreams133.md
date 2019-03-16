@@ -21,7 +21,7 @@ subcollection: eventstreams
 
 To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterprise and Standard++ plans, complete the following steps:
 
-1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview){:new_window}.
+1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
 
 2. Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
     <pre class="pre">

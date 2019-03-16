@@ -61,7 +61,7 @@ kubectl create secret generic eventstreams-binding --from-literal=binding='<Serv
 
 The command above creates a secret in your cluster named eventstreams-binding.
 
-3. Configure the CLI to run kubectl https://console.bluemix.net/docs/containers/cs_cli_install.html#cs_cli_configure
+3. Configure the CLI to run kubectl https://cloud.ibm.com/docs/containers?topic=containers-cs_cli_install#cs_cli_configure
 
 4. Deploy the application in the cluster:
 
@@ -94,9 +94,9 @@ kubectl logs kafka-nodejs-console-sample --follow
   
   e. Click **Create**.
 
-2. {: #create_credentials_step notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf_console).
+2. {: #create_credentials_step_node notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf_console).
    <br/>
-   <br/>You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for [step 7](/docs/services/EventStreams?topic=eventstreams-getting_started#start_consumer_step) of this task.   
+   <br/>You'll need the values of *kafka_brokers_sasl*, *kafka_admin_url*, and *api_key* for [step 7](/docs/services/EventStreams?topic=eventstreams-getting_started#start_consumer_step_node) of this task.   
 
 3. If you don't already have them, install the following prerequisites:
 
@@ -125,7 +125,7 @@ kubectl logs kafka-nodejs-console-sample --follow
     </pre>
 	{: codeblock}
 
-7. {: #start_consumer_step notoc} Start the consumer on your console by running the following command:
+7. {: #start_consumer_step_node notoc} Start the consumer on your console by running the following command:
 
     <pre class="pre">java -jar build/libs/kafka-java-console-sample-2.0.jar 
 	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">kafka_admin_url</var> token<var class="keyword varname">:api_key</var> -consumer</pre>
@@ -135,7 +135,7 @@ kubectl logs kafka-nodejs-console-sample --follow
     messages, the sample uses the Apache Kafka Java API.
 
     Use the values for *kafka_brokers_sasl*, *kafka_admin_url*,
-    and *api_key* from the credentials you created in [step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step).
+    and *api_key* from the credentials you created in [step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step_node).
 	
 	Specify <code>token</code> as your user name and the <var class="keyword varname">api_key</var> as your password. Separate <code>token</code> and the <var class="keyword varname">api_key</var> with a colon.
     
