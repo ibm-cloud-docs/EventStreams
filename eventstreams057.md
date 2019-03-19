@@ -113,7 +113,7 @@ of topics, or on the rapid deletion and re-creation of topics.
 ## Kafka REST API
 {: #trouble_rest}
 
-*  Only the binary embedded format is supported for requests and
+*  Only the binary-embedded format is supported for requests and
    responses. The Avro and JSON embedded formats are not supported.
 *  Concurrent requests are not supported for a consumer instance.
    Read, commit, or delete requests corresponding to a consumer
@@ -140,7 +140,7 @@ The Kafka REST API restarts once a day for a short period of
 time. During this period, the Kafka REST API might become
 unavailable. If this happens, you are recommended to retry your
 request. After the REST API has restarted, you will have to
-recreate your Kafka consumer instances. If this is the case, the
+create your Kafka consumer instances again. If this is the case, the
 REST API returns the following JSON:
 
 ```'{"error_code":40403,"message":"Consumer instance not found."}'

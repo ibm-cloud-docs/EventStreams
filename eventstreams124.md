@@ -84,7 +84,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app to consume a topic (consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/> Resource type: <code>group</code> |Not applicable      |Not applicable     |
 | Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: <code>txnid</code> |Not applicable     |
 | Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
-| To use Streams |Resource type: <code>cluster</code></br>Resouce type: <code>group</code>| Not applicable  |Resouce type: <code>topic</code>    |
+| To use Streams |Resource type: <code>cluster</code></br>Resource type: <code>group</code>| Not applicable  |Resource type: <code>topic</code>    |
 
 For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/iam?topic=iam-iamoverview#iamoverview).
