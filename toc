@@ -27,8 +27,8 @@ IBM Event Streams
 
 	{: .topicgroup}
 	Standard Plan
-		eventstreams085.md
-		eventstreams127.md
+		eventstreams134.md
+		eventstreams135.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
