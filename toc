@@ -32,9 +32,9 @@ IBM Event Streams
 		eventstreams136.md
 		eventstreams137.md
 		eventstreams138.md
+		eventstreams141.md
 		eventstreams139.md
 		eventstreams140.md
-		eventstreams141.md
 		eventstreams142.md
 	{: .navgroup-end}
 

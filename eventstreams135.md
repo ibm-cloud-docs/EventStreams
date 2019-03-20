@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Connecting to {{site.data.keyword.messagehub}}
+# Connecting to {{site.data.keyword.messagehub}} using the Standard plan
 {: #connecting_standard}
 
 The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're using the Standard or Enterprise plan, and also whether you're connecting from a Cloud Foundry application or from any other external client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:

@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs
+# FAQs for the Standard plan
 {: #faqs_standard}
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
