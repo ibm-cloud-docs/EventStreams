@@ -17,65 +17,56 @@ subcollection: eventstreams
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# The Standard V2 plan
+# The Standard plan
 {: #plan_choose_standard}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. The Standard V2 will be deprecated. For information about the current plans, see docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. The Standard plan will be deprecated. For information about the current plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
 {: shortdesc}
-
-## Standard plan
-
+ 
+## Standard plan overview
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
-## Enterprise plan 
 
-The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
+## What's supported by the Standard plan
 
-## What's supported by the Standard and Enterprise plans
-
-The following table summarizes what is supported by the plans:
+The following table summarizes what is supported by the plan:
 
 <table>
-    <caption>Table 1. Support in Standard and Enterprise plans</caption>
+    <caption>Table 1. Support in Standard plan</caption>
       <tr>
 	        <th></th>
 		    <th>Standard Plan</th>
-		    <th>Enterprise Plan</th>
         </tr>
 		<tr>
 			<td>**Tenancy**</td>
 			<td>Multi-tenant </td>
-			<td>Single tenant</td>
 		</tr>
         <tr>
 			<td>**Availability zones**</td>
 			<td>Not supported</td>
-			<td>3</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
 			<td>No</td>
-			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>**Kafka Connect and Kafka Streams supported **</td>
 			<td>Yes</td>
-			<td>Yes</td>
+
 		</tr>
 		<tr>
 			<td>**Maximum number of partitions**</td>
 			<td>100</td>
-			<td>1000</td>
+
 		</tr>
 		<tr>
 			<td>**Maximum retention period**</td>
 			<td>1 GB per partition for up to 30 days </td>
-			<td>Unlimited up to the storage limit of your plan </td>
+
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
@@ -83,15 +74,7 @@ The following table summarizes what is supported by the plans:
 			London (eu-gb)</br>
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de) - no {{site.data.keyword.mql}} API </td>
-			<td>Dallas (us-south)</br>
-			Washington (us-east)<br/>
-			London (eu-gb)<br/>
-			Sydney (au-syd)</br>
-			Frankfurt (eu-de)<br/>
-			Tokyo (jp-tok)<br/>
 
-			<br/>
-			</td>
 		</tr>
 		<tr>
      	    <td>**APIs supported**</td>
@@ -100,37 +83,15 @@ The following table summarizes what is supported by the plans:
 			Kafka REST API</br>
 			MQ Light API</br>
 		    </td>
-			<td>Kafka API<br/>
-			Admin REST API</td>
 		</tr>
 			<td>**Cloud Object Storage bridge and<br/>
 			MQ bridge supported**</td>
 			<td>Yes</td>
-			<td>No</td>
 		</tr>
 		<tr>
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
-			<td>Expect provisioning to take up to 3 hours</td>
 		</tr>
 
 </table>
-
-
-<!--
-## {{site.data.keyword.Bluemix_notm}} Public environment
-{: notoc}
-
-{{site.data.keyword.Bluemix_notm}} Public provides an
-economical public cloud service where you pay for what you use and share infrastructure with
-others.
-
-In {{site.data.keyword.Bluemix_notm}} Public, the cost of
-{{site.data.keyword.messagehub}} is determined by two factors: the
-number of partitions that you use and the number of messages that you send and receive. There is no
-charge for message data while it is retained on the topics, but the data that each partition retains
-is capped at 1 GB.
-
-For more information, see [{{site.data.keyword.Bluemix_notm}} Public ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud-computing/bluemix/public){:new_window}.
--->
 
