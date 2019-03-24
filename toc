@@ -21,7 +21,6 @@ IBM Event Streams
 	eventstreams114.md
 	eventstreams118.md
 	eventstreams068.md
-	eventstreams072.md
 	at-events.md
 	eventstreams-cli.md
 

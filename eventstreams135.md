@@ -152,20 +152,11 @@ This returns the service key details in JSON format.</li>
 ## What to do next
 {: #after_connecting_next}
 
-Now you have connection and credential information, you can choose an {{site.data.keyword.messagehub}} client. Your choice depends on your plan.
-
-* If you're using the Standard plan, see 
+Now you have connection and credential information, you can choose an {{site.data.keyword.messagehub}} client. See 
 [Choosing between the three APIs](/docs/services/EventStreams?topic=eventstreams-choose_api) for information about which client to choose and how to connect.
-* If you're using the Enterprise plan, see [Using the Kafka API](/docs/services/EventStreams?topic=eventstreams-kafka_using).
 
-	The internal Kafka <code>__consumer_offsets</code> topic is visible to you as read-only 
-	if you're using the Enterprise plan. You are strongly recommended not to attempt to manage the topic in any way. 
 
-<!--
-Charlie said:
 
-"Add some info describing how to take the information made available from above e.g. like the info in the Connecting a client to the Kafka API section of the alpha docs on stage 1? https://console.stage1.bluemix.net/docs/services/EventStreams/eventstreams122.html#alpha_about "
--->
 
 
 
