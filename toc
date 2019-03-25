@@ -32,6 +32,10 @@ IBM Event Streams
 		eventstreams137.md
 		eventstreams138.md
 		eventstreams141.md
+		eventstreams088.md
+		eventstreams105.md
+		eventstreams115.md
+		eventstreams089.md
 		eventstreams139.md
 		eventstreams140.md
 		eventstreams142.md
@@ -65,10 +69,6 @@ IBM Event Streams
 	
 	{: .topicgroup}
 	Integrating with other services
-		eventstreams088.md
-		eventstreams105.md
-		eventstreams115.md
-		eventstreams089.md
 		eventstreams119.md
 
 	{: .topicgroup}
