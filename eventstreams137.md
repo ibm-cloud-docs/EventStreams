@@ -80,6 +80,9 @@ The sample code is in the [event-streams-samples GitHub project ![External link 
 
 Follow the instructions in the [README.md ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window} file for that project to build and run the sample.
 
+	Th following blog provides a good introduction to the strengths and weaknesses of the Kafka REST API. [A Comprehensive, Open Source REST Proxy for Kafka. ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.confluent.io/blog/a-comprehensive-open-source-rest-proxy-for-kafka/){: new_window}.
+
+
 
 
 

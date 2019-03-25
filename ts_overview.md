@@ -41,8 +41,6 @@ like help from the {{site.data.keyword.messagehub}} team, ensure that you gather
    app with Cloud Foundry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/starters?topic=starters-download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface#download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: new_window}
 *  [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window}
 *  [Apache Kafka 1.1.0 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://archive.apache.org/dist/kafka/1.1.0/kafka-1.1.0-src.tgz){:new_window}
-*  [A Comprehensive, Open Source REST Proxy for Kafka. ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.confluent.io/blog/a-comprehensive-open-source-rest-proxy-for-kafka/){: new_window} 
-	This blog provides a good introduction to the strengths and weaknesses of the Kafka REST API. The Kafka REST API is available as part of the Standard plan only.
 *  [{{site.data.keyword.Bluemix_notm}} pricing information ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost#cost){: new_window}
 
 
