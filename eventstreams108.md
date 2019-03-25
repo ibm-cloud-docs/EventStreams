@@ -126,24 +126,6 @@ For example, if you create and delete 1 topic 10 times in a day, you are charged
 
 {{site.data.keyword.messagehub}} bills either for each message or for each 64 k. A message up to 64 k counts as 1 billable message. Messages larger than 64 k count as the following number of billable messages: <code><var class="keyword varname">message_size</var> &divide; 64 k</code>.
 
-<!--12/04/18 - Karen: same info duplicated at messagehub057 -->
-## How often does the Kafka REST API restart? 
-{: #REST_restart }
-{: faq}
-
-The Kafka REST API restarts once a day for a short period of
-time. 
-
-During this period, the Kafka REST API might become
-unavailable. If this happens, you are recommended to retry your
-request. After the REST API has restarted, you will have to
-recreate your Kafka consumer instances. If this is the case, the
-REST API returns the following JSON:
-
-```'{"error_code":40403,"message":"Consumer instance not found."}'
-```
-{:screen}
-
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
 {: #plan_compare }
 {: faq}
