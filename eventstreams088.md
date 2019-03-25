@@ -19,6 +19,9 @@ subcollection: eventstreams
 # Linking to other services using bridges
 {: #bridges}
 
+** The {{site.data.keyword.messagehub}}  bridges are deprecated from xx xxxxxx 2019.**
+<br/>
+
 ** {{site.data.keyword.messagehub}} bridges are available as part of the Standard plan only.**
 <br/>
 
