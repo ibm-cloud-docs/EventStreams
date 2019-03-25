@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Migrate the {{site.data.keyword.messagehub}} Standard plan
+# Migrating the {{site.data.keyword.messagehub}} Standard plan
 {: #migrate_standard_plan}
 
 Because the {{site.data.keyword.messagehub}} Standard plan is deprecated from xx xxxx 2019, {{site.data.keyword.messagehub}} instances created using the Standard plan need to be updated to one of the other {{site.data.keyword.messagehub}} plans. 
