@@ -33,30 +33,6 @@ To connect to {{site.data.keyword.messagehub}}, clients must support authenticat
 
 The minimum Kafka protocol that we support is 0.10.
 
-<!--
-## Support summary for the official Apache Kafka client (Java)
-
-<table>
-    <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
-      <tr>
-	        <th></th>
-		    <th>Standard and Enterprise Plans</th>
-		    <th></th>
-        </tr>
-	  		<tr>
-			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
-		</tr>
-	  		<tr>
-			<td>**Supported client versions**</td>
-			<td>Kafka 1.1, or later</td>
-		</tr>
-			<td>**Authentication requirements**</td>
-			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
-		</tr>
-
-</table>
--->
 	
 ## Third-party clients
 {: #third_party_clients}
@@ -125,12 +101,6 @@ Other third-party clients that support the minimum set of client requirements mi
 ### Footnote
 1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
-## Backward compatibility - Standard plan
-{: #compatibility}
-
-For backward compatibility, you can use the Apache Kafka 0.9 Java client with the {{site.data.keyword.messagehub}} Standard plan. However, because of this client's age, we strongly discourage its use. If you choose to use this client version, you need an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library).
-
-Client versions earlier than 0.11 might experience degraded performance because of the additional protocol conversions that are required to connect to newer Kafka server versions.
 
 <!--
 ## Unsupported clients

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-20"
+lastupdated: "2019-03-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -18,6 +18,9 @@ subcollection: eventstreams
 
 # Using the MQ Light API 
 {: #mql_using}
+
+** The {{site.data.keyword.messagehub}} bridges are deprecated from xx xxxxxx 2019.**
+<br/>
 
 ** The MQ Light API is available as part of the Standard plan only.**
 <br/>
