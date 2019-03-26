@@ -19,6 +19,9 @@ subcollection: eventstreams
 # MQ bridge
 {: #mq_bridge}
 
+** The MQ bridge is deprecated from xx xxxxxx 2019. For information about an alternative that you can use, see <blog about Andrew's MQ connector>.**
+<br/>
+
 ** The MQ bridge is available as part of the Standard plan only.**
 <br/>
 
