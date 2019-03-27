@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-01-29"
+lastupdated: "2019-03-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -111,7 +111,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
-			<td>Expect provisioning to take up to 3 hours</td>
+			<td>Expect provisioning to take up to 3 hours because Enterprise has its own dedicated resources for each cluster and so requires more time for provisioning</td>
 		</tr>
 
 </table>

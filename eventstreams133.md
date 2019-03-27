@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-12a"
+lastupdated: "2019-03-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -24,9 +24,10 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
 1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
 
 2. Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-    <pre class="pre">
+    ```
     ibmcloud login -a cloud.ibm.com
-    </pre>
+    ```
+    {: pre}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard+ plans. (The CLI does not support the Standard plan.) Select one of the following methods:
 
@@ -37,7 +38,7 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
     </pre>
     
-    Provisioning a new Enterprise instance might take up to 3 hours.
+    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
     
     * To create an instance from the CLI on the Standard+ plan, run the following command:
 
