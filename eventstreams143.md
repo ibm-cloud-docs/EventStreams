@@ -23,7 +23,7 @@ subcollection: eventstreams
 Because the {{site.data.keyword.messagehub}} Standard plan is deprecated from xx xxxx 2019, {{site.data.keyword.messagehub}} instances created using the Standard plan need to be updated to one of the other {{site.data.keyword.messagehub}} plans. 
 {: shortdesc}
 
-## Sample scenario: Migrate from the Standard plan to the Standard V2 plan
+## Sample scenario: Migrate from the Standard plan to the Standard+ plan
 
 ## Supported plan migrations
 
