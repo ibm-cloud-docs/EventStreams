@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Managing access to your {{site.data.keyword.messagehub}} resources (Standard V2 and Enterprise plans)
+# Managing access to your {{site.data.keyword.messagehub}} resources (Standard+ and Enterprise plans)
 {: #security }
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
