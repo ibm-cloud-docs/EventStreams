@@ -58,12 +58,13 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     ```
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
     ```
-    {:codeblock}
+    {: pre}
 
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
-    <pre class="pre">
+    ```
     ibmcloud plugin install event-streams
-    </pre>
+    ```
+    {: pre}
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard+ plans](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
