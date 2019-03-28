@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28k"
+lastupdated: "2019-03-28m"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -61,8 +61,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     * To create an API key from the CLI, run this command:
     <pre class="pre">
     ibmcloud resource service-key-create <var class="keyword varname">KEY_NAME</var> <var class="keyword varname">ROLE_NAME</var>
-    --instance-name
-    <var class="keyword varname">INSTANCE_NAME</var>
+    --instance-name <var class="keyword varname">INSTANCE_NAME</var>
     </pre>
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     ```
@@ -72,13 +71,16 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard+ plans](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
- 
+ ```
+    ibmcloud target -o <value> -s <value>
+  ```
+    {: codeblock}
 
  test
  ```
-  ibmcloud target -o <value> -s <value>
+    ibmcloud target -o <value> -s <value>
   ```
-  {: codeblock}
+    {: codeblock}
 
 
 
