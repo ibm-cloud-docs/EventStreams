@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28m"
+lastupdated: "2019-03-28n"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -46,9 +46,8 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     * To create an instance from the CLI on the Standard+ plan, run the following command:
 
     <pre class="pre">
-    ibmcloud resource service-instance-create
-    <var class="keyword varname">INSTANCE_NAME</var> messagehub ibm.message.hub.standard.v2
-    <var class="keyword varname">REGION</var>
+    ibmcloud resource service-instance-create <var class="keyword varname">INSTANCE_NAME</var>
+    messagehub ibm.message.hub.standard.v2 <var class="keyword varname">REGION</var>
     </pre>
     Provisioning a new Standard+ instance is instantaneous.
     
