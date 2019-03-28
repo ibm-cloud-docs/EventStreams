@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28i"
+lastupdated: "2019-03-28j"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -57,7 +57,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
 
     * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
-    *To create an API key from the CLI, run this command:
+    * To create an API key from the CLI, run this command:
     <pre class="pre">
     ibmcloud resource service-key-create <var class="keyword varname">KEY_NAME</var> <var class="keyword varname">ROLE_NAME</var>
     --instance-name
@@ -67,13 +67,20 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     ```
     ibmcloud plugin install event-streams
     ```
-    {: pre}
+    {: codeblock}
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard+ plans](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
+ 
+
+ test
+ ```
+  ibmcloud target -o <value> -s <value>
+  ```
+  {: codeblock}
 
 
-.
+
 
 
 
