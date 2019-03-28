@@ -27,7 +27,7 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     ```
     ibmcloud login -a cloud.ibm.com
     ```
-    {: pre}
+    {: codeblock}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard+ plans. (The CLI does not support the deprecated Standard plan.) Select one of the following methods:
 
