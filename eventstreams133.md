@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28j"
+lastupdated: "2019-03-28k"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -35,10 +35,11 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
     ```
-    ibmcloud resource service-instance-create 
-    <var class="keyword varname">INSTANCE_NAME</var> messagehub 
-    ibm.message.hub.enterprise.3nodes.2tb <var class="keyword varname">REGION</var>
+    ibmcloud resource service-instance-create <var class="keyword varname">
+    INSTANCE_NAME</var> messagehub ibm.message.hub.enterprise.3nodes.2tb 
+    <var class="keyword varname">REGION</var>
     ```
+   {: codeblock}
     
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
     
