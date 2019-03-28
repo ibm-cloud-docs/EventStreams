@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28a"
+lastupdated: "2019-03-28b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -51,9 +51,9 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
 4. Create a service API key for this instance. 
 <br/>
 The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
-<!--
-    * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
--->
+
+To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
+
 To create an API key from the CLI, run this command:
     ```
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
