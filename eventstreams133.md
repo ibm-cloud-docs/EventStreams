@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28n"
+lastupdated: "2019-03-28o"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -41,14 +41,12 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     ```
    {: codeblock}
     
-    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
+    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
     
     * To create an instance from the CLI on the Standard+ plan, run the following command:
 
-    <pre class="pre">
-    ibmcloud resource service-instance-create <var class="keyword varname">INSTANCE_NAME</var>
-    messagehub ibm.message.hub.standard.v2 <var class="keyword varname">REGION</var>
-    </pre>
+    <pre class="pre">ibmcloud resource service-instance-create <var class="keyword varname">INSTANCE_NAME</var>
+    messagehub ibm.message.hub.standard.v2 <var class="keyword varname">REGION</var></pre>
     Provisioning a new Standard+ instance is instantaneous.
     
 4. Create a service API key for this instance. 
@@ -58,10 +56,8 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
     * To create an API key from the CLI, run this command:
-    <pre class="pre">
-    ibmcloud resource service-key-create <var class="keyword varname">KEY_NAME</var> <var class="keyword varname">ROLE_NAME</var>
-    --instance-name <var class="keyword varname">INSTANCE_NAME</var>
-    </pre>
+    <pre class="pre">ibmcloud resource service-key-create <var class="keyword varname">KEY_NAME</var> <var class="keyword varname">ROLE_NAME</var>
+    --instance-name <var class="keyword varname">INSTANCE_NAME</var></pre>
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     ```
     ibmcloud plugin install event-streams
@@ -75,11 +71,7 @@ For information about the {{site.data.keyword.messagehub}} CLI commands, see [CL
   ```
     {: codeblock}
 
- test
- ```
-    ibmcloud target -o <value> -s <value>
-  ```
-    {: codeblock}
+
 
 
 
