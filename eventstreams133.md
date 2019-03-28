@@ -36,8 +36,8 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     * To create an instance from the CLI on the Enterprise plan, run the following command:
     <pre class="pre">
     ibmcloud resource service-instance-create 
-    <INSTANCE_NAME> messagehub 
-    ibm.message.hub.enterprise.3nodes.2tb <REGION>
+    <var class="keyword varname">INSTANCE_NAME</var> messagehub 
+    ibm.message.hub.enterprise.3nodes.2tb <var class="keyword varname">REGION</var>
     </pre>
     
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
@@ -46,8 +46,8 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
 
     <pre class="pre">
     ibmcloud resource service-instance-create
-    <INSTANCE_NAME> messagehub ibm.message.hub.standard.v2
-    <REGION>
+    <var class="keyword varname">INSTANCE_NAME</var> messagehub ibm.message.hub.standard.v2
+    <var class="keyword varname">REGION</var>
     </pre>
     Provisioning a new Standard+ instance is instantaneous.
     
@@ -58,11 +58,11 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
     To create an API key from the CLI, run this command:
-     <pre class="pre">
+    <pre class="pre">
     ibmcloud resource service-key-create
-    <KEY_NAME> <ROLE_NAME> --instance-name
-    <INSTANCE_NAME>
-     </pre>
+    <var class="keyword varname">KEY_NAME</var> <var class="keyword varname">ROLE_NAME</var> --instance-name
+    <var class="keyword varname">INSTANCE_NAME</var>
+    </pre>
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     ```
     ibmcloud plugin install event-streams
