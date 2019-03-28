@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-28h"
+lastupdated: "2019-03-28i"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -34,11 +34,11 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
-    <pre class="pre">
+    ```
     ibmcloud resource service-instance-create 
     <var class="keyword varname">INSTANCE_NAME</var> messagehub 
     ibm.message.hub.enterprise.3nodes.2tb <var class="keyword varname">REGION</var>
-    </pre>
+    ```
     
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
     
@@ -57,7 +57,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
 
     * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
-    To create an API key from the CLI, run this command:
+    *To create an API key from the CLI, run this command:
     <pre class="pre">
     ibmcloud resource service-key-create <var class="keyword varname">KEY_NAME</var> <var class="keyword varname">ROLE_NAME</var>
     --instance-name
