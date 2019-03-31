@@ -32,7 +32,7 @@ Kafka clients exist in multiple languages and we provide instructions for some o
         </tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.x</td>
+			<td>Kafka 2.2</td>
 			<td>Kafka 1.1</td>
 		</tr>
 	  		<tr>
