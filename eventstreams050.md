@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-03-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -24,15 +24,15 @@ If you're using the Java clients, you can use the publicly available Kafka clien
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
 <table>
-    <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
+    <caption>Table 1. Kafka client support in Standard+ and Enterprise plans</caption>
       <tr>
 	        <th></th>
-		    <th>Standard Plan</th>
+		    <th>Standard+ Plan</th>
 		    <th>Enterprise Plan</th>
         </tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
+			<td>Kafka 2.x</td>
 			<td>Kafka 1.1</td>
 		</tr>
 	  		<tr>
@@ -53,7 +53,7 @@ Kafka clients exist in multiple languages and we provide instructions for some o
 
 </table>
 
-For information about the Producer and Consumer APIs, see 
+For information about the V1.1 Producer and Consumer APIs, see 
 [Kafka Producer API 1.1.0 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
 [Kafka Consumer API 1.1 0 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 

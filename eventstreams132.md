@@ -19,6 +19,11 @@ subcollection: eventstreams
 # Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability (Enterprise plan)
 {: #sla}
 
+<br/>
+**Does this apply to Standard+ plan or is a new topic required for that plan?**
+
+<br/>
+
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-14/$file/i126-6605-14_08-2018_en_US.pdf){:new_window}.
