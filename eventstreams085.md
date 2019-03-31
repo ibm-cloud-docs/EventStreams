@@ -23,7 +23,7 @@ subcollection: eventstreams
 {{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
 {: shortdesc}
 
-## Standard plan
+## Standard+ plan
 
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
@@ -39,7 +39,7 @@ The following table summarizes what is supported by the plans:
     <caption>Table 1. Support in Standard and Enterprise plans</caption>
       <tr>
 	        <th></th>
-		    <th>Standard Plan</th>
+		    <th>Standard+ Plan</th>
 		    <th>Enterprise Plan</th>
         </tr>
 		<tr>
@@ -54,7 +54,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
+			<td>Kafka 2.2</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
