@@ -86,7 +86,7 @@ The following table summarizes what is supported by the plans:
 			<td>Dallas (us-south)</br>
 			London (eu-gb)</br>
 			Sydney (au-syd)</br>
-			Frankfurt (eu-de) - no {{site.data.keyword.mql}} API </td>
+			Frankfurt (eu-de) </td>
 			<td>Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
