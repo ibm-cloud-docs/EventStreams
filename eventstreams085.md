@@ -55,11 +55,11 @@ The following table summarizes what is supported by the plans:
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
-			<td>Kafka 1.1</td>
+			<td>Kafka 2.2</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
-			<td>No</td>
+			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
@@ -98,7 +98,6 @@ The following table summarizes what is supported by the plans:
 			<td>Kafka API</br>
 			Admin REST API<br/>
 			Kafka REST API</br>
-			MQ Light API</br>
 		    </td>
 			<td>Kafka API<br/>
 			Admin REST API</td>
@@ -111,7 +110,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
-			<td>Expect provisioning to take up to 3 hours because Enterprise has its own dedicated resources for each cluster and so requires more time for provisioning</td>
+			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
 		</tr>
 
 </table>
