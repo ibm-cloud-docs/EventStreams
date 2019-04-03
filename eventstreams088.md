@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Linking to other services using bridges
+# Linking to other services using bridges on the Standard plan (deprecated)
 {: #bridges}
 
 ** The {{site.data.keyword.messagehub}}  bridges are deprecated from xx xxxxxx 2019.**

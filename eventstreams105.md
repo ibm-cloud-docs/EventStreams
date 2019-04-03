@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# MQ bridge
+# MQ bridge on the Standard plan (deprecated)
 {: #mq_bridge}
 
 ** The MQ bridge is deprecated from xx xxxxxx 2019. For information about an alternative that you can use, see <blog about Andrew's MQ connector>.**

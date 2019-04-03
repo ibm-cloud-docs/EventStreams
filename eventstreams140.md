@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs for the Standard plan
+# FAQs for the Standard plan (deprecated)
 {: #faqs_standard}
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Standard plan. For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).

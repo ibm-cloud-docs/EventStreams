@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.messagehub}} CLI reference for the Enterprise and Standard+ plans
+# {{site.data.keyword.messagehub}} CLI reference for the Standard+ and Enterprise plans
 {: #cli_reference}
 
 ## ibmcloud es init

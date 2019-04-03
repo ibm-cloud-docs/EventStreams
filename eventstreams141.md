@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Choosing a Kafka client to use with {{site.data.keyword.messagehub}} Standard plan
+# Choosing a Kafka client to use with {{site.data.keyword.messagehub}} Standard plan (deprecated)
 {: #kafka_clients_standard}
 
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:

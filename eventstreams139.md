@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Monitoring and logging (Standard plan)
+# Monitoring and logging on the Standard plan (deprecated)
 {: #monitoring_standard}
 
 {{site.data.keyword.messagehub}} on the Standard plan automatically collects metrics and events so that you

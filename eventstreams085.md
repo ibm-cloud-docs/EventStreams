@@ -16,6 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
+{:note: .note}
 
 # Choosing your plan 
 {: #plan_choose}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-04-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,13 +16,15 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the MQ Light clients
+# Using the MQ Light clients (deprecated)
 {: #mql_clients}
 
-** The {{site.data.keyword.messagehub}} bridges are deprecated from xx xxxxxx 2019.**
+** The MQ Light clients are deprecated from xx xxxxxx 2019. For an alternative to the MQ Light API, see **
+{:note: .note}
 <br/>
 
-** The MQ Light API is available as part of the Standard plan only.**
+** The MQ Light API is available as part of the Standard plan only. **
+{: note}
 <br/>
 
 ## Using the MQ Light Java client
