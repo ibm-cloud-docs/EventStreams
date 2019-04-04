@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-17"
+lastupdated: "2019-04-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -15,9 +15,14 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:note: .note}
 
-# Reporting a problem to the {{site.data.keyword.messagehub}} team - Enterprise plan
+# Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard+ and Enterprise plans
 {: #report_problem_enterprise}
+
+<br/>
+**Is this just as relevant for Standard+ as it is for Enterprise?**
+{: note}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){:new_window}.
 {: shortdesc}

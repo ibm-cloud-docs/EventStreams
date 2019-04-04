@@ -39,7 +39,7 @@ IBM Event Streams
 		eventstreams089.md
 		eventstreams139.md
 		eventstreams140.md
-		eventstreams142.md
+		eventstreams109.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
@@ -87,7 +87,6 @@ IBM Event Streams
 	Troubleshooting
 		ts_overview.md
 		eventstreams057.md
-		eventstreams109.md
 		eventstreams125.md
 		
 	{: .topicgroup}
