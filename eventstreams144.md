@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-10-19"
+lastupdated: "2019-04-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -15,10 +15,9 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note: .note}
 
 
-# Known restrictions
+# Known restrictions for the Standard plan (deprecated)
 {: #restrictions}
 
 If you find a problem while using {{site.data.keyword.messagehub}}, review these known restrictions and workarounds. 
@@ -114,20 +113,12 @@ of topics, or on the rapid deletion and re-creation of topics.
 ## Kafka REST API
 {: #trouble_rest}
 
-<br/>
-**Is this specific to old Standard only? If so I'll move to specific Standard topic.**
-{: note}
-
 *  Only the binary-embedded format is supported for requests and
    responses. The Avro and JSON embedded formats are not supported.
 *  Concurrent requests are not supported for a consumer instance.
    Read, commit, or delete requests corresponding to a consumer
    instance should be sent only after a response is received for
    any outstanding requests of that instance.
-
-<br/>
-**Is this specific to old Standard only? If so I'll move to specific Standard topic.**
-{: note}
 
 ## Kafka REST API rate limitation
 {: #kafka_rate}
@@ -140,10 +131,6 @@ responds with the following HTTP error:
 {:screen}
 
 If you see this error, wait and submit the request again.
-
-<br/>
-**Is this specific to old Standard only? If so I'll move to specific Standard topic.**
-{: note}
 
 <!--12/04/18 - Karen: same info duplicated at messagehub108 -->
 ## Kafka REST API daily restart

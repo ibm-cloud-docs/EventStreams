@@ -40,6 +40,7 @@ IBM Event Streams
 		eventstreams139.md
 		eventstreams140.md
 		eventstreams109.md
+		eventstreams144.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
