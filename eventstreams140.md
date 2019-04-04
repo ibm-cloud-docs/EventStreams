@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-04-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,7 +20,9 @@ subcollection: eventstreams
 # FAQs for the Standard plan (deprecated)
 {: #faqs_standard}
 
-Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Standard plan. For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).
+Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Standard plan, which is deprecated from xx xxxxxx 2019. 
+
+For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->

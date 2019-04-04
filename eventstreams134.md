@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-24"
+lastupdated: "2019-04-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -17,10 +17,14 @@ subcollection: eventstreams
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# The Standard plan
+# The Standard plan (deprecated)
 {: #plan_choose_standard}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. The Standard plan will be deprecated. For information about the current plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
+**The Standard plan described in this topic will be deprecated xx xxxxxx 2019. **
+
+For information about the current plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
+
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. 
 {: shortdesc}
  
 ## Standard plan overview

@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the Kafka REST API
+# Using the Kafka REST API on the Standard plan (deprecated)
 {: #rest_using_standard}
 
 ** The Kafka REST API is available as part of the Standard plan only.**

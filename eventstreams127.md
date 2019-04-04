@@ -38,7 +38,7 @@ Read the following information for how to obtain these details. The steps can va
 As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} service instance for either the Standard+ or Enterprise plan. Next, obtain {{site.data.keyword.messagehub}} API connection details by completing the following tasks.
 
 
-## Plan overview
+## Overview
 {: #connect_enterprise}
 
 Services provisioned using the Standard+ or the Enterprise Plan are grouped in the dashboard under the heading **Services**. The plans are [IAM enabled ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-getstarted#getstarted){:new_window}. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see 
