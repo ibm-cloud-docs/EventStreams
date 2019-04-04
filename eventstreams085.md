@@ -107,11 +107,6 @@ The following table summarizes what is supported by the plans:
 			<td>Kafka API<br/>
 			Admin REST API</td>
 		</tr>
-			<td>**Cloud Object Storage bridge and<br/>
-			MQ bridge supported**</td>
-			<td>Yes</td>
-			<td>No</td>
-		</tr>
 		<tr>
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
