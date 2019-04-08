@@ -93,7 +93,7 @@ IBM Event Streams
 	{: .topicgroup}
 	Related links
 	 	[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
-	 	[Apache Kafka 1.1.0 client](https://archive.apache.org/dist/kafka/1.1.0/kafka-1.1.0-src.tgz)
+	 	[Apache Kafka 1.1.0 client - do we still want to link to 1.1?](https://archive.apache.org/dist/kafka/1.1.0/kafka-1.1.0-src.tgz)
 		[IBM Event Streams on ibm.com](https://www.ibm.com/cloud/message-hub)
 	{: .navgroup-end}
 
