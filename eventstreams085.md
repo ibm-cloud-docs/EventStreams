@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-01"
+lastupdated: "2019-04-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -67,6 +67,11 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
+				<tr>
+			<td>**Cloud Service Endpoint support**</td>
+			<td>No</td>
+			<td>Yes</td>
+		</tr>
 		<tr>
 			<td>**Kafka Connect and Kafka Streams supported **</td>
 			<td>Yes</td>
@@ -117,6 +122,8 @@ The following table summarizes what is supported by the plans:
 
 For information about the deprecated Standard plan, see
 [Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_standard#plan_choose_standard).
+
+
 <!--
 ## {{site.data.keyword.Bluemix_notm}} Public environment
 {: notoc}
