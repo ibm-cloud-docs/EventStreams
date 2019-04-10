@@ -45,6 +45,7 @@ IBM Event Streams
 
 	{: .navgroup id="howto"}
 	eventstreams127.md
+	eventstreams145.md
 		
 	{: .topicgroup}
 	Administering Event Streams
