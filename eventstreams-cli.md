@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-11"
+lastupdated: "2019-04-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,11 +16,11 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.messagehub}} CLI reference for the Standard+ and Enterprise plans
+# {{site.data.keyword.messagehub}} CLI reference for the Standard+ and Enterprise   m,//plans
 {: #cli_reference}
 
 ## ibmcloud es init
-{: #iibmcloud es init}
+{: #ibmcloud es init}
 
 Initialize the {{site.data.keyword.messagehub}} plugin. {{site.data.keyword.cloud_notm}} API endpoint.
 ```
@@ -38,6 +38,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
    <dt>--skip-ssl-validation (optional)</dt>
    <dd>Bypass SSL validation of HTTP requests.</dd>
    </dl>
+
 <strong>Examples</strong>:
 
 Set the API endpoint to cloud.ibm.com:
@@ -51,11 +52,13 @@ ibmcloud api https://cloud.ibm.com --skip-ssl-validation
 ```
 {: codeblock}
 
+
 View the current API endpoint:
 ```
 ibmcloud api
 ```
 {: codeblock}
+
 
 Unset the API endpoint:
 ```
@@ -64,21 +67,20 @@ ibmcloud api --unset
 {: codeblock}
 
 
-## ibmcloud es init
-{: #kp-create}
+## ibmcloud es broker
+{: #ibmcloud es broker}
 
-[Create a root key](/docs/services/key-protect?topic=key-protect-create-root-keys) in the {{site.data.keyword.keymanagementserviceshort}} service instance that you specify. 
+Display the details of a broker.
 
-```sh
-ibmcloud kp create KEY_NAME -i INSTANCE_ID | $INSTANCE_ID
-                   [-k, --key-material KEY_MATERIAL] 
-                   [-s, --standard-key]
-                   [--output FORMAT]
 ```
-{:pre}
+ibmcloud es broker [--broker] ID [--json]
+```
+{:codeblock}
 
-### Required parameters
-{: #create-req-params}
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #broker-req-params}
 
 <dl>
     <dt><code>KEY_NAME</code></dt>
