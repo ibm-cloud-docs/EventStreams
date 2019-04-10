@@ -16,13 +16,13 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.messagehub}} CLI reference for the Standard+ and Enterprise   m,//plans
+# {{site.data.keyword.messagehub}} CLI reference for the Standard+ and Enterprise plans
 {: #cli_reference}
 
 ## ibmcloud es init
 {: #ibmcloud es init}
 
-Initialize the {{site.data.keyword.messagehub}} plugin. {{site.data.keyword.cloud_notm}} API endpoint.
+Initialize the {{site.data.keyword.messagehub}} plugin using an {{site.data.keyword.cloud_notm}} API endpoint.
 ```
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```
@@ -31,7 +31,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
 
 <strong>Command options</strong>:
    <dl>
-   <dt>API_ENDPOINT (optional)</dt>
+   <dt>API_ENDPOINT_URL (optional)</dt>
    <dd>The API endpoint that is targeted, for example, `https://cloud.ibm.com`. If both *API_ENDPOINT* and `--unset` options aren't specified, the current API endpoint is displayed.</dd>
    <dt>--unset (optional)</dt>
    <dd>Remove the API endpoint setting.</dd>
