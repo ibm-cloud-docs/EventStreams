@@ -134,7 +134,7 @@ You could use a ConsumerRebalanceListener to manually commit offsets (if you are
 ## Code snippets
 {: #consumer_code_snippets notoc}
 
-These code snippets are at a very high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in GitHub https://github.com/ibm-messaging/event-streams-samples.
+These code snippets are at a very high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples).
 
 To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need at least these properties. Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with your own service credentials:
 
