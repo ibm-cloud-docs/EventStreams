@@ -56,16 +56,16 @@ ibmcloud es broker [--broker] ID [--json]
 {: #broker-req-params}
 
 <dl>
-    <dt><code>--broker value, -b value</code></dt>
+    <dt>--broker value, -b value</dt>
         <dd>Broker ID, with or without a preceding '--broker' flag.</dd>
-    <dt><code>--json (optional)</code></dt>
+    <dt>--json (optional)</dt>
         <dd>Output format in JSON.</dd>
 </dl>
 
 <strong>Examples</strong>:
 
 
-## bmcloud es broker-config
+## ibmcloud es broker-config
 {: #ibmcloud es broker config}
 
 Display broker configuration.
@@ -81,14 +81,14 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 {: #broker config params}
 
 <dl>
-    <dt><code>--broker value, -b value</code></dt>
+    <dt>--broker value, -b value</dt>
         <dd>Broker ID, with or without a preceding '--broker' flag.</dd>
-    <dt><code>--filter value, -f value (optional)</code></dt>
+    <dt>--filter value, -f value (optional)</dt>
         <dd> Filter the list of configuration using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
-        <dt><code>--verbose, -v  (optional)</code></dt>
+        <dt>--verbose, -v  (optional)</dt>
         <dd>Display verbose configuration information.</dd>
-        <dt><code>--filter value, -f value(optional)</code></dt>
-    <dt><code>--json (optional)</code></dt>
+        <dt>--filter value, -f value(optional)</dt>
+    <dt>--json (optional)</dt>
         <dd>Output format in JSON.</dd>
 </dl>
 
@@ -111,7 +111,7 @@ ibmcloud es cluster [--json]
 {: #es cluster params}
 
 <dl>
-    <dt><code>--json (optional)</code></dt>
+    <dt>--json (optional)</dt>
         <dd>Output format in JSON.</dd>
 </dl>
 
@@ -133,14 +133,99 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
 {: #es topic params}
 
 <dl>
-    <dt><code>--name value, -n value</code></dt>
+    <dt>--name value, -n value</dt>
         <dd>Topic name.</dd>
-    <dt><code>--json (optional)</code></dt>
+    <dt>--json (optional)</dt>
         <dd>Output format in JSON.</dd>
 </dl>
 
 <strong>Examples</strong>:
 
+## ibmcloud es topic-create
+{: #ibmcloud es topic-create}
+
+Create a new topic.
+
+```
+ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config KEY=VALUE[;KEY=VALUE]* ]*
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #es topic-create params}
+
+<dl>
+    <dt>--name value, -n value</dt>
+        <dd>Topic name.</dd>
+    <dt>--partitions value, -p value</dt>
+        <dd>Set the number of partitions for the topic.</dd>
+    <dt>--config KEY=VALUE, -c KEY=VALUE(optional)</dt>
+        <dd>Set a configuration option for the topic as a KEY=VALUE pair.<p> You can specify multiple --config options.
+Each '--config' option can specify a semicolon-delimited list of assignments.
+The following is a list of valid configuration keys:
+cleanup.policy
+retention.ms
+retention.bytes
+segment.bytes
+segment.ms
+segment.index.bytes</p></dd>
+</dl>
+
+<strong>Examples</strong>:
+
+## ibmcloud es topic-delete
+{: #ibmcloud es topic-delete}
+
+Display the details of a topic.
+
+```
+ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #es topic-delete params}
+
+<dl>
+    <dt>--name value, -n value</dt>
+        <dd>Topic name.</dd>
+    <dt>--force, -f (optional)</dt>
+        <dd>Delete without confirmation.</dd>
+</dl>
+
+<strong>Examples</strong>:
+
+## ibmcloud es topic-delete-records
+{: #ibmcloud es topic-delete-records}
+
+Delete records from a topic for a given offset.
+
+```
+ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITION:OFFSET[;PARTITION:OFFSET]* ]* [--force]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #es topic-create params}
+
+<dl>
+    <dt>--name value, -n value</dt>
+        <dd>Topic name.</dd>
+    <dt>--partition-offset PARTITION:OFFSET, -p PARTITION:OFFSET</dt>
+        <dd>The partition and offset to delete records from in PARTITION:OFFSET format. <p> You can specify multiple --partition-offset options or you can specify
+multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with quotations: 'PARTITION1:OFFSET1;PARTITION2:OFFSET2;PARTITION3:OFFSET3'.</dd>
+     <dt>--force, -f (optional)</dt>
+        <dd>Delete records without confirmation.</dd>
+</dl>
+
+<strong>Examples</strong>:
 
 -------------
 
