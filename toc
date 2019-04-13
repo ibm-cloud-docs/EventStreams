@@ -33,6 +33,8 @@ IBM Event Streams
 		eventstreams137.md
 		eventstreams138.md
 		eventstreams141.md
+		eventstreams075.md
+		eventstreams099.md
 		eventstreams088.md
 		eventstreams105.md
 		eventstreams115.md
@@ -65,8 +67,6 @@ IBM Event Streams
 		eventstreams111.md
 		eventstreams110.md
 		eventstreams025.md
-		eventstreams075.md
-		eventstreams099.md
 		eventstreams117.md
 	
 	{: .topicgroup}
