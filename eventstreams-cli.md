@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-13"
+lastupdated: "2019-04-13a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -34,7 +34,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
    <dt>--instance-name value, -i value (optional)</dt>
    <dd>Name of the {{site.data.keyword.messagehub}} instance.</dd>
    <dt>--api-url value, -a value (optional)</dt>
-   <dd>Kafka admin URL of {{site.data.keyword.messagehub}} instance.</dd>
+   <dd>Kafka admin URL of the {{site.data.keyword.messagehub}} instance.</dd>
    </dl>
 
 <strong>Examples</strong>:
@@ -57,7 +57,7 @@ ibmcloud es broker [--broker] ID [--json]
 
 <dl>
     <dt>--broker value, -b value</dt>
-        <dd>Broker ID, with or without a preceding '--broker' flag.</dd>
+        <dd>Broker ID, you can specify with or without a preceding '--broker' flag.</dd>
     <dt>--json (optional)</dt>
         <dd>Output format in JSON.</dd>
 </dl>
@@ -68,7 +68,7 @@ ibmcloud es broker [--broker] ID [--json]
 ## ibmcloud es broker-config
 {: #ibmcloud es broker config}
 
-Display broker configuration.
+Display the configuration of a broker.
 
 ```
 ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
@@ -82,7 +82,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 
 <dl>
     <dt>--broker value, -b value</dt>
-        <dd>Broker ID, with or without a preceding '--broker' flag.</dd>
+        <dd>Broker ID, you can specify with or without a preceding '--broker' flag.</dd>
     <dt>--filter value, -f value (optional)</dt>
         <dd> Filter the list of configuration using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
         <dt>--verbose, -v  (optional)</dt>
@@ -136,7 +136,7 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
     <dt>--name value, -n value</dt>
         <dd>Topic name.</dd>
     <dt>--json (optional)</dt>
-        <dd>Output format in JSON.</dd>
+        <dd>Output format of JSON.</dd>
 </dl>
 
 <strong>Examples</strong>:
