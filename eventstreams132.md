@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-02-06"
+lastupdated: "2019-04-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -17,12 +17,22 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 
-# Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability (Enterprise plan)
+# Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability 
 {: #sla}
 
-<br/>
-**Does this apply to Standard+ plan or is a new topic required for Standard+?**
-{: note}
+## Standard plan
+
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Standard plan. 
+For more information about the SLA for {{site.data.keyword.Bluemix}}, see
+[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
+
+
+
+## Enterprise plan
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan. 
+For more information about the SLA for {{site.data.keyword.Bluemix}}, see
+[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
+
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix}}, see
@@ -33,6 +43,8 @@ Availability refers to the ability of applications to produce and consume messag
 
 ## How do we measure it?
 Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded.
+
+Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 
 ## What do you need to consider to achieve this availability?
 To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/services/EventStreams?topic=eventstreams-sla#connectivity), [throughput](/docs/services/EventStreams?topic=eventstreams-sla#throughput), and [consistency and durability of messages](/docs/services/EventStreams?topic=eventstreams-sla#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
