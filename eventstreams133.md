@@ -33,9 +33,9 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
 
     * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
-    * To create an instance from the CLI on the Enterprise plan, run the following command:
+    * To create an instance from the CLI on the Enterprise plan, run a command like the following:
     ```
-   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
+   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
    {: codeblock}
     
@@ -46,7 +46,7 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
   ````
 ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.standard.v2 <REGION>
     ```
-    Provisioning a new Standard+ instance is instantaneous.
+    Provisioning a new Standard+ instance is instantaneous because the underlying resources are already set up.
     
 4. Create a service API key for this instance. 
 <br/>
