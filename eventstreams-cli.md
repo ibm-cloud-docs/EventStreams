@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-13a"
+lastupdated: "2019-04-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -26,6 +26,7 @@ Initialize the {{site.data.keyword.messagehub}} plugin.
 ```
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```
+{:codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -41,7 +42,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
 
 
 ## ibmcloud es broker
-{: #ibmcloud es broker}
+{: #ibmcloud_es_broker}
 
 Display the details of a broker.
 
@@ -66,7 +67,7 @@ ibmcloud es broker [--broker] ID [--json]
 
 
 ## ibmcloud es broker-config
-{: #ibmcloud es broker config}
+{: #ibmcloud_es_broker_config}
 
 Display the configuration of a broker.
 
@@ -96,7 +97,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 
 
 ## ibmcloud es cluster
-{: #ibmcloud es cluster}
+{: #ibmcloud_es_cluster}
 
 Display the details of the cluster
 
@@ -118,7 +119,7 @@ ibmcloud es cluster [--json]
 <strong>Examples</strong>:
 
 ## ibmcloud es topic
-{: #ibmcloud es topic}
+{: #ibmcloud_es_topic}
 
 Display the details of a topic.
 
@@ -227,6 +228,178 @@ multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with qu
 
 <strong>Examples</strong>:
 
+
+
+## ibmcloud es topic-update
+{: #ibmcloud es_topic_update}
+
+Update the configuration for a topic.
+
+
+```
+ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud es_topic_update_params}
+
+<dl>
+    <dt>--name value, -n value</dt>
+        <dd>Topic name.</dd>
+     <dt>--config KEY[=VALUE], -c KEY[=VALUE] </dt>
+        <dd>Set a configuration option for the topic as a KEY[=VALUE] pair.
+        <p>If VALUE is not given, the '--default' flag should be specified to indicate resetting the configuration value back to the default.
+Multiple --config options can be specified.
+Each '--config' option can specify a semicolon-delimited list of assignments
+The following is a list of valid configuration keys:
+cleanup.policy
+retention.ms
+retention.bytes
+segment.bytes
+segment.ms
+segment.index.bytes</p></dd>
+    <dt>--default, -d  (optional)</dt>
+        <dd>Reset each configuration parameter specified using '--config' to its default value.</dd>
+</dl>
+
+<strong>Examples</strong>:
+
+
+## ibmcloud es topics
+{: #ibmcloud_es_topics}
+
+List topics.
+
+
+````
+ibmcloud es topics [--filter FILTER] [--json]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud es_topics_params}
+
+<dl>
+    <dt>--filter value, -f value (optional)</dt>
+        <dd>Topic name.</dd>
+     <dt>--json (optional)</dt>
+        <dd>Format output in JSON. Up to 1000 topics are returned.
+</dd>
+</dl>
+
+<strong>Examples</strong>:
+
+
+## ibmcloud es group
+{: #ibmcloud_es_group}
+
+Display details of a consumer group.
+
+
+````
+ibmcloud es group [--group] GROUP_ID [--json]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud es_group_params}
+
+<dl>
+    <dt>--group value, -g value </dt>
+        <dd>Consumer group ID</dd>
+     <dt>--json (optional)</dt>
+        <dd>Format output in JSON. 
+</dd>
+</dl>
+
+<strong>Examples</strong>:
+ 
+ ## ibmcloud es group-reset
+{: #ibmcloud_es_group_reset}
+
+Reset the offsets for a consumer group.
+
+
+````
+ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] --mode MODE --value VALUE [--dry-run] [--execute] [--json]
+
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud es_group_params}
+
+<dl>
+    <dt>--group value, -g value </dt>
+        <dd>Consumer group ID</dd>
+     <dt>--topic value, -t value</dt>
+        <dd>Topic name. Apply to just this topic. Omit if '--all-topics' flag has been supplied. 
+</dd>
+     <dt>--all-topics, -a   </dt>
+        <dd>Apply to all topics assigned to the group. Omit if '--topic' flag has been supplied. 
+</dd>
+     <dt>--mode value, -m value</dt>
+        <dd>One of the following: 'earliest', 'latest' or 'datetime'.
+</dd>
+     <dt>--value value, -v value</dt>
+        <dd>Value for resetting offsets, based on '--mode'. Omit for 'earliest' and 'latest'.
+'datetime': use 'YYYY-MM-DDTHH:mm:SS.sss[±hh:mm|Z]'.
+</dd>
+     <dt>--dry-run (optional)</dt>
+        <dd>Show results, do not implement the changes.
+</dd>
+     <dt>--execute  (optional)</dt>
+        <dd> Execute the changes to the offsets.
+</dd>
+     <dt>--json (optional)</dt>
+        <dd> Format output in JSON. 
+</dd>
+</dl>
+
+<strong>Examples</strong>:
+
+
+## ibmcloud es groups
+{: #ibmcloud_es_groups}
+
+List consumer groups.
+
+
+````
+ibmcloud es groups [--filter FILTER] [--json]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud es_group_params}
+
+<dl>
+    <dt>--filter value, -f value (optional)
+ </dt>
+        <dd>Optional. Filter the list of consumer groups using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
+     <dt>--json (optional)</dt>
+        <dd>Format output in JSON. A maximum of 1000 groups are returned.
+</dd>
+</dl>
+
+<strong>Examples</strong>:
+ 
 -------------
 
  
