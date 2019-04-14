@@ -19,6 +19,9 @@ subcollection: eventstreams
 # {{site.data.keyword.messagehub}} CLI reference for the Standard+ and Enterprise plans
 {: #cli_reference}
 
+If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see 
+[Using the {{site.data.keyword.messagehub}} CLI ](docs/services/EventStreams?topic=eventstreams-cli#cli){:new_window}.
+
 ## ibmcloud es init
 {: #ibmcloud es init}
 
