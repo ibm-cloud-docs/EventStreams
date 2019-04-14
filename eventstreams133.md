@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-14"
+lastupdated: "2019-04-14a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -35,9 +35,7 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
     ```
-    ibmcloud resource service-instance-create <
-    INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb 
-    <REGION>
+   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.enterprise.3nodes.2tb <REGION>
     ```
    {: codeblock}
     
@@ -45,9 +43,9 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Enterpris
     
     * To create an instance from the CLI on the Standard+ plan, run the following command:
 
-    <pre class="pre">ibmcloud resource service-instance-create 
-   <INSTANCE_NAME> messagehub ibm.message.hub.standard.v2
-    <REGION></pre>
+  ````
+ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub ibm.message.hub.standard.v2 <REGION>
+    ```
     Provisioning a new Standard+ instance is instantaneous.
     
 4. Create a service API key for this instance. 
