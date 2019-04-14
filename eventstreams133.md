@@ -66,10 +66,12 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard+ plans](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
+<!--
  ```
     ibmcloud target -o <value> -s <value>
   ```
     {: codeblock}
+-->
 
 
 
