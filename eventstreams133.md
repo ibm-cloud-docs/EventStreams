@@ -31,9 +31,9 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Standard 
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard+ plans. (The CLI does not support the deprecated Standard plan.) Select one of the following methods:
 
-    * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
+  * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
-    * To create an instance from the CLI on the Enterprise plan, run a command like the following:
+  * To create an instance from the CLI on the Enterprise plan, run a command like the following:
     ```
    ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
@@ -41,7 +41,7 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Standard 
     
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
     
-    * To create an instance from the CLI on the Standard+ plan, run the following command:
+  * To create an instance from the CLI on the Standard+ plan, run the following command:
 
   ````
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
@@ -72,7 +72,23 @@ For information about the {{site.data.keyword.messagehub}} CLI commands, see [CL
     {: codeblock}
 -->
 
+## Step 1. Run the installation command
+{: #step1-install-idt}
 
+* For Mac and Linux, run the following command:
+  ```
+  curl -sL https://ibm.biz/idt-installer | bash
+  ```
+  {: codeblock}
+
+* For Windows 10 Pro, run the following command as an administrator:
+  ```
+  Set-ExecutionPolicy Unrestricted; iex(New-Object Net.WebClient).DownloadString('http://ibm.biz/idt-win-installer')
+  ```
+  {: codeblock}
+
+  Right-click the Windows PowerShell icon, and select **Run as administrator**.
+  {: tip}
 
 
 
