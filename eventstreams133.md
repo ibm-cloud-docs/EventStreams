@@ -29,7 +29,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
     ```
     {: codeblock}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard+ plans. (The CLI does not support the deprecated Standard plan.) Select one of the following methods:
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The CLI does not support the deprecated Standard plan.) Select one of the following methods:
 
   * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
@@ -41,13 +41,13 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
     
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
     
-  * To create an instance from the CLI on the Standard+ plan, run the following command:
+  * To create an instance from the CLI on the Standard plan, run the following command:
 
   ````
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
     {: codeblock}
-    Provisioning a new Standard+ instance is instantaneous because the underlying resources are already set up.
+    Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
     
 4. Create a service API key for this instance. 
 <br/>
