@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-15"
+lastupdated: "2019-04-15a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -46,6 +46,7 @@ To install and set up the  {{site.data.keyword.messagehub}} CLI on the Standard 
   ````
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
+    {: codeblock}
     Provisioning a new Standard+ instance is instantaneous because the underlying resources are already set up.
     
 4. Create a service API key for this instance. 
@@ -55,7 +56,10 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
     * To create an API key from the CLI, run this command:
-    <pre class="pre">ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME></pre>
+  ```
+  ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
+```
+ {: codeblock}
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     ```
     ibmcloud plugin install event-streams
