@@ -21,10 +21,10 @@ subcollection: eventstreams
 
 <!-- Name your file `at-events.md` and include it in the Reference nav group in your toc file. -->
 
-# {{site.data.keyword.cloudaccesstrailshort}} events (Standard+ and Enterprise plans)
+# {{site.data.keyword.cloudaccesstrailshort}} events 
 {: #at_events}
 
-Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard+ and Enterprise plans in {{site.data.keyword.Bluemix}}. 
+Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans in {{site.data.keyword.Bluemix}}. 
 {: shortdesc}
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.Bluemix_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](docs/services/cloud-activity-tracker?topic=cloud-activity-tracker-getting-started#getting-started){:new_window}.
