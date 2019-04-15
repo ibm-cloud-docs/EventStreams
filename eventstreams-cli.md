@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-14"
+lastupdated: "2019-04-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -279,7 +279,7 @@ segment.index.bytes</p></dd>
 List topics.
 
 
-````
+```
 ibmcloud es topics [--filter FILTER] [--json]
 
 ```
@@ -307,7 +307,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 Display details of a consumer group.
 
 
-````
+```
 ibmcloud es group [--group] GROUP_ID [--json]
 
 ```
@@ -334,7 +334,7 @@ ibmcloud es group [--group] GROUP_ID [--json]
 Reset the offsets for a consumer group.
 
 
-````
+```
 ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] --mode MODE --value VALUE [--dry-run] [--execute] [--json]
 
 
@@ -382,7 +382,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 List consumer groups.
 
 
-````
+```
 ibmcloud es groups [--filter FILTER] [--json]
 
 ```
