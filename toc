@@ -26,7 +26,7 @@ IBM Event Streams
 	eventstreams-cli.md
 
 	{: .topicgroup}
-	Standard Plan (deprecated)
+	Classic Plan (deprecated)
 		eventstreams134.md
 		eventstreams135.md
 		eventstreams136.md

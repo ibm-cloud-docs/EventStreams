@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -17,29 +17,29 @@ subcollection: eventstreams
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
 
-# The Standard plan (deprecated)
-{: #plan_choose_standard}
+# The Classic plan (deprecated)
+{: #plan_choose_classic}
 
-**The Standard plan described in this topic will be deprecated xx xxxxxx 2019. **
+**The Classic plan described in this topic will be deprecated xx xxxxxx 2019. This plan was previously known as the Standard plan.**
 
 For information about the current plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
 
 {{site.data.keyword.messagehub}} is available as different plans depending on your requirements. 
 {: shortdesc}
  
-## Standard plan overview
+## Classic plan overview
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 
-## What's supported by the Standard plan
+## What's supported by the Classic plan
 
 The following table summarizes what is supported by the plan:
 
 <table>
-    <caption>Table 1. Support in Standard plan</caption>
+    <caption>Table 1. Support in Classic plan</caption>
       <tr>
 	        <th></th>
-		    <th>Standard Plan</th>
+		    <th>Classic Plan</th>
         </tr>
 		<tr>
 			<td>**Tenancy**</td>
