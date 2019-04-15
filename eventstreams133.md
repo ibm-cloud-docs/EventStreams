@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-15a"
+lastupdated: "2019-04-15b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,7 +19,7 @@ subcollection: eventstreams
 # Getting started with the {{site.data.keyword.messagehub}} CLI 
 {: #cli}
 
-To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard and Enterprise plans , complete the following steps:
+To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard and Enterprise plans, complete the following steps:
 
 1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
 
@@ -29,7 +29,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
     ```
     {: codeblock}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The CLI does not support the deprecated Standard plan.) Select one of the following methods:
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The CLI does not support the deprecated Classic plan.) Select one of the following methods:
 
   * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 
@@ -43,7 +43,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
     
   * To create an instance from the CLI on the Standard plan, run the following command:
 
-  ````
+  ```
 ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
     {: codeblock}
@@ -69,12 +69,6 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
-<!--
- ```
-    ibmcloud target -o <value> -s <value>
-  ```
-    {: codeblock}
--->
 
 ## Step 1. Run the installation command
 {: #step1-install-idt}
