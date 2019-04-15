@@ -63,7 +63,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     {: codeblock}
 
 <br/>
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference for the Enterprise and Standard+ plans](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 <!--
  ```
