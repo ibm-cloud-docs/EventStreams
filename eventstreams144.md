@@ -17,10 +17,10 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Known restrictions for the Standard plan (deprecated)
+# Known restrictions for the Classic plan (deprecated)
 {: #restrictions}
 
-If you find a problem while using {{site.data.keyword.messagehub}}, review these known restrictions and workarounds. 
+If you find a problem while using {{site.data.keyword.messagehub}} on the Classic plan, review these known restrictions and workarounds. 
 {: shortdesc}
 
 ## Java Kafka calls don’t failover if a Kafka bootstrap server fails

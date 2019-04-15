@@ -17,14 +17,14 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Monitoring and logging on the Standard plan (deprecated)
-{: #monitoring_standard}
+# Monitoring and logging on the Classic plan (deprecated)
+{: #monitoring_classic}
 
-{{site.data.keyword.messagehub}} on the Standard plan automatically collects metrics and events so that you
+{{site.data.keyword.messagehub}} on the Classic plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}
 
-**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in Dallas (us-south), London (eu-gb), and Sydney (au-syd) only. 
+**Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Classic plan in Dallas (us-south), London (eu-gb), and Sydney (au-syd) only. 
 
 
 You can monitor the following log information:

@@ -17,17 +17,17 @@ subcollection: eventstreams
 {:pre: .pre}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs for the Standard plan (deprecated)
-{: #faqs_standard}
+# FAQs for the Classic plan (deprecated)
+{: #faqs_classic}
 
-Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Standard plan, which is deprecated from xx xxxxxx 2019. 
+Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Classic plan, which is deprecated from xx xxxxxx 2019. 
 
-For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).
+For answers to questions related to all current {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
 ## How do I use Kafka APIs to create and delete topics?
-{: #topic_admin_standard}
+{: #topic_admin_classic}
 {: faq}
 
 If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
@@ -47,7 +47,7 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 
 
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
-{: #offsets_standard }
+{: #offsets_classic }
 {: faq}
 
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
@@ -55,31 +55,31 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 Offset retention is system-wide so you cannot set it at an individual topic level. All consumer groups get only 7 days of stored offsets even if using a topic with a log retention that has been increased to the maximum of 30 days. 
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
-{: #availability_standard}
+{: #availability_classic}
 {: faq}
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
 
 ### APIs
-{: #api_availability_standard }
+{: #api_availability_classic }
 
 As part of the regular operation of {{site.data.keyword.messagehub}}, the nodes of the Kafka clusters are occasionally restarted.
 In some cases, your apps will be aware as the cluster reassigns resources. Write your apps to be resilient
 to these changes and to be able to reconnect and retry operations.
 
-### {{site.data.keyword.messagehub}} bridges (Standard plan only)
-{: #bridge_availability_standard }
+### {{site.data.keyword.messagehub}} bridges 
+{: #bridge_availability_classic }
 
 Write your apps to handle the possibility that bridges might restart from time to time.
 
 ## What is {{site.data.keyword.messagehub}}'s maximum message size? 
-{: #max_message_size_standard }
+{: #max_message_size_classic }
 {: faq}
 
 {{site.data.keyword.messagehub}}'s maximum message size is 1 MB, which is the Kafka default. 
 
 ## What are {{site.data.keyword.messagehub}}'s replication settings? 
-{: #replication_standard }
+{: #replication_classic }
 {: faq}
 
 {{site.data.keyword.messagehub}} is configured to provide strong availability and durability.
@@ -87,11 +87,11 @@ The following configuration settings apply to all topics and cannot be changed:
 * replication.factor = 3
 * min.insync.replicas = 2
 
-## How does {{site.data.keyword.messagehub}}'s billing work on the Standard plan? 
-{: #billing_standard }
+## How does {{site.data.keyword.messagehub}}'s billing work on the Classic plan? 
+{: #billing_classic }
 {: faq}
 
-{{site.data.keyword.messagehub}} on the Standard plan regularly samples a user's topic count and {{site.data.keyword.Bluemix_notm}} records the maximum sample value each day. {{site.data.keyword.messagehub}} bills for the maximum number of concurrent partitions seen and for the sum of messages that are sent and received daily.
+{{site.data.keyword.messagehub}} on the Classic plan regularly samples a user's topic count and {{site.data.keyword.Bluemix_notm}} records the maximum sample value each day. {{site.data.keyword.messagehub}} bills for the maximum number of concurrent partitions seen and for the sum of messages that are sent and received daily.
 
 For example, if you create and delete 1 topic 10 times in a day, you are charged for a maximum of 1 topic. However, if you create 10 topics and delete them, you might be charged for either 0 or 10 topics depending when the sampling takes place.
 
@@ -99,7 +99,7 @@ For example, if you create and delete 1 topic 10 times in a day, you are charged
 
 <!--12/04/18 - Karen: same info duplicated at messagehub057 -->
 ## How often does the Kafka REST API restart? 
-{: #REST_restart_standard }
+{: #REST_restart_classic }
 {: faq}
 
 The Kafka REST API restarts once a day for a short period of
@@ -116,13 +116,13 @@ REST API returns the following JSON:
 {:screen}
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
-{: #plan_compare_standard }
+{: #plan_compare_classic }
 {: faq}
 
-To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
+To find out more information about the two current {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
 
 ## How do I handle disaster recovery?
-{: #disaster_recovery_standard }
+{: #disaster_recovery_classic }
 {: faq}
 
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.

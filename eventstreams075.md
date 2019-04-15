@@ -24,7 +24,7 @@ subcollection: eventstreams
 {: note}
 <br/>
 
-** The MQ Light API is available as part of the Standard plan only.**
+** The MQ Light API is available as part of the Classic plan only.**
 <br/>
 
 The {{site.data.keyword.mql}} API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service. The API provides an AMQP-based messaging interface for Java&trade;, Node.js, Python, and Ruby. 
@@ -75,7 +75,7 @@ To disable the MQ Light API, delete the "MQLight" topic. Note that all data is d
 {: #mql_connect}
 
 To connect an app to the service, the app must use the <code>user</code>,
-<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf). Use the following guidance for your chosen language:
+<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_classic_cf). Use the following guidance for your chosen language:
 
 **For Java**
 

@@ -19,7 +19,10 @@ subcollection: eventstreams
 # Cloud Object Storage bridge (deprecated)
 {: #cloud_object_storage_bridge }
 
-** The Cloud Object Storage bridge is available as part of the Standard plan only.**
+** The Cloud Object Storage bridge is deprecated from xx xxxxxx 2019. For information about an alternative that you can use, see <blog >.**
+<br/>
+
+** The Cloud Object Storage bridge is available as part of the Classic plan only.**
 <br/>
 
 The {{site.data.keyword.IBM}} Cloud Object Storage bridge provides a way of reading data from an {{site.data.keyword.messagehub}} Kafka topic

@@ -16,10 +16,10 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the Kafka REST API on the Standard plan (deprecated)
-{: #rest_using_standard}
+# Using the Kafka REST API on the Classic plan (deprecated)
+{: #rest_using_classic}
 
-** The Kafka REST API is available as part of the Standard plan only.**
+** The Kafka REST API is available as part of the Classic plan only.**
 <br/>
 
 The Kafka REST API provides a RESTful interface to a Kafka
@@ -59,18 +59,18 @@ examples detailed in the [Confluent docs ![External link icon](../../icons/launc
 
 <br/>
 ## How to connect and authenticate
-{: #rest_connect_standard}
+{: #rest_connect_classic}
 
 <!-- info was in eventstreams066.md -->
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka REST API uses the <code>api_key</code> and <code>kafka_rest_url</code>
-credentials from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf).
+credentials from the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_classic_cf).
 
 To authenticate with the {{site.data.keyword.messagehub}} Kafka REST API, you must specify the <code>api_key</code> in the X-Auth-Token header of your requests.
 
 
 ## How to use the API
-{: #rest_how_standard}
+{: #rest_how_classic}
 
 <!-- info was in eventstreams097.md -->
 

@@ -16,17 +16,14 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Choosing between the three APIs on the Standard plan (deprecated)
-{: #choose_api_standard}
+# Choosing between the three APIs on the Classic plan (deprecated)
+{: #choose_api_classic}
 
-{{site.data.keyword.messagehub}} supports three APIs on the Standard plan. Here's some information to help you choose which is most appropriate:
+{{site.data.keyword.messagehub}} supports three APIs on the Classic plan. Here's some information to help you choose which is most appropriate:
 {: shortdesc}
 
 ## Why use the Kafka API?
-{: #why_kafka_standard notoc}
-
-** The Kafka API is available as part of both the Standard and Enterprise plans.**
-<br/>
+{: #why_kafka_classic notoc}
 
 There are a few reasons that you might choose to use the Kafka API over the other interfaces provided by {{site.data.keyword.messagehub}}. These reasons include the following:
 {:shortdesc}
@@ -37,9 +34,9 @@ There are a few reasons that you might choose to use the Kafka API over the othe
 * It offers a richer API than the Kafka REST API.
 
 ## Why use the Kafka REST API?
-{: #why_rest_standard notoc}
+{: #why_rest_classic notoc}
 
-** The Kafka REST API is available as part of the Standard plan only.**
+** The Kafka REST API is available as part of the Classic plan only.**
 <br/>
 
 The Kafka REST API is a convenient interface that can be used in the following situations:  
@@ -51,9 +48,9 @@ The Kafka REST API is a convenient interface that can be used in the following s
 The Kafka REST API is not intended as a high throughput, low latency interface. ​For these types of requirement, we recommend using the Kafka API to connect to and from {{site.data.keyword.messagehub}}. For more information, see [Using a Kafka client](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_using).
 
 ## Why use the {{site.data.keyword.mql}} API?
-{: #why_mql_standard notoc}
+{: #why_mql_classic notoc}
 
-** The MQ Light API is available as part of the Standard plan only.**
+** The MQ Light API is available as part of the Classic plan only.**
 <br/>
 
 The {{site.data.keyword.mql}} API provides an AMQP-based messaging interface for Java™, Node.js, Python, and Ruby. The API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service.
