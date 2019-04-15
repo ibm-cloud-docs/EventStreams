@@ -33,6 +33,7 @@ IBM Event Streams
 		eventstreams137.md
 		eventstreams138.md
 		eventstreams141.md
+		eventstreams146.md
 		eventstreams075.md
 		eventstreams099.md
 		eventstreams088.md

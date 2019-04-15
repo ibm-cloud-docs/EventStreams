@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-04-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -97,7 +97,6 @@ From 0.10.2, you can configure SASL authentication directly in the client's prop
 Complete the following steps:
 
 1. Delete the JAAS file. Note that the JVM property java.security.auth.login.config=<PATH TO JAAS> is also no longer required.
-2. If you're migrating from 0.9.X, delete the {{site.data.keyword.messagehub}} login jar module.
 2. Add the following to the client's properties:
     ```
 	sasl.mechanism=PLAIN
@@ -105,25 +104,6 @@ Complete the following steps:
 	```
 
 	where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-	
-	
 
-### Migrating a Kafka client from 0.9.X to 0.10.0.X or 0.10.1.X
 
-Complete the following steps:
 
-1. Delete the {{site.data.keyword.messagehub}} login jar module.
-2. Change your <code>jaas.conf</code> file to the following:
-    ```
-        KafkaClient {
-          org.apache.kafka.common.security.plain.PlainLoginModule required
-          serviceName="kafka"
-            username="USERNAME"
-            password="PASSWORD";
-        };
-    ```
-    {: codeblock}
-
-	where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-	
-3. Add this line to your consumer and producer properties: <code>sasl.mechanism=PLAIN</code>
