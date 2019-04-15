@@ -28,7 +28,7 @@ For information about the current plans, see [Choosing your plan](/docs/services
 {: shortdesc}
  
 ## Classic plan overview
-The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 
 ## What's supported by the Classic plan
