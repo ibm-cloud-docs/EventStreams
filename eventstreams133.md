@@ -55,8 +55,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
     * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
     * To create an API key from the CLI, run this command:
-    <pre class="pre">ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME>
-    --instance-name <INSTANCE_NAME></pre>
+    <pre class="pre">ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME></pre>
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     ```
     ibmcloud plugin install event-streams
