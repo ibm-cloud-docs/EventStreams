@@ -120,8 +120,8 @@ The following table summarizes what is supported by the plans:
 
 </table>
 
-For information about the deprecated Standard plan, see
-[Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_standard#plan_choose_standard).
+For information about the deprecated Classic plan, see
+[Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
 
 
 <!--
