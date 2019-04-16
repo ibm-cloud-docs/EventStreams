@@ -22,29 +22,32 @@ subcollection: eventstreams
 {: #plan_choose}
 
 <br/>
-**Review and updates needed to make this relevant to Standard+**
+**Review and updates needed to make this relevant to new Standard**
 {: note}
 
-{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard+ and Enterprise.
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard and Enterprise. 
+
+For information about the Classic plan, see
+[Classic plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
 {: shortdesc}
 
-## Standard+ plan
+## Standard plan
 
-The Standard+ plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard+ plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Enterprise plan 
 
 The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
 
-## What's supported by the Standard+ and Enterprise plans
+## What's supported by the Standard and Enterprise plans
 
 The following table summarizes what is supported by the plans:
 
 <table>
-    <caption>Table 1. Support in Standard+ and Enterprise plans</caption>
+    <caption>Table 1. Support in Standard and Enterprise plans</caption>
       <tr>
 	        <th></th>
-		    <th>Standard+ Plan</th>
+		    <th>Standard Plan</th>
 		    <th>Enterprise Plan</th>
         </tr>
 		<tr>
@@ -120,8 +123,7 @@ The following table summarizes what is supported by the plans:
 
 </table>
 
-For information about the Classic plan, see
-[Classic plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
+
 
 
 <!--

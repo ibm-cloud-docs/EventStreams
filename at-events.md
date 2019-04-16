@@ -36,7 +36,7 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 
 <!-- Make sure you introduce the table with a detailed description that immediately precedes it. For example, see https://console.bluemix.net/docs/services/cloud-activity-tracker/services/at_events_cf.html#catalog. -->
 
-{{site.data.keyword.messagehub}} on the Standard+ and Enterprise plans automatically generate events so that you can track activity on your service.
+{{site.data.keyword.messagehub}} on the Standard and Enterprise plans automatically generate events so that you can track activity on your service.
 
 | Action | Description |
 |:-------|:------------|

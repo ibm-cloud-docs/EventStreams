@@ -21,7 +21,7 @@ subcollection: eventstreams
 {: #getting_started}
 
 <br/>
-**Review and updates needed to make this relevant to Standard+ rather than old Standard**
+**Review and updates needed to make this relevant to new Standard rather than old Standard**
 {: note}
 
 To get started with {{site.data.keyword.messagehub}}
@@ -47,7 +47,7 @@ Complete the following steps:
   
   b. Click **Catalog**.
   
-  c. In the **Integration** section, click the {{site.data.keyword.messagehub}} tile and then select the **Standard+ plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+  c. In the **Integration** section, click the {{site.data.keyword.messagehub}} tile and then select the **Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
   d. Enter a name for your service. You can use the default value.
   
