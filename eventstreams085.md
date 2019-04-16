@@ -120,7 +120,7 @@ The following table summarizes what is supported by the plans:
 
 </table>
 
-For information about the deprecated Classic plan, see
+For information about the Classic plan, see
 [Classic plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
 
 

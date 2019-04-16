@@ -18,7 +18,7 @@ subcollection: eventstreams
 
 
 
-# Reporting a problem to the {{site.data.keyword.messagehub}} team for the Classic plan (deprecated)
+# Reporting a problem to the {{site.data.keyword.messagehub}} team for the Classic plan
 {: #report_problem_classic}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){:new_window}. 

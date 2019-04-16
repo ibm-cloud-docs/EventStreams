@@ -29,7 +29,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
     ```
     {: codeblock}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The CLI does not support the deprecated Classic plan.) Select one of the following methods:
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The CLI does not support the Classic plan.) Select one of the following methods:
 
   * To create an instance from the IBM Cloud console, enter this URL in a browser: https://cloud.ibm.com/catalog/services/event-streams
 

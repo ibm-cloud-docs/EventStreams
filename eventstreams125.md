@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 
-# Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard+ and Enterprise plans
+# Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans
 {: #report_problem_enterprise}
 
 <br/>
