@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Migrating a Kafka Java client on the Classic plan (deprecated)
+# Migrating a Kafka Java client on the Classic plan 
 {: #kafka_java_migrating_classic}
 
 

@@ -16,11 +16,8 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# MQ bridge on the Classic plan (deprecated)
+# MQ bridge on the Classic plan 
 {: #mq_bridge}
-
-** The MQ bridge is deprecated from xx xxxxxx 2019. For information about an alternative that you can use, see <blog about Andrew's MQ connector>.**
-<br/>
 
 ** The MQ bridge is available as part of the Classic plan only.**
 <br/>

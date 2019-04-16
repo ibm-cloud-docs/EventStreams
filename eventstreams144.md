@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Known restrictions for the Classic plan (deprecated)
+# Known restrictions for the Classic plan 
 {: #restrictions}
 
 If you find a problem while using {{site.data.keyword.messagehub}} on the Classic plan, review these known restrictions and workarounds. 

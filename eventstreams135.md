@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Connecting to {{site.data.keyword.messagehub}} using the Classic plan (deprecated)
+# Connecting to {{site.data.keyword.messagehub}} using the Classic plan 
 {: #connecting_classic}
 
 The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're connecting from a Cloud Foundry application or from any other external client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:

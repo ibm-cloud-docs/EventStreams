@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Monitoring and logging on the Classic plan (deprecated)
+# Monitoring and logging on the Classic plan 
 {: #monitoring_classic}
 
 {{site.data.keyword.messagehub}} on the Classic plan automatically collects metrics and events so that you

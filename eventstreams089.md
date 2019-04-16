@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .deprecated}
 
-# Object Storage bridge (deprecated)
+# Object Storage bridge
 {: #object_storage_bridge }
 
 ** The {{site.data.keyword.objectstorageshort}} bridge is deprecated from August 1st 2018.**

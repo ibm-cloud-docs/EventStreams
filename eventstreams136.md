@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Choosing between the three APIs on the Classic plan (deprecated)
+# Choosing between the three APIs on the Classic plan 
 {: #choose_api_classic}
 
 {{site.data.keyword.messagehub}} supports three APIs on the Classic plan. Here's some information to help you choose which is most appropriate:

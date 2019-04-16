@@ -17,12 +17,12 @@ subcollection: eventstreams
 {:pre: .pre}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs for the Classic plan (deprecated)
+# FAQs for the Classic plan 
 {: #faqs_classic}
 
-Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Classic plan, which is deprecated from xx xxxxxx 2019. 
+Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Classic plan.
 
-For answers to questions related to all current {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).
+For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](docs/services/EventStreams?topic=eventstreams-faqs#faqs).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
@@ -119,7 +119,7 @@ REST API returns the following JSON:
 {: #plan_compare_classic }
 {: faq}
 
-To find out more information about the two current {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
+To find out more information about the other {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery_classic }

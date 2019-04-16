@@ -16,12 +16,8 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the MQ Light clients (deprecated)
+# Using the MQ Light clients 
 {: #mql_clients}
-
-** The MQ Light clients are deprecated from xx xxxxxx 2019. For an alternative to the MQ Light API, see **
-{:note: .note}
-<br/>
 
 ** The MQ Light API is available as part of the Classic plan only. **
 {: note}

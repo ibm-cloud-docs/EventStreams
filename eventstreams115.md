@@ -16,11 +16,9 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Cloud Object Storage bridge (deprecated)
+# Cloud Object Storage bridge 
 {: #cloud_object_storage_bridge }
 
-** The Cloud Object Storage bridge is deprecated from xx xxxxxx 2019. For information about an alternative that you can use, see <blog >.**
-<br/>
 
 ** The Cloud Object Storage bridge is available as part of the Classic plan only.**
 <br/>
