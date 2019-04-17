@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17i"
+lastupdated: "2019-04-17j"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -32,6 +32,28 @@ Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
 ibmcloud login -a cloud.ibm.com
 ```
 {: codeblock}
+
+## Step 4. Create a service API key for this instance. 
+The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
+
+    * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
+
+    * To create an API key from the CLI, run this command:
+  ```
+  ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
+```
+ {: codeblock}
+
+## Step 5. Install the {{site.data.keyword.messagehub}} CLI plugin
+{: #step5_es_cli}
+Run the following command:
+```
+ibmcloud plugin install event-streams
+```
+{: codeblock}
+
+
+
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) 
 Select one of the following methods:
@@ -67,23 +89,9 @@ Select one of the following methods:
     ```
     {: codeblock}
     
-4. Create a service API key for this instance. 
-<br/>
-The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
 
-    * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
-    * To create an API key from the CLI, run this command:
-  ```
-  ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-```
- {: codeblock}
 
-5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
-    ```
-    ibmcloud plugin install event-streams
-    ```
-    {: codeblock}
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
