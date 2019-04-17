@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17b"
+lastupdated: "2019-04-17c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,7 +21,7 @@ subcollection: eventstreams
 
 To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard and Enterprise plans, complete the following steps:
 
-1. Install the IBM Cloud CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
 
 2. Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
     ```
@@ -29,10 +29,11 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
     ```
     {: codeblock}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) Select one of the following methods:
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) 
+Select one of the following methods:
 
-## IBM Cloud console
-To create an instance from the IBM Cloud console, go to the {{site.data.keyword.messagehub}} entry in the : 
+## {{site.data.keyword.Bluemix_notm}} console
+To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the
   [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
 
   ## CLI on the Enterprise plan
