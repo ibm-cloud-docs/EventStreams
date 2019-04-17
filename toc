@@ -57,7 +57,6 @@ IBM Event Streams
 		eventstreams116.md
 		eventstreams124.md
 		eventstreams133.md
-		cli-index.md
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
