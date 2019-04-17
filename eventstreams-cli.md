@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-15"
+lastupdated: "2019-04-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -147,7 +147,7 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
 <strong>Examples</strong>:
 
 ## ibmcloud es topic-create
-{: #ibmcloud es topic-create}
+{: #ibmcloud_es _topic-create}
 
 Create a new topic.
 
@@ -181,7 +181,7 @@ segment.index.bytes</p></dd>
 <strong>Examples</strong>:
 
 ## ibmcloud es topic-delete
-{: #ibmcloud es topic-delete}
+{: #ibmcloud_es_topic-delete}
 
 Display the details of a topic.
 
@@ -205,7 +205,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 <strong>Examples</strong>:
 
 ## ibmcloud es topic-delete-records
-{: #ibmcloud es topic-delete-records}
+{: #ibmcloud_es_topic-delete-records}
 
 Delete records from a topic for a given offset.
 
@@ -235,7 +235,7 @@ multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with qu
 
 
 ## ibmcloud es topic-update
-{: #ibmcloud es_topic_update}
+{: #ibmcloud_es_topic_update}
 
 Update the configuration for a topic.
 
@@ -344,7 +344,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud es_group_params}
+{: #ibmcloud_es_group_params}
 
 <dl>
     <dt>--group value, -g value </dt>
@@ -391,7 +391,7 @@ ibmcloud es groups [--filter FILTER] [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud es_group_params}
+{: #ibmcloud_es_group_params}
 
 <dl>
     <dt>--filter value, -f value (optional)
@@ -404,13 +404,9 @@ ibmcloud es groups [--filter FILTER] [--json]
 
 <strong>Examples</strong>:
  
--------------
 
- 
-* **Duplicates**:<br/>
-Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send it again when reconnected. You are recommended to architect applications to expect duplicate messages. If duplicates cannot be tolerated, you can use the idempotent producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ 'enable.idempotency' property for producers ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#topicconfigs){:new_window}.
 
-.
+
 
 
 
