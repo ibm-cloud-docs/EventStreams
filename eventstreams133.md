@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17kr"
+lastupdated: "2019-04-17kmmr"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -39,7 +39,7 @@ ibmcloud login -a cloud.ibm.com
 ## Step 3. Create an {{site.data.keyword.messagehub}} instance
 {: #step3_es_instance}
 
-Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) 
+Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) <br/>
 Select one of the following methods:
 
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
@@ -53,11 +53,11 @@ Select one of the following methods:
   Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
 
-* To create an instance from the CLI on the Standard plan, run the following command:
+* To create an instance from the CLI on the Standard plan,run a command like the following:
 
   ```
   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
- ```
+  ```
   {: codeblock}
 
   Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
@@ -67,7 +67,7 @@ Select one of the following methods:
 
 The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security).
 
-* To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
+* To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
 * To create an API key from the CLI, run this command:
   ```
