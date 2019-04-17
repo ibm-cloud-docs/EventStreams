@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17a"
+lastupdated: "2019-04-17b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -31,10 +31,11 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) Select one of the following methods:
 
-  * To create an instance from the IBM Cloud console, go to the {{site.data.keyword.messagehub}} entry in the : 
+## IBM Cloud console
+To create an instance from the IBM Cloud console, go to the {{site.data.keyword.messagehub}} entry in the : 
   [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
 
-  ## CLI
+  ## CLI on the Enterprise plan
   To create an instance from the CLI on the Enterprise plan, run a command like the following:
     ```
    ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
@@ -42,11 +43,12 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
    {: codeblock}
     
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
-    
-  * To create an instance from the CLI on the Standard plan, run the following command:
+
+  ## CLI on the Standard plan    
+  To create an instance from the CLI on the Standard plan, run the following command:
 
   ```
-ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
+  ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
     {: codeblock}
     Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
