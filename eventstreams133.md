@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17g"
+lastupdated: "2019-04-17h"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,9 +21,13 @@ subcollection: eventstreams
 
 To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard and Enterprise plans, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
+## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI. 
+{: #step1_install_cli}
+For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
 
-2. Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
+{: #step2_login}
+Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
     ```
     ibmcloud login -a cloud.ibm.com
     ```
@@ -108,40 +112,7 @@ For information about the {{site.data.keyword.messagehub}} CLI commands, see [CL
   Right-click the Windows PowerShell icon, and select **Run as administrator**.
   {: tip}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) 
-Select one of the following methods:
 
-  ## {{site.data.keyword.Bluemix_notm}} console
-  {: notoc}
-  To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the
-  [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
-
-  ## CLI on the Enterprise plan
-  {: notoc}
-  To create an instance from the CLI on the Enterprise plan, run a command like the following:
-    ```
-   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
-    ```
-   {: codeblock}
-    
-    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
-
-  ## CLI on the Standard plan
-  {: notoc}    
-  To create an instance from the CLI on the Standard plan, run the following command:
-
-  ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
-    ```
-    {: codeblock}
-
-    Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
-
-      ```
-    curl -sL https://ibm.biz/idt-installer | bash
-    ```
-    {: codeblock}
-    
 
 
 
