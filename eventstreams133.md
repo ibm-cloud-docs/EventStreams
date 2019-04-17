@@ -42,14 +42,9 @@ ibmcloud login -a cloud.ibm.com
 Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) 
 Select one of the following methods:
 
-  ## {{site.data.keyword.Bluemix_notm}} console
-  {: notoc}
-  To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the
-  [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
+* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
 
-  ## CLI on the Enterprise plan
-  {: notoc}
-  To create an instance from the CLI on the Enterprise plan, run a command like the following:
+* To create an instance from the CLI on the Enterprise plan, run a command like the following:
   ```
   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
   ```
@@ -57,16 +52,15 @@ Select one of the following methods:
   
   Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
-  ## CLI on the Standard plan
-  {: notoc}    
-  To create an instance from the CLI on the Standard plan, run the following command:
+
+* To create an instance from the CLI on the Standard plan, run the following command:
 
   ```
   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
  ```
   {: codeblock}
 
-    Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
+  Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
 
 ## Step 4. Create a service API key for this instance.
 {: #step4_es_api}
@@ -89,7 +83,6 @@ Run the following command:
 ibmcloud plugin install event-streams
 ```
 {: codeblock}
-
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
