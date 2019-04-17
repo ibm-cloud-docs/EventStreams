@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17e"
+lastupdated: "2019-04-17f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -54,7 +54,7 @@ Select one of the following methods:
     {: codeblock}
 
     Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
-    
+
       ```
     curl -sL https://ibm.biz/idt-installer | bash
     ```
@@ -95,6 +95,11 @@ For information about the {{site.data.keyword.messagehub}} CLI commands, see [CL
   ```
   Set-ExecutionPolicy Unrestricted; iex(New-Object Net.WebClient).DownloadString('http://ibm.biz/idt-win-installer')
   ```
+  {: codeblock}
+
+  ```
+  ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
+    ```
   {: codeblock}
 
   Right-click the Windows PowerShell icon, and select **Run as administrator**.
