@@ -36,13 +36,13 @@ ibmcloud login -a cloud.ibm.com
 ## Step 4. Create a service API key for this instance. 
 The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security)
 
-    * To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
+* To create an API key from the IBM Cloud console, enter the Service credentials from the instance page, and click **New Credentials**.
 
-    * To create an API key from the CLI, run this command:
+* To create an API key from the CLI, run this command:
   ```
   ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-```
- {: codeblock}
+  ```
+  {: codeblock}
 
 ## Step 5. Install the {{site.data.keyword.messagehub}} CLI plugin
 {: #step5_es_cli}
@@ -90,35 +90,11 @@ Select one of the following methods:
     {: codeblock}
     
 
-
-
-
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 
-## Step 1. Run the installation command
-{: #step1-install-idt}
 
-* For Mac and Linux, run the following command:
-  ```
-  curl -sL https://ibm.biz/idt-installer | bash
-  ```
-  {: codeblock}
-
-* For Windows 10 Pro, run the following command as an administrator:
-  ```
-  Set-ExecutionPolicy Unrestricted; iex(New-Object Net.WebClient).DownloadString('http://ibm.biz/idt-win-installer')
-  ```
-  {: codeblock}
-
-  ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
-    ```
-  {: codeblock}
-
-  Right-click the Windows PowerShell icon, and select **Run as administrator**.
-  {: tip}
 
 
 
