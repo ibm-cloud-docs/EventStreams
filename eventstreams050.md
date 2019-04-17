@@ -20,10 +20,6 @@ subcollection: eventstreams
 # Using the Kafka API
 {: #kafka_using}
 
-<br/>
-**Are the Kafka versions correct for both plans? Does the min client support remain the same?**
-{: note}
-
 If you're using the Java clients, you can use the publicly available Kafka clients at 0.10.x or later. For more information, see [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients).
 
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.

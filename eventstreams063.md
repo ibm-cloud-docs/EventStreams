@@ -15,10 +15,15 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:note: .note}
 
 # Configuring your Kafka API client
 {: #kafka_api_client}
 
+
+<br/>
+**Still talks about 0.9 client - move to Classic section?**
+{: note}
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from

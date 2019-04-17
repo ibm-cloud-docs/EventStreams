@@ -15,12 +15,15 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:note: .note}
 
 # Using the Kafka REST API
 {: #rest_using}
 
-** The Kafka REST API is available as part of the Standard plan only.**
+
 <br/>
+**Rewrite to apply to new REST produce only interface.**
+{: note}
 
 The Kafka REST API provides a RESTful interface to a Kafka
 cluster. You can produce and consume messages by using the
