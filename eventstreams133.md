@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17d"
+lastupdated: "2019-04-17e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -52,7 +52,13 @@ Select one of the following methods:
   ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
     ```
     {: codeblock}
+
     Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
+    
+      ```
+    curl -sL https://ibm.biz/idt-installer | bash
+    ```
+    {: codeblock}
     
 4. Create a service API key for this instance. 
 <br/>
@@ -65,6 +71,7 @@ The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are des
   ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
 ```
  {: codeblock}
+
 5. Install the {{site.data.keyword.messagehub}} CLI plugin, by running this command:
     ```
     ibmcloud plugin install event-streams
