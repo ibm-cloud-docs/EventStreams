@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 
-# Using the MQ Light API 
+# Using the MQ Light API on the Classic plan
 {: #mql_using}
 
 ** The MQ Light API is available as part of the Classic plan only.**

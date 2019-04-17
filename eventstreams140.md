@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -115,11 +115,12 @@ REST API returns the following JSON:
 ```
 {:screen}
 
-## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
+## What are the differences between the {{site.data.keyword.messagehub}} plans?
 {: #plan_compare_classic }
 {: faq}
 
-To find out more information about the other {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
+To find out more information about the other {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).For information about the Classic plan, see [Classic plan overview](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
+
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery_classic }

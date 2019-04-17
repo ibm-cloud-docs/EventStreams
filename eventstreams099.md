@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the MQ Light clients 
+# Using the MQ Light clients on the Classic plan
 {: #mql_clients}
 
 ** The MQ Light API is available as part of the Classic plan only. **

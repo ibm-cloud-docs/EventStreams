@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Using the Administration REST API
+# Using the Administration REST API on the Classic plan
 {: #admin_api_standard}
 
 {{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.
