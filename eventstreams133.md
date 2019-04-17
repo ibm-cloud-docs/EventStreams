@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17h"
+lastupdated: "2019-04-17i"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -28,10 +28,10 @@ For information about how to install the CLI, see [Getting started with the {{si
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
 Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-    ```
-    ibmcloud login -a cloud.ibm.com
-    ```
-    {: codeblock}
+```
+ibmcloud login -a cloud.ibm.com
+```
+{: codeblock}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Enterprise or Standard plans. (The Classic plan does not support the CLI.) 
 Select one of the following methods:
