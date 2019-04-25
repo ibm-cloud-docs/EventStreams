@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-04-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -22,7 +22,7 @@ subcollection: eventstreams
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
 
-For answers to questions specific to the Classic plan, see [FAQs for the Standard plan](docs/services/EventStreams?topic=eventstreams-faqs_standard#faqs_standard).
+For answers to questions specific to the Classic plan, see [FAQs for the Classic plan](docs/services/EventStreams?topic=eventstreams-faqs_standard#faqs_standard).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
@@ -98,11 +98,6 @@ As part of the regular operation of {{site.data.keyword.messagehub}}, the nodes 
 In some cases, your apps will be aware as the cluster reassigns resources. Write your apps to be resilient
 to these changes and to be able to reconnect and retry operations.
 
-### {{site.data.keyword.messagehub}} bridges (Standard plan only)
-{: #bridge_availability }
-
-Write your apps to handle the possibility that bridges might restart from time to time.
-
 ## What is {{site.data.keyword.messagehub}}'s maximum message size? 
 {: #max_message_size }
 {: faq}
@@ -115,7 +110,8 @@ Write your apps to handle the possibility that bridges might restart from time t
 
 {{site.data.keyword.messagehub}} is configured to provide strong availability and durability.
 The following configuration settings apply to all topics and cannot be changed:
-* replication.factor = 3
+* replication.factor = 3 (Enterprise plan)
+* replication.factor = 4 (Standard plan)
 * min.insync.replicas = 2
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
