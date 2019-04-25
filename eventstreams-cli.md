@@ -24,7 +24,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 
 
 ## ibmcloud es init
-{: #ibmcloud es init}
+{: #ibmcloud_es_init}
 
 Initialize the {{site.data.keyword.messagehub}} plugin.
 ```
@@ -83,7 +83,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #broker config params}
+{: #broker_config_params}
 
 <dl>
     <dt>--broker value, -b value</dt>
@@ -113,7 +113,7 @@ ibmcloud es cluster [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #es cluster params}
+{: #es_cluster_params}
 
 <dl>
     <dt>--json (optional)</dt>
@@ -135,7 +135,7 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #es topic params}
+{: #es_topic_params}
 
 <dl>
     <dt>--name value, -n value</dt>
@@ -159,7 +159,7 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #es topic-create params}
+{: #es_topic_create_params}
 
 <dl>
     <dt>--name value, -n value</dt>
@@ -181,7 +181,7 @@ segment.index.bytes</p></dd>
 <strong>Examples</strong>:
 
 ## ibmcloud es topic-delete
-{: #ibmcloud_es_topic-delete}
+{: #ibmcloud_es_topic_delete}
 
 Display the details of a topic.
 
@@ -193,7 +193,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #es topic-delete params}
+{: #es_topic_delete_params}
 
 <dl>
     <dt>--name value, -n value</dt>
@@ -218,7 +218,7 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #es topic-create params}
+{: #es_topic_create_params}
 
 <dl>
     <dt>--name value, -n value</dt>
@@ -249,7 +249,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud es_topic_update_params}
+{: #ibmcloud_es_topic_update_params}
 
 <dl>
     <dt>--name value, -n value</dt>
@@ -288,7 +288,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud es_topics_params}
+{: #ibmcloud_es_topics_params}
 
 <dl>
     <dt>--filter value, -f value (optional)</dt>
@@ -316,7 +316,7 @@ ibmcloud es group [--group] GROUP_ID [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud es_group_params}
+{: #ibmcloud_es_group_params}
 
 <dl>
     <dt>--group value, -g value </dt>
