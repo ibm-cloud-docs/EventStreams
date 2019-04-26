@@ -82,7 +82,7 @@ As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} 
 ## Cloud Foundry applications
 {: #connect_enterprise_cf}
 
-Your application must be bound to the {{site.data.keyword.messagehub}} service instance. To bind a Cloud Foundry application to a non-Cloud Foundry service, create a Cloud Foundry service alias first and then reference this alias from your Cloud Foundry application when binding.
+Your application must be bound to the {{site.data.keyword.messagehub}} service instance. To bind a Cloud Foundry application to a non-Cloud Foundry service, create a Cloud Foundry service alias first and then reference this alias from your Cloud Foundry application when binding. For more information, see [Bind using the console](/docs/services/EventStreams?topic=topic=eventstreams-connecting#connect_enterprise_cf_console) or [Bind using the CLI](/docs/services/EventStreams?topic=topic=eventstreams-connecting#connect_enterprise_cf_cli).
 
 When bound, the connection details are then made available to the application in JSON format using the VCAP_SERVICES environment variable. You can bind an application and service using either the IBM Cloud console or the IBM Cloud CLI.
 
