@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
-# Kafka quotas
+# Throughput quotas
 {: #kafka_quotas }
 
 ** Kafka quotas apply to the Standard plan only.**

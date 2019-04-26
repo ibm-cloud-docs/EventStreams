@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-14"
+lastupdated: "2019-04-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -63,7 +63,11 @@ If duplicates cannot be tolerated, you can use the <code>idempotent</code> produ
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster. 
 
-**Recommendation**<br/>
+**Specific guidance for the Standard plan**<br/>
+40 MB per second with a maximum peak limit of 90 MB per second. <br/>
+The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
+
+**Specific guidance for the Enterprise plan**<br/>
 40 MB per second with a maximum peak limit of 90 MB per second. <br/>
 The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
 
