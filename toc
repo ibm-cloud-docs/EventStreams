@@ -47,7 +47,6 @@ IBM Event Streams
 
 	{: .navgroup id="howto"}
 	eventstreams127.md
-	eventstreams145.md
 		
 	{: .topicgroup}
 	Administering Event Streams
@@ -56,6 +55,7 @@ IBM Event Streams
 		eventstreams116.md
 		eventstreams124.md
 		eventstreams133.md
+		eventstreams145.md
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
@@ -79,9 +79,11 @@ IBM Event Streams
 	Tutorials
 	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
 
+<!--
 	{: .topicgroup}
 	Alpha program
 		eventstreams122.md
+-->
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}

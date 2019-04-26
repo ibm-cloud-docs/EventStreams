@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-10"
+lastupdated: "2019-04-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,10 +20,6 @@ subcollection: eventstreams
 
 # Choosing your plan 
 {: #plan_choose}
-
-<br/>
-**Review and updates needed to make this relevant to new Standard**
-{: note}
 
 {{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard and Enterprise. 
 
@@ -57,7 +53,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
         <tr>
 			<td>**Availability zones**</td>
-			<td>Not supported</td>
+			<td>3</td>
 			<td>3</td>
 		</tr>
 	  		<tr>
