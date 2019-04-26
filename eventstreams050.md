@@ -164,7 +164,7 @@ The no-kafka client does not fully support SASL authentication with the PLAIN me
 
 For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_connect).
 
-# Configuring your Kafka API client
+## Configuring your Kafka API client
 {: #kafka_api_client}
 
 
@@ -208,8 +208,9 @@ auto.offset.reset=latest
 
 <!--17/10/17 - Karen: following info duplicated at messagehub104 -->
 
-## Using the sasl.jaas.config property (connecting and authenticating in a Java application)
+### Using the sasl.jaas.config property (connecting and authenticating in a Java application)
 {: #kafka_java notoc}
+
 If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
 <pre>
 <code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
@@ -219,7 +220,8 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.
 {:codeblock}
 
 For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
-## Connecting and authenticating in an application other than Java
+
+### Connecting and authenticating in an application other than Java
 {: #kafka_notjava notoc}
 
 The {{site.data.keyword.messagehub}} service currently
