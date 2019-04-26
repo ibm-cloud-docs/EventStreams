@@ -66,9 +66,6 @@ IBM Event Streams
 		eventstreams111.md
 		eventstreams110.md
 		eventstreams025.md
-		eventstreams062.md
-		eventstreams063.md
-		eventstreams104.md
 		eventstreams117.md
 	
 	{: .topicgroup}
@@ -77,6 +74,7 @@ IBM Event Streams
 
 	{: .topicgroup}
 	Tutorials
+		eventstreams104.md
 	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
 
 	{: .topicgroup}
