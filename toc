@@ -13,13 +13,10 @@ IBM Event Streams
 		eventstreams010.md
 		eventstreams073.md
 		eventstreams085.md
-		eventstreams143.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
 	eventstreams132.md
-	eventstreams112.md
-	eventstreams114.md
 	eventstreams118.md
 	eventstreams068.md
 	at-events.md
@@ -29,6 +26,7 @@ IBM Event Streams
 	{: .topicgroup}
 	Classic plan 
 		eventstreams134.md
+		eventstreams143.md
 		eventstreams135.md
 		eventstreams136.md
 		eventstreams137.md
@@ -62,13 +60,15 @@ IBM Event Streams
 	{: .topicgroup}
 	Developing apps with Event Streams
 		eventstreams050.md
-		eventstreams062.md
-		eventstreams063.md
-		eventstreams104.md
+		eventstreams112.md
+		eventstreams114.md
 		eventstreams113.md
 		eventstreams111.md
 		eventstreams110.md
 		eventstreams025.md
+		eventstreams062.md
+		eventstreams063.md
+		eventstreams104.md
 		eventstreams117.md
 	
 	{: .topicgroup}
