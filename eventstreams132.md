@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17"
+lastupdated: "2019-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -65,11 +65,12 @@ Throughput is expressed as the number of bytes per second that can be both sent 
 
 **Specific guidance for the Standard plan**<br/>
 40 MB per second with a maximum peak limit of 90 MB per second. <br/>
+
 The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
 
 **Specific guidance for the Enterprise plan**<br/>
-40 MB per second with a maximum peak limit of 90 MB per second. <br/>
-The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
+
+For guidance information, see [throughput quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas) 
 
 **Measurement**<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.

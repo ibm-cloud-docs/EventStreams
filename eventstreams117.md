@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-06-22"
+lastupdated: "2019-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,9 +20,6 @@ subcollection: eventstreams
 # Throughput quotas
 {: #kafka_quotas }
 
-** Kafka quotas apply to the Standard plan only.**
-<br/>
-
 {{site.data.keyword.messagehub}} uses throughput quotas to control the network bandwidth that is used by clients. The quotas are in place to minimize the impact of clients on each other. {{site.data.keyword.messagehub}} now implements Kafka quotas, that is throttling for producers and consumers.
 
 Quotas work by measuring the throughput of producers and consumers, and then throttling those that exceed the quotas by slightly delaying the responses to their requests. The effect is to apply a gentle brake to producers and consumers that attempt to consume a lot of bandwidth.
@@ -36,3 +33,8 @@ For example, consider a service instance with 10 topics, each with 1 partition a
 ```
 
 The quota is applied across the nodes of the Kafka cluster. The precise value applied at a point in time depends on the current distribution of partition leaders on the nodes of the cluster. For example, if all the partition leaders were by chance to exist on the same single broker, you could use 10 MB/s spread across those partitions, that is Partition 0 could use 10 MB/s and partitions 1 through 9 will be using nothing.
+-------------------
+Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
+
+40 MB per second with a maximum peak limit of 90 MB per second. <br/>
+The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
