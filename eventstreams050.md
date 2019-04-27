@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-03-31"
+lastupdated: "2019-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -69,21 +69,21 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 For both types of client, we recommend always choosing the latest client version. 
 {: shortdesc}
 
-## Client requirements for connecting to Event Streams
+### Client requirements for connecting to Event Streams
 
 To connect to {{site.data.keyword.messagehub}}, clients must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
 The minimum Kafka protocol that we support is 0.10.
 
 	
-## Third-party clients
+### Third-party clients
 {: #third_party_clients}
 
 If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
 
 Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}. However, we only test with and have experience of the recommended third-party clients.
 
-## Support summary for all recommended clients
+### Support summary for all recommended clients
 {: #client_summary}
 
 <table id="clients_table">
@@ -102,8 +102,8 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
 			<td>Java</td>
 			<td>Latest</td>
-			<td>0.10.2 <p> For information about older clients, see [backward compatibility](/docs/services/EventStreams?topic=eventstreams-kafka_clients#compatibility).</p></td>
-			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
+			<td>0.10.2 </td>
+			<td>[Java console sample](/docs/services/EventStreams?topic=eventstreams-kafka_java_using)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
 			</tr>
