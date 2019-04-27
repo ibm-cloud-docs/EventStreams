@@ -17,8 +17,8 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 
-# Using the Kafka REST API
-{: #rest_using}
+# Using the REST producer API
+{: #rest_producer_using}
 
 
 <br/>
