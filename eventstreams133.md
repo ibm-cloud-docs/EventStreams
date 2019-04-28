@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17kmmr"
+lastupdated: "2019-04-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -46,7 +46,7 @@ Select one of the following methods:
 
 * To create an instance from the CLI on the Enterprise plan, run a command like the following:
   ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
+  ibmcloud resource service-instance-create <INSTANCE_NAME> event-streams enterprise <REGION>
   ```
   {: codeblock}
   
@@ -56,7 +56,7 @@ Select one of the following methods:
 * To create an instance from the CLI on the Standard plan,run a command like the following:
 
   ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN> <REGION>
+  ibmcloud resource service-instance-create <INSTANCE_NAME> event-streams standard <REGION>
   ```
   {: codeblock}
 
