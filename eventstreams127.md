@@ -22,7 +22,7 @@ subcollection: eventstreams
 {: #connecting}
 
 <br/>
-**All old Standard info should be gone now. Is Standard+ exactly the same as Enterprise when it comes to connecting?**
+**Is Standard+ exactly the same as Enterprise when it comes to connecting?**
 {: note}
 
 The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're connecting from a Cloud Foundry application or from any other client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:

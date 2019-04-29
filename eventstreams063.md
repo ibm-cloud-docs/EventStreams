@@ -20,11 +20,6 @@ subcollection: eventstreams
 # Configuring your Kafka API client
 {: #kafka_api_client}
 
-
-<br/>
-**Still talks about 0.9 client - move to Classic section?**
-{: note}
-
 To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
 the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf).
@@ -84,7 +79,6 @@ should work with {{site.data.keyword.messagehub}}. Example clients are as follow
 * [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window} 
 * [confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window} 
 
-If you are using the earlier Kafka 0.9.0.0 client, you need to use a custom login module, which you
-can download from [{{site.data.keyword.messagehub}} login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library/messagehub.login-1.0.0.jar){:new_window}. 
+
 
 
