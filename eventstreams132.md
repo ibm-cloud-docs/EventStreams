@@ -70,7 +70,7 @@ The recommended figure is based on a typical workload and takes into account the
 
 **Specific guidance for the Enterprise plan**<br/>
 
-For guidance information, see [throughput quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas) 
+For throughput guidance information, see [throughput quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas). 
 
 **Measurement**<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
