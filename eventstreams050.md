@@ -67,7 +67,6 @@ To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the fo
 * One of the [recommended third-party clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#clients_table).
 
 For both types of client, we recommend always choosing the latest client version. 
-{: shortdesc}
 
 ### Client requirements for connecting to Event Streams
 
@@ -80,7 +79,6 @@ The minimum Kafka protocol that we support is 0.10.
 {: #third_party_clients}
 
 If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
-
 Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}. However, we only test with and have experience of the recommended third-party clients.
 
 ### Support summary for all recommended clients
@@ -159,7 +157,7 @@ The no-kafka client does not fully support SASL authentication with the PLAIN me
 -->
 
 <br/>
-## Connecting your client to {{site.data.keyword.messagehub}}
+### Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
 
 For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_connect).
@@ -171,8 +169,6 @@ To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the fo
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
 the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf).
 * the service key. For more information, see [Connecting to your cluster](/docs/services/EventStreams?topic=eventstreams-connecting).
-{: shortdesc}
-
 
 
 where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
