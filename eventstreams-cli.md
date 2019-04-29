@@ -205,7 +205,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 <strong>Examples</strong>:
 
 ## ibmcloud es topic-delete-records
-{: #ibmcloud_es_topic-delete-records}
+{: #ibmcloud_es_topic_delete_records}
 
 Delete records from a topic for a given offset.
 
@@ -218,7 +218,7 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #es_topic_create_params}
+{: #es_topic_delete_records_params}
 
 <dl>
     <dt>--name value, -n value</dt>
@@ -344,7 +344,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud_es_group_params}
+{: #ibmcloud_es_group_reset_params}
 
 <dl>
     <dt>--group value, -g value </dt>
@@ -391,7 +391,7 @@ ibmcloud es groups [--filter FILTER] [--json]
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud_es_group_params}
+{: #ibmcloud_es_groups_params}
 
 <dl>
     <dt>--filter value, -f value (optional)
