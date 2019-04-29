@@ -137,9 +137,6 @@ Alternatively, you can update your manifest file and push the application again.
 
 Now you have connection and credential information, you can choose an {{site.data.keyword.messagehub}} client. For more information, see [Using the Kafka API](/docs/services/EventStreams?topic=eventstreams-kafka_using).
 
-The internal Kafka <code>__consumer_offsets</code> topic is visible to you as read-only. 
-You are strongly recommended not to attempt to manage the topic in any way. 
-
 <!--
 Charlie said:
 

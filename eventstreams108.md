@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-25"
+lastupdated: "2019-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -84,6 +84,9 @@ Enterprise plan only. Set to any value between 5 minutes and 30 days</p>
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
 
 Offset retention is system-wide so you cannot set it at an individual topic level. All consumer groups get only 7 days of stored offsets even if using a topic with a log retention that has been increased to the maximum of 30 days. 
+
+The internal Kafka <code>__consumer_offsets</code> topic is visible to you as read-only. 
+You are strongly recommended not to attempt to manage the topic in any way. 
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability}
