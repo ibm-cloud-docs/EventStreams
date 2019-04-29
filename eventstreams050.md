@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-27"
+lastupdated: "2019-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -200,7 +200,7 @@ auto.offset.reset=latest
 <!--17/10/17 - Karen: following info duplicated at messagehub104 -->
 
 ### Using the sasl.jaas.config property (connecting and authenticating in a Java application)
-{: #kafka_java notoc}
+{: #kafka_java}
 
 If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
 <pre>
@@ -213,7 +213,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.
 For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
 
 ### Connecting and authenticating in an application other than Java
-{: #kafka_notjava notoc}
+{: #kafka_notjava }
 
 The {{site.data.keyword.messagehub}} service currently
 authenticates clients by using SASL PLAIN over TLS. Credentials are carried over an encrypted connection.
