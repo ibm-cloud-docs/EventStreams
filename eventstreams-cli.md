@@ -45,7 +45,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
 <strong>Examples</strong>:
 -->
 
-
+<br/>
 ## ibmcloud es broker
 {: #ibmcloud_es_broker}
 
@@ -72,7 +72,7 @@ ibmcloud es broker [--broker] ID [--json]
 <strong>Examples</strong>:
 -->
 
-
+<br/>
 ## ibmcloud es broker-config
 {: #ibmcloud_es_broker_config}
 
@@ -104,7 +104,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 <strong>Examples</strong>:
 -->
 
-
+<br/>
 ## ibmcloud es cluster
 {: #ibmcloud_es_cluster}
 
@@ -128,7 +128,7 @@ ibmcloud es cluster [--json]
 <!--
 <strong>Examples</strong>:
 -->
-
+<br/>
 ## ibmcloud es topic
 {: #ibmcloud_es_topic}
 
