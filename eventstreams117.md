@@ -34,9 +34,8 @@ For example, consider a service instance with 10 topics, each with 1 partition a
 
 The quota is applied across the nodes of the Kafka cluster. The precise value applied at a point in time depends on the current distribution of partition leaders on the nodes of the cluster. For example, if all the partition leaders were by chance to exist on the same single broker, you could use 10 MB/s spread across those partitions, that is Partition 0 could use 10 MB/s and partitions 1 through 9 will be using nothing.
 
--------------------
+## Recommendation
+{: #quotas_recommendation }
 
-Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
-
-40 MB per second with a maximum peak limit of 90 MB per second. <br/>
+40 MB per second with a maximum peak limit of 90 MB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.<br/>
 The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
