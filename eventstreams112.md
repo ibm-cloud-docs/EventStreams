@@ -21,10 +21,6 @@ subcollection: eventstreams
 {: #producing_messages }
 
 
-<br/>
-**Still link to Kafka 1.1 version? **
-{: note}
-
 A producer is an application that publishes streams of messages to Kafka topics. This information focuses on the Java programming interface that is part of the Apache Kafka project. The concepts apply to other languages too, but the names are sometimes a little different.
 {: shortdesc}
 
