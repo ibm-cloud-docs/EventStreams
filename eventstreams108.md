@@ -121,7 +121,7 @@ The following configuration settings apply to all topics and cannot be changed:
 {: #plan_compare }
 {: faq}
 
-To find out more information about the two different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
+To find out more information about the different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery }
