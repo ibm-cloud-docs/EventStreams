@@ -87,7 +87,6 @@ IBM Event Streams
 	{: .topicgroup}
 	Troubleshooting
 		ts_overview.md
-		eventstreams057.md
 		eventstreams125.md
 		
 	{: .topicgroup}
