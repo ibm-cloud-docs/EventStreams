@@ -111,6 +111,7 @@ that might take some time to complete. You are recommended to
 avoid usage patterns that rely on the rapid creation and deletion
 of topics, or on the rapid deletion and re-creation of topics.
 
+<!--
 ## Kafka REST API
 {: #trouble_rest}
 
@@ -125,6 +126,8 @@ of topics, or on the rapid deletion and re-creation of topics.
    instance should be sent only after a response is received for
    any outstanding requests of that instance.
 
+-->
+<!--
 <br/>
 **Is this specific to old Standard only? If so I'll move to specific Standard topic.**
 {: note}
@@ -144,8 +147,9 @@ If you see this error, wait and submit the request again.
 <br/>
 **Is this specific to old Standard only? If so I'll move to specific Standard topic.**
 {: note}
-
+-->
 <!--12/04/18 - Karen: same info duplicated at messagehub108 -->
+<!--
 ## Kafka REST API daily restart
 {: #rest_restart}
 
@@ -159,6 +163,7 @@ REST API returns the following JSON:
 ```'{"error_code":40403,"message":"Consumer instance not found."}'
 ```
 {:screen}
+-->
 
 ## Kafka high-level consumer API
 {: #kafka_consumer}
