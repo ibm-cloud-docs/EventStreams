@@ -253,6 +253,32 @@ multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with qu
 -->
 <br/>
 
+## ibmcloud es topic-partitions-set
+{: #ibmcloud_es_topic_partitions_set}
+
+Set the partitions for a topic.
+
+
+```
+ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud_es_groups_params}
+
+<dl>
+    <dt>--name value, -n value</dt>
+        <dd>Topic name.</dd>
+     <dt>--partitions value, -p value</dt>
+        <dd>Set the number of partitions for the topic.
+</dd>
+</dl>
+
+
 ## ibmcloud es topic-update
 {: #ibmcloud_es_topic_update}
 
@@ -437,30 +463,7 @@ ibmcloud es groups [--filter FILTER] [--json]
  
  <br/>
 
-## ibmcloud es topic-partitions-set
-{: #ibmcloud_es_topic_partitions_set}
 
-Set the partitions for a topic.
-
-
-```
-ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
-
-```
-{:codeblock}
-
-<strong>Prerequisites</strong>: None
-
-<strong>Command options</strong>:
-{: #ibmcloud_es_groups_params}
-
-<dl>
-    <dt>--name value, -n value</dt>
-        <dd>Topic name.</dd>
-     <dt>--partitions value, -p value</dt>
-        <dd>Set the number of partitions for the topic.
-</dd>
-</dl>
 
 
 
