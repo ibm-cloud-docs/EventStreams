@@ -164,9 +164,10 @@ REST API returns the following JSON:
 ```
 {:screen}
 -->
-
+<!--
 ## Kafka high-level consumer API
 {: #kafka_consumer}
 
 You cannot use the Apache Kafka 0.8.2 simple or high-level
 consumer API with {{site.data.keyword.messagehub}}. Instead, you can use the earliest supported Kafka consumer API, which is 0.10.
+-->
