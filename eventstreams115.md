@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Cloud Object Storage bridge 
+# Cloud Object Storage bridge on the Classic plan
 {: #cloud_object_storage_bridge }
 
 
