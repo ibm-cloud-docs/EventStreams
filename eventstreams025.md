@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-05-25"
+lastupdated: "2019-05-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -25,6 +25,16 @@ subcollection: eventstreams
 **Rewrite to apply to new REST produce only interface.**
 {: note}
 
+{{site.data.keyword.messagehub}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
+
+The REST producer API is a scalable REST interface for producing messages to {{site.data.keyword.messagehub}} over a secure HTTP endpoint. Send event data to {{site.data.keyword.messagehub}}, utilize Kafka technology to handle data feeds, and take advantage of Event Streams features to manage your data.
+
+
+## Producing messages using REST
+{: #rest_producing_messages}
+
+
+------------
 The Kafka REST API provides a RESTful interface to a Kafka
 cluster. You can produce and consume messages by using the
 API. For more information including the API reference documentation, see [Kafka REST Proxy docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/2.0.0/kafka-rest/docs/index.html){:new_window}. Only the binary embedded format is supported for requests and responses in {{site.data.keyword.messagehub}}. The Avro and JSON embedded formats are not supported.

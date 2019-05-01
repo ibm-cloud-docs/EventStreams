@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17"
+lastupdated: "2019-05-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -150,8 +150,10 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
     <dt>--json (optional)</dt>
         <dd>Output format of JSON.</dd>
 </dl>
-
+<!--
 <strong>Examples</strong>:
+-->
+<br/>
 
 ## ibmcloud es topic-create
 {: #ibmcloud_es _topic-create}
@@ -184,8 +186,10 @@ segment.bytes
 segment.ms
 segment.index.bytes</p></dd>
 </dl>
-
+<!--
 <strong>Examples</strong>:
+-->
+<br/>
 
 ## ibmcloud es topic-delete
 {: #ibmcloud_es_topic_delete}
@@ -209,7 +213,10 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
         <dd>Delete without confirmation.</dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
+-->
+<br/>
 
 ## ibmcloud es topic-delete-records
 {: #ibmcloud_es_topic_delete_records}
@@ -237,9 +244,10 @@ multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with qu
         <dd>Delete records without confirmation.</dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
-
-
+-->
+<br/>
 
 ## ibmcloud es topic-update
 {: #ibmcloud_es_topic_update}
@@ -277,8 +285,10 @@ segment.index.bytes</p></dd>
         <dd>Reset each configuration parameter specified using '--config' to its default value.</dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
-
+-->
+<br/>
 
 ## ibmcloud es topics
 {: #ibmcloud_es_topics}
@@ -305,8 +315,10 @@ ibmcloud es topics [--filter FILTER] [--json]
 </dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
-
+-->
+<br/>
 
 ## ibmcloud es group
 {: #ibmcloud_es_group}
@@ -333,9 +345,12 @@ ibmcloud es group [--group] GROUP_ID [--json]
 </dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
- 
- ## ibmcloud es group-reset
+-->
+<br/>
+
+## ibmcloud es group-reset
 {: #ibmcloud_es_group_reset}
 
 Reset the offsets for a consumer group.
@@ -370,7 +385,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 'datetime': use 'YYYY-MM-DDTHH:mm:SS.sss[±hh:mm|Z]'.
 </dd>
      <dt>--dry-run (optional)</dt>
-        <dd>Show results, do not implement the changes.
+        <dd>Show results and do not implement the changes.
 </dd>
      <dt>--execute  (optional)</dt>
         <dd> Execute the changes to the offsets.
@@ -380,8 +395,10 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 </dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
-
+-->
+<br/>
 
 ## ibmcloud es groups
 {: #ibmcloud_es_groups}
@@ -409,7 +426,10 @@ ibmcloud es groups [--filter FILTER] [--json]
 </dd>
 </dl>
 
+<!--
 <strong>Examples</strong>:
+-->
+<br/>
  
 
 
