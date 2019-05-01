@@ -278,6 +278,7 @@ ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 </dd>
 </dl>
 
+<br/>
 
 ## ibmcloud es topic-update
 {: #ibmcloud_es_topic_update}
