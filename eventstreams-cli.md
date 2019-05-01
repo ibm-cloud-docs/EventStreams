@@ -41,6 +41,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
    <dt>--api-url value, -a value (optional)</dt>
    <dd>Kafka admin URL of the {{site.data.keyword.messagehub}} instance.</dd>
    </dl>
+
 <!--
 <strong>Examples</strong>:
 -->
@@ -129,6 +130,7 @@ ibmcloud es cluster [--json]
 <strong>Examples</strong>:
 -->
 <br/>
+
 ## ibmcloud es topic
 {: #ibmcloud_es_topic}
 
@@ -150,6 +152,7 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
     <dt>--json (optional)</dt>
         <dd>Output format of JSON.</dd>
 </dl>
+
 <!--
 <strong>Examples</strong>:
 -->
@@ -186,6 +189,7 @@ segment.bytes
 segment.ms
 segment.index.bytes</p></dd>
 </dl>
+
 <!--
 <strong>Examples</strong>:
 -->
