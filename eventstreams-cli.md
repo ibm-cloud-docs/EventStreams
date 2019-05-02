@@ -198,7 +198,7 @@ segment.index.bytes</p></dd>
 ## ibmcloud es topic-delete
 {: #ibmcloud_es_topic_delete}
 
-Display the details of a topic.
+Delete a topic.
 
 ```
 ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
