@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-16"
+lastupdated: "2019-05-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -23,13 +23,13 @@ subcollection: eventstreams
 By using an internal endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network.
 {:shortdesc}
 
-You can now add an internal endpoint to access and manage your {{site.data.keyword.messagehub}}service instance.
+You can now add an internal endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
 
 ## Prerequisites
 {: #prereqs notoc}
 
 Ensure that you meet the following requirements:
-- Create your service instance by using the Enterprise plan [v2 container plans](docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
+- Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
 - Create your service instance in the {{site.data.keyword.Bluemix_short}} United Kingdom (London) or Germany (Frankfurt) regions.
 - Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_short}} account.
 
