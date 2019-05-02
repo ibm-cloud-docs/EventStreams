@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-27"
+lastupdated: "2019-05-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,7 +21,6 @@ subcollection: eventstreams
 {: #sla}
 
 ## Standard plan
-
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Standard plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
@@ -38,7 +37,7 @@ Availability refers to the ability of applications to produce and consume messag
 -->
 
 ## How do we measure it?
-Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded.
+Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?component=messagehub&selected=status){:new_window}.
 
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 
