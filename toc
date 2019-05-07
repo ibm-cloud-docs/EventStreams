@@ -21,7 +21,6 @@ IBM Event Streams
 	eventstreams068.md
 	at-events.md
 	eventstreams-cli.md
-	<!-- ensure above cli ref topic not included on prod until Charlie says so -->
 
 	{: .topicgroup}
 	Classic plan 
@@ -55,7 +54,6 @@ IBM Event Streams
 		eventstreams124.md
 		eventstreams133.md
 		eventstreams145.md
-<!-- ensure above 133.md cli getting started topic not included on prod until Charlie says so -->
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
