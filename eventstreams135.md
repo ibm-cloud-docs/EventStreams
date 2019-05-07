@@ -49,7 +49,7 @@ Here is an example of VCAP_SERVICES:
 {
   "credentials": {
     "mqlight_lookup_url": "https://mqlight-lookup.messagehub.services.us-south.bluemix.net/Lookup?serviceId=584e8436-e7f5-43db-96ac-2864fccae5ae",
-    "api_key": "d9JSx1SYsmLzNRbbgUFneDm2DtkedlVeViObYJIvrPAf2kJA",
+    "api_key": <YOUR_API_KEY>,
     "kafka_admin_url": "https://kafka-admin.messagehub.services.us-south.bluemix.net:443",
     "kafka_rest_url": "https://kafka-rest.messagehub.services.us-south.bluemix.net:443",
     "kafka_brokers_sasl": [
