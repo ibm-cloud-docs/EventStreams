@@ -41,7 +41,6 @@ IBM Event Streams
 		eventstreams089.md
 		eventstreams139.md
 		eventstreams140.md
-		eventstreams109.md
 		eventstreams144.md
 	{: .navgroup-end}
 
@@ -91,6 +90,7 @@ IBM Event Streams
 		ts_overview.md
 		eventstreams057.md
 		eventstreams125.md
+		eventstreams109.md
 		
 	{: .topicgroup}
 	Related links
