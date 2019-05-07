@@ -62,24 +62,29 @@ The following table summarizes what is supported by the plans:
 			<td>**Availability zones**</td>
 			<td>3</td>
 			<td>3</td>
+			<td>Not supported</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
+			<td>Kafka 1.1</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
 			<td>Yes</td>
 			<td>Yes</td>
+			<td>No</td>
 		</tr>
 				<tr>
 			<td>**Cloud Service Endpoint support**</td>
 			<td>No</td>
 			<td>Yes</td>
+			<td>No</td>
 		</tr>
 		<tr>
 			<td>**Kafka Connect and Kafka Streams supported **</td>
+			<td>Yes</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
@@ -87,11 +92,13 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum number of partitions**</td>
 			<td>100</td>
 			<td>1000</td>
+			<td>100</td>
 		</tr>
 		<tr>
 			<td>**Maximum retention period**</td>
 			<td>1 GB per partition for up to 30 days </td>
 			<td>Unlimited up to the storage limit of your plan </td>
+			<td>1 GB per partition for up to 30 days </td>
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
@@ -103,9 +110,12 @@ The following table summarizes what is supported by the plans:
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
-
 			<br/>
 			</td>
+			<td>Dallas (us-south)</br>
+			London (eu-gb)</br>
+			Sydney (au-syd)</br>
+			Frankfurt (eu-de) - no {{site.data.keyword.mql}} API </td>
 		</tr>
 		<tr>
      	    <td>**APIs supported**</td>
@@ -115,11 +125,24 @@ The following table summarizes what is supported by the plans:
 		    </td>
 			<td>Kafka API<br/>
 			Admin REST API</td>
+			<td>Kafka API</br>
+			Admin REST API<br/>
+			Kafka REST API</br>
+			MQ Light API</br>
+		    </td>
+		</tr>
+		</tr>
+			<td>**Cloud Object Storage bridge and<br/>
+			MQ bridge supported**</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
 			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
+			<td>Instantaneous provisioning</td>
 		</tr>
 
 </table>
