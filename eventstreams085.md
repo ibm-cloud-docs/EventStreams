@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard and Enterprise. 
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard, Enterprise, and Classic. 
 
 For information about the Classic plan, see
 [Classic plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
@@ -35,7 +35,12 @@ The Standard plan is appropriate if you require event ingest and distribution ca
 
 The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
 
-## What's supported by the Standard and Enterprise plans
+## Classic plan
+
+The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise or Standard plans. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+
+
+## What's supported by the Standard, Enterprise and Classic plans
 
 The following table summarizes what is supported by the plans:
 
@@ -45,11 +50,13 @@ The following table summarizes what is supported by the plans:
 	        <th></th>
 		    <th>Standard Plan</th>
 		    <th>Enterprise Plan</th>
+		    <th>Classic Plan</th>
         </tr>
 		<tr>
 			<td>**Tenancy**</td>
 			<td>Multi-tenant </td>
 			<td>Single tenant</td>
+			<td>Multi-tenant</td>
 		</tr>
         <tr>
 			<td>**Availability zones**</td>
@@ -89,9 +96,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Location (region) availability**</td>
 			<td>Dallas (us-south)</br>
-			London (eu-gb)</br>
-			Sydney (au-syd)</br>
-			Frankfurt (eu-de) </td>
+ </td>
 			<td>Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
