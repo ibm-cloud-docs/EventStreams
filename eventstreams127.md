@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -32,6 +32,9 @@ The way you connect to {{site.data.keyword.messagehub}} varies depending on whet
 * Credentials for authentication
 
 Read the following information for how to obtain these details. The steps can vary subtly so ensure that you complete the appropriate steps for your instance.
+
+For information about how to connect to {{site.data.keyword.messagehub}} if you're using the Classic plan, see [Connecting using the Classic plan](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
+
 
 ## Overview
 {: #connect_enterprise}
