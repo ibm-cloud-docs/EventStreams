@@ -92,7 +92,7 @@ Complete the following steps:
 
     Use the values for *kafka_brokers_sasl*
     and *api_key* from the credentials you created in [step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step).
-	
+
     
 	**Important:** *kafka_brokers_sasl* must be a single string and you must enclose it in quotes. For example:
 
