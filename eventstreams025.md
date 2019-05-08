@@ -93,6 +93,57 @@ The sample code is in the [event-streams-samples GitHub project ![External link 
 
 Follow the instructions in the [README.md ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window} file for that project to build and run the sample.
 
+------------
+Event Streams provides a REST API to help connect your existing systems to your Event Streams Kafka cluster. Using the API, you can integrate Event Streams with any system that supports RESTful APIs.
+
+The REST producer API is a scalable REST interface for producing messages to Event Streams over a secure HTTP endpoint. Send event data to Event Streams, utilize Kafka technology to handle data feeds, and take advantage of Event Streams features to manage your data.
+
+Use the API to connect existing systems to Event Streams, such as IBM Z mainframe systems with IBM z/OS Connect, systems using IBM DataPower Gateway, and so on. Create produce requests from your systems into Event Streams, including specifying the message key, headers, and the topics you want to write messages to.
+
+
+Producing messages using REST
+
+Use the producer API to write messages to topics. To be able to produce to a topic, you must have the following available:
+
+    The URL of the Event Streams API endpoint, including the port number.
+    The topic you want to produce to.
+    The API key that gives permission to connect and produce to the selected topic.
+    The Event Streams certificate.
+
+To retrieve the full URL for the Event Streams API endpoint:
+
+    Ensure you have the Event Streams CLI installed.
+    Log in to your cluster as an administrator by using the IBM Cloud Private CLI:
+    cloudctl login -a https://<Cluster Master Host>:<Cluster Master API Port>
+    The master host and port for your cluster are set during the installation of IBM Cloud Private.
+    Run the following command to initialize the Event Streams CLI: cloudctl es init.
+    If you have more than one Event Streams instance installed, select the one where the topic you want to produce to is.
+    Details of your Event Streams installation are displayed.
+    Copy the full URL from the Event Streams API endpoint field, including the port number.
+
+To create a topic and generate an API key with produce permissions, and to download the certificate:
+
+    If you have not previously created the topic, create it now:
+    cloudctl es topic-create --name <topic_name> --partitions 1 --replication-factor 3
+    Create a service ID and generate an API key:
+    cloudctl es iam-service-id-create --name <serviceId_name> --role editor --topic <topic_name>
+    For more information about roles, permissions, and service IDs, see the information about managing access.
+    Copy the API key returned by the previous command.
+    Download the certificate for Event Streams:
+    cloudctl es certificates --format pem
+
+You have now gathered all the details required to use the producer API. You can use the usual languages for making the API call. For example, to use cURL to produce messages to a topic with the producer API, run the curl command as follows:
+
+curl -v -X POST -H "Authorization: Bearer <api_key>" -H "Content-Type: text/plain" -H "Accept: application/json" -d 'test message' --cacert es-cert.pem "<api_endpoint>/topics/<topic_name>/records"
+
+Where:
+
+    <api_key> is the API key you generated earlier.
+    <api_endpoint> is the full URL copied from the Event Streams API endpoint field earlier (format https://<host>:<port>)
+    <topic_name> is the name of the topic you want to produce messages to.
+
+For full details of the API, see the API reference.
+
 
 
 
