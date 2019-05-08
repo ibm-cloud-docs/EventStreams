@@ -47,7 +47,7 @@ The Classic plan is appropriate if you require event ingest and distribution cap
 The following table summarizes what is supported by the plans:
 
 <table>
-    <caption>Table 1. Support in Standard and Enterprise plans</caption>
+    <caption>Table 1. Support in Standard, Enterprise, and Classic plans</caption>
       <tr>
 	        <th></th>
 		    <th>Standard Plan</th>
