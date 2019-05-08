@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-07"
+lastupdated: "2019-05-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -23,8 +23,10 @@ subcollection: eventstreams
 
 {{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard, Enterprise, and Classic. 
 
+<!--
 For information about the Classic plan, see
 [Classic plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
+-->
 {: shortdesc}
 
 ## Standard plan
@@ -37,7 +39,7 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 
 ## Classic plan
 
-The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise or Standard plans. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise or Standard plans. The Standard plan is recommended in preference to the Classic plan. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 
 ## What's supported by the Standard, Enterprise and Classic plans

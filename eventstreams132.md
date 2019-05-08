@@ -31,6 +31,11 @@ The {{site.data.keyword.messagehub}} service is provided with an availability of
 For more information about the SLA for {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
 
+## Classic plan
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
+For more information about the SLA for {{site.data.keyword.Bluemix}}, see
+[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
+
 <!--
 ## What does 99.95% availability mean?
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
