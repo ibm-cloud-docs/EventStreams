@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17"
+lastupdated: "2019-05-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -93,7 +93,6 @@ Complete the following steps:
     Use the values for *kafka_brokers_sasl*
     and *api_key* from the credentials you created in [step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step).
 	
-	Specify <code>token</code> as your user name and the <var class="keyword varname">api_key</var> as your password. Separate <code>token</code> and the <var class="keyword varname">api_key</var> with a colon.
     
 	**Important:** *kafka_brokers_sasl* must be a single string and you must enclose it in quotes. For example:
 
