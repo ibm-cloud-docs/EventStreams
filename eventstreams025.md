@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09d"
+lastupdated: "2019-05-09e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -157,9 +157,9 @@ curl -v -X POST -H "Authorization: Bearer <api_key>" -H "Content-Type: text/plai
 
 Where:
 
-* <var class="keyword varname">api_key</var> is the API key you generated earlier.
-* <api_endpoint> is the full URL copied from the Event Streams API endpoint field earlier (format https://<host>:<port>)
-* <topic_name> is the name of the topic you want to produce messages to.
+* <var class="keyword varname"><api_key></var> is the API key you generated earlier.
+* <var class="keyword varname"><api_endpoint></var> is the full URL copied from the Event Streams API endpoint field earlier (format https://<var class="keyword varname"><host></var>:<var class="keyword varname"><port></var>)
+* <var class="keyword varname"><topic_name></var> is the name of the topic you want to produce messages to.
 
 For full details of the API, see the API reference.
 
