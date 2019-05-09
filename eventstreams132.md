@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-02"
+lastupdated: "2019-05-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,7 +21,7 @@ subcollection: eventstreams
 {: #sla}
 
 ## Standard plan
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Standard plan. 
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Standard plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
 
@@ -68,13 +68,11 @@ If duplicates cannot be tolerated, you can use the <code>idempotent</code> produ
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster. 
 
 **Specific guidance for the Standard plan**<br/>
-40 MB per second with a maximum peak limit of 90 MB per second. <br/>
-
-The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes like the loss of an availability zone.  For example, messages with a small payload (less than 10 K). If the average throughput exceeds this figure, you might experience a loss in performance during these conditions.
+For throughput guidance information, see [Limits and quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas). 
 
 **Specific guidance for the Enterprise plan**<br/>
 
-For throughput guidance information, see [throughput quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas). 
+For throughput guidance information, see [Limits and quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas). 
 
 **Measurement**<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.

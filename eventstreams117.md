@@ -23,8 +23,10 @@ subcollection: eventstreams
 {{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on the plan being used:
 
 ## Standard plan
+{: #limits_standard }
 
-**Network throughput**
+### Network throughput
+{: #standard_throughput }
 
 The maximum throughput per service instance equates to 1MB/sec per partition up to a maximum of 20 MB/sec e.g. for a service instance with 10 partitions the maximum throughput will be 10MB/sec and for 30 partitions it will be 20 MB/s.
 
@@ -42,7 +44,9 @@ The throughput is measured separately for producers and consumers. When exceeded
 
 ## Enterprise plan
 
-**Network throughput** 
+### Network throughput
+{: #enterprise_throughput }
+
 A recommended maximum of 40 MB/sec with a peak limit of 90 MB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
 
