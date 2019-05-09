@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09c"
+lastupdated: "2019-05-09d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -148,6 +148,7 @@ To create a topic and generate an API key with produce permissions, and to downl
     cloudctl es certificates --format pem
     ```
 
+<br/>
 You have now gathered all the details required to use the producer API. You can use the usual languages for making the API call. For example, to use cURL to produce messages to a topic with the producer API, run the curl command as follows:
 
 ```
@@ -156,7 +157,7 @@ curl -v -X POST -H "Authorization: Bearer <api_key>" -H "Content-Type: text/plai
 
 Where:
 
-* <api_key> is the API key you generated earlier.
+* <var class="keyword varname">api_key</var> is the API key you generated earlier.
 * <api_endpoint> is the full URL copied from the Event Streams API endpoint field earlier (format https://<host>:<port>)
 * <topic_name> is the name of the topic you want to produce messages to.
 
