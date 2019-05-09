@@ -39,11 +39,11 @@ To add an internal endpoint:
 1. Raise a ticket to request an internal endpoint.
 2.
 3.
+
 <!--
 1. On the service details page, click **Manage endpoints**. You can see the external endpoint assigned to your service instance.
 2. Click  **Add internal endpoint**. An internal endpoint is assigned to your service instance.
 3. **Optional.** Use the endpoint toggle to enable or disable endpoints as needed.
 -->
-
 
 For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
