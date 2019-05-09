@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09b"
+lastupdated: "2019-05-09c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -94,7 +94,7 @@ The sample code is in the [event-streams-samples GitHub project ![External link 
 Follow the instructions in the [README.md ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){:new_window} file for that project to build and run the sample.
 
 ------------
-{{site.data.keyword.messagehub}}  provides a REST API to help connect your existing systems to your{{site.data.keyword.messagehub}}  Kafka cluster. Using the API, you can integrate Event Streams with any system that supports RESTful APIs.
+{{site.data.keyword.messagehub}}  provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can integrate Event Streams with any system that supports RESTful APIs.
 
 The REST producer API is a scalable REST interface for producing messages to {{site.data.keyword.messagehub}}  over a secure HTTP endpoint. Send event data to {{site.data.keyword.messagehub}} , utilize Kafka technology to handle data feeds, and take advantage of {{site.data.keyword.messagehub}} features to manage your data.
 
@@ -106,25 +106,25 @@ Use the API to connect existing systems to Event Streams, such as IBM Z mainfram
 
 Use the producer API to write messages to topics. To be able to produce to a topic, you must have the following available:
 
-* The URL of the Event Streams API endpoint, including the port number.
+* The URL of the {{site.data.keyword.messagehub}} API endpoint, including the port number.
 * The topic you want to produce to.
 * The API key that gives permission to connect and produce to the selected topic.
-* The Event Streams certificate.
+* The {{site.data.keyword.messagehub}} certificate.
 
-To retrieve the full URL for the Event Streams API endpoint:
+To retrieve the full URL for the {{site.data.keyword.messagehub}} API endpoint:
 
-1. Ensure you have the Event Streams CLI installed.
+1. Ensure you have the {{site.data.keyword.messagehub}} CLI installed.
 2. Log in to your cluster as an administrator by using the IBM Cloud Private CLI:
 
     ```
     cloudctl login -a https://<Cluster Master Host>:<Cluster Master API Port>
     ```
 
-The master host and port for your cluster are set during the installation of IBM Cloud Private.
+    The master host and port for your cluster are set during the installation of IBM Cloud Private.
 3. Run the following command to initialize the Event Streams CLI: cloudctl es init.
     If you have more than one Event Streams instance installed, select the one where the topic you want to produce to is.
-    Details of your Event Streams installation are displayed.
-4. Copy the full URL from the Event Streams API endpoint field, including the port number.
+    Details of your {{site.data.keyword.messagehub}} installation are displayed.
+4. Copy the full URL from the {{site.data.keyword.messagehub}} API endpoint field, including the port number.
 
 <br/>
 To create a topic and generate an API key with produce permissions, and to download the certificate:
