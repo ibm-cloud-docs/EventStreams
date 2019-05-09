@@ -80,8 +80,7 @@ Complete the following steps:
 
 7. {: #start_consumer_step notoc} Start the consumer on your console by running the following command:
 
-    <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">api_key</var> -consumer</pre>
+    <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar <var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">api_key</var> -consumer</pre>
     
     The sample uses a topic named `kafka-java-console-sample-topic`. If the topic does
     not already exist, the sample creates it using the {{site.data.keyword.messagehub}} Administration API. To send and receive
@@ -101,8 +100,7 @@ Complete the following steps:
 
 8. Start the producer on your console by running the following command:
    
-    <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	<var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">api_key</var> -producer</pre>
+    <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar <var class="keyword varname">kafka_brokers_sasl</var> <var class="keyword varname">api_key</var> -producer</pre>
   
 9. You should now see the messages sent by the producer appearing in the consumer. The following
 is some sample output:
