@@ -60,8 +60,6 @@ The following table summarizes what is supported by the plan:
 				<tr>
 			<td>**Cloud Service Endpoint support**</td>
 			<td>No</td>
-			<td>Yes</td>
-			<td>No</td>
 		</tr>
 		<tr>
 			<td>**Kafka Connect and Kafka Streams supported **</td>
