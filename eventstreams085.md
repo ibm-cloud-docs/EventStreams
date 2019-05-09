@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-08"
+lastupdated: "2019-05-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -66,6 +66,12 @@ The following table summarizes what is supported by the plans:
 			<td>3</td>
 			<td>Not supported</td>
 		</tr>
+        <tr>
+			<td>**Availability**</td>
+			<td>99.95%</td>
+			<td>99.95%</td>
+			<td>99.5%</td>
+		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
@@ -101,6 +107,18 @@ The following table summarizes what is supported by the plans:
 			<td>1 GB per partition for up to 30 days </td>
 			<td>Unlimited up to the storage limit of your plan </td>
 			<td>1 GB per partition for up to 30 days </td>
+		</tr>
+		<tr>
+			<td>**Maximum throughput**</td>
+			<td>1 MB per second per partition (20 MB per second maximum) </td>
+			<td>40 MB per second (90 MB per second at peak)</td>
+			<td>1 MB per second per partition</td>
+		</tr>
+		<tr>
+			<td>**Maximum message size**</td>
+			<td>1 MB</td>
+			<td>1 MB</td>
+			<td>1 MB</td>
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
