@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-16"
+lastupdated: "2019-05-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,12 +45,22 @@ The following table summarizes what is supported by the plan:
 			<td>**Availability zones**</td>
 			<td>Not supported</td>
 		</tr>
+        <tr>
+			<td>**Availability**</td>
+			<td>99.5%</td>
+		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
+			<td>No</td>
+		</tr>
+				<tr>
+			<td>**Cloud Service Endpoint support**</td>
+			<td>No</td>
+			<td>Yes</td>
 			<td>No</td>
 		</tr>
 		<tr>
@@ -67,6 +77,14 @@ The following table summarizes what is supported by the plan:
 			<td>**Maximum retention period**</td>
 			<td>1 GB per partition for up to 30 days </td>
 
+		</tr>
+		<tr>
+			<td>**Maximum throughput**</td>
+			<td>1 MB per second per partition</td>
+		</tr>
+		<tr>
+			<td>**Maximum message size**</td>
+			<td>1 MB</td>
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
