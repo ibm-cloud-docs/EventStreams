@@ -29,7 +29,7 @@ subcollection: eventstreams
 
 The REST producer API is a scalable REST interface for producing messages to {{site.data.keyword.messagehub}}  over a secure HTTP endpoint. Send event data to {{site.data.keyword.messagehub}} , utilize Kafka technology to handle data feeds, and take advantage of {{site.data.keyword.messagehub}} features to manage your data.
 
-Use the API to connect existing systems to Event Streams, such as IBM Z mainframe systems with IBM z/OS Connect, systems using IBM DataPower Gateway, and so on. Create produce requests from your systems into {{site.data.keyword.messagehub}} , including specifying the message key, headers, and the topics you want to write messages to.
+Use the API to connect existing systems to Event Streams. Create produce requests from your systems into {{site.data.keyword.messagehub}} , including specifying the message key, headers, and the topics you want to write messages to.
 
 
 ## Producing messages using REST
@@ -81,6 +81,7 @@ To create a topic and generate an API key with produce permissions, and to downl
     ```
     cloudctl es certificates --format pem
     ```
+    {: codeblock}
 
 <br/>
 You have now gathered all the details required to use the producer API. You can use the usual languages for making the API call. For example, to use cURL to produce messages to a topic with the producer API, run the curl command as follows:
@@ -88,6 +89,7 @@ You have now gathered all the details required to use the producer API. You can 
 ```
 curl -v -X POST -H "Authorization: Bearer <api_key>" -H "Content-Type: text/plain" -H "Accept: application/json" -d 'test message' --cacert es-cert.pem "<api_endpoint>/topics/<topic_name>/records"
 ```
+{: codeblock}
 
 Where:
 
