@@ -50,12 +50,14 @@ To retrieve the full URL for the {{site.data.keyword.messagehub}} API endpoint:
     ```
     cloudctl login -a https://<Cluster Master Host>:<Cluster Master API Port>
     ```
+    {: codeblock}
 
     The master host and port for your cluster are set during the installation of IBM Cloud Private.
 3. Run the following command to initialize the {{site.data.keyword.messagehub}} CLI: 
     ```
     cloudctl es init
     ```
+    {: codeblock}
     If you have more than one {{site.data.keyword.messagehub}} instance installed, select the one where the topic you want to produce to is.
     Details of your {{site.data.keyword.messagehub}} installation are displayed.
 4. Copy the full URL from the {{site.data.keyword.messagehub}} API endpoint field, including the port number.
@@ -68,11 +70,13 @@ To create a topic and generate an API key with produce permissions, and to downl
     ```
     cloudctl es topic-create --name <topic_name> --partitions 1 --replication-factor 3
     ```
+    {: codeblock}
 2. Create a service ID and generate an API key:
 
     ```
     cloudctl es iam-service-id-create --name <serviceId_name> --role editor --topic <topic_name>
     ```
+    {: codeblock}
 
     For more information about roles, permissions, and service IDs, see [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security).
 3. Copy the API key returned by the previous command.
