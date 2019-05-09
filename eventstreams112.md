@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-06-23"
+lastupdated: "2019-05-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -106,6 +106,8 @@ For efficiency purposes, the producer actually collects batches of records toget
 If you try to publish messages faster than they can be sent to a server, the producer automatically buffers them up into batched requests. The producer maintains a buffer of unsent records for each partition. Of course, there comes a point when even batching does not allow the rate you want to be achieved.
  
 There is another factor that has an impact. To prevent individual producers or consumers from swamping the cluster, {{site.data.keyword.messagehub}} applies throughput quotas. The rate that each producer is sending data at is calculated and any producer that attempts to exceed its quota is throttled. The throttling is applied by slightly delaying the sending of responses to the producer. Usually, this just acts as a natural brake.
+
+For throughput guidance information, see [Limits and quotas](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas). 
  
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 
