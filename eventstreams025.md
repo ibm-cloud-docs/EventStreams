@@ -98,7 +98,7 @@ curl -v -X POST -H "Authorization: Bearer <api_key>" -H "Content-Type: text/plai
 Where:
 
 * ```<api_key>``` is the API key that you generated earlier.
-* ```<api_endpoint>``` is the full URL copied from the Event Streams API endpoint field earlier (format https://```<host>```:```<port>```).
+* ```<api_endpoint>``` is the full URL copied from the Event Streams API endpoint field earlier (format ```https://<host>:<port>```).
 * ```<topic_name>``` is the name of the topic you want to produce messages to.
 
 For full details of the Rest Producer API, see the 
