@@ -113,7 +113,7 @@ Use the producer API to write messages to topics. To be able to produce to a top
 
 To retrieve the full URL for the {{site.data.keyword.messagehub}} API endpoint:
 
-1. Ensure you have the {{site.data.keyword.messagehub}} CLI installed.
+1. Ensure you have the [{{site.data.keyword.messagehub}} CLI](/docs/services/EventStreams?topic=eventstreams-cli) installed.
 2. Log in to your cluster as an administrator by using the IBM Cloud Private CLI:
 
     ```
@@ -143,7 +143,7 @@ To create a topic and generate an API key with produce permissions, and to downl
     cloudctl es iam-service-id-create --name <serviceId_name> --role editor --topic <topic_name>
     ```
 
-    For more information about roles, permissions, and service IDs, see the information about managing access.
+    For more information about roles, permissions, and service IDs, see [Managing access to your Event Streams resources](/docs/services/EventStreams?topic=eventstreams-security) 
 3. Copy the API key returned by the previous command.
 4. Download the certificate for Event Streams:
 
@@ -160,11 +160,13 @@ curl -v -X POST -H "Authorization: Bearer <api_key>" -H "Content-Type: text/plai
 
 Where:
 
-* <var class="keyword varname"><api_key></var> is the API key you generated earlier.
+* ```<api_key>``` is the API key you generated earlier.
 * <var class="keyword varname"><api_endpoint></var> is the full URL copied from the Event Streams API endpoint field earlier (format https://<var class="keyword varname"><host></var>:<var class="keyword varname"><port></var>)
 * <var class="keyword varname"><topic_name></var> is the name of the topic you want to produce messages to.
 
-For full details of the API, see the API reference.
+For full details of the Rest Producer API, see the 
+[{{site.data.keyword.messagehub}} API reference yaml file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.ibm.com/mhub/rest-producer/blob/master/openapi.yaml){:new_window}.
+
 
 
 
