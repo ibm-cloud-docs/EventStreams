@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09e"
+lastupdated: "2019-05-09f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -121,7 +121,10 @@ To retrieve the full URL for the {{site.data.keyword.messagehub}} API endpoint:
     ```
 
     The master host and port for your cluster are set during the installation of IBM Cloud Private.
-3. Run the following command to initialize the Event Streams CLI: cloudctl es init.
+3. Run the following command to initialize the Event Streams CLI: 
+    ```
+    cloudctl es init
+    ```
     If you have more than one Event Streams instance installed, select the one where the topic you want to produce to is.
     Details of your {{site.data.keyword.messagehub}} installation are displayed.
 4. Copy the full URL from the {{site.data.keyword.messagehub}} API endpoint field, including the port number.
