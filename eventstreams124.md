@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-07-04"
+lastupdated: "2019-05-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -15,12 +15,17 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:note: .note}
+{:important: .important}
 
 # Managing access to your {{site.data.keyword.messagehub}} resources 
 {: #security }
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
 {: shortdesc}
+
+When you make changes to IAM policies and permissions, these changes can sometimes take a number of minutes to reflected in the underlying service.
+{: important}
 
 ## What can I secure?
 
