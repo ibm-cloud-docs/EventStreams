@@ -39,10 +39,10 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 
 ## Classic plan
 
-The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise or Standard plans. The Standard plan is recommended in preference to the Classic plan. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise or Standard plans. The Standard plan is strongly recommended in preference to the Classic plan. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 
-## What's supported by the Standard, Enterprise and Classic plans
+## What's supported by the Standard, Enterprise, and Classic plans
 
 The following table summarizes what is supported by the plans:
 
