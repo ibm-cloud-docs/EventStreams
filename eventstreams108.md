@@ -22,7 +22,7 @@ subcollection: eventstreams
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
 
-For answers to questions specific to the Classic plan, see [FAQs for the Classic plan](docs/services/EventStreams?topic=eventstreams-faqs_standard#faqs_standard).
+For answers to questions specific to the Classic plan, see [FAQs for the Classic plan](/docs/services/EventStreams?topic=eventstreams-faqs_standard#faqs_standard).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
@@ -102,7 +102,7 @@ create a topic using either the user interface or the
 administration API. The time limit is a minimum of an hour and a
 maximum of 30 days.
 
-For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [Using the Kafka API](/docs/services/EventStreams?topic=eventstreams-kafka_using).
+For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [How do I use Kafka APIs to create and delete topics?](/docs/services/EventStreams?topic=eventstreams-faqs#topic_admin).
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability}
