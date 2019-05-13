@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-05-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -32,7 +32,7 @@ Kafka clients exist in multiple languages and we provide instructions for some o
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
-			<td>Kafka 1.1</td>
+			<td>Kafka 2.2</td>
 		</tr>
 	  		<tr>
 			<td>**Supported client versions**</td>
@@ -52,9 +52,9 @@ Kafka clients exist in multiple languages and we provide instructions for some o
 
 </table>
 
-For information about the V1.1 Producer and Consumer APIs, see 
-[Kafka Producer API 1.1.0 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 1.1 0 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+For information about the V2.2 Producer and Consumer APIs, see 
+[Kafka Producer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
+[Kafka Consumer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}

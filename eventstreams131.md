@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-10-29"
+lastupdated: "2019-05-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -30,8 +30,8 @@ subcollection: eventstreams
         </tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 0.10.2</td>
 			<td>Kafka 1.1</td>
+			<td>Kafka 2.2</td>
 		</tr>
 	  		<tr>
 			<td>**Supported client versions**</td>
