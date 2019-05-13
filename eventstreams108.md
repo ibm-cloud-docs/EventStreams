@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-29"
+lastupdated: "2019-05-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -87,6 +87,22 @@ Offset retention is system-wide so you cannot set it at an individual topic leve
 
 The internal Kafka <code>__consumer_offsets</code> topic is visible to you as read-only. 
 You are strongly recommended not to attempt to manage the topic in any way. 
+
+<!--following message retention info duplicted in eventstreams057-->
+
+## How long are messages retained?
+{: #messages_retained}
+
+By default, messages are retained in Kafka for up to 24 hours and
+each partition is capped at 1 GB. If the 1 GB cap is reached, the
+oldest messages are discarded to stay within the limit.
+
+You can change the time limit for message retention when you
+create a topic using either the user interface or the
+administration API. The time limit is a minimum of an hour and a
+maximum of 30 days.
+
+For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [Using the Kafka API](/docs/services/EventStreams?topic=eventstreams-kafka_using).
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability}

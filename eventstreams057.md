@@ -89,6 +89,8 @@ A Kafka Improvement Proposal (KIP) #302 has been created to ensure that Kafka cl
 *  Each {{site.data.keyword.Bluemix_notm}} space has a limit of 100 partitions. To create
    more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
 
+<!--following message retention info duplicted in FAQs eventstreams108-->
+
 ## Message retention
 {: #message_retention}
 
