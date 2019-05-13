@@ -129,8 +129,7 @@ to these changes and to be able to reconnect and retry operations.
 
 {{site.data.keyword.messagehub}} is configured to provide strong availability and durability.
 The following configuration settings apply to all topics and cannot be changed:
-* replication.factor = 3 (Enterprise plan)
-* replication.factor = 4 (Standard plan)
+* replication.factor = 3 
 * min.insync.replicas = 2
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
