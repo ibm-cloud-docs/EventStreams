@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17"
+lastupdated: "2019-05-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -53,6 +53,23 @@ If the cleanup policy is <code>compact</code> only, we automatically add <code>d
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
 
 Offset retention is system-wide so you cannot set it at an individual topic level. All consumer groups get only 7 days of stored offsets even if using a topic with a log retention that has been increased to the maximum of 30 days. 
+
+<!--following message retention info duplicted in eventstreams057 and evenstreams108-->
+
+## How long are messages retained?
+{: #messages_retained}
+
+By default, messages are retained in Kafka for up to 24 hours and
+each partition is capped at 1 GB. If the 1 GB cap is reached, the
+oldest messages are discarded to stay within the limit.
+
+You can change the time limit for message retention when you
+create a topic using either the user interface or the
+administration API. The time limit is a minimum of an hour and a
+maximum of 30 days.
+
+For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [How do I use Kafka APIs to create and delete topics?](/docs/services/EventStreams?topic=eventstreams-faqs_classic#topic_admin_classic).
+
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability_classic}
