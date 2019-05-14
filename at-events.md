@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated: "2019-03-25"
+lastupdated: "2019-05-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -40,8 +40,8 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 
 | Action | Description |
 |:-------|:------------|
-| messagehub.topic.create | An event is created when you create a topic|
-| messagehub.topic.delete | An event is created when you delete a topic|
+| event-streams.topic.create | An event is created when you create a topic|
+| event-streams.topic.delete | An event is created when you delete a topic|
 {: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 ## Where to view the events
