@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-14g"
+lastupdated: "2019-05-14h"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -32,7 +32,7 @@ The credentials depend on the authentication method and two types of credential 
     Use the ```user``` and ```api_key``` properties of the above objects as the username and password fields for Basic Auth, where the 'Authorization' HTTP header of the request is set to the ```Basic <base64 encoding of username and password joined by a single colon (:)>```.
 
 * Bearer Token:<br/>
-    You can obtain this credential from IAM after logging in to {{site.data.keyword.Bluemix_notm}}, where the 'Authorization' HTTP header of the request is set to 'Bearer <var class="keyword varname"><token></var>'. If you're using the {{site.data.keyword.Bluemix_notm}} CLI, use the following command to retrieve the token after logging into ibmcloud:
+    You can obtain this credential from IAM after logging in to {{site.data.keyword.Bluemix_notm}}, where the 'Authorization' HTTP header of the request is set to `Bearer <token>`. If you're using the {{site.data.keyword.Bluemix_notm}} CLI, use the following command to retrieve the token after logging into ibmcloud:
 
     ```
     ibmcloud iam oauth-tokens
