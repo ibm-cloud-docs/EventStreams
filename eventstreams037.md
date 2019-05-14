@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-04-17"
+lastupdated: "2019-05-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,14 +19,36 @@ subcollection: eventstreams
 # Using the Administration REST API
 {: #admin_api}
 
-{{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.
+{{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, list, and update topics.
 {: shortdesc}
+
+You must retrieve the URL and credential details needed to connect to the API from a Service credentials object or service key for the service instance. For information about creating these objects, see 
+[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting)
+
+The URL for the API's endpoint is provided in the ```kafka_admin_url```property
+
+The credentials depend on the authentication method, two types are supported:
+* Basic Auth: Use the ```user``` and ```api_key``` properties of the above objects as the username and password fields for Basic Auth, where the 'Authorization' HTTP header of the request is set to the 'Basic <base64 encoding of username and password joined by a single colon (:)>'.
+
+* Bearer Token: You can obtain this from IAM after logging in to IBM Cloud, where the 'Authorization' HTTP header of the request is set to 'Bearer <token>'. If you're using the IBM Cloud CLI, use the command ibmcloud iam oauth-tokens to retrieve the token after ibmcloud login. Both API key or JWT tokens are supported. 
+
+For service instances created on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable.
+
+For a description of the API with examples, see 
+[{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window}
+
+You can download the full specification for the API from {{site.data.keyword.messagehub}} Admin REST API yaml file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+ To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
+
+------------
 
 To discover the Administration RESTful API's endpoint, your {{site.data.keyword.Bluemix_short}} application can use the `kafka_admin_url` property in your application's VCAP_SERVICES environment variable.
 
 You can download the full specification for the API from [{{site.data.keyword.messagehub}} Admin REST API yaml file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
+
 To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
 The [{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window} directory also contains a useful set of examples of how you can call the Administration RESTful API.
+
 
 
