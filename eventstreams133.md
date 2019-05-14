@@ -46,7 +46,7 @@ Select one of the following methods:
 
 * To create an instance from the CLI on the Enterprise plan, run a command like the following:
   ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> event-streams enterprise <REGION>
+  ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
   ```
   {: codeblock}
   
@@ -56,7 +56,7 @@ Select one of the following methods:
 * To create an instance from the CLI on the Standard plan,run a command like the following:
 
   ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> event-streams standard <REGION>
+  ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
   ```
   {: codeblock}
 
