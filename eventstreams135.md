@@ -153,7 +153,7 @@ This returns the service key details in JSON format.</li>
 {: #after_connecting_next}
 
 Now you have connection and credential information, you can choose an {{site.data.keyword.messagehub}} client. See 
-[Choosing between the three APIs](/docs/services/EventStreams?topic=eventstreams-choose_api) for information about which client to choose and how to connect.
+[Choosing between the three APIs](/docs/services/EventStreams?topic=eventstreams-choose_api_classic) for information about which client to choose and how to connect.
 
 
 

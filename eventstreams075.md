@@ -48,7 +48,7 @@ The {{site.data.keyword.mql}} is available in the following
 {{site.data.keyword.Bluemix_notm}} locations (regions) only: Dallas (us-south), London (eu-gb), and Sydney (au-syd). The MQ Light API not available in the Frankfurt (eu-de) location or in
 {{site.data.keyword.Bluemix_notm}} Dedicated.
 
-For more information about choosing between the APIs, see [Choosing between the three APIs](/docs/services/EventStreams?topic=eventstreams-choose_api).
+For more information about choosing between the APIs, see [Choosing between the three APIs](/docs/services/EventStreams?topic=eventstreams-choose_api_classic).
 
 
 ## What's required to use the MQ Light API with {{site.data.keyword.messagehub}}?

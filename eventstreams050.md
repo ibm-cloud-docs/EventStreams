@@ -166,7 +166,7 @@ For information about how to configure your Java client to connect to {{site.dat
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
-the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf).
+the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting_classic#connect_classic_cf_plan).
 * the service key. For more information, see [Connecting to your cluster](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 
