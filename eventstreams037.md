@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-14d"
+lastupdated: "2019-05-14e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -29,10 +29,10 @@ The URL for the API's endpoint is provided in the ```kafka_admin_url```property.
 
 The credentials depend on the authentication method and two types of credential are supported:
 * Basic Auth:<br/> 
-    Use the ```user``` and ```api_key``` properties of the above objects as the username and password fields for Basic Auth, where the 'Authorization' HTTP header of the request is set to the 'Basic <var class="keyword varname">base64 encoding of username and password joined by a single colon (:)</var>'.
+    Use the ```user``` and ```api_key``` properties of the above objects as the username and password fields for Basic Auth, where the 'Authorization' HTTP header of the request is set to the 'Basic <var class="keyword varname"><base64 encoding of username and password joined by a single colon (:)></var>'.
 
 * Bearer Token:<br/>
-    You can obtain this credential from IAM after logging in to {{site.data.keyword.Bluemix_notm}}, where the 'Authorization' HTTP header of the request is set to 'Bearer <token>'. If you're using the {{site.data.keyword.Bluemix_notm}} CLI, use the following command to retrieve the token after ibmcloud login:
+    You can obtain this credential from IAM after logging in to {{site.data.keyword.Bluemix_notm}}, where the 'Authorization' HTTP header of the request is set to 'Bearer <var class="keyword varname"><token></var>'. If you're using the {{site.data.keyword.Bluemix_notm}} CLI, use the following command to retrieve the token after logging into ibmcloud:
 
     ```
     ibmcloud iam oauth-tokens
