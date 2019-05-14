@@ -31,7 +31,7 @@ subcollection: eventstreams
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 1.1</td>
-			<td>Kafka 2.2</td>
+			<td>Kafka 1.1</td>
 		</tr>
 	  		<tr>
 			<td>**Supported client versions**</td>
