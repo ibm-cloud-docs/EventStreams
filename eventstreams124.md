@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-12"
+lastupdated: "2019-05-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -84,7 +84,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app to connect to the cluster  |Resource type: <code>cluster</code>| Not applicable     |Not applicable      |
 | Allow an app to produce to any topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code> |Not applicable     |
 | Allow an app to produce to a specific topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code><br/>Resource ID: <var class="keyword varname">name_of_topic</var>      |Not applicable     |
-| Allow an app to connect and consume from any topic (no consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code> |Resource type: <code>topic</code>|Not applicable     |
+| Allow an app to connect and consume from any topic (no consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code> |Not applicable    |Not applicable     |
 | Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/>Resource ID: <var class="keyword varname">name_of_topic</var> |Not applicable     |Not applicable     |
 | Allow an app to consume a topic (consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/> Resource type: <code>group</code> |Not applicable      |Not applicable     |
 | Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: <code>txnid</code> |Not applicable     |
