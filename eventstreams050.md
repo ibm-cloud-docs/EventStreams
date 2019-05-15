@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,6 +21,8 @@ subcollection: eventstreams
 {: #kafka_using}
 
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
+
+For information about using the Kafka API on the Classic plan, see [Kafka API - Classic](/docs/services/EventStreams?topic=eventstreams-kafka_using_classic).
 
 <table>
     <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
