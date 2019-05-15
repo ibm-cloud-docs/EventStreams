@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -76,7 +76,7 @@ Kafka generally writes messages in the order that they are sent by the producer.
  
 The producer is also able to retry sending messages automatically. It's often a good idea to enable this retry feature because the alternative is that your application code has to perform any retries itself. The combination of batching in Kafka and automatic retries can have the effect of duplicating messages and reordering them.
  
-For example, if you publish a sequence of three messages &lt;M1, M2, M3&gt; on a topic. The records might all fit within the same batch, so they're actually all sent to the partition leader together. The leader then writes them to the partition and replicates them as separate records. In the case of a failure, it's possible that M1 and M2 are added to the partition, but M3 is not. The producer doesn't receive an acknowledgment, so it retries sending &lt;M1, M2, M3&gt;. The new leader simply writes M1, M2 and M3 onto the partition, which now contains &lt;M1, M2, M1, M2, M3&gt;, where the duplicated M1 actually follows the original M2. If you restrict the number of requests in flight to each broker to just one, you can prevent this reordering. You might still find a single record is duplicated such as &lt;M1, M2, M2, M3&gt;, but you'll never get out of order sequences. In Kafka 0.11 (not yet available in {{site.data.keyword.messagehub}}), you can also use the idempotent producer feature to prevent the duplication of M2.
+For example, if you publish a sequence of three messages &lt;M1, M2, M3&gt; on a topic. The records might all fit within the same batch, so they're actually all sent to the partition leader together. The leader then writes them to the partition and replicates them as separate records. In the case of a failure, it's possible that M1 and M2 are added to the partition, but M3 is not. The producer doesn't receive an acknowledgment, so it retries sending &lt;M1, M2, M3&gt;. The new leader simply writes M1, M2 and M3 onto the partition, which now contains &lt;M1, M2, M1, M2, M3&gt;, where the duplicated M1 actually follows the original M2. If you restrict the number of requests in flight to each broker to just one, you can prevent this reordering. You might still find a single record is duplicated such as &lt;M1, M2, M2, M3&gt;, but you'll never get out of order sequences. In Kafka 0.11 or later, you can also use the idempotent producer feature to prevent the duplication of M2.
  
 It's normal practice with Kafka to write the applications to handle occasional message duplicates because the performance impact of having only a single request in flight is significant.
 
