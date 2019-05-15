@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Connecting to {{site.data.keyword.messagehub}}
 {: #connecting}
 
-The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're connecting from a Cloud Foundry application or from any other client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:
+The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're application is running natively or as a Cloud Foundry application. However, in both cases two pieces of information are required: 
 {: shortdesc}
 
 * The endpoint URLs for the APIs
