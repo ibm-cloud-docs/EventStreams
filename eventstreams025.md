@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15e"
+lastupdated: "2019-05-151648"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -56,12 +56,13 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
     ```
     {: codeblock}
 
-    Place this token in the Authorization header of the HTTP request in the form 'Bearer <token>'. Both API key or JWT tokens are supported. 
+    Place this token in the Authorization header of the HTTP request in the form ```Bearer <token>```ß. Both API key or JWT tokens are supported. 
 
 * ** To authenticate directly using the api_key:**<br/> 
     Place the key directly as the value of the ```X-Auth-Token``` HTTP header.
 
-The following shows an example of sending a message using curl:
+<br/>
+The following code shows an example of sending a message using curl:
 
 ```
 curl -v -X POST -H "Authorization: Basic <base64 username:password>" -H "Content-Type: text/plain" -H "Accept: application/json" -d 'test message' "<kafka_http_url>/topics/<topic_name>/records"
