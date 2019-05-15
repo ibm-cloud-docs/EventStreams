@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15b"
+lastupdated: "2019-05-15c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,7 +27,7 @@ subcollection: eventstreams
 
 {{site.data.keyword.messagehub}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
 
-The REST producer API is a scalable REST interface for producing messages to {{site.data.keyword.messagehub}}  over a secure HTTP endpoint. Send event data to {{site.data.keyword.messagehub}}, utilize Kafka technology to handle data feeds, and take advantage of {{site.data.keyword.messagehub}} features to manage your data.
+The REST producer API is a scalable REST interface for producing messages to {{site.data.keyword.messagehub}} over a secure HTTP endpoint. Send event data to {{site.data.keyword.messagehub}}, utilize Kafka technology to handle data feeds, and take advantage of {{site.data.keyword.messagehub}} features to manage your data.
 
 Use the API to connect existing systems to {{site.data.keyword.messagehub}}. Create produce requests from your systems into {{site.data.keyword.messagehub}}, including specifying the message key, headers, and the topics that you want to write messages to.
 
@@ -60,7 +60,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 Place this token in the Authorization header of the HTTP request in the form 'Bearer <token>'. Both API key or JWT tokens are supported. 
 
 * ** To authenticate directly using the api_key:
-    Place the key directly as the value of the ```X-Auth-Token``` HTTP header
+    Place the key directly as the value of the ```X-Auth-Token``` HTTP header.
 
 The following shows an example of sending a message using curl:
 
