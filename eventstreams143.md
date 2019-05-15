@@ -20,7 +20,7 @@ subcollection: eventstreams
 # Upgrading to the new {{site.data.keyword.messagehub}} Standard plan 
 {: #migrate_classic_plan}
 
-This new release of the Standard multi-tenanted plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
+This new release of the Standard multi-tenant plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
 {: shortdesc}
 
 To migrate applications from the previous Standard plan (now called the Classic plan) to the new plan, consider the following information.
@@ -81,7 +81,7 @@ You should also be aware of some other changes as follows:
 
 * **Supported capabilities**
 <br/>
-    There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices,ß and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
+    There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
    
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
