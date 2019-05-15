@@ -30,10 +30,10 @@ The URL for the API's endpoint is provided in the ```kafka_admin_url```property.
 The credentials depend on the authentication method and two types of credential are supported:
 
 * **To authenticate using Basic Auth**:<br/> 
-    Use the ```user``` and ```api_key properties``` of the above objects as the username and password. Place these into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username and password joined by a single colon (:)>```.
+    Use the ```user``` and ```api_key``` properties of the above objects as the username and password. Place these values into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username:password joined by a single colon (:)>```.
 
 * **To authenticate using a bearer token:**<br/> 
-    To obtain your token using the IBM Cloud CLI, after logging in to IBM Cloud, run the following command: 
+    To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
     ```
     ibmcloud iam oauth-tokens
