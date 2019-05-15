@@ -166,18 +166,19 @@ For information about how to configure your Java client to connect to {{site.dat
 ## Configuring your Kafka API client
 {: #kafka_api_client}
 
-To establish a connection, clients must at a minimum be configured to use SASL_SSL PLAIN over TLSv1.2 and require a username and password as well as a list of the bootstrap servers. 
+To establish a connection, clients must be configured to use SASL_SSL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. 
 
 To retrieve the username, password, and list of bootstrap servers a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
+[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 From these objects:
-* Use the kafka_brokers_sasl property as the list of bootstrap servers. This list must be formatted a comma seperated list of host:port entries, for example host1:port1,host2:port2. We recommend including details for all the hosts listed in the kafka_brokers_sasl property.
+* Use the kafka_brokers_sasl property as the list of bootstrap servers. Format this list as a comma separated list of host:port entries. For example, ```host1:port1,host2:port2```. We recommend including details for all the hosts listed in the ```kafka_brokers_sasl``` property.
 
 * Use the 'user' and 'api_key' properties as the username and password
 
-For service instances on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable. See <link to Connecting to Event Streams using the Classic plan'
+For service instances on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable. See[Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
 
-For a Java client, the following shows the minimum set of properties, where USERNAME, PASSWORD, KAFKA_BROKERS_SASL should be replaced by the values retrieved above
+For a Java client, the following shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values retrieved above
 
 ```
 bootstrap.servers=KAFKA_BROKERS_SASL
@@ -194,14 +195,14 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 ```
 {: codeblock}
 
-NB: If you're using a Kafka client earlier then 0.10.2.1 the sasl.jaas.config property isn't supported and the client configuration must instead be provided in a JAAS configuration file. 
+Note, if you're using a Kafka client earlier than 0.10.2.1, the sasl.jaas.config property isn't supported and the client configuration must instead be provided in a JAAS configuration file. 
 
 ### Connecting and authenticating in an application other than Java
 {: #kafka_notjava }
 
-Any client that supports Kafka 0.10 with SASL PLAIN and TLSv1.2 should work with Event Streams.
+Any client that supports Kafka 0.10 with SASL PLAIN and TLSv1.2 should work with E{{site.data.keyword.messagehub}}.
 
-Note that the client must support the SNI extension to TLS where the servers hostname is included in the TLS handshake. 
+Note that the client must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. 
 
 Example clients are as follows:
 * [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window} 
@@ -262,18 +263,7 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.
 
 For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
 
-### Connecting and authenticating in an application other than Java
-{: #kafka_notjava }
 
-The {{site.data.keyword.messagehub}} service currently
-authenticates clients by using SASL PLAIN over TLS. Credentials are carried over an encrypted connection.
-This is a new feature added in Kafka 0.10.0.X. 
-
-Any client that supports Kafka 0.10 with SASL PLAIN
-should work with {{site.data.keyword.messagehub}}. Example clients are as follows:
-
-* [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window} 
-* [confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window} 
 
  
 
