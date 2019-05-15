@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15c"
+lastupdated: "2019-05-15d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -42,16 +42,16 @@ Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Servic
 <br/>
     The information an application needs to connect has not changed, that is, a list of ```bootstrap.servers```, ```username```, and ```password``` are required. However, the way these properties are retrieved has changed.
 
-    * **For native applications**
-<br/>
-    You must create a Credentials or Service Key object using either the IBM Cloud console or CLI respectively, from which the above properties can be retrieved 
-    [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
+        * **For native applications**
+        <br/>
+        You must create a Credentials or Service Key object using either the IBM Cloud console or CLI respectively, from which the above properties can be retrieved 
+        [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
     
 
-    * **For Cloud Foundry applications**
-<br/>
-    The service must first be bound to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable in the normal way. For more information, see 
-    [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+        * **For Cloud Foundry applications**
+        <br/>
+        The service must first be bound to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable in the normal way. For more information, see 
+        [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 Note that clients must support the SNI extension to TLS where the servers hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
 
