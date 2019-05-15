@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15a"
+lastupdated: "2019-05-15b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -199,7 +199,7 @@ Note, if you're using a Kafka client earlier than 0.10.2.1, the ```sasl.jaas.con
 ### Connecting and authenticating in an application other than Java
 {: #kafka_notjava }
 
-Any client that supports Kafka 0.10 with SASL PLAIN and TLSv1.2 should work with E{{site.data.keyword.messagehub}}.
+Any client that supports Kafka 0.10 with SASL PLAIN and TLSv1.2 should work with {{site.data.keyword.messagehub}}.
 
 Note that the client must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. 
 
