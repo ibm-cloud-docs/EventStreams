@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-05-15a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -168,17 +168,16 @@ For information about how to configure your Java client to connect to {{site.dat
 
 To establish a connection, clients must be configured to use SASL_SSL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. 
 
-To retrieve the username, password, and list of bootstrap servers a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
+To retrieve the username, password, and list of bootstrap servers, a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
 [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 From these objects:
-* Use the kafka_brokers_sasl property as the list of bootstrap servers. Format this list as a comma separated list of host:port entries. For example, ```host1:port1,host2:port2```. We recommend including details for all the hosts listed in the ```kafka_brokers_sasl``` property.
+* Use the ```kafka_brokers_sasl property``` as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, ```host1:port1,host2:port2```. We recommend including details for all the hosts listed in the ```kafka_brokers_sasl``` property.
+* Use the ```user``` and ```api_key``` properties as the username and password
 
-* Use the 'user' and 'api_key' properties as the username and password
+For service instances on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable. For more information, see [Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
 
-For service instances on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable. See[Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
-
-For a Java client, the following shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values retrieved above
+For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values retrieved previously.
 
 ```
 bootstrap.servers=KAFKA_BROKERS_SASL
@@ -195,7 +194,7 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 ```
 {: codeblock}
 
-Note, if you're using a Kafka client earlier than 0.10.2.1, the sasl.jaas.config property isn't supported and the client configuration must instead be provided in a JAAS configuration file. 
+Note, if you're using a Kafka client earlier than 0.10.2.1, the ```sasl.jaas.config``` property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
 
 ### Connecting and authenticating in an application other than Java
 {: #kafka_notjava }
@@ -208,60 +207,6 @@ Example clients are as follows:
 * [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window} 
 * [confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window} 
 
-
-
-
-
-
-
-
-------------------------
-To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
-* the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
-the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting_classic#connect_classic_cf_plan).
-* the service key. For more information, see [Connecting to your cluster](/docs/services/EventStreams?topic=eventstreams-connecting).
-
-
-where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-
-If you use <code>sasl.jaas.config</code>, clients running in the same JVM can use different credentials. For more information, see
-[Configuring Kafka clients ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){:new_window}
-
-The following example is a sample configuration file named <code>consumer.properties</code>:
-
-```
-key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
-value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
-#
-client.id=kafka-java-console-sample-consumer
-group.id=kafka-java-console-sample-group
-#
-security.protocol=SASL_SSL
-sasl.mechanism=PLAIN
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
-ssl.protocol=TLSv1.2
-ssl.enabled.protocols=TLSv1.2
-ssl.endpoint.identification.algorithm=HTTPS
-#
-# please read the Kafka docs about this setting
-auto.offset.reset=latest
-```
-{: codeblock}
-
-<!--17/10/17 - Karen: following info duplicated at messagehub104 -->
-
-### Using the sasl.jaas.config property (connecting and authenticating in a Java application)
-{: #kafka_java}
-
-If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
-<pre>
-<code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
-    username="USERNAME" \
-    password="PASSWORD";</code>
-</pre>
-{:codeblock}
-
-For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the <code>sasl.jaas.config</code> property instead.
 
 
 

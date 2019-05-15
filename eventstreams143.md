@@ -75,7 +75,7 @@ You should also be aware of some other changes as follows:
 
 * **Integrations**
 <br/>
-    Connection from other services, such as {{site.data.keyword.iot_short_notm}} or {{site.data.keyword.openwhisk_short}}, which bind to the service using a Cloud Foundry organization and space require a service alias to be created. For further information, see
+    Connection from other services, such as {{site.data.keyword.iot_short_notm}} or {{site.data.keyword.openwhisk_short}}, which bind to the service using a Cloud Foundry organization and space require a service alias to be created. For more information, see
     [Connect Cloud Foundry applications {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
     
 
