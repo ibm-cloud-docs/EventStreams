@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15d"
+lastupdated: "2019-05-15e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,7 +45,7 @@ You must retrieve the URL and credential details that are needed to connect to t
 
 The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
-* **To authenticate using Basic Auth**:<br/> 
+* **To authenticate using Basic Auth:**<br/> 
     Use the ```user``` and ```api_key properties``` of the above objects as the username and password. Place these into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username and password joined by a single colon (:)>```.
 
 * **To authenticate using a bearer token:**<br/> 
@@ -58,7 +58,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
     Place this token in the Authorization header of the HTTP request in the form 'Bearer <token>'. Both API key or JWT tokens are supported. 
 
-* ** To authenticate directly using the api_key:
+* ** To authenticate directly using the api_key:**<br/> 
     Place the key directly as the value of the ```X-Auth-Token``` HTTP header.
 
 The following shows an example of sending a message using curl:

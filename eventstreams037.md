@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-05-15a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -42,8 +42,8 @@ The credentials depend on the authentication method and two types of credential 
 
     Place this token in the Authorization header of the HTTP request in the form 'Bearer <token>'. Both API key or JWT tokens are supported. 
 
-* ** To authenticate directly using the api_key:
-    Place the key directly as the value of the ```X-Auth-Token``` HTTP header
+* ** To authenticate directly using the api_key:**
+    Place the key directly as the value of the ```X-Auth-Token``` HTTP header.
 
 For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
 
