@@ -166,6 +166,55 @@ For information about how to configure your Java client to connect to {{site.dat
 ## Configuring your Kafka API client
 {: #kafka_api_client}
 
+To establish a connection, clients must at a minimum be configured to use SASL_SSL PLAIN over TLSv1.2 and require a username and password as well as a list of the bootstrap servers. 
+
+To retrieve the username, password, and list of bootstrap servers a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
+
+From these objects:
+* Use the kafka_brokers_sasl property as the list of bootstrap servers. This list must be formatted a comma seperated list of host:port entries, for example host1:port1,host2:port2. We recommend including details for all the hosts listed in the kafka_brokers_sasl property.
+
+* Use the 'user' and 'api_key' properties as the username and password
+
+For service instances on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable. See <link to Connecting to Event Streams using the Classic plan'
+
+For a Java client, the following shows the minimum set of properties, where USERNAME, PASSWORD, KAFKA_BROKERS_SASL should be replaced by the values retrieved above
+
+```
+bootstrap.servers=KAFKA_BROKERS_SASL
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+ssl.protocol=TLSv1.2
+ssl.enabled.protocols=TLSv1.2
+ssl.endpoint.identification.algorithm=HTTPS
+
+# To send or receive messages, the following are also required
+key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
+```
+{: codeblock}
+
+NB: If you're using a Kafka client earlier then 0.10.2.1 the sasl.jaas.config property isn't supported and the client configuration must instead be provided in a JAAS configuration file. 
+
+### Connecting and authenticating in an application other than Java
+{: #kafka_notjava }
+
+Any client that supports Kafka 0.10 with SASL PLAIN and TLSv1.2 should work with Event Streams.
+
+Note that the client must support the SNI extension to TLS where the servers hostname is included in the TLS handshake. 
+
+Example clients are as follows:
+* [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window} 
+* [confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window} 
+
+
+
+
+
+
+
+
+------------------------
 To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
 the [VCAP_SERVICES environment variable](/docs/services/EventStreams?topic=eventstreams-connecting_classic#connect_classic_cf_plan).
