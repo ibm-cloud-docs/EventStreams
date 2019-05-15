@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15b"
+lastupdated: "2019-05-15c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -53,6 +53,8 @@ Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Servic
     The service must first be bound to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable in the normal way. For more information, see 
     [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
+Note that clients must support the SNI extension to TLS where the servers hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
+
 <br/>
 You should also be aware of some other changes as follows:
 
@@ -81,6 +83,6 @@ Small code deltas are shipped daily to production, as a result, you can expect t
 <br/>
     The ability to monitor activity in a service instance.
 
-
+For a quick walkthrough of the steps to get up and running with the new Standard plan, try the [Getting started tutorial](/docs/services/EventStreams?topic=eventstreams-getting_started).
 
 
