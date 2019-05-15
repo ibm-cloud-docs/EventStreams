@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-151705"
+lastupdated: "2019-05-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -44,6 +44,8 @@ You must retrieve the URL and credential details that are needed to connect to t
 [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
+
+Use one of the following methods to authenticate:
 
 * **To authenticate using Basic Auth:**<br/> 
     Use the ```user``` and ```api_key``` properties of the above objects as the username and password. Place these values into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username:password joined by a single colon (:)>```.

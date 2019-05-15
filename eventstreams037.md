@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-151705"
+lastupdated: "2019-05-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,7 +27,7 @@ You must retrieve the URL and credential details that are needed to connect to t
 
 The URL for the API's endpoint is provided in the ```kafka_admin_url```property.
 
-The credentials depend on the authentication method and two types of credential are supported:
+The credentials depend on the authentication method and three types of credential are supported:
 
 * **To authenticate using Basic Auth**:<br/> 
     Use the ```user``` and ```api_key``` properties of the above objects as the username and password. Place these values into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username:password joined by a single colon (:)>```.
@@ -42,7 +42,7 @@ The credentials depend on the authentication method and two types of credential 
 
     Place this token in the Authorization header of the HTTP request in the form ```Bearer <token>```. Both API key or JWT tokens are supported. 
 
-* ** To authenticate directly using the api_key:**
+* ** To authenticate directly using the api_key:**<br/>
     Place the key directly as the value of the ```X-Auth-Token``` HTTP header.
 
 For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
