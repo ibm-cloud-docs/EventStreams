@@ -17,7 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 
-# Upgrading to the new {{site.data.keyword.messagehub}}Standard plan 
+# Upgrading to the new {{site.data.keyword.messagehub}} Standard plan 
 {: #migrate_classic_plan}
 
 This new release of the standard multi-tenant brings offers significant improvements in resiliency, functionality, and usability. For more informtion, see [New plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan) 
