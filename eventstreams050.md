@@ -194,6 +194,7 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 ```
 {: codeblock}
 
+<br/>
 Note, if you're using a Kafka client earlier than 0.10.2.1, the ```sasl.jaas.config``` property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
 
 ### Connecting and authenticating in an application other than Java
