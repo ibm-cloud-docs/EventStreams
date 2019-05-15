@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15h"
+lastupdated: "2019-05-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,43 +20,45 @@ subcollection: eventstreams
 # Upgrading to the new {{site.data.keyword.messagehub}} Standard plan 
 {: #migrate_classic_plan}
 
-This new release of the Standard multi-tenanted plan brings offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
+This new release of the Standard multi-tenanted plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
 {: shortdesc}
 
 To migrate applications from the previous Standard plan (now called the Classic plan) to the new plan, consider the following information.
 
-Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular:
+Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
 
 * **Creating, deleting, and listing services**
 <br/>
-    As previously, you can manage the lifecycle of services using either the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI command line tool. If you're using the console, services are now listed under **Services** instead of **Cloud Foundry Services**. 
+    As before, you can manage the lifecycle of services using either the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI command line tool. If you're using the console, services are now listed under **Services** instead of **Cloud Foundry Services**. 
     
-    If you're using the CLI, instances are managed using the resource commands. For example,  ```ibmcloud resource service-instance-create``` instead of the **cf** commands, for example ```ibmcloud cf create-service```.
+    If you're using the CLI, instances are managed using the resource commands. For example,  ```ibmcloud resource service-instance-create```. This is instead of the **cf** commands, for example ```ibmcloud cf create-service```.
 
 * **Controlling access**
 <br/>
-    Authentication and authorization is now managed using the Cloud Identity and Access Management (IAM) service. As well as controlling a user's ability to connect, IAM also enables granular access to underlying resources to be configured, such as topics. Access is controlled by assigning policies to users. For more information, see 
+    Authentication and authorization are now managed using the Cloud Identity and Access Management (IAM) service. As well as controlling a user's ability to connect, IAM also enables you to configure granular access to underlying resources, such as topics. Access is controlled by assigning policies to users. For more information, see 
     [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security).
 
 <ul>
 <li><strong>Connecting applications</strong>
 <br/>
-    The information an application needs to connect has not changed, that is, a list of ```bootstrap.servers```, ```username```, and ```password``` are required. However, the way these properties are retrieved has changed.
+    The information that an application needs to connect has not changed, that is, a list of ```bootstrap.servers```, ```username```, and ```password``` are required. However, the way these properties are retrieved has changed.
 
 <ul>
 <li>
       <strong>For native applications</strong>
         <br/>
-        You must create a Credentials or Service Key object using either the IBM Cloud console or CLI respectively, from which the above properties can be retrieved 
+        You must create a Credentials or Service Key object using either the IBM Cloud console or CLI respectively. You can then retrieve the required properties. For more information, see 
         [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
 </li>
+<br/>
 <li><strong>For Cloud Foundry applications</strong>
         <br/>
-        The service must first be bound to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable in the normal way. For more information, see 
+        You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
         [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 </li>
 </ul>
-Note that clients must support the SNI extension to TLS where the servers hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
+<br/>
+Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
 </li>
 </ul>
 
@@ -65,8 +67,7 @@ You should also be aware of some other changes as follows:
 
 * **Kafka version**
 <br/>
-    This plan provides access to the latest stable Kafka release 2.2. Applications developed against Kafka 1.1 can run unchanged, but refer to the following information for recommended client versions and information about tested combinations: [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients). 
-    
+    This plan provides access to the latest stable Kafka release 2.2. Applications developed against Kafka 1.1 can run unchanged, but refer to the following information for recommended client versions and tested combinations: [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients). 
 
 * **Supported regions**
 <br/>
@@ -75,14 +76,15 @@ You should also be aware of some other changes as follows:
 * **Integrations**
 <br/>
     Connection from other services, such as {{site.data.keyword.iot_short_notm}} or {{site.data.keyword.openwhisk_short}}, which bind to the service using a Cloud Foundry organization and space require a service alias to be created. For more information, see
-    [Connect Cloud Foundry applications {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
+    [Connect Cloud Foundry applications to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
     
 
 * **Supported capabilities**
 <br/>
-    There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
+    There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices,ß and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
    
-Small code deltas are shipped daily to production, as a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
+<br/>
+Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
 
 * **Customer metrics**
 <br/>
