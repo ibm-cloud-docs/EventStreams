@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15d"
+lastupdated: "2019-05-15e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -75,7 +75,7 @@ You should also be aware of some other changes as follows:
 
 * **Supported capabilities**
 <br/>
-    There are differences between the capabilities in the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
+    There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
    
 Small code deltas are shipped daily to production, as a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
 
