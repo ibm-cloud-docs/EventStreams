@@ -38,20 +38,27 @@ Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Servic
     Authentication and authorization is now managed using the Cloud Identity and Access Management (IAM) service. As well as controlling a user's ability to connect, IAM also enables granular access to underlying resources to be configured, such as topics. Access is controlled by assigning policies to users. For more information, see 
     [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security).
 
-* **Connecting applications**
+<ul>
+<li> **Connecting applications**
 <br/>
     The information an application needs to connect has not changed, that is, a list of ```bootstrap.servers```, ```username```, and ```password``` are required. However, the way these properties are retrieved has changed.
 
+<ul>
+<li>
         * **For native applications**
         <br/>
         You must create a Credentials or Service Key object using either the IBM Cloud console or CLI respectively, from which the above properties can be retrieved 
         [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
-    
+</li>
 
-        * **For Cloud Foundry applications**
+<li>       * **For Cloud Foundry applications**
         <br/>
         The service must first be bound to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable in the normal way. For more information, see 
         [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+</li>
+</ul>
+</li>
+</ul>
 
 Note that clients must support the SNI extension to TLS where the servers hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
 
