@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -39,7 +39,7 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 
 ## Classic plan
 
-The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise or Standard plans. The Standard plan is strongly recommended in preference to the Classic plan. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Classic plan gives access to the previous edition of the Standard plan and is provided for existing workloads and backward compatibility only. You should provision new workloads against the Standard plan.
 
 
 ## What's supported by the Standard, Enterprise, and Classic plans
@@ -75,7 +75,7 @@ The following table summarizes what is supported by the plans:
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
-			<td>Kafka 1.1</td>
+			<td>Kafka 1.1 (Kafka 2.2 coming soon)</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
