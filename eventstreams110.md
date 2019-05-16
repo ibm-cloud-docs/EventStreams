@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-02-06"
+lastupdated: "2019-05-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,7 +19,7 @@ subcollection: eventstreams
 # Using KSQL with {{site.data.keyword.messagehub}}
 {: #ksql_using}
 
-You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use KSQL 0.4, or later. 
+You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use KSQL V4.1.3. 
 {: shortdesc}
 
 Complete the following steps:

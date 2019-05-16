@@ -48,7 +48,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 Use one of the following methods to authenticate:
 
 * **To authenticate using Basic Auth:**<br/> 
-    Use the ```user``` and ```api_key``` properties of the above objects as the username and password. Place these values into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username:password joined by a single colon (:)>```.
+    Use the <code>user</code> and <code>api_key</code> properties of the above objects as the username and password. Place these values into the <code>Authorization</code> header of the HTTP request in the form <code>Basic <base64 encoding of username:password joined by a single colon (:)></code>.
 
 * **To authenticate using a bearer token:**<br/> 
     To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
@@ -58,10 +58,10 @@ Use one of the following methods to authenticate:
     ```
     {: codeblock}
 
-    Place this token in the Authorization header of the HTTP request in the form ```Bearer <token>```. Both API key or JWT tokens are supported. 
+    Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
 
 * ** To authenticate directly using the api_key:**<br/> 
-    Place the key directly as the value of the ```X-Auth-Token``` HTTP header.
+    Place the key directly as the value of the <code>X-Auth-Token</code> HTTP header.
 
 <br/>
 The following code shows an example of sending a message using curl:
