@@ -75,7 +75,7 @@ The following table summarizes what is supported by the plans:
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
-			<td>Kafka 1.1 (Kafka 2.2 coming soon)</td>
+			<td>Kafka 1.1 <br/>(Kafka 2.2 coming soon)</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
