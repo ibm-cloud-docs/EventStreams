@@ -22,17 +22,17 @@ subcollection: eventstreams
 
 Kafka provides a rich set of API and clients across a broad range of languages. 
 
-* Kafka's core API (Consumer/Producer/Admin API)
-    To send and receive messages directly from one or more Kafka topics.
+* **Kafka's core API (Consumer, Producer, and Admin API)**<br/>
+    Use to send and receive messages directly from one or more Kafka topics.
 
-* Streams API
-    A higher level stream processing API to easily consume, transform and produce events between topics.
+* **Streams API**<br/>
+    A higher level stream processing API to easily consume, transform, and produce events between topics.
 
-* Connect API
+* **Connect API**<br/>
     A framework allowing re-usable or off-the-shelf integrations to stream events into and out of external systems, such as databases.
 
-* KSQL
-    An interface for processing and joining events from topics using an SQL like syntax.
+* **KSQL**<br/>
+    An interface for processing and joining events from topics using an SQL-like syntax.
 
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
 
@@ -65,21 +65,18 @@ The following table summarizes what you can use with {{site.data.keyword.message
 		</tr>
 
 </table>
+<br/>
 
 For information about using the Kafka API on the Classic plan, see [Kafka API - Classic](/docs/services/EventStreams?topic=eventstreams-kafka_using_classic).
 
 --------
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
-For information about the V2.2 Producer and Consumer APIs, see 
-[Kafka Producer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
-
-
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. Further information on this API is available here: Kafka Producer API 2.2 and Kafka Consumer API 2.2  
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
+[Kafka Consumer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
@@ -150,34 +147,14 @@ To connect to {{site.data.keyword.messagehub}}, clients must support authenticat
 
 The minimum Kafka protocol that we support is 0.10.
 
-	
-### Third-party clients
-{: #third_party_clients}
-
-If you can't run the official Java clients, we recommend running one of the [recommended third-party clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#clients_table), which are all well-tested with {{site.data.keyword.messagehub}}. 
-Other third-party clients that support the minimum set of client requirements might work with {{site.data.keyword.messagehub}}. However, we only test with and have experience of the recommended third-party clients.
 
 -----
-If the above can't be run, other third-party clients that meet the minimum requirements outlined below can be used (see librdkafka  for examples),  however, we only test and have experience of the recommended third-party clients
-- Support >= Kafka 0.10
-- Can connect and authenticate using SASL PLAIN with TLSv1.2
-- Support the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
+If the above can't be run, other third-party clients that meet the minimum requirements outlined as follows  can be used (see librdkafka  for examples).  However, we only test and have experience of the recommended third-party clients
+* Supports >= Kafka 0.10
+* Can connect and authenticate using SASL PLAIN with TLSv1.2
+* Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
 
 In all cases, the latest version of the client is recommended.
-
-<!--
-## Unsupported clients
-
-The following clients are not supported by {{site.data.keyword.messagehub}}:
-
-### kafka-node
-The kafka-node client does not fully support SASL authentication with the PLAIN mechanism so cannot currently be used with {{site.data.keyword.messagehub}}.
-
-
-### no-kafka 
-The no-kafka client does not fully support SASL authentication with the PLAIN mechanism so cannot currently be used with {{site.data.keyword.messagehub}}.
-
--->
 
 <br/>
 ### Connecting your client to {{site.data.keyword.messagehub}}
