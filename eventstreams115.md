@@ -24,11 +24,11 @@ subcollection: eventstreams
 <br/>
 
 The {{site.data.keyword.IBM}} Cloud Object Storage bridge provides a way of reading data from an {{site.data.keyword.messagehub}} Kafka topic
-and placing the data into [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}.
+and placing the data into [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}.
 {: shortdesc}
 
 The Cloud Object Storage bridge allows you
-to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}. The bridge consumes
+to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}. The bridge consumes
 batches of messages from Kafka and uploads the message data as objects to a bucket in the
 Cloud Object Storage service. By configuring
 the Cloud Object Storage bridge, you can
@@ -91,7 +91,7 @@ the credentials using the Cloud Object Storage UI as follows:
 
 The credential that you create grants writer access to the entire Cloud Object Storage instance,
 therefore you might want to restrict this access to the specific bucket that the bridge will interact with.
-1. Go to the [Manage access and users page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/iam#/overview){:new_window}.
+1. Go to the [Manage access and users page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/iam/overview){:new_window}. 
 2. You should see the auto generated service ID on this page. When you have identified the specific ID, select
 the **Manage service ID** action. 
 3. Select the **Edit policy** action to further restrict it to a specific **Resource type**, which is bucket and a **Resource ID**, which

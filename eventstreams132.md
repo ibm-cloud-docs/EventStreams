@@ -68,7 +68,7 @@ If duplicates cannot be tolerated, you can use the <code>idempotent</code> produ
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster. 
 
 **Specific guidance for the Standard plan**<br/>
-For throughput guidance information, see [Limits and quotas- Standard](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas#standard_throughput). 
+For throughput guidance information, see [Limits and quotas- Standard](/docs/services/EventStreams?topic=eventstreams-kafka_quotas#standard_throughput). 
 
 **Specific guidance for the Enterprise plan**<br/>
 

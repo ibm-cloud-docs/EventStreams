@@ -37,7 +37,6 @@ If you're using the Classic plan, see [Reporting a problem to the {{site.data.ke
 ## Useful links
 {: #troubleshooting_links notoc}
 
-*  [{{site.data.keyword.Bluemix_short}} free trial ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://apps.admin.ibmcloud.com/manage/trial/bluemix.html){: new_window}
 *  [{{site.data.keyword.messagehub}} Java Kafka sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: new_window}
 *  [Creating web applications with {{site.data.keyword.Bluemix_notm}} and deploying your
    app with Cloud Foundry ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/starters?topic=starters-download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface#download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: new_window}
