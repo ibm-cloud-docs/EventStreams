@@ -40,7 +40,7 @@ The credentials depend on the authentication method and three types of credentia
     ```
     {: codeblock}
 
-    Place this token in the Authorization header of the HTTP request in the form <code>Bearer <token></code>. Both API key or JWT tokens are supported. 
+    Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
 
 * ** To authenticate directly using the api_key:**<br/>
     Place the key directly as the value of the <code>X-Auth-Token</code> HTTP header.
