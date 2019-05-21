@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-21a"
+lastupdated: "2019-05-21b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -34,12 +34,14 @@ Ensure that you meet the following requirements:
 - Create your service instance in the {{site.data.keyword.Bluemix_short}} Dallas (us-south) region.
 - Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_short}} account.
 
+## Adding a private endpoint
+{: #add_endpoint}
 
-To add an internal endpoint:
+To add a private endpoint:
 
 * Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an internal endpoint.
 
-Provide the following information:
+    Provide the following information:
 
     * Your cluster ID if you know it.
 
