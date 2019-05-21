@@ -20,26 +20,25 @@ subcollection: eventstreams
 # Managing service endpoints using the Enterprise plan
 {: #manage_endpoints}
 
-By using an internal endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network.
+By using an internal or Private endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network.
 {:shortdesc}
 
-You can now add an internal endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
+You can now add a Private endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
 
 ## Prerequisites
 {: #prereqs notoc}
 
 Ensure that you meet the following requirements:
 - Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
-- Create your service instance in the {{site.data.keyword.Bluemix_short}} United Kingdom (London) or Germany (Frankfurt) regions.
+- Create your service instance in the {{site.data.keyword.Bluemix_short}} Dallas (us-south) region.
 - Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_short}} account.
 
 
 To add an internal endpoint:
 
-* Raise a ticket to request an internal endpoint. 
-You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an internal endpoint.
 
-When you have switched to an internal endpoint, the external or public endpoints are no longer available.
+When you have switched to a Private endpoint, the external or Public endpoints are no longer available.
 
 Provide the following information:
 
@@ -49,6 +48,7 @@ Provide the following information:
 
     * Region
 
+For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
 
 <!--
 1. On the service details page, click **Manage endpoints**. You can see the external endpoint assigned to your service instance.
@@ -56,5 +56,3 @@ Provide the following information:
 3. **Optional.** Use the endpoint toggle to enable or disable endpoints as needed.
 -->
 
-
-For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
