@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-05-21a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,10 +20,11 @@ subcollection: eventstreams
 # Managing service endpoints using the Enterprise plan
 {: #manage_endpoints}
 
-By using an internal or Private endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network.
+By using an internal or private endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network. This capability means that any data you publish or consume from the {{site.data.keyword.messagehub}} 
+service is over the private network and not public interfaces.
 {:shortdesc}
 
-You can now add a Private endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
+You can now add a private endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
 
 ## Prerequisites
 {: #prereqs notoc}
@@ -38,8 +39,6 @@ To add an internal endpoint:
 
 * Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an internal endpoint.
 
-When you have switched to a Private endpoint, the external or Public endpoints are no longer available.
-
 Provide the following information:
 
     * Your cluster ID if you know it.
@@ -47,6 +46,8 @@ Provide the following information:
     If you don't know this ID, provide your dashboard URL, the Kafka broker endpoints,or your service instance ID.
 
     * Region
+
+When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
 
 For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
 
