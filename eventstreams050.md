@@ -135,8 +135,8 @@ For other languages, we recommend running one of the following clients, all of w
 ### Footnote
 1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
-If the above can't be run, other third-party clients that meet the minimum requirements outlined as follows  can be used (see librdkafka  for examples).  However, we only test and have experience of the recommended third-party clients
-* Supports >= Kafka 0.10
+If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window}). However, we only test and have experience of the recommended third-party clients
+* Supports Kafka 0.10, or later
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
 * Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
 
@@ -182,17 +182,6 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 <br/>
 Note, if you're using a Kafka client earlier than 0.10.2.1, the ```sasl.jaas.config``` property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
 
-
-
------
-Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
-
-
-### Client requirements for connecting to Event Streams
-
-To connect to {{site.data.keyword.messagehub}}, clients must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
-
-The minimum Kafka protocol that we support is 0.10.
 
 
 
