@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-21b"
+lastupdated: "2019-05-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -39,7 +39,7 @@ Ensure that you meet the following requirements:
 
 To add a private endpoint:
 
-* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an internal endpoint. Provide the following information in the ticket:
+* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request a private endpoint. Provide the following information in the ticket:
 
     * Your cluster ID if you know it.
     If you don't know the cluster ID, provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.

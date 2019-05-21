@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-05-21a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -63,7 +63,6 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 </table>
 <br/>
-
 For information about using the Kafka API on the Classic plan, see [Kafka API - Classic](/docs/services/EventStreams?topic=eventstreams-kafka_using_classic).
 
 
@@ -133,8 +132,9 @@ For other languages, we recommend running one of the following clients, all of w
 
 </table>
 ### Footnote
-1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. {: #footnote1 notoc}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
+<br/>
 If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window}). However, we only test and have experience of the recommended third-party clients
 * Supports Kafka 0.10, or later
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
@@ -146,7 +146,7 @@ In all cases, the latest version of the client is recommended.
 ### Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
 
-For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_connect).
+For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_api_client).
 
 ## Configuring your Kafka API client
 {: #kafka_api_client}
