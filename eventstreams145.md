@@ -27,7 +27,7 @@ service is over the private network and not public interfaces.
 You can now add a private endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
 
 ## Prerequisites
-{: #prereqs notoc}
+{: #prereqs_endpoint}
 
 Ensure that you meet the following requirements:
 - Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
