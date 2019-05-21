@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-05-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,17 +20,14 @@ subcollection: eventstreams
 # Using the Kafka API
 {: #kafka_using}
 
-Kafka provides a rich set of API and clients across a broad range of languages. 
+Kafka provides a rich set of APIs and clients across a broad range of languages. For example:
 
 * **Kafka's core API (Consumer, Producer, and Admin API)**<br/>
     Use to send and receive messages directly from one or more Kafka topics.
-
 * **Streams API**<br/>
     A higher level stream processing API to easily consume, transform, and produce events between topics.
-
 * **Connect API**<br/>
     A framework allowing re-usable or off-the-shelf integrations to stream events into and out of external systems, such as databases.
-
 * **KSQL**<br/>
     An interface for processing and joining events from topics using an SQL-like syntax.
 
@@ -58,7 +55,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
-
+		<tr>
 			<td>**Authentication requirements**</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
@@ -69,8 +66,6 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 For information about using the Kafka API on the Classic plan, see [Kafka API - Classic](/docs/services/EventStreams?topic=eventstreams-kafka_using_classic).
 
---------
-Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
@@ -140,15 +135,6 @@ For other languages, we recommend running one of the following clients, all of w
 ### Footnote
 1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
-
-### Client requirements for connecting to Event Streams
-
-To connect to {{site.data.keyword.messagehub}}, clients must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
-
-The minimum Kafka protocol that we support is 0.10.
-
-
------
 If the above can't be run, other third-party clients that meet the minimum requirements outlined as follows  can be used (see librdkafka  for examples).  However, we only test and have experience of the recommended third-party clients
 * Supports >= Kafka 0.10
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
@@ -195,6 +181,18 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
 <br/>
 Note, if you're using a Kafka client earlier than 0.10.2.1, the ```sasl.jaas.config``` property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
+
+
+
+-----
+Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
+
+
+### Client requirements for connecting to Event Streams
+
+To connect to {{site.data.keyword.messagehub}}, clients must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
+
+The minimum Kafka protocol that we support is 0.10.
 
 
 
