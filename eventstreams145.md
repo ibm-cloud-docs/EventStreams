@@ -39,14 +39,10 @@ Ensure that you meet the following requirements:
 
 To add a private endpoint:
 
-* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an internal endpoint.
-
-    Provide the following information:
+* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an internal endpoint. Provide the following information in the ticket:
 
     * Your cluster ID if you know it.
-
-    If you don't know this ID, provide your dashboard URL, the Kafka broker endpoints,or your service instance ID.
-
+    If you don't know the cluster ID, provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
     * Region
 
 When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
