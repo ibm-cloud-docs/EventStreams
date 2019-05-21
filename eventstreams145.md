@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-08"
+lastupdated: "2019-05-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -36,14 +36,25 @@ Ensure that you meet the following requirements:
 
 To add an internal endpoint:
 
-1. Raise a ticket to request an internal endpoint.
-2.
-3.
+* Raise a ticket to request an internal endpoint. 
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+
+When you have switched to an internal endpoint, the external or public endpoints are no longer available.
+
+Provide the following information:
+
+    * Your cluster ID if you know it.
+
+    If you don't know this ID, provide your dashboard URL, the Kafka broker endpoints,or your service instance ID.
+
+    * Region
+
 
 <!--
 1. On the service details page, click **Manage endpoints**. You can see the external endpoint assigned to your service instance.
 2. Click  **Add internal endpoint**. An internal endpoint is assigned to your service instance.
 3. **Optional.** Use the endpoint toggle to enable or disable endpoints as needed.
 -->
+
 
 For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
