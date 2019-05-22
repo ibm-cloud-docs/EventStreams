@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-21a"
+lastupdated: "2019-05-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,7 +27,7 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
 * **Streams API**<br/>
     A higher level stream processing API to easily consume, transform, and produce events between topics.
 * **Connect API**<br/>
-    A framework allowing re-usable or off-the-shelf integrations to stream events into and out of external systems, such as databases.
+    A framework allowing re-usable or standard integrations to stream events into and out of external systems, such as databases.
 * **KSQL**<br/>
     An interface for processing and joining events from topics using an SQL-like syntax.
 
@@ -135,13 +135,13 @@ For other languages, we recommend running one of the following clients, all of w
 1. {: #footnote1 notoc}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
 <br/>
-If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window}). However, we only test and have experience of the recommended third-party clients
+If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window}).
 * Supports Kafka 0.10, or later
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
 * Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
+However, we only test and have experience of the recommended third-party clients.
 
 In all cases, the latest version of the client is recommended.
-
 <br/>
 ### Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
@@ -160,9 +160,9 @@ From these objects:
 * Use the ```kafka_brokers_sasl property``` as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, ```host1:port1,host2:port2```. We recommend including details for all the hosts listed in the ```kafka_brokers_sasl``` property.
 * Use the ```user``` and ```api_key``` properties as the username and password
 
-For service instances on the Classic plan, this information is instead available from your application's VCAP_SERVICES environment variable. For more information, see [Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
+For service instances on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead. For more information, see [Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
 
-For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values retrieved previously.
+For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values that you retrieved previously.
 
 ```
 bootstrap.servers=KAFKA_BROKERS_SASL
