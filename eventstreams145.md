@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-05-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,9 +45,22 @@ To add a private endpoint:
     If you don't know the cluster ID, provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
     * Region
 
+For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
+
+
+## After switching to a private endpoint
+{: #after_endpoint}
+
 When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
 
-For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
+
+### Accessing the {{site.data.keyword.Bluemix_short}} console
+
+When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.Bluemix_short}} console changes.
+
+The private endpoints are reachable only from a Softlayer account that is linked with the MIS account (that is, {{site.data.keyword.Bluemix_short}} account that enables private service endpoint). 
+
+To discover your private endpoints, you can create a new service credential.
 
 <!--
 1. On the service details page, click **Manage endpoints**. You can see the external endpoint assigned to your service instance.
