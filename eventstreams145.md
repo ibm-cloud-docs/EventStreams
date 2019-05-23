@@ -31,8 +31,8 @@ You can now add a private endpoint to access and manage your {{site.data.keyword
 
 Ensure that you meet the following requirements:
 - Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
-- Create your service instance in the {{site.data.keyword.Bluemix_short}} Dallas (us-south) region.
-- Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_short}} account.
+- Create your service instance in the {{site.data.keyword.Bluemix_notm}} Dallas (us-south) region.
+- Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_notm}} account.
 
 ## Adding a private endpoint
 {: #add_endpoint}
@@ -42,10 +42,11 @@ To add a private endpoint:
 * Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request a private endpoint. Provide the following information in the ticket:
 
     * Your cluster ID, if you know it.
+
     If you don't know the cluster ID, provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
     * Region
 
-For more information about service endpoints, see the [{{site.data.keyword.Bluemix_short}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
+For more information about service endpoints, see the [{{site.data.keyword.Bluemix_notm}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
 
 
 ## After switching to a private endpoint
@@ -54,11 +55,11 @@ For more information about service endpoints, see the [{{site.data.keyword.Bluem
 When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
 
 
-### Accessing the {{site.data.keyword.Bluemix_short}} console
+### Accessing the {{site.data.keyword.Bluemix_notm}} console
 
-When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.Bluemix_short}} console changes.
+When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.Bluemix_notm}} console changes.
 
-The private endpoints are reachable only from a SoftLayer account that is linked with the MIS account. This is the {{site.data.keyword.Bluemix_short}} account that enables private service endpoint. 
+The private endpoints are reachable only from a SoftLayer account that is linked with the MIS account. This is the {{site.data.keyword.Bluemix_notm}} account that enables private service endpoint. 
 
 To discover your private endpoints, you can create a new service credential.
 
