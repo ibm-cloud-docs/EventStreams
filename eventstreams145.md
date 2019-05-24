@@ -43,8 +43,8 @@ To add a private endpoint:
 
     * Your cluster ID, if you know it.
 
-    If you don't know the cluster ID, provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
-    * Region
+    If you don't know the cluster ID, please provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
+  
 
 For more information about service endpoints, see the [{{site.data.keyword.Bluemix_notm}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
 
@@ -55,13 +55,11 @@ For more information about service endpoints, see the [{{site.data.keyword.Bluem
 When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
 
 
-### Accessing the {{site.data.keyword.Bluemix_notm}} console
+### Accessing the {{site.data.keyword.messagehub}} user interface
 
-When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.Bluemix_notm}} console changes.
+When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} user interface changes.
 
-The private endpoints are reachable only from a SoftLayer account that is linked with the MIS account. This is the {{site.data.keyword.Bluemix_notm}} account that enables private service endpoint. 
-
-To discover your private endpoints, you can create a new service credential.
+The user interface is only reachable from a private admin URL. To discover your private endpoints, including the private admin URL you can create a new service credential.
 
 <!--
 1. On the service details page, click **Manage endpoints**. You can see the external endpoint assigned to your service instance.
