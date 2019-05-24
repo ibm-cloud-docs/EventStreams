@@ -31,6 +31,7 @@ You can now add a private endpoint to access and manage your {{site.data.keyword
 
 Ensure that you meet the following requirements:
 - Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
+- Create your service instance in the {{site.data.keyword.Bluemix_notm}} Dallas (us-south) or Frankfurt (eu-de) regions.
 - Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_notm}} account.
 
 ## Adding a private endpoint
