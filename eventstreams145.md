@@ -55,11 +55,11 @@ For more information about service endpoints, see the [{{site.data.keyword.Bluem
 When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
 
 
-### Accessing the {{site.data.keyword.messagehub}} user interface
+### Accessing the {{site.data.keyword.messagehub}} IBM {{site.data.keyword.messagehub}} console
 
-When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} user interface changes.
+When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} console changes.
 
-The user interface is only reachable from a private admin URL. To discover your private endpoints, including the private admin URL you can create a new service credential.
+The user interface is only reachable from a private admin URL. To discover your private endpoints, including the private admin URL, you can create a new service credential.
 
 <!--
 1. On the service details page, click **Manage endpoints**. You can see the external endpoint assigned to your service instance.
