@@ -49,7 +49,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th id="client" scope="col">Client</th>
 		    <th id="language" scope="col">Language</th>
 			<th id="version" scope="col">Recommended version</th>
-		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-kafka_clients#footnote1)</th>
+		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-kafka_clients#footnote_classic)</th>
 			<th id="sample link" scope="col">Link to sample</th>
         </tr>
 			<tr>
@@ -98,7 +98,7 @@ Other third-party clients that support the minimum set of client requirements mi
 
 </table>
 ### Footnote
-1. {: #footnote1}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. {: #footnote_classic}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
 ## Backward compatibility (Classic plan only)
 {: #compatibility_classic}

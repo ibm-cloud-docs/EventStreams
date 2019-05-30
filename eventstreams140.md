@@ -57,7 +57,7 @@ Offset retention is system-wide so you cannot set it at an individual topic leve
 <!--following message retention info duplicted in eventstreams057 and evenstreams108-->
 
 ## How long are messages retained?
-{: #messages_retained}
+{: #messages_retained_classic}
 
 By default, messages are retained in Kafka for up to 24 hours and
 each partition is capped at 1 GB. If the 1 GB cap is reached, the

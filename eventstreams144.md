@@ -24,7 +24,7 @@ If you find a problem while using {{site.data.keyword.messagehub}} on the Classi
 {: shortdesc}
 
 ## Java Kafka calls don’t failover if a Kafka bootstrap server fails
-{: #calls_failover}
+{: #calls_failover_classic}
 
 ### Problem
 {: #calls_failover_problem notoc}
@@ -65,7 +65,7 @@ java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
 ```
 
 ## Java Kafka calls might time out
-{: #calls_timeout}
+{: #calls_timeout_classic}
 
 ### Problem
 {: #calls_timeout_problem notoc}
@@ -81,7 +81,7 @@ A Kafka Improvement Proposal (KIP) #302 has been created to ensure that Kafka cl
 
 
 ## Topics and partitions
-{: #topics_partitions}
+{: #topics_partitions_classic}
 
 *  Topic names are restricted to a maximum of 100 characters.
 *  The default number of partitions for a topic is one.
@@ -103,7 +103,7 @@ maximum of 30 days.
 For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [Using the Kafka API](/docs/services/EventStreams?topic=eventstreams-kafka_using).
 
 ## Creating and deleting topics in Kafka
-{: #create_delete}
+{: #create_delete_classic}
 
 In Kafka, topic creation and deletion are asynchronous operations
 that might take some time to complete. You are recommended to
