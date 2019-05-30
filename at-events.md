@@ -34,7 +34,7 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 ## List of events
 {: #events}
 
-<!-- Make sure you introduce the table with a detailed description that immediately precedes it. For example, see https://console.bluemix.net/docs/services/cloud-activity-tracker/services/at_events_cf.html#catalog. -->
+<!-- Make sure you introduce the table with a detailed description that immediately precedes it. For example, see https://cloud.ibm.com/docs/services/cloud-activity-tracker/services?topic=cloud-activity-tracker-cf#catalog. -->
 
 {{site.data.keyword.messagehub}} on the Standard and Enterprise plans automatically generate events so that you can track activity on your service.
 
