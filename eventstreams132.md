@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-06-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -31,7 +31,7 @@ For more information about the SLA for High Availability services in {{site.data
 ## Enterprise plan
 {: #sla_enterprise}
 
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan as a High Availability Public Environment. 
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan as a High Availability Public Environment. When the {{site.data.keyword.messagehub}} service is run in non-HA environments, such as a Single Zone Region, the availability is 99.5%. 
 For more information about the SLA for High Availability services in {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
 
@@ -46,6 +46,15 @@ For more information about the SLA for {{site.data.keyword.Bluemix}}, see
 ## What does 99.95% availability mean?
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 -->
+
+## Single zone region deployments
+{: #sla_szr}
+
+For the highest availability we recommend our high availability Public environments, which are built in our multi-zone regions. In a multi-zone region, our Kafka clusters are distributed across 3 availability zones meaning that the cluster is resilient to the failure of a single zone or any component within that zone.
+Some customers require geographic locality and for that reason, they want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone region. {{site.data.keyword.messagehub}} supports this deployment model, however you should be aware of the availability trade-offs being made:
+* In a single zone region there are categories of single failures that might lead to the cluster going offline for a period of time. For example, a whole data center failure or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single zone regions.
+* An advantage of spreading Kafka across many zones is to minimize the chance of a failure that can bring down a whole cluster. In contrast, within one zone, there is the possibility (albeit small) that a single failure can bring down the whole cluster. In extreme cases there is also the potential of data loss. For example, even if acks=all is used by the producers (see link), if all kafka nodes were to go down simultaneously, there might be some messages for which the brokers had acknowledge receipt, BUT the underlying file system had not completed the flush to disk. There is the potential for those un-flushed messages to be lost. In many use cases this is not necessarily an issue. However if message loss is a not acceptable under any circumstance, you should consider other strategies such as using a multi AZ cluster, cross region replication or producer side message check-pointing.
+
 
 ## How do we measure it?
 Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?component=messagehub&selected=status){:new_window}.
