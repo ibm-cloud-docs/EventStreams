@@ -131,7 +131,9 @@ For other languages, we recommend running one of the following clients, all of w
 		</tr>
 
 </table>
-### Footnote
+### 
+{: #footnote_clients notoc}
+
 1. {: #footnote1 notoc}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
 <br/>
@@ -157,8 +159,8 @@ To retrieve the username, password, and list of bootstrap servers, a Service cre
 [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 From these objects:
-* Use the ```kafka_brokers_sasl property``` as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, ```host1:port1,host2:port2```. We recommend including details for all the hosts listed in the ```kafka_brokers_sasl``` property.
-* Use the ```user``` and ```api_key``` properties as the username and password
+* Use the <code>kafka_brokers_sasl property</code> as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, <code>host1:port1,host2:port2</code>. We recommend including details for all the hosts listed in the <code>kafka_brokers_sasl</code> property.
+* Use the <code>user</code> and <code>api_key</code> properties as the username and password
 
 For service instances on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead. For more information, see [Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
 
@@ -180,7 +182,7 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 {: codeblock}
 
 <br/>
-Note, if you're using a Kafka client earlier than 0.10.2.1, the ```sasl.jaas.config``` property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
+Note, if you're using a Kafka client earlier than 0.10.2.1, the <code>sasl.jaas.config</code> property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
 
 
 
