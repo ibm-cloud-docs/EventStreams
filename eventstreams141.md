@@ -98,6 +98,8 @@ Other third-party clients that support the minimum set of client requirements mi
 
 </table>
 ### Footnote
+{: #footnote_clients_classic notoc}
+
 1. {: #footnote_classic}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
 
 ## Backward compatibility (Classic plan only)

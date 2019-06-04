@@ -29,6 +29,7 @@ The way you connect to {{site.data.keyword.messagehub}} varies depending on whet
 Read the following information for how to obtain these details. The steps can vary subtly so ensure that you complete the appropriate steps for your instance.
 
 ## Provision an {{site.data.keyword.messagehub}} instance
+{: #provision_classic}
 
 As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} service instance for the Classic plan. Next, obtain {{site.data.keyword.messagehub}} API connection details by completing the following tasks.
 

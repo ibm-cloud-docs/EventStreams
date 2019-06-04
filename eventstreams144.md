@@ -58,6 +58,8 @@ From the <code>java.security</code> file:
 ```
 
 ### How to modify the JVM's TTL
+{: #jvm_ttl_classic notoc}
+
 * To modify the JVM's TTL for all applications, set the <code>networkaddress.cache.ttl</code> value in the <code><var class="keyword varname">$JAVA_HOME</var>/jre/lib/security/java.security</code> file.
 * To modify the JVM TTL for a given application, set the <code>networkaddress.cache.ttl</code> in your application code as follows:
 ```
@@ -89,7 +91,7 @@ A Kafka Improvement Proposal (KIP) #302 has been created to ensure that Kafka cl
    more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
 
 ## Message retention
-{: #message_retention}
+{: #message_retention_classic}
 
 By default, messages are retained in Kafka for up to 24 hours and
 each partition is capped at 1 GB. If the 1 GB cap is reached, the

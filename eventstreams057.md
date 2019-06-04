@@ -59,6 +59,8 @@ From the <code>java.security</code> file:
 ```
 
 ### How to modify the JVM's TTL
+{: #jvm_ttl notoc}
+
 * To modify the JVM's TTL for all applications, set the <code>networkaddress.cache.ttl</code> value in the <code><var class="keyword varname">$JAVA_HOME</var>/jre/lib/security/java.security</code> file.
 * To modify the JVM TTL for a given application, set the <code>networkaddress.cache.ttl</code> in your application code as follows:
 ```
@@ -66,7 +68,7 @@ java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
 ```
 
 ## Java Kafka calls might time out
-{: #calls_timeout}
+{: #calls_timeout_kafka}
 
 ### Problem
 {: #calls_timeout_problem notoc}

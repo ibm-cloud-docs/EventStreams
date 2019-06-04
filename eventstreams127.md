@@ -43,6 +43,7 @@ Complete the following steps to bind your application and obtain Service Keys fo
 To connect an application, the method used depends on where the application is deployed, that is in Cloud Foundry or deployed outside Cloud Foundry, for example in the Kubernetes Service.
 
 ## Provision an {{site.data.keyword.messagehub}} instance
+{: #provision_instance}
 
 As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} service instance for either the Standard or Enterprise plan. Next, obtain {{site.data.keyword.messagehub}} API connection details by completing the following tasks.
 
