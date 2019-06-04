@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-04b"
+lastupdated: "2019-06-04c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -50,10 +50,10 @@ Availability refers to the ability of applications to produce and consume messag
 ## Single-zone region deployments
 {: #sla_szr}
 
-For the highest availability we recommend our high availability Public environments, which are built in our multi-zone regions. In a multi-zone region, our Kafka clusters are distributed across 3 availability zones meaning that the cluster is resilient to the failure of a single zone or any component within that zone.
-Some customers require geographic locality and for that reason, they want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single-zone region. {{site.data.keyword.messagehub}} supports this deployment model, however you should be aware of the availability trade-offs being made:
-* In a single-zone region, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, a whole data center failure or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single-zone regions.
-* An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down a whole cluster. In contrast, within one zone, there is the possibility (albeit small) that a single failure could bring down the whole cluster. In extreme cases there is also the potential of data loss. For example, even if <code>acks=all</code> is used by the producers if all kafka nodes were to go down simultaneously, there might be some messages for which the brokers had acknowledge receipt, BUT the underlying file system had not completed the flush to disk. For more information, see [Message acknowledgments](/docs/services/EventStreams?topic=eventstreams-producing_messages#message_acknowledgments). There is the potential for those un-flushed messages to be lost. In many use cases this is not necessarily an issue. However, if message loss is a not acceptable under any circumstance, you should consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message check-pointing.
+For the highest availability we recommend our high availability Public environments, which are built in our multi-zone regions. In a multi-zone region, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+Some customers require geographic locality and for that reason they want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single-zone region. {{site.data.keyword.messagehub}} supports this deployment model, however you should be aware of the following availability trade-offs being made:
+* In a single-zone region, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, the failure of an entire data center or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single-zone regions.
+* An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down a whole cluster. In contrast, there is the possibility (albeit small) that a single failure could bring down the whole cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if <code>acks=all</code> is used by the producers, if all kafka nodes were to go down simultaneously, there might be some messages for which the brokers had acknowledged receipt, but the underlying file system had not completed the flush to disk. There is the potential for those un-flushed messages to be lost. In many use cases this is not necessarily an issue. For more information, see [Message acknowledgments](/docs/services/EventStreams?topic=eventstreams-producing_messages#message_acknowledgments). However, if message loss is a not acceptable under any circumstance, you should consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
 
 
 ## How do we measure it?
