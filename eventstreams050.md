@@ -131,7 +131,7 @@ For other languages, we recommend running one of the following clients, all of w
 		</tr>
 
 </table>
-### 
+### Footnote
 {: #footnote_clients notoc}
 
 1. {: #footnote1 notoc}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
