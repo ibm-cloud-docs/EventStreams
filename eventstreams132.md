@@ -24,7 +24,7 @@ subcollection: eventstreams
 {: #sla_standard}
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Standard plan.
-For more information about the SLA for High Availability services in {{site.data.keyword.Bluemix}}, see
+For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
 
 
@@ -32,7 +32,7 @@ For more information about the SLA for High Availability services in {{site.data
 {: #sla_enterprise}
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan as a high availability Public environment. When the {{site.data.keyword.messagehub}} service is run in non-HA environments, such as a single-zone region, the availability is 99.5%. 
-For more information about the SLA for High Availability services in {{site.data.keyword.Bluemix_notm}}, see
+For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
 
 ## Classic plan
