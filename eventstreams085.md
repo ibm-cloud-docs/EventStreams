@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-16"
+lastupdated: "2019-06-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -108,7 +108,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Maximum retention period**</td>
 			<td>1 GB per partition for up to 30 days </td>
-			<td>Unlimited up to the storage limit of your plan </td>
+			<td>2 TB of usable storage<!--Unlimited up to the storage limit of your plan --></td>
 			<td>1 GB per partition for up to 30 days </td>
 		</tr>
 		<tr>
