@@ -87,7 +87,7 @@ For other languages, we recommend running one of the following clients, all of w
 			<th id="sample link" scope="col">Link to sample</th>
         </tr>
 			<tr>
-			<td colspan="3">**Official client**</td>
+			<td colspan="3">**Official Apache Kafka client**</td>
 			</tr>
 	  		<tr>
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
