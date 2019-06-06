@@ -73,6 +73,6 @@ or email
 {: #general-data-protection-regulation-gdpr-overview}
 
 The GDPR seeks to create a harmonized data protection law 
-framework across the EU and aims to give citizens back the control of their personal data, whilst 
+framework across the EU and aims to give citizens back the control of their personal data, while 
 imposing strict rules on those hosting and ‘processing’ this data, anywhere in the world. The 
 Regulation also introduces rules relating to the free movement of personal data within and outside the EU. For more information, see the [{{site.data.keyword.IBM_notm}} privacy statement ![External link icon](../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/privacy/){: new_window}.

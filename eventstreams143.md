@@ -47,7 +47,7 @@ Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Servic
 <li>
       <strong>For native applications</strong>
         <br/>
-        You must create a Credentials or Service Key object using either the IBM Cloud console or CLI respectively. You can then retrieve the required properties. For more information, see 
+        You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see 
         [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
 </li>
 <br/>
