@@ -125,7 +125,7 @@ time.
 During this period, the Kafka REST API might become
 unavailable. If this happens, you are recommended to retry your
 request. After the REST API has restarted, you will have to
-recreate your Kafka consumer instances. If this is the case, the
+create your Kafka consumer instances again. If this is the case, the
 REST API returns the following JSON:
 
 ```'{"error_code":40403,"message":"Consumer instance not found."}'

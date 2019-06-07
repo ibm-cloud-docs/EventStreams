@@ -38,8 +38,7 @@ If you're using the Classic plan, see [Reporting a problem to the {{site.data.ke
 {: #troubleshooting_links notoc}
 
 *  [{{site.data.keyword.messagehub}} Java Kafka sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: new_window}
-*  [Creating web applications with {{site.data.keyword.Bluemix_notm}} and deploying your
-   app with Cloud Foundry ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/starters?topic=starters-download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface#download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: new_window}
+*  [Creating web applications with {{site.data.keyword.Bluemix_notm}} and deploying your app with Cloud Foundry ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/starters?topic=starters-download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface#download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: new_window}
 *  [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window}
 *  [Apache Kafka 2.2.0 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.0/kafka-2.2.0-src.tgz){:new_window}
 *  [{{site.data.keyword.Bluemix_notm}} pricing information ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-cost#cost){: new_window}
