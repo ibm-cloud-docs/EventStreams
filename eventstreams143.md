@@ -31,7 +31,7 @@ Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Servic
 <br/>
     As before, you can manage the lifecycle of services using either the {{site.data.keyword.cloud_notm}} console or the {{site.data.keyword.cloud_notm}} CLI command line tool. If you're using the console, services are now listed under **Services** instead of **Cloud Foundry Services**. 
     
-    If you're using the CLI, instances are managed using the resource commands. For example,  ```ibmcloud resource service-instance-create```. This is instead of the **cf** commands, for example ```ibmcloud cf create-service```.
+    If you're using the CLI, instances are managed using the resource commands. For example,  <code>ibmcloud resource service-instance-create</code>. This is instead of the **cf** commands, for example <code>ibmcloud cf create-service</code>.
 
 * **Controlling access**
 <br/>
@@ -41,7 +41,7 @@ Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Servic
 <ul>
 <li><strong>Connecting applications</strong>
 <br/>
-    The information that an application needs to connect has not changed, that is, a list of ```bootstrap.servers```, ```username```, and ```password``` are required. However, the way these properties are retrieved has changed.
+    The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> are required. However, the way these properties are retrieved has changed.
 
 <ul>
 <li>
