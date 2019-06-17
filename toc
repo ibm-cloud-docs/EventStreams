@@ -2,7 +2,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="eventstreams" audience="service" arm="285" href="/docs/services/EventStreams/index.html" path="services/EventStreams"}
+{: .toc subcollection="eventstreams" category="integration" audience="service" arm="285" href="/docs/services/EventStreams/index.html" path="services/EventStreams"}
 IBM Event Streams
 
 	{: .navgroup id="learn"}
