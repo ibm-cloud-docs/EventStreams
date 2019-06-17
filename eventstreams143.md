@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-15"
+lastupdated: "2019-06-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -71,7 +71,13 @@ You should also be aware of some other changes as follows:
 
 * **Supported regions**
 <br/>
-    The plan is initially available in us-south only. The remaining regions will be introduced over the coming few weeks.
+    The plan is available in the following regions:
+    * Dallas (us-south)</br>
+    * Washington (us-east)<br/>
+    * London (eu-gb)<br/>
+    * Sydney (au-syd)</br>
+    * Frankfurt (eu-de)<br/>
+    * Tokyo (jp-tok)
 
 * **Integrations**
 <br/>
