@@ -50,7 +50,7 @@ Complete the following steps:
   
   e. Click **Create**.
 
-2. {: #create_credentials_step notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/EventStreams?topic=eventstreams-connecting#connect_standard_cf_console).
+2. {: #create_credentials_step notoc} Create some {{site.data.keyword.messagehub}} credentials by completing these steps: [get credentials and connect using the IBM Cloud console](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external_console).
    <br/>
    <br/>You'll need the values of *kafka_brokers_sasl* and *api_key* for [step 7](/docs/services/EventStreams?topic=eventstreams-getting_started#start_consumer_step) of this task.   
 

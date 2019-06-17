@@ -49,7 +49,7 @@ Other third-party clients that support the minimum set of client requirements mi
 		    <th id="client" scope="col">Client</th>
 		    <th id="language" scope="col">Language</th>
 			<th id="version" scope="col">Recommended version</th>
-		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-kafka_clients#footnote_classic)</th>
+		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-kafka_clients_classic#footnote_clients_classic)</th>
 			<th id="sample link" scope="col">Link to sample</th>
         </tr>
 			<tr>
@@ -59,7 +59,7 @@ Other third-party clients that support the minimum set of client requirements mi
 			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
 			<td>Java</td>
 			<td>Latest</td>
-			<td>0.10.2 <p> For information about older clients, see [backward compatibility](/docs/services/EventStreams?topic=eventstreams-kafka_clients#compatibility).</p></td>
+			<td>0.10.2 <p> For information about older clients, see [backward compatibility](/docs/services/EventStreams?topic=eventstreams-kafka_clients_classic#compatibility_classic).</p></td>
 			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
