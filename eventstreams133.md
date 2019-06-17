@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-17"
+lastupdated: "2019-06-17b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -85,13 +85,13 @@ ibmcloud plugin install event-streams
 {: codeblock}
 
 ## Step 6. Initialize the {{site.data.keyword.messagehub}} plugin
-Run the following command to initialize the plugin. Select your {{site.data.keyword.messagehub}} instance:
+{: #step6_es_init}
+
+Before you run any of the {{site.data.keyword.messagehub}} CLI commands, you must run the following command to initialize the plugin and select your {{site.data.keyword.messagehub}} instance:
 
 ```
 ibmcloud es init
 ```
-
-You have to run the init command before you can use any of the other {{site.data.keyword.messagehub}} CLI commands.
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
