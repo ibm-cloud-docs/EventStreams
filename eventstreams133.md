@@ -24,7 +24,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard a
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI. 
 {: #step1_install_cli}
 
-For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli){:new_window}.
+For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](docs/cli?topic=cloud-cli-getting-started){:new_window}.
 
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
@@ -84,8 +84,8 @@ ibmcloud plugin install event-streams
 ```
 {: codeblock}
 
-## Step 6. Run the init command
-Run the following command to initialize the {{site.data.keyword.messagehub}} plugin.and then select your {{site.data.keyword.messagehub}} instance:
+## Step 6. Initialize the {{site.data.keyword.messagehub}} plugin
+Run the following command to initialize the plugin. Select your {{site.data.keyword.messagehub}} instance:
 
 ```
 ibmcloud es init
