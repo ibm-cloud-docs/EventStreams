@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-18d"
+lastupdated: "2019-06-18e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -66,7 +66,6 @@ Note that clients must support the SNI extension to TLS where the server's hostn
 
 <br>
 You should also be aware of some other changes as follows:
-
 ## Kafka version
 {: #kafka_version}
 
