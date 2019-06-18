@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-18e"
+lastupdated: "2019-06-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -43,7 +43,7 @@ Authentication and authorization are now managed using the Cloud Identity and Ac
 ## Connecting applications
 {: #connecting_apps}
 
-The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> are required. However, the way these properties are retrieved has changed.
+The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> is required. However, the way these properties are retrieved has changed.
 
 <ul>
 <li>
