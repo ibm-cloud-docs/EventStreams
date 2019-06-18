@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-18b"
+lastupdated: "2019-06-18c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -64,6 +64,7 @@ Note that clients must support the SNI extension to TLS where the server's hostn
 </li>
 </ul>
 
+<br>
 You should also be aware of some other changes as follows:
 
 ## Kafka version
@@ -75,11 +76,11 @@ This plan provides access to the latest stable Kafka release 2.2. Applications d
 {: #supported_regions}
 
 The plan is available in the following regions:
-    * Dallas (us-south)</br>
-    * Washington (us-east)<br/>
-    * London (eu-gb)<br/>
-    * Sydney (au-syd)</br>
-    * Frankfurt (eu-de)<br/>
+    * Dallas (us-south)
+    * Washington (us-east)
+    * London (eu-gb)
+    * Sydney (au-syd)
+    * Frankfurt (eu-de)
     * Tokyo (jp-tok)
 
 ## Integrations
@@ -96,10 +97,8 @@ There are differences between the capabilities of the Classic plan and the new S
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
 
-## Customer metrics
-{: #metrics}
-
-The ability to monitor activity in a service instance.
+* **Customer metrics**
+    The ability to monitor activity in a service instance.
 
 <br/>
 For a quick walkthrough of the steps to get up and running with the new Standard plan, try the [Getting started tutorial](/docs/services/EventStreams?topic=eventstreams-getting_started).
