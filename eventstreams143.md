@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-18c"
+lastupdated: "2019-06-18d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -76,12 +76,12 @@ This plan provides access to the latest stable Kafka release 2.2. Applications d
 {: #supported_regions}
 
 The plan is available in the following regions:
-    * Dallas (us-south)
-    * Washington (us-east)
-    * London (eu-gb)
-    * Sydney (au-syd)
-    * Frankfurt (eu-de)
-    * Tokyo (jp-tok)
+* Dallas (us-south)
+* Washington (us-east)
+* London (eu-gb)
+* Sydney (au-syd)
+* Frankfurt (eu-de)
+* Tokyo (jp-tok)
 
 ## Integrations
 {: #integrations}
