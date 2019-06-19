@@ -74,7 +74,8 @@ Unlimited, up to the storage limit of your plan.
 ### Other limits
 {: #enterprise_limits}
 
-Maximum message size: 1 MB
+* Maximum message size: 1 MB
+* Maximum concurrently active Kafka clients: 10000
 
 
 
