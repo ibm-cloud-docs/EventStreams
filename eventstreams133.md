@@ -21,7 +21,7 @@ subcollection: eventstreams
 
 To install and set up the {{site.data.keyword.messagehub}} CLI on the Standard and Enterprise plans, complete the following steps:
 
-## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI. 
+## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
 For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){:new_window}.
@@ -62,7 +62,7 @@ Select one of the following methods:
 
   Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
 
-## Step 4. Create a service API key for this instance.
+## Step 4. Create a service API key for this instance
 {: #step4_es_api}
 
 The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security).
