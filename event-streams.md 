@@ -28,7 +28,7 @@ lastupdated: "2019-06-20"
 
 
 # Introduction
-{: #intro}
+{: #es_api_intro}
 
 The resource controller is the next-generation IBM Cloud platform provisioning layer that manages the lifecycle of IBM Cloud resources in a customer account. Resources is a broad term that could mean anything from an instance of a service like Cloudant, a Cloud Foundry application, a virtual machine, a container, a software image, a data set, or other entities associated to the customer account.
 
@@ -36,7 +36,7 @@ The resource controller provides common APIs to control the lifecycle of resourc
 
 Resources are created by the resource controller within [resource groups](https://console.cloud.ibm.com/docs/overview/resource-groups.html#whatis). A resource group belongs to an account. All IBM Cloud resources must be provisioned within a resource group. If an account is suspended, the corresponding resource group are suspended as well, and all resources within the resource group are suspended.
 
-# Introduction
+## Introduction
 {: #intro_es}
 
 IBM {{site.data.keyword.messagehub}} for IBM Cloud is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into IBM Cloud and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
