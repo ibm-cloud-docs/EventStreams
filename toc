@@ -67,6 +67,7 @@ IBM Event Streams
 		eventstreams110.md
 		eventstreams025.md
 		eventstreams117.md
+		eventstreamsapi.md
 		event-streams.md
 	
 	{: .topicgroup}
