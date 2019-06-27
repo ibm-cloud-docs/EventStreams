@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-06-27b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -89,7 +89,7 @@ kubectl apply -f ./kafka-connect.yaml
 
   Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
 
-## Step 4. Manage Connectors
+## Step 4. Manage connectors
 {: #step4_manage_connectors}
 
 To manage connectors, port forward to the kafkaconnect-service Service on port 8083. For example:
@@ -113,19 +113,19 @@ The Connect REST API is then available at http://localhost:8083.
 ## Step 5. Build the connector
 {: #step5_build_connector}
 
-a. Clone the repository with the following command:
+  a. Clone the repository with the following command:
 
   ```
   git clone https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
   ```
 
-b. Change into the kafka-connect-ibmcos-sink directory:
+  b. Change into the <code>kafka-connect-ibmcos-sink</code> directory:
 
   ```
   cd kafka-connect-ibmcos-sink
   ```
 
-c. Build the connector using Gradle:
+  c. Build the connector using Gradle:
 
   ```
   $ gradle shadowJar
@@ -139,8 +139,54 @@ ibmcloud plugin install event-streams
 ```
 {: codeblock}
 
-## Step 6. Initialize the {{site.data.keyword.messagehub}} plugin
-{: #step6_es_init}
+## Step 6. Configure the cos-sink json file 
+{: #step6_config_json}
+
+kafka-connect-ibmcos-sink/config/cos-sink.json
+
+
+### cos-sink.json file properties
+
+<dl>
+<dt><strong>cos.api.key</strong></dt>
+<dd>Required. API key used to connect to the Cloud Object Storage service instance.</dd>
+<dt><strong>cos.bucket.location</strong></dt>
+<dd>Required. Location of the Cloud Object Storage service bucket, for example: eu-gb.</dd>
+<dt><strong>cos.bucket.name</strong></dt>
+<dd>Required. Name of the Cloud Object Storage service bucket to write data into.</dd>
+<dt><strong>cos.bucket.resiliency</strong></dt>
+<dd>Required. Resiliency of the Cloud Object Storage bucket. Must be one of: cross-region, regional, or single-site.</dd>
+<dt><strong>cos.endpoint.visibility</strong></dt>
+<dd>Optional. Specify public to connect to the Cloud Object Storage service over the public internet, or private to connect from a connector running inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
+<dt><strong>cos.object.deadline.seconds </strong></dt>
+<dd>Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object. This can be useful in situations where there are long pauses between Kafka records being produced to a topic, as it ensures that any records received by this connector will always be written into object storage within the specified period of time.</dd>
+<dt><strong>cos.object.interval.seconds</strong></dt>
+<dd>Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object.</dd>
+<dt><strong>cos.object.records</strong></dt>
+<dd>Optional. The maximum number of Kafka records to combine into a object.
+</dd>
+<dt><strong>cos.service.crn</strong></dt>
+<dd>Required. CRN for the Cloud Object Storage service instance.</dd>
+</dl>
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+Note that while the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are all listed as optional, at least one of these properties must be set to a non-default value.
+
 
 Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you must first initialize the plugin. Run the following command then select your {{site.data.keyword.messagehub}} instance:
 
