@@ -68,10 +68,10 @@ IBM Event Streams
 		eventstreams025.md
 		eventstreams117.md
 		eventstreamsapi.md
-		event-streams.md
 	
 	{: .topicgroup}
 	Integrating with other services
+		eventstreams149.md
 		eventstreams119.md
 
 	{: .topicgroup}
