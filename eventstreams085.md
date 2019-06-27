@@ -115,7 +115,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>1 MB per second per partition (20 MB per second maximum) </td>
-			<td>40 MB per second (peak throughput of 90 MB per second)</td>
+			<td>40 MB per second per cluster (peak throughput of 90 MB per second)</td>
 			<td>1 MB per second per partition</td>
 		</tr>
 		<tr>
