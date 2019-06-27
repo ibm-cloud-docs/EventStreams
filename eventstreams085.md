@@ -66,7 +66,7 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability zones**</td>
 			<td>3</td>
-			<td>3 for multizone locations<br/> 1 for single zone location (Seoul)
+			<td>3 (for multizone locations)<br/> 1 (for single zone location - Seoul)
 			</td>
 			<td>Not supported</td>
 		</tr>

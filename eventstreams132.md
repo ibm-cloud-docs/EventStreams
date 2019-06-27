@@ -31,7 +31,7 @@ For more information about the SLA for high availability services in {{site.data
 ## Enterprise plan
 {: #sla_enterprise}
 
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan as a high availability Public environment. When the {{site.data.keyword.messagehub}} service is run in non-HA environments, such as single-zone regions, the availability is 99.5%. 
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.95% on the Enterprise plan as a high availability Public environment. When the {{site.data.keyword.messagehub}} service is run in non-HA environments, such as single-zone locations, the availability is 99.5%. 
 For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.
 
@@ -99,13 +99,13 @@ Although all message are replicated, applications can control how robustly the m
 {: #sla_szr}
 
 For the highest availability we recommend our high availability Public environments, which are built in our multizone locations. In a multizone location, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
-Some customers require geographic locality and for that reason want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone location. {{site.data.keyword.messagehub}} supports this deployment model, however you should be aware of the following availability trade-offs:
+Some customers require geographic locality and therfore want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone location. {{site.data.keyword.messagehub}} supports this deployment model, however be aware of the following availability trade-offs:
 * In a single zone location, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, the failure of an entire data center or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single zone locations.
 * An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down an entire cluster. In contrast, there is the small possibility that a single failure could bring down the entire cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if <code>acks=all</code> is used by the producers, if all Kafka nodes went down simultaneously, there might be some messages that the brokers had acknowledged receipt for, but the underlying file system had not completed the flush to disk. Potentially, those un-flushed messages could be lost. 
 
     For more information, see [Message acknowledgments](/docs/services/EventStreams?topic=eventstreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
 
-For more information, see [single zone locations](/docs/containers?topic=containers-regions-and-zones#regions_single_zone) and [multizone locations](/docs/containers?topic=containers-regions-and-zones#regions_multizone).
+For more information, see [single zone clusters](/docs/containers?topic=containers-regions-and-zones#regions_single_zone) and [multizone clusters](/docs/containers?topic=containers-regions-and-zones#regions_multizone).
 
 
 
