@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -95,13 +95,18 @@ Kafka achieves its availability and durability by replicating the messages it re
 **Producer <code>acks</code> mode**<br/>
 Although all message are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's <code>acks</code> mode property. This property provides a choice between speed and the risk of message loss. The default setting is <code>acks=1</code>, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is <code>acks=all</code> where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
 
-## Single-zone region deployments
+## Single zone location deployments
 {: #sla_szr}
 
-For the highest availability we recommend our high availability Public environments, which are built in our multi-zone regions. In a multi-zone region, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
-Some customers require geographic locality and for that reason want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single-zone region. {{site.data.keyword.messagehub}} supports this deployment model, however you should be aware of the following availability trade-offs:
-* In a single-zone region, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, the failure of an entire data center or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single-zone regions.
-* An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down an entire cluster. In contrast, there is the possibility (albeit small) that a single failure could bring down the entire cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if <code>acks=all</code> is used by the producers, if all Kafka nodes were to go down simultaneously, there might be some messages for which the brokers had acknowledged receipt, but the underlying file system had not completed the flush to disk. There is the potential for those un-flushed messages to be lost. For more information, see [Message acknowledgments](/docs/services/EventStreams?topic=eventstreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, you should consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
+For the highest availability we recommend our high availability Public environments, which are built in our multizone locations. In a multizone location, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+Some customers require geographic locality and for that reason want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone location. {{site.data.keyword.messagehub}} supports this deployment model, however you should be aware of the following availability trade-offs:
+* In a single zone location, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, the failure of an entire data center or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single zone locations.
+* An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down an entire cluster. In contrast, there is the small possibility that a single failure could bring down the entire cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if <code>acks=all</code> is used by the producers, if all Kafka nodes went down simultaneously, there might be some messages that the brokers had acknowledged receipt for, but the underlying file system had not completed the flush to disk. Potentially, those un-flushed messages could be lost. 
+
+    For more information, see [Message acknowledgments](/docs/services/EventStreams?topic=eventstreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
+
+For more information, see [single zone locations](/docs/containers?topic=containers-regions-and-zones#regions_single_zone) and [multizone locations](/docs/containers?topic=containers-regions-and-zones#regions_multizone).
+
 
 
 
