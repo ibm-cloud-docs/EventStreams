@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27c"
+lastupdated: "2019-06-27d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,14 +45,14 @@ Ensure you have the following software and services set up:
 
 1. Edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> and <APIKEY> with your {{site.data.keyword.messagehub}} credentials.
 
-2. Then run the following commands to create a secret and a ConfigMap :
+2. Then run the following commands:
+ To create a secret: 
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
    ```
     {: codeblock}
 
-<br/>
-
+To create a ConfigMap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
@@ -79,16 +79,6 @@ kubectl apply -f ./kafka-connect.yaml
   
   Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
-
-* To create an instance from the CLI on the Standard plan,run a command like the following:
-
-  ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
-  ```
-  {: codeblock}
-
-  Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
-
 ## Step 4. Manage connectors
 {: #step4_manage_connectors}
 
@@ -101,14 +91,8 @@ kubectl port-forward service/kafkaconnect-service 8083
 
 The Connect REST API is then available at http://localhost:8083.
 
-
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
-* To create an API key from the CLI, run this command:
-  ```
-  ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-  ```
-  {: codeblock}
 
 ## Step 5. Build the connector
 {: #step5_build_connector}
