@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27e"
+lastupdated: "2019-06-27f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -29,7 +29,7 @@ Complete the following steps to walk through the setup:
 
 ## Step 1. Install the pre-requisites
 {: #step1_install_prereqs}
-Ensure you have the following software and services set up:
+Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan
 * An instance of the Cloud Object Storage service with at least one bucket
@@ -47,11 +47,14 @@ Ensure you have the following software and services set up:
 Your <APIKEY> will appear in clear text on your machine but will be secret when pushed to IKS.
 
 2. Then run the following commands:
+<br/>
  To create a secret: 
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
    ```
     {: codeblock}
+
+<br/>
 
 To create a ConfigMap:
     ```
@@ -72,13 +75,6 @@ kubectl apply -f ./kafka-connect.yaml
 
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
 
-* To create an instance from the CLI on the Enterprise plan, run a command like the following:
-  ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
-  ```
-  {: codeblock}
-  
-  Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
 ## Step 4. Manage connectors
 {: #step4_manage_connectors}
