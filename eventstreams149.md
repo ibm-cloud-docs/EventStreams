@@ -59,8 +59,6 @@ kubectl create configmap connect-log4j-config --from-file=connect-log4j.properti
 {: codeblock}
 
 
-
-
 ## Step 3. Deploy Kafka Connect
 {: #step3_deploy_kafka}
 
@@ -112,8 +110,28 @@ The Connect REST API is then available at http://localhost:8083.
   ```
   {: codeblock}
 
-## Step 5. Install the {{site.data.keyword.messagehub}} CLI plugin
-{: #step5_es_cli}
+## Step 5. Build the connector
+{: #step5_build_connector}
+
+a. Clone the repository with the following command:
+
+  ```
+  git clone https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
+  ```
+
+b. Change into the kafka-connect-ibmcos-sink directory:
+
+  ```
+  cd kafka-connect-ibmcos-sink
+  ```
+
+c. Build the connector using Gradle:
+
+  ```
+  $ gradle shadowJar
+  ```
+
+
 
 Run the following command:
 ```
