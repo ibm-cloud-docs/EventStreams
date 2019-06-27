@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27b"
+lastupdated: "2019-06-27c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -43,20 +43,20 @@ Ensure you have the following software and services set up:
 ## Step 2. Create your Kafka Connect configuration
 {: #step2_create_config}
 
-a. Edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> and <APIKEY> with your {{site.data.keyword.messagehub}} credentials.
+1. Edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> and <APIKEY> with your {{site.data.keyword.messagehub}} credentials.
 
-b. Then run the following commands to create a secret and a ConfigMap :
-```
-kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
-```
-{: codeblock}
+2. Then run the following commands to create a secret and a ConfigMap :
+    ```
+    kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
+   ```
+    {: codeblock}
 
 <br/>
 
-```
-kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
-```
-{: codeblock}
+    ```
+    kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
+    ```
+    {: codeblock}
 
 
 ## Step 3. Deploy Kafka Connect
@@ -113,31 +113,24 @@ The Connect REST API is then available at http://localhost:8083.
 ## Step 5. Build the connector
 {: #step5_build_connector}
 
-  a. Clone the repository with the following command:
+1. Clone the repository with the following command:
 
-  ```
-  git clone https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
-  ```
+    ```
+    git clone https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
+    ```
 
-  b. Change into the <code>kafka-connect-ibmcos-sink</code> directory:
+2. Change into the <code>kafka-connect-ibmcos-sink</code> directory:
 
-  ```
-  cd kafka-connect-ibmcos-sink
-  ```
+    ```
+    cd kafka-connect-ibmcos-sink
+    ```
 
-  c. Build the connector using Gradle:
+3. Build the connector using Gradle:
 
-  ```
-  $ gradle shadowJar
-  ```
+    ```
+    $ gradle shadowJar
+    ```
 
-
-
-Run the following command:
-```
-ibmcloud plugin install event-streams
-```
-{: codeblock}
 
 ## Step 6. Configure the cos-sink json file 
 {: #step6_config_json}
@@ -169,30 +162,7 @@ kafka-connect-ibmcos-sink/config/cos-sink.json
 <dd>Required. CRN for the Cloud Object Storage service instance.</dd>
 </dl>
  
-
-
-
- 
-
- 
-
- 
-
-
-
-
-
-
-
-
-Note that while the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are all listed as optional, at least one of these properties must be set to a non-default value.
-
-
-Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you must first initialize the plugin. Run the following command then select your {{site.data.keyword.messagehub}} instance:
-
-```
-ibmcloud es init
-```
+Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are all listed as optional, you must set at least one of these properties to a non-default value.
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
