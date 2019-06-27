@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-06-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -66,13 +66,14 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability zones**</td>
 			<td>3</td>
-			<td>3</td>
+			<td>3 for multizone locations<br/> 1 for single zone location (Seoul)
+			</td>
 			<td>Not supported</td>
 		</tr>
         <tr>
 			<td>**Availability**</td>
 			<td>99.95%</td>
-			<td>99.95%</td>
+			<td>99.95% for multizone locations<br/>99.5% for single zone location (Seoul)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -139,6 +140,7 @@ The following table summarizes what is supported by the plans:
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
+			Seoul (1 availability zone only)<br/>
 			<br/>
 			</td>
 			<td>Dallas (us-south)</br>
