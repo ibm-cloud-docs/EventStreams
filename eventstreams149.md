@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27d"
+lastupdated: "2019-06-27e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -43,7 +43,8 @@ Ensure you have the following software and services set up:
 ## Step 2. Create your Kafka Connect configuration
 {: #step2_create_config}
 
-1. Edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> and <APIKEY> with your {{site.data.keyword.messagehub}} credentials.
+1. Edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
+Your <APIKEY> will appear in clear text on your machine but will be secret when pushed to IKS.
 
 2. Then run the following commands:
  To create a secret: 
@@ -89,7 +90,11 @@ kubectl port-forward service/kafkaconnect-service 8083
 ```
   {: codeblock}
 
+Open two terminals on your kube service for port forwarding.
+
 The Connect REST API is then available at http://localhost:8083.
+
+See confluent docs for more info about api
 
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
@@ -119,8 +124,7 @@ The Connect REST API is then available at http://localhost:8083.
 ## Step 6. Configure the cos-sink json file 
 {: #step6_config_json}
 
-kafka-connect-ibmcos-sink/config/cos-sink.json
-
+Edit the <code>cos-sink.json</code> file located in kafka-connect-ibmcos-sink/config/ so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
 
@@ -143,15 +147,32 @@ kafka-connect-ibmcos-sink/config/cos-sink.json
 <dd>Optional. The maximum number of Kafka records to combine into a object.
 </dd>
 <dt><strong>cos.service.crn</strong></dt>
-<dd>Required. CRN for the Cloud Object Storage service instance.</dd>
+<dd>Required. CRN for the Cloud Object Storage service instance.
+<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example, 
+code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
 </dl>
  
-Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are all listed as optional, you must set at least one of these properties to a non-default value.
+### Get COS credentials using the IBM Cloud console
+{: #connect_enterprise_external_console}
+
+1. Locate your Cloud Object Storage service on the dashboard.
+2. Click your service tile.
+3. Click **Service Credentials**.
+4. Click **New Credential**. 
+5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
+6. Click this credential using **View Credentials** to reveal the details in JSON format.
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 
+## Step 8. Monitoring your connectors 
+{: #step8_monitor_connectors}
+
+Manual check
+http://localhost:8083/connectos/cos-sink/status <—
+
+If state is not running, need to restart
 
 
 
