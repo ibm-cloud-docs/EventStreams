@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-28c"
+lastupdated: "2019-06-28d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -55,15 +55,17 @@ Clone the following two repositories that contain the required files:
 ## Step 3. Create your Kafka Connect configuration
 {: #step3_create_config}
 
-1. From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
+1.You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
+
+    From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
 
     Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you will get an error.
 
     Your &lt;APIKEY&gt; will appear in clear text on your machine but will be secret when pushed to IKS.
 
-    If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the line<code>replicas: 1</code>
+    If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the entry <code>replicas: 1</code>
 
-    You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
+    
 
 2. Then run the following commands:
 <br/>
@@ -72,7 +74,7 @@ Clone the following two repositories that contain the required files:
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
    ```
     {: codeblock}
-
+    <br/>
     To create a ConfigMap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
@@ -110,8 +112,6 @@ The Connect REST API is then available at http://localhost:8083.
 For more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/current/connect/references/restapi.html){:new_window}
 
-* To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
-
 
 ## Step 6. Build the connector
 {: #step6_build_connector}
@@ -135,10 +135,10 @@ For more information about the API, see
     ```
 
 
-## Step 7. Configure the cos-sink json file 
+## Step 7. Configure the cos-sink json and cos-sink.properties files
 {: #step7_config_json}
 
-Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the <code>cos-sink.json</code> and cos-sink.properties files located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
 
@@ -180,8 +180,8 @@ code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515
 ## Step 8. Monitoring your connectors 
 {: #step8_monitor_connectors}
 
-Manual check
-http://localhost:8083/connectos/cos-sink/status <—
+You can check your connector, go to
+http://localhost:8083/connectos/cos-sink/status 
 
 If state is not running, need to restart
 
