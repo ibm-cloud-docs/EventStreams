@@ -73,7 +73,7 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability**</td>
 			<td>99.95%</td>
-			<td>99.95%: Multi-Zone Region<br/>99.5%: Single-Zone Region </td>
+			<td>99.95%:  Multi-Zone Region<br/>99.5%:  Single-Zone Region </td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -126,7 +126,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
-			<td>**Multi-Zone Region (MZR)**/br>
+			<td>**Multi-Zone Region (MZR)**
 			Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
@@ -142,6 +142,7 @@ The following table summarizes what is supported by the plans:
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
+			<br/>
 			**Single-Zone Region (SZR)**</br>
 			Seoul (seo01)<br/>
 			<br/>
