@@ -66,14 +66,14 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability zones**</td>
 			<td>3</td>
-			<td>3 (for multizone locations)<br/> 1 (for single zone location - Seoul)
+			<td>3:Multi-Zone Region<br/> 1:Single-Zone Region
 			</td>
 			<td>Not supported</td>
 		</tr>
         <tr>
 			<td>**Availability**</td>
 			<td>99.95%</td>
-			<td>99.95% for multizone locations<br/>99.5% for single zone location (Seoul)</td>
+			<td>99.95%: Multi-Zone Region<br/>99.5%: Single-Zone Region </td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -126,7 +126,8 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
-			<td>Dallas (us-south)</br>
+			<td>**Multi-Zone Region (MZR)**/br>
+			Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
 			Sydney (au-syd)</br>
@@ -134,13 +135,15 @@ The following table summarizes what is supported by the plans:
 			Tokyo (jp-tok)<br/>
 			<br/>
 			</td>
-			<td>Dallas (us-south)</br>
+			<td>**Multi-Zone Region (MZR)**</br>
+			Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
-			Seoul (1 availability zone only)<br/>
+			**Single-Zone Region (SZR)**</br>
+			Seoul (seo01)<br/>
 			<br/>
 			</td>
 			<td>Dallas (us-south)</br>
