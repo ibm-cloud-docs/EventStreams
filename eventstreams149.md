@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-27f"
+lastupdated: "2019-06-28a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -31,20 +31,39 @@ Complete the following steps to walk through the setup:
 {: #step1_install_prereqs}
 Ensure you have the following software and services installed:
 
-* An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan
+* An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
 * An instance of the Cloud Object Storage service with at least one bucket
-* An IKS cluster. You can provision a free one for testing purposes.
+* An {{site.data.keyword.cdn_full}} cluster. You can provision a free one for testing purposes. 
+
+You will also need CLI access to your cluster. For more information, see
+ [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install)
 * A recent version of Kubectl (for example 1.14)
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
 * [Gradle 4.0, or later ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/install/){:new_window}
 * Java 8 or later
 
+## Step 2. Clone the kafka-connect repositories
+{: #step3_clone project}
 
-## Step 2. Create your Kafka Connect configuration
-{: #step2_create_config}
+Clone the following two repositories that contain the required files:
 
-1. Edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
+https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
+
+https://github.com/ibm-messaging/kafka-connect
+
+
+## Step 3. Create your Kafka Connect configuration
+{: #step3_create_config}
+
+1. From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
+
+Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you will get an error.
+
 Your <APIKEY> will appear in clear text on your machine but will be secret when pushed to IKS.
+
+If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the line<code>replicas: 1</code>
+
+You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
 
 2. Then run the following commands:
 <br/>
@@ -63,8 +82,8 @@ To create a ConfigMap:
     {: codeblock}
 
 
-## Step 3. Deploy Kafka Connect
-{: #step3_deploy_kafka}
+## Step 4. Deploy Kafka Connect
+{: #step4_deploy_kafka}
 
 Apply the configuration in the <code>kafka-connect.yaml</code> file by running the following command:
 
@@ -76,8 +95,8 @@ kubectl apply -f ./kafka-connect.yaml
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
 
 
-## Step 4. Manage connectors
-{: #step4_manage_connectors}
+## Step 5. Manage connectors
+{: #step5_manage_connectors}
 
 To manage connectors, port forward to the kafkaconnect-service Service on port 8083. For example:
 
@@ -90,13 +109,14 @@ Open two terminals on your kube service for port forwarding.
 
 The Connect REST API is then available at http://localhost:8083.
 
-See confluent docs for more info about api
+For more information about the API, see
+[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/current/connect/references/restapi.html){:new_window}
 
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
 
-## Step 5. Build the connector
-{: #step5_build_connector}
+## Step 6. Build the connector
+{: #step6_build_connector}
 
 1. Clone the repository with the following command:
 
@@ -117,8 +137,8 @@ See confluent docs for more info about api
     ```
 
 
-## Step 6. Configure the cos-sink json file 
-{: #step6_config_json}
+## Step 7. Configure the cos-sink json file 
+{: #step7_config_json}
 
 Edit the <code>cos-sink.json</code> file located in kafka-connect-ibmcos-sink/config/ so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
