@@ -28,7 +28,7 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 * Connect event streams to streaming analytics to realize powerful insights.
 * Publish event data to multiple applications to react in real time.
 
-By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, Kafka Connect, and also KSQL.
+By being built with Apache Kafka, it directly benefits from all the innovation occurring in the community and supports Kafka client APIs, Kafka Streams, and Kafka Connect.
 
 Apache Kafka tools usually work directly with {{site.data.keyword.messagehub}}, although you do need to provide additional configuration because connections to {{site.data.keyword.messagehub}} always authenticate using credentials.
 
