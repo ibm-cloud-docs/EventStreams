@@ -66,7 +66,7 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability zones**</td>
 			<td>3</td>
-			<td>3:Multi-Zone Region<br/> 1:Single-Zone Region
+			<td>3: Multi-Zone Region<br/> 1: Single-Zone Region
 			</td>
 			<td>Not supported</td>
 		</tr>
@@ -126,7 +126,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
-			<td>**Multi-Zone Region (MZR)**
+			<td>**Multi-Zone Region (MZR)**<br/>
 			Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
