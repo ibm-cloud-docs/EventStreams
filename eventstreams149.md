@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-28a"
+lastupdated: "2019-06-28b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -47,9 +47,9 @@ You will also need CLI access to your cluster. For more information, see
 
 Clone the following two repositories that contain the required files:
 
-https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
+* https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
 
-https://github.com/ibm-messaging/kafka-connect
+* https://github.com/ibm-messaging/kafka-connect
 
 
 ## Step 3. Create your Kafka Connect configuration
@@ -57,17 +57,17 @@ https://github.com/ibm-messaging/kafka-connect
 
 1. From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
 
-Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you will get an error.
+    Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you will get an error.
 
-Your <APIKEY> will appear in clear text on your machine but will be secret when pushed to IKS.
+    Your <APIKEY> will appear in clear text on your machine but will be secret when pushed to IKS.
 
-If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the line<code>replicas: 1</code>
+    If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the line<code>replicas: 1</code>
 
-You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
+    You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
 
 2. Then run the following commands:
 <br/>
- To create a secret: 
+    To create a secret: 
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
    ```
@@ -75,7 +75,7 @@ You only have to set up this configuation once. {{site.data.keyword.messagehub}}
 
 <br/>
 
-To create a ConfigMap:
+    To create a ConfigMap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
@@ -177,9 +177,6 @@ code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515
 4. Click **New Credential**. 
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
 6. Click this credential using **View Credentials** to reveal the details in JSON format.
-
-<br/>
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 
 ## Step 8. Monitoring your connectors 
