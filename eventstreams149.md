@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-28b"
+lastupdated: "2019-06-28c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -33,9 +33,9 @@ Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
 * An instance of the Cloud Object Storage service with at least one bucket
-* An {{site.data.keyword.cdn_full}} cluster. You can provision a free one for testing purposes. 
+* An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
-You will also need CLI access to your cluster. For more information, see
+    You will also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install)
 * A recent version of Kubectl (for example 1.14)
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
@@ -55,11 +55,11 @@ Clone the following two repositories that contain the required files:
 ## Step 3. Create your Kafka Connect configuration
 {: #step3_create_config}
 
-1. From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
+1. From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
 
-    Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you will get an error.
+    Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you will get an error.
 
-    Your <APIKEY> will appear in clear text on your machine but will be secret when pushed to IKS.
+    Your &lt;APIKEY&gt; will appear in clear text on your machine but will be secret when pushed to IKS.
 
     If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the line<code>replicas: 1</code>
 
@@ -72,8 +72,6 @@ Clone the following two repositories that contain the required files:
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
    ```
     {: codeblock}
-
-<br/>
 
     To create a ConfigMap:
     ```
@@ -140,7 +138,7 @@ For more information about the API, see
 ## Step 7. Configure the cos-sink json file 
 {: #step7_config_json}
 
-Edit the <code>cos-sink.json</code> file located in kafka-connect-ibmcos-sink/config/ so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
 
