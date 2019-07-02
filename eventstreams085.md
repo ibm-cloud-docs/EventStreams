@@ -74,7 +74,7 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability**</td>
 			<td>99.95%</td>
-			<td>99.95%<br/>(99.5% in single zone locations) </td>
+			<td>99.95%<br/>(99.5% in single zone locations)  [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams--plan_choose#footnote_szr)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -182,7 +182,10 @@ The following table summarizes what is supported by the plans:
 		</tr>
 
 </table>
+### Footnote
+{: #footnote_plans notoc}
 
+1. {: #footnote_szr notoc} For more information about availability, see [single zone location (SZR)](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 
 
 
