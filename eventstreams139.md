@@ -20,6 +20,10 @@ subcollection: eventstreams
 # Monitoring and logging on the Classic plan 
 {: #monitoring_classic}
 
+
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
+
 {{site.data.keyword.messagehub}} on the Classic plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
 {:shortdesc}

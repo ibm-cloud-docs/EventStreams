@@ -16,6 +16,8 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
 
 # Known restrictions for the Classic plan 
 {: #restrictions_classic}

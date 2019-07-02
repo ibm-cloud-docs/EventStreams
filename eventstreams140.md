@@ -20,6 +20,9 @@ subcollection: eventstreams
 # FAQs for the Classic plan 
 {: #faqs_classic}
 
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
+
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Classic plan.
 
 For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](/docs/services/EventStreams?topic=eventstreams-faqs#faqs).
