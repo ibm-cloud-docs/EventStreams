@@ -21,6 +21,9 @@ subcollection: eventstreams
 # Reporting a problem to the {{site.data.keyword.messagehub}} team - Classic plan 
 {: #report_problem}
 
+** The Classic plan is deprecated from January 16th 2020. **
+<br/>
+
 If you're experiencing a problem with {{site.data.keyword.messagehub}} Classic plan, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){:new_window}. 
 
 If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently the team can help with the problem:

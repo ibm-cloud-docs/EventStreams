@@ -20,7 +20,7 @@ subcollection: eventstreams
 # Using the MQ Light API on the Classic plan
 {: #mql_using}
 
-** The MQ Light API is available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020.**
+** The {{site.data.keyword.mql}} API is available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020.**
 <br/>
 
 The {{site.data.keyword.mql}} API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service. The API provides an AMQP-based messaging interface for Java&trade;, Node.js, Python, and Ruby. 
