@@ -185,7 +185,7 @@ The following table summarizes what is supported by the plans:
 ### Footnote
 {: #footnote_plans notoc}
 
-1. {: #footnote_szr notoc} For more information about availability, see [single zone location (SZR)](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 
 
 
