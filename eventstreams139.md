@@ -21,7 +21,7 @@ subcollection: eventstreams
 {: #monitoring_classic}
 
 
-** The Classic plan is deprecated from January 16th 2020 **
+** The Classic plan is deprecated from January 16th 2020. **
 <br/>
 
 {{site.data.keyword.messagehub}} on the Classic plan automatically collects metrics and events so that you
