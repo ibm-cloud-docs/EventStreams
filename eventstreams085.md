@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -37,7 +37,8 @@ The Standard plan is appropriate if you require event ingest and distribution ca
 ## Enterprise plan 
 {: #plan_enterprise}
 
-The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
+The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster. You can also provision an {{site.data.keyword.messagehub}} cluster in a geographically local but [single zone location (SZR)](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+
 
 ## Classic plan
 {: #plan_classic}
@@ -66,14 +67,14 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability zones**</td>
 			<td>3</td>
-			<td>3: Multi-Zone Region<br/> 1: Single-Zone Region
+			<td>3<br/>(1 in single zone locations)
 			</td>
 			<td>Not supported</td>
 		</tr>
         <tr>
 			<td>**Availability**</td>
 			<td>99.95%</td>
-			<td>99.95%:  Multi-Zone Region<br/>99.5%:  Single-Zone Region </td>
+			<td>99.95%<br/>(99.5% in single zone locations) </td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -126,7 +127,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
-			<td>**Multi-Zone Region (MZR)**<br/>
+			<td>**Multizone location (MZR)**<br/>
 			Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
@@ -135,7 +136,7 @@ The following table summarizes what is supported by the plans:
 			Tokyo (jp-tok)<br/>
 			<br/>
 			</td>
-			<td>**Multi-Zone Region (MZR)**</br>
+			<td>**Multizone location (MZR)**</br>
 			Dallas (us-south)</br>
 			Washington (us-east)<br/>
 			London (eu-gb)<br/>
@@ -143,7 +144,7 @@ The following table summarizes what is supported by the plans:
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
 			<br/>
-			**Single-Zone Region (SZR)**</br>
+			**Single zone location (SZR)**</br>
 			Seoul (seo01)<br/>
 			<br/>
 			</td>
