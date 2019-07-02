@@ -19,7 +19,7 @@ subcollection: eventstreams
 # Known restrictions for the Classic plan 
 {: #restrictions_classic}
 
-** The Classic plan is deprecated from January 16th 2020 **
+** The Classic plan is deprecated from January 16th 2020. **
 <br/>
 
 If you find a problem while using {{site.data.keyword.messagehub}} on the Classic plan, review these known restrictions and workarounds. 

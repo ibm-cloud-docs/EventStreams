@@ -20,7 +20,7 @@ subcollection: eventstreams
 # Using the Kafka API on the Classic plan
 {: #kafka_using_classic}
 
-** The Classic plan is deprecated from January 16th 2020 **
+** The Classic plan is deprecated from January 16th 2020. **
 <br/>
 
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.

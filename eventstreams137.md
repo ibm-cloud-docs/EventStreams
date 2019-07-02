@@ -19,8 +19,7 @@ subcollection: eventstreams
 # Using the Kafka REST API on the Classic plan 
 {: #rest_using_classic}
 
-**The Classic plan is deprecated from January 16th 2020.**<br/>
-**This version of the Kafka REST API is available as part of the Classic plan only.**
+** This version of the Kafka REST API is available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020.**
 <br/>
 
 The Kafka REST API provides a RESTful interface to a Kafka

@@ -20,7 +20,7 @@ subcollection: eventstreams
 {: #cloud_object_storage_bridge }
 
 
-** The Cloud Object Storage bridge is available as part of the Classic plan only.**
+** The Cloud Object Storage bridge is available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020. **
 <br/>
 
 The {{site.data.keyword.IBM}} Cloud Object Storage bridge provides a way of reading data from an {{site.data.keyword.messagehub}} Kafka topic

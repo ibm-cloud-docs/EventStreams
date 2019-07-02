@@ -19,7 +19,7 @@ subcollection: eventstreams
 # Linking to other services using bridges on the Classic plan 
 {: #bridges}
 
-** {{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only.**
+** {{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020. **
 <br/>
 
 The {{site.data.keyword.messagehub}} Classic plan also

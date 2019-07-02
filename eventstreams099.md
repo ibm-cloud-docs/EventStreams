@@ -19,8 +19,7 @@ subcollection: eventstreams
 # Using the MQ Light clients on the Classic plan
 {: #mql_clients}
 
-** The Classic plan is deprecated from January 16th 2020. 
-The MQ Light API is available as part of the Classic plan only. **
+** The {{site.data.keyword.mql}} API is available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020. **
 {: note}
 <br/>
 

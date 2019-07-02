@@ -19,7 +19,7 @@ subcollection: eventstreams
 # Migrating a Kafka Java client on the Classic plan 
 {: #kafka_java_migrating_classic}
 
-** The Classic plan is deprecated from January 16th 2020 **
+** The Classic plan is deprecated from January 16th 2020. **
 <br/>
 
 ## Migrating a Kafka Java client from 0.9.X or 0.10.X to later client versions
