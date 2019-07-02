@@ -19,6 +19,9 @@ subcollection: eventstreams
 # Choosing a Kafka client to use with {{site.data.keyword.messagehub}} Classic plan 
 {: #kafka_clients_classic}
 
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
+
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
 
 * The official Java client. It is the best choice because it contains the latest features available for Apache Kafka.

@@ -19,6 +19,9 @@ subcollection: eventstreams
 # Choosing between the three APIs on the Classic plan 
 {: #choose_api_classic}
 
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
+
 {{site.data.keyword.messagehub}} supports three APIs on the Classic plan. Here's some information to help you choose which is most appropriate:
 {: shortdesc}
 

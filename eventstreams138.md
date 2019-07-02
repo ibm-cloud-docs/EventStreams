@@ -19,6 +19,9 @@ subcollection: eventstreams
 # Using the Administration REST API on the Classic plan
 {: #admin_api_standard}
 
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
+
 {{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.
 {: shortdesc}
 

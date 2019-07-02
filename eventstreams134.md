@@ -20,6 +20,9 @@ subcollection: eventstreams
 # The Classic plan 
 {: #plan_choose_classic}
 
+** The Classic plan is deprecated from January 16th 2020 **
+<br/>
+
 {{site.data.keyword.messagehub}} is available as different plans depending on your requirements. For information about the Standard and Enterprise plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
 {: shortdesc}
  
