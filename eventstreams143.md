@@ -23,7 +23,7 @@ subcollection: eventstreams
 This new release of the Standard multi-tenant plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
 {: shortdesc}
 
-To migrate applications from the previous Standard plan (now called the Classic plan) to the new plan, consider the following information.
+To migrate applications from the previous Standard plan (now called the Classic plan, which is deprecated from January 16th 2020) to the new plan, consider the following information.
 
 Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
 

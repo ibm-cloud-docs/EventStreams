@@ -38,6 +38,8 @@ For more information about the SLA for high availability services in {{site.data
 ## Classic plan
 {: #sla_classic}
 
+** The Classic plan is deprecated from January 16th 2020. **
+
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/8bd55c6b9fa8039c86256c6800578854/c4ceb9f019f9eb4c862582f9001b3994/$FILE/i126-6605-16_04-2019_en_US.pdf){:new_window}.

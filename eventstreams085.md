@@ -43,6 +43,8 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 ## Classic plan
 {: #plan_classic}
 
+** The Classic plan is deprecated from January 16th 2020. **
+
 The Classic plan gives access to the previous edition of the Standard plan and is provided for existing workloads and backward compatibility only. You should provision new workloads against the Standard plan.
 
 
