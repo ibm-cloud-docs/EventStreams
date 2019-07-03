@@ -66,126 +66,103 @@ The options instruct the Kafka producer to consider a message as having being su
 
 ### Confirming the delivery of received messages
 Consuming a message is a two step operation when using the {{site.data.keyword.mql}} API. First a subscribing application receives a copy of a message, then it must confirm the delivery of the message. When the delivery of a message is confirmed, the server knows it can safely discard its copy of the message. By using this protocol applications can receive a message:
-* * at least once* *, by confirming delivery of a message after it has been processed) and also
-* *at most once* *, by confirming a message before processing it.
+* _at least once_, by confirming delivery of a message after it has been processed) and also
+* _at most once_, by confirming a message before processing it.
 It is also possible to enable automatic confirmation of messages received using the {{site.data.keyword.mql}} API. This simplifies your application code, but offers less control over when confirmation of message delivery occurs.
 
-Kafka has a similar concept to confirming message delivery: [committing offsets](/docs/services/EventStreams?topic=eventstreams-consuming_messages#managing-offsets). Each message stored by Kafka is assigned a ever increasing numeric offset. Kafka consumers can tell Kafka (via a commit offset API) at what offset they want to start consuming from should they shut down or otherwise be interrupted. By deciding when to commit an offset value (before or after processing the message) an application can achieve similar "at least once" or "at most once" styles of message receipt. Kafka can also offer "exactly once" delivery of messages, as well as a lot more flexibility in deciding the point at which a consumer should start consuming from.
+Kafka has a similar concept to confirming message delivery: [committing offsets](/docs/services/EventStreams?topic=eventstreams-consuming_messages#managing-offsets). Each message stored by Kafka is assigned an ever increasing numeric offset. Kafka consumers can tell Kafka (via a commit offset API) at what offset they want to start consuming from if they shut down or are otherwise interrupted. By deciding when to commit an offset value (before or after processing the message) an application can achieve similar "at least once" or "at most once" styles of message receipt. Kafka can also offer "exactly once" delivery of messages, as well as a lot more flexibility in deciding the point at which a consumer should start consuming from.
 
-
-Kafka consumers also provide the convenience of [automatically committing offsets](/docs/services/EventStreams?topic=eventstreams-consuming_messages#committing-offsets-automatically). Again, this simplifies your application code but has the drawback that you get "mostly once" message delivery. Or to put it another way: infrequently your application might end up processing the same message twice, or perhaps even not processing a message at all if an application failure occurs. The Kafka consumer configuration options offer similar behaviour to {{site.data.keyword.mql}}'s automatic confirmation of messages are:
-enable.auto.commit=true
-auto-commit.interval.ms=10000
+Kafka consumers also provide the convenience of [automatically committing offsets](/docs/services/EventStreams?topic=eventstreams-consuming_messages#committing-offsets-automatically). Again, this simplifies your application code but has the drawback that you get "mostly once" message delivery. Or to put it another way: infrequently your application might end up processing the same message twice, or perhaps even not processing a message at all if an application failure occurs. The Kafka consumer configuration options offer similar behavior to {{site.data.keyword.mql}}'s automatic confirmation of messages are:
+* enable.auto.commit=true
+* auto-commit.interval.ms=10000
 
 
 The first of these options tells the Kafka consumer to automatically commit offsets, and the second specifies the frequency (in milliseconds) with which the consumer will automatically commit. This offers more control than the {{site.data.keyword.mql}} API, which does not provide any settings to control how frequently message deliveries are confirmed.
 
 ### Encoding data as message properties
-Sometimes it is useful to transport additional meta-data alongside the main payload of a message. For example, you might require the payload of a message to be in a fixed format to simplify its processing, but also care about the origin of this data when you are initially debugging your application. With the {{site.data.keyword.mql}} API you can associate a set of key/value pairs with each message.
+Sometimes it is useful to transport additional metadata alongside the main payload of a message. For example, you might require the payload of a message to be in a fixed format to simplify its processing, but also care about the origin of this data when you are initially debugging your application. With the {{site.data.keyword.mql}} API you can associate a set of key-value pairs with each message.
 
-Kafka also supports this use case using message headers, which are also key/value properties associated with a message. There is a slight difference here, in that the {{site.data.keyword.mql}} API allows you to associate structure with the value of a message property (e.g. this value is a number, this value is a string, etc). With Kafka message headers, the value associated with each key can only be an array of bytes. However it is trivial to use convention (e.g. keys ending with a suffix of "_str" encode their value as a UTF-8 string) or widely supported encodings such as JSON to encode the data type of a value.
+Kafka also supports this use case using message headers, which are also key-value properties associated with a message. There is a slight difference here, in that the {{site.data.keyword.mql}} API allows you to associate structure with the value of a message property (for example,. this value is a number, this value is a string, and so on). With Kafka message headers, the value associated with each key can only be an array of bytes. However, it is trivial to use convention (for example, keys ending with a suffix of <code>_str</code> encode their value as a UTF-8 string) or widely supported encodings such as JSON to encode the data type of a value.
 
 
 ### Programmatic administration
-With the {{site.data.keyword.mql}} API you can create resources such as topics and subscriptions directly via the API. This has the advantage that it is straight forward and quick to deploy new applications. It does, however, mean that there is no point of control where an administrator can step in and manage the configuration and use of these resources.
+With the {{site.data.keyword.mql}} API you can create resources such as topics and subscriptions directly using the API. This has the advantage that it is straightforward and quick to deploy new applications. It does, however, mean that there is no point of control where an administrator can step in and manage the configuration and use of these resources.
 
-Kafka also has an administration API for managing its topic resources. However, an advantage of using the {{site.data.keyword.messagehub}} deployment of Kafka is that permission to use this API is integrated with IBM Cloud's Identity and Access Management (IAM). This gives you the freedom to deploy applications that can create their own resources at run time, or to lock down these permissions so that resource creation can be tightly controlled.
+Kafka also has an administration API for managing its topic resources. However, an advantage of using the {{site.data.keyword.messagehub}} deployment of Kafka is that permission to use this API is integrated with IBM Cloud's Identity and Access Management (IAM). This gives you the freedom to deploy applications that can create their own resources at runtime, or to lock down these permissions so that resource creation can be tightly controlled.
 
-It's worth noting that {{site.data.keyword.messagehub}} Apache Kafka far exceeds the {{site.data.keyword.mql}} API both in terms of providing UI and CLI administration tooling as well as by integrating with IAM to offer fine-grain authorization. Providing details of how IBM Cloud implements access management are a little outside the scope of this post, and also completely unnecessary since Paul has written an excellent blog post that tackles this exact subject.
+It's worth noting that {{site.data.keyword.messagehub}} Apache Kafka far exceeds the {{site.data.keyword.mql}} API both in terms of providing {{site.data.keyword.Bluemix_notm}} console and CLI administration tooling as well as by integrating with IAM to offer fine-grain authorization. To learn more about how {{site.data.keyword.Bluemix_notm}} implements access management, see 
+[Enhanced Access Control on Apache Kafka Using {{site.data.keyword.messagehub}} for IBM Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/enhanced-access-control-on-apache-kafka-using-event-streams-for-ibm-cloud).
 
 ### Message expiry
-As the name suggestions, message expiry allows an {{site.data.keyword.mql}} application to decide the maximum length of time a message can be stored within the messaging system before it is discarded. Perhaps the data contained in the message is only valid for a short period of time, so there is no point in delivering the message if this duration is exceeded.
+As the name suggests, message expiry allows an {{site.data.keyword.mql}} application to decide the maximum length of time that a message can be stored within the messaging system before it is discarded. Perhaps the data contained in the message is valid only for a short period of time, so there is no point in delivering the message if this duration is exceeded.
 
+Kafka has the concept of log retention, which defines a minimum amount of time messages are stored in a topic. You can specify a retention time when you create a topic using the console, CLI, or administration programming interfaces. What can confuse new users are the rules that Kafka applies to decide when to delete unused log segments, which mean that it is sometimes possible for messages to be stored longer than the retention period you specified. Think of Kafka's retention settings as being designed to bound how much data is stored on a topic, rather than providing an exact control on the lifetime of message data.
 
-Kafka has the concept of log retention which defines a minimum amount of time messages are stored in a topic. You can specify a retention time when you create a topic using the {{site.data.keyword.messagehub}} UI, CLI, or administration programming interfaces. Something that can confuse new users is the rules that Kafka applies to decide when to delete unused log segments means that it is sometimes possible for messages to be stored longer than the retention period you specified. Think of Kafka's retention settings as being designed to bound how much data is stored on a topic, rather than providing an exact control on the lifetime of message data.
-
-
-Another difference between Kafka's log retention and {{site.data.keyword.mql}} is that the latter allows different expiry times to be associated with each message. If your application really needs very accurate message expiry, or to apply message expiry on a per-message basis, then this can be achieved by storing the time-stamp when the message will expire as a message header. The receiving application can then compare this to the current time and decide whether it will process or discard the message. The down sides to this approach is that it adds complexity to your application, and also requires that your application spends time receiving messages that it will then discard.
-
+Another difference between Kafka's log retention and {{site.data.keyword.mql}} is that the latter allows different expiry times to be associated with each message. If your application really needs very accurate message expiry, or to apply message expiry on a per-message basis, you can achieve this by storing the timestamp of when the message expires as a message header. The receiving application can then compare this to the current time and decide whether it will process or discard the message. The down sides to this approach are that it adds complexity to your application, and also requires that your application spends time receiving messages that it will then discard.
 
 ### Subscriptions with wildcards
-When subscribing, the {{site.data.keyword.mql}} API allows a topic pattern to be specified containing wildcard characters. This allows a single subscription to match messages published to a number of different topics. For example a subscription to 'a/+/z' can match messages published to 'a/b/z', 'a/c/z', etc..
+When subscribing, the {{site.data.keyword.mql}} API allows a topic pattern to be specified containing wildcard characters. This allows a single subscription to match messages published to a number of different topics. For example a subscription to <code>a/+/z</code> can match messages published to <code>a/b/z</code>, <code>a/c/z</code> and so on.
 
 Kafka also supports the notion of subscribing based on a wildcard. In this case you provide the Kafka subscribe call with a regular expression and Kafka will ensure that it is subscribed to all topics matching this expression. This includes subscribing to any new topics that are created and match the pattern.
 
 ### Subscription TTL
-When an {{site.data.keyword.mql}} application makes a subscription, {{site.data.keyword.messagehub}} keeps track of which messages have been delivered to the application, and which have not. Storing this information takes up space, so subscription TTL allows the application to provide a hint about how long to store data for a subscriber that is disconnected. If the subscriber does not return and start consuming within the subscription TTL period, then the resources used by the subscription are reclaimed.
+When an {{site.data.keyword.mql}} application makes a subscription, {{site.data.keyword.messagehub}} keeps track of which messages have been delivered to the application, and which have not. Storing this information takes up space, so subscription TTL allows the application to provide a hint about how long to store data for a subscriber that is disconnected. If the subscriber does not return and start consuming within the subscription TTL period, the resources used by the subscription are reclaimed.
 
-As we've already discussed, Kafka has a similar concept: committing consumer offsets. An {{site.data.keyword.messagehub}} Kafka deployment keeps each committed offset value for 7 days. This means that a consumer can be disconnected (and hence not committing any new offset values) for up to 7 days before it loses track of its position within a topic.
+As previously discussed, Kafka has a similar concept: committing consumer offsets. An {{site.data.keyword.messagehub}} Kafka deployment keeps each committed offset value for 7 days. This means that a consumer can be disconnected (and hence not committing any new offset values) for up to 7 days before it loses track of its position within a topic.
 
-Even though {{site.data.keyword.messagehub}} stores committed offsets for 7 days, it is still possible for a consumer to find that the message corresponding to a committed offset is no longer being stored. This can happen if more data has been appended to a topic partition that it is configured to retain, or if the topic is configured to retain data for less than 7 days. You can choose how a Kafka consumer responds to their being no valid committed offset using the auto.offset.reset configuration property which can be set to one of the following values:
+Even though {{site.data.keyword.messagehub}} stores committed offsets for 7 days, it's still possible for a consumer to find that the message corresponding to a committed offset is no longer being stored. This can happen if more data has been appended to a topic partition than it is configured to retain, or if the topic is configured to retain data for less than 7 days. You can choose how a Kafka consumer responds to there being no valid committed offset using the <code>auto.offset.reset</code> configuration property,  which can be set to one of the following values:
 * latest - start consuming at the most recent offset in the topic partition.
 * earliest - start consuming at the oldest offset in the topic partition.
 * none - treat this situation as an error condition.
 
+## Uses that are more difficult to migrate
+Now let's take a look at some uses of the {{site.data.keyword.mql}} API that are more difficult to migrate over to Kafka. In many cases this is because {{site.data.keyword.mql}} and Kafka have concepts that don't quite align. You might need to budget more time for migration, and perhaps be prepared to make some compromises that limit the degree to which your migrated application will be able to scale.
+
+### Shared subscriptions
+The {{site.data.keyword.mql}} concept of shared subscriptions allows a number of applications to all consume from the same queue of messages, albeit with somewhat loose message ordering guarantees. Kafka is based on a publish-subscribe messaging model, but has the concept of consumer groups that allow one group of consumers to share out messages between themselves.
+
+Although consumer groups might seem like a straightforward migration from shared subscriptions, there are some limitations to this approach that you should be aware of:
+* At any given time, each Kafka client in a consumer group has one or more topic partitions uniquely assigned to it. This means that you can't usefully have more Kafka clients in a consumer group than the associated Kafka topic has partitions (if you do, some clients won't receive any messages). Kafka partitions are a finite resource. So while it is certainly possible to create a topic with hundreds or thousands of partitions, it is not practical to scale this approach to hundreds of thousands or millions of partitions. Therefore, using shared subscriptions to implement queued messaging is not practical if you expect to have a large number of consumers.
+* When a Kafka consumer joins a consumer group, Kafka will attempt to assign it one or more partitions. As these partitions have to be taken from other consumers in the group (Kafka calls this rebalancing), message delivery to the group is paused briefly. If you have a dynamic set of clients that want to consume from a queue, then using Kafka consumer groups is not a good approach as rebalances will impact throughput.
+* Unlike {{site.data.keyword.mql}}, Kafka does not favor the consumers in a consumer group that can receive messages the fastest. With the {{site.data.keyword.mql}} API, if some consumers were able to receive messages from a shared subscription at a faster rate, those consumers could end up receiving a greater proportion of the overall number of messages sent to the corresponding topic. This is because the {{site.data.keyword.mql}} API selects which message is distributed to which consumer at the point a consumer tries to receive its next message. Kafka favours stronger ordering guarantees than the {{site.data.keyword.mql}} API and implements these by assigning a message to a topic partition at the point the message is produced (by default this assignment distributes messages evenly across all the partitions in a topic). Individual Kafka consumers in a consumer group are assigned one or more topic partitions to consume from in such a way that each partition is only being consumed from by one consumer in the group. This means that a consumer capable of receiving messages at a high rate may be limited by the availability of new messages in its set of assigned partitions, even though other consumers might not be able to keep up with the rate of arrival of new messages in their set of assigned partitions.
+
+
+### Topic hierarchies
+With {{site.data.keyword.mql}}, topics can be structured in a multi-level tree-like hierarchy. When a message is published to a particular topic name it is received both by subscribers that have subscribed to this topic, and also by any subscribers that are subscribed to a parent topic in the tree. A frequently cited example that illustrates this is an application that distributes the results of sports matches:
+Individual publishers send their results to a topic that contains the name of the sport. For example: '/sports/soccer' or '/sports/cricket'.
+A subscriber that is interested in only cricket results can subscribe to '/sports/cricket'.
+But a subscriber that wants to receive all of the sports results can subscribe to '/sports'.
+
+
+Kafka uses a simpler "flat" structure for topics, where a subscriber only receives messages that are published to the exact topic (or topics) that it is subscribed to. So what options are available to you if you need to migrate an {{site.data.keyword.mql}} application that uses topic hierarchies? Let's continue with our sports result distribution example:
+Producing to multiple topics. With this approach Kafka would have three topics: 'sports', 'soccer', and 'cricket'. Every time a producer wants to send a soccer result, it publishes the result twice: once to the 'soccer' topic, and once to the 'sports' topic. Likewise for producers that want to send a cricket result. Consumers can decide if they want to receive results for a particular sport or for all sports, depending on which topics they subscribe to.
+Consuming from multiple topics. For our example, this only requires two Kafka topics: 'soccer', and 'cricket'. Each producer chooses the topic to use depending on the sport being played. Consumers can choose to subscribe to a particular sport, or they can subscribe to all of the sports (potentially using a pattern based subscription).
+Using Kafka Streams to join two topics. Kafka Streams is a framework that simplifies processing the data stored on Kafka topics. To satisfy our use case will require three topics: 'sports', 'soccer', and 'cricket'. Our producers will send 'soccer' results to the 'soccer' topic, and 'cricket' results to the 'cricket' topic. The consumers will choose to consume from either the 'cricket', or 'soccer' topics if they only care about one particular sport, or the 'sports' topic if the want results for all of the sports. Kafka Streams is used to populate the 'sports' topic by deploying an application that consumes from both the 'cricket' and the 'soccer' topic and publishes each result to the 'sports' topic.
+
+
+Well, that's certainly a lot of choice. Which option should you pick? Ultimately, it will depend on your particular use-case, but here are some guidelines to help you choose:
+Both producing to, and consuming from multiple topics will likely be quicker to implement than to write and deploy a Kafka Streams application and runtime. However using Kafka Streams will offer greater flexibility.
+For "wide" topic hierarchies (in the sports example, this would be the case where we want to track results for tens or hundreds of different sports) producing to, and consuming from all the individual topics quickly becomes difficult to manage.
+Kafka does not preserve message order between topics, so if you subscribe to multiple topics the order in which a consumer receives messages will not necessarily match the order in which the messages were produced. If message ordering is important then producing to multiple topics, or using Kafka streams would allow the consumer to subscribe to a single topic where message ordering can be preserved.
+In general Kafka Streams offers a lot more flexibility than the other approaches, but has a higher up-front cost in writing and deploying a Streams application. If you are interested in this approach, the {{site.data.keyword.messagehub}} documentation has details on how to configure Kafka Streams. 
+
+
+### Large numbers of topics and/or short-lived topics
+The design and implementation of the {{site.data.keyword.mql}} API prioritises light-weight topics that have little to no-cost to create, can be used a few times, and then discarded just as trivially. The trade-off being made is that these topics can offer neither the throughput or scalability that can be achieved by using Apache Kafka.
+
+
+If you have designed your application around creating large numbers of light-weight topics, or perhaps only using a topic as the destination for a single message, then it might be difficult to adapt. Kafka topics, or more accurately the partitions that they are made up from, are not an unlimited resource. While you can reasonably create hundreds, thousands, or even tens of thousands of partitions - Kafka is not well suited for use cases where you want to create very large numbers of topics. Creating and deleting Kafka topics is also a more expensive operation. For example, the pattern of creating a topic for the sole purpose of receiving a single reply message and deleting the topic once that message is received may be prohibitively expensive with Kafka.
+
+
+### Client takeover
+One of the more niche features of the {{site.data.keyword.mql}} API is client takeover. If a client tries to connect using a client ID that matches an already connected client, then the already connected client is disconnected in favour of the newly arriving client. In theory this feature was designed to allow exclusive access to a topic. However, in practice, it often led to two instances of a client fighting for control - each sat in a loop of interrupting the other instance, then being restarted by the runtime used for deployment.
+
+
+Kafka doesn't implement this kind of exclusivity (and arguably, that should be considered a good thing). If you are really dependent on having only one producer or consumer at any given time then you can achieve this in a distributed way using a service that supports leadership election. For example: Apache ZooKeeper or etcd.
 
 
 
 
 
-
-
-
-You can connect {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full}} to read data from an {{site.data.keyword.messagehub}} Kafka topic
-and place the data into [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}.
-{: shortdesc}
-
-The connector allows you to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}. The connector consumes
-batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service.
-Complete the following steps to walk through the setup:
-
-## Step 1. Install the pre-requisites
-{: #step1_install_prereqs}
-Ensure you have the following software and services installed:
-
-* An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
-* An instance of the Cloud Object Storage service with at least one bucket
-* An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
-
-    You will also need CLI access to your cluster. For more information, see
- [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install)
-* A recent version of Kubectl (for example 1.14)
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
-* [Gradle 4.0, or later ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/install/){:new_window}
-* Java 8 or later
-
-## Step 2. Clone the kafka-connect repositories
-{: #step3_clone project}
-
-Clone the following two repositories that contain the required files:
-
-* https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
-
-* https://github.com/ibm-messaging/kafka-connect
-
-
-## Step 3. Create your Kafka Connect configuration
-{: #step3_create_config}
-
-1.You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
-
-    From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
-
-    Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you will get an error.
-
-    Your &lt;APIKEY&gt; will appear in clear text on your machine but will be secret when pushed to IKS.
-
-    If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the entry <code>replicas: 1</code>
-
-    
-
-2. Then run the following commands:
-<br/>
-    To create a secret: 
-    ```
-    kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
-   ```
-    {: codeblock}
-    <br/>
-    To create a ConfigMap:
-    ```
-    kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
-    ```
-    {: codeblock}
 
 
