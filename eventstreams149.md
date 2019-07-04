@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full_notm}} using {{site.data.keyword.containerfull_notm}} (IKS)
+# Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS
 {: #cos_connector}
 
 You can connect {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full}} to read data from an {{site.data.keyword.messagehub}} Kafka topic

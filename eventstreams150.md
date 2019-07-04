@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Migrating {{site.data.keyword.mql}} to Kafka on {{site.data.keyword.messagehub}} 
+# Migrating {{site.data.keyword.mql}} to Kafka 
 {: #migrate_mqlight}
 
 Here are some key considerations for migrating applications from the {{site.data.keyword.mql}} API to the Apache Kafka API.
