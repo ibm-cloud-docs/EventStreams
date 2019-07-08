@@ -19,14 +19,14 @@ subcollection: eventstreams
 # Migrating the REST APIs from the Classic plan
 {: #migrate_rest_apis}
 
-The new Standard plan introduces changes in the REST APIs for users coming from the Classic plan. The following information summarizes what these changes are and the recommended actions, if any, to move from the Classic to Standard or Enterprise plans:
+The new Standard plan introduces changes in the REST APIs for users coming from the Classic plan. The following information summarizes what these changes are and the recommended actions to take, if any, to move from the Classic to the Standard or Enterprise plans:
 
 <dl>
 <dt>Admin API</dt>
 <dd>The API and functionality remains the same, but small changes might be required to the processing of error responses.
 </dd>
 <dt>Produce API</dt>
-<dd>The core functionality remains the same, but small changes in properties and formats may be required.
+<dd>The core functionality remains the same, but small changes in properties and formats might be required.
 </dd>
 <dt>Consume API</dt>
 <dd>No longer supported
@@ -40,7 +40,7 @@ The following sections provide details of the changes:
 
 The API and functionality remains the same, but small changes might be required to the processing of error responses:
 
-On the Classic plan:
+On the Classic plan, for example:
 
 ```
 {
@@ -50,7 +50,7 @@ On the Classic plan:
 ```
 {: codeblock}
 
-On the Standard plan:
+On the Standard plan, for example:
 
 ```
 {
@@ -72,7 +72,7 @@ For further information and examples, see
 The core functionality of the produce API remains the same, but small changes in properties and formats are required. In particular, consider the following:
 
 * **Endpoint URL**
-    The URL of the API is unique to each service instance and must be retrieved from the 'kafka_http_url' property of a service credentials object or service key. Previously this would have been retrieved from the 'kafka_rest_url' property of the applications VCAP_SERVICES.
+    The URL of the API is unique to each service instance and must be retrieved from the 'kafka_http_url' property of a service credentials object or service key. Previously this URL was retrieved from the 'kafka_rest_url' property of the applications VCAP_SERVICES.
 
 * **Authentication**
     In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token 
@@ -84,12 +84,12 @@ The core functionality of the produce API remains the same, but small changes in
     Two new content types 'text/plain' and 'application/json' are supported, which allow the message payload to be set directly in the body of the HTTP request. This replaces the previous 'application/vnd.kafka.binary.v1+json' binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the 'key/keyType' HTTP request query parameters.
 
 * **Headers**
-    Message properties can now be set by formatting as a key:value comma separated list in a 'headers' query parameter in the HTTP request
+    Message properties can now be set by formatting as a key-value comma separated list in a 'headers' query parameter in the HTTP request.
 
 * **Errors**
     The formatting of the body returned in error responses has changed; updates might be required if these are processed by an application
 
-    Previously, from the Classic plan:
+    Previously, from the Classic plan, for example:
 
     ```
     {
@@ -99,7 +99,7 @@ The core functionality of the produce API remains the same, but small changes in
     ```
     {: codeblock}
 
-    Now, for the Standard plan:
+    Now, for the Standard plan, for example:
 
     ```
     {
@@ -111,9 +111,9 @@ The core functionality of the produce API remains the same, but small changes in
     ```
     {: codeblock}
 
-The following gives an example of a full request, and how this has changed between the plans:
+The following is an example of a full request and how this has changed between the plans:
 
-Previously, using the Classic plan to send the message 'Hello world'
+Previously, using the Classic plan to send the message 'Hello World'
 
 ```
 POST <kafka_rest_url>/topics/<topic>
@@ -145,13 +145,13 @@ Hello World
 ```
 {: codeblock}
 
-Further information is available here: link to REST Produce docs
+Further information is available here: [{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window}
 
 
 ## Consume
 {: #migrate_consume_api}
 
-Consuming messages via HTTP is no longer supported, this means the following API calls are no longer available:
+Consuming messages via HTTP is no longer supported, which means the following API calls are no longer available:
 
 <dl>
 <dt>GET /topics/(string: topic_name)/partitions/(int: partition_id)/messages?offset=(int)[&count=(int)]</dt>
@@ -171,9 +171,12 @@ Consuming messages via HTTP is no longer supported, this means the following API
 </dd>
 </dl>
 
-To replace this functionality, a number of different approaches can be taken. 
+To replace this functionality, you can take a number of different approaches. 
 
-Kafka Client - The core Kafka API is supported on a an ever growing number of platforms and languages https://cwiki.apache.org/confluence/display/KAFKA/Clients we also recommend a number which are specifically tested https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients. If switching is an option, this is recommended as a longer term more scalable, performant approach. Note, the Kafka API is a lower level API then HTTP, and so will expose some additional complexity, however a large number of samples and resources are available to help produce a solution, including our own samples <link to docs>
+* **Kafka client**
+    The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number, which are specifically tested [list of clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
+    
+    If switching is an option, this is recommended as a longer term more scalable, performant approach. Note, the Kafka API is a lower level API then HTTP, and so exposes some additional complexity. However a large number of samples and resources are available to help produce a solution, including our own samples <link to docs>
 
 If switching to the Kafka Client is not an option, other methods for integrating with {{site.data.keyword.messagehub}} you could consider include the following:
 
