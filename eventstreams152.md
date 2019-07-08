@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-07-08a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -64,57 +64,64 @@ On the Standard plan:
 Also note, additional methods are available for clients to authenticate. You can now use Basic Auth or a bearer token in addition to the previously supported method of placing an API key in the X-Auth-Token header.
 
 For further information and examples, see 
-[Using the Administration REST API](//docs/services/EventStreams?topic=eventstreams-admin_api).
+[Using the Administration REST API](/docs/services/EventStreams?topic=eventstreams-admin_api).
 
 ## Produce API
 {: #migrate_produce_api}
 
 The core functionality of the produce API remains the same, but small changes in properties and formats are required. In particular, consider the following:
 
-* Endpoint URL - The URL of the API is unique to each service instance and must be retrieved from the 'kafka_http_url' property of a service credentials object or service key. Previously this would have been retrieved from the 'kafka_rest_url' property of the applications VCAP_SERVICES.
+* **Endpoint URL**
+    The URL of the API is unique to each service instance and must be retrieved from the 'kafka_http_url' property of a service credentials object or service key. Previously this would have been retrieved from the 'kafka_rest_url' property of the applications VCAP_SERVICES.
 
-* Authentication - In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either basic auth or a bearer token 
+* **Authentication**
+    In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token 
 
-* Methods - Messages are sent by POSTing a request to a single method with the path '/topics/<topic_name>/records'. This replaces the previous path 'topics/<topic_name>'
+* **Methods**
+    Messages are sent by POSTing a request to a single method with the path '/topics/&lsquo;topic_name&rsquo;/records'. This replaces the previous path 'topics/&lsquo;topic_name&rsquo;'
 
-* Body - Two new content types 'text/plain' and 'application/json' are supported which allow the message payload to be set directly in the body of the HTTP request. This replaces the previous 'application/vnd.kafka.binary.v1+json' binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the 'key/keyType' HTTP request query parameters.
+* **Body**
+    Two new content types 'text/plain' and 'application/json' are supported, which allow the message payload to be set directly in the body of the HTTP request. This replaces the previous 'application/vnd.kafka.binary.v1+json' binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the 'key/keyType' HTTP request query parameters.
 
-* Headers - Message properties can now be set by formatting as a key:value comma separated list in a 'headers' query parameter in the HTTP request
+* **Headers**
+    Message properties can now be set by formatting as a key:value comma separated list in a 'headers' query parameter in the HTTP request
 
-* Errors - The formatting of the body returned in error responses has changed, updates may be required if these are processed by an application
+* **Errors**
+    The formatting of the body returned in error responses has changed; updates might be required if these are processed by an application
 
-Previously, from the Classic plan:
+    Previously, from the Classic plan:
 
-```
-{
-	"error_code":415,
-	"message":"HTTP 415 Unsupported Media Type"
-}
-```
-{: codeblock}
+    ```
+    {
+	    "error_code":415,
+	    "message":"HTTP 415 Unsupported Media Type"
+    }
+    ```
+    {: codeblock}
 
-Now, for the Standard plan:
+    Now, for the Standard plan:
 
-```
-{
-	"error":{
-		"message":"Unsupported content type",
-		"error_code":415
-	}
-}
-````
-{: codeblock}
+    ```
+    {
+	    "error":{
+		    "message":"Unsupported content type",
+		    "error_code":415
+	    }
+    }
+    ```
+    {: codeblock}
 
 The following gives an example of a full request, and how this has changed between the plans:
 
 Previously, using the Classic plan to send the message 'Hello world'
 
+```
 POST <kafka_rest_url>/topics/<topic>
 X-Auth-Token: <YourAPIKey>
 Content-Type: application/vnd.kafka.binary.v1+json
 Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/json
 
-```
+
 {
   "records": [
     {
@@ -126,17 +133,19 @@ Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/j
 ```
 {: codeblock}
 
-Now, on the Standard plan the equivalent would be:
+Now, on the Standard plan the equivalent is:
 
+```
 POST <kafka_http_url>/topics/<topic>/records?key=mykey
 X-Auth-Token: <YourAPIKey>
 Content-Type: text/plain
 Accept: application/json
 
 Hello World
+```
+{: codeblock}
 
-
-Further information is available here: <link to REST Produce docs>
+Further information is available here: link to REST Produce docs
 
 
 ## Consume
@@ -144,21 +153,23 @@ Further information is available here: <link to REST Produce docs>
 
 Consuming messages via HTTP is no longer supported, this means the following API calls are no longer available:
 
-GET /topics/(string: topic_name)/partitions/(int: partition_id)/messages?offset=(int)[&count=(int)]
-Consume messages from one partition of the topic.
-
-POST /consumers/(string: group_name)
-Create a new consumer instance in the consumer group.
-
-POST /consumers/(string: group_name)/instances/(string: instance)/offsets
-Commit offsets for the consumer. 
-
-DELETE /consumers/(string: group_name)/instances/(string: instance)
-Destroy the consumer instance.
-
-GET /consumers/(string: group_name)/instances/(string: instance)/topics/(string: topic_name)
-Consume messages from a topic.
-
+<dl>
+<dt>GET /topics/(string: topic_name)/partitions/(int: partition_id)/messages?offset=(int)[&count=(int)]</dt>
+<dd>Consume messages from one partition of the topic.
+</dd>
+<dt>POST /consumers/(string: group_name)</dt>
+<dd>Create a new consumer instance in the consumer group.
+</dd>
+<dt>POST /consumers/(string: group_name)/instances/(string: instance)/offsets</dt>
+<dd>Commit offsets for the consumer. 
+</dd>
+<dt>DELETE /consumers/(string: group_name)/instances/(string: instance)</dt>
+<dd>Destroy the consumer instance.
+</dd>
+<dt>GET /consumers/(string: group_name)/instances/(string: instance)/topics/(string: topic_name)</dt>
+<dd>Consume messages from a topic.
+</dd>
+</dl>
 
 To replace this functionality, a number of different approaches can be taken. 
 
