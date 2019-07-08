@@ -16,7 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Migrating the REST APIs {{site.data.keyword.messagehub}} from the Classic plan
+# Migrating the REST APIs from the Classic plan
 {: #migrate_rest_apis}
 
 The new Standard plan introduces changes in the REST APIs for users coming from the Classic plan. The following information summarizes what these changes are and the recommended actions, if any, to move from the Classic to Standard or Enterprise plans:
@@ -35,7 +35,7 @@ The new Standard plan introduces changes in the REST APIs for users coming from 
 
 The following sections provide details of the changes:
 
-## Admin
+## Admin API
 {: #migrate_admin_api}
 
 The API and functionality remains the same, but small changes might be required to the processing of error responses:
@@ -48,21 +48,25 @@ On the Classic plan:
   "errorMessage": "Unauthorized"
 }
 ```
+{: codeblock}
 
 On the Standard plan:
 
+```
 {
     "error_code": 40403,
     "message": "topic 'ffff' does not exist",
     "incident_id": "a34b19b3-b55d-4937-bef2-0c9fa9390fcb"
 }
+````
+{: codeblock}
 
 Also note, additional methods are available for clients to authenticate. You can now use Basic Auth or a bearer token in addition to the previously supported method of placing an API key in the X-Auth-Token header.
 
 For further information and examples, see 
-[Using the Administration REST API](//docs/services/EventStreams?topic=eventstreams-admin_api)
+[Using the Administration REST API](//docs/services/EventStreams?topic=eventstreams-admin_api).
 
-## Produce
+## Produce API
 {: #migrate_produce_api}
 
 The core functionality of the produce API remains the same, but small changes in properties and formats are required. In particular, consider the following:
@@ -81,20 +85,25 @@ The core functionality of the produce API remains the same, but small changes in
 
 Previously, from the Classic plan:
 
+```
 {
 	"error_code":415,
 	"message":"HTTP 415 Unsupported Media Type"
 }
+```
+{: codeblock}
 
 Now, for the Standard plan:
 
+```
 {
 	"error":{
 		"message":"Unsupported content type",
 		"error_code":415
 	}
 }
-
+````
+{: codeblock}
 
 The following gives an example of a full request, and how this has changed between the plans:
 
@@ -105,6 +114,7 @@ X-Auth-Token: <YourAPIKey>
 Content-Type: application/vnd.kafka.binary.v1+json
 Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/json
 
+```
 {
   "records": [
     {
@@ -113,6 +123,8 @@ Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/j
     }
   ]
 }
+```
+{: codeblock}
 
 Now, on the Standard plan the equivalent would be:
 
@@ -152,13 +164,16 @@ To replace this functionality, a number of different approaches can be taken.
 
 Kafka Client - The core Kafka API is supported on a an ever growing number of platforms and languages https://cwiki.apache.org/confluence/display/KAFKA/Clients we also recommend a number which are specifically tested https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients. If switching is an option, this is recommended as a longer term more scalable, performant approach. Note, the Kafka API is a lower level API then HTTP, and so will expose some additional complexity, however a large number of samples and resources are available to help produce a solution, including our own samples <link to docs>
 
-If switching to the Kafka Client is not an option then other methods for integrating with {{site.data.keyword.messagehub}} to consider include. 
+If switching to the Kafka Client is not an option, other methods for integrating with {{site.data.keyword.messagehub}} you could consider include the following:
 
-IBM Cloud Functions Service - Serverless actions can be defined, triggered from messages consumed from Kafka https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events or define web actions triggered from a REST API https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-apigateway
+* {{site.data.keyword.openwhisk}} Service IBM Cloud Functions Service
+    You can define serverless actions triggered from messages consumed from Kafka [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API [Creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
 
-IBM App Connect Enterprise - Integration flows can be defined to consume messages from Kafka https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm   https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm
+    * IBM App Connect Enterprise {{site.data.keyword.appconserviceshort}} 
+    Integration flows can be defined to consume messages from Kafka [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){:new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){:new_window}.
 
-Open Source - A number of Open Source REST APIs are available and may provide a suitable alternative
+* Open Source
+    A number of Open Source REST APIs are available and might provide a suitable alternative.
 
 
 
