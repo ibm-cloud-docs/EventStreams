@@ -48,7 +48,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 Use one of the following methods to authenticate:
 
 * **To authenticate using Basic Auth:**<br/> 
-    Use the <code>user</code> and <code>api_key</code> properties of the above objects as the username and password. Place these values into the <code>Authorization</code> header of the HTTP request in the form <code>Basic &lt;base64 encoding of username:password joined by a single colon (:)&gt;</code>.
+    Use the <code>user</code> and <code>api_key</code> properties of the above objects as the username and password. Place these values into the <code>Authorization</code> header of the HTTP request in the form <code>Basic &lt;base64 encoding of username and password joined by a single colon (:)&gt;</code>.
 
 * **To authenticate using a bearer token:**<br/> 
     To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
