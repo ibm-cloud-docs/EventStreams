@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-02"
+lastupdated: "2019-07-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -126,6 +126,12 @@ The following table summarizes what is supported by the plans:
 			<td>1 MB</td>
 			<td>1 MB</td>
 			<td>1 MB</td>
+		</tr>
+		<tr>
+			<td>**Maximum number of connected clients**</td>
+			<td>100</td>
+			<td>10 000</td>
+			<td>100</td>
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
