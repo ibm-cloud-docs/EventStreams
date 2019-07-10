@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-06-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -131,6 +131,17 @@ to these changes and to be able to reconnect and retry operations.
 The following configuration settings apply to all topics and cannot be changed:
 * replication.factor = 3 
 * min.insync.replicas = 2
+
+## Topics and partitions
+{: #topics_partitions}
+
+*  Topic names are restricted to a maximum of 100 characters.
+*  The default number of partitions for a topic is one.
+*  Each {{site.data.keyword.Bluemix_notm}} space has a limit of 100 partitions. To create
+   more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
+
+
+
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
 {: #plan_compare }
