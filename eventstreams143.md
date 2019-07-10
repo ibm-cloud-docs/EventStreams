@@ -94,7 +94,6 @@ Connection from other services, such as {{site.data.keyword.iot_short_notm}} or 
 There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, further information will be provided shortly to help you migrate.
 
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
-
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
 

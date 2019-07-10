@@ -55,7 +55,7 @@ Clone the following two repositories that contain the required files:
 ## Step 3. Create your Kafka Connect configuration
 {: #step3_create_config}
 
-1.You only have to set up this configuation once. {{site.data.keyword.messagehub}} stores it for future use.
+1. You only have to set up this configuration once. {{site.data.keyword.messagehub}} stores it for future use.
 
     From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
 
