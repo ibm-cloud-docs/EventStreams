@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-07-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -95,11 +95,8 @@ There are differences between the capabilities of the Classic plan and the new S
 
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
 
-* If you currently use the Cloud Object Storage bridge, see [Connecting Event Streams to Cloud Object Storage](/docs/services/EventStreams?topic=eventstreams-cos_connector).
+* If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
-* If you currently use the MQ bridge, see 
-
-[Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security)
 
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
