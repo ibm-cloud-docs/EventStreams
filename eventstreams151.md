@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-11d"
+lastupdated: "2019-07-11e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -34,10 +34,10 @@ The only functionality that is missing is partitioning by ISO 8601 date. The dat
 </code>
 {: codeblock} 
 
-Although the COS Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. You can find the full details for the Connector here 
+Although the COS Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. For  full details for the Connector, see 
 [Kafka Connect Sink Connector for IBM Cloud Object Storage. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-ibmcos-sink){:new_window}.
 
-The MQ Connector offers all the functionality of the MQ bridge and more with improved security. For a full list of MQ Connector features, see:[Kafka Connect sink Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-sink){:new_window}.
+The MQ Connector offers all the functionality of the MQ bridge and more with improved security. For a full list of MQ Connector features, see [Kafka Connect sink Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-sink){:new_window}.
  
-To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this with [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_connect). By running the Kafka Connect framework you have full control over how connectors are scaled, how you monitor your connectors, and access to a much richer set of metrics. For more information, see 
+To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this in [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_connect). By running the Kafka Connect framework you have full control over how Connectors are scaled, how you monitor your Connectors, and access to a much richer set of metrics. For more information, see 
 [Connect monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation.html#connect_monitoring){:new_window}.
