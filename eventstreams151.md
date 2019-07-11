@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-10"
+lastupdated: "2019-07-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -29,10 +29,11 @@ Kafka Connect allows for far greater scaling than the previously offered bridges
 
 The only functionality that is missing is the partitioning by ISO 8601 date. The date partitioning was used only if your messages were JSON and contained a timestamp field of a specific format, resulting in records being stored in COS as a file each day. This was rather restrictive and we've opted to make all the partitioning done by offset for the COS connector. What this means is that files uploaded to the object store will have the following naming scheme: 
  
-```
+<code>
 &lt;topic_name&gt;/&lt;partition&gt;/&lt;beginning_offset&gt;-&lt;end_offset&gt;
-```
- 
+</code>
+{: codeblock} 
+
 So although the COS connector does not include this feature, it offers far greater scaling and ability to do exactly once delivery. You can find the full details for the connectors here <link to github/docs>. 
 
 The MQ Connector offers all the functionality of the MQ bridge and more with improved security. For a full list of MQ Connector features, see: <github/docs link>
