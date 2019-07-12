@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-12d"
+lastupdated: "2019-07-12e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -70,13 +70,13 @@ For further information and examples, see
 The core functionality of the produce API remains the same, but small changes in properties and formats are required. In particular, consider the following:
 
 * **Endpoint URL**<br/>
-    The URL of the API is unique to each service instance and must be retrieved from the 'kafka_http_url' property of a service credentials object or service key. Previously this URL was retrieved from the 'kafka_rest_url' property of the applications VCAP_SERVICES.
+    The URL of the API is unique to each service instance and must be retrieved from the <code>kafka_http_url</code> property of a service credentials object or service key. Previously this URL was retrieved from the <code>kafka_rest_url</code> property of the applications VCAP_SERVICES.
 
 * **Authentication**<br/>
     In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token 
 
 * **Methods**<br/>
-    Messages are sent by POSTing a request to a single method with the path '/topics/&lsquo;topic_name&rsquo;/records'. This replaces the previous path 'topics/&lsquo;topic_name&rsquo;'
+    Messages are sent by POSTing a request to a single method with the path <code>'/topics/&lt;topic_name&gt;/records'</code>. This replaces the previous path <code>'topics/&lt;topic_name&lt;'</code>.
 
 * **Body**<br/>
     Two new content types 'text/plain' and 'application/json' are supported, which allow the message payload to be set directly in the body of the HTTP request. These replace the previous 'application/vnd.kafka.binary.v1+json' binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the 'key/keyType' HTTP request query parameters.
