@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-12b"
+lastupdated: "2019-07-12d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -19,26 +19,24 @@ subcollection: eventstreams
 # Migrating the REST APIs from the Classic plan
 {: #migrate_rest_apis}
 
-If you're using the Classic plan, be aware that the new Standard plan introduces changes in the REST APIs. The following information summarizes what these changes are and the recommended actions that you might need to take, if any, to move from the Classic to the Standard or Enterprise plans.
+If you're using the Classic plan, be aware that the new Standard plan introduces changes to the REST APIs. The following information summarizes what these changes are and the recommended actions that you might need to take, if any, to move from the Classic to the Standard or Enterprise plans.
 
 <dl>
-<dt>Admin API</dt>
-<dd>The API and functionality remains the same, but small changes might be required to the processing of error responses. For details, see [Changes to the Admin API](#migrate_admin_api).
+<dt>Administration API</dt>
+<dd>The API and functionality remains the same, but small changes might be required to the processing of error responses. For details, see [Changes to the Administration API](#migrate_admin_api).
 </dd>
 <dt>Produce API</dt>
-<dd>The core functionality remains the same, but small changes in properties and formats might be required. For details, see [Changes to the Admin API](#migrate_produce_api).
+<dd>The core functionality remains the same, but small changes in properties and formats might be required. For details, see [Changes to the Produce API](#migrate_produce_api).
 </dd>
 <dt>Consume API</dt>
 <dd>This API is no longer supported. For alternatives, see [Consume API](#migrate_consume_api).
 </dd>
 </dl>
 
-The following sections provide details of the changes:
-
-## Changes to the Admin API
+## Changes to the Administration API
 {: #migrate_admin_api}
 
-The API and functionality remains the same, but small changes might be required to the processing of error responses:
+The API and functionality are the same, but small changes might be required to the processing of error responses:
 
 For example, an error response on the Classic plan:
 
@@ -50,7 +48,7 @@ For example, an error response on the Classic plan:
 ```
 {: codeblock}
 
-For example, an error response on the Standard plan:
+And an error response on the Standard plan:
 
 ```
 {
@@ -58,9 +56,9 @@ For example, an error response on the Standard plan:
     "message": "topic 'ffff' does not exist",
     "incident_id": "a34b19b3-b55d-4937-bef2-0c9fa9390fcb"
 }
-````
+```
 {: codeblock}
-
+<br/>
 Additional methods are also available for clients to authenticate. You can now use Basic Auth or a bearer token, in addition to the previously supported method of placing an API key in the X-Auth-Token header.
 
 For further information and examples, see 
@@ -87,7 +85,7 @@ The core functionality of the produce API remains the same, but small changes in
     Message properties can be set by formatting as a key-value comma separated list in a 'headers' query parameter in the HTTP request.
 
 * **Errors**<br/>
-    The formatting of the body that's returned in error responses has changed; updates might be required if these are processed by an application
+    The formatting of the body that's returned in error responses has changed; updates might be required if these are processed by an application.
 
     For example, previously on the Classic plan:
 
@@ -99,7 +97,7 @@ The core functionality of the produce API remains the same, but small changes in
     ```
     {: codeblock}
 
-    For example now on the Standard plan:
+    For example, now on the Standard plan:
 
     ```
     {
@@ -135,6 +133,7 @@ Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/j
 ```
 {: codeblock}
 
+<br/>
 The equivalent on the Standard plan is as follows:
 
 ```
@@ -147,7 +146,7 @@ Hello World
 ```
 {: codeblock}
 
-For more information, see [{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window}
+For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window}.
 
 
 ## Consume API
@@ -178,13 +177,13 @@ To replace this functionality, you can take a number of different approaches.
 * **Kafka client**<br/>
     The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number, which are specifically tested [list of clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
     
-If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
+    If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
 [samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
 If switching to the Kafka Client is not an option, other methods for integrating with {{site.data.keyword.messagehub}} that you could consider include the following:
 
-* **{{site.data.keyword.openwhisk}}** Service<br/>
-    You can define serverless actions triggered from messages consumed from Kafka [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API [Creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
+* **{{site.data.keyword.openwhisk}} Service**<br/>
+    You can define serverless actions triggered from messages consumed from Kafka [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API by [creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
 
 * ** {{site.data.keyword.appconserviceshort}} Enterprise **<br/>
     You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){:new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){:new_window}.
