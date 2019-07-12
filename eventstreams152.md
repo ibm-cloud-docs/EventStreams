@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-12a"
+lastupdated: "2019-07-12b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -26,10 +26,10 @@ If you're using the Classic plan, be aware that the new Standard plan introduces
 <dd>The API and functionality remains the same, but small changes might be required to the processing of error responses. For details, see [Changes to the Admin API](#migrate_admin_api).
 </dd>
 <dt>Produce API</dt>
-<dd>The core functionality remains the same, but small changes in properties and formats might be required. For details, see 
+<dd>The core functionality remains the same, but small changes in properties and formats might be required. For details, see [Changes to the Admin API](#migrate_produce_api).
 </dd>
 <dt>Consume API</dt>
-<dd>This API is no longer supported. For alternatives, see 
+<dd>This API is no longer supported. For alternatives, see [Consume API](#migrate_consume_api).
 </dd>
 </dl>
 
@@ -178,16 +178,16 @@ To replace this functionality, you can take a number of different approaches.
 * **Kafka client**<br/>
     The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number, which are specifically tested [list of clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
     
-    If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
-    [samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
+If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
+[samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
 If switching to the Kafka Client is not an option, other methods for integrating with {{site.data.keyword.messagehub}} that you could consider include the following:
 
-* **{{site.data.keyword.openwhisk_notm}}** Service<br/>
+* **{{site.data.keyword.openwhisk}}** Service<br/>
     You can define serverless actions triggered from messages consumed from Kafka [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API [Creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
 
-* ** IBM App Connect Enterprise {{site.data.keyword.appconserviceshort}}**<br/>
-    You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){:new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){:new_window}..
+* ** {{site.data.keyword.appconserviceshort}} Enterprise **<br/>
+    You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){:new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){:new_window}.
 
 * **Open Source**<br/>
     A number of Open Source REST APIs are available and might provide a suitable alternative.
