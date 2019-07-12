@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-12e"
+lastupdated: "2019-07-12f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -70,19 +70,19 @@ For further information and examples, see
 The core functionality of the produce API remains the same, but small changes in properties and formats are required. In particular, consider the following:
 
 * **Endpoint URL**<br/>
-    The URL of the API is unique to each service instance and must be retrieved from the <code>kafka_http_url</code> property of a service credentials object or service key. Previously this URL was retrieved from the <code>kafka_rest_url</code> property of the applications VCAP_SERVICES.
+    The URL of the API is unique to each service instance and must be retrieved from the <code>kafka_http_url</code> property of a service credentials object or service key. Previously this URL was retrieved from the <code>kafka_rest_url</code> property of the application's VCAP_SERVICES.
 
 * **Authentication**<br/>
     In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token 
 
 * **Methods**<br/>
-    Messages are sent by POSTing a request to a single method with the path <code>'/topics/&lt;topic_name&gt;/records'</code>. This replaces the previous path <code>'topics/&lt;topic_name&lt;'</code>.
+    Messages are sent by POSTing a request to a single method with the path <code>/topics/&lt;topic_name&gt;/records</code>. This replaces the previous path <code>topics/&lt;topic_name&lt;</code>.
 
 * **Body**<br/>
-    Two new content types 'text/plain' and 'application/json' are supported, which allow the message payload to be set directly in the body of the HTTP request. These replace the previous 'application/vnd.kafka.binary.v1+json' binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the 'key/keyType' HTTP request query parameters.
+    Two new content types <code>text/plain</code> and <code>application/json</code> are supported, which allow the message payload to be set directly in the body of the HTTP request. These replace the previous <code>application/vnd.kafka.binary.v1+json</code> binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the <code>key/keyType</code> HTTP request query parameters.
 
 * **Headers**<br/>
-    Message properties can be set by formatting as a key-value comma separated list in a 'headers' query parameter in the HTTP request.
+    Message properties can be set by formatting as a key-value comma separated list in a <code>headers</code> query parameter in the HTTP request.
 
 * **Errors**<br/>
     The formatting of the body that's returned in error responses has changed; updates might be required if these are processed by an application.
@@ -137,8 +137,8 @@ Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/j
 The equivalent on the Standard plan is as follows:
 
 ```
-POST <kafka_http_url>/topics/<topic>/records?key=mykey
-X-Auth-Token: <YourAPIKey>
+POST <kafka_http_url>/topics/<topic>/records?key=mykey 
+X-Auth-Token: <YourAPIKey> 
 Content-Type: text/plain
 Accept: application/json
 
@@ -155,19 +155,19 @@ For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![Ext
 Consuming messages via HTTP is no longer supported. Consequently, the following API calls are no longer available:
 
 <dl>
-<dt>GET /topics/(string: topic_name)/partitions/(int: partition_id)/messages?offset=(int)[&count=(int)]</dt>
+<dt>GET /topics/(<var class="keyword varname”>string: topic_name</var>)/partitions/(<var class="keyword varname”>int: partition_id</var>)/messages?offset=(<var class="keyword varname”>int</var>)[&count=(<var class="keyword varname”>int</var>)]</dt>
 <dd>Consume messages from one partition of the topic.
 </dd>
-<dt>POST /consumers/(string: group_name)</dt>
+<dt>POST /consumers/(<var class="keyword varname”>string: group_name</var>)</dt>
 <dd>Create a new consumer instance in the consumer group.
 </dd>
-<dt>POST /consumers/(string: group_name)/instances/(string: instance)/offsets</dt>
+<dt>POST /consumers/(<var class="keyword varname”>string: group_name</var>)/instances/(<var class="keyword varname”>string: instance</var>)/offsets</dt>
 <dd>Commit offsets for the consumer. 
 </dd>
-<dt>DELETE /consumers/(string: group_name)/instances/(string: instance)</dt>
+<dt>DELETE /consumers/(<var class="keyword varname”>string: group_name</var>)/instances/(<var class="keyword varname”>string: instance</var>)</dt>
 <dd>Destroy the consumer instance.
 </dd>
-<dt>GET /consumers/(string: group_name)/instances/(string: instance)/topics/(string: topic_name)</dt>
+<dt>GET /consumers/(<var class="keyword varname”>string: group_name)/instances/(string: instance</var>)/topics/(<var class="keyword varname”>string: topic_name</var>)</dt>
 <dd>Consume messages from a topic.
 </dd>
 </dl>
