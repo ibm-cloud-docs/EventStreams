@@ -95,7 +95,7 @@ There are differences between the capabilities of the Classic plan and the new S
 
 * If you currently use the REST APIs on the Classic plan, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
-* If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
+* If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:

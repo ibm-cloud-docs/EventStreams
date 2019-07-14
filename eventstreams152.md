@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-14c"
+lastupdated: "2019-07-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -73,7 +73,7 @@ The core functionality of the produce API remains the same, but small changes in
     The URL of the API is unique to each service instance and must be retrieved from the <code>kafka_http_url</code> property of a service credentials object or service key. Previously this URL was retrieved from the <code>kafka_rest_url</code> property of the application's VCAP_SERVICES.
 
 * **Authentication**<br/>
-    In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token 
+    In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token. 
 
 * **Methods**<br/>
     Messages are sent by POSTing a request to a single method with the path <code>/topics/&lt;topic_name&gt;/records</code>. This replaces the previous path <code>topics/&lt;topic_name&gt;</code>.
@@ -175,7 +175,7 @@ Consuming messages via HTTP is no longer supported. Consequently, the following 
 To replace this functionality, you can take a number of different approaches. 
 
 * **Kafka client**<br/>
-    The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number of clients, which are specifically tested [list of clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
+    The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number of specifically tested clients: [recommended clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
     
     If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
 [samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
@@ -183,7 +183,7 @@ To replace this functionality, you can take a number of different approaches.
 If switching to the Kafka Client is not an option, other methods for integrating with {{site.data.keyword.messagehub}} that you could consider include the following:
 
 * **{{site.data.keyword.openwhisk}} Service**<br/>
-    You can define serverless actions triggered from messages consumed from Kafka [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API by [creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
+    You can define serverless actions triggered from messages consumed from Kafka: [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API by [creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
 
 * ** {{site.data.keyword.appconserviceshort}} Enterprise **<br/>
     You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){:new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){:new_window}.
