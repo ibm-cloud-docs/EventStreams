@@ -36,7 +36,10 @@ For information about migrating specific capabilities, refer to the following:
 * If you currently use the REST APIs on the Classic plan, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
+
 ## Classic plan overview
+{: #classic_overview}
+
 The Classic plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Classic plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 

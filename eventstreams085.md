@@ -47,6 +47,8 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 
 The Classic plan gives access to the previous edition of the Standard plan and is provided for existing workloads and backward compatibility only. You should provision new workloads against the Standard plan.
 
+For information about moving from the Classic plan, see [Migrating](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
+
 
 ## What's supported by the Standard, Enterprise, and Classic plans
 
