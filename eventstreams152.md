@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-12f"
+lastupdated: "2019-07-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -76,7 +76,7 @@ The core functionality of the produce API remains the same, but small changes in
     In addition to the previously supported method of placing an API key in the X-Auth-Token header, clients can now also authenticate using either Basic Auth or a bearer token 
 
 * **Methods**<br/>
-    Messages are sent by POSTing a request to a single method with the path <code>/topics/&lt;topic_name&gt;/records</code>. This replaces the previous path <code>topics/&lt;topic_name&lt;</code>.
+    Messages are sent by POSTing a request to a single method with the path <code>/topics/&lt;topic_name&gt;/records</code>. This replaces the previous path <code>topics/&lt;topic_name&gt;</code>.
 
 * **Body**<br/>
     Two new content types <code>text/plain</code> and <code>application/json</code> are supported, which allow the message payload to be set directly in the body of the HTTP request. These replace the previous <code>application/vnd.kafka.binary.v1+json</code> binary embedded format. Each message must be sent in its own HTTP request. If a message key is required, this can now be set as either a text or binary value in the <code>key/keyType</code> HTTP request query parameters.
@@ -155,7 +155,7 @@ For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![Ext
 Consuming messages via HTTP is no longer supported. Consequently, the following API calls are no longer available:
 
 <dl>
-<dt>GET /topics/(<var class="keyword varname”>string: topic_name</var>)/partitions/(<var class="keyword varname”>int: partition_id</var>)/messages?offset=(<var class="keyword varname”>int</var>)[&count=(<var class="keyword varname”>int</var>)]</dt>
+<dt>GET /topics/(<var class="keyword varname”><i>string: topic_name</i></var>)/partitions/(<var class="keyword varname”>int: partition_id</var>)/messages?offset=(<var class="keyword varname”>int</var>)[&count=(<var class="keyword varname”>int</var>)]</dt>
 <dd>Consume messages from one partition of the topic.
 </dd>
 <dt>POST /consumers/(<var class="keyword varname”>string: group_name</var>)</dt>
