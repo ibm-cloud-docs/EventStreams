@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-07-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ Light
 
@@ -19,7 +19,7 @@ subcollection: eventstreams
 # Migrating {{site.data.keyword.mql}} to Kafka 
 {: #migrate_mqlight}
 
-Here are some key considerations for migrating applications from the {{site.data.keyword.mql}} API to the Apache Kafka API.
+So you'd like to migrate your applications from the {{site.data.keyword.mql}} API to the Apache Kafka API? Here are some key considerations to bear in mind.
 
 For many use cases, Kafka provides all the capabilities (and more) of the {{site.data.keyword.mql}} API. Kafka offers a richer feature set, higher performance, and scalability than the {{site.data.keyword.mql}} API. If you are porting an application consider whether a slightly higher investment in code change would allow you to access this in the future.
 
