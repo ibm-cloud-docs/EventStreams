@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-18"
+lastupdated: "2019-07-18a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ Light
 
@@ -66,6 +66,7 @@ These options instruct the Kafka producer to consider a message as successfully 
 Consuming a message is a two step operation when using the {{site.data.keyword.mql}} API. First, a subscribing application receives a copy of a message, then it must confirm the delivery of the message. When the delivery of a message is confirmed, the server knows it can safely discard its copy of the message. By using this protocol applications can receive a message int he following two ways:
 * _at least once_ by confirming delivery of a message after it has been processed).
 * _at most once_ by confirming a message before processing it.<br/>
+
 It is also possible to enable automatic confirmation of messages received using the {{site.data.keyword.mql}} API. This simplifies your application code, but offers less control over when confirmation of message delivery occurs.
 
 Kafka has a similar concept to confirming message delivery: [committing offsets](/docs/services/EventStreams?topic=eventstreams-consuming_messages#managing-offsets). Each message stored by Kafka is assigned an ever increasing numeric offset. Kafka consumers can tell Kafka (using a commit offset API) at which offset they want to start consuming from if they shut down or are otherwise interrupted. By deciding when to commit an offset value (before or after processing the message) an application can achieve similar "at least once" or "at most once" styles of message receipt. Kafka can also offer "exactly once" delivery of messages, as well as a lot more flexibility in deciding the point at which a consumer should start consuming from.
@@ -98,7 +99,7 @@ Kafka has the concept of log retention, which defines a minimum amount of time m
 Another difference between Kafka's log retention and {{site.data.keyword.mql}} is that the latter allows different expiry times to be associated with each message. If your application really needs very accurate message expiry, or to apply message expiry on a per-message basis, you can achieve this by storing the timestamp of when the message expires as a message header. The receiving application can then compare this to the current time and decide whether to process or discard the message. The downsides to this approach are that it adds complexity to your application, and also requires that your application spends time receiving messages that it then discards.
 
 ### Subscriptions with wildcards
-When subscribing, the {{site.data.keyword.mql}} API allows a topic pattern to be specified containing wildcard characters. This allows a single subscription to match messages published to a number of different topics. For example a subscription to <code>a/+/z</code> can match messages published to <code>a/b/z</code>, <code>a/c/z</code> and so on.
+When subscribing, the {{site.data.keyword.mql}} API allows a topic pattern to be specified containing wildcard characters. This allows a single subscription to match messages published to a number of different topics. For example a subscription to <code>&apos;a/+/z&apos;</code> can match messages published to <code>&apos;a/b/z&apos;</code>, <code>&apos;a/c/z&apos;</code> and so on.
 
 Kafka also supports the notion of subscribing based on a wildcard. In this case you provide the Kafka subscribe call with a regular expression and Kafka will ensure that it is subscribed to all topics matching this expression. This includes subscribing to any new topics that are created and match the pattern.
 
@@ -125,18 +126,18 @@ Although consumer groups might seem like a straightforward migration from shared
 
 ### Topic hierarchies
 With {{site.data.keyword.mql}}, topics can be structured in a multi-level tree-like hierarchy. When a message is published to a particular topic name it is received both by subscribers that have subscribed to this topic, and also by any subscribers that are subscribed to a parent topic in the tree. A frequently cited example that illustrates this is an application that distributes the results of sports matches:
-* Individual publishers send their results to a topic that contains the name of the sport. For example: <code>&lsquo;/sports/soccer&rsquo;</code> or 
-<code>&lsquo;/sports/cricket&rsquo;</code>.
-* A subscriber that is interested in only cricket results can subscribe to <code>&lsquo;/sports/cricket&rsquo;</code>.
-* But a subscriber that wants to receive all of the sports results can subscribe to <code>&lsquo;/sports&rsquo;</code>.
+* Individual publishers send their results to a topic that contains the name of the sport. For example: <code>&apos;/sports/soccer&apos;</code> or 
+<code>&apos;/sports/cricket&apos;</code>.
+* A subscriber that is interested in only cricket results can subscribe to <code>&apos;/sports/cricket&apos;</code>.
+* But a subscriber that wants to receive all of the sports results can subscribe to <code>&apos;/sports&apos;</code>.
 
 Kafka uses a simpler "flat" structure for topics, where a subscriber receives only messages that are published to the exact topics that it is subscribed to. So what options are available to you if you need to migrate an {{site.data.keyword.mql}} application that uses topic hierarchies? Let's continue with our sports result distribution example:
 * **Producing to multiple topics**<br/>
-With this approach Kafka has three topics: <code>&lsquo;sports&rsquo;</code>,<code>&lsquo;soccer&rsquo;</code>, and <code>&lsquo;cricket&rsquo;</code>. Every time a producer wants to send a soccer result, it publishes the result twice: once to the <code>&lsquo;soccer&rsquo;</code> topic, and once to the <code>&lsquo;sports&rsquo;</code> topic. Likewise for producers that want to send a cricket result. Consumers can decide if they want to receive results for a particular sport or for all sports, depending on which topics they subscribe to.
+With this approach Kafka has three topics: <code>&apos;sports&apos;</code>,<code>&apos;soccer&apos;</code>, and <code>&apos;cricket&apos;</code>. Every time a producer wants to send a soccer result, it publishes the result twice: once to the <code>&apos;soccer&apos;</code> topic, and once to the <code>&apos;sports&apos;</code> topic. Likewise for producers that want to send a cricket result. Consumers can decide if they want to receive results for a particular sport or for all sports, depending on which topics they subscribe to.
 * **Consuming from multiple topics**<br/>
-For our example, this only requires two Kafka topics: <code>&lsquo;soccer&rsquo;</code>, and <code>&lsquo;cricket&rsquo;</code>. Each producer chooses the topic to use depending on the sport being played. Consumers can choose to subscribe to a particular sport, or they can subscribe to all the sports (potentially using a pattern-based subscription).
+For our example, this only requires two Kafka topics: <code>&apos;soccer&apos;</code>, and <code>&apos;cricket&apos;</code>. Each producer chooses the topic to use depending on the sport being played. Consumers can choose to subscribe to a particular sport, or they can subscribe to all the sports (potentially using a pattern-based subscription).
 * **Using Kafka Streams to join two topics**<br/>
-Kafka Streams is a framework that simplifies processing the data stored on Kafka topics. To satisfy our use case we'll require three topics: <code>&lsquo;sports&rsquo;</code>,<code>&lsquo;soccer&rsquo;</code>, and <code>&lsquo;cricket&rsquo;</code>. Our producers send <code>&lsquo;soccer&rsquo;</code> results to the <code>&lsquo;soccer&rsquo;</code> topic, and <code>&lsquo;cricket&rsquo;</code> results to the <code>&lsquo;cricket&rsquo;</code> topic. The consumers choose to consume from either the <code>&lsquo;cricket&rsquo;</code>, or <code>&lsquo;soccer&rsquo;</code> topics if they only care about one particular sport, or the <code>&lsquo;sports&rsquo;</code> topic if the want results for all of the sports. Kafka Streams is used to populate the <code>&lsquo;sports&rsquo;</code> topic by deploying an application that consumes from both the <code>&lsquo;cricket&rsquo;</code> and the <code>&lsquo;soccer&rsquo;</code> topic and publishes each result to the <code>&lsquo;sports&rsquo;</code> topic.
+Kafka Streams is a framework that simplifies processing the data stored on Kafka topics. To satisfy our use case we'll require three topics: <code>&apos;sports&apos;</code>,<code>&apos;soccer&apos;</code>, and <code>&apos;cricket&apos;</code>. Our producers send <code>&apos;soccer&apos;</code> results to the <code>&apos;soccer&apos;</code> topic, and <code>&apos;cricket&apos;</code> results to the <code>&apos;cricket&apos;</code> topic. The consumers choose to consume from either the <code>&apos;cricket&apos;</code>, or <code>&apos;soccer&apos;</code> topics if they only care about one particular sport, or the <code>&apos;sports&apos;</code> topic if the want results for all of the sports. Kafka Streams is used to populate the <code>&apos;sports&apos;</code> topic by deploying an application that consumes from both the <code>&apos;cricket&apos;</code> and the <code>&apos;soccer&apos;</code> topic and publishes each result to the <code>&apos;sports&apos;</code> topic.
 
 
 Well, that's certainly a lot of choice. Which option should you pick? Ultimately, it depends on your particular use case, but here are some guidelines to help you choose:
