@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-08-02"
+lastupdated: "2019-07-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -36,12 +36,11 @@ privacy of your data:
 
       * ECDHE-RSA-AES128-GCM-SHA256
       * ECDHE-RSA-AES256-GCM-SHA384
-      * DHE-RSA-AES128-GCM-SHA256
-      * kEDH+AESGCM
       * ECDHE-RSA-AES128-SHA256
       * ECDHE-RSA-AES256-SHA384
-      * DHE-RSA-AES128-SHA256
-      * DHE-RSA-AES256-SHA256
+
+    All clients must support TLSv1.2, elliptic curve cryptography, and TLS server name indication (SNI) to be a fully supported configuration
+
 
 
 
