@@ -49,7 +49,7 @@ Clone the following two repositories that contain the required files:
 
 * https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
 
-* https://github.com/ibm-messaging/kafka-connect
+* https://github.com/ibm-messaging/event-streams-samples
 
 
 ## Step 3. Create your Kafka Connect configuration
@@ -57,7 +57,7 @@ Clone the following two repositories that contain the required files:
 
 1. You only have to set up this configuration once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the kafka-connect project, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
+    From the event-streams-samples project, navigate to the kafka-connect/IKS directory, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
 
     Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you will get an error.
 
@@ -110,7 +110,7 @@ Open two terminals on your kube service for port forwarding.
 The Connect REST API is then available at http://localhost:8083.
 
 For more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/current/connect/references/restapi.html){:new_window}
+[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}
 
 
 ## Step 6. Build the connector
