@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-09"
+lastupdated: "2019-07-19"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -56,7 +56,7 @@ A maximum of 1 GB for each partition.
 ### Network throughput
 {: #enterprise_throughput }
 
-A recommended maximum of 40 MB per second with a peak limit of 90 MB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
+A recommended maximum of 40 MB per second with a peak limit of 75 MB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 
 The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
 

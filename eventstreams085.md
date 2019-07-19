@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-10"
+lastupdated: "2019-07-19"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -120,7 +120,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>1 MB per second per partition (20 MB per second maximum) </td>
-			<td>40 MB per second per cluster (peak throughput of 90 MB per second)</td>
+			<td>40 MB per second per cluster (peak throughput of 75 MB per second)</td>
 			<td>1 MB per second per partition</td>
 		</tr>
 		<tr>
