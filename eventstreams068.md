@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-18a"
+lastupdated: "2019-07-19"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -30,12 +30,12 @@ privacy of your data:
 
 
 * Connections to the Kafka native and REST interfaces must be made using TLS 1.2.
-* Connections are restricted to the following strong cipher
-   suites:
+* Connections are restricted to the following strong cipher suites:
 
       * ECDHE-RSA-AES128-GCM-SHA256
       * ECDHE-RSA-AES256-GCM-SHA384
       * ECDHE-RSA-AES128-SHA256
+      * ECDHE-RSA-AES256-SHA384
       * ECDHE-RSA-AES256-SHA384
 
     All clients must support TLSv1.2, elliptic curve cryptography, and TLS server name indication (SNI) to be a fully supported configuration.

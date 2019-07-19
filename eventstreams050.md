@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-22"
+lastupdated: "2019-07-19"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -141,6 +141,8 @@ If you can't run any of the clients listed, you can use other third-party client
 * Supports Kafka 0.10, or later
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
 * Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
+* Supports elliptic curve cryptography
+
 However, we only test and have experience of the recommended third-party clients.
 
 In all cases, the latest version of the client is recommended.
