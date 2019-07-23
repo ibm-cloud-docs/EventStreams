@@ -13,7 +13,6 @@ IBM Event Streams
 		eventstreams010.md
 		eventstreams073.md
 		eventstreams085.md
-		eventstreams143.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
@@ -45,6 +44,7 @@ IBM Event Streams
 
 	{: .topicgroup}
 	Migrating from the Classic plan 
+		eventstreams143.md
 		eventstreams152.md
 		eventstreams150.md
 		eventstreams151.md
