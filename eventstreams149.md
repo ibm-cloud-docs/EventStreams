@@ -67,8 +67,6 @@ Clone the following two repositories that contain the required files:
 
     Kafka Connect can run multiple workers for reliability and scalability reasons. If your IKS cluster has more than 1 node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file and edit the entry <code>replicas: 1</code>.
 
-    
-
 2. Then run the following commands:
 <br/>
     To create a secret: 
@@ -165,7 +163,7 @@ Edit the <code>cos-sink.json</code> and cos-sink.properties files located in <co
 <dt><strong>cos.service.crn</strong></dt>
 <dd>Required. CRN for the Cloud Object Storage service instance.
 <p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example, 
-code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
+<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
 </dl>
  
 ### Get COS credentials using the IBM Cloud console
@@ -179,18 +177,19 @@ code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515
 6. Click this credential using **View Credentials** to reveal the details in JSON format.
 
 
+## Step nn Start the connector with its configuration
+
+```
+curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors
+--data "@./cos-sink.json"
+```
+  {: codeblock}
+
 ## Step 7. Monitoring your connectors 
 {: #step7_monitor_connectors}
 
-You can check your connector, go to
-http://localhost:8083/connectos/cos-sink/status 
+You can check your connector by going to
+http://localhost:8083/connectors/cos-sink/status
 
-If state is not running, need to restart
-
-
-
-
-
-
-
+If the state of the connector is not running, you will need to restart it.
 
