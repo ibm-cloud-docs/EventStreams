@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-06-28d"
+lastupdated: "2019-07-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -18,6 +18,8 @@ subcollection: eventstreams
 
 # Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS
 {: #cos_connector}
+
+The following steps detail how to get the Kafka Connect runtime running in an IKS cluster and start the COS Sink Connector to archive data from Kafka topics in Event Streams to an instance of the Cloud Object Storage service. The connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service. Complete the following steps to walk through the setup:
 
 You can connect {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full}} to read data from an {{site.data.keyword.messagehub}} Kafka topic
 and place the data into [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}.
@@ -63,7 +65,7 @@ Clone the following two repositories that contain the required files:
 
     Your &lt;APIKEY&gt; will appear in clear text on your machine but will be secret when pushed to IKS.
 
-    If you have more than one replica (that is you're using a paid cluster), edit the <code>kafka-connect.yaml</code> file and edit the entry <code>replicas: 1</code>
+    Kafka Connect can run multiple workers for reliability and scalability reasons. If your IKS cluster has more than 1 node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file and edit the entry <code>replicas: 1</code>.
 
     
 
@@ -92,8 +94,6 @@ kubectl apply -f ./kafka-connect.yaml
 ```
 {: codeblock}
 
-* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
-
 
 ## Step 5. Manage connectors
 {: #step5_manage_connectors}
@@ -105,14 +105,16 @@ kubectl port-forward service/kafkaconnect-service 8083
 ```
   {: codeblock}
 
-Open two terminals on your kube service for port forwarding.
+Keep the terminal used for port forwarding open, and use another terminal for the following steps.
 
 The Connect REST API is then available at http://localhost:8083.
+
+So you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector!
 
 For more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}
 
-
+<!--
 ## Step 6. Build the connector
 {: #step6_build_connector}
 
@@ -133,10 +135,10 @@ For more information about the API, see
     ```
     $ gradle shadowJar
     ```
+-->
 
-
-## Step 7. Configure the cos-sink json and cos-sink.properties files
-{: #step7_config_json}
+## Step 6. Configure the cos-sink json and cos-sink.properties files
+{: #step6_config_json}
 
 Edit the <code>cos-sink.json</code> and cos-sink.properties files located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
@@ -177,8 +179,8 @@ code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515
 6. Click this credential using **View Credentials** to reveal the details in JSON format.
 
 
-## Step 8. Monitoring your connectors 
-{: #step8_monitor_connectors}
+## Step 7. Monitoring your connectors 
+{: #step7_monitor_connectors}
 
 You can check your connector, go to
 http://localhost:8083/connectos/cos-sink/status 
