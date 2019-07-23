@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-17"
+lastupdated: "2019-07-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -40,7 +40,9 @@ Although the COS Sink Connector does not include this feature, instead it offers
 
 
 ## MQ Source Connector
-The MQ Source Connector offers all the functionality of the MQ bridge and more with improved security. For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
+The MQ Connector offers all of the commonly used functionality of the MQ bridge and more, with improved security. However, note that partitioning by GroupID is not currently supported and the connector stops rather than discarding messages that is cannot process, for example if the message is too large to forward to Kafka.
+
+For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
  
 ## Running the Connectors
 To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this in [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_connect). By running the Kafka Connect framework you have full control over how Connectors are scaled, how you monitor your Connectors, and access to a much richer set of metrics. For more information, see 
