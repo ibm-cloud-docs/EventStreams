@@ -41,8 +41,6 @@ Ensure you have the following software and services installed:
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install)
 * A recent version of Kubectl (for example 1.14)
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
-* [Gradle 4.0, or later ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/install/){:new_window}
-* Java 8 or later
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step3_clone project}
