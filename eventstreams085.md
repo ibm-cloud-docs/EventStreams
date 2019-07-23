@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-07-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -170,7 +170,9 @@ The following table summarizes what is supported by the plans:
 			REST Producer API</br>
 		    </td>
 			<td>Kafka API<br/>
-			Admin REST API</td>
+			Admin REST API
+			REST Producer API</br>
+			</td>
 			<td>Kafka API</br>
 			Admin REST API<br/>
 			Kafka REST API</br>
