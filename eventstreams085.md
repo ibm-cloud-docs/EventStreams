@@ -170,7 +170,7 @@ The following table summarizes what is supported by the plans:
 			REST Producer API</br>
 		    </td>
 			<td>Kafka API<br/>
-			Admin REST API
+			Admin REST API</br>
 			REST Producer API</br>
 			</td>
 			<td>Kafka API</br>
