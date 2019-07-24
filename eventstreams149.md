@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,15 +19,10 @@ subcollection: eventstreams
 # Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS
 {: #cos_connector}
 
-The following steps detail how to get the Kafka Connect runtime running in an IKS cluster and start the COS Sink Connector to archive data from Kafka topics in Event Streams to an instance of the Cloud Object Storage service. The connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service. Complete the following steps to walk through the setup:
+The following steps walk you through getting the Kafka Connect runtime running in an IKS cluster and starting the COS Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service. 
 
-You can connect {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full}} to read data from an {{site.data.keyword.messagehub}} Kafka topic
-and place the data into [{{site.data.keyword.IBM_notm}} Cloud Object Storage ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}.
+Complete the following steps to get set up:
 {: shortdesc}
-
-The connector allows you to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the [Cloud Object Storage service ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/cloud-object-storage?topic=cloud-object-storage-about#about){:new_window}. The connector consumes
-batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service.
-Complete the following steps to walk through the setup:
 
 ## Step 1. Install the pre-requisites
 {: #step1_install_prereqs}
@@ -91,10 +86,10 @@ kubectl apply -f ./kafka-connect.yaml
 {: codeblock}
 
 
-## Step 5. Manage connectors
+## Step 5. Validate Kafka Connect is running
 {: #step5_manage_connectors}
 
-To manage connectors, port forward to the kafkaconnect-service Service on port 8083. For example:
+To validate that Kafka Connect is running, port forward to the kafkaconnect-service Service on port 8083. For example:
 
 ```
 kubectl port-forward service/kafkaconnect-service 8083
@@ -105,9 +100,9 @@ Keep the terminal used for port forwarding open, and use another terminal for th
 
 The Connect REST API is then available at http://localhost:8083.
 
-So you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector!
+So you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector.
 
-For more information about the API, see
+If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}
 
 <!--
@@ -186,8 +181,8 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ## Step 7. Monitoring your connectors 
 {: #step7_monitor_connectors}
 
-You can check your connector by going to
+You can check your connector by going to <br/>
 http://localhost:8083/connectors/cos-sink/status
 
-If the state of the connector is not running, you will need to restart it.
+If the state of the connector is not running, restart the connector.
 
