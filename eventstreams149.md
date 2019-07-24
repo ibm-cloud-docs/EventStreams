@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-07-24a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -135,6 +135,8 @@ Edit the <code>cos-sink.json</code> and cos-sink.properties files located in <co
 
 ### cos-sink.json file properties
 
+Replace the placeholders in the cos-sink.json file with your own values.
+
 <dl>
 <dt><strong>cos.api.key</strong></dt>
 <dd>Required. API key used to connect to the Cloud Object Storage service instance.</dd>
@@ -170,7 +172,9 @@ Edit the <code>cos-sink.json</code> and cos-sink.properties files located in <co
 6. Click this credential using **View Credentials** to reveal the details in JSON format.
 
 
-## Step nn Start the connector with its configuration
+## Step 7. Start the connector with its configuration
+
+Run the following command to start the COS connector with the configuration that you provided in the previous step.
 
 ```
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors
