@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-24a"
+lastupdated: "2019-07-24b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,22 +19,26 @@ subcollection: eventstreams
 # Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS
 {: #cos_connector}
 
-The following steps walk you through getting the Kafka Connect runtime running in an IKS cluster and starting the COS Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service. 
+The following task walks you through:
+* getting the Kafka Connect runtime running in an IKS cluster 
+* starting the COS Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
+
+The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service. 
 
 Complete the following steps to get set up:
 {: shortdesc}
 
-## Step 1. Install the pre-requisites
+## Step 1. Install the prerequisites
 {: #step1_install_prereqs}
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
-* An instance of the Cloud Object Storage service with at least one bucket
+* An instance of the Cloud Object Storage service with at least one bucket.
 * An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
     You will also need CLI access to your cluster. For more information, see
- [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install)
-* A recent version of Kubectl (for example 1.14)
+ [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
+* A recent version of Kubectl (for example 1.14).
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
 
 ## Step 2. Clone the kafka-connect repositories
@@ -96,11 +100,11 @@ kubectl port-forward service/kafkaconnect-service 8083
 ```
   {: codeblock}
 
-Keep the terminal used for port forwarding open, and use another terminal for the following steps.
+Keep the terminal that you've used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at http://localhost:8083.
 
-So you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector.
+So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector.
 
 If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}
@@ -149,7 +153,7 @@ Replace the placeholders in the cos-sink.json file with your own values.
 <dt><strong>cos.endpoint.visibility</strong></dt>
 <dd>Optional. Specify public to connect to the Cloud Object Storage service over the public internet, or private to connect from a connector running inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
 <dt><strong>cos.object.deadline.seconds </strong></dt>
-<dd>Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object. This can be useful in situations where there are long pauses between Kafka records being produced to a topic, as it ensures that any records received by this connector will always be written into object storage within the specified period of time.</dd>
+<dd>Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object. This can be useful in situations where there are long pauses between Kafka records being produced to a topic, because it ensures that any records received by this connector will always be written into object storage within the specified period of time.</dd>
 <dt><strong>cos.object.interval.seconds</strong></dt>
 <dd>Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object.</dd>
 <dt><strong>cos.object.records</strong></dt>
