@@ -47,7 +47,6 @@ Ensure you have the following software and services installed:
 Clone the following two repositories that contain the required files:
 
 * https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
-
 * https://github.com/ibm-messaging/event-streams-samples
 
 
@@ -56,7 +55,7 @@ Clone the following two repositories that contain the required files:
 
 1. You only have to set up this configuration once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the event-streams-samples project, navigate to the kafka-connect/IKS directory, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
+    From the event-streams-samples project, navigate to the <code>kafka-connect/IKS directory</code>, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
 
     Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you will get an error.
 
@@ -105,7 +104,7 @@ Keep the terminal that you've used for port forwarding open, and use another ter
 The Connect REST API is then available at http://localhost:8083. If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
-So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector.
+So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the COS connector.
 
 
 <!--
@@ -167,12 +166,12 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 ### Get COS credentials using the IBM Cloud console
 {: #connect_enterprise_external_console}
 
-1. Locate your Cloud Object Storage service on the dashboard.
-2. Click your service tile.
-3. Click **Service Credentials**.
-4. Click **New Credential**. 
-5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Click this credential using **View Credentials** to reveal the details in JSON format.
+    1. Locate your Cloud Object Storage service on the dashboard.
+    2. Click your service tile.
+    3. Click **Service Credentials**.
+    4. Click **New Credential**. 
+    5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
+    6. Click this credential using **View Credentials** to reveal the details in JSON format.
 
 
 ## Step 7. Start the connector with its configuration
@@ -186,7 +185,7 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ```
 {: codeblock}
 
-## Step 8. Monitoring your connector 
+## Step 8. Monitor your connector 
 {: #step8_monitor_connector}
 
 You can check your connector by going to <br/>
