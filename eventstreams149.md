@@ -166,12 +166,12 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 ### Get COS credentials using the IBM Cloud console
 {: #connect_enterprise_external_console}
 
-    1. Locate your Cloud Object Storage service on the dashboard.
-    2. Click your service tile.
-    3. Click **Service Credentials**.
-    4. Click **New Credential**. 
-    5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-    6. Click this credential using **View Credentials** to reveal the details in JSON format.
+1. Locate your Cloud Object Storage service on the dashboard.
+2. Click your service tile.
+3. Click **Service Credentials**.
+4. Click **New Credential**. 
+5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
+6. Click this credential using **View Credentials** to reveal the details in JSON format.
 
 
 ## Step 7. Start the connector with its configuration
@@ -180,8 +180,7 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 Run the following command to start the COS connector with the configuration that you provided in the previous step.
 
 ```
-curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors
---data "@./cos-sink.json"
+curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./cos-sink.json"
 ```
 {: codeblock}
 
