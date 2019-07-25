@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-24b"
+lastupdated: "2019-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -42,7 +42,7 @@ Ensure you have the following software and services installed:
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
 
 ## Step 2. Clone the kafka-connect repositories
-{: #step3_clone project}
+{: #step2_clone project}
 
 Clone the following two repositories that contain the required files:
 
@@ -91,7 +91,7 @@ kubectl apply -f ./kafka-connect.yaml
 
 
 ## Step 5. Validate Kafka Connect is running
-{: #step5_manage_connectors}
+{: #step5_validate_connector}
 
 To validate that Kafka Connect is running, port forward to the kafkaconnect-service Service on port 8083. For example:
 
@@ -177,6 +177,7 @@ Replace the placeholders in the cos-sink.json file with your own values.
 
 
 ## Step 7. Start the connector with its configuration
+{: #step7_start_connector}
 
 Run the following command to start the COS connector with the configuration that you provided in the previous step.
 
@@ -186,8 +187,8 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ```
   {: codeblock}
 
-## Step 7. Monitoring your connectors 
-{: #step7_monitor_connectors}
+## Step 8. Monitoring your connectors 
+{: #step8_monitor_connector}
 
 You can check your connector by going to <br/>
 http://localhost:8083/connectors/cos-sink/status
