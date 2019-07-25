@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-07-25a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -38,7 +38,7 @@ Ensure you have the following software and services installed:
 
     You will also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
-* A recent version of Kubectl (for example 1.14).
+* A recent version of Kubectl.
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
 
 ## Step 2. Clone the kafka-connect repositories
@@ -133,7 +133,7 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
 ## Step 6. Configure the cos-sink json and cos-sink.properties files
 {: #step6_config_json}
 
-Edit the <code>cos-sink.json</code> and <code>cos-sink.properties</code> files located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
 
@@ -148,6 +148,10 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 <dd>Required. Name of the Cloud Object Storage service bucket to write data into.</dd>
 <dt><strong>cos.bucket.resiliency</strong></dt>
 <dd>Required. Resiliency of the Cloud Object Storage bucket. Must be one of: cross-region, regional, or single-site.</dd>
+<dt><strong>cos.service.crn</strong></dt>
+<dd>Required. CRN for the Cloud Object Storage service instance.
+<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example:<br/> 
+<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
 <dt><strong>cos.endpoint.visibility</strong></dt>
 <dd>Optional. Specify public to connect to the Cloud Object Storage service over the public internet, or private to connect from a connector running inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
 <dt><strong>cos.object.deadline.seconds </strong></dt>
@@ -157,10 +161,6 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 <dt><strong>cos.object.records</strong></dt>
 <dd>Optional. The maximum number of Kafka records to combine into a object.
 </dd>
-<dt><strong>cos.service.crn</strong></dt>
-<dd>Required. CRN for the Cloud Object Storage service instance.
-<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example:<br/> 
-<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
 </dl>
  
 ### Get COS credentials using the IBM Cloud console
