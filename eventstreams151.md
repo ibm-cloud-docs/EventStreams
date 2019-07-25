@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-23"
+lastupdated: "2019-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -40,7 +40,7 @@ Although the COS Sink Connector does not include this feature, instead it offers
 
 
 ## MQ Source Connector
-The MQ Connector offers all of the commonly used functionality of the MQ bridge and more, with improved security. However, note that partitioning by GroupID is not currently supported and the connector stops rather than discarding messages that is cannot process, for example if the message is too large to forward to Kafka.
+The MQ Connector offers all of the commonly used functionality of the MQ bridge and more, with improved security. However, note that partitioning by GroupID is not currently supported. Additionally, the connector stops if it cannot process a message for any reason, for example if the message is too large to forward to Kafka in preference to discarding the message.
 
 For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
  
