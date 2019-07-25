@@ -46,7 +46,7 @@ To add a private endpoint:
     If you don't know the cluster ID, please provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
   
 
-For more information about service endpoints, see the [{{site.data.keyword.Bluemix_notm}} Service Endpoint documentation](/docs/services/service-endpoint?topic=service-endpoint-about#about){:new_window}.
+For more information about service endpoints, see the [{{site.data.keyword.Bluemix_notm}} Service Endpoint documentation](/docs/resources?topic=resources-service-endpoints#about){:new_window}.
 
 
 ## After switching to a private endpoint
