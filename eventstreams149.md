@@ -98,16 +98,15 @@ To validate that Kafka Connect is running, port forward to the kafkaconnect-serv
 ```
 kubectl port-forward service/kafkaconnect-service 8083
 ```
-  {: codeblock}
+{: codeblock}
 
 Keep the terminal that you've used for port forwarding open, and use another terminal for the next steps.
 
-The Connect REST API is then available at http://localhost:8083.
+The Connect REST API is then available at http://localhost:8083. If you want more information about the API, see
+[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
 So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's start the COS connector.
 
-If you want more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}
 
 <!--
 ## Step 6. Build the connector
@@ -135,11 +134,11 @@ If you want more information about the API, see
 ## Step 6. Configure the cos-sink json and cos-sink.properties files
 {: #step6_config_json}
 
-Edit the <code>cos-sink.json</code> and cos-sink.properties files located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the <code>cos-sink.json</code> and <code>cos-sink.properties</code> files located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
 
-Replace the placeholders in the cos-sink.json file with your own values.
+Replace the placeholders in the <code>cos-sink.json</code> file with your own values.
 
 <dl>
 <dt><strong>cos.api.key</strong></dt>
@@ -161,7 +160,7 @@ Replace the placeholders in the cos-sink.json file with your own values.
 </dd>
 <dt><strong>cos.service.crn</strong></dt>
 <dd>Required. CRN for the Cloud Object Storage service instance.
-<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example, 
+<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example:<br/> 
 <code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
 </dl>
  
@@ -185,9 +184,9 @@ Run the following command to start the COS connector with the configuration that
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors
 --data "@./cos-sink.json"
 ```
-  {: codeblock}
+{: codeblock}
 
-## Step 8. Monitoring your connectors 
+## Step 8. Monitoring your connector 
 {: #step8_monitor_connector}
 
 You can check your connector by going to <br/>
