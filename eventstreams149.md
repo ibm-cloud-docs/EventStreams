@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-25a"
+lastupdated: "2019-07-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -130,7 +130,7 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
     ```
 -->
 
-## Step 6. Configure the cos-sink json and cos-sink.properties files
+## Step 6. Configure the cos-sink json file
 {: #step6_config_json}
 
 Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
