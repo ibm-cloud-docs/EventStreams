@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-07-31a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -92,6 +92,7 @@ You are strongly recommended not to attempt to manage the topic in any way.
 
 ## How long are messages retained?
 {: #messages_retained}
+{: faq}
 
 By default, messages are retained in Kafka for up to 24 hours and
 each partition is capped at 1 GB. If the 1 GB cap is reached, the
@@ -132,8 +133,9 @@ The following configuration settings apply to all topics and cannot be changed:
 * replication.factor = 3 
 * min.insync.replicas = 2
 
-## Topics and partitions
+## What the restrictions and defaults for topics and partitions?
 {: #topics_partitions}
+{: faq}
 
 *  Topic names are restricted to a maximum of 100 characters.
 *  The default number of partitions for a topic is one.
@@ -153,8 +155,10 @@ To find out more information about the different {{site.data.keyword.messagehub}
 {: #disaster_recovery }
 {: faq}
 
-Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. You can use a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to build the ibmcom/eventstreams-kafkamirrormaker Docker image, see 
-[kafka-mirrormaker sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){:new_window}.
+Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
+
+You can use a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to build the Docker image, see 
+[{{site.data.keyword.messagehub}} kafka-mirrormaker sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){:new_window}.
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 
