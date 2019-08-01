@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-08-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -35,10 +35,13 @@ privacy of your data:
       * ECDHE-RSA-AES128-SHA256
       * ECDHE-RSA-AES256-SHA384
       * ECDHE-RSA-AES256-SHA384
-* To be a fully supported configuration, all clients must support TLSv1.2, elliptic curve cryptography, and TLS server name indication (SNI).
+* To be a fully supported configuration, all clients must support the following:
+    * TLS v1.2
+    * elliptic curve cryptography
+    * TLS server name indication (SNI)
 * You must use TLS v1.2 in the following cases:
-    * to access the {{site.data.keyword.messagehub}} dashboard your browser must support TLS v1.2
-    * to make connections to the Kafka native and REST interfaces 
+    * for the browser you use to access the {{site.data.keyword.messagehub}} dashboard 
+    * for making connections to the Kafka native and REST interfaces 
    
 ## Encryption of message payloads, topic names, and consumer groups
 {: #encryption_payloads notoc}
