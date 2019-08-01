@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-31"
+lastupdated: "2019-08-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -157,7 +157,7 @@ To find out more information about the different {{site.data.keyword.messagehub}
 
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
-You can use a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to build the Docker image, see 
+You can use a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
 [{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){:new_window}.
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
