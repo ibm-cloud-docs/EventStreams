@@ -151,7 +151,7 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 <dt><strong>cos.service.crn</strong></dt>
 <dd>Required. CRN for the Cloud Object Storage service instance.
 <p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example:<br/> 
-<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></dd>
+<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></p></dd>
 <dt><strong>cos.endpoint.visibility</strong></dt>
 <dd>Optional. Specify public to connect to the Cloud Object Storage service over the public internet, or private to connect from a connector running inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
 <dt><strong>cos.object.deadline.seconds </strong></dt>
