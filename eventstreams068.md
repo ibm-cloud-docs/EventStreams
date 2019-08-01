@@ -40,8 +40,9 @@ privacy of your data:
     * elliptic curve cryptography
     * TLS server name indication (SNI)
 * You must use TLS v1.2 in the following cases:
-    * the browser that you use to access the {{site.data.keyword.messagehub}} dashboard must support this 
     * for making connections to the Kafka native and REST interfaces 
+    * the browser that you use to access the {{site.data.keyword.messagehub}} dashboard must support TLS v1.2
+
    
 ## Encryption of message payloads, topic names, and consumer groups
 {: #encryption_payloads notoc}
