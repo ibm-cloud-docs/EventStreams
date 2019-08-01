@@ -162,7 +162,10 @@ You can use a tool like Kafka MirrorMaker to replicate data between clusters. Fo
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 
-Topic names are backed up by {{site.data.keyword.messagehub}}.
+Topic names are backed up by {{site.data.keyword.messagehub}}, although it is recommended good practice for users to back up topic names and configuration data for those topics.
+
+If you have configured your {{site.data.keyword.messagehub}} instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend that users plan for such circumstances. If, because of such an event, a user's instance is no longer available (and a remote DR instance had not been already set up), the user should consider configuring a new instance in a new region and restoring their topics and data from backup if available. Applications can then be pointed at the new instance.
+
 
 
 
