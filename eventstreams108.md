@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-08-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -157,14 +157,14 @@ To find out more information about the different {{site.data.keyword.messagehub}
 
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
-You can use a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
+We suggest a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
 [{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){:new_window}.
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 
-Topic names are backed up by {{site.data.keyword.messagehub}}, although it is recommended good practice for users to back up topic names and configuration data for those topics.
+Topic names are backed up by {{site.data.keyword.messagehub}}, although it is recommended good practice for users to back up topic names and the configuration data for those topics.
 
-If you have configured your {{site.data.keyword.messagehub}} instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend that users plan for such circumstances. If, because of such an event, a user's instance is no longer available (and a remote DR instance had not been already set up), the user should consider configuring a new instance in a new region and restoring their topics and data from backup if available. Applications can then be pointed at the new instance.
+If you have configured your {{site.data.keyword.messagehub}} instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend that users plan for such circumstances. If a user's instance is no longer available because of such an event (and a remote DR instance is not already set up), the user should consider configuring a new instance in a new region and restoring their topics and data from backup if available. Applications can then be pointed at the new instance.
 
 
 
