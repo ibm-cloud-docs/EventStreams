@@ -21,6 +21,9 @@ subcollection: eventstreams
 # Connecting to {{site.data.keyword.messagehub}}
 {: #connecting}
 
+Need to refresh topic includes info for Lite plan. 
+{: note}
+
 The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're application is running natively or as a Cloud Foundry application. However, in both cases two pieces of information are required: 
 {: shortdesc}
 
