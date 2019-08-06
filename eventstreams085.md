@@ -61,7 +61,7 @@ For information about moving from the Classic plan, see [Migrating](/docs/servic
 The following table summarizes what is supported by the plans:
 
 <table>
-    <caption>Table 1. Support in Standard, Enterprise, and Classic plans</caption>
+    <caption>Table 1. Support in Standard, Enterprise, Lite, and Classic plans</caption>
       <tr>
 	        <th></th>
 		    <th>Standard Plan</th>
@@ -180,10 +180,6 @@ The following table summarizes what is supported by the plans:
 			<td>Dallas (us-south)</br>
 			<br/>
 			</td>
-			<td>Dallas (us-south)</br>
-			London (eu-gb)</br>
-			Sydney (au-syd)</br>
-			Frankfurt (eu-de)</td>
 			<td>Dallas (us-south)</br>
 			London (eu-gb)</br>
 			Sydney (au-syd)</br>
