@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard, Enterprise, and Classic. 
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard, Enterprise, Lite, and Classic. 
 
 <!--
 For information about the Classic plan, see
@@ -38,6 +38,11 @@ The Standard plan is appropriate if you require event ingest and distribution ca
 {: #plan_enterprise}
 
 The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster. You can also provision an {{site.data.keyword.messagehub}} cluster in a geographically local but [single zone location (SZR)](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+
+## Lite plan
+{: #plan_lite}
+
+The Lite plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 
 ## Classic plan
