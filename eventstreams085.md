@@ -55,7 +55,7 @@ The Classic plan gives access to the previous edition of the Standard plan and i
 For information about moving from the Classic plan, see [Migrating](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
 
 
-## What's supported by the Standard, Enterprise, and Classic plans
+## What's supported by the Standard, Enterprise, Lite, and Classic plans
 
 The following table summarizes what is supported by the plans:
 
@@ -122,7 +122,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum number of partitions**</td>
 			<td>100</td>
 			<td>1000</td>
-			<td>100?</td>
+			<td>1</td>
 			<td>100</td>
 		</tr>
 		<tr>
