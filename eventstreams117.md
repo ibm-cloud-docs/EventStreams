@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-08-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -76,6 +76,35 @@ Unlimited, up to the storage limit of your plan.
 
 *  Maximum message size: 1 MB
 *  Maximum concurrently active Kafka clients: 10000
+
+## Lite plan
+{: #limits_lite }
+
+### Network throughput
+{: #lite_throughput }
+
+A recommended maximum of 100 KB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
+
+The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
+
+
+### Partitions
+{: #lite_partitions}
+
+1 partition for each service instance.
+
+### Retention
+{: #lite_retention}
+
+A maximum of 100 MB for the partition. 
+
+### Other limits
+{: #lite_limits}
+
+*  Maximum message size: 1 MB
+*  Maximum concurrently active Kafka clients: 5
+
+
 
 
 
