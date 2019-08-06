@@ -20,7 +20,8 @@ subcollection: eventstreams
 # Getting started tutorial
 {: #getting_started}
 
-Need to refresh topic so it's tailored for Lite plan. {: note}
+Need to refresh topic so it's tailored for Lite plan. 
+{: note}
 
 To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
