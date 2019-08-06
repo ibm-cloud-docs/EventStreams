@@ -20,7 +20,7 @@ subcollection: eventstreams
 # Limits and quotas
 {: #kafka_quotas }
 
-{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Standard or Enterprise plan.
+{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Standard, Enterprise, or Lite plan.
 
 ## Standard plan
 {: #limits_standard }
@@ -101,8 +101,10 @@ A maximum of 100 MB for the partition.
 ### Other limits
 {: #lite_limits}
 
-*  Maximum message size: 1 MB
-*  Maximum concurrently active Kafka clients: 5
+* Maximum message size: 1 MB?
+* Maximum concurrently active Kafka clients: 5
+* Maximum request rate [HTTP Produce API]: 5 per second?
+* Maximum request rate [HTTP Admin API]: 10 per second
 
 
 
