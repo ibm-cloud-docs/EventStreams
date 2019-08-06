@@ -42,7 +42,7 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 ## Lite plan
 {: #plan_lite}
 
-The Lite plan is free for users who are looking to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 
 
@@ -130,14 +130,14 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum retention period**</td>
 			<td>1 GB per partition for up to 30 days </td>
 			<td>2 TB of usable storage<!--Unlimited up to the storage limit of your plan --></td>
-			<td>100 MB for the partition for up to 30 days? </td>
+			<td>100 MB for the partition for up to 30 days </td>
 			<td>1 GB per partition for up to 30 days </td>
 		</tr>
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>1 MB per second per partition (20 MB per second maximum) </td>
 			<td>40 MB per second per cluster (peak throughput of 75 MB per second)</td>
-			<td>100 KB per second per partition?</td>
+			<td>100 KB per second per partition</td>
 			<td>1 MB per second per partition</td>
 		</tr>
 		<tr>
@@ -177,8 +177,7 @@ The following table summarizes what is supported by the plans:
 			Seoul (seo01)<br/>
 			<br/>
 			</td>
-			<td>
-			Dallas (us-south)</br>
+			<td>Dallas (us-south)</br>
 			<br/>
 			</td>
 			<td>Dallas (us-south)</br>
