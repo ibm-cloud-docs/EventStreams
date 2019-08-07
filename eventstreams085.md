@@ -32,7 +32,7 @@ For information about the Classic plan, see
 ## Lite plan
 {: #plan_lite}
 
-The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. We do not recommend the Lite plan for production use. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Standard plan
 {: #plan_standard}
@@ -54,12 +54,12 @@ The Classic plan gives access to the previous edition of the Standard plan and i
 For information about moving from the Classic plan, see [Migrating](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
 
 
-## What's supported by the Standard, Enterprise, Lite, and Classic plans
+## What's supported by the Lite, Standard, Enterprise, and Classic plans
 
 The following table summarizes what is supported by the plans:
 
 <table>
-    <caption>Table 1. Support in Lite, Standard, Enterprise, Lite, and Classic plans</caption>
+    <caption>Table 1. Support in Lite, Standard, Enterprise, and Classic plans</caption>
       <tr>
 	        <th></th>
 		    <th>Lite Plan</th>
@@ -84,9 +84,9 @@ The following table summarizes what is supported by the plans:
 		</tr>
         <tr>
 			<td>**Availability**</td>
+			<td>99.95% [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_lite)</td>
 			<td>99.95%</td>
-			<td>99.95%</td>
-			<td>99.95%<br/>(99.5% in single zone locations)  [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.95%<br/>(99.5% in single zone locations)  [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -224,7 +224,8 @@ The following table summarizes what is supported by the plans:
 ### Footnote
 {: #footnote_plans notoc}
 
-1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+1. {: #footnote_lite notoc} After 30 days of no use, your instance is deleted.
+2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 
 
 
