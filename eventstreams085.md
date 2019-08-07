@@ -213,7 +213,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Deployment timeframe**</td>
-			<td>Instantaneous provisioning?</td>
+			<td>Instantaneous provisioning</td>
 			<td>Instantaneous provisioning</td>
 			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
 			<td>Instantaneous provisioning</td>
@@ -224,7 +224,7 @@ The following table summarizes what is supported by the plans:
 ### Footnote
 {: #footnote_plans notoc}
 
-1. {: #footnote_lite notoc} After 30 days of no use, your instance is deleted.
+1. {: #footnote_lite notoc} Note that after 30 days of inactivity, your instance is deleted.
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 
 
