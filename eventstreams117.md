@@ -22,6 +22,35 @@ subcollection: eventstreams
 
 {{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Standard, Enterprise, or Lite plan.
 
+## Lite plan
+{: #limits_lite }
+
+### Network throughput
+{: #lite_throughput }
+
+A recommended maximum of 100 KB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
+
+The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
+
+
+### Partitions
+{: #lite_partitions}
+
+1 partition for each service instance.
+
+### Retention
+{: #lite_retention}
+
+A maximum of 100 MB for the partition. 
+
+### Other limits
+{: #lite_limits}
+
+* Maximum message size: 1 MB
+* Maximum concurrently active Kafka clients: 5
+* Maximum request rate [HTTP Produce API]: 5 per second
+* Maximum request rate [HTTP Admin API]: 10 per second
+
 ## Standard plan
 {: #limits_standard }
 
@@ -77,34 +106,7 @@ Unlimited, up to the storage limit of your plan.
 *  Maximum message size: 1 MB
 *  Maximum concurrently active Kafka clients: 10000
 
-## Lite plan
-{: #limits_lite }
 
-### Network throughput
-{: #lite_throughput }
-
-A recommended maximum of 100 KB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
-
-The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
-
-
-### Partitions
-{: #lite_partitions}
-
-1 partition for each service instance.
-
-### Retention
-{: #lite_retention}
-
-A maximum of 100 MB for the partition. 
-
-### Other limits
-{: #lite_limits}
-
-* Maximum message size: 1 MB?
-* Maximum concurrently active Kafka clients: 5
-* Maximum request rate [HTTP Produce API]: 5 per second?
-* Maximum request rate [HTTP Admin API]: 10 per second
 
 
 
