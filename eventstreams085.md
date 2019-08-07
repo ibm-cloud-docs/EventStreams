@@ -221,7 +221,7 @@ The following table summarizes what is supported by the plans:
 
 </table>
 
-### Footnote
+### Footnotes
 {: #footnote_plans notoc}
 
 1. {: #footnote_lite notoc} Note that after 30 days of inactivity, your instance is deleted.
