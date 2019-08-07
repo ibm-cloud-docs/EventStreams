@@ -98,7 +98,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
-			<td>No</td>
+			<td>Yes</td>
 			<td>Yes</td>
 			<td>Yes</td>
 			<td>No</td>

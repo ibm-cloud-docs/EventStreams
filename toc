@@ -17,6 +17,7 @@ IBM Event Streams
 
 	{: .navgroup id="reference"}
 	eventstreams132.md
+	eventstreams117.md
 	eventstreams148.md
 	eventstreams068.md
 	at-events.md
@@ -72,7 +73,6 @@ IBM Event Streams
 		eventstreams111.md
 		eventstreams110.md
 		eventstreams025.md
-		eventstreams117.md
 		eventstreamsapi.md
 	
 	{: .topicgroup}
