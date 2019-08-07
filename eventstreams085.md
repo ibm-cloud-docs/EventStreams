@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-06"
+lastupdated: "2019-08-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -81,21 +81,21 @@ The following table summarizes what is supported by the plans:
 			<td>3</td>
 			<td>3<br/>(1 in single zone locations)
 			</td>
-			<td>Not supported</td>
+			<td>3</td>
 			<td>Not supported</td>
 		</tr>
         <tr>
 			<td>**Availability**</td>
 			<td>99.95%</td>
 			<td>99.95%<br/>(99.5% in single zone locations)  [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
-			<td>99.5%?</td>
+			<td>99.5% (extra info required here)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
 			<td>Kafka 1.1 <br/>(Kafka 2.2 coming soon)</td>
-			<td>Kafka 2.2?</td>
+			<td>Kafka 2.2</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
@@ -116,7 +116,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Kafka Connect and Kafka Streams supported **</td>
 			<td>Yes</td>
 			<td>Yes</td>
-			<td>No?</td>
+			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
