@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-08-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -80,7 +80,16 @@ Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is 
 
 Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address should be returned from the DNS query and used. 
 
-A Kafka Improvement Proposal (KIP) #302 has been created to ensure that Kafka clients try all available broker IP addresses and not a subset, so a failure in a single IP address won't cause a failure.
+A Kafka Improvement Proposal (KIP) #302 (available from Kafka 2.1.0) ensures that Kafka clients try all available broker IP addresses and not a subset, so a failure in a single IP address won't cause a failure. 
+
+You need to opt in using one of the following methods:
+* by specifying a new allowed value in the Consumer/Producer properties of the configuration parameter <code>client.dns.lookup</code>:
+
+```
+client.dns.lookup: "use_all_dns_ips" 
+```
+
+* use the constants CommonClientConfigs.CLIENT_DNS_LOOKUP_CONFIG: ClientDnsLookup.USE_ALL_DNS_IPS 
 
 
 ## Topics and partitions
