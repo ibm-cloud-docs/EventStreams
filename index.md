@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08h"
+lastupdated: "2019-08-08i"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -75,7 +75,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
      The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
      {: important}
 
-     4. Observe the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+      4. Observe the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
   
      5. The topic appears in the table. Congratulations, you have created a topic!
   
@@ -122,8 +122,11 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-    <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -consumer</pre>
+    ```
+    java -jar ./build/libs/kafka-java-console-sample-2.0.jar
+	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -consumer
+    ```
+    {: codeblock}
   
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identified the locations of the java .JAR file to run within the cloned repository. This does not need to be changed. 
 
@@ -157,10 +160,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 6. {: #success_step notoc} **Success!**
 
-When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
-You can verify the successful flow of messages when `INFO Message consumed` is seen from the consumer. 
+    When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
+    You can verify the successful flow of messages when `INFO Message consumed` is seen from the consumer. 
 
-The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
+    The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
 
 ## Next steps
 {: #next_steps}
