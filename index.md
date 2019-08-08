@@ -40,21 +40,21 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 {: #getting_started_prereqs}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
-	
-   a. Log in to the {{site.data.keyword.Bluemix_notm}} console. 
+
+    1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-   b. Click **Catalog**.
+    2. Click **Catalog**.
   
-   c. In the **Integration** section, click the {{site.data.keyword.messagehub}} tile and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+    3. In the **Integration** section, click the {{site.data.keyword.messagehub}} tile and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
-   d. Enter a name for your service. You can use the default value.
+    4. Enter a name for your service. You can use the default value.
   
-   e. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
+    5. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
 2. **If you don't already have them, install the following prerequisites:**
 	
 	* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
 	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
-	* Java 8 or higher
+        * Java 8 or higher
 
 ## Tutorial steps
 {: #getting_started_steps}
@@ -65,35 +65,36 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the UI to create the topic, and then reference it when starting the application.
 
-      a. Go to **Topics**.
+      1. Go to **Topics**.
   
-      b. Click **New topic**.
+      2. Click **New topic**.
   
-      c. Name your topic.
+      3. Name your topic.
   
      The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it will be created when the application is started. 
      {: important}
 
-     d. Observe the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+     4. Observe the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
   
-     e. The topic appears in the table. Congratulations, you have created a topic!
+     5. The topic appears in the table. Congratulations, you have created a topic!
   
 2. {: #create_credentials_step notoc} **Create credentials**
 
     To allow the sample application to access your topic, we need to create some credentials for it. 
 
-     a. Go to **Service credentials**.
+     1. Go to **Service credentials**.
   
-     b. Click **New credential**.
+     2. Click **New credential**.
   
-     c. Give the credential a name so you can identify its purpose later. You can use the default value.
+     3. Give the credential a name so you can identify its purpose later. You can use the default value.
   
-     d. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+     4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-     e. Click **Create**. The new credential is listed in the table in **Service credentials**.
+     5. Click **Create**. The new credential is listed in the table in **Service credentials**.
   
-     f. Click **View credentials** to see the `API key` and `kafka_brokers_sasl`.
-3.  {: #clone_repository_step notoc} **Clone the Github repository** for the sample application
+     6. Click **View credentials** to see the `API key` and `kafka_brokers_sasl`.
+3.  {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
+
     The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
     <pre class="pre">
@@ -112,7 +113,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     gradle clean && gradle build
     </pre>
 4. {: #start_consumer_step notoc} **Run the consuming application**
-   Start the sample consuming application from the command line, replacing the _`italicised`_ values. 
+   
+   Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
     <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
 	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -consumer</pre>
@@ -121,15 +123,16 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
+   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
    {: important}
 
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). Add `-consumer` to specify that the consumer should start. 
+   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-consumer`  is used to specify that the consumer should start. 
 
-   An `INFO No messages consumed` is produced when the consuming application is running, but there is no data being consumed. 
+   An `INFO No messages consumed` is printed when the consuming application is running, but there is no data being consumed. 
 
-5. {: #start_producer_step notoc} ###Run the producing application
-   Open a new command line window and start the sample producing application from the command line, replacing the _`italicised`_ values. 
+5. {: #start_producer_step notoc} **Run the producing application**
+
+   Open a new command line window and start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
     <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
 	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -producer</pre>
@@ -138,16 +141,17 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
+   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
    {: important}
 
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). Add `-producer` to specify that the producer should start. 
+   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` is used to specify that the producer should start. 
 
 5. {: #success_step notoc} **Success!**
-When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
-You can verify the successful flow of messages when `INFO Message consumed` is seen from the consumer. 
 
-The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
+    When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
+    You can verify the successful flow of messages when `INFO Message consumed` is printed by the consumer. 
+
+    The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
 
 ## Next steps
 {: #next_steps}
