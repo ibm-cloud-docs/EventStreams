@@ -54,7 +54,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 	
 	* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
 	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
- 	* Java 8 or higher
+	* Java 8 or higher
 
 ## Tutorial steps
 {: #getting_started_steps}
