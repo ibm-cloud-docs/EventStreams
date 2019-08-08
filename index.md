@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08d"
+lastupdated: "2019-08-08e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -50,6 +50,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     4. Enter a name for your service. You can use the default value.
   
     5. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
+
 2. **If you don't already have them, install the following prerequisites:**
 	
 	* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
@@ -93,6 +94,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
      5. Click **Create**. The new credential is listed in the table in **Service credentials**.
   
      6. Click **View credentials** to see the `API key` and `kafka_brokers_sasl`.
+
 3.  {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
 
 
@@ -113,6 +115,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     <pre class="pre">
     gradle clean && gradle build
     </pre>
+
 4. {: #start_consumer_step notoc} **Run the consuming application**
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
