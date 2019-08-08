@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Standard, Enterprise, Lite, and Classic. 
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Lite, Standard, Enterprise, and Classic. 
 
 <!--
 For information about the Classic plan, see
