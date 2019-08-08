@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08e"
+lastupdated: "2019-08-08f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -139,8 +139,11 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Open a new command line window and start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-  <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -producer</pre>
+```
+  java -jar ./build/libs/kafka-java-console-sample-2.0.jar
+	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -producer
+```
+{: codeblock}
   
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identified the locations of the java .JAR file to run within the cloned repository. You do not need to change this. 
 
