@@ -26,7 +26,7 @@ privacy of your data:
 {:shortdesc}
 
 ## Cryptographic protocols
-{: #cryptographic notoc}
+{: #cryptographic}
 
 * Connections are restricted to the following strong cipher suites:
 
@@ -35,7 +35,7 @@ privacy of your data:
       * ECDHE-RSA-AES128-SHA256
       * ECDHE-RSA-AES256-SHA384
       * ECDHE-RSA-AES256-SHA384
-      
+
 * To be a fully supported configuration, all clients must support the following:
     * TLS v1.2
     * elliptic curve cryptography
@@ -47,7 +47,7 @@ privacy of your data:
 
    
 ## Encryption of message payloads, topic names, and consumer groups
-{: #encryption_payloads notoc}
+{: #encryption_payloads}
 
 Message data is encrypted for transmission between {{site.data.keyword.messagehub}}
 and clients as a result of TLS. {{site.data.keyword.messagehub}} stores message data
