@@ -85,11 +85,12 @@ A Kafka Improvement Proposal (KIP) #302 (available from Kafka 2.1.0) ensures tha
 You need to opt in using one of the following methods:
 * by specifying a new allowed value in the Consumer/Producer properties of the configuration parameter <code>client.dns.lookup</code>:
 
-```
-client.dns.lookup: "use_all_dns_ips" 
-```
+    ```
+    client.dns.lookup: "use_all_dns_ips" 
+    ```
+    {: codeblock}
 
-* use the constants CommonClientConfigs.CLIENT_DNS_LOOKUP_CONFIG: ClientDnsLookup.USE_ALL_DNS_IPS 
+* by using the constants CommonClientConfigs.CLIENT_DNS_LOOKUP_CONFIG: ClientDnsLookup.USE_ALL_DNS_IPS 
 
 
 ## Topics and partitions
