@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08i"
+lastupdated: "2019-08-08j"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -76,8 +76,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
      {: important}
 
       4. Observe the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
-  
-     5. The topic appears in the table. Congratulations, you have created a topic!
+
+      5. The topic appears in the table. Congratulations, you have created a topic!
   
 2. {: #create_credentials_step notoc} **Create credentials**
 
