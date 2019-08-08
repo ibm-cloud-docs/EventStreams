@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08b"
+lastupdated: "2019-08-08d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -71,7 +71,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
       c. Name your topic.
   
-     The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it will be created when the application is started. 
+     The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
      {: important}
 
      d. Observe the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
@@ -93,7 +93,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
      e. Click **Create**. The new credential is listed in the table in **Service credentials**.
   
      f. Click **View credentials** to see the `API key` and `kafka_brokers_sasl`.
-3.  {: #clone_repository_step notoc} **Clone the Github repository** for the sample application
+3.  {: #clone_repository_step notoc} **Clone the Github repository** for the sample application.
+
     The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
     <pre class="pre">
@@ -112,6 +113,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     gradle clean && gradle build
     </pre>
 4. {: #start_consumer_step notoc} **Run the consuming application**
+   
    Start the sample consuming application from the command line, replacing the _`italicised`_ values. 
 
     <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
@@ -128,13 +130,14 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    An `INFO No messages consumed` is produced when the consuming application is running, but there is no data being consumed. 
 
-5. {: #start_producer_step notoc} ###Run the producing application
+5. {: #start_producer_step notoc} ###Run the producing application.
+
    Open a new command line window and start the sample producing application from the command line, replacing the _`italicised`_ values. 
 
     <pre class="pre">java -jar ./build/libs/kafka-java-console-sample-2.0.jar
 	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -producer</pre>
   
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identified the locations of the java .JAR file to run within the cloned repository. This does not need to be changed. 
+   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identified the locations of the java .JAR file to run within the cloned repository. You do not need to change this. 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
@@ -144,6 +147,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). Add `-producer` to specify that the producer should start. 
 
 5. {: #success_step notoc} **Success!**
+
 When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
 You can verify the successful flow of messages when `INFO Message consumed` is seen from the consumer. 
 
