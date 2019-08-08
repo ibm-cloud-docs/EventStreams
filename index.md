@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08g"
+lastupdated: "2019-08-08h"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -99,9 +99,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
     The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
-    <pre class="pre">
+    ```
     git clone https://github.com/ibm-messaging/event-streams-samples.git
-    </pre>
+    ```
+    {: codeblock}
 
     When the repository is cloned, change the command line directory into the `kafka-java-console-sample` directory.
 
@@ -112,9 +113,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
     Build the contents of the `kafka-java-console-sample` directory.
 
-    <pre class="pre">
+    ```
     gradle clean && gradle build
-    </pre>
+    ```
+    {: codeblock}
 
 4. {: #start_consumer_step notoc} **Run the consuming application**
    
@@ -134,16 +136,15 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    An `INFO No messages consumed` is printed when the consuming application is running, but there is no data being consumed. 
 
-
 5. {: #start_producer_step notoc} **Run the producing application**
 
    Open a new command line window and start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-```
-  java -jar ./build/libs/kafka-java-console-sample-2.0.jar
+    ```
+    java -jar ./build/libs/kafka-java-console-sample-2.0.jar
 	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -producer
-```
-{: codeblock}
+    ```
+    {: codeblock}
   
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identified the locations of the java .JAR file to run within the cloned repository. You do not need to change this. 
 
