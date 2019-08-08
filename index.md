@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08f"
+lastupdated: "2019-08-08g"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -55,7 +55,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 	
 	* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
 	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
-        * Java 8 or higher
+	* Java 8 or higher
 
 ## Tutorial steps
 {: #getting_started_steps}
@@ -95,8 +95,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
      6. Click **View credentials** to see the `API key` and `kafka_brokers_sasl`.
 
-3.  {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
-
+3. {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
 
     The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
@@ -106,9 +105,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
     When the repository is cloned, change the command line directory into the `kafka-java-console-sample` directory.
 
-    <pre class="pre">
+    ```
     cd event-streams-samples/kafka-java-console-sample
-    </pre>
+    ```
+    {: codeblock}
 
     Build the contents of the `kafka-java-console-sample` directory.
 
@@ -154,7 +154,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` is used to specify that the producer should start. 
 
-5. {: #success_step notoc} **Success!**
+6. {: #success_step notoc} **Success!**
 
 When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
 You can verify the successful flow of messages when `INFO Message consumed` is seen from the consumer. 
