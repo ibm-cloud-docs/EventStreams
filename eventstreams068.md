@@ -35,11 +35,13 @@ privacy of your data:
       * ECDHE-RSA-AES128-SHA256
       * ECDHE-RSA-AES256-SHA384
       * ECDHE-RSA-AES256-SHA384
+      
 * To be a fully supported configuration, all clients must support the following:
     * TLS v1.2
     * elliptic curve cryptography
     * TLS server name indication (SNI)
-* You must use TLS v1.2 in the following cases:
+
+* Additionally, you must use TLS v1.2 in the following cases:
     * for making connections to the Kafka native and REST interfaces 
     * the browser that you use to access the {{site.data.keyword.messagehub}} dashboard must support TLS v1.2
 
