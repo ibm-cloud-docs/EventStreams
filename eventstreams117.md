@@ -20,7 +20,7 @@ subcollection: eventstreams
 # Limits and quotas
 {: #kafka_quotas }
 
-{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Standard, Enterprise, or Lite plan.
+{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Lite, Standard, or Enterprise plan.
 
 ## Lite plan
 {: #limits_lite }
