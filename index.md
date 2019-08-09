@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-08j"
+lastupdated: "2019-08-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -104,14 +104,16 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     ```
     {: codeblock}
 
-    When the repository is cloned, change the command line directory into the `kafka-java-console-sample` directory.
+<br/>
+    When the repository is cloned, change the command line directory into the <code>kafka-java-console-sample</code> directory.
 
     ```
     cd event-streams-samples/kafka-java-console-sample
     ```
     {: codeblock}
 
-    Build the contents of the `kafka-java-console-sample` directory.
+<br/>
+    Build the contents of the <code>kafka-java-console-sample</code> directory.
 
     ```
     gradle clean && gradle build
