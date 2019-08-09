@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-09"
+lastupdated: "2019-08-09a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -104,7 +104,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     ```
     {: codeblock}
 
-<br/>
+    <br/>
     When the repository is cloned, change the command line directory into the <code>kafka-java-console-sample</code> directory.
 
     ```
@@ -112,7 +112,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     ```
     {: codeblock}
 
-<br/>
+    <br/>
     Build the contents of the <code>kafka-java-console-sample</code> directory.
 
     ```
