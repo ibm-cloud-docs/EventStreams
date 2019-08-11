@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-09a"
+lastupdated: "2019-08-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -126,7 +126,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
     ```
     java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -consumer
+	"<kafka_brokers_sasl>" "<api_key>" -consumer
     ```
     {: codeblock}
   
@@ -147,7 +147,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
     ```
     java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	"<var class="keyword varname">kafka_brokers_sasl</var>" "<var class="keyword varname">api_key</var>" -producer
+	"<kafka_brokers_sasl>" "<api_key>" -producer
     ```
     {: codeblock}
   
