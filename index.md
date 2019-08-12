@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-12"
+lastupdated: "2019-08-12a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -130,7 +130,6 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     java -jar ./build/libs/kafka-java-console-sample-2.0.jar <kafka_brokers_sasl> <api_key> -consumer
     ```
     {: codeblock}
-  
    
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
