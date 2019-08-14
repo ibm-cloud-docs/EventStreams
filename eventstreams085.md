@@ -134,7 +134,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>100 KB per second per partition</td>
-			<td>1 MB per second per partition (20 MB per second maximum) </td>
+			<td>1 MB per second per partition (20 MB per service instance) </td>
 			<td>40 MB per second per cluster (peak throughput of 75 MB per second)</td>
 			<td>1 MB per second per partition</td>
 		</tr>
@@ -224,7 +224,7 @@ The following table summarizes what is supported by the plans:
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as non-zero bytes_out metric even though you might have created a partition created or produced messages.)
+1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 
 

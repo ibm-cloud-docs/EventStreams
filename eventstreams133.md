@@ -92,6 +92,7 @@ Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you
 ```
 ibmcloud es init
 ```
+{: codeblock}
 
 <br/>
 For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
