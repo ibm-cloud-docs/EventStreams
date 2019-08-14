@@ -45,7 +45,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
     2. Click **Catalog**.
   
-    3. From the navigation pane, click **Integration** , click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+    3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
     4. Enter a name for your service. You can use the default value.
   
@@ -83,7 +83,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
     To allow the sample application to access your topic, we need to create some credentials for it. 
 
-     1. Go to **Service credentials**.
+     1. Go to **Service credentials** in the navigation pane.
   
      2. Click **New credential**.
   
@@ -91,9 +91,9 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
      4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-     5. Click **Create**. The new credential is listed in the table in **Service credentials**.
+     5. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-     6. Click **View credentials** to see the `API key` and `kafka_brokers_sasl`.
+     6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
 3. {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
 
@@ -124,12 +124,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the java .JAR file to run within the cloned repository. You do not need to change this. 
-
-    ```
-    java -jar ./build/libs/kafka-java-console-sample-2.0.jar <kafka_brokers_sasl> <api_key> -consumer
-    ```
-    {: codeblock}
+   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
    
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
@@ -138,11 +133,24 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
 
+    ```
+    java -jar ./build/libs/kafka-java-console-sample-2.0.jar <kafka_brokers_sasl> <api_key> -consumer
+    ```
+    {: codeblock}
+  
+
    An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
 5. {: #start_producer_step notoc} **Run the producing application**
 
-   Open a new command line window and start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
+   Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
+
+    ```
+    cd event-streams-samples/kafka-java-console-sample
+    ```
+    {: codeblock}
+   
+   Then, start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
     ```
     java -jar ./build/libs/kafka-java-console-sample-2.0.jar
@@ -150,7 +158,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     ```
     {: codeblock}
   
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the java .JAR file to run within the cloned repository. You do not need to change this. 
+   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
