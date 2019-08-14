@@ -134,7 +134,7 @@ The following configuration settings apply to all topics and cannot be changed:
 * min.insync.replicas = 2
 
 ## What are the restrictions and defaults for topics and partitions?
-{: #topics_partitions}
+{: #topics_partitions_defaults}
 {: faq}
 
 *  Topic names are restricted to a maximum of 100 characters.
