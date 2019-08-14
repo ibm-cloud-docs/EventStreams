@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-14"
+lastupdated: "2019-08-14b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -66,7 +66,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-      1. Go to **Topics**.
+      1. Go to the **Topics** tab.
   
       2. Click **New topic**.
   
