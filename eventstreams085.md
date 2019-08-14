@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -121,7 +121,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum number of partitions**</td>
 			<td>1</td>
 			<td>100</td>
-			<td>1000</td>
+			<td>3000</td>
 			<td>100</td>
 		</tr>
 		<tr>
@@ -224,7 +224,7 @@ The following table summarizes what is supported by the plans:
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_lite notoc} Note that after 30 days of inactivity, your instance is deleted.
+1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as non-zero bytes_out metric even though you might have created a partition created or produced messages.)
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 
 

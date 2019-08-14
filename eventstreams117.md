@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-07"
+lastupdated: "2019-08-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -93,7 +93,7 @@ The recommended figure is based on a typical workload and takes into account the
 ### Partitions
 {: #enterprise_partitions}
 
-1000 partitions for each service instance.
+3000 partitions for each service instance.
 
 ### Retention
 {: #enterprise_retention}
