@@ -64,7 +64,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
 
-   We'll be using the UI to create the topic, and will reference it when starting the application.
+   We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
       1. Go to **Topics**.
   
