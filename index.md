@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-12a"
+lastupdated: "2019-08-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,7 +45,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
     2. Click **Catalog**.
   
-    3. In the **Integration** section, click the {{site.data.keyword.messagehub}} tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+    3. From the navigation pane, click **Integration** , click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
     4. Enter a name for your service. You can use the default value.
   
