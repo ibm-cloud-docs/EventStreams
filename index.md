@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-14b"
+lastupdated: "2019-08-14c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -137,7 +137,6 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     java -jar ./build/libs/kafka-java-console-sample-2.0.jar <kafka_brokers_sasl> <api_key> -consumer
     ```
     {: codeblock}
-  
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
@@ -152,12 +151,6 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    
    Then, start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-    ```
-    java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	<kafka_brokers_sasl> <api_key> -producer
-    ```
-    {: codeblock}
-  
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
@@ -166,6 +159,12 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    {: important}
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
+
+    ```
+    java -jar ./build/libs/kafka-java-console-sample-2.0.jar
+	<kafka_brokers_sasl> <api_key> -producer
+    ```
+    {: codeblock}
 
 6. {: #success_step notoc} **Success!**
 
