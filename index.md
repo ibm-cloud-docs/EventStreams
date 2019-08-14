@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-14c"
+lastupdated: "2019-08-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -158,7 +158,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
    {: important}
 
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
+   Use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
 
     ```
     java -jar ./build/libs/kafka-java-console-sample-2.0.jar
