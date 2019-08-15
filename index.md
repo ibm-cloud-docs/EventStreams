@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15a"
+lastupdated: "2019-08-15b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -60,7 +60,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Tutorial steps
 {: #getting_started_steps}
 
-### 1. {: #create_topic_step} **Create a topic **
+### 1. **Create a topic **
+{: #create_topic_step}
 
    The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
 
