@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15c"
+lastupdated: "2019-08-15d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -80,46 +80,48 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    5. The topic appears in the table. Congratulations, you have created a topic!
   
-2. {: #create_credentials_step} **Create credentials**
+### 2. **Create credentials**
+{: #create_credentials_step}
 
-    To allow the sample application to access your topic, we need to create some credentials for it. 
+   To allow the sample application to access your topic, we need to create some credentials for it. 
 
-     1. Go to **Service credentials** in the navigation pane.
+   1. Go to **Service credentials** in the navigation pane.
   
-     2. Click **New credential**.
+   2. Click **New credential**.
   
-     3. Give the credential a name so you can identify its purpose later. You can accept the default value.
+   3. Give the credential a name so you can identify its purpose later. You can accept the default value.
   
-     4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+   4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-     5. Click **Add**. The new credential is listed in the table in **Service credentials**.
+   5. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-     6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+   6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
-3. {: #clone_repository_step} **Clone the Github repository for the sample application**
+### 3. **Clone the Github repository for the sample application**
+ {: #clone_repository_step}
 
-    The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
+   The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
-    ```
+   ```
     git clone https://github.com/ibm-messaging/event-streams-samples.git
-    ```
-    {: codeblock}
+   ```
+   {: codeblock}
 
-    <br/>
-    When the repository is cloned, from the command line change into the <code>kafka-java-console-sample</code> directory.
+   <br/>
+   When the repository is cloned, from the command line change into the <code>kafka-java-console-sample</code> directory.
 
-    ```
-    cd event-streams-samples/kafka-java-console-sample
-    ```
-    {: codeblock}
+   ```
+   cd event-streams-samples/kafka-java-console-sample
+   ```
+   {: codeblock}
 
-    <br/>
-    Build the contents of the <code>kafka-java-console-sample</code> directory.
+   <br/>
+   Build the contents of the <code>kafka-java-console-sample</code> directory.
 
-    ```
-    gradle clean && gradle build
-    ```
-    {: codeblock}
+   ```
+   gradle clean && gradle build
+   ```
+   {: codeblock}
 
 4. {: #start_consumer_step} **Run the consuming application**
    
