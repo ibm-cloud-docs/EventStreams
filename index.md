@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15f"
+lastupdated: "2019-08-15g"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -67,18 +67,18 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-   a. Go to the **Topics** tab.
+   1. Go to the **Topics** tab.
   
-   b. Click **New topic**.
+   2. Click **New topic**.
   
-   c. Name your topic.
+   3. Name your topic.
   
    The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
    {: important}
 
-   d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+   4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-   e. The topic appears in the table. Congratulations, you have created a topic!
+   5. The topic appears in the table. Congratulations, you have created a topic!
   
 ### 2. **Create credentials**
 {: #create_credentials_step}
@@ -137,10 +137,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
 
-    ```
-    java -jar ./build/libs/kafka-java-console-sample-2.0.jar <kafka_brokers_sasl> <api_key> -consumer
-    ```
-    {: codeblock}
+   ```
+   java -jar ./build/libs/kafka-java-console-sample-2.0.jar <kafka_brokers_sasl> <api_key> -consumer
+   ```
+   {: codeblock}
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
@@ -149,9 +149,9 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
 
-    ```
-    cd event-streams-samples/kafka-java-console-sample
-    ```
+   ```
+   cd event-streams-samples/kafka-java-console-sample
+   ```
     {: codeblock}
    
    Then, start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
@@ -165,11 +165,11 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Use the `api_key` from the **Service credentials** created in [Step 2](/docs/services/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
 
-    ```
-    java -jar ./build/libs/kafka-java-console-sample-2.0.jar
+   ```
+   java -jar ./build/libs/kafka-java-console-sample-2.0.jar
 	<kafka_brokers_sasl> <api_key> -producer
-    ```
-    {: codeblock}
+   ```
+   {: codeblock}
 
 ### 6. **Success!**
 {: #success_step} 
