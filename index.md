@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15g"
+lastupdated: "2019-08-15h"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -41,15 +41,15 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
 
-    1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+   1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-    2. Click **Catalog**.
+   2. Click **Catalog**.
   
     3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
-    4. Enter a name for your service. You can use the default value.
+   4. Enter a name for your service. You can use the default value.
   
-    5. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
+   5. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
