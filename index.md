@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15e"
+lastupdated: "2019-08-15f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -67,35 +67,35 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-    a. Go to the **Topics** tab.
+   a. Go to the **Topics** tab.
   
-    b. Click **New topic**.
+   b. Click **New topic**.
   
-    c. Name your topic.
+   c. Name your topic.
   
-    The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
-    {: important}
+   The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
+   {: important}
 
-    d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+   d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-    e. The topic appears in the table. Congratulations, you have created a topic!
+   e. The topic appears in the table. Congratulations, you have created a topic!
   
 ### 2. **Create credentials**
 {: #create_credentials_step}
 
-    To allow the sample application to access your topic, we need to create some credentials for it. 
+   To allow the sample application to access your topic, we need to create some credentials for it. 
 
-    1. Go to **Service credentials** in the navigation pane.
+   1. Go to **Service credentials** in the navigation pane.
   
-    2. Click **New credential**.
+   2. Click **New credential**.
   
-    3. Give the credential a name so you can identify its purpose later. You can accept the default value.
+   3. Give the credential a name so you can identify its purpose later. You can accept the default value.
   
-    4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+   4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-    5. Click **Add**. The new credential is listed in the table in **Service credentials**.
+   5. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-    6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+   6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
 ### 3. **Clone the Github repository for the sample application**
  {: #clone_repository_step}
@@ -123,7 +123,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
 
-4. {: #start_consumer_step} **Run the consuming application**
+### 4.  **Run the consuming application**
+{: #start_consumer_step}
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
@@ -143,7 +144,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
-5. {: #start_producer_step} **Run the producing application**
+### 5. **Run the producing application**
+{: #start_producer_step}
 
    Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
 
@@ -169,12 +171,13 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     ```
     {: codeblock}
 
-6. {: #success_step} **Success!**
+### 6. **Success!**
+{: #success_step} 
 
-    When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
-    You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
+   When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
+   You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
 
-    The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
+   The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
 
 ## Next steps
 {: #next_steps}
