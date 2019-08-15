@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-14"
+lastupdated: "2019-08-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
