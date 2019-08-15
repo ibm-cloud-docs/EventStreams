@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15b"
+lastupdated: "2019-08-15c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -67,18 +67,18 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-      1. Go to the **Topics** tab.
+   1. Go to the **Topics** tab.
   
-      2. Click **New topic**.
+   2. Click **New topic**.
   
-      3. Name your topic.
+   3. Name your topic.
   
-     The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
-     {: important}
+   The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
+   {: important}
 
-      4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+   4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-      5. The topic appears in the table. Congratulations, you have created a topic!
+   5. The topic appears in the table. Congratulations, you have created a topic!
   
 2. {: #create_credentials_step} **Create credentials**
 
