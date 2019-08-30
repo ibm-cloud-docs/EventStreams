@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-08-30"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -43,7 +43,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 2.2</td>
-			<td>Kafka 1.1</td>
+			<td>Kafka 2.2</td>
 		</tr>
 	  		<tr>
 			<td>**Supported client versions**</td>
