@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-08-30"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -62,10 +62,10 @@ Select one of the following methods:
 
   Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
 
-## Step 4. Create a service API key for this instance
+## Step 4. Optional: Create a service API key for this instance
 {: #step4_es_api}
 
-The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security).
+Optionally, you can create a service API key. The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security).
 
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
