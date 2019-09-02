@@ -77,7 +77,7 @@ For example steps for {{site.data.keyword.messagehub}}, see [Examples](#security
 This table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign:
 
 | Action | Reader role | Writer role | Manager role |
-|---------|----------------|
+| --- | --- | --- | --- |
 | Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <var class="keyword varname">your_service_instance</var>|
 | Allow an app or user to create or delete topic |Resource type: <code>cluster</code>   |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <var class="keyword varname">name_of_topic</var> |
 | List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: <code>cluster</code>      |Not applicable  |Not applicable      |
@@ -90,6 +90,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: <code>txnid</code> |Not applicable     |
 | Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
 | To use Streams |Resource type: <code>cluster</code></br>Resource type: <code>group</code>| Not applicable  |Resource type: <code>topic</code>    |
+| Delete records | Not applicable | Not applicable | Resource type: <code>topic</code> <br/>Resoure ID: <var class="keyword varname">name_of_topic</var> |
 
 For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/iam?topic=iam-iamoverview#iamoverview).
