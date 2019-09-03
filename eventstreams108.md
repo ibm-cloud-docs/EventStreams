@@ -95,7 +95,7 @@ You are strongly recommended not to attempt to manage the topic in any way.
 {: #clean_consumer_group}
 {: faq}
 
-Consumer offsets are deleted after 7 days of inactivity. After consumers have left, a group exists only if it has offsets.  Consequently, the consumer group is deleted when the last committed offset for that group expires.
+After consumers have left, a group continues to exist only if it has offsets. Consumer offsets are deleted after 7 days of inactivity. Consequently, a consumer group is deleted when the last committed offset for that group expires.
 
 
 ## How long are messages retained?
