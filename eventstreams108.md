@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-09-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -89,6 +89,14 @@ The internal Kafka <code>__consumer_offsets</code> topic is visible to you as re
 You are strongly recommended not to attempt to manage the topic in any way. 
 
 <!--following message retention info duplicted in eventstreams057-->
+
+
+## How do I clean up a consumer group with no consumers?
+{: #clean_consumer_group}
+{: faq}
+
+Consumer offsets are deleted after 7 days of inactivity. After consumers have left, a group exists only if it has offsets.
+
 
 ## How long are messages retained?
 {: #messages_retained}
