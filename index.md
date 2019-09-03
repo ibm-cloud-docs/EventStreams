@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-03b"
+lastupdated: "2019-09-03c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -76,7 +76,6 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
    The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
    {: important}
-
    4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.</li>
 
    5. The topic appears in the table. Congratulations, you have created a topic!
