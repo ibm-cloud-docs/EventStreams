@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated: "2019-05-14"
+lastupdated: "2019-09-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -42,6 +42,8 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 |:-------|:------------|
 | event-streams.topic.create | An event is created when you create a topic|
 | event-streams.topic.delete | An event is created when you delete a topic|
+| event-streams.kafka.scale.down | User revoked their disk encryption key in {{site.data.keyword.keymanagementserviceshort}}. Stopping all Kafka brokers|
+| event-streams.kafka.scale.up | Disk encryption key in {{site.data.keyword.keymanagementserviceshort}} is available again. Starting up all Kafka brokers again.|
 {: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 ## Where to view the events
