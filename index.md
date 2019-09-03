@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-02"
+lastupdated: "2019-09-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,7 +45,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
    2. Click **Catalog**.
   
-    3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+   3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
    4. Enter a name for your service. You can use the default value.
   
@@ -85,19 +85,19 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ### 2. **Create credentials**
 {: #create_credentials_step}
 
-   To allow the sample application to access your topic, we need to create some credentials for it. 
+To allow the sample application to access your topic, we need to create some credentials for it. 
 
-   1. Go to **Service credentials** in the navigation pane.
+      1. Go to **Service credentials** in the navigation pane.
   
-   2. Click **New credential**.
+      2. Click **New credential**.
   
-   3. Give the credential a name so you can identify its purpose later. You can accept the default value.
+      3. Give the credential a name so you can identify its purpose later. You can accept the default value.
   
-   4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+      4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-   5. Click **Add**. The new credential is listed in the table in **Service credentials**.
+      5. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-   6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+      6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
 ### 3. **Clone the Github repository for the sample application**
  {: #clone_repository_step}
