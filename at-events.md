@@ -45,6 +45,7 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 | event-streams.kafka.scale.down | User revoked their disk encryption key in {{site.data.keyword.keymanagementserviceshort}}. Stopping all Kafka brokers|
 | event-streams.kafka.scale.up | Disk encryption key in {{site.data.keyword.keymanagementserviceshort}} is available again. Starting up all Kafka brokers again.|
 {: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
+<!-- 03/09/19 Karen: kafka.scale.down and kafka.scale.up are both related to BYOK. -->
 
 ## Where to view the events
 {: #ui}
