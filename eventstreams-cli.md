@@ -175,7 +175,7 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name.</dd>
+        <dd>Topic name</dd>
     <dt>--partitions value, -p value</dt>
         <dd>Set the number of partitions for the topic.</dd>
     <dt>--config KEY=VALUE, -c KEY=VALUE(optional)</dt>
@@ -212,7 +212,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name.</dd>
+        <dd>Topic name</dd>
     <dt>--force, -f (optional)</dt>
         <dd>Delete without confirmation.</dd>
 </dl>
@@ -240,7 +240,7 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name.</dd>
+        <dd>Topic name</dd>
     <dt>--partition-offset PARTITION:OFFSET, -p PARTITION:OFFSET</dt>
         <dd>The partition and offset to delete records from in PARTITION:OFFSET format. <p> You can specify multiple --partition-offset options or you can specify
 multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with quotations: 'PARTITION1:OFFSET1;PARTITION2:OFFSET2;PARTITION3:OFFSET3'.</dd>
@@ -272,7 +272,7 @@ ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name.</dd>
+        <dd>Topic name</dd>
      <dt>--partitions value, -p value</dt>
         <dd>Set the number of partitions for the topic.
 </dd>
@@ -299,7 +299,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name.</dd>
+        <dd>Topic name</dd>
      <dt>--config KEY[=VALUE], -c KEY[=VALUE] </dt>
         <dd>Set a configuration option for the topic as a KEY[=VALUE] pair.
         <p>If VALUE is not given, the '--default' flag should be specified to indicate resetting the configuration value back to the default.
@@ -340,7 +340,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 
 <dl>
     <dt>--filter value, -f value (optional)</dt>
-        <dd>Topic name.</dd>
+        <dd>Topic name</dd>
      <dt>--json (optional)</dt>
         <dd>Format output in JSON. Up to 1000 topics are returned.
 </dd>
