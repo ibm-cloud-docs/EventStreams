@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-15"
+lastupdated: "2019-09-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -461,8 +461,35 @@ ibmcloud es groups [--filter FILTER] [--json]
 <strong>Examples</strong>:
 -->
 <br/>
- 
- <br/>
+## ibmcloud es group-delete
+{: #ibmcloud_es_group_delete}
+
+Delete a consumer group.
+
+
+```
+ibmcloud es group-delete [--group] GROUP_ID [--force]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud_es_group_delete_params}
+
+<dl>
+    <dt>--group value, -g value </dt>
+        <dd>Consumer group ID</dd>
+    <dt>--force, -f (optional)</dt>
+        <dd>Delete group without confirmation.</dd> 
+</dd>
+</dl>
+
+<!--
+<strong>Examples</strong>:
+-->
+<br/>
 
 
 
