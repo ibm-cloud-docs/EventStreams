@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-04a"
+lastupdated: "2019-09-04b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -94,8 +94,7 @@ To allow the sample application to access your topic, we need to create some cre
   
    6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
-3. **Clone the Github repository for the sample application**
- {: #clone_repository_step}
+3. {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
 
    The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
@@ -120,8 +119,7 @@ To allow the sample application to access your topic, we need to create some cre
    ```
    {: codeblock}
 
-4.  **Run the consuming application**
-{: #start_consumer_step}
+4. {: #start_consumer_step notoc} **Run the consuming application**
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
@@ -142,8 +140,7 @@ To allow the sample application to access your topic, we need to create some cre
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
-5. **Run the producing application**
-{: #start_producer_step}
+5. {: #start_producer_step notoc} **Run the producing application**
 
    Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
 
@@ -169,8 +166,7 @@ To allow the sample application to access your topic, we need to create some cre
    ```
    {: codeblock}
 
-6. **Success!**
-{: #success_step} 
+6. {: #success_step notoc} **Success!**
 
    When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
    You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
