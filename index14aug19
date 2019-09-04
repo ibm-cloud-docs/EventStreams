@@ -18,8 +18,8 @@ subcollection: eventstreams
 {:note: .note}
 {:important: .important}
 
-# Getting started tutorial
-{: #getting_started}
+# Getting started tutorial test
+{: #getting_started_14aug19}
 
 To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
