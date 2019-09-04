@@ -7,13 +7,13 @@ IBM Event Streams
 
 	{: .navgroup id="learn"}
 	index.md
-	index14aug19.md
 	
 	{: .topicgroup}
 	About Event Streams
 		eventstreams010.md
 		eventstreams073.md
 		eventstreams085.md
+		test14aug19.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}

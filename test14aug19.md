@@ -19,7 +19,7 @@ subcollection: eventstreams
 {:important: .important}
 
 # Getting started tutorial test
-{: #getting_started_14aug19}
+{: #test14aug19}
 
 To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
@@ -37,7 +37,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 <!-- 08/08/2019 - Chloe - Re-structuring to get UI components of the flow introduced earlier in the flow. Also moving pre-requsisites to a potentially collapsible section. -->
 
 ## Prerequisites
-{: #getting_started_prereqs}
+{: #getting_started_prereqs1}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
 
@@ -58,7 +58,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 	* Java 8 or higher
 
 ## Tutorial steps
-{: #getting_started_steps}
+{: #getting_started_steps1}
 
 1. {: #Create_topic_step notoc} **Create a topic **
 
@@ -174,7 +174,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
     The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
 
 ## Next steps
-{: #next_steps}
+{: #next_steps1}
 
 Now that you've run the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}, explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, or take a look at [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1).
  
