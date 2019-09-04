@@ -80,19 +80,19 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
 2. {: #create_credentials_step notoc} **Create credentials**
 
-To allow the sample application to access your topic, we need to create some credentials for it. 
+    To allow the sample application to access your topic, we need to create some credentials for it. 
 
-   1. Go to **Service credentials** in the navigation pane.
+     1. Go to **Service credentials** in the navigation pane.
   
-   2. Click **New credential**.
+     2. Click **New credential**.
   
-   3. Give the credential a name so you can identify its purpose later. You can accept the default value.
+     3. Give the credential a name so you can identify its purpose later. You can accept the default value.
   
-   4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+     4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-   5. Click **Add**. The new credential is listed in the table in **Service credentials**.
+     5. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-   6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+     6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
 3. {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
 
