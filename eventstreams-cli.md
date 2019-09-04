@@ -268,7 +268,7 @@ ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 <strong>Prerequisites</strong>: None
 
 <strong>Command options</strong>:
-{: #ibmcloud_es_groups_params}
+{: #ibmcloud_es_topic_partitions_set_params}
 
 <dl>
     <dt>--name value, -n value</dt>
