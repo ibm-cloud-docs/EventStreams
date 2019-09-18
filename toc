@@ -89,6 +89,7 @@ IBM Event Streams
 	{: .topicgroup}
 	Alpha program
 		eventstreams122.md
+		eventstreams155.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
