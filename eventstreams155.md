@@ -20,18 +20,12 @@ subcollection: eventstreams
 # Bring Your Own Key (BYOK)
 {: #byok}
 
-
-{{site.data.keyword.IBM}} uses the following methods to help ensure the security and
-privacy of your data:
+You can use bring-your-own-key (BYOK) customer-managed encryption keys with IBM Key Protect.
 {:shortdesc}
 
-## 
-{: #cryptographic}
- 
-You can use bring-your-own-key (BYOK) customer-managed encryption keys with IBM Key Protect.
 
 Encryption keys contain subsets of information, such as the metadata that helps you identify the key, and the _key material_ that's used to encrypt and decrypt data.
-{: shortdesc}
+
 
 When you use {{site.data.keyword.keymanagementserviceshort}} to create keys, the service generates cryptographic key material on your behalf that's rooted in cloud-based hardware security modules (HSMs). But depending on your business requirements, you might need to generate key material from your internal solution, and then extend your on-premises key management infrastructure onto the cloud by importing keys into {{site.data.keyword.keymanagementserviceshort}}.
 
@@ -41,16 +35,16 @@ When you use {{site.data.keyword.keymanagementserviceshort}} to create keys, the
 
 Need a bit of scene setting on what it offers (should be able to grab some words from other services):
 
-    * Encryption for message data at REST controlled by a customer managed key.
-    * The customer can prevent any further access to the data by deleting or removing access to the key.
-    * Maybe something on the actual key usage e.g. the customers key is actually used to encrypt the disks encryption key, so removing the key prevents the service from retreiving the actual disk key - crypto shedding (should be able to get some words from the Key Protect service page)
+* Encryption for message data at REST controlled by a customer managed key.
+* The customer can prevent any further access to the data by deleting or removing access to the key.
+* Maybe something on the actual key usage e.g. the customers key is actually used to encrypt the disks encryption key, so removing the key prevents the service from retreiving the actual disk key - crypto shedding (should be able to get some words from the Key Protect service page)
 
 Customers need to be aware that:
 
-    * Only supported on clusters provisioned after x on the Enterprise plan
-    * Enablement is disruptive and results in the deletion of all existing message data.
-    * If deploying for use in a PCI environment, it is recommended to enable this feature
-    * Deleting the key is non-recoverable
+* Only supported on clusters provisioned after x on the Enterprise plan
+* Enablement is disruptive and results in the deletion of all existing message data.
+* If deploying for use in a PCI environment, it is recommended to enable this feature
+* Deleting the key is non-recoverable
 
 Rough outline of the enablement steps:
 
@@ -61,10 +55,10 @@ Based on Cloudant's approach to BYOK, our initial support will require that cust
 4. Create or import a root key into the Key Protect instance. This is the root key that will be used to protect the data stored by the {{site.data.keyword.messagehub}} service instance.
 
 5. Open a support ticket on {{site.data.keyword.messagehub}} containing the following information:
-* The IBM Cloud region of the Key Protect service instance
-* The crn of the root key in the Key Protect instance
-* The region of the {{site.data.keyword.messagehub}} service instance
-* The {{site.data.keyword.messagehub}} service instance ID
+   * The IBM Cloud region of the Key Protect service instance
+   * The crn of the root key in the Key Protect instance
+   * The region of the {{site.data.keyword.messagehub}} service instance
+   * The {{site.data.keyword.messagehub}} service instance ID
 The response to the support ticket will confirm that BYOK is enabled.
 
 Usage instructions:
