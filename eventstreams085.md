@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-09-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -176,6 +176,7 @@ The following table summarizes what is supported by the plans:
 			<br/>
 			**Single zone location (SZR)**</br>
 			Seoul (seo01)<br/>
+			Chennai (che01)<br/>
 			<br/>
 			</td>
 			<td>Dallas (us-south)</br>
