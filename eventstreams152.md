@@ -188,8 +188,7 @@ If switching to the Kafka Client is not an option, other methods for integrating
 * ** {{site.data.keyword.appconserviceshort}} Enterprise **<br/>
     You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){:new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){:new_window}.
 
-* **Open Source**<br/>
-    A number of Open Source REST APIs are available and might provide a suitable alternative.
+
 
 
 
