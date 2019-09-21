@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-21"
+lastupdated: "2019-09-21b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -57,17 +57,17 @@ To request BYOK-related function for an {{site.data.keyword.messagehub}} instanc
     * The crn of the root key in the {{site.data.keyword.keymanagementserviceshort}} instance
     * The region of the {{site.data.keyword.messagehub}} service instance
     * The {{site.data.keyword.messagehub}} service instance ID
+
 The response to the support ticket will confirm that BYOK is enabled.
 
 ## Using BYOK 
 {: #byok_using}
+
+Note the following information when using BYOK:
 
 * If you remove access to the key, the service instance shuts down.
 * If you then reenable access, the service instance is reenabled
 * If you delete the key, the key is non-recoverable
 * Activity Tracker events
 
-* To be a fully supported configuration, all clients must support the following:
-    * TLS v1.2
-    * elliptic curve cryptography
-    * TLS server name indication (SNI)
+
