@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-09-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -118,10 +118,10 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>**Maximum number of partitions**</td>
+			<td>**Maximum number of partitions per topic**</td>
 			<td>1</td>
 			<td>100</td>
-			<td>3000</td>
+			<td>1000</td>
 			<td>100</td>
 		</tr>
 		<tr>
