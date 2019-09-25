@@ -118,7 +118,7 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>**Maximum number of partitions per topic**</td>
+			<td>**Maximum number of partitions**</td>
 			<td>1</td>
 			<td>100</td>
 			<td>3000</td>
