@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-26a"
+lastupdated: "2019-09-26b"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -55,15 +55,15 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 This operation is destructive and results in the loss of all message and topic definitions. See notes above.
 {:important}
 
-1 Provision an instance of {{site.data.keyword.messagehubfull}}. This feature is supported only on the Enterprise plan.
-2 Provision an instance of {{site.data.keyword.keymanagementservicefull}}.
-3 Create an 'Authorization' to allow the {{site.data.keyword.messagehub}} instance to access the {{site.data.keyword.keymanagementserviceshort}} instance [add instructions or link to cloud docs].
-4 Create or import a root key in to {{site.data.keyword.keymanagementserviceshort}} [show how or link to KP instructions for this step].
-5 Retrieve the CRN (Cloud Resource Name) of the key using the 'View CRN' option in the {{site.data.keyword.keymanagementserviceshort}} Management portal.
-6 Open a support ticket on {{site.data.keyword.messagehub}} containing the following information [include a link to the support system and the field ti fill in e.g. sev, team name].
+1. Provision an instance of [{{site.data.keyword.messagehubfull}}](/docs/services/EventStreams?topic=eventstreams-getting_started). This feature is supported only on the Enterprise plan.
+2. Provision an instance of [{{site.data.keyword.keymanagementservicefull}}](/docs/services/key-protect?topic=key-protect-provision).
+3. Create an authorization to allow the {{site.data.keyword.messagehub}} instance to access the {{site.data.keyword.keymanagementserviceshort}} instance. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-serviceauth){:new_window}.
+4. Create or import a root key in to {{site.data.keyword.keymanagementserviceshort}}. For more information, see [Creating root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-create-root-keys){:new_window} or [Importing root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-import-root-keys){:new_window}.
+5. Retrieve the CRN (Cloud Resource Name) of the key using the 'View CRN' option in the {{site.data.keyword.keymanagementserviceshort}} Management portal.
+6 Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}  on {{site.data.keyword.messagehub}} that contains the following information (include a link to the support system and the field ti fill in e.g. sev, team name).
    * The CRN of the root key created above
    * The CRN of your {{site.data.keyword.messagehub}} instance
-   You can provide this ID by pasting the full IBM Cloud console URL after clicking on the service, or by pasting the output from the following CLI command:
+   You can provide this ID by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the service, or by pasting the output from the following CLI command:
    ```ibmcloud resource service-instance NAME```
 
    The response to the support ticket confirms that your encryption is now enabled using your key and that the cluster is ready for use.
