@@ -18,7 +18,7 @@ subcollection: eventstreams
 {:note: .note}
 {:important: .important}
 
-# Getting started tutorial2
+# Getting started tutorial
 {: #getting_started}
 
 To get started with {{site.data.keyword.messagehub}}
