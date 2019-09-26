@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-26g"
+lastupdated: "2019-09-26h"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -41,7 +41,7 @@ Be aware of the following information when deciding to enable customer-managed k
 
 {{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is a multi-layered practice. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is encrypted using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about){:new_window}. 
 
-You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Instead {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the customer root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
+You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Instead {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
 
 Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in {{site.data.keyword.messagehub}} using Advanced Encryption Standard (AES-256).
 
@@ -59,10 +59,9 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 4. Create or import a root key in to {{site.data.keyword.keymanagementserviceshort}}. For more information, see [Creating root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-create-root-keys){:new_window} or [Importing root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-import-root-keys){:new_window}.
 5. Retrieve the Cloud Resource Name (CRN) of the key using the ***View CRN*** option in the {{site.data.keyword.keymanagementserviceshort}} GUI.
 6. Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
-   * The CRN of the root key created previously
+   * The CRN of the root key that you created in {{site.data.keyword.keymanagementserviceshort}}.
    * The CRN of your {{site.data.keyword.messagehub}} instance<br/>
    You can provide this ID by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service, or by pasting the output from the following CLI command:
-
    ```
    ibmcloud resource service-instance NAME
    ```
@@ -85,7 +84,7 @@ To remove access permanently you can delete the key. However, you must take extr
 
 In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
 
-***Important:*** As long as the instance exists charges will continue.
+***Important:*** As long as the instance exists, charges will continue.
 
 ### Restoring access to data
 
@@ -95,9 +94,11 @@ An activity tracker event is generated to report the action. For more informatio
 
 ### Rotating the key
 
-{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by re-wrapping the DEK as described previously in [how customer-managed encryption works](/docs/services/EventStreams?topic=eventstreams-managing_encryption#encryption_how). An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
+{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by re-wrapping the DEK as described previously in [how customer-managed encryption works](/docs/services/EventStreams?topic=eventstreams-managing_encryption#encryption_how). 
 
-You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial). 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
+
+You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){:new_window}. 
 
 <!--
 You can use bring-your-own-key (BYOK) customer-managed encryption keys using [{{site.data.keyword.keymanagementservicefull}} 
