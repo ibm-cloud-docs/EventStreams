@@ -224,7 +224,7 @@ The following table summarizes what is supported by the plans:
 			<td>None</td>
 			<td>None</td>
 			<td>ISO<br/>
-SOC Type1<br/>
+SOC Type 1<br/>
 HIPPA ready<br/>
 PCI [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_pci)
 </td>
@@ -238,7 +238,7 @@ PCI [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#fo
 
 1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
-3. {: #footnote_pci notoc} You must enable the 'Customer Managed Keys' feature to be compliant for use in PCI environments.
+3. {: #footnote_pci notoc} You must enable the customer-managed keys feature to be compliant for use in PCI environments. For more information, see [managing encryption](/docs/services/EventStreams?topic=eventstreams-managing_encryption).
 
 
 
