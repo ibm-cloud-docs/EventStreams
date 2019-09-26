@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-26e"
+lastupdated: "2019-09-26f"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -30,7 +30,8 @@ Consider using customer-managed keys if you require the following features:
 - Explicit control of the lifecycle of data stored at rest, which is achieved by deleting or removing access to the key. For example, crypto-shredding
 - Use of your {{site.data.keyword.messagehub}} instance in a PCI environment
 
-{: #considerations_keys notoc} Be aware of the following information when deciding to enable customer-managed keys: 
+{: #considerations_keys notoc}
+Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
 - Enablement is disruptive and results in the loss of any existing message data and topic definitions
 - Deletion of the customer-managed key is non-recoverable
@@ -38,22 +39,22 @@ Consider using customer-managed keys if you require the following features:
 ## How customer-managed encryption works
 {: #encryption_how}
 
-{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is a multi-layered practice. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is encrypted using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ! [External link icon](../../icons/launch-glyph.svg "External link icon")]](/docs/services/key-protect?topic=key-protect-about). 
+{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is a multi-layered practice. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is encrypted using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ! [External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about){:new_window}. 
 
-You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the customer root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
+You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Instead {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the customer root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
 
 Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in {{site.data.keyword.messagehub}} using Advanced Encryption Standard (AES-256).
 
 ## Enabling a customer-managed key for {{site.data.keyword.messagehub}}
 {: #enabling_encryption}
 
-This operation is destructive and results in the loss of all message and topic definitions. For more information, see [considerations](/docs/services/EventStreams?topic=eventstreams-managing_encryption#considerations_keys)
+This operation is destructive and results in the loss of all message and topic definitions. For more information, see [considerations](/docs/services/EventStreams?topic=eventstreams-managing_encryption#considerations_keys).
 {:important}
 
 Complete the following steps to reconfigure your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
 
 1. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/services/EventStreams?topic=eventstreams-getting_started). This feature is supported only on the Enterprise plan.
-2. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")]](/docs/services/key-protect?topic=key-protect-provision).
+2. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-provision).
 3. Create an authorization to allow the {{site.data.keyword.messagehub}} instance to access the {{site.data.keyword.keymanagementserviceshort}} instance. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-serviceauth){:new_window}.
 4. Create or import a root key in to {{site.data.keyword.keymanagementserviceshort}}. For more information, see [Creating root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-create-root-keys){:new_window} or [Importing root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-import-root-keys){:new_window}.
 5. Retrieve the CRN (Cloud Resource Name) of the key using the 'View CRN' option in the {{site.data.keyword.keymanagementserviceshort}} Management portal.
@@ -62,14 +63,19 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
    * The CRN of your {{site.data.keyword.messagehub}} instance<br/>
    You can provide this ID by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service, or by pasting the output from the following CLI command:
 
-   ```ibmcloud resource service-instance NAME```
+   ```
+   ibmcloud resource service-instance NAME
+   ```
+   {: codeblock}
+
    The storage within your {{site.data.keyword.messagehub}} instance is re-created using the key you created. The supplied key is used to perform envelope encryption.
+
    The response to the support ticket confirms that your encryption is now enabled using your key and that the cluster is ready for use.
 
 ## Using a customer-managed key
 {: #using_encryption}
 
-When enabled, the cluster operates as normal, but with the following additional capabilities:
+After a customer-managed key is enabled, the cluster operates as normal, but with the following additional capabilities:
 
 ### Preventing access to data
 
@@ -89,9 +95,9 @@ An activity tracker event is generated to report the action. For more informatio
 
 ### Rotating the key
 
-{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by re-wrapping the DEK <link to info on envelope encryption above>. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
+{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by re-wrapping the DEK as described previously in [how customer-managed encryption works](/docs/services/EventStreams?topic=eventstreams-managing_encryption#encryption_how). An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
 
-You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ! [External link icon](../../icons/launch-glyph.svg "External link icon")]](/docs/services/key-protect?topic=key-protect-getting-started-tutorial). 
+You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ! [External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial). 
 
 <!--
 You can use bring-your-own-key (BYOK) customer-managed encryption keys using [{{site.data.keyword.keymanagementservicefull}} 
