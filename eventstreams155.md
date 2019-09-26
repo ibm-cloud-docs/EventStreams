@@ -23,10 +23,10 @@ subcollection: eventstreams
 
 Data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, some workloads need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption (often known as Bring Your Own Key or BYOK), which allows a customer-provided key to be used to control the encryption. By revoking access to or deleting this key, customers can prevent any further access to the data stored by the service, because it will no longer be possible to decrypt.
 
-Consider using customer-managed Keys if you require:
+Consider using customer-managed keys if you require:
 - Encryption of data at rest controlled by your own key
 - Explicit control of the lifecycle of data stored at rest by deleting or removing access to the key for example, crypto-shredding
-- Using your {{site.data.keyword.messagehub}} instance within a PCI environment
+- Use of your {{site.data.keyword.messagehub}} instance in a PCI environment
 
 Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
@@ -35,15 +35,15 @@ Be aware of the following information when deciding to enable customer-managed k
 
 ## How it works
 
-The user creates a root key in an instance of the {{site.data.keyword.keymanagementserviceshort}} service within their account and then raises a support ticket to have the storage within their {{site.data.keyword.messagehub}} instance re-created using this key. The supplied key is used to perform envelope encryption. Envelope encryption is a multi-layered practise. The key used to encrypt the actual data is known as a data encryption key (DEK), the DEK itself is never stored, it instead is encrypted using a second key known as the Key Encryption Key (KEK) to create a 'wrapped DEK'. In order to un-encrypt data, the wrapped DEK must first be un-encrypted to get the DEK. This process is only possible by accessing the KEK, which in this case is the customers root key stored in {{site.data.keyword.keymanagementserviceshort}}. If the customer revokes access to this key, or deletes the key the data can no longer be un-encrypted.
+Create a root key in an instance of the {{site.data.keyword.keymanagementserviceshort}} service in your account and then raise a support ticket to have the storage within your {{site.data.keyword.messagehub}} instance re-created using this key. The supplied key is used to perform envelope encryption. Envelope encryption is a multi-layered practice. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, it instead is encrypted using a second key known as the Key Encryption Key (KEK) to create a 'wrapped DEK'. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is only possible by accessing the KEK, which in this case is the customer's root key stored in {{site.data.keyword.keymanagementserviceshort}}. If the customer revokes access to this key, or deletes the key the data can no longer be decrypted.
 
-Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in {{site.data.keyword.messagehub}} using Advanced Encryption Standard (AES-256)
+Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in {{site.data.keyword.messagehub}} using Advanced Encryption Standard (AES-256).
 
 ## How to enable
 
 Complete the following steps to reconfigure your {{site.data.keyword.messagehub}} instance to use a customer-managed key. 
 
-Note, this operation is destructive and results in the loss of all message and topic definitions. See notes above.
+This operation is destructive and results in the loss of all message and topic definitions. See notes above.
 {:important}
 
 
