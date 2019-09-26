@@ -20,6 +20,7 @@ IBM Event Streams
 	eventstreams132.md
 	eventstreams117.md
 	eventstreams148.md
+	eventstreams155.md
 	eventstreams068.md
 	at-events.md
 	eventstreams-cli.md
@@ -89,7 +90,6 @@ IBM Event Streams
 	{: .topicgroup}
 	Alpha program
 		eventstreams122.md
-		eventstreams155.md
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
