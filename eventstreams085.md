@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-18"
+lastupdated: "2019-09-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -86,7 +86,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Availability**</td>
 			<td>99.95% [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_lite)</td>
 			<td>99.95%</td>
-			<td>99.95%<br/>(99.5% in single zone locations)  [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.95%<br/>(99.5% in single zone locations) [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -219,6 +219,17 @@ The following table summarizes what is supported by the plans:
 			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
 			<td>Instantaneous provisioning</td>
 		</tr>
+		<tr>
+			<td>**Compliance**</td>
+			<td>None</td>
+			<td>None</td>
+			<td>ISO<br/>
+SOC Type1<br/>
+HIPPA ready<br/>
+PCI [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_pci)
+</td>
+			<td>None</td>
+		</tr>
 
 </table>
 
@@ -227,6 +238,7 @@ The following table summarizes what is supported by the plans:
 
 1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+3. {: #footnote_pci notoc} You must enable the 'Customer Managed Keys' feature to be compliant for use in PCI environments.
 
 
 
