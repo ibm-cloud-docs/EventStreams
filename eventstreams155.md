@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Managing encryption
 {: #managing_encryption}
 
-Data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, some workloads need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption (often known as Bring Your Own Key or BYOK), which allows a customer-provided key to be used to control the encryption. By deleting or revoking access to this key, you can prevent any further access to the data stored by the service, because it is no longer possible to decrypt.
+By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, some customers need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption (often known as Bring Your Own Key or BYOK), which allows a customer-provided key to be used to control the encryption. By deleting or revoking access to this key, you can prevent any further access to the data stored by the service, because it is no longer possible to decrypt.
 
 Consider using customer-managed keys if you require the following features:
 - Encryption of data at rest controlled by your own key
@@ -39,6 +39,15 @@ Create a root key in an instance of the {{site.data.keyword.keymanagementservice
 
 Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in {{site.data.keyword.messagehub}} using Advanced Encryption Standard (AES-256).
 
+NEW:
+IBM Events Streams uses a concept called Envelope Encrytpion to implement Customer Managed keys. Envelope encryption is a multi-layered practise. The key used to encrypt the actual data is known as a data encryption key (DEK), the DEK itself is never stored, it instead is encrypted using a second key known as the Key Encryption Key (KEK) to create a 'wrapped DEK'. In order to un-encrypt data, the wrapped DEK must first be un-encrypted to get the DEK. This process is only possible by accessing the KEK. 
+
+The KEK is actually owned by the customer. They create a root key in the IBM Key Protect Service. The root key IS the KEK. 
+
+IBM Event streams service never sees the root/KEK key. It "asks' the IBM Key Protect service to wrap or unwrap a DEK with the customer root key. If the customer revokes access to this key, or deletes the key the data can no longer be un-encrypted.
+
+Keys are secured in Key Protect using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in Event Streams using Advanced Encryption Standard (AES-256)
+
 ## Enabling a customer-managed key
 
 Complete the following steps to reconfigure your {{site.data.keyword.messagehub}} instance to use a customer-managed key. 
@@ -46,8 +55,8 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 This operation is destructive and results in the loss of all message and topic definitions. See notes above.
 {:important}
 
-1 Provision an instance of {{site.data.keyword.messagehub}}. This feature is supported only on the Enterprise plan.
-2 Provision an instance of {{site.data.keyword.keymanagementserviceshort}}.
+1 Provision an instance of {{site.data.keyword.messagehubfull}}. This feature is supported only on the Enterprise plan.
+2 Provision an instance of {{site.data.keyword.keymanagementservicefull}}.
 3 Create an 'Authorization' to allow the {{site.data.keyword.messagehub}} instance to access the {{site.data.keyword.keymanagementserviceshort}} instance [add instructions or link to cloud docs].
 4 Create or import a root key in to {{site.data.keyword.keymanagementserviceshort}} [show how or link to KP instructions for this step].
 5 Retrieve the CRN (Cloud Resource Name) of the key using the 'View CRN' option in the {{site.data.keyword.keymanagementserviceshort}} Management portal.
@@ -67,7 +76,7 @@ When enabled, the cluster operates as normal, but with the following additional 
 
 To temporarily prevent access, remove the Authorization created between your {{site.data.keyword.messagehub}} and {{site.data.keyword.keymanagementserviceshort}} instances. {{site.data.keyword.messagehub}} can no longer access the data because it can no longer access the key. 
 
-To remove access permanently you can delete the key. However, extreme caution must be taken because this operation is non-recoverable. 
+To remove access permanently you can delete the key. However, extreme caution must be taken because this operation is non-recoverable. You will lose all access to message data.
 
 In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
 
