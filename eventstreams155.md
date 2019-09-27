@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27k"
+lastupdated: "2019-09-27k2"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -45,6 +45,8 @@ Deletion of the customer-managed key is non-recoverable and will result in the l
 You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Instead {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
 
 Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. Data is stored in {{site.data.keyword.messagehub}} using Advanced Encryption Standard (AES-256).
+
+You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){:new_window}.
 
 ## Enabling a customer-managed key for {{site.data.keyword.messagehub}}
 {: #enabling_encryption}
@@ -97,9 +99,7 @@ An activity tracker event is generated to report the action. For more informatio
 
 {{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by re-wrapping the DEK as described previously in [how customer-managed encryption works](/docs/services/EventStreams?topic=eventstreams-managing_encryption#encryption_how). 
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
-
-You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){:new_window}. 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events). 
 
 ## Disabling customer-managed encryption
 {: #stop_customer_encryption}
