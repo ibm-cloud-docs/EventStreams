@@ -101,10 +101,10 @@ An activity tracker event is generated to report the action. For more informatio
 
 You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){:new_window}. 
 
-## Switching off customer-managed encryption
+## Disabling customer-managed encryption
 {: #stop_customer_encryption}
 
-If you no longer want to use customer-managed encryption after enabling it for an {{site.data.keyword.messagehub}} instance, complete the following steps:
+If you no longer want to use customer-managed encryption for an {{site.data.keyword.messagehub}} instance, complete the following steps:
 1. Delete your customer-managed key.
 2. Provision a new instance of {{site.data.keyword.messagehub}}.
 
