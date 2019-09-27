@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27c"
+lastupdated: "2019-09-27d"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -67,8 +67,7 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
    ibmcloud resource service-instance NAME
    ```
    {: codeblock}
-
-   The {{site.data.keyword.Bluemix}} operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer user-managed key
+   The {{site.data.keyword.Bluemix}} operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key.
 
 ## Using a customer-managed key
 {: #using_encryption}
