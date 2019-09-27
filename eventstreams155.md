@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27h"
+lastupdated: "2019-09-27i"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -61,9 +61,9 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 5. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the {{site.data.keyword.keymanagementserviceshort}} GUI.
 6. Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
    * The CRN of the root key that you want to use in your instance of the {{site.data.keyword.keymanagementserviceshort}} service 
-   * The CRN of your {{site.data.keyword.messagehub}} instance
+   * The CRN of your {{site.data.keyword.messagehub}} service instance
    <br/>
-   You can find this CRN by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the {{site.data.keyword.Bluemix}} console , or by pasting the output from the following CLI command:
+   You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the {{site.data.keyword.Bluemix}} console. Alternatively, paste in the output from the following CLI command:
 
       ```
       ibmcloud resource service-instance NAME
@@ -100,6 +100,13 @@ An activity tracker event is generated to report the action. For more informatio
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
 
 You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){:new_window}. 
+
+## Switching away from using customer-managed encryption
+{: #stop_customer_encryption}
+
+If you no longer want to use customer-managed encryption after enabling it for an {{site.data.keyword.messagehub}} instance:
+* Delete your customer-managed key
+* Provision a new instance of {{site.data.keyword.messagehub}}
 
 <!--
 You can use bring-your-own-key (BYOK) customer-managed encryption keys using [{{site.data.keyword.keymanagementservicefull}} 
