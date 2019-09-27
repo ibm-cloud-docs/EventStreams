@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27b"
+lastupdated: "2019-09-27c"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -24,13 +24,12 @@ subcollection: eventstreams
 By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption (often known as Bring Your Own Key or BYOK), which allows the use of a customer-provided key to control the encryption. By deleting or revoking access to this key, you can prevent any further access to the data stored by the service, because it is no longer possible to decrypt it.
 {:shortdesc}
 
-
+{: #considerations_keys notoc}
 Consider using customer-managed keys if you require the following features:
 - Encryption of data at rest controlled by your own key
 - Explicit control of the lifecycle of data stored at rest<!--, which is achieved by deleting or removing access to the key. For example, crypto-shredding-->
 - Use of your {{site.data.keyword.messagehub}} instance in a PCI environment
 
-{: #considerations_keys notoc}
 Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
 - Enablement is disruptive and results in the loss of any existing message data and topic definitions
@@ -41,7 +40,7 @@ Deletion of the customer-managed key is non-recoverable and will result in the l
 ## How customer-managed encryption works
 {: #encryption_how}
 
-{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is the practice of encrypting one encryption key with another encryption key. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is encrypted using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about){:new_window}. 
+{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is the practice of encrypting one encryption key with another encryption key. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is wrapped by {{site.data.keyword.keymanagementserviceshort}} using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about){:new_window}. 
 
 You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Instead {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
 
