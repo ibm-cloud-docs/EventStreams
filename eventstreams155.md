@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27j"
+lastupdated: "2019-09-27k"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -101,47 +101,15 @@ An activity tracker event is generated to report the action. For more informatio
 
 You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-getting-started-tutorial){:new_window}. 
 
-## Switching away from using customer-managed encryption
+## Switching off customer-managed encryption
 {: #stop_customer_encryption}
 
-If you no longer want to use customer-managed encryption after enabling it for an {{site.data.keyword.messagehub}} instance:
-* Delete your customer-managed key
-* Provision a new instance of {{site.data.keyword.messagehub}}
-
-<!--
-You can use bring-your-own-key (BYOK) customer-managed encryption keys using [{{site.data.keyword.keymanagementservicefull}} 
- ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about). The service helps you provision encrypted keys for apps across {{site.data.keyword.Bluemix}} services. 
-Encryption keys contain subsets of information, such as the metadata that helps you identify the key, and the _key material_ that's used to encrypt and decrypt data. When you use {{site.data.keyword.keymanagementserviceshort}} to create keys, the service generates cryptographic key material on your behalf that's rooted in cloud-based hardware security modules (HSMs). But depending on your business requirements, you might need to generate key material from your internal solution, and then extend your on-premises key management infrastructure onto the cloud by importing keys into {{site.data.keyword.keymanagementserviceshort}}.
-
-
-BYOK offers the following benefits:
-
-* Encryption for message data at rest is controlled by a customer-managed key.
-* You can prevent any further access to the data by deleting or removing access to the key.
-* Actual key usage. For example, the customer's key is actually used to encrypt the disk's encryption key, so removing the customer key prevents the service from retrieving the actual disk key. For more information about crypto-shedding, ***see  - crypto shedding (should be able to get some words from the {{site.data.keyword.keymanagementserviceshort}} service page)***
+If you no longer want to use customer-managed encryption after enabling it for an {{site.data.keyword.messagehub}} instance, complete the following steps:
+1. Delete your customer-managed key.
+2. Provision a new instance of {{site.data.keyword.messagehub}}.
 
 
 
-## Enabling BYOK for {{site.data.keyword.messagehub}}
-{: #byok_steps}
-
-If you want to enable BYOK-related function for an {{site.data.keyword.messagehub}} instance, complete the following steps: 
-
-1. Provision an instance of 
-[{{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-getting_started).
-2. Provision an instance of 
-[{{site.data.keyword.keymanagementserviceshort}}](/docs/services/key-protect?topic=key-protect-provision).
-3. Grant the {{site.data.keyword.messagehub}} service instance access to the {{site.data.keyword.keymanagementserviceshort}} service instance.
-4. Create or import a root key into the {{site.data.keyword.keymanagementserviceshort}} instance. This is the root key that will be used to protect the data stored by the {{site.data.keyword.messagehub}} service instance.
-5. Open a support ticket on {{site.data.keyword.messagehub}} that contains the following information:
-    * The {{site.data.keyword.Bluemix}} region of the {{site.data.keyword.keymanagementserviceshort}} service instance
-    * The CRN of the root key in the {{site.data.keyword.keymanagementserviceshort}} instance
-    * The region of the {{site.data.keyword.messagehub}} service instance
-    * The {{site.data.keyword.messagehub}} service instance ID
-
-You'll then receive confirmation via the support ticket that BYOK is enabled.
-
--->
 
 
 
