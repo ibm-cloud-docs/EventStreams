@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27i"
+lastupdated: "2019-09-27j"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -49,7 +49,7 @@ Keys are secured in {{site.data.keyword.keymanagementserviceshort}} using FIPS 1
 ## Enabling a customer-managed key for {{site.data.keyword.messagehub}}
 {: #enabling_encryption}
 
-This operation is destructive and results in the loss of all message and topic definitions. For more information, see [considerations](/docs/services/EventStreams?topic=eventstreams-managing_encryption#considerations_keys).
+This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/services/EventStreams?topic=eventstreams-managing_encryption#considerations_keys).
 {:important}
 
 Complete the following steps to reconfigure your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
@@ -63,7 +63,7 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
    * The CRN of the root key that you want to use in your instance of the {{site.data.keyword.keymanagementserviceshort}} service 
    * The CRN of your {{site.data.keyword.messagehub}} service instance
    <br/>
-   You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the {{site.data.keyword.Bluemix}} console. Alternatively, paste in the output from the following CLI command:
+   You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the console. Alternatively, paste in the output from the following CLI command:
 
       ```
       ibmcloud resource service-instance NAME
