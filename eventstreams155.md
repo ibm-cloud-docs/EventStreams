@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-26h"
+lastupdated: "2019-09-27"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Managing encryption
 {: #managing_encryption}
 
-By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption (often known as Bring Your Own Key or BYOK), which allows the use of a customer-provided key to control the encryption. By deleting or revoking access to this key, you can prevent any further access to the data stored by the service, because it is no longer possible to decrypt.
+By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption (often known as Bring Your Own Key or BYOK), which allows the use of a customer-provided key to control the encryption. By deleting or revoking access to this key, you can prevent any further access to the data stored by the service, because it is no longer possible to decrypt it.
 {:shortdesc}
 
 
@@ -34,12 +34,13 @@ Consider using customer-managed keys if you require the following features:
 Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
 - Enablement is disruptive and results in the loss of any existing message data and topic definitions
-- Deletion of the customer-managed key is non-recoverable
+- Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your {{site.data.keyword.messagehub}} instance
+{:important}
 
 ## How customer-managed encryption works
 {: #encryption_how}
 
-{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is a multi-layered practice. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is encrypted using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about){:new_window}. 
+{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. Envelope encryption is the practice of encrypting one encryption key with another encryption key. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is encrypted using a second key known as the key encryption key (KEK) to create a wrapped DEK. To decrypt data, the wrapped DEK must first be decrypted to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-about){:new_window}. 
 
 You own the KEK, which you create as a root key in the {{site.data.keyword.keymanagementserviceshort}} service. The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Instead {{site.data.keyword.messagehub}} requests that the {{site.data.keyword.keymanagementserviceshort}} service wraps or unwraps a DEK with the root key. If you revoke access to this key, or delete the key the data can no longer be decrypted.
 
@@ -59,7 +60,7 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 4. Create or import a root key in to {{site.data.keyword.keymanagementserviceshort}}. For more information, see [Creating root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-create-root-keys){:new_window} or [Importing root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/key-protect?topic=key-protect-import-root-keys){:new_window}.
 5. Retrieve the Cloud Resource Name (CRN) of the key using the ***View CRN*** option in the {{site.data.keyword.keymanagementserviceshort}} GUI.
 6. Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
-   * The CRN of the root key that you created in {{site.data.keyword.keymanagementserviceshort}}.
+   * The CRN of the root key that you want to use in your instance of the {{site.data.keyword.keymanagementserviceshort}} service 
    * The CRN of your {{site.data.keyword.messagehub}} instance<br/>
    You can provide this ID by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service, or by pasting the output from the following CLI command:
    ```
@@ -67,9 +68,7 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
    ```
    {: codeblock}
 
-   The storage within your {{site.data.keyword.messagehub}} instance is re-created using the key you created. The supplied key is used to perform envelope encryption.
-
-   The response to the support ticket confirms that your encryption is now enabled using your key and that the cluster is ready for use.
+   The {{site.data.keyword.Bluemix}} operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer user-managed key
 
 ## Using a customer-managed key
 {: #using_encryption}
@@ -80,11 +79,11 @@ After a customer-managed key is enabled, the cluster operates as normal, but wit
 
 To temporarily prevent access, remove the authorization created between your {{site.data.keyword.messagehub}} and {{site.data.keyword.keymanagementserviceshort}} instances. As a consequence, {{site.data.keyword.messagehub}} can no longer access the data because it can no longer access the key. 
 
-To remove access permanently you can delete the key. However, you must take extreme caution because this operation is non-recoverable. You will lose all access to message data.
+To remove access permanently you can delete the key. However, you must take extreme caution because this operation is non-recoverable. You will lose access to any data stored in your {{site.data.keyword.messagehub}} instance. There is no way to recover this data.
 
 In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
 
-***Important:*** As long as the instance exists, charges will continue.
+***Important:***You will be charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you have chosen to prevent access to your data by removing authorization to your key or by deleting your key.
 
 ### Restoring access to data
 
