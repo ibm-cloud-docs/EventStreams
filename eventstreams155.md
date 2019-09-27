@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27g"
+lastupdated: "2019-09-27h"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -64,10 +64,11 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
    * The CRN of your {{site.data.keyword.messagehub}} instance
    <br/>
    You can find this CRN by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the {{site.data.keyword.Bluemix}} console , or by pasting the output from the following CLI command:
-   ```
-   ibmcloud resource service-instance NAME
-   ```
-   {: codeblock}
+
+      ```
+      ibmcloud resource service-instance NAME
+      ```
+      {: codeblock}
 
    The {{site.data.keyword.Bluemix}} operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key.
 
