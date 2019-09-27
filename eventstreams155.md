@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27k2"
+lastupdated: "2019-09-27k3"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -65,7 +65,8 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
    * The CRN of the root key that you want to use in your instance of the {{site.data.keyword.keymanagementserviceshort}} service 
    * The CRN of your {{site.data.keyword.messagehub}} service instance
    <br/>
-   You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the console. Alternatively, paste in the output from the following CLI command:
+   You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the console. 
+   Alternatively, paste in the output from the following CLI command:
 
       ```
       ibmcloud resource service-instance NAME
