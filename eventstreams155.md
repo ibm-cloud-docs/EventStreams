@@ -61,10 +61,10 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 5. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the {{site.data.keyword.keymanagementserviceshort}} GUI.
 6. Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
    * The CRN of the root key that you want to use in your instance of the {{site.data.keyword.keymanagementserviceshort}} service 
-   * The CRN of your {{site.data.keyword.messagehub}} instance<br/>
-      <!--
-   You can provide this CRN by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the {{site.data.keyword.Bluemix}} console , or by pasting the output from the following CLI command:
--->
+   * The CRN of your {{site.data.keyword.messagehub}} instance
+   <br/>
+   You can find this CRN by pasting the full {{site.data.keyword.Bluemix}} console URL after clicking on the {{site.data.keyword.messagehub}} service in the {{site.data.keyword.Bluemix}} console , or by pasting the output from the following CLI command:
+
    ```
    ibmcloud resource service-instance NAME
    ```
