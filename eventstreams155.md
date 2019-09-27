@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27a"
+lastupdated: "2019-09-27b"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -27,14 +27,15 @@ By default, message payload data in {{site.data.keyword.messagehub}} is encrypte
 
 Consider using customer-managed keys if you require the following features:
 - Encryption of data at rest controlled by your own key
-- Explicit control of the lifecycle of data stored at rest, which is achieved by deleting or removing access to the key. For example, crypto-shredding
+- Explicit control of the lifecycle of data stored at rest<!--, which is achieved by deleting or removing access to the key. For example, crypto-shredding-->
 - Use of your {{site.data.keyword.messagehub}} instance in a PCI environment
 
 {: #considerations_keys notoc}
 Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
 - Enablement is disruptive and results in the loss of any existing message data and topic definitions
-- Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your {{site.data.keyword.messagehub}} instance
+
+Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your {{site.data.keyword.messagehub}} instance
 {:important}
 
 ## How customer-managed encryption works
