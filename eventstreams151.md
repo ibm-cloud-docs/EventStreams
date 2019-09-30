@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-25"
+lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -35,7 +35,10 @@ The only functionality that is missing is partitioning by ISO 8601 date. The dat
 </code>
 {: codeblock} 
 
-Although the COS Sink Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. For full details for the COS Sink Connector, see 
+Although the COS Sink Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. 
+
+For a walkthrough of how you can connect to Cloud Object Storage, see 
+[Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS](/docs/services/EventStreams?topic=eventstreams-cos_connector). For full details of the COS Sink Connector, see 
 [Kafka Connect Sink Connector for IBM Cloud Object Storage. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-ibmcos-sink){:new_window}.
 
 
