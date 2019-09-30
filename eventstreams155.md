@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-27k3"
+lastupdated: "2019-09-30"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -105,9 +105,11 @@ An activity tracker event is generated to report the action. For more informatio
 ## Disabling customer-managed encryption
 {: #stop_customer_encryption}
 
-If you no longer want to use customer-managed encryption for an {{site.data.keyword.messagehub}} instance, complete the following steps:
+After enabling customer-managed encryption, it is not possible to disable it. Instead, you must delete the service instance and create a new instance.
+
+<!--If you no longer want to use customer-managed encryption for an {{site.data.keyword.messagehub}} instance, complete the following steps:
 1. Delete your customer-managed key.
-2. Provision a new instance of {{site.data.keyword.messagehub}}.
+2. Provision a new instance of {{site.data.keyword.messagehub}}.-->
 
 
 
