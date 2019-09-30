@@ -69,7 +69,7 @@ The following table summarizes what is supported by the plans:
 		    <th>Lite Plan</th>
 		    <th>Standard Plan</th>
 	      	    <th>Enterprise Plan</th>
-		    <th>Classic Plan</th>
+		    <th>Classic Plan[<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_classic)</th>
         </tr>
 		<tr>
 			<td>**Tenancy**</td>
@@ -241,6 +241,7 @@ HIPPA ready<br/>
 
 1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+3. {: #footnote_classic notoc} The Classic plan is deprecated. For more information, see [Classic plan deprecation](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_classic).
 
 
 
