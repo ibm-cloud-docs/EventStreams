@@ -15,6 +15,7 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
 
 
 # Connecting to {{site.data.keyword.messagehub}} using the Classic plan 

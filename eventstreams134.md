@@ -16,6 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:table: .aria-labeledby="caption"}
+{:deprecated: .deprecated}
 
 # The Classic plan 
 {: #plan_choose_classic}

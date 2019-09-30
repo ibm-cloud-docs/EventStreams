@@ -15,6 +15,7 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
 
 # Choosing a Kafka client to use with {{site.data.keyword.messagehub}} Classic plan 
 {: #kafka_clients_classic}

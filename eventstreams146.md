@@ -15,6 +15,7 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
 
 # Migrating a Kafka Java client on the Classic plan 
 {: #kafka_java_migrating_classic}

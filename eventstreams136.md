@@ -15,6 +15,8 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
+
 
 # Choosing between the three APIs on the Classic plan 
 {: #choose_api_classic}

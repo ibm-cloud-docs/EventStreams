@@ -15,6 +15,7 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
 
 # Cloud Object Storage bridge on the Classic plan
 {: #cloud_object_storage_bridge }

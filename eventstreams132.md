@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-03"
+lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,6 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability 
 {: #sla}

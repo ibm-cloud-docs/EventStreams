@@ -16,6 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Using the Kafka API on the Classic plan
 {: #kafka_using_classic}

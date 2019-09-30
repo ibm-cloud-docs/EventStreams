@@ -15,6 +15,8 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
+
 
 # MQ bridge on the Classic plan 
 {: #mq_bridge}
