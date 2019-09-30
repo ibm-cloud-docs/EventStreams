@@ -17,6 +17,8 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 {:note: .deprecated}
+{:deprecated: .deprecated}
+
 
 # Using the MQ Light API on the Classic plan
 {: #mql_using}

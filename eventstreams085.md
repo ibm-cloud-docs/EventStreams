@@ -18,6 +18,7 @@ subcollection: eventstreams
 {:table: .aria-labeledby="caption"}
 {:note: .note}
 {:note: .deprecated}
+{:deprecated: .deprecated}
 
 # Choosing your plan 
 {: #plan_choose}
