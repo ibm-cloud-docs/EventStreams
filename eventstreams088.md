@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-11-08"
+lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,8 +19,9 @@ subcollection: eventstreams
 # Linking to other services using bridges on the Classic plan 
 {: #bridges}
 
-** {{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020. **
-<br/>
+{{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only.  The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. <br/>However existing instances will continue to be supported.
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+{:deprecated}
 
 The {{site.data.keyword.messagehub}} Classic plan also
 supports bridges to a selection of other systems. Bridges are unidirectional links between {{site.data.keyword.messagehub}} and another service. Bridges allow either

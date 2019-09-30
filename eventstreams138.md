@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-07-05"
+lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,8 +19,9 @@ subcollection: eventstreams
 # Using the Administration REST API on the Classic plan
 {: #admin_api_standard}
 
-** The Classic plan is deprecated from January 16th 2020. **
-<br/>
+The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. <br/>However existing instances will continue to be supported.
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+{:deprecated}
 
 {{site.data.keyword.messagehub}} provides an Administration RESTful API that you can use to create, delete, and list topics.
 {: shortdesc}

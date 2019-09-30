@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-10-29"
+lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,8 +21,9 @@ subcollection: eventstreams
 {: #monitoring_classic}
 
 
-** The Classic plan is deprecated from January 16th 2020. **
-<br/>
+The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. <br/>However existing instances will continue to be supported.
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+{:deprecated}
 
 {{site.data.keyword.messagehub}} on the Classic plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.

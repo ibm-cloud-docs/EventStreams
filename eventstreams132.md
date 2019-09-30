@@ -38,7 +38,9 @@ For more information about the SLA for high availability services in {{site.data
 ## Classic plan
 {: #sla_classic}
 
-** The Classic plan is deprecated from January 16th 2020. **
+The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. <br/>However existing instances will continue to be supported.
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+{:deprecated}
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
