@@ -16,7 +16,6 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
-{:note: .deprecated}
 {:deprecated: .deprecated}
 
 
@@ -29,8 +28,6 @@ subcollection: eventstreams
 {:deprecated}
 
 ** If you currently use the {{site.data.keyword.mql}} API on the Classic plan and would like to migrate to Kafka, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).**
-
-<br/>
 
 The {{site.data.keyword.mql}} API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service. The API provides an AMQP-based messaging interface for Java&trade;, Node.js, Python, and Ruby. 
 {:shortdesc}
