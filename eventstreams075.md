@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-04"
+lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,7 +20,11 @@ subcollection: eventstreams
 # Using the MQ Light API on the Classic plan
 {: #mql_using}
 
-** The {{site.data.keyword.mql}} API is available as part of the Classic plan only. The Classic plan is deprecated from January 16th 2020.**</br>
+** The {{site.data.keyword.mql}} API is available as part of the Classic plan only. The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. However existing instances will continue to be supported.
+
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. **
+{:deprecated}**</br>
+
 ** If you currently use the {{site.data.keyword.mql}} API on the Classic plan and would like to migrate to Kafka, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).**
 
 <br/>
