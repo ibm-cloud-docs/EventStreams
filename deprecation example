@@ -1,0 +1,13 @@
+# Configuring FTP for NAS with cPanel and WHM
+{: #configureNAScPanel}
+
+All instances of this service are deprecated. For more information, contact [support](https://www.ibm.com/cloud-computing/bluemix/contact-us).
+{:deprecated}
+
+You can use NAS with cPanel and WHM for your backups. You can load data through File Transfer Protocol (FTP) to your NAS storage device. Follow these steps to configure FTP for your NAS within cPanel and WHM.
+
+1. Log in to WHM with your unique credentials.
+
+2. On the **Home** screen, select **Configure backup** from the **backup** menu.
+
+3. Update the **Configuration Options** based on your backup preferences.
