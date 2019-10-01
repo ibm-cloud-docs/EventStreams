@@ -18,7 +18,11 @@ subcollection: eventstreams
 
 # Migrating {{site.data.keyword.messagehub}} bridges to Kafka Connect
 {: #migrate_bridges}
- 
+
+The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+{:deprecated}
+
 The {{site.data.keyword.messagehub}} Classic plan offers two bridges, one that takes data from Kafka and stores it in {{site.data.keyword.cos_full}} and one that takes data from IBM MQ and puts it into Kafka. These bridges allow you to connect systems by supplying just the configuration and do not require you to write any code. 
  
 The bridges connect systems to and from Kafka. To those familiar with Kafka this sounds very similar to the Kafka Connect framework and the associated Connectors. {{site.data.keyword.messagehub}} is at its core Kafka so we wanted to align closely with Kafka and therefore are moving to Kafka Connect as a way to offer connections between systems. Consequently, we will not be supporting the older style bridges in the Enterprise and Standard plans.

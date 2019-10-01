@@ -15,9 +15,14 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
 
 # Migrating the REST APIs from the Classic plan
 {: #migrate_rest_apis}
+
+The Classic plan is deprecated. From November 1, 2019, you will no longer be able to provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+{:deprecated}
 
 If you're using the Classic plan, be aware that the new Standard plan introduces changes to the REST APIs. The following information summarizes what these changes are and the recommended actions that you might need to take, if any, to move from the Classic to the Standard or Enterprise plans.
 

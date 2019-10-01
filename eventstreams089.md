@@ -15,16 +15,15 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:note: .deprecated}
+{:deprecated: .deprecated}
 
 # Object Storage bridge on the Classic plan
 {: #object_storage_bridge }
 
-** The {{site.data.keyword.objectstorageshort}} bridge is deprecated from August 1st 2018.**
-<br/>
-
+The {{site.data.keyword.objectstorageshort}} bridge is deprecated from August 1st 2018.
 Because the underlying service that the {{site.data.keyword.objectstorageshort}} bridge connects to is deprecated, the {{site.data.keyword.objectstorageshort}} bridge is also deprecated from August 1st 2018. 
 {: shortdesc}
+{:deprecated}
 
 When the {{site.data.keyword.objectstorageshort}} service reaches its end of life and is decommissioned, all instances of the {{site.data.keyword.objectstorageshort}} bridge will also be decommissioned. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}. 
 
