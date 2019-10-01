@@ -16,6 +16,7 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:faq: data-hd-content-type='faq'}
+{:deprecated: .deprecated}
 
 # FAQs
 {: #faqs}

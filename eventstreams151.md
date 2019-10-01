@@ -15,6 +15,7 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:deprecated: .deprecated}
 
 # Migrating {{site.data.keyword.messagehub}} bridges to Kafka Connect
 {: #migrate_bridges}
