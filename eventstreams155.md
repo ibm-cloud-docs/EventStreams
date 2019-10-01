@@ -72,7 +72,7 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
       ```
       {: codeblock}
 
-   The {{site.data.keyword.messagehub}} Operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key. The enablement should be completed in one business day.
+   The {{site.data.keyword.messagehub}} Operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
 
 ## Using a customer-managed key
 {: #using_encryption}
