@@ -34,7 +34,7 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
 
 <table>
-    <caption>Table 1. Kafka client support in Standard and Enterprise plans</caption>
+    <caption>Table 1. Kafka client support in Standard, Enterprise, and Lite plans</caption>
       <tr>
 	        <th></th>
 		    <th>Standard and Enterprise Plans</th>
