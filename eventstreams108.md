@@ -123,16 +123,6 @@ For information about restrictions on the settings allowed when you create topic
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
 
-## How do I confirm which {{site.data.keyword.messagehub}} plan I've provisioned?
-{: #plan_check}
-{: faq}
-
-To confirm which {{site.data.keyword.messagehub}} type of plan (Lite, Standard, Enterprise, or Classic) you have provisioned:
-1. Navigate to the instance of {{site.data.keyword.messagehub}} that you want to check in the {{site.data.keyword.Bluemix_notm}} console.
-2. Click the **Plan** tab in the navigation pane the left.
-The **Current plan** displays your plan type. 
-
-
 ### APIs
 {: #api_availability }
 
@@ -164,7 +154,14 @@ The following configuration settings apply to all topics and cannot be changed:
 *  Each {{site.data.keyword.Bluemix_notm}} space has a limit of 100 partitions. To create
    more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
 
+## How do I check which {{site.data.keyword.messagehub}} plan I've provisioned?
+{: #plan_check}
+{: faq}
 
+To confirm which {{site.data.keyword.messagehub}} type of plan (Lite, Standard, Enterprise, or Classic) you have provisioned, complete the following steps:
+1. Navigate to the instance of {{site.data.keyword.messagehub}} that you want to check in the {{site.data.keyword.Bluemix_notm}} console.
+2. Click the **Plan** tab in the navigation pane on the left.
+The **Current plan** displays your plan type. 
 
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
