@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -122,6 +122,16 @@ For information about restrictions on the settings allowed when you create topic
 {: faq}
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
+
+## How do I confirm which {{site.data.keyword.messagehub}} plan I've provisioned?
+{: #plan_check}
+{: faq}
+
+To confirm which {{site.data.keyword.messagehub}} type of plan (Lite, Standard, Enterprise, or Classic) you have provisioned:
+1. Navigate to the instance of {{site.data.keyword.messagehub}} that you want to check in the {{site.data.keyword.Bluemix_notm}} console.
+2. Click the **Plan** tab in the navigation pane the left.
+The **Current plan** displays your plan type. 
+
 
 ### APIs
 {: #api_availability }
