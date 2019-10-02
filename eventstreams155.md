@@ -85,7 +85,7 @@ To temporarily prevent access, remove the authorization created between your {{s
 
 To remove access permanently you can delete the key. However, you must take extreme caution because this operation is non-recoverable. You will lose access to any data stored in your {{site.data.keyword.messagehub}} instance. There is no way to recover this data.
 
-In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
+In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events#events).
 
 ***Important:*** You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you have chosen to prevent access to your data by removing authorization to your key or by deleting your key.
 
@@ -93,13 +93,13 @@ In both cases the {{site.data.keyword.messagehub}} instance shuts down and no lo
 
 Access can be restored only if the key was not deleted. To restore access, re-create the authorization between your {{site.data.keyword.messagehub}} and {{site.data.keyword.keymanagementserviceshort}} instances. After a short period of initialization your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. All data is retained, subject to the normal retention limits configured in your instance.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events#events).
 
 ### Rotating the key
 
 {{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](/docs/services/EventStreams?topic=eventstreams-managing_encryption#encryption_how). 
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events). 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/services/EventStreams?topic=eventstreams-at_events#events). 
 
 ## Disabling customer-managed encryption
 {: #stop_customer_encryption}

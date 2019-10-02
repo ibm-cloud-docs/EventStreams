@@ -158,7 +158,7 @@ The following configuration settings apply to all topics and cannot be changed:
 {: #plan_check}
 {: faq}
 
-To confirm which type of {{site.data.keyword.messagehub}} plan (Lite, Standard, Enterprise, or Classic) you've provisioned, complete the following steps:
+To confirm which type of {{site.data.keyword.messagehub}} plan you've provisioned (Lite, Standard, Enterprise, or Classic), complete the following steps:
 1. Navigate to the instance of {{site.data.keyword.messagehub}} that you want to check in the {{site.data.keyword.Bluemix_notm}} console.
 2. Click the **Plan** tab in the navigation pane on the left.
 The **Current plan** section displays your plan type. 
