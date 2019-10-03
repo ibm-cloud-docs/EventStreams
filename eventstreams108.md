@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -162,6 +162,18 @@ To confirm which type of {{site.data.keyword.messagehub}} plan you've provisione
 1. Navigate to the instance of {{site.data.keyword.messagehub}} that you want to check in the {{site.data.keyword.Bluemix_notm}} console.
 2. Click the **Plan** tab in the navigation pane on the left.
 The **Current plan** section displays your plan type. 
+
+## Can I update my {{site.data.keyword.messagehub}} plan using the {{site.data.keyword.Bluemix_notm}} console?
+{: #plan_migrate}
+{: faq}
+
+From the **Plan** tab for your {{site.data.keyword.messagehub}} instance you can use the **Change pricing plan** option to update from the Lite plan to the Standard plan. However, this option does not currently work for any other plan upgrade path
+
+For example, if you try to change the pricing plan from Classic to Standard you'll see an error message like the the following:
+```
+Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
+```
+{:codeblock}
 
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
