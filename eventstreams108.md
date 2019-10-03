@@ -159,7 +159,7 @@ The following configuration settings apply to all topics and cannot be changed:
 {: faq}
 
 To confirm which type of {{site.data.keyword.messagehub}} plan you've provisioned (Lite, Standard, Enterprise, or Classic), complete the following steps:
-1. Navigate to the instance of {{site.data.keyword.messagehub}} that you want to check in the {{site.data.keyword.Bluemix_notm}} console.
+1. In the {{site.data.keyword.Bluemix_notm}} console, navigate to the instance of {{site.data.keyword.messagehub}} that you want to check.
 2. Click the **Plan** tab in the navigation pane on the left.
 The **Current plan** section displays your plan type. 
 
@@ -169,11 +169,12 @@ The **Current plan** section displays your plan type.
 
 Yes, but only if you are moving from the Lite plan to the Standard plan.
 
-1. Navigate to the instance of {{site.data.keyword.messagehub}} Lite plan that you want to change in the {{site.data.keyword.Bluemix_notm}} console.
+1. In the {{site.data.keyword.Bluemix_notm}} console, navigate to the instance of {{site.data.keyword.messagehub}} Lite plan that you want to change. 
 2. Click the **Plan** tab in the navigation pane on the left.
 3. In the **Change pricing plan** section, check the **Standard** box. Click **Upgrade**.
+<br/>
 
-However, this option does not currently work for any other combination of plans. For example, if you try to change the pricing plan from Classic to Standard, you'll see an error message like the the following:
+However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try to change the pricing plan from Classic to Standard, you'll see an error message like the the following:
 ```
 Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
 ```
