@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,13 +27,13 @@ From June 30, 2020, the Classic Plan will be retired and no longer s
 For more information, see 
 [IBM {{site.data.keyword.messagehub}} Classic Plan is being retired ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-classic-plan-is-being-retired){:new_window}.
 {:deprecated}
-
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. For information about the Standard and Enterprise plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
 {: shortdesc}
  
 
 ## Migrating from the Classic plan
 {: #migrating_from_classic}
+
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. You can migrate to either the Enterprise or Standard plans. For information to help you select a plan, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_choose).
 
 For an overview of migrating from the Classic plan to the new Standard plan, see [Upgrading to the new Standard plan](/docs/services/EventStreams?topic=eventstreams-migrate_classic_plan).
 

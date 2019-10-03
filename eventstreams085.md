@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -55,7 +55,7 @@ For more information, see
 
 The Classic plan gives access to the previous edition of the Standard plan and is provided for existing workloads and backward compatibility only. You should provision new workloads against the Standard plan.
 
-For information about moving from the Classic plan, see [Migrating](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
+For information about moving from the Classic plan to either the Enterprise or Standard plans, see [Migrating](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
 
 
 ## What's supported by the Lite, Standard, Enterprise, and Classic plans
