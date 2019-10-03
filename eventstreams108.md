@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-03a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -172,6 +172,7 @@ Yes, but only if you are moving from the Lite plan to the Standard plan.
 1. In the {{site.data.keyword.Bluemix_notm}} console, navigate to the instance of {{site.data.keyword.messagehub}} Lite plan that you want to change. 
 2. Click the **Plan** tab in the navigation pane on the left.
 3. In the **Change pricing plan** section, check the **Standard** box. Click **Upgrade**.
+<br/>
 <br/>
 
 However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try to change the pricing plan from Classic to Standard, you'll see an error message like the the following:
