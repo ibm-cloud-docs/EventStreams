@@ -26,7 +26,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 ## ibmcloud es init
 {: #ibmcloud_es_init}
 
-Initialize the {{site.data.keyword.messagehub}} plugin.
+Initialize the {{site.data.keyword.messagehub}} plug-in.
 ```
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```

@@ -75,7 +75,7 @@ Optionally, you can create a service API key. The valid ROLE_NAMEs are: Manager,
   ```
   {: codeblock}
 
-## Step 5. Install the {{site.data.keyword.messagehub}} CLI plugin
+## Step 5. Install the {{site.data.keyword.messagehub}} CLI plug-in
 {: #step5_es_cli}
 
 Run the following command:
@@ -84,10 +84,10 @@ ibmcloud plugin install event-streams
 ```
 {: codeblock}
 
-## Step 6. Initialize the {{site.data.keyword.messagehub}} plugin
+## Step 6. Initialize the {{site.data.keyword.messagehub}} plug-in
 {: #step6_es_init}
 
-Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you must first initialize the plugin. Run the following command then select your {{site.data.keyword.messagehub}} instance:
+Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you must first initialize the plug-in. Run the following command then select your {{site.data.keyword.messagehub}} instance:
 
 ```
 ibmcloud es init
