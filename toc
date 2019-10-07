@@ -80,6 +80,7 @@ IBM Event Streams
 	{: .topicgroup}
 	Integrating with other services
 		eventstreams149.md
+		eventstreams156.md
 		eventstreams119.md
 
 	{: .topicgroup}
