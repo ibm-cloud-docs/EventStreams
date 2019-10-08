@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-08"
+lastupdated: "2019-10-08a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -33,7 +33,7 @@ Complete the following steps to get set up:
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
-* IBM V8, or later
+* An instance of the IBM MQ on Cloud service or IBM MQ Version 8 or later
 * An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
     You will also need CLI access to your cluster. For more information, see
@@ -104,7 +104,7 @@ Keep the terminal that you've used for port forwarding open, and use another ter
 The Connect REST API is then available at http://localhost:8083. If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
-So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the COS connector.
+So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the MQ connector.
 
 
 <!--
@@ -114,13 +114,13 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
 1. Clone the repository with the following command:
 
     ```
-    git clone https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
+    git clone https://github.com/ibm-messaging/kafka-connect-mq-source
     ```
 
-2. Change into the <code>kafka-connect-ibmcos-sink</code> directory:
+2. Change into the <code>kafka-connect-mq-source</code> directory:
 
     ```
-    cd kafka-connect-ibmcos-sink
+    cd kafka-connect-mq-source
     ```
 
 3. Build the connector using Gradle:
@@ -130,28 +130,26 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
     ```
 -->
 
-## Step 6. Configure the cos-sink json file
+## Step 6. Configure the mq-source json file
 {: #step6_config_json_mq}
 
-Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the <code>mq-source.json</code> file located in <code>kafka-connect-mq-source/config</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
-### cos-sink.json file properties
+### mq-source.json file properties
 
-Replace the placeholders in the <code>cos-sink.json</code> file with your own values.
+Replace the placeholders in the <code>mq-source.json</code> file with your own values.
 
 <dl>
-<dt><strong>cos.api.key</strong></dt>
-<dd>Required. API key used to connect to the Cloud Object Storage service instance.</dd>
-<dt><strong>cos.bucket.location</strong></dt>
-<dd>Required. Location of the Cloud Object Storage service bucket, for example: eu-gb.</dd>
-<dt><strong>cos.bucket.name</strong></dt>
-<dd>Required. Name of the Cloud Object Storage service bucket to write data into.</dd>
-<dt><strong>cos.bucket.resiliency</strong></dt>
-<dd>Required. Resiliency of the Cloud Object Storage bucket. Must be one of: cross-region, regional, or single-site.</dd>
-<dt><strong>cos.service.crn</strong></dt>
-<dd>Required. CRN for the Cloud Object Storage service instance.
-<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example:<br/> 
-<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></p></dd>
+<dt><strong>TOPIC</strong></dt>
+<dd>Required. Name of the destination Kafka topic</dd>
+<dt><strong>QUEUE_MANAGER</strong></dt>
+<dd>Required. Name of the MQ queue manager</dd>
+<dt><strong>QUEUE</strong></dt>
+<dd>Required. Name of the source MQ queue </dd>
+<dt><strong>CHANNEL_NAME</strong></dt>
+<dd>Required (unless using bindings or CCDT). Name of the server-connection channel.</dd>
+<dt><strong>CONNECTION_NAME_LIST</strong></dt>
+<dd>Required (unless using bindings or CCDT). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
 <dt><strong>cos.endpoint.visibility</strong></dt>
 <dd>Optional. Specify public to connect to the Cloud Object Storage service over the public internet, or private to connect from a connector running inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
 <dt><strong>cos.object.deadline.seconds </strong></dt>
@@ -177,10 +175,10 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 ## Step 7. Start the connector with its configuration
 {: #step7_start_connector_mq}
 
-Run the following command to start the COS connector with the configuration that you provided in the previous step.
+Run the following command to start the MQ connector with the configuration that you provided in the previous step.
 
 ```
-curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./cos-sink.json"
+curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./mq-source.json"
 ```
 {: codeblock}
 
@@ -188,7 +186,7 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 {: #step8_monitor_connector_mq}
 
 You can check your connector by going to <br/>
-http://localhost:8083/connectors/cos-sink/status
+http://localhost:8083/connectors/mq-source/status
 
 If the state of the connector is not running, restart the connector.
 
