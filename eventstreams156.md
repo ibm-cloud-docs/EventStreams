@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-07"
+lastupdated: "2019-10-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -16,14 +16,14 @@ subcollection: eventstreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to IBM MQ using IKS
+# Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS
 {: #mq_connector}
 
 The following task walks you through:
 * getting the Kafka Connect runtime running in an IKS cluster 
 * starting the MQ Source Connector to copy messages from an IBM MQ source queue to a target Kafka topic in {{site.data.keyword.messagehub}}. 
 
-The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud Object Storage service. 
+The Connector copies messages from a source IBM MQ queue to a target Kafka topic.
 
 Complete the following steps to get set up:
 {: shortdesc}
@@ -46,7 +46,7 @@ Ensure you have the following software and services installed:
 
 Clone the following two repositories that contain the required files:
 
-* https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
+* https://github.com/ibm-messaging/kafka-connect-mq-source
 * https://github.com/ibm-messaging/event-streams-samples
 
 
