@@ -67,12 +67,12 @@ To achieve high levels of availability from the application perspective, you sho
 Because of the dynamic nature of the cloud, applications must expect connection breakages. A connection breakage is not considered a failure of service.
 
 **Retries**<br/>
-Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [ <code>retries</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}. Connections are remade within 60 seconds.   
+Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [ <code>retries</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){:new_window}. Connections are remade within 60 seconds.   
  
 **Duplicates**<br/>
 Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send the message again when reconnected. You are recommended to design applications to expect duplicate messages. 
 
-If duplicates cannot be tolerated, you can use the <code>idempotent</code> producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ <code>enable.idempotence</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/documentation.html#producerconfigs){:new_window}.
+If duplicates cannot be tolerated, you can use the <code>idempotent</code> producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ <code>enable.idempotence</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){:new_window}.
 
 ### Throughput
 {: #throughput}
