@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-08a"
+lastupdated: "2019-10-08b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -150,15 +150,6 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 <dd>Required (unless using bindings or CCDT). Name of the server-connection channel.</dd>
 <dt><strong>CONNECTION_NAME_LIST</strong></dt>
 <dd>Required (unless using bindings or CCDT). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
-<dt><strong>cos.endpoint.visibility</strong></dt>
-<dd>Optional. Specify public to connect to the Cloud Object Storage service over the public internet, or private to connect from a connector running inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
-<dt><strong>cos.object.deadline.seconds </strong></dt>
-<dd>Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object. This can be useful in situations where there are long pauses between Kafka records being produced to a topic, because it ensures that any records received by this connector will always be written into object storage within the specified period of time.</dd>
-<dt><strong>cos.object.interval.seconds</strong></dt>
-<dd>Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud Object Storage object.</dd>
-<dt><strong>cos.object.records</strong></dt>
-<dd>Optional. The maximum number of Kafka records to combine into a object.
-</dd>
 </dl>
  
 ### Get COS credentials using the IBM Cloud console
