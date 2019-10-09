@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-21a"
+lastupdated: "2019-10-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -23,22 +23,10 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 [Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/services/EventStreams?topic=eventstreams-cli#cli).
 
 ## Change log
+{: #es_cli_changelog}
 
-v1.0, released on 05/12/2019
-
-v1.0.1, released on 05/27/2019
-
-    improved error message when running command without init
-    sorted instances list during init
-    translation update
-
-v2.0, released on 08/21/2019
-
-    init: remove the service-key requirement
-    added group-delete command
-
-<table summary="Overview of version changes for the {{site.data.keyword.containerlong_notm}} CLI plug-in">
-<caption>Changelog for the {{site.data.keyword.containerlong_notm}} CLI plug-in</caption>
+<table summary="Overview of version changes for the {{site.data.keyword.messagehub}} CLI plug-in">
+<caption>Changelog for the {{site.data.keyword.messagehub}} CLI plug-in</caption>
 <thead>
 <tr>
 <th>Version</th>
@@ -58,9 +46,9 @@ Initial release of the CLI</td>
 <td>May 27th 2019</td>
 <td>
 <ul>
-<li>improved error message when running command without init</li>
-<li>sorted instances list during init</li>
-<li>translation update</li>
+<li>Improved error message when running command without init</li>
+<li>Sorted instances list during init</li>
+<li>Translation update</li>
 </td>
 </tr>
 <tr>
@@ -70,65 +58,13 @@ Initial release of the CLI</td>
 <ul>
 <li>init: remove the service-key requirement</li>
 <li>Added group-delete command</li>
-<li>Updated translations of help text.</li>
+<li>Updated translations of help text</li>
 </ul></td>
 </tr>
-
 <tr>
 <td>0.3.49</td>
 <td>18 Jun 2019</td>
-<td>Updates the Go version to 1.12.6.</td>
-</tr>
-<tr>
-<td>0.3.47</td>
-<td>15 Jun 2019</td>
-<td><ul>
-<li>Fixes a bug so that empty tables are not returned in the output of `ibmcloud ks kube-versions`.</li>
-<li>Updates the NLB DNS model so that an array of NLB IP addresses is returned by `ibmcloud ks nlb-dnss`.</li>
-<li>Changes the description text for the {{site.data.keyword.containerlong_notm}} CLI plug-in.</li>
-</ul></td>
-</tr>
-
-
-
-
-<tr>
-<td>0.2.99</td>
-<td>09 Apr 2019</td>
-<td><ul>
-<li>Updates help text.</li>
-<li>Updates the Go version to 1.12.2.</li>
-</ul></td>
-</tr>
-<tr>
-<td>0.2.95</td>
-<td>03 Apr 2019</td>
-<td><ul>
-<li>Adds versioning support for managed cluster add-ons.</li>
-<ul><li>Adds the [<code>ibmcloud ks addon-versions</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_addon_versions) command.</li>
-<li>Adds the <code>--version</code> flag to [ibmcloud ks cluster-addon-enable](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addon_enable) commands.</li></ul>
-<li>Updates translations of help text.</li>
-<li>Updates short links to documentation in help text.</li>
-<li>Fixes a bug where JSON error messages printed in an incorrect format.</li>
-<li>Fixes a bug where using the silent flag (`-s`) on some commands prevented errors from printing.</li>
-</ul></td>
-</tr>
-
-<tr>
-<td>0.2.61</td>
-<td>26 Feb 2019</td>
-<td><ul>
-<li>Adds the `debug-tool` add-on to the <code>ibmcloud ks cluster-addon-enable</code> command to install the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility).</li>
-<li>Adds the `cluster-pull-secret-apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/containers?topic=containers-images#cluster_registry_auth).</li>
-<li>Fixes a bug where `ibmcloud ks init` failures caused help output to be printed.</li>
-</ul></td>
-</tr>
-<tr>
-<td>0.2.40</td>
-<td>06 Feb 2019</td>
-<td><ul>
-<li>Adds the [<code>ibmcloud ks cluster-addons</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addons), [<code>ibmcloud ks cluster-addon-enable</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addon_enable), and [<code>ibmcloud ks cluster-addon-disable</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addon_disable) commands for working with managed cluster add-ons such as the [Istio](/docs/containers?topic=containers-istio) and [Knative](/docs/containers?topic=containers-serverless-apps-knative) managed add-ons for {{site.data.keyword.containerlong_notm}}.</li>
-<li>Improves help text for {{site.data.keyword.Bluemix_dedicated_notm}} users of the <code>ibmcloud ks vlans</code> command.</li></ul></td>
+<td>Updated the Go version to 1.12.6.</td>
 </tr>
 </tbody>
 </table>
@@ -566,6 +502,31 @@ ibmcloud es groups [--filter FILTER] [--json]
         <dd>Optional. Filter the list of consumer groups using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
      <dt>--json (optional)</dt>
         <dd>Format output in JSON. A maximum of 1000 groups are returned.
+</dd>
+</dl>
+
+## ibmcloud es group-delete
+{: #ibmcloud_es_group_delete}
+
+Delete a consumer group.
+
+
+```
+ibmcloud es group-delete [--group] GROUP_ID [--force]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: None
+
+<strong>Command options</strong>:
+{: #ibmcloud_es_group_delete_params}
+
+<dl>
+    <dt>--group value, -g value </dt>
+        <dd>Consumer group ID</dd>
+    <dt>--force, -f (optional)</dt>
+        <dd>Delete group without confirmation.</dd> 
 </dd>
 </dl>
 
