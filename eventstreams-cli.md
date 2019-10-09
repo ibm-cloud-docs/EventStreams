@@ -45,9 +45,11 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 <td>v1.0.1</td>
 <td>May 27 2019</td>
 <td>
-Improved error message when running command without init<br/>
-Sorted instances list during init<br/>
-Translation update<br/>
+<ul>
+<li>Improved error message when running command without init</li>
+<li>Sorted instances list during init</li>
+<li>Translation update</li>
+</ul>
 </td>
 </tr>
 <tr>
