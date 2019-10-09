@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-08b"
+lastupdated: "2019-10-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -23,7 +23,7 @@ The following task walks you through:
 * getting the Kafka Connect runtime running in an IKS cluster 
 * starting the MQ Source Connector to copy messages from an IBM MQ source queue to a target Kafka topic in {{site.data.keyword.messagehub}}. 
 
-The Connector copies messages from a source IBM MQ queue to a target Kafka topic.
+The MQ Source Connector connects to an IBM MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 
 Complete the following steps to get set up:
 {: shortdesc}
@@ -33,7 +33,7 @@ Complete the following steps to get set up:
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
-* An instance of the IBM MQ on Cloud service or IBM MQ Version 8 or later
+* An instance of the [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mqcloud?topic=mqcloud-mqoc_getting_started service){:new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-downloads/){:new_window}, or later 
 * An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
     You will also need CLI access to your cluster. For more information, see
@@ -133,7 +133,7 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
 ## Step 6. Configure the mq-source json file
 {: #step6_config_json_mq}
 
-Edit the <code>mq-source.json</code> file located in <code>kafka-connect-mq-source/config</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the <code>mq-source.json</code> file located in <code>kafka-connect-mq-source/config</code> so that at a minimum your required properties are completed with your information.
 
 ### mq-source.json file properties
 
@@ -143,19 +143,19 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 <dt><strong>TOPIC</strong></dt>
 <dd>Required. Name of the destination Kafka topic</dd>
 <dt><strong>QUEUE_MANAGER</strong></dt>
-<dd>Required. Name of the MQ queue manager</dd>
+<dd>Required. Name of the source MQ queue manager</dd>
 <dt><strong>QUEUE</strong></dt>
 <dd>Required. Name of the source MQ queue </dd>
 <dt><strong>CHANNEL_NAME</strong></dt>
-<dd>Required (unless using bindings or CCDT). Name of the server-connection channel.</dd>
+<dd>Required (unless you're using bindings or CCDT). Name of the server-connection channel.</dd>
 <dt><strong>CONNECTION_NAME_LIST</strong></dt>
-<dd>Required (unless using bindings or CCDT). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
+<dd>Required (unless you're using bindings or CCDT). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
 </dl>
  
-### Get COS credentials using the IBM Cloud console
+### Get IBM MQ on Cloud credentials using the IBM Cloud console
 {: #connect_enterprise_external_console_mq}
 
-1. Locate your Cloud Object Storage service on the dashboard.
+1. Locate your MQ service on the dashboard.
 2. Click your service tile.
 3. Click **Service Credentials**.
 4. Click **New Credential**. 
