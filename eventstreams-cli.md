@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09b"
+lastupdated: "2019-10-09c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -22,7 +22,7 @@ subcollection: eventstreams
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see 
 [Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/services/EventStreams?topic=eventstreams-cli#cli).
 
-## {{site.data.keyword.messagehub}} CLI changelog
+## Changelog
 {: #es_cli_changelog}
 
 <table summary="Overview of version changes for the {{site.data.keyword.messagehub}} CLI plug-in">
@@ -39,11 +39,11 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 <td>v1.0</td>
 <td>May 12 2019</td>
 <td>
-Initial release of the CLI</td>
+Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v1.0.1</td>
-<td>May 27th 2019</td>
+<td>May 27 2019</td>
 <td>
 Improved error message when running command without init<br/>
 Sorted instances list during init<br/>
@@ -52,7 +52,7 @@ Translation update<br/>
 </tr>
 <tr>
 <td>v2.0</td>
-<td>August 21st 2019</td>
+<td>August 21 2019</td>
 <td>
 <ul>
 <li>init: remove the service-key requirement</li>
