@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09"
+lastupdated: "2019-10-09a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -45,10 +45,9 @@ Initial release of the CLI</td>
 <td>v1.0.1</td>
 <td>May 27th 2019</td>
 <td>
-<ul>
-<li>Improved error message when running command without init</li>
-<li>Sorted instances list during init</li>
-<li>Translation update</li>
+Improved error message when running command without init<br/>
+Sorted instances list during init<br/>
+Translation update<br/>
 </td>
 </tr>
 <tr>
@@ -60,11 +59,6 @@ Initial release of the CLI</td>
 <li>Added group-delete command</li>
 <li>Updated translations of help text</li>
 </ul></td>
-</tr>
-<tr>
-<td>0.3.49</td>
-<td>18 Jun 2019</td>
-<td>Updated the Go version to 1.12.6.</td>
 </tr>
 </tbody>
 </table>
