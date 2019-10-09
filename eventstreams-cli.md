@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-09-04"
+lastupdated: "2019-08-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -22,11 +22,123 @@ subcollection: eventstreams
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see 
 [Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/services/EventStreams?topic=eventstreams-cli#cli).
 
+## Change log
+
+v1.0, released on 05/12/2019
+
+v1.0.1, released on 05/27/2019
+
+    improved error message when running command without init
+    sorted instances list during init
+    translation update
+
+v2.0, released on 08/21/2019
+
+    init: remove the service-key requirement
+    added group-delete command
+
+<table summary="Overview of version changes for the {{site.data.keyword.containerlong_notm}} CLI plug-in">
+<caption>Changelog for the {{site.data.keyword.containerlong_notm}} CLI plug-in</caption>
+<thead>
+<tr>
+<th>Version</th>
+<th>Release date</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0</td>
+<td>May 12 2019</td>
+<td>
+Initial release of the CLI</td>
+</tr>
+<tr>
+<td>v1.0.1</td>
+<td>May 27th 2019</td>
+<td>
+<ul>
+<li>improved error message when running command without init</li>
+<li>sorted instances list during init</li>
+<li>translation update</li>
+</td>
+</tr>
+<tr>
+<td>v2.0</td>
+<td>August 21st 2019</td>
+<td>
+<ul>
+<li>init: remove the service-key requirement</li>
+<li>Added group-delete command</li>
+<li>Updated translations of help text.</li>
+</ul></td>
+</tr>
+
+<tr>
+<td>0.3.49</td>
+<td>18 Jun 2019</td>
+<td>Updates the Go version to 1.12.6.</td>
+</tr>
+<tr>
+<td>0.3.47</td>
+<td>15 Jun 2019</td>
+<td><ul>
+<li>Fixes a bug so that empty tables are not returned in the output of `ibmcloud ks kube-versions`.</li>
+<li>Updates the NLB DNS model so that an array of NLB IP addresses is returned by `ibmcloud ks nlb-dnss`.</li>
+<li>Changes the description text for the {{site.data.keyword.containerlong_notm}} CLI plug-in.</li>
+</ul></td>
+</tr>
+
+
+
+
+<tr>
+<td>0.2.99</td>
+<td>09 Apr 2019</td>
+<td><ul>
+<li>Updates help text.</li>
+<li>Updates the Go version to 1.12.2.</li>
+</ul></td>
+</tr>
+<tr>
+<td>0.2.95</td>
+<td>03 Apr 2019</td>
+<td><ul>
+<li>Adds versioning support for managed cluster add-ons.</li>
+<ul><li>Adds the [<code>ibmcloud ks addon-versions</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_addon_versions) command.</li>
+<li>Adds the <code>--version</code> flag to [ibmcloud ks cluster-addon-enable](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addon_enable) commands.</li></ul>
+<li>Updates translations of help text.</li>
+<li>Updates short links to documentation in help text.</li>
+<li>Fixes a bug where JSON error messages printed in an incorrect format.</li>
+<li>Fixes a bug where using the silent flag (`-s`) on some commands prevented errors from printing.</li>
+</ul></td>
+</tr>
+
+<tr>
+<td>0.2.61</td>
+<td>26 Feb 2019</td>
+<td><ul>
+<li>Adds the `debug-tool` add-on to the <code>ibmcloud ks cluster-addon-enable</code> command to install the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility).</li>
+<li>Adds the `cluster-pull-secret-apply` command, which creates an IAM service ID for the cluster, policies, API key, and image pull secrets so that containers that run in the `default` Kubernetes namespace can pull images from IBM Cloud Container Registry. For new clusters, image pull secrets that use IAM credentials are created by default. Use this command to update existing clusters or if your cluster has an image pull secret error during creation. For more information, see [the doc](/docs/containers?topic=containers-images#cluster_registry_auth).</li>
+<li>Fixes a bug where `ibmcloud ks init` failures caused help output to be printed.</li>
+</ul></td>
+</tr>
+<tr>
+<td>0.2.40</td>
+<td>06 Feb 2019</td>
+<td><ul>
+<li>Adds the [<code>ibmcloud ks cluster-addons</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addons), [<code>ibmcloud ks cluster-addon-enable</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addon_enable), and [<code>ibmcloud ks cluster-addon-disable</code>](/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli#cs_cluster_addon_disable) commands for working with managed cluster add-ons such as the [Istio](/docs/containers?topic=containers-istio) and [Knative](/docs/containers?topic=containers-serverless-apps-knative) managed add-ons for {{site.data.keyword.containerlong_notm}}.</li>
+<li>Improves help text for {{site.data.keyword.Bluemix_dedicated_notm}} users of the <code>ibmcloud ks vlans</code> command.</li></ul></td>
+</tr>
+</tbody>
+</table>
+
+
 
 ## ibmcloud es init
 {: #ibmcloud_es_init}
 
-Initialize the {{site.data.keyword.messagehub}} plug-in.
+Initialize the {{site.data.keyword.messagehub}} plugin.
 ```
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```
@@ -175,7 +287,7 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name</dd>
+        <dd>Topic name.</dd>
     <dt>--partitions value, -p value</dt>
         <dd>Set the number of partitions for the topic.</dd>
     <dt>--config KEY=VALUE, -c KEY=VALUE(optional)</dt>
@@ -212,7 +324,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name</dd>
+        <dd>Topic name.</dd>
     <dt>--force, -f (optional)</dt>
         <dd>Delete without confirmation.</dd>
 </dl>
@@ -240,7 +352,7 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name</dd>
+        <dd>Topic name.</dd>
     <dt>--partition-offset PARTITION:OFFSET, -p PARTITION:OFFSET</dt>
         <dd>The partition and offset to delete records from in PARTITION:OFFSET format. <p> You can specify multiple --partition-offset options or you can specify
 multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with quotations: 'PARTITION1:OFFSET1;PARTITION2:OFFSET2;PARTITION3:OFFSET3'.</dd>
@@ -272,7 +384,7 @@ ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name</dd>
+        <dd>Topic name.</dd>
      <dt>--partitions value, -p value</dt>
         <dd>Set the number of partitions for the topic.
 </dd>
@@ -299,7 +411,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 <dl>
     <dt>--name value, -n value</dt>
-        <dd>Topic name</dd>
+        <dd>Topic name.</dd>
      <dt>--config KEY[=VALUE], -c KEY[=VALUE] </dt>
         <dd>Set a configuration option for the topic as a KEY[=VALUE] pair.
         <p>If VALUE is not given, the '--default' flag should be specified to indicate resetting the configuration value back to the default.
@@ -340,7 +452,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 
 <dl>
     <dt>--filter value, -f value (optional)</dt>
-        <dd>Topic name</dd>
+        <dd>Topic name.</dd>
      <dt>--json (optional)</dt>
         <dd>Format output in JSON. Up to 1000 topics are returned.
 </dd>
@@ -461,35 +573,8 @@ ibmcloud es groups [--filter FILTER] [--json]
 <strong>Examples</strong>:
 -->
 <br/>
-## ibmcloud es group-delete
-{: #ibmcloud_es_group_delete}
-
-Delete a consumer group.
-
-
-```
-ibmcloud es group-delete [--group] GROUP_ID [--force]
-
-```
-{:codeblock}
-
-<strong>Prerequisites</strong>: None
-
-<strong>Command options</strong>:
-{: #ibmcloud_es_group_delete_params}
-
-<dl>
-    <dt>--group value, -g value </dt>
-        <dd>Consumer group ID</dd>
-    <dt>--force, -f (optional)</dt>
-        <dd>Delete group without confirmation.</dd> 
-</dd>
-</dl>
-
-<!--
-<strong>Examples</strong>:
--->
-<br/>
+ 
+ <br/>
 
 
 
