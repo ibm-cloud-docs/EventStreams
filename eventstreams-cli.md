@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09c"
+lastupdated: "2019-10-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -57,7 +57,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 <td>August 21 2019</td>
 <td>
 <ul>
-<li>init: remove the service-key requirement</li>
+<li>init: removed the service-key requirement</li>
 <li>Added group-delete command</li>
 <li>Updated translations of help text</li>
 </ul></td>
