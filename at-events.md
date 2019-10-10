@@ -42,8 +42,8 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 |:-------|:------------|
 | event-streams.topic.create | An event is created when you create a topic|
 | event-streams.topic.delete | An event is created when you delete a topic|
-| event-streams.kafka.scale.down | User revoked their disk encryption key in {{site.data.keyword.keymanagementserviceshort}}. Stopping all Kafka brokers|
-| event-streams.kafka.scale.up | Disk encryption key in {{site.data.keyword.keymanagementserviceshort}} is available again. Starting up all Kafka brokers again.|
+| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} has changed. If the outcome of this event is 'success' then access to the disk encryption key has been restored and the Event Streams instance is availble to be used. If the outcome is 'failure' then access to the disk encryption key has been withdrawn and the Event Streams instance is not available to be used. |
+| event-streams.storage-key.update | The disk encryption key in {{site.data.keyword.keymanagementserviceshort}} has been rotated and the Event Streams instance has been updated to use the new key. |
 {: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
 <!-- 03/09/19 Karen: kafka.scale.down and kafka.scale.up are both related to BYOK. -->
 
