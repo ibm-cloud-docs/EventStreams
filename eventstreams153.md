@@ -133,7 +133,7 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
 ## Step 6. Configure the mq-source json file
 {: #step6_config_json_mq}
 
-Edit the <code>mq-source.json</code> file located in <code>kafka-connect-mq-source/config</code> so that at a minimum your required properties are completed with your information.
+Edit the <code>mq-source.json</code> file located in <code>kafka-connect-mq-source/config</code> so that, at a minimum, the required properties are completed with your information.
 
 ### mq-source.json file properties
 
@@ -147,11 +147,12 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 <dt><strong>QUEUE</strong></dt>
 <dd>Required. Name of the source MQ queue </dd>
 <dt><strong>CHANNEL_NAME</strong></dt>
-<dd>Required (unless you're using bindings or CCDT). Name of the server-connection channel.</dd>
+<dd>Required (unless you're using bindings or a CCDT file). Name of the server-connection channel.</dd>
 <dt><strong>CONNECTION_NAME_LIST</strong></dt>
-<dd>Required (unless you're using bindings or CCDT). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
+<dd>Required (unless you're using bindings or a CCDT file). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
 </dl>
- 
+
+<!--
 ### Get IBM MQ on Cloud credentials using the IBM Cloud console
 {: #connect_enterprise_external_console_mq}
 
@@ -161,7 +162,7 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 4. Click **New Credential**. 
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
 6. Click this credential using **View Credentials** to reveal the details in JSON format.
-
+-->
 
 ## Step 7. Start the connector with its configuration
 {: #step7_start_connector_mq}
