@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-09"
+lastupdated: "2019-10-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -21,7 +21,7 @@ subcollection: eventstreams
 
 The following task walks you through:
 * getting the Kafka Connect runtime running in an IKS cluster 
-* starting the MQ Source Connector to copy messages from an IBM MQ source queue to a target Kafka topic in {{site.data.keyword.messagehub}}. 
+* starting the MQ Source Connector to copy messages from an IBM MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}
 
 The MQ Source Connector connects to an IBM MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 
@@ -32,8 +32,15 @@ Complete the following steps to get set up:
 {: #step1_install_prereqs_mq}
 Ensure you have the following software and services installed:
 
-* An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
-* An instance of the [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mqcloud?topic=mqcloud-mqoc_getting_started service){:new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-downloads/){:new_window}, or later 
+* An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
+* An instance of the [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mqcloud?topic=mqcloud-mqoc_getting_started service){:new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")] 
+(https://developer.ibm.com/messaging/mq-downloads/){:new_window}, or later. 
+You can configure the MQ Connector to authenticate with IBM MQ using a user identifier and password. 
+
+We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
+
+   * CONNECT authority. The MQ bridge must be able to connect to the MQ queue manager.
+   * GET authority for the queue that the MQ bridge is configured to consume from.
 * An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
     You will also need CLI access to your cluster. For more information, see
@@ -104,7 +111,7 @@ Keep the terminal that you've used for port forwarding open, and use another ter
 The Connect REST API is then available at http://localhost:8083. If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
-So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the MQ connector.
+So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the MQ Connector.
 
 
 <!--
@@ -149,7 +156,7 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 <dt><strong>CHANNEL_NAME</strong></dt>
 <dd>Required (unless you're using bindings or a CCDT file). Name of the server-connection channel.</dd>
 <dt><strong>CONNECTION_NAME_LIST</strong></dt>
-<dd>Required (unless you're using bindings or a CCDT file). A list of one or more host(port) entries for connecting to the queue manager. Separate entries with a comma. 
+<dd>Required (unless you're using bindings or a CCDT file). A list of one or more host(port) pairs for connecting to the queue manager. Separate entries with a comma. 
 </dl>
 
 <!--
