@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-11"
+lastupdated: "2019-10-11a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -33,11 +33,13 @@ Complete the following steps to get set up:
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
-* An instance of the [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mqcloud?topic=mqcloud-mqoc_getting_started service){:new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")] 
-(https://developer.ibm.com/messaging/mq-downloads/){:new_window}, or later. 
-You can configure the MQ Connector to authenticate with IBM MQ using a user identifier and password. 
+* An instance of the [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/mqcloud?topic=mqcloud-mqoc_getting_started service){:new_window} 
 
-We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
+   or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")] 
+(https://developer.ibm.com/messaging/mq-downloads){:new_window}, or later. 
+   You can configure the MQ Connector to authenticate with IBM MQ using a user identifier and password. 
+
+   We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
 
    * CONNECT authority. The MQ bridge must be able to connect to the MQ queue manager.
    * GET authority for the queue that the MQ bridge is configured to consume from.
