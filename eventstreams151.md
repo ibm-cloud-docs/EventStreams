@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-01"
+lastupdated: "2019-10-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -50,7 +50,8 @@ For a walkthrough of how you can connect to Cloud Object Storage, see
 ## MQ Source Connector
 The MQ Connector offers all of the commonly used functionality of the MQ bridge and more, with improved security. However, note that partitioning by GroupID is not currently supported. Additionally, the connector stops if it cannot process a message for any reason, for example if the message is too large to forward to Kafka in preference to discarding the message.
 
-For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
+For a walkthrough of how you can connect IBM MQ, see 
+[Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS](/docs/services/EventStreams?topic=eventstreams-mq_connector). For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
  
 ## Running the Connectors
 To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this in [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_connect). By running the Kafka Connect framework you have full control over how Connectors are scaled, how you monitor your Connectors, and access to a much richer set of metrics. For more information, see 
