@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-15"
+lastupdated: "2019-10-15a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -243,10 +243,8 @@ HIPPA ready<br/>
 2. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
 3. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 4. {: #footnote_throughput notoc}A recommended maximum is:
-* 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming
-
-A recommended peak limit is:
-* 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming
+   * 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>A recommended peak limit is:
+   * 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
 
 
 
