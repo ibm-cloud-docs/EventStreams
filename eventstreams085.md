@@ -139,7 +139,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum throughput**</td>
 			<td>100 KB per second per partition</td>
 			<td>1 MB per second per partition (20 MB per service instance) </td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second)[<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
 			<td>1 MB per second per partition</td>
 		</tr>
 		<tr>
