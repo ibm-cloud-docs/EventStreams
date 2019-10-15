@@ -86,10 +86,10 @@ A maximum of 1 GB for each partition.
 {: #enterprise_throughput }
 
 A recommended maximum is:
-* 80 MB per second (40 MB per second for produce and 40 MB per second for consume) 
+* 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming
 
-A peak limit is:
-* 150 MB per second (75 MB per second for produce and 75 MB per second for consume). 
+A recommended peak limit is:
+* 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 
