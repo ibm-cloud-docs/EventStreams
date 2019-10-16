@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-16"
+lastupdated: "2019-10-16a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -244,6 +244,7 @@ HIPPA ready<br/>
 3. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 4. {: #footnote_throughput notoc}A recommended maximum is:
    * 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
+
 A recommended peak limit is:
    * 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
 
