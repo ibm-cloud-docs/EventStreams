@@ -14,8 +14,7 @@ IBM Event Streams
 		eventstreams073.md
 		eventstreams085.md
 		test14aug19.md
-		oldindex
-		.md
+		testgettingstarted.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
