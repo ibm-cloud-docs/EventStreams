@@ -37,5 +37,11 @@ and choose to either receive all the topic's messages or to share the messages b
 {{site.data.keyword.messagehub}} hosts and maintains the messages in an ordered sequence. 
 
 
+| Service       | Description                 | Link |
+| ------------- | ------------------------------------ | ---- |
+| [{{site.data.keyword.messagehub_full}}](/docs/services/EventStreams?topic=eventstreams-getting_started)  | The {{site.data.keyword.messagehub}} service is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into IBM Cloud and event stream distribution between your services and applications. | [View docs](/docs/services/EventStreams?topic=eventstreams-managing_encryption) |
+
+
+
 
 
