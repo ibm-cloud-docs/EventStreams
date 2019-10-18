@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-17"
+lastupdated: "2019-10-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,7 +21,7 @@ subcollection: eventstreams
 # Getting started tutorial
 {: #getting_started}
 
-To get started with {{site.data.keyword.messagehub}}
+{{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
 messages to a consumer using a topic. The same sample program is used to consume messages and
 produce messages.
@@ -42,7 +42,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
    1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-   2. Click **Catalog**.
+   2. Click [**Catalog** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
   
    3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
