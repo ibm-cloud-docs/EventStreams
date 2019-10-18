@@ -42,9 +42,9 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
    1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-   2. Click [**Catalog** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
+   2. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window} in the **Catalog**.
   
-   3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+   3. Select the **Lite plan** on the service instance page.
   
    4. Enter a name for your service. You can use the default value.
   
