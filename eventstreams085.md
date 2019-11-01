@@ -89,8 +89,8 @@ The following table summarizes what is supported by the plans:
         <tr>
 			<td>**Availability**</td>
 			<td>99.95% [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_lite)</td>
-			<td>99.95%</td>
-			<td>99.95%<br/>(99.5% in single zone locations) [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.99%</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
