@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -69,7 +69,7 @@ The following table summarizes what is supported by the plan:
 		</tr>
         <tr>
 			<td>**Availability**</td>
-			<td>99.5%</td>
+			<td>99.99%</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>

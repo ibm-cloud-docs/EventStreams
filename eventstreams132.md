@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -44,7 +44,7 @@ The Classic plan is deprecated. From November 1, 2019, you can no lon
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
 {:deprecated}
 
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Classic plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
 
