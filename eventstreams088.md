@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-05"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -22,6 +22,7 @@ subcollection: eventstreams
 
 {{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only.  The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 {:deprecated}
 
 The {{site.data.keyword.messagehub}} Classic plan also
