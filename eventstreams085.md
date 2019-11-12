@@ -227,15 +227,18 @@ The following table summarizes what is supported by the plans:
 			<td>**Compliance**</td>
 			<td>None</td>
 			<td>GDPR<br/>
-Privacy Shield</td>
+Privacy Shield<br/>
+ISO 27001, 27017, 27018<br/></td>
 			<td>GDPR<br/>
 Privacy Shield<br/>
-ISO<br/>
-SOC Type 1<br/>
+ISO 27001, 27017, 27018<br/>
+SOC 1 Type 1<br/>
+SOC 2 Type 1<br/>
 HIPPA ready<br/>
 </td>
 			<td>GDPR<br/>
-Privacy Shield</td>
+Privacy Shield<br/>
+ISO 27001, 27017, 27018<br/></td>
 		</tr>
 
 </table>
