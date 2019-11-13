@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-12"
+lastupdated: "2019-11-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -225,7 +225,8 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Compliance**</td>
-			<td>None</td>
+			<td>GDPR<br/>
+Privacy Shield<br/></td>
 			<td>GDPR<br/>
 Privacy Shield<br/>
 ISO 27001, 27017, 27018<br/></td>
@@ -236,9 +237,7 @@ SOC 1 Type 1<br/>
 SOC 2 Type 1<br/>
 HIPPA ready<br/>
 </td>
-			<td>GDPR<br/>
-Privacy Shield<br/>
-ISO 27001, 27017, 27018<br/></td>
+			<td>None</td>
 		</tr>
 
 </table>
