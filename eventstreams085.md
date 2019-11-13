@@ -237,7 +237,7 @@ SOC 1 Type 1<br/>
 SOC 2 Type 1<br/>
 HIPPA ready<br/>
 </td>
-			<td>None</td>
+			<td>ISO 27001, 27017, 27018</td>
 		</tr>
 
 </table>
