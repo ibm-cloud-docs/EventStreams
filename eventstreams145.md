@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-24"
+lastupdated: "2019-11-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints
 
@@ -17,6 +17,62 @@ subcollection: eventstreams
 {:pre: .pre}
 
 
+# Restricting Network Access using the Enterprise plan
+{: #restrict_access}
+
+By default {{site.data.keyword.messagehub}} allows access from any IP address on the public internet. If you are using an instance of the {{site.data.keyword.vpc_full}}, you are recommended to apply the following restrictions so that only designated VSIs within your VPC can establish network connections to the {{site.data.keyword.messagehub}} instance. 
+
+Access is restricted by enabling Cloud Service Endpoints (CSE) [Secure access to services using service endpoints](/docs/resources?topic=resources-service-endpoints) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. Then with the implementation of IP addresses whitelisting on the Cloud Service Endpoints access is subsequently restricted to VSIs with specified VPC’s. 
+
+## Prerequisites
+
+Ensure that you meet the following requirements:
+* Create your service instance by using the Enterprise plan. For more information, see Choosing your plan.
+
+* Enable Virtual Route Forwarding (VRF) for your {{site.data.keyword.Bluemix_short}} account.
+
+* Ensure Virtual Private Cloud instance is Cloud Service Endpoint enabled
+
+## Obtain Virtual Private Cloud CSE Source IP Addresses
+
+The restricting of access to VSIs hosted within a specific VPC, requires the VPC source IP addresses to be discovered. 
+
+1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_short}} Infrastructure UI.
+```
+export VPC_ID=<vpc_id>
+```
+{: codeblock}
+
+2. Obtain a bearer token from IAM using the ibmcloud cli tooling
+```
+export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
+```
+{: codeblock}
+
+3. Use the VPC REST API to obtain the source IP addresses
+```
+curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq-r'.cse_source_ips | .[] | "\(.ip)/32"'
+```
+{: codeblock}
+
+## Enabling Cloud Service Endpoints 
+
+To add a cloud service endpoint:
+
+Raise a ticket to request a cloud service endpoint. Provide the following information in the ticket:
+Your cluster ID, if you know it. If you don't know the cluster ID, please provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.For restricting access to your cloud service endpoint to individual VPCs, include in the ticket the VPC CSE source IP addresses obtained as described.After switching to a cloud service endpoint When you have switched to a cloud service endpoint, the external or public endpoints are no longer available to you. This means that while existing credentials will continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials will no longer be valid.
+
+### Accessing the IBM {{site.data.keyword.messagehub}} console
+
+When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} console changes.
+
+The {{site.data.keyword.messagehub}} console is reachable only from a private admin URL. To discover your private endpoints, including the private admin URL, you can create a new service credential.
+
+Because the {{site.data.keyword.messagehub}} instance endpoints have now been converted to be accessed from the {{site.data.keyword.Bluemix_short}} only, the UI will only be accessible via a web browser that is hosted on the {{site.data.keyword.Bluemix_short}} network.
+
+
+
+------------------------------------------
 # Managing service endpoints using the Enterprise plan
 {: #manage_endpoints}
 
