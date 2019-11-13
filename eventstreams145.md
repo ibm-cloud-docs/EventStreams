@@ -74,7 +74,7 @@ Because the {{site.data.keyword.messagehub}} instance endpoints have now been co
 
 ------------------------------------------
 # Managing service endpoints using the Enterprise plan
-{: #manage_endpoints}
+{: #manage_endpoints_old}
 
 By using an internal or private endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network. This capability means that any data you publish or consume from the {{site.data.keyword.messagehub}} 
 service is over the private network and not public interfaces.
@@ -83,7 +83,7 @@ service is over the private network and not public interfaces.
 You can now add a private endpoint to access and manage your {{site.data.keyword.messagehub}} service instance.
 
 ## Prerequisites
-{: #prereqs_endpoint}
+{: #prereqs_endpoint_old}
 
 Ensure that you meet the following requirements:
 - Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
@@ -91,7 +91,7 @@ Ensure that you meet the following requirements:
 - Enable [Virtual Route Forwarding (VRF)](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_notm}} account.
 
 ## Adding a private endpoint
-{: #add_endpoint}
+{: #add_endpoint_old}
 
 To add a private endpoint:
 
@@ -106,7 +106,7 @@ For more information about service endpoints, see the [{{site.data.keyword.Bluem
 
 
 ## After switching to a private endpoint
-{: #after_endpoint}
+{: #after_endpoint_old}
 
 When you have switched to a private endpoint, the external or public endpoints are no longer available to you.
 
