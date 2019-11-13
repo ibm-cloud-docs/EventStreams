@@ -22,7 +22,7 @@ subcollection: eventstreams
 
 By default {{site.data.keyword.messagehub}} allows access from any IP address on the public internet. If you are using an instance of the {{site.data.keyword.vpc_full}}, you are recommended to apply the following restrictions so that only designated VSIs within your VPC can establish network connections to the {{site.data.keyword.messagehub}} instance. 
 
-Access is restricted by enabling Cloud Service Endpoints (CSE) [Secure access to services using service endpoints](/docs/resources?topic=resources-service-endpoints) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. Then with the implementation of IP addresses whitelisting on the Cloud Service Endpoints access is subsequently restricted to VSIs with specified VPC’s. 
+Access is restricted by enabling [Cloud Service Endpoints (CSE)](/docs/resources?topic=resources-service-endpoints) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. Then with the implementation of IP addresses whitelisting on the Cloud Service Endpoints, access is subsequently restricted to VSIs with specified VPC’s. 
 
 ## Prerequisites
 
@@ -38,18 +38,21 @@ Ensure that you meet the following requirements:
 The restricting of access to VSIs hosted within a specific VPC, requires the VPC source IP addresses to be discovered. 
 
 1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_short}} Infrastructure UI.
+
 ```
 export VPC_ID=<vpc_id>
 ```
 {: codeblock}
 
 2. Obtain a bearer token from IAM using the ibmcloud cli tooling
+
 ```
 export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
 ```
 {: codeblock}
 
 3. Use the VPC REST API to obtain the source IP addresses
+
 ```
 curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq-r'.cse_source_ips | .[] | "\(.ip)/32"'
 ```
