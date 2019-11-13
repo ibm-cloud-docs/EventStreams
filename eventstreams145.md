@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-13b"
+lastupdated: "2019-11-13c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints
 
@@ -81,7 +81,7 @@ Because the {{site.data.keyword.messagehub}} instance endpoints have now been co
 
 
 ------------------------------------------
-# Managing service endpoints using the Enterprise plan
+## Managing service endpoints using the Enterprise plan
 {: #manage_endpoints_old}
 
 By using an internal or private endpoint, {{site.data.keyword.Bluemix_short}} Service Endpoint enables the connection to the {{site.data.keyword.messagehub}} service through the internal IBM Cloud network. This capability means that any data you publish or consume from the {{site.data.keyword.messagehub}} 
