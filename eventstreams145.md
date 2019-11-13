@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-13d"
+lastupdated: "2019-11-13e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints
 
@@ -22,14 +22,16 @@ subcollection: eventstreams
 
 By default {{site.data.keyword.messagehub}} allows access from any IP address on the public internet. If you are using an instance of the {{site.data.keyword.vpc_full}}, you are recommended to apply the following restrictions so that only designated VSIs within your VPC can establish network connections to the {{site.data.keyword.messagehub}} instance. 
 
-Access is restricted by enabling [Cloud Service Endpoints (CSE)](/docs/resources?topic=resources-service-endpoints) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. Then with the implementation of IP addresses whitelisting on the Cloud Service endpoints, access is subsequently restricted to VSIs with specified VPC’s. 
+Access is restricted by enabling [Cloud Service Endpoints (CSE)](/docs/resources?topic=resources-service-endpoints) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. Then with the implementation of IP addresses whitelisting on the Cloud Service endpoints, access is subsequently restricted to VSIs with specified VPCs. 
 
 ## Prerequisites
 
 Ensure that you meet the following requirements:
-* Create your service instance by using the Enterprise plan. For more information, see Choosing your plan.
+* Create your service instance by using the Enterprise plan. For more information, see 
+[Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose)
 
-* Enable Virtual Route Forwarding (VRF) for your {{site.data.keyword.Bluemix_short}} account.
+
+* Enable [Virtual Route Forwarding (VRF)](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_short}} account.
 
 * Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled
 
@@ -62,7 +64,7 @@ export VPC_ID=<vpc_id>
 
 To add a cloud service endpoint:
 
-* Raise a ticket to request a cloud service endpoint. Provide the following information in the ticket:
+* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request a cloud service endpoint. Provide the following information in the ticket:
 
     * Your cluster ID, if you know it. 
     If you don't know the cluster ID, please provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
