@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-13c"
+lastupdated: "2019-11-13d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints
 
@@ -39,22 +39,24 @@ The restricting of access to VSIs hosted within a specific VPC, requires the VPC
 
 1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_short}} Infrastructure UI.
 
-```
+   ```
 export VPC_ID=<vpc_id>
-```
-{: codeblock}
+   ```
+   {: codeblock}
+
 2. Obtain a bearer token from IAM using the ibmcloud cli tooling
 
-```
-export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
-```
-{: codeblock}
+   ```
+   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
+   ```
+   {: codeblock}
+
 3. Use the VPC REST API to obtain the source IP addresses
 
-```
-curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq-r'.cse_source_ips | .[] | "\(.ip)/32"'
-```
-{: codeblock}
+   ```
+   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq-r'.cse_source_ips | .[] | "\(.ip)/32"'
+   ```
+   {: codeblock}
 
 ## Enabling Cloud Service endpoints 
 
