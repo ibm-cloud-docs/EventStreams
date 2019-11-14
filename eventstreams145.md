@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-14b"
+lastupdated: "2019-11-14c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints
 
@@ -26,6 +26,7 @@ By default, {{site.data.keyword.messagehub}} allows access from any IP address o
 Enable [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. When you implement IP addresses whitelisting on the Cloud Service endpoints, access is subsequently restricted to VSIs with specified VPCs. 
 
 ## Prerequisites
+{: #prereqs_restrict_access}
 
 Ensure that you complete the following tasks:
 * Create your service instance by using the Enterprise plan. For more information, see 
@@ -34,6 +35,7 @@ Ensure that you complete the following tasks:
 * Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled.
 
 ## Obtaining Virtual Private Cloud CSE source IP addresses
+{: #vpc_ip}
 
 If you want to restrict access to VSIs hosted within a specific VPC, you have to discover the VPC source IP addresses. 
 
@@ -59,6 +61,7 @@ export VPC_ID=<vpc_id>
    {: codeblock}
 
 ## Enabling {{site.data.keyword.Bluemix_notm}} Service endpoints 
+{: #enable_endpoints}
 
 To add an {{site.data.keyword.Bluemix_notm}} service endpoint:
 
@@ -70,9 +73,12 @@ To add an {{site.data.keyword.Bluemix_notm}} service endpoint:
 * If you want to restrict access to your cloud service endpoint to individual VPCs, include the VPC CSE source IP addresses that you obtained as described in the ticket.
 
 ## After switching to an {{site.data.keyword.Bluemix_notm}} service endpoint 
+{: #after_endpoints}
+
 When you have switched to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available to you. This means that although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
 
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
+{: #access_console}
 
 When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} console changes.
 
