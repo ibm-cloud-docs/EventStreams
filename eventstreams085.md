@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-13"
+lastupdated: "2019-11-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -237,7 +237,9 @@ SOC 1 Type 1<br/>
 SOC 2 Type 1<br/>
 HIPPA ready<br/>
 </td>
-			<td>ISO 27001, 27017, 27018</td>
+			<td>GDPR<br/>
+Privacy Shield<br/>
+ISO 27001, 27017, 27018<br/></td>
 		</tr>
 
 </table>
