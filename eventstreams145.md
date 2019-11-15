@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-14c"
+lastupdated: "2019-11-15"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE
 
 subcollection: eventstreams
 
@@ -23,15 +23,15 @@ subcollection: eventstreams
 By default, {{site.data.keyword.messagehub}} allows access from any IP address on the public internet. If you are using an instance of the {{site.data.keyword.vpc_full}}, you are recommended to apply the following restrictions so that only designated VSIs within your VPC can establish network connections to the {{site.data.keyword.messagehub}} instance. 
 {:shortdesc}
 
-Enable [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. When you implement IP addresses whitelisting on the Cloud Service endpoints, access is subsequently restricted to VSIs with specified VPCs. 
+Enable [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} to restrict access to any source IP addresses on the {{site.data.keyword.Bluemix_short}} network. When you implement IP addresses whitelisting on the Cloud Service endpoints, access is subsequently restricted to VSIs with specified VPCs. 
 
 ## Prerequisites
 {: #prereqs_restrict_access}
 
 Ensure that you complete the following tasks:
 * Create your service instance by using the Enterprise plan. For more information, see 
-[Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).
-* Enable [Virtual Route Forwarding (VRF)](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud) for your {{site.data.keyword.Bluemix_short}} account.
+[Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-plan_choose){:new_window}.
+* Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled.
 
 ## Obtaining Virtual Private Cloud CSE source IP addresses
@@ -84,7 +84,7 @@ When a cluster has private endpoints enabled, the admin URL that you use to acce
 
 The {{site.data.keyword.messagehub}} console is reachable only from a private admin URL. To discover your private endpoints, including the private admin URL, you can create a new service credential.
 
-Because the {{site.data.keyword.messagehub}} instance endpoints have now been converted to be accessed from the {{site.data.keyword.Bluemix_short}} only, the UI is accessible only via a web browser that is hosted on the {{site.data.keyword.Bluemix_short}} network.
+Because the {{site.data.keyword.messagehub}} instance endpoints have now been converted to be accessed from the {{site.data.keyword.Bluemix_notm}} only, the UI is accessible only via a web browser that is hosted on the {{site.data.keyword.Bluemix_notm}} network.
 
 
 
