@@ -1,3 +1,26 @@
+---
+
+copyright:
+  years: 2015, 2019
+lastupdated: "2019-11-18"
+
+keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
+
+subcollection: eventstreams
+
+---
+
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen: .screen}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:important: .important}
+
+
+# Blog and video status
+{: #blogs}
+
 | Date | Title/link | Author | Where? |  |Status   | 
 | ---- | ---------- | ------ | ------ | ----------- |
 | Sep 2019 | [Using Kafka AdminClient - add partitions to an existing topic](https://ibm.box.com/s/mpb3cwhwlsx8o8ayrx0qlc8p15r4k6ne) | Tina Selenge | IBM Cloud Blog | Draft completed and sent for review with Dev site. https://github.ibm.com/IBMCode/IBMCodeContent/issues/3201. Tina has review comments to implement - more context and use case needed. |
