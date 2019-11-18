@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-15a"
+lastupdated: "2019-11-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE
 
@@ -24,6 +24,8 @@ By default, {{site.data.keyword.messagehub}} permits access from any IP address 
 {:shortdesc}
 
 Enable [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} to restrict access to any source IP address on the {{site.data.keyword.Bluemix_short}} network. When you implement IP address whitelisting on the Cloud Service endpoints, access is restricted to VSIs with specified VPCs. 
+
+If you're using IKS, you can also restrict access to source IP addresses by supplying the node addresses of your clusters.
 
 ## Prerequisites
 {: #prereqs_restrict_access}
@@ -56,7 +58,7 @@ export VPC_ID=<vpc_id>
 3. Use the VPC REST API to obtain the source IP addresses:
 
    ```
-   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq-r'.cse_source_ips | .[] | "\(.ip)/32"'
+   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
    ```
    {: codeblock}
 
@@ -71,6 +73,7 @@ To add an {{site.data.keyword.Bluemix_notm}} service endpoint:
     
     If you don't know the cluster ID, please provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
 * If you want to restrict access to your {{site.data.keyword.Bluemix_notm}} service endpoint to individual VPCs only, include the [VPC CSE source IP addresses](#vpc_ip) in the ticket.
+* If you're using IKS, you can restrict access by including the node addresses of your clusters.
 
 ## After switching to an {{site.data.keyword.Bluemix_notm}} service endpoint 
 {: #after_endpoints}
