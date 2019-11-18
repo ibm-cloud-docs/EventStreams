@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2019
 lastupdated: "2019-11-18"
 
-keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE
 
 subcollection: eventstreams
 
@@ -15,10 +15,9 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:important: .important}
 
 
-# Blog and video status
+# Blogs
 {: #blogs}
 
 | Date | Title/link | Author | Where? |  |Status   | 
