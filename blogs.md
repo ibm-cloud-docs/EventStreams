@@ -24,7 +24,7 @@ subcollection: eventstreams
 | ---- | ---------- | ------ | ------ | ----------- |
 | Sep 2019 | [Using Kafka AdminClient - add partitions to an existing topic](https://ibm.box.com/s/mpb3cwhwlsx8o8ayrx0qlc8p15r4k6ne) | Tina Selenge | IBM Cloud Blog | Draft completed and sent for review with Dev site. https://github.ibm.com/IBMCode/IBMCodeContent/issues/3201. Tina has review comments to implement - more context and use case needed. |
 | Sep 2019 | [HA and DR - a high level view](https://www.ibm.com/blogs/bluemix/2018/04/removal-apache-kafka-0-9-java-client-support-message-hub/) | Jon T and Adrian | IBM Cloud Blog |
-https://github.ibm.com/IBMCode/IBMCodeContent/issues/3198. With Michelle M - on verge of being published. |
+ https://github.ibm.com/IBMCode/IBMCodeContent/issues/3198. With Michelle M - on verge of being published. |
 | 2018 | [Blog pointing to async processing tutorial](https://ibm.ent.box.com/notes/308255677370) | James B and Eli | Draft written on Box |   | 
 | Sep 2019 | So you want a compliant Kafka? | Helen Beeken  | IBM Cloud Blog | Submitted to Dev for review https://github.ibm.com/IBMCode/IBMCodeContent/issues/3200. Currently with Michelle Corbin for edits|
 
