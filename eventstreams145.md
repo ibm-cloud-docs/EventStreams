@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-18"
+lastupdated: "2019-11-19"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE
 
@@ -25,7 +25,7 @@ By default, {{site.data.keyword.messagehub}} permits access from any IP address 
 
 Enable [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} to restrict access to any source IP address on the {{site.data.keyword.Bluemix_short}} network. When you implement IP address whitelisting on the Cloud Service endpoints, access is restricted to VSIs with specified VPCs. 
 
-If you're using IKS, you can also restrict access to source IP addresses by supplying the node addresses of your clusters.
+If you're using IKS, you can restrict access by including the private IP addresses of the nodes in your clusters that require access to the {{site.data.keyword.messagehub}} endpoints.
 
 ## Prerequisites
 {: #prereqs_restrict_access}
