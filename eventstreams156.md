@@ -22,7 +22,7 @@ lastupdated: "2019-11-21"
 {: #your-id}
 <!-- The title of your H1 should be Understanding your responsibilities with using _service-name_, where _service-name_ is the non-trademarked short version conref. -->
 
-Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.messagehub_full}}. For a high-level view of the service types in {{site.data.keyword.Bluemix}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyboard.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
+Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.messagehub_full}}. For a high-level view of the service types in {{site.data.keyword.Bluemix}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {:shortdesc}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.messagehub_full}}. For the overall terms of use, see [{{site.data.keyword.Bluemix}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
@@ -35,9 +35,12 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-|Task 2| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-|Task 3| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
+|Monitor environment| Perform continuous review and service improvements, code updates and operational monitoring.
+ | Customer responsibility description |
+|Provide high availability| Provide high availability via multi-zone region deployment of Event Streams to protect against single points of failure up to and including a data center loss to achieve IBM SLA as per IBM Cloud terms and conditions.
+| Customer responsibility description |
+|Deploy Event Streams environment|  with IBM recommended best practice configuration options (such as replication factor, min in sync replicas, throttling, rack awareness)
+Topic names are backed up by Event Streams | Customer responsibility description |
 {: caption="Table 1. Responsibilites for incident and operations" caption-side="top"}
 
 
