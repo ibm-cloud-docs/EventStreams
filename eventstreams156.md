@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-22e"
+lastupdated: "2019-11-22f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -39,12 +39,11 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Monitor environment| Perform continuous review and service improvements, code updates, and operational monitoring.  | Customer responsibility description |
-|Provide high availability| Provide high availability via multi-zone region deployment of {{site.data.keyword.messagehub}} to protect against single points of failure up to and including a data center loss to achieve IBM SLA as per IBM Cloud terms and conditions.  | Customer responsibility description |
+|High availability| Provide high availability via multi-zone region deployment of {{site.data.keyword.messagehub}} to protect against single points of failure up to and including a data center loss to achieve IBM SLA as per IBM Cloud terms and conditions.  | Customer responsibility description |
 |Deploy {{site.data.keyword.messagehub}} environment|  with IBM recommended best practice configuration options (such as replication factor, min in sync replicas, throttling, rack awareness)  | Customer responsibility description |
 |Topic name backup| Topic names are backed up by {{site.data.keyword.messagehub}}  | Customer responsibility description |
-{: caption="Table 1. Responsibilites for incident and operations" caption-side="top"}
+{: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
 
 
 ## Change management
@@ -57,11 +56,11 @@ Review the following sections for the specific responsibilities for you and for 
 |Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Task 2| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Task 3| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-{: caption="Table 2. Responsibilites for change management" caption-side="top"}
+{: caption="Table 2. Responsibilities for change management" caption-side="top"}
 
 
 ## Identity and access management
-{: #iam-responsibilities}
+{: #iam_responsibilities}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
@@ -70,19 +69,19 @@ Review the following sections for the specific responsibilities for you and for 
 |Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Task 2| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Task 3| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-{: caption="Table 3. Responsibilites for identity and access management" caption-side="top"}
+{: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
 
 ## Security and regulation compliance
-{: #security-compliance}
+{: #security_compliance}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Maintain controls| {{site.data.keyword.IBM_notm}} maintains controls commensurate to various industry compliance standards for which we are certified.  | Customer responsibility description |
-|Provide security and access control service with IBM Cloud Identity and Access Management (IAM).| Provide security and access control service with IBM Cloud Identity and Access Management (IAM)  | Customer responsibility description |
-|Apply the provided security and vulnerability patch updates to client Event Streams cluster - according to IBM X-Force timeframes| Apply the provided security and vulnerability patch updates to client Event Streams cluster - according to IBM X-Force timeframes  | Customer responsibility description |
-{: caption="Table 4. Responsibilites for security and regulation compliance" caption-side="top"}
+|IBM Cloud Identity and Access Management (IAM).| Provide security and access control service with IBM Cloud Identity and Access Management (IAM)  | Customer responsibility description |
+|Apply the provided security and vulnerability patch updates to client {{site.data.keyword.messagehub}} cluster| Apply the provided security and vulnerability patch updates to client {{site.data.keyword.messagehub}} cluster - according to IBM X-Force timeframes  | Customer responsibility description |
+{: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
 
 ## Disaster recovery
 {: #disaster-recovery}
@@ -94,7 +93,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Task 2| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
 |Task 3| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-{: caption="Table 5. Responsibilites for disaster recovery" caption-side="top"}
+{: caption="Table 5. Responsibilitiess for disaster recovery" caption-side="top"}
 
 ## App orchestration
 {: #app_orchestration}
@@ -107,7 +106,7 @@ Review the following sections for the specific responsibilities for you and for 
 | Provide {{site.data.keyword.messagehub}} integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.
   | Customer responsibility description |
 |Provide the capability for service binding to other {{site.data.keyword.IBM_notm}} services.| Provide the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | Customer responsibility description |
-{: caption="Table 5. Responsibilites for app orchestration" caption-side="top"}
+{: caption="Table 5. Responsibilities for app orchestration" caption-side="top"}
 
 
 ## {{site.data.keyword.IBM_notm}} infrastructure and managing the environment
@@ -118,6 +117,9 @@ Review the following sections for the specific responsibilities for you and for 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Deployment| Deploy an {{site.data.keyword.messagehub}} instance consisting of all required {{site.data.keyword.messagehub}} components and storage  | Customer responsibility description |
-|Monitor and repair infrastructure non-disruptively| Monitor and repair infrastructure non-disruptively  | Customer responsibility description |
-{: caption="Table 5. Responsibilites for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
+|Monitor and repair| Monitor and repair infrastructure non-disruptively  | Customer responsibility description |
+|Manage and configure
+|   | Use the provided APIs, CLI, or console to manage topics and configuration |
+|Monitor and repair| Monitor and repair infrastructure non-disruptively  | Customer responsibility description |
+{: caption="Table 5. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
 
