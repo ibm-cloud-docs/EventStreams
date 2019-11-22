@@ -1,8 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-11-21"
+  years: 2015, 2019
+lastupdated: "2019-11-22a"
+
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
+
+subcollection: eventstreams
 
 ---
 
@@ -35,10 +39,9 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Monitor environment| Perform continuous review and service improvements, code updates and operational monitoring.
- | Customer responsibility description |
-|Provide high availability| Provide high availability via multi-zone region deployment of Event Streams to protect against single points of failure up to and including a data center loss to achieve IBM SLA as per IBM Cloud terms and conditions.
-| Customer responsibility description |
+|Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
+|Monitor environment| Perform continuous review and service improvements, code updates, and operational monitoring.  | Customer responsibility description |
+|Provide high availability| Provide high availability via multi-zone region deployment of Event Streams to protect against single points of failure up to and including a data center loss to achieve IBM SLA as per IBM Cloud terms and conditions.  | Customer responsibility description |
 |Deploy Event Streams environment|  with IBM recommended best practice configuration options (such as replication factor, min in sync replicas, throttling, rack awareness)
 Topic names are backed up by Event Streams | Customer responsibility description |
 {: caption="Table 1. Responsibilites for incident and operations" caption-side="top"}
