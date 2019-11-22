@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-22h"
+lastupdated: "2019-11-22i"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -32,7 +32,7 @@ Learn about the management responsibilities and terms and conditions that you ha
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.messagehub_full}}. For the overall terms of use, see [{{site.data.keyword.Bluemix}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
 
   
-## Incident and operations management
+## Incident and operations management and cluster management
 {: #incident-and-ops}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -43,6 +43,20 @@ Review the following sections for the specific responsibilities for you and for 
 |High availability| Provide high availability via multi-zone region deployment of {{site.data.keyword.messagehub}} to protect against single points of failure up to and including a data center loss to achieve IBM SLA as per IBM Cloud terms and conditions.  | Customer responsibility description |
 |Deploy {{site.data.keyword.messagehub}} environment|  with IBM recommended best practice configuration options (such as replication factor, min in sync replicas, throttling, rack awareness)  | Customer responsibility description |
 |Topic name backup| Topic names are backed up by {{site.data.keyword.messagehub}}  | Customer responsibility description |
+|Supported client|   | Maintain a supported version of Kafka client (see documentation)
+ |
+|Client configuration, deployment, and lifecycle|   | Manage client configuration, deployment and lifecycle following IBM best practice documentation
+ |
+|Disaster recovery|   | Disaster Recovery - maintain and execute a disaster recovery plan in case of loss of service |
+|Replication|   | Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}}. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
+ |
+|Payload data backup|   | The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.
+ |
+|Topic name and data backup|   | It is recommended good practice that a user also backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}}s instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend users have a plan for such circumstances. If, due to such an event, a user's instance is no longer available (and a remote DR instance had not been already set up), then the user should consider configuring a new instance in a new region and restoring their topics/data from backup 
+ |
+|Cluster management|   | Manage the provided resource capacity of cluster across organizational user base
+
+ |
 {: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
 
 
