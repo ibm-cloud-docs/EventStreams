@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-22b"
+lastupdated: "2019-11-22c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -79,9 +79,9 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Task 1| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-|Task 2| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
-|Task 3| {{site.data.keyword.IBM_notm}} responsibility description  | Customer responsibility description |
+|Maintain controls| {{site.data.keyword.IBM_notm}} maintains controls commensurate to various industry compliance standards for which we are certified.  | Customer responsibility description |
+|Provide security and access control service with IBM Cloud Identity and Access Management (IAM).| Provide security and access control service with IBM Cloud Identity and Access Management (IAM)  | Customer responsibility description |
+|Apply the provided security and vulnerability patch updates to client Event Streams cluster - according to IBM X-Force timeframes| Apply the provided security and vulnerability patch updates to client Event Streams cluster - according to IBM X-Force timeframes  | Customer responsibility description |
 {: caption="Table 4. Responsibilites for security and regulation compliance" caption-side="top"}
 
 ## Disaster recovery
