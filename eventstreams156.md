@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-22d"
+lastupdated: "2019-11-22e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -106,6 +106,18 @@ Review the following sections for the specific responsibilities for you and for 
 |Provide {{site.data.keyword.messagehub}} integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.
 | Provide {{site.data.keyword.messagehub}} integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.
   | Customer responsibility description |
-|Provide the capability for service binding to other IBM Cloud services.| Provide the capability for service binding to other IBM Cloud services.  | Customer responsibility description |
+|Provide the capability for service binding to other {{site.data.keyword.IBM_notm}} services.| Provide the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | Customer responsibility description |
 {: caption="Table 5. Responsibilites for app orchestration" caption-side="top"}
+
+
+## {{site.data.keyword.IBM_notm}} infrastructure and managing the environment
+{: #cloud_infrastructure}
+
+<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
+
+| Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
+|----------|-----------------------|--------|
+|Deployment| Deploy an {{site.data.keyword.messagehub}} instance consisting of all required {{site.data.keyword.messagehub}} components and storage  | Customer responsibility description |
+|Monitor and repair infrastructure non-disruptively| Monitor and repair infrastructure non-disruptively  | Customer responsibility description |
+{: caption="Table 5. Responsibilites for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
 
