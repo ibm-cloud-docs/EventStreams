@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-22i"
+lastupdated: "2019-11-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -50,13 +50,10 @@ Review the following sections for the specific responsibilities for you and for 
 |Disaster recovery|   | Disaster Recovery - maintain and execute a disaster recovery plan in case of loss of service |
 |Replication|   | Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}}. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.
  |
-|Payload data backup|   | The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.
+|Message payload data backup|   | The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.
  |
-|Topic name and data backup|   | It is recommended good practice that a user also backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}}s instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend users have a plan for such circumstances. If, due to such an event, a user's instance is no longer available (and a remote DR instance had not been already set up), then the user should consider configuring a new instance in a new region and restoring their topics/data from backup 
- |
-|Cluster management|   | Manage the provided resource capacity of cluster across organizational user base
-
- |
+|Topic name and data backup|   | It is recommended good practice that a user also backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}}s instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend users have a plan for such circumstances. If, due to such an event, a user's instance is no longer available (and a remote DR instance had not been already set up), then the user should consider configuring a new instance in a new region and restoring their topics/data from backup if available. |
+|Cluster management|   | Manage the provided resource capacity of cluster across organizational user base. |
 {: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
 
 
@@ -78,7 +75,7 @@ Review the following sections for the specific responsibilities for you and for 
 {: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
 
 
-## {{site.data.keyword.IBM_notm}} infrastructure and managing the environment
+## {{site.data.keyword.Bluemix}} infrastructure and managing the environment
 {: #cloud_infrastructure}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -87,8 +84,7 @@ Review the following sections for the specific responsibilities for you and for 
 |----------|-----------------------|--------|
 |Deploy| Deploy an {{site.data.keyword.messagehub}} instance consisting of all required {{site.data.keyword.messagehub}} components and storage  | Customer is responsible deciding which region to deploy into |
 |Monitor and repair| Monitor and repair infrastructure non-disruptively  | Customer responsibility description |
-|Manage and configure
-|   | Customer is responsible for using the provided APIs, CLI, or, console to manage topics and configuration |
+|Manage and configure|   | Customer is responsible for using the provided APIs, CLI, or, console to manage topics and configuration |
 {: caption="Table 5. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
 
 
@@ -100,7 +96,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Provide {{site.data.keyword.messagehub}} integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.
+|Provide {{site.data.keyword.messagehub}} integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.| Provide {{site.data.keyword.messagehub}} integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.   |
 |Provide the capability for service binding to other {{site.data.keyword.IBM_notm}} services.| Provide the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | |
 |Manage, integrate and monitor|   | Use the provided tools and features to manage the lifecycle of customer-owned applications, integrate with other services, and monitor the health of the application (for example, Availability Monitoring).
  |
