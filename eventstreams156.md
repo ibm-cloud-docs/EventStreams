@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-24b"
+lastupdated: "2019-11-24c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -40,14 +40,13 @@ Review the following sections for the specific responsibilities for you and for 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Monitor environment|  {{site.data.keyword.messagehub}} performs continuous review and service improvements, code updates, and operational monitoring.  |  |
-|High availability|  {{site.data.keyword.messagehub}}provides high availability via multi-zone region deployment  to protect against single points of failure, up to and including a data center loss to achieve IBM SLA as per {{site.data.keyword.Bluemix}} terms and conditions.  |  |
-|Deploy {{site.data.keyword.messagehub}} environment|  {{site.data.keyword.messagehub}} is deplyed with IBM recommended best practice configuration options (for example, replication factor, minimum in sync replicas, throttling, and rack awareness).  | |
+|High availability|  {{site.data.keyword.messagehub}} provides high availability via multi-zone region deployment  to protect against single points of failure, up to and including a data center loss to achieve IBM SLA as per {{site.data.keyword.Bluemix}} terms and conditions.  |  |
+|Deploy {{site.data.keyword.messagehub}} environment|  {{site.data.keyword.messagehub}} is deployed with IBM recommended best practice configuration options (for example, replication factor, minimum in sync replicas, throttling, and rack awareness).  | |
 |Topic name backup| Topic names are backed up by {{site.data.keyword.messagehub}}  |  |
-|Supported client|   | Customer is responsible for maintain a supported version of Kafka client. For more information, see [Support summary for all recommended clients] (/docs/services/EventStreams?topic=eventstreams-kafka_using#client_summary).|
+|Supported client|   | Customer is responsible for maintain a supported version of Kafka client. For more information, see [Support summary for all recommended clients](/docs/services/EventStreams?topic=eventstreams-kafka_using#client_summary).|
 |Client configuration, deployment, and lifecycle|   | Customer is responsible for managing client configuration, deployment, and lifecycle following IBM best practice documentation.|
 |Disaster recovery|   | Customer is responsible for maintaining and executing a disaster recovery plan in case of loss of service. |
-|Replication|   | Currently, it is the responsibility of the customer to manage their own {{site.data.keyword.messagehub}}. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. <br/>
-However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.|
+|Replication|   | Currently, it is the responsibility of the customer to manage their own {{site.data.keyword.messagehub}}. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.|
 |Message payload data backup|   | The customer is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.|
 |Topic name and data backup|   | It is recommended good practice that a customer also backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}} instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend customer have a plan for such circumstances. If, due to such an event, a customer's instance is no longer available (and a remote DR instance had not been already set up), the customer should consider configuring a new instance in a new region and restoring their topics and data from backup if available. |
 |Cluster management|   | Manage the provided resource capacity of cluster across organizational user base. |
@@ -63,7 +62,7 @@ However, the user is responsible for provisioning a remote {{site.data.keyword.m
 |----------|-----------------------|--------|
 |Maintain controls| {{site.data.keyword.messagehub}} maintains controls commensurate to various industry compliance standards for which we are certified.  |  |
 |IBM Cloud Identity and Access Management (IAM).| {{site.data.keyword.messagehub}} provides security and access control service with IBM Cloud Identity and Access Management (IAM).  |  |
-|Security and vulnerability patch updates to client {{site.data.keyword.messagehub}} cluster| {{site.data.keyword.messagehub}} applies the provided security and vulnerability patch updates to the client {{site.data.keyword.messagehub}} cluster, according to IBM X-Force timeframes.  | |
+|Security and vulnerability patch updates to cluster| {{site.data.keyword.messagehub}} applies the provided security and vulnerability patch updates to the client {{site.data.keyword.messagehub}} cluster, according to IBM X-Force timeframes.  | |
 |Manage users and access|   | Manage your organizational account users and related access to the {{site.data.keyword.messagehub}} instance.|
 |Compliance controls|  | Maintain your organizational compliance controls.|
 {: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
