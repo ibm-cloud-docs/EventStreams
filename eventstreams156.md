@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-24d"
+lastupdated: "2019-11-24e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -38,7 +38,7 @@ Review the following sections for the specific responsibilities for you and for 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
-|----------| &nbsp; &nbsp; &nbsp; &nbsp; -----------------------|--------|
+|----------|-----------------------|--------|
 |Monitor environment|  {{site.data.keyword.messagehub}} performs continuous review and service improvements, code updates, and operational monitoring.  |  |
 |High availability|  {{site.data.keyword.messagehub}} provides high availability via multi-zone region deployment  to protect against single points of failure, up to and including a data center loss to achieve IBM SLA as per {{site.data.keyword.Bluemix}} terms and conditions.  |  |
 |Deploy {{site.data.keyword.messagehub}} environment|  {{site.data.keyword.messagehub}} is deployed with IBM recommended best practice configuration options (for example, replication factor, minimum in sync replicas, throttling, and rack awareness).  | |
