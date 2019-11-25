@@ -44,7 +44,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Deploy {{site.data.keyword.messagehub}} environment|  {{site.data.keyword.messagehub}} is deployed with IBM recommended best practice configuration options.  For example, replication factor, minimum in sync replicas, throttling, and rack awareness.  | |
 |Topic name backup| Topic names are backed up by {{site.data.keyword.messagehub}}  |  |
 |Supported client|   | Customer is responsible for maintaining a supported version of the Kafka client. For more information, see [Support summary for all recommended clients](/docs/services/EventStreams?topic=eventstreams-kafka_using#client_summary).|
-|Client configuration, deployment, and lifecycle|   | Customer is responsible for managing client configuration, deployment, and lifecycle following IBM best practice documentation.|
+|Client configuration, deployment, and lifecycle|   | Customer is responsible for managing client configuration, deployment, and lifecycle following [IBM best practice documentation](/docs/overview?topic=overview-shared-responsibilities#software-packages).|
 |Cluster management|   | Customer is responsible for managing the provided resource capacity of their clusters across their organizational user base. |
 {: caption="Table 1. Responsibilities for incident, operations and cluster management" caption-side="top"}
 
