@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-25a"
+lastupdated: "2019-11-25b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -61,7 +61,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Security and vulnerability patch updates to cluster| {{site.data.keyword.messagehub}} applies the provided security and vulnerability patch updates to the client cluster, according to IBM X-Force timeframes.  | |
 |Manage users and access|   | Customer is responsible for managing your organizational account users and related access to the {{site.data.keyword.messagehub}} instance.|
 |Compliance controls|  | Customer is responsible for maintaining your organizational compliance controls.|
-{: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
+{: caption="Table 2. Responsibilities for security and regulation compliance" caption-side="top"}
 
 
 ## {{site.data.keyword.cloud_notm}} infrastructure and managing the environment
@@ -74,7 +74,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Deploy| {{site.data.keyword.messagehub}} deploys an instance consisting of all required {{site.data.keyword.messagehub}} components and storage.  | Customer is responsible for deciding which region to deploy into. |
 |Monitor and repair| {{site.data.keyword.messagehub}} monitors and repairs infrastructure non-disruptively.  | |
 |Manage and configure|   | Customer is responsible for using the provided APIs, CLI, or console to manage topics and configuration. |
-{: caption="Table 5. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
+{: caption="Table 3. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
 
 ## Disaster recovery
 {: #disaster-recovery}
@@ -87,7 +87,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Replication|   | Currently, it is the responsibility of the customer to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the customer is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.|
 |Message payload data backup|   | The customer is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.|
 |Topic name and data backup|   | It is recommended good practice that a customer backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}} instance in a multi-zone region, a regional disaster is very unlikely. However, we recommend customers have a plan for such circumstances. If, due to such an event, a customer's instance is no longer available (and a remote DR instance had not been already set up), the customer should consider configuring a new instance in a new region and restoring their topics and data from backup if available. |
-{: caption="Table 5. Responsibilitiess for disaster recovery" caption-side="top"}
+{: caption="Table 4. Responsibilitiess for disaster recovery" caption-side="top"}
 
 
 ## App orchestration
@@ -100,6 +100,6 @@ Review the following sections for the specific responsibilities for you and for 
 |Integrate with select third-party partnership technologies| {{site.data.keyword.messagehub}} provides integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.   |
 |Provide service binding to other {{site.data.keyword.IBM_notm}} services| {{site.data.keyword.messagehub}} provides the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | |
 |Manage, integrate, and monitor|   | Customer is responsible for using the provided tools and features to manage the lifecycle of customer-owned applications, for integrating with other services, and monitoring the health of the application (for example, Availability Monitoring).|
-{: caption="Table 6. Responsibilities for app orchestration" caption-side="top"}
+{: caption="Table 5. Responsibilities for app orchestration" caption-side="top"}
 
 
