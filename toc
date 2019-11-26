@@ -12,16 +12,15 @@ IBM Event Streams
 	About Event Streams
 		eventstreams010.md
 		eventstreams073.md
-		eventstreams156.md
 		testgettingstarted.md
 	eventstreams085.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
 	eventstreams132.md
+	eventstreams156.md
 	eventstreams117.md
 	eventstreams148.md
-	eventstreams155.md
 	eventstreams068.md
 	at-events.md
 	eventstreams-cli.md
@@ -65,6 +64,7 @@ IBM Event Streams
 		eventstreams124.md
 		eventstreams133.md
 		eventstreams145.md
+		eventstreams155.md
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
