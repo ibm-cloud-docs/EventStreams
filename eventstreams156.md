@@ -22,7 +22,7 @@ subcollection: eventstreams
 {:download: .download}
 {:preview: .preview}
 
-# Understanding your responsibilities with using {{site.data.keyword.messagehub}}
+# Understanding your responsibilities when using {{site.data.keyword.messagehub}}
 {: #event_streams_responsibilities}
 <!-- The title of your H1 should be Understanding your responsibilities with using _service-name_, where _service-name_ is the non-trademarked short version conref. -->
 
