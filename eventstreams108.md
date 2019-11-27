@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-25"
+lastupdated: "2019-11-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -86,8 +86,8 @@ Enterprise plan only. Set to any value between 5 minutes and 30 days</p>
 
 Offset retention is system-wide so you cannot set it at an individual topic level. All consumer groups get only 7 days of stored offsets even if using a topic with a log retention that has been increased to the maximum of 30 days. 
 
-The internal Kafka <code>__consumer_offsets</code> topic is visible to you as read-only on the Enterpise plan. 
-You are strongly recommended not to attempt to manage the topic in any way. You cannot access the <code>__consumer_offsets</code> topic at all on the Standard plan. <code>__consumer_offsets</code>  <code>__consumer_offsets</code>
+The internal Kafka `__consumer_offsets` topic is visible to you as read-only on the Enterpise plan. 
+You are strongly recommended not to attempt to manage the topic in any way. You cannot access the `__consumer_offsets` topic at all on the Standard plan. <code>__consumer_offsets</code>  <code>__consumer_offsets</code>
 
 <!--following message retention info duplicted in eventstreams057-->
 
