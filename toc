@@ -48,6 +48,7 @@ IBM Event Streams
 	{: .topicgroup}
 	Migrating from the Classic plan 
 		eventstreams143.md
+		eventstreams157.md
 		eventstreams152.md
 		eventstreams150.md
 		eventstreams151.md
