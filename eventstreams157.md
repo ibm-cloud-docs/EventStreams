@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10a"
+lastupdated: "2019-12-10c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -18,12 +18,12 @@ subcollection: eventstreams
 {:note: .note}
 {:deprecated: .deprecated}
 
-# Upgrading to the new {{site.data.keyword.messagehub}} Enterprise plan from {{site.data.keyword.cloud_notm}} Dedicated
+# Upgrading to the {{site.data.keyword.messagehub}} Enterprise plan from {{site.data.keyword.cloud_notm}} Dedicated
 {: #migrate_dedicated_enterprise}
 
-The Enterprise plan provides data isolation, guaranteed performance, and increased retention and exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
+The {{site.data.keyword.messagehub}} Enterprise plan provides data isolation, guaranteed performance, increased retention and exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
 
-To migrate applications from {{site.data.keyword.cloud_notm}} Dedicated to the Enterprise plan, consider the following information.
+To migrate applications from {{site.data.keyword.messagehub}} on {{site.data.keyword.cloud_notm}} Dedicated to the Enterprise plan, consider the following information.
 {: shortdesc}
 
 
@@ -91,7 +91,7 @@ And in the following single-zone regions:
 ## Integrations
 {: #integrations}
 
-Connection from other services, such as {{site.data.keyword.iot_short_notm}} or {{site.data.keyword.openwhisk_short}}, which bind to the service using a Cloud Foundry organization and space require a service alias to be created. For more information, see
+Connection from other services, such as {{site.data.keyword.iot_short_notm}} or {{site.data.keyword.openwhisk_short}}, which bind to the service using a Cloud Foundry organization and space, require a service alias to be created. For more information, see
 [Connect Cloud Foundry applications to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
 
 ## Supported capabilities
@@ -99,12 +99,12 @@ Connection from other services, such as {{site.data.keyword.iot_short_notm}} or 
 
 There are differences between the capabilities of IBM Cloud Dedicated and the Enterprise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, use the following information to help you migrate.
 
-* If you currently use the REST APIs on IBM Cloud Dedicated, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
-* If you currently use the {{site.data.keyword.mql}} API on IBM Cloud Dedicated, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
+* If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
+* If you currently use the {{site.data.keyword.mql}} API, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
 <br/>
-Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
+Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
 
 * **Customer metrics**
     The ability to monitor activity in a service instance.

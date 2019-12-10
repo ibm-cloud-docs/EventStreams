@@ -103,12 +103,12 @@ There are differences between the capabilities of the Classic plan and the new S
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
 <br/>
-Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas) throughout the rest of 2019 and beyond. Coming soon:
+Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
 
 * **Customer metrics**
     The ability to monitor activity in a service instance.
 
 <br/>
-For a quick walkthrough of the steps to get up and running with the new Standard plan, try the [Getting started tutorial](/docs/services/EventStreams?topic=eventstreams-getting_started).
+
 
 
