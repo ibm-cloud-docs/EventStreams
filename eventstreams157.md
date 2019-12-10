@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10e"
+lastupdated: "2019-12-10f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -115,23 +115,23 @@ There are differences between the capabilities of IBM Cloud Dedicated and the En
 		</tr>
         <tr>
 			<td>**Availability zones**</td>
-			<td>3</td>
+			<td>0</td>
 			<td>3<br/>(1 in single zone locations)
 			</td>
 		</tr>
         <tr>
 			<td>**Availability**</td>
-			<td>99.99%</td>
+			<td>99.5%</td>
 			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.2</td>
+			<td>Kafka 1.1</td>
 			<td>Kafka 2.2</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
-			<td>Yes</td>
+			<td>At an instance level only</td>
 			<td>Yes</td>
 		</tr>
 				<tr>
@@ -146,7 +146,7 @@ There are differences between the capabilities of IBM Cloud Dedicated and the En
 		</tr>
 		<tr>
 			<td>**Maximum number of partitions**</td>
-			<td>100</td>
+			<td>1000</td>
 			<td>3000</td>
 		</tr>
 		<tr>
@@ -209,7 +209,7 @@ There are differences between the capabilities of IBM Cloud Dedicated and the En
 		</tr>
 		<tr>
 			<td>**Deployment timeframe**</td>
-			<td>Instantaneous provisioning</td>
+			<td>Weeks to months</td>
 			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
 		</tr>
 		<tr>
