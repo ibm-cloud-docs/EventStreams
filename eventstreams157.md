@@ -76,13 +76,17 @@ This plan provides access to the latest stable Kafka release 2.2. Applications d
 ## Supported regions
 {: #supported_regions}
 
-The plan is available in the following regions:
+The plan is available in the following multi-zone regions:
 * Dallas (us-south)
 * Washington (us-east)
 * London (eu-gb)
 * Sydney (au-syd)
 * Frankfurt (eu-de)
 * Tokyo (jp-tok)
+
+And in the following single-zone regions:
+* Seoul (seo01)
+* Chennai (che01)
 
 ## Integrations
 {: #integrations}
