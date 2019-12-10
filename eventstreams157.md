@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10h"
+lastupdated: "2019-12-10i"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -134,6 +134,11 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 			<td>At an instance level only</td>
 			<td>Yes</td>
 		</tr>
+		<tr>
+			<td>**Customer-managed encryption**</td>
+			<td>No</td>
+			<td>Yes</td>
+		</tr>
 				<tr>
 			<td>**Cloud Service Endpoint support**</td>
 			<td>No</td>
@@ -205,6 +210,12 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 			Admin REST API<br/>
 			REST Producer API</br>
 		    </td>
+		</tr>
+		</tr>
+			<td>**{{site.data.keyword.messagehub}} CLI supported**</td>
+
+			<td>No</td>
+			<td>Yes</td>
 		</tr>
 		</tr>
 		<tr>
