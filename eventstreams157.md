@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10n"
+lastupdated: "2019-12-10o"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -263,12 +263,13 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 ## Preparing to migrate to the Enterprise plan
 {: #enterprise_prep}
 
+<br/>
 ### Discovering topics and configuration in an existing cluster
 {: #existing_topic_config}
 
-If you want to find out your topics and configuration in an existing cluster before migration so you can recreate them in a new cluster, use the kafka-topics tool. Ensure you use V2.3, which does not require Zookeeper access
+If you want to find out information about your topics and configuration in an existing cluster so you can recreate them in a new cluster, use the *kafka-topics* tool. Ensure you use V2.3 of the tool, which does not require Zookeeper access
 
-For example, sample output:
+For example, some sample output from running the *kafka-topics* tool:
 
 ```
 ~/kafka_2.12-2.3.0 $ bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
@@ -281,14 +282,18 @@ Topic:edotesttopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.repli
 ```
 {: codeblock}
 
+<br/>
 
-### Switching from the old cluster to the new cluster
+### Switching from the existing cluster to a new cluster
 {: #switch_cluster}
 
-1. Stop producing to the old cluster.
-2. Drain all the messages from the old cluster. For more information about using the kafka-consumer-groups tool to do this, see https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
-For example, some sample output:
+1. Stop producing to the old cluster.
+2. Drain all the messages from the old cluster. For more information about using the *kafka-consumer-groups* tool to complete this task, see https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+
+For example, some sample output from running the *kafka-consumer-groups* tool:
+
 ```
 ~/kafka_2.12-2.3.0 $ bin/kafka-consumer-groups.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe --all-groups
 
@@ -309,11 +314,15 @@ edo-hyperion-groupid1575992703846 edotesttopic    1          256             268
 
 3. Switch the consumer to the new cluster.
 
+<br/>
+
 ### Calculate storage footprint of a partition
 {: #calculate_footprint}
 
-The storage footprint of a partition is approximately 
+To calculate the storage footprint of a partition approximately, use the following formula: 
+```
 retention.bytes + segment.bytes + a safety margin
+```
 
 
 
