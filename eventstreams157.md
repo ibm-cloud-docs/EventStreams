@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10k"
+lastupdated: "2019-12-10l"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -128,7 +128,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
         <tr>
 			<td>**Availability**</td>
 			<td>99.5%</td>
-			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr)</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
@@ -168,7 +168,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>Not specified</td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_throughput)</td>
 		</tr>
 		<tr>
 			<td>**Maximum message size**</td>
