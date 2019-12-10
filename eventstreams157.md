@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10i"
+lastupdated: "2019-12-10j"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -128,7 +128,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
         <tr>
 			<td>**Availability**</td>
 			<td>99.5%</td>
-			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
@@ -168,7 +168,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>Not specified</td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
 		</tr>
 		<tr>
 			<td>**Maximum message size**</td>
@@ -246,6 +246,12 @@ PCI<br/>
 
 </table>
 
+### Footnotes
+{: #footnote_plans notoc}
+
+1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+2. {: #footnote_throughput notoc}A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
+A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
 
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
