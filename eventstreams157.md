@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10c"
+lastupdated: "2019-12-10d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -100,8 +100,162 @@ Connection from other services, such as {{site.data.keyword.iot_short_notm}} or 
 There are differences between the capabilities of IBM Cloud Dedicated and the Enterprise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, use the following information to help you migrate.
 
 * If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
-* If you currently use the {{site.data.keyword.mql}} API, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
-* If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
+
+<table>
+    <caption>Table 1. Support in Standard, Enterprise, and Classic plans</caption>
+      <tr>
+	        <th></th>
+		    <th>Standard Plan</th>
+	      	    <th>Enterprise Plan</th>
+		    <th>Classic Plan[<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_classic)</th>
+        </tr>
+		<tr>
+			<td>**Tenancy**</td>
+			<td>Multi-tenant </td>
+			<td>Single tenant</td>			
+			<td>Multi-tenant</td>
+		</tr>
+        <tr>
+			<td>**Availability zones**</td>
+			<td>3</td>
+			<td>3<br/>(1 in single zone locations)
+			</td>
+			<td>Not supported</td>
+		</tr>
+        <tr>
+			<td>**Availability**</td>
+			<td>99.95% [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_lite)</td>
+			<td>99.99%</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.5%</td>
+		</tr>
+	  		<tr>
+			<td>**Kafka version on cluster**</td>
+			<td>Kafka 2.2</td>
+			<td>Kafka 2.2</td>
+			<td>Kafka 1.1</td>
+		</tr>
+		<tr>
+			<td>**Fine-grained access control**</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
+				<tr>
+			<td>**Cloud Service Endpoint support**</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>**Kafka Connect and Kafka Streams supported **</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>**Maximum number of partitions**</td>
+			<td>100</td>
+			<td>3000</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>**Maximum retention period**</td>
+			<td>1 GB per partition for up to 30 days </td>
+			<td>2 TB of usable storage<!--Unlimited up to the storage limit of your plan --></td>
+			<td>1 GB per partition for up to 30 days </td>
+		</tr>
+		<tr>
+			<td>**Maximum throughput**</td>
+			<td>1 MB per second per partition (20 MB per service instance) </td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
+			<td>1 MB per second per partition</td>
+		</tr>
+		<tr>
+			<td>**Maximum message size**</td>
+			<td>1 MB</td>
+			<td>1 MB</td>
+			<td>1 MB</td>
+		</tr>
+		<tr>
+			<td>**Maximum number of connected clients**</td>
+			<td>100</td>
+			<td>10 000</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>**Location (region) availability**</td>
+			<td>**Multizone location (MZR)**<br/>
+			Dallas (us-south)</br>
+			Washington (us-east)<br/>
+			London (eu-gb)<br/>
+			Sydney (au-syd)</br>
+			Frankfurt (eu-de)<br/>
+			Tokyo (jp-tok)<br/>
+			<br/>
+			</td>
+			<td>**Multizone location (MZR)**</br>
+			Dallas (us-south)</br>
+			Washington (us-east)<br/>
+			London (eu-gb)<br/>
+			Sydney (au-syd)</br>
+			Frankfurt (eu-de)<br/>
+			Tokyo (jp-tok)<br/>
+			<br/>
+			**Single zone location (SZR)**</br>
+			Seoul (seo01)<br/>
+			Chennai (che01)<br/>
+			<br/>
+			</td>
+			<td>Dallas (us-south)</br>
+			London (eu-gb)</br>
+			Sydney (au-syd)</br>
+			Frankfurt (eu-de) - no {{site.data.keyword.mql}} API </td>
+		</tr>
+		<tr>
+     	    <td>**APIs supported**</td>
+
+			<td>Kafka API<br/>
+			Admin REST API</br>
+			REST Producer API</br>
+			</td>
+			<td>Kafka API</br>
+			Admin REST API<br/>
+			REST Producer API</br>
+		    </td>
+			<td>Kafka API</br>
+			Admin REST API<br/>
+			Kafka REST API</br>
+			MQ Light API</br>
+		    </td>
+		</tr>
+		</tr>
+		<tr>
+			<td>**Deployment timeframe**</td>
+			<td>Instantaneous provisioning</td>
+			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
+			<td>Instantaneous provisioning</td>
+		</tr>
+		<tr>
+			<td>**Compliance**</td>
+			<td>GDPR<br/>
+Privacy Shield<br/>
+ISO 27001, 27017, 27018<br/></td>
+			<td>GDPR<br/>
+Privacy Shield<br/>
+ISO 27001, 27017, 27018<br/>
+SOC 1 Type 1<br/>
+SOC 2 Type 1<br/>
+HIPPA ready<br/>
+PCI<br/>
+</td>
+			<td>GDPR<br/>
+Privacy Shield<br/>
+ISO 27001, 27017, 27018<br/></td>
+		</tr>
+
+</table>
+
 
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
