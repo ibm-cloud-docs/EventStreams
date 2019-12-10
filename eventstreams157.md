@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10"
+lastupdated: "2019-12-10a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -97,10 +97,10 @@ Connection from other services, such as {{site.data.keyword.iot_short_notm}} or 
 ## Supported capabilities
 {: #capabilities}
 
-There are differences between the capabilities of the Classic plan and the Enterrpise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, use the following information to help you migrate.
+There are differences between the capabilities of IBM Cloud Dedicated and the Enterprise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, use the following information to help you migrate.
 
-* If you currently use the REST APIs on the Classic plan, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
-* If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
+* If you currently use the REST APIs on IBM Cloud Dedicated, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
+* If you currently use the {{site.data.keyword.mql}} API on IBM Cloud Dedicated, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
 <br/>
@@ -110,6 +110,6 @@ Small code deltas are shipped daily to production. As a result, you can expect t
     The ability to monitor activity in a service instance.
 
 <br/>
-For a quick walkthrough of the steps to get up and running with the new Standard plan, try the [Getting started tutorial](/docs/services/EventStreams?topic=eventstreams-getting_started).
+
 
 
