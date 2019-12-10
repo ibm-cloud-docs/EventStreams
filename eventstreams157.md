@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10j"
+lastupdated: "2019-12-10k"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -182,13 +182,11 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		</tr>
 		<tr>
 			<td>**Location (region) availability**</td>
-			<td>**Multizone location (MZR)**<br/>
+			<td>
 			Dallas (us-south)</br>
-			Washington (us-east)<br/>
 			London (eu-gb)<br/>
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de)<br/>
-			Tokyo (jp-tok)<br/>
 			<br/>
 			</td>
 			<td>**Multizone location (MZR)**</br>
@@ -256,7 +254,7 @@ A recommended peak limit is 150 MB per second, that is 75 MB per second for prod
 <br/>
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
 
-* **Customer metrics**
+* **Customer metrics**<br/>
     The ability to monitor activity in a service instance.
 
 <br/>
