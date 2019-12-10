@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10r"
+lastupdated: "2019-12-10s"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -263,10 +263,10 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 {: #enterprise_prep}
 
 
-### Discovering topics and configuration in an existing cluster
+### Obtaining information about topics and their configuration in an existing cluster
 {: #existing_topic_config}
 
-If you want to find out information about your topics and configuration in an existing cluster so you can recreate them in a new cluster, use the [**kafka-topics** tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#topics_tool){:new_window}. Ensure you use V2.3 of the tool, which does not require Zookeeper access.
+If you want to find out information about your topics and their configuration in an existing cluster so that you can recreate them in a new cluster, use the **kafka-topics** tool. Ensure that you use V2.3 of the tool, which does not require Zookeeper access.
 
 
 For example, some sample output from running the **kafka-topics** tool:
@@ -289,8 +289,8 @@ Topic:edotesttopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.repli
 
 Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
-1. Stop producing to the old cluster.
-2. Drain all the messages from the old cluster. Use the [**kafka-consumer-groups** tool ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window} to complete this task. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+1. Stop producing to the existing cluster.
+2. Drain all the messages from the existing cluster. Use the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window}  tool to complete this task. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
 
    For example, some sample output from running the **kafka-consumer-groups** tool:
 
