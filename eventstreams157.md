@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10l"
+lastupdated: "2019-12-10m"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -103,7 +103,7 @@ Connection from other services, such as {{site.data.keyword.iot_short_notm}} or 
 ## Supported capabilities
 {: #capabilities}
 
-There are differences between the capabilities of IBM Cloud Dedicated and the Enterprise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. The following table compares the available features. If you rely on these functions, use the following information to help you migrate.
+There are differences between the capabilities of IBM Cloud Dedicated and the Enterprise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. The following table compares the available features.
 
 If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
 
@@ -116,7 +116,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
         </tr>
 		<tr>
 			<td>**Tenancy**</td>
-			<td>Multi-tenant </td>
+			<td>Single tenant </td>
 			<td>Single tenant</td>			
 		</tr>
         <tr>
