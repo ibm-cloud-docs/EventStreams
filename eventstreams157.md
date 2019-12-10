@@ -88,6 +88,12 @@ And in the following single-zone regions:
 * Seoul (seo01)
 * Chennai (che01)
 
+
+## Tenancy
+{: #tenancy}
+
+
+
 ## Integrations
 {: #integrations}
 
