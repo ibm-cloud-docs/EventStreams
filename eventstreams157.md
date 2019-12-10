@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10m"
+lastupdated: "2019-12-10n"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -258,6 +258,65 @@ Small code deltas are shipped daily to production. As a result, you can expect t
     The ability to monitor activity in a service instance.
 
 <br/>
+
+
+## Preparing to migrate to the Enterprise plan
+{: #enterprise_prep}
+
+### Discovering topics and configuration in an existing cluster
+{: #existing_topic_config}
+
+If you want to find out your topics and configuration in an existing cluster before migration so you can recreate them in a new cluster, use the kafka-topics tool. Ensure you use V2.3, which does not require Zookeeper access
+
+For example, sample output:
+
+```
+~/kafka_2.12-2.3.0 $ bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
+
+Topic:kafka-nodejs-console-sample-topic	PartitionCount:1	ReplicationFactor:3	Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
+	Topic: kafka-nodejs-console-sample-topic	Partition: 0	Leader: 5	Replicas: 5,8,2	Isr: 8,5,2
+Topic:edotesttopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
+	Topic: edotesttopic	Partition: 0	Leader: 3	Replicas: 3,0,8	Isr: 3,0,8
+	Topic: edotesttopic	Partition: 1	Leader: 6	Replicas: 6,8,2	Isr: 6,8,2
+```
+{: codeblock}
+
+
+### Switching from the old cluster to the new cluster
+{: #switch_cluster}
+
+1. Stop producing to the old cluster.
+2. Drain all the messages from the old cluster. For more information about using the kafka-consumer-groups tool to do this, see https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+
+For example, some sample output:
+```
+~/kafka_2.12-2.3.0 $ bin/kafka-consumer-groups.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe --all-groups
+
+Consumer group 'edo-hyperion-groupid1575992638473' has no active members.
+
+GROUP                             TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+edo-hyperion-groupid1575992638473 edotesttopic    0          131             261             130             -               -               -
+edo-hyperion-groupid1575992638473 edotesttopic    1          142             268             126             -               -               -
+
+Consumer group 'edo-hyperion-groupid1575992703846' has no active members.
+
+GROUP                             TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+edo-hyperion-groupid1575992703846 edotesttopic    0          245             261             16              -               -               -
+edo-hyperion-groupid1575992703846 edotesttopic    1          256             268             12              -               -               -
+
+```
+{: codeblock}
+
+3. Switch the consumer to the new cluster.
+
+### Calculate storage footprint of a partition
+{: #calculate_footprint}
+
+The storage footprint of a partition is approximately 
+retention.bytes + segment.bytes + a safety margin
+
+
+
 
 
 
