@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-10g"
+lastupdated: "2019-12-10h"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -151,12 +151,12 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		</tr>
 		<tr>
 			<td>**Maximum retention period**</td>
-			<td>1 GB per partition for up to 30 days </td>
-			<td>2 TB of usable storage<!--Unlimited up to the storage limit of your plan --></td>
+			<td>1 TB  of usable storage per broker </td>
+			<td>2 TB of usable storage per broker<!--Unlimited up to the storage limit of your plan --></td>
 		</tr>
 		<tr>
 			<td>**Maximum throughput**</td>
-			<td>1 MB per second per partition (20 MB per service instance) </td>
+			<td>Not specified</td>
 			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/services/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
 		</tr>
 		<tr>
@@ -166,7 +166,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		</tr>
 		<tr>
 			<td>**Maximum number of connected clients**</td>
-			<td>100</td>
+			<td>Not specified</td>
 			<td>10 000</td>
 		</tr>
 		<tr>
@@ -199,7 +199,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 
 			<td>Kafka API<br/>
 			Admin REST API</br>
-			REST Producer API</br>
+			REST API</br>
 			</td>
 			<td>Kafka API</br>
 			Admin REST API<br/>
