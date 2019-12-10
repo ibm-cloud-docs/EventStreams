@@ -48,10 +48,13 @@ IBM Event Streams
 	{: .topicgroup}
 	Migrating from the Classic plan 
 		eventstreams143.md
-		eventstreams157.md
 		eventstreams152.md
 		eventstreams150.md
 		eventstreams151.md
+
+	{: .topicgroup}
+	Migrating from Dedicated to Enterprise
+		eventstreams157.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
