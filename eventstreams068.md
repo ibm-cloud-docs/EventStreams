@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-08-01"
+lastupdated: "2019-12-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -57,5 +57,7 @@ Topic names and consumer groups are encrypted for transmission between
 {{site.data.keyword.messagehub}} and clients as a result of TLS. However, 
 {{site.data.keyword.messagehub}} does not encrypt these values at rest. Therefore, you are not recommended to use confidential information in your topic names.
 
+For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see 
+[What's supported by the Lite, Standard, Enterprise, and Classic plans](/docs/services/EventStreams?topic=eventstreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans).
 
 
