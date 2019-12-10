@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-09"
+lastupdated: "2019-12-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -19,7 +19,9 @@ subcollection: eventstreams
 {:deprecated: .deprecated}
 
 # Upgrading to the new {{site.data.keyword.messagehub}} Enterprise plan from {{site.data.keyword.cloud_notm}} Dedicated
-{: #migrate_classic_plan_dedicated}
+{: #migrate_dedicated_enterprise}
+
+The Enterprise plan provides data isolation, guaranteed performance, and increased retention and exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster.
 
 To migrate applications from {{site.data.keyword.cloud_notm}} Dedicated to the Enterprise plan, consider the following information.
 {: shortdesc}
