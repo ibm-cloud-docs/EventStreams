@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-06"
+lastupdated: "2019-12-09"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
 subcollection: eventstreams
 
@@ -18,17 +18,12 @@ subcollection: eventstreams
 {:note: .note}
 {:deprecated: .deprecated}
 
-# Upgrading to the new {{site.data.keyword.messagehub}} Standard plan  from Dedicated
+# Upgrading to the new {{site.data.keyword.messagehub}} Enterprise plan from {{site.data.keyword.cloud_notm}} Dedicated
 {: #migrate_classic_plan_dedicated}
 
-This new release of the Standard multi-tenant plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
+To migrate applications from {{site.data.keyword.cloud_notm}} Dedicated to the Enterprise plan, consider the following information.
 {: shortdesc}
 
-To migrate applications from the previous Standard plan (now called the Classic plan and deprecated) to the new plan, consider the following information.
-
-The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
-From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
 
 Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
 
@@ -96,7 +91,7 @@ Connection from other services, such as {{site.data.keyword.iot_short_notm}} or 
 ## Supported capabilities
 {: #capabilities}
 
-There are differences between the capabilities of the Classic plan and the new Standard plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, use the following information to help you migrate.
+There are differences between the capabilities of the Classic plan and the Enterrpise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. A comparison of the features is available at [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose). If you rely on these functions, use the following information to help you migrate.
 
 * If you currently use the REST APIs on the Classic plan, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/services/EventStreams?topic=eventstreams-migrate_mqlight).
