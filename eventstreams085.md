@@ -251,8 +251,8 @@ ISO 27001, 27017, 27018<br/></td>
 1. {: #footnote_classic notoc} The Classic plan is deprecated. For more information, see [Classic plan deprecation](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_classic) and [moving to the Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
 2. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
 3. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
-4. {: #footnote_partitions notoc}3000 partitions is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
-5. {: #footnote_throughput notoc}A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
+4. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+5. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
 A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
 
 
