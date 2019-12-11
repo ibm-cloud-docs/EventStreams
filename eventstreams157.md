@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11j"
+lastupdated: "2019-12-11k"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -33,10 +33,10 @@ To migrate applications from {{site.data.keyword.messagehub}} on {{site.data.key
 
 A key difference between the Dedicated and Enterprise plans is that Dedicated supports provisioning of multiple instances of the {{site.data.keyword.messagehub}} service. That is, the users in Dedicated can each provision an instance of {{site.data.keyword.messagehub}}, but that instance resides on the Dedicated 4 Kafka node {{site.data.keyword.messagehub}} cluster. To the users it looks like they have their own instance of {{site.data.keyword.messagehub}}.
 
-When moving off a Dedicated {{site.data.keyword.messagehub}} cluster, you have two options.
+When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have two options:
 
-1. Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant Standard plan (See Standard Plan link)
-2. Or, if hosting an instance on a Public multi-tenant plan is not an option,  create their {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following discussion illustrates this option.
+1. Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan] (/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_standard).
+2. Or, if hosting an instance on a Public multi-tenant plan is not an option, create their {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following discussion illustrates this option.
 
 The {{site.data.keyword.messagehub}} Enterprise plan would be provisioned by the Admin in the account, or at least a user with sufficient permissions to provision such an instance. The "Admin" then grants access rights to users to create topics and partitions on that Enterprise instance.
 
