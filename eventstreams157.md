@@ -274,11 +274,10 @@ For example, some sample output from running the **kafka-topics** tool:
 ```
 ~/kafka_2.12-2.3.0 $ bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
 
-Topic:kafka-nodejs-console-sample-topic	PartitionCount:1	ReplicationFactor:3	Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
-	Topic: kafka-nodejs-console-sample-topic	Partition: 0	Leader: 5	Replicas: 5,8,2	Isr: 8,5,2
-Topic:edotesttopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
-	Topic: edotesttopic	Partition: 0	Leader: 3	Replicas: 3,0,8	Isr: 3,0,8
-	Topic: edotesttopic	Partition: 1	Leader: 6	Replicas: 6,8,2	Isr: 6,8,2
+Topic:sample-topic	PartitionCount:1	ReplicationFactor:3	Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
+...
+Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
+...
 ```
 {: codeblock}
 
@@ -297,17 +296,17 @@ Complete the following steps to switch from an existing cluster to a new cluster
    ```
    ~/kafka_2.12-2.3.0 $ bin/kafka-consumer-groups.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe --all-groups
 
-   Consumer group 'edo-hyperion-groupid1575992638473' has no active members.
+   Consumer group 'testgroup1' has no active members.
 
-   GROUP                             TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
-   edo-hyperion-groupid1575992638473 edotesttopic    0          131             261             130             -               -               -
-   edo-hyperion-groupid1575992638473 edotesttopic    1          142             268             126             -               -               -
+   GROUP         TOPIC        PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+   testgroup1    testtopic    0          131             261             130             -               -               -
+   testgroup1    testtopic    1          142             268             126             -               -               -
 
-   Consumer group 'edo-hyperion-groupid1575992703846' has no active members.
+   Consumer group 'testgroup2' has no active members.
 
-   GROUP                             TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
-   edo-hyperion-groupid1575992703846 edotesttopic    0          245             261             16              -               -               -
-   edo-hyperion-groupid1575992703846 edotesttopic    1          256             268             12              -               -               -
+   GROUP         TOPIC        PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+   testgroup2    testtopic    0          245             261             0               -               -               -
+   testgroup2    testtopic    1          256             268             0               -               -               -
 
    ```
    {: codeblock}
@@ -318,9 +317,9 @@ Complete the following steps to switch from an existing cluster to a new cluster
 ### Calculate storage footprint of a partition
 {: #calculate_footprint}
 
-To calculate the storage footprint of a partition approximately, use the following formula: 
+To calculate the storage footprint of a partition approximately, use the following formula which is used with a safety margin to avoid filling the storage: 
 ```
-retention.bytes + segment.bytes + a safety margin
+retention.bytes + segment.bytes
 ```
 
 
