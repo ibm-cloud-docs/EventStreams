@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11b"
+lastupdated: "2019-12-11c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -184,9 +184,13 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 			<td>**Location (region) availability**</td>
 			<td>
 			Dallas (us-south)</br>
+			San Jose (sjc04)</br>
+			Washington (us-east)<br/>
 			London (eu-gb)<br/>
 			Sydney (au-syd)</br>
 			Frankfurt (eu-de)<br/>
+			Milan (mil01)<br/>
+			Chennai (che01)
 			<br/>
 			</td>
 			<td>**Multizone location (MZR)**</br>
