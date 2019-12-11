@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11i"
+lastupdated: "2019-12-11j"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -321,8 +321,7 @@ When topics exist on the new plan, your applications will need to switch to usin
 NB Check that your Kafka clients are Kafka 0.10.x or later.
 
 To update your applications to use the new service see
-https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting
-
+[Connecting to Event Streams](https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting)
 For Cloud Foundry based Applications, see
 [Connect Cloud Foundry applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf)
 {: important}
@@ -330,13 +329,13 @@ For Cloud Foundry based Applications, see
 ### Migration considerations – consumer groups
 In Dedicated, consumer groups are scoped to the specific instance (exactly as for topics).
 No such scoping exists in the Enterprise plan, so applications should avoid name collisions to avoid unnecessary group rebalances.
-When targeting an Enterprise cluster, consumer group names should be prefixed with a name that references the instance in Dedicated.
+When targeting an Enterprise cluster, prefix consumer group names with a name that references the instance in Dedicated.
 Unlike topics, consumer groups are automatically created, so there is no need to pre-create them 
 
 ### Switching from the existing cluster to a new cluster
 {: #switch_cluster}
 
-After you have set up your topics, consumers, and producers for the new Enterprise plan and have tested their connectivity, you are ready to start the switchover process. Below is the recommended procedure.
+After you have set up your topics, consumers, and producers for the new Enterprise plan and have tested their connectivity, you are ready to start the switchover process. The following procedure is recommended:
 
 Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
@@ -362,7 +361,7 @@ Complete the following steps to switch from an existing cluster to a new cluster
 
    ```
    {: codeblock}
-3. Switch to using the new producers and consumers to the new Enterrprise cluster.
+3. Switch to using the new producers and consumers to the new Enterprise cluster.
 
 <br/>
 
