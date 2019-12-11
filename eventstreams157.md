@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11g"
+lastupdated: "2019-12-11h"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -26,6 +26,27 @@ The {{site.data.keyword.messagehub}} Enterprise plan provides data isolation, gu
 To migrate applications from {{site.data.keyword.messagehub}} on {{site.data.keyword.cloud_notm}} Dedicated to the Enterprise plan, consider the following information.
 {: shortdesc}
 
+## Service instances
+{: #service_instances}
+
+
+A key difference between the Dedicated and Enterprise plans is that Dedicated supports multiple instances of the {{site.data.keyword.messagehub}} service being provisioned. That is, the users in Dedicated can each provision an instance of {{site.data.keyword.messagehub}}, but that instance resides on the Dedicated 4 Kafka node {{site.data.keyword.messagehub}} cluster. To the users it looks like they have their own instance of Event Streams.
+
+When moving off a Dedicated {{site.data.keyword.messagehub}} cluster, users have two options.
+
+1. Provision {{site.data.keyword.messagehub}} instances on the Public Multi tenant standard plan (See Standard Plan link)
+or, if hosting an instance on a Public Multi-tenant plan is not an option then 
+2. Create their {{site.data.keyword.messagehub}} resources on an Enterprise plan. The discussion below illustrates this option.
+
+The {{site.data.keyword.messagehub}} Enterprise plan would be provisioned by the Admin in the account, or at least a user with sufficient permissions to provision such an Instance. The "Admin" would then grant access rights to users to create topics and partitions on that Enterprise Instance.
+
+If one is migrating multiple users from Dedicated {{site.data.keyword.messagehub}} cluster, each of whom had provisoned their own {{site.data.keyword.messagehub}} Instances on that Dedicated cluster, then one needs to take into account that resources like Topics should be prefixed with a namespace denominator that differentiates between users.
+.
+For example:
+- On Dedicated Event Streams, there might be two different business lines, each with their own instance and within their instance each had created a Topic called "Test"
+- if Business line 1 then migrated to a new Enterprise instance and just created a Topic called "Test" on the new Enterprise instance, then that would stop the other business line migrating their topic called "Test".
+- It is therefore recommended that the new topics are prefixed with a business line label when created on Enterprise, IE BU1_Test and BU2_Test.
+- Similar rules apply for Consumer Group names. If instance provisioned by Dept1 on Dedicated has consumer group “group1” then on Enterprise the consumer group should be called “Dept1_group1”
 
 Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
 
@@ -262,6 +283,10 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 ## Preparing to migrate to the Enterprise plan
 {: #enterprise_prep}
 
+### Migration considerations - Topics
+An application using {{site.data.keyword.messagehub}} produces and consumes to and from a number of Kafka topics.
+
+To migrate from an Dedicated cluster to and Enterprise instance, create the topics on the new instance with the same configuration as on the Dedicated instance.
 
 ### Obtaining information about topics and their configuration in an existing cluster
 {: #existing_topic_config}
@@ -283,13 +308,38 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 
 <br/>
 
+You can now use this information to create the same named topics in the target cluster.
+N.B. The topic name should be prefixed with a name that references the instance in Dedicated (see previous chart)
+See here for instructions of how to create Topics (or use the UI)
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-kafka_java_api
+Or
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es
+
+### Migration considerations - Connecting
+When topics exist on the new plan, your applications will need to switch to using the new plan.
+NB Check that your Kafka clients are Kafka 0.10.x or later.
+
+To update your applications to use the new service see
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting
+
+For Cloud Foundry based Applications see
+https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf
+
+### Migration considerations – consumer groups
+In Dedicated, consumer groups are scoped to the specific instance (exactly as for topics).
+No such scoping exists in the Enterprise plan, so applications should avoid name collisions to avoid unnecessary group rebalances.
+When targeting an Enterprise cluster, consumer group names should be prefixed with a name that references the instance in Dedicated.
+Unlike topics, consumer groups are automatically created, so there is no need to pre-create them 
+
 ### Switching from the existing cluster to a new cluster
 {: #switch_cluster}
 
+After you have set up your topics, consumers, and producers for the new Enterprise plan and have tested their connectivity, you are ready to start the switchover process. Below is the recommended procedure.
+
 Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
-1. Stop producing to the existing cluster.
-2. Drain all the messages from the existing cluster. Use the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window}  tool to complete this task. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+1. Stop any producers producing to the existing cluster or topic.
+2. Drain all the messages from the existing cluster or topic. To check this one checks that all consumers for that topic/cluster have zero lag. Use the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window}  tool to complete this task. Ensure you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
 
    For example, some sample output from running the **kafka-consumer-groups** tool:
 
@@ -310,7 +360,7 @@ Complete the following steps to switch from an existing cluster to a new cluster
 
    ```
    {: codeblock}
-3. Switch the consumer to the new cluster.
+3. Switch to using the new producers and consumers to the new Enterrprise cluster.
 
 <br/>
 
