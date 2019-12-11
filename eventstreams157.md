@@ -374,7 +374,7 @@ Complete the following steps to switch from an existing cluster to a new cluster
 
 To calculate the storage footprint of a partition approximately, use the following formula which is used with a safety margin to avoid filling the storage: 
 ```
-retention.bytes + segment.bytes + safety margin
+retention.bytes + segment.bytes
 ```
 
 
