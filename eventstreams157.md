@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11e"
+lastupdated: "2019-12-11f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -158,7 +158,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Maximum number of partitions**</td>
 			<td>1000</td>
-			<td>3000[<sup>2</sup>]((/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr#footnote_partitions)</td>
+			<td>3000 [<sup>2</sup>]((/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr#footnote_partitions)</td>
 		</tr>
 		<tr>
 			<td>**Maximum retention period**</td>
