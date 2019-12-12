@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-11l"
+lastupdated: "2019-12-12a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -30,23 +30,26 @@ To migrate applications from {{site.data.keyword.messagehub}} on {{site.data.key
 ## Service instances
 {: #service_instances}
 
-A key difference between the Dedicated and Enterprise plans is that Dedicated supports the provisioning of multiple instances of the {{site.data.keyword.messagehub}} service. That is, users in Dedicated can each provision an instance of {{site.data.keyword.messagehub}}, but that instance resides on the Dedicated 4 Kafka node {{site.data.keyword.messagehub}} cluster. To users, it looks like they have their own instance of {{site.data.keyword.messagehub}}.
+A key difference between the Dedicated and Enterprise plans is that Dedicated supports the provisioning of multiple instances of the {{site.data.keyword.messagehub}} service. That is, users in Dedicated can each provision an instance of {{site.data.keyword.messagehub}}, but that instance resides on the Dedicated 4 Kafka node {{site.data.keyword.messagehub}} cluster. To users, it appears like they have their own instance of {{site.data.keyword.messagehub}}.
 
 When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have the following two options:
 
 1. Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_standard).
 2. Alternatively, if hosting an instance on a Public multi-tenant plan is not an option, create your {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following discussion illustrates this option.
 
-The {{site.data.keyword.messagehub}} Enterprise plan is provisioned by the Admin in the account, or at least a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
+The Enterprise plan is provisioned by the Admin in the account, or at a minimum a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
 
 {: #dedicated_prefix notoc}
-If you are migrating multiple users from a Dedicated {{site.data.keyword.messagehub}} cluster, who had each provisioned their own {{site.data.keyword.messagehub}} instances on that Dedicated cluster, take into account that resources like topics should be prefixed with a namespace denominator that differentiates between users.
-.
+If you are migrating multiple users from a Dedicated {{site.data.keyword.messagehub}} cluster, who had each provisioned their own {{site.data.keyword.messagehub}} instances on that Dedicated cluster, bear in mind that you should prefix resources like topics with a namespace denominator that differentiates between users.
+
 For example:
-* On Dedicated {{site.data.keyword.messagehub}}, there might be two different business lines, each with their own instance. And within their instance each had created a Topic called `Test`.
-* If Business line 1 then migrated to a new Enterprise instance and just created a Topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
-* It is therefore recommended that the new topics are prefixed with a business line label when created on Enterprise. For example `BU1_Test` and `BU2_Test`.
+* On Dedicated {{site.data.keyword.messagehub}}, there might be two different business lines, each with their own instance. And within their instance each business line created a topic called `Test`.
+* If business line 1 then migrated to a new Enterprise instance and just created a topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
+* Therefore, you are recommended to prefix new topics with a business line label when created on Enterprise. For example `BU1_Test` and `BU2_Test`.
 * Similar rules apply to consumer group names. If an instance provisioned by Dept1 on Dedicated has a consumer group called `group1`, on Enterprise the consumer group should be called `Dept1_group1`.
+
+## How service instances are provisioned on Enterprise
+{: #instance_provision}
 
 Service instances on Enterprise are provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services on Dedicated. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
 
@@ -311,16 +314,18 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 You can now use this information to create the same named topics in the new cluster.
 
 Prefix the topic name with a name that references the instance in Dedicated as described in the [migration example](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#dedicated_prefix).
-For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or 
-[ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es)
-<br/>
-Alternatively, you can also use the {{site.data.keyword.messagehub}} console.
 {: important}
+
+For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
+[ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es).
+<br/>
+Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
+
 
 ### Migration considerations - connecting
 When topics exist on the new plan, your applications will need to switch to using the new plan.
 
-Ensure that your Kafka clients are Kafka 0.10.x or later.
+Ensure that your Kafka clients are 0.10.x or later.
 {: important}
 
 To update your applications to use the new service see
@@ -328,12 +333,14 @@ To update your applications to use the new service see
 <br/>
 For Cloud Foundry based Applications, see
 [Connect Cloud Foundry applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
-{: important}
 
 ### Migration considerations – consumer groups
 In Dedicated, consumer groups are scoped to the specific instance (exactly as for topics).
 No such scoping exists in the Enterprise plan, so applications should avoid name collisions to avoid unnecessary group rebalances.
+
 When targeting an Enterprise cluster, prefix consumer group names with a name that references the instance in Dedicated.
+{: important}
+
 Unlike topics, consumer groups are automatically created, so there is no need to create them in advance. 
 
 ### Switching from the existing cluster to a new cluster
