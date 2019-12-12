@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-12a"
+lastupdated: "2019-12-12b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -289,7 +289,7 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 ### Migration considerations: topics
 An application using {{site.data.keyword.messagehub}} produces to and consumes from a number of Kafka topics.
 
-To migrate from an Dedicated cluster to an Enterprise instance, create the topics on the new instance with the same configuration as on the Dedicated instance.
+To migrate from an Dedicated cluster to an Enterprise instance, create the topics on the new instance with the same configuration as the Dedicated instance.
 
 #### Obtaining information about topics and their configuration in an existing cluster
 {: #existing_topic_config}
@@ -322,25 +322,23 @@ For more information about how to create topics, see [Using the administration K
 Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
 
-### Migration considerations - connecting
+### Migration considerations: connecting
 When topics exist on the new plan, your applications will need to switch to using the new plan.
 
 Ensure that your Kafka clients are 0.10.x or later.
 {: important}
 
 To update your applications to use the new service see
-[Connecting to Event Streams](https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting)
-<br/>
+[Connecting to Event Streams](https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting). 
 For Cloud Foundry based Applications, see
 [Connect Cloud Foundry applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
 
-### Migration considerations – consumer groups
+### Migration considerations: consumer groups
 In Dedicated, consumer groups are scoped to the specific instance (exactly as for topics).
 No such scoping exists in the Enterprise plan, so applications should avoid name collisions to avoid unnecessary group rebalances.
 
 When targeting an Enterprise cluster, prefix consumer group names with a name that references the instance in Dedicated.
 {: important}
-
 Unlike topics, consumer groups are automatically created, so there is no need to create them in advance. 
 
 ### Switching from the existing cluster to a new cluster
@@ -351,7 +349,7 @@ After you have set up your topics, consumers, and producers for the new Enterpri
 Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
 1. Stop any producers producing to the existing cluster or topic.
-2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag. Use the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window} tool to complete this task. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag by using the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window} tool. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
 
    For example, some sample output from running the **kafka-consumer-groups** tool:
 
@@ -372,7 +370,7 @@ Complete the following steps to switch from an existing cluster to a new cluster
 
    ```
    {: codeblock}
-3. Switch to using the new producers and consumers to the new Enterprise cluster.
+3. Switch to using the new producers and consumers on the new Enterprise cluster.
 
 <br/>
 
