@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-04"
+lastupdated: "2019-12-16"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding
 
 subcollection: eventstreams
 
@@ -98,6 +98,10 @@ For more information about IAM, see
 
 For an example of how to set policies, see: 
 [IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){:new_window}.
+
+## Wildcarding
+You can take advantage of the IAM wildcarding facility on {{site.data.keyword.messagehub}} to set policies for groups or resources. For more information, see 
+[Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){:new_window}.
 
 ## Connecting to {{site.data.keyword.messagehub}}
 {: #connect_message_enterprise }

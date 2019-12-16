@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2019
 lastupdated: "2019-12-16a"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM
 
 subcollection: eventstreams
 
