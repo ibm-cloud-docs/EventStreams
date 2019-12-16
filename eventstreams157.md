@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-12c"
+lastupdated: "2019-12-16a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade
 
@@ -65,6 +65,9 @@ If you're using the CLI, instances are managed using the resource commands. For 
 
 Authentication and authorization are now managed using the Cloud Identity and Access Management (IAM) service. As well as controlling a user's ability to connect, IAM also enables you to configure granular access to underlying resources, such as topics. Access is controlled by assigning policies to users. For more information, see 
 [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security).
+
+If you are part of a department that previously owned its own instance on a Dedicated cluster and you now want to limit access to your resources (topics, consumer groups and so on) on the Enterprise cluster, you can take advantage of the IAM wildcarding facility to set policies for groups or resources. For example, if you name all your topics with a prefix like `Dept1_topic1`, `Dept1_Topic2` etc. You can set policies for topics called `Dept1_*` and these will be applied to all topics with that prefix. For more information, see 
+[Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){:new_window}.
 
 ## Connecting applications
 {: #connecting_apps}
