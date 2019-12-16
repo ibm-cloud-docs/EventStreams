@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-16i"
+lastupdated: "2019-12-16j"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -46,7 +46,7 @@ If you're using the CLI, instances are managed using the resource commands. For 
 Authentication and authorization are now managed using the Cloud Identity and Access Management (IAM) service. As well as controlling a user's ability to connect, IAM also enables you to configure granular access to underlying resources, such as topics. Access is controlled by assigning policies to users. For more information, see 
 [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security).
 
-If you are part of a department that previously owned its own instance on a Dedicated cluster and you now want to limit access to your resources on the Enterprise cluster (topics, consumer groups and so on), you can take advantage of the IAM wildcarding facility to set policies for groups or resources. For example, if you name all your topics with prefixes like `Dept1_Topic1` and `Dept1_Topic2`. You can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
+If you are part of a department that previously owned its own instance on a Dedicated cluster and you now want to limit access to your resources on the Enterprise cluster (topics, consumer groups and so on), you can take advantage of the IAM wildcarding facility to set policies for groups or resources. For example, if you name all your topics with prefixes like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
 [Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){:new_window}.
 
 ## Connecting applications
@@ -249,7 +249,7 @@ PCI<br/>
 1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 2. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
 3. {: #footnote_footprint notoc}
-To approximately calculate the storage footprint of a partition, use the following formula which is used with a safety margin to avoid filling the storage: 
+To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
 ```
 retention.bytes + segment.bytes
 ```
@@ -277,7 +277,7 @@ A key difference between the Dedicated and Enterprise plans is that Dedicated su
 When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have the following two options:
 
 * Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_standard).
-* Alternatively, if hosting an instance on a Public multi-tenant plan is not an option, create your {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following discussion illustrates this option.
+* Alternatively, if hosting an instance on a Public multi-tenant plan is not an option, create your {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following example illustrates this option.
 
 The Enterprise plan is provisioned by the Admin in the account, or at a minimum a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
 
@@ -288,10 +288,10 @@ If you are migrating multiple users from a Dedicated {{site.data.keyword.message
 
 For example:
 * On Dedicated {{site.data.keyword.messagehub}}, there might be two different business lines, each with their own instance. And within their instance each business line created a topic called `Test`.
-* If business line 1 then migrated to a new Enterprise instance and just created a topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
-* Therefore, you are recommended to prefix new topics with a business line label when created on Enterprise. For example `BU1_Test` and `BU2_Test`.
-* Similar rules apply to consumer group names. If an instance provisioned by Dept1 on Dedicated has a consumer group called `group1`, on Enterprise the consumer group should be called `Dept1_group1`.
-* When using prefixes, you can take advantage of IAM wildcarding for your business units. For more information, see [Controlling access](#controlling_access).
+* If business line 1 then migrated to a new Enterprise instance and simply created a topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
+* Therefore, you are recommended to prefix new topics with a business line label when you create them on Enterprise. For example `BL1_Test` and `BL2_Test`.
+* Similar rules apply to consumer group names. If an instance provisioned by `Dept1` on Dedicated has a consumer group called `group1`, on Enterprise the consumer group should be called `Dept1_group1`.
+* When using prefixes, you can take advantage of IAM wildcarding for your business kines. For more information, see [Controlling access](#controlling_access).
 
 
 
