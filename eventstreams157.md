@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-16f"
+lastupdated: "2019-12-16g"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -281,7 +281,9 @@ When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have 
 
 The Enterprise plan is provisioned by the Admin in the account, or at a minimum a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
 
+#### Migration example 
 {: #dedicated_prefix notoc}
+
 If you are migrating multiple users from a Dedicated {{site.data.keyword.messagehub}} cluster, who had each provisioned their own {{site.data.keyword.messagehub}} instances on that Dedicated cluster, bear in mind that you should prefix resources like topics with a namespace denominator that differentiates between users.
 
 For example:
