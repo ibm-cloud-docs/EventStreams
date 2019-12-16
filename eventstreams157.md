@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-16c"
+lastupdated: "2019-12-16e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -27,28 +27,8 @@ The {{site.data.keyword.messagehub}} Enterprise plan provides data isolation, gu
 To migrate applications from {{site.data.keyword.messagehub}} on {{site.data.keyword.cloud_notm}} Dedicated to the Enterprise plan, consider the following information.
 {: shortdesc}
 
-## Service instances
-{: #service_instances}
 
-A key difference between the Dedicated and Enterprise plans is that Dedicated supports the provisioning of multiple instances of the {{site.data.keyword.messagehub}} service. That is, users in Dedicated can each provision an instance of {{site.data.keyword.messagehub}}, but that instance resides on the Dedicated 4 Kafka node {{site.data.keyword.messagehub}} cluster. To users, it appears like they have their own instance of {{site.data.keyword.messagehub}}.
-
-When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have the following two options:
-
-1. Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_standard).
-2. Alternatively, if hosting an instance on a Public multi-tenant plan is not an option, create your {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following discussion illustrates this option.
-
-The Enterprise plan is provisioned by the Admin in the account, or at a minimum a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
-
-{: #dedicated_prefix notoc}
-If you are migrating multiple users from a Dedicated {{site.data.keyword.messagehub}} cluster, who had each provisioned their own {{site.data.keyword.messagehub}} instances on that Dedicated cluster, bear in mind that you should prefix resources like topics with a namespace denominator that differentiates between users.
-
-For example:
-* On Dedicated {{site.data.keyword.messagehub}}, there might be two different business lines, each with their own instance. And within their instance each business line created a topic called `Test`.
-* If business line 1 then migrated to a new Enterprise instance and just created a topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
-* Therefore, you are recommended to prefix new topics with a business line label when created on Enterprise. For example `BU1_Test` and `BU2_Test`.
-* Similar rules apply to consumer group names. If an instance provisioned by Dept1 on Dedicated has a consumer group called `group1`, on Enterprise the consumer group should be called `Dept1_group1`.
-
-## How service instances are provisioned on Enterprise
+## How service instances are provisioned on Enterprise 
 {: #instance_provision}
 
 Service instances on Enterprise are provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services on Dedicated. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
@@ -114,11 +94,6 @@ The plan is available in the following multi-zone regions:
 And in the following single-zone regions:
 * Seoul (seo01)
 * Chennai (che01)
-
-
-## Tenancy
-{: #tenancy}
-
 
 
 ## Integrations
@@ -188,14 +163,14 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 			<td>3000 [<sup>2</sup>]((/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr#footnote_partitions)</td>
 		</tr>
 		<tr>
-			<td>**Maximum retention period**</td>
+			<td>**Maximum retention period** [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_footprint)</td>
 			<td>1 TB  of usable storage per broker </td>
 			<td>2 TB of usable storage per broker<!--Unlimited up to the storage limit of your plan --></td>
 		</tr>
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>Not specified</td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_throughput)</td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_throughput)</td>
 		</tr>
 		<tr>
 			<td>**Maximum message size**</td>
@@ -273,7 +248,12 @@ PCI<br/>
 
 1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
 2. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
-3. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
+3. {: #footnote_footprint notoc}
+To calculate the storage footprint of a partition approximately, use the following formula which is used with a safety margin to avoid filling the storage: 
+```
+retention.bytes + segment.bytes
+```
+4. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
 A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
 
 ## Coming soon
@@ -288,11 +268,36 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 
 ## Preparing to migrate to the Enterprise plan
 {: #enterprise_prep}
+--> service instcnes section here
 
-### Migration considerations: topics
+### Service instances
+{: #service_instances}
+
+A key difference between the Dedicated and Enterprise plans is that Dedicated supports the provisioning of multiple instances of the {{site.data.keyword.messagehub}} service. That is, users in Dedicated can each provision an instance of {{site.data.keyword.messagehub}}, but that instance resides on the Dedicated (4 node Kafka) {{site.data.keyword.messagehub}} cluster. To users, it appears like they have their own instance of {{site.data.keyword.messagehub}}.
+
+When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have the following two options:
+
+1. Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_standard).
+2. Alternatively, if hosting an instance on a Public multi-tenant plan is not an option, create your {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following discussion illustrates this option.
+
+The Enterprise plan is provisioned by the Admin in the account, or at a minimum a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
+
+{: #dedicated_prefix notoc}
+If you are migrating multiple users from a Dedicated {{site.data.keyword.messagehub}} cluster, who had each provisioned their own {{site.data.keyword.messagehub}} instances on that Dedicated cluster, bear in mind that you should prefix resources like topics with a namespace denominator that differentiates between users.
+
+For example:
+* On Dedicated {{site.data.keyword.messagehub}}, there might be two different business lines, each with their own instance. And within their instance each business line created a topic called `Test`.
+* If business line 1 then migrated to a new Enterprise instance and just created a topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
+* Therefore, you are recommended to prefix new topics with a business line label when created on Enterprise. For example `BU1_Test` and `BU2_Test`.
+* Similar rules apply to consumer group names. If an instance provisioned by Dept1 on Dedicated has a consumer group called `group1`, on Enterprise the consumer group should be called `Dept1_group1`.
+* When prefixing, take advanatge of IAM wildcarding for departments, see xxx
+
+
+
+### Migrating topics
 An application using {{site.data.keyword.messagehub}} produces to and consumes from a number of Kafka topics.
 
-To migrate from an Dedicated cluster to an Enterprise instance, create the topics on the new instance with the same configuration as the Dedicated instance.
+To migrate from a Dedicated cluster to an Enterprise instance, create the topics on the new instance with the same configuration as the Dedicated instance.
 
 #### Obtaining information about topics and their configuration in an existing cluster
 {: #existing_topic_config}
@@ -319,13 +324,22 @@ You can now use this information to create the same named topics in the new clus
 Prefix the topic name with a name that references the instance in Dedicated as described in the [migration example](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#dedicated_prefix).
 {: important}
 
+ moveo under new cluster words
 For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
 [ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es).
 <br/>
 Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
 
-### Migration considerations: connecting
+### Migrating consumer groups
+In Dedicated, consumer groups are scoped to the specific instance (exactly as for topics).
+No such scoping exists in the Enterprise plan, so applications should avoid name collisions to avoid unnecessary group rebalances.
+
+When targeting an Enterprise cluster, prefix consumer group names with a name that references the instance in Dedicated.
+{: important}
+Unlike topics, consumer groups are automatically created, so there is no need to create them in advance. 
+
+### Migration considerations: connecting - move down to nearer switching
 When topics exist on the new plan, your applications will need to switch to using the new plan.
 
 Ensure that your Kafka clients are 0.10.x or later.
@@ -333,16 +347,8 @@ Ensure that your Kafka clients are 0.10.x or later.
 
 To update your applications to use the new service see
 [Connecting to Event Streams](https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting). 
-For Cloud Foundry based Applications, see
-[Connect Cloud Foundry applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
-
-### Migration considerations: consumer groups
-In Dedicated, consumer groups are scoped to the specific instance (exactly as for topics).
-No such scoping exists in the Enterprise plan, so applications should avoid name collisions to avoid unnecessary group rebalances.
-
-When targeting an Enterprise cluster, prefix consumer group names with a name that references the instance in Dedicated.
-{: important}
-Unlike topics, consumer groups are automatically created, so there is no need to create them in advance. 
+For Cloud Foundry based applications, see
+[Connect Cloud Foundry applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf). 
 
 ### Switching from the existing cluster to a new cluster
 {: #switch_cluster}
@@ -375,14 +381,9 @@ Complete the following steps to switch from an existing cluster to a new cluster
    {: codeblock}
 3. Switch to using the new producers and consumers on the new Enterprise cluster.
 
-<br/>
 
-### Calculate storage footprint of a partition
-{: #calculate_footprint}
 
-To calculate the storage footprint of a partition approximately, use the following formula which is used with a safety margin to avoid filling the storage: 
-```
-retention.bytes + segment.bytes
+
 ```
 
 
