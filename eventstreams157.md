@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-16e"
+lastupdated: "2019-12-16f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -160,7 +160,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Maximum number of partitions**</td>
 			<td>1000</td>
-			<td>3000 [<sup>2</sup>]((/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr#footnote_partitions)</td>
+			<td>3000 [<sup>2</sup>]((/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_partitions)</td>
 		</tr>
 		<tr>
 			<td>**Maximum retention period** [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_footprint)</td>
@@ -268,7 +268,6 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 
 ## Preparing to migrate to the Enterprise plan
 {: #enterprise_prep}
---> service instcnes section here
 
 ### Service instances
 {: #service_instances}
@@ -319,16 +318,14 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 
 <br/>
 
-You can now use this information to create the same named topics in the new cluster.
-
-Prefix the topic name with a name that references the instance in Dedicated as described in the [migration example](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#dedicated_prefix).
-{: important}
-
- moveo under new cluster words
+You can now use this information to create the same named topics in the new cluster. 
 For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
 [ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es).
 <br/>
 Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
+
+Prefix the topic name with a name that references the instance in Dedicated as described in the [migration example](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#dedicated_prefix).
+{: important}
 
 
 ### Migrating consumer groups
@@ -339,7 +336,7 @@ When targeting an Enterprise cluster, prefix consumer group names with a name th
 {: important}
 Unlike topics, consumer groups are automatically created, so there is no need to create them in advance. 
 
-### Migration considerations: connecting - move down to nearer switching
+### Migration considerations: connecting 
 When topics exist on the new plan, your applications will need to switch to using the new plan.
 
 Ensure that your Kafka clients are 0.10.x or later.
