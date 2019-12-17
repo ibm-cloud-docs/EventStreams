@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-16j"
+lastupdated: "2019-12-17aå"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -123,7 +123,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		</tr>
         <tr>
 			<td>**Availability zones**</td>
-			<td>0</td>
+			<td> ==1</td>
 			<td>3<br/>(1 in single zone locations)
 			</td>
 		</tr>
@@ -291,7 +291,7 @@ For example:
 * If business line 1 then migrated to a new Enterprise instance and simply created a topic called `Test` on the new Enterprise instance, that stops the other business line migrating their topic called `Test`.
 * Therefore, you are recommended to prefix new topics with a business line label when you create them on Enterprise. For example `BL1_Test` and `BL2_Test`.
 * Similar rules apply to consumer group names. If an instance provisioned by `Dept1` on Dedicated has a consumer group called `group1`, on Enterprise the consumer group should be called `Dept1_group1`.
-* When using prefixes, you can take advantage of IAM wildcarding for your business kines. For more information, see [Controlling access](#controlling_access).
+* When using prefixes, you can take advantage of IAM wildcarding for your business lines. For more information, see [Controlling access](#controlling_access).
 
 
 
