@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-05-07"
+lastupdated: "2019-12-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -118,9 +118,9 @@ Replace GROUP in the example with the group name that you want to retrieve detai
 ## Topics
 {: #topics_tool }
 
-You cannot use the Kafka topics tool `kafka-topics` with {{site.data.keyword.messagehub}} because the tool requires access to ZooKeeper.
+You can use the Kafka topics tool `kafka-topics` with {{site.data.keyword.messagehub}} from V2.3 onwards. Ensure that you use V2.3 of the tool, because it does not require Zookeeper access.
 
-However, you can administer topics using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console or using the REST API.
+You can also administer topics using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console or using the REST API.
 
 
 ## Kafka Streams reset
