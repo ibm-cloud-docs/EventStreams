@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-18d"
+lastupdated: "2019-12-18e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -120,7 +120,8 @@ Replace GROUP in the example with the group name that you want to retrieve detai
 
 You can use the **kafka-topics** tool with {{site.data.keyword.messagehub}}. Ensure that you use V2.3 of the tool, because it does not require Zookeeper access.
 
-A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster, so that you can recreate them in a new cluster. You can use the information that is output from **kafka-topics** to create the same named topics in the new cluster. 
+A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster, so that you can recreate them in a new cluster. You can use the information that is output from **kafka-topics** to create the same named topics in the new cluster. For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
+[ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es). Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
 Some sample output from running the **kafka-topics** tool:
 
@@ -133,10 +134,6 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 ...
 ```
 {: codeblock}
-
-<br/>
-For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
-[ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es). Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
 
 
