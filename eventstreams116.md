@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-12-18a"
+lastupdated: "2019-12-18b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -118,9 +118,9 @@ Replace GROUP in the example with the group name that you want to retrieve detai
 ## Topics
 {: #topics_tool }
 
-You can use the Kafka topics tool `kafka-topics` with {{site.data.keyword.messagehub}} from V2.3 onwards. Ensure that you use V2.3 of the tool, because it does not require Zookeeper access.
+You can use the Kafka topics tool **kafka-topics** with {{site.data.keyword.messagehub}} from V2.3 onwards. Ensure that you use V2.3 of the tool, because it does not require Zookeeper access.
 
-For example, if you want to find out information about your topics and their configuration in an existing cluster so that you can recreate them in a new cluster, use the **kafka-topics** tool. 
+A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster so that you can recreate them in a new cluster. 
 
 Some sample output from running the **kafka-topics** tool:
 
@@ -133,8 +133,6 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 ...
 ```
 {: codeblock}
-
-<br/>
 
 You can now use this information to create the same named topics in the new cluster. 
 For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
