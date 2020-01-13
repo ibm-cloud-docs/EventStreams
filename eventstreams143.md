@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2020-01-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -17,6 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:note: .note}
 {:deprecated: .deprecated}
+{:important: .important}
 
 # Upgrading to the new {{site.data.keyword.messagehub}} Standard plan 
 {: #migrate_classic_plan}
@@ -25,6 +26,9 @@ This new release of the Standard multi-tenant plan offers significant improvemen
 {: shortdesc}
 
 To migrate applications from the previous Standard plan (now called the Classic plan and deprecated) to the new plan, consider the following information.
+
+As part of the upgrade to the new Standard plan, you must create a new Standard plan instance. You cannot upgrade or change an existing instance of the Classic plan.
+{:important}
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
