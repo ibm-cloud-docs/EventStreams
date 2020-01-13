@@ -17,6 +17,7 @@ subcollection: eventstreams
 {:pre: .pre}
 {:faq: data-hd-content-type='faq'}
 {:deprecated: .deprecated}
+{:support: data-reuse='support'}
 
 # FAQs
 {: #faqs}
@@ -30,6 +31,7 @@ For answers to questions specific to the now deprecated Classic plan, see [FAQs 
 ## How do I use Kafka APIs to create and delete topics?
 {: #topic_admin}
 {: faq}
+{: support}
 
 If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 
@@ -81,6 +83,7 @@ Enterprise plan only. Set to any value between 5 minutes and 30 days</p>
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
 {: #offsets }
 {: faq}
+{: support}
 
 {{site.data.keyword.messagehub}} retains consumer offsets for 7 days. This corresponds to the Kafka configuration offsets.retention.minutes. 
 
@@ -95,6 +98,7 @@ You are strongly recommended not to attempt to manage the topic in any way. You 
 ## How can I clean up a consumer group with no consumers?
 {: #clean_consumer_group}
 {: faq}
+{: support}
 
 After consumers have left, a group continues to exist only if it has offsets. Consumer offsets are deleted after 7 days of inactivity. Consequently, a consumer group is deleted when the last committed offset for that group expires.
 
@@ -105,6 +109,7 @@ If you want to explicitly delete a group at a time you choose, you can use the
 ## How long are messages retained?
 {: #messages_retained}
 {: faq}
+{: support}
 
 By default, messages are retained in Kafka for up to 24 hours and
 each partition is capped at 1 GB. If the 1 GB cap is reached, the
@@ -120,6 +125,7 @@ For information about restrictions on the settings allowed when you create topic
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability}
 {: faq}
+{: support}
 
 If you write {{site.data.keyword.messagehub}} apps, use this information to understand what normal {{site.data.keyword.messagehub}} availability behavior is and what your apps are expected to handle.
 
@@ -148,6 +154,7 @@ The following configuration settings apply to all topics and cannot be changed:
 ## What are the restrictions and defaults for topics and partitions?
 {: #topics_partitions_defaults}
 {: faq}
+{: support}
 
 *  Topic names are restricted to a maximum of 100 characters.
 *  The default number of partitions for a topic is one.
@@ -157,6 +164,7 @@ The following configuration settings apply to all topics and cannot be changed:
 ## How do I check which {{site.data.keyword.messagehub}} plan I've provisioned?
 {: #plan_check}
 {: faq}
+{: support}
 
 To confirm which type of {{site.data.keyword.messagehub}} plan you've provisioned (Lite, Standard, Enterprise, or Classic), complete the following steps:
 1. In the {{site.data.keyword.Bluemix_notm}} console, navigate to the instance of {{site.data.keyword.messagehub}} that you want to check.
@@ -192,6 +200,7 @@ To find out more information about the different {{site.data.keyword.messagehub}
 ## How do I handle disaster recovery?
 {: #disaster_recovery }
 {: faq}
+{: support}
 
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
