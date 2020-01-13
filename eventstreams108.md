@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-27"
+lastupdated: "2020-10-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -174,6 +174,7 @@ Yes, but only if you are moving from the Lite plan to the Standard plan.
 3. In the **Change pricing plan** section, check the **Standard** box. Click **Upgrade**.
 <br/>
 <br/>
+Allow a few minutes for the cached limit of 1 partition for the Lite plan to clear so that you can take advantage of the 100 partition limit for the Standard plan.
 
 However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try to change the pricing plan from Classic to Standard, you'll see an error message like the the following:
 ```
