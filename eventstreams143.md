@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2020-01-13a"
+lastupdated: "2020-01-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -25,7 +25,7 @@ subcollection: eventstreams
 This new release of the Standard multi-tenant plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
 {: shortdesc}
 
-As part of the upgrade to the new Standard plan, you must create a new Standard plan instance. You cannot upgrade or change an existing instance of the Classic plan.
+As part of the upgrade to the Standard plan, you must create a new Standard plan instance. You cannot upgrade or change an existing instance of the Classic plan.
 {:important}
 
 To migrate applications from the previous Standard plan (now called the Classic plan and deprecated) to the new plan, consider the following information.
