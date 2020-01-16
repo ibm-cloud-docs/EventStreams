@@ -236,7 +236,7 @@ Privacy Shield<br/>
 ISO 27001, 27017, 27018<br/>
 SOC 1 Type 1<br/>
 SOC 2 Type 1<br/>
-HIPPA ready<br/>
+HIPAA ready<br/>
 PCI<br/>
 </td>
 		</tr>
