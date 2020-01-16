@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-13a"
+lastupdated: "2020-01-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -235,7 +235,7 @@ Privacy Shield<br/>
 ISO 27001, 27017, 27018<br/>
 SOC 1 Type 1<br/>
 SOC 2 Type 1<br/>
-HIPPA ready<br/>
+HIPAA ready<br/>
 PCI<br/>
 </td>
 			<td>GDPR<br/>
