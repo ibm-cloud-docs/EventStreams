@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-05-16"
+  years: 2015, 2020
+lastupdated: "2020-01-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -15,12 +15,16 @@ subcollection: eventstreams
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:important: .important}
 
 # Using KSQL with {{site.data.keyword.messagehub}}
 {: #ksql_using}
 
 You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use KSQL V4.1.3. 
 {: shortdesc}
+
+Because KSQL needs to create a topic with an unlimited retention.ms setting, you can use KSQL on the Enterprise plan only.
+{:important}
 
 Complete the following steps:
 
