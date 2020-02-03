@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-03e"
+lastupdated: "2020-02-03f"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost
 
@@ -19,7 +19,7 @@ subcollection: eventstreams
 {:deprecated: .deprecated}
 {:important: .important}
 
-# Event Streams metrics with IBM Cloud Monitoring with Sysdig
+# Monitoring Event Streams metrics with IBM Cloud Monitoring with Sysdig
 {: #metrics}
 
 {{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards. {{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with {{site.data.keyword.IBM_notm}}.
@@ -29,7 +29,7 @@ subcollection: eventstreams
 ## Opting in to {{site.data.keyword.messagehub}} metrics
 {: #opt_in_metrics}
 
-To opt into using {{site.data.keyword.messagehub}} Sysdig metrics, complete the steps detailed in 
+Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in. Complete the steps detailed in 
 [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#step1){:new_window}.
 
 
