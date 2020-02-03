@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-03f"
+lastupdated: "2020-02-03g"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing
 
 subcollection: eventstreams
 
@@ -19,10 +19,10 @@ subcollection: eventstreams
 {:deprecated: .deprecated}
 {:important: .important}
 
-# Monitoring Event Streams metrics with IBM Cloud Monitoring with Sysdig
+# Monitoring {{site.data.keyword.messagehub}} metrics with {{site.data.keyword.mon_full_notm}}
 {: #metrics}
 
-{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards. {{site.data.keyword.mon_full_notm}} is operated by Sysdig in partnership with {{site.data.keyword.IBM_notm}}.
+{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {:shortdesc}
 
 
@@ -30,7 +30,7 @@ subcollection: eventstreams
 {: #opt_in_metrics}
 
 Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in. Complete the steps detailed in 
-[Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#step1){:new_window}.
+[Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window} to get set up.
 
 
 ## {{site.data.keyword.messagehub}} metrics details
@@ -297,10 +297,10 @@ The following attributes are available for segmenting one or more attributes as 
 | Service instance name | ibm_service_instance_name | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
 
 
-For more information, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
+For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
 
 
-## {{site.data.keyword.messagehub}} metrics cost information
+## {{site.data.keyword.messagehub}} metrics cost information placeholder
 {: #metric_costs}
 
 Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
