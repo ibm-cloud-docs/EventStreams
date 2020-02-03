@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-03d"
+lastupdated: "2020-02-03e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost
 
@@ -36,10 +36,9 @@ To opt into using {{site.data.keyword.messagehub}} Sysdig metrics, complete the 
 ## {{site.data.keyword.messagehub}} metrics details
 {: #metric_details}
 
+The following tables describe the metrics provided by {{site.data.keyword.messagehub}}. 
 
-
-
-## Metrics available by Service Plan
+## Metrics available by Service plan
 {: metrics-by-plan}
 
 | Metric Name |Lite|Standard|Enterprise|
@@ -298,14 +297,7 @@ The following attributes are available for segmenting one or more attributes as 
 | Service instance name | ibm_service_instance_name | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
 
 
-
-Describe the metrics we are providing ( there is a script to generate document based on the metrics I onboard to sysdig)
-a. metrics dictionary (JP has a script to generate document from metrics metadata submitted to sysdig)
-eg. https://test.cloud.ibm.com/docs/observability-monitoring?topic=observability-monitoring-supertenant-sample-doc.
-
-
-[Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")]
- (/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
+[Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
 
 
 ## {{site.data.keyword.messagehub}} metrics cost information
