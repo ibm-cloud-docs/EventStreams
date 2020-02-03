@@ -23,6 +23,7 @@ IBM Event Streams
 	eventstreams148.md
 	eventstreams068.md
 	at-events.md
+	eventstreams158.md
 	eventstreams-cli.md
 
 	{: .topicgroup}
