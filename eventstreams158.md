@@ -297,7 +297,7 @@ The following attributes are available for segmenting one or more attributes as 
 | Service instance name | ibm_service_instance_name | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
 
 
-[Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
+For more information, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
 
 
 ## {{site.data.keyword.messagehub}} metrics cost information
