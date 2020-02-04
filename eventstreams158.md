@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-03g"
+lastupdated: "2020-02-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing
 
@@ -26,11 +26,15 @@ subcollection: eventstreams
 {:shortdesc}
 
 
-## Opting in to {{site.data.keyword.messagehub}} metrics
+## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
 {: #opt_in_metrics}
 
-Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in. Complete the steps detailed in 
+Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in and enable platform metrics. 
+
+1. Complete the steps detailed in 
 [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window} to get set up.
+
+2. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig#enable_platform_metrics)
 
 
 ## {{site.data.keyword.messagehub}} metrics details
