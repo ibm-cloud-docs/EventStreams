@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-04"
+lastupdated: "2020-02-05"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing
 
@@ -34,7 +34,7 @@ Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you 
 1. Complete the steps detailed in 
 [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window} to get set up.
 
-2. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig#enable_platform_metrics)
+2. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig#enable_platform_metrics).
 
 
 ## {{site.data.keyword.messagehub}} metrics details
@@ -42,27 +42,29 @@ Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you 
 
 The following tables describe the metrics provided by {{site.data.keyword.messagehub}}. 
 
-## Metrics available by Service plan
+
+
+## Metrics available by Service Plan
 {: metrics-by-plan}
 
 | Metric Name |Lite|Standard|Enterprise|
 |-----------|--------|--------|--------|
-| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | X |
-| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | X |
-| [Estimated connections](#ibm_eventstreams_kafka_connected_clients_estimated) |    |   | X |
-| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | X |
-| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  X | X | X |
-| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  X | X | X |
-| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | X |
-| [Number of partitions](#ibm_eventstreams_instance_partitions) |    |   | X |
-| [Number of topics](#ibm_eventstreams_instance_topics) |    |   | X |
-| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | X |
-| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | X |
-| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | X |
-| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | X |
-| [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  X | X | X |
-| [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  X | X | X |
-| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | X |
+| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Estimated connections](#ibm_eventstreams_kafka_connected_clients_estimated) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Number of partitions](#ibm_eventstreams_instance_partitions) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Number of topics](#ibm_eventstreams_instance_topics) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### Authentication failures
@@ -72,10 +74,10 @@ Incrementing count of the number of authentication failures
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_kafka_authentication_failure_total |
-| Metric Type | counter |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_kafka_authentication_failure_total`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Authentication failures metric metadata" caption-side="top"}
 
 ### Consume message conversion time
@@ -85,10 +87,10 @@ Indicates the accumulated time spent performing message conversion from clients 
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_consume_conversions_time_quantile |
-| Metric Type | gauge |
-| Value Type  | second |
-| Segment By | Service instance, Quantile, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_consume_conversions_time_quantile`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `second` |
+| `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 3: Consume message conversion time metric metadata" caption-side="top"}
 
 ### Estimated connections
@@ -98,10 +100,10 @@ The estimated number of connections using the Kafka API
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_kafka_connected_clients_estimated |
-| Metric Type | counter |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_kafka_connected_clients_estimated`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: Estimated connections metric metadata" caption-side="top"}
 
 ### Inactive consumer groups
@@ -111,10 +113,10 @@ The number of inactive consumer groups in an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_inactive_consumergroups |
-| Metric Type | gauge |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_inactive_consumergroups`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: Inactive consumer groups metric metadata" caption-side="top"}
 
 ### Instance bytes in per second
@@ -124,10 +126,10 @@ The number of bytes produced per second to an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_bytes_in_per_second |
-| Metric Type | gauge |
-| Value Type  | byte |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_bytes_in_per_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: Instance bytes in per second metric metadata" caption-side="top"}
 
 ### Instance bytes out per second
@@ -137,10 +139,10 @@ The number of bytes consumed per second from an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_bytes_out_per_second |
-| Metric Type | gauge |
-| Value Type  | byte |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_bytes_out_per_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: Instance bytes out per second metric metadata" caption-side="top"}
 
 ### Missing SNI connections
@@ -150,23 +152,23 @@ Incrementing count of the number of connections rejected due to not supporting t
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_kafka_missing_sni_host_total |
-| Metric Type | counter |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_kafka_missing_sni_host_total`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Missing SNI connections metric metadata" caption-side="top"}
 
 ### Number of partitions
 {: #ibm_eventstreams_instance_partitions}
 
-The number of partitions in an Event Streams instance
+The number of leader partitions in an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_partitions |
-| Metric Type | gauge |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_partitions`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: Number of partitions metric metadata" caption-side="top"}
 
 ### Number of topics
@@ -176,10 +178,10 @@ The number of topics in an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_topics |
-| Metric Type | gauge |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_topics`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10: Number of topics metric metadata" caption-side="top"}
 
 ### Produce message conversion time
@@ -189,10 +191,10 @@ Indicates the accumulated time spent performing message conversion from clients 
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_produce_conversions_time_quantile |
-| Metric Type | gauge |
-| Value Type  | second |
-| Segment By | Service instance, Quantile, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_produce_conversions_time_quantile`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `second` |
+| `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 11: Produce message conversion time metric metadata" caption-side="top"}
 
 ### Rebalancing consumer groups
@@ -202,10 +204,10 @@ The number of rebalancing consumer groups in an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_rebalancing_consumergroups |
-| Metric Type | gauge |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_rebalancing_consumergroups`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 12: Rebalancing consumer groups metric metadata" caption-side="top"}
 
 ### Reserved disk space percentage
@@ -215,10 +217,10 @@ The percentage of reserved disk space required for all allocated partitions if f
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_reserved_disk_space_percent |
-| Metric Type | gauge |
-| Value Type  | percent |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_reserved_disk_space_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 13: Reserved disk space percentage metric metadata" caption-side="top"}
 
 ### Stable consumer groups
@@ -228,10 +230,10 @@ The number of stable consumer groups in an Event Streams instance
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_stable_consumergroups |
-| Metric Type | gauge |
-| Value Type  | none |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_stable_consumergroups`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 14: Stable consumer groups metric metadata" caption-side="top"}
 
 ### Topic bytes in per second
@@ -241,10 +243,10 @@ The number of bytes produced per second to a topic
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_topic_bytes_in_per_second |
-| Metric Type | gauge |
-| Value Type  | byte |
-| Segment By | Service instance, IBM Event Streams Kafka topic, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_topic_bytes_in_per_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 15: Topic bytes in per second metric metadata" caption-side="top"}
 
 ### Topic bytes out per second
@@ -254,10 +256,10 @@ The number of bytes consumed per second from a topic
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_topic_bytes_out_per_second |
-| Metric Type | gauge |
-| Value Type  | byte |
-| Segment By | Service instance, IBM Event Streams Kafka topic, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_topic_bytes_out_per_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 16: Topic bytes out per second metric metadata" caption-side="top"}
 
 ### Utilized disk space percentage
@@ -267,10 +269,10 @@ The percentage of currently utilized disk space
 
 | Metadata | Description |
 |----------|-------------|
-| Metric Name | ibm_eventstreams_instance_utilised_disk_space_percent |
-| Metric Type | gauge |
-| Value Type  | percent |
-| Segment By | Service instance, Event Streams cluster, Service instance name |
+| `Metric Name` | `ibm_eventstreams_instance_utilised_disk_space_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 17: Utilized disk space percentage metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
@@ -278,27 +280,29 @@ The percentage of currently utilized disk space
 
 ### Global Attributes
 {: global-attributes}
+
 The following attributes are available for segmenting all of the metrics listed above
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| Cloud Type | ibm_ctype | The cloud type is a value of public, dedicated or local |
-| Location | ibm_location | The location of the monitored resource - this may be a region, data center or global |
-| Resource group | ibm_resource_group_name | The resource group where the service instance was created |
-| Scope | ibm_scope | The scope is the account, organization or space GUID associated with this metric |
-| Service name | ibm_service_name | Name of the service generating this metric |
+| `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated or local |
+| `Location` | `ibm_location` | The location of the monitored resource - this may be a region, data center or global |
+| `Scope` | `ibm_scope` | The scope is the account, organization or space GUID associated with this metric |
+| `Service name` | `ibm_service_name` | Name of the service generating this metric |
+| `Service instance` | `ibm_service_instance` | The service instance GUID identifies the instance the metric is associated with 
+| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
+| `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created |
 
 ### Additional Attributes
 {: additional-attributes}
+
 The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| Event Streams cluster | ibm_eventstreams_cluster | The name of an Event Streams cluster |
-| IBM Event Streams Kafka topic | ibm_eventstreams_topic | IBM Event Streams Kafka topic |
-| Quantile | ibm_quantile | The quantile represented when a metric supports segmenting by quantile |
-| Service instance | ibm_service_instance | The service instance segment identifies the instance the metric is associated with |
-| Service instance name | ibm_service_instance_name | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
+| `IBM Event Streams Kafka topic` | `ibm_eventstreams_topic` | IBM Event Streams Kafka topic |
+| `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile |
+
 
 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
@@ -314,12 +318,12 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 * the {{site.data.keyword.messagehub}} plan that you use
 * whether you are using a customer account or a provider account
 
-| Plans            | Tier         | Data collection  |
+| Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|
-| `Trial`          |              | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node for 30 days only. |
-| `Graduated tier` | `Basic`      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |
-| `Graduated tier` | `Pro`        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |
-| `Graduated tier` | `Advanced`   | Data is collected for a maximum of 110 containers per node or for 3000 custom metrics per node. |
+| `Lite`          |              | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node for 30 days only. |        |
+| `Standard` | `Basic`      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    |
+| `Enterprise` | `Pro`        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+| `Graduated tier` | `Advanced`   | Data is collected for a maximum of 110 containers per node or for 3000 custom metrics per node. |     |
 {: caption="Table 1. List of service plans" caption-side="top"} 
 
 
