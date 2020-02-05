@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05a"
+lastupdated: "2020-02-05b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing
 
@@ -321,10 +321,11 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|
 | `Lite`          | 1        |1 x 2 + 2 = 4 | $0.08 x 4 = $0.32       |
-| `Standard` | 1      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    |
-| | 10      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    ||  | 100      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    |
+| `Standard` | 1      | 1 x 2 + 2 = 4 | $0.08 x 4 = $0.32   |
+| | 10      | 10 x 2 + 2 = 22 | $0.08 x 22 = $1.76   |
+|  | 100      | 100 x 2 + 2 = 202 | $0.08 x 202 = $16.16   |
 | `Enterprise` | 1        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
-|           | 10        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+|           | 10        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
 |         | 100        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
 |        | 1000        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
 |      | 3000        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
