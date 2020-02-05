@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05"
+lastupdated: "2020-02-05a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing
 
@@ -303,7 +303,7 @@ The following attributes are available for segmenting one or more attributes as 
 | `IBM Event Streams Kafka topic` | `ibm_eventstreams_topic` | IBM Event Streams Kafka topic |
 | `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile |
 
-
+<br/>
 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
 
@@ -320,10 +320,15 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|
-| `Lite`          |              | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node for 30 days only. |        |
-| `Standard` | `Basic`      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    |
-| `Enterprise` | `Pro`        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
-| `Graduated tier` | `Advanced`   | Data is collected for a maximum of 110 containers per node or for 3000 custom metrics per node. |     |
+| `Lite`          | 1        |1 x 2 + 2 = 4 | $0.08 x 4 = $0.32       |
+| `Standard` | 1      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    |
+| | 10      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    ||  | 100      | Data is collected for a maximum of 20 containers per node or for 200 custom metrics per node. |    |
+| `Enterprise` | 1        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+|           | 10        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+|         | 100        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+|        | 1000        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+|      | 3000        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+
 {: caption="Table 1. List of service plans" caption-side="top"} 
 
 
