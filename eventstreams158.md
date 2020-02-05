@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05d"
+lastupdated: "2020-02-05e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -326,9 +326,9 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 |  | 100      | 100 x 2 + 2 = 202 | $0.08 x 202 = $16.16   |
 | `Enterprise` | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
 |           | 10        | 10 x 2 + 16 = 36 | $0.08 x 18 = $2.88  |
-|         | 100        |     | $0.08 x 216 = $17.28  |
-|        | 1000        |    | $0.08 x 2016 = $161.28   |
-|      | 3000        |       | $0.08 x 6016 = $481.28  |
+|         | 100        |  100 x 2 + 16 = 216   | $0.08 x 216 = $17.28  |
+|        | 1000        |  1000 x 2 + 16 = 2016  | $0.08 x 2016 = $161.28   |
+|      | 3000        |   3000 x 2 + 16 = 6016    | $0.08 x 6016 = $481.28  |
 
 {: caption="Table 1. Cost for each plan" caption-side="top"} 
 
