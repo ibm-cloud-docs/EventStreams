@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05c"
+lastupdated: "2020-02-05d"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
 subcollection: eventstreams
 
@@ -308,7 +308,7 @@ The following attributes are available for segmenting one or more attributes as 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
 
 
-## {{site.data.keyword.messagehub}} metrics cost information placeholder
+## {{site.data.keyword.messagehub}} metrics cost information 
 {: #metric_costs}
 
 Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
@@ -324,13 +324,13 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 | `Standard` | 1      | 1 x 2 + 2 = 4 | $0.08 x 4 = $0.32   |
 | | 10      | 10 x 2 + 2 = 22 | $0.08 x 22 = $1.76   |
 |  | 100      | 100 x 2 + 2 = 202 | $0.08 x 202 = $16.16   |
-| `Enterprise` | 1        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
-|           | 10        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
-|         | 100        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
-|        | 1000        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
-|      | 3000        | Data is collected for a maximum of 50 containers per node or for 500 custom metrics per node. |   |
+| `Enterprise` | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
+|           | 10        | 10 x 2 + 16 = 36 | $0.08 x 18 = $2.88  |
+|         | 100        |     | $0.08 x 216 = $17.28  |
+|        | 1000        |    | $0.08 x 2016 = $161.28   |
+|      | 3000        |       | $0.08 x 6016 = $481.28  |
 
-{: caption="Table 1. List of service plans" caption-side="top"} 
+{: caption="Table 1. Cost for each plan" caption-side="top"} 
 
 
 
