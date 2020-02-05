@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-05f"
+lastupdated: "2020-02-05g"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -22,14 +22,15 @@ subcollection: eventstreams
 # Monitoring {{site.data.keyword.messagehub}} metrics using {{site.data.keyword.mon_full_notm}}
 {: #metrics}
 
-{{site.data.keyword.mon_full}} is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+[{{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about)
+ is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {:shortdesc}
 
 
 ## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
 {: #opt_in_metrics}
 
-Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in and enable platform metrics. 
+Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in and then enable platform metrics by completing the following steps: 
 
 1. Complete the steps detailed in 
 [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window} to get set up.
@@ -40,7 +41,7 @@ Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you 
 ## {{site.data.keyword.messagehub}} metrics details
 {: #metric_details}
 
-The following tables describe the metrics provided by {{site.data.keyword.messagehub}}. 
+The following tables describe the specific metrics provided by {{site.data.keyword.messagehub}} for each plan. 
 
 
 
@@ -313,9 +314,9 @@ For more information about enabling platform metrics from the {{site.data.keywor
 
 Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
 
-* how often time series is sent for each plan
-* the number of topics you use
 * the {{site.data.keyword.messagehub}} plan that you use
+* how often a time series is sent for each plan
+* the number of topics you use
 * whether you are using a customer account or a provider account
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
