@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-06"
+lastupdated: "2020-02-06a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -315,8 +315,9 @@ For more information about enabling platform metrics from the {{site.data.keywor
 Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
 
 * the {{site.data.keyword.messagehub}} plan that you use
-* how often a time series is sent for each plan
-* the number of topics you use
+* how many unique time series are sent for each plan
+* the number of topics that you have created
+<br/>
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|
@@ -332,7 +333,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 {: caption="Table 1. Cost for each plan" caption-side="top"} 
 
-For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans)
+For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans).
 
 
 
