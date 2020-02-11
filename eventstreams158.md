@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-06a"
+lastupdated: "2020-02-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -36,6 +36,8 @@ Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you 
 [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window} to get set up.
 
 2. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling).
+
+3. Navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full}} dashboard, after opting into the {{site.data.keyword.mon_full}} instance. Click the 3 vertical dots on the upper right (Service instance options) and select **Monitoring**.
 
 
 ## {{site.data.keyword.messagehub}} metrics details
@@ -276,6 +278,35 @@ The percentage of currently utilized disk space
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 17: Utilized disk space percentage metric metadata" caption-side="top"}
 
+## {{site.data.keyword.messagehub}} metrics cost information 
+{: #metric_costs}
+
+Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
+
+* the {{site.data.keyword.messagehub}} plan that you use
+* how many unique time series are sent for each plan
+* the number of topics that you have created
+
+
+<br/>
+
+| Plan            | Topics         | Number of time series  | Monthly cost |
+|------------------|--------------|------------------|
+| `Lite`          | 1        |1 x 2 + 2 = 4 | $0.08 x 4 = $0.32       |
+| `Standard` | 1      | 1 x 2 + 2 = 4 | $0.08 x 4 = $0.32   |
+| | 10      | 10 x 2 + 2 = 22 | $0.08 x 22 = $1.76   |
+|  | 100      | 100 x 2 + 2 = 202 | $0.08 x 202 = $16.16   |
+| `Enterprise` | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
+|           | 10        | 10 x 2 + 16 = 36 | $0.08 x 36 = $2.88  |
+|         | 100        |  100 x 2 + 16 = 216   | $0.08 x 216 = $17.28  |
+|        | 1000        |  1000 x 2 + 16 = 2016  | $0.08 x 2016 = $161.28   |
+|      | 3000        |   3000 x 2 + 16 = 6016    | $0.08 x 6016 = $481.28  |
+
+{: caption="Table 1. Cost for each plan" caption-side="top"} 
+
+For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
+
+
 ## Attributes for Segmentation
 {: attributes}
 
@@ -309,31 +340,7 @@ The following attributes are available for segmenting one or more attributes as 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
 
 
-## {{site.data.keyword.messagehub}} metrics cost information 
-{: #metric_costs}
 
-Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
-
-* the {{site.data.keyword.messagehub}} plan that you use
-* how many unique time series are sent for each plan
-* the number of topics that you have created
-<br/>
-
-| Plan            | Topics         | Number of time series  | Monthly cost |
-|------------------|--------------|------------------|
-| `Lite`          | 1        |1 x 2 + 2 = 4 | $0.08 x 4 = $0.32       |
-| `Standard` | 1      | 1 x 2 + 2 = 4 | $0.08 x 4 = $0.32   |
-| | 10      | 10 x 2 + 2 = 22 | $0.08 x 22 = $1.76   |
-|  | 100      | 100 x 2 + 2 = 202 | $0.08 x 202 = $16.16   |
-| `Enterprise` | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
-|           | 10        | 10 x 2 + 16 = 36 | $0.08 x 36 = $2.88  |
-|         | 100        |  100 x 2 + 16 = 216   | $0.08 x 216 = $17.28  |
-|        | 1000        |  1000 x 2 + 16 = 2016  | $0.08 x 2016 = $161.28   |
-|      | 3000        |   3000 x 2 + 16 = 6016    | $0.08 x 6016 = $481.28  |
-
-{: caption="Table 1. Cost for each plan" caption-side="top"} 
-
-For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans).
 
 
 
