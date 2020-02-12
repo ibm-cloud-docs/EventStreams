@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-11b"
+lastupdated: "2020-02-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -32,12 +32,9 @@ subcollection: eventstreams
 
 Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in and then enable platform metrics by completing the following steps: 
 
-1. Complete the steps detailed in 
-[Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window} to get set up.
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling). The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window}. 
 
-2. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling).
-
-3. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**. 
+2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**. 
 
 
 ## {{site.data.keyword.messagehub}} metrics details
@@ -54,7 +51,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 |-----------|--------|--------|--------|
 | [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Estimated connections](#ibm_eventstreams_kafka_connected_clients_estimated) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [The estimated number of client applications connected to the Kafka API](#ibm_eventstreams_kafka_connected_clients_estimated) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
