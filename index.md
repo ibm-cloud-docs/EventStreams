@@ -180,7 +180,7 @@ Now that you've run the Java sample application, you can try other [{{site.data.
 [{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){:new_window}.
 
 To watch a video that walks
-you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/mbqSQAsj-Yc){:new_window}
+you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/mbqSQAsj-Yc){:new_window}.
  
 <!-- 07/06/18 - Karen: removing until a newer version available
 To watch a video that walks
