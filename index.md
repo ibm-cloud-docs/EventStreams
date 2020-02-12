@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-11-28"
+  years: 2015, 2020
+lastupdated: "2020-02-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -178,6 +178,9 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 Now that you've run the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}, explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, take a look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial or find out more about 
 [{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){:new_window}.
+
+To watch a video that walks
+you through getting this Java sample to run, see [Getting started with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://youtu.be/mbqSQAsj-Yc){:new_window}
  
 <!-- 07/06/18 - Karen: removing until a newer version available
 To watch a video that walks
