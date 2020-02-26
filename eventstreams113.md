@@ -19,6 +19,12 @@ subcollection: eventstreams
 # Using Kafka Connect with {{site.data.keyword.messagehub}}
 {: #kafka_connect }
 
+Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster. Its main characteristics are:
+
+- Scalability: It can easily scale from a single worker to many 
+- Reliability: It automatically manages offsets and the lifecycle of connectors
+- Extensibility: The community has built connectors for most popular systems. IBM has connectors for MQ and Cloud Object Storage.
+
 You can use Kafka Connect with {{site.data.keyword.messagehub}} and can run the workers inside or outside {{site.data.keyword.Bluemix_short}}.
 {: shortdesc}
 
