@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-26"
+lastupdated: "2020-02-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -36,7 +36,8 @@ Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you 
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**. 
 
-On your initial usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page and accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan you're using. Note: Dashboards are available only after metrics have started to be recorded; this might take a couple of minutes to initialize. 
+   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page and accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan you're using. 
+   Note: Dashboards are available only after metrics have started to be recorded; this might take a couple of minutes to initialize. 
 
 
 ## {{site.data.keyword.messagehub}} metrics details
