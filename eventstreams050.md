@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-10-01"
+  years: 2015, 2020
+lastupdated: "2020-02-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -28,8 +28,6 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
     A higher level stream processing API to easily consume, transform, and produce events between topics.
 * **Connect API**<br/>
     A framework allowing re-usable or standard integrations to stream events into and out of external systems, such as databases.
-* **KSQL**<br/>
-    An interface for processing and joining events from topics using an SQL-like syntax.
 
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
 
@@ -155,7 +153,7 @@ For information about how to configure your Java client to connect to {{site.dat
 ## Configuring your Kafka API client
 {: #kafka_api_client}
 
-To establish a connection, clients must be configured to use SASL_SSL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. 
+To establish a connection, clients must be configured to use SASL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. This is required to ensure connections are encrypted and authenticated. 
 
 To retrieve the username, password, and list of bootstrap servers, a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
 [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
