@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-27b"
+lastupdated: "2020-02-27c"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -57,7 +57,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|
 | `Lite`          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56       |
-| `Standard` | 1      | 1 x 2 +5 = 7 | $0.08 x 7 = $0.56   |
+| `Standard` | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
 | | 10      | 10 x 2 + 5 = 25 | $0.08 x 25 = $2   |
 |  | 100      | 100 x 2 + 5 = 205 | $0.08 x 205 = $16.40   |
 | `Enterprise` | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
@@ -76,7 +76,7 @@ For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![Externa
 
 The following tables describe the specific metrics provided by {{site.data.keyword.messagehub}} for each plan. 
 
-NEW
+
 
 
 ## Metrics available by Service Plan
