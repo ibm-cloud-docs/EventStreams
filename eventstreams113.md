@@ -165,7 +165,7 @@ For example, you can use the following key-value pairs in your properties file:
 
 Consider reducing the number of partitions if you are making only light use of Kafka Connect.
 
-For more detail about Kafka Connect, see [Kafka Connect overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_overview){:new_window}.
+For more detailed information about Kafka Connect, see [Kafka Connect overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_overview){:new_window}.
 
 
 
