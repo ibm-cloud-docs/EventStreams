@@ -23,7 +23,7 @@ subcollection: eventstreams
 Kafka provides a rich set of APIs and clients across a broad range of languages. For example:
 
 * **Kafka's core API (Consumer, Producer, and Admin API)**<br/>
-    Use to send and receive messages directly from one or more Kafka topics.
+    Use to send and receive messages directly from one or more Kafka topics. The Kafka Admin Client provides a simple HTTPS interface for creating, deleting and managing topics, as well as managing brokers and configurations.
 * **Streams API**<br/>
     A higher level stream processing API to easily consume, transform, and produce events between topics.
 * **Connect API**<br/>
