@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-05a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE
 
@@ -24,7 +24,7 @@ subcollection: eventstreams
 By default, {{site.data.keyword.messagehub}} permits access from any IP address on the public internet. If you are using an instance of the {{site.data.keyword.vpc_full}}, you are recommended to apply the following restrictions so that only designated virtual server instances (VSIs) within your Virtual Private Cloud (VPC) can establish network connections to the {{site.data.keyword.messagehub}} instance. 
 {:shortdesc}
 
-When you have switched to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available to you. This means that although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
+When you switch to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available to you. Therefore, this enablement is a disruptive change. This means that although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
 {:important}
 
 Enable [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} to restrict access to any source IP address on the {{site.data.keyword.Bluemix_short}} network. When you implement IP address whitelisting on the Cloud Service endpoints, access is restricted to VSIs with specified VPCs. 
