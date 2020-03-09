@@ -110,29 +110,29 @@ There are differences between the capabilities of IBM Cloud Dedicated and the En
 If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
 
 <table>
-    <caption>Table 1. Support in Dedicated and Enterprise plans</caption>
-      <tr>
-	        <th></th>
-		    <th>Dedicated Plan</th>
-	      	    <th>Enterprise Plan</th>
-        </tr>
+		<caption>Table 1. Support in Dedicated and Enterprise plans</caption>
+		<tr>
+			<th></th>
+			<th>Dedicated Plan</th>
+			<th>Enterprise Plan</th>
+		</tr>
 		<tr>
 			<td>**Tenancy**</td>
 			<td>Single tenant </td>
-			<td>Single tenant</td>			
+			<td>Single tenant</td>
 		</tr>
-        <tr>
+		<tr>
 			<td>**Availability zones**</td>
-			<td> ==1</td>
+			<td>1</td>
 			<td>3<br/>(1 in single zone locations)
 			</td>
 		</tr>
-        <tr>
+		<tr>
 			<td>**Availability**</td>
 			<td>99.5%</td>
 			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr)</td>
 		</tr>
-	  		<tr>
+		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 1.1</td>
 			<td>Kafka 2.2</td>
@@ -203,8 +203,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 			</td>
 		</tr>
 		<tr>
-     	    <td>**APIs supported**</td>
-
+			<td>**APIs supported**</td>
 			<td>Kafka API<br/>
 			Admin REST API</br>
 			REST API</br>
@@ -212,14 +211,11 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 			<td>Kafka API</br>
 			Admin REST API<br/>
 			REST Producer API</br>
-		    </td>
-		</tr>
+		  </td>
 		</tr>
 			<td>**{{site.data.keyword.messagehub}} CLI supported**</td>
-
 			<td>No</td>
 			<td>Yes</td>
-		</tr>
 		</tr>
 		<tr>
 			<td>**Deployment timeframe**</td>
@@ -229,19 +225,22 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Compliance**</td>
 			<td>GDPR<br/>
-Privacy Shield<br/>
-ISO 27001, 27017, 27018<br/></td>
+			Privacy Shield<br/>
+			ISO 27001, 27017, 27018<br/></td>
 			<td>GDPR<br/>
-Privacy Shield<br/>
-ISO 27001, 27017, 27018<br/>
-SOC 1 Type 1<br/>
-SOC 2 Type 1<br/>
-HIPAA ready<br/>
-PCI<br/>
-</td>
+			Privacy Shield<br/>
+			ISO 27001, 27017, 27018<br/>
+			SOC 1 Type 1<br/>
+			SOC 2 Type 1<br/>
+			HIPAA ready<br/>
+			PCI<br/>
+			</td>
 		</tr>
-
 </table>
+
+<br/>
+Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
+<br/>
 
 ### Footnotes
 {: #footnote_plans notoc}
@@ -255,15 +254,6 @@ retention.bytes + segment.bytes
 ```
 4. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
 A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
-
-## Coming soon
-{: #coming_soon}
-
-Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
-
-* **Customer metrics**<br/>
-    The ability to monitor activity in a service instance.
-
 
 
 ## Preparing to migrate to the Enterprise plan
