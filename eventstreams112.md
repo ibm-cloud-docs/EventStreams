@@ -111,6 +111,29 @@ For throughput guidance information, see [Limits and quotas](/docs/services/Even
  
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 
+
+## Delivery Semantics
+{: #delivery_semantics}
+
+Multiple message delivery semantics can be provided by Kafka:
+<ul>
+  <li>At most once: messages may get lost and won't get redelivered</li>
+  <li>At least once: messages are never lost but there may be duplicates</li>
+  <li>Exactly once: messages are never lost and there are no duplicates</li>
+</ul>
+
+The delivery semantics are determined by the following settings:
+<ul>
+  <li>`acks`</li>
+  <li>`retries`</li>
+  <li>`enable.idempotence`</li>
+</ul>
+
+By default, Kafka uses at least once semantics.
+
+To enable exactly once semantics, the idempotent or transactional producers must be used. The idempotent producer is enabled by setting `enable.idempotence` to `true` and guarantees that exactly one copy of each message is written to Kafka even if it retries. The transactional producer enables sending data to multiple partitions such that either all messages are successfully delivered, or none of them are, ie a transaction is either fully committed or fully discarded. Offsets can also be included in transactions allowing building applications that read, processed and write messages to Kafka.
+
+
 ## Code snippets
 {: #code_snippets}
 
