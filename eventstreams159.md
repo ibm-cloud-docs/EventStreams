@@ -139,7 +139,7 @@ The recovery time objective is fully controlled by users and is made of the foll
 - the time it takes the user to fail over their applications
 
 ### Testing
-We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](docs/services/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
+We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/services/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
 
 
