@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11a"
+lastupdated: "2020-03-11b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -41,7 +41,7 @@ Before starting mirroring, consider the following:
 - For seamless switchover, applications are recommended to follow the coding guidelines as outlined below.
 - The network bandwidth used by mirroring must be taken in to account during capacity planning. For example, if 10 MB/s of message traffic is being produced by applications into the source service instance, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being consumed by applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/services/EventStreams?topic=eventstreams-metrics).
 
-To enable mirroring, see [Mirroring setup guide](docs/services/EventStreams?topic=eventstreams-mirroring_setup).
+To enable mirroring, see [Mirroring setup guide](/docs/services/EventStreams?topic=eventstreams-mirroring_setup).
 
 ## Mirroring overview
 {: #mirroring_overview}
@@ -61,7 +61,7 @@ Because applications need access to the source and destination clusters, IAM acc
 
 If you are new to IAM access policies, see [Getting started with IAM tutorial](/docs/iam?topic=iam-getstarted) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=eventstreams-security) for more details before reading further.
 
-Define the following IAM access policies on **both** clusters:
+Define the following IAM access policies on **both** clusters, where &lt;ALIAS&gt; is the alias for other cluster. For example, on cluster B, the Resource ID should be `A.checkpoints.internal`:
 
 | Resource type | Resource ID| Role|
 |----------|---------|---------|
@@ -70,8 +70,6 @@ Define the following IAM access policies on **both** clusters:
 |topic     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |txnid     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |topic (note, this is specific to the checkpoint topic)    | &lt;ALIAS&gt;.checkpoints.internal | Reader |
-
-where &lt;ALIAS&gt; is the alias for other cluster. For example, on cluster B, the Resource ID should be `A.checkpoints.internal`.
 
 Fine-grained access policies should be granted to individual applications. For example, applications simply consuming should only have Reader access policies.
 
@@ -111,10 +109,10 @@ We recommend producers to only produce to local topics, hence they should not re
 ### Consumers
 Consumers should subscribe and consume to both the local and remote topics. This can be done with one wild-carded subscription, that is to consume from both  `accounting.invoice` and `accounting.invoice.<ALIAS>` use the subscription to `accounting.invoice.*`.
 
-When consuming both local and remote topics, care should be taken if the application requires strict ordering. In such a case, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order they were produced.
+When consuming both local and remote topics, take care if the application requires strict ordering. In such a case, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order that they were produced.
 
 ### Consumer offsets
-Note that while consumer groups offsets are replicated between clusters, they must be explicitly used by consumers in order to reset their position when switching cluster.
+Note that while consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when switching cluster.
 
 The RemoteClusterUtils package allows to easily make these changes. Such logic is demonstrated in [ConsumerRunnable.java](https://github.ibm.com/messagehub/event-streams-samples/blob/mm2/kafka-java-console-sample/src/main/java/com/eventstreams/samples/ConsumerRunnable.java#L68-L119).
 
@@ -127,21 +125,21 @@ The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the followi
 - Mirroring throughput: the bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
 - Mirroring latency: the 95% quantile of mirroring latency in seconds from the source {{site.data.keyword.messagehub}} instance. For example, if this is 1 second, it means 95% of the partitions being mirrored are less than 1 second behind the source cluster. This is useful to determine how far behind the target cluster is.
 
-Data produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
+Data produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However, if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
 
 ## Understanding recovery objectives with mirroring
 {: #recovery_objectives}
 
 In a data protection plan such as mirroring, recovery point objective (RPO) and recovery time objective (RTO) are key parameters. You must understand the decisions associated with these objectives.
 
-The recovery point objective can be monitored using the mirroring latency metric provided in the **Mirroring dashboard**. This metric shows the lag between both clusters and allows to estimate the amount of data loss in the event of a disaster. You are responsible for monitoring that value and ensuring it fits in your RPO.
+You can monitor the recovery point objective using the mirroring latency metric provided in the **Mirroring dashboard**. This metric shows the lag between both clusters and allows you to estimate the amount of data loss in the event of a disaster. You are responsible for monitoring that value and ensuring it fits in your RPO.
 
 The recovery time objective is fully controlled by users and is made of the following timing windows:
 - the time it takes the user to decide to fail over
 - the time it takes the user to fail over their applications
 
 ### Testing
-We recommend you testing failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](docs/services/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
+We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](docs/services/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
 
 
