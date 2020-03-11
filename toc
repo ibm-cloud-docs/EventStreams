@@ -72,6 +72,7 @@ IBM Event Streams
 		eventstreams124.md
 		eventstreams145.md
 		eventstreams155.md
+		eventstreams161.md
 	
 	{: .topicgroup}
 	Developing apps with Event Streams
