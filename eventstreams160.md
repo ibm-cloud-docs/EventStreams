@@ -32,7 +32,7 @@ A producer publishes records to a topic called accounting.invoices and a consume
 ## Source cluster becomes unavailable 
 We will now consider what happens if a disaster occurs on the source cluster's region.
 
-<diagram>
+![Mirroring overview diagram.](disaster2.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers."){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
 
 It is the responsibility of the Event Streams instance owner to determine if the impact of the event is such as to declare a disaster. The service instance owner must coordinate the failover of applications including their reconfiguration, redeployment and restart if necessary.
 
@@ -42,7 +42,7 @@ To failover:
 stop the producers that were pointing to cluster A
 restart the producers pointing to cluster B's endpoints
 
-<diagram>
+![Mirroring overview diagram.](disaster3.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers."){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
 
 The producer is now switched to cluster B and sends messages to a new local topic with the same name as the original.
 
@@ -52,7 +52,7 @@ To fail over:
 - Stop the consumers that were pointing to cluster A
 - Restart the consumers to point to cluster B's endpoints
 
-<diagram>
+![Mirroring overview diagram.](disaster4.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers."){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
 
 The consumer is now able to continue consuming the existing messages from the `accounting.invoices.A` topic from cluster B while new messages will come from `accounting.invoices`.
 
@@ -71,7 +71,7 @@ Before failing back, mirroring has to be enabled in the opposite direction:
 
 Now make sure data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. Remember these will have the suffix from the new source cluster, B.
 
-<diagram>
+![Mirroring overview diagram.](disaster5.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers."){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
 
 ## Failback
 
@@ -79,6 +79,6 @@ The decision to fail back is again owned by the Event Streams instance owner. Th
 
 Unlike the failover case, in this case there has been no disaster on cluster B. Therefore failback should be a controlled operation and can be achieved without data loss. 
 
-<diagram>
+![Mirroring overview diagram.](disaster6.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers."){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
 
 Finally you should now switch the mirroring back to the original configuration, this means cluster A is again the source and cluster B resumes as the target.
