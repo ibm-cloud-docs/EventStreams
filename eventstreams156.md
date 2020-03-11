@@ -87,7 +87,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Replication|   | Currently, it is the responsibility of the customer to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the customer is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.|
 |Message payload data backup|   | The customer is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.|
 |Topic name and data backup|   | It is recommended good practice that a customer backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}} instance in a multi-zone region, a regional disaster is very unlikely. However, we recommend customers have a plan for such circumstances. If, due to such an event, a customer's instance is no longer available (and a remote DR instance had not been already set up), the customer should consider configuring a new instance in a new region and restoring their topics and data from backup if available. |
-{: caption="Table 4. Responsibilitiess for disaster recovery" caption-side="top"}
+{: caption="Table 4. Responsibilities for disaster recovery" caption-side="top"}
 
 
 ## App orchestration
@@ -101,6 +101,9 @@ Review the following sections for the specific responsibilities for you and for 
 |Provide service binding to other {{site.data.keyword.IBM_notm}} services| {{site.data.keyword.messagehub}} provides the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | |
 |Manage, integrate, and monitor|   | Customer is responsible for using the provided tools and features to manage the lifecycle of customer-owned applications, for integrating with other services, and monitoring the health of the application (for example, Availability Monitoring).|
 {: caption="Table 5. Responsibilities for app orchestration" caption-side="top"}
+
+## Mirroring
+{: #mirroring_responsibilities}
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
