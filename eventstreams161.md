@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11a"
+lastupdated: "2020-03-11b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring, setup
 
@@ -26,7 +26,9 @@ This information describes how to set up a pair of {{site.data.keyword.messagehu
 {:shortdesc}
 
 
-## Step 1 - setup 
+## Step 1: setup 
+{: #step1_setup}
+
 Ensure that you have provisioned two Enterprise plan clusters. Both clusters should also have the same throughput and storage capacity and have suitable IAM access policies.
 
 Because mirroring is currently unidirectional, decide which direction mirroring should happen. One cluster will be the source and the other cluster will be the target.
@@ -35,7 +37,8 @@ Consider your bandwidth requirements; is there enough bandwidth available in the
 
 If your source cluster is at its limit or close to its theoretical maximum of 80 MB per second (Enterprise plan cluster), there will be insufficient bandwidth for mirroring to operate.
 
-## Step 2 - enable service-to-service bindings
+## Step 2: enable service-to-service bindings
+{: #step2_bindings}
 
 A service-to-service binding between both instances must be configured to allow both instances to communicate. To configure, complete the following steps:
 
@@ -44,9 +47,12 @@ A service-to-service binding between both instances must be configured to allow 
 
 For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](https://cloud.ibm.com/docs/iam?topic=iam-serviceauth).
 
-## Step 3 - enable mirroring
+## Step 3: enable mirroring
+{: #step3_enable}
 
-Raise a support ticket to request enablement of mirroring. Include the following information in the ticket:
+Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) to request enablement of mirroring. 
+
+Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
 - Aliases that you want to use for each of the two instances. Each service instance has an alias configured by the user when enabling mirroring. The aliases will appear in topic names. We recommend choosing short and descriptive names. For example "us-south" and "us-east".
 - The desired direction for mirroring.
@@ -64,7 +70,8 @@ Data should flow from "us-south" to "us-east".
 ```
 {:codeblock}
 
-## Step 4 - validation
+## Step 4: validation
+{: #step4_validation}
 
 When the ticket has been processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics suffixed with the source clusters alias. The Sysdig dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
 
