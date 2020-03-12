@@ -114,3 +114,4 @@ Review the following sections for the specific responsibilities for you and for 
 |IAM  |    |Setting up required access policies    |
 |Failover  |    |Deciding when to failover and failover applications |
 {: caption="Table 6. Responsibilities for mirroring" caption-side="top"}
+{: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
