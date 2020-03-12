@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -108,9 +108,9 @@ Review the following sections for the specific responsibilities for you and for 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Clusters| Checking clusters are viable mirroring pairs|Provisioning both clusters |
-|  Setup  | Setting up mirroring    |  Setting up service to service binding |
-|  Enablement and monitoring | Monitoring health and SLA of mirroring link   |  Requesting enablement via support ticket  |
-|  Metrics and applications  | Providing metrics to enable customer to understand the current recovery point objective (RPO).   |  Enabling applications to switch clusters  |
-|  IAM  |    |Setting up required access policies    |
-|  Failover  |    |Deciding when to failover and failover applications     |
+|Setup  | Setting up mirroring    |  Setting up service to service binding |
+|Enablement and monitoring | Monitoring health and SLA of mirroring link   |  Requesting enablement via support ticket  |
+|Metrics and applications  | Providing metrics to enable customer to understand the current recovery point objective (RPO).   |  Enabling applications to switch clusters  |
+|IAM  |    |Setting up required access policies    |
+|Failover  |    |Deciding when to failover and failover applications |
 {: caption="Table 6. Responsibilities for mirroring" caption-side="top"}
