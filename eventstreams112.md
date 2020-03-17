@@ -56,7 +56,7 @@ Many more configuration settings are available, but ensure that you read the [Ap
 ## Partitioning
 {: #partitioning}
 
-Generally, partitioning is an effective way to increase your throughput by allowing data sent to the topic to flow in multiple parallel streams.
+With Kafka, partitions are the unit of scalability. Partitioning is therefore an effective way to increase your throughput as it allows data sent to the topic to flow in multiple parallel streams.
 
 When the producer publishes a message on a topic, the producer can choose which partition to use. If ordering is important, you must remember that a partition is an ordered sequence of records, but a topic comprises one or more partitions. If you want a set of messages to be delivered in order, ensure that they all go on the same partition. The most straightforward way to achieve this is to give all of those messages the same key. 
  
