@@ -48,7 +48,7 @@ To enable mirroring, see [Mirroring setup guide](/docs/services/EventStreams?top
 
 Mirroring happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. In this document, the source cluster is named `A` and the target cluster is named `B`. Note that these cluster aliases are configurable when enabling mirroring, so for example they could be "us-south" and "us-east".
 
-A topic called `mytopic` from the source cluster (A) will appear on the target cluster (B) as `mytopic.A` indicating it originates from `A`. Such topics are called _remote topics_ because they originate from the remote cluster. In contrast, any topics directly created on a cluster by users are called _local topics_.
+A topic called `mytopic` from the source cluster (A) will appear on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote cluster. In contrast, any topics directly created on a cluster by users are called _local topics_.
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
