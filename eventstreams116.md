@@ -118,9 +118,9 @@ Here is an example of the output:
 <pre>
 <code>
 GROUP              TOPIC    PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG         CONSUMER-ID      HOST          CLIENT-ID
-consumer-group-123 foo        0          264             267            3       client-1234-abc    abc.com        client-1234
-consumer-group-123 foo        1          124             124            0       client-1234-abc    abc.com        client-1234
-consumer-group-123 foo        2          212             212            0       client-2234-def    abc.com        client-2234
+consumer-group     foo        0          264             267            3          client-1-abc    example.com    client-1
+consumer-group     foo        1          124             124            0          client-1-abc    example.com    client-1
+consumer-group     foo        2          212             212            0          client-2-def    example.com    client-2
 </code>
 </pre>
 {:codeblock}
