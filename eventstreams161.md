@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11b"
+lastupdated: "2020-03-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring, setup
 
@@ -44,6 +44,9 @@ A service-to-service binding between both instances must be configured to allow 
 
 1. Navigate to the **Authorizations** panel in IAM and click **Create**. 
 2. **From the point of view of IAM, the source and target services are the opposite of mirroring**. Select both clusters accordingly, assign the Reader role, and click **Authorize**.
+
+If your requirement is to fail back, you will need also the service-to-service binding in the opposite direction.
+{: important}
 
 For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](https://cloud.ibm.com/docs/iam?topic=iam-serviceauth).
 
