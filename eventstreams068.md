@@ -63,20 +63,22 @@ For information about compliance on each of the {{site.data.keyword.messagehub}}
 ## Data isolation model
 {: #data_isolation}
 
-### Enterprise Plan
-The Enterprise plan provides a Tenant specific Service with Private endpoint in IBM Service domain.
+{{site.data.keyword.messagehub}}'s data isolation model varies according to which plan you're using.
+
+### Enterprise plan
+The Enterprise plan provides a tenant-specificsService with Private endpoint in IBM Service domain.
 
 The Enterprise plan creates a single tenant instance on a Dedicated kubernetes cluster on Shared Hardware (VSI isolation).
 
-The Enterprise Plan default is public endpoints but will also support private endpoints for further network isolation on request.
+The Enterprise plan default is public endpoints but it also supports private endpoints for further network isolation on request.
 
-The Enterprise Plan creates single tenant IKS Block storage for each new instance.
+The Enterprise plan creates single tenant IKS Block storage for each new instance.
 
-### Standard Plan
+### Standard plan
 The Standard plan provides a Public Service with Public endpoints.
 
 The Standard plan provides creates a tenant instance on a Shared Kubernetes cluster on Shared Hardware (VSI isolation).
 
-The Standard Plan provides public endpoints only.
+The Standard plan provides public endpoints only.
 
-The Standard Plan uses Shared IKS Block storage and achieves tenant isolation through separation of files and access controls.
+The Standard plan uses Shared IKS Block storage and achieves tenant isolation through separation of files and access controls.
