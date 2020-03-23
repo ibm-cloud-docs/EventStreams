@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-12-10"
+  years: 2015, 2020
+lastupdated: "2020-03-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -60,4 +60,23 @@ Topic names and consumer groups are encrypted for transmission between
 For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see 
 [What's supported by the Lite, Standard, Enterprise, and Classic plans](/docs/services/EventStreams?topic=eventstreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans).
 
+## Data isolation model
+{: #data_isolation}
 
+### Enterprise Plan
+The Enterprise plan provides a Tenant specific Service with Private endpoint in IBM Service domain.
+
+The Enterprise plan creates a single tenant instance on a Dedicated kubernetes cluster on Shared Hardware (VSI isolation).
+
+The Enterprise Plan default is public endpoints but will also support private endpoints for further network isolation on request.
+
+The Enterprise Plan creates single tenant IKS Block storage for each new instance.
+
+### Standard Plan
+The Standard plan provides a Public Service with Public endpoints.
+
+The Standard plan provides creates a tenant instance on a Shared Kubernetes cluster on Shared Hardware (VSI isolation).
+
+The Standard Plan provides public endpoints only.
+
+The Standard Plan uses Shared IKS Block storage and achieves tenant isolation through separation of files and access controls.
