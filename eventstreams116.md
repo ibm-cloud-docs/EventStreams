@@ -114,6 +114,19 @@ Using this tool, you can also display details like the current positions of the 
 
 Replace GROUP in the example with the group name that you want to retrieve details for. 
 
+Here is an example of the output:
+<pre>
+<code>
+GROUP              TOPIC    PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG         CONSUMER-ID      HOST          CLIENT-ID
+consumer-group     foo        0          264             267            3          client-1-abc    example.com    client-1
+consumer-group     foo        1          124             124            0          client-1-abc    example.com    client-1
+consumer-group     foo        2          212             212            0          client-2-def    example.com    client-2
+</code>
+</pre>
+{:codeblock}
+
+
+From the example above, you can see consumer group `consumer-group-123` has 2 consumer members consuming messages from topic `foo` with 3 partitions. It also shows that the consumer `client-1234-abc` consuming from partition `0` is 3 messages behind because current offset of the consumer is `264` but the offset of the last message on partition `0` is `267`. 
 
 ## Topics
 {: #topics_tool }
