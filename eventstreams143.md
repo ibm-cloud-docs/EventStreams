@@ -72,8 +72,7 @@ The information that an application needs to connect has not changed, that is, a
 </ul>
 <br/>
 Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
-</li>
-</ul>
+
 
 <br>
 You should also be aware of some other changes as follows:
@@ -109,11 +108,7 @@ There are differences between the capabilities of the Classic plan and the new S
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/services/EventStreams?topic=eventstreams-migrate_bridges).
 
 <br/>
-Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas). Coming soon:
-
-* **Customer metrics**
-    The ability to monitor activity in a service instance.
-
+Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
 <br/>
 
 
