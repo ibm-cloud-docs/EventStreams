@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-25a"
+lastupdated: "2020-03-25b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -22,7 +22,7 @@ subcollection: eventstreams
 # Monitoring {{site.data.keyword.messagehub}} metrics using {{site.data.keyword.mon_full_notm}}
 {: #metrics}
 
-[{{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-about)
+[{{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-about)
  is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {:shortdesc}
 
@@ -32,7 +32,7 @@ subcollection: eventstreams
 
 Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in and then enable platform metrics by completing the following steps: 
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling){:new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window}. 
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling){:new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window}. 
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**. 
 
@@ -84,22 +84,22 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 | Metric Name |Lite|Standard|Enterprise|Classic|
 |-----------|--------|--------|--------|--------|
-| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
-| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### Authentication failures
