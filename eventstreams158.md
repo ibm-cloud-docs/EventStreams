@@ -88,7 +88,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
@@ -99,7 +99,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
 | [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
+| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  <br/> |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### Authentication failures
