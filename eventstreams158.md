@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -82,8 +82,8 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 ## Metrics available by Service Plan
 {: metrics-by-plan}
 
-| Metric Name |Lite|Standard|Enterprise|
-|-----------|--------|--------|--------|
+| Metric Name |Lite|Standard|Enterprise|Classic|
+|-----------|--------|--------|--------|--------|
 | [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
@@ -97,8 +97,8 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
