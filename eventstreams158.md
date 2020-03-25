@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-03-25a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -84,22 +84,22 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 | Metric Name |Lite|Standard|Enterprise|Classic|
 |-----------|--------|--------|--------|--------|
-| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
+| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
 | [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |...|
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### Authentication failures
