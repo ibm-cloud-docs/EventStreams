@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2019-06-20"
+  years: 2015, 2020
+lastupdated: "2020-03-25"
 
 ---
 
@@ -36,9 +36,6 @@ The resource controller provides common APIs to control the lifecycle of resourc
 
 Resources are created by the resource controller within [resource groups](https://console.cloud.ibm.com/docs/overview/resource-groups.html#whatis). A resource group belongs to an account. All IBM Cloud resources must be provisioned within a resource group. If an account is suspended, the corresponding resource group are suspended as well, and all resources within the resource group are suspended.
 
-## Introduction
-{: #intro_es}
-
 IBM {{site.data.keyword.messagehub}} for IBM Cloud is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into IBM Cloud and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
 
 {{site.data.keyword.messagehub}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
@@ -49,24 +46,7 @@ Use the API to connect existing systems to {{site.data.keyword.messagehub}}. Cre
 
 
 
-### Resource aliases
-
-You can think of an alias as a symlink in computing terms. It represents an entity that points back to a resource instance and enables you to define different access controls on it. As with symlinks you can also create multiple aliases to a single resource instance and manage each one separately.
-
-For example, you can create an instance of a service and then reuse that instance in both London and Dallas by creating aliases in both regions. This enables you to bind keys (credentials) to applications that run in those regions and utilize the same logical instance.
-
-## Example (Displayed on the right)
-{: curl}
-{: right}
-
-API endpoint
-
-```bash
-https://resource-controller.cloud.ibm.com/v2/
-```
-
-
-## Error handling
+# Error handling
 {: #errors}
 
 This API uses standard HTTP response codes to indicate whether a method completed successfully. A `200` response indicates success. A `400` type response indicates a failure, and a `500` type response indicates an internal system error.
@@ -82,8 +62,8 @@ This API uses standard HTTP response codes to indicate whether a method complete
 | `410` | Gone | The resource is valid but has been removed already in a previous call |
 | `500` | Internal Server Error | *offering_name* is currently unavailable. Your request could not be processed. Wait a few minutes and try again. |
 
-## Authentication
-{: #authentication}
+# Authentication
+{: #es_authentication}
 
 To work with the API, authenticate your app or service by including your IBM Cloud IAM access token in the API request authentication header:
 
@@ -119,18 +99,7 @@ ibmcloud resource service-instance <instance_name> --id
 Replace `<instance_name>` with the unique alias that you assigned to your service instance.
 
 
-## Pagination
 
-Some API requests might return a large number of results. To avoid performance issues, these results are returned one page at a time, with a limited number of results on each page. GET requests for the following resources use pagination:
-
-   * /v2/resource_instances
-   * /v2/resource_bindings
-   * /v2/resource_keys
-   * /v2/resource_aliases
-
-The default page and max size is 100 objects. To use a different page size, use the `limit` query parameter.
-
-For any request that uses pagination, the response includes a `next_url` object that specifies pagination information. `next_url` is the URL for requesting the next page of results. The `next_url` property is null if there are no more results, and retains the same `limit` parameter that is used for the initial request.
 
 ## Rate limiting
 
@@ -152,4 +121,6 @@ The number of allowed requests, and the length of the time window, vary by metho
 When working with the resource controller endpoints, it may be helpful to be aware of the IBM Cloud Open Source Broker APIs used to create your service broker.
 
 * [IBM Cloud OSB](/apidocs/ibm-cloud-osb-api)
+
+# SDKs
 
