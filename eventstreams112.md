@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -112,13 +112,13 @@ For throughput guidance information, see [Limits and quotas](/docs/services/Even
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 
 
-## Delivery Semantics
+## Delivery semantics
 {: #delivery_semantics}
 
-Multiple message delivery semantics can be provided by Kafka:
+Kafka can provide multiple message delivery semantics as follows:
 <ul>
-  <li>At most once: messages may get lost and won't get redelivered</li>
-  <li>At least once: messages are never lost but there may be duplicates</li>
+  <li>At most once: messages might get lost and won't get redelivered</li>
+  <li>At least once: messages are never lost but there might be duplicates</li>
   <li>Exactly once: messages are never lost and there are no duplicates</li>
 </ul>
 
@@ -131,7 +131,7 @@ The delivery semantics are determined by the following settings:
 
 By default, Kafka uses at least once semantics.
 
-To enable exactly once semantics, the idempotent or transactional producers must be used. The idempotent producer is enabled by setting `enable.idempotence` to `true` and guarantees that exactly one copy of each message is written to Kafka even if it retries. The transactional producer enables sending data to multiple partitions such that either all messages are successfully delivered, or none of them are, ie a transaction is either fully committed or fully discarded. Offsets can also be included in transactions allowing building applications that read, processed and write messages to Kafka.
+To enable exactly once semantics, you must use the idempotent or transactional producers. The idempotent producer is enabled by setting `enable.idempotence` to `true` and guarantees that exactly one copy of each message is written to Kafka, even if it retries. The transactional producer enables the sending of data to multiple partitions such that either all messages are successfully delivered, or none of them are. That is, a transaction is either fully committed or fully discarded. You can also include offsets in transactions to enable you to build applications that read, process, and write messages to Kafka.
 
 
 ## Code snippets
