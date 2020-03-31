@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-31c"
+lastupdated: "2020-03-31d"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -62,23 +62,8 @@ You must create a Credentials object using the IBM Cloud console or a Service Ke
 You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
-<ul>
-<li>
-      <strong>For native applications</strong>
-        <br/>
-        You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see 
-        [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
-</li>
-<br/>
-<li><strong>For Cloud Foundry applications</strong>
-        <br/>
-        You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
-        [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
-</li>
-</ul>
 <br/>
 Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
-
 
 <br>
 You should also be aware of some other changes as follows:
