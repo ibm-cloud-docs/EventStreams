@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -24,11 +24,10 @@ subcollection: eventstreams
 
 This new release of the Standard multi-tenant plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan). 
 {: shortdesc}
-As part of the upgrade to the Standard plan, you must create a new Standard plan instance. You cannot upgrade or change an existing instance of the Classic plan.
-{:important}
 
 As part of the upgrade to the Standard plan, you must create a new Standard plan instance. You cannot upgrade or change an existing instance of the Classic plan.
 {:important}
+
 
 To migrate applications from the previous Standard plan (now called the Classic plan and deprecated) to the new plan, consider the following information.
 
@@ -55,6 +54,17 @@ Authentication and authorization are now managed using the Cloud Identity and Ac
 {: #connecting_apps}
 
 The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> is required. However, the way these properties are retrieved has changed.
+
+
+
+
+* **For native applications**
+        You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see 
+        [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
+
+* **For Cloud Foundry applications**
+        You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
+        [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
 <ul>
 <li>
