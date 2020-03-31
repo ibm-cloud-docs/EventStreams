@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-03-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -25,7 +25,7 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
 * **Kafka's core API (Consumer, Producer, and Admin API)**<br/>
     Use to send and receive messages directly from one or more Kafka topics. 
 	
-	The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. It allows creating, deleting, and managing topics. You can also use the Admin client to manage consumer groups and configurations.
+	The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. It allows you to create, delete, and manage topics. You can also use the Admin client to manage consumer groups and configurations.
 * **Streams API**<br/>
     A higher level stream processing API to easily consume, transform, and produce events between topics.
 * **Connect API**<br/>
