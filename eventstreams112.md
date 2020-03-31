@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-03-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -115,7 +115,7 @@ In summary, when a message is published, its record is first written into a buff
 ## Delivery semantics
 {: #delivery_semantics}
 
-Kafka can provide multiple message delivery semantics as follows:
+Kafka offers the following multiple different message delivery semantics:
 <ul>
   <li>At most once: messages might get lost and won't get redelivered</li>
   <li>At least once: messages are never lost but there might be duplicates</li>
