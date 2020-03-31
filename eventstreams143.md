@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-31a"
+lastupdated: "2020-03-31b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -54,13 +54,11 @@ Authentication and authorization are now managed using the Cloud Identity and Ac
 The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> is required. However, the way these properties are retrieved has changed.
 
 
-
-
-* **For native applications**
+* **For native applications**<br/>
 You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see 
 [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
 
-* **For Cloud Foundry applications**
+* **For Cloud Foundry applications**<br/>
 You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
 
