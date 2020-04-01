@@ -150,7 +150,7 @@ Topic:testtopic	 PartitionCount:1	 ReplicationFactor:3	Configs:min.insync.replic
 ```
 {: codeblock}
 
-From the sample above, you can see topic `sample-topic` has three partitions and replication factor of three. It also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, partition `0`'s leader is on broker `0`, the followers are on brokers `2` and `1` and all three replicas are in sync. If you look at the second topic `testtopics`, it has only one partition, replicated on broker `0`, `2` and `1` but in sync replica list only shows `0` and `2`. This means the follower on broker `1` is falling behind therefore not in `Isr` list. 
+From the sample above, you can see topic `sample-topic` has three partitions and replication factor of three. It also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, partition `0`'s leader is on broker `0`, the followers are on brokers `2` and `1` and all three replicas are in sync. If you look at the second topic `testtopic`, it has only one partition, replicated on broker `0`, `2` and `1` but in sync replica list only shows `0` and `2`. This means the follower on broker `1` is falling behind therefore not in `Isr` list. 
 
 
 ## Kafka Streams reset
