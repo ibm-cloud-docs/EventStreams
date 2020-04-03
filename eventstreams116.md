@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-04-03a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -125,7 +125,7 @@ consumer-group-1   foo        2          212          
 </pre>
 {:codeblock}
 
-From the example above, you can see consumer group `consumer-group-1` has 2 consumer members consuming messages from topic `foo` with 3 partitions. It also shows that the consumer `client-1-abc` consuming from partition `0` is 3 messages behind because current offset of the consumer is `264` but the offset of the last message on partition `0` is `267`. 
+From the example above, you can see consumer group `consumer-group-1` has 2 consumer members consuming messages from topic `foo` with 3 partitions. It also shows that the consumer `client-1-abc` that is consuming from partition `0` is 3 messages behind, because the current offset of the consumer is `264` but the offset of the last message on partition `0` is `267`. 
 
 ## Topics
 {: #topics_tool }
@@ -149,7 +149,7 @@ Topic:testtopic	 PartitionCount:1	 ReplicationFactor:3	Configs:min.insync.replic
 ```
 {: codeblock}
 
-From the sample above, you can see topic `sample-topic` has three partitions and replication factor of three. It also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, partition `0`'s leader is on broker `0`, the followers are on brokers `2` and `1` and all three replicas are in sync. If you look at the second topic `testtopic`, it has only one partition, replicated on broker `0`, `2` and `1` but in sync replica list only shows `0` and `2`. This means the follower on broker `1` is falling behind therefore not in `Isr` list. 
+From the sample above, you can see that topic `sample-topic` has three partitions and a replication factor of 3. It also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, partition `0`'s leader is on broker `0`, the followers are on brokers `2` and `1` and all 3 replicas are in sync. If you look at the second topic `testtopic`, it has only one partition, replicated on broker `0`, `2` and `1` but the in sync replica list only shows `0` and `2`. This means the follower on broker `1` is falling behind and is therefore not in the `Isr` list. 
 
 
 ## Kafka Streams reset
