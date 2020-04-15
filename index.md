@@ -40,15 +40,15 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 {: #getting_started_prereqs}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
-   1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+   a. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-   2. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window} in the **Catalog**.
+   b. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window} in the **Catalog**.
   
-   3. Select the **Lite plan** on the service instance page.
+   c. Select the **Lite plan** on the service instance page.
   
-   4. Enter a name for your service. You can use the default value.
+   d. Enter a name for your service. You can use the default value.
   
-   5. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
+   e. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
