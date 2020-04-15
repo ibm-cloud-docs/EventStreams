@@ -117,7 +117,7 @@ IBM Event Streams
 	Related links
 	 	[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
 	 	[Apache Kafka client downloads](https://kafka.apache.org/downloads)
-		[IBM Event Streams on ibm.com](https://www.ibm.com/cloud/message-hub)
+		[IBM Event Streams on ibm.com](https://www.ibm.com/cloud/event-streams)
 	{: .navgroup-end}
 
 
