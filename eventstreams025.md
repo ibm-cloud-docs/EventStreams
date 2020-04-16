@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-07-23"
+  years: 2015, 2020
+lastupdated: "2020-04-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -76,7 +76,7 @@ curl -v -X POST -H "Authorization: Basic <base64 username:password>" -H "Content
 {: #rest_api_reference}
 
 For full details of the API, see the 
-[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/api/){:new_window}.
+[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){:new_window}.
 
 
 
