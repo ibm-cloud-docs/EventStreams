@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-12xx"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -40,6 +40,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 {: #getting_started_prereqs}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
+
    a. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
    b. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window} in the **Catalog**.
