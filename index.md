@@ -66,18 +66,18 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-         a. Go to the **Topics** tab.
+   a. Go to the **Topics** tab.
   
-         b. Click **New topic**.
+   b. Click **New topic**.
   
-         c. Name your topic.
+   c. Name your topic.
   
-        The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
-        {: important}
+   The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
+   {: important}
 
-         d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+   d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-         e. The topic appears in the table. You have created a topic!
+   e. The topic appears in the table. You have created a topic!
   
 2. {: #create_credentials_step notoc} **Create credentials**
 
