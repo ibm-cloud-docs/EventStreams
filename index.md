@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-02-12"
+lastupdated: "2020-02-12fri"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -66,34 +66,34 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-      1. Go to the **Topics** tab.
+      a. Go to the **Topics** tab.
   
-      2. Click **New topic**.
+      b. Click **New topic**.
   
-      3. Name your topic.
+      c. Name your topic.
   
      The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
      {: important}
 
-      4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+      d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-      5. The topic appears in the table. You have created a topic!
+      e. The topic appears in the table. You have created a topic!
   
 2. {: #create_credentials_step notoc} **Create credentials**
 
     To allow the sample application to access your topic, we need to create some credentials for it. 
 
-     1. Go to **Service credentials** in the navigation pane.
+     a. Go to **Service credentials** in the navigation pane.
   
-     2. Click **New credential**.
+     b. Click **New credential**.
   
-     3. Give the credential a name so you can identify its purpose later. You can accept the default value.
+     c. Give the credential a name so you can identify its purpose later. You can accept the default value.
   
-     4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+     d. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-     5. Click **Add**. The new credential is listed in the table in **Service credentials**.
+     e. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-     6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+     f. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
 3. {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
 
