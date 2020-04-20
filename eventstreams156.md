@@ -39,7 +39,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Monitor environment|  {{site.data.keyword.messagehub}} performs continuous review, service improvements, code updates, and operational monitoring.  |  |
+|Monitor environment|  {{site.data.keyword.messagehub}} performs continuous review, service improvements, code updates, and operational monitoring. This includes automatic, no downtime upgrades of the environment. |  |
 |High availability|  {{site.data.keyword.messagehub}} provides high availability via multi-zone region deployment  to protect against single points of failure, up to and including a data center loss to achieve the IBM SLA detailed in the {{site.data.keyword.Bluemix}} terms and conditions.  |  |
 |Deploy {{site.data.keyword.messagehub}} environment|  {{site.data.keyword.messagehub}} is deployed with IBM recommended best practice configuration options.  For example, replication factor, minimum in sync replicas, throttling, and rack awareness.  | |
 |Topic name backup| Topic names are backed up by {{site.data.keyword.messagehub}}  |  |
