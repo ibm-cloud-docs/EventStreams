@@ -25,12 +25,12 @@ subcollection: eventstreams
 The following list defines some Apache Kafka concepts:
 
 <dl>
-<dt>Server</dt>
-<dd>A Kafka installation is made up of one or more individual server machines. These servers can be located in geographically disparate data centers. 
+<dt>Broker</dt>
+<dd>A Kafka installation is made up of one or more individual broker machines. These brokers can be located in geographically disparate data centers. 
 </dd>
 <br/>
 <dt>Cluster</dt>
-<dd>Kafka runs as a cluster of one or more servers. The load is balanced across the cluster by distributing it amongst the servers.</dd>
+<dd>Kafka runs as a cluster of one or more brokers. The load is balanced across the cluster by distributing it amongst the brokers.</dd>
 <br/>
 <dt>Message</dt>
 <dd>The unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
@@ -43,7 +43,7 @@ The following list defines some Apache Kafka concepts:
 <br/>
 <dt>Partition</dt>
 <dd>Each topic comprises one or more partitions. Each partition is an ordered list of messages. The messages on a partition are each given a monotonically increasing number called the offset. 
-<p>Each partition has one server in the cluster that acts as the partition's leader and other servers that act as the followers.<p>
+<p>Each partition has one broker in the cluster that acts as the partition's leader and other brokers that act as the followers.<p>
 <p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p>
 <p>For more information, see [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership).</dd>
 <dt>Producer</dt>
