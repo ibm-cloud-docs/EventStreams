@@ -43,15 +43,16 @@ The following list defines some Apache Kafka concepts:
 <br/>
 <dt>Partition</dt>
 <dd>Each topic comprises one or more partitions. Each partition is an ordered list of messages. The messages on a partition are each given a monotonically increasing number called the offset. 
-<p>Each partition has one broker in the cluster that acts as the partition's leader and other brokers that act as the followers.<p>
+<p>Each partition has one broker in the cluster that acts as the partition's leader and other brokers that act as the followers.</p>
 <p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p>
-<p>For more information, see [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership).</dd>
+<p>For more information, see [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership).</p></dd>
 <dt>Producer</dt>
 <dd>A process that publishes streams of messages to Kafka topics. A producer can publish to one or
-more topics and can optionally choose the partition that stores the data.<br/></dd>
-<br/>
+more topics and can optionally choose the partition that stores the data.<br/>
+<p>For more information, see [Producing Messages](/docs/services/EventStreams?topic=eventstreams-producing_messages#producing_messages).</p></dd>
 <dt>Consumer </dt>
-<dd>A process that consumes messages from Kafka topics and processes the feed of messages. A consumer can consume from one or more topics or partitions.</dd>
+<dd>A process that consumes messages from Kafka topics and processes the feed of messages. A consumer can consume from one or more topics or partitions.
+<p>For more information, see [Producing Messages](/docs/services/EventStreams?topic=eventstreams-consuming_messages#consuming_messages).</p></dd>
 <br/>
 <dt>Consumer group</dt>
 <dd>A named group of one or more consumers that together consume the messages from a set of topics. Each consumer in the group reads messages from specific partitions that it is assigned to. Each partition is assigned to one consumer in the group only.
@@ -64,9 +65,6 @@ partitions.</li>
 </dl>
 
 To learn more, see the following information:
-- [Producing messages](/docs/services/EventStreams?topic=eventstreams-producing_messages#producing_messages)
-- [Consuming messages](/docs/services/EventStreams?topic=eventstreams-consuming_messages#consuming_messages) 
-- [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership) 
 - [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
 
 
