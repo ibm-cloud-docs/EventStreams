@@ -19,54 +19,80 @@ subcollection: eventstreams
 # Apache Kafka concepts
 {: #apache_kafka}
 
-![Kafka architecture diagram.](kafka_overview.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers.")
 
+![Kafka architecture diagram.](kafka_overview.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers.")
 
 The following list defines some Apache Kafka concepts:
 
-<dl>
-<dt>Server</dt>
-<dd>A Kafka installation is made up of one or more individual server machines. These servers can be located in geographically disparate data centers. 
-</dd>
-<br/>
-<dt>Cluster</dt>
-<dd>Kafka runs as a cluster of one or more servers. The load is balanced across the cluster by distributing it amongst the servers.</dd>
-<br/>
-<dt>Message</dt>
-<dd>The unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
+## Brokers
 
-<p>Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose, which are supported by {{site.data.keyword.messagehub}}.  </p> 
+Apache Kafka® is a distributed messaging system. A Kafka cluster consists of a set of brokers.
+A cluster has a minimum of 3 brokers.
 
-<p>Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it's best to put all of the message data in the value and just use the key for partitioning or log compaction. You should not rely on everything that reads from Kafka to make use of the key.</p>   </dd>
-<dt>Topic</dt>
-<dd>A named stream of messages.</dd>
-<br/>
-<dt>Partition</dt>
-<dd>Each topic comprises one or more partitions. Each partition is an ordered list of messages. The messages on a partition are each given a monotonically increasing number called the offset. 
-<p>Each partition has one server in the cluster that acts as the partition's leader and other servers that act as the followers.<p>
-<p>If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.</p>
-<p>For more information, see [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership).</dd>
-<dt>Producer</dt>
-<dd>A process that publishes streams of messages to Kafka topics. A producer can publish to one or
-more topics and can optionally choose the partition that stores the data.<br/></dd>
-<br/>
-<dt>Consumer </dt>
-<dd>A process that consumes messages from Kafka topics and processes the feed of messages. A consumer can consume from one or more topics or partitions.</dd>
-<br/>
-<dt>Consumer group</dt>
-<dd>A named group of one or more consumers that together consume the messages from a set of topics. Each consumer in the group reads messages from specific partitions that it is assigned to. Each partition is assigned to one consumer in the group only.
-<ul>
-<li>If there are more partitions than consumers in a group, some consumers have multiple
-partitions.</li>
-<li>If there are more consumers than partitions, some consumers have no partitions.</li>
-</ul>
-</dd>
-</dl>
+![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker.")
+
+## Messages
+
+A message is a unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
+
+## Topics and partitions
+Each topic is a named stream of messages. A topic is made up of one or more partitions. The messages on a partition are ordered by a number called the offset. By having multiple partitions distributed across the brokers, the scalability of a topic is increased.
+
+If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.
+
+For more information, see [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership).
+
+![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers.")
+
+## Replication
+
+In order to improve availability, each topic can be replicated onto multiple brokers. For each partition, one of the brokers is the leader, and the other brokers are the followers.
+
+Replication works by the followers repeatedly fetching messages from the leader.
+
+![Replication diagram.](concepts_replication.png "Diagram that shows a topic partition being replicated across 3 brokers.")
+
+## In-sync replicas
+
+A follower replica that is keeping up with the partition leader is in-sync. Any follower with an in-sync replica can become the leader without losing any messages.
+
+If the partition leader fails, another leader is chosen from the followers. All the replicas should usually be in-sync. It's acceptable for a replica to be temporarily not in-sync whilst it's catching up after a failure.
+
+![In-sync-replicas diagram.](concepts_in_sync_replicas.png "Diagram that shows a topic partition being replicated across 3 brokers and staying in-sync across all replicas.")
+
+## Producers
+
+A producer publishes messages to one or more topics. A producer can publish to one or more topics and can optionally choose the partition that stores the data.
+
+You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgement it receives for messages it publishes.
+
+For more information, see [Producing Messages](/docs/services/EventStreams?topic=eventstreams-producing_messages#producing_messages).
+
+![Producers diagram.](concepts_producers.png "Diagram that shows a producer publishing messages to 1 topic across 3 brokers.")
+
+## Consumers
+
+A consumer reads messages from one or more topics and processes them. The difference between a consumer's current position and the newest message on a partition is known as offset lag.
+
+If the lag increases over time, it is a sign that the consumer is not able to keep up. Over the short term, this is not an issue but eventually the consumer could miss messages if the retention period is exceeded.
+
+For more information, see [Consuming Messages](/docs/services/EventStreams?topic=eventstreams-consuming_messages#consuming_messages).
+
+![Consumers diagram.](concepts_consumers.png "Diagram that shows a consumer processing messages from 1 topic across 3 brokers.")
+
+## Consumer Groups
+
+A consumer group contains one or more consumers working together to process the messages. The messages from a single partition are processed by one consumer in each group.
+
+At any time, each partition is assigned to only one consumer in the group. This ensures that the messages on each partition are processed in order.
+
+If there are more partitions than consumers in a group, some consumers have multiple partitions. If there are more consumers than partitions, some consumers have no partitions.
+
+![Consumer groups diagram.](concepts_consumer_groups.png "Diagram that shows a consumer processing messages from 1 topic across 3 brokers.")
+
+## Additional links
 
 To learn more, see the following information:
-- [Producing messages](/docs/services/EventStreams?topic=eventstreams-producing_messages#producing_messages)
-- [Consuming messages](/docs/services/EventStreams?topic=eventstreams-consuming_messages#consuming_messages) 
-- [Partition leadership](/docs/services/EventStreams?topic=eventstreams-partition_leadership#partition_leadership) 
 - [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
 
 
