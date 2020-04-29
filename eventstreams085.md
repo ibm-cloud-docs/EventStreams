@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-01-16"
+lastupdated: "2020-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -95,9 +95,9 @@ The following table summarizes what is supported by the plans:
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.2</td>
-			<td>Kafka 2.2</td>
-			<td>Kafka 2.2</td>
+			<td>Kafka 2.3</td>
+			<td>Kafka 2.3</td>
+			<td>Kafka 2.3</td>
 			<td>Kafka 1.1</td>
 		</tr>
 		<tr>
