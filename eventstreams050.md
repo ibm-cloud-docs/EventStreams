@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -42,8 +42,8 @@ The following table summarizes what you can use with {{site.data.keyword.message
         </tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.2</td>
-			<td>Kafka 2.2</td>
+			<td>Kafka 2.3</td>
+			<td>Kafka 2.3</td>
 		</tr>
 	  		<tr>
 			<td>**Supported client versions**</td>
@@ -69,8 +69,8 @@ For information about using the Kafka API on the now deprecated Classic plan, se
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 2.2 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/22/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.3 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
+[Kafka Consumer API 2.3 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
