@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -135,7 +135,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Kafka version on cluster**</td>
 			<td>Kafka 1.1</td>
-			<td>Kafka 2.2</td>
+			<td>Kafka 2.3</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
