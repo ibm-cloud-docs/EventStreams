@@ -78,7 +78,7 @@ You should also be aware of some other changes as follows:
 ## Kafka version
 {: #kafka_version}
 
-This plan provides access to the latest stable Kafka release 2.2. Applications developed against Kafka 1.1 can run unchanged, but refer to the following information for recommended client versions and tested combinations: [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients). 
+This plan provides access to the latest stable Kafka release 2.3. Applications developed against Kafka 1.1 can run unchanged, but refer to the following information for recommended client versions and tested combinations: [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients). 
 
 ## Supported regions
 {: #supported_regions}
