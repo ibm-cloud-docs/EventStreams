@@ -28,6 +28,7 @@ When you make changes to IAM policies and permissions, these can sometimes take 
 {: important}
 
 ## What can I secure?
+{: #what_secure }
 
 Within {{site.data.keyword.messagehub}}, you can secure access to the following resources:
 * Cluster (cluster): you can control which applications and users can connect to the service
@@ -40,7 +41,7 @@ The levels of access (also known as a role) that you can assign to a user to eac
 | Access role | Description of actions | Example actions |
 |:-----------------|:-----------------|:-----------------|
 |  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing resources | Allow an app to connect to a cluster by assigning read access to cluster resource type |
-| Writer | Writers have permissions beyond the reader role, including editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
+| Writer | Writers have permissions beyond the reader role, including creating and editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
 | Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance|
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="top"}
 
@@ -51,6 +52,7 @@ KR: I think they do inherit the lower level access https://cloud.ibm.com/docs/ia
 
 
 ## How do I assign access?
+{: #assign_access }
 
 Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
 * The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
@@ -61,6 +63,7 @@ If you want to specify more than one type of resource, you must create one polic
 * The role assigned to the user. For example, Reader, Writer, or Manager. 
 
 ## What are the default security settings?
+{: #default_settings }
 
 By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access. 
 
@@ -100,6 +103,7 @@ For an example of how to set policies, see:
 [IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){:new_window}.
 
 ## Wildcarding
+{: #wildcarding }
 You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. 
 For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
 [Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){:new_window}.
