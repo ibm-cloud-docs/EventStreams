@@ -20,7 +20,7 @@ subcollection: eventstreams
 {: #cli_reference}
 
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see 
-[Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/services/EventStreams?topic=eventstreams-cli#cli).
+[Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/EventStreams?topic=eventstreams-cli#cli).
 
 ## Changelog
 {: #es_cli_changelog}

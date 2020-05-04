@@ -41,7 +41,7 @@ Use the producer API to write messages to topics. To be able to produce to a top
 * The API key that gives permission to connect and produce to the selected topic.
 
 You must retrieve the URL and credential details that are needed to connect to the API from a Service credentials object or service key for the service instance. For information about creating these objects, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-connecting).
 
 The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
