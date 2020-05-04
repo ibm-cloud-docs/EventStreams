@@ -63,7 +63,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 </table>
 <br/>
-For information about using the Kafka API on the now deprecated Classic plan, see [Kafka API - Classic](/docs/services/EventStreams?topic=eventstreams-kafka_using_classic).
+For information about using the Kafka API on the now deprecated Classic plan, see [Kafka API - Classic](/docs/EventStreams?topic=eventstreams-kafka_using_classic).
 
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
@@ -83,7 +83,7 @@ For other languages, we recommend running one of the following clients, all of w
 		    <th id="client" scope="col">Client</th>
 		    <th id="language" scope="col">Language</th>
 			<th id="version" scope="col">Recommended version</th>
-		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-kafka_clients#footnote1)</th>
+		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=eventstreams-kafka_clients#footnote1)</th>
 			<th id="sample link" scope="col">Link to sample</th>
         </tr>
 			<tr>
@@ -94,7 +94,7 @@ For other languages, we recommend running one of the following clients, all of w
 			<td>Java</td>
 			<td>Latest</td>
 			<td>0.10.2 </td>
-			<td>[Java console sample](/docs/services/EventStreams?topic=eventstreams-kafka_java_using)<br/>
+			<td>[Java console sample](/docs/EventStreams?topic=eventstreams-kafka_java_using)<br/>
 			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
 			</td>
 			</tr>
@@ -150,7 +150,7 @@ In all cases, the latest version of the client is recommended.
 ### Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
 
-For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_api_client).
+For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/EventStreams?topic=eventstreams-kafka_using#kafka_api_client).
 
 ## Configuring your Kafka API client
 {: #kafka_api_client}
@@ -158,13 +158,13 @@ For information about how to configure your Java client to connect to {{site.dat
 To establish a connection, clients must be configured to use SASL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. TLSv1.2 ensures connections are encrypted and validates the authenticity of the brokers (to prevent man-in-the-middle attacks). On the over hand, SASL enforces authentication on all connections.
 
 To retrieve the username, password, and list of bootstrap servers, a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-connecting).
 
 From these objects:
 * Use the <code>kafka_brokers_sasl property</code> as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, <code>host1:port1,host2:port2</code>. We recommend including details for all the hosts listed in the <code>kafka_brokers_sasl</code> property.
 * Use the <code>user</code> and <code>api_key</code> properties as the username and password
 
-For service instances on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead. For more information, see [Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/services/EventStreams?topic=eventstreams-connecting_classic).
+For service instances on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead. For more information, see [Connecting to {{site.data.keyword.messagehub}} - Classic](/docs/EventStreams?topic=eventstreams-connecting_classic).
 
 For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values that you retrieved previously.
 

@@ -23,7 +23,7 @@ subcollection: eventstreams
 {: shortdesc}
 
 You must retrieve the URL and credential details that are needed to connect to the API from a Service credentials object or service key for the service instance. For information about creating these objects, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-connecting).
 
 The URL for the API's endpoint is provided in the <code>kafka_admin_url</code>property.
 
