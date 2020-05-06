@@ -27,7 +27,7 @@ Because the underlying service that the {{site.data.keyword.objectstorageshort}}
 
 When the {{site.data.keyword.objectstorageshort}} service reaches its end of life and is decommissioned, all instances of the {{site.data.keyword.objectstorageshort}} bridge will also be decommissioned. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}. 
 
-For information about the replacement for the {{site.data.keyword.objectstorageshort}} and Cloud Object Storage bridges, see [Connecting Event Streams to Cloud Object Storage](/docs/services/EventStreams?topic=eventstreams-cos_connector).
+For information about the replacement for the {{site.data.keyword.objectstorageshort}} and Cloud Object Storage bridges, see [Connecting Event Streams to Cloud Object Storage](/docs/EventStreams?topic=eventstreams-cos_connector).
 
 The {{site.data.keyword.objectstorageshort}} bridge allows you
 to archive data from the Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.Bluemix_short}} service. The bridge consumes

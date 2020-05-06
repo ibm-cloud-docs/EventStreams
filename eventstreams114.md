@@ -31,7 +31,7 @@ When a consumer processes a message, the message is not removed from its topic. 
 
 In the programming interfaces, a message is actually called a record. For example, the Java class org.apache.kafka.clients.consumer.ConsumerRecord is used to represent a message for the consumer API. The terms _record_ and _message_ can be used interchangeably, but essentially a record is used to represent a message.
 
-You might find it useful to read this information in conjunction with [producing messages](/docs/services/EventStreams?topic=eventstreams-producing_messages) in {{site.data.keyword.messagehub}}.
+You might find it useful to read this information in conjunction with [producing messages](/docs/EventStreams?topic=eventstreams-producing_messages) in {{site.data.keyword.messagehub}}.
 
 ## Configuring consumer properties 
 {: #configuring_consumer_properties }

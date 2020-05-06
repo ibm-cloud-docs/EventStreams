@@ -42,7 +42,7 @@ ibmcloud login -a cloud.ibm.com
 Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Lite, Standard, or Enterprise plans. (The Classic plan does not support the CLI.) <br/>
 Select one of the following methods:
 
-* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/services/event-streams){:new_window}.
+* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){:new_window}.
 
 * To create an instance from the CLI on the Enterprise plan, run a command like the following:
   ```
@@ -65,7 +65,7 @@ Select one of the following methods:
 ## Step 4. Optional: Create a service API key for this instance
 {: #step4_es_api}
 
-Optionally, you can create a service API key. The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/services/EventStreams?topic=eventstreams-security#security).
+Optionally, you can create a service API key. The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/EventStreams?topic=eventstreams-security#security).
 
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
@@ -95,7 +95,7 @@ ibmcloud es init
 {: codeblock}
 
 <br/>
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/services/EventStreams?topic=eventstreams-cli_reference#cli_reference).
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=eventstreams-cli_reference#cli_reference).
 
 
 

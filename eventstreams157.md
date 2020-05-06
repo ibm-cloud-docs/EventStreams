@@ -44,7 +44,7 @@ If you're using the CLI, instances are managed using the resource commands. For 
 {: #controlling_access}
 
 Authentication and authorization are now managed using the Cloud Identity and Access Management (IAM) service. As well as controlling a user's ability to connect, IAM also enables you to configure granular access to underlying resources, such as topics. Access is controlled by assigning policies to users. For more information, see 
-[Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security).
+[Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=eventstreams-security).
 
 If you are part of a department that previously owned its own instance on a Dedicated cluster and you now want to limit access to your resources on the Enterprise cluster (topics, consumer groups and so on), you can take advantage of the IAM wildcarding facility to set policies for groups of resources. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
 [Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){:new_window}.
@@ -59,17 +59,17 @@ The information that an application needs to connect has not changed, that is, a
       <strong>For native applications</strong>
         <br/>
         You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see 
-        [Connecting applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
+        [Connecting applications](/docs/EventStreams?topic=eventstreams-connecting#connect_enterprise_external).
 </li>
 <br/>
 <li><strong>For Cloud Foundry applications</strong>
         <br/>
         You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
-        [Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+        [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-connecting).
 </li>
 </ul>
 <br/>
-Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
+Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-kafka_using#kafka_clients).
 </li>
 </ul>
 
@@ -78,7 +78,7 @@ You should also be aware of some other changes as follows:
 ## Kafka version
 {: #kafka_version}
 
-This plan provides access to the latest stable Kafka release 2.3. Applications developed against Kafka 1.1 can run unchanged, but refer to the following information for recommended client versions and tested combinations: [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_using#kafka_clients). 
+This plan provides access to the latest stable Kafka release 2.3. Applications developed against Kafka 1.1 can run unchanged, but refer to the following information for recommended client versions and tested combinations: [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-kafka_using#kafka_clients). 
 
 ## Supported regions
 {: #supported_regions}
@@ -100,14 +100,14 @@ And in the following single-zone regions:
 {: #integrations}
 
 Connection from other services, such as {{site.data.keyword.iot_short_notm}} or {{site.data.keyword.openwhisk_short}}, which bind to the service using a Cloud Foundry organization and space, require a service alias to be created. For more information, see
-[Connect Cloud Foundry applications to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
+[Connect Cloud Foundry applications to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf).
 
 ## Supported capabilities
 {: #capabilities}
 
 There are differences between the capabilities of IBM Cloud Dedicated and the Enterprise plan. To align the product offerings, adopt new technology choices, and remove less-used features, not all capabilities are carried forward. The following table compares the available features.
 
-If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services/EventStreams?topic=eventstreams-migrate_rest_apis).
+If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStreams?topic=eventstreams-migrate_rest_apis).
 
 <table>
 		<caption>Table 1. Support in Dedicated and Enterprise plans</caption>
@@ -130,7 +130,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Availability**</td>
 			<td>99.5%</td>
-			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr)</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_szr)</td>
 		</tr>
 		<tr>
 			<td>**Kafka version on cluster**</td>
@@ -160,17 +160,17 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/services
 		<tr>
 			<td>**Maximum number of partitions**</td>
 			<td>1000</td>
-			<td>3000 [<sup>2</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_partitions)</td>
+			<td>3000 [<sup>2</sup>](/docs/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_partitions)</td>
 		</tr>
 		<tr>
-			<td>**Maximum retention period** [<sup>3</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_footprint)</td>
+			<td>**Maximum retention period** [<sup>3</sup>](/docs/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_footprint)</td>
 			<td>1 TB  of usable storage per broker </td>
 			<td>2 TB of usable storage per broker<!--Unlimited up to the storage limit of your plan --></td>
 		</tr>
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>Not specified</td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_throughput)</td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#footnote_throughput)</td>
 		</tr>
 		<tr>
 			<td>**Maximum message size**</td>
@@ -245,7 +245,7 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/services/EventStreams?topic=eventstreams-sla#sla_szr).
+1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=eventstreams-sla#sla_szr).
 2. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
 3. {: #footnote_footprint notoc}
 To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
@@ -266,7 +266,7 @@ A key difference between the Dedicated and Enterprise plans is that Dedicated su
 
 When moving from a Dedicated {{site.data.keyword.messagehub}} cluster, you have the following two options:
 
-* Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan](/docs/services/EventStreams?topic=eventstreams-plan_choose#plan_standard).
+* Provision {{site.data.keyword.messagehub}} instances on the Public multi-tenant [Standard plan](/docs/EventStreams?topic=eventstreams-plan_choose#plan_standard).
 * Alternatively, if hosting an instance on a Public multi-tenant plan is not an option, create your {{site.data.keyword.messagehub}} resources on an Enterprise plan. The following example illustrates this option.
 
 The Enterprise plan is provisioned by the Admin in the account, or at a minimum a user with sufficient permissions to provision such an instance. The Admin then grants access rights to users to create topics and partitions on that Enterprise instance.
@@ -311,11 +311,11 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 <br/>
 
 You can now use this information to create the same named topics in the new cluster. 
-For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/services/EventStreams?topic=eventstreams-kafka_java_api) or the 
-[ibmcloud es topic-create command](/docs/services/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es). 
+For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/EventStreams?topic=eventstreams-kafka_java_api) or the 
+[ibmcloud es topic-create command](/docs/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es). 
 Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
-Prefix the topic name with a name that references the instance in Dedicated as described in the [migration example](/docs/services/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#dedicated_prefix).
+Prefix the topic name with a name that references the instance in Dedicated as described in the [migration example](/docs/EventStreams?topic=eventstreams-migrate_dedicated_enterprise#dedicated_prefix).
 {: important}
 
 
@@ -335,9 +335,9 @@ Ensure that your Kafka clients are 0.10.x or later.
 {: important}
 
 To update your applications to use the new service see
-[Connecting to Event Streams](https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-connecting). 
+[Connecting to Event Streams](https://cloud.ibm.com/docs/EventStreams?topic=eventstreams-connecting). 
 For Cloud Foundry based applications, see
-[Connect Cloud Foundry applications](/docs/services/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf). 
+[Connect Cloud Foundry applications](/docs/EventStreams?topic=eventstreams-connecting#connect_enterprise_cf). 
 
 ### Switching from the existing cluster to a new cluster
 {: #switch_cluster}
@@ -347,7 +347,7 @@ After you have set up your topics, consumers, and producers for the new Enterpri
 Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
 1. Stop any producers producing to the existing cluster or topic.
-2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag by using the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window} tool. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag by using the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=eventstreams-kafka_console_tools#consumer_groups_tool){:new_window} tool. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
 
    For example, some sample output from running the **kafka-consumer-groups** tool:
 

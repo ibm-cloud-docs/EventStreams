@@ -112,7 +112,7 @@ For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_To
 {: #connect_message_enterprise }
 
 For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-connecting).
+[Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-connecting).
 
 <!-- 28/06/18 - Karen: draft info only
 

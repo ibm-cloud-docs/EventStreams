@@ -39,7 +39,7 @@ the Kafka API to send and receive messages, the sample uses the {{site.data.keyw
 
 For more information about the setup and running of the sample, see the [README.md ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){:new_window}.
 
-For a detailed walkthrough of how to run the sample, see [Getting started with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-getting_started#getting_started_steps).
+For a detailed walkthrough of how to run the sample, see [Getting started with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-getting_started#getting_started_steps).
 
 ## How to use, download, and run the Liberty for Java sample
 {: #liberty_sample notoc}
@@ -87,7 +87,7 @@ latest version. You can download a Kafka client from
 
 <!--
 For information about the implications of using a 0.9.X client, see 
-[Backward compatibility](/docs/services/EventStreams?topic=eventstreams-kafka_clients#compatibility).
+[Backward compatibility](/docs/EventStreams?topic=eventstreams-kafka_clients#compatibility).
 -->
 
 

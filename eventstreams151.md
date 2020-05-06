@@ -43,7 +43,7 @@ The only functionality that is missing is partitioning by ISO 8601 date. The dat
 Although the COS Sink Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. 
 
 For a walkthrough of how you can connect to Cloud Object Storage, see 
-[Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS](/docs/services/EventStreams?topic=eventstreams-cos_connector). For full details of the COS Sink Connector, see 
+[Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS](/docs/EventStreams?topic=eventstreams-cos_connector). For full details of the COS Sink Connector, see 
 [Kafka Connect Sink Connector for IBM Cloud Object Storage. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-ibmcos-sink){:new_window}.
 
 
@@ -51,8 +51,8 @@ For a walkthrough of how you can connect to Cloud Object Storage, see
 The MQ Connector offers all of the commonly used functionality of the MQ bridge and more, with improved security. However, note that partitioning by GroupID is not currently supported. Additionally, the connector stops if it cannot process a message for any reason, for example if the message is too large to forward to Kafka in preference to discarding the message.
 
 For a walkthrough of how you can connect IBM MQ, see 
-[Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS](/docs/services/EventStreams?topic=eventstreams-mq_connector). For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
+[Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS](/docs/EventStreams?topic=eventstreams-mq_connector). For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
  
 ## Running the Connectors
-To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this in [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/services/EventStreams?topic=eventstreams-kafka_connect). By running the Kafka Connect framework you have full control over how Connectors are scaled, how you monitor your Connectors, and access to a much richer set of metrics. For more information, see 
+To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this in [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-kafka_connect). By running the Kafka Connect framework you have full control over how Connectors are scaled, how you monitor your Connectors, and access to a much richer set of metrics. For more information, see 
 [Connect monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation.html#connect_monitoring){:new_window}.

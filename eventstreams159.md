@@ -39,9 +39,9 @@ The current limitations are:
 
 Before starting mirroring, consider the following:
 - For seamless switchover, applications are recommended to follow the coding guidelines as outlined below.
-- The network bandwidth used by mirroring must be taken in to account during capacity planning. For example, if 10 MB/s of message traffic is being produced by applications into the source service instance, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being consumed by applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/services/EventStreams?topic=eventstreams-metrics).
+- The network bandwidth used by mirroring must be taken in to account during capacity planning. For example, if 10 MB/s of message traffic is being produced by applications into the source service instance, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being consumed by applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=eventstreams-metrics).
 
-To enable mirroring, see [Mirroring setup guide](/docs/services/EventStreams?topic=eventstreams-mirroring_setup).
+To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=eventstreams-mirroring_setup).
 
 ## Mirroring overview
 {: #mirroring_overview}
@@ -119,7 +119,7 @@ The RemoteClusterUtils package allows to easily make these changes. Such logic i
 ## Monitoring mirroring
 {: #monitoring_mirroring}
 
-You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/services/EventStreams?topic=eventstreams-metrics). The **Monitoring** dashboard is available on the target cluster.
+You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=eventstreams-metrics). The **Monitoring** dashboard is available on the target cluster.
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
 - Mirroring throughput: the bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
@@ -139,7 +139,7 @@ The recovery time objective is fully controlled by users and is made of the foll
 - the time it takes the user to fail over their applications
 
 ### Testing
-We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/services/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
+We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
 
 

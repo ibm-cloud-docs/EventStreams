@@ -27,7 +27,7 @@ From June 30, 2020, the Classic Plan will be retired and no longer s
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Classic plan.
 
-For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](/docs/services/EventStreams?topic=eventstreams-faqs#faqs).
+For answers to questions related to all {{site.data.keyword.messagehub}} plans, see [FAQs](/docs/EventStreams?topic=eventstreams-faqs#faqs).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
@@ -73,7 +73,7 @@ create a topic using either the user interface or the
 administration API. The time limit is a minimum of an hour and a
 maximum of 30 days.
 
-For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [How do I use Kafka APIs to create and delete topics?](/docs/services/EventStreams?topic=eventstreams-faqs_classic#topic_admin_classic).
+For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [How do I use Kafka APIs to create and delete topics?](/docs/EventStreams?topic=eventstreams-faqs_classic#topic_admin_classic).
 
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
@@ -141,7 +141,7 @@ REST API returns the following JSON:
 {: #plan_compare_classic }
 {: faq}
 
-To find out more information about the other {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/services/EventStreams?topic=eventstreams-plan_choose).For information about the Classic plan, see [Classic plan overview](/docs/services/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
+To find out more information about the other {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/EventStreams?topic=eventstreams-plan_choose).For information about the Classic plan, see [Classic plan overview](/docs/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
 
 
 ## How do I handle disaster recovery?

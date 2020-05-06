@@ -68,7 +68,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 {: caption="Table 1. Cost for each plan" caption-side="top"} 
 
-For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/services/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
+For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
 
 
 ## {{site.data.keyword.messagehub}} metrics details

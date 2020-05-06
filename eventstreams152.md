@@ -67,7 +67,7 @@ And an error response on the Standard plan:
 Additional methods are also available for clients to authenticate. You can now use Basic Auth or a bearer token, in addition to the previously supported method of placing an API key in the X-Auth-Token header.
 
 For further information and examples, see 
-[Using the Administration REST API](/docs/services/EventStreams?topic=eventstreams-admin_api).
+[Using the Administration REST API](/docs/EventStreams?topic=eventstreams-admin_api).
 
 ## Changes to the Produce API
 {: #migrate_produce_api}
@@ -180,7 +180,7 @@ Consuming messages via HTTP is no longer supported. Consequently, the following 
 To replace this functionality, you can take a number of different approaches. 
 
 * **Kafka client**<br/>
-    The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number of specifically tested clients: [recommended clients](/docs/services/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
+    The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}. We also recommend a number of specifically tested clients: [recommended clients](/docs/EventStreams?topic=eventstreams-kafka_clients#kafka_clients). 
     
     If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
 [samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
