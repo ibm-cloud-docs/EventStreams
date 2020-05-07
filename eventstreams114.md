@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2018-03-23"
+lastupdated: "2020-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -61,7 +61,7 @@ Each consumer group has a server in the cluster called the _coordinator_ respons
 
 When a consumer joins a consumer group, it discovers the coordinator for the group. The consumer then tells the coordinator that it wants to join the group and the coordinator starts a rebalance of the partitions across the group including the new member.
 
-The messages from a single partition are processed by only one consumer in each group. This ensures that the messages on each partition are processed in order. See fig 1. for an example where a consumer group contains three consumers, and each consumer handles one topic partition produced to a topic. 
+The messages from a single partition are processed by only one consumer in each group. This ensures that the messages on each partition are processed in order. See the following diagram for an example where a consumer group contains three consumers, and each consumer handles one topic partition produced to a topic. 
 
 ![Consumer groups diagram.](consumer_groups.png "Diagram that shows an example consumer group. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by a consumer group with 3 consumers each processing one partition."){: caption="Figure 1. Consumer group example" caption-side="bottom"}
 
