@@ -46,7 +46,7 @@ For more information, see [Partition leadership](/docs/EventStreams?topic=events
 
 ## Replication
 
-In order to improve availability, each topic can be replicated onto multiple brokers. For each partition, one of the brokers is the leader, and the other brokers are the followers.
+To improve availability, each topic can be replicated onto multiple brokers. For each partition, one of the brokers is the leader, and the other brokers are the followers.
 
 Replication works by the followers repeatedly fetching messages from the leader.
 
@@ -56,7 +56,7 @@ Replication works by the followers repeatedly fetching messages from the leader.
 
 A follower replica that is keeping up with the partition leader is in-sync. Any follower with an in-sync replica can become the leader without losing any messages.
 
-If the partition leader fails, another leader is chosen from the followers. All the replicas should usually be in-sync. It's acceptable for a replica to be temporarily not in-sync whilst it's catching up after a failure.
+If the partition leader fails, another leader is chosen from the followers. All the replicas should usually be in-sync. It's acceptable for a replica to be temporarily not in-sync while it's catching up after a failure.
 
 ![In-sync-replicas diagram.](concepts_in_sync_replicas.png "Diagram that shows a topic partition being replicated across 3 brokers and staying in-sync across all replicas.")
 
@@ -64,7 +64,7 @@ If the partition leader fails, another leader is chosen from the followers. All 
 
 A producer publishes messages to one or more topics. A producer can publish to one or more topics and can optionally choose the partition that stores the data.
 
-You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgement it receives for messages it publishes.
+You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgement the producer receives for messages it publishes.
 
 For more information, see [Producing Messages](/docs/EventStreams?topic=eventstreams-producing_messages#producing_messages).
 
@@ -72,7 +72,7 @@ For more information, see [Producing Messages](/docs/EventStreams?topic=eventstr
 
 ## Consumers
 
-A consumer reads messages from one or more topics and processes them. The difference between a consumer's current position and the newest message on a partition is known as offset lag.
+A consumer reads messages from one or more topics and processes them. The difference between a consumer's current position and the newest message on a partition is known as the offset lag.
 
 If the lag increases over time, it is a sign that the consumer is not able to keep up. Over the short term, this is not an issue but eventually the consumer could miss messages if the retention period is exceeded.
 
