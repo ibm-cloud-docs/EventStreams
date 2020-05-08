@@ -26,7 +26,7 @@ The following list defines some Apache Kafka concepts:
 
 ## Brokers
 
-Apache Kafka® is a distributed messaging system. A Kafka cluster consists of a set of brokers.
+Apache Kafka is a distributed messaging system. A Kafka cluster consists of a set of brokers.
 A cluster has a minimum of 3 brokers.
 
 ![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker.")
