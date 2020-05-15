@@ -6,7 +6,7 @@ lastupdated: "2019-12-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 

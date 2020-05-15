@@ -6,7 +6,7 @@ lastupdated: "2020-03-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -36,7 +36,7 @@ If you're using IKS, you can restrict access by including the private IP address
 
 Ensure that you complete the following tasks:
 * Create your service instance by using the Enterprise plan. For more information, see 
-[Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=eventstreams-plan_choose){:new_window}.
+[Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled.
 

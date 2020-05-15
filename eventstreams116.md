@@ -6,7 +6,7 @@ lastupdated: "2020-04-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -132,8 +132,8 @@ From the example above, you can see consumer group `consumer-group-1` has 2 cons
 
 You can use the **kafka-topics** tool with {{site.data.keyword.messagehub}}. Ensure that you use V2.3 of the tool, because it does not require Zookeeper access.
 
-A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster, so that you can recreate them in a new cluster. You can use the information that is output from **kafka-topics** to create the same named topics in the new cluster. For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/EventStreams?topic=eventstreams-kafka_java_api) or the 
-[ibmcloud es topic-create command](/docs/EventStreams?topic=eventstreams-cli_reference#ibmcloud_es). Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
+A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster, so that you can recreate them in a new cluster. You can use the information that is output from **kafka-topics** to create the same named topics in the new cluster. For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/EventStreams?topic=EventStreams-kafka_java_api) or the 
+[ibmcloud es topic-create command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es). Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
 Here is some sample output from running the **kafka-topics** tool:
 

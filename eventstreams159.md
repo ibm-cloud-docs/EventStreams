@@ -6,7 +6,7 @@ lastupdated: "2020-03-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -39,9 +39,9 @@ The current limitations are:
 
 Before starting mirroring, consider the following:
 - For seamless switchover, applications are recommended to follow the coding guidelines as outlined below.
-- The network bandwidth used by mirroring must be taken in to account during capacity planning. For example, if 10 MB/s of message traffic is being produced by applications into the source service instance, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being consumed by applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=eventstreams-metrics).
+- The network bandwidth used by mirroring must be taken in to account during capacity planning. For example, if 10 MB/s of message traffic is being produced by applications into the source service instance, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being consumed by applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
 
-To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=eventstreams-mirroring_setup).
+To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
 ## Mirroring overview
 {: #mirroring_overview}
@@ -59,7 +59,7 @@ Finally, because of the naming of remote topics, we recommend avoiding using clu
 
 Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters and use the API key from the service ID that the policies are attached to.  We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/iam?topic=iam-wildcard) to simplify the access policies that control access to the mirrored resources.
 
-If you are new to IAM access policies, see [Getting started with IAM tutorial](/docs/iam?topic=iam-getstarted) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=eventstreams-security) for more details before reading further.
+If you are new to IAM access policies, see [Getting started with IAM tutorial](/docs/iam?topic=iam-getstarted) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security) for more details before reading further.
 
 Define the following IAM access policies on **both** clusters, where &lt;ALIAS&gt; is the alias for other cluster. For example, on cluster B, the Resource ID should be `A.checkpoints.internal`:
 
@@ -119,7 +119,7 @@ The RemoteClusterUtils package allows to easily make these changes. Such logic i
 ## Monitoring mirroring
 {: #monitoring_mirroring}
 
-You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=eventstreams-metrics). The **Monitoring** dashboard is available on the target cluster.
+You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). The **Monitoring** dashboard is available on the target cluster.
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
 - Mirroring throughput: the bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
@@ -139,7 +139,7 @@ The recovery time objective is fully controlled by users and is made of the foll
 - the time it takes the user to fail over their applications
 
 ### Testing
-We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=eventstreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
+We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
 
 

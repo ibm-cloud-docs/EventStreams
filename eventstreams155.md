@@ -6,7 +6,7 @@ lastupdated: "2019-10-16"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -50,12 +50,12 @@ You can find out more about using {{site.data.keyword.keymanagementserviceshort}
 ## Enabling a customer-managed key for {{site.data.keyword.messagehub}}
 {: #enabling_encryption}
 
-This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=eventstreams-managing_encryption#considerations_keys).
+This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
 {:important}
 
 Complete the following steps to reconfigure your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
 
-1. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=eventstreams-getting_started) on or after October 7th 2019. This feature is supported on the Enterprise plan only.
+1. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started) on or after October 7th 2019. This feature is supported on the Enterprise plan only.
 2. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-provision).
 3. Create an authorization to allow the {{site.data.keyword.messagehub}} instance to access the {{site.data.keyword.keymanagementserviceshort}} instance. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-serviceauth){:new_window}.
 4. Create or import a root key into {{site.data.keyword.keymanagementserviceshort}}. For more information, see [Creating root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-create-root-keys){:new_window} or [Importing root keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-import-root-keys){:new_window}.
@@ -85,7 +85,7 @@ To temporarily prevent access, remove the authorization created between your {{s
 
 To remove access permanently you can delete the key. However, you must take extreme caution because this operation is non-recoverable. You will lose access to any data stored in your {{site.data.keyword.messagehub}} instance. There is no way to recover this data.
 
-In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=eventstreams-at_events#events).
+In both cases the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ***Important:*** You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you have chosen to prevent access to your data by removing authorization to your key or by deleting your key.
 
@@ -93,13 +93,13 @@ In both cases the {{site.data.keyword.messagehub}} instance shuts down and no lo
 
 Access can be restored only if the key was not deleted. To restore access, re-create the authorization between your {{site.data.keyword.messagehub}} and {{site.data.keyword.keymanagementserviceshort}} instances. After a short period of initialization your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. All data is retained, subject to the normal retention limits configured in your instance.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=eventstreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Rotating the key
 
-{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](/docs/EventStreams?topic=eventstreams-managing_encryption#encryption_how). 
+{{site.data.keyword.keymanagementserviceshort}} supports the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](/docs/EventStreams?topic=EventStreams-managing_encryption#encryption_how). 
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=eventstreams-at_events#events). 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events). 
 
 ## Disabling customer-managed encryption
 {: #stop_customer_encryption}

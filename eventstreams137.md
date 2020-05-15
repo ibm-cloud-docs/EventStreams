@@ -6,7 +6,7 @@ lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -66,7 +66,7 @@ examples detailed in the [Confluent docs ![External link icon](../../icons/launc
 <!-- info was in eventstreams066.md -->
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka REST API uses the <code>api_key</code> and <code>kafka_rest_url</code>
-credentials from the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=eventstreams-connecting#connect_classic_cf_plan).
+credentials from the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=EventStreams-connecting#connect_classic_cf_plan).
 
 To authenticate with the {{site.data.keyword.messagehub}} Kafka REST API, you must specify the <code>api_key</code> in the X-Auth-Token header of your requests.
 

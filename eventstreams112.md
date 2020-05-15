@@ -6,7 +6,7 @@ lastupdated: "2020-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -34,7 +34,7 @@ Each message is represented as a record which comprises two parts: key and value
 
 Many other messaging systems also have a way of carrying other information along with the messages. Kafka 0.11 introduces record headers for this purpose.
 
-You might find it useful to read this information in conjunction with [consuming messages](/docs/EventStreams?topic=eventstreams-consuming_messages) in {{site.data.keyword.messagehub}}.
+You might find it useful to read this information in conjunction with [consuming messages](/docs/EventStreams?topic=EventStreams-consuming_messages) in {{site.data.keyword.messagehub}}.
 
 ## Configuration settings
 {: #config_settings}
@@ -109,7 +109,7 @@ If you try to publish messages faster than they can be sent to a server, the pro
  
 There is another factor that has an impact. To prevent individual producers or consumers from swamping the cluster, {{site.data.keyword.messagehub}} applies throughput quotas. The rate that each producer is sending data at is calculated and any producer that attempts to exceed its quota is throttled. The throttling is applied by slightly delaying the sending of responses to the producer. Usually, this just acts as a natural brake.
 
-For throughput guidance information, see [Limits and quotas](/docs/EventStreams?topic=eventstreams-kafka_quotas#kafka_quotas). 
+For throughput guidance information, see [Limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#kafka_quotas). 
  
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
 

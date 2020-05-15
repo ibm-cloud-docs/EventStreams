@@ -6,7 +6,7 @@ lastupdated: "2019-10-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -20,7 +20,7 @@ subcollection: eventstreams
 {: #cli_reference}
 
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see 
-[Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/EventStreams?topic=eventstreams-cli#cli).
+[Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/EventStreams?topic=EventStreams-cli#cli).
 
 ## Changelog
 {: #es_cli_changelog}

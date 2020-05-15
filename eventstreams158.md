@@ -6,7 +6,7 @@ lastupdated: "2020-03-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 

@@ -6,7 +6,7 @@ lastupdated: "2020-03-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring, setup
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 

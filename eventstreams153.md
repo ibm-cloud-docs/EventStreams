@@ -6,7 +6,7 @@ lastupdated: "2019-11-05"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 

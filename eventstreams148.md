@@ -6,7 +6,7 @@ lastupdated: "2019-05-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, top-tier physical system, hipaa, iso, soc 2 type 2 certification, gdpr
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 

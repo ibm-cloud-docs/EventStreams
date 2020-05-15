@@ -6,7 +6,7 @@ lastupdated: "2020-01-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -24,7 +24,7 @@ subcollection: eventstreams
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
 
-For answers to questions specific to the now deprecated Classic plan, see [FAQs for the Classic plan](/docs/EventStreams?topic=eventstreams-faqs_classic).
+For answers to questions specific to the now deprecated Classic plan, see [FAQs for the Classic plan](/docs/EventStreams?topic=EventStreams-faqs_classic).
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
@@ -120,7 +120,7 @@ create a topic using either the user interface or the
 administration API. The time limit is a minimum of an hour and a
 maximum of 30 days.
 
-For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [How do I use Kafka APIs to create and delete topics?](/docs/EventStreams?topic=eventstreams-faqs#topic_admin)
+For information about restrictions on the settings allowed when you create topics using a Kafka client or Kafka Streams, see [How do I use Kafka APIs to create and delete topics?](/docs/EventStreams?topic=EventStreams-faqs#topic_admin)
 
 ## What is {{site.data.keyword.messagehub}}'s availability behavior?
 {: #availability}
@@ -195,7 +195,7 @@ Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.st
 {: #plan_compare }
 {: faq}
 
-To find out more information about the different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/EventStreams?topic=eventstreams-plan_choose).
+To find out more information about the different {{site.data.keyword.messagehub}} plans, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose).
 
 ## How do I handle disaster recovery?
 {: #disaster_recovery }

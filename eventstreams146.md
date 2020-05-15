@@ -6,7 +6,7 @@ lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -36,7 +36,7 @@ latest version. You can download a Kafka client from
 [https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/downloads){:new_window}.
 
 For information about the implications of using a 0.9.X client, see 
-[Backward compatibility](/docs/EventStreams?topic=eventstreams-kafka_clients_classic#compatibility_classic).
+[Backward compatibility](/docs/EventStreams?topic=EventStreams-kafka_clients_classic#compatibility_classic).
 
 
 

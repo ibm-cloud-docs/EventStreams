@@ -6,7 +6,7 @@ lastupdated: "2020-03-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -58,7 +58,7 @@ Topic names and consumer groups are encrypted for transmission between
 {{site.data.keyword.messagehub}} does not encrypt these values at rest. Therefore, you are not recommended to use confidential information in your topic names.
 
 For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see 
-[What's supported by the Lite, Standard, Enterprise, and Classic plans](/docs/EventStreams?topic=eventstreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans).
+[What's supported by the Lite, Standard, Enterprise, and Classic plans](/docs/EventStreams?topic=EventStreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans).
 
 ## Data isolation model
 {: #data_isolation}

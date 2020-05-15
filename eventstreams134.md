@@ -6,7 +6,7 @@ lastupdated: "2019-11-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -27,21 +27,21 @@ From June 30, 2020, the Classic Plan will be retired and no longer s
 For more information, see 
 [IBM {{site.data.keyword.messagehub}} Classic Plan is being retired ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-classic-plan-is-being-retired){:new_window}.
 {:deprecated}
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. For information about the Standard and Enterprise plans, see [Choosing your plan](/docs/EventStreams?topic=eventstreams-plan_choose#plan_choose).
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. For information about the Standard and Enterprise plans, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_choose).
 {: shortdesc}
  
 
 ## Migrating from the Classic plan
 {: #migrating_from_classic}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. You can migrate to either the Enterprise or Standard plans. For information to help you select a plan, see [Choosing your plan](/docs/EventStreams?topic=eventstreams-plan_choose#plan_choose).
+{{site.data.keyword.messagehub}} is available as different plans depending on your requirements. You can migrate to either the Enterprise or Standard plans. For information to help you select a plan, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_choose).
 
-For an overview of migrating from the Classic plan to the new Standard plan, see [Upgrading to the new Standard plan](/docs/EventStreams?topic=eventstreams-migrate_classic_plan).
+For an overview of migrating from the Classic plan to the new Standard plan, see [Upgrading to the new Standard plan](/docs/EventStreams?topic=EventStreams-migrate_classic_plan).
 
 For information about migrating specific capabilities, refer to the following: 
-* If you currently use the REST APIs on the Classic plan, see [Migrating the REST APIs](/docs/EventStreams?topic=eventstreams-migrate_rest_apis).
-* If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=eventstreams-migrate_mqlight).
-* If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating to Kafka Connect](/docs/EventStreams?topic=eventstreams-migrate_bridges).
+* If you currently use the REST APIs on the Classic plan, see [Migrating the REST APIs](/docs/EventStreams?topic=EventStreams-migrate_rest_apis).
+* If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=EventStreams-migrate_mqlight).
+* If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating to Kafka Connect](/docs/EventStreams?topic=EventStreams-migrate_bridges).
 
 ## Classic plan overview
 {: #classic_overview}

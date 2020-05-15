@@ -6,7 +6,7 @@ lastupdated: "2019-10-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -29,9 +29,9 @@ community.
 {: shortdesc}
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){:new_window}. If you'd then 
-like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in  [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans](/docs/EventStreams?topic=eventstreams-report_problem_enterprise#report_problem_enterprise).
+like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in  [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise#report_problem_enterprise).
 
-If you're using the Classic plan (which is now deprecated), see [Reporting a problem to the {{site.data.keyword.messagehub}} team - Classic plan](/docs/EventStreams?topic=eventstreams-report_problem#report_problem) for a list of the information required by the team.
+If you're using the Classic plan (which is now deprecated), see [Reporting a problem to the {{site.data.keyword.messagehub}} team - Classic plan](/docs/EventStreams?topic=EventStreams-report_problem#report_problem) for a list of the information required by the team.
 {:shortdesc}
 
 ## Useful links

@@ -6,7 +6,7 @@ lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -26,7 +26,7 @@ The {{site.data.keyword.mql}} API is available as part of the Classic plan only.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
 {:deprecated}
 
-** If you currently use the {{site.data.keyword.mql}} API on the Classic plan and would like to migrate to Kafka, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=eventstreams-migrate_mqlight).**
+** If you currently use the {{site.data.keyword.mql}} API on the Classic plan and would like to migrate to Kafka, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=EventStreams-migrate_mqlight).**
 
 The {{site.data.keyword.mql}} API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service. The API provides an AMQP-based messaging interface for Java&trade;, Node.js, Python, and Ruby. 
 {:shortdesc}
@@ -53,7 +53,7 @@ The {{site.data.keyword.mql}} is available in the following
 {{site.data.keyword.Bluemix_notm}} locations (regions) only: Dallas (us-south), London (eu-gb), and Sydney (au-syd). The MQ Light API not available in the Frankfurt (eu-de) location or in
 {{site.data.keyword.Bluemix_notm}} Dedicated.
 
-For more information about choosing between the APIs, see [Choosing between the three APIs](/docs/EventStreams?topic=eventstreams-choose_api_classic).
+For more information about choosing between the APIs, see [Choosing between the three APIs](/docs/EventStreams?topic=EventStreams-choose_api_classic).
 
 
 ## What's required to use the MQ Light API with {{site.data.keyword.messagehub}}?
@@ -76,7 +76,7 @@ To disable the MQ Light API, delete the "MQLight" topic. Note that all data is d
 {: #mql_connect}
 
 To connect an app to the service, the app must use the <code>user</code>,
-<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=eventstreams-connecting#connect_classic_cf). Use the following guidance for your chosen language:
+<code>password</code>, and <code>mqlight_lookup_url</code> details from the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=EventStreams-connecting#connect_classic_cf). Use the following guidance for your chosen language:
 
 **For Java**
 
@@ -170,7 +170,7 @@ You can connect existing applications that currently run against either {{site.d
 To connect existing apps, complete the following checks:
 
 * Ensure that the app is using the latest available {{site.data.keyword.mql}} API client version for your language.
-* Check that the connection details extracted from VCAP_SERVICES reference the <code>messagehub</code> service type and retrieve the connections user name from the <code>credentials.user</code> property rather than the <code>credentials.username</code> property, and retrieve the connection lookup URL from the <code>credentials.mqlight_lookup_url</code> property rather than the <code>credentials.connectionLookupURI</code> property. For more information, see [VCAP_SERVICES environment variable](/docs/EventStreams?topic=eventstreams-connecting).
+* Check that the connection details extracted from VCAP_SERVICES reference the <code>messagehub</code> service type and retrieve the connections user name from the <code>credentials.user</code> property rather than the <code>credentials.username</code> property, and retrieve the connection lookup URL from the <code>credentials.mqlight_lookup_url</code> property rather than the <code>credentials.connectionLookupURI</code> property. For more information, see [VCAP_SERVICES environment variable](/docs/EventStreams?topic=EventStreams-connecting).
 
 	Note that this step is done for you if you use the Java&trade; client and specify 'null' as the endpointService parameter in the create() call, so that the client retrieves the information itself.
 	
@@ -178,7 +178,7 @@ To connect existing apps, complete the following checks:
 
 You should also note the following information:
 
-* Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/EventStreams?topic=eventstreams-mql_using#max_limits).
+* Message limits are consistent with {{site.data.keyword.messagehub}} but might be different from other servers supporting the {{site.data.keyword.mql}} API. For more information, see [Maximum limits](/docs/EventStreams?topic=EventStreams-mql_using#max_limits).
 * JMS is not supported.
 
 <!-- 15/11/18: info was in eventstreams081.md, moved because of doc app changes -->

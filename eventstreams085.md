@@ -6,7 +6,7 @@ lastupdated: "2020-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -26,7 +26,7 @@ subcollection: eventstreams
 
 <!--
 For information about the Classic plan, see
-[Classic plan](/docs/EventStreams?topic=eventstreams-plan_choose_classic#plan_choose_classic).
+[Classic plan](/docs/EventStreams?topic=EventStreams-plan_choose_classic#plan_choose_classic).
 -->
 {: shortdesc}
 
@@ -43,7 +43,7 @@ The Standard plan is appropriate if you require event ingest and distribution ca
 ## Enterprise plan 
 {: #plan_enterprise}
 
-The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster. You can also provision an {{site.data.keyword.messagehub}} cluster in a geographically local but [single zone location (SZR)](/docs/EventStreams?topic=eventstreams-sla#sla_szr).
+The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster. You can also provision an {{site.data.keyword.messagehub}} cluster in a geographically local but [single zone location (SZR)](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 
 ## Classic plan
 {: #plan_classic}
@@ -55,7 +55,7 @@ For more information, see
 
 The Classic plan gives access to the previous edition of the Standard plan and is provided for existing workloads and backward compatibility only. You should provision new workloads against the Standard plan.
 
-For information about moving from the Classic plan to either the Enterprise or Standard plans, see [Migrating](/docs/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
+For information about moving from the Classic plan to either the Enterprise or Standard plans, see [Migrating](/docs/EventStreams?topic=EventStreams-plan_choose_classic#migrating_from_classic).
 
 
 ## What's supported by the Lite, Standard, Enterprise, and Classic plans
@@ -69,7 +69,7 @@ The following table summarizes what is supported by the plans:
 		    <th>Lite Plan</th>
 		    <th>Standard Plan</th>
 	      	    <th>Enterprise Plan</th>
-		    <th>Classic Plan [<sup>1</sup>](/docs/EventStreams?topic=eventstreams-plan_choose#footnote_classic)</th>
+		    <th>Classic Plan [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_classic)</th>
         </tr>
 		<tr>
 			<td>**Tenancy**</td>
@@ -88,9 +88,9 @@ The following table summarizes what is supported by the plans:
 		</tr>
         <tr>
 			<td>**Availability**</td>
-			<td>99.95% [<sup>2</sup>](/docs/EventStreams?topic=eventstreams-plan_choose#footnote_lite)</td>
+			<td>99.95% [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite)</td>
 			<td>99.99%</td>
-			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/EventStreams?topic=eventstreams-plan_choose#footnote_plans)</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)</td>
 			<td>99.5%</td>
 		</tr>
 	  		<tr>
@@ -123,9 +123,9 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Maximum number of partitions**</td>
-			<td>1  [<sup>4</sup>](/docs/EventStreams?topic=eventstreams-plan_choose#footnote_partitions_lite)</td>
+			<td>1  [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)</td>
 			<td>100</td>
-			<td>3000 [<sup>5</sup>](/docs/EventStreams?topic=eventstreams-plan_choose#footnote_partitions)</td>
+			<td>3000 [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions)</td>
 			<td>100</td>
 		</tr>
 		<tr>
@@ -139,7 +139,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum throughput**</td>
 			<td>100 KB per second per partition</td>
 			<td>1 MB per second per partition (20 MB per service instance) </td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>6</sup>](/docs/EventStreams?topic=eventstreams-plan_choose#footnote_throughput)</td>
+			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
 			<td>1 MB per second per partition</td>
 		</tr>
 		<tr>
@@ -248,9 +248,9 @@ ISO 27001, 27017, 27018<br/></td>
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_classic notoc} The Classic plan is deprecated. For more information, see [Classic plan deprecation](/docs/EventStreams?topic=eventstreams-plan_choose#plan_classic) and [moving to the Standard plan](/docs/EventStreams?topic=eventstreams-plan_choose_classic#migrating_from_classic).
+1. {: #footnote_classic notoc} The Classic plan is deprecated. For more information, see [Classic plan deprecation](/docs/EventStreams?topic=EventStreams-plan_choose#plan_classic) and [moving to the Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose_classic#migrating_from_classic).
 2. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
-3. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=eventstreams-sla#sla_szr).
+3. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 4. {: #footnote_partitions_lite notoc} If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of 1 partition to clear so that you can take advantage of the 100 partition limit for the Standard plan.
 5. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
 6. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>

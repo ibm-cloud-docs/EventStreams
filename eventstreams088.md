@@ -6,7 +6,7 @@ lastupdated: "2019-11-05"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -22,7 +22,7 @@ subcollection: eventstreams
 
 {{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only.  The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted.<br/>
-If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/EventStreams?topic=eventstreams-migrate_bridges).
+If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/EventStreams?topic=EventStreams-migrate_bridges).
 {:deprecated}
 
 The {{site.data.keyword.messagehub}} Classic plan also
@@ -47,9 +47,9 @@ You might find bridges useful in the following two common scenarios:
 {: notoc}
 
 * We provide the following types of bridge: 
-  - [MQ bridge](/docs/EventStreams?topic=eventstreams-mq_bridge), which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
-  - [Cloud Object Storage bridge](/docs/EventStreams?topic=eventstreams-cloud_object_storage_bridge), which transfers {{site.data.keyword.messagehub}} data to an instance of the {{site.data.keyword.IBM_notm}} Cloud Object Storage service. 
-  - The [{{site.data.keyword.objectstorageshort}} bridge](/docs/EventStreams?topic=eventstreams-object_storage_bridge) is deprecated from August 1st 2018. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}.
+  - [MQ bridge](/docs/EventStreams?topic=EventStreams-mq_bridge), which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
+  - [Cloud Object Storage bridge](/docs/EventStreams?topic=EventStreams-cloud_object_storage_bridge), which transfers {{site.data.keyword.messagehub}} data to an instance of the {{site.data.keyword.IBM_notm}} Cloud Object Storage service. 
+  - The [{{site.data.keyword.objectstorageshort}} bridge](/docs/EventStreams?topic=EventStreams-object_storage_bridge) is deprecated from August 1st 2018. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
 * You can administer bridges in the following two ways:
   - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also find examples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
@@ -67,6 +67,6 @@ secured using SSL/TLS.
 ## Bridges from other services into {{site.data.keyword.messagehub}}
 {: notoc}
 
-* {{site.data.keyword.iot_full}} provides its own [bridge into {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-consuming_messages). The bridge provides a unidirectional link into {{site.data.keyword.messagehub}} that allows you to store historical data. By connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}}, you can use {{site.data.keyword.messagehub}} as an event pipeline to consume your device events from the Watson IoT Platform and make the events available in real time to the rest of the platform. 
+* {{site.data.keyword.iot_full}} provides its own [bridge into {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-consuming_messages). The bridge provides a unidirectional link into {{site.data.keyword.messagehub}} that allows you to store historical data. By connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_notm}}, you can use {{site.data.keyword.messagehub}} as an event pipeline to consume your device events from the Watson IoT Platform and make the events available in real time to the rest of the platform. 
 
 

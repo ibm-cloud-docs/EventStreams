@@ -6,7 +6,7 @@ lastupdated: "2019-01-30"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -22,8 +22,8 @@ subcollection: eventstreams
 
 To connect to {{site.data.keyword.messagehub}}, the Kafka API uses one of the following sets of credential information: 
 * the <code>kafka_brokers_sasl</code> credentials, and the <code>user</code> and <code>password</code> from
-the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=eventstreams-connecting#connect_standard_cf).
-* the service key. For more information, see [Connecting to your cluster](/docs/EventStreams?topic=eventstreams-connecting).
+the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=EventStreams-connecting#connect_standard_cf).
+* the service key. For more information, see [Connecting to your cluster](/docs/EventStreams?topic=EventStreams-connecting).
 {: shortdesc}
 
 

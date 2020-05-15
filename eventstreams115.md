@@ -6,7 +6,7 @@ lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -25,7 +25,7 @@ The Cloud Object Storage bridge is available as part of the Classic plan only. T
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
 {:deprecated}
 
-For information about the replacement for the bridge, see [Connecting Event Streams to Cloud Object Storage](/docs/EventStreams?topic=eventstreams-cos_connector).
+For information about the replacement for the bridge, see [Connecting Event Streams to Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
 
 
 The {{site.data.keyword.IBM}} Cloud Object Storage bridge provides a way of reading data from an {{site.data.keyword.messagehub}} Kafka topic

@@ -6,7 +6,7 @@ lastupdated: "2019-11-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -60,7 +60,7 @@ Service instances are continuously monitored for performance, error rates, and t
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 
 ## What do you need to consider to achieve this availability?
-To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/EventStreams?topic=eventstreams-sla#connectivity), [throughput](/docs/EventStreams?topic=eventstreams-sla#throughput), and [consistency and durability of messages](/docs/EventStreams?topic=eventstreams-sla#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
+To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/EventStreams?topic=EventStreams-sla#connectivity), [throughput](/docs/EventStreams?topic=EventStreams-sla#throughput), and [consistency and durability of messages](/docs/EventStreams?topic=EventStreams-sla#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
 
 ### Connectivity
 {: #connectivity}
@@ -81,17 +81,17 @@ If duplicates cannot be tolerated, you can use the <code>idempotent</code> produ
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster. 
 
 **Specific guidance for the Standard plan**<br/>
-For throughput guidance information, see [Limits and quotas- Standard](/docs/EventStreams?topic=eventstreams-kafka_quotas#standard_throughput). 
+For throughput guidance information, see [Limits and quotas- Standard](/docs/EventStreams?topic=EventStreams-kafka_quotas#standard_throughput). 
 
 **Specific guidance for the Enterprise plan**<br/>
 
-For throughput guidance information, see [Limits and quotas - Enterprise](/docs/EventStreams?topic=eventstreams-kafka_quotas#enterprise_throughput). 
+For throughput guidance information, see [Limits and quotas - Enterprise](/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput). 
 
 **Measurement**<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
 
 **Saturation**<br/>
-As the limit of the traffic that can be produced in to the cluster is approached, producers start to be throttled, latency increases, and ultimately errors such as timeout errors occur. Depending on the configuration, message consistency and durability might also be impacted. For more information, see [Consistency and durability of messages](/docs/EventStreams?topic=eventstreams-sla#message_consistency).
+As the limit of the traffic that can be produced in to the cluster is approached, producers start to be throttled, latency increases, and ultimately errors such as timeout errors occur. Depending on the configuration, message consistency and durability might also be impacted. For more information, see [Consistency and durability of messages](/docs/EventStreams?topic=EventStreams-sla#message_consistency).
 
 ### Consistency and durability of messages
 {: #message_consistency}
@@ -109,7 +109,7 @@ Some customers require geographic locality and therefore want to provision an {{
 * In a single zone location, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, the failure of an entire data center or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single zone locations.
 * An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down an entire cluster. In contrast, there is the small possibility that a single failure could bring down the entire cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if <code>acks=all</code> is used by the producers, if all Kafka nodes went down simultaneously, there might be some messages that the brokers had acknowledged receipt for, but the underlying file system had not completed the flush to disk. Potentially, those un-flushed messages could be lost. 
 
-    For more information, see [Message acknowledgments](/docs/EventStreams?topic=eventstreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
+    For more information, see [Message acknowledgments](/docs/EventStreams?topic=EventStreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
 
 For more information, see [single zone clusters](/docs/containers?topic=containers-regions-and-zones#regions_single_zone) and [multizone clusters](/docs/containers?topic=containers-regions-and-zones#regions_multizone).
 

@@ -6,7 +6,7 @@ lastupdated: "2020-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -40,7 +40,7 @@ Each topic is a named stream of messages. A topic is made up of one or more part
 
 If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.
 
-For more information, see [Partition leadership](/docs/EventStreams?topic=eventstreams-partition_leadership#partition_leadership).
+For more information, see [Partition leadership](/docs/EventStreams?topic=EventStreams-partition_leadership#partition_leadership).
 
 ![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers.")
 
@@ -66,7 +66,7 @@ A producer publishes messages to one or more topics. A producer can publish to o
 
 You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgement the producer receives for messages it publishes.
 
-For more information, see [Producing Messages](/docs/EventStreams?topic=eventstreams-producing_messages#producing_messages).
+For more information, see [Producing Messages](/docs/EventStreams?topic=EventStreams-producing_messages#producing_messages).
 
 ![Producers diagram.](concepts_producers.png "Diagram that shows a producer publishing messages to 1 topic across 3 brokers.")
 
@@ -76,7 +76,7 @@ A consumer reads messages from one or more topics and processes them. The differ
 
 If the lag increases over time, it is a sign that the consumer is not able to keep up. Over the short term, this is not an issue but eventually the consumer could miss messages if the retention period is exceeded.
 
-For more information, see [Consuming Messages](/docs/EventStreams?topic=eventstreams-consuming_messages#consuming_messages).
+For more information, see [Consuming Messages](/docs/EventStreams?topic=EventStreams-consuming_messages#consuming_messages).
 
 ![Consumers diagram.](concepts_consumers.png "Diagram that shows a consumer processing messages from 1 topic across 3 brokers.")
 

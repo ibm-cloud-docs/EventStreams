@@ -6,7 +6,7 @@ lastupdated: "2020-02-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -27,7 +27,7 @@ messages to a consumer using a topic. The same sample program is used to consume
 produce messages.
 {: shortdesc}
 
-To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=eventstreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.
+To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.
 
 To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
 
@@ -126,12 +126,12 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
    
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
+   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
    The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
    {: important}
 
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
+   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
 
    ```
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar 
@@ -154,12 +154,12 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
 
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=eventstreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
+   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
    The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
    {: important}
 
-   Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=eventstreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
+   Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
 
    ```
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar
@@ -177,7 +177,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Next steps
 {: #next_steps}
 
-Now that you've run the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}, explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=eventstreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, take a look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial or find out more about 
+Now that you've run the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}, explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, take a look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial or find out more about 
 [{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){:new_window}.
 
 To watch a video that walks

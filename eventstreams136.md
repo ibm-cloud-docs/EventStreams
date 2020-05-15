@@ -6,7 +6,7 @@ lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -51,7 +51,7 @@ The Kafka REST API is a convenient interface that can be used in the following s
 * In certain low throughput use cases where latency is not a critical factor
 * For debugging and fault finding
 
-The Kafka REST API is not intended as a high throughput, low latency interface. ​For these types of requirement, we recommend using the Kafka API to connect to and from {{site.data.keyword.messagehub}}. For more information, see [Using a Kafka client](/docs/EventStreams?topic=eventstreams-kafka_using#kafka_using).
+The Kafka REST API is not intended as a high throughput, low latency interface. ​For these types of requirement, we recommend using the Kafka API to connect to and from {{site.data.keyword.messagehub}}. For more information, see [Using a Kafka client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_using).
 
 ## Why use the {{site.data.keyword.mql}} API?
 {: #why_mql_classic notoc}

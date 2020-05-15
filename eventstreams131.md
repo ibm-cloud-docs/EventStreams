@@ -6,7 +6,7 @@ lastupdated: "2019-05-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
@@ -66,7 +66,7 @@ The kafka-node client does not fully support SASL authentication so cannot curre
 ### no-kafka 
 The no-kafka client does not fully support SASL authentication so cannot currently be used with {{site.data.keyword.messagehub}}.
 
-For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/EventStreams?topic=eventstreams-kafka_connect).
+For information about how to configure your client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/EventStreams?topic=EventStreams-kafka_connect).
 
 
 
