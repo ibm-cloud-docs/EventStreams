@@ -110,7 +110,7 @@ Cluster A should have the same access policies apart from the last one which sho
 
 ## Mirroring user controls
 
-A user can define which topics are mirrored via the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api) on the target cluster. The selection is made based on the topic names on the source cluster via patterns and it is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the previous section (TODO link to sharing_clusters). With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. Also when adding new topics to the source cluster, if you have a well established naming convention, you will not need to update the mirroring topic selection if it already matches an existing pattern.
+A user can define which topics are mirrored via the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api) on the target cluster. The selection is made based on the topic names on the source cluster via patterns and it is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section. With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. Also when adding new topics to the source cluster, if you have a well established naming convention, you will not need to update the mirroring topic selection if it already matches an existing pattern.
 
 The topic selection is in the form of a list of patterns, the following example shows enabling mirroring for all topics which have the prefix `aaa` or `bbb`:
 

@@ -28,14 +28,23 @@ This information describes how to set up a pair of {{site.data.keyword.messagehu
 
 ## Step 1: setup 
 {: #step1_setup}
-
 Ensure that you have provisioned two Enterprise plan clusters. Both clusters should also have the same throughput and storage capacity and have suitable IAM access policies.
 
 Because mirroring is currently unidirectional, decide which direction mirroring should happen. One cluster will be the source and the other cluster will be the target.
 
+Decide which topics from your source cluster you wish to mirror. The selection should be specified as one or more patterns. Some examples of patterns to select topics for mirroring:
+
+Example Patterns | Explanation
+------------ | -------------
+`"aaa.*", "bbb.*"` | Match on the prefix of topic names.
+`"topic1", "topic2"` | Full topic names.
+`".*"` | Mirror all source topics.
+`""` | Mirror no source topics.
+
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. 
 
 If your source cluster is at its limit or close to its theoretical maximum of 80 MB per second (Enterprise plan cluster), there will be insufficient bandwidth for mirroring to operate.
+
 
 ## Step 2: enable service-to-service bindings
 {: #step2_bindings}
@@ -59,6 +68,7 @@ Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
 - Aliases that you want to use for each of the two instances. Each service instance has an alias configured by the user when enabling mirroring. The aliases will appear in topic names. We recommend choosing short and descriptive names. For example "us-south" and "us-east".
 - The desired direction for mirroring.
+- The set of patterns for the source topics to be mirrored.
 
 ### Example request
 
@@ -70,6 +80,10 @@ We request the {{site.data.keyword.messagehub}} team to enable mirroring between
 - crn:v1:bluemix:public:messagehub:us-east:a/bbb:bbbb:: aliased with "us-east"
 
 Data should flow from "us-south" to "us-east".
+
+Mirrored topics should be:
+"aaa.*"
+"bbb.*"
 ```
 {:codeblock}
 
