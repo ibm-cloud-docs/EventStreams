@@ -97,7 +97,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Integrate with select third-party partnership technologies| {{site.data.keyword.messagehub}} provides integrations with select third-party partnership technologies, such as Log Analysis with LogDNA.   |
+|Integrate with select third-party partnership technologies| {{site.data.keyword.messagehub}} provides integrations with select third-party partnership technologies, such as IBM Cloud Activity Tracker with LogDNA.   |
 |Provide service binding to other {{site.data.keyword.IBM_notm}} services| {{site.data.keyword.messagehub}} provides the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | |
 |Manage, integrate, and monitor|   | Customer is responsible for using the provided tools and features to manage the lifecycle of customer-owned applications, for integrating with other services, and monitoring the health of the application (for example, Availability Monitoring).|
 {: caption="Table 5. Responsibilities for app orchestration" caption-side="top"}
