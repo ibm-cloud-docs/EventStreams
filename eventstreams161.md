@@ -32,19 +32,11 @@ Ensure that you have provisioned two Enterprise plan clusters. Both clusters sho
 
 Because mirroring is currently unidirectional, decide which direction mirroring should happen. One cluster will be the source and the other cluster will be the target.
 
-Decide which topics from your source cluster you wish to mirror. The selection should be specified as one or more patterns. Some examples of patterns to select topics for mirroring:
-
-Example Patterns | Explanation
------------- | -------------
-`"aaa.*", "bbb.*"` | Match on the prefix of topic names.
-`"topic1", "topic2"` | Full topic names.
-`".*"` | Mirror all source topics.
-`""` | Mirror no source topics.
+Decide which topics from your source cluster you wish to mirror. By default no topics will be mirrored and you can enable mirroring using the user controls when you are ready. Alternatively you can provide details of which topics to include at set up time. The selection should be specified as one or more patterns, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) for more information on making the selection.
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. 
 
 If your source cluster is at its limit or close to its theoretical maximum of 80 MB per second (Enterprise plan cluster), there will be insufficient bandwidth for mirroring to operate.
-
 
 ## Step 2: enable service-to-service bindings
 {: #step2_bindings}

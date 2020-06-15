@@ -33,7 +33,6 @@ The current features are:
 - Monitoring using {{site.data.keyword.mon_full}}
 
 The current limitations are:
-- All topics and groups are mirrored
 - Enablement and disablement is via a support ticket
 - Unidirectional
 
@@ -109,16 +108,25 @@ The required access policies must be adjusted. For example, for the accounting b
 Cluster A should have the same access policies apart from the last one which should be on B.checkpoints.internal.
 
 ## Mirroring user controls
+{: #user_controls}
 
-A user can define which topics are mirrored via the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api) on the target cluster. The selection is made based on the topic names on the source cluster via patterns and it is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section. With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. Also when adding new topics to the source cluster, if you have a well established naming convention, you will not need to update the mirroring topic selection if it already matches an existing pattern.
+A user can define which topics are mirrored via the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api) on the target cluster. The selection is made based on the topic names on the source cluster via patterns and it is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
-The topic selection is in the form of a list of patterns, the following example shows enabling mirroring for all topics which have the prefix `aaa` or `bbb`:
+With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. With such a selection in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following example shows enabling mirroring for all topics whose name has the prefix `accounting` or `hr`:
 
 ```
-curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["aaa.*", "bbb.*"]}'
+curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["accounting.*", "hr.*"]}'
 ```
 
-If you wish to mirror all topics then you can use the pattern `.*`. If you wish to disable mirroring then you can set no patterns.
+Some examples of patterns to select topics for mirroring:
+
+Example Patterns | Explanation
+------------ | -------------
+`"aaa.*", "bbb.*"` | Match on the prefix of topic names.
+`^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names.
+`"topic1", "topic2"` | Full topic names.
+`".*"` | Mirror all source topics.
+`""` | Mirror no source topics.
 
 Note: Updating a topic selection replaces the current set of patterns.
 
