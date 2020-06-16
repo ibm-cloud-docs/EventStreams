@@ -33,7 +33,6 @@ The current features are:
 - Monitoring using {{site.data.keyword.mon_full}}
 
 The current limitations are:
-- All topics and groups are mirrored
 - Enablement and disablement is via a support ticket
 - Unidirectional
 
@@ -46,15 +45,17 @@ To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventS
 ## Mirroring overview
 {: #mirroring_overview}
 
-Mirroring happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. In this document, the source cluster is named `A` and the target cluster is named `B`. Note that these cluster aliases are configurable when enabling mirroring, so for example they could be "us-south" and "us-east".
+Mirroring of selected topics happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. In this document, the source cluster is named `A` and the target cluster is named `B`. Note that these cluster aliases are configurable when enabling mirroring, so for example they could be "us-south" and "us-east".
 
 A topic called `mytopic` from the source cluster (A) will appear on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote cluster. In contrast, any topics directly created on a cluster by users are called _local topics_.
+
+Topics which are mirrored are selected based on patterns that can be set via Mirroring User Controls. 
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
 Finally, because of the naming of remote topics, we recommend avoiding using cluster aliases as part of the Kafka resource names.
 
-## IAM access policies for mirroring
+## IAM access policies for mirroring 
 {: #iam_mirroring}
 
 Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters and use the API key from the service ID that the policies are attached to.  We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/iam?topic=iam-wildcard) to simplify the access policies that control access to the mirrored resources.
@@ -72,6 +73,12 @@ Define the following IAM access policies on **both** clusters, where &lt;ALIAS&g
 |topic (note, this is specific to the checkpoint topic)    | &lt;ALIAS&gt;.checkpoints.internal | Reader |
 
 Fine-grained access policies should be granted to individual applications. For example, applications simply consuming should only have Reader access policies.
+
+For mirroring user controls you will need to have the following permissions on the target cluster.
+
+| Resource type | Resource ID| Role|
+|----------|---------|---------|
+|cluster |  |Manager |
 
 ## Considerations when sharing clusters between multiple entities
 {: #sharing_clusters}
@@ -99,6 +106,29 @@ The required access policies must be adjusted. For example, for the accounting b
 |topic (note, this is specific to the checkpoint topic)    | A.checkpoints.internal | Reader |
 
 Cluster A should have the same access policies apart from the last one which should be on B.checkpoints.internal.
+
+## Mirroring user controls
+{: #user_controls}
+
+A user can define which topics are mirrored via the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api) on the target cluster. The selection is made based on the topic names on the source cluster via patterns and it is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
+
+With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. With such a selection in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following example shows enabling mirroring for all topics whose name has the prefix `accounting` or `hr`:
+
+```
+curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["accounting.*", "hr.*"]}'
+```
+
+Some examples of patterns to select topics for mirroring:
+
+Example Patterns | Explanation
+------------ | -------------
+`"aaa.*", "bbb.*"` | Match on the prefix of topic names.
+`^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names.
+`"topic1", "topic2"` | Full topic names.
+`".*"` | Mirror all source topics.
+`""` | Mirror no source topics.
+
+Note: Updating a topic selection replaces the current set of patterns.
 
 ## Building mirroring aware applications 
 {: #building_apps}
