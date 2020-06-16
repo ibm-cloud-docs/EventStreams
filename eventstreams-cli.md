@@ -526,6 +526,53 @@ ibmcloud es group-delete [--group] GROUP_ID [--force]
 </dd>
 </dl>
 
+## ibmcloud es mirroring-topic-selection
+{: #ibmcloud_es_mirroring_topic_selection}
+
+List mirroring topic selection.
+
+
+```
+ibmcloud es mirroring-topic-selection [--json]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. es plugin configured to connect to the mirroring target cluster via `ibmcloud es init`.
+
+<strong>Command options</strong>:
+{: #ibmcloud_es_mirroring_topic_selection_params}
+
+<dl>
+    <dt>--json (optional)</dt>
+        <dd>Format output in JSON.</dd>
+</dl>
+
+## ibmcloud es mirroring-topic-selection-set
+{: #ibmcloud_es_mirroring_topic_selection_set}
+
+Replace mirroring topic selection.
+
+```
+ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) [--force]
+
+```
+{:codeblock}
+
+<strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. es plugin configured to connect to the mirroring target cluster via `ibmcloud es init`.
+
+<strong>Command options</strong>:
+{: #ibmcloud_es_mirroring_topic_selection_set_params}
+
+<dl>
+    <dt>--select value</dt>
+        <dd>Selection of topics to mirror as comma separated regex patterns. Use '.*' to mirror all topics.</dt>
+    <dt>--none</dt>
+        <dd>Clear currently selected topics (disable mirroring of topics).</dd>
+    <dt>--force</dt>
+        <dd>Optional. Replace mirroring topic selection without confirmation.</dd>
+</dl>
+
 <!--
 <strong>Examples</strong>:
 -->
