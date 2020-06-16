@@ -55,7 +55,7 @@ To allow consumer groups to switch between clusters, special topics are used to 
 
 Finally, because of the naming of remote topics, we recommend avoiding using cluster aliases as part of the Kafka resource names.
 
-## IAM access policies for mirroring 
+## IAM access policies for mirroring
 {: #iam_mirroring}
 
 Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters and use the API key from the service ID that the policies are attached to.  We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/iam?topic=iam-wildcard) to simplify the access policies that control access to the mirrored resources.
@@ -110,23 +110,33 @@ Cluster A should have the same access policies apart from the last one which sho
 ## Mirroring user controls
 {: #user_controls}
 
-A user can define which topics are mirrored via the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api) on the target cluster. The selection is made based on the topic names on the source cluster via patterns and it is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
+A user can define which topics are mirrored via the [CLI](/docs/EventStreams?topic=EventStreams-cli) or [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api). All mirroring user controls are performed on the target cluster.
 
-With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. With such a selection in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following example shows enabling mirroring for all topics whose name has the prefix `accounting` or `hr`:
+The mirroring selection is made based on the topic names on the source cluster via patterns. It is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
+
+With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. With such a selection in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+
+Firstly via the CLI:
 
 ```
-curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["accounting.*", "hr.*"]}'
+ibmcloud es mirroring-topic-selection-set --select ^accounting.*,^hr.* 
+```
+
+Also, the same selection via the Administration REST API:
+
+```
+curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["^accounting.*", "^hr.*"]}'
 ```
 
 Some examples of patterns to select topics for mirroring:
 
 Example Patterns | Explanation
 ------------ | -------------
-`"aaa.*", "bbb.*"` | Match on the prefix of topic names.
+`"^aaa.*", "^bbb.*"` | Match on the prefix of topic names.
 `^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names.
 `"topic1", "topic2"` | Full topic names.
 `".*"` | Mirror all source topics.
-`""` | Mirror no source topics.
+`""` (via Administration REST API) <br /> `--none` (via CLI) | Mirror no source topics.
 
 Note: Updating a topic selection replaces the current set of patterns.
 
