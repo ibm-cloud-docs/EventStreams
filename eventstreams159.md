@@ -74,11 +74,11 @@ Define the following IAM access policies on **both** clusters, where &lt;ALIAS&g
 
 Fine-grained access policies should be granted to individual applications. For example, applications simply consuming should only have Reader access policies.
 
-For user controls you will need to have the following permissions on the target cluster.
+For mirroring user controls you will need to have the following permissions on the target cluster.
 
 | Resource type | Resource ID| Role|
 |----------|---------|---------|
-|instance |  |Manager |
+|cluster |  |Manager |
 
 ## Considerations when sharing clusters between multiple entities
 {: #sharing_clusters}
