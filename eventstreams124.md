@@ -42,7 +42,7 @@ The levels of access (also known as a role) that you can assign to a user to eac
 |:-----------------|:-----------------|:-----------------|
 |  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing resources | Allow an app to connect to a cluster by assigning read access to cluster resource type |
 | Writer | Writers have permissions beyond the reader role, including editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
-| Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance|
+| Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance. <br /> Allow administrative configuration on the {{site.data.keyword.messagehub}} instance, for example, mirroring topic selection. |
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="top"}
 
 <!-- comment from Charlie and my reply 
@@ -95,6 +95,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
 | To use Streams |Resource type: <code>cluster</code></br>Resource type: <code>group</code>| Not applicable  |Resource type: <code>topic</code>    |
 | Delete records | Not applicable | Not applicable | Resource type: <code>topic</code> <br/>Resoure ID: <var class="keyword varname">name_of_topic</var> |
+| Mirroring User Control | Not applicable | Not applicable | Resource type: <code>cluster</code> |
 
 For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/iam?topic=iam-iamoverview#iamoverview).
