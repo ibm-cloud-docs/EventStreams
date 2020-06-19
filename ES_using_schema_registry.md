@@ -509,8 +509,8 @@ Example response:
 
 Getting per-schema rules requires at least:
 
-•	Reader role access to the Event Streams cluster resource type
-•	Reader role access to the schema resource to which the rule applies
+- Reader role access to the Event Streams cluster resource type
+- Reader role access to the schema resource to which the rule applies
 
 ## Updating a per-schema rule – PUT /artifacts/{schema-id}/rules/{rule-type}
 
