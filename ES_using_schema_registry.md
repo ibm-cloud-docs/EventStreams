@@ -173,7 +173,6 @@ roles which would be required by the actors involved.
 
 Scenario | Role and resource
 --- | ---
-
 The process of managing schemas is handled separately to deploying applications. New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas. | The application would require:
 - Reader role for the cluster resource
 - Reader role for the schema resource
@@ -200,7 +199,6 @@ The schema registry supports enforcing compatibility rules when creating a new v
 
 Compatibility Rule | Tested against | Description
 --- | --- | ---
-
 NONE | N/A | No compatibility checking is performed when a new schema version is created.
 BACKWARD | Latest version of the schema | A new version of the schema can omit fields that are present in the existing version of the schema.
 BACKWARD_TRANSITIVE | All versions of the schema | A new version of the schema can add optional fields that are not present in the existing version of the schema.
@@ -224,9 +222,7 @@ you will need to specify two properties in the configuration of your Kafka clien
 
 Property name | Value
 --- | ---
-
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of “/confluent”. For example, if $APIKEY is the API key to use and $HOST is the host from the Kafka HTTP URL property in the service credentials, then the value should be in the form:
-https://token:$APIKEY@$HOST/confluent
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of “/confluent”. For example, if $APIKEY is the API key to use and $HOST is the host from the Kafka HTTP URL property in the service credentials, then the value should be in the form: https://token:$APIKEY@$HOST/confluent
 BASIC_AUTH_CREDENTIALS_SOURCE | Set to “URL”. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the schema registry URL.
 
 IMAGE MISSING!!!
@@ -440,7 +436,6 @@ The JSON document sent in the request body must have the following properties:
 
 Property name | Description
 --- | ---
-
 type | Must always be set to the value COMPATIBILITY
 config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TRANSITIVE, FORWARD, FORWARD_TRANSITIVE, FULL, or FULL_TRANSITIVE (see the earlier section on compatibility rules for details on each of these values)
 
