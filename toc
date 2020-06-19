@@ -68,6 +68,7 @@ IBM Event Streams
 	Administering Event Streams
 		eventstreams037.md
 		eventstreams128.md
+		ES_using_schema_registry.md
 		eventstreams116.md
 		eventstreams133.md
 		eventstreams124.md
