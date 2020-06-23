@@ -163,6 +163,7 @@ NB:  Switching IP Whitelists will disable any whitelisted IP address not in the
 
 ## How to check if instance update is completed
 {: #check_endpoints}
+
 Typically we would expect the above updates to take less than an hour. To check status use the following command
 
 ```
@@ -175,6 +176,7 @@ when Last Operation.Status shows "sync succeeded", instance update is complete.
 
 ## Migrate Applications to use Private Endpoints
 {: #migrate_endpoints}
+
 Once you have enable private endpoints then you will need new access credentials.  Create a new service key with private service endpoint:
 
 ```
