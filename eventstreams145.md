@@ -74,22 +74,29 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 There are a number of options you have for selecting endpoints on your Enterprise cluster.
 
 1. Do not use {{site.data.keyword.Bluemix_notm}} service endpoints - Endpoints are accessible on public internet
-2. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable private endpoints and disable public endpoints - Endpoints are not visible on publc internet.
+
+2. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable private endpoints and disable public endpoints - Endpoints are not visible on publc internet
+
 3. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable both private endpoints and public endpoints.
 
 You can select your endpoints at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
 
-Alternatively, if you wish to use the CLI to provision an {{site.data.keyword.messagehub}} service then you would use the following command: 
+Alternatively, if you wish to use the CLI to provision an {{site.data.keyword.messagehub}} service then you would use the following commands 
+
+To enable public endpoints (this is the default) - 
 
 ```
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
 ```
   {: codeblock}
-  
+
+To enable private only endpoints - 
 ```
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
 ```
 {: codeblock}
+
+To enable both private and public endpoints - 
 
 ```
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
@@ -99,14 +106,14 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 use plan-name = messagehub ibm.message.hub.enterprise.3nodes.2tb
 
 
-In addition to the above, if you select private endpoints and wish to further restrict access to only known VSIs with specific VPCs you can add an IP whitelist via the CLI by appending as follows.
+In addition to the above, if you select private endpoints and wish to further restrict access to only known VSIs with specific VPCs, you can add an IP whitelist via the CLI by appending as follows.
 
 ```
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_whitelist":["CIDR1","CIDR2"]}' "
 ```
 {: codeblock}
 
-where CIDR1, 2 are .......????? ip addresses of the form ww.xx.yy.zz.? 
+where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
 
 ## Updating Cloud Service Endpoints or IP Whitelists
 {: #update_endpoints}
@@ -114,46 +121,49 @@ where CIDR1, 2 are .......????? ip addresses of the form ww.xx.yy.zz.? 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this you use the following CLI commands
 
 
-To enable private endpoints
+To enable private endpoints - 
+
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
 {: codeblock}
 
 NB - switching to private endpoints whilst the cluster is in use is NOT recommended. It will disable all public endpoints and your applications will lose access to the cluster.
+{:important}
  
-An initial first step would be to enable both public and private
+An initial first step would be to enable both public and private - 
+
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
 ```
 {: codeblock}
 
-and then once applications migrated to the private endpoints, one can issue the following to turn off the public endpoints.
+
+and then once applications migrated to the private endpoints, one can issue the following to turn off the public endpoints - 
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
 {: codeblock}
 
 
-To change the IP whitelist use the following command
+To change the IP whitelist use the following command - 
+
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_whitelist":["CIDR1","CIDR2"]}'
 ```
 {: codeblock}
 
-where CIDR1, 2 are .......????? ip addresses of the form ww.xx.yy.zz.? 
-?????This is not additive right? All old and new need to be listed, any old not listed are removed form whitelist ???****
-
+where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
 
 NB:  If the private endpoint is enabled via CLI, then next time when updating private IP whitelist, --service-endpoints private can be omitted.
 
-
-NB:  switching IP Whitelists will disable any whitelisted IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
+NB:  Switching IP Whitelists will disable any whitelisted IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
 
 
 ## How to check if instance update is completed
 {: #check_endpoints}
 Typically we would expect the above updates to take less than an hour. To check status use the following command
+
 ```
 ibmcloud resource service-instance <instance-name>
 ```
@@ -165,6 +175,7 @@ when Last Operation.Status shows "sync succeeded", instance update is complete.
 ## Migrate Applications to use Private Endpoints
 {: #migrate_endpoints}
 Once you have enable private endpoints then you will need new access credentials.  Create a new service key with private service endpoint:
+
 ```
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
