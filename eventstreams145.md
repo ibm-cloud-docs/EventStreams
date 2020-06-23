@@ -78,7 +78,7 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 ```
 {: codeblock}
 
-use plan-name = messagehub ibm.message.hub.enterprise.3nodes.2tb
+use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
 
 
 In addition to the above, if you select private endpoints and wish to further restrict access to only known VSIs with specific VPCs, you can add an IP whitelist via the CLI by appending as follows.
@@ -173,7 +173,7 @@ ibmcloud resource service-instance <instance-name>
 ```
 {: codeblock}
 
-when Last Operation.Status shows "sync succeeded", instance update is complete.
+when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
 
 
 ## Migrate Applications to use Private Endpoints
