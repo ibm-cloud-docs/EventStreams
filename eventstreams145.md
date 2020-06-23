@@ -130,7 +130,8 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 
 NB - switching to private endpoints whilst the cluster is in use is NOT recommended. It will disable all public endpoints and your applications will lose access to the cluster.
 {:important}
- 
+
+
 An initial first step would be to enable both public and private - 
 
 ```
