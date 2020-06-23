@@ -27,7 +27,7 @@ If your workload is running entirely within the {{site.data.keyword.Bluemix_shor
 
 Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_short}} public and private networks, where your workload can use the most appropriate interface for its location.
 
-Private network access is achieved using {{site.data.keyword.Bluemix_notm}}. See the following link to enable [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window}.
+Further information about IBM Cloud private networking setup can be found here:[Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window}.
 
 When you switch to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available, making this enablement a disruptive change. Consequently, although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
 {:important}
@@ -42,31 +42,6 @@ Ensure that you complete the following tasks:
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled.
 
-## Obtaining Virtual Private Cloud CSE source IP addresses
-{: #vpc_ip}
-
-If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses. 
-
-1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
-
-   ```
-   export VPC_ID=<vpc_id>
-   ```
-  {: codeblock}
-
-2. Obtain a bearer token from IAM using the ibmcloud CLI:
-   
-   ```
-   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
-   ```
-   {: codeblock}
-
-3. Use the VPC REST API to obtain the source IP addresses:
-
-   ```
-   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
-   ```
-   {: codeblock}
    
 ## Enabling {{site.data.keyword.Bluemix_notm}} Service endpoints 
 {: #enable_endpoints}
@@ -114,6 +89,33 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 {: codeblock}
 
 where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+
+## Obtaining Virtual Private Cloud CSE source IP addresses
+{: #vpc_ip}
+
+If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses. 
+
+1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
+
+   ```
+   export VPC_ID=<vpc_id>
+   ```
+  {: codeblock}
+
+2. Obtain a bearer token from IAM using the ibmcloud CLI:
+   
+   ```
+   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
+   ```
+   {: codeblock}
+
+3. Use the VPC REST API to obtain the source IP addresses:
+
+   ```
+   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
+   ```
+   {: codeblock}
+
 
 ## Updating Cloud Service Endpoints or IP Whitelists
 {: #update_endpoints}
@@ -186,20 +188,10 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 
 and update the credentials in the application to use the newly created one
 
-## After switching to an {{site.data.keyword.Bluemix_notm}} service endpoint 
-{: #after_endpoints}
-
-When you have switched to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available to you. This means that although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
-
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
 {: #access_console}
 
-When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} console changes.
-
-The {{site.data.keyword.messagehub}} console is reachable only from a private admin URL. To discover your private endpoints, including the private admin URL, you can create a new service credential.
-
-Because the {{site.data.keyword.messagehub}} instance endpoints have now been converted to be accessed from the {{site.data.keyword.Bluemix_notm}} only, the {{site.data.keyword.messagehub}} console is accessible only using a web browser that is hosted on the {{site.data.keyword.Bluemix_notm}} network.
-
+Once the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
 
 
 .
