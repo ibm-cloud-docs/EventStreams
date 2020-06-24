@@ -62,6 +62,15 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 <li>Updated translations of help text</li>
 </ul></td>
 </tr>
+<tr>
+<td>v2.1</td>
+<td>June 24 2020</td>
+<td>
+<ul>
+<li>init: displayed provision parameters for Enterprise instance</li>
+<li>Translation update</li>
+</ul></td>
+</tr>
 </tbody>
 </table>
 
