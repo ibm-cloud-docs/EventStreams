@@ -30,16 +30,16 @@ Schemas help producers create data that conforms to a predefined structure, defi
 
 It is common for all of the messages on a topic to use the same schema. The key and value of a message can each be described by a schema.
 
-![Schemas overview diagram.](schema_registry1.svg "Diagram representing how a schema can help define a structure for the key and value pairs of a message"){: caption="Figure 1. Schemas Overview" caption-side="bottom"}
+![Schemas overview diagram.](schema_registry1.svg "Diagram representing how a schema can help define a structure for the key and value pairs of a message"){: caption="Schemas Overview" caption-side="bottom"}
 
 ## Schema Registry
 {: #ES_registry}
 
-Schemas are stored in the {{site.data.keyword.messagehub}} schema registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them. Each {{site.data.keyword.messagehub}} instance has its own schema registry.
+Schemas are stored in the {{site.data.keyword.messagehub}} schema registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them. Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own schema registry.
 
 Producers and consumers validate the data against the specified schema stored in the schema registry. This is in addition to going through Kafka brokers. The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller than without using a schema registry.
 
-![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Figure 2. Schema Registry Architecture" caption-side="bottom"}
+![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Schema Registry Architecture" caption-side="bottom"}
 
 ## Apache Avro data format
 {: #ES_apache_avro_data_format}
@@ -50,7 +50,7 @@ The {{site.data.keyword.messagehub}} schema registry uses Apache Avro data forma
 
 Avro has support for a wide range of data types, including primitive types (null, boolean, int, long, float, double, bytes, and string) and complex types (record, enum, array, map, union, and fixed).
 
-![Avro format diagram.](schema_registry3.svg "Diagram showing a representation of a message sent with the avro format"){: caption="Figure 3. Avro message format" caption-side="bottom"}
+![Avro format diagram.](schema_registry3.svg "Diagram showing a representation of a message sent with the avro format"){: caption="Avro message format" caption-side="bottom"}
 
 ## Serialization and deserialization
 {: #ES_serialization_and_deserialization}
@@ -62,33 +62,14 @@ A consuming application then uses a deserializer to consume messages that have b
 This process provides an efficient way of ensuring that data in messages conform to the required structure.
 
 The {{site.data.keyword.messagehub}} schema registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer)
-![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fits into the {{site.data.keyword.messagehub}} architecture"){: caption="Figure 4. Serializer and deserializer" caption-side="bottom"}
+![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fits into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
 
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
 
 Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. You simply create a new version of an existing schema, and the schema registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
 
-![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Figure 4. Compatibility and versions" caption-side="bottom"}
-
-
-## Current features
-{: #ES_current_features}
-
-Bold typeface is used to denote features added since last Early Access release:
-
-- Support for creating, listing and deleting schemas via a REST interface
-- **Support for creating, listing and deleting versions of a schema, via a REST interface**
-- Support for using schema information in Kafka producer and consumer applications via the Confluent AVRO SerDes
-- Support for Apache AVRO as the format used to express schemas
-- **Support for applying constraints on schema compatibility, either at a global scope, or on a per-schema basis**
-- Access to schema registry requires authentication and access is controlled via IAM
-- **Access to individual schemas, and compatibility rules can be controlled via a new IAM schema resource type**
-- **Constraints on maximum schema size (64kB), the maximum number of schemas that can be stored in the registry (1000) and the maximum
-number of versions a schema can have (100)**
-- SLA of 99.99% availability, consistent with that of the {{site.data.keyword.messagehub}} service
-
-
+![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
 
 ## Enabling the schema registry
 {: #enabling_schema_registry}
@@ -113,7 +94,7 @@ authenticate with the registry. Both of these pieces of information can be found
 To view these in the UI, click on your service instance, select “service credentials” in the left-hand navigation pane, then click on
 the “view credentials” link located next to one of the service credentials listed in the table. You should see something like this:
 
-IMAGE MISSING!
+![Service credentials diagram.](schema_registry8.png "Diagram showing a representation the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
 You will need the value of `kafka_http_url`, which is also the URL of the schema registry, and the value of `apikey` which you can use
 as the credential for authenticating with the schema registry.
@@ -124,7 +105,7 @@ if you are granting access to multiple other people or teams. See the [Managing 
 
 You can use cURL to verify that you have the correct URL and API key values. Here’s a screenshot showing successful verification:
 
-IMAGE MISSING!!!
+![Curl command diagram.](schema_registry9.png "Diagram showing the curl command for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Curl the REST endpoint for the Registry Schema" caption-side="bottom"}
 
 The cURL command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the
 Kafka HTTP URL property of the service credentials):
@@ -147,8 +128,6 @@ Connection: keep-alive
 
 ## Schema registry REST endpoints
 {: #schema_registry_rest_endpoints}
-
-We intend to integrate the schema registry with the {{site.data.keyword.messagehub}} UI and CLI. However, currently the only interface to the schema registry is via a REST interface. This REST interface may be subject to change as the design of the schema registry is iterated upon.
 
 The REST API offers four main capabilities:
 
