@@ -21,15 +21,17 @@ subcollection: EventStreams
 # Restricting network access using the Enterprise plan
 {: #restrict_access}
 
-By default, {{site.data.keyword.messagehub}} permits access from any IP address on the public internet. If you are using an instance of the {{site.data.keyword.vpc_full}}, you are recommended to apply the following restrictions so that only designated virtual server instances (VSIs) within your Virtual Private Cloud (VPC) can establish network connections to the {{site.data.keyword.messagehub}} instance. 
-{:shortdesc}
+By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.Bluemix_short}} public network, so they are accessible over the public Internet. 
+
+If your workload is running entirely within the {{site.data.keyword.Bluemix_short}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_short}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. If required, further isolation is also possible by specifying an allowlist of the IP addresses (source IPs) from which private traffic will be accepted, for instance, the IPs of the VSIs or VPCs within the {{site.data.keyword.Bluemix_short}} where your workload is running.
+
+Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_short}} public and private networks, where your workload can use the most appropriate interface for its location.
+
+Further information about IBM Cloud private networking setup can be found here:[Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window}.
 
 When you switch to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available, making this enablement a disruptive change. Consequently, although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
 {:important}
 
-Enable [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} to restrict access to any source IP address on the {{site.data.keyword.Bluemix_short}} network. When you implement IP address whitelisting on the Cloud Service endpoints, access is restricted to VSIs with specified VPCs. 
-
-If you're using IKS, you can restrict access by including the private IP addresses of the nodes in your clusters that require access to the {{site.data.keyword.messagehub}} endpoints.
 
 ## Prerequisites
 {: #prereqs_restrict_access}
@@ -40,6 +42,54 @@ Ensure that you complete the following tasks:
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled.
 
+   
+## Enabling {{site.data.keyword.Bluemix_notm}} Service endpoints 
+{: #enable_endpoints}
+
+There are a number of options you have for selecting endpoints on your Enterprise cluster.
+
+1. Do not use {{site.data.keyword.Bluemix_notm}} service endpoints - Endpoints are accessible on public Internet.
+
+2. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable private endpoints and disable public endpoints - Endpoints are not visible on public Internet.
+
+3. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable both private endpoints and public endpoints.
+
+You can select your endpoints at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
+
+Alternatively, if you want to use the CLI to provision an {{site.data.keyword.messagehub}} service, use the following commands:
+
+To enable public endpoints (this is the default):
+
+```
+ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
+```
+  {: codeblock}
+
+To enable private only endpoints:
+```
+ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
+```
+{: codeblock}
+
+To enable both, private and public endpoints:
+
+```
+ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
+```
+{: codeblock}
+
+use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
+
+
+In addition, if you select private endpoints and want to further restrict access to only known VSIs with specific VPCs, you can add an IP allowlist via the CLI by appending as follows:
+
+```
+ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_whitelist":["CIDR1","CIDR2"]}' "
+```
+{: codeblock}
+
+where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+
 ## Obtaining Virtual Private Cloud CSE source IP addresses
 {: #vpc_ip}
 
@@ -48,12 +98,12 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
 
    ```
-export VPC_ID=<vpc_id>
+   export VPC_ID=<vpc_id>
    ```
-   {: codeblock}
+  {: codeblock}
 
 2. Obtain a bearer token from IAM using the ibmcloud CLI:
-
+   
    ```
    export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
    ```
@@ -66,33 +116,81 @@ export VPC_ID=<vpc_id>
    ```
    {: codeblock}
 
-## Enabling {{site.data.keyword.Bluemix_notm}} Service endpoints 
-{: #enable_endpoints}
 
-To add an {{site.data.keyword.Bluemix_notm}} service endpoint:
+## Updating Cloud Service Endpoints or IP allowlists
+{: #update_endpoints}
 
-* Raise a [ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} to request an {{site.data.keyword.Bluemix_notm}} service endpoint. Provide the following information in the ticket:
+You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this,use the following CLI commands.
 
-    * Your cluster ID, if you know it. 
-    
-    If you don't know the cluster ID, please provide your dashboard URL, the Kafka broker endpoints, or your service instance ID instead.
-* If you want to restrict access to your {{site.data.keyword.Bluemix_notm}} service endpoint to individual VPCs only, include the [VPC CSE source IP addresses](#vpc_ip) in the ticket.
-* If you're using IKS, you can restrict access by including the node addresses of your clusters.
+To enable private endpoints:
 
-## After switching to an {{site.data.keyword.Bluemix_notm}} service endpoint 
-{: #after_endpoints}
+```
+ibmcloud resource service-instance-update <instance-name> --service-endpoints private
+```
+{: codeblock}
 
-When you have switched to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available to you. This means that although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
+Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster.
+{:important}
+
+
+An initial first step is to enable both public and private endpoints:
+
+```
+ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
+```
+{: codeblock}
+
+
+Next, once applications migrated to the private endpoints, you can issue the following to turn off the public endpoints:
+```
+ibmcloud resource service-instance-update <instance-name> --service-endpoints private
+```
+{: codeblock}
+
+
+To change the IP allowlist, use the following command:
+
+```
+ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_whitelist":["CIDR1","CIDR2"]}'
+```
+{: codeblock}
+
+where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+
+Note that if the private endpoint is enabled via CLI, next time when updating private IP whitelist, `--service-endpoints private` can be omitted.
+
+Switching IP allowlists will disable any whitelisted IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
+
+
+## How to check if instance update is completed
+{: #check_endpoints}
+
+Typically, the above updates take less than an hour. To check status use the following command:
+
+```
+ibmcloud resource service-instance <instance-name>
+```
+{: codeblock}
+
+when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
+
+
+## Migrate Applications to use private endpoints
+{: #migrate_endpoints}
+
+Once you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
+
+```
+ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+```
+{: codeblock}
+
+and update the credentials in the application to use the newly created one:
 
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
 {: #access_console}
 
-When a cluster has private endpoints enabled, the admin URL that you use to access the {{site.data.keyword.messagehub}} console changes.
-
-The {{site.data.keyword.messagehub}} console is reachable only from a private admin URL. To discover your private endpoints, including the private admin URL, you can create a new service credential.
-
-Because the {{site.data.keyword.messagehub}} instance endpoints have now been converted to be accessed from the {{site.data.keyword.Bluemix_notm}} only, the {{site.data.keyword.messagehub}} console is accessible only using a web browser that is hosted on the {{site.data.keyword.Bluemix_notm}} network.
-
+Once the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
 
 
 .
