@@ -136,6 +136,8 @@ The REST API offers four main capabilities:
 3. Reading and updating the global compatibility rule for the registry.
 4. Creating, reading, updating, and deleting compatibility rules that apply to individual schemas.
 
+For actions that alter the schema version, such as create, update, or delete artifact, artifact versions and rules, an activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+
 ## Authentication
 {: #authentication}
 
@@ -187,6 +189,8 @@ Creating a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - Writer role access to the schema resource that matches the schema being created
 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+
 ## List schemas – GET /artifacts
 
 You can generate a list of the IDs of all of the schemas stored in the registry by making a GET request to the /artifacts endpoint.
@@ -222,6 +226,8 @@ Deleting a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - Manager role access to the schema resource that matches the schema being deleted
 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+
 ## Create a new version of a schema – POST /artifacts/{schema-id}/versions
 
 To create a new version of a schema, make a POST request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). The body of the request must contain the new version of the schema.
@@ -244,6 +250,8 @@ Creating a new version of a schema requires at least both:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - Writer role access to the schema resource that matches the schema getting a new version
+
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ## Get the latest version of a schema – GET /artifacts/{schema-id}
 
@@ -323,6 +331,8 @@ Deleting a schema version requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - Manager role access to the schema resource that matches the schema being deleted
 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+
 ## Updating a global rule – PUT /rules/{rule-type}
 
 Global compatibility rules can be updated by issuing a PUT request to the /rules/{rule-type} endpoint, (where {rule-type} identifies the type of global rule to be updated - currently the only supported type is COMPATIBILITY), with the new rule configuration in the body of the request. If the request is successful then the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
@@ -349,6 +359,8 @@ Example response:
 Updating a global rule configuration requires at least:
 
 - Manager role access to the {{site.data.keyword.messagehub}} cluster resource type
+
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ## Getting the current value of a global rule – GET /rules/{rule-type}
 
@@ -385,6 +397,7 @@ Creating per-schema rules requires at least
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - role access to the schema resource for which the rule will apply
 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
  
 ## Getting a per-schema rule – GET /artifacts/{schema-id}/rules/{rule-type}
 
@@ -428,6 +441,8 @@ Updating a per-schema rule requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - Manager role access to the schema resource to which the rule applies
 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+
 ## Deleting a per-schema rule – DELETE /artifacts/{schema-id}/rules/{rule-type}
 
 The rules applied to a specific schema are deleted by making a DELETE request to the /artifacts/{schema-id}/rules/{rule-type} endpoint,
@@ -443,6 +458,8 @@ Deleting a per-schema rule requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type
 - Manager role access to the schema resource to which the rule applies
+
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ## Applying compatibility rules to new versions of schemas
 {: #applying_compatibility_rules}
