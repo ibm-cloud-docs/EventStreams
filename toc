@@ -92,6 +92,7 @@ IBM Event Streams
 		eventstreams149.md
 		eventstreams153.md
 		eventstreams119.md
+		eventstreams120.md
 
 	{: .topicgroup}
 	Tutorials
