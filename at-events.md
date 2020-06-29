@@ -44,6 +44,12 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 | event-streams.topic.delete | An event is created when you delete a topic|
 | event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} has changed.</br> If the outcome of this event is <code>success</code>, access to the disk encryption key has been restored and the {{site.data.keyword.messagehub}} instance is available for use.</br> If the outcome is <code>failure</code>, access to the disk encryption key has been withdrawn and the {{site.data.keyword.messagehub}} instance is not available for use. |
 | event-streams.storage-key.update | The disk encryption key in {{site.data.keyword.keymanagementserviceshort}} has been rotated and the {{site.data.keyword.messagehub}} instance has been updated to use the new key. |
+| event-streams.schema.create | A schema  or schema version has been created or updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance either through the administration API or through the Confluent Serdes.
+| event-streams.schema.delete | A schema or schema version has been deleted from the {{site.data.keyword.messagehub}} schema registry for the enterprise instance|
+| event-streams.schema-rule.create | A new rule or global rule has been created in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance|
+| event-streams.schema-rule.update | An existing rule or global rule has been updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance|
+| event-streams.schema-rule.delete | A rule has been deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance|
+|
 {: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
 <!-- 03/09/19 Karen: kafka.scale.down and kafka.scale.up are both related to BYOK. -->
 

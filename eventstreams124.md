@@ -61,9 +61,9 @@ KR: I think they do inherit the lower level access https://cloud.ibm.com/docs/ia
 Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
 * The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
 * The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
-* The type of resource to be secured. The valid values are <code>cluster</code>, <code>topic</code>, <code>group</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance.
+* The type of resource to be secured. The valid values are <code>cluster</code>, <code>topic</code>, <code>group</code>, <code>schema</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance.
 If you want to specify more than one type of resource, you must create one policy per resource. 
-* The resource to be secured. Specify for resources of type <code>topic</code>, <code>group</code> and <code>txnid</code>. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
+* The resource to be secured. Specify for resources of type <code>topic</code>, <code>group</code>, <code>schema</code>, and <code>txnid</code>. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
 * The role assigned to the user. For example, Reader, Writer, or Manager. 
 
 ## What are the default security settings?
@@ -121,6 +121,41 @@ For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_To
 For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
+## Managing access to the Schema Registry
+{: #managing_access_schemas}
+
+The authorization model for the Schema Registry used the same style of policies described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document
+
+
+### IAM Resources
+{: #iam_resources}
+
+With the new <code>schema</code> IAM resource type it is possible to create policies that control access using varying degrees of granularity, for example:
+
+- a specific schema
+- a set of schemas selected via a wildcard expression
+- all of the schemas stored by an instance of IBM {{site.data.keyword.messagehub}}
+- all of the schemas stored by all of the instances of IBM {{site.data.keyword.messagehub}} in an account
+
+{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. This is used to control all access to the service instance,
+with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type will
+also be applied to the schema registry whereby a minimum role of Reader will be required to access the registry.
+
+### Example Authorization Scenarios
+{: #example_authorization_scenarios}
+
+The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the
+roles which would be required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application connecting to the registry
+
+Scenario | Managing Registry Role | Managing Registry Resource| Application Role | Application Resource
+--- | --- | --- | --- | ---
+ New schema versions are placed into the registry | <code>Reader</code> <br /><code>Reader</code>| <code>cluster</code> <br /><code>schema</code> | <code>Reader</code> <br /><code>Writer</code> | <code>cluster</code> <br /><code>schema</code>
+Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |<code>Reader</code> | <code>cluster</code> | <code>Manager</code> | <code>schema</code> 
+Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not Applicable | Not Applicable | <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code>
+The global default rule that controls schema evolution is changed. | <code>Manager</code> | <code>cluster</code> | Not Applicable | Not Applicable
+
+
+
 <!-- 28/06/18 - Karen: draft info only
 
 ## Examples
@@ -143,13 +178,3 @@ I want to give a user access to create or delete a topic:
 13. Click **Invite users**.
 
 -->
-
-
-
-
-
-
-
-
-
-
