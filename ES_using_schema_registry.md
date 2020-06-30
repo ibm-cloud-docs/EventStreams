@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-06-29"
 
 keywords: IBM Event Streams, schema registry
 
@@ -105,8 +105,6 @@ as the credential for authenticating with the schema registry.
 You can also authenticate using an API key that has been granted from a service ID, providing the service ID has a policy
 that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice
 if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security) help topic for more details.
-
-![Curl command diagram.](schema_registry9.png "Diagram showing the curl command for accessing {{site.data.keyword.messagehub}} schema registry"){: caption="Curl the REST endpoint for schema registry" caption-side="bottom"}
 
 The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the
 Kafka HTTP URL property of the service credentials):
@@ -275,7 +273,7 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Reader role access to the schema resource that matches the schema being retrieved.
 
-## Getting a specific version of a schema
+### Getting a specific version of a schema
 
 To retrieve a specific version of a schema, make a GET request to the /artifacts/{schema-id}/versions/{version} endpoint, (where {schema-id} is the ID of the schema, and {version} is the version number of the specific version you need to retrieve). If successful, the specified version of the schema is returned in the payload of the response.
 
