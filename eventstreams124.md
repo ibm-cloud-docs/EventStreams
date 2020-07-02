@@ -147,7 +147,7 @@ also be applied to the schema registry whereby a minimum role of Reader will be 
 The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the
 roles which would be required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application connecting to the registry
 
-Scenario | Person or Process Role | Person or Process Resource| Application Role | Application Resource
+Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
  New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code> | <code>Reader</code> <br /><code>Reader</code> | <code>cluster</code> <br /><code>schema</code>
 Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |<code>Reader</code> <br /><code>Manager</code> | <code>cluster</code><br /><code>schema</code> | Not applicable |  Not applicable
