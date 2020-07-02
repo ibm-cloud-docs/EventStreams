@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-29"
+lastupdated: "2020-07-02"
 
 keywords: IBM Event Streams, schema registry
 
@@ -40,7 +40,7 @@ caption-side="bottom"}
 Schemas are stored in the {{site.data.keyword.messagehub}} schema registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them.
 Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own schema registry.
 
-Producers and consumers validate the data against the specified schema stored in the schema registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller without using a schema registry.
+Producers and consumers validate the data against the specified schema stored in the schema registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller.
 
 ![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Schema Registry Architecture" caption-side="bottom"}
 
