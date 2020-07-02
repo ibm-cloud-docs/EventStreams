@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-07-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -39,14 +39,14 @@ Ensure that you complete the following tasks:
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 
    
-## Selecting a Network Configuration 
+## Selecting a network configuration 
 {: #enable_endpoints}
 
 There are a number of options you have for selecting the network configuration of your Enterprise cluster.
 
 1. Use the {{site.data.keyword.Bluemix_notm}} public network - Endpoints are accessible on the public Internet. This is the default.
 
-2. Use the {{site.data.keyword.Bluemix_notm}} private network - Endpoints are not visible on public Internet.
+2. Use the {{site.data.keyword.Bluemix_notm}} private network - Endpoints are not visible on the public Internet.
 
 3. Use the {{site.data.keyword.Bluemix_notm}} public and private network - Endpoints are visible on both the public Internet and internally within the {{site.data.keyword.Bluemix_notm}}.
 
@@ -87,7 +87,7 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
 
 
-## Updating the Network Configuration or IP allowlist
+## Updating the network configuration or IP allowlist
 {: #update_endpoints}
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this,use the following CLI commands.
@@ -99,7 +99,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 ```
 {: codeblock}
 
-Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided by enabling both public and private endpoints, re-configuring applications to use private endpoints, before then switching to private only endpoints.
+Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {:important}
 
 
@@ -145,7 +145,7 @@ ibmcloud resource service-instance <instance-name>
 when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
 
 
-## Obtaining Virtual Private Cloud CSE source IP addresses
+## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
 {: #vpc_ip}
 
 If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses. 
@@ -172,7 +172,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
    {: codeblock}
 
 
-## Migrate Applications to use private endpoints
+## Migrate applications to use private endpoints
 {: #migrate_endpoints}
 
 Once you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
