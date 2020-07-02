@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-07-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -29,9 +29,6 @@ Instances can also be configured to be accessible over both the {{site.data.keyw
 
 Further information about IBM Cloud private networking setup can be found here:[Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window}.
 
-When you switch to an {{site.data.keyword.Bluemix_notm}} service endpoint, the external or public endpoints are no longer available, making this enablement a disruptive change. Consequently, although existing credentials continue to be valid, the Kafka endpoints and HTTP endpoints in any pre-existing service credentials are no longer valid.
-{:important}
-
 
 ## Prerequisites
 {: #prereqs_restrict_access}
@@ -40,21 +37,21 @@ Ensure that you complete the following tasks:
 * Create your service instance by using the Enterprise plan. For more information, see
 [Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
-* Ensure Virtual Private Cloud instance is Cloud Service endpoint enabled.
 
+   
+## Selecting a network configuration 
 
-## Enabling {{site.data.keyword.Bluemix_notm}} Service endpoints
 {: #enable_endpoints}
 
-There are a number of options you have for selecting endpoints on your Enterprise cluster.
+There are a number of options you have for selecting the network configuration of your Enterprise cluster.
 
-1. Do not use {{site.data.keyword.Bluemix_notm}} service endpoints - Endpoints are accessible on public Internet.
+1. Use the {{site.data.keyword.Bluemix_notm}} public network - Endpoints are accessible on the public Internet. This is the default.
 
-2. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable private endpoints and disable public endpoints - Endpoints are not visible on public Internet.
+2. Use the {{site.data.keyword.Bluemix_notm}} private network - Endpoints are not visible on the public Internet.
 
-3. Use {{site.data.keyword.Bluemix_notm}} service endpoints to enable both private endpoints and public endpoints.
+3. Use the {{site.data.keyword.Bluemix_notm}} public and private network - Endpoints are visible on both the public Internet and internally within the {{site.data.keyword.Bluemix_notm}}.
 
-You can select your endpoints at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
+This slection can be made at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
 
 Alternatively, if you want to use the CLI to provision an {{site.data.keyword.messagehub}} service, use the following commands:
 
@@ -88,7 +85,8 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 ```
 {: codeblock}
 
-where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+where CIDR1, 2 are IP addressess of the form a.b.c.d/e
+
 
 ## Obtaining Virtual Private Cloud CSE source IP addresses
 {: #vpc_ip}
@@ -117,7 +115,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
    {: codeblock}
 
 
-## Updating Cloud Service Endpoints or IP allowlists
+## Updating the network configuration or IP allowlist
 {: #update_endpoints}
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this,use the following CLI commands.
@@ -129,7 +127,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 ```
 {: codeblock}
 
-Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster.
+Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {:important}
 
 
@@ -155,14 +153,14 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 ```
 {: codeblock}
 
-where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
 Note that if the private endpoint is enabled via CLI, next time when updating private IP allowlist, `--service-endpoints private` can be omitted.
 
 Switching IP allowlists will disable any allowed IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
 
 
-## How to check if instance update is completed
+## How to check if an instance update is completed
 {: #check_endpoints}
 
 Typically, the above updates take less than an hour. To check status use the following command:
@@ -175,7 +173,34 @@ ibmcloud resource service-instance <instance-name>
 when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
 
 
-## Migrate Applications to use private endpoints
+## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
+{: #vpc_ip}
+
+If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses. 
+
+1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
+
+   ```
+   export VPC_ID=<vpc_id>
+   ```
+  {: codeblock}
+
+2. Obtain a bearer token from IAM using the ibmcloud CLI:
+   
+   ```
+   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
+   ```
+   {: codeblock}
+
+3. Use the VPC REST API to obtain the source IP addresses:
+
+   ```
+   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
+   ```
+   {: codeblock}
+
+
+## Migrate applications to use private endpoints
 {: #migrate_endpoints}
 
 Once you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:

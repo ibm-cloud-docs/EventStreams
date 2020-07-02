@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-06-29"
 
 keywords: IBM Event Streams, schema registry
 
@@ -40,7 +40,7 @@ caption-side="bottom"}
 Schemas are stored in the {{site.data.keyword.messagehub}} schema registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them.
 Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own schema registry.
 
-Producers and consumers validate the data against the specified schema stored in the schema registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller.
+Producers and consumers validate the data against the specified schema stored in the schema registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller without using a schema registry.
 
 ![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Schema Registry Architecture" caption-side="bottom"}
 
@@ -104,7 +104,11 @@ as the credential for authenticating with the schema registry.
 
 You can also authenticate using an API key that has been granted from a service ID, providing the service ID has a policy
 that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice
-if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security) help topic for more details.
+if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](https://cloud.ibm.com/docs/services/EventStreams?topic=eventstreams-security) help topic for more details.
+
+You can use cURL to verify that you have the correct URL and API key values. Here’s a screenshot showing successful verification:
+
+![Curl command diagram.](schema_registry9.png "Diagram showing the curl command for accessing {{site.data.keyword.messagehub}} schema registry"){: caption="Curl the REST endpoint for schema registry" caption-side="bottom"}
 
 The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the
 Kafka HTTP URL property of the service credentials):
@@ -137,7 +141,7 @@ The REST API offers four main capabilities:
 
 For actions that alter the schema version, such as create, update, or delete artifact, artifact versions and rules, an activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### Authentication
+## Authentication
 {: #authentication}
 
 As described above, you can authenticate to the schema registry using an API key. This is supplied as the password portion of a HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token).
@@ -147,7 +151,7 @@ For example:
 curl –H "Authorization: Bearer $TOKEN" ...
 ```
 
-### Errors
+## Errors
 {: #errors}
 
 If an error condition is encountered, the schema registry will return a non-2XX range HTTP status code. The body of the response will contain a JSON object in the following form:
@@ -167,14 +171,14 @@ error_code | The HTTP status code of the response.
 message | A description of the cause of the problem.
 incident | This field is only included if the error is a result of a problem with the schema registry. This value can be used by IBM service to correlate a request to diagnostic information captured by the registry.
 
-### Create a schema
+## Create a schema
 
 This endpoint is used to store a schema in the registry. The schema data is sent as the body of the POST request. An ID for the schema can be included using the ‘X-Registry-ArtifactId' request header. If this header is not present in the request, an ID will be generated. The content type header must be set to “application/json”.
 
 Example curl request:
 
 ```
-curl -u token:$APIKEY -H 'Content-Type: application/json' -H 'X-Registry-ArtifactId: my-schema' $URL/artifacts -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
+curl -u token:$APIKEY -H 'Content-Type: application/json' -H 'X-Registry-ArtifactId: my-schema' $URL/artifacts -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string
 ```
 
 Example response:
@@ -186,11 +190,11 @@ Example response:
 Creating a schema requires at least both:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
-- Manager role access to the schema resource that matches the schema being created.
+- Writer role access to the schema resource that matches the schema being created.
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### List schemas
+## List schemas
 
 You can generate a list of the IDs of all of the schemas stored in the registry by making a GET request to the /artifacts endpoint.
 
@@ -210,7 +214,7 @@ Listing schemas requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
-### Delete a schema
+## Delete a schema
 
 Schemas are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id} endpoint (where {schema-id} is the ID of the schema). If successful, an empty response and a status code of 204 (no content) is returned.
 
@@ -227,7 +231,7 @@ Deleting a schema requires at least both:
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### Create a new version of a schema
+## Create a new version of a schema
 
 To create a new version of a schema, make a POST request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). The body of the request must contain the new version of the schema.
 
@@ -252,7 +256,7 @@ Creating a new version of a schema requires at least both:
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### Get the latest version of a schema
+## Get the latest version of a schema
 
 To retrieve the latest version of a particular schema, make a GET request to the /artifacts/{schema-id} endpoint, (where {schema-id} is the ID of the schema). If successful, the latest version of the schema is returned in the payload of the response.
 
@@ -273,7 +277,7 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Reader role access to the schema resource that matches the schema being retrieved.
 
-### Getting a specific version of a schema
+## Getting a specific version of a schema
 
 To retrieve a specific version of a schema, make a GET request to the /artifacts/{schema-id}/versions/{version} endpoint, (where {schema-id} is the ID of the schema, and {version} is the version number of the specific version you need to retrieve). If successful, the specified version of the schema is returned in the payload of the response.
 
@@ -294,7 +298,7 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Reader role access to the schema resource that matches the schema being retrieved.
 
-### Listing all of the versions of a schema
+## Listing all of the versions of a schema
 
 To list all versions of a schema currently stored in the registry, make a GET request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response.
 
@@ -315,7 +319,7 @@ Getting the list of available versions of a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Reader role access to the schema resource that matches the schema being retrieved.
 
-### Deleting a version of a schema
+## Deleting a version of a schema
 
 Schema versions are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id}/versions/{version} endpoint (where {schema-id} is the ID of the schema, and {version} is the version number of the schema version). If successful, an empty response, and a status code of 204 (no content) is returned. Deleting the only remaining version of a schema will also delete the schema.
 
@@ -332,7 +336,7 @@ Deleting a schema version requires at least both:
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### Updating a global rule
+## Updating a global rule
 
 Global compatibility rules can be updated by issuing a PUT request to the /rules/{rule-type} endpoint, (where {rule-type} identifies the type of global rule to be updated - currently the only supported type is COMPATIBILITY), with the new rule configuration in the body of the request. If the request is successful, the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -341,7 +345,7 @@ The JSON document sent in the request body must have the following properties:
 Property name | Description
 --- | ---
 type | Must always be set to the value COMPATIBILITY.
-config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TRANSITIVE, FORWARD, FORWARD_TRANSITIVE, FULL, or FULL_TRANSITIVE (See the section on [compatibility rules](/docs/EventStreams?topic=EventStreams-ES_schema_registry#applying_compatibility_rules) for details on each of these values).
+config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TRANSITIVE, FORWARD, FORWARD_TRANSITIVE, FULL, or FULL_TRANSITIVE (see the earlier section on compatibility rules for details on each of these values).
 
 Example curl request:
 
@@ -361,7 +365,7 @@ Updating a global rule configuration requires at least:
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### Getting the current value of a global rule
+## Getting the current value of a global rule
 
 The current value of a global rule is retrieved by issuing a GET request to the /rules/{rule-type} endpoint, (where {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the current rule configuration is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -381,7 +385,7 @@ Getting global rule configuration requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
-### Creating a per-schema rule
+## Creating a per-schema rule
 
 Rules can be applied to a specific schema, overriding any global rules that have been set, by making a POST request to the /artifacts/{schema-id}/rules endpoint, (where {schema-id} is the ID of the schema), with the type and value of the new rule contained in the body of the request, (currently the only supported type is COMPATIBILITY). If successful, an empty response and a status code of 204 (no content) are returned.
 
@@ -394,11 +398,11 @@ curl -u token:$APIKEY $URL/artifacts/my-schema/rules -d '{"type":"COMPATIBILITY"
 Creating per-schema rules requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
-- Manager role access to the schema resource for which the rule will apply.
+- Writer role access to the schema resource for which the rule will apply.
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
  
-### Getting a per-schema rule
+## Getting a per-schema rule
 
 To retrieve the current value of a type of rule being applied to a specific schema, a GET request is made to the /artifacts/{schema-id}/rules/{rule-type} endpoint, (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the current rule value is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -419,7 +423,7 @@ Getting per-schema rules requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Reader role access to the schema resource to which the rule applies.
 
-### Updating a per-schema rule
+## Updating a per-schema rule
 
 The rules applied to a specific schema are modified by making a PUT request to the /artifacts/{schema-id}/rules/{rule-type} endpoint, (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -442,7 +446,7 @@ Updating a per-schema rule requires at least:
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-### Deleting a per-schema rule
+## Deleting a per-schema rule
 
 The rules applied to a specific schema are deleted by making a DELETE request to the /artifacts/{schema-id}/rules/{rule-type} endpoint,
 (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, an empty response is returned, with a status code of 204 (no content).
@@ -482,12 +486,8 @@ These rules can be applied at two scopes:
 
 By default, the registry has a global compatibility rule setting of `NONE`. Per-schema level rules must be defined, otherwise the schema will default to using the global setting.
 
-## Using the schema registry with the the third party SerDes
+## Using the schema registry with the Confluent SerDes
 {: #using_schema_regsitry_serdes}
-
-Schema registry supports the use of the following third party SerDes:
-
-- Confluent SerDes
 
 To configure the Confluent SerDes to use the schema registry, you need to specify two properties in the configuration of your Kafka client:
 
