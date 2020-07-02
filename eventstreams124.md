@@ -147,12 +147,12 @@ also be applied to the schema registry whereby a minimum role of Reader will be 
 The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the
 roles which would be required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application connecting to the registry
 
-Scenario | Managing Registry Role | Managing Registry Resource| Application Role | Application Resource
+Scenario | Person or Process Role | Person or Process Resource| Application Role | Application Resource
 --- | --- | --- | --- | ---
- New schema versions are placed into the registry | <code>Reader</code> <br /><code>Reader</code>| <code>cluster</code> <br /><code>schema</code> | <code>Reader</code> <br /><code>Writer</code> | <code>cluster</code> <br /><code>schema</code>
-Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |<code>Reader</code> | <code>cluster</code> | <code>Manager</code> | <code>schema</code> 
-Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not Applicable | Not Applicable | <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code>
-The global default rule that controls schema evolution is changed. | <code>Manager</code> | <code>cluster</code> | Not Applicable | Not Applicable
+ New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code> | <code>Reader</code> <br /><code>Reader</code> | <code>cluster</code> <br /><code>schema</code>
+Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |<code>Reader</code> <br /><code>Manager</code> | <code>cluster</code><br /><code>schema</code> | Not applicable |  Not applicable
+Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not applicable | Not applicable | <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code>
+The global default rule that controls schema evolution is changed. | <code>Manager</code> | <code>cluster</code> | Not applicable | Not applicable
 
 
 
