@@ -482,7 +482,7 @@ These rules can be applied at two scopes:
 
 By default, the registry has a global compatibility rule setting of `NONE`. Per-schema level rules must be defined, otherwise the schema will default to using the global setting.
 
-## Using the schema registry with the the third party SerDes
+## Using the schema registry with the third party SerDes
 {: #using_schema_regsitry_serdes}
 
 Schema registry supports the use of the following third party SerDes:
