@@ -34,12 +34,13 @@ Further information about IBM Cloud private networking setup can be found here:[
 {: #prereqs_restrict_access}
 
 Ensure that you complete the following tasks:
-* Create your service instance by using the Enterprise plan. For more information, see 
+* Create your service instance by using the Enterprise plan. For more information, see
 [Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 
    
 ## Selecting a network configuration 
+
 {: #enable_endpoints}
 
 There are a number of options you have for selecting the network configuration of your Enterprise cluster.
@@ -80,11 +81,38 @@ use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
 In addition, if you select private endpoints and want to further restrict access to only known VSIs with specific VPCs, you can add an IP allowlist via the CLI by appending as follows:
 
 ```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_whitelist":["CIDR1","CIDR2"]}' "
+ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}' "
 ```
 {: codeblock}
 
-where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+where CIDR1, 2 are IP addressess of the form a.b.c.d/e
+
+
+## Obtaining Virtual Private Cloud CSE source IP addresses
+{: #vpc_ip}
+
+If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses.
+
+1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
+
+   ```
+   export VPC_ID=<vpc_id>
+   ```
+  {: codeblock}
+
+2. Obtain a bearer token from IAM using the ibmcloud CLI:
+
+   ```
+   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
+   ```
+   {: codeblock}
+
+3. Use the VPC REST API to obtain the source IP addresses:
+
+   ```
+   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
+   ```
+   {: codeblock}
 
 
 ## Updating the network configuration or IP allowlist
@@ -121,15 +149,15 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 To change the IP allowlist, use the following command:
 
 ```
-ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_whitelist":["CIDR1","CIDR2"]}'
+ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
 ```
 {: codeblock}
 
-where CIDR1, 2 are IP addressess of the form ww.xx.yy.zz
+where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
-Note that if the private endpoint is enabled via CLI, next time when updating private IP whitelist, `--service-endpoints private` can be omitted.
+Note that if the private endpoint is enabled via CLI, next time when updating private IP allowlist, `--service-endpoints private` can be omitted.
 
-Switching IP allowlists will disable any whitelisted IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
+Switching IP allowlists will disable any allowed IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
 
 
 ## How to check if an instance update is completed
@@ -191,7 +219,3 @@ Once the required network configuration has been selected, all subsequent connec
 
 
 .
-
-
-
-
