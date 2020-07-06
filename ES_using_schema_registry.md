@@ -77,17 +77,8 @@ Whenever you add a schema, and any subsequent versions of the same schema, {{sit
 ## Enabling the schema registry
 {: #enabling_schema_registry}
 
-Currently the schema registry is not enabled by default and can only be enabled for {{site.data.keyword.messagehub}} Enterprise plan service instances.
-To request the enablement of the schema registry, open a [support ticket](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support#using-avatar).
-Ensure that you include the CRN of your {{site.data.keyword.messagehub}} service instance in the ticket. The CRN of the service instance can be found
-using the following IBM Cloud CLI command (where $SERVICENAME is the name of your {{site.data.keyword.messagehub}} service instance).
-
-```
-ibmcloud resource service-instance $SERVICENAME
-```
-
-If you have already enabled the schema registry capability for an {{site.data.keyword.messagehub}} Enterprise plan service instance,
-it will automatically receive updates as new capabilities become available.
+The schema registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances.
+The schema registry is not available for other {{site.data.keyword.messagehub}} plans.
 
 ## Accessing the schema registry
 {: #accessing_schema_registry}
