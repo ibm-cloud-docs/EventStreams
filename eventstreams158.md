@@ -115,6 +115,8 @@ Incrementing count of the number of authentication failures
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 2: Authentication failures metric metadata" caption-side="top"}
 
+Ideally zero. A non-zero value on this indicates client(s) are attempting to connect using invalid credentials. Ensure all clients are using valid credentials. 
+
 ### Consume message conversion time
 {: #ibm_eventstreams_instance_consume_conversions_time_quantile}
 
@@ -127,6 +129,8 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Value Type`  | `second` |
 | `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 3: Consume message conversion time metric metadata" caption-side="top"}
+
+Ideally zero, as non zero indicates clients are experiencing additional latency due to using an older protocol level . Those clients are down-level and should be upgraded. Ensure all clients at the latest levels.
 
 ### Estimated connected clients percentage
 {: #ibm_eventstreams_kafka_recommended_max_connected_clients_percent}
@@ -141,6 +145,8 @@ The percentage of maximum number of connected clients
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: Estimated connected clients percentage metric metadata" caption-side="top"}
 
+This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+
 ### Inactive consumer groups
 {: #ibm_eventstreams_instance_inactive_consumergroups}
 
@@ -153,6 +159,9 @@ The number of inactive consumer groups in an Event Streams instance
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: Inactive consumer groups metric metadata" caption-side="top"}
+
+This is for information. Spikes indicate that a set of consumer groups have stopped sending messages.
+Not in itself an issue.
 
 ### Instance bytes in per second
 {: #ibm_eventstreams_instance_bytes_in_per_second}
@@ -167,6 +176,8 @@ The number of bytes produced per second to an Event Streams instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: Instance bytes in per second metric metadata" caption-side="top"}
 
+This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+
 ### Instance bytes out per second
 {: #ibm_eventstreams_instance_bytes_out_per_second}
 
@@ -179,6 +190,9 @@ The number of bytes consumed per second from an Event Streams instance
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: Instance bytes out per second metric metadata" caption-side="top"}
+
+This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+
 
 ### Missing SNI connections
 {: #ibm_eventstreams_kafka_missing_sni_host_total}
@@ -193,6 +207,9 @@ Incrementing count of the number of connections rejected due to not supporting t
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Missing SNI connections metric metadata" caption-side="top"}
 
+Ideally this should be zero. Indicates clients which are not configured correctly. Clients must use the SNI extension for TLS in order to connect to the service. If not zero, then ensure all clients are at correct level and configured correctly for [SNI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_using){:new_window}.
+
+
 ### Number of partitions
 {: #ibm_eventstreams_instance_partitions}
 
@@ -205,6 +222,8 @@ The number of leader partitions in an Event Streams instance
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: Number of partitions metric metadata" caption-side="top"}
+
+This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
 
 ### Number of topics
 {: #ibm_eventstreams_instance_topics}
@@ -232,6 +251,8 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 11: Produce message conversion time metric metadata" caption-side="top"}
 
+Ideally zero. A consistent growth in this indicates that some clients are down-level and should be upgraded. Ensure all clients at the latest levels.
+
 ### Rebalancing consumer groups
 {: #ibm_eventstreams_instance_rebalancing_consumergroups}
 
@@ -244,6 +265,8 @@ The number of rebalancing consumer groups in an Event Streams instance
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 12: Rebalancing consumer groups metric metadata" caption-side="top"}
+
+Whilst it is expected that this figure is occasionally >0 (as broker restarts happen frequently,) sustained high levels suggest that consumers may be restarting frequently and leaving/rejoining the consumer groups. Check you client logs.
 
 ### Reserved disk space percentage
 {: #ibm_eventstreams_instance_reserved_disk_space_percent}
@@ -258,6 +281,8 @@ The percentage of reserved disk space required for all allocated partitions if f
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 13: Reserved disk space percentage metric metadata" caption-side="top"}
 
+Shows the % of disk space that would be used if your topics are filled to the extent of their configured retention size.
+
 ### Stable consumer groups
 {: #ibm_eventstreams_instance_stable_consumergroups}
 
@@ -270,6 +295,8 @@ The number of stable consumer groups in an Event Streams instance
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 14: Stable consumer groups metric metadata" caption-side="top"}
+
+Use in conjunction with re-balancing consumer groups. If this is consistently zero and re-balancing high then may indicate a cluster problem. If this is non zero and re-balancing high then indicates a consumer group issue.
 
 ### Topic bytes in per second
 {: #ibm_eventstreams_instance_topic_bytes_in_per_second}
@@ -284,6 +311,8 @@ The number of bytes produced per second to a topic
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 15: Topic bytes in per second metric metadata" caption-side="top"}
 
+This is for information to help you monitor trends in your usage, particularly if any topics are producing unusually more or less throughput than expected.
+
 ### Topic bytes out per second
 {: #ibm_eventstreams_instance_topic_bytes_out_per_second}
 
@@ -297,6 +326,8 @@ The number of bytes consumed per second from a topic
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 16: Topic bytes out per second metric metadata" caption-side="top"}
 
+This is for information to help you monitor trends in your usage, particularly if any topics are consuming unusually more or less throughput than expected.
+
 ### Utilized disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
 
@@ -309,6 +340,8 @@ The percentage of currently utilized disk space
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 17: Utilized disk space percentage metric metadata" caption-side="top"}
+
+This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
 
 ## Attributes for Segmentation
 {: attributes}
