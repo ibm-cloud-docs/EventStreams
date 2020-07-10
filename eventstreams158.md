@@ -82,24 +82,26 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 ## Metrics available by Service Plan
 {: metrics-by-plan}
 
-| Metric Name |Lite|Standard|Enterprise|Classic|
-|-----------|--------|--------|--------|--------|
-| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |   |
-| [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |    |   | ![Checkmark icon](../../icons/checkmark-icon.svg) |  <br/> |
+| Metric Name |Enterprise|Lite|Standard|
+|-----------|--------|--------|--------|
+| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Schema greatest version percentage](#ibm_eventstreams_instance_schema_registry_schema_versions_greatest_percentage) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Schema used percentage](#ibm_eventstreams_instance_schema_registry_schemas_used_percentage) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |  <br/> 
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### Authentication failures
@@ -258,6 +260,32 @@ The percentage of reserved disk space required for all allocated partitions if f
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 13: Reserved disk space percentage metric metadata" caption-side="top"}
 
+### Schema greatest version percentage
+{: #ibm_eventstreams_instance_schema_registry_schema_versions_greatest_percentage}
+
+The percentage of schema version capacity used for the schema with the greatest number of versions in the registry
+
+| Metadata | Description |
+|-------------|-------------------------------------------------------------------------------|
+| `Metric Name` | `ibm_eventstreams_instance_schema_registry_schema_versions_greatest_percentage`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By`  | `Service instance, Service instance name` |
+{: caption="Table 14: Schema greatest version percentage metric metadata" caption-side="top"}
+
+### Schema used percentage
+{: #ibm_eventstreams_instance_schema_registry_schemas_used_percentage}
+
+The percentage of schema capacity used in the schema registry
+
+| Metadata | Description |
+|-------------|-------------------------------------------------------------------|
+| `Metric Name` | `ibm_eventstreams_instance_schema_registry_schemas_used_percentage`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By`  | `Service instance, Service instance name` |
+{: caption="Table 15: Schema used percentage metric metadata" caption-side="top"}
+
 ### Stable consumer groups
 {: #ibm_eventstreams_instance_stable_consumergroups}
 
@@ -269,7 +297,7 @@ The number of stable consumer groups in an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 14: Stable consumer groups metric metadata" caption-side="top"}
+{: caption="Table 16: Stable consumer groups metric metadata" caption-side="top"}
 
 ### Topic bytes in per second
 {: #ibm_eventstreams_instance_topic_bytes_in_per_second}
@@ -282,7 +310,7 @@ The number of bytes produced per second to a topic
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 15: Topic bytes in per second metric metadata" caption-side="top"}
+{: caption="Table 17: Topic bytes in per second metric metadata" caption-side="top"}
 
 ### Topic bytes out per second
 {: #ibm_eventstreams_instance_topic_bytes_out_per_second}
@@ -295,7 +323,7 @@ The number of bytes consumed per second from a topic
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 16: Topic bytes out per second metric metadata" caption-side="top"}
+{: caption="Table 18: Topic bytes out per second metric metadata" caption-side="top"}
 
 ### Utilized disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
@@ -308,7 +336,7 @@ The percentage of currently utilized disk space
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 17: Utilized disk space percentage metric metadata" caption-side="top"}
+{: caption="Table 19: Utilized disk space percentage metric metadata" caption-side="top"}
 
 ## Attributes for Segmentation
 {: attributes}
@@ -324,7 +352,7 @@ The following attributes are available for segmenting all of the metrics listed 
 | `Location` | `ibm_location` | The location of the monitored resource - this may be a region, data center or global |
 | `Scope` | `ibm_scope` | The scope is the account, organization or space GUID associated with this metric |
 | `Service name` | `ibm_service_name` | Name of the service generating this metric |
-| `Service instance` | `ibm_service_instance` | The service instance GUID segment identifies the instance the metric is associated with |
+| `Service instance` | `ibm_service_instance` | The service instance GUID identifies the instance the metric is associated with |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created |
 
