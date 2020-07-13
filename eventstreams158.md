@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-07-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -130,7 +130,7 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 3: Consume message conversion time metric metadata" caption-side="top"}
 
-Ideally zero, as non zero indicates clients are experiencing additional latency due to using an older protocol level . Those clients are down-level and should be upgraded. Ensure all clients at the latest levels.
+Ideally zero, as non-zero indicates clients are experiencing additional latency due to using an older protocol level. Those clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
 
 ### Estimated connected clients percentage
 {: #ibm_eventstreams_kafka_recommended_max_connected_clients_percent}
@@ -160,8 +160,7 @@ The number of inactive consumer groups in an Event Streams instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 5: Inactive consumer groups metric metadata" caption-side="top"}
 
-This is for information. Spikes indicate that a set of consumer groups have stopped sending messages.
-Not in itself an issue.
+This is for information only and is not an issue. Spikes indicate that a set of consumer groups have stopped sending messages.
 
 ### Instance bytes in per second
 {: #ibm_eventstreams_instance_bytes_in_per_second}
@@ -207,7 +206,7 @@ Incrementing count of the number of connections rejected due to not supporting t
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Missing SNI connections metric metadata" caption-side="top"}
 
-Ideally this should be zero. Indicates clients which are not configured correctly. Clients must use the SNI extension for TLS in order to connect to the service. If not zero, then ensure all clients are at correct level and configured correctly for [SNI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_using){:new_window}.
+Ideally this should be zero. It indicates clients that are not configured correctly. Clients must use the SNI extension for TLS in order to connect to the service. If this value is non-zero, then ensure that all clients are at correct level and configured correctly for [SNI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_using){:new_window}.
 
 
 ### Number of partitions
@@ -251,7 +250,7 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 11: Produce message conversion time metric metadata" caption-side="top"}
 
-Ideally zero. A consistent growth in this indicates that some clients are down-level and should be upgraded. Ensure all clients at the latest levels.
+Ideally zero. A consistent growth in this indicates that some clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
 
 ### Rebalancing consumer groups
 {: #ibm_eventstreams_instance_rebalancing_consumergroups}
@@ -296,7 +295,7 @@ The number of stable consumer groups in an Event Streams instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 14: Stable consumer groups metric metadata" caption-side="top"}
 
-Use in conjunction with re-balancing consumer groups. If this is consistently zero and re-balancing high then may indicate a cluster problem. If this is non zero and re-balancing high then indicates a consumer group issue.
+Use in conjunction with re-balancing consumer groups. If this is consistently zero and re-balancing high, then it indicates a cluster problem. If this is non-zero and re-balancing high, then it indicates a consumer group issue.
 
 ### Topic bytes in per second
 {: #ibm_eventstreams_instance_topic_bytes_in_per_second}
