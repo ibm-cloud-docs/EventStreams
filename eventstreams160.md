@@ -76,10 +76,14 @@ Before failing back, mirroring has to be enabled in the opposite direction:
 - The source cluster A now becomes the target cluster.
 - The target cluster B becomes the new source cluster.
 - Enable any topics to be mirrored from cluster B to cluster A
-
+  
 Now make sure data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. Remember these have the suffix from the new source cluster, B.
 
 ![Mirroring enabled in opposite direction diagram.](disaster5.png "Diagram that shows mirroring is now enabled in the opposite direction"){: caption="Figure 5. Mirroring enabled in opposite direction" caption-side="bottom"}
+
+N.B. Do not mirror back the original target topic on cluster B as that would cause an undesirable cyclic effect. As shown in the diagram above we mirror accounting.invoices from cluster B to cluster A, not accounting.invoices.A. 
+
+
 
 ## Failback
 {: #failback_decision}
