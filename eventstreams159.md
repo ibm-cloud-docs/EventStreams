@@ -25,7 +25,7 @@ subcollection: EventStreams
 Mirroring enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily. This improves resilience because if a service instance becomes unavailable, applications can, without change, simply reconnect to the second instance and continue their normal operation, using the same credentials, authorizations, and topic definitions. This is provided as a fully managed capability.
 {:shortdesc}
 
-Currently mirroring is in early access status. This means that a limited function version is being made available to a small group of users for the purpose of gathering feedback, and rapidly iterating on the design. This feature is only available for service instances using the Enterprise plan.
+This feature is only available for service instances using the Enterprise plan.
 
 The current features are:
 - Mirror topics and consumer groups between two {{site.data.keyword.messagehub}} service instances
@@ -49,7 +49,7 @@ Mirroring of selected topics happens between two clusters and is unidirectional,
 
 A topic called `mytopic` from the source cluster (A) will appear on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote cluster. In contrast, any topics directly created on a cluster by users are called _local topics_.
 
-Topics which are mirrored are selected based on patterns that can be set via Mirroring User Controls. 
+Topics which are mirrored are selected based on patterns that can be set via [Mirroring User Controls](/docs/EventStreams?topic=user_controls). 
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
@@ -146,7 +146,7 @@ A user can define which topics are mirrored via the [CLI](/docs/EventStreams?top
 
 The mirroring selection is made based on the topic names on the source cluster via patterns. It is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
-With well structured names it is easy to control mirroring, for instance based on the prefix of topic names. With such a selection in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+With well structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
 
 Firstly via the CLI:
 
@@ -179,7 +179,7 @@ Note: Updating a topic selection replaces the current set of patterns.
 We recommend producers to only produce to local topics, hence they should not require changes when switching between clusters.
 
 ### Consumers
-Consumers should subscribe and consume to both the local and remote topics. This can be done with one wild-carded subscription, that is to consume from both  `accounting.invoice` and `accounting.invoice.<ALIAS>` use the subscription to `accounting.invoice.*`.
+Consumers should subscribe to and consume from both the local and remote topics. This can be done with one wild-carded subscription. For example, to consume from both  `accounting.invoice` and `accounting.invoice.<ALIAS>` use the subscription to `accounting.invoice.*`.
 
 When consuming both local and remote topics, take care if the application requires strict ordering. In such a case, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order that they were produced.
 
