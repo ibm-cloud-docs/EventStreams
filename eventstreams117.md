@@ -75,7 +75,7 @@ A maximum of 1 GB for each partition.
 {: #standard_limits}
 
 * Maximum message size: 1 MB
-* Maximum concurrently active Kafka clients: 100
+* Maximum concurrently active Kafka clients: 500
 * Maximum request rate [HTTP Produce API]: 100 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
 
