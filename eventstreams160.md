@@ -44,6 +44,8 @@ It is the responsibility of the {{site.data.keyword.messagehub}} instance owner 
 To failover:
 - Stop the producers that were pointing to cluster A
 - Restart the producers pointing to cluster B's endpoints
+- If cluster A and the link from A to cluster B is still operational, ensure all data has been mirrored by checking the lag on those topics on cluster B is zero.
+- Disable any mirroring still enabled on topics from cluster A to cluster B
 
 ![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Figure 3. Producer switched to cluster B" caption-side="bottom"}
 
@@ -73,6 +75,7 @@ Before failing back, mirroring has to be enabled in the opposite direction:
 - Enable mirroring between cluster B (now the source) and cluster A (now the target)
 - The source cluster A now becomes the target cluster.
 - The target cluster B becomes the new source cluster.
+- Enable any topics to be mirrored from cluster B to cluster A
 
 Now make sure data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. Remember these have the suffix from the new source cluster, B.
 
