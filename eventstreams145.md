@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -86,33 +86,6 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 {: codeblock}
 
 where CIDR1, 2 are IP addressess of the form a.b.c.d/e
-
-
-## Obtaining Virtual Private Cloud CSE source IP addresses
-{: #vpc_ip}
-
-If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses.
-
-1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
-
-   ```
-   export VPC_ID=<vpc_id>
-   ```
-  {: codeblock}
-
-2. Obtain a bearer token from IAM using the ibmcloud CLI:
-
-   ```
-   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
-   ```
-   {: codeblock}
-
-3. Use the VPC REST API to obtain the source IP addresses:
-
-   ```
-   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
-   ```
-   {: codeblock}
 
 
 ## Updating the network configuration or IP allowlist
