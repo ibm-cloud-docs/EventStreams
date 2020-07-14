@@ -172,6 +172,18 @@ Example Patterns | Explanation
 
 Note: Updating a topic selection replaces the current set of patterns.
 
+One can also disable mirroring on previously enabled topics.
+
+```
+ibmcloud es mirroring-topic-selection-set --none
+```
+To selectively disable mirroring just re-apply the topic selection leaving out the topic you wish to disable.
+For example, when topic1, topic2, topic3 are currently being mirrored, the following command disables mirroring for topic2 but leaves the other two enabled.
+
+```
+ibmcloud es mirroring-topic-selection-set --select topic1,topic3 
+```
+
 ## Building mirroring aware applications 
 {: #building_apps}
 
