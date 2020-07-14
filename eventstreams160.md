@@ -62,6 +62,8 @@ To fail over:
 
 The consumer is now able to continue consuming the existing messages from the `accounting.invoices.A` topic from cluster B while new messages come from `accounting.invoices`.
 
+N.B If the application requires strict ordering, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order that they were produced.
+
 ## Resetting a mirroring environment
 {: #reset_mirroring}
 
@@ -69,7 +71,7 @@ At that point, the {{site.data.keyword.messagehub}} service instance owner is re
 
 In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} service instance owner is responsible for enabling mirroring between cluster B and a newly provisioned instance.
 
-Typically a user returns operations to cluster A after it has recovered. Below is the recommended way to return primary operations to cluster A.
+Alternatively, if cluster A has recovered then typically a user returns operations to cluster A. Below is the recommended way to return primary operations to cluster A.
 
 Before failing back, mirroring has to be enabled in the opposite direction:
 - Enable mirroring between cluster B (now the source) and cluster A (now the target)
