@@ -152,7 +152,7 @@ The following table summarizes what is supported by the plans:
 		<tr>
 			<td>**Maximum number of connected clients**</td>
 			<td>5</td>
-			<td>100</td>
+			<td>500</td>
 			<td>10 000</td>
 			<td>100</td>
 		</tr>
