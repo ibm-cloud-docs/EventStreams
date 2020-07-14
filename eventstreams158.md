@@ -104,6 +104,22 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |  <br/> 
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
+---
+
+Only add once mirroring GA'd
+
+## Metrics available with Mirroring function enabled
+{: metrics-mirroring}
+
+| Metric Name |Enterprise|Lite|Standard|
+|-----------|--------|--------|--------|
+| [Mirroring throughput](#ibm_eventstreams_instance_mirroring_throughput) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Mirroring latency](#ibm_eventstreams_instance_mirroring_latency) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+<br/> 
+{: caption="Table 2: Metrics Available for Mirroring" caption-side="top"}
+
+---
+
 ### Authentication failures
 {: #ibm_eventstreams_kafka_authentication_failure_total}
 
@@ -370,6 +386,45 @@ The percentage of currently utilized disk space
 {: caption="Table 19: Utilized disk space percentage metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+
+---
+
+only add once mirroring GA'd
+
+
+
+
+### Mirroring_throughput
+{: #ibm_eventstreams_instance_mirroring_throughput
+
+The bytes per second of mirroring throughput from the source Event Streams instance.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | ` ibm_eventstreams_instance_mirroring_throughput_bytes_per_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `bytes_per_second` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 21: Mirroring throughput" caption-side="top"}
+
+This is useful to see if mirroring is active and for capacity planning.
+
+### Mirroring_latency
+{: #ibm_eventstreams_instance_mirroring_latency}
+
+The 95% quantile of mirroring latency in seconds from the source Event Streams instance. For example, if this is 1 second, it means 95% of the partitions being mirrored are less than 1 second behind the source cluster. 
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_mirroring_latency_seconds`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `seconds` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 22: Mirroring latency" caption-side="top"}
+
+This is useful to determine how far behind the target cluster is.
+
+---
 
 ## Attributes for Segmentation
 {: attributes}
