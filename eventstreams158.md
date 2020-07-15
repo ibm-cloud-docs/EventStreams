@@ -412,7 +412,7 @@ This is useful to see if mirroring is active and for capacity planning.
 ### Mirroring_latency
 {: #ibm_eventstreams_instance_mirroring_latency}
 
-The 95% quantile of mirroring latency in seconds from the source Event Streams instance. For example, if this is 1 second, it means 95% of the partitions being mirrored are less than 1 second behind the source cluster. 
+The per-topic mirroring latency in second from source Event Streams instance.
 
 | Metadata | Description |
 |----------|-------------|
@@ -422,7 +422,7 @@ The 95% quantile of mirroring latency in seconds from the source Event Streams i
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 22: Mirroring latency" caption-side="top"}
 
-This is useful to determine how far behind the target cluster is.
+This is useful to determine how far behind a topic on the target cluster is.
 
 ---
 
