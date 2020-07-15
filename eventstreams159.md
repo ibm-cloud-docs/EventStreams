@@ -207,7 +207,7 @@ You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable moni
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
 - Mirroring throughput: the bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
-- Mirroring latency: the 95% quantile of mirroring latency in seconds from the source {{site.data.keyword.messagehub}} instance. For example, if this is 1 second, it means 95% of the partitions being mirrored are less than 1 second behind the source cluster. This is useful to determine how far behind the target cluster is.
+- Mirroring latency: The per-topic mirroring latency in second from source Event Streams instance. This is useful to determine how far behind a given topic on the target cluster is.
 
 Data produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However, if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
 
