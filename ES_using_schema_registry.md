@@ -177,7 +177,7 @@ Example response:
 Creating a schema requires at least both:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
-- Manager role access to the schema resource that matches the schema being created.
+- Writer role access to the schema resource that matches the schema being created.
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
