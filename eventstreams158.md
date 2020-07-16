@@ -108,7 +108,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 Only add once mirroring GA'd
 
-## Metrics available with Mirroring function enabled
+## Metrics available with Mirroring enabled
 {: metrics-mirroring}
 
 | Metric Name |Enterprise|Lite|Standard|
