@@ -55,6 +55,38 @@ To allow consumer groups to switch between clusters, special topics are used to 
 
 Finally, because of the naming of remote topics, we recommend avoiding using cluster aliases as part of the Kafka resource names.
 
+## Capacity Planning
+{: #capacity_planning}
+
+Both the network usage and geographical location of the source and target service instances must be taken in to account when capacity planning.
+
+### Network Bandwidth
+
+The network bandwidth needed to mirror the selected topics must be taken in to account in the bandwidth allowance of both the source and target clusters. For example, if 10 MB/s of message traffic is being produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth will be required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
+
+### Geographical Location
+
+As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This effects the maximum throughput which can be achieved between the source and target instances. It is recommended to place the target service instances in as geographically close location as possible to the source.
+
+The following table provides guidance for the achievable throughputs:
+
+| Regions | Max Per-Partition Throughput [MB/s] | Max Total Throughput [MB/s] |
+| ------- |:------:|:------:|
+| us-south <-> us-east | 1.5 | 35 |
+| eu-gb <-> eu-de | <xxx> | |
+| au-syd <-> jp-tok | | |
+| within same region | | |
+
+The numbers indicate:
+- **Max Total Throughout**: The maximum total MB/s which can be mirrored across all selected topics. 
+- **Max Per-Partition throughput**: The maximum MB/s which can be mirrored within a single partition. The number of partitions configured for the source topics should be selected to ensure the per partition load remains within this limit.
+
+Exceeding the limits will result in an increasing time lag between the data in the source and target instances. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring)
+
+### Deleting Redundant Target Topics
+
+To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. If mirrored topics are frequently deleted and created this can lead to additional disk and partition allowance being consumed in the target cluster. This usage can be monitored using the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). To identify the currently active mirrored topics the <xxx> API can be used. Topics which are no longer required can be deleted using the UI or Admin interfaces.
+
 ## IAM access policies for mirroring
 {: #iam_mirroring}
 
