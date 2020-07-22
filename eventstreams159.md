@@ -70,12 +70,12 @@ As with any networking, the maximum achievable throughput is a factor of the dis
 
 The following table provides guidance for the achievable throughputs:
 
-| Regions | Max Per-Partition Throughput [MB/s] | Max Total Throughput [MB/s] |
+| Regions | Max Per-Partition Throughput | Max Total Throughput |
 | ------- |:------:|:------:|
-| us-south <-> us-east | 1.5 | 35 |
-| eu-gb <-> eu-de | <xxx> | |
-| au-syd <-> jp-tok | | |
-| within same region | | |
+| us-south <-> us-east | 1.5 MB/s | 35 MB/s |
+| eu-gb <-> eu-de | 3 MB/s | 35 MB/s |
+| au-syd <-> jp-tok | 400Kb/s| 12MB/s|
+| within same region <br/>eu-gb <-> eu-gb | 2.5MB/s| 35MB/s| 
 
 The numbers indicate:
 - **Max Total Throughout**: The maximum total MB/s which can be mirrored across all selected topics. 
