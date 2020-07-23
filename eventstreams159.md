@@ -81,7 +81,7 @@ The numbers indicate:
 - **Max Total Throughout**: The maximum total MB/s which can be mirrored across all selected topics. 
 - **Max Per-Partition throughput**: The maximum MB/s which can be mirrored within a single partition. The number of partitions configured for the source topics should be selected to ensure the per partition load remains within this limit.
 
-Exceeding the limits will result in an increasing time lag between the data in the source and target instances. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring)
+Exceeding the limits will result in an increasing time lag between the data in the source and target instances. Having a large data lag could result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring)
 
 ### Deleting Redundant Target Topics
 

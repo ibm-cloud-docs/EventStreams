@@ -113,4 +113,5 @@ Review the following sections for the specific responsibilities for you and for 
 |Metrics and applications  | Providing metrics to enable customer to understand the current recovery point objective (RPO).   |  Enabling applications to switch clusters  |
 |IAM  |    |Setting up required access policies    |
 |Failover  |    |Deciding when to failover and failover applications |
+|Failback  | Reconfiguring mirroring |Developing and executing failback plan. Coordinating with {{site.data.keyword.IBM_notm}} to reconfigue mirroring. |
 {: caption="Table 6. Responsibilities for mirroring" caption-side="top"}

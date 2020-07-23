@@ -45,7 +45,7 @@ To failover:
 - Stop the producers that were pointing to cluster A
 - Restart the producers pointing to cluster B's endpoints
 - If cluster A and the link from A to cluster B is still operational, ensure all data has been mirrored by checking the lag on those topics on cluster B is zero.
-- Disable any mirroring still enabled on topics from cluster A to cluster B
+- Disable any mirroring still enabled on topics from cluster A to cluster B. This can be done by using the [User Controls](/docs/EventStreams?topic=EventStreams-user_controls) 
 
 ![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Figure 3. Producer switched to cluster B" caption-side="bottom"}
 
@@ -74,10 +74,11 @@ In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} servi
 Alternatively, if cluster A has recovered then typically a user returns operations to cluster A. Below is the recommended way to return primary operations to cluster A.
 
 Before failing back, mirroring has to be enabled in the opposite direction:
-- Enable mirroring between cluster B (now the source) and cluster A (now the target)
+- Ensure that cluster A is fully operational.
+- Enable mirroring between cluster B (now the source) and cluster A (now the target). See [Mirroring Setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 - The source cluster A now becomes the target cluster.
 - The target cluster B becomes the new source cluster.
-- Enable any topics to be mirrored from cluster B to cluster A
+- Enable any topics to be mirrored from cluster B to cluster A. This can be done by using the [User Controls](/docs/EventStreams?topic=EventStreams-user_controls) 
   
 Now make sure data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. Remember these have the suffix from the new source cluster, B.
 
@@ -96,4 +97,4 @@ Unlike the failover case, in this case there has been no disaster on cluster B. 
 
 ![Mirroring switched back to the original configuration diagram.](disaster6.png "Diagram that shows mirroring has now switched back to the original configuration"){: caption="Figure 6. Mirroring switched back to the original configuration." caption-side="bottom"}
 
-Finally you should now switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target.
+Finally you should now switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target. See [Mirroring Setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
