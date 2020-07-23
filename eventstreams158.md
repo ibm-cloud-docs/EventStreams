@@ -400,7 +400,7 @@ The bytes per second of mirroring throughput from the source Event Streams insta
 | `Metric Name` | ` ibm_eventstreams_instance_mirroring_throughput_bytes_per_second`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `bytes_per_second` |
-| `Segment By` | `Service instance, Service instance name` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 21: Mirroring throughput" caption-side="top"}
 
 This is useful to see if mirroring is active and for capacity planning.
@@ -415,7 +415,7 @@ The per-topic mirroring latency in seconds from the source Event Streams instanc
 | `Metric Name` | `ibm_eventstreams_instance_mirroring_latency_seconds`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `seconds` |
-| `Segment By` | `Service instance, Service instance name` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 22: Mirroring latency" caption-side="top"}
 
 This is useful to determine how far behind a topic on the target cluster is.

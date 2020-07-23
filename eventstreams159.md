@@ -58,15 +58,15 @@ Finally, because of the naming of remote topics, we recommend avoiding using clu
 ## Capacity Planning
 {: #capacity_planning}
 
-Both the network usage and geographical location of the source and target service instances must be taken in to account when capacity planning.
+Both the network usage and geographical location of the source and target service instances must be taken into account when planning capacity.
 
 ### Network Bandwidth
 
-The network bandwidth needed to mirror the selected topics must be taken in to account in the bandwidth allowance of both the source and target clusters. For example, if 10 MB/s of message traffic is being produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth will be required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
+The network bandwidth needed to mirror the selected topics must be taken into account in the bandwidth allowance of both the source and target service instances. For example, if 10 MB/s of message traffic is being produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth will be required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
 
 ### Geographical Location
 
-As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This effects the maximum throughput which can be achieved between the source and target instances. It is recommended to place the target service instances in as geographically close location as possible to the source.
+As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput which can be achieved between the source and target instances. It is recommended to place the target service instances in as geographically close location as possible to the source.
 
 The following table provides guidance for the achievable throughputs:
 
@@ -207,7 +207,7 @@ You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable moni
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
 - Mirroring throughput: the bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
-- Mirroring latency: The per-topic mirroring latency in second from source Event Streams instance. This is useful to determine how far behind a given topic on the target cluster is.
+- Mirroring latency: The per-topic mirroring latency in second from source {{site.data.keyword.messagehub}} instance. This is useful to determine how far behind a given topic on the target cluster is.
 
 Data produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However, if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
 

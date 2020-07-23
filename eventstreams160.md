@@ -62,7 +62,7 @@ To fail over:
 
 The consumer is now able to continue consuming the existing messages from the `accounting.invoices.A` topic from cluster B while new messages come from `accounting.invoices`.
 
-N.B If the application requires strict ordering, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order that they were produced.
+N.B If the application requires strict ordering, remote topics should be fully consumed first before starting to consume from local topics. This way, messages are processed in the order that they were produced.
 
 ## Resetting a mirroring environment
 {: #reset_mirroring}
