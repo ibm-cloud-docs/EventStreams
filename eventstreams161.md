@@ -64,6 +64,7 @@ Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-su
 
 Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
+- Whether this is: a new enablement of mirroring, failback on an existing mirroring setup, or restoring the original configuration after a failback
 - Aliases that you want to use for each of the two instances. Each service instance has an alias configured by the user when enabling mirroring. The aliases will appear in topic names. We recommend choosing short and descriptive names. For example "us-south" and "us-east".
 - The desired direction for mirroring.
 - The set of patterns for the source topics to be mirrored.
