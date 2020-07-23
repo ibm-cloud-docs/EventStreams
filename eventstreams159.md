@@ -85,7 +85,7 @@ Exceeding the limits will result in an increasing time lag between the data in t
 
 ### Deleting Redundant Target Topics
 
-To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. If mirrored topics are frequently deleted and created this can lead to additional disk and partition allowance being consumed in the target cluster. This usage can be monitored using the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). To identify the currently active mirrored topics the <xxx> API can be used. Topics which are no longer required can be deleted using the UI or Admin interfaces.
+To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created this can lead to additional disk and partition allowance being consumed in the target cluster. This usage can be monitored using the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). Topics which are no longer required can be deleted using the UI or Admin interfaces.
 
 ## IAM access policies for mirroring
 {: #iam_mirroring}
