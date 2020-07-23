@@ -38,7 +38,7 @@ The current limitations are:
 
 Before starting mirroring, consider the following:
 - For seamless switchover, applications are recommended to follow the coding guidelines as outlined below.
-- The network bandwidth used by mirroring must be taken in to account during capacity planning. For example, if 10 MB/s of message traffic is being produced by applications into the source service instance, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being consumed by applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
+- [Capacity Planning](#capacity_planning)
 
 To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
@@ -225,5 +225,6 @@ The recovery time objective is fully controlled by users and is made of the foll
 ### Testing
 We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
-
+## Deleting and Recreating topics with the same name on the source cluster
+When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then recreate a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to recreate the source topic, we recommend that you delete the corresponding topic on the target cluster before you recreate the topic on the source cluster. It is not recommended that topics are deleted and then recreated with the same name.
 

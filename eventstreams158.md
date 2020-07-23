@@ -106,8 +106,6 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 ---
 
-Only add once mirroring GA'd
-
 ## Metrics available with Mirroring enabled
 {: metrics-mirroring}
 
@@ -389,8 +387,6 @@ This is for information to help you monitor trends in your usage. Refer to [{{si
 
 ---
 
-only add once mirroring GA'd
-
 
 
 
@@ -412,7 +408,7 @@ This is useful to see if mirroring is active and for capacity planning.
 ### Mirroring_latency
 {: #ibm_eventstreams_instance_mirroring_latency}
 
-The per-topic mirroring latency in second from source Event Streams instance.
+The per-topic mirroring latency in seconds from the source Event Streams instance.
 
 | Metadata | Description |
 |----------|-------------|
