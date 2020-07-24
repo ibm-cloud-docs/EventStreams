@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -79,7 +79,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 
 
-## Metrics available by Service Plan
+## Metrics available by service plan
 {: metrics-by-plan}
 
 | Metric Name |Enterprise|Lite|Standard|
@@ -422,10 +422,10 @@ This is useful to determine how far behind a topic on the target cluster is.
 
 ---
 
-## Attributes for Segmentation
+## Attributes for segmentation
 {: attributes}
 
-### Global Attributes
+### Global attributes
 {: global-attributes}
 
 The following attributes are available for segmenting all of the metrics listed above
@@ -440,7 +440,7 @@ The following attributes are available for segmenting all of the metrics listed 
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created |
 
-### Additional Attributes
+### Additional attributes
 {: additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
