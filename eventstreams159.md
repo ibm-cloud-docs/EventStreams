@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-07-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -38,7 +38,7 @@ The current limitations are:
 
 Before starting mirroring, consider the following:
 - For seamless switchover, applications are recommended to follow the coding guidelines as outlined below.
-- [Capacity Planning](#capacity_planning)
+- [Capacity planning](#capacity_planning)
 
 To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
@@ -55,37 +55,37 @@ To allow consumer groups to switch between clusters, special topics are used to 
 
 Finally, because of the naming of remote topics, we recommend avoiding using cluster aliases as part of the Kafka resource names.
 
-## Capacity Planning
+## Capacity planning
 {: #capacity_planning}
 
 Both the network usage and geographical location of the source and target service instances must be taken into account when planning capacity.
 
-### Network Bandwidth
+### Network bandwidth
 
 The network bandwidth needed to mirror the selected topics must be taken into account in the bandwidth allowance of both the source and target service instances. For example, if 10 MB/s of message traffic is being produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth will be required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
 
-### Geographical Location
+### Geographical location
 
 As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput which can be achieved between the source and target instances. It is recommended to place the target service instances in as geographically close location as possible to the source.
 
 The following table provides guidance for the achievable throughputs:
 
-| Regions | Max Per-Partition Throughput | Max Total Throughput |
+| Regions | Max per-partition throughput | Max total throughput |
 | ------- |:------:|:------:|
 | us-south <-> us-east | 1.5 MB/s | 35 MB/s |
 | eu-gb <-> eu-de | 2.5 MB/s | 35 MB/s |
-| au-syd <-> jp-tok | 400KB/s| 12MB/s|
-| within same region <br/>eu-gb <-> eu-gb | 2.5MB/s| 35MB/s| 
+| au-syd <-> jp-tok | 400KB/s| 12 MB/s|
+| within same region <br/>eu-gb <-> eu-gb | 2.5 MB/s| 35 MB/s| 
 
 The numbers indicate:
-- **Max Total Throughout**: The maximum total MB/s which can be mirrored across all selected topics. 
-- **Max Per-Partition throughput**: The maximum MB/s which can be mirrored within a single partition. The number of partitions configured for the source topics should be selected to ensure the per partition load remains within this limit.
+- **Max total Throughout**: The maximum total MB/s that can be mirrored across all selected topics. 
+- **Max per-partition throughput**: The maximum MB/s that can be mirrored within a single partition. The number of partitions configured for the source topics should be selected to ensure the per partition load remains within this limit.
 
-Exceeding the limits will result in an increasing time lag between the data in the source and target instances. Having a large data lag could result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring)
+Exceeding the limits will result in an increasing time lag between the data in the source and target instances. Having a large data lag could result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring).
 
-### Deleting Redundant Target Topics
+### Deleting redundant target topics
 
-To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created this can lead to additional disk and partition allowance being consumed in the target cluster. This usage can be monitored using the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). Topics which are no longer required can be deleted using the UI or Admin interfaces.
+To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created, this can lead to additional disk and partition allowance being consumed in the target cluster. This usage can be monitored using the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). Topics which are no longer required can be deleted using the UI or Admin interfaces.
 
 ## IAM access policies for mirroring
 {: #iam_mirroring}
@@ -146,7 +146,7 @@ A user can define which topics are mirrored via the [CLI](/docs/EventStreams?top
 
 The mirroring selection is made based on the topic names on the source cluster via patterns. It is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
-With well structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+With well structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics matching the pattern will automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
 
 Firstly via the CLI:
 
@@ -172,12 +172,12 @@ Example Patterns | Explanation
 
 Note: Updating a topic selection replaces the current set of patterns.
 
-One can also disable mirroring on previously enabled topics.
+You can also disable mirroring on previously enabled topics.
 
 ```
 ibmcloud es mirroring-topic-selection-set --none
 ```
-To selectively disable mirroring just re-apply the topic selection leaving out the topic you wish to disable.
+To selectively disable mirroring just re-apply the topic selection leaving out the topic you want to disable.
 For example, when topic1, topic2, topic3 are currently being mirrored, the following command disables mirroring for topic2 but leaves the other two enabled.
 
 ```
@@ -191,7 +191,7 @@ ibmcloud es mirroring-topic-selection-set --select topic1,topic3
 We recommend producers to only produce to local topics, hence they should not require changes when switching between clusters.
 
 ### Consumers
-Consumers should subscribe to and consume from both the local and remote topics. This can be done with one wild-carded subscription. For example, to consume from both  `accounting.invoice` and `accounting.invoice.<ALIAS>` use the subscription to `accounting.invoice.*`.
+Consumers should subscribe to and consume from both the local and remote topics. This can be done with one wild-carded subscription. For example, to consume from both  `accounting.invoice` and `accounting.invoice.<ALIAS>`, use the subscription to `accounting.invoice.*`.
 
 When consuming both local and remote topics, take care if the application requires strict ordering. In such a case, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order that they were produced.
 
@@ -206,8 +206,8 @@ The RemoteClusterUtils package allows to easily make these changes. Such logic i
 You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). The **Monitoring** dashboard is available on the target cluster.
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
-- Mirroring throughput: the bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
-- Mirroring latency: The per-topic mirroring latency in second from source {{site.data.keyword.messagehub}} instance. This is useful to determine how far behind a given topic on the target cluster is.
+- Mirroring throughput: The bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
+- Mirroring latency: The per-topic mirroring latency in second from the source {{site.data.keyword.messagehub}} instance. This is useful to determine how far behind a given topic on the target cluster is.
 
 Data produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However, if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
 
@@ -225,6 +225,6 @@ The recovery time objective is fully controlled by users and is made of the foll
 ### Testing
 We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
-## Deleting and Recreating topics with the same name on the source cluster
+## Deleting and recreating topics with the same name on the source cluster
 When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then recreate a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to recreate the source topic, we recommend that you delete the corresponding topic on the target cluster before you recreate the topic on the source cluster. It is not recommended that topics are deleted and then recreated with the same name.
 
