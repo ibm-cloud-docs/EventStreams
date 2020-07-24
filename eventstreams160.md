@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-07-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -42,10 +42,10 @@ It is the responsibility of the {{site.data.keyword.messagehub}} instance owner 
 {: #fail_over_producers}
 
 To failover:
-- Stop the producers that were pointing to cluster A
-- Restart the producers pointing to cluster B's endpoints
-- If cluster A and the link from A to cluster B is still operational, ensure all data has been mirrored by checking the lag on those topics on cluster B is zero.
-- Disable any mirroring still enabled on topics from cluster A to cluster B. This can be done by using the [User Controls](/docs/EventStreams?topic=EventStreams-user_controls) 
+- Stop the producers that were pointing to cluster A.
+- Restart the producers pointing to cluster B's endpoints.
+- If cluster A and the link from A to cluster B is still operational, ensure that all data has been mirrored by checking that the lag on those topics on cluster B is zero.
+- Disable any mirroring that is still enabled on topics from cluster A to cluster B. This can be done by using the [User Controls](/docs/EventStreams?topic=EventStreams-user_controls).
 
 ![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Figure 3. Producer switched to cluster B" caption-side="bottom"}
 
@@ -62,7 +62,7 @@ To fail over:
 
 The consumer is now able to continue consuming the existing messages from the `accounting.invoices.A` topic from cluster B while new messages come from `accounting.invoices`.
 
-N.B If the application requires strict ordering, remote topics should be fully consumed first before starting to consume from local topics. This way, messages are processed in the order that they were produced.
+Note that if the application requires strict ordering, remote topics should be fully consumed first before starting to consume from local topics. This way, messages are processed in the order that they were produced.
 
 ## Resetting a mirroring environment
 {: #reset_mirroring}
@@ -71,20 +71,20 @@ At that point, the {{site.data.keyword.messagehub}} service instance owner is re
 
 In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} service instance owner is responsible for enabling mirroring between cluster B and a newly provisioned instance.
 
-Alternatively, if cluster A has recovered then typically a user returns operations to cluster A. Below is the recommended way to return primary operations to cluster A.
+Alternatively, if cluster A has recovered, then typically a user returns operations to cluster A. Below is the recommended way to return primary operations to cluster A.
 
 Before failing back, mirroring has to be enabled in the opposite direction:
 - Ensure that cluster A is fully operational.
 - Enable mirroring between cluster B (now the source) and cluster A (now the target). See [Mirroring Setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 - The source cluster A now becomes the target cluster.
 - The target cluster B becomes the new source cluster.
-- Enable any topics to be mirrored from cluster B to cluster A. This can be done by using the [User Controls](/docs/EventStreams?topic=EventStreams-user_controls) 
+- Enable any topics to be mirrored from cluster B to cluster A. This can be done by using the [User Controls](/docs/EventStreams?topic=EventStreams-user_controls).
   
-Now make sure data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. Remember these have the suffix from the new source cluster, B.
+Next, make sure that data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. Remember that these have the suffix from the new source cluster, B.
 
 ![Mirroring enabled in opposite direction diagram.](disaster5.png "Diagram that shows mirroring is now enabled in the opposite direction"){: caption="Figure 5. Mirroring enabled in opposite direction" caption-side="bottom"}
 
-N.B. Do not mirror back the original target topic on cluster B as that would cause an undesirable cyclic effect. As shown in the diagram above we mirror accounting.invoices from cluster B to cluster A, not accounting.invoices.A. 
+Note: Do not mirror back the original target topic on cluster B as that would cause an undesirable cyclic effect. As shown in the diagram above, we mirror accounting.invoices from cluster B to cluster A, not accounting.invoices.A. 
 
 
 
@@ -97,4 +97,4 @@ Unlike the failover case, in this case there has been no disaster on cluster B. 
 
 ![Mirroring switched back to the original configuration diagram.](disaster6.png "Diagram that shows mirroring has now switched back to the original configuration"){: caption="Figure 6. Mirroring switched back to the original configuration." caption-side="bottom"}
 
-Finally you should now switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target. See [Mirroring Setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
+Finally, you should switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target. See [Mirroring Setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
