@@ -37,6 +37,18 @@ Ensure that you complete the following tasks:
 * Create your service instance by using the Enterprise plan. For more information, see
 [Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
+* Enable service endpoints connectivity by running this command: 
+```
+ibmcloud account update --service-endpoint-enable true
+```
+
+To check if prerequisites are completed, run this command and check if these two properties are true.
+```
+ibmcloud account show
+
+VRF Enabled:                        true
+Service Endpoint Enabled:           true
+```
 
    
 ## Selecting a network configuration 
