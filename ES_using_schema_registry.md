@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-02"
+lastupdated: "2020-07-27"
 
 keywords: IBM Event Streams, schema registry
 
@@ -473,6 +473,14 @@ These rules can be applied at two scopes:
 
 By default, the registry has a global compatibility rule setting of `NONE`. Per-schema level rules must be defined, otherwise the schema will default to using the global setting.
 
+## Full API description
+{: full_api_description}
+For a description of the API with examples, see 
+[{{site.data.keyword.messagehub}} schema-registry-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){:new_window}.
+
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){:new_window}.
+To view the Swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
+
 ## Using the schema registry with the third party SerDes
 {: #using_schema_regsitry_serdes}
 
@@ -491,3 +499,55 @@ The following diagram shows an example of the properties required to create a Ka
 
 
 ![Kafka properties for Confluent Serdes](schema_registry7.png "Diagram showing showing the properties required to create a Kafka producer that uses the Confluent SerDes, and can be connected to the {{site.data.keyword.messagehub}} service"){: caption="Figure 1. Kafka properties for Confluent Serdes" caption-side="bottom"}
+
+## Using the schema registry with third party tools
+
+The schema registry can be tested with third party tools, such as the `kafka-avro-console-producer.sh` and `kafka-avro-console-consumer.sh`, that allow testing of conformance to schema using the Confluent SerDes.
+
+To run either the producer or the consumer tool, a common properties is required with the connection options for the {{site.data.keyword.messagehub}} Enterprise instance.
+
+<pre>
+<code>
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="apikey";
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+ssl.protocol=TLSv1.2
+ssl.enabled.protocols=TLSv1.2
+ssl.endpoint.identification.algorithm=HTTPS
+</code>
+</pre>
+{:codeblock}
+
+## Avro console producer and consumer
+{: #avro_console_producer }
+
+You can use the Kafka avro console producer and consumer tools with {{site.data.keyword.messagehub}}. You must provide a client properties, as detailed above, and in addition, the connection method and credentials for the schema registry are required to be supplied as command line `--property` arguments. There are two connection methods using a credentials source of USER_INFO or of URL detailed below.
+
+To execute using the credentials source method of URL, use the following code:
+
+<pre>
+<code>
+  ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
+</code>
+</pre>
+{:codeblock}
+
+Replace the following variables in the example with your own values:
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+* SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the username `token` and apikey, along with the path `/confluent` (for example https://token:apikey@kafka_http_url/confluent).
+* CONFIG_FILE with the path of the configuration file. 
+
+To execute using the credentials source method of USER_INFO, use the following code:
+
+<pre>
+<code>
+  ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
+</code>
+</pre>
+{:codeblock}
+
+Replace the following variables in the example with your own values:
+* KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+* SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the path `/confluent` (for example https://kafka_http_url/confluent).
+* CONFIG_FILE with the path of the configuration file. 
+
