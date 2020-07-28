@@ -68,6 +68,8 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 {: caption="Table 1. Cost for each plan" caption-side="top"} 
 
+Enabling Mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
+
 For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
 
 

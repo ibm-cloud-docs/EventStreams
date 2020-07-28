@@ -49,7 +49,7 @@ Mirroring of selected topics happens between two clusters and is unidirectional,
 
 A topic called `mytopic` from the source cluster (A) will appear on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote cluster. In contrast, any topics directly created on a cluster by users are called _local topics_.
 
-Topics which are mirrored are selected based on patterns that can be set via [Mirroring User Controls](/docs/EventStreams?topic=user_controls). 
+To select which topics are mirrored, a regular expression pattern can be configured via [Mirroring User Controls](/docs/EventStreams?topic=user_controls). 
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
@@ -228,3 +228,5 @@ We recommend that you test failing over and back when you have made your applica
 ## Deleting and recreating topics with the same name on the source cluster
 When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then recreate a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to recreate the source topic, we recommend that you delete the corresponding topic on the target cluster before you recreate the topic on the source cluster. It is not recommended that topics are deleted and then recreated with the same name.
 
+## Limited support for APIs
+We do not currently support the Streams and Connect APIs in a Mirroring failover/failback scenario.
