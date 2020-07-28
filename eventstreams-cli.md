@@ -81,6 +81,14 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 <li>Translation update</li>
 </ul></td>
 </tr>
+<tr>
+<td>v2.2.0</td>
+<td>August 7 2020</td>
+<td>
+<ul>
+<li>Added support for the Mirroring feature</li>
+</ul></td>
+</tr>
 </tbody>
 </table>
 
