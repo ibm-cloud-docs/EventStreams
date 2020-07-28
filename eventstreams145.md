@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -42,7 +42,7 @@ Ensure that you complete the following tasks:
 ibmcloud account update --service-endpoint-enable true
 ```
 
-To check if prerequisites are completed, run this command and check if these two properties are true.
+To check if prerequisites are completed, run the following command and then check if the following two properties are true:
 ```
 ibmcloud account show
 
