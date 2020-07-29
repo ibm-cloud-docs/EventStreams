@@ -74,7 +74,7 @@ The following table provides guidance for the achievable throughputs:
 | ------- |:------:|:------:|
 | us-south <-> us-east | 1.5 MB/s | 35 MB/s |
 | eu-gb <-> eu-de | 2.5 MB/s | 35 MB/s |
-| au-syd <-> jp-tok | 400KB/s| 12 MB/s|
+| au-syd <-> jp-tok | 0.4 MB/s| 12 MB/s|
 | within same region <br/>eu-gb <-> eu-gb | 2.5 MB/s| 35 MB/s| 
 
 The numbers indicate:
@@ -142,7 +142,9 @@ Cluster A should have the same access policies apart from the last one which sho
 ## Mirroring user controls
 {: #user_controls}
 
-A user can define which topics are mirrored via the [CLI](/docs/EventStreams?topic=EventStreams-cli) or [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api). All mirroring user controls are performed on the target cluster.
+Mirroring can be configured via the [CLI](/docs/EventStreams?topic=EventStreams-cli) or [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api). All mirroring user controls are performed on the target cluster.
+
+### Setting the topic selection
 
 The mirroring selection is made based on the topic names on the source cluster via patterns. It is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
@@ -182,6 +184,38 @@ For example, when topic1, topic2, topic3 are currently being mirrored, the follo
 
 ```
 ibmcloud es mirroring-topic-selection-set --select topic1,topic3 
+```
+
+### Retrieving the topic selection
+
+The mirroring selection can be retrieved via the following:
+
+CLI:
+
+```
+ibmcloud es mirroring-topic-selection
+```
+
+REST API:
+
+```
+curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection
+```
+
+### Retrieving the active topics
+
+The topics that are being actively mirrored can be retrieved via the following:
+
+CLI:
+
+```
+ibmcloud es mirroring-active-topics
+```
+
+REST API:
+
+```
+curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/active-topics
 ```
 
 ## Building mirroring aware applications 
