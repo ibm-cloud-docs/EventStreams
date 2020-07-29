@@ -84,6 +84,37 @@ The Standard plan provides Public endpoints only.
 
 The Standard plan uses Shared Block storage and achieves tenant isolation through separation of files and access controls.
 
+## Instance Deleting model
 
+{{site.data.keyword.messagehub}} is reclamation enabled serivce, which means when you delete any plan's instance, it will stay in reclamation status until retention period reached. the retention period for {{site.data.keyword.messagehub}} are 3 days. user's instance and data will be kept in backend until it's clean up from reclamation list.
 
+### Deleting {{site.data.keyword.messagehub}} instance
 
+To delete {{site.data.keyword.messagehub}} instance using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
+
+```
+ibmcloud resource service-instance-delete <INSTANCE_NAME>
+```
+{: codeblock}
+
+After delete the instance, you will see the instance in reclamation list using the IBM Cloud CLI:
+
+```
+ibmcloud resource reclamations
+```
+{: codeblock}
+
+To remove the instance immediately, you can delete the instance from reclamation list:
+
+```
+ibmcloud resource reclamation-delete <INSTANCE_NAME_RECLAMATION_ID>
+```
+
+### Restoring deleted {{site.data.keyword.messagehub}} instance
+
+When user delete the instance but not clean it from reclamation list, user can restore the {{site.data.keyword.messagehub}} instance back to normal anytime before retention period reached.
+
+```
+ibmcloud resource reclamation-restore <INSTANCE_NAME_RECLAMATION_ID>
+```
+{: codeblock}
