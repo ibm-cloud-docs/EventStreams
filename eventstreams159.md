@@ -262,5 +262,5 @@ We recommend that you test failing over and back when you have made your applica
 ## Deleting and recreating topics with the same name on the source cluster
 When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then recreate a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to recreate the source topic, we recommend that you delete the corresponding topic on the target cluster before you recreate the topic on the source cluster. It is not recommended that topics are deleted and then recreated with the same name.
 
-## Limited support for APIs
-We do not currently support the Streams and Connect APIs in a Mirroring failover/failback scenario.
+## Considerations for Kafka Streams and Kafka Connect
+Kafka Streams and Kafka Connect rely on internal topics with specific names to store state and configuration. When these are mirrored, they are going to be renamed on the target cluster. For this reason Kafka Streams and Kafka Connect applications cannot failover and failback seamlessly between clusters. You should consider this when planning disaster recovery of such applications.
