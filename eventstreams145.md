@@ -131,7 +131,23 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 {: codeblock}
 
 
-To change the IP allowlist, use the following command:
+To change the IP allowlist, follow below steps:
+
+Firstly, obtain the original IP allowlist applied on the instance
+
+```
+$ibmcloud es init -i <instance-name>
+API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
+Service endpoints:	public-and-private
+Private IP allowlist:	"10.243.0.8/32","10.243.128.8/32","10.243.64.4/32"
+Storage size:		4096 GB
+Throughput:		300 MB/s
+OK
+```
+
+Secondly, add CIDRs into or delete CIDRs from the `Private IP allowlist`.
+
+Then run this command to update the service instance with a new list.
 
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
