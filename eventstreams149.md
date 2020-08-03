@@ -16,7 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS
+# Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using the Kubernetes Service
 {: #cos_connector}
 
 The following task walks you through:
