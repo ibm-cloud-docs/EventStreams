@@ -88,7 +88,7 @@ The following table summarizes what is supported by the plans:
 		</tr>
         <tr>
 			<td>**Availability**</td>
-			<td>99.95% [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite)</td>
+			<td>99.99% [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite)</td>
 			<td>99.99%</td>
 			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)</td>
 			<td>99.5%</td>
@@ -99,6 +99,20 @@ The following table summarizes what is supported by the plans:
 			<td>Kafka 2.3</td>
 			<td>Kafka 2.3</td>
 			<td>Kafka 1.1</td>
+		</tr>
+		<tr>
+			<td>**Kafka Connect and Kafka Streams supported **</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>**Managed Schema Regisry supported **</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>No</td>
 		</tr>
 		<tr>
 			<td>**Fine-grained access control**</td>
@@ -127,13 +141,6 @@ The following table summarizes what is supported by the plans:
 			<td>No</td>
 			<td>Yes</td>
 			<td>No</td>
-		</tr>
-		<tr>
-			<td>**Kafka Connect and Kafka Streams supported **</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td>Yes</td>
 		</tr>
 		<tr>
 			<td>**Maximum number of partitions**</td>
