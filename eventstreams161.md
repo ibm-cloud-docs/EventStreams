@@ -49,6 +49,12 @@ A service-to-service binding between both instances must be configured to allow 
 If your requirement is to fail back, you will need also the service-to-service binding in the opposite direction.
 {: important}
 
+Here is an example of how to use the command line to configure service-to-service binding. Note, in this command we are using IAM source and target definitions, which is the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
+
+```
+ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the source cluster> --source-service-account <account id> --target-service-instance-id <instance id of target>
+```
+
 For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](https://cloud.ibm.com/docs/iam?topic=iam-serviceauth).
 
 ## Step 3: enable mirroring
@@ -58,6 +64,7 @@ Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-su
 
 Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
+- Whether this is: a new enablement of mirroring, failback on an existing mirroring setup, or restoring the original configuration after a failback
 - Aliases that you want to use for each of the two instances. Each service instance has an alias configured by the user when enabling mirroring. The aliases will appear in topic names. We recommend choosing short and descriptive names. For example "us-south" and "us-east".
 - The desired direction for mirroring.
 - The set of patterns for the source topics to be mirrored.
