@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-08-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -108,7 +108,7 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>**Managed Schema Regisry supported **</td>
+			<td>**Managed schema registry supported **</td>
 			<td>No</td>
 			<td>No</td>
 			<td>Yes</td>
