@@ -107,8 +107,22 @@ The following table summarizes what is supported by the plans:
 			<td>Yes</td>
 			<td>No</td>
 		</tr>
-				<tr>
+		<tr>
 			<td>**Cloud Service Endpoint support**</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>**Schema Registry support**</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>**Mirroring support**</td>
 			<td>No</td>
 			<td>No</td>
 			<td>Yes</td>
@@ -201,6 +215,7 @@ The following table summarizes what is supported by the plans:
 			<td>Kafka API</br>
 			Admin REST API<br/>
 			REST Producer API</br>
+			Schema Registry API</br>
 		    </td>
 			<td>Kafka API</br>
 			Admin REST API<br/>
