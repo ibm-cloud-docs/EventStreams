@@ -129,13 +129,6 @@ The following table summarizes what is supported by the plans:
 			<td>No</td>
 		</tr>
 		<tr>
-			<td>**Schema Registry support**</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>No</td>
-		</tr>
-		<tr>
 			<td>**Mirroring support**</td>
 			<td>No</td>
 			<td>No</td>
