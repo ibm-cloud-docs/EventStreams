@@ -393,7 +393,7 @@ This is for information to help you monitor trends in your usage. Refer to [{{si
 
 
 ### Mirroring_throughput
-{: #ibm_eventstreams_instance_mirroring_throughput
+{: #ibm_eventstreams_instance_mirroring_throughput}
 
 The bytes per second of mirroring throughput from the source Event Streams instance.
 
