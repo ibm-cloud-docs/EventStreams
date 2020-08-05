@@ -143,9 +143,9 @@ The following table summarizes what is supported by the plans:
 			<td>100</td>
 		</tr>
 		<tr>
-			<td>**Maximum retention period**</td>
-			<td>100 MB for the partition for up to 30 days </td>
-			<td>1 GB per partition for up to 30 days </td>
+			<td>**Maximum retention limits**</td>
+			<td>100 MB for the partition</td>
+			<td>1 GB per partition </td>
 			<td>2 TB of usable storage<!--Unlimited up to the storage limit of your plan --></td>
 			<td>1 GB per partition for up to 30 days </td>
 		</tr>
