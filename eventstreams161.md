@@ -34,9 +34,7 @@ Because mirroring is currently unidirectional, decide which direction mirroring 
 
 Decide which topics from your source cluster you wish to mirror. By default no topics will be mirrored and you can enable mirroring using the user controls when you are ready. Alternatively you can provide details of which topics to include at set up time. The selection should be specified as one or more patterns, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) for more information on making the selection.
 
-Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. 
-
-If your source cluster is at its limit or close to its theoretical maximum of 80 MB per second (Enterprise plan cluster), there will be insufficient bandwidth for mirroring to operate.
+Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams Metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
 ## Step 2: enable service-to-service bindings
 {: #step2_bindings}
