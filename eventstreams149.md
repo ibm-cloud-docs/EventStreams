@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-10-01"
+  years: 2015, 2020
+lastupdated: "2020-08-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,7 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS
+# Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using the Kubernetes Service
 {: #cos_connector}
 
 The following task walks you through:

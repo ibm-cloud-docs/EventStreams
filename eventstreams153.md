@@ -16,7 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS
+# Connecting IBM MQ to {{site.data.keyword.messagehub}} using the Kubernetes Service
 {: #mq_connector}
 
 The following task walks you through:

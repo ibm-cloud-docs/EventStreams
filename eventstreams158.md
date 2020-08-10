@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-08-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, Sysdig, metrics, cost, billing, opting in
 
@@ -68,6 +68,8 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 {: caption="Table 1. Cost for each plan" caption-side="top"} 
 
+Enabling Mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
+
 For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
 
 
@@ -79,7 +81,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 
 
-## Metrics available by Service Plan
+## Metrics available by service plan
 {: metrics-by-plan}
 
 | Metric Name |Enterprise|Lite|Standard|
@@ -103,6 +105,20 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |  <br/> 
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+
+---
+
+## Metrics available with Mirroring enabled
+{: metrics-mirroring}
+
+| Metric Name |Enterprise|Lite|Standard|
+|-----------|--------|--------|--------|
+| [Mirroring throughput](#ibm_eventstreams_instance_mirroring_throughput) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Mirroring latency](#ibm_eventstreams_instance_mirroring_latency) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+<br/> 
+{: caption="Table 2: Metrics Available for Mirroring" caption-side="top"}
+
+---
 
 ### Authentication failures
 {: #ibm_eventstreams_kafka_authentication_failure_total}
@@ -371,10 +387,47 @@ The percentage of currently utilized disk space
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
 
-## Attributes for Segmentation
+---
+
+
+
+
+### Mirroring_throughput
+{: #ibm_eventstreams_instance_mirroring_throughput}
+
+The bytes per second of mirroring throughput from the source Event Streams instance.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | ` ibm_eventstreams_instance_mirroring_throughput_bytes_per_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `bytes_per_second` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+{: caption="Table 21: Mirroring throughput" caption-side="top"}
+
+This is useful to see if mirroring is active and for capacity planning.
+
+### Mirroring_latency
+{: #ibm_eventstreams_instance_mirroring_latency}
+
+The per-topic mirroring latency in seconds from the source Event Streams instance.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_mirroring_latency_seconds`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `seconds` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+{: caption="Table 22: Mirroring latency" caption-side="top"}
+
+This is useful to determine how far behind a topic on the target cluster is.
+
+---
+
+## Attributes for segmentation
 {: attributes}
 
-### Global Attributes
+### Global attributes
 {: global-attributes}
 
 The following attributes are available for segmenting all of the metrics listed above
@@ -389,7 +442,7 @@ The following attributes are available for segmenting all of the metrics listed 
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance which isn't necessarily a unique value depending on the name provided by the user. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created |
 
-### Additional Attributes
+### Additional attributes
 {: additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
