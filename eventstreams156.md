@@ -42,7 +42,6 @@ Review the following sections for the specific responsibilities for you and for 
 |Monitor environment|  {{site.data.keyword.messagehub}} performs continuous review, service improvements, code updates, and operational monitoring. This includes automatic, no downtime upgrades of the environment. |  |
 |High availability|  {{site.data.keyword.messagehub}} provides high availability via multi-zone region deployment  to protect against single points of failure, up to and including a data center loss to achieve the IBM SLA detailed in the {{site.data.keyword.Bluemix}} terms and conditions.  |  |
 |Deploy {{site.data.keyword.messagehub}} environment|  {{site.data.keyword.messagehub}} is deployed with IBM recommended best practice configuration options.  For example, replication factor, minimum in sync replicas, throttling, and rack awareness.  | |
-|Topic name backup| Topic names are backed up by {{site.data.keyword.messagehub}}  |  |
 |Supported client|   | Customer is responsible for maintaining a supported version of the Kafka client. For more information, see [Support summary for all recommended clients](/docs/EventStreams?topic=EventStreams-kafka_using#client_summary).|
 |Client configuration, deployment, and lifecycle|   | Customer is responsible for managing client configuration, deployment, and lifecycle following [IBM best practice documentation](/docs/overview?topic=overview-shared-responsibilities#software-packages).|
 |Cluster management|   | Customer is responsible for managing the provided resource capacity of their clusters across their organizational user base. |
@@ -71,7 +70,7 @@ Review the following sections for the specific responsibilities for you and for 
 
 | Task | IBM Cloud Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Deploy| {{site.data.keyword.messagehub}} deploys an instance consisting of all required {{site.data.keyword.messagehub}} components and storage.  | Customer is responsible for deciding which region to deploy into. |
+|Deploy| {{site.data.keyword.messagehub}} deploys an instance consisting of all required {{site.data.keyword.messagehub}} components and storage.  | Customer is responsible for deciding which region to deploy, selecting capacity of cluster and setting any cluster configuration parameters available at deploy, for example private/public endpoints, IP allowlisting. |
 |Monitor and repair| {{site.data.keyword.messagehub}} monitors and repairs infrastructure non-disruptively.  | |
 |Manage and configure|   | Customer is responsible for using the provided APIs, CLI, or console to manage topics and configuration. |
 {: caption="Table 3. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
@@ -81,12 +80,15 @@ Review the following sections for the specific responsibilities for you and for 
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
+If you have configured your {{site.data.keyword.messagehub}} instance in a multi-zone region, a regional disaster is very unlikely. However, we recommend customers have a plan for such circumstances. If, due to such an event, a customer's instance is no longer available (and a remote DR instance had not been already set up), the customer should consider configuring a new instance in a new region.  
+
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
-|Disaster recovery|   | Customer is responsible for maintaining and executing a disaster recovery plan in case of loss of service. |
-|Replication|   | Currently, it is the responsibility of the customer to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the customer is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication.|
+|Disaster recovery|   | Customer is responsible for maintaining and executing a disaster recovery plan in case of loss of service. This could include provisoining a new cluster in a new region in the event of a disaster and restoring any configuration or data to that cluster, or, pre-provisioning a cluster in another region and using the {{site.data.keyword.messagehub}} [Mirroring feature](/docs/EventStreams?topic=EventStreams-event_streams_responsibilities#mirroring_responsibilities).|
+|Mirroring|   | Customer can use the {{site.data.keyword.messagehub}} [Mirroring feature](/docs/EventStreams?topic=EventStreams-event_streams_responsibilities#mirroring_responsibilities), or choose to manage their own mirroring solution.|
 |Message payload data backup|   | The customer is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.|
-|Topic name and data backup|   | It is recommended good practice that a customer backs up their topic names and configuration data for those topics. If you have configured your {{site.data.keyword.messagehub}} instance in a multi-zone region, a regional disaster is very unlikely. However, we recommend customers have a plan for such circumstances. If, due to such an event, a customer's instance is no longer available (and a remote DR instance had not been already set up), the customer should consider configuring a new instance in a new region and restoring their topics and data from backup if available. |
+|Topic name and data backup|   | It is recommended good practice that a customer stores their topic names and configuration data for those topics in the same repository as their application source code. This way the topics can be restored into a new cluster should a disaster occur. |
+|Schema Registry|   | It is recommended good practice that a customer stores their schema in the same repository as their application source code. This way the schema can be restored into a new cluster should a disaster occur. |
 {: caption="Table 4. Responsibilities for disaster recovery" caption-side="top"}
 
 
