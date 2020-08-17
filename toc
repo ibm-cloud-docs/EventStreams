@@ -73,6 +73,7 @@ IBM Event Streams
 		eventstreams124.md
 		eventstreams145.md
 		eventstreams155.md
+		ES_Scaling_Event_Streams_Capacity.md
 		eventstreams161.md
 	
 	{: .topicgroup}
