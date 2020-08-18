@@ -43,7 +43,10 @@ The Standard plan is appropriate if you require event ingest and distribution ca
 ## Enterprise plan 
 {: #plan_enterprise}
 
-The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan offers exclusive access to a dedicated {{site.data.keyword.messagehub}} cluster. You can also provision an {{site.data.keyword.messagehub}} cluster in a geographically local but [single zone location (SZR)](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
+The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan features include
+- exclusive access to a single-tenant Event Streams service instance deployed in a highly available multi zone region (MZR).
+- option to provision a single-tenant Event Streams service instance in a geographically local but single zone location [(SZR)](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
+- scaling options to customize throughput and/or storage capacity
 
 ## Classic plan
 {: #plan_classic}
@@ -146,14 +149,14 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum retention limits**</td>
 			<td>100 MB for the partition</td>
 			<td>1 GB per partition </td>
-			<td>2 TB of usable storage<!--Unlimited up to the storage limit of your plan --></td>
+			<td>2 TB - 12 TB of scalable usable storage [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)</td>
 			<td>1 GB per partition for up to 30 days </td>
 		</tr>
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>100 KB per second per partition</td>
 			<td>1 MB per second per partition (20 MB per service instance) </td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
+			<td>150 MB/s - 450 MB/s  of scalable throughput [<sup>7</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
 			<td>1 MB per second per partition</td>
 		</tr>
 		<tr>
@@ -268,10 +271,8 @@ ISO 27001, 27017, 27018<br/></td>
 3. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 4. {: #footnote_partitions_lite notoc} If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of 1 partition to clear so that you can take advantage of the 100 partition limit for the Standard plan.
 5. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
-6. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
-A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
-
-
+6. {: #footnote_retention notoc} Maximum message retention (storage) can be specified when the service instance is created.  Storage can be later scaled independently as demands increase.  The minimum usable storage available is dependent upon the number of throughput capacity units configured for the service instance. Refer to [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on capacity options.
+7. {: #footnote_throughput notoc} Maximum throughput can be specified when the service instance is created.  Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance.  Throughput can be later scaled as demands increase.  Throughput scaling is independent of storage, however for each tier there is a defined minimum storage amount required. Refer to [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on capacity options.<br/>
 
 
 <!--

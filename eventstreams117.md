@@ -85,16 +85,23 @@ A maximum of 1 GB for each partition.
 ### Network throughput
 {: #enterprise_throughput }
 
-A recommended maximum is:
-* 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming
+Network throughput capacity is based on the peak maximum.  Each peak maximum has a recommended maximum for typical workloads.
 
-A recommended peak limit is:
-* 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming
+| Peak Maximum | Recommended maximum | 
+|--------------|-----------------------|
+|150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
+|300 MB/s (150 MB/s producing and 150 MB/s consuming)|200/s (100 MB/s producing and 100 MB/s consuming) |
+|450 MB/s (225 MB/s producing and 225 MB/s consuming)|300 MB/s (150 MB/s producing and 150 MB/s consuming)|
 
-Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
+Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance.  The throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
 
-The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
 
+Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new Event Streams service instance at the lower capacity unit.
+
+
+The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum is 100 MB/s.
+
+For additional information see [Scaling Event streams](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Partitions
 {: #enterprise_partitions}
@@ -106,7 +113,13 @@ The recommended figure is based on a typical workload and takes into account the
 ### Retention
 {: #enterprise_retention}
 
-Unlimited, up to the storage limit of your plan.
+The storage capacity can be selected when the service instance is created, and later scaled as demands increase.  Storage capacity is dependent upon the configured throughput capacity.  Refer to [Scaling Event streams](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on storage capacity options.
+
+
+Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new Event Streams service instance at the lower capacity unit
+
+
+For additional information see [Scaling Event streams](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Schema Registry
 {: #enterprise_schema_registry}
@@ -115,6 +128,7 @@ Unlimited, up to the storage limit of your plan.
 * Maximum number of schemas that can be stored: 1000
 * Maximum number of schema versions for each schema that can be stored: 100
 * Maximum schema size 64kB
+
 #### Limits
 * Maximum request rate [HTTP Schema Admin] 10 per second
 * Maximum request rate [HTTP Serdes] 100 per second
