@@ -89,3 +89,47 @@ The {{site.data.keyword.Bluemix_notm}} CLI command will use the service-instance
 
 Note:  As an example, the steps below will scale-up a service instance configured with 1 throughput capacity unit and base storage (throughput 150 MB/s, storage 2TB) to 2 throughput capacity units and 8TB usable storage (throughput 300 MB/s, storage 8TB).
 
+
+
+1. If you don't already have one, create an Event Streams service instance.
+  
+    a. Log in to the **{{site.data.keyword.Bluemix_notm}} console**.
+    
+    b. Click the **{{site.data.keyword.messagehub}} service** in the Catalog.
+    
+    c. Select the **Enterprise plan** on the service instance page.
+    
+    d. Review capacity selections...1 base capacity unit includes.
+    
+        - 150MB/s throughput capacity.  
+        - 2TB storage capacity.  
+        
+    g. Enter a name for your service instance. You can use the default value.
+    
+    h. Click Create.  See [choosing your plan](docs/EventStreams?topic=EventStreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans) for information on the amount of time needed to create the service instance.
+
+2. Login to the **{{site.data.keyword.Bluemix_notm}} CLI**.
+ 
+     <code>ibmcloud login</code>
+
+3. Get the resource name of your {{site.data.keyword.messagehub}} service instance.
+  
+     <code>ibmcloud resource service-instances</code>
+
+4. Find the name of your instance in the Name column.
+
+    a. View current capacity configuration using the {{site.data.keyword.messagehub}} CLI.
+    
+    b. To install and use the CLI plugin, refer to [cli reference](/docs/EventStreams?topic=EventStreams-cli_reference).
+    
+    c. Display the current capacity configuration.
+  
+      <code>ibmcloud es init  --instance-name  "Event Streams resource instance name"</code>
+
+      Output will be similar to the following, which shows this service instance is configured with a throughput capacity of 1 (one) (150 MB/s peak maximum) and 2TB of storage:
+
+        API Endpoint:         https://service-instance-adsf1234asdf1234asdf1234-0000.eu-south.containers.appdomain.cloud
+        Service endpoints:    public
+        Storage size:         2048 GB
+        Throughput:           150 MB/s
+    
