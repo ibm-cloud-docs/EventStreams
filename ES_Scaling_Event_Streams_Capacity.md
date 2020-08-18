@@ -78,20 +78,38 @@ The {{site.data.keyword.Bluemix_notm}} CLI command will use the service-instance
 
 ### During the scale-up process
 
-- The time required to scale-up the {{site.data.keyword.messagehub}} service instance is variable.  This variability is driven by dependent resources when
+The time required to scale-up the {{site.data.keyword.messagehub}} service instance is variable.  This variability is driven by dependent resources when
 
   - provisioning additional kafka broker nodes for scaling-up throughput
   
   - provisioning additional storage volumes for scaling-up capacity
   
-- Kafka topic/partition add/update/delete operations will be suspended.  This ensures the integrity of data is maintained during storage volume infrastructure scale-up operations.  This suspension of topic/partition operations will only occur during a brief portion of the scale-up process, not the entire process.
+  Kafka topic/partition add/update/delete operations will be suspended.  This ensures the integrity of data is maintained during storage volume infrastructure scale-up operations.  This suspension of topic/partition operations will only occur during a brief portion of the scale-up process, not the entire process.
+
+Valid combinations/values for the "throughput" and "storage_size" are
+
+|Throughput capacity units (peak maximum)|"throughput" value to specify|Storage capacity units|"storage_size" value to specify|
+|----------------------------------------|-----------------------------|----------------------|------------------------------|
+|1  (150 MB/s )|150|2TB|2048|
+| | |4TB|4096|
+| | |6TB|6144|
+| | |8TB|8192|
+| | |10TB|10240|
+| | |12TB|12288|
+|2  (300 MB/s )|300|4TB|4096|
+| | |8TB|8192|
+| | |12TB|12288|
+|3  (450 MB/s )|450|6TB|6144|
+| | |12TB|12288|
 
 
-Note:  As an example, the steps below will scale-up a service instance configured with 1 throughput capacity unit and base storage (throughput 150 MB/s, storage 2TB) to 2 throughput capacity units and 8TB usable storage (throughput 300 MB/s, storage 8TB).
+
+### Example 1
+Scale-up a service instance configured with 1 throughput capacity unit and base storage (throughput 150 MB/s, storage 2TB) to 2 throughput capacity units and 8TB usable storage (throughput 300 MB/s, storage 8TB).
 
 
 
-1. If you don't already have one, create an Event Streams service instance.
+1. If you don't already have one, create an {site.data.keyword.messagehub}} service instance.
   
     a. Log in to the **{{site.data.keyword.Bluemix_notm}} console**.
     
@@ -132,4 +150,45 @@ Note:  As an example, the steps below will scale-up a service instance configur
         Service endpoints:    public
         Storage size:         2048 GB
         Throughput:           150 MB/s
+
+### Example 2
+1. Scale-up the service instance.
+
+    from ** 1 base capacity unit (150 MB/s throughput, 2TB storage)**
     
+    to **1 additional throughput unit (300 MB/s)** plus **Maximum storage capacity of 8TB**
+    
+      <code> ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' </code>
+
+
+
+**Note** If there is an issue running the ibmcloud resource service-instance-update command and requires contacting IBM Support for assistance, please run this command and include the output when contacting support
+
+  <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
+
+2. Monitor the update of the service instance.
+
+    The scale-up process could take several minutes to complete depending on what new resources need to be allocated to the service instance.
+    
+    You can get the current service instance information using the command
+    
+      <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
+        
+    Review the Last Operation section of the output. The information will be continuously updated as the update proceeds. When the scale-up process has completed, the last operation information will indicate update succeeded or sync succeeded.
+
+    Rerun the command until success is indicated.
+
+5. Verify the scaled-up capacity configuration using the Event Streams CLI.
+  
+    Display the capacity configuration
+    
+      <code> ibmcloud es init  --instance-name  "Event Streams resource instance name" </code>
+        
+    Output will be similar to the following, which shows this service instance has been scaled-up to a throughput capacity of 2 (two) (300 MB/s peak maximum) and 8TB of storage:
+
+
+       API Endpoint:         https://service-instance-adsf1234asdf1234asdf1234-0000.eu-south.containers.appdomain.cloud
+       Service endpoints:    public
+       Storage size:         8192 GB
+       Throughput:           300 MB/s
+ 
