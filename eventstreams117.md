@@ -101,7 +101,7 @@ Throughput capacity cannot be scaled down.  To move to a lower throughput capac
 
 The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum is 100 MB/s.
 
-For additional information see [Scaling Event streams](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+For additional information see [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Partitions
 {: #enterprise_partitions}
@@ -113,13 +113,13 @@ For additional information see [Scaling Event streams](https://cloud.ibm.com/doc
 ### Retention
 {: #enterprise_retention}
 
-The storage capacity can be selected when the service instance is created, and later scaled as demands increase.  Storage capacity is dependent upon the configured throughput capacity.  Refer to [Scaling Event streams](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on storage capacity options.
+The storage capacity can be selected when the service instance is created, and later scaled as demands increase.  Storage capacity is dependent upon the configured throughput capacity.  Refer to [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on storage capacity options.
 
 
 Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new Event Streams service instance at the lower capacity unit
 
 
-For additional information see [Scaling Event streams](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+For additional information see [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Schema Registry
 {: #enterprise_schema_registry}
