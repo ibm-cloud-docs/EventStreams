@@ -85,7 +85,7 @@ A maximum of 1 GB for each partition.
 ### Network throughput
 {: #enterprise_throughput }
 
-Network throughput capacity is based on the peak maximum.  Each peak maximum has a recommended maximum for typical workloads.
+Network throughput capacity is based on the peak maximum.  Each peak maximum has a recommended maximum for typical production workloads.
 
 | Peak Maximum | Recommended maximum | 
 |--------------|-----------------------|
@@ -99,7 +99,7 @@ Throughput is expressed as the number of bytes per second that can be both sent 
 Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new Event Streams service instance at the lower capacity unit.
 
 
-The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum is 100 MB/s.
+The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
 
 For additional information see [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
