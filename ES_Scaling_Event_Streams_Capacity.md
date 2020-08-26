@@ -145,15 +145,16 @@ Scale-up a service instance configured with 1 throughput capacity unit and base 
         Throughput:           150 MB/s
 
 ### Example 2
-1. Scale-up the service instance from ** 1 base capacity unit (150 MB/s throughput, 2TB storage)** to **1 additional throughput unit (300 MB/s)** plus **Maximum storage capacity of 8TB**
+
+1. Scale-up the service instance from ** 1 base capacity unit (150 MB/s throughput, 2TB storage)** to **1 additional throughput unit (300 MB/s)** plus **Maximum storage capacity of 8TB** 
     
       <code> ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' </code>
 
 
 
-  **Note** If there is an issue running the ibmcloud resource service-instance-update command and requires contacting IBM Support for assistance, please run this command and include the output when contacting support
+      **Note** If there is an issue running the ibmcloud resource service-instance-update command and requires contacting IBM Support for assistance, please run this command and include the output when contacting support
 
-  <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
+      <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
 
 2. Monitor the update of the service instance.
 
@@ -180,4 +181,4 @@ Scale-up a service instance configured with 1 throughput capacity unit and base 
        Service endpoints:    public
        Storage size:         8192 GB
        Throughput:           300 MB/s
- 
+
