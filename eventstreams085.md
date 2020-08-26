@@ -76,9 +76,9 @@ The following table summarizes what is supported by the plans:
 		</tr>
         <tr>
 			<td>**Availability**</td>
-			<td>99.99% [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite)</td>
+			<td>99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite)</td>
 			<td>99.99%</td>
-			<td>99.99%<br/>(99.9% in single zone locations) [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)</td>
+			<td>99.99%<br/>(99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)</td>
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
@@ -118,21 +118,21 @@ The following table summarizes what is supported by the plans:
 		</tr>
 		<tr>
 			<td>**Maximum number of partitions**</td>
-			<td>1  [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)</td>
+			<td>1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)</td>
 			<td>100</td>
-			<td>3000 [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions)</td>
+			<td>3000 [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions)</td>
 		</tr>
 		<tr>
 			<td>**Maximum retention limits**</td>
 			<td>100 MB for the partition</td>
 			<td>1 GB per partition </td>
-			<td>2 TB - 12 TB of scalable usable storage [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)</td>
+			<td>2 TB - 12 TB of scalable usable storage [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)</td>
 		</tr>
 		<tr>
 			<td>**Maximum throughput**</td>
 			<td>100 KB per second per partition</td>
 			<td>1 MB per second per partition (20 MB per service instance) </td>
-			<td>150 MB/s - 450 MB/s  of scalable throughput [<sup>7</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
+			<td>150 MB/s - 450 MB/s  of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
 		</tr>
 		<tr>
 			<td>**Maximum message size**</td>
