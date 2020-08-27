@@ -27,6 +27,7 @@ IBM Event Streams
 	eventstreams158.md
 	eventstreams159.md
 	eventstreams160.md
+	UnderstandingReservedDiskUsage.md 	
 	eventstreams-cli.md
 
 	{: .topicgroup}
