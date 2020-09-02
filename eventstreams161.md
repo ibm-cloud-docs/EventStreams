@@ -19,7 +19,7 @@ subcollection: EventStreams
 {:deprecated: .deprecated}
 {:important: .important}
 
-# Guide to setting up mirroring
+# Enabling mirroring
 {: #mirroring_setup}
 
 This information describes how to set up a pair of {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
