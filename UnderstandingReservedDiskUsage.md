@@ -74,7 +74,7 @@ When doing topic administration operations, such as creating topics, creating pa
 Event Streams ensures enough storage is available to satisfy the operation. To do this, for each topic, Event Streams 
 computes the "reserved size" per topic using the following method:
 
-     Reserved size = (retention.bytes + 2 x segment.index.size) x number.of.log.segments
+     Reserved size = retention.bytes + log.segment.size + (2 x segment.index.size x number.of.log.segments)
 
 where 
 
