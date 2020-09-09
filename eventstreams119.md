@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2018-06-01"
+  years: 2015, 2020
+lastupdated: "2020-09-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -18,7 +18,7 @@ subcollection: EventStreams
 
 
 # Watson IoT Platform bridge
-{: #consuming_messages_watson}
+{: #watson_iot}
 
 {{site.data.keyword.iot_full}} provides a managed bridge that allows you to create a unidirectional link to {{site.data.keyword.messagehub_full}}.
 {: shortdesc}
