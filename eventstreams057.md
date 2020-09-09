@@ -96,7 +96,7 @@ You need to opt into this functionality by using one of the following methods:
 ## Topics and partitions
 {: #topics_partitions}
 
-*  Topic names are restricted to a maximum of 100 characters.
+*  Topic names are restricted to a maximum of 200 characters.
 *  The default number of partitions for a topic is one.
 
 <!--following message retention info duplicted in FAQs eventstreams108-->
