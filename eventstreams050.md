@@ -80,8 +80,6 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 </table>
 <br/>
-For information about using the Kafka API on the now deprecated Classic plan, see [Kafka API - Classic](/docs/EventStreams?topic=EventStreams-kafka_using_classic).
-
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
