@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-09-18"
 
 keywords: IBM Event Streams, scaling capacity
 
@@ -18,7 +18,7 @@ subcollection: EventStreams
 {:note: .note}
 
 
-# {{site.data.keyword.messagehub}} Scaling Capacity
+# Scaling Enterprise plan capacity
 {: #ES_scaling_capacity}
 
 
@@ -27,12 +27,21 @@ subcollection: EventStreams
 
 The {{site.data.keyword.messagehub}} Enterprise plan allows you to specify throughput and storage capacity when a new instance of the service is created.  If you find after using the service instance that the current capacity configuration of your service instance is not meeting the demands of your solution, throughput and/or storage capacity can be scaled-up to meet demands.
 
+Each base or additional capacity unit includes the following:
+* 150MB/s of throughput capacity.
+* 2TB of storage capacity available for your data retention.
+
+For example, selecting a base capacity unit, one additional capacity unit, and 4TB of additional storage provides you with the following:
+* 300MB/s of throughput capacity.
+* 8TB of storage capacity for data retention.
+
+
 ## Throughput Capacity
 {: #ES_thruput_capacity}
 
 Throughput capacity is the recommended peak MB/s maximum for producing and consuming messages. 
 
-Our base capacity unit provides 150 MB/s of throughput (75 MB/s producing and 75 MB/s consuming)
+Each capacity unit provides 150 MB/s of throughput capacity. This is comprised of 75MB/s data ingress and 75MB/s data egress capacity.
 
 To scale-up throughput capacity, you can add additional capacity units. Each additional capacity unit adds 150MB/s of throughput to your service instance, to a total of 450MB/s.
 
@@ -47,7 +56,7 @@ Storage capacity is the amount of storage allocated in the service instance for 
 
 Storage capacity can be scaled-up, independent of throughput capacity, when data retention is important for your architecture.
 
-Refer to [choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans) for additional information on capacity options.
+{{site.data.keyword.messagehub}}  stores three replicas of your data to ensure the highest level of resilience across three availability zones. When you select 2TB of storage with {{site.data.keyword.messagehub}}, it is equivalent to deploying 6TB of storage when you are running your own Apache Kafka cluster with the same replication policy enabled.
 
 ## Scaling Combinations
 {: #ES_scaling_combinations}
@@ -62,10 +71,10 @@ The table below lists valid throughput/storage capacity unit combinations.
 
 For additional information on capacity limitations, refer to [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
 
-Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new Event Streams service instance at the lower capacity unit.
+Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}}  service instance at the lower capacity unit.
 {:important}
 
-Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new Event Streams service instance at the lower capacity unit.
+Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 {:important}
 
 ## How to scale capacity
@@ -87,7 +96,7 @@ The time required to scale-up the {{site.data.keyword.messagehub}} service insta
 
 Valid combinations/values for the "throughput" and "storage_size" are
 
-|**Throughput capacity units (peak maximum)**|**"throughput" value to specify**|**Storage capacity units**|**"storage_size" value to specify**|
+|**Throughput capacity (peak maximum)**|**"throughput" value to specify**|**Storage capacity**|**"storage_size" value to specify**|
 |----------------------------------------|-----------------------------|----------------------|------------------------------|
 |1  (150 MB/s )|150|2TB|2048|
 | | |4TB|4096|
@@ -103,10 +112,14 @@ Valid combinations/values for the "throughput" and "storage_size" are
 
 
 
-### Example 1
-Scale-up a service instance configured with 1 throughput capacity unit and base storage (throughput 150 MB/s, storage 2TB) to 2 throughput capacity units and 8TB usable storage (throughput 300 MB/s, storage 8TB).
+### Example
+Deploy a service instance configured with a base capacity unit:
+* 150 MB/s of throughput capacity.
+* 2TB of strorage capacity for data retention.
 
-
+Scale this service instance to a configuration of a base capacity unit, one additional capacity unit, and 4TB of additional storage providing:
+* 300MB/s of throughput capacity.
+* 8TB of storage capacity for data retention.
 
 1. If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.
   
@@ -116,7 +129,7 @@ Scale-up a service instance configured with 1 throughput capacity unit and base 
     
     c. Select the **Enterprise plan** on the service instance page.
     
-    d. Review capacity selections (1 base capacity unit includes 150MB/s throughput capacity and 2TB storage capacity).  
+    d. Review capacity selections of 150MB/s throughput and 2TB storage.
         
     g. Enter a name for your service instance. You can use the default value.
     
@@ -140,16 +153,15 @@ Scale-up a service instance configured with 1 throughput capacity unit and base 
   
       <code>ibmcloud es init  --instance-name  "Event Streams resource instance name"</code>
 
-      Output will be similar to the following, which shows this service instance is configured with a throughput capacity of 1 (one) (150 MB/s peak maximum) and 2TB of storage:
+      Output will be similar to the following, which shows this service instance is configured with 150MB/s of throughput capacity and 2TB of storage capacity:
 
         API Endpoint:         https://service-instance-adsf1234asdf1234asdf1234-0000.eu-south.containers.appdomain.cloud
         Service endpoints:    public
         Storage size:         2048 GB
         Throughput:           150 MB/s
 
-### Example 2
 
-1. Scale-up the service instance from ** 1 base capacity unit (150 MB/s throughput, 2TB storage)** to **1 additional throughput unit (300 MB/s)** plus **Maximum storage capacity of 8TB** 
+5. Scale-up the service instance from **150MB/s throughput capacity and 2TB storage capacity** to **300MB/s throughput capacity and 8TB storage capacity**. 
     
     a. Execute the following from the cli
     
@@ -159,7 +171,7 @@ Scale-up a service instance configured with 1 throughput capacity unit and base 
 
       <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
 
-2. Monitor the update of the service instance.
+6. Monitor the update of the service instance.
 
     The scale-up process could take several minutes to complete depending on what new resources need to be allocated to the service instance.
     
@@ -171,13 +183,13 @@ Scale-up a service instance configured with 1 throughput capacity unit and base 
 
     Rerun the command until success is indicated.
 
-3. Verify the scaled-up capacity configuration using the Event Streams CLI.
+7. Verify the scaled-up capacity configuration using the {{site.data.keyword.messagehub}} CLI.
   
     Display the capacity configuration
     
       <code> ibmcloud es init  --instance-name  "Event Streams resource instance name" </code>
         
-    Output will be similar to the following, which shows this service instance has been scaled-up to a throughput capacity of 2 (two) (300 MB/s peak maximum) and 8TB of storage:
+    Output will be similar to the following, which shows that this service instance is configured with 300MB/s of throughput capacity and 8TB of storage capacity:
 
 
        API Endpoint:         https://service-instance-adsf1234asdf1234asdf1234-0000.eu-south.containers.appdomain.cloud
