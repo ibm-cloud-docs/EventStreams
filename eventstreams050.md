@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-07"
+lastupdated: "2020-09-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -196,14 +196,3 @@ ssl.endpoint.identification.algorithm=HTTPS
 
 <br/>
 Note, if you're using a Kafka client earlier than 0.10.2.1, the <code>sasl.jaas.config</code> property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
-
-
-
-
-
-
- 
-
-
-
-
