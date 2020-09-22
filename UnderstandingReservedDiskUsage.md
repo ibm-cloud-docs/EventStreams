@@ -65,7 +65,7 @@ For reference, the storage used by indexes is calculated as
 
 where 
 
-     number.of.log.segments = floor(retention.bytes/segment.index.size) + 1
+     number.of.log.segments = floor(retention.bytes/log.segment.size) + 1.
      
 ## Managing Storage with {{site.data.keyword.messagehub}}
 {: #ES_managing_storage_with_event_streams}     
@@ -78,7 +78,7 @@ computes the "reserved size" per topic using the following method:
 
 where 
 
-     number.of.log.segments = floor(retention.bytes/segment.index.size) + 1.
+     number.of.log.segments = floor(retention.bytes/log.segment.size) + 1.
 
 
 The total reserved storage percentage is also exposed in Sysdig via the [ibm_eventstreams_instance_reserved_disk_space_percent
