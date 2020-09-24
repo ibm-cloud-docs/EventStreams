@@ -20,7 +20,7 @@ subcollection: eventstreams
 # Streaming log events from LogDNA to third party tools
 {: #streaming_events_from_logdna_to_3rd_party_tools}
 
-{{site.data.keyword.iot_full}} can be used to stream log events from LogDNA to third party tools like Splunk.
+{{site.data.keyword.messagehub}} can be used to stream log events from LogDNA to third party tools, such as Splunk.
 {: shortdesc}
 
 You can configure LogDNA to stream log events into an {{site.data.keyword.messagehub}} instance. Once in {{site.data.keyword.messagehub}} these events can be forwarded to many third party tools using Kafka Connect.
