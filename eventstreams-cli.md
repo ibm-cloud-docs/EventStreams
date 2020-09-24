@@ -83,10 +83,18 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.2.0</td>
-<td>August 7 2020</td>
+<td>August 3 2020</td>
 <td>
 <ul>
 <li>Added support for the Mirroring feature</li>
+</ul></td>
+</tr>
+<tr>
+<td>v2.2.1</td>
+<td>August 7 2020</td>
+<td>
+<ul>
+<li>Refined the display of IP allowlist in init command</li>
 </ul></td>
 </tr>
 </tbody>
