@@ -131,7 +131,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 {: codeblock}
 
 
-To change the IP allowlist, follow below steps:
+To change the IP allowlist, perform the following steps:
 
 Firstly, obtain the original IP allowlist applied on the instance
 
