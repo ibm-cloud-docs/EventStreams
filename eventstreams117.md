@@ -50,8 +50,8 @@ A maximum of 100 MB for the partition.
 * Maximum concurrently active Kafka clients: 5
 * Maximum request rate [HTTP Produce API]: 5 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
-* Maximum record key size when using REST Producer API is 4K 
-* Maximum record value size when using REST Producer API is 64K
+* Maximum record key size when using REST Producer API is 4 K 
+* Maximum record value size when using REST Producer API is 64 K
 
 ## Standard plan
 {: #limits_standard }
@@ -80,8 +80,8 @@ A maximum of 1 GB for each partition.
 * Maximum concurrently active Kafka clients: 100
 * Maximum request rate [HTTP Produce API]: 100 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
-* Maximum record key size when using REST Producer API is 4K 
-* Maximum record value size when using REST Producer API is 64K
+* Maximum record key size when using REST Producer API is 4 K 
+* Maximum record value size when using REST Producer API is 64 K
 
 ## Enterprise plan
 {: #limits_enterprise }
@@ -117,8 +117,8 @@ Unlimited, up to the storage limit of your plan.
 
 * Maximum message size: 1 MB
 * Maximum concurrently active Kafka clients: 10000
-* Maximum record key size when using REST Producer API is 4K 
-* Maximum record value size when using REST Producer API is 64K
+* Maximum record key size when using REST Producer API is 4 K 
+* Maximum record value size when using REST Producer API is 64 K
 
 
 
