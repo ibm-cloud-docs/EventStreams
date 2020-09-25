@@ -73,9 +73,9 @@ curl -v -X POST -H "Authorization: Basic <base64 username:password>" -H "Content
 
 ## Limitations
 
-When using the REST producer API, there is a limitation on the record key and value size. These limitations are :
-* Maximum key size is 4K 
-* Maximum value size is 64K
+When using the REST producer API, there is a limitation on the record key and value size. These limitations are as follows:
+* Maximum key size is 4 K 
+* Maximum value size is 64 K
 
 ## API reference
 {: #rest_api_reference}
