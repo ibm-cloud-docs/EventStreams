@@ -71,12 +71,19 @@ curl -v -X POST -H "Authorization: Basic <base64 username:password>" -H "Content
 ```
 {: codeblock}
 
+## Limitations
+
+When using the REST producer API, there is a limitation on the record key and value size. These limitations are as follows:
+* Maximum key size is 4 K 
+* Maximum value size is 64 K
 
 ## API reference
 {: #rest_api_reference}
 
 For full details of the API, see the 
 [{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){:new_window}.
+
+
 
 
 
