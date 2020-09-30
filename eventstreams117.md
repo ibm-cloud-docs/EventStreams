@@ -110,9 +110,9 @@ For additional information see [Scaling Event streams](/docs/EventStreams?topic=
 ### Partitions
 {: #enterprise_partitions}
 
-3000 partitions for each service instance. 
+The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150MB/s, 6000 for 300MB/s and 9000 for 450MB/s in Enterprise. 
 
-3000 partitions is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+This is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond this, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
 
 ### Retention
 {: #enterprise_retention}
