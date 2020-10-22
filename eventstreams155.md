@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2019
+  years: 2015, 2020
 lastupdated: "2020-10-22"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
