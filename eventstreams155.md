@@ -75,7 +75,7 @@ Complete the following steps to provision your {{site.data.keyword.messagehub}} 
 4. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the key management service instance GUI.
 5. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started). This feature is supported on the Enterprise plan only. 
 
-If privisioning through {{site.data.keyword.Bluemix}} console, select a key management service instance and then select a root key from the instance.
+If provisioning through {{site.data.keyword.Bluemix}} console, select a key management service instance and then select a root key from the instance.
 
 If provisioning through CLI, use this command: 
 
@@ -85,9 +85,7 @@ ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub
 {: codeblock}
 
 
-If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key.
-
-Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
+If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
    * The CRN of the root key that you want to use in your key management service instance.
    * The CRN of your {{site.data.keyword.messagehub}} service instance.
    <br/>
