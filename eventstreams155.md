@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-22"
+lastupdated: "2020-11-2"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -67,17 +67,25 @@ is performed entirely within the key management service. If you revoke access to
 ## Enabling a customer-managed key for {{site.data.keyword.messagehub}}
 {: #enabling_encryption}
 
-This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
-{:important}
+Complete the following steps to provision your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
 
-Complete the following steps to reconfigure your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
+1. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-provision) or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-provision).
+2. Create an authorization policy to allow the {{site.data.keyword.messagehub}} service to access the key management service instance as a Reader. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-serviceauth){:new_window}.
+3. Create or import a root key into your key management service instance.
+4. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the key management service instance GUI.
+5. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started). This feature is supported on the Enterprise plan only. 
 
-1. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting_started) on or after October 7th 2019. This feature is supported on the Enterprise plan only.
-2. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-provision) or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-provision).
-3. Create an authorization to allow the {{site.data.keyword.messagehub}} instance to access the key management service instance. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-serviceauth){:new_window}.
-4. Create or import a root key into your key management service instance.
-5. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the key management service instance GUI.
-6. Open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
+If provisioning through {{site.data.keyword.Bluemix}} console, select a key management service instance and then select a root key from the instance.
+
+If provisioning through CLI, use this command: 
+
+```
+ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub ibm.message.hub.enterprise.3nodes.2tb REGION -p '{"kms_key_crn":"KMS_KEY_CRN"}'
+```
+{: codeblock}
+
+
+If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
    * The CRN of the root key that you want to use in your key management service instance.
    * The CRN of your {{site.data.keyword.messagehub}} service instance.
    <br/>
@@ -91,6 +99,10 @@ Complete the following steps to reconfigure your {{site.data.keyword.messagehub}
 
    The {{site.data.keyword.messagehub}} Operations team will respond to your support ticket to confirm that your instance of 
    {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
+
+This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
+{:important}
+
 
 ## Using a customer-managed key
 {: #using_encryption}
