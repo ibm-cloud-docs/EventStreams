@@ -29,12 +29,38 @@ Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users an
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started){:new_window}.
 
-<!-- You can create different sections to group events by area. -->
 
-## List of events
-{: #events}
+## Topic events
+{: #topic-events}
 
-<!-- Make sure you introduce the table with a detailed description that immediately precedes it. For example, see https://cloud.ibm.com/docs/cloud-activity-tracker?topic=cloud-activity-tracker-cf#catalog. -->
+{{site.data.keyword.messagehub}} instances that are on the `Enterprise plan` or the `Standard plan` automatically generate topic events. 
+
+The following table lists the topic events: 
+
+| Action | Description |
+|:-------|:------------|
+| event-streams.topic.create | An event is created when you create a topic|
+| event-streams.topic.delete | An event is created when you delete a topic|
+| event-streams.topic.update | An event is created when you update a topic's configuration or increase partitions|
+{: caption="Table 1. {{site.data.keyword.messagehub}} topic events" caption-side="top"}
+
+## Message audit events
+{: #message-events}
+
+You can enable message audit events on a per topic basis for {{site.data.keyword.messagehub}} instances that are on the `Enterprise plan`. 
+Also see [How to enable message audit events](/docs/EventStreams?topic=at_events#enable-message-events).
+
+The following table lists the message audit events:
+
+| Action | Description |
+|:-------|:------------|
+| event-streams.message.read | An event is created when message audit is enabled on a topic and a consumer is reading data from this topic|
+| event-streams.message.write | An event is created when message audit is enabled on a topic and a producer is writing data to this topic|
+| event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from this topic|
+{: caption="Table 2. {{site.data.keyword.messagehub}} message events" caption-side="top"}
+
+## Other events
+{: #other-events}
 
 {{site.data.keyword.messagehub}} instances that are on the `Enterprise plan` automatically generate events so that you can track activity on your service. 
 
@@ -48,47 +74,11 @@ The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiat
 | event-streams.schema-rule.update | An existing rule or global rule has been updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance|
 | event-streams.schema-rule.delete | A rule has been deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance|
 |
-{: caption="Table 1. {{site.data.keyword.messagehub}} events" caption-side="top"}
-<!-- 03/09/19 Karen: kafka.scale.down and kafka.scale.up are both related to BYOK. -->
+{: caption="Table 3. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
-## Topic events
-{: #topic-events}
-
-<!-- Make sure you introduce the table with a detailed description that immediately precedes it. For example, see https://cloud.ibm.com/docs/cloud-activity-tracker?topic=cloud-activity-tracker-cf#catalog. -->
-
-{{site.data.keyword.messagehub}} instances that are on the `Enterprise plan` or the `Standard plan` automatically generate topic events. 
-
-The following table lists the topic events: 
-
-| Action | Description |
-|:-------|:------------|
-| event-streams.topic.create | An event is created when you create a topic|
-| event-streams.topic.delete | An event is created when you delete a topic|
-| event-streams.topic.update | An event is created when you update a topic's configuration or increase partitions|
-{: caption="Table 2. {{site.data.keyword.messagehub}} topic events" caption-side="top"}
-<!-- 03/09/19 Karen: kafka.scale.down and kafka.scale.up are both related to BYOK. -->
-
-## Message audit events
-{: #message-events}
-
-You can enable message audit events on a per topic basis for {{site.data.keyword.messagehub}} instances that have the `Enterprise plan` or the `Standard plan`.
-
-The following table lists the message audit events:
-
-| Action | Description |
-|:-------|:------------|
-| event-streams.message.read | An event is created when message audit is enabled on a topic and a consumer is reading data from this topic|
-| event-streams.message.write | An event is created when message audit is enabled on a topic and a producer is writing data to this topic|
-| event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from this topic|
-{: caption="Table 3. {{site.data.keyword.messagehub}} message events" caption-side="top"}
-<!-- 03/09/19 Karen: kafka.scale.down and kafka.scale.up are both related to BYOK. -->
 
 ## Where to view the events
 {: #ui}
-
-<!-- For example, choose one of the following two options. -->
-
-<!-- Option 2: Add the following sentence if your service sends events to the account domain. -->
 
 {{site.data.keyword.cloudaccesstrailshort}} events are available in the {{site.data.keyword.cloudaccesstrailshort}} **account domain** that is available in the {{site.data.keyword.cloud_notm}} location (region) where the events are generated.
 
@@ -134,7 +124,7 @@ Once a topic is configured to enable message audit events, 3 additional types of
 
 `event-streams.message.delete`: when user initiates the deletion records from a topic (Records deletion because of retention policy will not generate events)
 
-Event Streams can sustain very high requests rate so not every single request triggers an event. Instead, events are aggregated by initiator(user ID or API key), host(IP address), operation(read, write, delete) and topic over a 1 hour period.
+Event Streams can sustain very high requests rate so not every single request triggers an event. Instead, events are aggregated by initiator(user ID or service ID), host(IP address), operation(read, write, delete), outcome(success or failure) and topic over a 1 hour period.
 
 Additionally, be aware of the implications of enabling message audit events:
 
