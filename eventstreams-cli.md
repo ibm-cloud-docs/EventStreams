@@ -97,6 +97,15 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 <li>Refined the display of IP allowlist in init command</li>
 </ul></td>
 </tr>
+<tr>
+<td>v2.3</td>
+<td>November 9 2020</td>
+<td>
+<ul>
+<li>Added support for configuring message audit on topic</li>
+<li>init: display encryption key if parameter kms_key_crn is specified in provisioning</li>
+</ul></td>
+</tr>
 </tbody>
 </table>
 
