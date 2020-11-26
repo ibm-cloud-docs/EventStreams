@@ -40,9 +40,9 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
-| instance | public_network_enabled | is_true <br>is_false | - | Indicates whether access to a Event Streams instance is allowed only through a public network. |
-| instance | private_network_enabled | is_true <br>is_false | - | Indicates whether access to a Event Streams instance is allowed only through a private network. |
-| instance | private_access_allowlist | ips_in_range | - | Indicates whether access to a Event Streams instance is accessible only through a given range of private IP CIDR formatted subnets. |
+| instance | public_network_enabled | is_true <br>is_false | - | Indicates whether access to a Event Streams instance is allowed through a public network. |
+| instance | private_network_enabled | is_true <br>is_false | - | Indicates whether access to a Event Streams instance is allowed through a private network. |
+| instance | private_access_allowlist | ips_in_range | - | If private networking is enabled this indicates whether access to a Event Streams instance should be restricted to a given range of private IP CIDR formatted subnets. |
 {: caption="Table 1. Rule properties for Events Streams" caption-side="top"}
 
 To learn more about config rules, check out [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).
