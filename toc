@@ -97,6 +97,10 @@ Event Streams
 		eventstreams120.md
 
 	{: .topicgroup}
+	Enhancing security
+		manage-scc.md
+		
+	{: .topicgroup}
 	Tutorials
 		eventstreams104.md
 	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
