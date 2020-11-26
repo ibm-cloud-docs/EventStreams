@@ -32,7 +32,7 @@ With the {{site.data.keyword.compliance_short}}, you can:
 * Define rules for Event Streams that can help to standardize resource configuration.
 
 ## Monitoring security and compliance posture with Event Streams
-{: #monitor-Event Streams}
+{: #monitor-messagehub}
 
 As a security or compliance focal, you can use the *Event Streams* [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, you can identity potential issues as they arise.
 
@@ -42,14 +42,14 @@ All of the goals for Event Streams are added to the {{site.data.keyword.cloud_no
 To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic-security-compliance-getting-started)
 
 ### Available goals for Event Streams
-{: #Event Streams-available-goals}
+{: #messagehub-available-goals}
 
 * *Ensure the Event Streams instance is configured with a public service-endpoint*
 * *Ensure the Event Streams instance is configured with a private service-endpoint*
 * *Ensure the Event Streams instance is configured with an allow list for ip-addresses*
 
 ## Governing Event Streams resource configuration
-{: #govern-Event Streams}
+{: #govern-messagehub}
 
 As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} to define configuration rules for the instances of Event Streams that you create.
 
