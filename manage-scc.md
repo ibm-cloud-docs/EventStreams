@@ -28,11 +28,28 @@ Event Streams is integrated with the {{site.data.keyword.compliance_short}} to h
 
 With the {{site.data.keyword.compliance_short}}, you can:
 
+* Monitor for controls and goals that pertain to Event Streams.
 * Define rules for Event Streams that can help to standardize resource configuration.
 
+## Monitoring security and compliance posture with Event Streams
+{: #monitor-Event Streams}
+
+As a security or compliance focal, you can use the *Event Streams* [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, you can identity potential issues as they arise.
+
+All of the goals for Event Streams are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
+{: note}
+
+To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic-security-compliance-getting-started)
+
+### Available goals for Event Streams
+{: #Event Streams-available-goals}
+
+* *Ensure the Event Streams instance is configured with a public service-endpoint*
+* *Ensure the Event Streams instance is configured with a private service-endpoint*
+* *Ensure the Event Streams instance is configured with an allow list for ip-addresses*
 
 ## Governing Event Streams resource configuration
-{: #govern-service_name}
+{: #govern-Event Streams}
 
 As a security or compliance focal, you can use the {{site.data.keyword.compliance_short}} to define configuration rules for the instances of Event Streams that you create.
 
