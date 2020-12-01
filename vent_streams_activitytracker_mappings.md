@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-13"
+lastupdated: "2020-12-01"
 
 keywords: IBM Cloud, observability, api methods, iam, activity tracker, actions
 
@@ -58,13 +58,13 @@ Review the following administration API methods, their required actions in {{sit
 | Get the latest schema version	| `GET $Kakfa-http-url/artifacts/{schema-id} messagehub.cluster.read` | `messagehub.schema.read` | None |
 | Get a specific schema version	| `GET $Kakfa-http-url/artifacts/{schema-id}/versions/{version}` | `messagehub.cluster.read messagehub.schema.read`	| None |
 | List all schema versions | `GET $Kakfa-http-url/artifacts/{schema-id}/versions` | `messagehub.cluster.read  messagehub.schema.read` | None |
-| Delete a schema version	| `DELETE $Kakfa-http-url//artifacts/{schema-id}/versions/{version}` | `messagehub.cluster.read. messagehub.schema.manage` | `event-streams.schema.delete` |
+| Delete a schema version	| `DELETE $Kakfa-http-url/artifacts/{schema-id}/versions/{version}` | `messagehub.cluster.read. messagehub.schema.manage` | `event-streams.schema.delete` |
 | Update a global rule | `PUT $Kakfa-http-url/rules/{rule-type}` | `messagehub.cluster.manage` | `event-streams.schema-rule.update` |
-| Get the current value of rule	| `GET $Kakfa-http-url /rules/{rule-type}`	| `messagehub.cluster.read`	| None |
+| Get the current value of rule	| `GET $Kakfa-http-url/rules/{rule-type}`	| `messagehub.cluster.read`	| None |
 | Create a per-schema rule	| `POST $Kakfa-http-url/artifacts/{schema-id}/rules` | `messagehub.cluster.read  messagehub.schema.manage`	| `event-streams.schema-rule.create` |
-| Get a per-schema rule	| `GET $Kakfa-http-url //artifacts/{schema-id}/rules/{rule-type}` | `messagehub.cluster.read  messagehub.schema.read` | None |
-| Update a per-schema rule | `PUT $Kakfa-http-url //artifacts/{schema-id}/rules/{rule-type}` | `messagehub.cluster.read  messagehub.schema.manage`	| `event-streams.schema-rule.update` |
-| Delete a per-schema rule | `DELETE $Kakfa-http-url //artifacts/{schema-id}/rules/{rule-type}` | `messagehub.cluster.read  messagehub.schema.manage` | `event-streams.schema-rule.delete` |
+| Get a per-schema rule	| `GET $Kakfa-http-url/artifacts/{schema-id}/rules/{rule-type}` | `messagehub.cluster.read  messagehub.schema.read` | None |
+| Update a per-schema rule | `PUT $Kakfa-http-url/artifacts/{schema-id}/rules/{rule-type}` | `messagehub.cluster.read  messagehub.schema.manage`	| `event-streams.schema-rule.update` |
+| Delete a per-schema rule | `DELETE $Kakfa-http-url/artifacts/{schema-id}/rules/{rule-type}` | `messagehub.cluster.read  messagehub.schema.manage` | `event-streams.schema-rule.delete` |
 {: caption="Table 1. Administration" caption-side="top"}
 
 ## Producer REST APIs
