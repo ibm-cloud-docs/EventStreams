@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-12-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
@@ -48,7 +48,7 @@ The following table lists the topic events:
 {: #message-events}
 
 You can enable message audit events on a per topic basis for {{site.data.keyword.messagehub}} instances that are on the `Enterprise plan`. 
-Also see [How to enable message audit events](/docs/EventStreams?topic=at_events#enable-message-events).
+Also see [How to enable message audit events](/docs/EventStreams?topic=EventStreams-at_events#enable-message-events).
 
 The following table lists the message audit events:
 
