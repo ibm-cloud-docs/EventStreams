@@ -58,8 +58,7 @@ The following table lists the message audit events:
 |:-------|:------------|
 | event-streams.message.read | An event is created when message audit is enabled on a topic and a consumer is reading data from this topic.|
 | event-streams.message.write | An event is created when message audit is enabled on a topic and a producer is writing data to this topic.|
-| event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from this topic. 
-Records deletion because of retention policy will not generate.|
+| event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from this topic. Records deletion because of retention policy will not generate.|
 {: caption="Table 2. {{site.data.keyword.messagehub}} message events" caption-side="top"}
 
 Event Streams can sustain very high requests rate so not every single request triggers an event. Instead, events are aggregated by 
@@ -79,7 +78,6 @@ initiator(user ID or service ID), host(IP address), operation(read, write, delet
 | event-streams.schema-rule.create | A new rule or global rule has been created in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.update | An existing rule or global rule has been updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.delete | A rule has been deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
-|
 {: caption="Table 3. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 
