@@ -173,6 +173,15 @@ ibmcloud resource service-instance <instance-name>
 
 when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
 
+## How to set private IP allowlist via Schematics
+{: #schematics_integration}
+
+Event Streams supports integration with [Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-getting-started).
+
+Refer to this [example](https://cloud.ibm.com/docs/terraform?topic=terraform-event-streams-resources) about how to set the `private_ip_allowlist` in a Terraform script. 
+
+Note if the terraform script is executed from Schematics, additional IPs are required to be added into Event Streams' `private_ip_allowlist` to allow Schematics to access Event Streams's API endpoints. Find the IPs of Schematics in each region from [here](https://cloud.ibm.com/docs/schematics?topic=schematics-allowed-ipaddresses).
+
 
 ## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
 {: #vpc_ip}
