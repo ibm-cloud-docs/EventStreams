@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-07-28"
+  years: 2015, 2021
+lastupdated: "2021-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -172,6 +172,15 @@ ibmcloud resource service-instance <instance-name>
 {: codeblock}
 
 when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
+
+## How to set private IP allowlist via Schematics
+{: #schematics_integration}
+
+Event Streams supports integration with [Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-getting-started).
+
+Refer to this [example](https://cloud.ibm.com/docs/terraform?topic=terraform-event-streams-resources) about how to set the `private_ip_allowlist` in a Terraform script. 
+
+Note: If the terraform script is executed from Schematics, additional IPs are required to be added into Event Streams' `private_ip_allowlist` to allow Schematics to access Event Streams' API endpoints. Find the IPs of Schematics in each region from [here](https://cloud.ibm.com/docs/schematics?topic=schematics-allowed-ipaddresses).
 
 
 ## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
