@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-08-04"
+  years: 2015, 2021
+lastupdated: "2021-01-19"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -215,7 +215,7 @@ PCI<br/>
 
 </table>
 
-For further details on limits, please see [limits and quotas](docs/EventStreams?topic=EventStreams-kafka_quotas).
+For further details on limits, see [limits and quotas](docs/EventStreams?topic=EventStreams-kafka_quotas).
 
 ### Footnotes
 {: #footnote_plans notoc}
