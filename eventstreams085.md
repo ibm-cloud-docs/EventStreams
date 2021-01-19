@@ -215,6 +215,8 @@ PCI<br/>
 
 </table>
 
+For further details on limits, please see [limits and quotas](docs/EventStreams?topic=EventStreams-kafka_quotas).
+
 ### Footnotes
 {: #footnote_plans notoc}
 
