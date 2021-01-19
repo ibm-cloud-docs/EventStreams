@@ -209,7 +209,7 @@ For TLS v1.3:
 
 * Additionally, you must use TLS v1.2 or v1.3 in the following cases:
     * for making connections to the Kafka native and REST interfaces 
-    * the browser that you use to access the {{site.data.keyword.messagehub}} dashboard must support TLS v1.2 ot v1.3
+    * the browser that you use to access the {{site.data.keyword.messagehub}} dashboard must support TLS v1.2 or v1.3
 
    
 ## Encryption of message payloads, topic names, and consumer groups
