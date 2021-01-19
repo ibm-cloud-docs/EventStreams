@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-09-28"
+  years: 2015, 2021
+lastupdated: "2020-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -43,6 +43,12 @@ The recommended figure is based on a typical workload and takes into account the
 
 A maximum of 100 MB for the partition. 
 
+
+### Consumer groups
+{: #lite_consumer_groups}
+
+A maximum of 10 consumer groups. When the limit is exceeded, the `GROUP_MAX_SIZE_REACHED` error is returned to the client.
+
 ### Other limits
 {: #lite_limits}
 
@@ -72,6 +78,11 @@ The throughput is measured separately for producers and consumers. When exceeded
 {: #standard_retention}
 
 A maximum of 1 GB for each partition.
+
+### Consumer groups
+{: #standard_consumer_groups}
+
+A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SIZE_REACHED` error is returned to the client.
 
 ### Other limits
 {: #standard_limits}
