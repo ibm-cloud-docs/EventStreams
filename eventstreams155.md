@@ -50,6 +50,13 @@ Deletion of the customer-managed key is non-recoverable and will result in the l
 {{site.data.keyword.messagehub}} instance.
 {:important}
 
+## What is not covered by customer-managed encryption
+If customer-managed encryption feature is selected the user should be aware that **only** Message Payload data is covered by this encrytpion. {{site.data.keyword.messagehub}} encrypts at rest other data related to the use of the service. However, although encrypted, Non Message payload data **will not** be encrypted with the customer-managed encryption. Examples are client metadata such as Topic Names, Topic configuration data, Schemas stored in the Schema registry and metadata stored in relation to the configuration of the Enterprise instance. 
+
+Therefore, you are not recommended to use confidential information in such client metadata.
+{:important}
+
+
 ## How customer-managed encryption works
 {: #encryption_how}
 
