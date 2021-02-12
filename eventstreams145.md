@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-01-18"
+lastupdated: "2021-02-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -63,7 +63,7 @@ There are a number of options you have for selecting the network configuration o
 
 3. Use the {{site.data.keyword.Bluemix_notm}} public and private network - Endpoints are visible on both the public Internet and internally within the {{site.data.keyword.Bluemix_notm}}.
 
-This slection can be made at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
+This selection can be made at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
 
 Alternatively, if you want to use the CLI to provision an {{site.data.keyword.messagehub}} service, use the following commands:
 
