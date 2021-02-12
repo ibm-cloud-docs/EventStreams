@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2019-11-05"
+  years: 2015, 2021
+lastupdated: "2021-02-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -72,7 +72,7 @@ Clone the following two repositories that contain the required files:
     To create a secret: 
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
-   ```
+    ```
     {: codeblock}
     <br/>
     To create a ConfigMap:
