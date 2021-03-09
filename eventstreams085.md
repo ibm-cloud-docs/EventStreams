@@ -82,9 +82,9 @@ The following table summarizes what is supported by the plans:
 		</tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.3</td>
-			<td>Kafka 2.3</td>
-			<td>Kafka 2.3</td>
+			<td>Kafka 2.6</td>
+			<td>Kafka 2.6</td>
+			<td>Kafka 2.6</td>
 		</tr>
 		<tr>
 			<td>**Kafka Connect and Kafka Streams supported **</td>
