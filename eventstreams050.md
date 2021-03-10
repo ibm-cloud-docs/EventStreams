@@ -43,9 +43,9 @@ The following table summarizes what you can use with {{site.data.keyword.message
         </tr>
 	  		<tr>
 			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.3</td>
-			<td>Kafka 2.3</td>
-			<td>Kafka 2.3</td>
+			<td>Kafka 2.6</td>
+			<td>Kafka 2.6</td>
+			<td>Kafka 2.6</td>
 		</tr>
 	  		<tr>
 			<td>**Supported client versions**</td>
@@ -86,8 +86,8 @@ The following table summarizes what you can use with {{site.data.keyword.message
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.3 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 2.3 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
+[Kafka Consumer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
