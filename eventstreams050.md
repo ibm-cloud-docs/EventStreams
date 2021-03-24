@@ -79,7 +79,8 @@ The following table summarizes what you can use with {{site.data.keyword.message
 		</tr>
 
 </table>
-*: known issues with Kafka Connect version 2.6 and above: new versions Kafka Connect require creating topics with the cleanup policy set to compact only. This is currently not supported in {{site.data.keyword.messagehub}}. As a short-term workaround we would recommend customers use Kafka Connect 2.5.1 .
+
+**Known issues with Kafka Connect version 2.6 and above**: New versions Kafka Connect require creating topics with the cleanup policy set to compact only. This is currently not supported in {{site.data.keyword.messagehub}}. As a short-term workaround we would recommend customers use Kafka Connect 2.5.1 .
 
 <br/>
 
