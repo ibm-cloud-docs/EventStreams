@@ -24,17 +24,21 @@ subcollection: EventStreams
 ## Standard plan
 {: #sla_standard}
 
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Standard plan.
-For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
+The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture via multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+
+The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
 
 
 ## Enterprise plan
 {: #sla_enterprise}
 
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan as a high availability Public environment. When the {{site.data.keyword.messagehub}} service is run in non-HA environments, such as [single zone locations](#sla_szr), the availability is 99.9%. 
-For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see
+The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available architecture via multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
+
+In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
+
+When the {{site.data.keyword.messagehub}} service is run in a non highly-available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
 
 
 ## Classic plan
