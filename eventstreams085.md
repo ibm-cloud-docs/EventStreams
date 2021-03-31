@@ -38,7 +38,8 @@ The Lite plan is free for users who want to try out {{site.data.keyword.messageh
 ## Standard plan
 {: #plan_standard}
 
-The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster which seamlessly autoscales as you increase the number of partitions you are utilising for your workload.
+
 
 ## Enterprise plan 
 {: #plan_enterprise}
