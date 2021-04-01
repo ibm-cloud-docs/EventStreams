@@ -40,7 +40,7 @@ The Lite plan is free for users who want to try out {{site.data.keyword.messageh
 
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are utilising for your workload. 
 
-The architecture is highly available by default. The service is distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+The architecture is highly available by default. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 
 ## Enterprise plan 
@@ -51,7 +51,7 @@ The Enterprise plan is appropriate if data isolation, guaranteed performance, an
 - option to provision a single-tenant Event Streams service instance in a geographically local but single zone location [(SZR)](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 - scaling options to customize throughput and/or storage capacity
 
-The architecture is highly available when you choose to deploy into a multi-zone region. The service is distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+The architecture is highly available when you choose to deploy into a multi-zone region. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 
 ## What's supported by the Lite, Standard, Enterprise plans
