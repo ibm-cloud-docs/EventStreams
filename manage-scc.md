@@ -5,7 +5,7 @@ lastupdated: "2021-04-13"
 
 keywords: security and compliance for Event Streams, security for Event streams, compliance for Event Streams,
 
-subcollection: <!--Your subcollection value-->
+subcollection: EventStreams
 
 ---
 
