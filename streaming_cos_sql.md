@@ -72,4 +72,4 @@ To validate that stream landing is working:
 •	The REST API of SQL Query could be used to get the list and the details of running streaming jobs as well. 
 •	Beside the topic in Event Stream UI you get information about the active landing as well. Using ES the landing configuration could be viewed as well it could be stopped again.
 
-More details could be found within SQL Query TBD: Link to SQL Query
+For more information, see [Streaming to Cloud Object Storage by using SQL Query](/docs/sql-query?topic=sql-query-kafka-event-streams-landing) in the {{site.data.keyword.sqlquery_short}} documentation.
