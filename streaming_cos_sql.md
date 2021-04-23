@@ -23,9 +23,9 @@ subcollection: EventStreams
 
 The following task walks you through:
 
-- Creating the required services
-- Setting up {{site.data.keyword.cos_full}} landing using SQL Query
-- Verifying that the events are stored in {{site.data.keyword.cos_short}}
+- Creating the required services.
+- Setting up {{site.data.keyword.cos_full}} landing using SQL Query.
+- Verifying that the events are stored in {{site.data.keyword.cos_short}}.
 
 
 {{site.data.keyword.sqlquery_full}} consumes batches of events from Kafka and stores the data as Parquet objects in the 
