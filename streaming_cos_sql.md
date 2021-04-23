@@ -23,9 +23,10 @@ subcollection: EventStreams
 
 The following task walks you through:
 
-•	Creating the required services 
-•	Setting up {{site.data.keyword.cos_full}} landing using SQL Query 
-•	Verifying that the events are stored in {{site.data.keyword.cos_short}}
+- Creating the required services
+- Setting up {{site.data.keyword.cos_full}} landing using SQL Query
+- Verifying that the events are stored in {{site.data.keyword.cos_short}}
+
 
 {{site.data.keyword.sqlquery_full}} consumes batches of events from Kafka and stores the data as Parquet objects in the 
 {{site.data.keyword.cos_short}} service. The process is triggered by submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
@@ -37,10 +38,10 @@ Complete the following steps to start the streams landing. {: shortdesc}
 
 Ensure you have the following software and services installed:
 
-•	An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
-•	A Cloud {{site.data.keyword.cos_short}} instance with at least one bucket.
-•	An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
-•	A {{site.data.keyword.keymanagementservicelong}} instance.
+- An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
+- A Cloud {{site.data.keyword.cos_short}} instance with at least one bucket.
+- An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
+- A {{site.data.keyword.keymanagementservicelong}} instance.
 
 
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} landing
@@ -67,9 +68,10 @@ in order to see the streams landing overview page.
 {: #step5_validate_landing}
 
 To validate that stream landing is working:
-•	Verify that the specified prefix in COS get filled with Parquet objects.
-•	In the SQL Query UI you will find a status of all streaming jobs
-•	The REST API of SQL Query could be used to get the list and the details of running streaming jobs as well. 
-•	Beside the topic in Event Stream UI you get information about the active landing as well. Using ES the landing configuration could be viewed as well it could be stopped again.
+
+  - Verify that the specified prefix in COS get filled with Parquet objects.
+  - In the SQL Query UI you will find a status of all streaming jobs
+  - The REST API of SQL Query could be used to get the list and the details of running streaming jobs as well. 
+  - Beside the topic in Event Stream UI you get information about the active landing as well. Using ES the landing configuration could be viewed as well it could be stopped again.
 
 For more information, see [Streaming to Cloud Object Storage by using SQL Query](/docs/sql-query?topic=sql-query-kafka-event-streams-landing) in the {{site.data.keyword.sqlquery_short}} documentation.
