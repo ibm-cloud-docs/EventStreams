@@ -22,7 +22,7 @@ subcollection: EventStreams
 # Monitoring {{site.data.keyword.messagehub}} metrics using {{site.data.keyword.mon_full_notm}}
 {: #metrics}
 
-[{{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started#getting-started)
+[{{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started)
  is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {:shortdesc}
 
@@ -32,7 +32,7 @@ subcollection: EventStreams
 
 Before you can start using {{site.data.keyword.messagehub}} Sysdig metrics, you must first opt in and then enable platform metrics by completing the following steps: 
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-platform_metrics_enabling){:new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-getting-started#prereqs){:new_window}. 
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](docs/monitoring?topic=monitoring-platform_metrics_enabling){:new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){:new_window}.
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**. 
 
@@ -70,7 +70,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 Enabling Mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
 
-For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/Monitoring-with-Sysdig?topic=Sysdig-pricing_plans). 
+For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-pricing_plans). 
 
 
 ## {{site.data.keyword.messagehub}} metrics details
@@ -455,4 +455,4 @@ The following attributes are available for segmenting one or more attributes as 
 
 <br/>
 
-For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/observability-monitoring?topic=observability-monitoring-monitor-sysdig){:new_window}.
+For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-monitoring){:new_window}.
