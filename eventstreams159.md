@@ -49,7 +49,7 @@ Mirroring of selected topics happens between two clusters and is unidirectional,
 
 A topic called `mytopic` from the source cluster (A) will appear on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote cluster. In contrast, any topics directly created on a cluster by users are called _local topics_.
 
-To select which topics are mirrored, a regular expression pattern can be configured via [Mirroring User Controls](/docs/EventStreams?topic=user_controls). 
+To select which topics are mirrored, a regular expression pattern can be configured via [Mirroring User Controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
