@@ -81,8 +81,7 @@ where
      number.of.log.segments = floor(retention.bytes/log.segment.size) + 1
 
 
-The total reserved storage percentage is also exposed in Sysdig via the [ibm_eventstreams_instance_reserved_disk_space_percent
-metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_reserved_disk_space_percent).
+The total reserved storage percentage is also exposed in {{site.data.keyword.mon_full_notm}} via the [ibm_eventstreams_instance_reserved_disk_space_percent metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_reserved_disk_space_percent).
 
 If there is not enough unreserved storage to satisfy the topic operation, it is rejected with a PolicyViolation error 
 detailing the reason.
