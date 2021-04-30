@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-08-17"
+  years: 2020, 2021
+lastupdated: "2021-04-30"
 
 keywords: IBM Event Streams, reserved disk usage
 
