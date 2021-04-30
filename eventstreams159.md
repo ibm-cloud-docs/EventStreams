@@ -237,7 +237,7 @@ The RemoteClusterUtils package allows to easily make these changes. Such logic i
 ## Monitoring mirroring
 {: #monitoring_mirroring}
 
-You can monitor mirroring using IBM Cloud Monitoring with Sysdig. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). The **Monitoring** dashboard is available on the target cluster.
+You can monitor mirroring using IBM Cloud Monitoring. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). The **Monitoring** dashboard is available on the target cluster.
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
 - Mirroring throughput: The bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
