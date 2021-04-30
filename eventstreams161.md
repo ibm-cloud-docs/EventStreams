@@ -87,5 +87,5 @@ Mirrored topics should be:
 ## Step 4: validation
 {: #step4_validation}
 
-When the ticket has been processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics suffixed with the source clusters alias. The Sysdig dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
+When the ticket has been processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
 
