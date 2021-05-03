@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-02-12"
+  years: 2015, 2021
+lastupdated: "2021-05-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,7 +19,7 @@ subcollection: EventStreams
 {:important: .important}
 
 # Getting started tutorial
-{: #getting_started}
+{: #getting-started}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. To get started with {{site.data.keyword.messagehub}}
 and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends
@@ -66,18 +66,18 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-     a. Go to the **Topics** tab.
+      a. Go to the **Topics** tab.
   
-     b. Click **New topic**.
+      b. Click **New topic**.
   
-     c. Name your topic.
+      c. Name your topic.
   
      The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
      {: important}
 
-     d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+      d. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-     e. The topic appears in the table. You have created a topic!
+      e. The topic appears in the table. You have created a topic!
   
 2. {: #create_credentials_step notoc} **Create credentials**
 
@@ -188,8 +188,3 @@ you through getting this Java sample to run, see [Getting started with IBM {{sit
 To watch a video that walks
 you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){:new_window}.
 -->
-
-
-
-
-
