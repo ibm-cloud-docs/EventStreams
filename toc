@@ -1,4 +1,3 @@
-<!-- Markdown Navigation -->
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
@@ -6,14 +5,12 @@
 Event Streams
 
 	{: .navgroup id="learn"}
-	index.md
-	
+	getting-started.md
+
 	{: .topicgroup}
 	About Event Streams
 		eventstreams010.md
-		eventstreams073.md
-		testgettingstarted.md
-		event-streams.md
+	eventstreams073.md
 	eventstreams085.md
 	{: .navgroup-end}
 
@@ -21,13 +18,11 @@ Event Streams
 	eventstreams132.md
 	eventstreams156.md
 	eventstreams117.md
-	eventstreams148.md
 	eventstreams068.md
 	at-events.md
 	eventstreams158.md
-	eventstreams159.md
 	eventstreams160.md
-	UnderstandingReservedDiskUsage.md 	
+	UnderstandingReservedDiskUsage.md
 	eventstreams-cli.md
 
 	{: .topicgroup}
@@ -58,13 +53,13 @@ Event Streams
 		eventstreams151.md
 
 	{: .topicgroup}
-	Migrating from Dedicated to Enterprise
+	Migrating from Dedicated to Enterprise plan
 		eventstreams157.md
 	{: .navgroup-end}
 
 	{: .navgroup id="howto"}
 	eventstreams127.md
-		
+
 	{: .topicgroup}
 	Administering Event Streams
 		eventstreams037.md
@@ -76,7 +71,7 @@ Event Streams
 		eventstreams155.md
 		ES_Scaling_Event_Streams_Capacity.md
 		eventstreams161.md
-	
+
 	{: .topicgroup}
 	Developing apps with Event Streams
 		eventstreams050.md
@@ -88,10 +83,8 @@ Event Streams
 		eventstreams111.md
 		eventstreams110.md
 		eventstreams025.md
-		
-	{: .topicgroup}
-	streaming_cos_sql.md
-	
+		eventstreams159.md
+
 	{: .topicgroup}
 	Integrating with other services
 		eventstreams149.md
@@ -102,32 +95,27 @@ Event Streams
 	{: .topicgroup}
 	Enhancing security
 		manage-scc.md
-		
-	{: .topicgroup}
-	Tutorials
-		eventstreams104.md
-	 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
 
 	{: .topicgroup}
-	Alpha program
-		eventstreams122.md
+	Tutorials
+	eventstreams104.md
+	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
 	eventstreams108.md
-	
+
 	{: .topicgroup}
 	Troubleshooting
 		ts_overview.md
 		eventstreams057.md
 		eventstreams125.md
 		eventstreams109.md
-		
+	
 	{: .topicgroup}
 	Related links
-	 	[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
-	 	[Apache Kafka client downloads](https://kafka.apache.org/downloads)
+		[Event Streams Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)
+		[Apache Kafka client downloads](https://kafka.apache.org/downloads)
 		[IBM Event Streams on ibm.com](https://www.ibm.com/cloud/event-streams)
 	{: .navgroup-end}
-
 
