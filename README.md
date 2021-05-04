@@ -1,6 +1,6 @@
 # EventStreams
 Event Streams
 
-Admin/Owner: Karen Rodgers GHE: karen-rodgers.
+Admin/Owner: Karen Rodgers/Andrea Lang GHE: karen-rodgers/ANDREAL.
 
-Please assign PRs to Karen.
+Please assign PRs to Karen/Andrea.
