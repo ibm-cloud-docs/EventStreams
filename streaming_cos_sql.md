@@ -2,7 +2,7 @@
 
 copyright:
   years: 202!
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-06"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -20,6 +20,8 @@ subcollection: EventStreams
 
 # Streaming to Cloud Object Storage by using SQL Query
 {: #streaming_cos_sql}
+
+![Streaming to Cloud Object Storage by using SQL Query](streaming_diagram.svg)
 
 The following task walks you through:
 
