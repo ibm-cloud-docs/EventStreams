@@ -123,8 +123,15 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pu
 ```
 {: codeblock}
 
+Next, create a new credential containing private endpoints and new API key: 
+```
+ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+```
+{: codeblock}
 
-Next, once applications migrated to the private endpoints, you can issue the following to turn off the public endpoints:
+Next, update the broker address to be private endpoints and new API key in the application.
+
+Next, once applications migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
