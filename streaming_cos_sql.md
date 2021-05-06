@@ -33,7 +33,7 @@ The following task walks you through:
 {{site.data.keyword.sqlquery_full}} consumes batches of events from Kafka and stores the data as Parquet objects in the 
 {{site.data.keyword.cos_short}} service. The process is triggered by submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
 
-Complete the following steps to start the streams landing. {: shortdesc}
+Complete the following steps to start the streams landing. 
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs}
