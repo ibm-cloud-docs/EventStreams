@@ -84,6 +84,8 @@ Event Streams
 		eventstreams110.md
 		eventstreams025.md
 		eventstreams159.md
+		
+	streaming_cos_sql.md
 
 	{: .topicgroup}
 	Integrating with other services
