@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-01"
+lastupdated: "2021-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -146,20 +146,3 @@ Charlie said:
 
 "Add some info describing how to take the information made available from above e.g. like the info in the Connecting a client to the Kafka API section of the alpha docs on stage 1? https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-alpha_about#alpha_about"
 -->
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
