@@ -61,19 +61,18 @@ in order to see the streams landing overview page.
   - Specify the event format (JSON or AVRO).
   - Specify the optional event size.
   - Create or select a service ID with the correct IAM access policies. This service ID is used to create an API key.
-  - Select a Key Protect instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} 
-  to run the landing until you stop it again.
+  - Select a {{site.data.keyword.keymanagementservicelong}} instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} to run the landing until you stop it again.
   - Click *Start streaming data* to start the landing.
 
 
-## Step 3. Validate stream landing is working
+## Step 3. Validate that streams landing is working
 {: #step5_validate_landing}
 
-To validate that stream landing is working:
+To validate that streams landing is working:
 
-  - Verify that the specified prefix in COS get filled with Parquet objects.
-  - In the SQL Query UI you will find a status of all streaming jobs
-  - The REST API of SQL Query could be used to get the list and the details of running streaming jobs as well. 
-  - Beside the topic in Event Stream UI you get information about the active landing as well. Using ES the landing configuration could be viewed as well it could be stopped again.
+  - Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
+  - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
+  - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running streaming jobs. 
+  - In addition to the topic in the {{site.data.keyword.messagehub}} UI, you also get information about the active landing. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
 
 For more information, see [Streaming to Cloud Object Storage by using SQL Query](/docs/sql-query?topic=sql-query-kafka-event-streams-landing) in the {{site.data.keyword.sqlquery_short}} documentation.
