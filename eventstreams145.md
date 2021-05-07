@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -123,8 +123,15 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pu
 ```
 {: codeblock}
 
+Next, create a new credential containing private endpoints and new API key, as follows: 
+```
+ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+```
+{: codeblock}
 
-Next, once applications migrated to the private endpoints, you can issue the following to turn off the public endpoints:
+Next, update the broker address to be private endpoints and new API key in the application.
+
+Next, once applications migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
 ```
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
@@ -227,5 +234,3 @@ and update the credentials in the application to use the newly created one:
 
 Once the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
 
-
-.
