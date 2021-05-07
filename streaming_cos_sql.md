@@ -18,7 +18,7 @@ subcollection: EventStreams
 {:note: .note}
 
 
-# Streaming to Cloud Object Storage by using SQL Query
+# Streaming to Cloud {{site.data.keyword.cos_short}} by using {{site.data.keyword.sqlquery_short}}
 {: #streaming_cos_sql}
 
 ![Streaming to Cloud Object Storage by using SQL Query](streaming_diagram.svg)
@@ -26,11 +26,11 @@ subcollection: EventStreams
 The following task walks you through:
 
 - Creating the required services.
-- Setting up {{site.data.keyword.cos_full}} landing using SQL Query.
+- Setting up {{site.data.keyword.cos_full}} landing using {{site.data.keyword.sqlquery_full}}.
 - Verifying that the events are stored in {{site.data.keyword.cos_short}}.
 
 
-{{site.data.keyword.sqlquery_full}} consumes batches of events from Kafka and stores the data as Parquet objects in the 
+{{site.data.keyword.sqlquery_short}} consumes batches of events from Kafka and stores the data as Parquet objects in the 
 {{site.data.keyword.cos_short}} service. The process is triggered by submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
 
 Complete the following steps to start the streams landing. 
