@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-05-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -123,7 +123,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pu
 ```
 {: codeblock}
 
-Next, create a new credential containing private endpoints and new API key: 
+Next, create a new credential containing private endpoints and new API key, as follows: 
 ```
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
