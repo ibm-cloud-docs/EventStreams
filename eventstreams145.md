@@ -234,5 +234,3 @@ and update the credentials in the application to use the newly created one:
 
 Once the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
 
-
-.
