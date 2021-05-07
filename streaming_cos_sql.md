@@ -2,7 +2,7 @@
 
 copyright:
   years: 202!
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-07"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -49,11 +49,11 @@ Ensure you have the following software and services installed:
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} landing
 {: #step2_setup_cos_landing}
 
-1. Click on the Overflow menu (3 vertical dots beside the topic) to start and select the *streaming* topic data option 
+1. Click on the **Overflow menu** (3 vertical dots beside the topic) to start and select the **streaming** topic data option 
 in order to see the streams landing overview page.
-2. Click *Start* to start the wizard.
-3. Select the required Cloud {{site.data.keyword.cos_short}} instance, then click *Next*. 
-4. Within the Cloud {{site.data.keyword.cos_short}} instance, select the bucket where the events should be stored, then click *Next*.
+2. Click **Start** to start the wizard.
+3. Select the required Cloud {{site.data.keyword.cos_short}} instance, then click **Next**. 
+4. Within the Cloud {{site.data.keyword.cos_short}} instance, select the bucket where the events should be stored, then click **Next**.
 5. Select the {{site.data.keyword.sqlquery_short}} instance. Only instances with a Standard plan are listed.
 6. Configure the streams landing by completing the following steps:
  
@@ -62,7 +62,7 @@ in order to see the streams landing overview page.
   - Specify the optional event size.
   - Create or select a service ID with the correct IAM access policies. This service ID is used to create an API key.
   - Select a {{site.data.keyword.keymanagementservicelong}} instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} to run the landing until you stop it again.
-  - Click *Start streaming data* to start the landing.
+  - Click **Start streaming data** to start the landing.
 
 
 ## Step 3. Validate that streams landing is working
