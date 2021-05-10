@@ -104,7 +104,7 @@ To learn more, see the following information:
 * Choose the Standard plan if you want event ingest and distribution capabilities, where you pay for what you use and share infrastructure with others.
 * Choose the Enterprise plan if data isolation, guaranteed performance, and increased retention are important considerations. 
 
-For more information, see [Choosing your plan](/docs/EventStreams/eventstreams085.html).
+For more information, see [Choosing your plan](/docs/EventStreams/choosing_your_plan.html).
 -->
 
 
