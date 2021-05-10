@@ -9,26 +9,26 @@ Event Streams
 
 	{: .topicgroup}
 	About Event Streams
-		eventstreams010.md
-	eventstreams073.md
-	eventstreams085.md
+		overview.md
+	apache_kafka_concepts.md
+	choosing_your_plan.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
-	eventstreams132.md
-	eventstreams156.md
-	eventstreams117.md
-	eventstreams068.md
+	sla.md
+	responsibilities.md
+	limits_quotas.md
+	data_security.md
 	at-events.md
-	eventstreams158.md
-	eventstreams160.md
+	monitoring.md
+	disaster_recovery.md
 	UnderstandingReservedDiskUsage.md
 	eventstreams-cli.md
 
 	{: .topicgroup}
 	Classic plan 
-		eventstreams134.md
-		eventstreams135.md
+		classic_plan.md
+		connecting_es_classic.md
 		eventstreams136.md
 		eventstreams147.md
 		eventstreams137.md
