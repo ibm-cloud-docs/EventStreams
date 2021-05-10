@@ -164,6 +164,7 @@ The following table summarizes what is supported by the plans:
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
 			Osaka (jp-osa)<br/>
+			Toronto (ca-tor)<br/>
 			<br/>
 			</td>
 			<td>**Multizone location (MZR)**</br>
@@ -174,6 +175,7 @@ The following table summarizes what is supported by the plans:
 			Frankfurt (eu-de)<br/>
 			Tokyo (jp-tok)<br/>
 			Osaka (jp-osa)<br/>
+			Toronto (ca-tor)<br/>
 			<br/>
 			**Single zone location (SZR)**</br>
 			Seoul (seo01)<br/>
