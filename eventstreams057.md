@@ -99,7 +99,7 @@ You need to opt into this functionality by using one of the following methods:
 *  Topic names are restricted to a maximum of 200 characters.
 *  The default number of partitions for a topic is one.
 
-<!--following message retention info duplicted in FAQs eventstreams108-->
+<!--following message retention info duplicted in FAQs faq.md-->
 
 ## Creating and deleting topics in Kafka
 {: #create_delete}
@@ -146,7 +146,7 @@ If you see this error, wait and submit the request again.
 **Is this specific to old Standard only? If so I'll move to specific Standard topic.**
 {: note}
 -->
-<!--12/04/18 - Karen: same info duplicated at messagehub108 -->
+<!--12/04/18 - Karen: same info duplicated at faq.md -->
 <!--
 ## Kafka REST API daily restart
 {: #rest_restart}
