@@ -107,7 +107,7 @@ To connect a client to the REST API, complete the following steps:
 
 * Set the HTTP <code>X-Auth-Token</code> header to the value of <code>apikey</code>
 
-For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/EventStreams/eventstreams120.html).
+For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/EventStreams/streaming_log_events.html).
 
 
 ## Administering {{site.data.keyword.messagehub}}
@@ -124,7 +124,7 @@ The only administration tasks required in a cluster are to create, list, and del
 You can find further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
 To view the swagger file use Swagger tools, for example [Swagger Editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
 
-For a simple example that demonstrates how to create a topic using Curl, see [Getting started with the Alpha program](/docs/EventStreams/eventstreams120.html).
+For a simple example that demonstrates how to create a topic using Curl, see [Getting started with the Alpha program](/docs/EventStreams/streaming_log_events.html).
 
 In the future, other configuration options will also be available.
 
@@ -133,7 +133,7 @@ In the future, other configuration options will also be available.
 
 Coming soon...
 
-For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/EventStreams/eventstreams120.html).
+For simple steps to get up and running with the Alpha, see [Getting started with the Alpha program](/docs/EventStreams/streaming_log_events.html).
 
 ## Alpha limitations
 {: alpha_limitations}
