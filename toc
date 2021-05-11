@@ -100,19 +100,19 @@ Event Streams
 
 	{: .topicgroup}
 	Tutorials
-	eventstreams104.md
+	using_kafka_client.md
 	[Asynchronous data processing using object storage and pub/sub messaging tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging)
 	{: .navgroup-end}
 
 	{: .navgroup id="help"}
-	eventstreams108.md
+	faq.md
 
 	{: .topicgroup}
 	Troubleshooting
-		ts_overview.md
-		eventstreams057.md
-		eventstreams125.md
-		eventstreams109.md
+		troubleshooting.md
+		known_restrictions.md
+		reporting_problem.md
+		reporting_problem_classic.md
 	
 	{: .topicgroup}
 	Related links
