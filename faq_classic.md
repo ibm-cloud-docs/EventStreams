@@ -57,7 +57,7 @@ If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or
 
 Offset retention is system-wide so you cannot set it at an individual topic level. All consumer groups get only 7 days of stored offsets even if using a topic with a log retention that has been increased to the maximum of 30 days. 
 
-<!--following message retention info duplicted in eventstreams057 and evenstreams108-->
+<!--following message retention info duplicted in known_restrictions and faq.md-->
 
 ## How long are messages retained?
 {: #messages_retained_classic}
@@ -117,7 +117,7 @@ For example, if you create and delete 1 topic 10 times in a day, you are charged
 
 {{site.data.keyword.messagehub}} bills either for each message or for each 64 k. A message up to 64 k counts as 1 billable message. Messages larger than 64 k count as the following number of billable messages: <code><var class="keyword varname">message_size</var> &divide; 64 k</code>.
 
-<!--12/04/18 - Karen: same info duplicated at messagehub057 -->
+<!--12/04/18 - Karen: same info duplicated at known_restrictions.md -->
 ## How often does the Kafka REST API restart? 
 {: #REST_restart_classic }
 {: faq}
