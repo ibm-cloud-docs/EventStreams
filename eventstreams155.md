@@ -33,7 +33,7 @@ The service is built on FIPS 140-2 Level 4-certified hardware, the highest offer
 You can find out more about using {{site.data.keyword.hscrypto}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-get-started){:new_window}.
 
 These services allow the use of a customer-provided key to control encryption. 
-By disablig or deleting this key, you can prevent any further access to the data stored by the service, 
+By disabling or deleting this key, you can prevent any further access to the data stored by the service, 
 because it is no longer possible to decrypt it.
 {:shortdesc}
 
@@ -126,15 +126,15 @@ To remove access permanently, you can delete the key. However, you must take ext
 In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections.
  An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-Note: The authorization should be left in place between between your {{site.data.keyword.messagehub}} and key management service instances at all times. While removing this authoization will prevent {{site.data.keyword.messagehub}} from future access to the data, already in-use data will continue to be available for a period of time.
+Note: The authorization should be left in place between your {{site.data.keyword.messagehub}} and key management service instance at all times. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data will continue to be available for a period of time.
 
 ***Important:*** You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the 
-{{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you have chosen to prevent access to your data.
+{{site.data.keyword.Bluemix}} console or CLI. These charges are still applied, even if you chose to prevent access to your data.
 
 
 ### Restoring access to data
 
-Access can be restored only if the key was not deleted. To restore access, reenable your root key.
+Access can be restored only if the key was not deleted. To restore access, re-enable your root key.
 After a short period of initialization, your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. 
 All data is retained, subject to the normal retention limits configured in your instance.
 
