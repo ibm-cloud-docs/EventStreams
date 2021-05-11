@@ -66,11 +66,11 @@ Event Streams
 		using_admin_kafka_api.md
 		using_kafka_console.md
 		getting_started_cli.md
-		eventstreams124.md
-		eventstreams145.md
-		eventstreams155.md
-		ES_Scaling_Event_Streams_Capacity.md
-		eventstreams161.md
+		managing_access.md
+		restricting_access_enterprise.md
+		managing_encryption.md
+		scaling_capacity.md
+		enabling_monitoring.md
 
 	{: .topicgroup}
 	Developing apps with Event Streams
