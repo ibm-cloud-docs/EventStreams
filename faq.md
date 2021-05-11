@@ -90,7 +90,7 @@ Offset retention is system-wide so you cannot set it at an individual topic leve
 The internal Kafka `__consumer_offsets` topic is visible to you as read-only on the Enterpise plan. 
 You are strongly recommended not to attempt to manage the topic in any way. You cannot access the `__consumer_offsets` topic in any way on the Standard plan. 
 
-<!--following message retention info duplicated in eventstreams057-->
+<!--following message retention info duplicated in known_restrictions.md-->
 
 
 ## How can I clean up a consumer group with no consumers?
