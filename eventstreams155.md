@@ -126,8 +126,6 @@ To remove access permanently, you can delete the key. However, you must take ext
 In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections.
  An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-Note: The authorization should be left in place between between your {{site.data.keyword.messagehub}} and key management service instances. If the authorization is removed, although {{site.data.keyword.messagehub}} will no longer be able to access the key management service. While this will cause all future access to the data to fail, already in-use data will continue to be available for a period of time.
-
 Note: The authorization should be left in place between between your {{site.data.keyword.messagehub}} and key management service instances at all times. While removing this authoization will prevent {{site.data.keyword.messagehub}} from future access to the data, already in-use data will continue to be available for a period of time.
 
 ***Important:*** You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the 
