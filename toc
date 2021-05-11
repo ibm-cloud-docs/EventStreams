@@ -19,10 +19,10 @@ Event Streams
 	responsibilities.md
 	limits_quotas.md
 	data_security.md
-	at-events.md
+	activity_tracker_events.md
 	monitoring.md
 	disaster_recovery.md
-	UnderstandingReservedDiskUsage.md
+	reserved_disk.md
 	eventstreams-cli.md
 
 	{: .topicgroup}
@@ -74,29 +74,29 @@ Event Streams
 
 	{: .topicgroup}
 	Developing apps with Event Streams
-		eventstreams050.md
-		eventstreams112.md
-		eventstreams114.md
-		eventstreams118.md
-		ES_using_schema_registry.md
-		eventstreams113.md
-		eventstreams111.md
-		eventstreams110.md
-		eventstreams025.md
-		eventstreams159.md
+		using_kafka_api.md
+		producing_messages.md
+		consuming_messages.md
+		partition_leadership.md
+		schema_registry.md
+		using_kafka_connect.md
+		using_kafka_streams.md
+		using_ksqldb.md
+		using_rest_producer.md
+		mirroring.md
 		
 	streaming_cos_sql.md
 
 	{: .topicgroup}
 	Integrating with other services
-		eventstreams149.md
-		eventstreams153.md
-		eventstreams119.md
-		eventstreams120.md
+		connecting_cos.md
+		connecting_mq.md
+		watson_platform.md
+		streaming_log_events.md
 
 	{: .topicgroup}
 	Enhancing security
-		manage-scc.md
+		manage_security.md
 
 	{: .topicgroup}
 	Tutorials
