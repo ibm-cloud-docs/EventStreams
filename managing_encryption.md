@@ -91,7 +91,7 @@ ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub
 {: codeblock}
 
 
-If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
+If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
    * The CRN of the root key that you want to use in your key management service instance.
    * The CRN of your {{site.data.keyword.messagehub}} service instance.
    <br/>
