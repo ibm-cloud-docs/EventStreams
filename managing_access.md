@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-08-04"
+  years: 2015, 2021
+lastupdated: "2021-05-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding, IAM, wildcard, policies
 
@@ -104,7 +104,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 -->
 
 For more information about IAM, see 
-[IBM Cloud Identity and Access Management](/docs/iam?topic=iam-iamoverview#iamoverview).
+[IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 
 For an example of how to set policies, see: 
 [IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){:new_window}.
