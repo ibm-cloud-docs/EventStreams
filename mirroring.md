@@ -90,9 +90,9 @@ To avoid accidental deletion of data in the target instance, topics are not auto
 ## IAM access policies for mirroring
 {: #iam_mirroring}
 
-Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters and use the API key from the service ID that the policies are attached to.  We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/iam?topic=iam-wildcard) to simplify the access policies that control access to the mirrored resources.
+Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters and use the API key from the service ID that the policies are attached to.  We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard) to simplify the access policies that control access to the mirrored resources.
 
-If you are new to IAM access policies, see [Getting started with IAM tutorial](/docs/iam?topic=iam-getstarted) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security) for more details before reading further.
+If you are new to IAM access policies, see [Getting started with IAM tutorial](/docs/vpc?topic=vpc-iam-getting-started) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security) for more details before reading further.
 
 Define the following IAM access policies on **both** clusters, where &lt;ALIAS&gt; is the alias for other cluster. For example, on cluster B, the Resource ID should be `A.checkpoints.internal`:
 
