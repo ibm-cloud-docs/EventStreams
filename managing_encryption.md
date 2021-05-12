@@ -33,7 +33,7 @@ The service is built on FIPS 140-2 Level 4-certified hardware, the highest offer
 You can find out more about using {{site.data.keyword.hscrypto}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-get-started){:new_window}.
 
 These services allow the use of a customer-provided key to control encryption. 
-By deleting or revoking access to this key, you can prevent any further access to the data stored by the service, 
+By disabling or deleting this key, you can prevent any further access to the data stored by the service, 
 because it is no longer possible to decrypt it.
 {:shortdesc}
 
@@ -44,7 +44,6 @@ Consider using customer-managed keys if you require the following features:
 
 Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
-- Enablement is disruptive and results in the loss of any existing message data and topic definitions
 
 Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your 
 {{site.data.keyword.messagehub}} instance.
@@ -69,7 +68,7 @@ Therefore, you are not recommended to use confidential information in such clien
 
 You own the KEK, which you create as a root key in the {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} service. 
 The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Its storage, management, and use to wrap and unwrap the DEK 
-is performed entirely within the key management service. If you revoke access to this key or delete the key, the data can no longer be decrypted.
+is performed entirely within the key management service. If you disable or delete the key, the data can no longer be decrypted.
 
 ## Enabling a customer-managed key for {{site.data.keyword.messagehub}}
 {: #enabling_encryption}
@@ -118,8 +117,7 @@ After a customer-managed key is enabled, the cluster operates as normal, but wit
 
 ### Preventing access to data
 
-To temporarily prevent access, you can either disable your root key or remove the authorization created between your 
-{{site.data.keyword.messagehub}} and key management service instances. As a consequence, {{site.data.keyword.messagehub}} 
+To temporarily prevent access, you can disable your root key. As a consequence, {{site.data.keyword.messagehub}} 
 can no longer access the data because it can no longer access the key. 
 
 To remove access permanently, you can delete the key. However, you must take extreme caution because this operation is non-recoverable.
@@ -128,14 +126,14 @@ To remove access permanently, you can delete the key. However, you must take ext
 In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections.
  An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
+Note: The authorization should be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data will continue to be available for a period of time.
+
 ***Important:*** You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the 
-{{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you have chosen to prevent access to your data by removing 
-authorization to your key or by deleting your key.
+{{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you chose to prevent access to your data.
 
 ### Restoring access to data
 
-Access can be restored only if the key was not deleted. To restore access, either reenable your root key (if it was disabled) or re-create the 
-authorization between your {{site.data.keyword.messagehub}} and key management service instances (if the authorization was removed). 
+Access can be restored only if the key was not deleted. To restore access, re-enable your root key.
 After a short period of initialization, your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. 
 All data is retained, subject to the normal retention limits configured in your instance.
 
