@@ -2,7 +2,7 @@
 
 copyright:
   years: 202!
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-18"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -21,14 +21,16 @@ subcollection: EventStreams
 # Streaming to Cloud {{site.data.keyword.cos_short}} by using {{site.data.keyword.sqlquery_short}}
 {: #streaming_cos_sql}
 
-A common pattern when building an event-driven architecture is the long term archival of events flowing through {{site.data.keyword.messagehub}}. With this fully-managed capability, you are able to archive a continuous stream of events from an {{site.data.keyword.messagehub}} to a Cloud {{site.data.keyword.cos_full}} bucket of your choice.
+Extend your data pipeline to {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by
+leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to
+{{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed using the fully-managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
 
 ![Streaming to Cloud Object Storage by using SQL Query](streaming_diagram.svg)
 
 The following task walks you through:
 
 - Creating the required services.
-- Setting up {{site.data.keyword.cos_short}} landing using {{site.data.keyword.sqlquery_full}}.
+- Setting up {{site.data.keyword.cos_short}} landing using {{site.data.keyword.sqlquery_short}}.
 - Verifying that the events are stored in {{site.data.keyword.cos_short}}.
 
 
