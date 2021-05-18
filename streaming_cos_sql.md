@@ -47,7 +47,9 @@ Ensure you have the following software and services installed:
 - An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
 - A Cloud {{site.data.keyword.cos_short}} instance with at least one bucket.
 - An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
-- A {{site.data.keyword.keymanagementservicelong}} instance.
+- An {{site.data.keyword.keymanagementservicelong}} instance.
+
+These services can also be created after you start configuring your streaming job in the set up wizard.
 
 
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} landing
