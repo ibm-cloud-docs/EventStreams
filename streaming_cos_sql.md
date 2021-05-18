@@ -21,20 +21,20 @@ subcollection: EventStreams
 # Streaming to Cloud {{site.data.keyword.cos_short}} by using {{site.data.keyword.sqlquery_short}}
 {: #streaming_cos_sql}
 
-Extend your data pipeline to {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by
+Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by
 leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to
-{{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed using the fully-managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
+Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed using the fully-managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
 
 ![Streaming to Cloud Object Storage by using SQL Query](streaming_diagram.svg)
 
 The following task walks you through:
 
 - Creating the required services.
-- Setting up {{site.data.keyword.cos_short}} landing using {{site.data.keyword.sqlquery_short}}.
+- Setting up Cloud {{site.data.keyword.cos_short}} landing using {{site.data.keyword.sqlquery_short}}.
 - Verifying that the events are stored in {{site.data.keyword.cos_short}}.
 
 
-{{site.data.keyword.sqlquery_short}} consumes batches of events from Kafka and stores the data as Parquet objects in the 
+{{site.data.keyword.sqlquery_short}} consumes batches of events from Kafka and stores the data as Parquet objects in the Cloud 
 {{site.data.keyword.cos_short}} service. The process is triggered by submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
 
 Complete the following steps to start the streams landing. 
