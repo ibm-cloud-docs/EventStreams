@@ -84,8 +84,6 @@ Event Streams
 		using_ksqldb.md
 		using_rest_producer.md
 		mirroring.md
-		
-	streaming_cos_sql.md
 
 	{: .topicgroup}
 	Integrating with other services
