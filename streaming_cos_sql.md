@@ -97,9 +97,11 @@ For more detailed information on how billing is calculated, see the following ex
 
 The following permissions are needed for streams landing: 
 
-- Permission to create service-to-service authentication
-- Permission to create service IDs and API keys
-- Permission to write to {{site.data.keyword.keymanagementservicelong}} (to store the API key)
+- Permission to create service-to-service authentication.
+- Permission to create service IDs and API keys.
+- Permission to write to {{site.data.keyword.keymanagementservicelong}} (to store the API key).
+- Reader access role for the cluster, topic and group resources within the {{site.data.keyword.messagehub}} service instance (or a Reader access role for the service instance as a whole).
+- Writer role for the Cloud {{site.data.keyword.cos_short}} bucket.
 
 ## Limitations
 {:limitations-streams-landing}
