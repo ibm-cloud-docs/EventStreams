@@ -2,7 +2,7 @@
 
 copyright:
   years: 202!
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-21"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -80,5 +80,32 @@ To validate that streams landing is working:
   - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
   - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running streaming jobs. 
   - In addition to the topic in the {{site.data.keyword.messagehub}} UI, you also get information about the active landing. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
+  
+## Billing example
+{:billing-example}
+
+With a simple capacity metric, you are charged by the hour for each {{site.data.keyword.messagehub}} job enabling you to stream a single topic to a single bucket and then scale up as your workload increases.
+
+For more detailed information on how billing is calculated, see the following examples: 
+
+- 1 topic, 8 partitions, 1 MB ingress costs $0.014 USD per partition hour * 8 * 30 days
+- SQL Query landing costs $0.11 USD per capacity unit hour * 1 * 30 days
+- Cloud {{site.data.keyword.cos_short}}: 30 days * 24 hours * 60 / 1024 /1024 equals to 2.47 TB per month (Standard Plan, US-South, regional) costs $0.0220 * 2.47 + $1 for Class A and Class B requests
+
+## Permissions
+{:permissions-event-streams}
+
+The following permissions are needed for streams landing: 
+
+- Permission to create service-to-service authentication
+- Permission to create service IDs and API keys
+- Permission to write to {{site.data.keyword.keymanagementservicelong}} (to store the API key)
+
+## Limitations
+{:limitations-streams-landing}
+
+With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput 
+depends on parameters, such as topic partitions and size and format of the events. For one {{site.data.keyword.sqlquery_short}} instance 
+there is a limit of five concurrent stream landing jobs. The limit can be raised upon request via support ticket. The {{site.data.keyword.messagehub}} feature is currently only available for instances created in the US-South region. 
 
 For more information, see [Streaming to Cloud Object Storage by using SQL Query](/docs/sql-query?topic=sql-query-kafka-event-streams-landing) in the {{site.data.keyword.sqlquery_short}} documentation.
