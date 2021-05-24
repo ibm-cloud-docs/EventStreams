@@ -35,24 +35,24 @@ The following task walks you through:
 
 
 {{site.data.keyword.sqlquery_short}} consumes batches of events from Kafka and stores the data as Parquet objects in the Cloud 
-{{site.data.keyword.cos_short}} service. The process is triggered by submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
+{{site.data.keyword.cos_short}} service. The process is triggered in the background by {{site.data.keyword.messagehub}} submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
 
 Complete the following steps to start the streams landing. 
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs}
 
-Ensure you have the following software and services installed:
+Ensure you have the following services configured:
 
 - An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
 - A Cloud {{site.data.keyword.cos_short}} instance with at least one bucket.
 - An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
 - An {{site.data.keyword.keymanagementservicelong}} instance.
 
-These services can also be created after you start configuring your streaming job in the set up wizard.
+These services can also be created after you start configuring your stream landing job in the set up wizard.
 
 
-## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} landing
+## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} stream landing
 {: #step2_setup_cos_landing}
 
 1. Click on the **Overflow menu** (3 vertical dots beside the topic) to start and select the **streaming** topic data option 
@@ -65,32 +65,36 @@ in order to see the streams landing overview page.
  
   - Define the prefix of the {{site.data.keyword.cos_short}} objects.
   - Specify the event format (JSON or AVRO).
-  - Specify the optional event size.
   - Create or select a service ID with the correct IAM access policies. This service ID is used to create an API key.
   - Select a {{site.data.keyword.keymanagementservicelong}} instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} to run the landing until you stop it again.
-  - Click **Start streaming data** to start the landing.
+  - Click **Start streaming data** to enable a stream landing job.
 
 
-## Step 3. Validate that streams landing is working
+## Step 3. Validate that your stream landing job is working
 {: #step5_validate_landing}
 
 To validate that streams landing is working:
 
   - Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
   - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
-  - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running streaming jobs. 
-  - In addition to the topic in the {{site.data.keyword.messagehub}} UI, you also get information about the active landing. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
+  - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs. 
+  - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
   
 ## Billing example
 {:billing-example}
 
-With a simple capacity metric, you are charged by the hour for each {{site.data.keyword.messagehub}} job enabling you to stream a single topic to a single bucket and then scale up as your workload increases.
+Consider a simple scenario, where you would like to persist 1MB a second of data in Cloud {{site.data.keyword.cos_short} that originates from {{site.data.keyword.messagehub}}.
 
-For more detailed information on how billing is calculated, see the following examples: 
+You will see the following in your IBM Cloud useage:
+- 1 {{site.data.keyword.messagehub}} topic with 1 partition: $0.014 USD per partition hour
+- {{site.data.keyword.messagehub}} outbound bandwidth charge: $0.028 for 3.6GB data transmitted per hour
+- 1 {{site.data.keyword.sqlquery_short}} stream landing job: $0.11 per hour
+- Cloud {{site.data.keyword.cos_short}} Class A requests for writing data: ~$0.02 per hour
+- Cloud {{site.data.keyword.cos_short}} storage costs: $0.05 per month for each 3.6GB using the smart storage tier class.
 
-- 1 topic, 8 partitions, 1 MB ingress costs $0.014 USD per partition hour * 8 * 30 days
-- SQL Query landing costs $0.11 USD per capacity unit hour * 1 * 30 days
-- Cloud {{site.data.keyword.cos_short}}: 30 days * 24 hours * 60 / 1024 /1024 equals to 2.47 TB per month (Standard Plan, US-South, regional) costs $0.0220 * 2.47 + $1 for Class A and Class B requests
+Your total cost per hour, with the data subsequently stored for a month, would be approximately: $0.222
+
+The above is only an example, and you should evaluate your own planned useage with the IBM Cloud cost calculator.
 
 ## Permissions
 {:permissions-event-streams}
