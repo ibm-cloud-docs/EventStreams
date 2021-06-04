@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 202!
-lastupdated: "2021-05-21"
+  years: 2021
+lastupdated: "2021-06-04"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
