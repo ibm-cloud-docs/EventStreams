@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-07-27"
+  years: 2020, 2021
+lastupdated: "2021-06-18"
 
 keywords: IBM Event Streams, schema registry
 
@@ -24,15 +24,13 @@ subcollection: EventStreams
 ## Schemas overview
 {: #ES_overview}
 
-Apache Kafka can handle any data, but it does not validate the information in the messages. However, efficient handling of data often requires
-that it includes specific information in a certain format. Using schemas, you can define the structure of the data in a message, ensuring that both producers and consumers use the correct structure.
+Apache Kafka can handle any data, but it does not validate the information in the messages. However, efficient handling of data often requires that it includes specific information in a certain format. Using schemas, you can define the structure of the data in a message, ensuring that both producers and consumers use the correct structure.
 
 Schemas help producers create data that conforms to a predefined structure, defining the fields that need to be present together with the type of each field. This definition then helps consumers parse that data and interpret it correctly. {{site.data.keyword.messagehub}} Enterprise plan supports schemas and includes a schema registry for using and managing schemas.
 
 It is common for all of the messages on a topic to use the same schema. The key and value of a message can each be described by a schema.
 
-![Schemas overview diagram.](schema_registry1.svg "Diagram representing how a schema can help define a structure for the key and value pairs of a message"){: caption="Schemas Overview"
-caption-side="bottom"}
+![Schemas overview diagram.](schema_registry1.svg "Diagram representing how a schema can help define a structure for the key and value pairs of a message"){: caption="Schemas Overview"caption-side="bottom"}
 
 ## Schema registry
 {: #ES_registry}
@@ -83,10 +81,10 @@ The schema registry is not available for other {{site.data.keyword.messagehub}} 
 ## Accessing the schema registry
 {: #accessing_schema_registry}
 
-To access the schema registry, you need the URL of the schema registry as well as a set of credentials that can be used to
+To access the schema registry, you need the URL of the schema registry, as well as a set of credentials that can be used to
 authenticate with the registry. Both of these pieces of information can be found by inspecting the service credentials of your service.
-To view these in the UI, click on your service instance, select “service credentials” in the left-hand navigation pane, then click on
-the “view credentials” link located next to one of the service credentials listed in the table:
+To view these in the UI, click on your service instance, select **Service Credentials** in the left-hand navigation pane, then click on
+the **View Credentials** link located next to one of the service credentials listed in the table:
 
 ![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
@@ -492,7 +490,7 @@ To configure the Confluent SerDes to use the schema registry, you need to specif
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the service credentials, then the value should be in the form: <code>https://token:$APIKEY@$HOST/confluent</code>
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, then the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
 BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the schema registry URL.
 
 The following diagram shows an example of the properties required to create a Kafka producer, that uses the Confluent SerDes and can be connected to the {{site.data.keyword.messagehub}} service:
@@ -534,7 +532,7 @@ To execute using the credentials source method of URL, use the following code:
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
-* SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the username `token` and apikey, along with the path `/confluent` (for example https://token:apikey@kafka_http_url/confluent).
+* SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the username `token` and apikey, along with the path `/confluent` (for example, `https://{token}:{apikey}@{kafka_http_url}/{confluent}`).
 * CONFIG_FILE with the path of the configuration file. 
 
 To execute using the credentials source method of USER_INFO, use the following code:
@@ -548,6 +546,6 @@ To execute using the credentials source method of USER_INFO, use the following c
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
-* SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the path `/confluent` (for example https://kafka_http_url/confluent).
+* SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the path `/confluent` (for example, `https://{kafka_http_url}/{confluent}`).
 * CONFIG_FILE with the path of the configuration file. 
 
