@@ -96,7 +96,7 @@ kubectl apply -f ./kafka-connect.yaml
 ## Step 5. Validate Kafka Connect is running
 {: #step5_validate_connector_mq}
 
-To validate that Kafka Connect is running, port forward to the kafkaconnect-service Service on port 8083. For example:
+To validate that Kafka Connect is running, port forward to the kafkaconnect-service on port 8083. For example:
 
 ```
 kubectl port-forward service/kafkaconnect-service 8083
@@ -105,7 +105,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 
 Keep the terminal that you've used for port forwarding open, and use another terminal for the next steps.
 
-The Connect REST API is then available at http://localhost:8083. If you want more information about the API, see
+The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
 So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the MQ Connector.
@@ -182,7 +182,7 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 {: #step8_monitor_connector_mq}
 
 You can check your connector by going to <br/>
-http://localhost:8083/connectors/mq-source/status
+`http://localhost:8083/connectors/mq-source/status`
 
 If the state of the connector is not running, restart the connector.
 
