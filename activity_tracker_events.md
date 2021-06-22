@@ -35,7 +35,7 @@ they include can be found [here](https://cloud.ibm.com/docs/Activity-Tracker-wit
 ## Topic events
 {: #topic-events}
 
-{{site.data.keyword.messagehub}} instances that are on the `Enterprise plan` or the `Standard plan` automatically generate topic events. 
+{{site.data.keyword.messagehub}} instances that are on the Enterprise plan or the Standard plan automatically generate topic events. 
 
 The following table lists the topic events: 
 
