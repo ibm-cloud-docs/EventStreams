@@ -23,7 +23,8 @@ The following task walks you through:
 * Getting the Kafka Connect runtime to run in an {{site.data.keyword.containershort}} cluster.
 * Starting the {{site.data.keyword.cos_short}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
 
-The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud {{site.data.keyword.cos_short}} service. 
+The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the 
+Cloud {{site.data.keyword.cos_short}} service. 
 
 Complete the following steps to get set up:
 {: shortdesc}
@@ -33,7 +34,7 @@ Complete the following steps to get set up:
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You need to create credentials.
-* An instance of the Cloud{{site.data.keyword.cos_short}} service with at least one bucket.
+* An instance of the Cloud {{site.data.keyword.cos_short}} service with at least one bucket.
 * An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
     You also need CLI access to your cluster. For more information, see
@@ -108,7 +109,7 @@ Keep the terminal that you used for port forwarding open, and use another termin
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
-So, you now have the Kafka Connect runtime deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the {{site.data.keyword.cos_short}} connector.
+So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
 
 
 <!--
@@ -147,20 +148,20 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 <dt><strong>cos.api.key</strong></dt>
 <dd>Required. API key used to connect to the Cloud {{site.data.keyword.cos_short}} service instance.</dd>
 <dt><strong>cos.bucket.location</strong></dt>
-<dd>Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket, for example: eu-gb.</dd>
+<dd>Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket, for example, eu-gb.</dd>
 <dt><strong>cos.bucket.name</strong></dt>
 <dd>Required. Name of the Cloud {{site.data.keyword.cos_short}} service bucket to write data into.</dd>
 <dt><strong>cos.bucket.resiliency</strong></dt>
 <dd>Required. Resiliency of the Cloud {{site.data.keyword.cos_short}} bucket. Must be one of: cross-region, regional, or single-site.</dd>
 <dt><strong>cos.service.crn</strong></dt>
 <dd>Required. CRN for the Cloud {{site.data.keyword.cos_short}} service instance.
-<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons. For example:<br/> 
+<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons, for example, <br/> 
 <code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></p></dd>
 <dt><strong>cos.endpoint.visibility</strong></dt>
-<dd>Optional. Specify public to connect to the Cloud {{site.data.keyword.cos_short}} service over the public internet, or private to connect from a connector that runs inside the IBM Cloud network, for example from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
+<dd>Optional. Specify *public* to connect to the Cloud {{site.data.keyword.cos_short}} service over the public internet, or *private* to connect from a connector that runs inside the IBM Cloud network, for example, from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
 <dt><strong>cos.object.deadline.seconds </strong></dt>
 <dd>Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object. 
-This property can be useful in situations that have long pauses between Kafka records being produced to a topic because it ensures that any records that are received by this connector are always written into object storage within the specified time.</dd>
+This property can be useful in situations that have long pauses between Kafka records being produced to a topic. It ensures that any records that are received by this connector are always written into {{site.data.keyword.cos_short}} within the specified time.</dd>
 <dt><strong>cos.object.interval.seconds</strong></dt>
 <dd>Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object.</dd>
 <dt><strong>cos.object.records</strong></dt>
