@@ -31,8 +31,7 @@ Schemas help producers create data that conforms to a predefined structure, defi
 
 It is common for all of the messages on a topic to use the same schema. The key and value of a message can each be described by a schema.
 
-![Schemas overview diagram.](schema_registry1.svg "Diagram representing how a schema can help define a structure for the key and value pairs of a message"){: caption="Schemas Overview"
-caption-side="bottom"}
+![Schemas overview diagram.](schema_registry1.svg "Diagram representing how a schema can help define a structure for the key and value pairs of a message"){: caption="Schemas Overview" caption-side="bottom"}
 
 ## Schema registry
 {: #ES_registry}
