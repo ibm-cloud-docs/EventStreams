@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2020-05-07"
+  years: 2015, 2021
+lastupdated: "2021-07-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,7 +27,7 @@ When a consumer connects to Kafka, it makes an initial bootstrap connection. Thi
 
 A consumer is normally a long-running application. A consumer requests messages from Kafka by calling `Consumer.poll(...)` regularly. The consumer calls `poll()`, receives a batch of messages, processes them promptly, and then calls `poll()` again.
 
-When a consumer processes a message, the message is not removed from its topic. Instead, consumers can choose from several ways of letting Kafka know which messages have been processed. This process is known as committing the offset.
+When a consumer processes a message, the message is not removed from its topic. Instead, consumers can choose from several ways of notifying Kafka which messages have been processed. This process is known as committing the offset.
 
 In the programming interfaces, a message is actually called a record. For example, the Java class org.apache.kafka.clients.consumer.ConsumerRecord is used to represent a message for the consumer API. The terms _record_ and _message_ can be used interchangeably, but essentially a record is used to represent a message.
 
@@ -104,7 +104,7 @@ When committed offsets are saved in Kafka and the consumers are restarted, consu
 
 ### Committing offsets automatically
 
-The easiest way to commit offsets is to let the Kafka consumer do it automatically. This is simple but it does give less control than committing manually. By default, a consumer automatically commits offsets every 5 seconds. This default commit happens every 5 seconds, regardless of the progress the consumer is making toward processing the messages. In addition, when the consumer calls `poll()`, this also causes the latest offset returned from the previous call to `poll()` to be committed (because it's probably been processed).
+The easiest way to commit offsets is to have the Kafka consumer do it automatically. This is simple but it does give less control than committing manually. By default, a consumer automatically commits offsets every 5 seconds. This default commit happens every 5 seconds, regardless of the progress the consumer is making toward processing the messages. In addition, when the consumer calls `poll()`, this also causes the latest offset returned from the previous call to `poll()` to be committed (because it's probably been processed).
 
 If the committed offset overtakes the processing of the messages and there is a consumer failure, it's possible that some messages might not be processed. This is because processing restarts at the committed offset, which is later than the last message to be processed before the failure. For this reason, if reliability is more important than simplicity, it's usually best to commit offsets manually.
 
@@ -118,7 +118,7 @@ The committed offset is the offset of the messages from which processing is resu
 
 The consumer lag for a partition is the difference between the offset of the most recently published message and the consumer's committed offset. Although it's usual to have natural variations in the produce and consume rates, the consume rate should not be slower than the produce rate for an extended period.
 
-If you observe that a consumer is processing messages successfully but occasionally appears to jump over a group of messages, it could be a sign that the consumer is not able to keep up. For topics that are not using log compaction, the amount of log space is managed by periodically deleting old log segments. If a consumer has fallen so far behind that it is consuming messages in a log segment that is deleted, it will suddenly jump forwards to the start of the next log segment. If it is important that the consumer processes all of the messages, this behavior indicates message loss from the point of view of this consumer.
+If you observe that a consumer is processing messages successfully but occasionally appears to jump over a group of messages, it can be a sign that the consumer is not able to keep up. For topics that are not using log compaction, the amount of log space is managed by periodically deleting old log segments. If a consumer has fallen so far behind that it is consuming messages in a log segment that is deleted, it will suddenly jump forwards to the start of the next log segment. If it is important that the consumer processes all of the messages, this behavior indicates message loss from the point of view of this consumer.
 
 You can use the <code>kafka-consumer-groups</code> tool to see the consumer lag. You can also use the consumer API and the consumer metrics for the same purpose.
 
@@ -132,7 +132,7 @@ If you have problems with message handling caused by message flooding, you can s
 ## Handling consumer rebalancing
 When consumers are added to or removed from a group, a group rebalance takes place and consumers are not able to consume messages. This results in all the consumers in a consumer group being unavailable for a short period.
 
-You could use a ConsumerRebalanceListener to manually commit offsets (if you are not using auto-commit) when notified with the "on partitions revoked" callback, and to pause further processing until notified of the successful rebalance using the "on partition assigned" callback.
+You might use a ConsumerRebalanceListener to manually commit offsets (if you are not using auto-commit) when notified with the "on partitions revoked" callback, and to pause further processing until notified of the successful rebalance using the "on partition assigned" callback.
 
 
 ## Code snippets
@@ -213,7 +213,7 @@ Thrown by `Consumer.poll(...)` as a result of `Consumer.wakeup()` being called. 
 ### org.apache.kafka.common.errors.NotLeaderForPartitionException
 Thrown as a result of `Producer.send(...)` when the leadership for a partition changes. The client automatically refreshes its metadata to find the up-to-date leader information. Retry the operation, which should succeed with the updated metadata.
 ### org.apache.kafka.common.errors.CommitFailedException
-Thrown as a result of `Consumer.commitSync(...)` when an unrecoverable error occurs. In some cases, it is not possible simply to repeat the operation because the partition assignment might have changed and the consumer might no longer be able to commit its offsets. Because `Consumer.commitSync(...)` can be partially successful when used with multiple partitions in a single call, the error recovery can be simplified by using a separate `Consumer.commitSync(...)` call for each partition.
+Thrown as a result of `Consumer.commitSync(...)` when an unrecoverable error occurs. In some cases, it is not possible to repeat the operation because the partition assignment might have changed and the consumer might no longer be able to commit its offsets. Because `Consumer.commitSync(...)` can be partially successful when used with multiple partitions in a single call, the error recovery can be simplified by using a separate `Consumer.commitSync(...)` call for each partition.
 ### org.apache.kafka.common.errors.TimeoutException
 Thrown by `Producer.send(...),  Consumer.listTopics()` if the metadata cannot be retrieved. The exception is also seen in the send callback (or the returned Future) when the requested acknowledgment does not come back within `request.timeout.ms`. The client can retry the operation, but the effect of a repeated operation depends on the specific operation. For example, if sending a message is retried, the message might be duplicated.
 
