@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring, setup
 
@@ -48,7 +48,8 @@ A service-to-service binding between both instances must be configured to allow 
 If your requirement is to fail back, you need also the service-to-service binding in the opposite direction.
 {: important}
 
-Here is an example of how to use the command line to configure service-to-service binding. Note, in this command we are using IAM source and target definitions, which are the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
+Following is an example of how to use the command line to configure service-to-service binding. 
+Note, in this command we are using IAM source and target definitions, which are the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
 
 ```
 ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the source cluster> --source-service-account <account id> --target-service-instance-id <instance id of target>
@@ -63,8 +64,8 @@ Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-su
 
 Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
-- Whether this is: a new enablement of mirroring, failback on an existing mirroring setup, or restoring the original configuration after a failback
-- Aliases that you want to use for each of the two instances. Each service instance has an alias configured by the user when enabling mirroring. The aliases appear in topic names. We recommend choosing short and descriptive names. For example "us-south" and "us-east".
+- Whether it is a new enablement of mirroring, failback on an existing mirroring setup, or restoring the original configuration after a failback.
+- Aliases that you want to use for each of the two instances. You configue an alias for each service instance when enabling mirroring. The aliases appear in topic names. We recommend choosing short and descriptive names. For example, "us-south" and "us-east".
 - The wanted direction for mirroring.
 - The set of patterns for the source topics to be mirrored.
 
@@ -86,5 +87,5 @@ Mirrored topics are:
 ## Step 4: validation
 {: #step4_validation}
 
-When the ticket has been processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
+When the ticket is processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics that are suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
 
