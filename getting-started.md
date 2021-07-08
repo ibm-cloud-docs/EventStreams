@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-07-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -53,14 +53,14 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
-	* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
+	* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
 	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
 	* Java 8 or higher
 
 ## Tutorial steps
 {: #getting_started_steps}
 
-1. {: #Create_topic_step notoc} **Create a topic **
+1. {: #Create_topic_step notoc} **Create a topic**.
 
    The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
 
@@ -79,7 +79,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
       e. The topic appears in the table. You have created a topic!
   
-2. {: #create_credentials_step notoc} **Create credentials**
+2. {: #create_credentials_step notoc} **Create credentials**.
 
     To allow the sample application to access your topic, we need to create some credentials for it. 
 
@@ -95,9 +95,9 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
      f. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
-3. {: #clone_repository_step notoc} **Clone the Github repository for the sample application**
+3. {: #clone_repository_step notoc} **Clone the GitHub repository for the sample application**.
 
-   The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
+   The sample application is stored in GitHub. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
    ```
     git clone https://github.com/ibm-messaging/event-streams-samples.git
@@ -126,7 +126,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
    
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
+   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). 
+   Use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
    The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
    {: important}
@@ -141,7 +142,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
-5. {: #start_producer_step notoc} **Run the producing application**
+5. {: #start_producer_step notoc} **Run the producing application**.
 
    Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
 
