@@ -29,5 +29,5 @@ Then, you can configure Kafka Connect to consume the data and forward it to your
 Once the data is persisted within Event Streams, you can configure any application or service to create a subscription 
 and take action on log data being streamed.
 
-For more information, see [Streaming data 
+For more information, see [Streaming data from an IBM Log Analysis instance
 ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/log-analysis?topic=log-analysis-streaming){:new_window}.
