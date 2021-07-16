@@ -30,5 +30,4 @@ Once the data is persisted within Event Streams, you can configure any applicati
 and take action on log data being streamed.
 
 For more information, see [Streaming data 
-![External link icon](../../icons/launch-glyph.svg "External link icon")]
-(/docs/log-analysis?topic=log-analysis-streaming/){:new_window}.
+![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/log-analysis?topic=log-analysis-streaming){:new_window}.
