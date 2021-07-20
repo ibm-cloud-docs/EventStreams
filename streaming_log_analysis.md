@@ -32,8 +32,4 @@ and take action on log data being streamed.
 For more information, see [Streaming data from an IBM Log Analysis instance
 ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/log-analysis?topic=log-analysis-streaming){:new_window}.
 
-{{site.data.keyword.messagehub}} can also be used to stream log events from LogDNA to third party tools, such as Splunk.
-
-You can configure LogDNA to stream log events into an {{site.data.keyword.messagehub}} instance. Once in {{site.data.keyword.messagehub}}, these events can be forwarded to many third party tools using Kafka Connect.
-
-For the step-by-step instructions, see [Streaming log events from LogDNA to Splunk ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/cloud-enterprise-examples/log-streaming/configure-streaming-for-third-party-tools/){:new_window}.
+For step-by-step instructions for streaming to Splunk as an example SIEM system, see [Streaming log events from LogDNA to Splunk ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/cloud-enterprise-examples/log-streaming/configure-streaming-for-third-party-tools/){:new_window}.
