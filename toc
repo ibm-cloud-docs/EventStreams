@@ -92,7 +92,6 @@ Event Streams
 		connecting_cos.md
 		connecting_mq.md
 		watson_platform.md
-		streaming_log_events.md
 		streaming_log_analysis.md
 
 	{: .topicgroup}
