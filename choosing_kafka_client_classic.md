@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-11-01"
+  years: 2015, 2019, 2021
+lastupdated: "2021-06-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -110,7 +110,7 @@ Other third-party clients that support the minimum set of client requirements mi
 ## Backward compatibility (Classic plan only)
 {: #compatibility_classic}
 
-For backward compatibility, you can use the Apache Kafka 0.9 Java client with the {{site.data.keyword.messagehub}} Classic plan. However, because of this client's age, we strongly discourage its use. If you choose to use this client version, you need an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-0.9/message-hub-login-library).
+For backward compatibility, you can use the Apache Kafka 0.9 Java client with the {{site.data.keyword.messagehub}} Classic plan. However, because of this client's age, we strongly discourage its use. If you choose to use this client version, you need an additional [login module ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/blob/master/java/message-hub-liberty-sample/lib-message-hub/messagehub.login-1.0.0.jar).
 
 Client versions earlier than 0.11 might experience degraded performance because of the additional protocol conversions that are required to connect to newer Kafka server versions.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-06-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -22,7 +22,7 @@ subcollection: EventStreams
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as different plans depending on your requirements: Lite, Standard, Enterprise. 
+{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, or Enterprise plan, depending on your requirements. 
 
 <!--
 For information about the Classic plan, see
@@ -38,7 +38,7 @@ The Lite plan is free for users who want to try out {{site.data.keyword.messageh
 ## Standard plan
 {: #plan_standard}
 
-The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are utilising for your workload. 
+The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are using for your workload. 
 
 The architecture is highly available by default. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
@@ -46,15 +46,17 @@ The architecture is highly available by default. The service is distributed acro
 ## Enterprise plan 
 {: #plan_enterprise}
 
-The Enterprise plan is appropriate if data isolation, guaranteed performance, and increased retention are important considerations. The Enterprise plan features include
-- exclusive access to a single-tenant Event Streams service instance deployed in a highly available multi zone region (MZR).
-- option to provision a single-tenant Event Streams service instance in a geographically local but single zone location [(SZR)](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
-- scaling options to customize throughput and/or storage capacity
+The Enterprise plan is appropriate if data isolation, performance, and increased retention are important considerations. 
+The Enterprise plan includes the following features:
+
+- Exclusive access to a single-tenant {{site.data.keyword.messagehub}} service instance deployed in a highly available multi zone region (MZR).
+- Option to provision a single-tenant {{site.data.keyword.messagehub}} service instance in a geographically local but single zone location [(SZR)](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
+- Scaling options to customize throughput, storage capacity, or both.
 
 The architecture is highly available when you choose to deploy into a multi-zone region. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 
-## What's supported by the Lite, Standard, Enterprise plans
+## What is supported by the Lite, Standard, Enterprise plans
 
 The following table summarizes what is supported by the plans:
 
@@ -92,13 +94,13 @@ The following table summarizes what is supported by the plans:
 			<td>Kafka 2.6</td>
 		</tr>
 		<tr>
-			<td>**Kafka Connect and Kafka Streams supported **</td>
+			<td>**Kafka Connect and Kafka Streams supported**</td>
 			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>**Managed schema registry supported **</td>
+			<td>**Managed schema registry supported**</td>
 			<td>No</td>
 			<td>No</td>
 			<td>Yes</td>
@@ -125,7 +127,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum number of partitions**</td>
 			<td>1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)</td>
 			<td>100</td>
-			<td>3000-9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions)</td>
+			<td>3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions)</td>
 		</tr>
 		<tr>
 			<td>**Maximum retention limits**</td>
@@ -137,7 +139,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Maximum throughput**</td>
 			<td>100 KB per second per partition</td>
 			<td>1 MB per second per partition (20 MB per service instance) </td>
-			<td>150 MB/s - 450 MB/s  of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
+			<td>150 MB/s - 450 MB/s of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)</td>
 		</tr>
 		<tr>
 			<td>**Maximum message size**</td>
@@ -203,7 +205,7 @@ The following table summarizes what is supported by the plans:
 			<td>**Deployment timeframe**</td>
 			<td>Instantaneous provisioning</td>
 			<td>Instantaneous provisioning</td>
-			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
+			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning.</td>
 		</tr>
 		<tr>
 			<td>**Compliance**</td>
@@ -227,17 +229,20 @@ PCI<br/>
 
 </table>
 
-For further details on limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
+For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric even though you might have created a partition or produced messages.)
+1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. 
+(Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.)
 2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
-3. {: #footnote_partitions_lite notoc} If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of 1 partition to clear so that you can take advantage of the 100 partition limit for the Standard plan.
-4. {: #footnote_partitions notoc} This value scales relative to the maximum throughput, for example if you have a throughput of 150MB/s the max partitions would be 3000, for a throughput of 300MB/s, 6000 and for 450MB/s, 9000. This is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
-5. {: #footnote_retention notoc} Maximum message retention (storage) can be specified when the service instance is created.  Storage can be later scaled independently as demands increase.  The minimum usable storage available is dependent upon the number of capacity units configured for the service instance. Refer to [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on capacity options.
-6. {: #footnote_throughput notoc} Maximum throughput can be specified when the service instance is created.  Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance.  Throughput can be later scaled as demands increase.  Throughput scaling is independent of storage, however for each tier there is a defined minimum storage amount required. Refer to [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on capacity options.<br/>
+3. {: #footnote_partitions_lite notoc} If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan.
+4. {: #footnote_partitions notoc} This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+5. {: #footnote_retention notoc} Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+6. {: #footnote_throughput notoc} Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. 
+Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. 
+For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).<br/>
 
 
 <!--
@@ -248,11 +253,9 @@ For further details on limits, see [limits and quotas](/docs/EventStreams?topic=
 economical public cloud service where you pay for what you use and share infrastructure with
 others.
 
-In {{site.data.keyword.Bluemix_notm}} Public, the cost of
-{{site.data.keyword.messagehub}} is determined by two factors: the
-number of partitions that you use and the number of messages that you send and receive. There is no
-charge for message data while it is retained on the topics, but the data that each partition retains
-is capped at 1 GB.
+In {{site.data.keyword.Bluemix_notm}} Public, the cost of {{site.data.keyword.messagehub}} is determined by two factors: the
+number of partitions that you use and the number of messages that you send and receive. 
+Message data is not charged while it is retained on the topics, but the data that each partition retains is capped at 1 GB.
 
 For more information, see [{{site.data.keyword.Bluemix_notm}} Public ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/free/){:new_window}.
 -->

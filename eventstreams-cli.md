@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-10-09"
+  years: 2015, 2021
+lastupdated: "2021-07-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,7 +20,7 @@ subcollection: EventStreams
 {: #cli_reference}
 
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see 
-[Getting started with the {{site.data.keyword.messagehub}} CLI ](/docs/EventStreams?topic=EventStreams-cli#cli).
+[Getting started with the {{site.data.keyword.messagehub}} CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
 
 ## Changelog
 {: #es_cli_changelog}
@@ -37,13 +37,13 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 <tbody>
 <tr>
 <td>v1.0</td>
-<td>May 12 2019</td>
+<td>12 May 2019</td>
 <td>
 Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v1.0.1</td>
-<td>May 27 2019</td>
+<td>27 May 2019</td>
 <td>
 <ul>
 <li>Improved error message when running command without init</li>
@@ -54,7 +54,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.0</td>
-<td>August 21 2019</td>
+<td>21 August 2019</td>
 <td>
 <ul>
 <li>init: removed the service-key requirement</li>
@@ -64,7 +64,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.1</td>
-<td>June 24 2020</td>
+<td>24 June 2020</td>
 <td>
 <ul>
 <li>init: displayed provision parameters for Enterprise instance</li>
@@ -73,7 +73,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.1.1</td>
-<td>July 10 2020</td>
+<td>10 July 2020</td>
 <td>
 <ul>
 <li>Replaced whitelist with allowlist</li>
@@ -83,7 +83,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.2.0</td>
-<td>August 3 2020</td>
+<td>3 August 2020</td>
 <td>
 <ul>
 <li>Added support for the Mirroring feature</li>
@@ -91,7 +91,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.2.1</td>
-<td>August 7 2020</td>
+<td>7 August 2020</td>
 <td>
 <ul>
 <li>Refined the display of IP allowlist in init command</li>
@@ -99,7 +99,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tr>
 <tr>
 <td>v2.3</td>
-<td>November 9 2020</td>
+<td>9 November 2020</td>
 <td>
 <ul>
 <li>Added support for configuring message audit on topic</li>
@@ -114,7 +114,7 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 ## ibmcloud es init
 {: #ibmcloud_es_init}
 
-Initialize the {{site.data.keyword.messagehub}} plugin.
+Initialize the {{site.data.keyword.messagehub}} plug-in.
 ```
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```
@@ -181,7 +181,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
     <dt>--broker value, -b value</dt>
         <dd>Broker ID, you can specify with or without a preceding '--broker' flag.</dd>
     <dt>--filter value, -f value (optional)</dt>
-        <dd> Filter the list of configuration using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
+        <dd> Filter the list of configuration by using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
         <dt>--verbose, -v  (optional)</dt>
         <dd>Display verbose configuration information.</dd>
         <dt>--filter value, -f value(optional)</dt>
@@ -197,7 +197,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 ## ibmcloud es cluster
 {: #ibmcloud_es_cluster}
 
-Display the details of the cluster
+Display the details of the cluster.
 
 ```
 ibmcloud es cluster [--json]
@@ -269,7 +269,7 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
     <dt>--config KEY=VALUE, -c KEY=VALUE(optional)</dt>
         <dd>Set a configuration option for the topic as a KEY=VALUE pair.<p> You can specify multiple --config options.
 Each '--config' option can specify a semicolon-delimited list of assignments.
-The following is a list of valid configuration keys:
+The following list shows valid configuration keys:
 cleanup.policy
 retention.ms
 retention.bytes
@@ -390,10 +390,10 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
         <dd>Topic name.</dd>
      <dt>--config KEY[=VALUE], -c KEY[=VALUE] </dt>
         <dd>Set a configuration option for the topic as a KEY[=VALUE] pair.
-        <p>If VALUE is not given, the '--default' flag should be specified to indicate resetting the configuration value back to the default.
+        <p>If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default.
 Multiple --config options can be specified.
-Each '--config' option can specify a semicolon-delimited list of assignments
-The following is a list of valid configuration keys:
+Each '--config' option can specify a semicolon-delimited list of assignments.
+The following list shows valid configuration keys:
 cleanup.policy
 retention.ms
 retention.bytes
@@ -401,7 +401,7 @@ segment.bytes
 segment.ms
 segment.index.bytes</p></dd>
     <dt>--default, -d  (optional)</dt>
-        <dd>Reset each configuration parameter specified using '--config' to its default value.</dd>
+        <dd>Reset each configuration parameter specified by using '--config' to its default value.</dd>
 </dl>
 
 <!--
@@ -491,13 +491,13 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
     <dt>--group value, -g value </dt>
         <dd>Consumer group ID</dd>
      <dt>--topic value, -t value</dt>
-        <dd>Topic name. Apply to just this topic. Omit if '--all-topics' flag has been supplied. 
+        <dd>Topic name. Apply to just this topic. Omit if '--all-topics' flag was supplied. 
 </dd>
      <dt>--all-topics, -a   </dt>
-        <dd>Apply to all topics assigned to the group. Omit if '--topic' flag has been supplied. 
+        <dd>Apply to all topics assigned to the group. Omit if '--topic' flag was supplied. 
 </dd>
      <dt>--mode value, -m value</dt>
-        <dd>One of the following: 'earliest', 'latest' or 'datetime'.
+        <dd>One of the following values: 'earliest', 'latest' or 'datetime'.
 </dd>
      <dt>--value value, -v value</dt>
         <dd>Value for resetting offsets, based on '--mode'. Omit for 'earliest' and 'latest'.
@@ -539,7 +539,7 @@ ibmcloud es groups [--filter FILTER] [--json]
 <dl>
     <dt>--filter value, -f value (optional)
  </dt>
-        <dd>Optional. Filter the list of consumer groups using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
+        <dd>Optional. Filter the list of consumer groups by using wildcards (*) or a regular expression with forward slash (/) delimiters.</dd>
      <dt>--json (optional)</dt>
         <dd>Format output in JSON. A maximum of 1000 groups are returned.
 </dd>
@@ -582,7 +582,7 @@ ibmcloud es mirroring-topic-selection [--json]
 ```
 {:codeblock}
 
-<strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. es plugin configured to connect to the mirroring target cluster via `ibmcloud es init`.
+<strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 
 <strong>Command options</strong>:
 {: #ibmcloud_es_mirroring_topic_selection_params}
@@ -603,14 +603,14 @@ ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) 
 ```
 {:codeblock}
 
-<strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. es plugin configured to connect to the mirroring target cluster via `ibmcloud es init`.
+<strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 
 <strong>Command options</strong>:
 {: #ibmcloud_es_mirroring_topic_selection_set_params}
 
 <dl>
     <dt>--select value</dt>
-        <dd>Selection of topics to mirror as comma separated regex patterns. Use '.*' to mirror all topics.</dt>
+        <dd>Selection of topics to mirror as comma-separated regex patterns. Use '.*' to mirror all topics.</dt>
     <dt>--none</dt>
         <dd>Clear currently selected topics (disable mirroring of topics).</dd>
     <dt>--force</dt>
@@ -623,11 +623,3 @@ ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) 
 <br/>
  
  <br/>
-
-
-
-
-
-
-
-

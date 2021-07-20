@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-06-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
 
@@ -16,14 +16,14 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting IBM MQ to {{site.data.keyword.messagehub}} using the Kubernetes Service
+# Connecting IBM MQ to {{site.data.keyword.messagehub}} by using the Kubernetes Service
 {: #mq_connector}
 
 The following task walks you through:
-* getting the Kafka Connect runtime running in an IKS cluster 
-* starting the MQ Source Connector to copy messages from an IBM MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}
+* Getting the Kafka Connect runtime to run in an {{site.data.keyword.containerlong}} cluster.
+* Starting the IBM MQ Source Connector to copy messages from an IBM MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}.
 
-The MQ Source Connector connects to an IBM MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
+The IBM MQ Source Connector connects to an IBM MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 
 Complete the following steps to get set up:
 {: shortdesc}
@@ -35,14 +35,14 @@ Ensure you have the following software and services installed:
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
 * An instance of [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){:new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-downloads){:new_window}, or later. 
    
-   You can configure the MQ Connector to authenticate with IBM MQ using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
-   * CONNECT authority. The MQ Connector must be able to connect to the MQ queue manager.
-   * GET authority for the queue that the MQ Connector is configured to consume from.
+   You can configure the IBM MQ Connector to authenticate with IBM MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
+   * CONNECT authority. The IBM MQ Connector must be able to connect to the MQ queue manager.
+   * GET authority for the queue that the IBM MQ Connector is configured to consume from.
 * An {{site.data.keyword.containerfull}} cluster. You can provision a free one for testing purposes. 
 
-    You will also need CLI access to your cluster. For more information, see
+    You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
-* A recent version of Kubectl.
+* A recent version of kubectl.
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
 
 ## Step 2. Clone the kafka-connect repositories
@@ -57,17 +57,17 @@ Clone the following two repositories that contain the required files:
 ## Step 3. Create your Kafka Connect configuration
 {: #step3_create_config_mq}
 
-1. You only have to set up this configuration once. {{site.data.keyword.messagehub}} stores it for future use.
+1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
     From the event-streams-samples project, navigate to the <code>kafka-connect/IKS directory</code>, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
 
-    Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you will get an error.
+    Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you get an error.
 
-    Your &lt;APIKEY&gt; will appear in clear text on your machine but will be secret when pushed to IKS.
+    Your &lt;APIKEY&gt; appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containershort}}.
 
-    Kafka Connect can run multiple workers for reliability and scalability reasons. If your IKS cluster has more than 1 node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file and edit the entry <code>replicas: 1</code>.
+    Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} cluster has more than one node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file, and edit the entry <code>replicas: 1</code>.
 
-2. Then run the following commands:
+2. Then, run the following commands:
 <br/>
     To create a secret: 
     ```
@@ -75,7 +75,7 @@ Clone the following two repositories that contain the required files:
     ```
     {: codeblock}
     <br/>
-    To create a ConfigMap:
+    To create a configmap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
@@ -96,19 +96,19 @@ kubectl apply -f ./kafka-connect.yaml
 ## Step 5. Validate Kafka Connect is running
 {: #step5_validate_connector_mq}
 
-To validate that Kafka Connect is running, port forward to the kafkaconnect-service Service on port 8083. For example:
+To validate that Kafka Connect is running, port forward to the kafkaconnect-service on port 8083. For example:
 
 ```
 kubectl port-forward service/kafkaconnect-service 8083
 ```
 {: codeblock}
 
-Keep the terminal that you've used for port forwarding open, and use another terminal for the next steps.
+Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
-The Connect REST API is then available at http://localhost:8083. If you want more information about the API, see
+The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
 [Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
 
-So, you now have the Kafka Connect runtime deployed and running in IKS. Next, let's configure and start the MQ Connector.
+So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the IBM MQ Connector.
 
 
 <!--
@@ -137,7 +137,7 @@ So, you now have the Kafka Connect runtime deployed and running in IKS. Next, le
 ## Step 6. Configure the mq-source json file
 {: #step6_config_json_mq}
 
-Edit the <code>mq-source.json</code> file located in <code>kafka-connect-mq-source/config</code> so that, at a minimum, the required properties are completed with your information.
+Edit the <code>mq-source.json</code> file that is located in <code>kafka-connect-mq-source/config</code> so that, at a minimum, the required properties are completed with your information.
 
 ### mq-source.json file properties
 
@@ -147,9 +147,9 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 <dt><strong>TOPIC</strong></dt>
 <dd>Required. Name of the destination Kafka topic</dd>
 <dt><strong>QUEUE_MANAGER</strong></dt>
-<dd>Required. Name of the source MQ queue manager</dd>
+<dd>Required. Name of the source IBM MQ queue manager</dd>
 <dt><strong>QUEUE</strong></dt>
-<dd>Required. Name of the source MQ queue </dd>
+<dd>Required. Name of the source IBM MQ queue </dd>
 <dt><strong>CHANNEL_NAME</strong></dt>
 <dd>Required (unless you're using bindings or a CCDT file). Name of the server-connection channel.</dd>
 <dt><strong>CONNECTION_NAME_LIST</strong></dt>
@@ -157,10 +157,10 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 </dl>
 
 <!--
-### Get IBM MQ on Cloud credentials using the IBM Cloud console
+### Get IBM MQ on Cloud credentials by using the {{site.data.keyword.bluemix}} console
 {: #connect_enterprise_external_console_mq}
 
-1. Locate your MQ service on the dashboard.
+1. Locate your IBM MQ service on the dashboard.
 2. Click your service tile.
 3. Click **Service Credentials**.
 4. Click **New Credential**. 
@@ -171,7 +171,7 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 ## Step 7. Start the connector with its configuration
 {: #step7_start_connector_mq}
 
-Run the following command to start the MQ connector with the configuration that you provided in the previous step.
+Run the following command to start the IBM MQ Connector with the configuration that you provided in the previous step.
 
 ```
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./mq-source.json"
@@ -181,8 +181,8 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ## Step 8. Monitor your connector 
 {: #step8_monitor_connector_mq}
 
-You can check your connector by going to <br/>
-http://localhost:8083/connectors/mq-source/status
+You can check your connector by going to the following address: <br/>
+`http://localhost:8083/connectors/mq-source/status`
 
 If the state of the connector is not running, restart the connector.
 

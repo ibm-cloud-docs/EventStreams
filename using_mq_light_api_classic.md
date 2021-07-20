@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-11-01"
+  years: 2015, 2021
+lastupdated: "2021-06-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -223,7 +223,7 @@ messages to the front end. This sample shows how you can get apps talking to eac
 the {{site.data.keyword.mql}} API. You can also use the {{site.data.keyword.mql}} API to perform worker offload; a key capability
 required for building scalable, loosely coupled, and distributed apps.
 
-You can find the sample code in the [event-streams-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/mqlight){:new_window}.
+You can find the sample code in the [event-streams-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/9fa3ffff8cc7f7f2a01a948845ab2e07fbfcdf4c/mqlight){:new_window}.
 
 
 <!-- 15/11/18: info was in eventstreams083.md, moved because of doc app changes -->
