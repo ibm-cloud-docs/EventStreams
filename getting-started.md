@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -126,10 +126,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). 
    Use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
+   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
    {: important}
 
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
+   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` indicates to start the consumer. 
 
    ```
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar 
@@ -137,7 +137,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
 
-   An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
+   An `INFO No messages consumed` is displayed when the consuming application is running, but no data is consumed. 
 
 5. {: #start_producer_step notoc} **Run the producing application**.
 
@@ -148,13 +148,13 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
    
-   Then, start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
+   Then, start the application that produces the sample from the command line, and replace the `kafka_brokers_sasl` and `api_key` values. 
 
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
+   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this value. 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend to use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
+   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
    {: important}
 
    Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` initiates to start the producer. 
@@ -175,7 +175,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Next steps
 {: #next_steps}
 
-Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}. Explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, take a look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial, or find out more about 
+Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}. Explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial, or find out more about 
 [{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){:new_window}.
 
 To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=XyNy7TcfJOc){:new_window}.
