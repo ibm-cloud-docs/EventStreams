@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-08-30"
+  years: 2015, 2021
+lastupdated: "2021-07-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -39,12 +39,12 @@ ibmcloud login -a cloud.ibm.com
 ## Step 3. Create an {{site.data.keyword.messagehub}} instance
 {: #step3_es_instance}
 
-Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Lite, Standard, or Enterprise plans. (The Classic plan does not support the CLI.) <br/>
+Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans. (The Classic plan does not support the CLI.) <br/>
 Select one of the following methods:
 
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){:new_window}.
 
-* To create an instance from the CLI on the Enterprise plan, run a command like the following:
+* To create an instance from the CLI on the Enterprise plan, run the following command:
   ```
   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
   ```
@@ -53,7 +53,7 @@ Select one of the following methods:
   Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
 
-* To create an instance from the CLI on the Standard plan,run a command like the following:
+* To create an instance from the CLI on the Standard plan, run the following command:
 
   ```
   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
@@ -65,7 +65,7 @@ Select one of the following methods:
 ## Step 4. Optional: Create a service API key for this instance
 {: #step4_es_api}
 
-Optionally, you can create a service API key. The valid ROLE_NAMEs are: Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources ](/docs/EventStreams?topic=EventStreams-security#security).
+Optionally, you can create a service API key. The valid `ROLE_NAME`s are Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security#security).
 
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
