@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-15"
+lastupdated: "2021-08-15a"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -112,8 +112,8 @@ of topics, or on the rapid deletion and re-creation of topics.
 ### IAM allow listing
 {: #iam_allow notoc}
 
-Enabling the IAM allow listing functionality on your account as described in [Allowing specific IP addresses for an account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/account?topic=account-ips#ips_account){:new_window}.is not currenlty supported by IBM Event Strreams.
-This is because of the internal authentication performed by Event Streams from within the cluster.
+Enabling the IAM allow listing functionality on your account as described in [Allowing specific IP addresses for an account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/account?topic=account-ips#ips_account){:new_window} is not currenlty supported by {{site.data.keyword.messagehub}}.
+This is because of the internal authentication performed by {{site.data.keyword.messagehub}} from within the cluster.
 We are working on a solution to this issue.
 
 
