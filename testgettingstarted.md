@@ -45,7 +45,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
    2. Click **Catalog**.
   
-    3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+   3. From the navigation pane, click **Integration**, click the **{{site.data.keyword.messagehub}}** tile, and then select the **Lite plan**. The {{site.data.keyword.messagehub}} service instance page opens.
   
    4. Enter a name for your service. You can use the default value.
   
@@ -53,132 +53,130 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
-	* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
-	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
-	* Java 8 or higher
+   * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
+   * [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
+   * Java 8 or higher
 
 ## Tutorial steps
 {: #getting_started_steps}
 
-### 1. **Create a topic **
+### 1. Create a topic
 {: #create_topic_step}
 
-   The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
+The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
 
-   We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
+We'll be using the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic, and will reference it when starting the application.
 
-   1. Go to the **Topics** tab.
+1. Go to the **Topics** tab.
   
-   2. Click **New topic**.
+2. Click **New topic**.
   
-   3. Name your topic.
+3. Name your topic.
   
    The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
    {: important}
 
-   4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
+4. Keep the defaults set in the rest of the topic creation, click **Next** and then **Create topic**.
 
-   5. The topic appears in the table. Congratulations, you have created a topic!
+5. The topic appears in the table. Congratulations, you have created a topic!
   
 ### 2. **Create credentials**
 {: #create_credentials_step}
 
-   To allow the sample application to access your topic, we need to create some credentials for it. 
+To allow the sample application to access your topic, we need to create some credentials for it. 
 
-   1. Go to **Service credentials** in the navigation pane.
+1. Go to **Service credentials** in the navigation pane.
   
-   2. Click **New credential**.
+2. Click **New credential**.
   
-   3. Give the credential a name so you can identify its purpose later. You can accept the default value.
+3. Give the credential a name so you can identify its purpose later. You can accept the default value.
   
-   4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
+4. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
   
-   5. Click **Add**. The new credential is listed in the table in **Service credentials**.
+5. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-   6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+6. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
-### 3. **Clone the Github repository for the sample application**
+### 3. Clone the Github repository for the sample application
  {: #clone_repository_step}
 
-   The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
+The sample application is stored in Github. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
-   ```
-    git clone https://github.com/ibm-messaging/event-streams-samples.git
-   ```
-   {: codeblock}
+```
+git clone https://github.com/ibm-messaging/event-streams-samples.git
+```
+{: codeblock}
 
-   <br/>
-   When the repository is cloned, from the command line change into the <code>kafka-java-console-sample</code> directory.
+When the repository is cloned, from the command line change into the `kafka-java-console-sample` directory.
 
-   ```
-   cd event-streams-samples/kafka-java-console-sample
-   ```
-   {: codeblock}
+```
+cd event-streams-samples/kafka-java-console-sample
+```
+{: codeblock}
 
-   <br/>
-   Build the contents of the <code>kafka-java-console-sample</code> directory.
+Build the contents of the `kafka-java-console-sample` directory.
 
-   ```
-   gradle clean && gradle build
-   ```
-   {: codeblock}
+```
+gradle clean && gradle build
+```
+{: codeblock}
 
-### 4.  **Run the consuming application**
+### 4. Run the consuming application
 {: #start_consumer_step}
    
-   Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
+Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
+The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
    
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
+Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
-   {: important}
+The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
+{: important}
 
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
+Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` specifies that the consumer should start. 
 
-   ```
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar 
-   <kafka_brokers_sasl> <api_key> -consumer
-   ```
-   {: codeblock}
+```
+java -jar ./build/libs/kafka-java-console-sample-2.0.jar 
+<kafka_brokers_sasl> <api_key> -consumer
+```
+{: codeblock}
 
-   An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
+An `INFO No messages consumed` is displayed when the consuming application is running, but there is no data being consumed. 
 
-### 5. **Run the producing application**
+### 5. Run the producing application
 {: #start_producer_step}
 
-   Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
+Open a new command line window and change into the `kafka-java-console-sample` directory.
 
-   ```
-   cd event-streams-samples/kafka-java-console-sample
-   ```
-   {: codeblock}
-   
-   Then, start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
+```
+cd event-streams-samples/kafka-java-console-sample
+```
+{: codeblock}
 
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
+Then, start the sample producing application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
+The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this. 
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
-   {: important}
+Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend using all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
+The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. Format the contents of `kafka_brokers_sasl` in a text editor before entering it in the command line.
+{: important}
 
-   ```
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	<kafka_brokers_sasl> <api_key> -producer
-   ```
-   {: codeblock}
+Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` specifies that the producer should start. 
 
-### 6. **Success!**
+```
+java -jar ./build/libs/kafka-java-console-sample-2.0.jar
+<kafka_brokers_sasl> <api_key> -producer
+```
+{: codeblock}
+
+### 6. Success!
 {: #success_step} 
 
-   When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
-   You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
+When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
+You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
 
-   The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
+The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
 
 ## Next steps
 {: #next_steps}
