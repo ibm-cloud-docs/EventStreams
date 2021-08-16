@@ -109,7 +109,7 @@ In Kafka, topic creation and deletion are asynchronous operations
 that might take some time to complete. Avoid usage patterns that rely on the rapid creation and deletion
 of topics, or on the rapid deletion and re-creation of topics.
 
-### IAM allow listing
+## IAM allow listing
 {: #iam_allow notoc}
 
 Enabling the IAM allow listing functionality on your account as described in [Allowing specific IP addresses for an account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/account?topic=account-ips#ips_account){:new_window} is not currenlty supported by {{site.data.keyword.messagehub}}.
