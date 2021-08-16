@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-16
+lastupdated: "2021-08-16a
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -110,70 +110,8 @@ that might take some time to complete. Avoid usage patterns that rely on the rap
 of topics, or on the rapid deletion and re-creation of topics.
 
 ## IAM allow listing
-{: #iam_allow notoc}
+{: #iam_allow}
 
-Enabling the IAM allow listing functionality on your account as described in [Allowing specific IP addresses for an account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/account?topic=account-ips#ips_account){:new_window} is not currenlty supported by {{site.data.keyword.messagehub}}.
+Enabling the IAM allow listing functionality on your account as described in [Allowing specific IP addresses for an account ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/account?topic=account-ips#ips_account){:new_window} is not currently supported by {{site.data.keyword.messagehub}}.
 This is because of the internal authentication performed by {{site.data.keyword.messagehub}} from within the cluster.
 We are working on a solution to this issue.
-
-
-<!--
-## Kafka REST API
-{: #trouble_rest}
-
-<br/>
-**Is this specific to old Standard only? If so I'll move to specific Standard topic.**
-{: note}
-
-*  Only the binary-embedded format is supported for requests and
-   responses. The Avro and JSON embedded formats are not supported.
-*  Concurrent requests are not supported for a consumer instance.
-   Read, commit, or delete requests corresponding to a consumer
-   instance should be sent only after a response is received for
-   any outstanding requests of that instance.
-
--->
-<!--
-<br/>
-**Is this specific to old Standard only? If so I'll move to specific Standard topic.**
-{: note}
-
-## Kafka REST API rate limitation
-{: #kafka_rate}
-
-Applications using the Kafka REST API can be subject to rate
-limiting for each ApiKey. When this limiting occurs, the API
-responds with the following HTTP error:
-
-<code>429 Too Many Requests</code>
-{:screen}
-
-If you see this error, wait and submit the request again.
-
-<br/>
-**Is this specific to old Standard only? If so I'll move to specific Standard topic.**
-{: note}
--->
-<!--12/04/18 - Karen: same info duplicated at faq.md -->
-<!--
-## Kafka REST API daily restart
-{: #rest_restart}
-
-The Kafka REST API restarts once a day for a short period of
-time. During this period, the Kafka REST API might become
-unavailable. If this happens, you are recommended to retry your
-request. After the REST API has restarted, you will have to
-create your Kafka consumer instances again. If this is the case, the
-REST API returns the following JSON:
-
-```'{"error_code":40403,"message":"Consumer instance not found."}'
-```
-{:screen}
--->
-<!--
-## Kafka high-level consumer API
-{: #kafka_consumer}
-
-You cannot use the Apache Kafka 0.8.2 simple or high-level
-consumer API with {{site.data.keyword.messagehub}}. Instead, you can use the earliest supported Kafka consumer API, which is 0.10.
--->
