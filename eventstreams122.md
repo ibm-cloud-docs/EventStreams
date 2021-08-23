@@ -115,14 +115,14 @@ For simple steps to get up and running with the Alpha, see [Getting started with
 
 The only administration tasks required in a cluster are to create, list, and delete the topics you need. You can administer using one of the following methods:
 
-* The Kafka admin APIs directly from your application. For example for Java, by using the <code>createTopics()</code>, <code>deleteTopics()</code> or <code>listTopics()</code> methods from [AdminClient ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){:new_window}.
+* The Kafka admin APIs directly from your application. For example for Java, by using the <code>createTopics()</code>, <code>deleteTopics()</code> or <code>listTopics()</code> methods from [AdminClient ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/admin/AdminClient.html){: new_window}.
 
 * Interactively by using the Web UI for the service instance available in the IBM Cloud portal.
 
 * The admin REST API provided in the cluster.
 
-You can find further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
-To view the swagger file use Swagger tools, for example [Swagger Editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
+You can find further details of the create, list, and delete functions provided by the admin REST API (which is compatible with the existing {{site.data.keyword.messagehub}} admin API) in the full specification for the API available from [admin-rest-api.yaml ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: new_window}.
+To view the swagger file use Swagger tools, for example [Swagger Editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
 
 For a simple example that demonstrates how to create a topic using Curl, see [Getting started with the Alpha program](/docs/EventStreams/streaming_log_events.html).
 

@@ -81,7 +81,7 @@ To validate that streams landing is working:
   - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
   
 ## Estimating cost
-{:estimating-cost}
+{: estimating-cost}
 
 To keep the example simple, assume to persist 1 MB per second of data in Cloud {{site.data.keyword.cos_short}} that originates from {{site.data.keyword.messagehub}}. All pricing in this example is in US currency.
 

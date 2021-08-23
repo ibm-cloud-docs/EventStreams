@@ -26,7 +26,7 @@ subcollection: EventStreams
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
+To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}.
 
 <!-- 11/01/18 - Karen - removing diagram as requested by James
 ![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
@@ -40,7 +40,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    a. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-   b. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){:new_window} in the **Catalog**.
+   b. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){: new_window} in the **Catalog**.
   
    c. Select the **Lite plan** on the service instance page.
   
@@ -50,14 +50,14 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
-	* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){:new_window}
-	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){:new_window}
+	* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){: new_window}
+	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){: new_window}
 	* Java™  8 or higher 
 
 ## Tutorial steps
 {: #getting_started_steps}
 
-1. {: #Create_topic_step notoc} **Create a topic**.
+1. **Create a topic**. {: #Create_topic_step notoc}
 
    The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
 
@@ -76,7 +76,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
       e. The topic appears in the table. You just created a topic!
   
-2. {: #create_credentials_step notoc} **Create credentials**.
+2. **Create credentials**. {: #create_credentials_step notoc}
 
     To allow the sample application to access your topic, we need to create some credentials for it. 
 
@@ -92,7 +92,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
      f. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
-3. {: #clone_repository_step notoc} **Clone the GitHub repository for the sample application**.
+3. **Clone the GitHub repository for the sample application**. {: #clone_repository_step notoc}
 
    The sample application is stored in GitHub. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
@@ -117,7 +117,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
 
-4. {: #start_consumer_step notoc} **Run the consuming application**
+4. **Run the consuming application** {: #start_consumer_step notoc}
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
@@ -139,7 +139,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but no data is consumed. 
 
-5. {: #start_producer_step notoc} **Run the producing application**.
+5. **Run the producing application**. {: #start_producer_step notoc}
 
    Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
 
@@ -165,7 +165,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
 
-6. {: #success_step notoc} **Success!**
+6. **Success!** {: #success_step notoc}
 
    When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
    You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
@@ -175,13 +175,13 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Next steps
 {: #next_steps}
 
-Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}. Explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial, or find out more about 
-[{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){:new_window}.
+Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}. Explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_connect){:new_window} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial, or find out more about 
+[{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){: new_window}.
 
-To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=XyNy7TcfJOc){:new_window}.
+To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=XyNy7TcfJOc){: new_window}.
  
  
 <!-- 07/06/18 - Karen: removing until a newer version available
 To watch a video that walks
-you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){:new_window}.
+you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){: new_window}.
 -->

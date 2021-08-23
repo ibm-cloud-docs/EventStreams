@@ -47,7 +47,7 @@ Authentication and authorization are now managed using the Cloud Identity and Ac
 [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security).
 
 If you are part of a department that previously owned its own instance on a Dedicated cluster and you now want to limit access to your resources on the Enterprise cluster (topics, consumer groups and so on), you can take advantage of the IAM wildcarding facility to set policies for groups of resources. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
-[Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){:new_window}.
+[Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){: new_window}.
 
 ## Connecting applications
 {: #connecting_apps}
@@ -245,14 +245,14 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
-2. {: #footnote_partitions notoc} 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+1. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
+2. 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}. {: #footnote_partitions notoc}
 3. {: #footnote_footprint notoc}
 To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
 ```
 retention.bytes + segment.bytes
 ```
-4. {: #footnote_throughput notoc} A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/>
+4. A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/> {: #footnote_throughput notoc}
 A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
 
 
@@ -347,7 +347,7 @@ After you have set up your topics, consumers, and producers for the new Enterpri
 Complete the following steps to switch from an existing cluster to a new cluster as part of migration: 
 
 1. Stop any producers producing to the existing cluster or topic.
-2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag by using the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_console_tools#consumer_groups_tool){:new_window} tool. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
+2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag by using the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_console_tools#consumer_groups_tool){: new_window} tool. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
 
    For example, some sample output from running the **kafka-consumer-groups** tool:
 

@@ -101,7 +101,7 @@ You are strongly recommended not to attempt to manage the topic in any way. You 
 After consumers have left, a group continues to exist only if it has offsets. Consumer offsets are deleted after 7 days of inactivity. Consequently, a consumer group is deleted when the last committed offset for that group expires.
 
 If you want to explicitly delete a group at a time you choose, you can use the 
-[deleteConsumerGroups() API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection-){:new_window}.
+[deleteConsumerGroups() API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection-){: new_window}.
 
 
 ## How long are messages retained?
@@ -186,7 +186,7 @@ However, this option does not currently work in the {{site.data.keyword.Bluemix_
 ```
 Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
 ```
-{:codeblock}
+{: codeblock}
 
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
@@ -203,7 +203,7 @@ To find out more information about the different {{site.data.keyword.messagehub}
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
 We suggest a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
-[{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){:new_window}.
+[{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: new_window}.
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 

@@ -27,15 +27,15 @@ For these use cases, {{site.data.keyword.messagehub}} supports customer-managed 
 - {{site.data.keyword.keymanagementservicefull}} (Bring Your Own Key - BYOK) helps you provision encrypted keys for apps across IBM Cloud® services. 
 As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by FIPS 140-2 Level 3 certified 
 cloud-based hardware security modules (HSMs) that protect against the theft of information. 
-You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-getting-started-tutorial){:new_window}.
+You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-getting-started-tutorial){: new_window}.
 - {{site.data.keyword.hscrypto}} (Keep Your Own Key - KYOK) is a single-tenant, dedicated HSM that is controlled by you. 
 The service is built on FIPS 140-2 Level 4-certified hardware, the highest offered by any cloud provider in the industry. 
-You can find out more about using {{site.data.keyword.hscrypto}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-get-started){:new_window}.
+You can find out more about using {{site.data.keyword.hscrypto}} in the [Getting Started tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-get-started){: new_window}.
 
 These services allow the use of a customer-provided key to control encryption. 
 By disabling or deleting this key, you can prevent any further access to the data stored by the service, 
 because it is no longer possible to decrypt it.
-{:shortdesc}
+{: shortdesc}
 
 {: #considerations_keys notoc}
 Consider using customer-managed keys if you require the following features:
@@ -47,13 +47,13 @@ Be aware of the following information when deciding to enable customer-managed k
 
 Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your 
 {{site.data.keyword.messagehub}} instance.
-{:important}
+{: important}
 
 ## What is not covered by customer-managed encryption
 If customer-managed encryption feature is selected the user should be aware that **only** Message Payload data is covered by this encrytpion. {{site.data.keyword.messagehub}} encrypts at rest other data related to the use of the service. However, although encrypted, Non Message payload data **will not** be encrypted with the customer-managed encryption. Examples are client metadata such as Topic Names, Topic configuration data, Schemas stored in the Schema registry and metadata stored in relation to the configuration of the Enterprise instance. 
 
 Therefore, you are not recommended to use confidential information in such client metadata.
-{:important}
+{: important}
 
 
 ## How customer-managed encryption works
@@ -64,7 +64,7 @@ Therefore, you are not recommended to use confidential information in such clien
    The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, 
    but instead is wrapped by a second key known as the key encryption key (KEK) to create a wrapped DEK. 
    To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, 
-   which in this case is your root key stored in either [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-about){:new_window} or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-overview){:new_window}. 
+   which in this case is your root key stored in either [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-about){: new_window} or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-overview){:new_window}. 
 
 You own the KEK, which you create as a root key in the {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} service. 
 The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Its storage, management, and use to wrap and unwrap the DEK 
@@ -76,7 +76,7 @@ is performed entirely within the key management service. If you disable or delet
 Complete the following steps to provision your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
 
 1. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-provision) or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-provision).
-2. Create an authorization policy to allow the {{site.data.keyword.messagehub}} service to access the key management service instance as a Reader. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-serviceauth){:new_window}.
+2. Create an authorization policy to allow the {{site.data.keyword.messagehub}} service to access the key management service instance as a Reader. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-serviceauth){: new_window}.
 3. Create or import a root key into your key management service instance.
 4. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the key management service instance GUI.
 5. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting-started). This feature is supported on the Enterprise plan only. 
@@ -91,7 +91,7 @@ ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub
 {: codeblock}
 
 
-If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case){:new_window} on {{site.data.keyword.messagehub}} that contains the following information:
+If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case){: new_window} on {{site.data.keyword.messagehub}} that contains the following information:
    * The CRN of the root key that you want to use in your key management service instance.
    * The CRN of your {{site.data.keyword.messagehub}} service instance.
    <br/>
@@ -107,7 +107,7 @@ If you wish to update your existing {{site.data.keyword.messagehub}} instance to
    {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
 
 This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
-{:important}
+{: important}
 
 
 ## Using a customer-managed key

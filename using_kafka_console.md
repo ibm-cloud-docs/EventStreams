@@ -24,7 +24,7 @@ subcollection: EventStreams
 Apache Kafka comes with a variety of console tools for simple administration and messaging operations. You can use many of them with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka has developed, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 {: shortdesc}
 
-You can find these console tools in the <code>bin</code> directory of your Kafka download. You can download a client from [Apache Kafka downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads){:new_window}.
+You can find these console tools in the <code>bin</code> directory of your Kafka download. You can download a client from [Apache Kafka downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads){: new_window}.
 
 To provide the SASL credentials to these tools, create a properties file based on the following example:
 
@@ -38,7 +38,7 @@ To provide the SASL credentials to these tools, create a properties file based o
   ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
@@ -55,7 +55,7 @@ After you've created the properties file as described previously, you can run th
   $ kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
@@ -76,7 +76,7 @@ After you've created the properties file as described previously, you can run th
   $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
@@ -97,7 +97,7 @@ After you've created the properties file as described previously, you can run th
   $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
@@ -110,7 +110,7 @@ Using this tool, you can also display details like the current positions of the 
   $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace GROUP in the example with the group name that you want to retrieve details for. 
 
@@ -123,7 +123,7 @@ consumer-group-1   foo        1          124          
 consumer-group-1   foo        2          212             212            0          client-2-def    example.com    client-2
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 From the example above, you can see consumer group `consumer-group-1` has 2 consumer members consuming messages from topic `foo` with 3 partitions. It also shows that the consumer `client-1-abc` that is consuming from partition `0` is 3 messages behind, because the current offset of the consumer is `264` but the offset of the last message on partition `0` is `267`. 
 
@@ -164,7 +164,7 @@ For example:
   $ kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). 

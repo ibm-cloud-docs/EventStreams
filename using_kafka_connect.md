@@ -28,7 +28,7 @@ You can use Kafka Connect with {{site.data.keyword.messagehub}} and can run the 
 {: shortdesc}
 
 Kafka Connect can run in either stand-alone or distributed mode. Stand-alone mode is intended for testing and temporary connections between systems. Distributed mode is more appropriate for production use. The configuration required to use {{site.data.keyword.messagehub}} with these two modes is slightly different.
-{:shortdesc}
+{: shortdesc}
 
 ## Stand-alone worker configuration
 {: #standalone_worker notoc}
@@ -48,7 +48,7 @@ You must provide the bootstrap servers and SASL credentials information in the w
   ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
@@ -68,7 +68,7 @@ The following example lists the properties that you must provide in your propert
   producer.ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the 
 {{site.data.keyword.Bluemix_notm}} console.
@@ -89,7 +89,7 @@ The following example lists the properties that you must provide in your propert
   consumer.ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the 
 {{site.data.keyword.Bluemix_notm}} console.
@@ -110,7 +110,7 @@ You must provide the bootstrap servers and SASL credentials information in the p
   ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
@@ -126,7 +126,7 @@ If you want to use a source connector, you must also specify the SSL and SASL co
   producer.ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 If you want to use a sink connector, you must also specify the SSL and SASL configuration for the consumer as follows:
 
@@ -140,7 +140,7 @@ If you want to use a sink connector, you must also specify the SSL and SASL conf
   consumer.ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 In addition, Kafka Connect in distributed mode uses three topics internally. These topics are created automatically when a worker starts up, if you use Kafka Connect in Apache Kafka version 0.11 or later. You provide the names of the topics as configuration parameters. Ensure that the values are the same for all workers with the same `group.id` configuration value.
 
@@ -161,11 +161,11 @@ For example, you can use the following key-value pairs in your properties file:
   status.storage.topic=connect-status
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Consider reducing the number of partitions if you are making only light use of Kafka Connect.
 
-For more detailed information about Kafka Connect, see [Kafka Connect overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_overview){:new_window}.
+For more detailed information about Kafka Connect, see [Kafka Connect overview ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_overview){: new_window}.
 
 
 

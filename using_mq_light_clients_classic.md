@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 The {{site.data.keyword.mql}} API is available as part of the Classic plan only. The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 ## Using the MQ Light Java client
 {: #mql_java}
@@ -39,7 +39,7 @@ Add the following reference to your <code>Maven pom</code> file:
     <version>LATEST</version>
 </dependency>
 ```
-{:codeblock}
+{: codeblock}
 
 
 <!-- 12/11/18: info was in eventstreams102.md, moved because of doc app changes -->
@@ -96,7 +96,7 @@ file:
 ```
 git+git://github.com/mqlight/python-mqlight.git@readthedocs
 ```
-{:codeblock}
+{: codeblock}
 
 <br>
 And add the following import statement to your source file:
@@ -104,7 +104,7 @@ And add the following import statement to your source file:
 ```
 import mqlight
 ```
-{:codeblock}
+{: codeblock}
 <!-- Comment from Andrew
 Instructions for getting started, with links for more info
 Simple send source and receive source in-line

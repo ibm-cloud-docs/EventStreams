@@ -26,7 +26,7 @@ produce messages.
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-about).
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Java and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
+To access other {{site.data.keyword.messagehub}} samples, including samples for Java and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}.
 
 Complete the following steps:
 {: #getting_started_steps_node}

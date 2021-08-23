@@ -514,7 +514,7 @@ ssl.enabled.protocols=TLSv1.2
 ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 ## Avro console producer and consumer
 {: #avro_console_producer }
@@ -528,7 +528,7 @@ To execute using the credentials source method of URL, use the following code:
   ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
@@ -542,7 +542,7 @@ To execute using the credentials source method of USER_INFO, use the following c
   ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 Replace the following variables in the example with your own values:
 * KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 

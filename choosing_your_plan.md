@@ -234,13 +234,13 @@ For more information about limits, see [limits and quotas](/docs/EventStreams?to
 ### Footnotes
 {: #footnote_plans notoc}
 
-1. {: #footnote_lite notoc} After 30 days of inactivity, your instance is deleted. 
+1. After 30 days of inactivity, your instance is deleted.  {: #footnote_lite notoc}
 (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.)
-2. {: #footnote_szr notoc} For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
-3. {: #footnote_partitions_lite notoc} If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan.
-4. {: #footnote_partitions notoc} This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
-5. {: #footnote_retention notoc} Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
-6. {: #footnote_throughput notoc} Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. 
+2. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
+3. If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan. {: #footnote_partitions_lite notoc}
+4. This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}. {: #footnote_partitions notoc}
+5. Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_retention notoc}
+6. Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase.  {: #footnote_throughput notoc}
 Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. 
 For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).<br/>
 
@@ -257,6 +257,6 @@ In {{site.data.keyword.Bluemix_notm}} Public, the cost of {{site.data.keyword.me
 number of partitions that you use and the number of messages that you send and receive. 
 Message data is not charged while it is retained on the topics, but the data that each partition retains is capped at 1 GB.
 
-For more information, see [{{site.data.keyword.Bluemix_notm}} Public ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/free/){:new_window}.
+For more information, see [{{site.data.keyword.Bluemix_notm}} Public ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/free/){: new_window}.
 -->
 

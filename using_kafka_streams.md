@@ -39,7 +39,7 @@ For example:
     props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USERNAME\" password=\"PASSWORD\";");
 </code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
 {{site.data.keyword.Bluemix_notm}}.

@@ -23,13 +23,13 @@ subcollection: EventStreams
 
 The MQ bridge is available as part of the Classic plan only. The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 For information about the replacement for the bridge, see [Connecting IBM MQ to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-mq_connector).
 
 The MQ bridge allows you to transfer message data from an {{site.data.keyword.IBM_notm}}
  MQ queue to an {{site.data.keyword.messagehub}} Kafka topic. The MQ bridge enables you to efficiently perform cloud-style workloads (for example, data analytics) against {{site.data.keyword.IBM_notm}} MQ message data generated within your enterprise.
- {:shortdesc}
+ {: shortdesc}
 
 The MQ bridge connects to an {{site.data.keyword.IBM_notm}} MQ queue manager as an MQ client and consumes MQ message data from an MQ queue. The bridge converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 

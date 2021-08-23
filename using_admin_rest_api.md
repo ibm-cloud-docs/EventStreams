@@ -48,10 +48,10 @@ The credentials depend on the authentication method and three types of credentia
 For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
 
 For a description of the API with examples, see 
-[{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window}.
+[{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: new_window}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
-To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: new_window}.
+To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
 
 
 
