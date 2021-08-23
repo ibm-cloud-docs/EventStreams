@@ -24,11 +24,11 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 {{site.data.keyword.messagehub}} on the Classic plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
-{:shortdesc}
+{: shortdesc}
 
 **Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Classic plan in Dallas (us-south), London (eu-gb), and Sydney (au-syd) only. 
 

@@ -23,14 +23,14 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub}} bridges are available as part of the Classic plan only.  The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted.<br/>
 If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/EventStreams?topic=EventStreams-migrate_bridges).
-{:deprecated}
+{: deprecated}
 
 The {{site.data.keyword.messagehub}} Classic plan also
 supports bridges to a selection of other systems. Bridges are unidirectional links between {{site.data.keyword.messagehub}} and another service. Bridges allow either
 data to be read from {{site.data.keyword.messagehub}} and written
 into another service, or data to be read from another service and written into {{site.data.keyword.messagehub}}. A bridge can take messages from the other system and publish them onto a topic, or consume
 messages from a topic and send them to the other system. In this way, you can use {{site.data.keyword.messagehub}} to integrate with other systems without writing code.
-{:shortdesc}
+{: shortdesc}
 
 The key benefits of using {{site.data.keyword.messagehub}} bridges are the following:  
 
@@ -49,15 +49,15 @@ You might find bridges useful in the following two common scenarios:
 * We provide the following types of bridge: 
   - [MQ bridge](/docs/EventStreams?topic=EventStreams-mq_bridge), which takes message data from {{site.data.keyword.IBM}} MQ and transfers it to a topic in {{site.data.keyword.messagehub}}. We intend to support a wider range of bridges in the future.
   - [Cloud Object Storage bridge](/docs/EventStreams?topic=EventStreams-cloud_object_storage_bridge), which transfers {{site.data.keyword.messagehub}} data to an instance of the {{site.data.keyword.IBM_notm}} Cloud Object Storage service. 
-  - The [{{site.data.keyword.objectstorageshort}} bridge](/docs/EventStreams?topic=EventStreams-object_storage_bridge) is deprecated from August 1st 2018. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/05/end-marketing-object-storage-openstack-swift-paas/){:new_window}.
+  - The [{{site.data.keyword.objectstorageshort}} bridge](/docs/EventStreams?topic=EventStreams-object_storage_bridge) is deprecated from August 1st 2018. For more information, see the [deprecation announcement: {{site.data.keyword.objectstorageshort}} OpenStack Swift (PaaS) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/cloud-archive/2018/05/end-marketing-object-storage-openstack-swift-paas/){: new_window}.
 * Currently, bridges are available in all {{site.data.keyword.Bluemix_notm}} public environments. Bridges are not available in {{site.data.keyword.Bluemix_short}} Dedicated.
 * You can administer bridges in the following two ways:
-  - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also find examples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
+  - Using a [REST API ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){: new_window}, which is an extension to the existing {{site.data.keyword.messagehub}} Administration API. You can also find examples of how to use curl to manage the lifecycle of bridges at [message-hub-docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs){:new_window}. We might change this REST API as we continue to develop bridges. We intend to stabilize this API.
   - Using the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console.
 * You can associate a maximum of two bridges of any type with an instance of the {{site.data.keyword.messagehub}} service. We will continue to review this limitation as we continue to develop bridges.
 * There is no additional charge for using bridges beyond their messaging operations.
 * The MQ bridge does not support the use of SSL/TLS to protect the privacy and integrity of data as it is transferred between the bridge and the MQ queue manager. We intend to add support for using SSL/TLS to the bridge. 
-* However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg){:new_window} service to send your data
+* However, you can use the [{{site.data.keyword.SecureGatewayfull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg){: new_window} service to send your data
 through a secure tunnel between {{site.data.keyword.Bluemix_notm}}
 and a {{site.data.keyword.SecureGateway}} client that you can install on-premises. In this configuration, the communication on either end of the tunnel is not
 secured using SSL/TLS.

@@ -24,12 +24,12 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
-If you're experiencing a problem with {{site.data.keyword.messagehub}} Classic plan, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){:new_window}. 
+If you're experiencing a problem with {{site.data.keyword.messagehub}} Classic plan, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){: new_window}. 
 
 If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently the team can help with the problem:
-{:shortdesc}
+{: shortdesc}
 
 1. Which {{site.data.keyword.Bluemix_notm}} location (region) is your instance of {{site.data.keyword.messagehub}} provisioned in?  For example, Dallas or London. 
 2. Which interface are you seeing issues with? Kafka, REST, AMQP, or bridges?
@@ -47,7 +47,7 @@ You can find this ID by looking at the "instance_id" field in the service's VCAP
 10. What impact is the problem having on your service?
 
 
-You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){:new_window}.
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}.
 
 
 

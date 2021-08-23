@@ -27,7 +27,7 @@ If your workload is running entirely within the {{site.data.keyword.Bluemix_shor
 
 Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_short}} public and private networks, where your workload can use the most appropriate interface for its location.
 
-Further information about IBM Cloud private networking setup can be found here:[Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window}.
+Further information about IBM Cloud private networking setup can be found here:[Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window}.
 
 
 ## Prerequisites
@@ -35,8 +35,8 @@ Further information about IBM Cloud private networking setup can be found here:[
 
 Ensure that you complete the following tasks:
 * Create your service instance by using the Enterprise plan. For more information, see
-[Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window}.
-* Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
+[Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window}.
+* Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Enable service endpoints connectivity by running this command: 
 ```
 ibmcloud account update --service-endpoint-enable true
@@ -113,7 +113,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 {: codeblock}
 
 Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
-{:important}
+{: important}
 
 
 An initial first step is to enable both public and private endpoints:

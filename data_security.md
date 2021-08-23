@@ -23,7 +23,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.IBM}} uses the following methods to help ensure the security and
 privacy of your data:
-{:shortdesc}
+{: shortdesc}
 
 ## Cryptographic protocols
 {: #cryptographic}

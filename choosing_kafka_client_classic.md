@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
 
@@ -105,7 +105,7 @@ Other third-party clients that support the minimum set of client requirements mi
 ### Footnote
 {: #footnote_clients_classic notoc}
 
-1. {: #footnote_classic}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist {: #footnote_classic}
 
 ## Backward compatibility (Classic plan only)
 {: #compatibility_classic}

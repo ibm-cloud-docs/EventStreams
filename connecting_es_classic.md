@@ -23,7 +23,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 The way you connect to {{site.data.keyword.messagehub}} varies depending on whether you're connecting from a Cloud Foundry application or from any other external client. You need to collect two pieces of information to connect to any of {{site.data.keyword.messagehub}}'s APIs:
 {: shortdesc}

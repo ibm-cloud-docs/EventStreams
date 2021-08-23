@@ -79,10 +79,10 @@ The table below lists valid throughput/storage capacity unit combinations.
 For additional information on capacity limitations, refer to [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
 
 Throughput capacity cannot be scaled down. To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
-{:important}
+{: important}
 
 Storage capacity cannot be scaled down. To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
-{:important}
+{: important}
 
 ## How to scale capacity
 {: #ES_how_to_scale_capacity}

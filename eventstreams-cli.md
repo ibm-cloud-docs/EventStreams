@@ -118,7 +118,7 @@ Initialize the {{site.data.keyword.messagehub}} plug-in.
 ```
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -143,7 +143,7 @@ Display the details of a broker.
 ```
 ibmcloud es broker [--broker] ID [--json]
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -170,7 +170,7 @@ Display the configuration of a broker.
 ```
 ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -202,7 +202,7 @@ Display the details of the cluster.
 ```
 ibmcloud es cluster [--json]
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -227,7 +227,7 @@ Display the details of a topic.
 ```
 ibmcloud es topic [--name] TOPIC_NAME [--json]
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -254,7 +254,7 @@ Create a new topic.
 ```
 ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config KEY=VALUE[;KEY=VALUE]* ]*
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -291,7 +291,7 @@ Delete a topic.
 ```
 ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -319,7 +319,7 @@ Delete records from a topic for a given offset.
 ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITION:OFFSET[;PARTITION:OFFSET]* ]* [--force]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -351,7 +351,7 @@ Set the partitions for a topic.
 ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -378,7 +378,7 @@ Update the configuration for a topic.
 ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -419,7 +419,7 @@ List topics.
 ibmcloud es topics [--filter FILTER] [--json]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -449,7 +449,7 @@ Display details of a consumer group.
 ibmcloud es group [--group] GROUP_ID [--json]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -480,7 +480,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -529,7 +529,7 @@ List consumer groups.
 ibmcloud es groups [--filter FILTER] [--json]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -555,7 +555,7 @@ Delete a consumer group.
 ibmcloud es group-delete [--group] GROUP_ID [--force]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: None
 
@@ -580,7 +580,7 @@ List mirroring topic selection.
 ibmcloud es mirroring-topic-selection [--json]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 
@@ -601,7 +601,7 @@ Replace mirroring topic selection.
 ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) [--force]
 
 ```
-{:codeblock}
+{: codeblock}
 
 <strong>Prerequisites</strong>: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 

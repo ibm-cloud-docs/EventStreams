@@ -51,7 +51,7 @@ Many configuration settings exist for the consumer, which control aspects of its
 |max.poll.interval.ms |The maximum time interval between polls before the consumer leaves the group. | 1,... | 300000 (5 minutes) |
 | | | | |
 
-Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){:new_window} before starting to experiment with them.
+Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){: new_window} before starting to experiment with them.
 
 ## Consumer groups
 

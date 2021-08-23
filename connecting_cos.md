@@ -40,7 +40,7 @@ Ensure you have the following software and services installed:
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
 * A recent version of kubectl.
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
+* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step2_clone project}
@@ -107,7 +107,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
+[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
 
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
 

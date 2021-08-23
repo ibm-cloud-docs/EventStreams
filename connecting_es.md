@@ -36,7 +36,7 @@ For information about how to connect to {{site.data.keyword.messagehub}} if you 
 ## Overview
 {: #connect_enterprise}
 
-Services that are provisioned using the Standard or the Enterprise plans are grouped in the dashboard under the heading **Services**. The plans are [IAM enabled ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-overview){:new_window}. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see 
+Services that are provisioned using the Standard or the Enterprise plans are grouped in the dashboard under the heading **Services**. The plans are [IAM enabled ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-overview){: new_window}. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see 
 [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security).
 
 Complete the following steps to bind your application and obtain Service Keys for your service. To be authorized to create topics, your application or Service Key must have a Manager access role.

@@ -24,7 +24,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Lite, Stan
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){:new_window}.
+For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: new_window}.
 
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
@@ -42,7 +42,7 @@ ibmcloud login -a cloud.ibm.com
 Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans. (The Classic plan does not support the CLI.) <br/>
 Select one of the following methods:
 
-* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){:new_window}.
+* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){: new_window}.
 
 * To create an instance from the CLI on the Enterprise plan, run the following command:
   ```

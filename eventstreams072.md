@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.messagehub}} on the Standard plan automatically collects metrics and events so that you
 can monitor your usage of {{site.data.keyword.messagehub}}.
-{:shortdesc}
+{: shortdesc}
 
 **Note:** Metrics and events are available as part of the {{site.data.keyword.messagehub}} Standard plan in Dallas (us-south), London (eu-gb), and Sydney (au-syd) only. 
 

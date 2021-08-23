@@ -85,8 +85,8 @@ The following table summarizes what you can use with {{site.data.keyword.message
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){: new_window} and 
+[Kafka Consumer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){: new_window}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
@@ -150,10 +150,10 @@ For other languages, we recommend running one of the following clients, all of w
 ### Footnote
 {: #footnote_clients notoc}
 
-1. {: #footnote1 notoc}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist {: #footnote1 notoc}
 
 <br/>
-If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window}).
+If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){: new_window}).
 * Supports Kafka 0.10, or later
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
 * Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake

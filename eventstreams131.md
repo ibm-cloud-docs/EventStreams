@@ -49,11 +49,11 @@ subcollection: EventStreams
 
 If you can't run the official Java clients, we recommend running one of the following third-party clients, which are well-tested with {{site.data.keyword.messagehub}}:
 
-* [node-rdkafka (Node.js) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){:new_window} - tested up to V2.3.3. 
+* [node-rdkafka (Node.js) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka){: new_window} - tested up to V2.3.3. 
 
-* [confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){:new_window}
+* [confluent-kafka-python (Python) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python){: new_window}
 
-* [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){:new_window}  
+* [sarama (Go) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Shopify/sarama){: new_window}  
 
 Other third-party clients might work with {{site.data.keyword.messagehub}} but we can't make any guarantees.
 

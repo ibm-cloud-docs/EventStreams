@@ -24,7 +24,7 @@ subcollection: EventStreams
 
 [{{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started)
  is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-{:shortdesc}
+{: shortdesc}
 
 
 ## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
@@ -32,14 +32,14 @@ subcollection: EventStreams
 
 Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in and then enable platform metrics by completing the following steps: 
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-platform_metrics_enabling){:new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){:new_window}.
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){:new_window}.
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**. 
 
    On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page.  Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan you're using. 
    
    Dashboards are available only after metrics have started to be recorded; this might take a few minutes to initialize.
-   {:note} 
+   {: note} 
 
 
 ## {{site.data.keyword.messagehub}} metrics cost information 
@@ -163,7 +163,7 @@ The percentage of maximum number of connected clients
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 4: Estimated connected clients percentage metric metadata" caption-side="top"}
 
-This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 ### Inactive consumer groups
 {: #ibm_eventstreams_instance_inactive_consumergroups}
@@ -193,7 +193,7 @@ The number of bytes produced per second to an Event Streams instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 6: Instance bytes in per second metric metadata" caption-side="top"}
 
-This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 ### Instance bytes out per second
 {: #ibm_eventstreams_instance_bytes_out_per_second}
@@ -208,7 +208,7 @@ The number of bytes consumed per second from an Event Streams instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 7: Instance bytes out per second metric metadata" caption-side="top"}
 
-This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 
 ### Missing SNI connections
@@ -224,7 +224,7 @@ Incrementing count of the number of connections rejected due to not supporting t
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 8: Missing SNI connections metric metadata" caption-side="top"}
 
-Ideally this should be zero. It indicates clients that are not configured correctly. Clients must use the SNI extension for TLS in order to connect to the service. If this value is non-zero, then ensure that all clients are at correct level and configured correctly for [SNI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_using){:new_window}.
+Ideally this should be zero. It indicates clients that are not configured correctly. Clients must use the SNI extension for TLS in order to connect to the service. If this value is non-zero, then ensure that all clients are at correct level and configured correctly for [SNI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_using){: new_window}.
 
 
 ### Number of partitions
@@ -240,7 +240,7 @@ The number of leader partitions in an Event Streams instance
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 9: Number of partitions metric metadata" caption-side="top"}
 
-This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 ### Number of topics
 {: #ibm_eventstreams_instance_topics}
@@ -385,7 +385,7 @@ The percentage of currently utilized disk space
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 19: Utilized disk space percentage metric metadata" caption-side="top"}
 
-This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window} to determine what the recommended limits are for your plan and cluster.
+This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 ---
 
@@ -455,4 +455,4 @@ The following attributes are available for segmenting one or more attributes as 
 
 <br/>
 
-For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-monitoring){:new_window}.
+For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-monitoring){: new_window}.

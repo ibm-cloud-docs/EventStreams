@@ -28,11 +28,11 @@ member of the {{site.data.keyword.messagehub}} development team or the wider
 community.
 {: shortdesc}
 
-If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){:new_window}. If you'd then 
+If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){: new_window}. If you'd then 
 like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in  [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise#report_problem_enterprise).
 
 If you're using the Classic plan (which is now deprecated), see [Reporting a problem to the {{site.data.keyword.messagehub}} team - Classic plan](/docs/EventStreams?topic=EventStreams-report_problem#report_problem) for a list of the information required by the team.
-{:shortdesc}
+{: shortdesc}
 
 ## Useful links
 {: #troubleshooting_links notoc}
@@ -40,7 +40,7 @@ If you're using the Classic plan (which is now deprecated), see [Reporting a pro
 *  [{{site.data.keyword.messagehub}} Java Kafka sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: new_window}
 *  [Creating web applications with {{site.data.keyword.Bluemix_notm}} and deploying your app with Cloud Foundry ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cloud-foundry?topic=cloud-foundry-cf-deploy-cli#download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: new_window}
 *  [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window}
-*  [Apache Kafka 2.2.0 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.0/kafka-2.2.0-src.tgz){:new_window}
+*  [Apache Kafka 2.2.0 client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.0/kafka-2.2.0-src.tgz){: new_window}
 *  [{{site.data.keyword.Bluemix_notm}} pricing information ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/billing-usage?topic=billing-usage-cost#cost){: new_window}
 
 
