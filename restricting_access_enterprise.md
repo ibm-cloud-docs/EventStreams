@@ -72,7 +72,7 @@ To enable public endpoints (this is the default):
 ```
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
 ```
-  {: codeblock}
+    {: codeblock}
 
 To enable private only endpoints:
 ```
@@ -159,9 +159,9 @@ OK
   ```
   ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
   ```
-  {: codeblock}
+    {: codeblock}
 
-  where CIDR1, 2 are IP addressess of the form a.b.c.d/e
+    where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
 Note that if the private endpoint is enabled via CLI, next time when updating private IP allowlist, `--service-endpoints private` can be omitted.
 
@@ -197,17 +197,17 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
 
-   ```
-   export VPC_ID=<vpc_id>
-   ```
-  {: codeblock}
+    ```
+    export VPC_ID=<vpc_id>
+    ```
+   {: codeblock}
 
 2. Obtain a bearer token from IAM using the ibmcloud CLI:
-   
-   ```
-   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
-   ```
-   {: codeblock}
+    
+    ```
+    export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
+    ```
+    {: codeblock}
 
 3. Use the VPC REST API to obtain the source IP addresses:
 

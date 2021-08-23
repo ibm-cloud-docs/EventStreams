@@ -194,19 +194,19 @@ You should also note the following information:
 
 <table border='1'>
 <caption>Table 1. Kafka message format</caption>
-  <tr>
-    <th> Key </th>
-    <th> Value </th>
-  </tr>
-  <tr>
-    <td> Optional (not used by the API)
+    <tr>
+      <th> Key </th>
+      <th> Value </th>
+     </tr>
+    <tr>
+      <td> Optional (not used by the API)
 	<p></p>
 	</td>
-    <td>**1 byte**
-	<p>		     MQ Light API eye catcher, which is always 0xFA.</p>
-    <p><var class="keyword varname">**n**</var> **bytes**</p>
-    <p>		    AMQP encoded message (formatted based on the AMQP wire format). </p></td>
-  </tr>
+      <td>**1 byte**
+	<p>		       MQ Light API eye catcher, which is always 0xFA.</p>
+      <p><var class="keyword varname">**n**</var> **bytes**</p>
+      <p>		      AMQP encoded message (formatted based on the AMQP wire format). </p></td>
+    </tr>
 </table>
 
 
@@ -238,6 +238,6 @@ The following limits are enforced for the {{site.data.keyword.mql}} API:
 * The maximum size of a message (excluding headers) is 1 MB.
 * The maximum number of clients that can be connected at a single time is 25.
 * The maximum number of destinations that can be active at a single time is 25. An active destination is defined as follows:
-  - A destination with a TimeToLive > 0 both with or without a client currently connected.
-  - A destination with a TimeToLive = 0 (the default) where a client is connected. 
-  <p>A destination that is shared between clients counts as a single destination.</p>
+     - A destination with a TimeToLive > 0 both with or without a client currently connected.
+    - A destination with a TimeToLive = 0 (the default) where a client is connected. 
+    <p>A destination that is shared between clients counts as a single destination.</p>

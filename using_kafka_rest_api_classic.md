@@ -35,11 +35,11 @@ curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Con
 
 '
 {
-  "records": [
-    {
-      "value": "<var class="keyword varname">A base 64 encoded value string</var>"
-    }
-  ]
+    "records": [
+      {
+        "value": "<var class="keyword varname">A base 64 encoded value string</var>"
+      }
+    ]
 }
 '
 </code></pre>

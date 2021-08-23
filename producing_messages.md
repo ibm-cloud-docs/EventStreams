@@ -119,16 +119,16 @@ In summary, when a message is published, its record is first written into a buff
 
 Kafka offers the following multiple different message delivery semantics:
 <ul>
-  <li>At most once: messages might get lost and won't get redelivered</li>
-  <li>At least once: messages are never lost but there might be duplicates</li>
-  <li>Exactly once: messages are never lost and there are no duplicates</li>
+    <li>At most once: messages might get lost and won't get redelivered</li>
+    <li>At least once: messages are never lost but there might be duplicates</li>
+    <li>Exactly once: messages are never lost and there are no duplicates</li>
 </ul>
 
 The delivery semantics are determined by the following settings:
 <ul>
-  <li>`acks`</li>
-  <li>`retries`</li>
-  <li>`enable.idempotence`</li>
+    <li>`acks`</li>
+    <li>`retries`</li>
+    <li>`enable.idempotence`</li>
 </ul>
 
 By default, Kafka uses at least once semantics.

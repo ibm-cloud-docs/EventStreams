@@ -99,9 +99,9 @@ When bound, the connection details are then made available to the application in
 6. Select the {{site.data.keyword.messagehub}} service tile that you want to bind to and click **Connect**. 
 7. In the **Connect IAM-Enabled Service** window that appears, select an access role from **Access Role for Connection** and a service ID from the **Service ID for Connection** list (you can accept the auto-generated ID). Click **Connect**. 
 
-  This step creates a Cloud Foundry service alias for your {{site.data.keyword.messagehub}} service and then binds your application to this alias. 
+    This step creates a Cloud Foundry service alias for your {{site.data.keyword.messagehub}} service and then binds your application to this alias. 
 
-  Restage your application for the changes to take effect.<br/>
+    Restage your application for the changes to take effect.<br/>
 8. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. You can now verify your VCAP_SERVICES information. Your application can now access these variables as environment variables. 
  
 

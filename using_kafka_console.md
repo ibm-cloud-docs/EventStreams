@@ -30,12 +30,12 @@ To provide the SASL credentials to these tools, create a properties file based o
 
 <pre>
 <code>
-  sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
-  security.protocol=SASL_SSL
-  sasl.mechanism=PLAIN
-  ssl.protocol=TLSv1.2
-  ssl.enabled.protocols=TLSv1.2
-  ssl.endpoint.identification.algorithm=HTTPS
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
+    security.protocol=SASL_SSL
+    sasl.mechanism=PLAIN
+    ssl.protocol=TLSv1.2
+    ssl.enabled.protocols=TLSv1.2
+    ssl.endpoint.identification.algorithm=HTTPS
 </code>
 </pre>
 {: codeblock}
@@ -52,7 +52,7 @@ After you've created the properties file as described previously, you can run th
 
 <pre>
 <code>
-  $ kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
+    $ kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
 </code>
 </pre>
 {: codeblock}
@@ -73,7 +73,7 @@ After you've created the properties file as described previously, you can run th
 
 <pre>
 <code>
-  $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
+    $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
 </code>
 </pre>
 {: codeblock}
@@ -94,7 +94,7 @@ After you've created the properties file as described previously, you can run th
 
 <pre>
 <code>
-  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
+    $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
 </code>
 </pre>
 {: codeblock}
@@ -107,7 +107,7 @@ Using this tool, you can also display details like the current positions of the 
 
 <pre>
 <code>
-  $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
+    $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
 </code>
 </pre>
 {: codeblock}
@@ -161,7 +161,7 @@ For example:
 
 <pre>
 <code>
-  $ kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
+    $ kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
 </code>
 </pre>
 {: codeblock}

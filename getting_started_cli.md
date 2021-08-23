@@ -48,19 +48,19 @@ Select one of the following methods:
   ```
   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
   ```
-  {: codeblock}
-  
-  Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
+    {: codeblock}
+    
+    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
 
 * To create an instance from the CLI on the Standard plan, run the following command:
 
-  ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
-  ```
-  {: codeblock}
+    ```
+    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
+    ```
+    {: codeblock}
 
-  Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
+    Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
 
 ## Step 4. Optional: Create a service API key for this instance
 {: #step4_es_api}
@@ -70,10 +70,10 @@ Optionally, you can create a service API key. The valid `ROLE_NAME`s are Manager
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
 * To create an API key from the CLI, run this command:
-  ```
-  ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
-  ```
-  {: codeblock}
+    ```
+    ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
+    ```
+    {: codeblock}
 
 ## Step 5. Install the {{site.data.keyword.messagehub}} CLI plug-in
 {: #step5_es_cli}

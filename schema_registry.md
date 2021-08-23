@@ -525,7 +525,7 @@ To execute using the credentials source method of URL, use the following code:
 
 <pre>
 <code>
-  ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
+    ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
 </code>
 </pre>
 {: codeblock}
@@ -539,7 +539,7 @@ To execute using the credentials source method of USER_INFO, use the following c
 
 <pre>
 <code>
-  ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
+    ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
 </code>
 </pre>
 {: codeblock}

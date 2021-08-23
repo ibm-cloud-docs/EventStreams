@@ -155,7 +155,7 @@ If you have designed your application around creating large numbers of lightweig
 ### Client takeover
 One of the more niche features of the {{site.data.keyword.mql}} API is client takeover. If a client tries to connect using a client ID that matches an already connected client, the already connected client is disconnected in favor of the newly arriving client. In theory this feature was designed to allow exclusive access to a topic. However, in practice, it often led to two instances of a client fighting for control - each stuck in a loop of interrupting the other instance, then being restarted by the runtime used for deployment.
 
-Kafka doesn't implement this kind of exclusivity (and arguably, that should be considered a good thing). If you are really dependent on having only one producer or consumer at any given time, you can achieve this in a distributed way using a service that supports leadership election. For example: [Apache ZooKeeper ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zookeeper.apache.org/){: new_window} or [etcd ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://etcd.io/){:new_window}.
+Kafka doesn't implement this kind of exclusivity (and arguably, that should be considered a good thing). If you are really dependent on having only one producer or consumer at any given time, you can achieve this in a distributed way using a service that supports leadership election. For example: [Apache ZooKeeper ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zookeeper.apache.org/){: new_window} or [etcd ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://etcd.io/){: new_window}.
 
 
 
