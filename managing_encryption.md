@@ -59,12 +59,12 @@ Therefore, you are not recommended to use confidential information in such clien
 ## How customer-managed encryption works
 {: #encryption_how}
 
-   {{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. 
-   Envelope encryption is the practice of encrypting one encryption key with another encryption key. 
-   The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, 
-   but instead is wrapped by a second key known as the key encryption key (KEK) to create a wrapped DEK. 
-   To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, 
-   which in this case is your root key stored in either [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-about){: new_window} or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-overview){:new_window}. 
+    {{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. 
+    Envelope encryption is the practice of encrypting one encryption key with another encryption key. 
+    The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, 
+    but instead is wrapped by a second key known as the key encryption key (KEK) to create a wrapped DEK. 
+    To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, 
+    which in this case is your root key stored in either [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-about){: new_window} or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-overview){: new_window}. 
 
 You own the KEK, which you create as a root key in the {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} service. 
 The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Its storage, management, and use to wrap and unwrap the DEK 

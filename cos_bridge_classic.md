@@ -110,23 +110,23 @@ To create a new Cloud Object Storage bridge using the Kafka REST API, use JSON l
 
 <pre class="pre"><code>
 {
-  "name": "cosbridge",
-  "topic": "kafka-java-console-sample-topic",
-  "type": "objectStorageS3Out",
-  "configuration" : {
-    "credentials" : {
-      "endpoint" : "https://s3-api.us-geo.objectstorage.softlayer.net",
-      "resourceInstanceId" : "crn::",
-      "apiKey" : "your_api_key"
-    },
-    "bucket" : "cosbridge0",
-    "uploadDurationThresholdSeconds" : 600,
-    "uploadSizeThresholdKB" : 1024,
-    "partitioning" : [ {
-        "type" : "kafkaOffset"
-      }
-    ]
-  }
+    "name": "cosbridge",
+    "topic": "kafka-java-console-sample-topic",
+    "type": "objectStorageS3Out",
+    "configuration" : {
+      "credentials" : {
+        "endpoint" : "https://s3-api.us-geo.objectstorage.softlayer.net",
+        "resourceInstanceId" : "crn::",
+        "apiKey" : "your_api_key"
+      },
+      "bucket" : "cosbridge0",
+      "uploadDurationThresholdSeconds" : 600,
+      "uploadSizeThresholdKB" : 1024,
+      "partitioning" : [ {
+          "type" : "kafkaOffset"
+        }
+      ]
+    }
 }
 </code></pre>
 {: codeblock}

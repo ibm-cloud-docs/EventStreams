@@ -63,11 +63,11 @@ in order to see the streams landing overview page.
 5. Select the {{site.data.keyword.sqlquery_short}} instance. Only instances with a Standard plan are listed.
 6. Configure the streams landing by completing the following steps:
  
-  - Define the prefix of the {{site.data.keyword.cos_short}} objects.
-  - Specify the event format (JSON or AVRO).
-  - Create or select a service ID with the correct IAM access policies. This service ID is used to create an API key.
-  - Select a {{site.data.keyword.keymanagementservicelong}} instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} to run the landing until you stop it again.
-  - Click **Start streaming data** to enable a stream landing job.
+    - Define the prefix of the {{site.data.keyword.cos_short}} objects.
+    - Specify the event format (JSON or AVRO).
+    - Create or select a service ID with the correct IAM access policies. This service ID is used to create an API key.
+    - Select a {{site.data.keyword.keymanagementservicelong}} instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} to run the landing until you stop it again.
+    - Click **Start streaming data** to enable a stream landing job.
 
 
 ## Step 3. Validate that your stream landing job is working
@@ -75,11 +75,11 @@ in order to see the streams landing overview page.
 
 To validate that streams landing is working:
 
-  - Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
-  - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
-  - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs. 
-  - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
-  
+    - Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
+    - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
+    - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs. 
+    - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
+    
 ## Estimating cost
 {: estimating-cost}
 
