@@ -42,7 +42,7 @@ The credentials depend on the authentication method and three types of credentia
 
     Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
 
-* ** To authenticate directly using the api_key:**
+* **To authenticate directly using the api_key:**
     Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
 For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
@@ -51,7 +51,7 @@ For a description of the API with examples, see
 [{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: new_window}.
 
 You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: new_window}.
-To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
+To view the swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
 
 
 

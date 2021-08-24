@@ -27,6 +27,15 @@ subcollection: EventStreams
 If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 {: shortdesc}
 
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+:   A color between red and yellow on the rainbow.
+
+
+cleanup.policy
+:   Set to `delete` (default), `compact` or `delete,compact`
+
+
 <dl>
 <dt>cleanup.policy</dt>
 <dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code>
