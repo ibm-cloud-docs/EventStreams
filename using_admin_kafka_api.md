@@ -35,12 +35,26 @@ Orange
 cleanup.policy
 :   Set to `delete` (default), `compact` or `delete,compact`
 
+retention.ms
+:   The default retention period is 24 hours. The minimum is 1 hour and the maximum is
+30 days. Specify this value as multiples of hours.
+
+    **Note:**
+    In the Enterprise plan, you can set this to any value.
+
+retention.bytes
+:   The maximum size a partition (which consists of log segments) can grow to before we discard old log segments to free up space.
+
+    **Note:**
+    Enterprise plan only. Set to any value larger than 1 MB.
+
+segment.bytes
+:   The segment file size for the log.
+
+    **Note:**
+    Enterprise plan only. Set to any value larger than 100 kB.
 
 <dl>
-<dt>cleanup.policy</dt>
-<dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code>
-</dd>
-
 <dt>retention.ms</dt>
 <dd>The default retention period is 24 hours. The minimum is 1 hour and the maximum is
 30 days. Specify this value as multiples of hours.
