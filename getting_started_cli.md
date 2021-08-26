@@ -95,7 +95,8 @@ ibmcloud es init
 {: codeblock}
 
 <br/>
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference#cli_reference).
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-eventstreams-cli#cli_reference).
+[How to reuse content across sub-collections - Before you begin](/docs/writing?topic=writing-reuse#prereqs)
 
 
 

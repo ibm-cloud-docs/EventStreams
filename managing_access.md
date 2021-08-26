@@ -46,7 +46,6 @@ The levels of access (also known as a role) that you can assign to a user to eac
 <!-- publish this for mirroring GA (July 2020)
 <br /> Allow administrative configuration on the {{site.data.keyword.messagehub}} instance, for example, mirroring topic selection. 
 -->
-|
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="top"}
 
 <!-- comment from Charlie and my reply 
@@ -86,19 +85,19 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
-| Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <var class="keyword varname">your_service_instance</var>|
-| Allow an app or user to create or delete topic |Resource type: <code>cluster</code>   |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <var class="keyword varname">name_of_topic</var> |
+| Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <your_service_instance>|
+| Allow an app or user to create or delete topic |Resource type: <code>cluster</code>   |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <name_of_topic> |
 | List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: <code>cluster</code>      |Not applicable  |Not applicable      |
 | Allow an app to connect to the cluster  |Resource type: <code>cluster</code>| Not applicable     |Not applicable      |
 | Allow an app to produce to any topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code> |Not applicable     |
-| Allow an app to produce to a specific topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code><br/>Resource ID: <var class="keyword varname">name_of_topic</var>      |Not applicable     |
+| Allow an app to produce to a specific topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code><br/>Resource ID: <name_of_topic>      |Not applicable     |
 | Allow an app to connect and consume from any topic (no consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code> |Not applicable    |Not applicable     |
-| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/>Resource ID: <var class="keyword varname">name_of_topic</var> |Not applicable     |Not applicable     |
+| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/>Resource ID: <name_of_topic> |Not applicable     |Not applicable     |
 | Allow an app to consume a topic (consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/> Resource type: <code>group</code> |Not applicable      |Not applicable     |
-| Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <var class="keyword varname">name_of_topic</var> <br/>Resource type: <code>txnid</code> |Not applicable     |
-| Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <var class="keyword varname">group_ID</var>      |
+| Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <name_of_topic> <br/>Resource type: <code>txnid</code> |Not applicable     |
+| Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <group_ID>      |
 | To use Streams |Resource type: <code>cluster</code></br>Resource type: <code>group</code>| Not applicable  |Resource type: <code>topic</code>    |
-| Delete records | Not applicable | Not applicable | Resource type: <code>topic</code> <br/>Resoure ID: <var class="keyword varname">name_of_topic</var> |
+| Delete records | Not applicable | Not applicable | Resource type: <code>topic</code> <br/>Resource ID: <name_of_topic> |
 <!-- publish this for mirroring GA (July 2020)
 | Mirroring User Control | Not applicable | Not applicable | Resource type: <code>cluster</code> |
 -->
@@ -127,7 +126,7 @@ For information about how to bind a Cloud Foundry application or get a security 
 The authorization model for the Schema Registry used the same style of policies described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document
 
 
-### IAM Resources
+### IAM resources
 {: #iam_resources}
 
 With the new <code>schema</code> IAM resource type it is possible to create policies that control access using varying degrees of granularity, for example:
@@ -141,7 +140,7 @@ With the new <code>schema</code> IAM resource type it is possible to create poli
 with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type will
 also be applied to the schema registry whereby a minimum role of Reader will be required to access the registry.
 
-### Example Authorization Scenarios
+### Example authorization scenarios
 {: #example_authorization_scenarios}
 
 The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the

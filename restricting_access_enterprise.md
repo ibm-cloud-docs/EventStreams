@@ -27,7 +27,7 @@ If your workload is running entirely within the {{site.data.keyword.Bluemix_shor
 
 Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_short}} public and private networks, where your workload can use the most appropriate interface for its location.
 
-Further information about IBM Cloud private networking setup can be found here:[Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window}.
+Further information about IBM Cloud private networking setup can be found here: [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window}.
 
 
 ## Prerequisites
@@ -38,17 +38,17 @@ Ensure that you complete the following tasks:
 [Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Enable service endpoints connectivity by running this command: 
-```
-ibmcloud account update --service-endpoint-enable true
-```
+    ```
+     ibmcloud account update --service-endpoint-enable true
+    ```
 
-To check if prerequisites are completed, run the following command and then check if the following two properties are true:
-```
-ibmcloud account show
+    To check if prerequisites are completed, run the following command and then check if the following two properties are true:
+    ```
+    ibmcloud account show
 
-VRF Enabled:                        true
-Service Endpoint Enabled:           true
-```
+    VRF Enabled:                        true
+    Service Endpoint Enabled:           true
+    ```
 
    
 ## Selecting a network configuration 
@@ -67,27 +67,27 @@ This selection can be made at provision time through the {{site.data.keyword.mes
 
 Alternatively, if you want to use the CLI to provision an {{site.data.keyword.messagehub}} service, use the following commands:
 
-To enable public endpoints (this is the default):
+* To enable public endpoints (the default):
 
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
 ```
     {: codeblock}
 
-To enable private only endpoints:
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
-```
-{: codeblock}
+* To enable private only endpoints:
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
+    ```
+    {: codeblock}
 
-To enable both, private and public endpoints:
+* To enable both private and public endpoints:
 
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
+      ```
+    {: codeblock}
 
-use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
+    use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
 
 
 In addition, if you select private endpoints and want to further restrict access to only known VSIs with specific VPCs, you can add an IP allowlist via the CLI by appending as follows:
@@ -97,7 +97,7 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 ```
 {: codeblock}
 
-where CIDR1, 2 are IP addressess of the form a.b.c.d/e
+where CIDR1, 2 are IP addresses of the form a.b.c.d/e
 
 
 ## Updating the network configuration or IP allowlist
@@ -105,12 +105,12 @@ where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this,use the following CLI commands.
 
-To enable private endpoints:
+* To enable private endpoints:
 
-```
-ibmcloud resource service-instance-update <instance-name> --service-endpoints private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance-update <instance-name> --service-endpoints private
+    ```
+    {: codeblock}
 
 Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}

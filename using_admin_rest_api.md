@@ -30,9 +30,11 @@ The URL for the API's endpoint is provided in the `kafka_admin_url` property.
 The credentials depend on the authentication method and three types of credential are supported:
 
 * **To authenticate using Basic Auth**:
+
     Use the `user` and `api_key` properties of the above objects as the username and password. Place these values into the `Authorization` header of the HTTP request in the form `Basic <base64 encoding of username and password joined by a single colon (:)>`.
 
 * **To authenticate using a bearer token:** 
+
     To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
     ```
@@ -43,6 +45,7 @@ The credentials depend on the authentication method and three types of credentia
     Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
 
 * **To authenticate directly using the api_key:**
+
     Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
 For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
