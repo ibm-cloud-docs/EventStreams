@@ -163,7 +163,7 @@ OK
 
     where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
-Note that if the private endpoint is enabled via CLI, next time when updating private IP allowlist, `--service-endpoints private` can be omitted.
+Note that if the private endpoint is enabled using the CLI, next time when updating private IP allowlist, `--service-endpoints private` can be omitted.
 
 Switching IP allowlists will disable any allowed IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
 
@@ -171,7 +171,7 @@ Switching IP allowlists will disable any allowed IP address not in the new list.
 ## How to check if an instance update is completed
 {: #check_endpoints}
 
-Typically, the above updates take less than an hour. To check status use the following command:
+Typically, the updates described previously take less than an hour. To check status use the following command:
 
 ```
 ibmcloud resource service-instance <instance-name>
@@ -187,7 +187,7 @@ Event Streams supports integration with [Schematics](https://cloud.ibm.com/docs/
 
 Refer to this [example](https://cloud.ibm.com/docs/terraform?topic=terraform-event-streams-resources) about how to set the `private_ip_allowlist` in a Terraform script. 
 
-Note: If the terraform script is executed from Schematics, additional IPs are required to be added into Event Streams' `private_ip_allowlist` to allow Schematics to access Event Streams' API endpoints. Find the IPs of Schematics in each region from [here](https://cloud.ibm.com/docs/schematics?topic=schematics-allowed-ipaddresses).
+Note: If the terraform script is executed from Schematics, additional IPs are required to be added into the `private_ip_allowlist` of {{site.data.keyword.messagehub}}' to allow Schematics to access {{site.data.keyword.messagehub}}' API endpoints. You can find the IPs of Schematics in each region from [Opening required IP addresses for IBM Cloud Schematics in your firewall](https://cloud.ibm.com/docs/schematics?topic=schematics-allowed-ipaddresses).
 
 
 ## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
