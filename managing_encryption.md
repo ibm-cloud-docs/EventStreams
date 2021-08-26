@@ -37,10 +37,10 @@ By disabling or deleting this key, you can prevent any further access to the dat
 because it is no longer possible to decrypt it.
 {: shortdesc}
 
-{: #considerations_keys notoc}
 Consider using customer-managed keys if you require the following features:
 - Encryption of data at rest controlled by your own key
 - Explicit control of the lifecycle of data stored at rest
+{: #considerations_keys notoc}
 
 Be aware of the following information when deciding to enable customer-managed keys: 
 - This feature is available on the Enterprise plan only
@@ -50,7 +50,7 @@ Deletion of the customer-managed key is non-recoverable and will result in the l
 {: important}
 
 ## What is not covered by customer-managed encryption
-If customer-managed encryption feature is selected the user should be aware that **only** Message Payload data is covered by this encrytpion. {{site.data.keyword.messagehub}} encrypts at rest other data related to the use of the service. However, although encrypted, Non Message payload data **will not** be encrypted with the customer-managed encryption. Examples are client metadata such as Topic Names, Topic configuration data, Schemas stored in the Schema registry and metadata stored in relation to the configuration of the Enterprise instance. 
+If customer-managed encryption feature is selected the user should be aware that **only** Message Payload data is covered by this encryption. {{site.data.keyword.messagehub}} encrypts at rest other data related to the use of the service. However, although encrypted, Non Message payload data **will not** be encrypted with the customer-managed encryption. Examples are client metadata such as Topic Names, Topic configuration data, Schemas stored in the Schema registry and metadata stored in relation to the configuration of the Enterprise instance. 
 
 Therefore, you are not recommended to use confidential information in such client metadata.
 {: important}
@@ -59,12 +59,11 @@ Therefore, you are not recommended to use confidential information in such clien
 ## How customer-managed encryption works
 {: #encryption_how}
 
-    {{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. 
-    Envelope encryption is the practice of encrypting one encryption key with another encryption key. 
-    The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, 
-    but instead is wrapped by a second key known as the key encryption key (KEK) to create a wrapped DEK. 
-    To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, 
-    which in this case is your root key stored in either [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-about){: new_window} or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-overview){: new_window}. 
+{{site.data.keyword.messagehub}} uses a concept called envelope encryption to implement customer-managed keys. 
+
+Envelope encryption is the practice of encrypting one encryption key with another encryption key. The key used to encrypt the actual data is known as a data encryption key (DEK). The DEK itself is never stored, but instead is wrapped by a second key known as the key encryption key (KEK) to create a wrapped DEK. 
+
+To decrypt data, the wrapped DEK must first be unwrapped to get the DEK. This process is possible only by accessing the KEK, which in this case is your root key stored in either [{{site.data.keyword.keymanagementserviceshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-about){: new_window} or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-overview){: new_window}. 
 
 You own the KEK, which you create as a root key in the {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} service. 
 The {{site.data.keyword.messagehub}} service never sees the root (KEK) key. Its storage, management, and use to wrap and unwrap the DEK 
@@ -75,11 +74,11 @@ is performed entirely within the key management service. If you disable or delet
 
 Complete the following steps to provision your {{site.data.keyword.messagehub}} instance to use a customer-managed key:
 
-1. Provision an instance of [{{site.data.keyword.keymanagementservicefull}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-provision) or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-provision).
+1. Provision an instance of [{{site.data.keyword.keymanagementserviceshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/key-protect?topic=key-protect-provision) or [{{site.data.keyword.hscrypto}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/hs-crypto?topic=hs-crypto-provision).
 2. Create an authorization policy to allow the {{site.data.keyword.messagehub}} service to access the key management service instance as a Reader. For more information, see [Using authorizations to grant access between services ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-serviceauth){: new_window}.
 3. Create or import a root key into your key management service instance.
 4. Retrieve the Cloud Resource Name (CRN) of the key using the **View CRN** option in the key management service instance GUI.
-5. Provision an instance of [{{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting-started). This feature is supported on the Enterprise plan only. 
+5. Provision an instance of [{{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-getting-started). This feature is supported on the Enterprise plan only. 
 
 If provisioning through {{site.data.keyword.Bluemix}} console, select a key management service instance and then select a root key from the instance.
 
@@ -142,7 +141,7 @@ For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/
 
 ### Rotating the key
 
-{{site.data.keyword.keymanagementservicefull}} and {{site.data.keyword.hscrypto}} support the rotation of root keys, 
+{{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.hscrypto}} support the rotation of root keys, 
 either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described 
 previously in [how customer-managed encryption works](/docs/EventStreams?topic=EventStreams-managing_encryption#encryption_how). 
 
