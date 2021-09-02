@@ -68,13 +68,14 @@ Clone the following two repositories that contain the required files:
     Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} cluster has more than one node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file, and edit the entry <code>replicas: 1</code>.
 
 2. Then, run the following commands:
-<br/>
+
     To create a secret: 
+
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
-    <br/>
+
     To create a configmap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties

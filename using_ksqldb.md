@@ -102,12 +102,12 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ```
     where BOOTSTRAP_SERVERS and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
-    b. Start ksqlDB server using the following command:
+    d. Start ksqlDB server using the following command:
     ```
     ./bin/ksql-server-start ./config/ibm-eventstreams.properties
     ```
     
-    c. Start ksqlDB CLI using the following command:
+    e. Start ksqlDB CLI using the following command:
     ```
     ./bin/ksql
     ```
@@ -116,12 +116,12 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
 
     Then start <code>DataGen</code> twice as follows:
     
-    i. Run the following command to start creating <code>users</code> events.
+    a. Run the following command to start creating <code>users</code> events.
     ```
     ./bin/ksql-datagen quickstart=users format=json topic=users maxInterval=10000 propertiesFile=./config/ibm-eventstreams.properties
     ```
 
-    ii. Run the following command to start creating <code>pageviews</code> events.
+    b. Run the following command to start creating <code>pageviews</code> events.
     ```
     ./bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=10000 propertiesFile=./config/ibm-eventstreams.properties
     ```

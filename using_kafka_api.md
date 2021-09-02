@@ -42,37 +42,37 @@ The following table summarizes what you can use with {{site.data.keyword.message
 		    <th>Lite Plan</th>
         </tr>
 	  		<tr>
-			<td>**Kafka version on cluster**</td>
+			<td>Kafka version on cluster</td>
 			<td>Kafka 2.6</td>
 			<td>Kafka 2.6</td>
 			<td>Kafka 2.6</td>
 		</tr>
 	  		<tr>
-			<td>**Supported client versions**</td>
+			<td>Supported client versions</td>
 			<td>Kafka 0.10.x, or later</td>
 			<td>Kafka 0.10.x, or later</td>
 			<td>Kafka 0.10.x, or later</td>
 		</tr>
 		<tr>
-			<td>**Kafka Connect supported**</td>
+			<td>Kafka Connect supported</td>
 			<td>Yes*</td>
 			<td>Yes*</td>
 			<td>No</td>
 		</tr>
 		<tr>
-			<td>**Kafka Streams supported**</td>
+			<td>Kafka Streams supported</td>
 			<td>Yes</td>
 			<td>Yes</td>
 			<td>No</td>
 		</tr>
 		<tr>
-			<td>**ksqlDB supported**</td>
+			<td>ksqlDB supported</td>
 			<td>Yes</td>
 			<td>No</td>
 			<td>No</td>
 		</tr>
 		<tr>
-			<td>**Authentication requirements**</td>
+			<td>Authentication requirements</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
 			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
@@ -81,6 +81,14 @@ The following table summarizes what you can use with {{site.data.keyword.message
 </table>
 
 <br/>
+|   |Enterprise Plan   |Standard Plan   |Lite Plan |
+|---|---|---|---|
+|**Kafka version on cluster**  | Kafka 2.6  |  Kafka 2.6 | Kafka 2.6  |
+| **Supported client versions**  |  Kafka 0.10.x, or later |Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
+|**Kafka Connect supported**   |  Yes |  Yes |  No |
+|**Kafka Streams supported**   |  Yes |  Yes |  No |
+|**ksqlDB supported supported**   |  Yes |  No|  No |
+|**Authentication requirements**   |  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol | Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol|  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol |
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}

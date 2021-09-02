@@ -52,15 +52,13 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 * the number of topics that you have created
 
 
-<br/>
-
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|
-| `Lite`          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56       |
-| `Standard` | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
+| **Lite**          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56       |
+| **Standard** | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
 | | 10      | 10 x 2 + 5 = 25 | $0.08 x 25 = $2   |
 |  | 100      | 100 x 2 + 5 = 205 | $0.08 x 205 = $16.40   |
-| `Enterprise` | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
+| **Enterprise** | 1        | 1 x 2 + 16 = 18 | $0.08 x 18 = $1.44  |
 |           | 10        | 10 x 2 + 16 = 36 | $0.08 x 36 = $2.88  |
 |         | 100        |  100 x 2 + 16 = 216   | $0.08 x 216 = $17.28  |
 |        | 1000        |  1000 x 2 + 16 = 2016  | $0.08 x 2016 = $161.28   |

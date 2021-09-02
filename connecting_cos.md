@@ -16,12 +16,12 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full}} by using the Kubernetes Service
+# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_short}} by using the Kubernetes Service
 {: #cos_connector}
 
 The following task walks you through:
 * Getting the Kafka Connect runtime to run in an {{site.data.keyword.containershort}} cluster.
-* Starting the {{site.data.keyword.cos_short}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
+* Starting the {{site.data.keyword.cos_full}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
 
 The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the 
 Cloud {{site.data.keyword.cos_short}} service. 
@@ -169,7 +169,7 @@ This property can be useful in situations that have long pauses between Kafka re
 </dd>
 </dl>
  
-### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.bluemix}}  console
+### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.Bluemix_notm}} console
 {: #connect_enterprise_external_console}
 
 1. Locate your {{site.data.keyword.cos_short}} service on the dashboard.
