@@ -31,35 +31,32 @@ API. For more information including the API reference documentation, see [Kafka 
 
 If you are using CURL, you can use an example like the following to produce:
 <pre class="pre"><code>
-curl -X POST -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Content-Type: application/vnd.kafka.binary.v1+json" <var class="keyword varname">kafka-rest endpoint</var>/topics/<var class="keyword varname">topic name</var> -d 
+curl -X POST -H "X-Auth-Token:<APIKEY>" -H "Content-Type: application/vnd.kafka.binary.v1+json" <kafka-rest endpoint>/topics/<topic name> -d 
 
 '
 {
     "records": [
       {
-        "value": "<var class="keyword varname">A base 64 encoded value string</var>"
+        "value": "<A base 64 encoded value string>"
       }
     ]
 }
 '
 </code></pre>
 {: codeblock}
-<br/>
-<br/>
+
 If you are using CURL, you can use an example like the following to consume:
 <pre class="pre"><code>
-curl -X GET -H "X-Auth-Token:<var class="keyword varname">APIKEY</var>" -H "Accept: application/vnd.kafka.binary.v1+json" <var class="keyword varname">kafka-rest endpoint</var>/topics/<var class="keyword varname">topic name</var>/partitions/<var class="keyword varname">partition ID</var>/messages?offset=<var class="keyword varname">offset to start from</var>
+curl -X GET -H "X-Auth-Token:<APIKEY>" -H "Accept: application/vnd.kafka.binary.v1+json" <kafka-rest endpoint>/topics/<topic name>/partitions/<partition ID>/messages?offset=<offset to start from>
 </code></pre>
 {: codeblock}
 
-<br/>
-<br/>
 For CURL, you can also adapt the code
 examples detailed in the [Confluent docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/2.0.0/){: new_window} by adding the following line to the command line:
-<pre class="pre">-H "X-Auth-Token: <var class="keyword varname">APIKEY</var>"</pre> 
+<pre class="pre">-H "X-Auth-Token: <APIKEY>"</pre> 
 {: codeblock}
 
-<br/>
+
 ## How to connect and authenticate
 {: #rest_connect_classic}
 
@@ -82,7 +79,7 @@ The sample code is in the [event-streams-samples GitHub project ![External link 
 
 Follow the instructions in the [README.md ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample){: new_window} file for that project to build and run the sample.
 
-	Th following blog provides a good introduction to the strengths and weaknesses of the Kafka REST API. [A Comprehensive, Open Source REST Proxy for Kafka. ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.confluent.io/blog/a-comprehensive-open-source-rest-proxy-for-kafka/){: new_window}.
+The following blog provides a good introduction to the strengths and weaknesses of the Kafka REST API. [A Comprehensive, Open Source REST Proxy for Kafka. ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.confluent.io/blog/a-comprehensive-open-source-rest-proxy-for-kafka/){: new_window}.
 
 
 

@@ -16,7 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_short}} by using the Kubernetes Service
+# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full_notm}} by using the Kubernetes Service
 {: #cos_connector}
 
 The following task walks you through:
@@ -69,13 +69,13 @@ Clone the following two repositories that contain the required files:
     the entry <code>replicas: 1</code>.
 
 2. Then, run the following commands:
-<br/>
+
     Run the following command to create a secret: 
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
-    <br/>
+
     Run the following command to create a configmap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties

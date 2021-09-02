@@ -56,8 +56,7 @@ The Kafka REST API is not intended as a high throughput, low latency interface.Â
 ## Why use the {{site.data.keyword.mql}} API?
 {: #why_mql_classic notoc}
 
-** The MQ Light API is available as part of the Classic plan only.**
-<br/>
+**The MQ Light API is available as part of the Classic plan only.**
 
 The {{site.data.keyword.mql}} API provides an AMQP-based messaging interface for Javaâ„¢, Node.js, Python, and Ruby. The API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service.
 
