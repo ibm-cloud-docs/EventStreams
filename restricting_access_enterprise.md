@@ -38,17 +38,17 @@ Ensure that you complete the following tasks:
 [Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){:new_window}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){:new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Enable service endpoints connectivity by running this command: 
-```
-ibmcloud account update --service-endpoint-enable true
-```
+    ```
+    ibmcloud account update --service-endpoint-enable true
+    ```
 
 To check if prerequisites are completed, run the following command and then check if the following two properties are true:
-```
-ibmcloud account show
+    ```
+    ibmcloud account show
 
-VRF Enabled:                        true
-Service Endpoint Enabled:           true
-```
+    VRF Enabled:                        true
+    Service Endpoint Enabled:           true
+    ```
 
    
 ## Selecting a network configuration 
@@ -69,33 +69,33 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
 To enable public endpoints (this is the default):
 
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
-```
-  {: codeblock}
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
+    ```
+    {: codeblock}
 
 To enable private only endpoints:
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
+    ```
+    {: codeblock}
 
 To enable both, private and public endpoints:
 
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
+    ```
+    {: codeblock}
 
 use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
 
 
 In addition, if you select private endpoints and want to further restrict access to only known VSIs with specific VPCs, you can add an IP allowlist via the CLI by appending as follows:
 
-```
-ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}' "
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}' "
+    ```
+    {: codeblock}
 
 where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
@@ -103,14 +103,14 @@ where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 ## Updating the network configuration or IP allowlist
 {: #update_endpoints}
 
-You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this,use the following CLI commands.
+You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
 To enable private endpoints:
 
-```
-ibmcloud resource service-instance-update <instance-name> --service-endpoints private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance-update <instance-name> --service-endpoints private
+    ```
+    {: codeblock}
 
 Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {:important}
@@ -124,44 +124,44 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pu
 {: codeblock}
 
 Next, create a new credential containing private endpoints and new API key, as follows: 
-```
-ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+    ```
+    {: codeblock}
 
 Next, update the broker address to be private endpoints and new API key in the application.
 
-Next, once applications migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
-```
-ibmcloud resource service-instance-update <instance-name> --service-endpoints private
-```
-{: codeblock}
+Then, once applications migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
+    ```
+    ibmcloud resource service-instance-update <instance-name> --service-endpoints private
+    ```
+    {: codeblock}
 
 
 To change the IP allowlist, perform the following steps:
 
 1. Obtain the original IP allowlist applied on the instance
 
-```
-$ibmcloud es init -i <instance-name>
-API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
-Service endpoints:	public-and-private
-Private IP allowlist:	"10.243.0.8/32","10.243.128.8/32","10.243.64.4/32"
-Storage size:		4096 GB
-Throughput:		300 MB/s
-OK
-```
+    ```
+    $ibmcloud es init -i <instance-name>
+    API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
+    Service endpoints:	public-and-private
+    Private IP allowlist:	"10.243.0.8/32","10.243.128.8/32","10.243.64.4/32"
+    Storage size:		4096 GB
+    Throughput:		300 MB/s
+    OK
+    ```
 
 2. Add CIDRs into or delete CIDRs from the `Private IP allowlist`.
 
 3. Run the following command to update the service instance with a new list:
 
-  ```
-  ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
-  ```
-  {: codeblock}
+    ```
+    ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
+    ```
+    {: codeblock}
 
-  where CIDR1, 2 are IP addressess of the form a.b.c.d/e
+    where CIDR1, 2 are IP addressess of the form a.b.c.d/e
 
 Note that if the private endpoint is enabled via CLI, next time when updating private IP allowlist, `--service-endpoints private` can be omitted.
 
@@ -173,10 +173,10 @@ Switching IP allowlists will disable any allowed IP address not in the new list.
 
 Typically, the above updates take less than an hour. To check status use the following command:
 
-```
-ibmcloud resource service-instance <instance-name>
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-instance <instance-name>
+    ```
+    {: codeblock}
 
 when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
 
@@ -204,7 +204,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
    {: codeblock}
 
 2. Obtain a bearer token from IAM using the ibmcloud CLI:
-   
+    
     ```
     export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token | tr -d '"')
     ```
@@ -213,10 +213,10 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 3. Use below VPC REST API to obtain the source IP addresses or check UI section `Cloud Service Endpoint source addresses`:
 
 
-   ```
-   curl -s -H "Authorization: ${IAM_TOKEN}" "https://${VPC_REGION}.iaas.cloud.ibm.com/v1/vpcs/${VPC_ID}?generation=2&version=2021-08-17" | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
-   ```
-   {: codeblock}
+    ```
+    curl -s -H "Authorization: ${IAM_TOKEN}" "https://${VPC_REGION}.iaas.cloud.ibm.com/v1/vpcs/${VPC_ID}?generation=2&version=2021-08-17" | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
+    ```
+  {: codeblock}
 
 
 ## Migrate applications to use private endpoints
@@ -224,10 +224,10 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 Once you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
 
-```
-ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
-```
-{: codeblock}
+    ```
+    ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+    ```
+    {: codeblock}
 
 and update the credentials in the application to use the newly created one:
 
