@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-09-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -197,22 +197,24 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
 
-   ```
-   export VPC_ID=<vpc_id>
-   ```
-  {: codeblock}
+    ```
+    export VPC_ID=<vpc_id>
+    export VPC_REGION=<vpc_region>
+    ```
+   {: codeblock}
 
 2. Obtain a bearer token from IAM using the ibmcloud CLI:
    
-   ```
-   export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token)
-   ```
-   {: codeblock}
+    ```
+    export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token | tr -d '"')
+    ```
+    {: codeblock}
 
-3. Use the VPC REST API to obtain the source IP addresses:
+3. Use below VPC REST API to obtain the source IP addresses or check UI section `Cloud Service Endpoint source addresses`:
+
 
    ```
-   curl -H "Authorization: $IAM_TOKEN" "https://us-south.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r'.cse_source_ips | .[] | "\(.ip)/32"'
+   curl -s -H "Authorization: ${IAM_TOKEN}" "https://${VPC_REGION}.iaas.cloud.ibm.com/v1/vpcs/${VPC_ID}?generation=2&version=2021-08-17" | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
    ```
    {: codeblock}
 
