@@ -21,7 +21,7 @@ subcollection: EventStreams
 {: #rest_using_classic}
 
 This version of the Kafka REST API is available as part of the Classic plan only. The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
-From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
+From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
 {: deprecated}
 
 The Kafka REST API provides a RESTful interface to a Kafka
@@ -30,7 +30,8 @@ API. For more information including the API reference documentation, see [Kafka 
 {: shortdesc}
 
 If you are using CURL, you can use an example like the following to produce:
-<pre class="pre"><code>
+
+```
 curl -X POST -H "X-Auth-Token:<APIKEY>" -H "Content-Type: application/vnd.kafka.binary.v1+json" <kafka-rest endpoint>/topics/<topic name> -d 
 
 '
@@ -42,18 +43,22 @@ curl -X POST -H "X-Auth-Token:<APIKEY>" -H "Content-Type: application/vnd.kafka.
     ]
 }
 '
-</code></pre>
+```
 {: codeblock}
 
 If you are using CURL, you can use an example like the following to consume:
-<pre class="pre"><code>
+
+```
 curl -X GET -H "X-Auth-Token:<APIKEY>" -H "Accept: application/vnd.kafka.binary.v1+json" <kafka-rest endpoint>/topics/<topic name>/partitions/<partition ID>/messages?offset=<offset to start from>
-</code></pre>
+```
 {: codeblock}
 
 For CURL, you can also adapt the code
 examples detailed in the [Confluent docs ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.confluent.io/2.0.0/){: new_window} by adding the following line to the command line:
-<pre class="pre">-H "X-Auth-Token: <APIKEY>"</pre> 
+
+```
+-H "X-Auth-Token: <APIKEY>"
+```
 {: codeblock}
 
 
@@ -62,10 +67,10 @@ examples detailed in the [Confluent docs ![External link icon](../../icons/launc
 
 <!-- info was in eventstreams066.md -->
 
-To connect to {{site.data.keyword.messagehub}}, the Kafka REST API uses the <code>api_key</code> and <code>kafka_rest_url</code>
+To connect to {{site.data.keyword.messagehub}}, the Kafka REST API uses the ```api_key``` and ```kafka_rest_url```
 credentials from the [VCAP_SERVICES environment variable](/docs/EventStreams?topic=EventStreams-connecting#connect_classic_cf_plan).
 
-To authenticate with the {{site.data.keyword.messagehub}} Kafka REST API, you must specify the <code>api_key</code> in the X-Auth-Token header of your requests.
+To authenticate with the {{site.data.keyword.messagehub}} Kafka REST API, you must specify the ```api_key``` in the X-Auth-Token header of your requests.
 
 
 ## How to use the API

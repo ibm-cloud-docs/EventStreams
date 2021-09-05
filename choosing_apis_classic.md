@@ -42,8 +42,8 @@ There are a few reasons that you might choose to use the Kafka API over the othe
 ## Why use the Kafka REST API?
 {: #why_rest_classic notoc}
 
-** The Kafka REST API is available as part of the Classic plan only.**
-<br/>
+**The Kafka REST API is available as part of the Classic plan only.**
+
 
 The Kafka REST API is a convenient interface that can be used in the following situations:  
 
