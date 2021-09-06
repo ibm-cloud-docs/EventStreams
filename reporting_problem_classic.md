@@ -41,6 +41,7 @@ You can find this ID by looking at the "instance_id" field in the service's VCAP
     "instance_id": "e662a61b-d1ff-4cce-aab9-5eae9adb9827"
     ```
     {: codeblock}
+    
 6. Which Kafka or REST client is your application using? What are the version details?
 7. What are your client configuration details?
 8. Do you have application log snippets that display the problem?

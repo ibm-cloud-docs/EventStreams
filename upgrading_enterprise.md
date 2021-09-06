@@ -55,7 +55,6 @@ If you are part of a department that previously owned its own instance on a Dedi
 The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> is required. However, the way these properties are retrieved has changed.
 
 For native applications
-Orange
 :   You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see [Connecting applications](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_external).
 
 For Cloud Foundry applications

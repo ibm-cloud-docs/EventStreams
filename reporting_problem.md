@@ -35,6 +35,7 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
     ibmcloud resource service-instance NAME
     ```
     {: codeblock}
+    
 2. When did the problem first occur (specifically time, date, and timezone)?
    How long was your app running before this?
 3. Is the problem still occurring? Can you replicate it?
