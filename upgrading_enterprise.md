@@ -97,6 +97,30 @@ There are differences between the capabilities of IBM Cloud Dedicated and the En
 
 If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStreams?topic=EventStreams-migrate_rest_apis).
 
+
+|   |  Dedicated Plan |  Enterprise Plan  |
+|---|---|---|---|---|
+| **Tenancy**  |Single tenant   | Single tenant  |
+|**Availability zones**   | 1  |3 (1 in single zone locations)   |
+| **Availability**  |  99.5% | 99.99% (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
+| | 1  |3 (1 in single zone locations)   |
+| **Kafka version on cluster**  | Kafka 1.1 | Kafka 2.3  |
+| **Fine-grained access control**  | At an instance level only  |  Yes |
+|  **Customer-managed encryption** | No  | Yes  |
+|  **Cloud Service Endpoint support** | No   | Yes  |
+| **Kafka Connect and Kafka Streams supported**  |  Yes | Yes  |
+| **Maximum number of partitions**  | 1000  |  3000 [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_partitions) |
+|**Maximum retention period** [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_footprint)   | 1 TB  of usable storage per broker   | 2 TB  of usable storage per broker   |
+| **Maximum throughput**  | Not specified  |  80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_throughput) |
+| **Maximum message size**  | 1 MB  | 1 MB   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+
+
+
 <table>
 		<caption>Table 1. Support in Dedicated and Enterprise plans</caption>
 		<tr>
@@ -226,9 +250,9 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 		</tr>
 </table>
 
-<br/>
+
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
-<br/>
+
 
 ### Footnotes
 {: #footnote_plans notoc}
