@@ -35,9 +35,9 @@ The COS Sink Connector offers the majority of bridge functionality and more. You
 
 The only functionality that is missing is partitioning by ISO 8601 date. The date partitioning was used only if your messages were JSON and contained a timestamp field of a specific format, resulting in records being stored in COS as a file each day. This was rather restrictive and we've opted to make all the partitioning by offset for the COS Sink Connector. What this means is that files uploaded to the object store have the following naming scheme: 
  
-<code>
-&lt;topic_name&gt;/&lt;partition&gt;/&lt;beginning_offset&gt;-&lt;end_offset&gt;
-</code>
+```
+<topic_name>/<partition>/<beginning_offset>-<end_offset>
+```
 {: codeblock} 
 
 Although the COS Sink Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. 

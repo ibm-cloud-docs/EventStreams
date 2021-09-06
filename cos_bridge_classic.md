@@ -209,7 +209,7 @@ To partition data by the ISO 8601 date, complete the following steps:
 2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. 
 
 	For example:
-    <pre class="pre"><code>
+    ```
     ```
     {
       "topic": "topic2",
@@ -230,7 +230,7 @@ To partition data by the ISO 8601 date, complete the following steps:
       }
     }
     ```
-    </code></pre>
+    ```
     {: codeblock}
 
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
@@ -243,13 +243,13 @@ To partition data by the ISO 8601 date, complete the following steps:
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
 
-    <pre class="pre"><code>
+    ```
         ```
-        &lt;bucket_name&gt;/dt=2016-12-07/&lt;object_a&gt;
-        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_b&gt;
-        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_c&gt;
+        <bucket_name>/dt=2016-12-07/<object_a>
+        <bucket_name>/dt=2016-12-08/<object_b>
+        <bucket_name>/dt=2016-12-08/<object_c>
         ```       
-    </code></pre>
+    ```
     {: codeblock}
 
 	Any message data that is valid JSON but without a valid date field or value is written into an object
@@ -261,9 +261,9 @@ To partition data by the ISO 8601 date, complete the following steps:
 The Cloud Object Storage bridge reports
 metrics, which can be displayed on your dashboard using Grafana. Metrics of interest include the following:
 <dl>
-<dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.bytes-consumed-rate</code></dt>
+<dt><code>*.<topicName>.<bridgeName>.bytes-consumed-rate</code></dt>
 <dd>Measures the rate that the bridge consumes data (in bytes per second).</dd>
-<dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.records-lag-max</code></dt>
+<dt><code>*.<topicName>.<bridgeName>.records-lag-max</code></dt>
 <dd>Measures the maximum lag in the number of records consumed by the bridge for any partition in
 this topic. An increasing value over time indicates that the bridge is not keeping up with producers
 for the topic.</dd>

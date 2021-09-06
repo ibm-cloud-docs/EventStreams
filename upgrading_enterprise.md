@@ -54,26 +54,15 @@ If you are part of a department that previously owned its own instance on a Dedi
 
 The information that an application needs to connect has not changed, that is, a list of <code>bootstrap.servers</code>, <code>username</code>, and <code>password</code> is required. However, the way these properties are retrieved has changed.
 
-<ul>
-<li>
-      <strong>For native applications</strong>
-        <br/>
-        You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see 
-        [Connecting applications](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_external).
-</li>
-<br/>
-<li><strong>For Cloud Foundry applications</strong>
-        <br/>
-        You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
-        [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
-</li>
-</ul>
-<br/>
-Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_clients).
-</li>
-</ul>
+For native applications
+Orange
+:   You must create a Credentials object using the IBM Cloud console or a Service Key object using the CLI. You can then retrieve the required properties. For more information, see [Connecting applications](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_external).
 
-<br>
+For Cloud Foundry applications
+:   You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+
+Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_clients).
+
 You should also be aware of some other changes as follows:
 ## Kafka version
 {: #kafka_version}
@@ -308,7 +297,6 @@ Topic:testtopic	PartitionCount:2	ReplicationFactor:3	Configs:min.insync.replicas
 ```
 {: codeblock}
 
-<br/>
 
 You can now use this information to create the same named topics in the new cluster. 
 For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/EventStreams?topic=EventStreams-kafka_java_api) or the 

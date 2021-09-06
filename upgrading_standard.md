@@ -62,10 +62,9 @@ You must create a Credentials object using the IBM Cloud console or a Service Ke
 You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
-<br/>
 Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_clients).
 
-<br>
+
 You should also be aware of some other changes as follows:
 ## Kafka version
 {: #kafka_version}
@@ -98,9 +97,9 @@ There are differences between the capabilities of the Classic plan and the new S
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=EventStreams-migrate_mqlight).
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/EventStreams?topic=EventStreams-migrate_bridges).
 
-<br/>
+
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
-<br/>
+
 
 
 

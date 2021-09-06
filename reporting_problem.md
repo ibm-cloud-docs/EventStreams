@@ -30,11 +30,11 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
 1. What is the CRN ID of the {{site.data.keyword.messagehub}} service you are
    using?  You can provide this ID by pasting the full
    {{site.data.keyword.Bluemix_notm}} console URL after clicking on the
-   service, or by pasting the output from the following CLI command:<br/>
-   <pre class="pre">
-   ibmcloud resource service-instance NAME
-   </pre>
-	{: codeblock}
+   service, or by pasting the output from the following CLI command:
+    ```
+    ibmcloud resource service-instance NAME
+    ```
+    {: codeblock}
 2. When did the problem first occur (specifically time, date, and timezone)?
    How long was your app running before this?
 3. Is the problem still occurring? Can you replicate it?

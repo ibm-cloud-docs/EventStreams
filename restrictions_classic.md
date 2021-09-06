@@ -149,7 +149,8 @@ request. After the REST API has restarted, you will have to
 create your Kafka consumer instances again. If this is the case, the
 REST API returns the following JSON:
 
-```'{"error_code":40403,"message":"Consumer instance not found."}'
+```
+'{"error_code":40403,"message":"Consumer instance not found."}'
 ```
 {: screen}
 
