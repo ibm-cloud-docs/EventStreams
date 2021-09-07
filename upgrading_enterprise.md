@@ -99,7 +99,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 
 
 |   |  Dedicated Plan |  Enterprise Plan  |
-|---|---|---|---|---|
+|---|---|---|
 | **Tenancy**  |Single tenant   | Single tenant  |
 |**Availability zones**   | 1  |3 (1 in single zone locations)   |
 | **Availability**  |  99.5% | 99.99% (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
