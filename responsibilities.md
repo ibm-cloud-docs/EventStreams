@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2021-09-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -117,3 +117,11 @@ If you have configured your {{site.data.keyword.messagehub}} instance in a multi
 |Failover  |    |Deciding when to failover and failover applications |
 |Failback  | Reconfiguring mirroring |Developing and executing failback plan. Coordinating with {{site.data.keyword.IBM_notm}} to reconfigure mirroring. |
 {: caption="Table 6. Responsibilities for mirroring" caption-side="top"}
+
+
+## Support of client-side libraries
+{: #support_client_libraries}
+
+{{site.data.keyword.IBM_notm}} does not own Kafka client-side libraries and cannot commit to provide fixes in case issues are found in them. Client-side libraries include the official Apache Kafka clients (Consumer, Producer, Connect and Streams) as well as third party clients, libraries/tools and connectors.
+
+As an active member of the Kafka community, {{site.data.keyword.IBM_notm}} will work, on a best effort basis, with communities owning clients-side libraries to help develop and release fixes for critical issues.
