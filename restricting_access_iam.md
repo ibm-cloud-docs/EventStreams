@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-05"
+lastupdated: "2021-09-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -35,10 +35,10 @@ If you're using {{site.data.keyword.messagehub}} over the public network, you mu
 If you're using {{site.data.keyword.messagehub}} over the private network, you must add the {{site.data.keyword.messagehub}}'s own private IP addresses for the appropriate cluster to the {{site.data.keyword.iamshort}} (IAM) IP allowlist. You can find these IP addresses via below command: 
 
 ```
-ibmcloud resource service-instance mh-integration-customer-us-south-mis --output json
+ibmcloud resource service-instance <event-streams-instance-name> --output json
 ```
 
-Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section from the output, the 3 `166.9.x.x` IP addresses are needed to be added to {{site.data.keyword.iamshort}} (IAM) IP allowlist.
+Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section from the output, the 3 `166.9.x.x` IP addresses are needed to be added to {{site.data.keyword.iamshort}} (IAM) IP allowlist. These addresses are static and will remain for the life of the service instance.
 
 eg.
 ```json
