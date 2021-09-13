@@ -140,7 +140,7 @@ To partition data by Kafka message offset, complete the following steps:
         <container_name>/offset=2000/<object_d>
         ```       
     ```
-{: codeblock}
+    {: codeblock}
   
     
 ## Partitioning by ISO 8601 date
@@ -154,28 +154,28 @@ To partition data by the ISO 8601 date, complete the following steps:
 
 	For example:
     ```
-    ```
-    {
-      "topic": "topic2",
-      "type": "objectStorageOut",
-      "name": "bridge2",
-      "configuration" : {
-        "credentials" : { ... },
-        "container" : "container2",
-        "inputFormat" : "json",
-        "uploadDurationThresholdSeconds" : "1000",
-        "uploadSizeThresholdKB" : "1000",
-        "partitioning": [
-          {
-            "type": "dateIso8601",
-            "propertyName": "timestamp"
+        ```
+        {
+          "topic": "topic2",
+          "type": "objectStorageOut",
+          "name": "bridge2",
+          "configuration" : {
+            "credentials" : { ... },
+            "container" : "container2",
+            "inputFormat" : "json",
+            "uploadDurationThresholdSeconds" : "1000",
+            "uploadSizeThresholdKB" : "1000",
+            "partitioning": [
+              {
+                "type": "dateIso8601",
+                "propertyName": "timestamp"
+              }
+            ]
           }
-        ]
-      }
-    }
+        }
+        ```
     ```
-    ```
-    {: pre}
+    {: codeblock}
 
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
 	`"propertyName"` in the JSON used to configure the bridge must correspond to the ISO

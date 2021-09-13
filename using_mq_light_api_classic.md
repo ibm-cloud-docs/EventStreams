@@ -192,6 +192,16 @@ You should also note the following information:
 ### Kafka message format
 {: #kafka_format notoc}
 
+
+| Key   |Value   |  
+|---|---|
+|Optional (not used by the API)   |  **1 byte** | 
+|   | MQ Light API eye catcher, which is always 0xFA.  |
+|   | <**n**> **bytes**|
+|  |  AMQP encoded message (formatted based on the AMQP wire format). |
+{: caption="Table 1. Kafka message format" caption-side="top"}
+
+
 <table border='1'>
 <caption>Table 1. Kafka message format</caption>
     <tr>

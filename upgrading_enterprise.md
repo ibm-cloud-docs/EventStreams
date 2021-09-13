@@ -114,15 +114,14 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 | **Maximum throughput**  | Not specified  |  80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_throughput) |
 | **Maximum message size**  | 1 MB  | 1 MB   |
 | **Maximum number of connected clients**  |Not specified   | 10 000  |
-|  **Location (region) availability** | Various  |  **Multizone location (MZR)** Dallas (us-south) Washington (us-east) London (eu-gb) Sydney (au-syd) Frankfurt (eu-de) Tokyo (jp-tok)
-
-**Single zone location (SZR)** Seoul (seo01) Chennai (che01) |
-| **APIs supported** |Kafka API
-Admin REST API
-REST API
+|  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) √ Tokyo (jp-tok)
+**Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
+| **APIs supported** |  \n Kafka API
+  \n Admin REST API
+  \n REST API
    |Kafka API
-Admin REST API
-REST Producer API    |
+  \n Admin REST API
+  \n REST Producer API    |
 | **{{site.data.keyword.messagehub}} CLI supported** | No  | Yes  |
 | **Deployment timeframe** | Weeks to months  | Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |
 | **Compliance** |GDPR Privacy Shield ISO 27001, 27017, 27018 |  GDPR
