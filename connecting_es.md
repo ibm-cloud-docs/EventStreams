@@ -119,11 +119,11 @@ When bound, the connection details are then made available to the application in
 2. Locate your app:
     `ibmcloud app list`
 
-If you have a manifest file, you can create a new app by running the following command:
+    If you have a manifest file, you can create a new app by running the following command:
 
     `ibmcloud app push`
 
-Because the app is not bound to {{site.data.keyword.messagehub}} yet, the app cannot establish a connection. Therefore, push the application with the `--no-start` parameter to avoid unnecessary connection failures.
+    Because the app is not bound to {{site.data.keyword.messagehub}} yet, the app cannot establish a connection. Therefore, push the application with the `--no-start` parameter to avoid unnecessary connection failures.
 3. Locate your service:
     `ibmcloud resource service-instances`
 4. Create a Cloud Foundry service alias:
@@ -132,12 +132,12 @@ Because the app is not bound to {{site.data.keyword.messagehub}} yet, the app ca
 
     `ibmcloud service bind <your_ app_name> <alias_name>`.
 
-Alternatively, you can update your manifest file and push the application again.
+    Alternatively, you can update your manifest file and push the application again.
 6. Verify that the VCAP_SERVICES environment variable is available in your application runtime:
     `ibmcloud app env <your_app_name>`
 7. Pass these credentials to your application. Specify `token` as your username and the <api_key> as your password. Separate `token` and the <api_key> with a colon. For more information, see [Configuring your client](/docs/EventStreams?topic=EventStreams-kafka_api_client). 
 
-You might need to restage your application for the changes to take effect.
+    You might need to restage your application for the changes to take effect.
 
 
 ## What to do next

@@ -56,6 +56,23 @@ For other languages, we recommend running one of the following clients, all of w
 ### Support summary for all recommended clients
 {: #client_summary}
 
+
+| Client  |Language   |Recommended version   | Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-kafka_clients#footnote1)  | Link to sample  |
+|---|---|---|---|---|
+| **Official Apache Kafka client**  |   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+
+
+
 <table id="clients_table">
     <caption>Table 2. Client support summary</caption>
       <tr>
