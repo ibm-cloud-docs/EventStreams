@@ -202,24 +202,6 @@ You should also note the following information:
 {: caption="Table 1. Kafka message format" caption-side="top"}
 
 
-<table border='1'>
-<caption>Table 1. Kafka message format</caption>
-    <tr>
-      <th> Key </th>
-      <th> Value </th>
-     </tr>
-    <tr>
-      <td> Optional (not used by the API)
-	<p></p>
-	</td>
-      <td>**1 byte**
-	<p>		       MQ Light API eye catcher, which is always 0xFA.</p>
-      <p><var class="keyword varname">**n**</var> **bytes**</p>
-      <p>		      AMQP encoded message (formatted based on the AMQP wire format). </p></td>
-    </tr>
-</table>
-
-
 <!-- 15/11/18: info was in eventstreams082.md, moved because of doc app changes -->
 
 ## MQ Light API samples
