@@ -114,8 +114,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 | **Maximum throughput**  | Not specified  |  80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_throughput) |
 | **Maximum message size**  | 1 MB  | 1 MB   |
 | **Maximum number of connected clients**  |Not specified   | 10 000  |
-|  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) \n  Tokyo (jp-tok)
-\n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
+|  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) \n  Tokyo (jp-tok) \n   **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
 | **APIs supported** |   \n Kafka API   \n Admin REST API   \n REST API
    |Kafka API  \n Admin REST API  \n REST Producer API    |
 | **{{site.data.keyword.messagehub}} CLI supported** | No  | Yes  |
