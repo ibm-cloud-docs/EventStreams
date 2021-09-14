@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29test2ß"
+lastupdated: "2020-04-29test3"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -115,8 +115,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 | **Maximum message size**  | 1 MB  | 1 MB   |
 | **Maximum number of connected clients**  |Not specified   | 10 000  |
 |  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) \n  Tokyo (jp-tok)   \n  \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
-| **APIs supported** |  Kafka API   \n Admin REST API   \n REST API
-   |Kafka API  \n Admin REST API  \n REST Producer API    |
+| **APIs supported** |  Kafka API   \n Admin REST API   \n REST API |  Kafka API   \n Admin REST API   \n REST Producer API    |
 | **{{site.data.keyword.messagehub}} CLI supported** | No  | Yes  |
 | **Deployment timeframe** | Weeks to months  | Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |
 | **Compliance** |GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018 |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018   \n  SOC 1 Type 1    \n  SOC 2 Type 1  \n HIPAA ready    \n  PCI |
