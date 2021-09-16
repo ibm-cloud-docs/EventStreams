@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29test3"
+lastupdated: "2020-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -101,9 +101,8 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 |   |  Dedicated Plan |  Enterprise Plan  |
 |---|---|---|
 | **Tenancy**  |Single tenant   | Single tenant  |
-|**Availability zones**   | 1  |3 (1 in single zone locations)   |
-| **Availability**  |  99.5% | 99.99% (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
-| | 1  |3 (1 in single zone locations)   |
+|**Availability zones**   | 1  |3    \n  (1 in single zone locations)   |
+| **Availability**  |  99.5% | 99.99%    \n  (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
 | **Kafka version on cluster**  | Kafka 1.1 | Kafka 2.3  |
 | **Fine-grained access control**  | At an instance level only  |  Yes |
 |  **Customer-managed encryption** | No  | Yes  |
@@ -114,144 +113,11 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 | **Maximum throughput**  | Not specified  |  80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_throughput) |
 | **Maximum message size**  | 1 MB  | 1 MB   |
 | **Maximum number of connected clients**  |Not specified   | 10 000  |
-|  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) \n  Tokyo (jp-tok)   \n  \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
+|  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
 | **APIs supported** |  Kafka API   \n Admin REST API   \n REST API |  Kafka API   \n Admin REST API   \n REST Producer API    |
 | **{{site.data.keyword.messagehub}} CLI supported** | No  | Yes  |
 | **Deployment timeframe** | Weeks to months  | Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |
 | **Compliance** |GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018 |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018   \n  SOC 1 Type 1    \n  SOC 2 Type 1  \n HIPAA ready    \n  PCI |
-
-
-
-
-
-<table>
-		<caption>Table 1. Support in Dedicated and Enterprise plans</caption>
-		<tr>
-			<th></th>
-			<th>Dedicated Plan</th>
-			<th>Enterprise Plan</th>
-		</tr>
-		<tr>
-			<td>**Tenancy**</td>
-			<td>Single tenant </td>
-			<td>Single tenant</td>
-		</tr>
-		<tr>
-			<td>**Availability zones**</td>
-			<td>1</td>
-			<td>3<br/>(1 in single zone locations)
-			</td>
-		</tr>
-		<tr>
-			<td>**Availability**</td>
-			<td>99.5%</td>
-			<td>99.99%<br/>(99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)</td>
-		</tr>
-		<tr>
-			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
-			<td>Kafka 2.3</td>
-		</tr>
-		<tr>
-			<td>**Fine-grained access control**</td>
-			<td>At an instance level only</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>**Customer-managed encryption**</td>
-			<td>No</td>
-			<td>Yes</td>
-		</tr>
-				<tr>
-			<td>**Cloud Service Endpoint support**</td>
-			<td>No</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>**Kafka Connect and Kafka Streams supported **</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>**Maximum number of partitions**</td>
-			<td>1000</td>
-			<td>3000 [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_partitions)</td>
-		</tr>
-		<tr>
-			<td>**Maximum retention period** [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_footprint)</td>
-			<td>1 TB  of usable storage per broker </td>
-			<td>2 TB of usable storage per broker<!--Unlimited up to the storage limit of your plan --></td>
-		</tr>
-		<tr>
-			<td>**Maximum throughput**</td>
-			<td>Not specified</td>
-			<td>80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_throughput)</td>
-		</tr>
-		<tr>
-			<td>**Maximum message size**</td>
-			<td>1 MB</td>
-			<td>1 MB</td>
-		</tr>
-		<tr>
-			<td>**Maximum number of connected clients**</td>
-			<td>Not specified</td>
-			<td>10 000</td>
-		</tr>
-		<tr>
-			<td>**Location (region) availability**</td>
-			<td>
-			Various
-			<br/>
-			</td>
-			<td>**Multizone location (MZR)**</br>
-			Dallas (us-south)</br>
-			Washington (us-east)<br/>
-			London (eu-gb)<br/>
-			Sydney (au-syd)</br>
-			Frankfurt (eu-de)<br/>
-			Tokyo (jp-tok)<br/>
-			<br/>
-			**Single zone location (SZR)**</br>
-			Seoul (seo01)<br/>
-			Chennai (che01)<br/>
-			<br/>
-			</td>
-		</tr>
-		<tr>
-			<td>**APIs supported**</td>
-			<td>Kafka API<br/>
-			Admin REST API</br>
-			REST API</br>
-			</td>
-			<td>Kafka API</br>
-			Admin REST API<br/>
-			REST Producer API</br>
-		  </td>
-		</tr>
-			<td>**{{site.data.keyword.messagehub}} CLI supported**</td>
-			<td>No</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>**Deployment timeframe**</td>
-			<td>Weeks to months</td>
-			<td>Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning</td>
-		</tr>
-		<tr>
-			<td>**Compliance**</td>
-			<td>GDPR<br/>
-			Privacy Shield<br/>
-			ISO 27001, 27017, 27018<br/></td>
-			<td>GDPR<br/>
-			Privacy Shield<br/>
-			ISO 27001, 27017, 27018<br/>
-			SOC 1 Type 1<br/>
-			SOC 2 Type 1<br/>
-			HIPAA ready<br/>
-			PCI<br/>
-			</td>
-		</tr>
-</table>
 
 
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
@@ -262,14 +128,14 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 
 1. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
 2. 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}. {: #footnote_partitions notoc}
-3. {: #footnote_footprint notoc}
-To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
-```
-retention.bytes + segment.bytes
-```
-4. A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming. <br/> {: #footnote_throughput notoc}
+3. To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
+    ```
+    retention.bytes + segment.bytes
+    ```
+{: #footnote_footprint notoc}
+4. A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming.  
 A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
-
+{: #footnote_throughput notoc}
 
 ## Preparing to migrate to the Enterprise plan
 {: #enterprise_prep}
