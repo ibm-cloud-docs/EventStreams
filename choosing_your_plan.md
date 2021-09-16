@@ -60,6 +60,34 @@ The architecture is highly available when you choose to deploy into a multi-zone
 
 The following table summarizes what is supported by the plans:
 
+|   | Lite Plan  |  Standard Plan |  Enterprise Plan  |
+|---|---|---|---|
+| **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant |
+|**Availability zones**   |  3  |   3  |3 (1 in single zone locations)   |
+| **Availability**  |  99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |....99.99% | 99.99%<br/>(99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |
+| | 1  |3 (1 in single zone locations)   |
+| **Kafka version on cluster**  | Kafka 2.6 | Kafka 2.6  | Kafka 2.6 |
+| **Kafka Connect and Kafka Streams supported**  |  Yes | Yes  |
+| **Managed schema registry supported**  | No |  No |  Yes |
+| **Fine-grained access control**  | Yes  |  Yes |  Yes |
+|  **Cloud Service Endpoint support** | No   | No  |  Yes |
+|  **Mirroring support** | No   | No  |  Yes |
+| **Maximum number of partitions**  | 1000  |  3000 [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_partitions) |
+|**Maximum retention period** [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_footprint)   | 1 TB  of usable storage per broker   | 2 TB  of usable storage per broker   |
+| **Maximum throughput**  | Not specified  |  80 MB per second per cluster (peak throughput of 150 MB per second) [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_throughput) |
+| **Maximum message size**  | 1 MB  | 1 MB   |
+| **Maximum number of connected clients**  |Not specified   | 10 000  |
+|  **Location (region) availability** | Various  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) \n  Tokyo (jp-tok)   \n  \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01) |
+| **APIs supported** |  Kafka API   \n Admin REST API   \n REST API |  Kafka API   \n Admin REST API   \n REST Producer API    |
+| **{{site.data.keyword.messagehub}} CLI supported** | No  | Yes  |
+| **Deployment timeframe** | Weeks to months  | Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |
+| **Compliance** |GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018 |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018   \n  SOC 1 Type 1    \n  SOC 2 Type 1  \n HIPAA ready    \n  PCI |
+
+
+
+
+
+
 <table>
     <caption>Table 1. Support in Lite, Standard, Enterprise, and Classic plans</caption>
       <tr>
