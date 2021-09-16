@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2020-04-29thu"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -102,7 +102,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 |---|---|---|
 | **Tenancy**  |Single tenant   | Single tenant  |
 |**Availability zones**   | 1  |3    \n  (1 in single zone locations)   |
-| **Availability**  |  99.5% | 99.99%    \n  (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
+| **Availability**  |  99.5% |99.99%    \n     \n   (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
 | **Kafka version on cluster**  | Kafka 1.1 | Kafka 2.3  |
 | **Fine-grained access control**  | At an instance level only  |  Yes |
 |  **Customer-managed encryption** | No  | Yes  |
@@ -132,10 +132,9 @@ Small code deltas are shipped daily to production. As a result, you can expect t
     ```
     retention.bytes + segment.bytes
     ```
-{: #footnote_footprint notoc}
+{: codeblock} {: #footnote_footprint notoc}
 4. A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming.  
-A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming.
-{: #footnote_throughput notoc}
+A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming. {: #footnote_throughput notoc}
 
 ## Preparing to migrate to the Enterprise plan
 {: #enterprise_prep}
