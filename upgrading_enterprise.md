@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29thu"
+lastupdated: "2020-04-29thu2"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -102,7 +102,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 |---|---|---|
 | **Tenancy**  |Single tenant   | Single tenant  |
 |**Availability zones**   | 1  |3    \n  (1 in single zone locations)   |
-| **Availability**  |  99.5% |99.99%    \n     \n   (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
+| **Availability**  |  99.5% |99.99%   \n  \n  (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
 | **Kafka version on cluster**  | Kafka 1.1 | Kafka 2.3  |
 | **Fine-grained access control**  | At an instance level only  |  Yes |
 |  **Customer-managed encryption** | No  | Yes  |
@@ -129,10 +129,11 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 1. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
 2. 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}. {: #footnote_partitions notoc}
 3. To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
-    ```
-    retention.bytes + segment.bytes
-    ```
+ ```
+retention.bytes + segment.bytes
+```
 {: codeblock} {: #footnote_footprint notoc}
+
 4. A recommended maximum is 80 MB per second, that is 40 MB per second for producing and 40 MB per second for consuming.  
 A recommended peak limit is 150 MB per second, that is 75 MB per second for producing and 75 MB per second for consuming. {: #footnote_throughput notoc}
 
