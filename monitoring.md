@@ -32,7 +32,7 @@ subcollection: EventStreams
 
 Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in and then enable platform metrics by completing the following steps:
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-platform_metrics_enabling){ :new_window}. The owner of the account has full access to the this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){: new_window}.
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-platform_metrics_enabling){ :new_window}. The owner of the account has full access to this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){: new_window}.
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**.
 
@@ -55,7 +55,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 <br/>
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
-|------------------|--------------|------------------|
+|------------------|--------------|------------------|------------------|
 | `Lite`          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56       |
 | `Standard` | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
 | | 10      | 10 x 2 + 5 = 25 | $0.08 x 25 = $2   |
@@ -68,7 +68,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 
 {: caption="Table 1. Cost for each plan" caption-side="top"}
 
-Enabling Mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
+Enabling mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
 
 For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-pricing_plans).
 
@@ -109,7 +109,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 ---
 
-## Metrics available with Mirroring enabled
+## Metrics available with mirroring enabled
 {: metrics-mirroring}
 
 | Metric Name |Enterprise|Lite|Standard|
@@ -117,7 +117,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Mirroring throughput](#ibm_eventstreams_instance_mirroring_throughput) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Mirroring latency](#ibm_eventstreams_instance_mirroring_latency) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 <br/>
-{: caption="Table 2: Metrics Available for Mirroring" caption-side="top"}
+{: caption="Table 2: Metrics available for mirroring" caption-side="top"}
 
 ---
 
@@ -179,7 +179,7 @@ The number of connected clients with a particular client software name and versi
 | `Segment By` | `Client software name, Client software version` |
 {: caption="Table 5: Connected clients software name and version metric metadata" caption-side="top"}
 
-This is for information to help you monitor the software name and version data of the active clients connected to the Event Streams Instance
+This is for information to help you monitor the software name and version data of the active clients connected to the Event Streams instance
 
 ### Inactive consumer groups
 {: #ibm_eventstreams_instance_inactive_consumergroups}
