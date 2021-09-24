@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-09-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
@@ -27,7 +27,7 @@ subcollection: EventStreams
 Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans in {{site.data.keyword.Bluemix}}. 
 {: shortdesc}
 
-The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/activity-tracker?topic=activity-tracker-getting-started){:new_window}.
+The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/activity-tracker?topic=activity-tracker-getting-started){: new_window}.
 
 Events are formatted according to the Cloud Auditing Data Federation (CADF) standard, further details of the information 
 they include can be found [here](https://cloud.ibm.com/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event).
@@ -61,8 +61,23 @@ The following table lists the message audit events:
 | event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from this topic. Records deletion because of retention policy does not generate.|
 {: caption="Table 2. {{site.data.keyword.messagehub}} message events" caption-side="top"}
 
-Event Streams can sustain high requests rate so not every request triggers an event. Instead, events are aggregated by 
+{{site.data.keyword.messagehub}} can sustain high requests rate so not every request triggers an event. Instead, events are aggregated by 
 initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1 hour period.
+
+## Instance events
+{: #instance-events}
+
+{{site.data.keyword.messagehub}} instances that are on the Enterprise plan automatically generate instance events.
+
+The following table lists the instance events:
+
+
+| Action | Description |
+|:-------|:------------|
+| event-streams.instance.create | An event is created when you create an instance.|
+| event-streams.instance.delete | An event is created when you delete an instance.|
+| event-streams.instance.update | An event is created when you update an instance’s throughput, storage, service endpoint type (public/private), and allowlist.|
+{: caption="Table 3. {{site.data.keyword.messagehub}} instance events" caption-side="top"}
 
 ## Other events
 {: #other-events}
@@ -78,7 +93,7 @@ initiator (user ID or service ID), host (IP address), operation (read, write, de
 | event-streams.schema-rule.create | A new rule or global rule was created in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.update | An existing rule or global rule was updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.delete | A rule was deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
-{: caption="Table 3. {{site.data.keyword.messagehub}} events" caption-side="top"}
+{: caption="Table 4. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 
 ## Where to view the events
