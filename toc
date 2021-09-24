@@ -67,6 +67,7 @@ Event Streams
 		using_kafka_console.md
 		getting_started_cli.md
 		managing_access.md
+		restricting_access_iam.md
 		restricting_access_enterprise.md
 		managing_encryption.md
 		scaling_capacity.md
