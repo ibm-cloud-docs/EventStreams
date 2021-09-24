@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -173,7 +173,7 @@ The number of connected clients with a particular client software name and versi
 
 | Metadata | Description |
 |----------|-------------|
-| `Metric Name` | `ibm_eventstreams_connected_clients_software_name_and_version`|
+| `Metric Name` | `ibm_eventstreams_instance_connected_clients_software_name_and_version`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `number` |
 | `Segment By` | `Client software name, Client software version` |
