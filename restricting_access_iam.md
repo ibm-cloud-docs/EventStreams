@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -21,24 +21,24 @@ subcollection: EventStreams
 # Using IAM IP address access restrictions with {{site.data.keyword.messagehub}}
 {: #restricting_access_iam}
 
-If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.messagehub}}, you must ensure that the {{site.data.keyword.iamshort}} (IAM) IP allowlist is configured so that the {{site.data.keyword.messagehub}} authentication and authorization service, which is used to authenticate and authorize Kafka client, can still function.
+If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.messagehub}}, you must ensure that the {{site.data.keyword.iamshort}} (IAM) IP allowlist is configured so that the {{site.data.keyword.messagehub}} authentication and authorization service, which is used to authenticate and authorize the Kafka client, can still function.
 
 
-## Granting access if you are using {{site.data.keyword.messagehub}} over the public network
+## Granting access if you use {{site.data.keyword.messagehub}} over the public network
 {: #restricting_access_iam_public}
 
-If you're using {{site.data.keyword.messagehub}} over the public network, you must ensure that the IP addresses of any computers that access Kafka API endpoints and REST API endpoints are added to the {{site.data.keyword.iamshort}} (IAM) IP allowlist.
+If you use {{site.data.keyword.messagehub}} over the public network, you must add the IP addresses of any computers that access Kafka API endpoints and REST API endpoints to the {{site.data.keyword.iamshort}} (IAM) IP allowlist.
 
-## Granting access if you are using {{site.data.keyword.messagehub}} over the private network (Enterprise plan only)
+## Granting access if you use {{site.data.keyword.messagehub}} over the private network (Enterprise plan only)
 {: #restricting_access_iam_private}
 
-If you're using {{site.data.keyword.messagehub}} over the private network, you must add the {{site.data.keyword.messagehub}}'s own private IP addresses for the appropriate cluster to the {{site.data.keyword.iamshort}} (IAM) IP allowlist. You can find these IP addresses via below command: 
+If you use {{site.data.keyword.messagehub}} over the private network, you must add the {{site.data.keyword.messagehub}}'s own private IP addresses for the appropriate cluster to the {{site.data.keyword.iamshort}} (IAM) IP allowlist. You can find these IP addresses with the following command: 
 
 ```
 ibmcloud resource service-instance <event-streams-instance-name> --output json
 ```
 
-Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section from the output, the 3 `166.9.x.x` IP addresses are needed to be added to {{site.data.keyword.iamshort}} (IAM) IP allowlist. These addresses are static and will remain for the life of the service instance.
+Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section from the output, the three `166.9.x.x` IP addresses are needed to be added to {{site.data.keyword.iamshort}} (IAM) IP allowlist. These addresses are static and will remain for the life of the service instance.
 
 eg.
 ```json
@@ -80,5 +80,5 @@ eg.
 
 This action is required for private connections because the source IP address that {{site.data.keyword.messagehub}} receives is the IP address of the {{site.data.keyword.cloud_notm}} service endpoint and not the IP from where the request originated.
 
-Further more you can restrict access on {{site.data.keyword.messagehub}} Enterprise instance on via Private IP Allowlist, refer to [Restricting network access using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access).
+You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance through the Private IP Allowlist. For more information, refer to [Restricting network access using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access).
 {: note}
