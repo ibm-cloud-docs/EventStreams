@@ -30,6 +30,7 @@ Complete the following steps to get set up:
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs_mq}
+
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
@@ -46,7 +47,7 @@ Ensure you have the following software and services installed:
 * [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
 
 ## Step 2. Clone the kafka-connect repositories
-{: #step2_clone project_mq}
+{: #step2_clone_project_mq}
 
 Clone the following two repositories that contain the required files:
 
