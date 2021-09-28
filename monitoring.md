@@ -55,7 +55,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 <br/>
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
-|------------------|--------------|------------------|
+|------------------|--------------|------------------|------------------|
 | `Lite`          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56       |
 | `Standard` | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
 | | 10      | 10 x 2 + 5 = 25 | $0.08 x 25 = $2   |
@@ -66,7 +66,7 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 |        | 1000        |  1000 x 2 + 16 = 2016  | $0.08 x 2016 = $161.28   |
 |      | 3000        |   3000 x 2 + 16 = 6016    | $0.08 x 6016 = $481.28  |
 
-{: caption="Table 1. Cost for each plan" caption-side="top"} 
+{: caption="Table 1. Cost for each plan" caption-side="top"}
 
 Enabling Mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
 
