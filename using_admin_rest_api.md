@@ -25,14 +25,16 @@ subcollection: EventStreams
 You must retrieve the URL and credential details that are needed to connect to the API from a Service credentials object or service key for the service instance. For information about creating these objects, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
-The URL for the API's endpoint is provided in the <code>kafka_admin_url</code>property.
+The URL for the API's endpoint is provided in the `kafka_admin_url` property.
 
 The credentials depend on the authentication method and three types of credential are supported:
 
-* **To authenticate using Basic Auth**:<br/> 
-    Use the <code>user</code> and <code>api_key</code> properties of the above objects as the username and password. Place these values into the <code>Authorization</code> header of the HTTP request in the form <code>Basic &lt;base64 encoding of username and password joined by a single colon (:)&gt;</code>.
+* **To authenticate using Basic Auth**:
 
-* **To authenticate using a bearer token:**<br/> 
+    Use the `user` and `api_key` properties of the above objects as the username and password. Place these values into the `Authorization` header of the HTTP request in the form `Basic <base64 encoding of username and password joined by a single colon (:)>`.
+
+* **To authenticate using a bearer token:** 
+
     To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
     ```
@@ -40,18 +42,20 @@ The credentials depend on the authentication method and three types of credentia
     ```
     {: codeblock}
 
-    Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
+    Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
 
-* ** To authenticate directly using the api_key:**<br/>
-    Place the key directly as the value of the <code>X-Auth-Token</code> HTTP header.
+* **To authenticate directly using the api_key:**
+
+    Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
 For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
 
 For a description of the API with examples, see 
-[{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){:new_window}.
+[{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: new_window}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){:new_window}.
-To view the swagger file use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){:new_window}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: new_window}.
+To view the swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
+
 
 
 

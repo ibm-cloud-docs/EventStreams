@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 The {{site.data.keyword.messagehub}} Classic plan offers two bridges, one that takes data from Kafka and stores it in {{site.data.keyword.cos_full}} and one that takes data from IBM MQ and puts it into Kafka. These bridges allow you to connect systems by supplying just the configuration and do not require you to write any code. 
  
@@ -35,24 +35,24 @@ The COS Sink Connector offers the majority of bridge functionality and more. You
 
 The only functionality that is missing is partitioning by ISO 8601 date. The date partitioning was used only if your messages were JSON and contained a timestamp field of a specific format, resulting in records being stored in COS as a file each day. This was rather restrictive and we've opted to make all the partitioning by offset for the COS Sink Connector. What this means is that files uploaded to the object store have the following naming scheme: 
  
-<code>
-&lt;topic_name&gt;/&lt;partition&gt;/&lt;beginning_offset&gt;-&lt;end_offset&gt;
-</code>
+```
+<topic_name>/<partition>/<beginning_offset>-<end_offset>
+```
 {: codeblock} 
 
 Although the COS Sink Connector does not include this feature, instead it offers far greater scaling and the ability to do exactly once delivery. 
 
 For a walkthrough of how you can connect to Cloud Object Storage, see 
 [Connecting {{site.data.keyword.messagehub}} to Cloud Object Storage using IKS](/docs/EventStreams?topic=EventStreams-cos_connector). For full details of the COS Sink Connector, see 
-[Kafka Connect Sink Connector for IBM Cloud Object Storage. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-ibmcos-sink){:new_window}.
+[Kafka Connect Sink Connector for IBM Cloud Object Storage. ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-ibmcos-sink){: new_window}.
 
 
 ## MQ Source Connector
 The MQ Connector offers all of the commonly used functionality of the MQ bridge and more, with improved security. However, note that partitioning by GroupID is not currently supported. Additionally, the connector stops if it cannot process a message for any reason, for example if the message is too large to forward to Kafka in preference to discarding the message.
 
 For a walkthrough of how you can connect IBM MQ, see 
-[Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS](/docs/EventStreams?topic=EventStreams-mq_connector). For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){:new_window}.
+[Connecting IBM MQ to {{site.data.keyword.messagehub}} using IKS](/docs/EventStreams?topic=EventStreams-mq_connector). For a full list of MQ Source Connector features, see [Kafka Connect source Connector for IBM MQ ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/kafka-connect-mq-source){: new_window}.
  
 ## Running the Connectors
 To run the Connectors you will need to run the Kafka Connect framework. We provide examples of how to do this in [Using Kafka Connect with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-kafka_connect). By running the Kafka Connect framework you have full control over how Connectors are scaled, how you monitor your Connectors, and access to a much richer set of metrics. For more information, see 
-[Connect monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation.html#connect_monitoring){:new_window}.
+[Connect monitoring ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation.html#connect_monitoring){: new_window}.

@@ -24,12 +24,12 @@ subcollection: EventStreams
 
 The {{site.data.keyword.mql}} API is available as part of the Classic plan only. The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
-** If you currently use the {{site.data.keyword.mql}} API on the Classic plan and would like to migrate to Kafka, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=EventStreams-migrate_mqlight).**
+**If you currently use the {{site.data.keyword.mql}} API on the Classic plan and would like to migrate to Kafka, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=EventStreams-migrate_mqlight).**
 
 The {{site.data.keyword.mql}} API is provided for backward compatibility with the earlier {{site.data.keyword.mql}} service. The API provides an AMQP-based messaging interface for Java&trade;, Node.js, Python, and Ruby. 
-{:shortdesc}
+{: shortdesc}
 
 
 ## What is the MQ Light API and how is it different?
@@ -91,7 +91,7 @@ client to read the <code>user</code>, <code>password</code> and,
     }
 }, null);</code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 <br>
 
@@ -110,7 +110,7 @@ opts.password = mqlightService.credentials.password;
 var mqlightClient = mqlight.createClient(opts, function(err) {
 ...</code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 <br>
 
@@ -129,7 +129,7 @@ opts[:password] = credentials['password']
 set :client, Mqlight::BlockingClient.new(service, opts)
 ...</code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 <br>
 
@@ -150,12 +150,12 @@ client = mqlight.Client(service=service,
                         security_options=security_options,
                         on_started=on_started)</code>
 </pre>
-{:codeblock}
+{: codeblock}
 
 <br>
 
 For more information about the APIs,
-see: [{{site.data.keyword.mql}} APIs on GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/mqlight){:new_window}.
+see: [{{site.data.keyword.mql}} APIs on GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/mqlight){: new_window}.
 
 
 <!-- 14/11/18: info was in eventstreams080.md, moved because of doc app changes -->
@@ -192,22 +192,14 @@ You should also note the following information:
 ### Kafka message format
 {: #kafka_format notoc}
 
-<table border='1'>
-<caption>Table 1. Kafka message format</caption>
-  <tr>
-    <th> Key </th>
-    <th> Value </th>
-  </tr>
-  <tr>
-    <td> Optional (not used by the API)
-	<p></p>
-	</td>
-    <td>**1 byte**
-	<p>		     MQ Light API eye catcher, which is always 0xFA.</p>
-    <p><var class="keyword varname">**n**</var> **bytes**</p>
-    <p>		    AMQP encoded message (formatted based on the AMQP wire format). </p></td>
-  </tr>
-</table>
+
+| Key   |Value   |  
+|---|---|
+|Optional (not used by the API)   |  **1 byte** | 
+|   | MQ Light API eye catcher, which is always 0xFA.  |
+|   | <**n**> **bytes**|
+|  |  AMQP encoded message (formatted based on the AMQP wire format). |
+{: caption="Table 1. Kafka message format" caption-side="top"}
 
 
 <!-- 15/11/18: info was in eventstreams082.md, moved because of doc app changes -->
@@ -223,7 +215,7 @@ messages to the front end. This sample shows how you can get apps talking to eac
 the {{site.data.keyword.mql}} API. You can also use the {{site.data.keyword.mql}} API to perform worker offload; a key capability
 required for building scalable, loosely coupled, and distributed apps.
 
-You can find the sample code in the [event-streams-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/9fa3ffff8cc7f7f2a01a948845ab2e07fbfcdf4c/mqlight){:new_window}.
+You can find the sample code in the [event-streams-samples GitHub project ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/9fa3ffff8cc7f7f2a01a948845ab2e07fbfcdf4c/mqlight){: new_window}.
 
 
 <!-- 15/11/18: info was in eventstreams083.md, moved because of doc app changes -->
@@ -238,6 +230,6 @@ The following limits are enforced for the {{site.data.keyword.mql}} API:
 * The maximum size of a message (excluding headers) is 1 MB.
 * The maximum number of clients that can be connected at a single time is 25.
 * The maximum number of destinations that can be active at a single time is 25. An active destination is defined as follows:
-  - A destination with a TimeToLive > 0 both with or without a client currently connected.
-  - A destination with a TimeToLive = 0 (the default) where a client is connected. 
-  <p>A destination that is shared between clients counts as a single destination.</p>
+     - A destination with a TimeToLive > 0 both with or without a client currently connected.
+    - A destination with a TimeToLive = 0 (the default) where a client is connected. 
+    <p>A destination that is shared between clients counts as a single destination.</p>

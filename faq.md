@@ -35,47 +35,38 @@ For answers to questions specific to the now deprecated Classic plan, see [FAQs 
 
 If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 
-<dl>
-<dt>cleanup.policy</dt>
-<dd>Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code>
-</dd>
+cleanup.policy
+:   Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code>
 
-<dt>retention.ms</dt>
-<dd>The default retention period is 24 hours. The minimum is 1 hour and the maximum is
-30 days. Specify this value as multiples of hours.
+retention.ms
+:   The default retention period is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
-<p>**Note:**
-In the Enterprise plan, you can set this to any value.</p>
-</dd>
+    **Note:**
+    In the Enterprise plan, you can set this to any value.
 
-<dt>retention.bytes</dt>
-<dd>The maximum size a partition (which consists of log segments) can grow to before we discard old log segments to free up space.
+retention.bytes
+:   The maximum size a partition (which consists of log segments) can grow to before we discard old log segments to free up space.
 
-<p>**Note:**
-Enterprise plan only. Set to any value larger than 1 MB.</p>
-</dd>
+    **Note:**
+    Enterprise plan only. Set to any value larger than 1 MB.
 
-<dt>segment.bytes</dt>
-<dd>The segment file size for the log.
+segment.bytes
+:   The segment file size for the log.
 
-<p>**Note:**
-Enterprise plan only. Set to any value larger than 100 kB.</p>
-</dd>
+    **Note:**
+    Enterprise plan only. Set to any value larger than 100 kB.
 
-<dt>segment.index.bytes</dt>
-<dd>The size of the index that maps offsets to file positions. 
+segment.index.bytes
+:   The size of the index that maps offsets to file positions. 
 
-<p>**Note:**
-Enterprise plan only. Set to any value between 100 kB and 2 GB.</p>
-</dd>
+    **Note:**
+    Enterprise plan only. Set to any value between 100 kB and 2 GB.
 
-<dt>segment.ms</dt>
-<dd>The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
+segment.ms
+:   The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
 
-<p>**Note:**
-Enterprise plan only. Set to any value between 5 minutes and 30 days</p>
-</dd>
-</dl>
+    **Note:**
+    Enterprise plan only. Set to any value between 5 minutes and 30 days
 
 
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
@@ -101,7 +92,7 @@ You are strongly recommended not to attempt to manage the topic in any way. You 
 After consumers have left, a group continues to exist only if it has offsets. Consumer offsets are deleted after 7 days of inactivity. Consequently, a consumer group is deleted when the last committed offset for that group expires.
 
 If you want to explicitly delete a group at a time you choose, you can use the 
-[deleteConsumerGroups() API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection-){:new_window}.
+[deleteConsumerGroups() API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection-){: new_window}.
 
 
 ## How long are messages retained?
@@ -186,7 +177,7 @@ However, this option does not currently work in the {{site.data.keyword.Bluemix_
 ```
 Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
 ```
-{:codeblock}
+{: codeblock}
 
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
@@ -203,7 +194,7 @@ To find out more information about the different {{site.data.keyword.messagehub}
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
 We suggest a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
-[{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){:new_window}.
+[{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: new_window}.
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 

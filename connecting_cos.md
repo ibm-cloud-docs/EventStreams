@@ -16,12 +16,12 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full}} by using the Kubernetes Service
+# Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full_notm}} by using the Kubernetes Service
 {: #cos_connector}
 
 The following task walks you through:
 * Getting the Kafka Connect runtime to run in an {{site.data.keyword.containershort}} cluster.
-* Starting the {{site.data.keyword.cos_short}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
+* Starting the {{site.data.keyword.cos_full}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
 
 The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the 
 Cloud {{site.data.keyword.cos_short}} service. 
@@ -40,7 +40,7 @@ Ensure you have the following software and services installed:
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
 * A recent version of kubectl.
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
+* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step2_clone project}
@@ -69,13 +69,13 @@ Clone the following two repositories that contain the required files:
     the entry <code>replicas: 1</code>.
 
 2. Then, run the following commands:
-<br/>
+
     Run the following command to create a secret: 
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
-    <br/>
+
     Run the following command to create a configmap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
@@ -107,7 +107,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
+[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
 
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
 
@@ -169,7 +169,7 @@ This property can be useful in situations that have long pauses between Kafka re
 </dd>
 </dl>
  
-### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.bluemix}}  console
+### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.Bluemix_notm}} console
 {: #connect_enterprise_external_console}
 
 1. Locate your {{site.data.keyword.cos_short}} service on the dashboard.
