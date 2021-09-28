@@ -21,8 +21,7 @@ subcollection: EventStreams
 {: #rest_producer_using}
 
 
-** The REST producer API is available as part of the {{site.data.keyword.messagehub}} Standard and Enterprise plans only.**
-<br/>
+**The REST producer API is available as part of the {{site.data.keyword.messagehub}} Standard and Enterprise plans only.**
 
 {{site.data.keyword.messagehub}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
 
@@ -60,7 +59,7 @@ Use one of the following methods to authenticate:
 
     Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
 
-* ** To authenticate directly using the api_key:**<br/> 
+* **To authenticate directly using the api_key:**<br/> 
     Place the key directly as the value of the <code>X-Auth-Token</code> HTTP header.
 
 <br/>
@@ -81,7 +80,7 @@ When using the REST producer API, there is a limitation on the record key and va
 {: #rest_api_reference}
 
 For full details of the API, see the 
-[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){:new_window}.
+[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){: new_window}.
 
 
 
