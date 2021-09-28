@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
@@ -45,6 +45,8 @@ The following table lists the topic events:
 | event-streams.topic.delete | An event is created when you delete a topic.|
 | event-streams.topic.update | An event is created when you update a topic's configuration or increase partitions.|
 {: caption="Table 1. {{site.data.keyword.messagehub}} topic events" caption-side="top"}
+
+Additional info on topic configuration is logged in the update/delete events such as partitions, retentionMs, segmentMs etc
 
 ## Message audit events
 {: #message-events}
