@@ -23,39 +23,22 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 Kafka clients exist in multiple languages and we provide instructions for some of those languages. You can use others but you'll need SASL PLAIN support to provide credentials. Additionally, if you're using the Enterprise plan, you'll also need to use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.
 
-<table>
-    <caption>Table 1. Kafka client support on Classic plan</caption>
-      <tr>
-	        <th></th>
-		    <th>Classic Plan</th>
-		    
-        </tr>
-	  		<tr>
-			<td>**Kafka version on cluster**</td>
-			<td>Kafka 1.1</td>
-					</tr>
-	  		<tr>
-			<td>**Supported client versions**</td>
-			<td>Kafka 0.10.x, or later</td>
-		</tr>
-		<tr>
-			<td>**Kafka Connect, Kafka Streams, and KSQL supported? **</td>
-			<td>Yes</td>
-		</tr>
+|   |Classic Plan   |  
+|---|---|
+|**Kafka version on cluster**   |  Kafka 1.1 | 
+|  **Supported client versions** | Kafka 0.10.x, or later  |
+|   **Kafka Connect, Kafka Streams, and KSQL supported?**| Yes  |
+|  **Authentication requirements**| Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol |   |
+{: caption="Table 1. Kafka client support on Classic plan" caption-side="top"}
 
-			<td>**Authentication requirements**</td>
-			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
-				</tr>
-
-</table>
 
 For information about the V1.1 Producer and Consumer APIs, see 
-[Kafka Producer API 1.1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 1.1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+[Kafka Producer API 1.1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){: new_window} and 
+[Kafka Consumer API 1.1 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/11/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){: new_window}. 
 
 
 
