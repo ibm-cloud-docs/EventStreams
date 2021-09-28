@@ -30,10 +30,11 @@ Complete the following steps to get set up:
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs_mq}
+
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
-* An instance of [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){:new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-downloads){:new_window}, or later. 
+* An instance of [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){: new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-downloads){: new_window}, or later. 
    
    You can configure the IBM MQ Connector to authenticate with IBM MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
    * CONNECT authority. The IBM MQ Connector must be able to connect to the MQ queue manager.
@@ -43,10 +44,10 @@ Ensure you have the following software and services installed:
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
 * A recent version of kubectl.
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){:new_window}
+* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
 
 ## Step 2. Clone the kafka-connect repositories
-{: #step2_clone project_mq}
+{: #step2_clone_project_mq}
 
 Clone the following two repositories that contain the required files:
 
@@ -68,13 +69,14 @@ Clone the following two repositories that contain the required files:
     Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} cluster has more than one node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file, and edit the entry <code>replicas: 1</code>.
 
 2. Then, run the following commands:
-<br/>
+
     To create a secret: 
+
     ```
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
-    <br/>
+
     To create a configmap:
     ```
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
@@ -106,7 +108,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){:new_window}.
+[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
 
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the IBM MQ Connector.
 

@@ -24,14 +24,14 @@ subcollection: EventStreams
 
 This new release of the Standard multi-tenant plan offers significant improvements in resiliency, functionality, and usability. For more information, see [New Standard plan blog announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/announcements/ibm-event-streams-releases-a-new-and-enhanced-standard-plan).<br/>
 As part of the upgrade to the Standard plan, you must create a new Standard plan instance. You cannot upgrade or change an existing instance of the Classic plan.
-{:important}
+{: important}
 
 
 To migrate applications from the previous Standard plan (now called the Classic plan and deprecated) to the new plan, consider the following information.
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 Service instances are now provisioned as {{site.data.keyword.cloud_notm}} Services rather than as Cloud Foundry Services. This enables the service to support the latest {{site.data.keyword.cloud_notm}} standards and capabilities, including multi-zone deployments and granular access controls, but has implications for how the service is used. In particular, consider the following aspects:
 
@@ -62,10 +62,9 @@ You must create a Credentials object using the IBM Cloud console or a Service Ke
 You must first bind the service to the application's organization and space by creating a service alias. You can then retrieve the required properties from the VCAP_SERVICES environment variable as normal. For more information, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
-<br/>
 Note that clients must support the SNI extension to TLS where the server's hostname is included in the TLS handshake. This feature is commonly available and is supported in all the client versions recommended in [Choosing a Kafka client to use with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_clients).
 
-<br>
+
 You should also be aware of some other changes as follows:
 ## Kafka version
 {: #kafka_version}
@@ -98,9 +97,9 @@ There are differences between the capabilities of the Classic plan and the new S
 * If you currently use the {{site.data.keyword.mql}} API on the Classic plan, see [Migrating MQ Light to Kafka](/docs/EventStreams?topic=EventStreams-migrate_mqlight).
 * If you currently use the Cloud Object Storage bridge or the MQ bridge, see [Migrating bridges to Kafka Connect](/docs/EventStreams?topic=EventStreams-migrate_bridges).
 
-<br/>
+
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
-<br/>
+
 
 
 

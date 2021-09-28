@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 If you find a problem while using {{site.data.keyword.messagehub}} on the Classic plan, review these known restrictions and workarounds. 
 {: shortdesc}
@@ -134,7 +134,7 @@ limiting for each ApiKey. When this limiting occurs, the API
 responds with the following HTTP error:
 
 <code>429 Too Many Requests</code>
-{:screen}
+{: screen}
 
 If you see this error, wait and submit the request again.
 
@@ -149,9 +149,10 @@ request. After the REST API has restarted, you will have to
 create your Kafka consumer instances again. If this is the case, the
 REST API returns the following JSON:
 
-```'{"error_code":40403,"message":"Consumer instance not found."}'
 ```
-{:screen}
+'{"error_code":40403,"message":"Consumer instance not found."}'
+```
+{: screen}
 
 ## Kafka high-level consumer API
 {: #kafka_consumer}

@@ -20,13 +20,13 @@ subcollection: EventStreams
 # Using ksqlDB with {{site.data.keyword.messagehub}}
 {: #ksql_using}
 
-You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){:new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use ksqlDB V5.5.0.
+You can use [KSQL ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql){: new_window} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use ksqlDB V5.5.0.
 {: shortdesc}
 
 The quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
 Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting, you can only use ksqlDB with the Enterprise plan.
-{:important}
+{: important}
 
 1. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called <code>_confluent-ksql-default__command_topic</code> with a single partition and the default retention period.
 
@@ -102,12 +102,12 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ```
     where BOOTSTRAP_SERVERS and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
-    b. Start ksqlDB server using the following command:
+    d. Start ksqlDB server using the following command:
     ```
     ./bin/ksql-server-start ./config/ibm-eventstreams.properties
     ```
     
-    c. Start ksqlDB CLI using the following command:
+    e. Start ksqlDB CLI using the following command:
     ```
     ./bin/ksql
     ```
@@ -116,12 +116,12 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
 
     Then start <code>DataGen</code> twice as follows:
     
-    i. Run the following command to start creating <code>users</code> events.
+    a. Run the following command to start creating <code>users</code> events.
     ```
     ./bin/ksql-datagen quickstart=users format=json topic=users maxInterval=10000 propertiesFile=./config/ibm-eventstreams.properties
     ```
 
-    ii. Run the following command to start creating <code>pageviews</code> events.
+    b. Run the following command to start creating <code>pageviews</code> events.
     ```
     ./bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=10000 propertiesFile=./config/ibm-eventstreams.properties
     ```
