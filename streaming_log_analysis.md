@@ -30,6 +30,6 @@ Once the data is persisted within Event Streams, you can configure any applicati
 and take action on log data being streamed.
 
 For more information, see [Streaming data from an IBM Log Analysis instance
-![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/log-analysis?topic=log-analysis-streaming){:new_window}.
+![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/log-analysis?topic=log-analysis-streaming){: new_window}.
 
-For step-by-step instructions for streaming to Splunk as an example SIEM system, see [Streaming log events from LogDNA to Splunk ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/cloud-enterprise-examples/log-streaming/configure-streaming-for-third-party-tools/){:new_window}.
+For step-by-step instructions for streaming to Splunk as an example SIEM system, see [Streaming log events from LogDNA to Splunk ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/cloud-enterprise-examples/log-streaming/configure-streaming-for-third-party-tools/){: new_window}.

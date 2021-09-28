@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 ## Migrating a Kafka Java client from 0.9.X or 0.10.X to later client versions
 {: #kafka_migrate_classic}
@@ -33,7 +33,7 @@ the publicly available Kafka clients at 0.10 or later.
 
 You are strongly encouraged to move from 0.9.X to the
 latest version. You can download a Kafka client from 
-[https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/downloads){:new_window}.
+[https://kafka.apache.org/downloads ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/downloads){: new_window}.
 
 For information about the implications of using a 0.9.X client, see 
 [Backward compatibility](/docs/EventStreams?topic=EventStreams-kafka_clients_classic#compatibility_classic).

@@ -23,7 +23,7 @@ subcollection: EventStreams
 {: #mirroring_setup}
 
 This information describes how to set up a pair of {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
-{:shortdesc}
+{: shortdesc}
 
 
 ## Step 1: setup 
@@ -82,7 +82,7 @@ Mirrored topics are:
 "aaa.*"
 "bbb.*"
 ```
-{:codeblock}
+{: codeblock}
 
 ## Step 4: validation
 {: #step4_validation}

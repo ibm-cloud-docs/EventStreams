@@ -27,7 +27,7 @@ subcollection: EventStreams
 The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
-[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
+[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
 
 
 ## Enterprise plan
@@ -36,9 +36,9 @@ The {{site.data.keyword.messagehub}} service is provided with an availability of
 The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
 
 In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see
-[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
+[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
 
-When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
+When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
 
 
 ## Classic plan
@@ -46,11 +46,11 @@ When the {{site.data.keyword.messagehub}} service is run in a non highly availab
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
-[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){:new_window}.
+[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
 
 <!--
 ## What does 99.95% availability mean?
@@ -59,7 +59,7 @@ Availability refers to the ability of applications to produce and consume messag
 
 
 ## How do we measure it?
-Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?component=messagehub&selected=status){:new_window}.
+Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?component=messagehub&selected=status){: new_window}.
 
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 
@@ -72,12 +72,12 @@ To achieve high levels of availability from the application perspective, you sho
 Because of the dynamic nature of the cloud, applications must expect connection breakages. A connection breakage is not considered a failure of service.
 
 **Retries**<br/>
-Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [ <code>retries</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){:new_window}. Connections are remade within 60 seconds.   
+Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [ <code>retries</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){: new_window}. Connections are remade within 60 seconds.   
  
 **Duplicates**<br/>
 Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send the message again when reconnected. You are recommended to design applications to expect duplicate messages. 
 
-If duplicates cannot be tolerated, you can use the <code>idempotent</code> producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ <code>enable.idempotence</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){:new_window}.
+If duplicates cannot be tolerated, you can use the <code>idempotent</code> producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [ <code>enable.idempotence</code> property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){: new_window}.
 
 ### Throughput
 {: #throughput}
