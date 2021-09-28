@@ -46,7 +46,7 @@ The following table lists the topic events:
 | event-streams.topic.update | An event is created when you update a topic's configuration or increase partitions.|
 {: caption="Table 1. {{site.data.keyword.messagehub}} topic events" caption-side="top"}
 
-Additional information about topic configuration is logged in the update and delete events,  for example partitions, retentionMs, and segmentMs.
+Additional information about topic configuration is logged in the update and delete events,  for example partitions, 'retentionMs', and 'segmentMs'.
 
 ## Message audit events
 {: #message-events}
