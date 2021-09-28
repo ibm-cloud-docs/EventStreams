@@ -23,7 +23,7 @@ subcollection: EventStreams
 {: #mirroring}
 
 Mirroring enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily. This improves resilience because if a service instance becomes unavailable, applications can, without change, simply reconnect to the second instance and continue their normal operation, using the same credentials, authorizations, and topic definitions. This is provided as a fully managed capability.
-{:shortdesc}
+{: shortdesc}
 
 This feature is only available for service instances using the Enterprise plan.
 
