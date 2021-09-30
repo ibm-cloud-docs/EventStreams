@@ -16,6 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
+{:external: target="_blank" .external}
 
 
 # {{site.data.keyword.messagehub}} schema registry
@@ -473,15 +474,15 @@ By default, the registry has a global compatibility rule setting of `NONE`. Per-
 
 ## Full API description
 {: full_api_description}
-For a description of the API with examples, see 
+For a description of the REST API with examples, see 
 [{{site.data.keyword.messagehub}} schema-registry-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: new_window}.
 
 You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
 To view the Swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
 
-For more details about the Schema Registry, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md).
+For details about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 
-For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-index-of-terraform-on-ibm-cloud-resources-and-data-sources#ibm-event-streams_rd).
+For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-index-of-terraform-on-ibm-cloud-resources-and-data-sources#ibm-event-streams_rd){: external}.
 
 ## Using the schema registry with the third party SerDes
 {: #using_schema_regsitry_serdes}
