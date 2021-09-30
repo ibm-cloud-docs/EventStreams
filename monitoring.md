@@ -179,7 +179,9 @@ The number of connected clients with a particular client software name and versi
 | `Segment By` | `Client software name, Client software version` |
 {: caption="Table 5: Connected clients software name and version metric metadata" caption-side="top"}
 
-This is for information to help you monitor the software name and version data of the active clients connected to the Event Streams instance
+This is for information to help you monitor the software name and version data of the active clients connected to the {{site.data.keyword.messagehub}} instance.
+
+Client software name and version are available for the Kafka client (Java version 2.4 or later, and other implementations that support software name and version) as described in [KIP-8855](https://issues.apache.org/jira/browse/KAFKA-8855). If the client software name and version are not available, these are set as `unknown`.
 
 ### Inactive consumer groups
 {: #ibm_eventstreams_instance_inactive_consumergroups}
