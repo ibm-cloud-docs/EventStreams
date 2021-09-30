@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29thu3"
+lastupdated: "2020-04-29thu30"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration. Dedicated, upgrade, wildcarding, IAM, wildcard, policies
 
@@ -102,7 +102,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 |---|---|---|
 | **Tenancy**  |Single tenant   | Single tenant  |
 |**Availability zones**   | 1  |3    \n  (1 in single zone locations)   |
-| **Availability**  |  99.5% |99.99%   \n  \n  (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
+| **Availability**  |  99.5% |99.99%   \n \n  (99.9% in single zone locations) [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-migrate_dedicated_enterprise#footnote_szr)  |
 | **Kafka version on cluster**  | Kafka 1.1 | Kafka 2.3  |
 | **Fine-grained access control**  | At an instance level only  |  Yes |
 |  **Customer-managed encryption** | No  | Yes  |
@@ -129,10 +129,11 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 1. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
 2. 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}. {: #footnote_partitions notoc}
 3. To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: 
-   ```
-   cd event-streams-samples/kafka-java-console-sample
-   ```
-   {: codeblock}
+    ```
+    cd event-streams-samples/kafka-java-console-sample
+    ```
+    {: codeblock}
+
     ```
     retention.bytes + segment.bytes
     ```
@@ -232,25 +233,25 @@ Complete the following steps to switch from an existing cluster to a new cluster
 1. Stop any producers producing to the existing cluster or topic.
 2. Drain all the messages from the existing cluster or topic. You can confirm this by checking that all consumers for that topic or cluster have zero lag by using the [**kafka-consumer-groups** ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_console_tools#consumer_groups_tool){: new_window} tool. Ensure that you use V2.3 of the tool because this version makes it easier to check whether a group has lag 0 (that is, if it has reached the log end offset for each of its partitions).
 
-   For example, some sample output from running the **kafka-consumer-groups** tool:
+    For example, some sample output from running the **kafka-consumer-groups** tool:
 
-   ```
-   ~/kafka_2.12-2.3.0 $ bin/kafka-consumer-groups.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe --all-groups
+    ```
+    ~/kafka_2.12-2.3.0 $ bin/kafka-consumer-groups.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe --all-groups
 
-   Consumer group 'testgroup1' has no active members.
+     Consumer group 'testgroup1' has no active members.
 
-   GROUP         TOPIC        PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
-   testgroup1    testtopic    0          131             261             130             -               -               -
-   testgroup1    testtopic    1          142             268             126             -               -               -
+    GROUP         TOPIC        PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+     testgroup1    testtopic    0          131             261             130             -               -               -
+    testgroup1    testtopic    1          142             268             126             -               -               -
 
-   Consumer group 'testgroup2' has no active members.
+    Consumer group 'testgroup2' has no active members.
 
-   GROUP         TOPIC        PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+    GROUP         TOPIC        PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
    testgroup2    testtopic    0          245             261             0               -               -               -
    testgroup2    testtopic    1          256             268             0               -               -               -
 
-   ```
-   {: codeblock}
+    ```
+    {: codeblock}
 3. Switch to using the new producers and consumers on the new Enterprise cluster.
 
 
