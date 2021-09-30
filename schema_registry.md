@@ -41,7 +41,7 @@ Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own schem
 
 Producers and consumers validate the data against the specified schema stored in the schema registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller.
 
-![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Schema Registry Architecture" caption-side="bottom"}
+![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Schema registry architecture" caption-side="bottom"}
 
 ## Apache Avro data format
 {: #ES_apache_avro_data_format}
@@ -87,7 +87,7 @@ authenticate with the registry. Both of these pieces of information can be found
 To view these in the UI, click on your service instance, select **Service Credentials** in the left-hand navigation pane, then click on
 the **View Credentials** link located next to one of the service credentials listed in the table:
 
-![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
+![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} schema registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
 You need the value of `kafka_http_url`, which is also the URL of the schema registry, and the value of `apikey` that you can use
 as the credential for authenticating with the schema registry.
@@ -477,10 +477,10 @@ By default, the registry has a global compatibility rule setting of `NONE`. Per-
 For a description of the REST API with examples, see 
 [{{site.data.keyword.messagehub}} schema-registry-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: new_window}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} schema registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
 To view the Swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
 
-For details about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
+For details about accessing the schema registry using an SDK, see [{{site.data.keyword.messagehub}} schema registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 
 For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-index-of-terraform-on-ibm-cloud-resources-and-data-sources#ibm-event-streams_rd){: external}.
 
