@@ -133,3 +133,23 @@ The following table summarizes what is supported by the plan:
 
 </table>
 
+|   |  Classic Plan |
+|---|---|
+| **Tenancy**  |Multi-tenant   |
+|**Availability zones**   | Not supported  |
+| **Availability**  |  99.99% |
+| **Kafka version on cluster**  | Kafka 1.1 | 
+| **Fine-grained access control**  | No  | 
+|  **Cloud Service Endpoint support** | No   |
+| **Kafka Connect and Kafka Streams supported**  |  Yes | 
+| **Maximum number of partitions**  | 100 | 
+|**Maximum retention period** 1 GB per partition for up to 30 days   |
+| **Maximum throughput**  | 1 MB per second per partition  | 
+| **Maximum message size**  | 1 MB  | 
+| **Maximum number of connected clients**  |Not specified   | 10 000  |
+|  **Location (region) availability** |Dallas (us-south)  \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de) - no {{site.data.keyword.mql}} API   |
+| **APIs supported** |  Kafka API   \n Admin REST API   \n Kafka REST API   \n {{site.data.keyword.mql}} API |
+| **Cloud Object Storage bridge and MQ bridge supported** | Yes  |
+| **Deployment timeframe** | Instantaneous provisioning  | 
+{: caption="Table 1. Supported capabilities on Classic plan" caption-side="top"}
+

@@ -118,6 +118,7 @@ If you currently use the REST APIs, see [Migrating the REST APIs](/docs/EventStr
 | **{{site.data.keyword.messagehub}} CLI supported** | No  | Yes  |
 | **Deployment timeframe** | Weeks to months  | Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |
 | **Compliance** |GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018 |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018   \n  SOC 1 Type 1    \n  SOC 2 Type 1  \n HIPAA ready    \n  PCI |
+{: caption="Table 1. Supported capabilities on Dedicated and Enterprise Plans" caption-side="top"}
 
 
 Small code deltas are shipped daily to production. As a result, you can expect to see many further improvements to our user experience (and other areas).
