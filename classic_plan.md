@@ -143,7 +143,7 @@ The following table summarizes what is supported by the plan:
 |  **Cloud Service Endpoint support** | No   |
 | **Kafka Connect and Kafka Streams supported**  |  Yes | 
 | **Maximum number of partitions**  | 100 | 
-|**Maximum retention period** 1 GB per partition for up to 30 days   |
+|**Maximum retention period**   | 1 GB per partition for up to 30 days   |
 | **Maximum throughput**  | 1 MB per second per partition  | 
 | **Maximum message size**  | 1 MB  | 
 | **Maximum number of connected clients**  |Not specified   | 10 000  |
