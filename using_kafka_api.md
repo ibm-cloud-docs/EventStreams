@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-08-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -33,127 +33,46 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
 
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
 
-<table>
-    <caption>Table 1. Kafka client support in Standard, Enterprise, and Lite plans</caption>
-      <tr>
-	        <th></th>
-		    <th>Enterprise Plan</th>
-		    <th>Standard Plan</th>
-		    <th>Lite Plan</th>
-        </tr>
-	  		<tr>
-			<td>**Kafka version on cluster**</td>
-			<td>Kafka 2.6</td>
-			<td>Kafka 2.6</td>
-			<td>Kafka 2.6</td>
-		</tr>
-	  		<tr>
-			<td>**Supported client versions**</td>
-			<td>Kafka 0.10.x, or later</td>
-			<td>Kafka 0.10.x, or later</td>
-			<td>Kafka 0.10.x, or later</td>
-		</tr>
-		<tr>
-			<td>**Kafka Connect supported**</td>
-			<td>Yes*</td>
-			<td>Yes*</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>**Kafka Streams supported**</td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>**ksqlDB supported**</td>
-			<td>Yes</td>
-			<td>No</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>**Authentication requirements**</td>
-			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
-			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
-			<td>Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol</td>
-		</tr>
 
-</table>
+|   |Enterprise Plan   |Standard Plan   |Lite Plan |
+|---|---|---|---|
+|**Kafka version on cluster**  | Kafka 2.6  |  Kafka 2.6 | Kafka 2.6  |
+| **Supported client versions**  |  Kafka 0.10.x, or later |Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
+|**Kafka Connect supported**   |  Yes |  Yes |  No |
+|**Kafka Streams supported**   |  Yes |  Yes |  No |
+|**ksqlDB supported supported**   |  Yes |  No|  No |
+|**Authentication requirements**   |  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol | Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol|  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol |
 
-<br/>
+{: caption="Table 1.  Kafka client support in Standard, Enterprise, and Lite plans" caption-side="top"} 	
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){:new_window} and 
-[Kafka Consumer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){:new_window}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){: new_window} and 
+[Kafka Consumer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){: new_window}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
 ### Support summary for all recommended clients
 {: #client_summary}
 
-<table id="clients_table">
-    <caption>Table 2. Client support summary</caption>
-      <tr>
-		    <th id="client" scope="col">Client</th>
-		    <th id="language" scope="col">Language</th>
-			<th id="version" scope="col">Recommended version</th>
-		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-kafka_clients#footnote1)</th>
-			<th id="sample link" scope="col">Link to sample</th>
-        </tr>
-			<tr>
-			<td colspan="3">**Official Apache Kafka client**</td>
-			</tr>
-	  		<tr>
-			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
-			<td>Java</td>
-			<td>Latest</td>
-			<td>0.10.2 </td>
-			<td>[Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)<br/>
-			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
-			</td>
-			</tr>
-			<tr>
-			<td colspan="3">**Third-party clients**</td>
-			</tr>
-	  		<tr>
-			<td>[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)</td>
-			<td>Node.js</td>
-			<td>Latest</td>
-			<td>2.2.2</td>
-			<td>[Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)</td>
-		</tr>
-		<tr>
-			<td>[confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python)</td>
-			<td>Python</td>
-			<td>Latest</td>
-			<td>0.11.0</td>
-			<td>[Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample)</td>
-		</tr>
-		<tr>
-			<td>[confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go)</td>
-			<td>Golang</td>
-			<td>Latest</td>
-			<td>0.11.0</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>[librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka)</td>
-			<td>C or C++</td>
-			<td>Latest</td>
-			<td>0.11.0</td>
-			<td></td>
-		</tr>
+| Client  | Language   | Recommended version   |Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-kafka_using#footnote1) |  Link to sample|
+|---|---|---|---|---|
+|**Official Apache Kafka client:**         |   |   |   |    |
+| [Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)  |  Java   | Latest  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
+|**Third-party clients:**   |   |   |   |    |
+|[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
+|[confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
+| [confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go) |  Golang | Latest  |  0.11.0  |   |
+| [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka) |  C or C++ | Latest  |  0.11.0  |   |
+{: caption="Table 2. Client support summary" caption-side="top"}
 
-</table>
 ### Footnote
 {: #footnote_clients notoc}
 
-1. {: #footnote1 notoc}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist {: #footnote1 notoc}
 
-<br/>
-If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){:new_window}).
+If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){: new_window}).
 * Supports Kafka 0.10, or later
 * Can connect and authenticate using SASL PLAIN with TLSv1.2
 * Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
@@ -195,5 +114,4 @@ ssl.endpoint.identification.algorithm=HTTPS
 ```
 {: codeblock}
 
-<br/>
 Note, if you're using a Kafka client earlier than 0.10.2.1, the <code>sasl.jaas.config</code> property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
