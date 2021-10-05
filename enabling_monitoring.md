@@ -25,7 +25,7 @@ subcollection: EventStreams
 This information describes how to set up a pair of {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
 {: shortdesc}
 
-Using mirroring with {{site.data.keyword.messagehub}} incurs an additional charge of $1.37 for each Mirroring capacity unit-hour. For more information, see [Multiple Enhancements for the Event Streams Enterprise Plan](https://www.ibm.com/cloud/blog/announcements/multiple-enhancements-for-the-event-streams-enterprise-plan).
+Using mirroring with {{site.data.keyword.messagehub}} incurs an additional charge of $1.37 for each mirroring capacity unit hour. For more information, see [Multiple Enhancements for the Event Streams Enterprise Plan](https://www.ibm.com/cloud/blog/announcements/multiple-enhancements-for-the-event-streams-enterprise-plan).
 
 ## Step 1: setup 
 {: #step1_setup}
