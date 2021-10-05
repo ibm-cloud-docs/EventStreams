@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 To use the Kafka API with {{site.data.keyword.messagehub}}, choose one of the following types of client:
 
@@ -48,64 +48,21 @@ Other third-party clients that support the minimum set of client requirements mi
 ## Support summary for all recommended clients
 {: #client_summary_classic}
 
-<table id="clients_table">
-    <caption>Table 2. Client support summary</caption>
-      <tr>
-		    <th id="client" scope="col">Client</th>
-		    <th id="language" scope="col">Language</th>
-			<th id="version" scope="col">Recommended version</th>
-		    <th id="minimum version" scope="col">Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-kafka_clients_classic#footnote_clients_classic)</th>
-			<th id="sample link" scope="col">Link to sample</th>
-        </tr>
-			<tr>
-			<td colspan="3">**Official client**</td>
-			</tr>
-	  		<tr>
-			<td>[Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)</td>
-			<td>Java</td>
-			<td>Latest</td>
-			<td>0.10.2 <p> For information about older clients, see [backward compatibility](/docs/EventStreams?topic=EventStreams-kafka_clients_classic#compatibility_classic).</p></td>
-			<td>[Java console sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample)<br/>
-			[Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample)
-			</td>
-			</tr>
-			<tr>
-			<td colspan="3">**Third-party clients**</td>
-			</tr>
-	  		<tr>
-			<td>[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)</td>
-			<td>Node.js</td>
-			<td>Latest</td>
-			<td>2.2.2</td>
-			<td>[Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)</td>
-		</tr>
-		<tr>
-			<td>[confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python)</td>
-			<td>Python</td>
-			<td>Latest</td>
-			<td>0.11.0</td>
-			<td>[Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample)</td>
-		</tr>
-		<tr>
-			<td>[confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go)</td>
-			<td>Golang</td>
-			<td>Latest</td>
-			<td>0.11.0</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>[librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka)</td>
-			<td>C or C++</td>
-			<td>Latest</td>
-			<td>0.11.0</td>
-			<td></td>
-		</tr>
+| Client  | Language   | Recommended version   |Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-kafka_clients_classic#footnote_classic) |  Link to sample|
+|---|---|---|---|---|
+|**Official Apache Kafka client:**         |   |   |   |    |
+| [Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)  |  Java   | Latest  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
+|**Third-party clients:**   |   |   |   |    |
+|[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
+|[confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
+| [confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go) |  Golang | Latest  |  0.11.0  |   |
+| [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka) |  C or C++ | Latest  |  0.11.0  |   |
+{: caption="Table 2. Client support summary" caption-side="top"}
 
-</table>
 ### Footnote
 {: #footnote_clients_classic notoc}
 
-1. {: #footnote_classic}This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist
+1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist. {: #footnote_classic}
 
 ## Backward compatibility (Classic plan only)
 {: #compatibility_classic}
@@ -114,19 +71,6 @@ For backward compatibility, you can use the Apache Kafka 0.9 Java client with th
 
 Client versions earlier than 0.11 might experience degraded performance because of the additional protocol conversions that are required to connect to newer Kafka server versions.
 
-<!--
-## Unsupported clients
-
-The following clients are not supported by {{site.data.keyword.messagehub}}:
-
-### kafka-node
-The kafka-node client does not fully support SASL authentication with the PLAIN mechanism so cannot currently be used with {{site.data.keyword.messagehub}}.
-
-
-### no-kafka 
-The no-kafka client does not fully support SASL authentication with the PLAIN mechanism so cannot currently be used with {{site.data.keyword.messagehub}}.
-
--->
 
 ## Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client_classic}
