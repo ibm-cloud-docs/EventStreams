@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-10-05"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring, setup
 
@@ -25,6 +25,7 @@ subcollection: EventStreams
 This information describes how to set up a pair of {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
 {: shortdesc}
 
+Using mirroring with {{site.data.keyword.messagehub}} incurs an additional charge of $1.37 for each Mirroring capacity unit-hour. For more information, see [Multiple Enhancements for the Event Streams Enterprise Plan](https://www.ibm.com/cloud/blog/announcements/multiple-enhancements-for-the-event-streams-enterprise-plan).
 
 ## Step 1: setup 
 {: #step1_setup}
