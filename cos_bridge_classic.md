@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01thu071"
+lastupdated: "2019-11-01thu072"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -192,8 +192,8 @@ To partition data by Kafka message offset, complete the following steps:
 2. Specify an object with a `"type"` property of the value `"kafkaOffset"` in the `"partitioning"` array. 
 
     For example:
-    ```
-        ```
+
+        ```json
         {
           "topic": "topic1",
           "type": "objectStorageOut",
@@ -209,7 +209,6 @@ To partition data by Kafka message offset, complete the following steps:
             ]
           }
         }
-        ```
     ```
     {: codeblock}
 
