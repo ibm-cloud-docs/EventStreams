@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01thu073"
+lastupdated: "2019-11-01thu074"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -193,7 +193,7 @@ To partition data by Kafka message offset, complete the following steps:
 
     For example:
 
-        ```json
+    ```
         {
           "topic": "topic1",
           "type": "objectStorageOut",
@@ -216,12 +216,10 @@ To partition data by Kafka message offset, complete the following steps:
     to the first Kafka message stored in that partition (the group of objects with this prefix). For example, if a bridge generates objects with names like the following example, `<object_a>` and `<object_b>` contain messages with offsets in the range 0 - 999, `<object_c>` contains messages with offsets in the range 1000 - 1999, and so on.
 
     ```
-        ```
         <bucket_name>/offset=0/<object_a>
         <bucket_name>/offset=0/<object_b>
         <bucket_name>/offset=1000/<object_c>
         <bucket_name>/offset=2000/<object_d>
-        ```       
     ```
     {: codeblock}
 
@@ -236,7 +234,6 @@ To partition data by the ISO 8601 date, complete the following steps:
 2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. 
 
 	For example:
-    ```
     ```
     {
       "topic": "topic2",
@@ -257,7 +254,6 @@ To partition data by the ISO 8601 date, complete the following steps:
       }
     }
     ```
-    ```
     {: codeblock}
 
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
@@ -271,11 +267,9 @@ To partition data by the ISO 8601 date, complete the following steps:
 	2016-12-08.
 
     ```
-        ```
         <bucket_name>/dt=2016-12-07/<object_a>
         <bucket_name>/dt=2016-12-08/<object_b>
         <bucket_name>/dt=2016-12-08/<object_c>
-        ```       
     ```
     {: codeblock}
 
