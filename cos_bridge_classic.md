@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01thu07"
+lastupdated: "2019-11-01thu071"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -154,6 +154,39 @@ partition Kafka messages into Cloud Object Storage objects:
 {: notoc}
 
 To partition data by Kafka message offset, complete the following steps:
+
+1. Save the following configmap to a file on your local machine.
+
+   ```yaml
+   apiVersion: v1
+   kind: List
+   metadata:
+    name: configmap
+    items:
+    - apiVersion: v1
+      kind: Namespace
+      metadata:
+        labels:
+        openshift.io/cluster-monitoring: "true"
+        name: openshift-storage # Enter the namespace where you want to install the OCS Operator.
+    - kind: ConfigMap
+      apiVersion: v1
+      metadata:
+        name: rook-ceph-operator-config
+        namespace: openshift-storage # Enter the namespace where you want to install the OCS Operator.
+      data:
+         ROOK_CSI_KUBELET_DIR_PATH: "/var/data/kubelet"
+   ```
+   {: codeblock}
+
+1. Create the configmap in your cluster.
+
+    ```sh
+    oc create -f <configmap.yaml>
+    ```
+    {: pre}
+
+1. From the web console, click **Operators** > **OperatorHub**.
 
 1. Configure a bridge without the `"inputFormat"` property.
 2. Specify an object with a `"type"` property of the value `"kafkaOffset"` in the `"partitioning"` array. 
