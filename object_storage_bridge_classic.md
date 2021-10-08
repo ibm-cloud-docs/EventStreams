@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-02"
+lastupdated: "2019-10-02fri09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -104,7 +104,6 @@ To partition data by Kafka message offset, complete the following steps:
 
     For example:
     ```
-        ```
         {
           "topic": "topic1",
           "type": "objectStorageOut",
@@ -120,7 +119,6 @@ To partition data by Kafka message offset, complete the following steps:
             ]
           }
         }
-        ```
     ```
 {: codeblock}
 
@@ -133,12 +131,10 @@ To partition data by Kafka message offset, complete the following steps:
     1999, and so on.
 
     ```
-        ```
         <container_name>/offset=0/<object_a>
         <container_name>/offset=0/<object_b>
         <container_name>/offset=1000/<object_c>
-        <container_name>/offset=2000/<object_d>
-        ```
+        <container_name>/offset=2000/<object_d>xs
     ```
     {: codeblock}
   
@@ -154,7 +150,6 @@ To partition data by the ISO 8601 date, complete the following steps:
 
 	For example:
     ```
-        ```
         {
           "topic": "topic2",
           "type": "objectStorageOut",
@@ -173,7 +168,6 @@ To partition data by the ISO 8601 date, complete the following steps:
             ]
           }
         }
-        ```
     ```
     {: codeblock}
 
@@ -188,11 +182,9 @@ To partition data by the ISO 8601 date, complete the following steps:
 	2016-12-08.
 
     ```
-        ```
         <container_name>/dt=2016-12-07/<object_a>
         <container_name>/dt=2016-12-08/<object_b>
         <container_name>/dt=2016-12-08/<object_c>
-        ```
     ```
     {: codeblock}
 
