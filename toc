@@ -48,7 +48,7 @@ Event Streams
 	{: .topicgroup}
 	Migrating from the Classic plan 
 		upgrading_standard.md
-		migrating_rest_api_classic..md
+		migrating_rest_api_classic.md
 		migrating_mq_light.md
 		migrating_bridges_kafka.md
 
