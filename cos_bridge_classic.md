@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01mon11pm"
+lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -48,7 +48,7 @@ The output format of the bridge is an object storage service object that contain
 records concatenated with newline characters as separators.
 
 ## How data is transferred using the Cloud Object Storage bridge
-{: #data_transfer notoc}
+{: #data_transfer}
 
 The Cloud Object Storage bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
@@ -82,7 +82,7 @@ unsuitable for messages that contain embedded newline characters and for binary 
 
 
 ## Getting credentials to use with the Cloud Object Storage bridge
-{: notoc}
+{: cos_credentials}
 
 You must supply credentials to allow the Cloud Object Storage bridge to connect into your Cloud Object Storage instance. Request that the owner or administrator of your Cloud Object Storage instance creates
 the credentials using the Cloud Object Storage UI as follows: 
@@ -104,7 +104,7 @@ is the name of the bucket. Click **Save**.
 
 
 ## Creating a Cloud Object Storage bridge
-{: notoc}
+{: create_cos_bridge}
 
 To create a new Cloud Object Storage bridge using the Kafka REST API, use JSON like the following example. Ensure that your bucket names are globally unique, not just unique within your Cloud Object Storage instance.
 
@@ -133,7 +133,7 @@ To create a new Cloud Object Storage bridge using the Kafka REST API, use JSON l
 
 
 ## How the Cloud Object Storage bridge partitions data into objects
-{: notoc}
+{: cos_partitions}
 
 One of the features of the Cloud Object Storage bridge is its ability to partition
 Kafka messages and store them as objects named with a common prefix. A group of objects named with a
@@ -151,7 +151,7 @@ partition Kafka messages into Cloud Object Storage objects:
 * By an ISO 8601 date present in each Kafka message. This requires the Kafka messages to comprise a valid JSON format object.
 
 ## Partitioning by Kafka message offset
-{: notoc}
+{: cos_offset}
 
 To partition data by Kafka message offset, complete the following steps:
 
@@ -193,7 +193,7 @@ To partition data by Kafka message offset, complete the following steps:
 
 
 ## Partitioning by ISO 8601 date
-{: #partition_iso notoc}
+{: #partition_iso }
 
 To partition data by the ISO 8601 date, complete the following steps:
 
@@ -245,7 +245,7 @@ To partition data by the ISO 8601 date, complete the following steps:
 	with the prefix `"dt=1970-01-01"`.
 
 ## Cloud Object Storage bridge metrics
-{: notoc}
+{: cos_metrics}
 
 The Cloud Object Storage bridge reports
 metrics, which can be displayed on your dashboard using Grafana. Metrics of interest include the following:
