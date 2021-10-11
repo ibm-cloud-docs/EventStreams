@@ -239,14 +239,14 @@ To partition data by the ISO 8601 date, complete the following steps:
 	2016-12-08.
 
 
-        <pre class="pre"><code>
-        ```
-        &lt;bucket_name&gt;/dt=2016-12-07/&lt;object_a&gt;
-        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_b&gt;
-        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_c&gt;
-        ```       
-    </code></pre>
-    {:codeblock}
+test
+
+    ```
+    <bucket_name>/dt=2016-12-07/<object_a>
+    <bucket_name>/dt=2016-12-08/<object_b>
+    <bucket_name>/dt=2016-12-08/<object_c>
+    ```
+    {: pre}
 
 	Any message data that is valid JSON but without a valid date field or value is written into an object
 	with the prefix `"dt=1970-01-01"`.
