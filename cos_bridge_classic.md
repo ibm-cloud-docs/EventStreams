@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01mon11oct"
+lastupdated: "2019-11-01mon11pm"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -201,10 +201,7 @@ To partition data by the ISO 8601 date, complete the following steps:
 `"json"`.
 2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. 
 
-
-
-    	For example:
-    <pre class="pre"><code>
+	For example:
     ```
     {
       "topic": "topic2",
@@ -225,8 +222,7 @@ To partition data by the ISO 8601 date, complete the following steps:
       }
     }
     ```
-    </code></pre>
-    {:codeblock}
+    {: codeblock}
 
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
 	`"propertyName"` in the JSON used to configure the bridge must correspond to the ISO
@@ -238,15 +234,12 @@ To partition data by the ISO 8601 date, complete the following steps:
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
 
-
-test
-
     ```
-    <bucket_name>/dt=2016-12-07/<object_a>
-    <bucket_name>/dt=2016-12-08/<object_b>
-    <bucket_name>/dt=2016-12-08/<object_c>
+        <bucket_name>/dt=2016-12-07/<object_a>
+        <bucket_name>/dt=2016-12-08/<object_b>
+        <bucket_name>/dt=2016-12-08/<object_c>
     ```
-    {: pre}
+    {: codeblock}
 
 	Any message data that is valid JSON but without a valid date field or value is written into an object
 	with the prefix `"dt=1970-01-01"`.
