@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-10-02fri09"
+lastupdated: "2019-10-02tue12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -50,15 +50,11 @@ records concatenated with newline characters as separators.
 
 The {{site.data.keyword.objectstorageshort}} bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
-object. This object is uploaded to an instance of the {{site.data.keyword.objectstorageshort}} service. Each {{site.data.keyword.objectstorageshort}} bridge reads message data from a
-single Kafka topic, although it is possible for one topic to have multiple bridges reading data from
-it. A new instance of the {{site.data.keyword.objectstorageshort}}
-bridge always starts reading from the earliest offset present in the Kafka topic. The {{site.data.keyword.objectstorageshort}} bridge uses Kafka's consumer offset
-management to transfer data reliably from Kafka without loss, but with a small chance of
-duplication.
+object. This object is uploaded to an instance of the {{site.data.keyword.objectstorageshort}} service. Each {{site.data.keyword.objectstorageshort}} bridge reads message data from a single Kafka topic, although it is possible for one topic to have multiple bridges reading data from it. A new instance of the {{site.data.keyword.objectstorageshort}} bridge always starts reading from the earliest offset present in the Kafka topic. The {{site.data.keyword.objectstorageshort}} bridge uses Kafka's consumer offset management to transfer data reliably from Kafka without loss, but with a small chance of duplication.
 
 You can control how many records are read from Kafka before data is written into the {{site.data.keyword.objectstorageshort}} service instance using the
 following properties. Specify these properties when you create or update a bridge:
+
 `"uploadDurationThresholdSeconds"`
 :   Defines a period of time in seconds after which the data accumulated from Kafka is uploaded to the {{site.data.keyword.objectstorageshort}} service.
 
@@ -134,7 +130,7 @@ To partition data by Kafka message offset, complete the following steps:
         <container_name>/offset=0/<object_a>
         <container_name>/offset=0/<object_b>
         <container_name>/offset=1000/<object_c>
-        <container_name>/offset=2000/<object_d>xs
+        <container_name>/offset=2000/<object_d>
     ```
     {: codeblock}
   
