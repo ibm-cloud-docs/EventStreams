@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-04-29"
+lastupdated: "2021-10-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -81,6 +81,9 @@ The plan is available in the following regions:
 * Sydney (au-syd)
 * Frankfurt (eu-de)
 * Tokyo (jp-tok)
+* Osaka (jp-osa)
+* Toronto (ca-tor)
+* Sao Paulo (br-sao)
 
 ## Integrations
 {: #integrations}
