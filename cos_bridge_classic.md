@@ -23,7 +23,7 @@ subcollection: EventStreams
 
 The Cloud Object Storage bridge is available as part of the Classic plan only. The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 For information about the replacement for the bridge, see [Connecting Event Streams to Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
 
@@ -48,7 +48,7 @@ The output format of the bridge is an object storage service object that contain
 records concatenated with newline characters as separators.
 
 ## How data is transferred using the Cloud Object Storage bridge
-{: #data_transfer notoc}
+{: #data_transfer}
 
 The Cloud Object Storage bridge works by
 reading a number of Kafka records from a topic and writing the data from these records into an
@@ -82,7 +82,7 @@ unsuitable for messages that contain embedded newline characters and for binary 
 
 
 ## Getting credentials to use with the Cloud Object Storage bridge
-{: notoc}
+{: cos_credentials}
 
 You must supply credentials to allow the Cloud Object Storage bridge to connect into your Cloud Object Storage instance. Request that the owner or administrator of your Cloud Object Storage instance creates
 the credentials using the Cloud Object Storage UI as follows: 
@@ -96,7 +96,7 @@ the credentials using the Cloud Object Storage UI as follows:
 
 The credential that you create grants writer access to the entire Cloud Object Storage instance,
 therefore you might want to restrict this access to the specific bucket that the bridge will interact with.
-1. Go to the [Manage access and users page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/iam/overview){:new_window}. 
+1. Go to the [Manage access and users page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/iam/overview){: new_window}. 
 2. You should see the auto generated service ID on this page. When you have identified the specific ID, select
 the **Manage service ID** action. 
 3. Select the **Edit policy** action to further restrict it to a specific **Resource type**, which is bucket and a **Resource ID**, which
@@ -104,36 +104,36 @@ is the name of the bucket. Click **Save**.
 
 
 ## Creating a Cloud Object Storage bridge
-{: notoc}
+{: create_cos_bridge}
 
 To create a new Cloud Object Storage bridge using the Kafka REST API, use JSON like the following example. Ensure that your bucket names are globally unique, not just unique within your Cloud Object Storage instance.
 
-<pre class="pre"><code>
+```
 {
-  "name": "cosbridge",
-  "topic": "kafka-java-console-sample-topic",
-  "type": "objectStorageS3Out",
-  "configuration" : {
-    "credentials" : {
-      "endpoint" : "https://s3-api.us-geo.objectstorage.softlayer.net",
-      "resourceInstanceId" : "crn::",
-      "apiKey" : "your_api_key"
-    },
-    "bucket" : "cosbridge0",
-    "uploadDurationThresholdSeconds" : 600,
-    "uploadSizeThresholdKB" : 1024,
-    "partitioning" : [ {
-        "type" : "kafkaOffset"
-      }
-    ]
-  }
+    "name": "cosbridge",
+    "topic": "kafka-java-console-sample-topic",
+    "type": "objectStorageS3Out",
+    "configuration" : {
+      "credentials" : {
+        "endpoint" : "https://s3-api.us-geo.objectstorage.softlayer.net",
+        "resourceInstanceId" : "crn::",
+        "apiKey" : "your_api_key"
+      },
+      "bucket" : "cosbridge0",
+      "uploadDurationThresholdSeconds" : 600,
+      "uploadSizeThresholdKB" : 1024,
+      "partitioning" : [ {
+          "type" : "kafkaOffset"
+        }
+      ]
+    }
 }
-</code></pre>
+```
 {: codeblock}
 
 
 ## How the Cloud Object Storage bridge partitions data into objects
-{: notoc}
+{: cos_partitions}
 
 One of the features of the Cloud Object Storage bridge is its ability to partition
 Kafka messages and store them as objects named with a common prefix. A group of objects named with a
@@ -151,16 +151,17 @@ partition Kafka messages into Cloud Object Storage objects:
 * By an ISO 8601 date present in each Kafka message. This requires the Kafka messages to comprise a valid JSON format object.
 
 ## Partitioning by Kafka message offset
-{: notoc}
+{: cos_offset}
 
 To partition data by Kafka message offset, complete the following steps:
+
 
 1. Configure a bridge without the `"inputFormat"` property.
 2. Specify an object with a `"type"` property of the value `"kafkaOffset"` in the `"partitioning"` array. 
 
     For example:
-    <pre class="pre"><code>
-        ```
+
+    ```
         {
           "topic": "topic1",
           "type": "objectStorageOut",
@@ -176,31 +177,23 @@ To partition data by Kafka message offset, complete the following steps:
             ]
           }
         }
-        ```
-     	</code></pre>
-    {:codeblock}
+    ```
+    {: codeblock}
 
-    The object names generated by a bridge configured in this way contain the prefix
-    `"offset=<kafka_offset>"` where `"<kafka_offset>"` corresponds
-    to the first Kafka message stored in that partition (the group of objects with this prefix). For
-    example, if a bridge generates objects with names like the following example,
-    `<object_a>` and `<object_b>` contain messages with offsets in
-    the range 0 - 999, `<object_c>` contains messages with offsets in the range 1000 -
-    1999, and so on.
+    The object names generated by a bridge configured in this way contain the prefix `"offset=<kafka_offset>"` where `"<kafka_offset>"` corresponds
+    to the first Kafka message stored in that partition (the group of objects with this prefix). For example, if a bridge generates objects with names like the following example, `<object_a>` and `<object_b>` contain messages with offsets in the range 0 - 999, `<object_c>` contains messages with offsets in the range 1000 - 1999, and so on.
 
-    <pre class="pre"><code>
-        ```
-        &lt;bucket_name&gt;/offset=0/&lt;object_a&gt;
-        &lt;bucket_name&gt;/offset=0/&lt;object_b&gt;
-        &lt;bucket_name&gt;/offset=1000/&lt;object_c&gt;
-        &lt;bucket_name&gt;/offset=2000/&lt;object_d&gt;
-        ```       
-    </code></pre>
-    {:codeblock}
-  
-    
+    ```
+        <bucket_name>/offset=0/<object_a>
+        <bucket_name>/offset=0/<object_b>
+        <bucket_name>/offset=1000/<object_c>
+        <bucket_name>/offset=2000/<object_d>
+    ```
+    {: codeblock}
+
+
 ## Partitioning by ISO 8601 date
-{: #partition_iso notoc}
+{: #partition_iso }
 
 To partition data by the ISO 8601 date, complete the following steps:
 
@@ -209,7 +202,6 @@ To partition data by the ISO 8601 date, complete the following steps:
 2. Specify an object with a `"type"` property of the value `"dateIso8601"` and a `"propertyName"` property in the `"partitioning"` array. 
 
 	For example:
-    <pre class="pre"><code>
     ```
     {
       "topic": "topic2",
@@ -230,8 +222,7 @@ To partition data by the ISO 8601 date, complete the following steps:
       }
     }
     ```
-    </code></pre>
-    {:codeblock}
+    {: codeblock}
 
 	Partitioning by the ISO 8601 date requires that Kafka messages have a valid JSON format. The value of
 	`"propertyName"` in the JSON used to configure the bridge must correspond to the ISO
@@ -243,27 +234,25 @@ To partition data by the ISO 8601 date, complete the following steps:
 	a date of 2016-12-07, and both `<object_b>` and `<object_c>` contain JSON messages with `"timestamp"` fields with a date of
 	2016-12-08.
 
-    <pre class="pre"><code>
-        ```
-        &lt;bucket_name&gt;/dt=2016-12-07/&lt;object_a&gt;
-        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_b&gt;
-        &lt;bucket_name&gt;/dt=2016-12-08/&lt;object_c&gt;
-        ```       
-    </code></pre>
-    {:codeblock}
+    ```
+        <bucket_name>/dt=2016-12-07/<object_a>
+        <bucket_name>/dt=2016-12-08/<object_b>
+        <bucket_name>/dt=2016-12-08/<object_c>
+    ```
+    {: codeblock}
 
 	Any message data that is valid JSON but without a valid date field or value is written into an object
 	with the prefix `"dt=1970-01-01"`.
 
 ## Cloud Object Storage bridge metrics
-{: notoc}
+{: cos_metrics}
 
 The Cloud Object Storage bridge reports
 metrics, which can be displayed on your dashboard using Grafana. Metrics of interest include the following:
 <dl>
-<dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.bytes-consumed-rate</code></dt>
+<dt><code>*.<topicName>.<bridgeName>.bytes-consumed-rate</code></dt>
 <dd>Measures the rate that the bridge consumes data (in bytes per second).</dd>
-<dt><code>*.<var class="keyword varname">topicName</var>.<var class="keyword varname">bridgeName</var>.records-lag-max</code></dt>
+<dt><code>*.<topicName>.<bridgeName>.records-lag-max</code></dt>
 <dd>Measures the maximum lag in the number of records consumed by the bridge for any partition in
 this topic. An increasing value over time indicates that the bridge is not keeping up with producers
 for the topic.</dd>
