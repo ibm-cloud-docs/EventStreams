@@ -5,7 +5,7 @@ toc:
     audience: service
     href: /docs/EventStreams/
     path: EventStreams
-    label: Event Streams service
+    label: Event Streams 
     version: 2
     console-page: /event-streams
     product-page: https://www.ibm.com/cloud/event-streams
@@ -88,6 +88,10 @@ toc:
             label: Enhancing security
             topics:
             - manage_security.md
+        - using_kafka_client.md
+        - link: 
+             label: Asynchronous data processing using object storage and pub/sub messaging tutorial
+             href: https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging
     - navgroup:
         id: reference
         topics:
@@ -131,18 +135,6 @@ toc:
             label: Migrating from Dedicated to Enterprise plan
             topics:
             - upgrading_enterprise.md
-        - topicgroup:
-            label: Related links
-            topics:
-              - link: 
-                  label: Event Streams Java Kafka sample
-                  href: https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
-              - link: 
-                  label: Apache Kafka client downloads
-                  href: https://kafka.apache.org/downloads
-              - link: 
-                  label: IBM Event Streams on ibm.com
-                  href: https://www.ibm.com/cloud/event-streams
     - navgroup: 
         id: help
         topics:
@@ -154,6 +146,18 @@ toc:
               - known_restrictions.md
               - reporting_problem.md
               - reporting_problem_classic.md
+          - topicgroup:
+              label: Related links
+              topics:
+              - link: 
+                  label: Event Streams Java Kafka sample
+                  href: https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
+              - link: 
+                  label: Apache Kafka client downloads
+                  href: https://kafka.apache.org/downloads
+              - link: 
+                  label: IBM Event Streams on ibm.com
+                  href: https://www.ibm.com/cloud/event-streams
         
         
 
