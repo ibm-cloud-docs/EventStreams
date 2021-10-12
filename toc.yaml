@@ -7,7 +7,7 @@ toc:
     path: EventStreams
     label: Event Streams 
     version: 2
-    console-page: /event-streams
+    console-page: /catalog/services/event-streams
     product-page: https://www.ibm.com/cloud/event-streams
   entries: 
     - navgroup: 
