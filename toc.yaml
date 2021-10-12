@@ -18,8 +18,8 @@ toc:
             label: About Event Streams
             topics:
             - overview.md
-            - apache_kafka_concepts.md
-            - choosing_your_plan.md
+        - apache_kafka_concepts.md
+        - choosing_your_plan.md
     - navgroup:
         id: tutorial
         topics:
@@ -88,13 +88,6 @@ toc:
             label: Enhancing security
             topics:
             - manage_security.md
-        - topicgroup:
-            label: Managing access control
-            topics:
-            - access-overview.md
-            - access-apikey.md
-            - access-iam-rbac.md
-            - access-pod-identity.md
     - navgroup:
         id: reference
         topics:
