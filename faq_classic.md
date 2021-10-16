@@ -23,7 +23,7 @@ subcollection: EventStreams
 
 The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{:deprecated}
+{: deprecated}
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service for the Classic plan.
 
@@ -133,7 +133,7 @@ REST API returns the following JSON:
 
 ```'{"error_code":40403,"message":"Consumer instance not found."}'
 ```
-{:screen}
+{: screen}
 
 ## What are the differences between the {{site.data.keyword.messagehub}} plans?
 {: #plan_compare_classic }
