@@ -93,7 +93,7 @@ If more partitions than consumers exist in a group, some consumers have multiple
 ## More links
 
 To learn more, see the following information:
-- [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){:new_window} 
+- [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window} 
 
 
 <!-- 27/06/18 Karen: removing - suggestion from James
