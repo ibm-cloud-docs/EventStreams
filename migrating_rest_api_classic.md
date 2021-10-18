@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01monpm"
+lastupdated: "2019-11-01monpm1"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -157,20 +157,20 @@ For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![Ext
 Consuming messages via HTTP is no longer supported. Consequently, the following API calls are no longer available:
 
 
-* GET /topics/(<em>string: topic_name</em>)/partitions/(<em>int: partition_id</em>)/messages?offset=(<em>int</em>)[&count=(<em>int</em>)]
-    Consume messages from one partition of the topic.
+* **GET /topics/(<string: topic_name>)/partitions/(<int: partition_id>)/messages?offset=(<int>)[&count=(<int>)]**  \n 
+Consume messages from one partition of the topic.
 
-* POST /consumers/(<em>string: group_name</em>)
-    Create a new consumer instance in the consumer group.
+* **POST /consumers/(<string: group_name>)**  \n 
+Create a new consumer instance in the consumer group.
 
-* POST /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)/offsets
-    Commit offsets for the consumer. 
+* **POST /consumers/(<string: group_name>)/instances/(<string: instance>)/offsets**  \n 
+Commit offsets for the consumer. 
 
-* DELETE /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)
-    Destroy the consumer instance.
+* **DELETE /consumers/(<string: group_name>)/instances/(<string: instance>)**  \n 
+Destroy the consumer instance.
 
-* GET /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)/topics/(<em>string: topic_name</em>)
-    Consume messages from a topic.
+* **GET /consumers/(<string: group_name>)/instances/(<string: instance>)/topics/(<string: topic_name>)**  \n 
+Consume messages from a topic.
 
 
 To replace this functionality, you can take a number of different approaches. 
