@@ -160,9 +160,6 @@ Consuming messages using HTTP is no longer supported. Consequently, the followin
 * **GET /topics/(<em>string: topic_name</em>)/partitions/(<em>int: partition_id</em>)/messages?offset=(<em>int</em>)[&count=(<em>int</em>)]** \
 Consume messages from one partition of the topic.
 
-* **GET /topics/(<em>string: topic_name</em>)/partitions/(<em>int: partition_id</em>)/messages?offset=(<em>int</em>)[&count=(<em>int</em>)]** \
-Consume messages from one partition of the topic.
-
 * **POST /consumers/(<em>string: group_name</em>)** \
 Create a new consumer instance in the consumer group.
 
