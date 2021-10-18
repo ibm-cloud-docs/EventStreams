@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-01mon"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -20,7 +20,7 @@ subcollection: EventStreams
 # Migrating the REST APIs from the Classic plan
 {: #migrate_rest_apis}
 
-The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. However, existing instances will continue to be supported.
+The Classic plan is deprecated. From November 1, 2019 you can no longer provision new instances of the Classic Plan. However, existing instances will continue to be supported.
 From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
 {: deprecated}
 
@@ -184,11 +184,11 @@ To replace this functionality, you can take a number of different approaches.
 
 If switching to the Kafka Client is not an option, other methods for integrating with {{site.data.keyword.messagehub}} that you could consider include the following:
 
-* **{{site.data.keyword.openwhisk}} Service**
-    You can define serverless actions triggered from messages consumed from Kafka: [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API by [creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
+{{site.data.keyword.openwhisk}} Service
+:   You can define serverless actions triggered from messages consumed from Kafka: [{{site.data.keyword.messagehub}} events](/docs/openwhisk?topic=cloud-functions-pkg_event_streams#eventstreams_events) or define web actions triggered from a REST API by [creating serverless REST APIs](/docs/openwhisk?topic=cloud-functions-apigateway).
 
-* ** {{site.data.keyword.appconserviceshort}} Enterprise **
-    You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){: new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){: new_window}.
+{{site.data.keyword.appconserviceshort}} Enterprise
+:   You can define integration flows to consume messages from Kafka. For more information, see [Using Kafka nodes with {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91055_.htm){: new_window} and [Processing Kafka messages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bz91030_.htm){: new_window}.
 
 
 
