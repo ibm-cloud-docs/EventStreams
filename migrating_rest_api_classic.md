@@ -170,7 +170,7 @@ Commit offsets for the consumer.
 * **DELETE /consumers/(<string: group_name>)/instances/(<string: instance>)** \
 Destroy the consumer instance.
 
-* **GET /consumers/(<string: group_name>)/instances/(<string: instance>)/topics/ \(<string: topic_name>)**
+* **GET /consumers/(<string: group_name>)/instances/(<string: instance>)/topics/ (<string: topic_name>)** \
 Consume messages from a topic.
 
 
