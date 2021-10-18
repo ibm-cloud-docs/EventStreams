@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01monpm1"
+lastupdated: "2019-11-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -136,6 +136,7 @@ Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/j
 ```
 {: codeblock}
 
+
 The equivalent on the Standard plan is as follows:
 
 ```
@@ -157,19 +158,19 @@ For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![Ext
 Consuming messages via HTTP is no longer supported. Consequently, the following API calls are no longer available:
 
 
-* **GET /topics/(<string: topic_name>)/partitions/(<int: partition_id>)/messages?offset=(<int>)[&count=(<int>)]**  \n 
+* **GET /topics/(<string: topic_name>)/partitions/(<int: partition_id>)/messages?offset=(<int>)[&count=(<int>)]** \
 Consume messages from one partition of the topic.
 
-* **POST /consumers/(<string: group_name>)**  \n 
+* **POST /consumers/(<string: group_name>)** \
 Create a new consumer instance in the consumer group.
 
-* **POST /consumers/(<string: group_name>)/instances/(<string: instance>)/offsets**  \n 
+* **POST /consumers/(<string: group_name>)/instances/(<string: instance>)/offsets** \
 Commit offsets for the consumer. 
 
-* **DELETE /consumers/(<string: group_name>)/instances/(<string: instance>)**  \n 
+* **DELETE /consumers/(<string: group_name>)/instances/(<string: instance>)** \
 Destroy the consumer instance.
 
-* **GET /consumers/(<string: group_name>)/instances/(<string: instance>)/topics/(<string: topic_name>)**  \n 
+* **GET /consumers/(<string: group_name>)/instances/(<string: instance>)/topics/ \(<string: topic_name>)**
 Consume messages from a topic.
 
 
