@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01"
+lastupdated: "2019-11-01mon6pm"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -157,6 +157,7 @@ For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![Ext
 
 Consuming messages via HTTP is no longer supported. Consequently, the following API calls are no longer available:
 
+* **GET /topics/(<string: topic_name>)/partitions/(<int: partition_id>)/messages?offset=(<em>int</em>)[&count=(<em>int</em>)]** \
 
 * **GET /topics/(<string: topic_name>)/partitions/(<int: partition_id>)/messages?offset=(<int>)[&count=(<int>)]** \
 Consume messages from one partition of the topic.
