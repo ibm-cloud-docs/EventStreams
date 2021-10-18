@@ -118,8 +118,6 @@ In summary, when a message is published, its record is first written into a buff
 {: #delivery_semantics}
 
 Kafka offers the following multiple different message delivery semantics:
-
-Kafka offers the following multiple different message delivery semantics:
 <ul>
     <li>At most once: messages might get lost and won't get redelivered</li>
     <li>At least once: messages are never lost but there might be duplicates</li>
