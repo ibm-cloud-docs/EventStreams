@@ -1,0 +1,140 @@
+toc:
+  properties:
+    subcollection: EventStreams
+    category: integration
+    audience: service
+    href: /docs/EventStreams/
+    path: EventStreams
+    label: Event Streams 
+    version: 2
+    console-page: /catalog/services/event-streams
+    product-page: https://www.ibm.com/cloud/event-streams
+  entries: 
+    - navgroup: 
+        id: learn
+        topics:
+        - getting-started.md
+        - topicgroup:
+            label: About Event Streams
+            topics:
+            - overview.md
+        - apache_kafka_concepts.md
+        - choosing_your_plan.md
+    - navgroup: 
+        id: howto
+        topics:
+        - connecting_es.md
+        - topicgroup:
+            label: Administering Event Streams
+            topics:
+            - using_admin_rest_api.md
+            - using_admin_kafka_api.md
+            - using_kafka_console.md
+            - getting_started_cli.md
+            - managing_access.md
+            - restricting_access_iam.md
+            - restricting_access_enterprise.md
+            - managing_encryption.md
+            - scaling_capacity.md
+            - enabling_monitoring.md
+        - topicgroup:
+            label: Developing apps with Event Streams
+            topics:
+            - using_kafka_api.md
+            - producing_messages.md
+            - consuming_messages.md
+            - partition_leadership.md
+            - schema_registry.md
+            - using_kafka_connect.md
+            - using_kafka_streams.md
+            - using_ksqldb.md
+            - using_rest_producer.md
+            - mirroring.md
+        - streaming_cos_sql.md
+        - topicgroup:
+            label: Integrating with other services
+            topics:
+            - connecting_cos.md
+            - connecting_mq.md
+            - watson_platform.md
+            - streaming_log_analysis.md
+        - topicgroup:
+            label: Enhancing security
+            topics:
+            - manage_security.md
+        - using_kafka_client.md
+        - link: 
+             label: Asynchronous data processing using object storage and pub/sub messaging tutorial
+             href: https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging
+    - navgroup:
+        id: reference
+        topics:
+        - sla.md
+        - responsibilities.md
+        - limits_quotas.md
+        - data_security.md
+        - activity_tracker_events.md
+        - monitoring.md
+        - disaster_recovery.md
+        - reserved_disk.md
+        - eventstreams-cli.md
+        - topicgroup:
+            label: Classic plan
+            topics:
+              - classic_plan.md
+              - connecting_es_classic.md
+              - choosing_apis_classic.md
+              - using_kafka_api_classic.md
+              - using_kafka_rest_api_classic.md
+              - using_admin_rest_api_class.md
+              - choosing_kafka_client_classic.md
+              - migrating_kafka_java_classic.md
+              - using_mq_light_api_classic.md
+              - using_mq_light_clients_classic.md
+              - linking_bridges_classic.md
+              - mq_bridge_classic.md
+              - cos_bridge_classic.md
+              - object_storage_bridge_classic.md
+              - monitoring_logging_classic.md
+              - faq_classic.md
+              - restrictions_classic.md
+        - topicgroup:
+            label: Migrating from the Classic plan
+            topics:
+            - upgrading_standard.md
+            - migrating_rest_api_classic.md
+            - migrating_mq_light.md
+            - migrating_bridges_kafka.md
+        - topicgroup:
+            label: Migrating from Dedicated to Enterprise plan
+            topics:
+            - upgrading_enterprise.md
+    - navgroup: 
+        id: help
+        topics:
+          - faq.md
+          - topicgroup:
+              label: Troubleshooting
+              topics:
+              - troubleshooting.md
+              - known_restrictions.md
+              - reporting_problem.md
+              - reporting_problem_classic.md
+          - topicgroup:
+              label: Related links
+              topics:
+              - link: 
+                  label: Event Streams Java Kafka sample
+                  href: https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
+              - link: 
+                  label: Apache Kafka client downloads
+                  href: https://kafka.apache.org/downloads
+              - link: 
+                  label: IBM Event Streams on ibm.com
+                  href: https://www.ibm.com/cloud/event-streams
+        
+        
+
+
+
+
