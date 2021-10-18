@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-11-01mon"
+lastupdated: "2019-11-01monpm"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, migration, REST API
 
@@ -156,28 +156,27 @@ For more information, see [{{site.data.keyword.messagehub}} admin-rest api ![Ext
 
 Consuming messages via HTTP is no longer supported. Consequently, the following API calls are no longer available:
 
-<dl>
-<dt>GET /topics/(<em>string: topic_name</em>)/partitions/(<em>int: partition_id</em>)/messages?offset=(<em>int</em>)[&count=(<em>int</em>)]</dt>
-<dd>Consume messages from one partition of the topic.
-</dd>
-<dt>POST /consumers/(<em>string: group_name</em>)</dt>
-<dd>Create a new consumer instance in the consumer group.
-</dd>
-<dt>POST /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)/offsets</dt>
-<dd>Commit offsets for the consumer. 
-</dd>
-<dt>DELETE /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)</dt>
-<dd>Destroy the consumer instance.
-</dd>
-<dt>GET /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)/topics/(<em>string: topic_name</em>)</dt>
-<dd>Consume messages from a topic.
-</dd>
-</dl>
+
+* GET /topics/(<em>string: topic_name</em>)/partitions/(<em>int: partition_id</em>)/messages?offset=(<em>int</em>)[&count=(<em>int</em>)]
+    Consume messages from one partition of the topic.
+
+* POST /consumers/(<em>string: group_name</em>)
+    Create a new consumer instance in the consumer group.
+
+* POST /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)/offsets
+    Commit offsets for the consumer. 
+
+* DELETE /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)
+    Destroy the consumer instance.
+
+* GET /consumers/(<em>string: group_name</em>)/instances/(<em>string: instance</em>)/topics/(<em>string: topic_name</em>)
+    Consume messages from a topic.
+
 
 To replace this functionality, you can take a number of different approaches. 
 
-* **Kafka client**
-    The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){: new_window}. We also recommend a number of specifically tested clients: [recommended clients](/docs/EventStreams?topic=EventStreams-kafka_clients#kafka_clients). 
+Kafka client
+:   The core Kafka API is supported on an ever-growing number of [platforms and languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){: new_window}. We also recommend a number of specifically tested clients: [recommended clients](/docs/EventStreams?topic=EventStreams-kafka_clients#kafka_clients). 
     
     If switching is an option, you are recommended to do so as a longer term more scalable, performant approach. Note, the Kafka API is a lower-level API than HTTP, and so exposes some additional complexity. However, a large number of samples and resources are available to help produce a solution, including our own 
 [samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}.
