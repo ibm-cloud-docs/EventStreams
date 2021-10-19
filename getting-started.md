@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-10-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -132,7 +132,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` indicates to start the consumer. 
 
    ```
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar \ 
+   java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
    <kafka_brokers_sasl> <api_key> -consumer
    ```
    {: codeblock}
@@ -160,8 +160,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` initiates to start the producer. 
 
    ```
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	<kafka_brokers_sasl> <api_key> -producer
+   java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
+   <kafka_brokers_sasl> <api_key> -producer
    ```
    {: codeblock}
 
