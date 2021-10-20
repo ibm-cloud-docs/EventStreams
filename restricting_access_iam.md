@@ -82,3 +82,4 @@ This action is required for private connections because the source IP address th
 
 You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance through the Private IP Allowlist. For more information, refer to [Restricting network access using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access).
 {: note}
+
