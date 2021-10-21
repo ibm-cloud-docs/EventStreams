@@ -160,8 +160,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` initiates to start the producer. 
 
    ```
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar
-	<kafka_brokers_sasl> <api_key> -producer
+java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
+<kafka_brokers_sasl> <api_key> -producer
    ```
    {: codeblock}
 
