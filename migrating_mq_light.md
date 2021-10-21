@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2019
-lastupdated: "2019-07-18a"
+lastupdated: "2019-07-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ Light
 
@@ -29,10 +29,10 @@ The tradeoff for these lightweight topics is that {{site.data.keyword.mql}} topi
 
 To learn more about key Kafka concepts and the Kafka API, see 
 [Apache Kafka concepts](/docs/EventStreams?topic=EventStreams-apache_kafka) and 
-[Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation/){:new_window}.
+[Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/documentation/){: new_window}.
 
 ## Programming language support
-Just because you're migrating between APIs doesn't mean you want to change everything. Your choice of programming language is probably based around the skills of your development team, as well as the other APIs that your application uses. The good news is that Apache Kafka has clients in [many languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){:new_window}, far more than the {{site.data.keyword.mql}} API has been implemented in.
+Just because you're migrating between APIs doesn't mean you want to change everything. Your choice of programming language is probably based around the skills of your development team, as well as the other APIs that your application uses. The good news is that Apache Kafka has clients in [many languages ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cwiki.apache.org/confluence/display/KAFKA/Clients){: new_window}, far more than the {{site.data.keyword.mql}} API has been implemented in.
 
 {{site.data.keyword.messagehub}} maintains a [list of clients](/docs/EventStreams?topic=EventStreams-kafka_clients#kafka_clients) that we regularly test and know to work well with the service. If you're using the {{site.data.keyword.mql}} API in Java, Node JS, or Python, {{site.data.keyword.messagehub}} has a recommended Kafka client for these languages. But what about the only other language that the {{site.data.keyword.mql}} API has been ported to, Ruby? {{site.data.keyword.messagehub}} doesn't currently have a recommended client for this language. We do, however, have customers who are using the [Zendesk Ruby client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/zendesk/ruby-kafka), so if your application is written in Ruby, this might be a good starting point.
 
@@ -155,7 +155,7 @@ If you have designed your application around creating large numbers of lightweig
 ### Client takeover
 One of the more niche features of the {{site.data.keyword.mql}} API is client takeover. If a client tries to connect using a client ID that matches an already connected client, the already connected client is disconnected in favor of the newly arriving client. In theory this feature was designed to allow exclusive access to a topic. However, in practice, it often led to two instances of a client fighting for control - each stuck in a loop of interrupting the other instance, then being restarted by the runtime used for deployment.
 
-Kafka doesn't implement this kind of exclusivity (and arguably, that should be considered a good thing). If you are really dependent on having only one producer or consumer at any given time, you can achieve this in a distributed way using a service that supports leadership election. For example: [Apache ZooKeeper ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zookeeper.apache.org/){:new_window} or [etcd ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://etcd.io/){:new_window}.
+Kafka doesn't implement this kind of exclusivity (and arguably, that should be considered a good thing). If you are really dependent on having only one producer or consumer at any given time, you can achieve this in a distributed way using a service that supports leadership election. For example: [Apache ZooKeeper ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://zookeeper.apache.org/){: new_window} or [etcd ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://etcd.io/){: new_window}.
 
 
 
