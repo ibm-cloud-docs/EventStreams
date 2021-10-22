@@ -26,7 +26,7 @@ produce messages.
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-about).
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Java and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){:new_window}.
+To access other {{site.data.keyword.messagehub}} samples, including samples for Java and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}.
 
 Complete the following steps:
 {: #getting_started_steps_node}
@@ -38,16 +38,16 @@ Complete the following tasks before running the sample
 2. Install the IBM Cloud CLI by completing the tasks https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli#install_use
 3. Install the Kubernetes CLI by completing the tasks https://kubernetes.io/docs/tasks/tools/install-kubectl/
 4. Provision an Event Streams Service Instance in IBM Cloud®
-  a. Log in to the {{site.data.keyword.Bluemix_notm}} console. 
-  
-  b. Click **Catalog**.
-  
-  c. In the **Integration** section, select **{{site.data.keyword.messagehub}} Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
-  
-  d. Enter a name for your service. You can use the default value.
-  
-  e. Click **Create**.
-  
+    a. Log in to the {{site.data.keyword.Bluemix_notm}} console. 
+    
+    b. Click **Catalog**.
+    
+    c. In the **Integration** section, select **{{site.data.keyword.messagehub}} Standard plan**. The {{site.data.keyword.messagehub}} service instance page opens.
+    
+    d. Enter a name for your service. You can use the default value.
+    
+    e. Click **Create**.
+    
 4. Provision a Kubernetes Service instance in IBM Cloud®
 
 ## Deploying the app

@@ -29,7 +29,7 @@ subcollection: EventStreams
 <br/>
 
 There are a few reasons that you might choose to use the Kafka API over the other interfaces provided by {{site.data.keyword.messagehub}}. These reasons include the following:
-{:shortdesc}
+{: shortdesc}
 
 
 * It is easier to integrate your app with existing systems that have Kafka support, for example {{site.data.keyword.IBM}} {{site.data.keyword.streaminganalyticsshort}} and {{site.data.keyword.sparks}}.

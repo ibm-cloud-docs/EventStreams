@@ -27,7 +27,6 @@ This information describes how to set up a pair of {{site.data.keyword.messagehu
 
 Using mirroring with {{site.data.keyword.messagehub}} incurs an additional charge of $1.37 for each mirroring capacity unit hour. For more information, see [Multiple Enhancements for the Event Streams Enterprise Plan](https://www.ibm.com/cloud/blog/announcements/multiple-enhancements-for-the-event-streams-enterprise-plan).
 
-
 ## Step 1: setup 
 {: #step1_setup}
 Ensure that you provisioned two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have suitable IAM access policies.
