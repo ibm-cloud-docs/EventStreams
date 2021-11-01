@@ -55,7 +55,7 @@ Ensure that you complete the following tasks:
 
 {: #enable_endpoints}
 
-There are a number of options you have for selecting the network configuration of your Enterprise cluster.
+You have a number of options for selecting the network configuration of your Enterprise cluster.
 
 1. Use the {{site.data.keyword.Bluemix_notm}} public network - Endpoints are accessible on the public Internet. This is the default.
 
@@ -71,7 +71,7 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
     ```
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
-```
+    ```
     {: codeblock}
 
 * To enable private only endpoints:
@@ -85,7 +85,7 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
     ```
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
-      ```
+    ```
     {: codeblock}
 
     use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
