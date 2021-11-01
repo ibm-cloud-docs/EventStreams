@@ -55,7 +55,7 @@ Ensure that you complete the following tasks:
 
 {: #enable_endpoints}
 
-There are a number of options you have for selecting the network configuration of your Enterprise cluster.
+You have a number of options for selecting the network configuration of your Enterprise cluster.
 
 1. Use the {{site.data.keyword.Bluemix_notm}} public network - Endpoints are accessible on the public Internet. This is the default.
 
@@ -71,10 +71,11 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
     ```
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
-```
+    ```
     {: codeblock}
 
 * To enable private only endpoints:
+
     ```
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
     ```
@@ -84,7 +85,7 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
     ```
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
-      ```
+    ```
     {: codeblock}
 
     use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
@@ -142,23 +143,24 @@ To change the IP allowlist, perform the following steps:
 
 1. Obtain the original IP allowlist applied on the instance
 
-```
-$ibmcloud es init -i <instance-name>
-API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
-Service endpoints:	public-and-private
-Private IP allowlist:	"10.243.0.8/32","10.243.128.8/32","10.243.64.4/32"
-Storage size:		4096 GB
-Throughput:		300 MB/s
-OK
-```
+    ```
+    $ibmcloud es init -i <instance-name>
+    API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
+    Service endpoints:	public-and-private
+    Private IP allowlist:	"10.243.0.8/32","10.243.128.8/32","10.243.64.4/32"
+    Storage size:		4096 GB
+    Throughput:		300 MB/s
+    OK
+    ```
+    {: codeblock}
 
 2. Add CIDRs into or delete CIDRs from the `Private IP allowlist`.
 
 3. Run the following command to update the service instance with a new list:
 
-  ```
-  ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
-  ```
+    ```
+    ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
+    ```
     {: codeblock}
 
     where CIDR1, 2 are IP addressess of the form a.b.c.d/e
