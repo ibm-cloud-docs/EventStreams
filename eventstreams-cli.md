@@ -34,7 +34,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.1 | 24 June 2020  |   * init: displayed provision parameters for Enterprise instance \n * Translation update|
 |  v2.1.1| 10 July 2020  | * Replaced whitelist with allowlist \n * Fixed color configuration \n * Translation update  |
 | v2.2.0  | 3 August 2020  | Added support for the Mirroring feature  |
-| v2.2.1 | 7 August 2020 |  Refined the display of IP allowlist in init command  |
+| v2.2.1 | 7 August 2020 |  Refined the display of IP allowlist in the init command  |
 | v2.3 |  9 November 2020 | * Added support for configuring message audit on topic \n * init: display encryption key if parameter kms_key_crn is specified in provisioning  |
 {: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
