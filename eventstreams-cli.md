@@ -109,7 +109,22 @@ Initial release of the {{site.data.keyword.messagehub}} CLI</td>
 </tbody>
 </table>
 
-
+| Version | Release date  | Changes  |
+|---|---|---|
+| v1.0 |  12 May 2019 | Initial release of the {{site.data.keyword.messagehub}} CLI  |
+| v1.0.1  | 27 May 2019  |  * Improved error message when running command without init \n * Sorted instances list during init \n * Translation update |
+|  v2.0  | 21 August 2019  | * init: removed the service-key requirement \n 
+* Added group-delete command \n 
+* Updated translations of help text  |
+| v2.1 | 24 June 2020  |   * init: displayed provision parameters for Enterprise instance \n
+* Translation update|
+|  v2.1.1| 10 July 2020  | * Replaced whitelist with allowlist \n * Fixed color configuration \n * Translation update  |
+| v2.2.0  | 3 August 2020  | Added support for the Mirroring feature  |
+| v2.2.1 | 7 August 2020 |  Refined the display of IP allowlist in init command  |
+|  <td>v2.3
+ |  9 November 2020 | * Added support for configuring message audit on topic \n 
+* init: display encryption key if parameter kms_key_crn is specified in provisioning  |
+{: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
 {: #ibmcloud_es_init}
