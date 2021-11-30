@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-11-30"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -65,8 +65,10 @@ Topic names and consumer groups are encrypted for transmission between
 {{site.data.keyword.messagehub}} and clients as a result of TLS. However, 
 {{site.data.keyword.messagehub}} does not encrypt these values at rest. Therefore, you are not recommended to use confidential information in your topic names.
 
+On the Satellite plan, all encryption is determined by the options that you specify on your chosen storage provider.
+
 For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see 
-[What's supported by the Lite, Standard, Enterprise, and Classic plans](/docs/EventStreams?topic=EventStreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans).
+[What's supported by the Lite, Standard, Enterprise, and Satellite plans](/docs/EventStreams?topic=EventStreams-plan_choose##what-is-supported-by-the-lite-standard-enterprise-and-satellite-plans).
 
 ## Data isolation model
 {: #data_isolation}
@@ -82,6 +84,15 @@ By default, the Enterprise plan provides Public endpoints, but it also supports 
 
 The Enterprise plan creates single tenant Block storage for each new instance.
 
+### Satellite plan
+The Satellite plan provides a tenant-specific service in the IBM Service domain and is based on the Enterprise plan.
+
+The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster on Shared Hardware (VSI isolation).
+
+By default, the Satellite plan provides Public endpoints.
+
+The Satellite plan creates single tenant Block storage for each new instance.
+
 
 ### Standard plan
 The Standard plan provides a Public Service with Public endpoints.
@@ -94,6 +105,8 @@ The Standard plan uses Shared Block storage and achieves tenant isolation throug
 
 ## Data retention and reclamation
 
-When a service instance is deleted, the data is not deleted immediately. Instead, it is scheduled for reclamation, {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both, topics and messages written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that has not yet been reclaimed.
+On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. Instead, it is scheduled for reclamation, {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both, topics and messages written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that has not yet been reclaimed.
 
-It is possible to check the status of a reclamation, as well as force or cancel a scheduled reclamation using [the IBM Cloud® Platform CLI](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).
+You can check the status of a reclamation, as well as force or cancel a scheduled reclamation using [the IBM Cloud Platform CLI](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).
+
+On the Satellite plan, data retention and reclamation is determined by how you've configured these on your chosen storage provider.
