@@ -77,7 +77,7 @@ The following table summarizes what is supported by the plans:
 | **Activity tracker events**  | No  |  Yes |  Yes |  _Need to add Satellite details_   |
 | **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  _Need to add Satellite details_  |
 |  **Cloud Service Endpoint support** | No   | No  |  Yes | No    |
-|  **Scale plan capacity** | No   | No  |  Yes |   Yes, but with restrictions  |
+|  **Scale plan capacity** | No   | No  |  Yes |   No  |
 | **Maximum number of partitions**  | 1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)  | 100   |3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions) | 3000 - 9000 scales with throughput     |
 |**Maximum retention limits**   | 100 MB for the partition   | 1 GB per partition  | 2 TB - 12 TB of scalable usable storage [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)|  2 TB of scalable usable storage   |
 | **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)  | 150 MB/s of scalable throughput   |
