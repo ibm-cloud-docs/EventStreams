@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -89,7 +89,7 @@ The Satellite plan provides a tenant-specific service in the IBM Service domain 
 
 The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster on Shared Hardware (VSI isolation).
 
-By default, the Satellite plan provides Public endpoints.
+The Satellite plan provides Public endpoints.
 
 The Satellite plan creates single tenant Block storage for each new instance.
 
