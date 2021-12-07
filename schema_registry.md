@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-12-07"
 
 keywords: IBM Event Streams, schema registry
 
@@ -19,7 +19,7 @@ subcollection: EventStreams
 {:external: target="_blank" .external}
 
 
-# {{site.data.keyword.messagehub}} schema registry
+# {{site.data.keyword.messagehub}} Schema Registry
 {: #ES_schema_registry}
 
 ## Schemas overview
@@ -485,9 +485,9 @@ For details about accessing the schema registry using an SDK, see [{{site.data.k
 For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-index-of-terraform-on-ibm-cloud-resources-and-data-sources#ibm-event-streams_rd){: external}.
 
 ## Using the schema registry with the third party SerDes
-{: #using_schema_regsitry_serdes}
+{: #using_schema_registry_serdes}
 
-Schema registry supports the use of the following third party SerDes:
+Schema Registry supports the use of the following third party SerDes:
 
 - Confluent SerDes
 
@@ -495,8 +495,15 @@ To configure the Confluent SerDes to use the schema registry, you need to specif
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, then the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
 BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the schema registry URL.
+
+You can optionally provide the following properties to control the schema selection (subject naming strategy):
+
+Property name | Value
+--- | ---
+VALUE_SUBJECT_NAME_STRATEGY | `TopicNameStrategy`(default), `RecordNameStrategy`, and `TopicRecordNameStrategy` are supported. For example, to specify that the schema for the message value is selected using a `TopicRecordNameStrategy`, the client properties are used: configs.put(KafkaAvroSerializerConfig.VALUE_SUBJECT_NAME_STRATEGY, TopicRecordNameStrategy.class.getName());
+KEY_SUBJECT_NAME_STRATEGY | `TopicNameStrategy` (default), `RecordNameStrategy`, and `TopicRecordNameStrategy` are supported. See VALUE_SUBJECT_NAME_STRATEGY for an example.
 
 The following diagram shows an example of the properties required to create a Kafka producer, that uses the Confluent SerDes and can be connected to the {{site.data.keyword.messagehub}} service:
 
