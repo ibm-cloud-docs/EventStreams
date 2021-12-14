@@ -27,6 +27,28 @@ Use the Satellite plan to deploy an Enterprise plan into Satellite locations of 
 
 Complete the following steps to deploy a Satellite instance. 
 
+## Steps overview
+
+What are we trying to achieve?
+
+1. Provision an {{site.data.keyword.Bluemix_notm}} Satellite location. This will enable you to bring your own hosts to the {{site.data.keyword.Bluemix_notm}} and provision {{site.data.keyword.Bluemix_notm}} services onto your machines. The examples in this topic will mainly discuss AWS as the host provider because for our Beta release, we have mainly focused on AWS EC2.
+
+   For provisioning and machine selection for Event Streams' requirements, refer to the rest of this guide.
+
+   Our steps discussed for provisioning will follow the "public cloud -> other cloud" type provisioning flow though so you can theoretically deploy and configure Satellite for any hosts with this guide
+
+   Please note that block storage and ingress requirements are not discussed in detail in this document, we'll be planning to fill this gap later.
+
+2. We'll discuss provisioning the AWS infrastructure
+
+3. After adding enough machines to your Satellite location, we'll proceed to provision an {{site.data.keyword.messagehub}} for Satellite instance
+
+4. We'll then create a block storage assignment for Event Streams' purposes from AWS into your new {{site.data.keyword.messagehub}} cluster
+
+5. The ongoing provisioning now automatically attaches the block storage to your {{site.data.keyword.messagehub}} cluster, the provisioning completes and you'll be ready to use {{site.data.keyword.messagehub}}.
+
+
+
 ### Prerequisites
 
 You must have the following: 
@@ -39,7 +61,7 @@ You must have the following:
 ### Steps
 
 1. Sign in to {{site.data.keyword.Bluemix_notm}} and target your target account.
-2. Create a service-to-service binding between {{site.data.keyword.messagehub}} and Satellite in your {{site.data.keyword.Bluemix_notm}} account. 
+2. Create a service-to-service binding between {{site.data.keyword.messagehub}} and Satellite in your {{site.data.keyword.Bluemix_notm}} account, if you haven't already done so. 
 
    ```
    Role: All
@@ -79,7 +101,7 @@ You must have the following:
 
 7. Create the AWS access key and secret. 
 
-   From the AWS Management Console, 
+   From the AWS Management Console:
    1. Click **Security Credentials** in the top right corner. 
    2. In the main **Your Security Credentials** pane, select **Access keys (access key ID and secret access key)**. 
    3. Click **Create New Access Key** for CLI, SDK, and API access.
@@ -135,7 +157,7 @@ You must have the following:
    _Check what the cluster name should be and service will probably be messagehub_
    {: note}
 
-12. Assign the storage to your {{site.data.keyword.messagehub}} service.
+12. Wait until you can see the cluster in the sat loc location, then assign the storage to your {{site.data.keyword.messagehub}} service.
 
    ```
    ibmcloud sat storage assignment create  \
