@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-12-09"
+lastupdated: "2021-12-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -34,7 +34,7 @@ You must have the following:
 
 * access to an AWS account
 
-* sufficient access to create resources in both accounts
+* sufficient access to create the required resources in both accounts
 
 ### Steps
 
@@ -49,11 +49,27 @@ You must have the following:
    {: codeblock}
 
 3. Complete the following steps on Satellite. For more information, see [Getting started with IBM Cloud Satellite](/docs/satellite?topic=satellite-getting-started).
-    1. [Provision a Satellite location](/docs/satellite-working?topic=satellite-working-getting-started#create-location).
-    2. Set up a Satellite location control plane 
-    3. [Attach hosts to your Satellite location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location) for the {{site.data.keyword.messagehub}} cluster to use.
-    
-4. Get the Satellite location ID.
+   1. [Provision a Satellite location](/docs/satellite-working?topic=satellite-working-getting-started#create-location).
+   Provision your location manually from the [Satellite catalog](https://cloud.ibm.com/satellite/): **Locations** > **Create location** > **Advanced Configuration** > **Public cloud** > **Other cloud** > **Manual**
+   2. Set up a Satellite location control plane 
+   3. [Attach hosts to your Satellite location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location) for the {{site.data.keyword.messagehub}} cluster to use.
+4. After you have provisioned your Satellite location, download the provisioning script provided by IBM Cloud Satellite. Run this script on your machines.
+
+   If you are using AWS, you need to make some updates to the script. In your script, add the following lines *after* the line that first mentions `API_URL`:
+
+   ```
+   bash
+   # Enable AWS RHEL package updates
+   yum update -y
+   yum-config-manager --enable '*'
+   yum repolist all
+   yum install container-selinux -y
+   echo "repos enabled"
+   ```
+   {: codeblock}
+
+5. Before you can create the {{site.data.keyword.messagehub}} instance and its storage configuration for your new Satellite location, you need to complete the provisioning of the Satellite location, including the configuration and provisioning of its control plane. 
+6. Get the Satellite location ID.
 
    ```
    ibmcloud sat location ls
@@ -61,13 +77,13 @@ You must have the following:
    ```
    {: codeblock}
 
-5. Create the AWS access key and secret. 
+7. Create the AWS access key and secret. 
 
    From the AWS Management Console, 
    1. Click **Security Credentials** in the top right corner. 
    2. In the main **Your Security Credentials** pane, select **Access keys (access key ID and secret access key)**. 
    3. Click **Create New Access Key** for CLI, SDK, and API access.
-6. Create storage configuration for your {{site.data.keyword.messagehub}} cluster.
+8. Create storage configuration for your {{site.data.keyword.messagehub}} cluster.
 
    ```
    ibmcloud sat storage template ls
@@ -81,16 +97,16 @@ You must have the following:
    ```
    {: codeblock}
 
-7. Verify that the storage config is successfully created.
+9. Verify that the storage config is successfully created.
 
    ```
    ibmcloud sat storage config get --config <configuration_name>
    ```
    {: codeblock}
 
-8. Provision your {{site.data.keyword.messagehub}} service instance from the [{{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/catalog/event-streams). 
+10. Provision your {{site.data.keyword.messagehub}} service instance from the [{{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/catalog/event-streams). 
 
-9. Obtain the {{site.data.keyword.messagehub}} service cluster ID from the list of services in the Satellite location.
+11. Obtain the {{site.data.keyword.messagehub}} service cluster ID from the list of services in the Satellite location.
 
    ```
    ibmcloud sat service ls --location c6l3qc0d0bmg9kc8otcg
@@ -98,7 +114,28 @@ You must have the following:
    ```
    {: codeblock}
 
-10. Assign the storage to your {{site.data.keyword.messagehub}} service.
+   _Check what should replace eventstreams-nextgen-int_
+   {: note}
+
+12. Run the command 
+
+   ```
+   ibmcloud sat service ls --location <location_id> 
+   ```
+   {: codeblock}
+
+   and wait for the status of the new service to become normal. For example:
+
+   ```
+   Cluster Name              Cluster ID             Service                    Status               Created      Hosts   Needs more hosts?
+   Control plane             c6ou4fiw0268us5d3d4g   satellite                  All Workers Normal   3 days ago   3       no
+   mh-int-pipe-sat-rymxbpj   c6ousl0w01nmcvqp5ojg   eventstreams-nextgen-int   All Workers Normal   3 days ago   9       no
+   ```
+
+   _Check what the cluster name should be and service will probably be messagehub_
+   {: note}
+
+12. Assign the storage to your {{site.data.keyword.messagehub}} service.
 
    ```
    ibmcloud sat storage assignment create  \
