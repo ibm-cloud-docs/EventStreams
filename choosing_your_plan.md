@@ -65,7 +65,7 @@ The following table summarizes what is supported by the plans:
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant |
 |**Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |
 | **Availability**  |  99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |  99.99% | 99.99%<br/>(99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |
-| **Kafka version on cluster**  | Kafka 2.6 | Kafka 2.6  | Kafka 2.6 |
+| **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |
 | **Managed schema registry supported**  | No |  No |  Yes |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes |
