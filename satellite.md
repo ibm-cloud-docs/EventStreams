@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-12-14"
+lastupdated: "2021-12-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,28 +27,6 @@ Use the Satellite plan to deploy an Enterprise plan into Satellite locations of 
 
 Complete the following steps to deploy a Satellite instance. 
 
-## Steps overview
-
-What are we trying to achieve?
-
-1. Provision an {{site.data.keyword.Bluemix_notm}} Satellite location. This will enable you to bring your own hosts to the {{site.data.keyword.Bluemix_notm}} and provision {{site.data.keyword.Bluemix_notm}} services onto your machines. The examples in this topic will mainly discuss AWS as the host provider because for our Beta release, we have mainly focused on AWS EC2.
-
-   For provisioning and machine selection for Event Streams' requirements, refer to the rest of this guide.
-
-   Our steps discussed for provisioning will follow the "public cloud -> other cloud" type provisioning flow though so you can theoretically deploy and configure Satellite for any hosts with this guide
-
-   Please note that block storage and ingress requirements are not discussed in detail in this document, we'll be planning to fill this gap later.
-
-2. We'll discuss provisioning the AWS infrastructure
-
-3. After adding enough machines to your Satellite location, we'll proceed to provision an {{site.data.keyword.messagehub}} for Satellite instance
-
-4. We'll then create a block storage assignment for Event Streams' purposes from AWS into your new {{site.data.keyword.messagehub}} cluster
-
-5. The ongoing provisioning now automatically attaches the block storage to your {{site.data.keyword.messagehub}} cluster, the provisioning completes and you'll be ready to use {{site.data.keyword.messagehub}}.
-
-
-
 ### Prerequisites
 
 You must have the following: 
@@ -58,10 +36,32 @@ You must have the following:
 
 * sufficient access to create the required resources in both accounts
 
+## Steps overview
+
+What are we trying to achieve?
+
+1. Provision an {{site.data.keyword.Bluemix_notm}} Satellite location. This enables you to bring your own hosts to the {{site.data.keyword.Bluemix_notm}} and provision {{site.data.keyword.Bluemix_notm}} services onto your machines. The examples in this topic mainly discuss AWS as the host provider because for our Beta release, we have mainly focused on AWS EC2.
+
+   For provisioning and machine selection for {{site.data.keyword.messagehub}}' requirements, see [Setting up your AWS machines](/docs/EventStreams?topic=EventStreams-aws).
+
+   Our steps follow the **Public cloud** > **Other cloud** type provisioning flow. However, you might be able to use these steps to deploy and configure Satellite for any hosts.
+
+   Note that block storage and ingress requirements are not currently discussed in detail. We're planning to fill this gap later.
+
+2. We'll discuss provisioning the AWS infrastructure.
+
+3. After adding enough machines to your Satellite location, we'll proceed to provision an {{site.data.keyword.messagehub}} for Satellite instance.
+
+4. We'll then create a block storage assignment for {{site.data.keyword.messagehub}}' purposes from AWS into your new {{site.data.keyword.messagehub}} cluster.
+
+5. The ongoing provisioning now automatically attaches the block storage to your {{site.data.keyword.messagehub}} cluster, the provisioning completes, and you'll be ready to use {{site.data.keyword.messagehub}}.
+
+
+
 ### Steps
 
 1. Sign in to {{site.data.keyword.Bluemix_notm}} and target your target account.
-2. Create a service-to-service binding between {{site.data.keyword.messagehub}} and Satellite in your {{site.data.keyword.Bluemix_notm}} account, if you haven't already done so. 
+2. Create a service-to-service binding between {{site.data.keyword.messagehub}} and Satellite in your {{site.data.keyword.Bluemix_notm}} account, if you haven't already done so. You can verify this by navigating to the following page: **{{site.data.keyword.Bluemix_notm}} dashboard** > **Manage** > **Account** > **Manage access and users** > **Access (IAM)** page > **Authorizations**.
 
    ```
    Role: All
@@ -90,8 +90,9 @@ You must have the following:
    ```
    {: codeblock}
 
-5. Before you can create the {{site.data.keyword.messagehub}} instance and its storage configuration for your new Satellite location, you need to complete the provisioning of the Satellite location, including the configuration and provisioning of its control plane. 
-6. Get the Satellite location ID.
+   Before you can create the {{site.data.keyword.messagehub}} instance and its storage configuration for your new Satellite location, you need to complete the provisioning of the Satellite location, including the configuration and provisioning of its control plane. 
+
+5. Get the Satellite location ID.
 
    ```
    ibmcloud sat location ls
@@ -99,13 +100,13 @@ You must have the following:
    ```
    {: codeblock}
 
-7. Create the AWS access key and secret. 
+6. Create the AWS access key and secret. 
 
    From the AWS Management Console:
    1. Click **Security Credentials** in the top right corner. 
    2. In the main **Your Security Credentials** pane, select **Access keys (access key ID and secret access key)**. 
    3. Click **Create New Access Key** for CLI, SDK, and API access.
-8. Create storage configuration for your {{site.data.keyword.messagehub}} cluster.
+7. Create storage configuration for your {{site.data.keyword.messagehub}} cluster.
 
    ```
    ibmcloud sat storage template ls
@@ -119,16 +120,16 @@ You must have the following:
    ```
    {: codeblock}
 
-9. Verify that the storage config is successfully created.
+8. Verify that the storage config is successfully created.
 
    ```
    ibmcloud sat storage config get --config <configuration_name>
    ```
    {: codeblock}
 
-10. Provision your {{site.data.keyword.messagehub}} service instance from the [{{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/catalog/event-streams). 
+9. Provision your {{site.data.keyword.messagehub}} service instance from the [{{site.data.keyword.Bluemix_notm}} catalog](https://cloud.ibm.com/catalog/event-streams). 
 
-11. Obtain the {{site.data.keyword.messagehub}} service cluster ID from the list of services in the Satellite location.
+10. Obtain the {{site.data.keyword.messagehub}} service cluster ID from the list of services in the Satellite location.
 
    ```
    ibmcloud sat service ls --location c6l3qc0d0bmg9kc8otcg
@@ -139,7 +140,7 @@ You must have the following:
    _Check what should replace eventstreams-nextgen-int_
    {: note}
 
-12. Run the command 
+11. Run the command 
 
    ```
    ibmcloud sat service ls --location <location_id> 
