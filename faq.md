@@ -54,7 +54,7 @@ segment.bytes
 :   The segment file size for the log.
 
     **Note:**
-    Enterprise plan only. Set to any value larger than 100 kB.
+    Enterprise plan only. Set to any value between 100 kB and 2 GB.
 
 segment.index.bytes
 :   The size of the index that maps offsets to file positions. 
