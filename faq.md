@@ -48,22 +48,22 @@ retention.bytes
 :   The maximum size a partition (which consists of log segments) can grow to before we discard old log segments to free up space.
 
     **Note:**
-    Enterprise: Set to any value between 100 kB and 2 TB.
-    Standard: Set to any value between 100 kB and 1 GB
+    Enterprise: Set to any value between 100 KiB and 2 TiB.
+    Standard: Set to any value between 100 KiB and 1 GiB.
 
 segment.bytes
 :   The segment file size for the log.
 
     **Note:**
-    Enterprise: Set to any value between 100 kB and 2 TB.
-    Standard: Set to any value between 100 kB and 512 MB.
+    Enterprise: Set to any value between 100 KiB and 2 TiB.
+    Standard: Set to any value between 100 KiB and 512 MiB.
 
 segment.index.bytes
 :   The size of the index that maps offsets to file positions. 
 
     **Note:**
-    Enterprise: Set to any value between 100 kB and 1 TB.
-    Standard: Set to any value between 100 kB and 100 MB.
+    Enterprise: Set to any value between 100 KiB and 1 TiB.
+    Standard: Set to any value between 100 KiB and 100 MiB.
 
 segment.ms
 :   The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
