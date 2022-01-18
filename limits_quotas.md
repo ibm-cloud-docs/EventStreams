@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-11-28"
+  years: 2015, 2022
+lastupdated: "2022-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -167,6 +167,8 @@ Network throughput capacity is based on the peak maximum.  Each peak maximum ha
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
 
 Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+
+**The following figures are not verified for beta, they are guidelines only.**
 
 The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
 

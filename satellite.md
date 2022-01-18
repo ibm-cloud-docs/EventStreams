@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-12-16"
+  years: 2015, 2022
+lastupdated: "2022-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -32,7 +32,7 @@ Complete the following steps to deploy a Satellite instance.
 You must have the following: 
 * access to an {{site.data.keyword.Bluemix}} account
 
-* access to an AWS account
+* access to an on-prem or AWS account
 
 * sufficient access to create the required resources in both accounts
 
@@ -174,7 +174,7 @@ What are we trying to achieve?
 The following functions are not supported on the Satellite plan for {{site.data.keyword.messagehub}.
 
 * IAM IP address access restrictions
-* Encryption
+* Bring Your Own Key (BYOK)
 * Schema Registry
 * Cloud Service Endpoint support
 * Stream to Cloud Object Storage using SQL Query

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-12-02"
+  years: 2015, 2022
+lastupdated: "2022-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -82,16 +82,16 @@ The Enterprise plan creates a single tenant instance on a Dedicated Kubernetes c
 
 By default, the Enterprise plan provides Public endpoints, but it also supports Cloud Service Endpoints to enable Private Endpoints for further network isolation on request.
 
-The Enterprise plan creates single tenant Block storage for each new instance.
+The Enterprise plan creates single tenant Block Storage for each new instance.
 
 ### Satellite plan
 The Satellite plan provides a tenant-specific service in the IBM Service domain and is based on the Enterprise plan.
 
-The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster on Shared Hardware (VSI isolation).
+The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster using hosts (physical and virtual) that you provided and attached to your Satellite location.
 
 The Satellite plan provides Public endpoints.
 
-The Satellite plan creates single tenant Block storage for each new instance.
+The Satellite plan creates single tenant Block Storage for each new instance using the Block Storage configuration you have specified for your storage provider.
 
 
 ### Standard plan
@@ -101,7 +101,7 @@ The Standard plan creates a tenant instance on a Shared Kubernetes cluster on sh
 
 The Standard plan provides Public endpoints only.
 
-The Standard plan uses Shared Block storage and achieves tenant isolation through separation of files and access controls.
+The Standard plan uses Shared Block Storage and achieves tenant isolation through separation of files and access controls.
 
 ## Data retention and reclamation
 

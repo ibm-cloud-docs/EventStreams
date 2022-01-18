@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-11-29"
+  years: 2015, 2022
+lastupdated: "2022-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -62,7 +62,7 @@ The Satellite plan is appropriate if you want to deploy an Enterprise plan into 
 
 The following table summarizes what is supported by the plans:
 
-|   | Lite plan  |  Standard plan |  Enterprise plan  |  Satellite plan  |
+|   | Lite plan  |  Standard plan |  Enterprise plan  |  Satellite plan (Beta) |
 |---|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 |**Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
@@ -74,19 +74,19 @@ The following table summarizes what is supported by the plans:
 | **Encryption**  | No  |  No |  Yes |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes |  Yes   |
 | **IAM IP address access restrictions**  | No  |  No |  Yes |  No   |
-| **Activity tracker events**  | No  |  Yes |  Yes |  _Need to add Satellite details_   |
-| **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  _Need to add Satellite details_  |
+| **Activity tracker events**  | No  |  Yes |  Yes |  Not during Beta   |
+| **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Not during Beta  |
 |  **Cloud Service Endpoint support** | No   | No  |  Yes | No    |
 |  **Scale plan capacity** | No   | No  |  Yes |   No  |
-| **Maximum number of partitions**  | 1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)  | 100   |3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions) | 3000 - 9000 scales with throughput     |
+| **Maximum number of partitions**  | 1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)  | 100   |3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions) | 3000    |
 |**Maximum retention limits**   | 100 MB for the partition   | 1 GB per partition  | 2 TB - 12 TB of scalable usable storage [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)|  2 TB of scalable usable storage   |
-| **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)  | 150 MB/s of scalable throughput   |
+| **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)  | TBD for Beta   |
 | **Maximum message size**  | 1 MB  | 1 MB   | 1 MB |   1 MB  |
 | **Maximum number of connected clients**  | 5   | 500  | 10 000  |   10 000  |
 |  **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  Your own Satellite locations   |
 | **APIs supported** |  Kafka API   \n Admin REST API  \n REST Producer API |  Kafka API   \n Admin REST API   \n REST Producer API    |  Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API  | Kafka API   \n Admin REST API    |
-| **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 3 hours. Because Satellite has its own dedicated resources for each cluster, it requires more time for provisioning   |
-| **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   TBD for Satellite  |
+| **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 3 hours because Satellite has its own dedicated resources for each instance   |
+| **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   Not applicable for Beta  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 
 
