@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-12-05"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -41,6 +41,13 @@ In a multi-zone region deployment the {{site.data.keyword.messagehub}} service i
 When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
 
 
+## Satellite plan
+{: #sla_satellite}
+
+The {{site.data.keyword.messagehub}} Satellite Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the {{site.data.keyword.messagehub}} service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
+
+
+
 ## Classic plan
 {: #sla_classic}
 
@@ -52,10 +59,6 @@ The {{site.data.keyword.messagehub}} service is provided with an availability of
 For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
 [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
 
-<!--
-## What does 99.95% availability mean?
-Availability refers to the ability of applications to produce and consume messages from Kafka topics.
--->
 
 
 ## How do we measure it?
@@ -90,6 +93,10 @@ For throughput guidance information, see [Limits and quotas- Standard](/docs/Eve
 **Specific guidance for the Enterprise plan**<br/>
 
 For throughput guidance information, see [Limits and quotas - Enterprise](/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput). 
+
+**Specific guidance for the Satellite plan**<br/>
+
+For throughput guidance information, see [Limits and quotas - Satellite](/docs/EventStreams?topic=EventStreams-kafka_quotas#satellite_throughput). 
 
 **Measurement**<br/>
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.

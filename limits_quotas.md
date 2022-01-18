@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2020-01-18"
+  years: 2015, 2022
+lastupdated: "2022-01-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,7 +20,7 @@ subcollection: EventStreams
 # Limits and quotas
 {: #kafka_quotas }
 
-{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Lite, Standard, or Enterprise plan.
+{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Lite, Standard, Enterprise, or Satellite plan.
 
 ## Lite plan
 {: #limits_lite }
@@ -110,13 +110,11 @@ Network throughput capacity is based on the peak maximum.  Each peak maximum ha
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance.  The throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
 
-
-Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new Event Streams service instance at the lower capacity unit.
-
+Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
 The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
 
-For additional information see [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Partitions
 {: #enterprise_partitions}
@@ -128,13 +126,11 @@ This is a hard limit for the Enterprise plan. If you reach this limit, you can n
 ### Retention
 {: #enterprise_retention}
 
-The storage capacity can be selected when the service instance is created, and later scaled as demands increase.  Storage capacity is dependent upon the configured throughput capacity.  Refer to [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on storage capacity options.
+The storage capacity can be selected when the service instance is created, and later scaled as demands increase.  Storage capacity is dependent upon the configured throughput capacity.  Refer to [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on storage capacity options.
 
+Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit
 
-Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new Event Streams service instance at the lower capacity unit
-
-
-For additional information see [Scaling Event streams](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Schema Registry
 {: #enterprise_schema_registry}
@@ -156,18 +152,49 @@ For additional information see [Scaling Event streams](/docs/EventStreams?topic=
 * Maximum record key size when using REST Producer API is 4 K 
 * Maximum record value size when using REST Producer API is 64 K
 
+## Satellite plan
+{: #limits_satellite }
+
+### Network throughput
+{: #satellite_throughput }
+
+Network throughput capacity is based on the peak maximum.  Each peak maximum has a recommended maximum for typical production workloads.
+
+| Peak Maximum | Recommended maximum | 
+|--------------|-----------------------|
+|150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
+
+Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
+
+Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+
+**The following figures are not verified for beta, they are guidelines only.**
+
+The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
 
 
+### Partitions
+{: #satellite_partitions}
 
+The maximum number of partitions is related to the number of capacity units, so 3000 for 150MB/s in Satellite. 
 
+This is a hard limit for the Satellite plan. If you reach this limit, you can no longer create topics. 
 
+### Retention
+{: #satellite_retention}
 
+You must implement mechanisms to back up your data to meet your retention requirements.
 
+### Schema Registry
+{: #satellite_schema_registry}
 
+The Schema Registry is not supported on the Satellite plan.
 
+### Other limits
+{: #satellite_limits}
 
-
-
+* Maximum message size: 1 MB
+* Maximum concurrently active Kafka clients: 10000
 
 
 
