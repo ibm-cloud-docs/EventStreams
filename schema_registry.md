@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-12-08"
 
-keywords: IBM Event Streams, schema registry
+keywords: IBM Event Streams, Schema Registry
 
 subcollection: EventStreams
 
@@ -19,7 +19,7 @@ subcollection: EventStreams
 {:external: target="_blank" .external}
 
 
-# {{site.data.keyword.messagehub}} schema registry
+# {{site.data.keyword.messagehub}} Schema Registry
 {: #ES_schema_registry}
 
 ## Schemas overview
@@ -27,7 +27,7 @@ subcollection: EventStreams
 
 Apache Kafka can handle any data, but it does not validate the information in the messages. However, efficient handling of data often requires that it includes specific information in a certain format. Using schemas, you can define the structure of the data in a message, ensuring that both producers and consumers use the correct structure.
 
-Schemas help producers create data that conforms to a predefined structure, defining the fields that need to be present together with the type of each field. This definition then helps consumers parse that data and interpret it correctly. {{site.data.keyword.messagehub}} Enterprise plan supports schemas and includes a schema registry for using and managing schemas.
+Schemas help producers create data that conforms to a predefined structure, defining the fields that need to be present together with the type of each field. This definition then helps consumers parse that data and interpret it correctly. {{site.data.keyword.messagehub}} Enterprise plan supports schemas and includes a Schema Registry for using and managing schemas.
 
 It is common for all of the messages on a topic to use the same schema. The key and value of a message can each be described by a schema.
 
@@ -36,19 +36,19 @@ It is common for all of the messages on a topic to use the same schema. The key 
 ## Schema registry
 {: #ES_registry}
 
-Schemas are stored in the {{site.data.keyword.messagehub}} schema registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them.
-Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own schema registry.
+Schemas are stored in the {{site.data.keyword.messagehub}} Schema Registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them.
+Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own Schema Registry.
 
-Producers and consumers validate the data against the specified schema stored in the schema registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller.
+Producers and consumers validate the data against the specified schema stored in the Schema Registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller.
 
-![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a schema registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the schema registry"){: caption="Schema registry architecture" caption-side="bottom"}
+![Schema Registry architecture diagram.](schema_registry2.png "Diagram showing a Schema Registry architecture. A producer is sending messages and a consumer is reading messages, while both are retrieving the schema from the Schema Registry"){: caption="Schema registry architecture" caption-side="bottom"}
 
 ## Apache Avro data format
 {: #ES_apache_avro_data_format}
 
 Schemas are defined using [Apache Avro](https://avro.apache.org), an open-source data serialization technology commonly used with Apache Kafka. It provides an efficient data encoding format, either by using the compact binary format or a more verbose, but human-readable [JSON](https://www.json.org) format.
 
-The {{site.data.keyword.messagehub}} schema registry uses Apache Avro data formats. When messages are sent in the Avro format, they contain the data and the unique identifier for the schema used. The identifier specifies which schema in the registry is to be used for the message.
+The {{site.data.keyword.messagehub}} Schema Registry uses Apache Avro data formats. When messages are sent in the Avro format, they contain the data and the unique identifier for the schema used. The identifier specifies which schema in the registry is to be used for the message.
 
 Avro has support for a wide range of data types, including primitive types (null, boolean, int, long, float, double, bytes, and string) and complex types (record, enum, array, map, union, and fixed).
 
@@ -59,38 +59,38 @@ Avro has support for a wide range of data types, including primitive types (null
 
 A producing application uses a serializer to produce messages conforming to a specific schema. As mentioned earlier, the message contains the data in Avro format, together with the schema identifier.
 
-A consuming application then uses a deserializer to consume messages that have been serialized using the same schema. When a consumer reads a message sent in Avro format, the deserializer finds the identifier of the schema in the message, and retrieves the schema from the schema registry to deserialize the data.
+A consuming application then uses a deserializer to consume messages that have been serialized using the same schema. When a consumer reads a message sent in Avro format, the deserializer finds the identifier of the schema in the message, and retrieves the schema from the Schema Registry to deserialize the data.
 
 This process provides an efficient way of ensuring that data in messages conform to the required structure.
 
-The {{site.data.keyword.messagehub}} schema registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer)
+The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer)
 ![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
 
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
 
-Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. You simply create a new version of an existing schema, and the schema registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
+Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. You simply create a new version of an existing schema, and the Schema Registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
 
 ![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
 
-## Enabling the schema registry
+## Enabling the Schema Registry
 {: #enabling_schema_registry}
 
-The schema registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances.
-The schema registry is not available for other {{site.data.keyword.messagehub}} plans.
+The Schema Registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances.
+The Schema Registry is not available for other {{site.data.keyword.messagehub}} plans.
 
-## Accessing the schema registry
+## Accessing the Schema Registry
 {: #accessing_schema_registry}
 
-To access the schema registry, you need the URL of the schema registry, as well as a set of credentials that can be used to
+To access the Schema Registry, you need the URL of the Schema Registry, as well as a set of credentials that can be used to
 authenticate with the registry. Both of these pieces of information can be found by inspecting the service credentials of your service.
 To view these in the UI, click on your service instance, select **Service Credentials** in the left-hand navigation pane, then click on
 the **View Credentials** link located next to one of the service credentials listed in the table:
 
-![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} schema registry"){: caption="Kafka credentials block" caption-side="bottom"}
+![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
-You need the value of `kafka_http_url`, which is also the URL of the schema registry, and the value of `apikey` that you can use
-as the credential for authenticating with the schema registry.
+You need the value of `kafka_http_url`, which is also the URL of the Schema Registry, and the value of `apikey` that you can use
+as the credential for authenticating with the Schema Registry.
 
 You can also authenticate using an API key that has been granted from a service ID, providing the service ID has a policy
 that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice
@@ -103,7 +103,7 @@ Kafka HTTP URL property of the service credentials):
 curl -i –u token:$APIKEY $URL/artifacts
 ```
 
-Assuming you haven’t already used the schema registry, you should see the following output that indicates that there are no schemas
+Assuming you haven’t already used the Schema Registry, you should see the following output that indicates that there are no schemas
 stored in the registry:
 
 ```
@@ -130,7 +130,7 @@ For actions that alter the schema version, such as create, update, or delete art
 ### Authentication
 {: #authentication}
 
-As described above, you can authenticate to the schema registry using an API key. This is supplied as the password portion of a HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token).
+As described above, you can authenticate to the Schema Registry using an API key. This is supplied as the password portion of a HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token).
 For example:
 
 ```
@@ -140,7 +140,7 @@ curl –H "Authorization: Bearer $TOKEN" ...
 ### Errors
 {: #errors}
 
-If an error condition is encountered, the schema registry will return a non-2XX range HTTP status code. The body of the response will contain a JSON object in the following form:
+If an error condition is encountered, the Schema Registry will return a non-2XX range HTTP status code. The body of the response will contain a JSON object in the following form:
 
 ```
 {
@@ -155,7 +155,7 @@ Property name | Description
 --- | ---
 error_code | The HTTP status code of the response.
 message | A description of the cause of the problem.
-incident | This field is only included if the error is a result of a problem with the schema registry. This value can be used by IBM service to correlate a request to diagnostic information captured by the registry.
+incident | This field is only included if the error is a result of a problem with the Schema Registry. This value can be used by IBM service to correlate a request to diagnostic information captured by the registry.
 
 ### Create a schema
 
@@ -453,7 +453,7 @@ An activity tracker event is generated to report the action. For more informatio
 ## Applying compatibility rules to new versions of schemas
 {: #applying_compatibility_rules}
 
-The schema registry supports enforcing compatibility rules when creating a new version of a schema. If a request is made to create a new schema version that does not conform to the required compatibility rule, the registry rejects the request. The following rules are supported:
+The Schema Registry supports enforcing compatibility rules when creating a new version of a schema. If a request is made to create a new schema version that does not conform to the required compatibility rule, the registry rejects the request. The following rules are supported:
 
 Compatibility Rule | Tested against | Description
 --- | --- | ---
@@ -477,35 +477,42 @@ By default, the registry has a global compatibility rule setting of `NONE`. Per-
 For a description of the REST API with examples, see 
 [{{site.data.keyword.messagehub}} schema-registry-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: new_window}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} schema registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
 To view the Swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
 
-For details about accessing the schema registry using an SDK, see [{{site.data.keyword.messagehub}} schema registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
+For details about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 
 For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-index-of-terraform-on-ibm-cloud-resources-and-data-sources#ibm-event-streams_rd){: external}.
 
-## Using the schema registry with the third party SerDes
-{: #using_schema_regsitry_serdes}
+## Using the Schema Registry with the third party SerDes
+{: #using_schema_registry_serdes}
 
-Schema registry supports the use of the following third party SerDes:
+Schema Registry supports the use of the following third party SerDes:
 
 - Confluent SerDes
 
-To configure the Confluent SerDes to use the schema registry, you need to specify two properties in the configuration of your Kafka client:
+To configure the Confluent SerDes to use the Schema Registry, you need to specify two properties in the configuration of your Kafka client:
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the schema registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, then the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
-BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the schema registry URL.
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
+BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
+
+You can also optionally provide the following properties to control the schema selection (subject naming strategy):
+
+Property name | Value
+--- | ---
+VALUE_SUBJECT_NAME_STRATEGY | `TopicNameStrategy`(default), `RecordNameStrategy`, and `TopicRecordNameStrategy` are supported. For example, to specify that the schema for the message value is selected using a `TopicRecordNameStrategy`, you could use the following client properties: configs.put(KafkaAvroSerializerConfig.VALUE_SUBJECT_NAME_STRATEGY, TopicRecordNameStrategy.class.getName());
+KEY_SUBJECT_NAME_STRATEGY | `TopicNameStrategy` (default), `RecordNameStrategy`, and `TopicRecordNameStrategy` are supported. See VALUE_SUBJECT_NAME_STRATEGY for an example.
 
 The following diagram shows an example of the properties required to create a Kafka producer, that uses the Confluent SerDes and can be connected to the {{site.data.keyword.messagehub}} service:
 
 
 ![Kafka properties for Confluent Serdes](schema_registry7.png "Diagram showing showing the properties required to create a Kafka producer that uses the Confluent SerDes, and can be connected to the {{site.data.keyword.messagehub}} service"){: caption="Figure 1. Kafka properties for Confluent Serdes" caption-side="bottom"}
 
-## Using the schema registry with third party tools
+## Using the Schema Registry with third party tools
 
-The schema registry can be tested with third party tools, such as the `kafka-avro-console-producer.sh` and `kafka-avro-console-consumer.sh`, that allow testing of conformance to schema using the Confluent SerDes.
+The Schema Registry can be tested with third party tools, such as the `kafka-avro-console-producer.sh` and `kafka-avro-console-consumer.sh`, that allow testing of conformance to schema using the Confluent SerDes.
 
 To run either the producer or the consumer tool, a common properties is required with the connection options for the {{site.data.keyword.messagehub}} Enterprise instance.
 
@@ -524,7 +531,7 @@ ssl.endpoint.identification.algorithm=HTTPS
 ## Avro console producer and consumer
 {: #avro_console_producer }
 
-You can use the Kafka avro console producer and consumer tools with {{site.data.keyword.messagehub}}. You must provide a client properties, as detailed above, and in addition, the connection method and credentials for the schema registry are required to be supplied as command line `--property` arguments. There are two connection methods using a credentials source of USER_INFO or of URL detailed below.
+You can use the Kafka avro console producer and consumer tools with {{site.data.keyword.messagehub}}. You must provide a client properties, as detailed above, and in addition, the connection method and credentials for the Schema Registry are required to be supplied as command line `--property` arguments. There are two connection methods using a credentials source of USER_INFO or of URL detailed below.
 
 To execute using the credentials source method of URL, use the following code:
 

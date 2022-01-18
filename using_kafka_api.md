@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-12-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -36,7 +36,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 |   |Enterprise Plan   |Standard Plan   |Lite Plan |
 |---|---|---|---|
-|**Kafka version on cluster**  | Kafka 2.6  |  Kafka 2.6 | Kafka 2.6  |
+|**Kafka version on cluster**  | Kafka 2.8  |  Kafka 2.8 | Kafka 2.8  |
 | **Supported client versions**  |  Kafka 0.10.x, or later |Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
@@ -48,8 +48,8 @@ The following table summarizes what you can use with {{site.data.keyword.message
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/producer/KafkaProducer.html){: new_window} and 
-[Kafka Consumer API 2.6 ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/26/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html){: new_window}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: new_window} and 
+[Kafka Consumer API 2.8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: new_window}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
