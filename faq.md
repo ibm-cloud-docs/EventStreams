@@ -69,7 +69,7 @@ segment.ms
 :   The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
 
     **Note:**
-    Set to any value between 5 minutes and 30 days
+    Set to any value between 5 minutes and 30 days.
 
 
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
