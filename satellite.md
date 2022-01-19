@@ -171,7 +171,7 @@ What are we trying to achieve?
 ## Restrictions of the Satellite plan
 {: #satellite_restrictions}
 
-The following functions are not supported on the Satellite plan for {{site.data.keyword.messagehub}.
+The following functions are not supported on the Satellite plan for {{site.data.keyword.messagehub}}.
 
 * IAM IP address access restrictions
 * Bring Your Own Key (BYOK)
