@@ -50,10 +50,11 @@ toc:
             - using_ksqldb.md
             - using_rest_producer.md
             - mirroring.md
-        - satellite.md
-        - satellite_getting_started.md
-        - aws.md
-        - aws_how_to.md
+        - topicgroup:
+            label: IBM Event Streams enabled by IBM Cloud Satellite 
+            topics:
+            - satellite_getting_started.md
+            - aws_how_to.md
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
