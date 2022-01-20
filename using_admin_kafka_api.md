@@ -40,25 +40,7 @@ retention.bytes
 :   The maximum size a partition (which consists of log segments) can grow to before we discard old log segments to free up space.
 
     **Note:**
-    Enterprise plan only. Set to any value larger than 1 MB.
-
-segment.bytes
-:   The segment file size for the log.
-
-    **Note:**
-    Enterprise plan only. Set to any value larger than 100 kB.
-
-retention.ms
-:   The default retention period is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
-
-    **Note:**
-    In the Enterprise plan, you can set this to any value.
-
-retention.bytes
-:   The maximum size a partition (which consists of log segments) can grow to before we discard old log segments to free up space.
-
-    **Note:**
-    Enterprise plan only. Set to any value larger than 1 MB.
+    Enterprise plan only. Set to any value larger than 10 MB.
 
 segment.bytes
 :   The segment file size for the log.
@@ -70,7 +52,7 @@ segment.index.bytes
 :   The size of the index that maps offsets to file positions. 
 
     **Note:**
-    Enterprise plan only. Set to any value between 100 kB and 2 GB.
+    Enterprise plan only. Set to any value between 100 kB and 1 GB.
 
 segment.ms
 :   The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
