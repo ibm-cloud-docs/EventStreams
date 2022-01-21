@@ -54,7 +54,7 @@ toc:
             label: IBM Event Streams enabled by IBM Cloud Satellite 
             topics:
             - satellite_getting_started.md
-            - aws_how_to.md
+            - setting_up_aws.md
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
