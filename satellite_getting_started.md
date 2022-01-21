@@ -52,7 +52,7 @@ To deploy Event Streams into a Satellite location, the following high-level step
 
 - Refer to the Satellite usage requirements.
 - Set up the IBM Cloud command-line interface (CLI), the plug-in for Satellite commands, and other related CLIs.
-- Create a Satellite location, see [Setting up Satellite locations](). Follow the steps in [Manually creating Satellite locations]().
+- Create a Satellite location, see [Setting up Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual).
   - For the management location, choose Dallas or Washington DC.
   - If you create your Satellite location using AWS infrastructure, adjust the Satellite location host zones to AWS-default zone names, for example, us-east-1a, us-east-1b, or us-east-1c.
 - Before you procede, set up your Satellite location and ensure that the Satellite control plane is up and running.
