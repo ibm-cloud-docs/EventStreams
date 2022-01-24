@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-08"
+  years: 2020, 2022
+lastupdated: "2022-01-24"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -71,7 +71,7 @@ The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO se
 
 Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. You simply create a new version of an existing schema, and the Schema Registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
 
-Schemas are compared synatactically, meaning that other then minor textual formatting differences, schemas will only be considered matching if they are textually the same, including all attribute ordering and descriptive fields. 
+Schemas are compared syntactically, meaning that other then minor textual formatting differences, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. 
 
 ![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
 
@@ -512,9 +512,10 @@ The following diagram shows an example of the properties required to create a Ka
 
 ![Kafka properties for Confluent Serdes](schema_registry7.png "Diagram showing showing the properties required to create a Kafka producer that uses the Confluent SerDes, and can be connected to the {{site.data.keyword.messagehub}} service"){: caption="Figure 1. Kafka properties for Confluent Serdes" caption-side="bottom"}
 
-If a message is sent using a schema which isn’t in the registry, then the  serdes will attempt to create the new schema, or version of the schema, in the registry. if this behaviour is not required it can be disabled by removing the writer permission for schema resources from the application. See [Managing access to the schema registry](/docs/EventStreams?topic=EventStreams-security#managing_access_schemas)
+If a message is sent using a schema that isn’t in the registry, the SerDes attempts to create the new schema, or version of the schema, in the registry. If this behaviour is not required, it can be disabled by removing the writer permission for schema resources from the application. See [Managing access to the schema registry](/docs/EventStreams?topic=EventStreams-security#managing_access_schemas).
 
-Note: the ‘normalize’ option for schema lookup's and registration is not supported
+Note: The *normalize* option for schema lookups and registration is not supported.
+{:note: .note}
 
 ## Using the Schema Registry with third party tools
 
