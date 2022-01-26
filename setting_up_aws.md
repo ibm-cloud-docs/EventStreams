@@ -89,7 +89,7 @@ ibmcloud sat storage config create  \\
 {: step}
 {: #service-authorization}
 
-In order for the Event Streams service to access the Satellite service, a service to service authorization needs to be created.
+In order for the Event Streams service to access the Satellite service, you must create a service-to-service authorization.
 
 - Log in to the IBM Cloud console account where your Satellite location was provisioned.
 - From the **Manage** tab, select **Access (IAM)**.
@@ -112,7 +112,7 @@ In order for the Event Streams service to access the Satellite service, a servic
 
 After preparing your Satellite location and granting service authorization, you can provision your IBM Satellite plan for Event Streams Satellite service instance by selecting the Satellite location that you created in the **Location** dropdown of the Event Streams provisioning page. When the provisioning starts, you can verify that the service instance provision has started in the IBM Cloud **Resource List** by selecting **Services and software**.
 
-When you provision an Event Streams service instance, a service cluster will automatically be deployed into your Satellite location using the additional hosts you added to your satellite location. The deployment of the service cluster can take up to one hour, and can be verified using these steps:
+When you provision an Event Streams service instance, a service cluster will automatically be deployed into your Satellite location using the additional hosts you added to your Satellite location. The deployment of the service cluster can take up to one hour, and can be verified using these steps:
 
 1. From the left hand **Navigation Menu**, select **Satellite**, then **Locations**.
 2. Select your Satellite location.
