@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-01-25"
+  year: 2022
+lastupdated: "2022-01-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -64,10 +64,14 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
 - The following infrastruture provider is supported:
   - AWS
+
 - Your {{site.data.keyword.satelliteshort}} location can be managed from the following {{site.data.keyword.cloud_notm}} data centers:
+
   - Dallas
   - Washington DC
+
 - The following functions are not supported on the {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}}:
+
   - Scale up of message retention storage
   - IAM IP address access restrictions
   - Bring Your Own Key (BYOK)
