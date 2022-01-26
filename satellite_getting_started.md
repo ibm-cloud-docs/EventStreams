@@ -57,7 +57,9 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
     - Dallas
     - Washington DC
   - As noted in the [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
-- Before you procede to the steps in the infrastructure specific topic, the {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state, and the {{site.data.keyword.satelliteshort}} control plane service is running and has a Normal state.
+- Before you procede to the steps in the infrastructure specific topic
+  - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state
+  - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
 
 ## Limitations of the IBM Satellite plan for Event Streams
 {: #satellite_restrictions}
