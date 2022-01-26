@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-01-25"
+  year: 2022
+lastupdated: "2022-01-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, Satellite, location
 
@@ -38,6 +38,7 @@ The following steps guide you through configuring, assigning, and provisioning b
 The following information outlines the type and amount of block storage that will be allocated by Event Streams.
 
 AWS Elastic Block Storage (EBS)
+
 - message data retention 2 TB x three replicas/availability zones = 6 TB total
 - message data management 250 GB x three replicas/availability zones = 750 GB total
 - service instance monitoring 125 GB x three replicas/availability zones = 375 GB total
@@ -97,13 +98,15 @@ Begin by configuring IAM Authorizations. In order for the Event Streams service 
 - Click the **Create** button to create an authorization that allows a service instance access to another service instance.
   - The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service, based on the assigned roles.
   - In the **Source Service** field, select **Event Streams**.
+  
     - Scope the access to **All resources**.
   - In the **Target Service** field, select **Satellite**.
   - Select all options:
+  
     - **Satellite Cluster Creator**
     - **Satellite Link Administrator**
     - **Satellite Link Source Access Controller**
- - Click the **Authorize** button.
+- Click the **Authorize** button.
 
 ## Step 3: Provisioning Event Streams Satellite Deployment
 
@@ -134,6 +137,7 @@ First, use the IBM Cloud CLI to obtain the list of services in your Satellite lo
 ```bash
 ibmcloud sat service ls --location <sat location name/location id>
 ```
+
 A list of services are displayed. Identify the **messagehub** service that has a **Cluster Name** matching the service listed in the IBM Cloud console in the previous step. Save the **Cluster ID** value for that service.
 
 {: pre}
