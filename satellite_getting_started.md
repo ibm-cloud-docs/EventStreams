@@ -77,6 +77,6 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
   - Bring Your Own Key (BYOK)
   - Schema Registry
   - Cloud Service Endpoint support
-  - Stream to {site.data.keyword.cos_full_notm}} using {site.data.keyword.sqlquery_full}}
+  - Stream to {{site.data.keyword.cos_full_notm}} using {{site.data.keyword.sqlquery_full}}
   - Activity tracker
   - Monitoring {{site.data.keyword.messagehub}} metrics using {{site.data.keyword.monitoringfull}}
