@@ -58,10 +58,10 @@ Before you deploy the Event Streams enabled by IBM Cloud Satellite service, prep
 
 These additional hosts are used to create a service cluster into which Event Streams will be deployed. Attach the following hosts to your Satellite location:
 
-- six type **4x16** hosts
-  - on AWS, choose six hosts of type **AWS m5d.xlarge**
-- three type **32x128** hosts
-  - on AWS choose three hosts of type **AWS m5d.2xlarge**
+- 6 type **4x16** hosts
+  - On AWS, choose 6 hosts of type **AWS m5d.xlarge**.
+- 3 type **32x128** hosts
+  - On AWS, choose 3 hosts of type **AWS m5d.2xlarge**.
 
 ### Create a Satellite block storage configuration
 
