@@ -8,8 +8,6 @@ keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
 subcollection: EventStreams
 
----
-
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -17,8 +15,6 @@ subcollection: EventStreams
 {:pre: .pre}
 {:note: .note}
 {:beta: .beta}
-
----
 
 # Getting started with the IBM Satellite plan for Event Streams
 
@@ -41,7 +37,8 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
 4. Provision an {{site.data.keyword.messagehub}} service instance in your account, and a service cluster in your {{site.data.keyword.satelliteshort}} location.
 
-5. Create the block storage and assignment for the {{site.data.keyword.messagehub}} service cluster that was provisioned. {{site.data.keyword.messagehub}} will use the block storage for the retention of your message data.
+5. Create the block storage and assignment for the {{site.data.keyword.messagehub}} service cluster that was provisioned. 
+{{site.data.keyword.messagehub}} will use the block storage for the retention of your message data.
 
     The storage capacity cannot be scaled up for the initial release of IBM Satelite plan for {{site.data.keyword.messagehub}}.
 
@@ -61,16 +58,17 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
 3. Create a {{site.data.keyword.satelliteshort}} location, see [Setting up Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual).
 
-  - Supported options for the {{site.data.keyword.satelliteshort}} location Managed from field include:
+- Supported options for the {{site.data.keyword.satelliteshort}} location Managed from field include:
   
-    - Dallas
-    - Washington DC
-    
-  - As noted in the [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
+  - Dallas
+  - Washington DC
+- As noted in the [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?
+topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
+
 4. Before you proceed to the steps in the infrastructure specific topic:
 
-  - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
-  - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
+- The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
+- The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
 
 ## Limitations of the IBM Satellite plan for Event Streams
 
