@@ -91,20 +91,20 @@ ibmcloud sat storage config create  \\
 
 Begin by configuring IAM Authorizations. In order for the {{site.data.keyword.messagehub}} service to access the {{site.data.keyword.satelliteshort}} service, a service to service authorization needs to be created.
 
-- Log in to the {{site.data.keyword.cloud}} console account where your {{site.data.keyword.satelliteshort}} location was provisioned.
-- From the **Manage** tab, select **Access (IAM)**.
-- Choose the **Authorizations** tab from the left hand menu.
-- Click the **Create** button to create an authorization that allows a service instance access to another service instance.
-  - The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service, based on the assigned roles.
-  - In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
+1. Log in to the {{site.data.keyword.cloud}} console account where your {{site.data.keyword.satelliteshort}} location was provisioned.
+2. From the **Manage** tab, select **Access (IAM)**.
+3. Choose the **Authorizations** tab from the left hand menu.
+4. Click the **Create** button to create an authorization that allows a service instance access to another service instance.
+
+- The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service, based on the assigned roles.
+- In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
+- Scope the access to **All resources**.
+- In the **Target Service** field, select **Satellite**.
+- Select all options:
   
-    - Scope the access to **All resources**.
-  - In the **Target Service** field, select **Satellite**.
-  - Select all options:
-  
-    - **{{site.data.keyword.satelliteshort}} Cluster Creator**
-    - **{{site.data.keyword.satelliteshort}} Link Administrator**
-    - **{{site.data.keyword.satelliteshort}} Link Source Access Controller**
+  - **{{site.data.keyword.satelliteshort}} Cluster Creator**
+  - **{{site.data.keyword.satelliteshort}} Link Administrator**
+  - **{{site.data.keyword.satelliteshort}} Link Source Access Controller**
 - Click the **Authorize** button.
 
 ## Step 3: Provisioning Event Streams Satellite Deployment
