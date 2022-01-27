@@ -114,14 +114,14 @@ Begin by configuring IAM Authorizations. In order for the {{site.data.keyword.me
 
 Once you prepared your {{site.data.keyword.satelliteshort}} location and granted service authorization, you can provision your {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance by selecting the {{site.data.keyword.satelliteshort}} location that you created in the **Location** dropdown of the provisioning page. When the provisioning starts, you can verify that the service instance provision has started in the {{site.data.keyword.cloud_notm}} **Resource List** by selecting **Services and software**.
 
-When you provision {{site.data.keyword.messagehub}} service instance, a service cluster will automatically be deployed into your {{site.data.keyword.satelliteshort}} location. The deployment of the service cluster can take up to one hour, and can be verified using these steps:
+When you provision {{site.data.keyword.messagehub}} service instance, a service cluster will automatically be deployed into your {{site.data.keyword.satelliteshort}} location. You can verify the start of the deployment of the service cluster by using the following steps:
 
 1. From the left hand **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
 2. Select your {{site.data.keyword.satelliteshort}} location.
 3. Select **Services**.
 4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before moving to the next step. Make note of the **Cluster name** of the **messagehub** service.
 
-While the service instance and cluster are provisioned, create the storage assignment. You do not need to wait for the service instance/cluster provision to complete to create the storage assignment. Proceed to the next step and complete the instructions.
+While the service instance and cluster are provisioned, create the storage assignment. You do not need to wait for the service instance or cluster provision to complete to create the storage assignment. Proceed to the next step and complete the instructions.
 {: .important}
 
 ## Step 4: Create a Storage Assignment
