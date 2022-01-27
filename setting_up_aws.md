@@ -51,7 +51,10 @@ Service instance monitoring | 125 GB x 3 replicas/availability zones | 375 GB to
 {: #prepare-satellite-location}
 {: step}
 
-Before you deploy the Event Streams enabled by IBM Cloud Satellite service, prepare your Satellite location.
+Before you deploy the {{site.data.keyword.messagehub_full}} enabled by {{site.data.keyword.satellitelong}} service, prepare your {{site.data.keyword.satelliteshort}} location.
+
+The following information regarding the amount of storage and hosts is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.  If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the same amount of hosts and storage are needed for additional {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.
+{:note: .note}
 
 ### Attach additional hosts to the Satellite location
 
