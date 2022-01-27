@@ -2,7 +2,7 @@
 
 copyright:
   year: 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -31,7 +31,7 @@ Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan func
 
 To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed:
 
-1. Provision an {{site.data.keyword.satellitelong_notm}} location and its control pane. It enables you to bring your own hosts to the {{site.data.keyword.cloud}} and provision {{site.data.keyword.cloud_notm}} services onto your machines. Host compute and storage requirements are detailed in each of the infrastructure's (for example, AWS, and on-premises) specific topics.
+1. Provision an {{site.data.keyword.satellitelong_notm}} location and its control plane. It enables you to bring your own hosts to the {{site.data.keyword.cloud}} and provision {{site.data.keyword.cloud_notm}} services onto your machines. Host compute and storage requirements are detailed in each of the infrastructure's (for example, AWS, and on-premises) specific topics.
 
 2. Provision and attach host compute infrastructure, and create the block storage configuration for your {{site.data.keyword.satelliteshort}} location. {{site.data.keyword.messagehub}} will use the hosts and block storage when it is provisioned.
 
@@ -55,15 +55,15 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
 {: #satellite_before_you_begin}
 
-- Refer to the [Satellite usage requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-requirements).
-- Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
-- Create a {{site.data.keyword.satelliteshort}} location, see [Setting up Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual).
+1. Refer to the [Satellite usage requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-requirements).
+2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
+3. Create a {{site.data.keyword.satelliteshort}} location, see [Setting up Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual).
   - Supported options for the {{site.data.keyword.satelliteshort}} location Managed from field include:
   
     - Dallas
     - Washington DC
   - As noted in the [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
-- Before you procede to the steps in the infrastructure specific topic:
+4. Before you proceed to the steps in the infrastructure specific topic:
 
   - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
   - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
