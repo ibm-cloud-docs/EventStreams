@@ -28,11 +28,11 @@ subcollection: EventStreams
 
 ## Overview
 
-Follow the steps below to set up the IBM Satellite plan for Event Streams in a Satellite location that is using Amazon Web Services (AWS) infrastructure.
+Follow the steps below to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location that is using Amazon Web Services (AWS) infrastructure.
 
-The following steps guide you through configuring, assigning, and provisioning block storage from your infrastructure provider. Storage capacity is the amount of block storage allocated in the Event Streams service instance for retention of message data, management of message data, and for monitoring the operation of the Event Streams service instance.
+The following steps guide you through configuring, assigning, and provisioning block storage from your infrastructure provider. Storage capacity is the amount of block storage allocated in the {{site.data.keyword.messagehub}} service instance for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance.
 
-The following information outlines the type and amount of block storage that will be allocated by Event Streams.
+The following information outlines the type and amount of block storage that will be allocated by {{site.data.keyword.messagehub}}.
 
 | Usage | Amount allocated | Total |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ The following information regarding the amount of storage and hosts is for a sin
 
 {: #attach-additional-hosts}
 
-These additional hosts are used to create a service cluster into which Event Streams will be deployed. Attach the following hosts to your Satellite location:
+These additional hosts are used to create a service cluster into which {{site.data.keyword.messagehub}} will be deployed. Attach the following hosts to your {{site.data.keyword.satelliteshort}} location:
 
 - 6 type **4x16** hosts
   - On AWS, choose 6 hosts of type **AWS m5d.xlarge**.
@@ -66,7 +66,7 @@ These additional hosts are used to create a service cluster into which Event Str
 
 {: #satellite-blockstorage-config}
 
-To make block storage available in a Satellite location, a storage configuration needs to be created. The configuration defines which Satellite template/driver to use, the version of the template, and the infrastructure provider credentials. The following example command shows how to create an AWS configuration for Event Streams. A later step will assign this configuration to your Satellite instance of Event Streams.
+To make block storage available in a {{site.data.keyword.satelliteshort}} location, a storage configuration needs to be created. The configuration defines which {{site.data.keyword.satelliteshort}} template (or driver) to use, the version of the template, and the infrastructure provider credentials. The following example command shows how to create an AWS configuration for {{site.data.keyword.messagehub}}. A later step will assign this configuration to your {{site.data.keyword.satelliteshort}} instance of {{site.data.keyword.messagehub}}.
 
 Refer to [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs) for more detail on block storage configurations.
 {: note}
@@ -89,22 +89,22 @@ ibmcloud sat storage config create  \\
 {: step}
 {: #service-authorization}
 
-Begin by configuring IAM Authorizations. In order for the Event Streams service to access the Satellite service, a service to service authorization needs to be created.
+Begin by configuring IAM Authorizations. In order for the {{site.data.keyword.messagehub}} service to access the {{site.data.keyword.satelliteshort}} service, a service to service authorization needs to be created.
 
-- Log in to the IBM Cloud console account where your Satellite location was provisioned.
+- Log in to the {{site.data.keyword.cloud}} console account where your {{site.data.keyword.satelliteshort}} location was provisioned.
 - From the **Manage** tab, select **Access (IAM)**.
 - Choose the **Authorizations** tab from the left hand menu.
 - Click the **Create** button to create an authorization that allows a service instance access to another service instance.
   - The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service, based on the assigned roles.
-  - In the **Source Service** field, select **Event Streams**.
+  - In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
   
     - Scope the access to **All resources**.
   - In the **Target Service** field, select **Satellite**.
   - Select all options:
   
-    - **Satellite Cluster Creator**
-    - **Satellite Link Administrator**
-    - **Satellite Link Source Access Controller**
+    - **{{site.data.keyword.satelliteshort}} Cluster Creator**
+    - **{{site.data.keyword.satelliteshort}} Link Administrator**
+    - **{{site.data.keyword.satelliteshort}} Link Source Access Controller**
 - Click the **Authorize** button.
 
 ## Step 3: Provisioning Event Streams Satellite Deployment
@@ -112,12 +112,12 @@ Begin by configuring IAM Authorizations. In order for the Event Streams service 
 {: step}
 {: #provision-deployment}
 
-Once you prepared your Satellite location and granted service authorization, you can provision your IBM Satellite plan for Event Streams Satellite service instance by selecting the Satellite location that you created in the **Location** dropdown of the provisioning page. When the provisioning starts, you can verify that the service instance provision has started in the IBM Cloud **Resource List** by selecting **Services and software**.
+Once you prepared your {{site.data.keyword.satelliteshort}} location and granted service authorization, you can provision your {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance by selecting the {{site.data.keyword.satelliteshort}} location that you created in the **Location** dropdown of the provisioning page. When the provisioning starts, you can verify that the service instance provision has started in the {{site.data.keyword.cloud_notm}} **Resource List** by selecting **Services and software**.
 
-When you provision Event Streams service instance, a service cluster will automatically be deployed into your Satellite location. The deployment of the service cluster can take up to one hour, and can be verified using these steps:
+When you provision {{site.data.keyword.messagehub}} service instance, a service cluster will automatically be deployed into your {{site.data.keyword.satelliteshort}} location. The deployment of the service cluster can take up to one hour, and can be verified using these steps:
 
-1. From the left hand **Navigation Menu**, select **Satellite**, then **Locations**.
-2. Select your Satellite location.
+1. From the left hand **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
+2. Select your {{site.data.keyword.satelliteshort}} location.
 3. Select **Services**.
 4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before moving to the next step. Make note of the **Cluster name** of the **messagehub** service.
 
@@ -129,19 +129,19 @@ While the service instance and cluster are provisioned, create the storage assig
 {: step}
 {: #create-storage-assignment-aws}
 
-When the Event Streams service cluster is available in your Satellite location, the next step is to create a Satellite storage assignment. This will allow the service cluster to create volumes on the previously configured storage.
+When the {{site.data.keyword.messagehub}} service cluster is available in your {{site.data.keyword.satelliteshort}} location, the next step is to create a {{site.data.keyword.satelliteshort}} storage assignment. This will allow the service cluster to create volumes on the previously configured storage.
 
-First, use the IBM Cloud CLI to obtain the list of services in your Satellite location:
+First, use the {{site.data.keyword.cloud_notm}} CLI to obtain the list of services in your {{site.data.keyword.satelliteshort}} location:
 
 ```bash
 ibmcloud sat service ls --location <sat location name/location id>
 ```
 
-A list of services are displayed. Identify the **messagehub** service that has a **Cluster Name** matching the service listed in the IBM Cloud console in the previous step. Save the **Cluster ID** value for that service.
+A list of services are displayed. Identify the **messagehub** service that has a **Cluster Name** matching the service listed in the {{site.data.keyword.cloud_notm}} console in the previous step. Save the **Cluster ID** value for that service.
 
 {: pre}
 
-  Use the **Cluster ID** as an input parameter value for `--service-cluster-id` in the following Satellite storage assignment command:
+  Use the **Cluster ID** as an input parameter value for `--service-cluster-id` in the following {{site.data.keyword.satelliteshort}} storage assignment command:
 
 ```bash
 ibmcloud sat storage assignment create  \\
@@ -152,4 +152,4 @@ ibmcloud sat storage assignment create  \\
 
 {: pre}
 
-After the storage assignment is created, allow up to 60 minutes for the Event Streams service instance to be ready for use.
+After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
