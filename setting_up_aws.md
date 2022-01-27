@@ -11,15 +11,11 @@ subcollection: EventStreams
 ---
 
 {:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:external: target="_blank" .external}
 {:important: .important}
 {:note: .note}
 {:pre: .pre}
 {:beta: .beta}
 {:shortdesc: .shortdesc}
-{:support: data-reuse='support'}
 {:step: data-tutorial-type='step'}
 {:tutorial: data-hd-content-type='tutorial'}
 
@@ -38,13 +34,12 @@ The following steps guide you through configuring, assigning, and provisioning b
 
 The following information outlines the type and amount of block storage that will be allocated by Event Streams.
 
-AWS Elastic Block Storage (EBS)
-
-Usage | Amount allocated | Total
---- | --- | ---
-Message data retention | 2 TB x 3 replicas/availability zones | 6 TB total
-Message data management | 250 GB x 3 replicas/availability zones | 750 GB total
-Service instance monitoring | 125 GB x 3 replicas/availability zones | 375 GB total
+| Usage | Amount allocated | Total |
+| --- | --- | --- |
+| Message data retention | 2 TB x 3 replicas/availability zones | 6 TB total |
+| Message data management | 250 GB x 3 replicas/availability zones | 750 GB total |
+| Service instance monitoring | 125 GB x 3 replicas/availability zones | 375 GB total |
+{: caption="Table 1. AWS Elastic Block Storage (EBS)" caption-side="bottom"}
 
 ## Step 1: Prepare a Satellite location for the IBM Satellite plan for Event Streams
 
@@ -76,8 +71,6 @@ To make block storage available in a Satellite location, a storage configuration
 Refer to [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs) for more detail on block storage configurations.
 {: note}
 
-Example command:
-
 ```bash
 ibmcloud sat storage config create  \\
   --name 'aws-ebs-config-storage-es-1' \\
@@ -88,6 +81,7 @@ ibmcloud sat storage config create  \\
   -p "aws-secret-access-key=${AWS_ACCESS_KEY}"
 ```
 
+{:codeblock: .codeblock}
 {: pre}
 
 ## Step 2: Grant a service authorization
