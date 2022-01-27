@@ -19,7 +19,7 @@ subcollection: EventStreams
 {:step: data-tutorial-type='step'}
 {:tutorial: data-hd-content-type='tutorial'}
 
-# Setting up Amazon Web Services Location
+# Setting up Amazon Web Services location
 
 {: #satellite-aws}
 {:beta: .beta}
@@ -107,7 +107,7 @@ Begin by configuring IAM Authorizations. In order for the {{site.data.keyword.me
   - **{{site.data.keyword.satelliteshort}} Link Source Access Controller**
 - Click the **Authorize** button.
 
-## Step 3: Provisioning Event Streams Satellite Deployment
+## Step 3: Provisioning Event Streams Satellite deployment
 
 {: step}
 {: #provision-deployment}
@@ -124,7 +124,7 @@ When you provision {{site.data.keyword.messagehub}} service instance, a service 
 While the service instance and cluster are provisioned, create the storage assignment. You do not need to wait for the service instance or cluster provision to complete to create the storage assignment. Proceed to the next step and complete the instructions.
 {: .important}
 
-## Step 4: Create a Storage Assignment
+## Step 4: Create a storage assignment
 
 {: step}
 {: #create-storage-assignment-aws}
