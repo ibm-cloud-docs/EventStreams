@@ -2,7 +2,7 @@
 
 copyright:
   year: 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, Satellite, location
 
@@ -26,6 +26,7 @@ subcollection: EventStreams
 # Setting up Amazon Web Services Location
 
 {: #satellite-aws}
+{:beta: .beta}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
 
