@@ -8,6 +8,8 @@ keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
 subcollection: EventStreams
 
+---
+
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
