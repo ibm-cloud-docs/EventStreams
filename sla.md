@@ -17,6 +17,7 @@ subcollection: EventStreams
 {:pre: .pre}
 {:note: .note}
 {:deprecated: .deprecated}
+{:beta: .beta}
 
 # Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability 
 {: #sla}
@@ -42,9 +43,10 @@ When the {{site.data.keyword.messagehub}} service is run in a non highly availab
 
 
 ## Satellite plan
+{:beta: .beta}
 {: #sla_satellite}
 
-The {{site.data.keyword.messagehub}} Satellite Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the {{site.data.keyword.messagehub}} service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
+The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}}  plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, with the correct IaaS configurations, the {{site.data.keyword.messagehub}} service can be distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
 
 
 
