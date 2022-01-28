@@ -42,7 +42,7 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 5. Create the block storage and assignment for the {{site.data.keyword.messagehub}} service cluster that was provisioned. 
 {{site.data.keyword.messagehub}} will use the block storage for the retention of your message data.
 
-    The storage capacity cannot be scaled up for the initial release of IBM Satelite plan for {{site.data.keyword.messagehub}}.
+    The storage capacity cannot be scaled up for the initial release of {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}}.
 
     {{site.data.keyword.messagehub}} stores three replicas of your message data to ensure the highest level of resilience across three availability zones. When {{site.data.keyword.messagehub}} is provisioned for {{site.data.keyword.satelliteshort}}, 2 TB of storage is allocated from your configured block storage infrastructure for each of the three replicas (availability zones). This is equivalent to deploying 6 TB of storage if you run your own Apache Kafka cluster with the same replication policy enabled.
 
