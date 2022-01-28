@@ -59,6 +59,8 @@ The architecture is highly available when you choose to deploy into a multi-zone
 
 The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
 
+The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access beta service and is only visible to approved users. Contact [James Bennett](james.bennett@uk.ibm.com) for details to join the beta programme.
+
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite {:beta: .beta} plans
 
