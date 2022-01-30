@@ -18,12 +18,17 @@ subcollection: EventStreams
 {:note: .note}
 {:beta: .beta}
 
-# Getting started with the IBM Satellite plan for Event Streams
+# Getting started with the IBM Satellite plan for Event Streams (Beta)
 
 {: #satellite_getting_started}
 {:beta: .beta}
 
 Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan functionality into {{site.data.keyword.satelliteshort}} locations of your choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+
+## Beta
+The IBM Satellite plan for Event Streams is currently available as a limited access beta service and will only be visible to approved users.  Please contact [James Bennett](james.bennett@uk.ibm.com) for details of how to join the beta program.
+
+Review the IBM Terms for usage of the beta service at [IBM Cloud (Public Cloud) Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document), see setion Beta Services.
 
 ## Overview
 
@@ -39,7 +44,7 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
 4. Provision an {{site.data.keyword.messagehub}} service instance in your account, and a service cluster in your {{site.data.keyword.satelliteshort}} location.
 
-5. Create the block storage and assignment for the {{site.data.keyword.messagehub}} service cluster that was provisioned. 
+5. Create the block storage assignment for the {{site.data.keyword.messagehub}} service cluster that was provisioned. 
 {{site.data.keyword.messagehub}} will use the block storage for the retention of your message data.
 
     The storage capacity cannot be scaled up for the initial release of {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}}.

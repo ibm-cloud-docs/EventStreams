@@ -53,13 +53,13 @@ The Enterprise plan includes the following features:
 
 The architecture is highly available when you choose to deploy into a multi-zone region. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
-## Satellite plan 
+## Satellite plan (Beta) 
 {:beta: .beta}
 {: #plan_satellite}
 
 The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
 
-The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access beta service and is only visible to approved users. Contact [James Bennett](james.bennett@uk.ibm.com) for details to join the beta programme.
+The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access beta service and is only visible to approved users. Contact [James Bennett](james.bennett@uk.ibm.com) for details to join the beta program.
 
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite {:beta: .beta} plans
@@ -89,7 +89,7 @@ The following table summarizes what is supported by the plans:
 | **Maximum number of connected clients**  | 5   | 500  | 10 000  |   10 000  |
 |  **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  Your own {{site.data.keyword.satelliteshort}} locations   |
 | **APIs supported** |  Kafka API   \n Admin REST API  \n REST Producer API |  Kafka API   \n Admin REST API   \n REST Producer API    |  Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API  | Kafka API   \n Admin REST API    |
-| **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 3 hours because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance   |
+| **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 1 hour because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance   |
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   Not applicable for Beta  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 

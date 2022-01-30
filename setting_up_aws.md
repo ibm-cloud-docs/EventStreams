@@ -46,7 +46,7 @@ The following information outlines the type and amount of block storage that wil
 {: #prepare-satellite-location}
 {: step}
 
-Before you deploy the {{site.data.keyword.messagehub_full}} enabled by {{site.data.keyword.satellitelong}} service, prepare your {{site.data.keyword.satelliteshort}} location.
+Before you deploy the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} service, prepare your {{site.data.keyword.satelliteshort}} location.
 
 The following information regarding the amount of storage and hosts is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.  If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the same amount of hosts and storage are needed for additional {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.
 {:note: .note}
@@ -62,11 +62,14 @@ These additional hosts are used to create a service cluster into which {{site.da
 - 3 type **32x128** hosts
   - On AWS, choose 3 hosts of type **AWS m5d.2xlarge**.
 
+Refer to [Adding AWS hosts to Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-aws#aws-host-attach) for more detail on adding AWS hosts to your satellite location.
+{: note}
+
 ### Create a Satellite block storage configuration
 
 {: #satellite-blockstorage-config}
 
-To make block storage available in a {{site.data.keyword.satelliteshort}} location, a storage configuration needs to be created. The configuration defines which {{site.data.keyword.satelliteshort}} template (or driver) to use, the version of the template, and the infrastructure provider credentials. The following example command shows how to create an AWS configuration for {{site.data.keyword.messagehub}}. A later step will assign this configuration to your {{site.data.keyword.satelliteshort}} instance of {{site.data.keyword.messagehub}}.
+To make block storage available in a {{site.data.keyword.satelliteshort}} location, a storage configuration needs to be created. The configuration defines which {{site.data.keyword.satelliteshort}} template (or driver) to use, the version of the template, and the infrastructure provider credentials. The following example command shows how to create an AWS configuration for {{site.data.keyword.messagehub}}. A later step will assign this configuration to your {{site.data.keyword.satelliteshort}} service cluster of {{site.data.keyword.messagehub}}.
 
 Refer to [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs) for more detail on block storage configurations.
 {: note}
@@ -139,9 +142,7 @@ ibmcloud sat service ls --location <sat location name/location id>
 
 A list of services are displayed. Identify the **messagehub** service that has a **Cluster Name** matching the service listed in the {{site.data.keyword.cloud_notm}} console in the previous step. Save the **Cluster ID** value for that service.
 
-{: pre}
-
-  Use the **Cluster ID** as an input parameter value for `--service-cluster-id` in the following {{site.data.keyword.satelliteshort}} storage assignment command:
+Use the **Cluster ID** as an input parameter value for `--service-cluster-id` in the following {{site.data.keyword.satelliteshort}} storage assignment command:
 
 ```bash
 ibmcloud sat storage assignment create  \\
@@ -149,7 +150,5 @@ ibmcloud sat storage assignment create  \\
     --service-cluster-id <Cluster-ID>  \\
     --config 'aws-ebs-config-storage-es-1'
 ```
-
-{: pre}
 
 After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.

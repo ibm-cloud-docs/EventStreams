@@ -62,7 +62,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Security and vulnerability patch updates to cluster| {{site.data.keyword.messagehub}} applies the provided security and vulnerability patch updates to the client cluster, according to IBM X-Force timeframes.  | |
 |Manage users and access|   | Customer is responsible for managing your organizational account users and related access to the {{site.data.keyword.messagehub}} instance.|
 |Compliance controls|  | Customer is responsible for maintaining your organizational compliance controls.|
-|{{site.data.keyword.satelliteshort}} compliance and security {:beta: .beta}| [IBM Cloud Service Description - Beta Services](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document) |[{{site.data.keyword.satelliteshort}} security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance)|
+|{{site.data.keyword.satelliteshort}} compliance and security {:beta: .beta}| [IBM Cloud Service Description - Beta Services](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document) |[{{site.data.keyword.satelliteshort}} security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) The IBM Satellite plan for Event Streams is currently available as a limited access beta service.  Review the IBM Terms for usage of the beta service at [IBM Cloud (Public Cloud) Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document), see setion Beta Services.|
 {: caption="Table 2. Responsibilities for security and regulation compliance" caption-side="top"}
 
 
