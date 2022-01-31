@@ -2,7 +2,7 @@
 
 copyright:
   year: 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -19,11 +19,13 @@ subcollection: EventStreams
 {:beta: .beta}
 
 # Getting started with the IBM Satellite plan for Event Streams
+{: beta}
 
 {: #satellite_getting_started}
-{:beta: .beta}
+
 
 Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan functionality into {{site.data.keyword.satelliteshort}} locations of your choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+{: beta}
 
 ## Overview
 
@@ -66,7 +68,6 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
   - Washington DC
 - As noted in the [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?
 topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
-
 4. Before you proceed to the steps in the infrastructure specific topic:
 
 - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
