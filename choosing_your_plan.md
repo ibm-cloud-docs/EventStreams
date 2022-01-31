@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -21,19 +21,21 @@ subcollection: EventStreams
 {:beta: .beta}
 
 # Choosing your plan 
+
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan {:beta: .beta} depending on your requirements. 
-
+{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan {: beta} depending on your requirements. 
 
 {: shortdesc}
 
 ## Lite plan
+
 {: #plan_lite}
 
 The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. We do not recommend the Lite plan for production use. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Standard plan
+
 {: #plan_standard}
 
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are using for your workload. 
@@ -42,6 +44,7 @@ The architecture is highly available by default. The service is distributed acro
 
 
 ## Enterprise plan 
+
 {: #plan_enterprise}
 
 The Enterprise plan is appropriate if data isolation, performance, and increased retention are important considerations. 
@@ -54,7 +57,8 @@ The Enterprise plan includes the following features:
 The architecture is highly available when you choose to deploy into a multi-zone region. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 ## Satellite plan 
-{:beta: .beta}
+{: beta}
+
 {: #plan_satellite}
 
 The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
@@ -62,11 +66,11 @@ The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to depl
 The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access beta service and is only visible to approved users. Contact [James Bennett](james.bennett@uk.ibm.com) for details to join the beta programme.
 
 
-## What is supported by the Lite, Standard, Enterprise, and Satellite {:beta: .beta} plans
+## What is supported by the Lite, Standard, Enterprise, and Satellite {: beta} plans
 
 The following table summarizes what is supported by the plans:
 
-|   | Lite plan  |  Standard plan |  Enterprise plan  |  {{site.data.keyword.satelliteshort}} plan {:beta: .beta}|
+|   | Lite plan  |  Standard plan |  Enterprise plan  |  {{site.data.keyword.satelliteshort}} plan {: beta}|
 |---|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 |**Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
@@ -96,6 +100,7 @@ The following table summarizes what is supported by the plans:
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
 ### Footnotes
+
 {: #footnote_plans notoc}
 
 1. After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.) {: #footnote_lite notoc}
