@@ -46,11 +46,11 @@ When the {{site.data.keyword.messagehub}} service is run in a non highly availab
 
 
 ## Satellite plan
-{: beta}
 
 {: #sla_satellite}
 
 The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}}  plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, with the correct IaaS configurations, the {{site.data.keyword.messagehub}} service can be distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
+{: beta}
 
 
 
