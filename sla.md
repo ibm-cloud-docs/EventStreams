@@ -30,7 +30,7 @@ subcollection: EventStreams
 The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
-[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
+[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
 
 
 ## Enterprise plan
@@ -40,9 +40,9 @@ The {{site.data.keyword.messagehub}} service is provided with an availability of
 The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. 
 
 In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see
-[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
+[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
 
-When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
+When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
 
 
 ## Satellite plan
@@ -64,7 +64,7 @@ From June 30, 2020, the Classic Plan will be retired and no longer s
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
 For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
-[{{site.data.keyword.Bluemix_notm}} service description ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-03.ibm.com/software/sla/sladb.nsf/pdf/6605-19/$file/i126-6605-19_10-2019_en_US.pdf){: new_window}.
+[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
 
 
 
