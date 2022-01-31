@@ -60,7 +60,7 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
 1. Refer to the [Satellite usage requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-requirements).
 2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
-3. Create a {{site.data.keyword.satelliteshort}} location, see [Setting up Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](https://cloud.ibm.com/docs/satellite?topic=satellite-locations#location-create-manual).
+3. Create a {{site.data.keyword.satelliteshort}} location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create-manual).
 
   - Supported options for the {{site.data.keyword.satelliteshort}} location Managed from field include:
   
