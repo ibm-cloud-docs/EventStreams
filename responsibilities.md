@@ -48,7 +48,8 @@ Review the following sections for the specific responsibilities for you and for 
 |Supported client|   | Customer is responsible for maintaining a supported version of the Kafka client. For more information, see [Support summary for all recommended clients](/docs/EventStreams?topic=EventStreams-kafka_using#client_summary).|
 |Client configuration, deployment, and lifecycle|   | Customer is responsible for managing client configuration, deployment, and lifecycle following [IBM best practice documentation](/docs/overview?topic=overview-shared-responsibilities#software-packages).|
 |Cluster management|   | Customer is responsible for managing the provided resource capacity of their clusters across their organizational user base. |
-|{{site.data.keyword.satelliteshort}} cluster management |   | [{{site.data.keyword.satelliteshort}} incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops) | {: beta}
+|{{site.data.keyword.satelliteshort}} cluster management |   | [{{site.data.keyword.satelliteshort}} incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops) | 
+{: beta}
 {: caption="Table 1. Responsibilities for incident, operations and cluster management" caption-side="top"}
 
 
@@ -66,6 +67,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Manage users and access|   | Customer is responsible for managing your organizational account users and related access to the {{site.data.keyword.messagehub}} instance.|
 |Compliance controls|  | Customer is responsible for maintaining your organizational compliance controls.|
 |{{site.data.keyword.satelliteshort}} compliance and security {: beta}| [IBM Cloud Service Description - Beta Services](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document) |[{{site.data.keyword.satelliteshort}} security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance)|
+{: beta}
 {: caption="Table 2. Responsibilities for security and regulation compliance" caption-side="top"}
 
 
@@ -81,6 +83,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Monitor and repair| {{site.data.keyword.messagehub}} monitors and repairs infrastructure non-disruptively.  | |
 |Manage and configure|   | Customer is responsible for using the provided APIs, CLI, or console to manage topics and configuration. |
 |{{site.data.keyword.satelliteshort}} infrastructure and environment {: beta}| {{site.data.keyword.messagehub}} deploys an instance consisting of all required {{site.data.keyword.messagehub}} components onto the customer provided infrastructure. {{site.data.keyword.messagehub}} is responsible for monitoring the health of the {{site.data.keyword.messagehub}} cluster and recovery of that cluster, unless recovery requires customer infrastructure actions.  | For information, see [{{site.data.keyword.satelliteshort}} incident and operations management](/docs/satellite?topic=satellite-responsibilities#task-responsibilities) and [{{site.data.keyword.satelliteshort}} change management](/docs/satellite?topic=satellite-responsibilities#change-management). |
+{: beta}
 {: caption="Table 3. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
 
 ## Disaster recovery
