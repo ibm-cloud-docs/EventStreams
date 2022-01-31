@@ -29,6 +29,7 @@ subcollection: EventStreams
 ## Overview
 
 Follow the steps below to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location that is using Amazon Web Services (AWS) infrastructure.
+{: beta}
 
 The following steps guide you through configuring, assigning, and provisioning block storage from your infrastructure provider. Storage capacity is the amount of block storage allocated in the {{site.data.keyword.messagehub}} service instance for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance.
 
