@@ -68,6 +68,8 @@ The {{site.data.keyword.satelliteshort}} plan is currently available as a limite
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite {: beta} plans
 
+{: #what_is_supported}
+
 The following table summarizes what is supported by the plans:
 
 |   | Lite plan  |  Standard plan |  Enterprise plan  |  {{site.data.keyword.satelliteshort}} plan {: beta}|
