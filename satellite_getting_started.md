@@ -31,7 +31,6 @@ Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan func
 {: #satellite_beta}
 
 The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} is currently available as a limited access Beta service and is only visible to approved users.
-{: beta}
 
 Review the IBM Terms for usage of the Beta service at [IBM Cloud (Public Cloud) Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document), see section *Beta Services*.
 
