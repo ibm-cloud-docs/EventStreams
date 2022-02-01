@@ -2,7 +2,7 @@
 
 copyright:
   year: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,9 +27,35 @@ Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan func
 {: beta}
 
 ## Beta
-The IBM Satellite plan for Event Streams is currently available as a limited access beta service and will only be visible to approved users.  Please contact [James Bennett](james.bennett@uk.ibm.com) for details of how to join the beta program.
 
-Review the IBM Terms for usage of the beta service at [IBM Cloud (Public Cloud) Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document), see setion Beta Services.
+{: #satellite_beta}
+
+The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} is currently available as a limited access Beta service and is only visible to approved users.
+{: beta}
+
+Review the IBM Terms for usage of the Beta service at [IBM Cloud (Public Cloud) Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document), see section *Beta Services*.
+
+Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) to request access to the beta service.
+
+- IBM Internal users:
+  - Log in using the ibmcloud CLI.
+  - Run the following command to get your account GUID: `bx account list`.
+  - Include the account GUID value to be given access in your ticket.
+  
+- Users outside IBM:
+  - Include the account ID to be given access in your ticket.
+  - Wait for response to your ticket before you attempt to access the {{site.data.keyword.messagehub}} Beta service.
+
+### Example request
+
+{: #satellite_example_request}
+
+```
+We request access to the IBM Satellite plan for Event Streams (Beta).
+
+The account to authorize:  xxxxxxxxxxxxx
+```
+{: codeblock}
 
 ## Overview
 
