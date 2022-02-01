@@ -50,6 +50,11 @@ toc:
             - using_ksqldb.md
             - using_rest_producer.md
             - mirroring.md
+        - topicgroup:
+            label: IBM Event Streams enabled by IBM Cloud Satellite 
+            topics:
+            - satellite_getting_started.md
+            - setting_up_aws.md
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
@@ -86,7 +91,7 @@ toc:
               - choosing_apis_classic.md
               - using_kafka_api_classic.md
               - using_kafka_rest_api_classic.md
-              - using_admin_rest_api_class.md
+              - using_admin_rest_api_classic.md
               - choosing_kafka_client_classic.md
               - migrating_kafka_java_classic.md
               - using_mq_light_api_classic.md

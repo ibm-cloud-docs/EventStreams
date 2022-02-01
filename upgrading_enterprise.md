@@ -131,7 +131,7 @@ Small code deltas are shipped daily to production. As a result, you can expect t
 {: #footnote_plans notoc}
 
 1. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
-2. 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-getting-customer-support#using-avatar){: new_window}. {: #footnote_partitions notoc}
+2. 3000 is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond 3000, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: new_window}. {: #footnote_partitions notoc}
 3. To approximately calculate the storage footprint of a partition, use the following formula, which is used with a safety margin to avoid filling the storage: {: #footnote_footprint notoc}
     ```
     retention.bytes + segment.bytes
