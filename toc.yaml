@@ -84,26 +84,6 @@ toc:
         - reserved_disk.md
         - eventstreams-cli.md
         - topicgroup:
-            label: Classic plan
-            topics:
-              - classic_plan.md
-              - connecting_es_classic.md
-              - choosing_apis_classic.md
-              - using_kafka_api_classic.md
-              - using_kafka_rest_api_classic.md
-              - using_admin_rest_api_classic.md
-              - choosing_kafka_client_classic.md
-              - migrating_kafka_java_classic.md
-              - using_mq_light_api_classic.md
-              - using_mq_light_clients_classic.md
-              - linking_bridges_classic.md
-              - mq_bridge_classic.md
-              - cos_bridge_classic.md
-              - object_storage_bridge_classic.md
-              - monitoring_logging_classic.md
-              - faq_classic.md
-              - restrictions_classic.md
-        - topicgroup:
             label: Migrating from the Classic plan
             topics:
             - upgrading_standard.md
