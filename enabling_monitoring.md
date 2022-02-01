@@ -61,7 +61,7 @@ For more information about service-to-service bindings, see [Manage authorizatio
 ## Step 3: enable mirroring
 {: #step3_enable}
 
-Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) to request enablement of mirroring. 
+Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) to request enablement of mirroring. 
 
 Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
