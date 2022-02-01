@@ -53,21 +53,6 @@ The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}}  plan 
 {: beta}
 
 
-
-## Classic plan
-
-{: #sla_classic}
-
-The Classic plan is deprecated. From November 1, 2019, you can no longer provision new instances of the Classic Plan. <br/>However, existing instances will continue to be supported.
-From June 30, 2020, the Classic Plan will be retired and no longer supported. Any instance of the Classic Plan still provisioned at this date will be deleted. 
-{: deprecated}
-
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.5% on the Classic plan. 
-For more information about the SLA for {{site.data.keyword.Bluemix_notm}}, see
-[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
-
-
-
 ## How do we measure it?
 
 Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?component=messagehub&selected=status){: new_window}.

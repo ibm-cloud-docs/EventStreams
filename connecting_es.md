@@ -30,8 +30,6 @@ The way how you connect to {{site.data.keyword.messagehub}} varies depending on 
 
 Read the following information about how to obtain these details. Ensure that you complete the appropriate steps for your instance.
 
-For information about how to connect to {{site.data.keyword.messagehub}} if you use the now deprecated Classic plan, see [Connecting by using the Classic plan](/docs/EventStreams?topic=EventStreams-connecting_classic).
-
 
 ## Overview
 {: #connect_enterprise}

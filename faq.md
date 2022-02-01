@@ -175,7 +175,7 @@ Yes, but only if you are moving from the Lite plan to the Standard plan.
 <br/>
 Allow a few minutes for the cached limit of 1 partition for the Lite plan to clear so that you can take advantage of the 100 partition limit for the Standard plan.
 
-However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try for a different plan combination, you'll see an error message like the the following:
+However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try a different plan combination, you'll see an error message like the the following:
 ```
 Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
 ```

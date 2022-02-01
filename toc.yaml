@@ -84,13 +84,6 @@ toc:
         - reserved_disk.md
         - eventstreams-cli.md
         - topicgroup:
-            label: Migrating from the Classic plan
-            topics:
-            - upgrading_standard.md
-            - migrating_rest_api_classic.md
-            - migrating_mq_light.md
-            - migrating_bridges_kafka.md
-        - topicgroup:
             label: Migrating from Dedicated to Enterprise plan
             topics:
             - upgrading_enterprise.md
@@ -104,7 +97,6 @@ toc:
               - troubleshooting.md
               - known_restrictions.md
               - reporting_problem.md
-              - reporting_problem_classic.md
           - topicgroup:
               label: Related links
               topics:
