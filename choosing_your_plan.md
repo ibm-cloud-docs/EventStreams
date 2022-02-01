@@ -64,7 +64,7 @@ The architecture is highly available when you choose to deploy into a multi-zone
 The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
 {: beta}
 
-The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access Beta service. To request access to the beta service, refer to the information at [Getting started with the IBM Satellite plan for Event Streams (Beta)](/docs/EventStreams?topic=EventStreams-getting-started-with-the-ibm-satellite-plan-for-event-streams#satellite_beta).
+The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access Beta service. To request access to the beta service, refer to the information at [Getting started with the IBM Satellite plan for Event Streams (Beta)](/docs/EventStreams?topic=EventStreams-getting-started-with-the-ibm-satellite-plan-for-event-streams-beta#beta).
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite plans
 
