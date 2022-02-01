@@ -34,7 +34,7 @@ The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_
 
 Review the IBM Terms for usage of the Beta service at [IBM Cloud (Public Cloud) Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document), see section *Beta Services*.
 
-Raise a [support ticket](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) to request access to the beta service.
+Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) to request access to the beta service.
 
 - IBM Internal users:
   - Log in using the ibmcloud CLI.
