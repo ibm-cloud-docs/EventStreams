@@ -60,7 +60,7 @@ These additional hosts are used to create a service cluster into which {{site.da
 
 - 6 type **4x16** hosts
   - On AWS, choose 6 hosts of type **AWS m5d.xlarge**.
-- 3 type **32x128** hosts
+- 3 type **8x32** hosts
   - On AWS, choose 3 hosts of type **AWS m5d.2xlarge**.
 
 Refer to [Adding AWS hosts to Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-aws#aws-host-attach) for more detail on adding AWS hosts to your satellite location.
