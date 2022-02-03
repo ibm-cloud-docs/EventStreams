@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-02"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -24,7 +24,6 @@ subcollection: EventStreams
 {:beta: .beta}
 
 # Understanding your responsibilities when using {{site.data.keyword.messagehub}}
-
 {: #event_streams_responsibilities}
 <!-- The title of your H1 should be Understanding your responsibilities with using _service-name_, where _service-name_ is the non-trademarked short version conref. -->
 
@@ -35,7 +34,6 @@ Review the following sections for the specific responsibilities for you and for 
 
   
 ## Incident, operations, and cluster management 
-
 {: #incident_ops_cluster}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -54,7 +52,6 @@ Review the following sections for the specific responsibilities for you and for 
 
 
 ## Security and regulation compliance
-
 {: #security_compliance}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -71,7 +68,6 @@ Review the following sections for the specific responsibilities for you and for 
 
 
 ## {{site.data.keyword.cloud_notm}} infrastructure and managing the environment
-
 {: #cloud_infrastructure}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -85,7 +81,6 @@ Review the following sections for the specific responsibilities for you and for 
 {: caption="Table 3. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
 
 ## Disaster recovery
-
 {: #disaster-recovery}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -103,7 +98,6 @@ If you have configured your {{site.data.keyword.messagehub}} instance in a multi
 
 
 ## App orchestration
-
 {: #app_orchestration}
 
 <!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
@@ -116,7 +110,6 @@ If you have configured your {{site.data.keyword.messagehub}} instance in a multi
 {: caption="Table 5. Responsibilities for app orchestration" caption-side="top"}
 
 ## Mirroring
-
 {: #mirroring_responsibilities}
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
@@ -132,7 +125,6 @@ If you have configured your {{site.data.keyword.messagehub}} instance in a multi
 
 
 ## Support of client-side libraries
-
 {: #support_client_libraries}
 
 {{site.data.keyword.IBM_notm}} does not own Kafka client-side libraries and cannot commit to provide fixes in case issues are found in them. Client-side libraries include the official Apache Kafka clients (Consumer, Producer, Connect and Streams) as well as third party clients, libraries/tools and connectors.
