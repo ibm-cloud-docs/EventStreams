@@ -39,7 +39,8 @@ ibmcloud login -a cloud.ibm.com
 ## Step 3. Create an {{site.data.keyword.messagehub}} instance
 {: #step3_es_instance}
 
-Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans. (The Classic plan does not support the CLI.) <br/>
+Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans. 
+
 Select one of the following methods:
 
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){: new_window}.

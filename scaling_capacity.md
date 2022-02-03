@@ -145,8 +145,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
         
     g. Enter a name for your service instance. You can use the default value.
     
-    h. Click Create. (See [choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose#what-s-supported-by-the-lite-standard-enterprise-and-classic-plans) 
-    for information on the amount of time needed to create the service instance).
+    h. Click Create. (See [choosing your plan](/docs/EventStreams?topic=EventStreams-choosing-your-plan#what-is-supported-by-the-lite-standard-enterprise-and-satellite-plans) for information on the amount of time needed to create the service instance).
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  

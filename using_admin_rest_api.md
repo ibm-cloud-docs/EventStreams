@@ -48,8 +48,6 @@ The credentials depend on the authentication method and three types of credentia
 
     Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
-For service instances created on the Classic plan, this information is available from your application's VCAP_SERVICES environment variable instead.
-
 For a description of the API with examples, see 
 [{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: new_window}.
 
