@@ -157,4 +157,4 @@ When using the REST producer API, there is a limitation on the record key and va
 {: #rest_api_reference}
 
 For full details of the API, see the 
-[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){: new_window}.
+[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams/restproducer){: new_window}.
