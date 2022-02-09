@@ -2,7 +2,7 @@
 
 copyright:
   year: 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -20,14 +20,12 @@ subcollection: EventStreams
 
 
 # Getting started with the IBM Satellite plan for Event Streams (Beta)
-
 {: #satellite_getting_started}
 
 Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan functionality into {{site.data.keyword.satelliteshort}} locations of your choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 {: beta}
 
 ## Beta
-
 {: #satellite_beta}
 
 The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} is currently available as a limited access Beta service and is only visible to approved users.
@@ -46,7 +44,6 @@ Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface
   - Wait for response to your ticket before you attempt to access the {{site.data.keyword.messagehub}} Beta service.
 
 ### Example request
-
 {: #satellite_example_request}
 
 ```
@@ -57,7 +54,6 @@ The account to authorize:  xxxxxxxxxxxxx
 {: codeblock}
 
 ## Overview
-
 {: #overview}
 
 To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed:
@@ -84,7 +80,6 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 6. Provisioning of {{site.data.keyword.messagehub}} service instance completes and is ready to use.
 
 ## Before you begin
-
 {: #satellite_before_you_begin}
 
 1. Refer to the [Satellite usage requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-requirements).
@@ -101,10 +96,14 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
   - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
   - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
-5. Set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location).
+
+
+## Provision Event Streams
+{: #provision_es}
+
+Follow the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location).
 
 ## Limitations of the IBM Satellite plan for Event Streams
-
 {: #satellite_restrictions}
 
 - The following infrastruture provider is supported:
