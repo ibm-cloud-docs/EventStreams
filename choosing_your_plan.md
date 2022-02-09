@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -81,12 +81,11 @@ The following table summarizes what is supported by the plans:
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  No | Yes  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  No   |
-| **Encryption**  | No  |  No |  Yes |  No   |
+| **Customer-managed encryption**  | No  |  No |  Yes |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes |  Yes   |
-| **IAM IP address access restrictions**  | Yes  |  Yes |  Yes |  No   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  Not during Beta   |
 | **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Not during Beta  |
-|  **Cloud Service Endpoint support** | No   | No  |  Yes | No    |
+|  **Cloud Service Endpoint support** | No   | No  |  Yes |  Not applicable  |
 |  **Scale plan capacity** | No   | No  |  Yes |   No  |
 | **Maximum number of partitions**  | 1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)  | 100   |3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions) | 3000    |
 |**Maximum retention limits**   | 100 MB for the partition   | 1 GB per partition  | 2 TB - 12 TB of scalable usable storage [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)|  2 TB of scalable usable storage   |
