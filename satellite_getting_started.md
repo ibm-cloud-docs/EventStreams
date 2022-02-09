@@ -101,13 +101,14 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
   - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
   - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
+5. Set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location).
 
 ## Limitations of the IBM Satellite plan for Event Streams
 
 {: #satellite_restrictions}
 
 - The following infrastruture provider is supported:
-  - AWS
+  - [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location)
 
 - Your {{site.data.keyword.satelliteshort}} location can be managed from the following {{site.data.keyword.cloud_notm}} data centers:
 
