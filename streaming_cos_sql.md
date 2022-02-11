@@ -44,6 +44,8 @@ Ensure you have the following services configured:
 - An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
 - An {{site.data.keyword.keymanagementservicelong}} instance.
 
+These services can also be created after you start configuring your stream landing job in the set up wizard.
+
 Ensure you have the following permissions:
 
 - Permission to create service-to-service authentication.
@@ -51,9 +53,6 @@ Ensure you have the following permissions:
 - Permission to write to {{site.data.keyword.keymanagementservicelong}} (to store the API key).
 - Reader access role for the cluster, topic and group resources within the {{site.data.keyword.messagehub}} service instance (or a Reader access role for the service instance as a whole).
 - Writer role for the Cloud {{site.data.keyword.cos_short}} bucket.
-
-
-These services can also be created after you start configuring your stream landing job in the set up wizard.
 
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} stream landing
 {: #step2_setup_cos_landing}
