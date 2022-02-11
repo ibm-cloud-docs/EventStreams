@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021,2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-11"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -18,7 +18,6 @@ subcollection: EventStreams
 {:note: .note}
 
 # Streaming to Cloud {{site.data.keyword.cos_short}} by using {{site.data.keyword.sqlquery_short}}
-
 {: #streaming_cos_sql}
 
 Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed using the fully-managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
@@ -35,8 +34,7 @@ The following task walks you through:
 
 Complete the following steps to start the streams landing.
 
-## Step 1. Install the prerequisites
-
+## Step 1. Prerequisites
 {: #step1_install_prereqs}
 
 Ensure you have the following services configured:
@@ -46,10 +44,18 @@ Ensure you have the following services configured:
 - An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
 - An {{site.data.keyword.keymanagementservicelong}} instance.
 
+Ensure you have the following permissions:
+
+- Permission to create service-to-service authentication.
+- Permission to create service IDs and API keys.
+- Permission to write to {{site.data.keyword.keymanagementservicelong}} (to store the API key).
+- Reader access role for the cluster, topic and group resources within the {{site.data.keyword.messagehub}} service instance (or a Reader access role for the service instance as a whole).
+- Writer role for the Cloud {{site.data.keyword.cos_short}} bucket.
+
+
 These services can also be created after you start configuring your stream landing job in the set up wizard.
 
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} stream landing
-
 {: #step2_setup_cos_landing}
 
 1. Click on the **Overflow menu** (3 vertical dots beside the topic) to start and select the **streaming** topic data option
@@ -78,7 +84,6 @@ To validate that streams landing is working, do the following steps:
 - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
 
 ## Estimating cost
-
 {: estimating-cost}
 
 To keep the example simple, assume to persist 1 MB per second of data in Cloud {{site.data.keyword.cos_short}} that originates from {{site.data.keyword.messagehub}}. All pricing in this example is in US currency.
@@ -94,20 +99,7 @@ Cloud {{site.data.keyword.cos_short}} | $0.05 per month for each 3.6 GB using th
 Your total cost per hour, with the data subsequently stored for a month, would be approximately: $0.222.
 The above is only an example, and you should evaluate your own planned usage with the IBM Cloud cost calculator.
 
-## Permissions
-
-{:permissions-event-streams}
-
-The following permissions are needed for streams landing:
-
-- Permission to create service-to-service authentication.
-- Permission to create service IDs and API keys.
-- Permission to write to {{site.data.keyword.keymanagementservicelong}} (to store the API key).
-- Reader access role for the cluster, topic and group resources within the {{site.data.keyword.messagehub}} service instance (or a Reader access role for the service instance as a whole).
-- Writer role for the Cloud {{site.data.keyword.cos_short}} bucket.
-
 ## Limitations
-
 {:limitations-streams-landing}
 
 With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput depends on parameters, such as topic partitions and size and format of the events. For one {{site.data.keyword.sqlquery_short}} instance there is a limit of five concurrent stream landing jobs. The limit can be raised upon request via support ticket. The {{site.data.keyword.messagehub}} feature is currently only available for instances created in the US-South region.
