@@ -2,7 +2,7 @@
 
 copyright:
   year: 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -36,7 +36,7 @@ Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface
 
 - IBM Internal users:
   - Log in using the ibmcloud CLI.
-  - Run the following command to get your account GUID: `bx account list`.
+  - Run the following command to get your account GUID: `ibmcloud account list`.
   - Include the account GUID value to be given access in your ticket.
   
 - Users outside IBM:
