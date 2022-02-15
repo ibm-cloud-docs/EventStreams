@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-09-30"
+  years: 2015, 2022
+lastupdated: "2022-02-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -79,8 +79,6 @@ For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![Externa
 The following tables describe the specific metrics provided by {{site.data.keyword.messagehub}} for each plan.
 
 
-
-
 ## Metrics available by service plan
 {: metrics-by-plan}
 
@@ -89,13 +87,17 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Connected clients software name and version](#ibm_eventstreams_connected_clients_software_name_and_version) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |  ? | ? |
 | [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Maximum partition retention percentage](#ibm_eventstreams_instance_max_partition_retention_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg) ? | ?  | ? |
 | [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
+| [Number of offline partitions](#ibm_eventstreams_kafka_offline_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Number of under in-sync replica partitions](#ibm_eventstreams_kafka_under_minisr_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
@@ -104,8 +106,9 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../../icons/checkmark-icon.svg) ?| ![Checkmark icon](../../icons/checkmark-icon.svg) ?| ![Checkmark icon](../../icons/checkmark-icon.svg) ? |
 | [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |  <br/>
-{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+{: caption="Table 2: Metrics Available by Plan Names" caption-side="top"}
 
 ---
 
@@ -117,7 +120,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Mirroring throughput](#ibm_eventstreams_instance_mirroring_throughput) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Mirroring latency](#ibm_eventstreams_instance_mirroring_latency) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 <br/>
-{: caption="Table 2: Metrics available for mirroring" caption-side="top"}
+{: caption="Table 3: Metrics available for mirroring" caption-side="top"}
 
 ---
 
@@ -132,7 +135,7 @@ Incrementing count of the number of authentication failures
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 2: Authentication failures metric metadata" caption-side="top"}
+{: caption="Table 4: Authentication failures metric metadata" caption-side="top"}
 
 Ideally zero. A non-zero value on this indicates client(s) are attempting to connect using invalid credentials. Ensure all clients are using valid credentials.
 
@@ -147,9 +150,27 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `second` |
 | `Segment By` | `Service instance, Quantile, Service instance name` |
-{: caption="Table 3: Consume message conversion time metric metadata" caption-side="top"}
+{: caption="Table 5: Consume message conversion time metric metadata" caption-side="top"}
 
 Ideally zero, as non-zero indicates clients are experiencing additional latency due to using an older protocol level. Those clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
+
+
+### Consumer groups lag 
+{: #ibm_eventstreams_instance_consumer_groups_lag}
+
+Indicates how long a time lag between producers and consumers that consumer groups are displaying.
+
+You can select this metric using the IBM Cloud CLI and Terraform.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_consumer_groups_lag`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `second` |
+| `Segment By` | `Service instance, Quantile, Service instance name` |
+{: caption="Table 6: Consumer groups lag metric metadata" caption-side="top"}
+
+TBD
 
 ### Estimated connected clients percentage
 {: #ibm_eventstreams_kafka_recommended_max_connected_clients_percent}
@@ -162,7 +183,7 @@ The percentage of maximum number of connected clients
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 4: Estimated connected clients percentage metric metadata" caption-side="top"}
+{: caption="Table 7: Estimated connected clients percentage metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
@@ -177,7 +198,7 @@ The number of connected clients with a particular client software name and versi
 | `Metric Type` | `gauge` |
 | `Value Type`  | `number` |
 | `Segment By` | `Client software name, Client software version` |
-{: caption="Table 5: Connected clients software name and version metric metadata" caption-side="top"}
+{: caption="Table 8: Connected clients software name and version metric metadata" caption-side="top"}
 
 This is for information to help you monitor the software name and version data of the active clients connected to the {{site.data.keyword.messagehub}} instance.
 
@@ -186,7 +207,7 @@ Client software name and version are available for the Kafka client (Java versio
 ### Inactive consumer groups
 {: #ibm_eventstreams_instance_inactive_consumergroups}
 
-The number of inactive consumer groups in an Event Streams instance
+The number of inactive consumer groups in an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -194,14 +215,14 @@ The number of inactive consumer groups in an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 6: Inactive consumer groups metric metadata" caption-side="top"}
+{: caption="Table 9: Inactive consumer groups metric metadata" caption-side="top"}
 
 This is for information only and is not an issue. Spikes indicate that a set of consumer groups have stopped sending messages.
 
 ### Instance bytes in per second
 {: #ibm_eventstreams_instance_bytes_in_per_second}
 
-The number of bytes produced per second to an Event Streams instance
+The number of bytes produced per second to an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -209,14 +230,14 @@ The number of bytes produced per second to an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 7: Instance bytes in per second metric metadata" caption-side="top"}
+{: caption="Table 10: Instance bytes in per second metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 ### Instance bytes out per second
 {: #ibm_eventstreams_instance_bytes_out_per_second}
 
-The number of bytes consumed per second from an Event Streams instance
+The number of bytes consumed per second from an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -224,9 +245,26 @@ The number of bytes consumed per second from an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 8: Instance bytes out per second metric metadata" caption-side="top"}
+{: caption="Table 11: Instance bytes out per second metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage of how many incoming or outgoing MB/s your clients are transferring to/from your cluster. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
+
+### Maximum partition retention percentage
+{: #ibm_eventstreams_instance_max_partition_retention_percent}
+
+The percentage of the maximum partition retention period reached.
+
+You can select this metric using the IBM Cloud CLI and Terraform.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_max_partition_retention_percent`|
+| `Metric Type` | `counter` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 12: Maximum partition retention percentage metric metadata" caption-side="top"}
+
+TBD
 
 
 ### Missing SNI connections
@@ -240,15 +278,29 @@ Incrementing count of the number of connections rejected due to not supporting t
 | `Metric Type` | `counter` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 9: Missing SNI connections metric metadata" caption-side="top"}
+{: caption="Table 13: Missing SNI connections metric metadata" caption-side="top"}
 
 Ideally this should be zero. It indicates clients that are not configured correctly. Clients must use the SNI extension for TLS in order to connect to the service. If this value is non-zero, then ensure that all clients are at correct level and configured correctly for [SNI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_using){: new_window}.
 
+### Number of offline partitions
+{: #ibm_eventstreams_kafka_offline_partitions}
+
+The number of offline partitions in an {{site.data.keyword.messagehub}} instance
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_kafka_offline_partitions`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 14: Number of offline partitions metric metadata" caption-side="top"}
+
+TBD
 
 ### Number of partitions
 {: #ibm_eventstreams_instance_partitions}
 
-The number of leader partitions in an Event Streams instance
+The number of leader partitions in an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -256,14 +308,16 @@ The number of leader partitions in an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 10: Number of partitions metric metadata" caption-side="top"}
+{: caption="Table 15: Number of partitions metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
+
+
 
 ### Number of topics
 {: #ibm_eventstreams_instance_topics}
 
-The number of topics in an Event Streams instance
+The number of topics in an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -271,7 +325,23 @@ The number of topics in an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 11: Number of topics metric metadata" caption-side="top"}
+{: caption="Table 16: Number of topics metric metadata" caption-side="top"}
+
+### Number of under in-sync replica partitions
+{: #ibm_eventstreams_kafka_under_minisr_partitions}
+
+The number of partitions, where the number of in-sync replicas (ISR) is less than specified
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_kafka_under_minisr_partitions`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 17: Number of under in-sync replica partitions metric metadata" caption-side="top"}
+
+TBD
+
 
 ### Produce message conversion time
 {: #ibm_eventstreams_instance_produce_conversions_time_quantile}
@@ -284,14 +354,14 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `second` |
 | `Segment By` | `Service instance, Quantile, Service instance name` |
-{: caption="Table 12: Produce message conversion time metric metadata" caption-side="top"}
+{: caption="Table 18: Produce message conversion time metric metadata" caption-side="top"}
 
 Ideally zero. A consistent growth in this indicates that some clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
 
 ### Rebalancing consumer groups
 {: #ibm_eventstreams_instance_rebalancing_consumergroups}
 
-The number of rebalancing consumer groups in an Event Streams instance
+The number of rebalancing consumer groups in an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -299,7 +369,7 @@ The number of rebalancing consumer groups in an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 13: Rebalancing consumer groups metric metadata" caption-side="top"}
+{: caption="Table 19: Rebalancing consumer groups metric metadata" caption-side="top"}
 
 Whilst it is expected that this figure is occasionally >0 (as broker restarts happen frequently,) sustained high levels suggest that consumers may be restarting frequently and leaving/rejoining the consumer groups. Check you client logs.
 
@@ -314,7 +384,7 @@ The percentage of reserved disk space required for all allocated partitions if f
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 14: Reserved disk space percentage metric metadata" caption-side="top"}
+{: caption="Table 20: Reserved disk space percentage metric metadata" caption-side="top"}
 
 Shows the % of disk space that would be used if your topics are filled to the extent of their configured retention size.
 
@@ -330,7 +400,7 @@ The percentage of schema version capacity used for the schema with the greatest 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By`  | `Service instance, Service instance name` |
-{: caption="Table 15: Schema greatest version percentage metric metadata" caption-side="top"}
+{: caption="Table 21: Schema greatest version percentage metric metadata" caption-side="top"}
 
 ### Schema used percentage
 {: #ibm_eventstreams_instance_schema_registry_schemas_used_percentage}
@@ -343,12 +413,12 @@ The percentage of schema capacity used in the schema registry
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By`  | `Service instance, Service instance name` |
-{: caption="Table 16: Schema used percentage metric metadata" caption-side="top"}
+{: caption="Table 22: Schema used percentage metric metadata" caption-side="top"}
 
 ### Stable consumer groups
 {: #ibm_eventstreams_instance_stable_consumergroups}
 
-The number of stable consumer groups in an Event Streams instance
+The number of stable consumer groups in an {{site.data.keyword.messagehub}} instance
 
 | Metadata | Description |
 |----------|-------------|
@@ -356,7 +426,7 @@ The number of stable consumer groups in an Event Streams instance
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 17: Stable consumer groups metric metadata" caption-side="top"}
+{: caption="Table 23: Stable consumer groups metric metadata" caption-side="top"}
 
 Use in conjunction with re-balancing consumer groups. If this is consistently zero and re-balancing high, then it indicates a cluster problem. If this is non-zero and re-balancing high, then it indicates a consumer group issue.
 
@@ -371,7 +441,7 @@ The number of bytes produced per second to a topic
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 18: Topic bytes in per second metric metadata" caption-side="top"}
+{: caption="Table 24: Topic bytes in per second metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage, particularly if any topics are producing unusually more or less throughput than expected.
 
@@ -386,9 +456,26 @@ The number of bytes consumed per second from a topic
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 19: Topic bytes out per second metric metadata" caption-side="top"}
+{: caption="Table 25: Topic bytes out per second metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage, particularly if any topics are consuming unusually more or less throughput than expected.
+
+### Topic size
+{: #ibm_eventstreams_instance_topic_size}
+
+The size of the topic.
+
+You can select this metric using the IBM Cloud CLI and Terraform.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_topic_size`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+{: caption="Table 26: Topic size metric metadata" caption-side="top"}
+
+TBD
 
 ### Utilized disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
@@ -401,19 +488,17 @@ The percentage of currently utilized disk space
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 20: Utilized disk space percentage metric metadata" caption-side="top"}
+{: caption="Table 27: Utilized disk space percentage metric metadata" caption-side="top"}
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window} to determine what the recommended limits are for your plan and cluster.
 
 ---
 
 
-
-
 ### Mirroring_throughput
 {: #ibm_eventstreams_instance_mirroring_throughput}
 
-The bytes per second of mirroring throughput from the source Event Streams instance.
+The bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance.
 
 | Metadata | Description |
 |----------|-------------|
@@ -421,14 +506,14 @@ The bytes per second of mirroring throughput from the source Event Streams insta
 | `Metric Type` | `gauge` |
 | `Value Type`  | `bytes_per_second` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 21: Mirroring throughput" caption-side="top"}
+{: caption="Table 28: Mirroring throughput" caption-side="top"}
 
 This is useful to see if mirroring is active and for capacity planning.
 
 ### Mirroring_latency
 {: #ibm_eventstreams_instance_mirroring_latency}
 
-The per-topic mirroring latency in seconds from the source Event Streams instance.
+The per-topic mirroring latency in seconds from the source {{site.data.keyword.messagehub}} instance.
 
 | Metadata | Description |
 |----------|-------------|
@@ -436,7 +521,7 @@ The per-topic mirroring latency in seconds from the source Event Streams instanc
 | `Metric Type` | `gauge` |
 | `Value Type`  | `seconds` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 22: Mirroring latency" caption-side="top"}
+{: caption="Table 29: Mirroring latency" caption-side="top"}
 
 This is useful to determine how far behind a topic on the target cluster is.
 
@@ -473,4 +558,4 @@ The following attributes are available for segmenting one or more attributes as 
 
 <br/>
 
-For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring Event Streams metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-monitoring){: new_window}.
+For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring {{site.data.keyword.messagehub}} metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-monitoring){: new_window}.
