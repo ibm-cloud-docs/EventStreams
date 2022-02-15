@@ -83,10 +83,6 @@ toc:
         - disaster_recovery.md
         - reserved_disk.md
         - eventstreams-cli.md
-        - topicgroup:
-            label: Migrating from Dedicated to Enterprise plan
-            topics:
-            - upgrading_enterprise.md
     - navgroup:
         id: help
         topics:
