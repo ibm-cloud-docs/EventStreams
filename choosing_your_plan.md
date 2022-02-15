@@ -84,7 +84,7 @@ The following table summarizes what is supported by the plans:
 | **Customer-managed encryption**  | No  |  No |  Yes |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  Not during Beta   |
-| **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Not during Beta  |
+| **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
 |  **Cloud Service Endpoint support** | No   | No  |  Yes |  Not applicable  |
 |  **Scale plan capacity** | No   | No  |  Yes |   No  |
 | **Maximum number of partitions**  | 1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)  | 100   |3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions) | 3000    |
