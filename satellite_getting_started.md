@@ -106,8 +106,9 @@ Follow the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=
 ## Limitations of the IBM Satellite plan for Event Streams
 {: #satellite_restrictions}
 
-- The following infrastruture provider is supported:
+- The following infrastruture providers are supported:
   - [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location)
+  - [On-Premises Location with NetApp ONTAP-SAN storage](/docs/EventStreams?topic=EventStreams-setting-up-on-premises-web-services-location-with-netapp-ontap-san-(21.04)-storage)
 
 - Your {{site.data.keyword.satelliteshort}} location can be managed from the following {{site.data.keyword.cloud_notm}} data centers:
 
