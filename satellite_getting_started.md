@@ -118,9 +118,7 @@ Follow the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=
 
   - Scale up of message retention storage
   - IAM IP address access restrictions
-  - Bring Your Own Key (BYOK)
   - Schema Registry
   - Cloud Service Endpoint support
   - Stream to {{site.data.keyword.cos_full_notm}} using {{site.data.keyword.sqlquery_full}}
   - Activity tracker
-  - Monitoring {{site.data.keyword.messagehub}} metrics using {{site.data.keyword.monitoringfull}}
