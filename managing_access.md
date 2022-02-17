@@ -112,7 +112,7 @@ For an example of how to set policies, see:
 {: #wildcarding }
 You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. 
 For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
-[Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/iam?topic=iam-wildcard){: new_window}.
+[Assigning access by using wildcard policies ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/account?topic=account-wildcard){: new_window}.
 
 ## Connecting to {{site.data.keyword.messagehub}}
 {: #connect_message_enterprise }
