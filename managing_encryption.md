@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-05-12"
+  years: 2015, 2022
+lastupdated: "2022-02-17"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -38,12 +38,12 @@ because it is no longer possible to decrypt it.
 {: shortdesc}
 
 Consider using customer-managed keys if you require the following features:
-- Encryption of data at rest controlled by your own key
-- Explicit control of the lifecycle of data stored at rest
+- Encryption of data at rest controlled by your own key.
+- Explicit control of the lifecycle of data stored at rest.
 {: #considerations_keys notoc}
 
 Be aware of the following information when deciding to enable customer-managed keys: 
-- This feature is available on the Enterprise plan only
+- This feature is available on the Enterprise plan only.
 
 Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your 
 {{site.data.keyword.messagehub}} instance.
@@ -120,10 +120,9 @@ To temporarily prevent access, you can disable your root key. As a consequence, 
 can no longer access the data because it can no longer access the key. 
 
 To remove access permanently, you can delete the key. However, you must take extreme caution because this operation is non-recoverable.
- You will lose access to any data stored in your {{site.data.keyword.messagehub}} instance. There is no way to recover this data.
+You will lose access to any data stored in your {{site.data.keyword.messagehub}} instance. There is no way to recover this data.
 
-In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections.
- An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 Note: The authorization should be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data will continue to be available for a period of time.
 
