@@ -42,7 +42,7 @@ For more information about the setup and running of the sample, see the [README.
 For a detailed walkthrough of how to run the sample, see [Getting started with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps).
 
 ## How to use, download, and run the Liberty for Java sample
-{: #liberty_sample notoc}
+{: #liberty_sample}
 
 The Liberty for Java sample implements a simple application that is deployed onto the Liberty runtime. The application uses the Kafka API for {{site.data.keyword.messagehub}} to produce and consume messages.
 The application also serves up a web front end that you can use for administration.
@@ -54,7 +54,8 @@ You can find the sample code in the [event-streams-samples GitHub project ![Exte
 -->
 
 ## Using the sasl.jaas.config property
-{: #sasl_prop notoc}
+{: #sasl_prop}
+
 If you're using a Kafka client at 0.10.2.1 or later, you can use the <code>sasl.jaas.config</code> property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set <code>sasl.jaas.config</code> as follows:
 <pre>
 <code>    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
@@ -77,7 +78,6 @@ For an earlier Kafka client, you must use a JAAS configuration file to specify t
 ## Migrating a Kafka client from 0.9.X or 0.10.X to later client versions
 {: #kafka_migrate}
 
-
 If you're using the Java clients, you can use
 the publicly available Kafka clients at 0.10 or later. 
 
@@ -89,8 +89,6 @@ latest version. You can download a Kafka client from
 For information about the implications of using a 0.9.X client, see 
 [Backward compatibility](/docs/EventStreams?topic=EventStreams-kafka_clients#compatibility).
 -->
-
-
 
 ### Migrating a Kafka client to 0.10.2.X or later versions
 
@@ -106,6 +104,3 @@ Complete the following steps:
 	```
 
 	where USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
-
-
-
