@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-09-02"
+  years: 2015, 2022
+lastupdated: "2022-02-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -208,7 +208,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 2. Obtain a bearer token from IAM using the ibmcloud CLI:
     
     ```
-    export IAM_TOKEN=$(bx iam oauth-tokens --output json | jq -r .iam_token | tr -d '"')
+    export IAM_TOKEN=$(ibmcloud iam oauth-tokens --output json | jq -r .iam_token | tr -d '"')
     ```
     {: codeblock}
 
@@ -216,7 +216,10 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 
    ```
-   curl -s -H "Authorization: ${IAM_TOKEN}" "https://${VPC_REGION}.iaas.cloud.ibm.com/v1/vpcs/${VPC_ID}?generation=2&version=2021-08-17" | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
+   $ curl -H "Authorization: $IAM_TOKEN" "https://eu-de.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
+10.249.x.x/32
+10.249.x.x/32
+10.249.x.x/32
    ```
    {: codeblock}
 
