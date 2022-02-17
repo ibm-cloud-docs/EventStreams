@@ -55,6 +55,7 @@ toc:
             topics:
             - satellite_getting_started.md
             - setting_up_aws.md
+            - setting_up_onprem.md
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
