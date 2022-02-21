@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-06-25"
+  years: 2015, 2022
+lastupdated: "2022-02-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -148,7 +148,7 @@ Replace the placeholders in the <code>cos-sink.json</code> file with your own va
 <dt><strong>cos.api.key</strong></dt>
 <dd>Required. API key used to connect to the Cloud {{site.data.keyword.cos_short}} service instance.</dd>
 <dt><strong>cos.bucket.location</strong></dt>
-<dd>Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket, for example, eu-gb.</dd>
+<dd>Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket, for example, for a [regional bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-region) `eu-gb` or for a [global bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo) `eu`.</dd>
 <dt><strong>cos.bucket.name</strong></dt>
 <dd>Required. Name of the Cloud {{site.data.keyword.cos_short}} service bucket to write data into.</dd>
 <dt><strong>cos.bucket.resiliency</strong></dt>
