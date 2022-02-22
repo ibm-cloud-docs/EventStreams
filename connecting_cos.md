@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -144,30 +144,19 @@ Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-s
 
 Replace the placeholders in the <code>cos-sink.json</code> file with your own values.
 
-<dl>
-<dt><strong>cos.api.key</strong></dt>
-<dd>Required. API key used to connect to the Cloud {{site.data.keyword.cos_short}} service instance.</dd>
-<dt><strong>cos.bucket.location</strong></dt>
-<dd>Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket, for example, for a [regional bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-region) `eu-gb` or for a [global bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo) `eu`.</dd>
-<dt><strong>cos.bucket.name</strong></dt>
-<dd>Required. Name of the Cloud {{site.data.keyword.cos_short}} service bucket to write data into.</dd>
-<dt><strong>cos.bucket.resiliency</strong></dt>
-<dd>Required. Resiliency of the Cloud {{site.data.keyword.cos_short}} bucket. Must be one of: cross-region, regional, or single-site.</dd>
-<dt><strong>cos.service.crn</strong></dt>
-<dd>Required. CRN for the Cloud {{site.data.keyword.cos_short}} service instance.
-<p>Ensure you enter the correct CRN:it is the resource instance ID ending with double colons, for example, <br/> 
-<code>crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::</code></p></dd>
-<dt><strong>cos.endpoint.visibility</strong></dt>
-<dd>Optional. Specify *public* to connect to the Cloud {{site.data.keyword.cos_short}} service over the public internet, or *private* to connect from a connector that runs inside the IBM Cloud network, for example, from an IBM Cloud Kubernetes Service cluster. The default is public.</dd>
-<dt><strong>cos.object.deadline.seconds </strong></dt>
-<dd>Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object. 
-This property can be useful in situations that have long pauses between Kafka records being produced to a topic. It ensures that any records that are received by this connector are always written into {{site.data.keyword.cos_short}} within the specified time.</dd>
-<dt><strong>cos.object.interval.seconds</strong></dt>
-<dd>Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object.</dd>
-<dt><strong>cos.object.records</strong></dt>
-<dd>Optional. The maximum number of Kafka records to combine into an object.
-</dd>
-</dl>
+File properties | Description
+--- | ---
+cos.api.key | Required. API key used to connect to the Cloud {{site.data.keyword.cos_short}} service instance.
+cos.bucket.location | Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket, for example, for a [regional bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-region) `eu-gb` or for a [global bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo) `eu`.
+cos.bucket.name | Required. Name of the Cloud {{site.data.keyword.cos_short}} service bucket to write data into.
+cos.bucket.resiliency | Required. Resiliency of the Cloud {{site.data.keyword.cos_short}} bucket. Must be one of: cross-region, regional, or single-site.
+cos.service.crn | Required. CRN for the Cloud {{site.data.keyword.cos_short}} service instance. 
+Ensure you enter the correct CRN:it is the resource instance ID ending with double colons, for example, `crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::`.
+cos.endpoint.visibility | Optional. Specify *public* to connect to the Cloud {{site.data.keyword.cos_short}} service over the public internet, or *private* to connect from a connector that runs inside the IBM Cloud network, for example, from an IBM Cloud Kubernetes Service cluster. The default is public.
+cos.object.deadline.seconds | Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object. 
+This property can be useful in situations that have long pauses between Kafka records being produced to a topic. It ensures that any records that are received by this connector are always written into {{site.data.keyword.cos_short}} within the specified time.
+cos.object.interval.seconds | Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object.
+cos.object.records | Optional. The maximum number of Kafka records to combine into an object.
  
 ### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.Bluemix_notm}} console
 {: #connect_enterprise_external_console}
