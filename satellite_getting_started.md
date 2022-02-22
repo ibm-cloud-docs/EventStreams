@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  year: 2022
+years: 2015, 20222
 lastupdated: "2022-02-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
@@ -19,7 +19,7 @@ subcollection: EventStreams
 {:beta: .beta}
 
 
-# Getting started with the IBM Satellite plan for Event Streams (Beta)
+# Getting started with the IBM Satellite plan for {{site.data.keyword.messagehub}} (Beta)
 {: #satellite_getting_started}
 
 Use the {{site.data.keyword.satelliteshort}} plan to deploy Enterprise plan functionality into {{site.data.keyword.satelliteshort}} locations of your choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
@@ -47,7 +47,7 @@ Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface
 {: #satellite_example_request}
 
 ```
-We request access to the IBM Satellite plan for Event Streams (Beta).
+We request access to the IBM Satellite plan for {{site.data.keyword.messagehub}} (Beta).
 
 The account to authorize:  xxxxxxxxxxxxx
 ```
@@ -56,7 +56,7 @@ The account to authorize:  xxxxxxxxxxxxx
 ## Overview
 {: #overview}
 
-To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed:
+To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed:
 
 1. Provision an {{site.data.keyword.satellitelong_notm}} location and its control plane. It enables you to bring your own hosts to the {{site.data.keyword.cloud}} and provision {{site.data.keyword.cloud_notm}} services onto your machines. Host compute and storage requirements are detailed in each of the infrastructure's (for example, AWS, and on-premises) specific topics.
 
@@ -64,7 +64,7 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
 
 3. Set up service-to-service authorization between {{site.data.keyword.messagehub}} and {{site.data.keyword.satelliteshort}} within your account.
 
-4. Provision an {{site.data.keyword.messagehub}} service instance in your account, and a service cluster in your {{site.data.keyword.satelliteshort}} location.
+4. Provision an {{site.data.keyword.messagehub}} service instance in your account and a service cluster in your {{site.data.keyword.satelliteshort}} location.
 
 5. Create the block storage assignment for the {{site.data.keyword.messagehub}} service cluster that was provisioned. 
 {{site.data.keyword.messagehub}} will use the block storage for the retention of your message data.
@@ -98,16 +98,17 @@ To deploy {{site.data.keyword.messagehub_full}} into a {{site.data.keyword.satel
   - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
 
 
-## Provision Event Streams
+## Provision {{site.data.keyword.messagehub}}
 {: #provision_es}
 
-Follow the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location).
+Complete the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location).
 
-## Limitations of the IBM Satellite plan for Event Streams
+## Limitations of the IBM Satellite plan for {{site.data.keyword.messagehub}}
 {: #satellite_restrictions}
 
-- The following infrastruture provider is supported:
+- The following infrastructure providers are supported:
   - [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location)
+  - [On-Premises Location with NetApp ONTAP-SAN storage](/docs/EventStreams?topic=EventStreams-setting-up-on-premises-web-services-location-with-netapp-ontap-san-(21.04)-storage)
 
 - Your {{site.data.keyword.satelliteshort}} location can be managed from the following {{site.data.keyword.cloud_notm}} data centers:
 
