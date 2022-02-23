@@ -14,10 +14,7 @@ toc:
         id: learn
         topics:
         - getting-started.md
-        - topicgroup:
-            label: About Event Streams
-            topics:
-            - overview.md
+        - overview.md
         - apache_kafka_concepts.md
         - choosing_your_plan.md
     - navgroup:
