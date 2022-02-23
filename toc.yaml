@@ -55,7 +55,8 @@ toc:
             topics:
             - satellite_getting_started.md
             - setting_up_aws.md
-            - setting_up_onprem.md
+            - topic: setting_up_onprem.md
+              navtitle: Setting up on-premises Web Services location
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
