@@ -189,7 +189,7 @@ If the state of the connector is not running, restart the connector.
 ## Step 9. Delete your connector
 {: #step9_delete_connector}
 
-If the status shows an error or if the connector is not configured properly, you can use the following command to delete a connector. 
+You can use the following command to delete a connector. 
 
 ```
 curl -X DELETE 
