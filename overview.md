@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-05-21"
+  years: 2015, 2022
+lastupdated: "2022-02-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,7 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# What is {{site.data.keyword.messagehub}}?
+# Overview
 {: #about}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.Bluemix_notm}} and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
