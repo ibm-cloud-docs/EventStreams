@@ -6,6 +6,7 @@ lastupdated: "2022-02-24"
 
 content-type: tutorial
 services: EventStreams
+completion-time: 15m
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, on-premises, location
 
