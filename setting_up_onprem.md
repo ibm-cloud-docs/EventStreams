@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-02-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, on-premises, location
 
@@ -115,7 +115,7 @@ Begin by configuring IAM authorizations. For the {{site.data.keyword.messagehub}
 - The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service, based on the assigned roles.
 - In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
 - Scope the access to **All resources**.
-- In the **Target Service** field, select ***{{site.data.keyword.satelliteshort}}**.
+- In the **Target Service** field, select **{{site.data.keyword.satelliteshort}}**.
 - Select all options:
   
   - **{{site.data.keyword.satelliteshort}} Cluster Creator**
