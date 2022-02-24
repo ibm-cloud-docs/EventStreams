@@ -39,20 +39,14 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
 ## Authentication:
 {: #rest_produce_authenticate}
-Use one of the following methods to authenticate:
+The supported authentication mechanism is using a bearer token. To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
-* **To authenticate using a bearer token:**<br/> 
-    To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
+```
+ibmcloud iam oauth-tokens
+```
+{: codeblock}
 
-    ```
-    ibmcloud iam oauth-tokens
-    ```
-    {: codeblock}
-
-    Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
-
-* **To authenticate directly using the api_key:**<br/> 
-    Place the key directly as the value of the <code>X-Auth-Token</code> HTTP header.
+Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
 
 ## Producing messages using the REST producer API
 {: #rest_produce_messages}
