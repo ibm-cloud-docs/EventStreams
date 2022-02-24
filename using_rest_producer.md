@@ -39,7 +39,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
 ## Authentication:
 {: #rest_produce_authenticate}
-The supported authentication mechanism is using a bearer token. To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
+The supported authentication mechanism is to use a bearer token. To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud, then run the following command: 
 
 ```
 ibmcloud iam oauth-tokens
@@ -51,7 +51,7 @@ Place this token in the Authorization header of the HTTP request in the form <co
 ## Producing messages using the REST producer API
 {: #rest_produce_messages}
 
-Use the v2 endpoint of the producer API to send messages of type text, binary, JSON or avro to topics. It allows you to use Event Streams Schema Registry by specifying the schema for avro data type.
+Use the v2 endpoint of the producer API to send messages of type text, binary, JSON, or avro to topics. It allows you to use the {{site.data.keyword.messagehub}} Schema Registry by specifying the schema for the avro data type.
 
 <br/>
 
@@ -84,9 +84,9 @@ For full details of the API reference, see the
 [{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: new_window}.
 
 ## Producing messages conforming to a schema:
-The v2 endpoint of REST producer API also allows you to produce a message in such a way that message key and value are conforming to a schema. You can specify different schemas for key and value. The serializer currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=ES_schema_registry).
+The v2 endpoint of REST producer API also allows you to produce a message in a way that message key and value conform to a schema. You can specify different schemas for key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=ES_schema_registry).
 
-The following are the schema naming strategies allowed:
+The following the schema naming strategies are allowed:
 
   * Topic naming strategy: The name of the topic is used to derive the schema artifact id. The id would be of form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where topicName is the name of topic.
 
@@ -115,15 +115,15 @@ curl -v -X POST \
 {: codeblock}
 
 ## Migrating from existing endpoint to the v2 end point of the REST producer API
-Several improvements have been made to the v2 endpoint for better usage and also to align with the API standards. In order to leverage this, changes should be made to the existing applications.
+Several improvements have been made to the v2 endpoint for better usage and to align with the API standards. To make the most of these improvements, you should make changes to the existing applications.
 
 Below are the considerations to help you plan the migration: <br>
 1. Accessing the REST producer API: <br>
-    The v2 endpoint can be accessed in the same way as the existing URL, i.e by obtaining the value of `kafka_http_url` property for the service instance. The path to be used is `/v2/topics/<topic_name>/records`.
+    The v2 endpoint can be accessed in the same way as the existing URL, that is by obtaining the value of `kafka_http_url` property for the service instance. The path to use is `/v2/topics/<topic_name>/records`.
     
        Example URL: https://service-instance-adsf1234asdf1234asdf1234-0000.us-south.containers.appdomain.cloud/v2/topics/topic_name/records
 3. Authentication: <br>
-    The supported authentication mechanism is a bearer token. In order to enhance security, basic auth using API Keys is no longer accepted.
+    The supported authentication mechanism is a bearer token. To enhance security, basic auth using API keys is no longer accepted.
     
        Example Header:  –H "Authorization: Bearer $token"
 3. Headers: <br>
@@ -131,9 +131,9 @@ The Content-Type and the Accept headers must be set to `application/json`.
     
        Example Headers:  –H "Content-Type: application/json" -H "Accept: application/json"
 4. Payload: <br>
-    The payload for v2 endpoint should be provided in JSON format. The message key, headers and data can be defined in the payload. The headers can be specified in the form of a list, whose values should be base64 encoded. The message key and headers are however optional.
+    The payload for v2 endpoint should be provided in JSON format. The message key, headers, and data can be defined in the payload. The headers can be specified in the form of a list, whose values should be base64 encoded. However, the message key and headers are optional.
     
-       Example Payload:
+       Example payload:
        {
          "headers": [
          {
@@ -149,7 +149,7 @@ The Content-Type and the Accept headers must be set to `application/json`.
           "data": "Test Value"
          }
         }
-    One of the below supported data types must be specified for the field type under the key and value object:
+    One of the following supported data types must be specified for the field type under the key and value object:
 
     a.  Text: The data provided is validated as plain text format consisting of linear sequence of characters.
 
@@ -160,7 +160,7 @@ The Content-Type and the Accept headers must be set to `application/json`.
     d.  Avro: The data is validated as [Apache Avro data format](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry&locale=en#ES_apache_avro_data_format).
 
 5. Error Response: <br>
-    The error response contains `trace`,  `error message`, `error code`, `more_info` and `target` properties.
+    The error response contains `trace`,  `error message`, `error code`, `more_info` and, `target` properties.
 
        Example error response:
        {
