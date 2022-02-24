@@ -86,14 +86,14 @@ For full details of the API reference, see the
 ## Producing messages conforming to a schema:
 The v2 endpoint of REST producer API also allows you to produce a message in a way that message key and value conform to a schema. You can specify different schemas for key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=ES_schema_registry).
 
-The following the schema naming strategies are allowed:
+The following schema naming strategies are allowed:
 
-  * Topic naming strategy: The name of the topic is used to derive the schema artifact id. The id would be of form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where topicName is the name of topic.
+* Topic naming strategy: The name of the topic is used to derive the schema artifact ID. The ID takes the form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where topicName is the name of topic.
 
-  * Record naming strategy: The name of the record in the schema is used to derive the schema artifact id. The id would be of form 
-  "\<composite-recordName\>-key for key and "<composite-recordName\>-value for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
+* Record naming strategy: The name of the record in the schema is used to derive the schema artifact ID. The ID takes the form 
+"\<composite-recordName\>-key for key and "<composite-recordName\>-value for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
-  * TopicRecord naming strategy: Both the name of the topic and record are used to derive the schema artifact id. The id would be of form "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
+* TopicRecord naming strategy: Both the name of the topic and record are used to derive the schema artifact ID. The ID takes the form "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
 <br/>
 
