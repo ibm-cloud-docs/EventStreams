@@ -82,6 +82,7 @@ However, we only test and have experience of the recommended third-party clients
 
 In all cases, the latest version of the client is recommended.
 <br/>
+
 ### Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
 

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2021,2022
+  years: 2015, 2022
 lastupdated: "2022-02-11"
 
 keywords: Cloud Object Storage, SQL query, streaming
@@ -99,7 +99,7 @@ Your total cost per hour, with the data subsequently stored for a month, would b
 The above is only an example, and you should evaluate your own planned usage with the IBM Cloud cost calculator.
 
 ## Limitations
-{:limitations-streams-landing}
+{: limitations-streams-landing}
 
 With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput depends on parameters, such as topic partitions and size and format of the events. For one {{site.data.keyword.sqlquery_short}} instance there is a limit of five concurrent stream landing jobs. The limit can be raised upon request via support ticket. The {{site.data.keyword.messagehub}} feature is currently only available for instances created in the US-South region.
 

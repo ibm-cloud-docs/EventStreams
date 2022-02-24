@@ -1,8 +1,11 @@
 ---
 
 copyright:
-  years: 2022
+  years: 2015, 2022
 lastupdated: "2022-02-24"
+
+content-type: tutorial
+services: EventStreams
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, on-premises, location
 

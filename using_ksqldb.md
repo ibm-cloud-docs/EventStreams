@@ -127,4 +127,4 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ```
 	Ensure you insert all the Kafka hosts listed in the **Service Credentials** page as values for <code>bootstrap-server</code>. To find this information, go to your {{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the **Credentials** that you want to use.
 
-When you have completed these steps, you can run all queries listed in the [ksqlDB Quick Start Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){:new_window}
+When you have completed these steps, you can run all queries listed in the [ksqlDB Quick Start Guide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){: new_window}

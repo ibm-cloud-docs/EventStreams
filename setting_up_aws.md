@@ -1,7 +1,7 @@
 ---
 
 copyright:
-years: 2015, 2022
+  years: 2015, 2022
 lastupdated: "2022-01-31"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location
