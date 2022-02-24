@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-02-17"
+  years: 2022
+lastupdated: "2022-02-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, on-premises, location
 
@@ -21,12 +21,12 @@ subcollection: EventStreams
 
 # Setting up on-premises Web Services location with NetApp ONTAP-SAN (21.04) storage
 {: beta}
-
 {: #satellite-onprem}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
 
 ## Overview
+{: #onprem-overview}
 
 Complete the following steps to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub}} in a {{site.data.keyword.satelliteshort}} location that is using on-premises infrastructure.
 {: beta}
@@ -42,7 +42,7 @@ The following information outlines the type and amount of block storage that is 
 | Service instance monitoring | 125 GB x 3 replicas/availability zones | 375 GB total |
 {: caption="Table 1. NetApp ONTAP-SAN block storage" caption-side="bottom"}
 
-## Step 1: Prepare a Satellite location for the IBM Satellite plan for Event Streams
+## Prepare a Satellite location for the IBM Satellite plan for Event Streams
 {: #prepare-satellite-location}
 {: step}
 
@@ -64,16 +64,19 @@ These additional hosts are used to create a service cluster into which {{site.da
 
 To make block storage available in a {{site.data.keyword.satelliteshort}} location, a storage configuration needs to be created. The configuration defines which {{site.data.keyword.satelliteshort}} template (or driver) to use, the version of the template, and the infrastructure provider credentials. The following example command shows how to create an NetApp ONTAP-SAN configuration for {{site.data.keyword.messagehub}}. A later step assigns this configuration to your {{site.data.keyword.satelliteshort}} service cluster of {{site.data.keyword.messagehub}}.
 
-For NetApp ONTAP-SAN, you need to create two storage configurations. One is for the trident operator and the other is for the SAN storage. Use the following command examples to create the configurations.
+For NetApp ONTAP-SAN, you must create two storage configurations. One is for the trident operator and the other is for the SAN storage. Use the following command examples to create the configurations.
 
 Refer to [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-config-storage-netapp-2104) for more detail on the NetApp templates and configuration parameters used below.
 {: note}
 
-1. Your Satellite location is Managed from an {{site.data.keyword.cloud_notm}} region. Use the following command to target that region. For more information, see [Satellite regions](/docs/satellite?topic=satellite-sat-regions).
+1. Your Satellite location is managed from an {{site.data.keyword.cloud_notm}} region. Use the following command to target that region. For more information, see [Satellite regions](/docs/satellite?topic=satellite-sat-regions).
+
    ```bash
    ibmcloud target -r <region>
    ```
-2. Operator configuration
+   
+2. Operator configuration:
+
    ```bash
    ibmcloud sat storage config create  \\
       --name 'netapp-trident-config-storage-es-1' \\
@@ -81,7 +84,9 @@ Refer to [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-config-storage
       --template-version '21.04' \\
       --location '${LOCATION_ID}'
    ```
-3. SAN configuration
+   
+3. SAN configuration:
+
    ```bash
    ibmcloud sat storage config create  \\
      --name 'netapp-san-config-storage-es-1' \\
@@ -96,14 +101,11 @@ Refer to [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-config-storage
      -p "limitVolumeSize=2500Gi"
    ```
 
-{: codeblock}
-{: pre}
-
-## Step 2: Grant a service authorization
+## Grant a service authorization
 {: step}
 {: #service-authorization}
 
-Begin by configuring IAM Authorizations. For the {{site.data.keyword.messagehub}} service to access the {{site.data.keyword.satelliteshort}} service, a service to service authorization needs to be created.
+Begin by configuring IAM authorizations. For the {{site.data.keyword.messagehub}} service to access the {{site.data.keyword.satelliteshort}} service, a service-to-service authorization must to be created.
 
 1. Log in to the {{site.data.keyword.cloud}} console account where your {{site.data.keyword.satelliteshort}} location was provisioned.
 2. From the **Manage** tab, select **Access (IAM)**.
@@ -113,7 +115,7 @@ Begin by configuring IAM Authorizations. For the {{site.data.keyword.messagehub}
 - The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you are granting permission to be accessed by the source service, based on the assigned roles.
 - In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
 - Scope the access to **All resources**.
-- In the **Target Service** field, select **Satellite**.
+- In the **Target Service** field, select **{{site.data.keyword.satelliteshort}}**.
 - Select all options:
   
   - **{{site.data.keyword.satelliteshort}} Cluster Creator**
@@ -121,14 +123,13 @@ Begin by configuring IAM Authorizations. For the {{site.data.keyword.messagehub}
   - **{{site.data.keyword.satelliteshort}} Link Source Access Controller**
 - Click the **Authorize** button.
 
-## Step 3: Provisioning {{site.data.keyword.messagehub}} Satellite deployment
-
+## Provisioning {{site.data.keyword.messagehub}} Satellite deployment
 {: step}
 {: #provision-deployment}
 
-After preparing your {{site.data.keyword.satelliteshort}} location and granting service authorization, you can provision your {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance by selecting the {{site.data.keyword.satelliteshort}} location that you created in the **Location** dropdown of the provisioning page. When the provisioning starts, you can verify that the service instance provision has started in the {{site.data.keyword.cloud_notm}} **Resource List** by selecting **Services and software**.
+After preparing your {{site.data.keyword.satelliteshort}} location and granting service authorization, provision your {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance by selecting the {{site.data.keyword.satelliteshort}} location that you created in the **Location** dropdown of the provisioning page. When the provisioning starts, verify that the service instance provision has started in the {{site.data.keyword.cloud_notm}} **Resource List** by selecting **Services and software**.
 
-When you provision {{site.data.keyword.messagehub}} service instance, a service cluster will automatically be deployed into your {{site.data.keyword.satelliteshort}} location. You can verify the start of the deployment of the service cluster by using the following steps:
+When you provision {{site.data.keyword.messagehub}} service instance, a service cluster is automatically deployed into your {{site.data.keyword.satelliteshort}} location. To verify the start of the deployment of the service cluster by using the following steps:
 
 1. From the left hand **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
 2. Select your {{site.data.keyword.satelliteshort}} location.
@@ -138,8 +139,7 @@ When you provision {{site.data.keyword.messagehub}} service instance, a service 
 While the service instance and cluster are provisioned, create the storage assignment. You do not need to wait for the service instance or cluster provision to complete to create the storage assignment. Proceed to the next step and complete the instructions.
 {: important}
 
-## Step 4: Create a storage assignment
-
+## Create a storage assignment
 {: step}
 {: #create-storage-assignment-onprem}
 
@@ -155,14 +155,17 @@ A list of services are displayed. Identify the **messagehub** service that has a
 
 Use the **Cluster ID** as an input parameter value for `--service-cluster-id` in the following {{site.data.keyword.satelliteshort}} storage assignment command:
 
-1. Operator storage assignment
+1. Operator storage assignment:
+
    ```bash
    ibmcloud sat storage assignment create  \\
       --name "netapp-trident-es-assignment"  \\
       --service-cluster-id <Cluster-ID>  \\
       --config 'netapp-trident-config-storage-es-1'
    ```
-2. SAN storage assignment
+   
+2. SAN storage assignment:
+
    ```bash
    ibmcloud sat storage assignment create  \\
       --name "netapp-san-es-assignment"  \\

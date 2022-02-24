@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-10-21"
+  years: 2015, 2022
+lastupdated: "2022-02-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -18,7 +18,7 @@ subcollection: EventStreams
 {:note: .note}
 {:important: .important}
 
-# Getting started tutorial
+# Getting started with IBM Event Streams for IBM Cloud
 {: #getting-started}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. To get started with {{site.data.keyword.messagehub}} and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends messages to a consumer by using a topic. The same sample program is used to consume messages and produce messages.
