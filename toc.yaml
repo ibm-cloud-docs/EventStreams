@@ -62,10 +62,8 @@ toc:
             - connecting_mq.md
             - watson_platform.md
             - streaming_log_analysis.md
-        - topicgroup:
-            label: Enhancing security
-            topics:
-            - manage_security.md
+        - topic: manage_security.md
+          navtitle: Enhancing security
         - using_kafka_client.md
         - link:
              label: Asynchronous data processing using object storage and pub/sub messaging tutorial
