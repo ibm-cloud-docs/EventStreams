@@ -30,6 +30,10 @@ subcollection: EventStreams
 ## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
 {: #opt_in_metrics}
 
+{{site.data.keyword.messagehub}} metrics can broadly be categorised into two different groups **Default** and **Enhanced**.
+
+### Enabling default {{site.data.keyword.messagehub}} metrics
+
 Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in and then enable platform metrics by completing the following steps:
 
 1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-platform_metrics_enabling){ :new_window}. The owner of the account has full access to this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){: new_window}.
@@ -38,10 +42,29 @@ Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.
 
    On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page.  Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan you're using.
 
-   Dashboards are available only after metrics have started to be recorded; this might take a few minutes to initialize.
-   {: note}
+### Enabling enhanced {{site.data.keyword.messagehub}} metrics
+{: #opt_in_enhanced_metrics}
 
+The enhanced {{site.data.keyword.messagehub}} consists of two groups; `topic` and `consumers`. You can opt in for either one or both. The metrics available are mentioned in the [topic](#metrics-topic) and [consumers](#metrics-consumers) table.
 
+Enabling enhanced metrics introduces additional global gauge, therefore increasing the costs accordingly.
+
+Before you can start using enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
+
+1. Run the following command to update the service instance to start using enchanced metrics:
+   
+```
+ibmcloud resource service-instance-update <instance-name> -p '{"metrics":["topic","consumers"]}'
+```
+When enhanced metrics are enabled, depending on the selection, new dashboards are available; **IBM Event Streams(Topic)**  and/or **IBM Event Streams(Consumers)**
+
+To opt-out of enhanced metrics, run the following command:
+
+```
+ibmcloud resource service-instance-update <instance-name> -p '{"metrics":[]}'
+```
+Dashboards are available only after metrics have started to be recorded; this might take a few minutes to initialize.
+{: note}
 ## {{site.data.keyword.messagehub}} metrics cost information
 {: #metric_costs}
 
@@ -121,18 +144,24 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 ---
 
-## Metrics available on the Enterprise plan only
-{: metrics-enterprise}
+## Enhanced metrics available with topic enabled
+{: metrics-topic}
 
-| Metric Name |Enterprise|
-|-----------|--------|
-|**Topic**|        |
-| [Maximum partition retention percentage](#ibm_eventstreams_instance_max_partition_retention_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)|
-| [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../../icons/checkmark-icon.svg) |
-|**Consumer**|        |
-| [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |
+| Metric Name |Enterprise|Lite|Standard|
+|-----------|--------|--------|--------|
+| [Maximum partition retention percentage](#ibm_eventstreams_instance_max_partition_retention_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)|  | |
+| [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../../icons/checkmark-icon.svg) |  | |
 <br/>
-{: caption="Table 4: Metrics available for the Enterprise plan only" caption-side="top"}
+{: caption="Table 4: Metrics available for topic" caption-side="top"}
+
+## Enhanced metrics available with consumers enabled
+{: metrics-consumers}
+
+| Metric Name |Enterprise|Lite|Standard|
+|-----------|--------|--------|--------|
+| [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  | | |
+<br/>
+{: caption="Table 4: Metrics available for consumers" caption-side="top"}
 
 ---
 
@@ -493,8 +522,6 @@ This is useful to determine how far behind a topic on the target cluster is.
 
 Lag for each consumer group for each topic-partition in an {{site.data.keyword.messagehub}} instance. This metric indicates the number of messages that are yet to be processed for each partition in a consumer group. 
 
-You can select this metric using the IBM Cloud CLI and Terraform.
-
 | Metadata | Description |
 |----------|-------------|
 | `Metric Name` | `ibm_eventstreams_instance_consumer_groups_lag`|
@@ -513,8 +540,6 @@ It is normal for this metric to fluctuate when viewed over short time periods be
 
 Maximum percentage of the retention size used for partitions of a topic.
 
-You can select this metric using the IBM Cloud CLI and Terraform.
-
 | Metadata | Description |
 |----------|-------------|
 | `Metric Name` | `ibm_eventstreams_instance_max_partition_retention_percent`|
@@ -528,8 +553,6 @@ You can select this metric using the IBM Cloud CLI and Terraform.
 {: #ibm_eventstreams_instance_topic_size}
 
 Total disk size of all partitions of a topic.
-
-You can select this metric using the IBM Cloud CLI and Terraform.
 
 | Metadata | Description |
 |----------|-------------|
