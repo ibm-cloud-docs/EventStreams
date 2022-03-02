@@ -161,7 +161,17 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 |-----------|--------|--------|--------|
 | [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  | | |
 <br/>
-{: caption="Table 4: Metrics available for consumers" caption-side="top"}
+{: caption="Table 5: Metrics available for consumers" caption-side="top"}
+
+### Metrics cost information
+
+| Consumer Group | Topics| Paritions| Number of time series  | Monthly cost |
+|----------------|-------|----------|------------------------|--------------|
+| 1              | 1     | 3        | 1 x 1 x 3  = 3         | $0.08 x 3 = $0.24     |
+| 10             | 10    | 3        | 10 x 10 x 3 = 300      | $0.08 x 300 = $24.00  |
+| 25             | 25    | 6        |  25 x 25 x 6 = 3750    | $0.08 x 15000 = $300  |
+<br/>
+{: caption="Table 6. Cost for eaconsumers metric" caption-side="top"}
 
 ---
 
