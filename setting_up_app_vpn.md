@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-03-01"
+  years: 2022
+lastupdated: "2022-03-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location, VPN
 
@@ -40,22 +40,27 @@ Complete the steps in [Getting started with the Satellite plan for Event Streams
 {: step}
 
    a. Create a Client VPN endpoint that does the following:
-      * Provides all clients access to a single VPC.
-      * Provides all clients access to the internet.
+      * Provides all clients with access to a single VPC.
+      * Provides all clients with access to the internet.
       * Uses mutual authentication.
    b. Complete the steps detailed in [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html){: external}.
 
-## Step 3: Test the {{site.data.keyword.messagehub}} producer and consumer sample applications
+## (Optional) Step 3: Test the {{site.data.keyword.messagehub}} producer and consumer sample applications
 {: #test_sample_apps}
 {: step}
 
-Complete the steps detailed in [{{site.data.keyword.messagehub}} Getting Started](/docs/EventStreams?topic=EventStreams-getting-started){: external} to ensure that you can run these sample applications successfully.
+To test sending and receiving messages, you can optionally use the {{site.data.keyword.messagehub}} Java sample. The sample shows how a producer sends messages to a consumer by using a topic. The same sample program is used to consume messages and produce messages.
 
-## Step 4: Test the {{site.data.keyword.messagehub}} CLI
+Use the steps detailed in [{{site.data.keyword.messagehub}} Getting Started](/docs/EventStreams?topic=EventStreams-getting-started){: external} to run the sample application.
+
+Alternatively, you can also use your own applications to perform this validation.
+
+## (Optional) Step 4: Test the {{site.data.keyword.messagehub}} CLI
 {: #test_cli}
 {: step}
 
-Complete the steps detailed in [{{site.data.keyword.messagehub}} CLI reference](docs/EventStreams?topic=EventStreams-cli_reference).
+In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. The {{site.data.keyword.messagehub}} CLI enables you to easily work with topics and consumer groups.
 
-**Question:** Is the suggestion that the user runs a few of these commands as a test? There are no steps as such in the CLI topic.
-{: note}
+Alternatively, you can also use your own applications to perform this validation.
+
+
