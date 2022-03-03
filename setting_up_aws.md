@@ -63,7 +63,7 @@ These additional hosts are used to create a service cluster into which {{site.da
 - 3 type **8x32** hosts
   - On AWS, choose 3 hosts of type **AWS m5d.2xlarge**.
 
-Refer to [Adding AWS hosts to Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-aws#aws-host-attach) for more detail on adding AWS hosts to your satellite location.
+Refer to [Adding AWS hosts to Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-aws#aws-host-attach) for more detail on adding AWS hosts to your satellite location.  Event Streams provides high availability via multi-zone region deployment to protect against single points of failure.  The host compute infrastructure needs to be provisioned balanced for the zones in your satellite location.
 {: note}
 
 ### Create a Satellite block storage configuration
