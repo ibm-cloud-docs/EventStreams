@@ -25,6 +25,7 @@ subcollection: EventStreams
 The following list defines some Apache Kafka concepts:
 
 ## Brokers
+{: #kafka_brokers}
 
 Apache Kafka is a distributed messaging system. A Kafka cluster consists of a set of brokers.
 A cluster has a minimum of 3 brokers.
@@ -32,10 +33,13 @@ A cluster has a minimum of 3 brokers.
 ![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker.")
 
 ## Messages
+{: #kafka_messages}
 
 A message is a unit of data in Kafka. Each message is represented as a record, which comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Kafka uses the terms record and message interchangeably. 
 
 ## Topics and partitions
+{: #kafka_topics_partitions}
+
 Each topic is a named stream of messages. A topic is made up of one or more partitions. The messages on a partition are ordered by a number that is called the offset. By having multiple partitions distributed across the brokers, the scalability of a topic is increased.
 
 If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.
@@ -45,6 +49,7 @@ For more information, see [Partition leadership](/docs/EventStreams?topic=EventS
 ![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers.")
 
 ## Replication
+{: #kafka_replication}
 
 To improve availability, each topic can be replicated onto multiple brokers. For each partition, one of the brokers is the leader, and the other brokers are the followers.
 
@@ -53,6 +58,7 @@ Replication works by the followers repeatedly fetching messages from the leader.
 ![Replication diagram.](concepts_replication.png "Diagram that shows a topic partition being replicated across 3 brokers.")
 
 ## In-sync replicas
+{: #kafka_isr}
 
 A follower replica that is keeping up with the partition leader is in-sync. Any follower with an in-sync replica can become the leader without losing any messages.
 
@@ -61,6 +67,7 @@ If the partition leader fails, another leader is chosen from the followers. All 
 ![In-sync-replicas diagram.](concepts_in_sync_replicas.png "Diagram that shows a topic partition being replicated across three brokers and staying in-sync across all replicas.")
 
 ## Producers
+{: #kafka_producers}
 
 A producer publishes messages to one or more topics. A producer can publish to one or more topics and can optionally choose the partition that stores the data.
 
@@ -71,6 +78,7 @@ For more information, see [Producing Messages](/docs/EventStreams?topic=EventStr
 ![Producers diagram.](concepts_producers.png "Diagram that shows a producer publishing messages to one topic across three brokers.")
 
 ## Consumers
+{: #kafka_consumers}
 
 A consumer reads messages from one or more topics and processes them. The difference between a consumer's current position and the newest message on a partition is known as the offset lag.
 
@@ -80,7 +88,8 @@ For more information, see [Consuming Messages](/docs/EventStreams?topic=EventStr
 
 ![Consumers diagram.](concepts_consumers.png "Diagram that shows a consumer processing messages from one topic across three brokers.")
 
-## Consumer Groups
+## Consumer groups
+{: #kafka_consumer_groups}
 
 A consumer group contains one or more consumers working together to process the messages. The messages from a single partition are processed by one consumer in each group.
 
@@ -90,22 +99,11 @@ If more partitions than consumers exist in a group, some consumers have multiple
 
 ![Consumer groups diagram.](concepts_consumer_groups.png "Diagram that shows a consumer processing messages from 1 topic across 3 brokers.")
 
-## More links
+## More information
+{: #kafka_information}
 
 To learn more, see the following information:
-- [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html){: new_window} 
-
-
-<!-- 27/06/18 Karen: removing - suggestion from James
-
-## {{site.data.keyword.messagehub}} plans
-{{site.data.keyword.messagehub}} is available as two different plans depending on your requirements: Standard and Enterprise.
-
-* Choose the Standard plan if you want event ingest and distribution capabilities, where you pay for what you use and share infrastructure with others.
-* Choose the Enterprise plan if data isolation, guaranteed performance, and increased retention are important considerations. 
-
-For more information, see [Choosing your plan](/docs/EventStreams/choosing_your_plan.html).
--->
+- [Apache Kafka documentation](http://kafka.apache.org/documentation.html){: external}
 
 
 

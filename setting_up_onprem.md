@@ -2,7 +2,11 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-03-03"
+
+content-type: tutorial
+services: EventStreams
+completion-time: 15m
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, on-premises, location
 
@@ -58,6 +62,9 @@ These additional hosts are used to create a service cluster into which {{site.da
 
 - 6 type **4x16** hosts
 - 3 type **8x32** hosts
+
+{{site.data.keyword.messagehub}} provides high availability using multi-zone region deployment to protect against single points of failure. You must provision and balance the host compute infrastructure for the zones in your satellite location.
+{: note}
 
 ### Create a Satellite block storage configuration
 {: #satellite-blockstorage-config}

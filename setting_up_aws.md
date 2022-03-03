@@ -1,8 +1,8 @@
 ---
 
 copyright:
-years: 2015, 2022
-lastupdated: "2022-01-31"
+  years: 2022
+lastupdated: "2022-03-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location
 
@@ -63,7 +63,7 @@ These additional hosts are used to create a service cluster into which {{site.da
 - 3 type **8x32** hosts
   - On AWS, choose 3 hosts of type **AWS m5d.2xlarge**.
 
-Refer to [Adding AWS hosts to Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-aws#aws-host-attach) for more detail on adding AWS hosts to your satellite location.
+Refer to [Adding AWS hosts to Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-aws#aws-host-attach) for more detail on adding AWS hosts to your satellite location.  {{site.data.keyword.messagehub}} provides high availability using multi-zone region deployment to protect against single points of failure. You must provision and balance the host compute infrastructure for the zones in your satellite location.
 {: note}
 
 ### Create a Satellite block storage configuration

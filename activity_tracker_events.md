@@ -27,7 +27,7 @@ subcollection: EventStreams
 Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans in {{site.data.keyword.Bluemix}}. 
 {: shortdesc}
 
-The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/activity-tracker?topic=activity-tracker-getting-started){: new_window}.
+The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started){: external}.
 
 Events are formatted according to the Cloud Auditing Data Federation (CADF) standard, further details of the information 
 they include can be found [here](https://cloud.ibm.com/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event).
@@ -88,7 +88,11 @@ The following table lists the instance events:
 
 | Action | Description |
 |:-------|:------------|
-| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed.</br> If the outcome of this event is <code>success</code>, access to the disk encryption key is restored and the {{site.data.keyword.messagehub}} instance is available for use.</br> If the outcome is <code>failure</code>, access to the disk encryption key was withdrawn and the {{site.data.keyword.messagehub}} instance is not available for use. |
+| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed. 
+
+If the outcome of this event is `success`, access to the disk encryption key is restored and the {{site.data.keyword.messagehub}} instance is available for use.
+
+If the outcome is `failure`, access to the disk encryption key was withdrawn and the {{site.data.keyword.messagehub}} instance is not available for use. |
 | event-streams.storage-key.update | The disk encryption key in {{site.data.keyword.keymanagementserviceshort}} was rotated and the {{site.data.keyword.messagehub}} instance was updated to use the new key. |
 | event-streams.schema.create | A schema  or schema version was created or updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance either through the administration API or through the Confluent Serdes.
 | event-streams.schema.delete | A schema or schema version was deleted from the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
@@ -115,21 +119,21 @@ Message audit events can be enabled on a per topic basis. To do so, complete the
 
 1. Install {{site.data.keyword.messagehub}} CLI plug-in v2.3 or later: 
 
-   ```
+   ```text
    ibmcloud plugin install event-streams
    ```
    {: pre}
 
 2. Enable message audit on an existing topic:
 
-   ```
+   ```text
    ibmcloud es topic-update <topic-name> --config message.audit.enable=true
    ```
    {: pre}
 
    Or create a new topic with message audit enabled:
 
-   ```
+   ```text
    ibmcloud es topic-create <topic-name> --partitions <number-of-partitions> --config message.audit.enable=true
    ```
    {: pre}
@@ -141,4 +145,4 @@ Additionally, be aware of the implications of enabling message audit events:
 
 1. An internal Kafka topic is used for streaming events to {{site.data.keyword.cloudaccesstrailshort}}, thus it uses a small amount of the cluster's network bandwidth and storage. Typically throughput is less than 1 KB/s, and storage does not exceed 1 GB.
    
-2. Since more events are sent to {{site.data.keyword.cloudaccesstrailshort}}, this incurs extra storage costs for {{site.data.keyword.cloudaccesstrailshort}}. Each event's size is about 1 KB, a rough estimation of how much storage it takes: Assuming cluster has 100 topics, each topic has 10 clients actively producing and consuming, each client runs on three different locations, then it generates 100x10x3=3000 events per hour, that is 2 GB per month.
+2. Because more events are sent to {{site.data.keyword.cloudaccesstrailshort}}, this incurs extra storage costs for {{site.data.keyword.cloudaccesstrailshort}}. Each event's size is about 1 KB, a rough estimation of how much storage it takes: Assuming cluster has 100 topics, each topic has 10 clients actively producing and consuming, each client runs on three different locations, then it generates 100x10x3=3000 events per hour, that is 2 GB per month.
