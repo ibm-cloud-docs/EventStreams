@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -60,25 +60,25 @@ Clone the following two repositories that contain the required files:
 
 1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the event-streams-samples project, navigate to the <code>kafka-connect/IKS directory</code>, edit the <code>connect-distributed.properties</code> file and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; in three places with your {{site.data.keyword.messagehub}} credentials.
+    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace  <BOOTSTRAP_SERVERS>; in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
 
-    Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you get an error.
+    Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you get an error.
 
-    Your &lt;APIKEY&gt; appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containershort}}.
+    Your <APIKEY> appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containershort}}.
 
-    Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} cluster has more than one node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file, and edit the entry <code>replicas: 1</code>.
+    Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} cluster has more than one node and you want multiple Connect workers, edit the `kafka-connect.yaml` file, and edit the entry `replicas: 1`.
 
 2. Then, run the following commands:
 
     To create a secret: 
 
-    ```
+    ```text
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
 
     To create a configmap:
-    ```
+    ```text
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
     {: codeblock}
@@ -87,9 +87,9 @@ Clone the following two repositories that contain the required files:
 ## Step 4. Deploy Kafka Connect
 {: #step4_deploy_kafka_mq}
 
-Apply the configuration in the <code>kafka-connect.yaml</code> file by running the following command:
+Apply the configuration in the `kafka-connect.yaml` file by running the following command:
 
-```
+```text
 kubectl apply -f ./kafka-connect.yaml
 ```
 {: codeblock}
@@ -100,7 +100,7 @@ kubectl apply -f ./kafka-connect.yaml
 
 To validate that Kafka Connect is running, port forward to the kafkaconnect-service on port 8083. For example:
 
-```
+```text
 kubectl port-forward service/kafkaconnect-service 8083
 ```
 {: codeblock}
@@ -113,37 +113,14 @@ The Connect REST API is then available at `http://localhost:8083`. If you want m
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the IBM MQ Connector.
 
 
-<!--
-## Step 6. Build the connector
-{: #step6_build_connector}
-
-1. Clone the repository with the following command:
-
-    ```
-    git clone https://github.com/ibm-messaging/kafka-connect-mq-source
-    ```
-
-2. Change into the <code>kafka-connect-mq-source</code> directory:
-
-    ```
-    cd kafka-connect-mq-source
-    ```
-
-3. Build the connector using Gradle:
-
-    ```
-    $ gradle shadowJar
-    ```
--->
-
 ## Step 6. Configure the mq-source json file
 {: #step6_config_json_mq}
 
-Edit the <code>mq-source.json</code> file that is located in <code>kafka-connect-mq-source/config</code> so that, at a minimum, the required properties are completed with your information.
+Edit the `mq-source.json` file that is located in `kafka-connect-mq-source/config` so that, at a minimum, the required properties are completed with your information.
 
 ### mq-source.json file properties
 
-Replace the placeholders in the <code>mq-source.json</code> file with your own values.
+Replace the placeholders in the `mq-source.json` file with your own values.
 
 <dl>
 <dt><strong>TOPIC</strong></dt>
@@ -158,24 +135,14 @@ Replace the placeholders in the <code>mq-source.json</code> file with your own v
 <dd>Required (unless you're using bindings or a CCDT file). A list of one or more host(port) pairs for connecting to the queue manager. Separate entries with a comma. 
 </dl>
 
-<!--
-### Get IBM MQ on Cloud credentials by using the {{site.data.keyword.bluemix}} console
-{: #connect_enterprise_external_console_mq}
 
-1. Locate your IBM MQ service on the dashboard.
-2. Click your service tile.
-3. Click **Service Credentials**.
-4. Click **New Credential**. 
-5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Click this credential using **View Credentials** to reveal the details in JSON format.
--->
 
 ## Step 7. Start the connector with its configuration
 {: #step7_start_connector_mq}
 
 Run the following command to start the IBM MQ Connector with the configuration that you provided in the previous step.
 
-```
+```text
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./mq-source.json"
 ```
 {: codeblock}

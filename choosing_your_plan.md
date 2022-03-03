@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -21,7 +21,6 @@ subcollection: EventStreams
 {:beta: .beta}
 
 # Choosing your plan 
-
 {: #plan_choose}
 
 {{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan {: beta} depending on your requirements. 
@@ -29,13 +28,11 @@ subcollection: EventStreams
 {: shortdesc}
 
 ## Lite plan
-
 {: #plan_lite}
 
 The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. We do not recommend the Lite plan for production use. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Standard plan
-
 {: #plan_standard}
 
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are using for your workload. 
@@ -44,7 +41,6 @@ The architecture is highly available by default. The service is distributed acro
 
 
 ## Enterprise plan 
-
 {: #plan_enterprise}
 
 The Enterprise plan is appropriate if data isolation, performance, and increased retention are important considerations. 
@@ -58,7 +54,6 @@ The architecture is highly available when you choose to deploy into a multi-zone
 
 ## Satellite plan (Beta) 
 {: beta}
-
 {: #plan_satellite}
 
 The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
@@ -67,7 +62,6 @@ The {{site.data.keyword.satelliteshort}} plan is appropriate if you want to depl
 The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access Beta service. To request access to the beta service, refer to the information at [Getting started with the IBM Satellite plan for Event Streams (Beta)](/docs/EventStreams?topic=EventStreams-getting-started-with-the-ibm-satellite-plan-for-event-streams-beta#beta).
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite plans
-
 {: #what_is_supported}
 
 The following table summarizes what is supported by the plans:
@@ -101,7 +95,6 @@ The following table summarizes what is supported by the plans:
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
 ### Footnotes
-
 {: #footnote_plans notoc}
 
 1. After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.) {: #footnote_lite notoc}

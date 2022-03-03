@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -56,28 +56,28 @@ Clone the following two repositories that contain the required files:
 
 1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the event-streams-samples project, navigate to the <code>kafka-connect/IKS directory</code>, 
-    edit the <code>connect-distributed.properties</code> file, and replace &lt;BOOTSTRAP_SERVERS&gt; in one place and &lt;APIKEY&gt; 
+    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, 
+    edit the `connect-distributed.properties` file, and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> 
     in three places with your {{site.data.keyword.messagehub}} credentials.
 
-    Provide &lt;BOOTSTRAP_SERVERS&gt; as a comma-separated list. If they are not valid, you get an error.
+    Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you get an error.
 
-    Your &lt;APIKEY&gt; appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containerlong}}.
+    Your <APIKEY> appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containerlong}}.
 
     Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} 
-    cluster has more than one node and you want multiple Connect workers, edit the <code>kafka-connect.yaml</code> file and edit 
-    the entry <code>replicas: 1</code>.
+    cluster has more than one node and you want multiple Connect workers, edit the `kafka-connect.yaml` file and edit 
+    the entry `replicas: 1`.
 
 2. Then, run the following commands:
 
     Run the following command to create a secret: 
-    ```
+    ```text
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
 
     Run the following command to create a configmap:
-    ```
+    ```text
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
     {: codeblock}
@@ -86,9 +86,9 @@ Clone the following two repositories that contain the required files:
 ## Step 4. Deploy Kafka Connect
 {: #step4_deploy_kafka}
 
-Apply the configuration in the <code>kafka-connect.yaml</code> file by running the following command:
+Apply the configuration in the `kafka-connect.yaml` file by running the following command:
 
-```
+```text
 kubectl apply -f ./kafka-connect.yaml
 ```
 {: codeblock}
@@ -99,7 +99,7 @@ kubectl apply -f ./kafka-connect.yaml
 
 To validate that Kafka Connect is running, port forward to the kafkaconnect-service on port 8083, as in the following example:
 
-```
+```text
 kubectl port-forward service/kafkaconnect-service 8083
 ```
 {: codeblock}
@@ -112,37 +112,14 @@ The Connect REST API is then available at `http://localhost:8083`. If you want m
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
 
 
-<!--
-## Step 6. Build the connector
-{: #step6_build_connector}
-
-1. Clone the repository with the following command:
-
-    ```
-    git clone https://github.com/ibm-messaging/kafka-connect-ibmcos-sink
-    ```
-
-2. Change into the <code>kafka-connect-ibmcos-sink</code> directory:
-
-    ```
-    cd kafka-connect-ibmcos-sink
-    ```
-
-3. Build the connector using Gradle:
-
-    ```
-    $ gradle shadowJar
-    ```
--->
-
 ## Step 6. Configure the cos-sink JSON file
 {: #step6_config_json}
 
-Edit the <code>cos-sink.json</code> file located in <code>kafka-connect-ibmcos-sink/config/</code> so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the `cos-sink.json` file located in `kafka-connect-ibmcos-sink/config/` so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
 
-Replace the placeholders in the <code>cos-sink.json</code> file with your own values.
+Replace the placeholders in the `cos-sink.json` file with your own values.
 
 File properties | Description
 --- | ---
@@ -173,7 +150,7 @@ cos.object.records | Optional. The maximum number of Kafka records to combine in
 
 Run the following command to start the {{site.data.keyword.cos_short}} connector with the configuration that you provided in the previous step.
 
-```
+```text
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./cos-sink.json"
 ```
 {: codeblock}
@@ -191,7 +168,7 @@ If the state of the connector is not running, restart the connector.
 
 You can use the following command to delete a connector. 
 
-```
+```text
 curl -X DELETE 
 http://localhost:8083/connectors/cos-sink
 ```
