@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-02-14"
+  years: 2022
+lastupdated: "2022-03-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -60,7 +60,7 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 
 1. Provision an {{site.data.keyword.satellitelong_notm}} location and its control plane. It enables you to bring your own hosts to the {{site.data.keyword.cloud}} and provision {{site.data.keyword.cloud_notm}} services onto your machines. Host compute and storage requirements are detailed in each of the infrastructure's (for example, AWS, and on-premises) specific topics.
 
-2. Provision and attach host compute infrastructure, and create the block storage configuration for your {{site.data.keyword.satelliteshort}} location. {{site.data.keyword.messagehub}} will use the hosts and block storage when it is provisioned.  Event Streams provides high availability via multi-zone region deployment to protect against single points of failure.  The host compute infrastructure needs to be provisioned balanced for the zones in your satellite location.
+2. Provision and attach host compute infrastructure, and create the block storage configuration for your {{site.data.keyword.satelliteshort}} location. {{site.data.keyword.messagehub}} will use the hosts and block storage when it is provisioned. {{site.data.keyword.messagehub}} provides high availability using multi-zone region deployment to protect against single points of failure. You must provision and balance the host compute infrastructure for the zones in your satellite location.
 
 3. Set up service-to-service authorization between {{site.data.keyword.messagehub}} and {{site.data.keyword.satelliteshort}} within your account.
 

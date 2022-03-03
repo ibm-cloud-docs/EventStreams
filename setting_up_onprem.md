@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-02-24"
+  years: 2022
+lastupdated: "2022-03-03"
 
 content-type: tutorial
 services: EventStreams
@@ -63,7 +63,7 @@ These additional hosts are used to create a service cluster into which {{site.da
 - 6 type **4x16** hosts
 - 3 type **8x32** hosts
 
-Event Streams provides high availability via multi-zone region deployment to protect against single points of failure.  The host compute infrastructure needs to be provisioned balanced for the zones in your satellite location.
+{{site.data.keyword.messagehub}} provides high availability using multi-zone region deployment to protect against single points of failure. You must provision and balance the host compute infrastructure for the zones in your satellite location.
 {: note}
 
 ### Create a Satellite block storage configuration
