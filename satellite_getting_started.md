@@ -119,7 +119,7 @@ Complete the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topi
 - The following functions are not supported on the {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}}:
 
   - Scale up of message retention storage
-  - [IAM IP address restrictions](/docs/EventStreams?topic=EventStreams-restricting_access_iam)
+  - [IAM IP address access restrictions](/docs/EventStreams?topic=EventStreams-restricting_access_iam)
   - Schema Registry
   - Cloud Service Endpoint support
   - Stream to {{site.data.keyword.cos_full_notm}} using {{site.data.keyword.sqlquery_full}}
