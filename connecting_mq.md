@@ -34,7 +34,7 @@ Complete the following steps to get set up:
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
-* An instance of [IBM MQ on Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){: new_window} or [IBM MQ Version 8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/messaging/mq-downloads){: new_window}, or later. 
+* An instance of [IBM MQ on Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){: external} or [IBM MQ Version 8 ](https://developer.ibm.com/messaging/mq-downloads){: external}, or later. 
    
    You can configure the IBM MQ Connector to authenticate with IBM MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
    * CONNECT authority. The IBM MQ Connector must be able to connect to the MQ queue manager.
@@ -119,6 +119,7 @@ So, you now have the Kafka Connect runtime that is deployed and running in {{sit
 Edit the `mq-source.json` file that is located in `kafka-connect-mq-source/config` so that, at a minimum, the required properties are completed with your information.
 
 ### mq-source.json file properties
+{: #mq-source_props}
 
 Replace the placeholders in the `mq-source.json` file with your own values.
 

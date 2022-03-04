@@ -49,7 +49,7 @@ Many configuration settings exist for the consumer, which control aspects of its
 |max.poll.records | The maximum number of records returned in a call to poll() | 1,... | 500 |
 |session.timeout.ms | The number of milliseconds within which a consumer heartbeat must be received to maintain a consumer's membership of a consumer group. | 6000-300000 | 10000 (10 seconds) |
 |max.poll.interval.ms |The maximum time interval between polls before the consumer leaves the group. | 1,... | 300000 (5 minutes) |
-| | | | |
+{: caption="Table 1. Configuring consumer properties" caption-side="top"}
 
 Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){: new_window} before starting to experiment with them.
 
@@ -134,7 +134,7 @@ If you observe that a consumer is processing messages successfully but occasiona
 If a consumer has fallen so far behind that it is consuming messages in a log segment that is deleted, it will suddenly jump forwards to the start 
 of the next log segment. If it is important that the consumer processes all of the messages, this behavior indicates message loss from the point of view of this consumer.
 
-You can use the <code>kafka-consumer-groups</code> tool to see the consumer lag. You can also use the consumer API and the consumer metrics for the same purpose.
+You can use the `kafka-consumer-groups` tool to see the consumer lag. You can also use the consumer API and the consumer metrics for the same purpose.
 
 
 ## Controlling the speed of message consumption
@@ -152,11 +152,11 @@ You might use a ConsumerRebalanceListener to manually commit offsets (if you are
 ## Code snippets
 {: #consumer_code_snippets notoc}
 
-These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples).
+These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples).
 
 To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user/password authentication, so you need at least these properties. Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with your own service credentials:
 
-```
+```text
 Properties props = new Properties();
  props.put("bootstrap.servers", KAFKA_BROKERS_SASL);
  props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USER\" password=\"PASSWORD\";");
@@ -169,7 +169,7 @@ Properties props = new Properties();
 
 To consume messages, you also need to specify deserializers for the keys and values, for example:
 
-```
+```text
  props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
  props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 ```
@@ -177,7 +177,7 @@ To consume messages, you also need to specify deserializers for the keys and val
 Then, use a KafkaConsumer to consume messages, where each message is represented by a ConsumerRecord. The most common way to consume messages is to put the consumer in a consumer group by setting the group ID, and then call `subscribe()` for a list of topics. 
 The consumer is assigned some partitions to consume, although if more consumers exist in the group than partitions in the topic, the consumer might not be assigned any partitions. Next, call `poll()` in a loop, receiving a batch of messages to process, where each message is represented by a ConsumerRecord.
 
-```
+```text
 props.put("group.id", "G1");
 Consumer<String, String> consumer = new KafkaConsumer<>(props);
 consumer.subscribe(Arrays.asList("T1"));
@@ -192,7 +192,7 @@ This consumer loop runs forever but it can be interrupted from another thread ca
 
 To commit offsets manually, it's first necessary to set the `enable.auto.commit` configuration to `false`. Then, use either `Consumer.commmitSync()` or `Consumer.commitAsync()` to update the consumer's committed offset periodically. For simplicity, this example processes the records for each partition and commits the last offset separately.
 
-```
+```text
 props.put("group.id", "G1");
 props.put("enable.auto.commit", "false");
 Consumer<String, String> consumer = new KafkaConsumer<>(props);
@@ -218,21 +218,30 @@ finally {
 ```
 
 ## Exception handling
+{: #exceptions}
 
 Any robust application that uses the Kafka client needs to handle exceptions for certain expected situations. 
-In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results by using a `Future` or a callback. You can find example code in [GitHub ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples) that shows complete examples.
+In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results by using a `Future` or a callback. You can find example code in [GitHub](https://github.com/ibm-messaging/event-streams-samples) that shows complete examples.
 
 Here's a list of exceptions that you should handle in your code:
 
 ### org.apache.kafka.common.errors.WakeupException
+{: #wakeup_exception}
+
 Thrown by `Consumer.poll(...)` as a result of `Consumer.wakeup()` being called. This is the standard way to interrupt the consumer's polling loop. The polling loop should exit and `Consumer.close()` should be called to disconnect cleanly.
 
 ### org.apache.kafka.common.errors.NotLeaderForPartitionException
+{: #notleaderforpartition_exception}
+
 Thrown as a result of `Producer.send(...)` when the leadership for a partition changes. The client automatically refreshes its metadata to find the up-to-date leader information. Retry the operation, which should succeed with the updated metadata.
 
 ### org.apache.kafka.common.errors.CommitFailedException
+{: #commitfailed_exception}
+
 Thrown as a result of `Consumer.commitSync(...)` when an unrecoverable error occurs. In some cases, it is not possible to repeat the operation because the partition assignment might have changed and the consumer might no longer be able to commit its offsets. Because `Consumer.commitSync(...)` can be partially successful when used with multiple partitions in a single call, the error recovery can be simplified by using a separate `Consumer.commitSync(...)` call for each partition.
 
 ### org.apache.kafka.common.errors.TimeoutException
+{: #timeout_exception}
+
 Thrown by `Producer.send(...),  Consumer.listTopics()` if the metadata cannot be retrieved. The exception is also seen in the send callback (or the returned Future) when the requested acknowledgment does not come back within `request.timeout.ms`. The client can retry the operation, but the effect of a repeated operation depends on the specific operation. For example, if sending a message is retried, the message might be duplicated.
 

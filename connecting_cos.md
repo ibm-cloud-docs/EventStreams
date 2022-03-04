@@ -31,6 +31,7 @@ Complete the following steps to get set up:
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs}
+
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You need to create credentials.
@@ -40,7 +41,7 @@ Ensure you have the following software and services installed:
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
 * A recent version of kubectl.
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
+* [git](https://git-scm.com/downloads){: external}
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step2_clone project}
@@ -107,7 +108,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
+[Kafka Connect REST Interface](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
 
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
 
@@ -118,6 +119,7 @@ So, you now have the Kafka Connect runtime that is deployed and running in {{sit
 Edit the `cos-sink.json` file located in `kafka-connect-ibmcos-sink/config/` so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
 
 ### cos-sink.json file properties
+{: #cos-sink_props}
 
 Replace the placeholders in the `cos-sink.json` file with your own values.
 
@@ -158,7 +160,7 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ## Step 8. Monitor your connector 
 {: #step8_monitor_connector}
 
-You can check your connector by going to: <br/>
+You can check your connector by going to:     \n   
 `http://localhost:8083/connectors/cos-sink/status`
 
 If the state of the connector is not running, restart the connector.
