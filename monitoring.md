@@ -83,11 +83,11 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 | `Standard` | 1      | 1 x 2 + 7 = 9 | $0.08 x 9 = $0.72   |
 | | 10      | 10 x 2 + 7 = 27 | $0.08 x 27 = $2.16   |
 |  | 100      | 100 x 2 + 7 = 207 | $0.08 x 207 = $16.56   |
-| `Enterprise` | 1        | 1 x 2 + 18 = 20 | $0.08 x 20 = $1.60  |
-|           | 10        | 10 x 2 + 18 = 38 | $0.08 x 38 = $3.04  |
-|         | 100        |  100 x 2 + 18 = 218   | $0.08 x 218 = $17.44  |
-|        | 1000        |  1000 x 2 + 18 = 2018  | $0.08 x 2018 = $161.44   |
-|      | 3000        |   3000 x 2 + 18 = 6018    | $0.08 x 6018 = $481.44  |
+| `Enterprise` | 1        | 1 x 2 + 19 = 21 | $0.08 x 21 = $1.68  |
+|           | 10        | 10 x 2 + 19 = 39 | $0.08 x 39 = $3.12  |
+|         | 100        |  100 x 2 + 19 = 219   | $0.08 x 219 = $17.52  |
+|        | 1000        |  1000 x 2 + 19 = 2019  | $0.08 x 2019 = $161.52   |
+|      | 3000        |   3000 x 2 + 19 = 6019    | $0.08 x 6019 = $481.52  |
 
 {: caption="Table 1. Cost for each plan" caption-side="top"}
 
@@ -171,7 +171,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 ### Metrics cost information with consumers enabled
 
-| Consumer Group | Topics| Paritions| Number of time series  | Monthly cost |
+| Consumer Group | Topics| Partitions| Number of time series  | Monthly cost |
 |----------------|-------|----------|------------------------|--------------|
 | 1              | 1     | 3        | 1 x 1 x 3  = 3         | $0.08 x 3 = $0.24     |
 | 10             | 10    | 3        | 10 x 10 x 3 = 300      | $0.08 x 300 = $24.00  |
