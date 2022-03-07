@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -84,14 +84,14 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 
 1. Refer to the [Satellite usage requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-requirements).
 2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
-3. Create a {{site.data.keyword.satelliteshort}} location, see [Setting up Satellite locations](/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+3. Create a {{site.data.keyword.satelliteshort}} location, see [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
 
   Supported options for the {{site.data.keyword.satelliteshort}} location Managed from field include:
   
   - Dallas
   - Washington DC
     
-  As noted in the [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
+  As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 4. Before you proceed to the steps in the infrastructure specific topic:
 
   - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
@@ -107,6 +107,7 @@ Complete the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topi
 {: #satellite_restrictions}
 
 - The following infrastructure providers are supported:
+
   - [Amazon Web Services (AWS)](/docs/EventStreams?topic=EventStreams-setting-up-amazon-web-services-location)
   - [On-Premises Location with NetApp ONTAP-SAN storage](/docs/EventStreams?topic=EventStreams-setting-up-on-premises-web-services-location-with-netapp-ontap-san-(21.04)-storage)
 
@@ -118,7 +119,7 @@ Complete the steps to set up [Amazon Web Services (AWS)](/docs/EventStreams?topi
 - The following functions are not supported on the {{site.data.keyword.satellitelong_notm}} plan for {{site.data.keyword.messagehub}}:
 
   - Scale up of message retention storage
-  - IAM IP address access restrictions
+  - [IAM IP address access restrictions](/docs/EventStreams?topic=EventStreams-restricting_access_iam)
   - Schema Registry
   - Cloud Service Endpoint support
   - Stream to {{site.data.keyword.cos_full_notm}} using {{site.data.keyword.sqlquery_full}}

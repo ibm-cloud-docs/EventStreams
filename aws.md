@@ -19,13 +19,15 @@ subcollection: EventStreams
 
 
 # Setting up AWS machines
+{: #satellite_aws}
 
 ## Prerequisites
+{: #prereqs_aws}
 
 1. Go to your Satellite location and under  **Setting up your location**, download the script to set up Satellite machines for your location.
 1. Edit the script by placing the following after the first mention of `API_URL`
 
-   ```
+   ```text
    # Enable AWS RHEL package updates
    yum update -y
    yum-config-manager --enable '*'
@@ -36,6 +38,7 @@ subcollection: EventStreams
    {: codeblock}
 
 ## Launch templates
+{: #launch_templates}
 
 Launch templates are used to specify the machine types and configuration you're intending to use for each respective machine type in your Satellite location.
 
@@ -54,6 +57,7 @@ Launch templates are used to specify the machine types and configuration you're 
 
 
 ## Auto Scaling groups
+{: #auto_scaling_groups}
 
 An Auto Scaling group is a scalable group of hosts that are created based on a launch template. By scaling the group to the capacity that you want, you provision the hosts in EC2. The startup script you downloaded from IBM Cloud Satellite will make the machines provision with your Satellite location.
 

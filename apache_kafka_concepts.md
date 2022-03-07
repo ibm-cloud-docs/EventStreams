@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -20,7 +20,8 @@ subcollection: EventStreams
 {: #apache_kafka}
 
 
-![Kafka architecture diagram.](kafka_overview.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers.")
+![Kafka architecture diagram.](kafka_overview.png "Diagram that shows a Kafka architecture. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by consumers."){: caption="Figure 1. Diagram that shows a Kafka architecture." caption-side="bottom"}
+
 
 The following list defines some Apache Kafka concepts:
 
@@ -30,7 +31,7 @@ The following list defines some Apache Kafka concepts:
 Apache Kafka is a distributed messaging system. A Kafka cluster consists of a set of brokers.
 A cluster has a minimum of 3 brokers.
 
-![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker.")
+![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker."){: caption="Figure 2. Diagram that shows an example broker." caption-side="bottom"}
 
 ## Messages
 {: #kafka_messages}
@@ -46,7 +47,8 @@ If a topic has more than one partition, it allows data to be fed through in para
 
 For more information, see [Partition leadership](/docs/EventStreams?topic=EventStreams-partition_leadership#partition_leadership).
 
-![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers.")
+![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers."{: caption="Figure 3. Diagram that shows 1 topic with 3 partitions spread across 3 brokers" caption-side="bottom"}
+
 
 ## Replication
 {: #kafka_replication}
@@ -55,7 +57,7 @@ To improve availability, each topic can be replicated onto multiple brokers. For
 
 Replication works by the followers repeatedly fetching messages from the leader.
 
-![Replication diagram.](concepts_replication.png "Diagram that shows a topic partition being replicated across 3 brokers.")
+![Replication diagram.](concepts_replication.png "Diagram that shows a topic partition being replicated across 3 brokers."){: caption="Figure 4. Diagram that shows a topic partition being replicated across 3 brokers" caption-side="bottom"}
 
 ## In-sync replicas
 {: #kafka_isr}
@@ -64,7 +66,7 @@ A follower replica that is keeping up with the partition leader is in-sync. Any 
 
 If the partition leader fails, another leader is chosen from the followers. All the replicas should usually be in-sync. It is acceptable for a replica to be temporarily not in-sync while it is catching up after a failure.
 
-![In-sync-replicas diagram.](concepts_in_sync_replicas.png "Diagram that shows a topic partition being replicated across three brokers and staying in-sync across all replicas.")
+![In-sync-replicas diagram.](concepts_in_sync_replicas.png "Diagram that shows a topic partition being replicated across three brokers and staying in-sync across all replicas."){: caption="Figure 5. Diagram that shows a topic partition being replicated across three brokers and staying in-sync across all replicas" caption-side="bottom"}
 
 ## Producers
 {: #kafka_producers}
@@ -75,7 +77,7 @@ You can also configure your producer to prioritize speed or reliability by choos
 
 For more information, see [Producing Messages](/docs/EventStreams?topic=EventStreams-producing_messages#producing_messages).
 
-![Producers diagram.](concepts_producers.png "Diagram that shows a producer publishing messages to one topic across three brokers.")
+![Producers diagram.](concepts_producers.png "Diagram that shows a producer publishing messages to one topic across three brokers."){: caption="Figure 6. Diagram that shows a producer publishing messages to one topic across three brokers" caption-side="bottom"}
 
 ## Consumers
 {: #kafka_consumers}
@@ -86,7 +88,7 @@ If the lag increases over time, it is a sign that the consumer is not able to ke
 
 For more information, see [Consuming Messages](/docs/EventStreams?topic=EventStreams-consuming_messages#consuming_messages).
 
-![Consumers diagram.](concepts_consumers.png "Diagram that shows a consumer processing messages from one topic across three brokers.")
+![Consumers diagram.](concepts_consumers.png "Diagram that shows a consumer processing messages from one topic across three brokers."){: caption="Figure 7. Diagram that shows a consumer processing messages from one topic across three brokers" caption-side="bottom"}
 
 ## Consumer groups
 {: #kafka_consumer_groups}
@@ -97,7 +99,7 @@ At any time, each partition is assigned to only one consumer in the group. This 
 
 If more partitions than consumers exist in a group, some consumers have multiple partitions. If more consumers than partitions exist, some consumers have no partitions.
 
-![Consumer groups diagram.](concepts_consumer_groups.png "Diagram that shows a consumer processing messages from 1 topic across 3 brokers.")
+![Consumer groups diagram.](concepts_consumer_groups.png "Diagram that shows a consumer processing messages from 1 topic across 3 brokers."){: caption="Figure 8. Diagram that shows a consumer processing messages from 1 topic across 3 brokers" caption-side="bottom"}
 
 ## More information
 {: #kafka_information}

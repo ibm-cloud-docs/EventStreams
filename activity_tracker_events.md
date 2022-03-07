@@ -19,8 +19,6 @@ subcollection: EventStreams
 {:download: .download}
 {:table: .aria-labeledby="caption"}
 
-<!-- Name your file `at-events.md` and include it in the Reference nav group in your toc file. -->
-
 # {{site.data.keyword.cloudaccesstrailshort}} events 
 {: #at_events}
 
@@ -89,6 +87,7 @@ The following table lists the instance events:
 | Action | Description |
 |:-------|:------------|
 | event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed. 
+{: caption="Table 4. {{site.data.keyword.messagehub}} other events" caption-side="top"}
 
 If the outcome of this event is `success`, access to the disk encryption key is restored and the {{site.data.keyword.messagehub}} instance is available for use.
 
@@ -99,7 +98,7 @@ If the outcome is `failure`, access to the disk encryption key was withdrawn and
 | event-streams.schema-rule.create | A new rule or global rule was created in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.update | An existing rule or global rule was updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.delete | A rule was deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
-{: caption="Table 4. {{site.data.keyword.messagehub}} events" caption-side="top"}
+{: caption="Table 5. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 
 ## Where to view the events

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-09-24"
+  years: 2021, 2022
+lastupdated: "2022-03-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -16,13 +16,15 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:important: .important}
-
+{:note: .note}
 
 # Using IAM IP address access restrictions with {{site.data.keyword.messagehub}}
 {: #restricting_access_iam}
 
 If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.messagehub}}, you must ensure that the {{site.data.keyword.iamshort}} (IAM) IP allowlist is configured so that the {{site.data.keyword.messagehub}} authentication and authorization service, which is used to authenticate and authorize the Kafka client, can still function.
 
+Using the {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan with the IP address restrictions is not yet supported. Although you can enable IP address restrictions in your account, {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan clusters do not accept messages. Support for co-existence is in plan. As a workaround, provision {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan clusters from a separate account.
+{: note}
 
 ## Granting access if you use {{site.data.keyword.messagehub}} over the public network
 {: #restricting_access_iam_public}
@@ -38,9 +40,8 @@ If you use {{site.data.keyword.messagehub}} over the private network, you must a
 ibmcloud resource service-instance <event-streams-instance-name> --output json
 ```
 
-Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section from the output, the three `166.9.x.x` IP addresses are needed to be added to {{site.data.keyword.iamshort}} (IAM) IP allowlist. These addresses are static and will remain for the life of the service instance.
+Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section from the output, add the three `166.9.x.x` IP addresses to the {{site.data.keyword.iamshort}} (IAM) IP allowlist, as in the following example. These addresses are static and remain for the life of the service instance.
 
-eg.
 ```json
     {
         "extensions": {
