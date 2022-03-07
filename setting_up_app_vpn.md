@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location, VPN
 
@@ -29,23 +29,23 @@ To connect applications running outside Amazon Web Services (AWS) with VPN acces
 
 ![VPN diagram](satellite_vpn.png "VPN"){: caption="Figure 1. Diagram showing an app connecting to clients using a VPN endpoint " caption-side="bottom"}
 
-## Step 1: Set up the Satellite plan for {{site.data.keyword.messagehub_full}} in a Satellite location using AWS
+## Set up the Satellite plan for {{site.data.keyword.messagehub_full}} in a Satellite location using AWS
 {: #prepare-satellite-aws}
 {: step}
 
 Complete the steps in [Getting started with the Satellite plan for Event Streams](/docs/EventStreams?topic=EventStreams-satellite_getting_started){: external} to set up the plan for {{site.data.keyword.messagehub}} in a Satellite location that is using AWS infrastructure.
 
-## Step 2: Create a Client VPN endpoint
+## Create a Client VPN endpoint
 {: #create_vpn_endpoint}
 {: step}
 
-   a. Create a Client VPN endpoint that does the following:
-      * Provides all clients with access to a single VPC.
-      * Provides all clients with access to the internet.
-      * Uses mutual authentication.
-   b. Complete the steps detailed in [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html){: external}.
+1. Create a Client VPN endpoint that does the following:
+   * Provides all clients with access to a single VPC.
+   * Provides all clients with access to the internet.
+   * Uses mutual authentication.
+2. Complete the steps detailed in [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html){: external}.
 
-## (Optional) Step 3: Test the {{site.data.keyword.messagehub}} producer and consumer sample applications
+## (Optional) Test the {{site.data.keyword.messagehub}} producer and consumer sample applications
 {: #test_sample_apps}
 {: step}
 
@@ -55,7 +55,7 @@ Use the steps detailed in [{{site.data.keyword.messagehub}} Getting Started](/do
 
 Alternatively, you can also use your own applications to perform this validation.
 
-## (Optional) Step 4: Test the {{site.data.keyword.messagehub}} CLI
+## (Optional) Test the {{site.data.keyword.messagehub}} CLI
 {: #test_cli}
 {: step}
 
