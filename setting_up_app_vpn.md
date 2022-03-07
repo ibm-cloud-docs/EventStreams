@@ -39,11 +39,11 @@ Complete the steps in [Getting started with the Satellite plan for Event Streams
 {: #create_vpn_endpoint}
 {: step}
 
-   a. Create a Client VPN endpoint that does the following:
-      * Provides all clients with access to a single VPC.
-      * Provides all clients with access to the internet.
-      * Uses mutual authentication.
-   b. Complete the steps detailed in [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html){: external}.
+a. Create a Client VPN endpoint that does the following:
+   * Provides all clients with access to a single VPC.
+   * Provides all clients with access to the internet.
+   * Uses mutual authentication.
+b. Complete the steps detailed in [Getting started with Client VPN](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-getting-started.html){: external}.
 
 ## (Optional) Step 3: Test the {{site.data.keyword.messagehub}} producer and consumer sample applications
 {: #test_sample_apps}
