@@ -90,13 +90,12 @@ To keep the example simple, assume to persist 1 MB per second of data in Cloud {
 Feature | Price
 --- | ---
 {{site.data.keyword.messagehub}} topic with one partition | $0.014 USD per partition hour
-{{site.data.keyword.messagehub}} outbound bandwidth charge | $0.028 for 3.6 GB data transmitted per hour
+{{site.data.keyword.messagehub}} outbound bandwidth charge | $0.28 for 3.6 GB data transmitted per hour
 {{site.data.keyword.sqlquery_short}} stream landing job | $0.11 per hour
 Cloud {{site.data.keyword.cos_short}} Class A requests for writing data | ~$0.02 per hour
 Cloud {{site.data.keyword.cos_short}} | $0.05 per month for each 3.6 GB using the smart storage tier class
 
-Your total cost per hour, with the data subsequently stored for a month, would be approximately: $0.222.
-The above is only an example, and you should evaluate your own planned usage with the IBM Cloud cost calculator.
+Your total cost per hour, with the data subsequently stored for a month, would be approximately: $0.474. The above is only an example, and you should evaluate your own planned usage with the IBM Cloud cost calculator.
 
 ## Limitations
 {: limitations-streams-landing}
