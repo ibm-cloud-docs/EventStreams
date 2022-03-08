@@ -39,7 +39,7 @@ Complete the following steps to start the streams landing.
 
 Ensure you have the following services configured:
 
-- An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You will need to create credentials.
+- An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You must create credentials.
 - A Cloud {{site.data.keyword.cos_short}} instance with at least one bucket.
 - An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
 - An {{site.data.keyword.keymanagementservicelong}} instance.
@@ -72,15 +72,14 @@ in order to see the streams landing overview page.
 - Click **Start streaming data** to enable a stream landing job.
 
 ## Step 3. Validate that your stream landing job is working
-
-{: #step5_validate_landing}
+{: #step3_validate_landing}
 
 To validate that streams landing is working, do the following steps:
 
-- Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
-- Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
-- Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs.
-- In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
+    - Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
+    - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
+    - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs.
+    - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
 
 ## Estimating cost
 {: estimating-cost}

@@ -58,7 +58,7 @@ The architecture is highly available when you choose to deploy into a multi-zone
 The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satelliteshort}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
 {: beta}
 
-The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access Beta service. To request access to the beta service, refer to the information at [Getting started with the IBM Satellite plan for Event Streams (Beta)](/docs/EventStreams?topic=EventStreams-getting-started-with-the-ibm-satellite-plan-for-event-streams-beta#beta).
+The {{site.data.keyword.satelliteshort}} plan is currently available as a limited access Beta service. To request access to the beta service, refer to the information at [Getting started with the IBM Satellite plan for Event Streams (Beta)](/docs/EventStreams?topic=EventStreams-satellite_getting_started#satellite_beta).
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite plans
 {: #what_is_supported}
@@ -69,7 +69,7 @@ The following table summarizes what is supported by the plans:
 |---|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 |**Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
-| **Availability**  |  99.99% [^tabletext](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |  99.99% | 99.99%   \n  (99.9% in single zone locations) [^tabletext2](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |  Not applicable    |
+| **Availability**  |  99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |  99.99% | 99.99%<br/>(99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |  Not applicable    |
 | **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |  Kafka 2.8   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
@@ -92,9 +92,6 @@ The following table summarizes what is supported by the plans:
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
 
-[^tabletext]: After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.
-
-[^tabletext2]: For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). 
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
