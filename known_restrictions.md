@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -39,7 +39,7 @@ Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with m
 
 From the <code>java.security</code> file: 
 
-```
+```text
 # The Java-level namelookup cache policy for successful lookups:
 #
 # any negative value: caching forever
@@ -61,11 +61,11 @@ From the <code>java.security</code> file:
 ### How to modify the JVM's TTL
 {: #jvm_ttl notoc}
 
-* To modify the JVM's TTL for all applications, set the <code>networkaddress.cache.ttl</code> value in the <code><var class="keyword varname">$JAVA_HOME</var>/jre/lib/security/java.security</code> file.
-* To modify the JVM TTL for a specific application, set the <code>networkaddress.cache.ttl</code> in your application code.
-```
-java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
-```
+* To modify the JVM's TTL for all applications, set the `networkaddress.cache.ttl` value in the `<$JAVA_HOME>/jre/lib/security/java.security` file.
+* To modify the JVM TTL for a specific application, set the `networkaddress.cache.ttl` in your application code.
+   ```text
+   java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
+   ```
 
 ## Java Kafka calls might time out
 {: #calls_timeout_kafka}
@@ -86,7 +86,7 @@ and not a subset, so a failure in a single IP address does not cause a failure.
 You need to opt into this functionality by using one of the following methods:
 * Specify a new allowed value in the Consumer and Producer properties of the configuration parameter <code>client.dns.lookup</code>:
 
-    ```
+    ```text
     client.dns.lookup: "use_all_dns_ips" 
     ```
     {: codeblock}

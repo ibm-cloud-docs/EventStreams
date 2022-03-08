@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -54,6 +54,7 @@ Many configuration settings exist for the consumer, which control aspects of its
 Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){: new_window} before starting to experiment with them.
 
 ## Consumer groups
+{: #consumer_groups}
 
 A _consumer group_ is a group of consumers that cooperates to consume messages from one or more topics. The consumers in a group all use the same value for the `group.id` configuration. If you need more than one consumer to handle your workload, you can run multiple consumers in the same consumer group. Even if you need one consumer only, it's usual to also specify a value for `group.id`.
 
@@ -77,6 +78,7 @@ For each consumer group, Kafka remembers the committed offset for each partition
 If you have a consumer group that is rebalanced, be aware that any consumer that has left the group has its commits rejected until it rejoins the group. In this case, the consumer needs to rejoin the group, where it might be assigned a different partition to the one it was previously consuming from.
 
 ## Consumer liveness
+{: #consumer_liveness }
 
 Kafka automatically detects failed consumers so that it can reassign partitions to working consumers. It uses two mechanisms: polling and heartbeating.
 
@@ -91,6 +93,7 @@ A background heartbeat thread runs in the consumer and sends regular heartbeats 
 You can configure the maximum polling interval by using the `max.poll.interval.ms` property and the session timeout by using the `session.timeout.ms` property. You don't need to use these settings unless it takes more than 5 minutes to process a batch of messages.
 
 ## Managing offsets
+{: #managing_offsets}
 
 For each consumer group, Kafka maintains the committed offset for each partition that is consumed. When a consumer processes a message, it doesn't remove it from the partition. 
 Instead, it just updates its current offset by using a process that is called committing the offset.
@@ -98,6 +101,8 @@ Instead, it just updates its current offset by using a process that is called co
 {{site.data.keyword.messagehub}} retains committed offset information for 7 days.
 
 ### What if there is no existing committed offset?
+{: #no_committed_offset}
+
 When a consumer starts and is assigned a partition to consume, it starts at its group's committed offset. 
 If there is no existing committed offset, the consumer can choose whether to start with the earliest or latest available message based on 
 the setting of the `auto.offset.reset` property as follows:
@@ -113,18 +118,21 @@ This means that the message is processed again by the next consumer in that grou
 When committed offsets are saved in Kafka and the consumers are restarted, consumers resume from the point they last stopped at. When there is a committed offset, the `auto.offset.reset` property is not used.
 
 ### Committing offsets automatically
+{: #committing_offsets}
 
 The easiest way to commit offsets is to have the Kafka consumer do it automatically. This is simple but it does give less control than committing manually. By default, a consumer automatically commits offsets every 5 seconds. This default commit happens every 5 seconds, regardless of the progress the consumer is making toward processing the messages. In addition, when the consumer calls `poll()`, this also causes the latest offset returned from the previous call to `poll()` to be committed (because it was probably processed).
 
 If the committed offset overtakes the processing of the messages and there is a consumer failure, it's possible that some messages might not be processed. This is because processing restarts at the committed offset, which is later than the last message to be processed before the failure. For this reason, if reliability is more important than simplicity, it's usually best to commit offsets manually.
 
 ### Committing offsets manually
+{: #committing_offsets_manually}
 
 If `enable.auto.commit` is set to `false`, the consumer commits its offsets manually. It can do this either synchronously or asynchronously. A common pattern is to commit the offset of the latest processed message based on a periodic timer. This pattern means that every message is processed at least once, but the committed offset never overtakes the progress of messages that are actively being processed. The frequency of the periodic timer controls the number of messages that can be reprocessed following a consumer failure. Messages are retrieved again from the last saved committed offset when the application restarts or when the group rebalances.
 
 The committed offset is the offset of the messages from which processing is resumed. This is usually the offset of the most recently processed message *plus one*.
 
 ### Consumer lag
+{: #consumer_lag}
 
 The consumer lag for a partition is the difference between the offset of the most recently published message and the consumer's committed offset. 
 Although it's usual to have natural variations in the produce and consume rates, 
@@ -144,6 +152,8 @@ If you have problems with message handling caused by message flooding, you can s
 
 
 ## Handling consumer rebalancing
+{: #consumer_rebalancing}
+
 When consumers are added to or removed from a group, a group rebalance takes place and consumers are not able to consume messages. This results in all the consumers in a consumer group being unavailable for a short period.
 
 You might use a ConsumerRebalanceListener to manually commit offsets (if you are not using auto-commit) when notified with the "on partitions revoked" callback, and to pause further processing until notified of the successful rebalance using the "on partition assigned" callback.

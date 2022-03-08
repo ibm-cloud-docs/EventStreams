@@ -43,15 +43,7 @@ The levels of access (also known as a role) that you can assign to a user to eac
 |  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing resources | Allow an app to connect to a cluster by assigning read access to cluster resource type |
 | Writer | Writers have permissions beyond the reader role, including editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types|
 | Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance. 
-<!-- publish this for mirroring GA (July 2020)
-<br /> Allow administrative configuration on the {{site.data.keyword.messagehub}} instance, for example, mirroring topic selection. 
--->
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="top"}
-
-<!-- comment from Charlie and my reply 
-CM: need to confirm if hierarchical e.g. write includes read - and doc. 
-KR: I think they do inherit the lower level access https://cloud.ibm.com/docs/iam?topic=iam-userroles#iamusermanrol 
--->
 
 
 ## How do I assign access?
@@ -60,9 +52,9 @@ KR: I think they do inherit the lower level access https://cloud.ibm.com/docs/ia
 Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
 * The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
 * The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
-* The type of resource to be secured. The valid values are <code>cluster</code>, <code>topic</code>, <code>group</code>, <code>schema</code>, or <code>txnid</code>. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance.
+* The type of resource to be secured. The valid values are `cluster`, `topic`, `group`, `schema`, or `txnid`. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance.
 If you want to specify more than one type of resource, you must create one policy per resource. 
-* The resource to be secured. Specify for resources of type <code>topic</code>, <code>group</code>, <code>schema</code>, and <code>txnid</code>. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
+* The resource to be secured. Specify for resources of type `topic`, `group`, `schema`, and `txnid`. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
 * The role assigned to the user. For example, Reader, Writer, or Manager. 
 
 ## What are the default security settings?
@@ -73,9 +65,6 @@ By default, when {{site.data.keyword.messagehub}} is provisioned, the user who p
 You can then apply additional policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
 
 Only users with an administration role for an account can assign policies to users . Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands. 
-<!--
-For example steps for {{site.data.keyword.messagehub}}, see [Examples](#security_examples).
--->
 
 
 ## Common scenarios
@@ -86,27 +75,26 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
 | Allow full access to all resources|Not applicable   |Not applicable  |Service instance: <your_service_instance>|
-| Allow an app or user to create or delete topic |Resource type: <code>cluster</code>   |Not applicable  |Resource type: topic <br/><br/>Optional: Resource ID: <name_of_topic> |
-| List groups, topics, and offsets <br/> Describe group, topic, and broker configurations | Resource type: <code>cluster</code>      |Not applicable  |Not applicable      |
-| Allow an app to connect to the cluster  |Resource type: <code>cluster</code>| Not applicable     |Not applicable      |
-| Allow an app to produce to any topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code> |Not applicable     |
-| Allow an app to produce to a specific topic  |Resource type: <code>cluster</code>|Resource type: <code>topic</code><br/>Resource ID: <name_of_topic>      |Not applicable     |
-| Allow an app to connect and consume from any topic (no consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code> |Not applicable    |Not applicable     |
-| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/>Resource ID: <name_of_topic> |Not applicable     |Not applicable     |
-| Allow an app to consume a topic (consumer group)  |Resource type: <code>cluster</code> <br/>Resource type: <code>topic</code><br/> Resource type: <code>group</code> |Not applicable      |Not applicable     |
-| Allow an app to produce to a topic transactionally  |Resource type: <code>cluster</code> <br/> Resource type: <code>group</code>|Resource type: <code>topic</code> <br/>Resource ID: <name_of_topic> <br/>Resource type: <code>txnid</code> |Not applicable     |
-| Delete consumer group |Resource type: <code>cluster</code> |Not applicable  |Resource type: <code>group</code> <br/>Resource ID: <group_ID>      |
-| To use Streams |Resource type: <code>cluster</code></br>Resource type: <code>group</code>| Not applicable  |Resource type: <code>topic</code>    |
-| Delete records | Not applicable | Not applicable | Resource type: <code>topic</code> <br/>Resource ID: <name_of_topic> |
-<!-- publish this for mirroring GA (July 2020)
-| Mirroring User Control | Not applicable | Not applicable | Resource type: <code>cluster</code> |
--->
+| Allow an app or user to create or delete topic |Resource type: `cluster`   |Not applicable  |Resource type: topic   \n   \n Optional: Resource ID: <name_of_topic> |
+| List groups, topics, and offsets   \n  Describe group, topic, and broker configurations | Resource type: `cluster`      |Not applicable  |Not applicable      |
+| Allow an app to connect to the cluster  |Resource type: `cluster`| Not applicable     |Not applicable      |
+| Allow an app to produce to any topic  |Resource type: `cluster`|Resource type: `topic` |Not applicable     |
+| Allow an app to produce to a specific topic  |Resource type: `cluster`|Resource type: `topic`<br/>Resource ID: <name_of_topic>      |Not applicable     |
+| Allow an app to connect and consume from any topic (no consumer group)  |Resource type: `cluster` <br/>Resource type: `topic` |Not applicable    |Not applicable     |
+| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: `cluster` <br/>Resource type: `topic`<br/>Resource ID: <name_of_topic> |Not applicable     |Not applicable     |
+| Allow an app to consume a topic (consumer group)  |Resource type: `cluster` <br/>Resource type: `topic`<br/> Resource type: `group` |Not applicable      |Not applicable     |
+| Allow an app to produce to a topic transactionally  |Resource type: `cluster` <br/> Resource type: `group`|Resource type: `topic` <br/>Resource ID: <name_of_topic> <br/>Resource type: `txnid` |Not applicable     |
+| Delete consumer group |Resource type: `cluster` |Not applicable  |Resource type: `group` <br/>Resource ID: <group_ID>      |
+| To use Streams |Resource type: `cluster`</br>Resource type: `group`| Not applicable  |Resource type: `topic`    |
+| Delete records | Not applicable | Not applicable | Resource type: `topic` <br/>Resource ID: <name_of_topic> |
+{: caption="Table 2. Access for common scenarios" caption-side="bottom"}
+
 
 For more information about IAM, see 
 [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 
 For an example of how to set policies, see: 
-[IBM Cloud IAM Service IDs and API Keys ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: new_window}.
+[IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
 
 ## Wildcarding
 {: #wildcarding }
@@ -129,7 +117,7 @@ The authorization model for the Schema Registry used the same style of policies 
 ### IAM resources
 {: #iam_resources}
 
-With the new <code>schema</code> IAM resource type it is possible to create policies that control access using varying degrees of granularity, for example:
+With the new `schema` IAM resource type it is possible to create policies that control access using varying degrees of granularity, for example:
 
 - a specific schema
 - a set of schemas selected via a wildcard expression
@@ -148,10 +136,10 @@ roles which would be required by the actors involved. The process of managing sc
 
 Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
- New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code> | <code>Reader</code> <br /><code>Reader</code> | <code>cluster</code> <br /><code>schema</code>
-Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |<code>Reader</code> <br /><code>Manager</code> | <code>cluster</code><br /><code>schema</code> | Not applicable |  Not applicable
-Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not applicable | Not applicable | <code>Reader</code> <br /><code>Writer</code>| <code>cluster</code> <br /><code>schema</code>
-The global default rule that controls schema evolution is changed. | <code>Manager</code> | <code>cluster</code> | Not applicable | Not applicable
+ New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| `Reader` <br />`Writer`| `cluster` <br />`schema` | `Reader` <br />`Reader` | `cluster` <br />`schema`
+Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |`Reader` <br />`Manager` | `cluster`<br />`schema` | Not applicable |  Not applicable
+Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not applicable | Not applicable | `Reader` <br />`Writer`| `cluster` <br />`schema`
+The global default rule that controls schema evolution is changed. | `Manager` | `cluster` | Not applicable | Not applicable
 
 
 
