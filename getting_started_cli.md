@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -24,13 +24,13 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Lite, Stan
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: new_window}.
+For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
 
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
 
 Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-```
+```text
 ibmcloud login -a cloud.ibm.com
 ```
 {: codeblock}
@@ -46,17 +46,17 @@ Select one of the following methods:
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){: new_window}.
 
 * To create an instance from the CLI on the Enterprise plan, run the following command:
-  ```
-  ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
-  ```
-    {: codeblock}
-    
-    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
+   ```text
+   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
+   ```
+   {: codeblock}
+   
+   Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
 
 * To create an instance from the CLI on the Standard plan, run the following command:
 
-    ```
+    ```text
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
     ```
     {: codeblock}
@@ -71,7 +71,7 @@ Optionally, you can create a service API key. The valid `ROLE_NAME`s are Manager
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
 * To create an API key from the CLI, run this command:
-    ```
+    ```text
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
     ```
     {: codeblock}
@@ -80,7 +80,7 @@ Optionally, you can create a service API key. The valid `ROLE_NAME`s are Manager
 {: #step5_es_cli}
 
 Run the following command:
-```
+```text
 ibmcloud plugin install event-streams
 ```
 {: codeblock}
@@ -90,7 +90,7 @@ ibmcloud plugin install event-streams
 
 Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you must first initialize the plug-in. Run the following command then select your {{site.data.keyword.messagehub}} instance:
 
-```
+```text
 ibmcloud es init
 ```
 {: codeblock}

@@ -47,7 +47,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
 ```
 {: codeblock}
 
-<strong>Prerequisites</strong>: None
+**Prerequisites**: None
 
 <strong>Command options</strong>:
    <dl>
@@ -57,9 +57,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
    <dd>Kafka admin URL of the {{site.data.keyword.messagehub}} instance.</dd>
    </dl>
 
-<!--
-<strong>Examples</strong>:
--->
+
 
 <br/>
 ## ibmcloud es broker
@@ -84,9 +82,6 @@ ibmcloud es broker [--broker] ID [--json]
         <dd>Output format in JSON.</dd>
 </dl>
 
-<!--
-<strong>Examples</strong>:
--->
 
 <br/>
 ## ibmcloud es broker-config

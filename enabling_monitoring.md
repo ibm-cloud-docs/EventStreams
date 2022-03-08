@@ -29,6 +29,7 @@ Using mirroring with {{site.data.keyword.messagehub}} incurs an additional charg
 
 ## Step 1: setup 
 {: #step1_setup}
+
 Ensure that you provisioned two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have suitable IAM access policies.
 
 Because mirroring is unidirectional, decide which direction mirroring you want. One cluster is the source and the other cluster is the target.
@@ -52,7 +53,7 @@ If your requirement is to fail back, you need also the service-to-service bindin
 Following is an example of how to use the command line to configure service-to-service binding. 
 Note, in this command we are using IAM source and target definitions, which are the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
 
-```
+```text
 ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the source cluster> --source-service-account <account id> --target-service-instance-id <instance id of target>
 ```
 
@@ -72,7 +73,7 @@ Include the following information in the ticket:
 
 ### Example request
 
-```
+```text
 We request the {{site.data.keyword.messagehub}} team to enable mirroring between the following 2 service instances:
 - crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa:: aliased with "us-south"
 - crn:v1:bluemix:public:messagehub:us-east:a/bbb:bbbb:: aliased with "us-east"

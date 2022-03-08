@@ -54,7 +54,7 @@ Review the following administration API methods, their required actions in {{sit
 | Create a schema | `POST $Kakfa-http-url/artifacts/` | `messagehub.cluster.read messagehub.schema.write` | `event-streams.schema.create` |
 | List the schemas in the schema registry | `GET $Kakfa-http-url/artifacts`	| `messagehub.cluster.read`	| None |
 | Delete a schema from the schema registry | `DELETE $Kakfa-http-url/artifacts/{schema-id}` | `messagehub.cluster.read  messagehub.schema.manage` | `event-streams.schema.delete` |
-| Create a schema version | `POST $Kakfa-http-url/artifacts/{schema-id}/versions` |` messagehub.cluster.read messagehub.schema.write` | `event-streams.schema.create` |
+| Create a schema version | `POST $Kakfa-http-url/artifacts/{schema-id}/versions` |`messagehub.cluster.read messagehub.schema.write` | `event-streams.schema.create` |
 | Get the latest schema version	| `GET $Kakfa-http-url/artifacts/{schema-id} ` | `messagehub.cluster.read messagehub.schema.read` | None |
 | Get a specific schema version	| `GET $Kakfa-http-url/artifacts/{schema-id}/versions/{version}` | `messagehub.cluster.read messagehub.schema.read`	| None |
 | List all schema versions | `GET $Kakfa-http-url/artifacts/{schema-id}/versions` | `messagehub.cluster.read  messagehub.schema.read` | None |
