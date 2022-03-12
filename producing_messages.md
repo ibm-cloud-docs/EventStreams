@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -51,7 +51,7 @@ There are many configuration settings for the producer. You can control aspects 
 |max.in.flight.requests.per.connection     | The maximum number of unacknowledged requests that the client sends on a connection before blocking further requests| 1,...  | 5 |
 |request.timeout.ms     | The maximum amount of time the producer waits for a response to a request. If the response is not received before the timeout elapses, the request is retried or fails if the number of retries has been exhausted.| 0,...  | 30000 (30 seconds) |
 
-Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){: new_window} thoroughly before experimenting with them.
+Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation](http://kafka.apache.org/documentation/){: external} thoroughly before experimenting with them.
 
 ## Partitioning
 {: #partitioning}
@@ -61,7 +61,7 @@ With Kafka, partitions are the unit of scalability. Partitioning is therefore an
 When the producer publishes a message on a topic, the producer can choose which partition to use. If ordering is important, you must remember that a partition is an ordered sequence of records, but a topic comprises one or more partitions. If you want a set of messages to be delivered in order, ensure that they all go on the same partition. The most straightforward way to achieve this is to give all of those messages the same key. 
  
 The producer can explicitly specify a partition number when it publishes a message. This gives direct control, but it makes the producer code more complex because it takes on the responsibility for managing the partition selection. For more information, see the method call Producer.partitionsFor. For example, the call is described for 
-[Kafka 2.2.0 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/22/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: new_window}
+[Kafka 2.2.0](https://kafka.apache.org/22/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external}
  
 If the producer does not specify a partition number, the selection of partition is made by a partitioner. The default partitioner that is built into the Kafka producer works as follows:
 
@@ -87,14 +87,16 @@ It's normal practice with Kafka to write the applications to handle occasional m
 
 When you publish a message, you can choose the level of acknowledgments required using the `acks` producer configuration. The choice represents a balance between throughput and reliability. There are three levels as follows:
 
-<dl>
-<dt>acks=0 (least reliable)</dt>
-<dd>The message is considered sent as soon as it has been written to the network. There is no acknowledgment from the partition leader. As a result, messages can be lost if the partition leadership changes. This level of acknowledgment is very fast, but comes with the possibility of message loss in some situations.</dd>
-<dt>acks=1 (the default)</dt>
-<dd>The message is acknowledged to the producer as soon as the partition leader has successfully written its record to the partition. Because the acknowledgment occurs before the record is known to have reached the in-sync replicas, the message could be lost if the leader fails but the followers do not yet have the message. If partition leadership changes, the old leader informs the producer, which can handle the error and retry sending the message to the new leader. Because messages are acknowledged before their receipt has been confirmed by all replicas, messages that have been acknowledged but not yet fully replicated can be lost if the partition leadership changes.</dd>
-<dt>acks=all (most reliable)</dt>
-<dd>The message is acknowledged to the producer when the partition leader has successfully written its record and all in-sync replicas have done the same. The message is not lost if the partition leadership changes provided that at least one in-sync replica is available.</dd>
-</dl>
+
+acks=0 (least reliable)
+:   The message is considered sent as soon as it has been written to the network. There is no acknowledgment from the partition leader. As a result, messages can be lost if the partition leadership changes. This level of acknowledgment is very fast, but comes with the possibility of message loss in some situations.
+
+acks=1 (the default)
+:   The message is acknowledged to the producer as soon as the partition leader has successfully written its record to the partition. Because the acknowledgment occurs before the record is known to have reached the in-sync replicas, the message could be lost if the leader fails but the followers do not yet have the message. If partition leadership changes, the old leader informs the producer, which can handle the error and retry sending the message to the new leader. Because messages are acknowledged before their receipt has been confirmed by all replicas, messages that have been acknowledged but not yet fully replicated can be lost if the partition leadership changes.
+
+acks=all (most reliable)
+:   The message is acknowledged to the producer when the partition leader has successfully written its record and all in-sync replicas have done the same. The message is not lost if the partition leadership changes provided that at least one in-sync replica is available.
+
 
 Even if you do not wait for messages to be acknowledged to the producer, messages are still only available to be consumed when committed, and that means replication to the in-sync replicas is complete. In other words, the latency of sending the messages from the point of view of the producer is lower than the end-to-end latency measured from the producer sending a message to a consumer receiving the message.
 
@@ -118,18 +120,17 @@ In summary, when a message is published, its record is first written into a buff
 {: #delivery_semantics}
 
 Kafka offers the following multiple different message delivery semantics:
-<ul>
-    <li>At most once: messages might get lost and won't get redelivered</li>
-    <li>At least once: messages are never lost but there might be duplicates</li>
-    <li>Exactly once: messages are never lost and there are no duplicates</li>
-</ul>
+
+* At most once: messages might get lost and won't get redelivered
+* At least once: messages are never lost but there might be duplicates
+* Exactly once: messages are never lost and there are no duplicates
+
 
 The delivery semantics are determined by the following settings:
-<ul>
-    <li>`acks`</li>
-    <li>`retries`</li>
-    <li>`enable.idempotence`</li>
-</ul>
+
+* `acks`
+* `retries`
+* `enable.idempotence`
 
 By default, Kafka uses at least once semantics.
 
@@ -143,7 +144,7 @@ These code snippets are at a very high level to illustrate the concepts involved
 
 To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need these properties at a minimum. Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with your own service credentials:
 
-```
+```text
 Properties props = new Properties();
  props.put("bootstrap.servers", KAFKA_BROKERS_SASL);
  props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USER\" password=\"PASSWORD\";");
@@ -156,14 +157,14 @@ Properties props = new Properties();
 
 To send messages, you'll also need to specify serializers for the keys and values, for example:
 
-```
+```text
  props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
  props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 ```
 
 Then use a KafkaProducer to send messages, where each message is represented by a ProducerRecord. Don't forget to close the KafkaProducer when you're finished. This code just sends the message but it doesn't wait to see whether the send succeeded.
 
-```
+```text
  Producer<String, String> producer = new KafkaProducer<>(props);
  producer.send(new ProducerRecord<String, String>("T1", "key", "value"));
  producer.close();
@@ -171,7 +172,7 @@ Then use a KafkaProducer to send messages, where each message is represented by 
  
 The `send()` method is asynchronous and returns a Future that you can use to check its completion:
 
-```
+```text
  Future<RecordMetadata> f = producer.send(new ProducerRecord<String, String>("T1", "key", "value"));
 // Do some other stuff
 // Now wait for the result of the send
@@ -181,7 +182,7 @@ The `send()` method is asynchronous and returns a Future that you can use to che
 
 Alternatively, you can supply a callback when sending the message:
 
-```
+```text
 producer.send(new ProducerRecord<String,String>("T1","key","value", new Callback() {
           public void onCompletion(RecordMetadata metadata, Exception exception) {
                      // This is called when the send completes, either successfully or with an exception

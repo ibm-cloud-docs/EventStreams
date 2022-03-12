@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -76,6 +76,8 @@ For information about compliance on each of the {{site.data.keyword.messagehub}}
 {{site.data.keyword.messagehub}}'s data isolation model varies according to which plan you're using.
 
 ### Enterprise plan
+{: #data_isolation_enterprise}
+
 The Enterprise plan provides a tenant-specific service in the IBM Service domain.
 
 The Enterprise plan creates a single tenant instance on a Dedicated Kubernetes cluster on Shared Hardware (VSI isolation).
@@ -85,6 +87,8 @@ By default, the Enterprise plan provides Public endpoints, but it also supports 
 The Enterprise plan creates single tenant Block Storage for each new instance.
 
 ### Satellite plan
+{: #data_isolation_satellite}
+
 The Satellite plan provides a tenant-specific service in the IBM Service domain and is based on the Enterprise plan.
 
 The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster using hosts (physical and virtual) that you provided and attached to your Satellite location.
@@ -95,6 +99,8 @@ The Satellite plan creates single tenant Block Storage for each new instance usi
 
 
 ### Standard plan
+{: #data_isolation_standard}
+
 The Standard plan provides a Public Service with Public endpoints.
 
 The Standard plan creates a tenant instance on a Shared Kubernetes cluster on shared hardware (VSI isolation).
@@ -104,6 +110,7 @@ The Standard plan provides Public endpoints only.
 The Standard plan uses Shared Block Storage and achieves tenant isolation through separation of files and access controls.
 
 ## Data retention and reclamation
+{: #data_retention_reclamation}
 
 On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. Instead, it is scheduled for reclamation, {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both, topics and messages written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that has not yet been reclaimed.
 

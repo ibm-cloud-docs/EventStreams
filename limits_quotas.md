@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -107,6 +107,7 @@ Network throughput capacity is based on the peak maximum.  Each peak maximum ha
 |150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
 |300 MB/s (150 MB/s producing and 150 MB/s consuming)|200/s (100 MB/s producing and 100 MB/s consuming) |
 |450 MB/s (225 MB/s producing and 225 MB/s consuming)|300 MB/s (150 MB/s producing and 150 MB/s consuming)|
+{: caption="Table 1. Network throughput capacity on Enterprise" caption-side="top"}
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance.  The throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
 
@@ -121,7 +122,7 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 
 The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150MB/s, 6000 for 300MB/s and 9000 for 450MB/s in Enterprise. 
 
-This is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond this, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: new_window}.
+This is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond this, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
 
 ### Retention
 {: #enterprise_retention}
@@ -136,11 +137,13 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 {: #enterprise_schema_registry}
 
 #### Schemas
+{: #schemas}
 * Maximum number of schemas that can be stored: 1000
 * Maximum number of schema versions for each schema that can be stored: 100
 * Maximum schema size 64kB
 
 #### Limits
+{: #limits}
 * Maximum request rate [HTTP Schema Admin] 10 per second
 * Maximum request rate [HTTP Serdes] 100 per second
 
@@ -158,11 +161,12 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 ### Network throughput
 {: #satellite_throughput }
 
-Network throughput capacity is based on the peak maximum.  Each peak maximum has a recommended maximum for typical production workloads.
+Network throughput capacity is based on the peak maximum. Each peak maximum has a recommended maximum for typical production workloads.
 
 | Peak Maximum | Recommended maximum | 
 |--------------|-----------------------|
 |150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
+{: caption="Table 2. Network throughput capacity on Satellite" caption-side="top"}
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
 

@@ -24,8 +24,6 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
 {: shortdesc}
 
-<!--Add the following sections as your service onboards to the Security and Compliance Center. You might have only monitoring or you might also have configuration enforcement. Also, if you only have one of the options, be sure to remove the bulleted list and write the following section as a sentence.-->
-
 With the {{site.data.keyword.compliance_short}}, you can:
 
 * Monitor for controls and goals that pertain to {{site.data.keyword.messagehub}}.
@@ -58,7 +56,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 | Resource type | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
 | instance | public_network_enabled | is_true <br>is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a public network. |
-| instance | private_network_enabled | is_true <br>is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a private network. |
+| instance | private_network_enabled | is_true   \n   is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a private network. |
 | instance | private_access_allowlist | ips_in_range | - | If private networking is enabled, this property indicates whether access to a {{site.data.keyword.messagehub}} instance should be restricted to a given range of private IP CIDR formatted subnets. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.messagehub}}" caption-side="top"}
 

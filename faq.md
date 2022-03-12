@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -23,7 +23,6 @@ subcollection: EventStreams
 {: #faqs}
 
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
-
 {: shortdesc}
 
 <!--17/10/17 - Karen: same info duplicated at messagehub104 -->
@@ -35,7 +34,7 @@ Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyw
 If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
 
 cleanup.policy
-:   Set to <code>delete</code> (default), <code>compact</code> or <code>delete,compact</code>
+:   Set to `delete` (default), `compact` or `delete,compact`
 
 retention.ms
 :   The default retention period is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
@@ -94,7 +93,7 @@ You are strongly recommended not to attempt to manage the topic in any way. You 
 After consumers have left, a group continues to exist only if it has offsets. Consumer offsets are deleted after 7 days of inactivity. Consequently, a consumer group is deleted when the last committed offset for that group expires.
 
 If you want to explicitly delete a group at a time you choose, you can use the 
-[deleteConsumerGroups() API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection-){: new_window}.
+[deleteConsumerGroups() API (http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection-){: external}.
 
 
 ## How long are messages retained?
@@ -160,7 +159,7 @@ The following configuration settings apply to all topics and cannot be changed:
 To confirm which type of {{site.data.keyword.messagehub}} plan you've provisioned (Lite, Standard, or Enterprise), complete the following steps:
 1. In the {{site.data.keyword.Bluemix_notm}} console, navigate to the instance of {{site.data.keyword.messagehub}} that you want to check.
 2. Click the **Plan** tab in the navigation pane on the left.
-The **Current plan** section displays your plan type. 
+   The **Current plan** section displays your plan type. 
 
 ## Can I change my {{site.data.keyword.messagehub}} plan using the {{site.data.keyword.Bluemix_notm}} console?
 {: #plan_migrate}
@@ -171,15 +170,14 @@ Yes, but only if you are moving from the Lite plan to the Standard plan.
 1. In the {{site.data.keyword.Bluemix_notm}} console, navigate to the instance of {{site.data.keyword.messagehub}} Lite plan that you want to change. 
 2. Click the **Plan** tab in the navigation pane on the left.
 3. In the **Change pricing plan** section, check the **Standard** box. Click **Upgrade**.
-<br/>
-<br/>
-Allow a few minutes for the cached limit of 1 partition for the Lite plan to clear so that you can take advantage of the 100 partition limit for the Standard plan.
 
-However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try a different plan combination, you'll see an error message like the the following:
-```
-Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
-```
-{: codeblock}
+   Allow a few minutes for the cached limit of 1 partition for the Lite plan to clear so that you can take advantage of the 100 partition limit for the Standard plan.
+
+   However, this option does not currently work in the {{site.data.keyword.Bluemix_notm}} console for any other combination of plans. For example, if you try a different plan combination, you'll see an error message like the the following:
+   ```text
+   Could not find VCAP::CloudController::ServicePlan with guid: ibm.eventstreams.standard 
+   ```
+   {: codeblock}
 
 
 ## What are the differences between the {{site.data.keyword.messagehub}} Standard and {{site.data.keyword.messagehub}} Enterprise plans?
@@ -196,7 +194,7 @@ To find out more information about the different {{site.data.keyword.messagehub}
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
 We suggest a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
-[{{site.data.keyword.messagehub}} kafka-mirrormaker repository ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: new_window}.
+[{{site.data.keyword.messagehub}} kafka-mirrormaker repository](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: external}.
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 
