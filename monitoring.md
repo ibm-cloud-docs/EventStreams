@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-03-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -30,41 +30,46 @@ subcollection: EventStreams
 ## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
 {: #opt_in_metrics}
 
-{{site.data.keyword.messagehub}} metrics can broadly be categorised into two different groups **Default** and **Enhanced**.
+{{site.data.keyword.messagehub}} metrics can broadly be categorized into two different groups **Default** and **Enhanced**.
 
 ### Enabling default {{site.data.keyword.messagehub}} metrics
 
 Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in and then enable platform metrics by completing the following steps:
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-platform_metrics_enabling){ :new_window}. The owner of the account has full access to this metrics data. For more information about managing access for other users see [Getting started tutorial for {{site.data.keyword.mon_full}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){: new_window}.
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){ :external}. The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started tutorial for {{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){: external}.
 
-2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.mon_full_notm}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**.
+2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.monitoringshort}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**.
 
    On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page.  Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan you're using.
 
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
-The enhanced {{site.data.keyword.messagehub}} consists of two groups; `topic` and `consumers`. You can opt in for either one or both. The metrics available are mentioned in the [topic](#metrics-topic) and [consumers](#metrics-consumers) table.
+The enhanced {{site.data.keyword.messagehub}} consists of two groups; `topic` and `consumers`. You can opt in for either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
 
 Enabling enhanced metrics introduces additional global gauge, therefore increasing the costs accordingly.
 
 Before you can start using enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
 
-1. Run the following command to update the service instance to start using enchanced metrics:
+* Run the following command to update the service instance to start using enhanced metrics:
    
-```
+   ```
 ibmcloud resource service-instance-update <instance-name> -p '{"metrics":["topic","consumers"]}'
-```
-When enhanced metrics are enabled, depending on the selection, new dashboards are available; **IBM Event Streams(Topic)**  and/or **IBM Event Streams(Consumers)**
+   ```
+   {: codeblock}
 
-To opt-out of enhanced metrics, run the following command:
+When enhanced metrics are enabled, depending on the selection, new dashboards are available; **IBM Event Streams(Topic)** and **IBM Event Streams(Consumers)**
 
-```
-ibmcloud resource service-instance-update <instance-name> -p '{"metrics":[]}'
-```
+To opt out of enhanced metrics, run the following command:
+
+   ```
+   ibmcloud resource service-instance-update <instance-name> -p '{"metrics":[]}'
+   ```
+   {: codeblock}
+
 Dashboards are available only after metrics have started to be recorded; this might take a few minutes to initialize.
 {: note}
+
 ## {{site.data.keyword.messagehub}} metrics cost information
 {: #metric_costs}
 
@@ -73,9 +78,6 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 * the {{site.data.keyword.messagehub}} plan that you use
 * how many unique time series are sent for each plan
 * the number of topics that you have created
-
-
-<br/>
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|------------------|
@@ -88,12 +90,11 @@ Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of t
 |         | 100        |  100 x 2 + 19 = 219   | $0.08 x 219 = $17.52  |
 |        | 1000        |  1000 x 2 + 19 = 2019  | $0.08 x 2019 = $161.52   |
 |      | 3000        |   3000 x 2 + 19 = 6019    | $0.08 x 6019 = $481.52  |
-
 {: caption="Table 1. Cost for each plan" caption-side="top"}
 
-Enabling mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the above table), therefore increasing the costs accordingly.
+Enabling mirroring for Enterprise clusters introduces one additional global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs accordingly.
 
-For more information, see [{{site.data.keyword.mon_full_notm}} pricing ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/monitoring?topic=monitoring-pricing_plans).
+For more information, see [{{site.data.keyword.monitoringshort}} pricing](/docs/monitoring?topic=monitoring-pricing_plans).
 
 
 ## {{site.data.keyword.messagehub}} metrics details
@@ -103,7 +104,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 
 
 ## Metrics available by service plan
-{: metrics-by-plan}
+{: #metrics-by-plan}
 
 | Metric Name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
@@ -131,9 +132,10 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 {: caption="Table 2: Metrics Available by Plan Names" caption-side="top"}
 
 ---
+  \n     \n     \n   
 
 ## Metrics available with mirroring enabled
-{: metrics-mirroring}
+{: #metrics-mirroring}
 
 | Metric Name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
@@ -142,9 +144,10 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 {: caption="Table 3: Metrics available for mirroring" caption-side="top"}
 
 ---
+  \n     \n     \n   
 
 ## Enhanced metrics available with topic enabled
-{: metrics-topic}
+{: #metrics-topic}
 
 | Metric Name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
@@ -153,6 +156,8 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 {: caption="Table 4: Metrics available for topic" caption-side="top"}
 
 ### Metrics cost information with topic enabled
+{: #metrics_cost_topic}
+
  Topics| Number of time series  | Monthly cost |
 |----------------|-------|----------|
 | 1        | 1 x 2 = 2         | $0.08 x 2 = $0.16     |
@@ -162,7 +167,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 {: caption="Table 5. Cost for topic metrics" caption-side="top"}
 
 ## Enhanced metrics available with consumers enabled
-{: metrics-consumers}
+{: #metrics-consumers}
 
 | Metric Name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
@@ -176,7 +181,6 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | 1              | 1     | 3        | 1 x 1 x 3  = 3         | $0.08 x 3 = $0.24     |
 | 10             | 10    | 3        | 10 x 10 x 3 = 300      | $0.08 x 300 = $24.00  |
 | 25             | 25    | 6        |  25 x 25 x 6 = 3750    | $0.08 x 15000 = $300.00  |  <br/>
-
 {: caption="Table 7. Cost for consumers metric" caption-side="top"}
 
 ---
@@ -208,7 +212,7 @@ Indicates the accumulated time spent performing message conversion from clients 
 | `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 9: Consume message conversion time metric metadata" caption-side="top"}
 
-Ideally zero, as non-zero indicates clients are experiencing additional latency due to using an older protocol level. Those clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
+Ideally zero, as non-zero indicates clients are experiencing additional latency because of using an older protocol level. Those clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
 
 
 ### Estimated connected clients percentage
