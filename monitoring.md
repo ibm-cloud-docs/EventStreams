@@ -30,24 +30,26 @@ subcollection: EventStreams
 ## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
 {: #opt_in_metrics}
 
-{{site.data.keyword.messagehub}} metrics can broadly be categorized into two different groups **Default** and **Enhanced**.
+{{site.data.keyword.messagehub}} metrics can broadly be categorized into two different groups: **Default** and **Enhanced**.
 
 ### Enabling default {{site.data.keyword.messagehub}} metrics
 
 Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in and then enable platform metrics by completing the following steps:
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}. The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started tutorial for {{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started-monitor#getting-started-monitor_prereqs){: external}.
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}. 
+
+   The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started#getting-started-step1){: external}.
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.monitoringshort}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**.
 
-   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page.  Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan you're using.
+   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page.  Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan that you're using.
 
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
-The enhanced {{site.data.keyword.messagehub}} consists of two groups; `topic` and `consumers`. You can opt in for either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
+The enhanced {{site.data.keyword.messagehub}} consists of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
 
-Enabling enhanced metrics introduces additional global gauge, therefore increasing the costs accordingly.
+Enabling enhanced metrics introduces additional global gauge and therefore increases the costs accordingly.
 
 Before you can start using enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
 
@@ -73,7 +75,7 @@ Dashboards are available only after metrics have started to be recorded; this mi
 ## {{site.data.keyword.messagehub}} metrics cost information
 {: #metric_costs}
 
-Before you opt in to using {{site.data.keyword.mon_full}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
+Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
 
 * the {{site.data.keyword.messagehub}} plan that you use
 * how many unique time series are sent for each plan
@@ -161,8 +163,10 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | 1        | 1 x 2 = 2         | $0.08 x 2 = $0.16     |
 | 10        | 10 x 2  = 20     | $0.08 x 20 = $1.60  |
 | 100        |  100 x 2 = 200    | $0.08 x 200 = $16.00  | <br/>
-
 {: caption="Table 5. Cost for topic metrics" caption-side="top"}
+
+
+---
 
 ## Enhanced metrics available with consumers enabled
 {: #metrics-consumers}
@@ -320,7 +324,7 @@ The number of partitions offline in an {{site.data.keyword.messagehub}} instance
 | `Segment By` | `Service instance` |
 {: caption="Table 16: Number of offline partitions metric metadata" caption-side="top"}
 
-Ideally this value should be zero. A non-zero value might refer to a temporary issue with the cluster. It might also refer to a Kafka partition leader election difficulty.
+Ideally this value should be zero. A non-zero value might indicate to a temporary issue with the cluster. It might also indicate to a Kafka partition leader election difficulty.
 
 ### Number of partitions
 {: #ibm_eventstreams_instance_partitions}
