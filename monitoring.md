@@ -38,7 +38,7 @@ Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.
 
 1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}. 
 
-   The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started tutorial for {{site.data.keyword.mon_full_notm}}](/docs/monitoring?topic=monitoring-getting-started#getting-started-step1){: external}.
+   The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started with {{site.data.keyword.mon_full_notm}} - manage user access](/docs/monitoring?topic=monitoring-getting-started#getting-started-step1){: external}.
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.monitoringshort}} dashboard, click the 3 vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**.
 
@@ -47,7 +47,7 @@ Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
-The enhanced {{site.data.keyword.messagehub}} consists of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
+The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
 
 Enabling enhanced metrics introduces additional global gauge and therefore increases the costs accordingly.
 
