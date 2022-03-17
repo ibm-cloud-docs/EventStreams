@@ -73,7 +73,7 @@ The following table summarizes what is supported by the plans:
 | **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |  Kafka 2.8   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
-| **Managed Schema Registry supported**  | No |  No |  Yes |  No   |
+| **Managed Schema Registry supported**  | No |  No |  Yes |  Yes   |
 | **Customer-managed encryption**  | No  |  No |  Yes |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  Not during Beta   |
