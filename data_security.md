@@ -93,8 +93,6 @@ The Satellite plan provides a tenant-specific service in the IBM Service domain 
 
 The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster using hosts (physical and virtual) that you provided and attached to your Satellite location.
 
-The Satellite plan provides Public endpoints.
-
 The Satellite plan creates single tenant Block Storage for each new instance using the Block Storage configuration you have specified for your storage provider.
 
 
