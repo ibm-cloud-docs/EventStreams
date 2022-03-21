@@ -1,7 +1,7 @@
 toc:
   properties:
     subcollection: EventStreams
-    service-name: event-streams
+    service-name: messagehub
     category: integration
     audience: service
     href: /docs/EventStreams/
