@@ -1,6 +1,6 @@
 ---
 copyright:
-  years: 2021
+  years: 2021, 2022
 lastupdated: "2022-03-21"
 
 keywords: security and compliance for Event Streams, security for Event streams, compliance for Event Streams,
