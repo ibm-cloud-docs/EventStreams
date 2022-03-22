@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-04-13"
+lastupdated: "2022-03-21"
 
 keywords: security and compliance for Event Streams, security for Event streams, compliance for Event Streams,
 
@@ -42,9 +42,11 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 ### Available goals for Event Streams
 {: #eventstreams-available-goals}
 
-* *Ensure that the {{site.data.keyword.messagehub}} instance is configured with a public service-endpoint*.
-* *Ensure that the {{site.data.keyword.messagehub}} instance is configured with a private service-endpoint*.
-* *Ensure that the {{site.data.keyword.messagehub}} instance is configured with an allow list for ip-addresses*.
+* Check whether {{site.data.keyword.messagehub}} has at least # users with the IAM manager role
+* Check whether {{site.data.keyword.messagehub}} has at least # service IDs with the IAM manager role
+* Check whether {{site.data.keyword.messagehub}} is accessible through public endpoints
+* Check whether {{site.data.keyword.messagehub}} is accessible only by using private endpoints
+* Check whether {{site.data.keyword.messagehub}} network access is restricted to a specific IP range
 
 ## Governing Event Streams resource configuration
 {: #govern-eventstreams}
@@ -60,4 +62,4 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 | instance | private_access_allowlist | ips_in_range | - | If private networking is enabled, this property indicates whether access to a {{site.data.keyword.messagehub}} instance should be restricted to a given range of private IP CIDR formatted subnets. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.messagehub}}" caption-side="top"}
 
-To learn more about config rules, check out [What is a config rule](/docs/security-compliance?topic=security-compliance-what-is-rule).
+To learn more about config rules, check out [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-governance)
