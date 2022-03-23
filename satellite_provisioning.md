@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -19,39 +19,35 @@ subcollection: EventStreams
 {:tutorial: data-hd-content-type='tutorial'}
 
 # Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}}
-
 {: #satellite-provisioning}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
 
 ## Overview
-
 {: #satellite-provision-overview}
 
-Follow the steps below to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location.
+Follow the steps to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location.
 
-The following steps guide you through provisioning a satellite location in your account, configure service authorization, adding compute hosts to the satellite location for {{site.data.keyword.messagehub_full}}, provision an {{site.data.keyword.messagehub_full}} service instance, and configure the block storage assignment for {{site.data.keyword.messagehub_full}}.
+The following steps guide you through provisioning a Satellite location in your account, configure service authorization, adding compute hosts to the Satellite location for {{site.data.keyword.messagehub_full}}, provision an {{site.data.keyword.messagehub_full}} service instance, and configure the block storage assignment for {{site.data.keyword.messagehub_full}}.
 
 ## Step 1: Provision a satellite location
-
 {: #satellite-provision-location}
 {: step}
 
-1. Provision a {{site.data.keyword.satelliteshort}} location
-   1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
-   2. {{site.data.keyword.messagehub_full}} supports satellite locations that are managed by several different regions.  Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
-   3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location Zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
+1. Provision a {{site.data.keyword.satelliteshort}} location.
+    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+    2. {{site.data.keyword.messagehub_full}} supports Satellite locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
+    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
 2. Before you proceed to the next step:
 
    - The {{site.data.keyword.satelliteshort}} location must be provisioned and have a Normal state.
    - The {{site.data.keyword.satelliteshort}} location control plane service must be running and have a Normal state.
 
-The following information regarding the amount of storage and hosts is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.  If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the same amount of hosts and storage are needed for additional {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.
+The following information regarding the amount of storage and hosts is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance. If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the same amount of hosts and storage are needed for additional {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance.
 {:note: .note}
 
 ## Step 2: Grant service authorization
-
 {: step}
 {: #satellite-service-authorization}
 
@@ -73,7 +69,6 @@ In order for the {{site.data.keyword.messagehub}} service to access the {{site.d
 - Click the **Authorize** button.
 
 ## Step 3: Attach additional hosts to the Satellite location
-
 {: #satellite-attach-additional-hosts}
 {: step}
 
@@ -88,7 +83,6 @@ The above hosts requirement is for a single {{site.data.keyword.messagehub}} {{s
 {:note: .note}
 
 ## Step 4: Provision {{site.data.keyword.messagehub}} service instance
-
 {: step}
 {: #satellite-provision-es-instance}
 
@@ -111,7 +105,6 @@ While the service instance and cluster are provisioned, create the storage assig
 {: .important}
 
 ## Step 5: Create the block storage configuration assignment (using Satellite Storage UI)
-
 {: step}
 {: #satellite-create-storage-assignment}
 
