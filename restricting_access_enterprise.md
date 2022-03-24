@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -27,23 +27,24 @@ If your workload is running entirely within the {{site.data.keyword.Bluemix_shor
 
 Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_short}} public and private networks, where your workload can use the most appropriate interface for its location.
 
-Further information about IBM Cloud private networking setup can be found here: [Cloud Service Endpoints (CSE) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window}.
+Further information about IBM Cloud private networking setup can be found here: [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
 
 
 ## Prerequisites
 {: #prereqs_restrict_access}
 
 Ensure that you complete the following tasks:
+
 * Create your service instance by using the Enterprise plan. For more information, see
-[Choosing your plan ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-plan_choose){: new_window}.
+[Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 * Enable [Virtual Route Forwarding (VRF) ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: new_window} for your {{site.data.keyword.Bluemix_short}} account.
 * Enable service endpoints connectivity by running this command: 
-    ```
+    ```text
      ibmcloud account update --service-endpoint-enable true
     ```
 
     To check if prerequisites are completed, run the following command and then check if the following two properties are true:
-    ```
+    ```text
     ibmcloud account show
 
     VRF Enabled:                        true
@@ -52,7 +53,6 @@ Ensure that you complete the following tasks:
 
    
 ## Selecting a network configuration 
-
 {: #enable_endpoints}
 
 You have a number of options for selecting the network configuration of your Enterprise cluster.
@@ -69,21 +69,21 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
 * To enable public endpoints (the default):
 
-    ```
+    ```text
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
     ```
     {: codeblock}
 
 * To enable private only endpoints:
 
-    ```
+    ```text
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
     ```
     {: codeblock}
 
 * To enable both private and public endpoints:
 
-    ```
+    ```text
     ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
     ```
     {: codeblock}
@@ -93,7 +93,7 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
 In addition, if you select private endpoints and want to further restrict access to only known VSIs with specific VPCs, you can add an IP allowlist via the CLI by appending as follows:
 
-```
+```text
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}' "
 ```
 {: codeblock}
@@ -108,7 +108,7 @@ You are also able to switch the endpoints that your Enterprise cluster uses afte
 
 * To enable private endpoints:
 
-    ```
+    ```text
     ibmcloud resource service-instance-update <instance-name> --service-endpoints private
     ```
     {: codeblock}
@@ -119,13 +119,13 @@ Note that switching to private endpoints whilst the cluster is in use is **not r
 
 An initial first step is to enable both public and private endpoints:
 
-```
+```text
 ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
 ```
 {: codeblock}
 
 Next, create a new credential containing private endpoints and new API key, as follows: 
-```
+```text
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
 {: codeblock}
@@ -133,7 +133,7 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 Next, update the broker address to be private endpoints and new API key in the application.
 
 Next, once applications migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
-```
+```text
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
 {: codeblock}
@@ -143,7 +143,7 @@ To change the IP allowlist, perform the following steps:
 
 1. Obtain the original IP allowlist applied on the instance
 
-    ```
+    ```text
     $ibmcloud es init -i <instance-name>
     API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
     Service endpoints:	public-and-private
@@ -158,7 +158,7 @@ To change the IP allowlist, perform the following steps:
 
 3. Run the following command to update the service instance with a new list:
 
-    ```
+    ```text
     ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
     ```
     {: codeblock}
@@ -175,7 +175,7 @@ Switching IP allowlists will disable any allowed IP address not in the new list.
 
 Typically, the updates described previously take less than an hour. To check status use the following command:
 
-```
+```text
 ibmcloud resource service-instance <instance-name>
 ```
 {: codeblock}
@@ -199,7 +199,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
 
-    ```
+    ```text
     export VPC_ID=<vpc_id>
     export VPC_REGION=<vpc_region>
     ```
@@ -207,7 +207,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 2. Obtain a bearer token from IAM using the ibmcloud CLI:
     
-    ```
+    ```text
     export IAM_TOKEN=$(ibmcloud iam oauth-tokens --output json | jq -r .iam_token | tr -d '"')
     ```
     {: codeblock}
@@ -215,7 +215,7 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 3. Use below VPC REST API to obtain the source IP addresses or check UI section `Cloud Service Endpoint source addresses`:
 
 
-   ```
+   ```text
    $ curl -H "Authorization: $IAM_TOKEN" "https://eu-de.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
 10.249.x.x/32
 10.249.x.x/32
@@ -227,9 +227,9 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 ## Migrate applications to use private endpoints
 {: #migrate_endpoints}
 
-Once you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
+After you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
 
-```
+```text
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
 {: codeblock}
@@ -239,5 +239,5 @@ and update the credentials in the application to use the newly created one:
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
 {: #access_console}
 
-Once the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
+After the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
 
