@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: IBM Event Streams, Satellite
 
@@ -28,7 +28,7 @@ For a detailed comparison of the {{site.data.keyword.messagehub}} plans and the 
 ## Overview
 {: #satellite_overview}
 
-To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed and are detailed in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-xxxxxxxxxxxxxxxxxxxxxxxxxx):
+To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed and are detailed in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams_satellite_provisioning):
 
 1. Provision an {{site.data.keyword.satellitelong_notm}} location and its control plane in your account. It enables you to bring your own hosts to the {{site.data.keyword.cloud}} and provision {{site.data.keyword.cloud_notm}} services onto your machines. 
 
@@ -59,7 +59,8 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 4. {{site.data.keyword.messagehub}} uses block storage for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance. During the provision of the {{site.data.keyword.messagehub}} service instance, the block storage configuration completes. To prepare for that configuration, review the following:
 
     1. To configure block storage, {{site.data.keyword.satellitelong_notm}} provides configuration templates for several storage infrastructure providers. The [Understanding Satellite storage templates](https://cloud.ibm.com/docs/satellite?topic=satellite-sat-storage-template-ov) information explains how the storage templates work and how to configure them using the IBM Cloud CLI. The {{site.data.keyword.messagehub}} service instance provision helps simplify the configuration by prompting for the needed configuration. To prepare for the configuration, perform the following steps:
-        1. Review the supported block storage classes in [Storage class reference](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-class-ref).
+    
+        1. Review the supported block storage classes in the [Storage class reference](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-class-ref).
 	2. Identify the block storage classes availabe for your storage infrastructure provider.
 	3. When available, select a block storage class that has a **Volume Binding Mode** = **WaitForFirstConsumer**.
 
@@ -78,4 +79,4 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 ## Provision {{site.data.keyword.messagehub}}
 {: #satellite_provision_es}
 
-Complete the steps in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-xxxxxxxxxxxxxxxxxxxxxxxxxx).
+Complete the steps in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams_satellite_provisioning).
