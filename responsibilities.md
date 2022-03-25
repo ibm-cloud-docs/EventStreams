@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-03-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -61,7 +61,7 @@ Review the following sections for the specific responsibilities for you and for 
 |Security and vulnerability patch updates to cluster| {{site.data.keyword.messagehub}} applies the provided security and vulnerability patch updates to the client cluster, according to IBM X-Force timeframes.  | |
 |Manage users and access|   | Customer is responsible for managing your organizational account users and related access to the {{site.data.keyword.messagehub}} instance.|
 |Compliance controls|  | Customer is responsible for maintaining your organizational compliance controls.|
-|{{site.data.keyword.satelliteshort}} compliance and security | Provide service-level compliance to certain standards. See [What is supported](EventStreams-plan_choose#what_is_supported) for specific compliance stardards information.  For additional information, see [IBM Cloud Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document) | For information, see [{{site.data.keyword.satelliteshort}} security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) |
+|{{site.data.keyword.satelliteshort}} compliance and security | Provide service-level compliance to certain standards. See [What is supported](EventStreams-plan_choose#what_is_supported) for specific compliance stardards information. For additional information, see [IBM Cloud Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document) | For information, see [{{site.data.keyword.satelliteshort}} security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) |
 {: caption="Table 2. Responsibilities for security and regulation compliance" caption-side="top"}
 
 
