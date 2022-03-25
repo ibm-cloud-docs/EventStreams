@@ -16,7 +16,7 @@ toc:
         topics:
         - getting-started.md
         - overview.md
-	      - release-notes.md
+        - release-notes.md
         - apache_kafka_concepts.md
         - choosing_your_plan.md
     - navgroup:
