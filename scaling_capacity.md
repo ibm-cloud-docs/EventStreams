@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -22,7 +22,7 @@ subcollection: EventStreams
 {: #ES_scaling_capacity}
 
 
-## Event Streams Capacity
+## Event Streams capacity
 {: #ES_capacity}
 
 The {{site.data.keyword.messagehub}} Enterprise plan allows you to specify throughput and storage capacity when a new instance of the service is created. 
@@ -38,14 +38,14 @@ For example, selecting a base capacity unit, one additional capacity unit, and 4
 * 8 TB of storage capacity for data retention.
 
 
-## Throughput Capacity
+## Throughput capacity
 {: #ES_thruput_capacity}
 
 Throughput capacity is the recommended peak MB/s maximum for producing and consuming messages. 
 
 Each capacity unit provides 150 MB/s of throughput capacity. This is comprised of 75 MB/s data ingress and 75 MB/s data egress capacity.
 
-To scale-up throughput capacity, you can add additional capacity units. Each additional capacity unit adds 150 MB/s of throughput to your service instance, to a total of 450 MB/s.
+To scale up throughput capacity, you can add additional capacity units. Each additional capacity unit adds 150 MB/s of throughput to your service instance, to a total of 450 MB/s.
 
 The recommended throughput maximum is based on a typical workload and takes into account the possible impact of operational actions or failure modes, like the loss of an availability zone. 
 If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions. It is recommended to plan your maximum throughput capacity 
@@ -54,7 +54,7 @@ refer to [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#
 
 Throughput scaling is independent of storage, however for each tier there is a defined minimum storage amount required. 
 
-## Storage Capacity
+## Storage capacity
 {: #ES_storage_capacity}
 
 Storage capacity is the amount of storage allocated in the service instance for retention of message data. 
@@ -65,7 +65,7 @@ Storage capacity can be scaled-up, independent of throughput capacity, when data
 When you select 2 TB of storage with {{site.data.keyword.messagehub}}, it is equivalent to deploying 6 TB of storage if you are running your own Apache Kafka cluster 
 with the same replication policy enabled.
 
-## Scaling Combinations
+## Scaling combinations
 {: #ES_scaling_combinations}
 
 The table below lists valid throughput/storage capacity unit combinations.
@@ -87,8 +87,8 @@ Storage capacity cannot be scaled down. To move to a lower storage capacity woul
 ## How to scale capacity
 {: #ES_how_to_scale_capacity}
 
-The steps below show you how to scale-up throughput and/or storage capacity for an {{site.data.keyword.messagehub}} Enterprise plan service instance. 
-If you do not have an Enterprise instance, the steps below will help you to create one.
+The following steps show you how to scale-up throughput and/or storage capacity for an {{site.data.keyword.messagehub}} Enterprise plan service instance. 
+If you do not have an Enterprise instance, these steps will help you to create one.
 
 At this time, scaling-up an {{site.data.keyword.messagehub}} service instance capacity requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
 
@@ -149,11 +149,11 @@ Scale this service instance to a configuration of a base capacity unit, one addi
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
-      <code>ibmcloud login</code>
+      ```ibmcloud login```
 
 3. Get the resource name of your {{site.data.keyword.messagehub}} service instance.
   
-      <code>ibmcloud resource service-instances</code>
+      ```ibmcloud resource service-instances```
      
       (You can find the name of your instance in the Name column.)
 
@@ -163,7 +163,9 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     Use the following command to display the current capacity configuration:
   
-      <code>ibmcloud es init  --instance-name  "Event Streams resource instance name"</code>
+      ```
+      ibmcloud es init  --instance-name  "Event Streams resource instance name"
+      ```
 
     Output will be similar to the following, which shows this service instance is configured with 150 MB/s of throughput capacity and 2 TB of storage capacity:
 
@@ -177,12 +179,16 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     a. Execute the following from the cli:
     
-      <code> ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' </code>
+    ```
+      ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' 
+      ```
 
     b. If there is an issue running the ibmcloud resource service-instance-update command and requires contacting IBM Support for assistance, 
     run the following command and include the output when contacting support:
 
-      <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
+      ```
+      ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
+      ```
 
 6. Monitor the update of the service instance.
 
@@ -190,7 +196,9 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     You can get the current service instance information using the following command:
     
-      <code> ibmcloud resource service-instance "Event Streams resource instance name" --output=json </code>
+      ```
+      ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
+      ```
         
     Review the Last Operation section of the output. The information will be continuously updated as the update proceeds. When the scale-up process has completed, 
     the last operation information will indicate update succeeded or sync succeeded.
@@ -201,9 +209,11 @@ Scale this service instance to a configuration of a base capacity unit, one addi
   
     Display the capacity configuration with the following command:
     
-      <code> ibmcloud es init  --instance-name  "Event Streams resource instance name" </code>
+      ```
+      ibmcloud es init  --instance-name  "Event Streams resource instance name" 
+      ```
         
-    Output will be similar to the following, which shows that this service instance is configured with 300 MB/s of throughput capacity and 8TB of storage capacity:
+    Output will be similar to the following, which shows that this service instance is configured with 300 MB/s of throughput capacity and 8 TB of storage capacity:
 
 
        API Endpoint:         https://service-instance-adsf1234asdf1234asdf1234-0000.eu-south.containers.appdomain.cloud

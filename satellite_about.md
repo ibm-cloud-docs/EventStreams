@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-25"
 
 keywords: IBM Event Streams, Satellite
 
@@ -28,7 +28,7 @@ For a detailed comparison of the {{site.data.keyword.messagehub}} plans and the 
 ## Overview
 {: #satellite_overview}
 
-To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed and are detailed in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams_satellite_provisioning):
+To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satelliteshort}} location, the following high-level steps must be completed and are detailed in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning):
 
 1. Provision an {{site.data.keyword.satellitelong_notm}} location and its control plane in your account. It enables you to bring your own hosts to the {{site.data.keyword.cloud}} and provision {{site.data.keyword.cloud_notm}} services onto your machines. 
 
@@ -79,4 +79,4 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 ## Provision {{site.data.keyword.messagehub}}
 {: #satellite_provision_es}
 
-Complete the steps in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams_satellite_provisioning).
+Complete the steps in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning).
