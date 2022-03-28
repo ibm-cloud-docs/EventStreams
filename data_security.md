@@ -62,7 +62,7 @@ Topic names and consumer groups are encrypted for transmission between
 On the Satellite plan, all encryption is determined by the options that you specify on your chosen storage provider.
 
 For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see 
-[What's supported by the Lite, Standard, Enterprise, and Satellite plans](/docs/EventStreams?topic=EventStreams-plan_choose##what-is-supported-by-the-lite-standard-enterprise-and-satellite-plans).
+[What's supported by the Lite, Standard, Enterprise, and Satellite plans](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported).
 
 ## Data isolation model
 {: #data_isolation}
