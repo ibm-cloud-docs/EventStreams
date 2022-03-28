@@ -95,8 +95,7 @@ ibmcloud es init
 ```
 {: codeblock}
 
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-eventstreams-cli#cli_reference).
-
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
 
 
 

@@ -57,8 +57,10 @@ Alternatively, you can also use your own applications to perform this validation
 {: #test_cli}
 {: step}
 
-In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. The {{site.data.keyword.messagehub}} CLI enables you to easily work with topics and consumer groups.
+In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. The {{site.data.keyword.messagehub}} CLI enables you to easily work with topics and consumer groups.
 
 Alternatively, you can also use your own applications to perform this validation.
+
+
 
 

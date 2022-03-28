@@ -497,7 +497,12 @@ To configure the Confluent SerDes to use the Schema Registry, you need to specif
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form:
+```
+https://token:{$APIKEY}@{$HOST}/{confluent}
+```
+{: screen}
+
 BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
 
 You can also optionally provide the following properties to control the schema selection (subject naming strategy):
