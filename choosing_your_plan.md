@@ -105,5 +105,6 @@ For more information about capacity options, see [Scaling Event Streams capacity
    - Performance of hosts attached to your satellite location for use by {{site.data.keyword.messagehub}}
    - Type, configuration, and performance of the block storage provided
    - Network latency between the hosts, block storage, and the satellite location {: #footnote_sat_throughput notoc}
-8. Specific compliance standards are still being verified for the {{site.data.keyword.satelliteshort}} plan.  For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance), [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). {: #footnote_sat_compliance notoc}
+   - For details regarding infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin)
+8. Specific compliance standards are still being verified for the {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan.  For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance), [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). {: #footnote_sat_compliance notoc}
 
