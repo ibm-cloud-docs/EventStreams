@@ -12,6 +12,9 @@ content-type: release-note
 
 ---
 
+{{site.data.keyword.attribute-definition-list}}
+
+
 # Release notes for {{site.data.keyword.messagehub}}
 {: #event-streams-relnotes}
 
