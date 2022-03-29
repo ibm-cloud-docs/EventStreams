@@ -61,7 +61,7 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 
     1. The [What is supported](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported) information notes the flexibility of the {{site.data.keyword.satelliteshort}} infrastructure provided can impact the actual maximum throughput {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} can provide.  The performance of the hosts, network latency, block storage performance can all impact maximum throughput.
 
-	   As you review the block storage information below and select a storage class, to achieve a maximum throughput you should select block storage that provides a minimum of **4 IOPS per GB**.
+	   As you review the block storage information below and select a storage class, to achieve a maximum throughput you should select block storage that provides a minimum of **4 IOPS per GB** of storage and that can support 75MB/s disk writes and 25MB/s disk reads concurrently.
 
 	2. To configure block storage, {{site.data.keyword.satellitelong_notm}} provides configuration templates for several storage infrastructure providers. The [Understanding Satellite storage templates](https://cloud.ibm.com/docs/satellite?topic=satellite-sat-storage-template-ov) information explains how the storage templates work and how to configure them using the IBM Cloud CLI. The {{site.data.keyword.messagehub}} service instance provision helps simplify the configuration by prompting for the needed configuration. To prepare for the configuration, perform the following steps:
     
