@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -79,7 +79,7 @@ The following table summarizes what is supported by the plans:
 | **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)  | 150 MB/s [<sup>7</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_sat_throughput)   |
 | **Maximum message size**  | 1 MB  | 1 MB   | 1 MB |   1 MB  |
 | **Maximum number of connected clients**  | 5   | 500  | 10 000  |   10 000  |
-| **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  **Your Satellite Location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Toronto   \n Sao Paulo   |
+| **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  **Your Satellite location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Toronto   \n Sao Paulo   |
 | **APIs supported** |  Kafka API   \n Admin REST API  \n REST Producer API |  Kafka API   \n Admin REST API   \n REST Producer API    |  Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API  | Kafka API   \n Admin REST API   \n REST Producer API    |
 | **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 1 hour because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance   |
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   TBD [<sup>8</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_sat_compliance)  |
@@ -100,11 +100,11 @@ For more information about limits, see [limits and quotas](/docs/EventStreams?to
 6. Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. 
 Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. 
 For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_throughput notoc}
-7. The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan providing a maximum throughput of 150 MB/s.  The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput.  When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note these items could impact throughput
+7. The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note the following items could impact throughput:
 
-   - Performance of hosts attached to your satellite location for use by {{site.data.keyword.messagehub}}
+   - Performance of hosts attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}
    - Type, configuration, and performance of the block storage provided
-   - Network latency between the hosts, block storage, and the satellite location {: #footnote_sat_throughput notoc}
-   - For details regarding infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin)
-8. Specific compliance standards are still being verified for the {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan.  For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance), [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). {: #footnote_sat_compliance notoc}
+   - Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location {: #footnote_sat_throughput notoc}
+   - For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin)
+8. Specific compliance standards are still being verified for the {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). {: #footnote_sat_compliance notoc}
 
