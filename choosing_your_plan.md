@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-03-30"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -18,6 +18,7 @@ subcollection: EventStreams
 {:table: .aria-labeledby="caption"}
 {:note: .note}
 {:deprecated: .deprecated}
+{:important: .important}
 
 # Choosing your plan 
 {: #plan_choose}
@@ -53,6 +54,9 @@ The architecture is highly available when you choose to deploy into a multi-zone
 {: #plan_satellite}
 
 The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satelliteshort}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
+
+The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan does not yet provide the compliance certifications that the Enterprise or Standard plans conform to.
+{: important}
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite plans
 {: #what_is_supported}
