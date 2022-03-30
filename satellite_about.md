@@ -57,7 +57,12 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 
 1. Refer to the [Satellite usage requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-requirements).
 2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
-3. The {{site.data.keyword.messagehub}} service instance provision process uses the Satellite Storage user interface. To enable your access to the Storage UI for Satellite, you must be added to the allowlist. [Contact IBM](https://www.ibm.com/contact/us/en/) to learn more.
+3. The {{site.data.keyword.messagehub}} service instance provision process uses the Satellite Storage user interface. To enable your access to the Storage UI for Satellite, you must be added to the allowlist. Raise a [support case](https://cloud.ibm.com/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) requesting allowlist access.
+
+   1. The Topic field of the support case should be set to **IBM Cloud Satellite**
+   2. State in the support case you are requesting allowlist access to the Satellite Storage user interface so you can provision an {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. 
+   3. Include the account ID to be given access in your support case.
+   4. Wait for response to your support case before you attempt to provision the {{site.data.keyword.messagehub}} service.
 4. The [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning) steps simplify block storage configuration and assignment by using the Storage UI for Satellite.  At this time, the Storage UI requires your account to be allowlisted to access it.  To enable your access [Contact IBM](https://www.ibm.com/contact/us/en/) to learn more.  If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster you do not need access to the Storage UI for Satellite.
 5. {{site.data.keyword.messagehub}} uses block storage for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance. During the provision of the {{site.data.keyword.messagehub}} service instance, the block storage configuration completes. To prepare for that configuration, review the following:
 

@@ -87,7 +87,7 @@ After preparing your {{site.data.keyword.satelliteshort}} location, granting ser
 
 1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
 2. Look for the **Event Streams** tile in the **Integration** section and select it.
-3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned.
+3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned.  When your {{site.data.keyword.satelliteshort}} location is selected, the pricing plan information will be updated.  Review the {{site.data.keyword.satelliteshort}} plan details.
 4. Specify a **Service name** if something other than the default name is desired.
 5. Click **Create**.
 
@@ -105,7 +105,7 @@ While the service instance and cluster are provisioned, create the storage assig
 {: step}
 {: #satellite-create-storage-assignment}
 
-The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. [Contact IBM](https://www.ibm.com/contact/us/en/) to learn more.  If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster you do not need access to the Storage UI for Satellite.  If using the CLI, you should complete the storage configuration and assignment now.
+The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access.  If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster you do not need access to the Storage UI for Satellite.  If using the CLI, you should complete the storage configuration and assignment now.
 {: .important}
 
 During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgement from the {{site.data.keyword.satelliteshort}} location administrator.
