@@ -72,8 +72,9 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
         2. Identify the block storage classes available for your storage infrastructure provider.
         3. When available, select a block storage class that has a **Volume Binding Mode** = **WaitForFirstConsumer**.
         4. The following table outlines the amount of block storage that will be allocated by {{site.data.keyword.messagehub}}.
+
         | Usage | Amount allocated | Total |
-        | --- | --- | --- |
+        |---|---|---|
         | Message data retention | 2 TB x 3 replicas/availability zones | 6 TB total |
         | Message data management | 250 GB x 3 replicas/availability zones | 750 GB total |
         | Service instance monitoring | 125 GB x 3 replicas/availability zones | 375 GB total |
