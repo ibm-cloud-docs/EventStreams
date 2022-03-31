@@ -59,23 +59,23 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli){: external}, the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
 3. The {{site.data.keyword.messagehub}} service instance provision process uses the Satellite Storage user interface. To enable your access to the Storage UI for Satellite, you must be added to the allowlist. Raise a [support case](https://cloud.ibm.com/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external} requesting allowlist access with the following information:
 
-    a. Set the Topic field of the support case to **IBM Cloud Satellite**
-    b. State in the support case that you are requesting allowlist access to the Satellite Storage user interface so you can provision an {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. 
-    c. Include the account ID to be given access in your support case.
-    d. Wait for response to your support case before you attempt to provision the {{site.data.keyword.messagehub}} service.
+   a. Set the Topic field of the support case to **IBM Cloud Satellite**
+   b. State in the support case that you are requesting allowlist access to the Satellite Storage user interface so you can provision an {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. 
+   c. Include the account ID to be given access in your support case.
+   d. Wait for response to your support case before you attempt to provision the {{site.data.keyword.messagehub}} service.
 4. The [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning) steps simplify block storage configuration and assignment by using the Storage UI for Satellite. At this time, the Storage UI requires your account to be allowlisted to access it. To enable your access [Contact IBM](https://www.ibm.com/contact/us/en/){: external} to learn more. 
 
     If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster you do not need access to the Storage UI for Satellite.
 5. {{site.data.keyword.messagehub}} uses block storage for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance. During the provision of the {{site.data.keyword.messagehub}} service instance, the block storage configuration completes. To prepare for that configuration, review the following:
 
-    1. The [What is supported](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported) information notes the flexibility of the {{site.data.keyword.satelliteshort}} infrastructure provided can impact the actual maximum throughput {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} can provide. The performance of the hosts, network latency, and block storage performance can all impact maximum throughput.
+    a. The [What is supported](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported) information notes the flexibility of the {{site.data.keyword.satelliteshort}} infrastructure provided can impact the actual maximum throughput {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} can provide. The performance of the hosts, network latency, and block storage performance can all impact maximum throughput.
 
 	   As you review the following block storage information and select a storage class, to achieve a maximum throughput you should select block storage that provides a minimum of **4 IOPS per GB** of storage and that can support 75MB/s disk writes and 25MB/s disk reads concurrently.
 
-	2. To configure block storage, {{site.data.keyword.satelliteshort}} provides configuration templates for several storage infrastructure providers. The [Understanding Satellite storage templates](https://cloud.ibm.com/docs/satellite?topic=satellite-sat-storage-template-ov){: external} information explains how the storage templates work and how to configure them using the IBM Cloud CLI. The {{site.data.keyword.messagehub}} service instance provision helps simplify the configuration by prompting for the needed configuration. To prepare for the configuration, complete the following steps:
+	b. To configure block storage, {{site.data.keyword.satelliteshort}} provides configuration templates for several storage infrastructure providers. The [Understanding Satellite storage templates](https://cloud.ibm.com/docs/satellite?topic=satellite-sat-storage-template-ov){: external} information explains how the storage templates work and how to configure them using the IBM Cloud CLI. The {{site.data.keyword.messagehub}} service instance provision helps simplify the configuration by prompting for the needed configuration. To prepare for the configuration, complete the following steps:
     
         1. Review the supported block storage classes in the [Storage class reference](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-class-ref){: external}.
-		
+
 	3. Identify the block storage classes available for your storage infrastructure provider.
 	4. When available, select a block storage class that has a **Volume Binding Mode** = **WaitForFirstConsumer**.
     5. The following table outlines the amount of block storage that will be allocated by {{site.data.keyword.messagehub}}.
