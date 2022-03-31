@@ -25,7 +25,8 @@ The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_
 
 For a detailed comparison of the {{site.data.keyword.messagehub}} plans and the functionality of each, refer to [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose).
 
-The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan does not yet provide the compliance certifications that the Enterprise or Standard plans conform to. {: important}as you
+The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan does not yet provide the compliance certifications that the Enterprise or Standard plans conform to. 
+{: important}
 
 ## Overview
 {: #satellite_overview}
