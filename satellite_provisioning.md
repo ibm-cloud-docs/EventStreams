@@ -10,6 +10,7 @@ subcollection: EventStreams
 
 ---
 
+{:external: target="_blank" .external}
 {:codeblock: .codeblock}
 {:important: .important}
 {:note: .note}
@@ -26,7 +27,7 @@ subcollection: EventStreams
 ## Overview
 {: #satellite-provision-overview}
 
-Follow the steps to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location.
+Complete the steps to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location.
 
 The following steps guide you through provisioning a {{site.data.keyword.satelliteshort}} location in your account, configuring service authorization, adding compute hosts to the {{site.data.keyword.satelliteshort}} location, provisioning an {{site.data.keyword.messagehub_full}} service instance, and configuring the block storage assignment so {{site.data.keyword.messagehub}} can allocate block storage.
 
@@ -35,7 +36,7 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 {: step}
 
 1. Provision a {{site.data.keyword.satelliteshort}} location.
-    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Follow the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
     2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
     3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must match exactly the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
@@ -77,7 +78,7 @@ Attach the following hosts to your {{site.data.keyword.satelliteshort}} location
 - 3 nodes of 8 vCPU and 32 GiB memory
 
 The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance. If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
-{:note: .note}
+{:note}
 
 ## Provision {{site.data.keyword.messagehub}} service instance
 {: step}
@@ -99,21 +100,21 @@ When you provision an {{site.data.keyword.messagehub}} service instance, a servi
 4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before moving to the next step.
 
 While the service instance and cluster are provisioned, create the storage assignment. Proceed to the next step and complete the instructions.
-{: .important}
+{: important}
 
 ## Create the block storage configuration assignment (using {{site.data.keyword.satelliteshort}} Storage UI)
 {: step}
 {: #satellite-create-storage-assignment}
 
-The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. [Contact IBM](https://www.ibm.com/contact/us/en/) to learn more.  If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster you do not need access to the Storage UI for Satellite.  If using the CLI, you should complete the storage configuration and assignment now.
-{: .important}
+The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. [Contact IBM](https://www.ibm.com/contact/us/en/) to learn more. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster you do not need access to the Storage UI for Satellite. If using the CLI, you should complete the storage configuration and assignment now.
+{: important}
 
 During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgement from the {{site.data.keyword.satelliteshort}} location administrator.
 
 1. Navigate to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
 2. Select your {{site.data.keyword.satelliteshort}} location.
 3. Select the **Services** tab.
-4. Look for the acknowledgement pop-up
+4. Look for the acknowledgement pop-up.
    1. Complete the storage configuration set up.
    2. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
 
