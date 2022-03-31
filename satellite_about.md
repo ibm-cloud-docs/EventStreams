@@ -16,6 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
+{:important: .important}
 {:beta: .beta}
 
 # About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}} 
@@ -60,7 +61,7 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 
 2. Set up the [IBM Cloud command-line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
 
-3. The [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning) steps simplify block storage configuration and assignment by using the Storage user interface for Satellite.  To enable your access to the Storage user interface for Satellite, you must be added to the allowlist. Raise a [support case](https://cloud.ibm.com/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) requesting allowlist access.  If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage user interface for Satellite.
+3. The [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning) steps simplify block storage configuration and assignment by using the Storage user interface for Satellite. To enable your access to the Storage user interface for Satellite, you must be added to the allowlist. Raise a [support case](https://cloud.ibm.com/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) requesting allowlist access.  If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage user interface for Satellite.
     1. The Topic field of the support case should be set to **IBM Cloud Satellite**
     2. State in the support case you are requesting allowlist access to the Satellite Storage user interface so you can provision an {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. 
     3. Include the account ID to be given access in your support case.
