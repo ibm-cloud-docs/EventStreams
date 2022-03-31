@@ -35,7 +35,7 @@ The following task walks you through:
 Complete the following steps to start the streams landing.
 
 ## Step 1. Prerequisites
-{: #step1_install_prereqs}
+{: #step1_install_prereqs_cos}
 
 Ensure you have the following services configured:
 
