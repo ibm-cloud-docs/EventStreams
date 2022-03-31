@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-09-25"
+  years: 2020, 2022
+lastupdated: "2022-03-31"
 
 keywords: IBM Event Streams, scaling capacity
 
@@ -27,7 +27,7 @@ subcollection: EventStreams
 
 The {{site.data.keyword.messagehub}} Enterprise plan allows you to specify throughput and storage capacity when a new instance of the service is created. 
 If, after using the service instance, you find that the current capacity configuration of your service instance is not meeting the demands of your solution, 
-throughput and/or storage capacity can be scaled-up to meet demands.
+throughput and storage capacity can be scaled up to meet demands.
 
 Each base or additional capacity unit includes the following:
 * 150 MB/s of throughput capacity.
@@ -59,7 +59,7 @@ Throughput scaling is independent of storage, however for each tier there is a d
 
 Storage capacity is the amount of storage allocated in the service instance for retention of message data. 
 
-Storage capacity can be scaled-up, independent of throughput capacity, when data retention is important for your architecture.
+Storage capacity can be scaled up, independent of throughput capacity, when data retention is important for your architecture.
 
 {{site.data.keyword.messagehub}} stores three replicas of your data to ensure the highest level of resilience across three availability zones. 
 When you select 2 TB of storage with {{site.data.keyword.messagehub}}, it is equivalent to deploying 6 TB of storage if you are running your own Apache Kafka cluster 
@@ -68,7 +68,7 @@ with the same replication policy enabled.
 ## Scaling combinations
 {: #ES_scaling_combinations}
 
-The table below lists valid throughput/storage capacity unit combinations.
+The table below lists valid throughput and storage capacity unit combinations.
 
 |**Throughput capacity**|**Available storage capacity**|
 |-------------------|--------------------------|
@@ -76,36 +76,36 @@ The table below lists valid throughput/storage capacity unit combinations.
 |300 MB per second (150 MB/s producing, 150 MB/s consuming)|4 TB, 8 TB, 12 TB|
 |450 MB per second (225 MB/s producing, 225 MB/s consuming)|6 TB, 12 TB|
 
-For additional information on capacity limitations, refer to [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
+For additional information about capacity limitations, refer to [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
 
-Throughput capacity cannot be scaled down. To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+Throughput capacity cannot be scaled down. To move to a lower throughput capacity requires creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 {: important}
 
-Storage capacity cannot be scaled down. To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+Storage capacity cannot be scaled down. To move to a lower storage capacity requires creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 {: important}
 
 ## How to scale capacity
 {: #ES_how_to_scale_capacity}
 
-The following steps show you how to scale-up throughput and/or storage capacity for an {{site.data.keyword.messagehub}} Enterprise plan service instance. 
+The following steps show you how to scale up throughput and storage capacity for an {{site.data.keyword.messagehub}} Enterprise plan service instance. 
 If you do not have an Enterprise instance, these steps will help you to create one.
 
-At this time, scaling-up an {{site.data.keyword.messagehub}} service instance capacity requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
+At this time, scaling up an {{site.data.keyword.messagehub}} service instance capacity requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
 
 To install this tool, see [install devtools](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
 
-The {{site.data.keyword.Bluemix_notm}} CLI command will use the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. 
+The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. 
 The user ID in the account used to issue the **service-instance-** command must be assigned the same access policies that are needed when creating resources. 
 See [creating resources](/docs/account?topic=account-manage_resource#creating-resources) for access requirements.
 
 ### During the scale-up process
 
-The time required to scale-up the {{site.data.keyword.messagehub}} service instance is variable. Both, throughput and storage, require provisioning extra infrastructure.
+The time required to scale up the {{site.data.keyword.messagehub}} service instance is variable, but under normal circumstances should not exceed 3 hours. Both throughput and storage require provisioning extra infrastructure.
 
-During this time, Kafka topic/partition add/update/delete operations will be suspended. This ensures that the integrity of data is maintained during 
-storage volume infrastructure scale-up operations. This suspension of topic/partition operations will only occur during a brief portion of the scale-up process, not the entire process.
+During this time, the flow of Kafka data is not affected (the scaling operation is non-disruptive). Kafka topic and partition add, update,and delete operations are suspended. This ensures that the integrity of data is maintained during 
+storage volume infrastructure scale-up operations. This suspension of topic and partition operations only occur during a brief portion of the scale-up process, not the entire process.
 
-Valid combinations/values for the "throughput" and "storage_size" are the following:
+Valid combinations and values for the "throughput" and "storage_size" are as follows:
 
 |**Throughput capacity (peak maximum)**|**"throughput" value to specify**|**Storage capacity**|**"storage_size" value to specify**|
 |----------------------------------------|-----------------------------|----------------------|------------------------------|
@@ -145,7 +145,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
         
     g. Enter a name for your service instance. You can use the default value.
     
-    h. Click Create. (See [choosing your plan](/docs/EventStreams?topic=EventStreams-choosing-your-plan#what-is-supported-by-the-lite-standard-enterprise-and-satellite-plans) for information on the amount of time needed to create the service instance).
+    h. Click Create. (See [Choosing your plan](/docs/EventStreams?topic=EventStreams-choosing-your-plan#what-is-supported) for information on the amount of time needed to create the service instance).
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
@@ -175,9 +175,9 @@ Scale this service instance to a configuration of a base capacity unit, one addi
         Throughput:           150 MB/s
 
 
-5. Scale-up the service instance from **150 MB/s throughput capacity and 2 TB storage capacity** to **300 MB/s throughput capacity and 8 TB storage capacity**. 
+5. Scale up the service instance from **150 MB/s throughput capacity and 2 TB storage capacity** to **300 MB/s throughput capacity and 8 TB storage capacity**. 
     
-    a. Execute the following from the cli:
+    a. Run the following from the CLI:
     
     ```
       ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' 
@@ -203,7 +203,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     Review the Last Operation section of the output. The information will be continuously updated as the update proceeds. When the scale-up process has completed, 
     the last operation information will indicate update succeeded or sync succeeded.
 
-    Rerun the command until success is indicated.
+    Run the command again until success is indicated.
 
 7. Verify the scaled-up capacity configuration using the {{site.data.keyword.messagehub}} CLI.
   
