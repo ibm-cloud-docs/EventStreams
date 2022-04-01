@@ -20,9 +20,8 @@ subcollection: EventStreams
 {:step: data-tutorial-type='step'}
 {:tutorial: data-hd-content-type='tutorial'}
 
-# Connecting applications running outside AWS with VPN access to the Satellite location
+# Connecting applications running outside AWS with VPN access to the Satellite location (Beta)
 {: #satellite_vpn}
-{: beta}
 
 To connect applications running outside Amazon Web Services (AWS) with VPN access to the Satellite location to an {{site.data.keyword.messagehub}} instance, complete the following set of steps.
 {: beta}
