@@ -23,7 +23,7 @@ subcollection: EventStreams
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
+{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan (Beta) depending on your requirements. 
 {: shortdesc}
 
 ## Lite plan
@@ -52,8 +52,10 @@ The architecture is highly available when you choose to deploy into a multi-zone
 
 ## Satellite plan
 {: #plan_satellite}
+{: beta}
 
 The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satelliteshort}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
+{: beta}
 
 The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan does not yet provide the compliance certifications that the Enterprise or Standard plans conform to.
 {: important}
@@ -63,7 +65,7 @@ The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan d
 
 The following table summarizes what is supported by the plans:
 
-|   | Lite plan  |  Standard plan |  Enterprise plan  |  {{site.data.keyword.satelliteshort}} plan |
+|   | Lite plan  |  Standard plan |  Enterprise plan  |  {{site.data.keyword.satelliteshort}} plan (Beta) |
 |---|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
@@ -89,7 +91,6 @@ The following table summarizes what is supported by the plans:
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [<sup>8</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_sat_compliance)  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
-
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
