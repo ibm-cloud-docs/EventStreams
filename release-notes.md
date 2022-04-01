@@ -22,7 +22,7 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 {: shortdesc}
 
 ## 1 July 2019
-{: #event-streams-july2019}
+{: #EventStreams-july2019}
 {: release-note}
 
 Updates to Enterprise plan
@@ -41,7 +41,7 @@ Support for Cloud Service Endpoints
 :   This capability means that any data you publish or consume from the {{site.data.keyword.messagehub}} service will be over the private network and not public interfaces.
 
 ## 14 May 2019
-{: #event-streams-may2019}
+{: #EventStreams-may2019}
 {: release-note}
 
 New Standard plan
