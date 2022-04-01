@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-04-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location, VPN
 
@@ -20,8 +20,7 @@ subcollection: EventStreams
 {:step: data-tutorial-type='step'}
 {:tutorial: data-hd-content-type='tutorial'}
 
-# Connecting applications running outside AWS with VPN access to the Satellite location
-{: beta}
+# Connecting applications running outside AWS with VPN access to the Satellite location (Beta)
 {: #satellite_vpn}
 
 To connect applications running outside Amazon Web Services (AWS) with VPN access to the Satellite location to an {{site.data.keyword.messagehub}} instance, complete the following set of steps.
@@ -59,8 +58,10 @@ Alternatively, you can also use your own applications to perform this validation
 {: #test_cli}
 {: step}
 
-In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. The {{site.data.keyword.messagehub}} CLI enables you to easily work with topics and consumer groups.
+In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. The {{site.data.keyword.messagehub}} CLI enables you to easily work with topics and consumer groups.
 
 Alternatively, you can also use your own applications to perform this validation.
+
+
 
 

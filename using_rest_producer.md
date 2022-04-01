@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -46,26 +46,26 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
 Use one of the following methods to authenticate:
 
-* **To authenticate using Basic Auth:**<br/> 
-    Use the <code>user</code> and <code>api_key</code> properties of the above objects as the username and password. Place these values into the <code>Authorization</code> header of the HTTP request in the form <code>Basic &lt;base64 encoding of username and password joined by a single colon (:)&gt;</code>.
+* **To authenticate using Basic Auth:**  \n   
+    Use the ```user``` and ```api_key``` properties of the above objects as the username and password. Place these values into the ```Authorization``` header of the HTTP request in the form ```Basic <base64 encoding of username and password joined by a single colon (:)>```.
 
-* **To authenticate using a bearer token:**<br/> 
+* **To authenticate using a bearer token:**  \n   
     To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
-    ```
+    ```text
     ibmcloud iam oauth-tokens
     ```
     {: codeblock}
 
-    Place this token in the Authorization header of the HTTP request in the form <code>Bearer<token></code>. Both API key or JWT tokens are supported. 
+    Place this token in the Authorization header of the HTTP request in the form ```Bearer<token>```. Both API key or JWT tokens are supported. 
 
-* **To authenticate directly using the api_key:**<br/> 
-    Place the key directly as the value of the <code>X-Auth-Token</code> HTTP header.
+* **To authenticate directly using the api_key:**  \n   
+    Place the key directly as the value of the ```X-Auth-Token```HTTP header.
 
-<br/>
+  \n   
 The following code shows an example of sending a message using curl:
 
-```
+```text
 curl -v -X POST -H "Authorization: Basic <base64 username:password>" -H "Content-Type: text/plain" -H "Accept: application/json" -d 'test message' "<kafka_http_url>/topics/<topic_name>/records"
 ```
 {: codeblock}
@@ -80,7 +80,7 @@ When using the REST producer API, there is a limitation on the record key and va
 {: #rest_api_reference}
 
 For full details of the API, see the 
-[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){: new_window}.
+[{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.
 
 
 

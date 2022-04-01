@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2021
-lastupdated: "2021-04-13"
+  years: 2021, 2022
+lastupdated: "2022-03-30"
 
 keywords: security and compliance for Event Streams, security for Event streams, compliance for Event Streams,
 
@@ -14,6 +14,7 @@ subcollection: EventStreams
 {:term: .term}
 {:shortdesc: .shortdesc}
 {:table: .aria-labeledby="caption"}
+{:important: .important}
 
 
 # Managing security and compliance with {{site.data.keyword.messagehub}}
@@ -28,6 +29,9 @@ With the {{site.data.keyword.compliance_short}}, you can:
 
 * Monitor for controls and goals that pertain to {{site.data.keyword.messagehub}}.
 * Define rules for {{site.data.keyword.messagehub}} that can help to standardize resource configuration.
+
+{{site.data.keyword.compliance_short}} is only applicable to the Enterprise plan.
+{: important}
 
 ## Monitoring security and compliance posture with {{site.data.keyword.messagehub}}
 {: #monitor-eventstreams}

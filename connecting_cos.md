@@ -137,7 +137,7 @@ cos.object.records | Optional. The maximum number of Kafka records to combine in
 {: caption="Table 1. cos-sink.json file properties" caption-side="bottom"}
  
 ### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.Bluemix_notm}} console
-{: #connect_enterprise_external_console}
+{: #connect_enterprise_console}
 
 1. Locate your {{site.data.keyword.cos_short}} service on the dashboard.
 2. Click your service tile.

@@ -83,10 +83,10 @@ Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be awa
 
 | Plan            | Topics         | Number of time series  | Monthly cost |
 |------------------|--------------|------------------|------------------|
-| `Lite`          | 1        |1 x 2 + 7 = 9 | $0.08 x 9 = $0.72      |
-| `Standard` | 1      | 1 x 2 + 7 = 9 | $0.08 x 9 = $0.72   |
-| | 10      | 10 x 2 + 7 = 27 | $0.08 x 27 = $2.16   |
-|  | 100      | 100 x 2 + 7 = 207 | $0.08 x 207 = $16.56   |
+| `Lite`          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56      |
+| `Standard` | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
+| | 10      | 10 x 2 + 5 = 25 | $0.08 x 25 = $2   |
+|  | 100      | 100 x 2 + 5 = 205 | $0.08 x 205 = $16.40   |
 | `Enterprise` | 1        | 1 x 2 + 19 = 21 | $0.08 x 21 = $1.68  |
 |           | 10        | 10 x 2 + 19 = 39 | $0.08 x 39 = $3.12  |
 |         | 100        |  100 x 2 + 19 = 219   | $0.08 x 219 = $17.52  |
@@ -118,10 +118,10 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
-| [Number of offline partitions](#ibm_eventstreams_kafka_offline_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Number of offline partitions](#ibm_eventstreams_kafka_offline_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) |  |  |
 | [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Number of under in-sync replica partitions](#ibm_eventstreams_kafka_under_minisr_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| [Number of under in-sync replica partitions](#ibm_eventstreams_kafka_under_minisr_partitions) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | |  |
 | [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
