@@ -15,19 +15,23 @@ subcollection: EventStreams
 {:important: .important}
 {:note: .note}
 {:pre: .pre}
+{:beta: .beta}
 {:shortdesc: .shortdesc}
 {:step: data-tutorial-type='step'}
 {:tutorial: data-hd-content-type='tutorial'}
 
-# Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}}
+# Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}} (Beta)
 {: #satellite-provisioning}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
+{:beta: .beta}
 
 ## Overview
 {: #satellite-provision-overview}
+{: beta}
 
 Complete the steps to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location.
+{: beta}
 
 The following steps guide you through provisioning a {{site.data.keyword.satelliteshort}} location in your account, configuring service authorization, adding compute hosts to the {{site.data.keyword.satelliteshort}} location, provisioning an {{site.data.keyword.messagehub_full}} service instance, and configuring the block storage assignment, so that
 {{site.data.keyword.messagehub}} can allocate block storage.
