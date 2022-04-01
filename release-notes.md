@@ -50,4 +50,3 @@ New Standard plan
 :   Support for availability zones to further increase the resiliency of the service.
 :   A brand new {{site.data.keyword.ibm}} Design Thinking-led developer and user experience.
 :   Available in the US-South region.
-
