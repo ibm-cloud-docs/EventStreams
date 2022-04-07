@@ -81,6 +81,15 @@ toc:
         - monitoring.md
         - disaster_recovery.md
         - reserved_disk.md
+        - topicgroup:
+            label: API reference
+            topics:
+            - link:
+                label: IBM Event Streams REST Producer API
+                href: https://cloud.ibm.com/apidocs/event-streams/restproducer
+            - link:
+                label: IBM Event Streams Admin REST API
+                href: https://cloud.ibm.com/apidocs/event-streams/adminrest
         - eventstreams-cli.md
     - navgroup:
         id: help
