@@ -424,6 +424,7 @@ Getting per-schema rules requires at least:
 - Reader role access to the schema resource to which the rule applies.
 
 ### Updating a per-schema rule
+{: #update_rule}
 
 The rules applied to a specific schema are modified by making a PUT request to the /artifacts/{schema-id}/rules/{rule-type} endpoint, (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -447,6 +448,7 @@ Updating a per-schema rule requires at least:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Deleting a per-schema rule
+{: #delete_rule}
 
 The rules applied to a specific schema are deleted by making a DELETE request to the /artifacts/{schema-id}/rules/{rule-type} endpoint,
 (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, an empty response is returned, with a status code of 204 (no content).
@@ -517,7 +519,7 @@ https://token:{$APIKEY}@{$HOST}/{confluent}
 ```
 {: screen}
 
-BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
+BASIC_AUTH_CREDENTIALS_SOURCE | Set to ```URL```. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
 
 You can also optionally provide the following properties to control the schema selection (subject naming strategy):
 
@@ -537,6 +539,7 @@ The *normalize* option for schema lookups and registration is not supported.
 {: note}
 
 ## Using the Schema Registry with third party tools
+{: #third_party}
 
 The Schema Registry can be tested with third party tools, such as the `kafka-avro-console-producer.sh` and `kafka-avro-console-consumer.sh`, that allow testing of conformance to schema using the Confluent SerDes.
 

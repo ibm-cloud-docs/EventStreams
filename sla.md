@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
