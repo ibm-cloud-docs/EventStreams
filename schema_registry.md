@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -101,14 +101,14 @@ if you are granting access to multiple other people or teams. See the [Managing 
 The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the
 Kafka HTTP URL property of the service credentials):
 
-```
+```text
 curl -i –u token:$APIKEY $URL/artifacts
 ```
 
 Assuming you haven’t already used the Schema Registry, you should see the following output that indicates that there are no schemas
 stored in the registry:
 
-```
+```text
 HTTP/1.1 200 OK
 Date: Thu, 16 Jan 2020 15:45:26 GMT
 Content-Type: application/json
@@ -135,7 +135,7 @@ For actions that alter the schema version, such as create, update, or delete art
 As described above, you can authenticate to the Schema Registry using an API key. This is supplied as the password portion of a HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token).
 For example:
 
-```
+```text
 curl –H "Authorization: Bearer $TOKEN" ...
 ```
 
@@ -144,7 +144,7 @@ curl –H "Authorization: Bearer $TOKEN" ...
 
 If an error condition is encountered, the Schema Registry will return a non-2XX range HTTP status code. The body of the response will contain a JSON object in the following form:
 
-```
+```text
 {
     "error_code":404,
     "message":"No artifact with id 'my-schema' could be found."
@@ -165,13 +165,13 @@ This endpoint is used to store a schema in the registry. The schema data is sent
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY -H 'Content-Type: application/json' -H 'X-Registry-ArtifactId: my-schema' $URL/artifacts -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
 ```
 
 Example response:
 
-```
+```text
 {"id":"my-schema","type":"AVRO","version":1,"createdBy":"","createdOn":1579267788258,"modifiedBy":"","modifiedOn":1579267788258,"globalId":75}
 ```
 
@@ -188,13 +188,13 @@ You can generate a list of the IDs of all of the schemas stored in the registry 
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts
 ```
 
 Example response:
 
-```
+```text
 ["my-schema"]
 ```
 
@@ -208,7 +208,7 @@ Schemas are deleted from the registry by issuing a DELETE request to the /artifa
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema
 ```
 
@@ -227,13 +227,13 @@ If the request is successful, the new schema version is created as the new lates
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY -H 'Content-Type: application/json' $URL/artifacts/my-schema/versions -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
 ```
 
 Example response:
 
-```
+```text
 {"id":"my-schema","type":"AVRO","version":2,"createdBy":"","createdOn": 1579267978382,"modifiedBy":"","modifiedOn":1579267978382,"globalId":83}
 ```
 
@@ -250,13 +250,13 @@ To retrieve the latest version of a particular schema, make a GET request to the
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema
 ```
 
 Example response:
 
-```
+```text
 {"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}
 ```
 
@@ -271,13 +271,13 @@ To retrieve a specific version of a schema, make a GET request to the /artifacts
 
 Example curl request
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions/3
 ```
 
 Example response:
 
-```
+```text
 {"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}
 ```
 
@@ -292,13 +292,13 @@ To list all versions of a schema currently stored in the registry, make a GET re
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions
 ```
 
 Example response:
 
-```
+```text
 [1,2,3,5,6,8,100]
 ```
 
@@ -313,7 +313,7 @@ Schema versions are deleted from the registry by issuing a DELETE request to the
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema/versions/3
 ```
 
@@ -337,13 +337,13 @@ config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TR
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X PUT $URL/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"BACKWARD"}
 ```
 
@@ -359,13 +359,13 @@ The current value of a global rule is retrieved by issuing a GET request to the 
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/rules/COMPATIBILITY
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"BACKWARD"}
 ```
 
@@ -379,7 +379,7 @@ Rules can be applied to a specific schema, overriding any global rules that have
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/rules -d '{"type":"COMPATIBILITY","config":"FORWARD"}'
 ```
 
@@ -396,13 +396,13 @@ To retrieve the current value of a type of rule being applied to a specific sche
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"FORWARD"}
 ```
 
@@ -417,13 +417,13 @@ The rules applied to a specific schema are modified by making a PUT request to t
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"BACKWARD"}
 ```
 
@@ -441,7 +441,7 @@ The rules applied to a specific schema are deleted by making a DELETE request to
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 
@@ -476,11 +476,12 @@ By default, the registry has a global compatibility rule setting of `NONE`. Per-
 
 ## Full API description
 {: full_api_description}
-For a description of the REST API with examples, see 
-[{{site.data.keyword.messagehub}} schema-registry-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: new_window}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
-To view the Swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
+For a description of the REST API with examples, see 
+[{{site.data.keyword.messagehub}} schema-registry-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: external}.
+
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: external}.
+To view the Swagger file, use Swagger tools, for example [Swagger editor](http://editor.swagger.io/#/){: external}.
 
 For details about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 
@@ -498,7 +499,8 @@ To configure the Confluent SerDes to use the Schema Registry, you need to specif
 Property name | Value
 --- | ---
 SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form:
-```
+
+```text
 https://token:{$APIKEY}@{$HOST}/{confluent}
 ```
 {: screen}
@@ -519,8 +521,8 @@ The following diagram shows an example of the properties required to create a Ka
 
 If a message is sent using a schema that isn’t in the registry, the SerDes attempts to create the new schema, or version of the schema, in the registry. If this behaviour is not required, it can be disabled by removing the writer permission for schema resources from the application. See [Managing access to the schema registry](/docs/EventStreams?topic=EventStreams-security#managing_access_schemas).
 
-Note: The *normalize* option for schema lookups and registration is not supported.
-{:note: .note}
+The *normalize* option for schema lookups and registration is not supported.
+{: note}
 
 ## Using the Schema Registry with third party tools
 
@@ -528,16 +530,15 @@ The Schema Registry can be tested with third party tools, such as the `kafka-avr
 
 To run either the producer or the consumer tool, a common properties is required with the connection options for the {{site.data.keyword.messagehub}} Enterprise instance.
 
-<pre>
-<code>
+
+```text
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="apikey";
 security.protocol=SASL_SSL
 sasl.mechanism=PLAIN
 ssl.protocol=TLSv1.2
 ssl.enabled.protocols=TLSv1.2
 ssl.endpoint.identification.algorithm=HTTPS
-</code>
-</pre>
+```
 {: codeblock}
 
 ## Avro console producer and consumer
@@ -547,11 +548,9 @@ You can use the Kafka avro console producer and consumer tools with {{site.data.
 
 To execute using the credentials source method of URL, use the following code:
 
-<pre>
-<code>
+```text
     ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
-</code>
-</pre>
+```
 {: codeblock}
 
 Replace the following variables in the example with your own values:
@@ -561,11 +560,9 @@ Replace the following variables in the example with your own values:
 
 To execute using the credentials source method of USER_INFO, use the following code:
 
-<pre>
-<code>
+```text
     ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
-</code>
-</pre>
+```
 {: codeblock}
 
 Replace the following variables in the example with your own values:

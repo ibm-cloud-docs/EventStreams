@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -20,99 +20,101 @@ subcollection: EventStreams
 {:beta: .beta}
 
 # Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability 
-
 {: #sla}
 
 ## Standard plan
-
 {: #sla_standard}
 
-The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the {{site.data.keyword.messagehub}} service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
-[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
+[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
 
 ## Enterprise plan
-
 {: #sla_enterprise}
 
 The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
-In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
+In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud))](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
 
-When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: new_window}.
+When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
 
 ## Satellite plan
-
 {: #sla_satellite}
 
 The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}}  plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, with the correct IaaS configurations, the {{site.data.keyword.messagehub}} service can be distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 {: beta}
 
 ## How do we measure it?
+{: #sla_measure}
 
-Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?component=messagehub&selected=status){: new_window}.
+Service instances are continuously monitored for performance, error rates, and their response to synthetic operations. Outages are recorded. For more information, see [Service status for Event Streams](https://cloud.ibm.com/status?component=messagehub&selected=status){: external}.
 
 Availability refers to the ability of applications to produce and consume messages from Kafka topics.
 
 ## What do you need to consider to achieve this availability?
+{: #sla_availability}
 
 To achieve high levels of availability from the application perspective, you should consider [connectivity](/docs/EventStreams?topic=EventStreams-sla#connectivity), [throughput](/docs/EventStreams?topic=EventStreams-sla#throughput), and [consistency and durability of messages](/docs/EventStreams?topic=EventStreams-sla#message_consistency). Users are responsible for designing their applications to optimize these three elements for their business.
 
 ### Connectivity
-
 {: #connectivity}
 
 Because of the dynamic nature of the cloud, applications must expect connection breakages. A connection breakage is not considered a failure of service.
 
 #### Retries
+{: #sla_retries}
 
-Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [`retries` property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){: new_window}. Connections are remade within 60 seconds.
+Kafka clients provide reconnect logic, but you must explicitly enable reconnects for producers. For more information, see the [`retries` property](http://kafka.apache.org/documentation.html#producerconfigs){: external}. Connections are remade within 60 seconds.
 
 #### Duplicates
+{: #sla_duplicates}
 
 Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send the message again when reconnected. You are recommended to design applications to expect duplicate messages.
 
-If duplicates cannot be tolerated, you can use the `idempotent` producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [`enable.idempotence` property ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation.html#producerconfigs){: new_window}.
+If duplicates cannot be tolerated, you can use the `idempotent` producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [`enable.idempotence` property](http://kafka.apache.org/documentation.html#producerconfigs){: external}.
 
 ### Throughput
-
 {: #throughput}
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 
 #### Specific guidance for the Standard plan
+{: #sla_standard}
 
 For throughput guidance information, see [Limits and quotas - Standard](/docs/EventStreams?topic=EventStreams-kafka_quotas#standard_throughput).
 
 #### Specific guidance for the Enterprise plan
+{: #sla_enterprise}
 
 For throughput guidance information, see [Limits and quotas - Enterprise](/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput).
 
 #### Specific guidance for the Satellite plan
+{: #sla_satellite}
 
 For throughput guidance information, see [Limits and quotas - Satellite](/docs/EventStreams?topic=EventStreams-kafka_quotas#satellite_throughput).
 
 #### Measurement
+{: #sla_measurement}
 
 You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
 
 #### Saturation
+{: #sla_saturation}
 
 As the limit of the traffic that can be produced in to the cluster is approached, producers start to be throttled, latency increases, and ultimately errors such as timeout errors occur. Depending on the configuration, message consistency and durability might also be impacted. For more information, see [Consistency and durability of messages](/docs/EventStreams?topic=EventStreams-sla#message_consistency).
 
 ### Consistency and durability of messages
-
 {: #message_consistency}
 
 Kafka achieves its availability and durability by replicating the messages it receives across other nodes in the cluster, which can then be used in case of failure. {{site.data.keyword.messagehub}} uses three replicas (default.replication.factor = 3) meaning that each message received by a node is replicated to two other nodes in different availability zones. In this way, the loss of a node or availability zone can be tolerated without loss of data or function.
 
 #### Producer `acks` mode
+{: #sla_acks}
 
 Although all message are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. The default setting is `acks=1`, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is `acks=all` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
 
 ## Single zone location deployments
-
 {: #sla_szr}
 
 For the highest availability we recommend our high availability Public environments, which are built in our multizone locations. In a multizone location, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. Some customers require geographic locality and therefore want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone location. {{site.data.keyword.messagehub}} supports this deployment model, however be aware of the following availability trade-offs:
