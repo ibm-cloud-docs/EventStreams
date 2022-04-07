@@ -160,6 +160,7 @@ message | A description of the cause of the problem.
 incident | This field is only included if the error is a result of a problem with the Schema Registry. This value can be used by IBM service to correlate a request to diagnostic information captured by the registry.
 
 ### Create a schema
+{: #create_schema}
 
 This endpoint is used to store a schema in the registry. The schema data is sent as the body of the POST request. An ID for the schema can be included using the ‘X-Registry-ArtifactId' request header. If this header is not present in the request, an ID will be generated. The content type header must be set to “application/json”.
 
@@ -183,6 +184,7 @@ Creating a schema requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### List schemas
+{: #list_schemas}
 
 You can generate a list of the IDs of all of the schemas stored in the registry by making a GET request to the /artifacts endpoint.
 
@@ -203,6 +205,7 @@ Listing schemas requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
 ### Delete a schema
+{: #delete_schema}
 
 Schemas are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id} endpoint (where {schema-id} is the ID of the schema). If successful, an empty response and a status code of 204 (no content) is returned.
 
@@ -220,6 +223,7 @@ Deleting a schema requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Create a new version of a schema
+{: #new_schema}
 
 To create a new version of a schema, make a POST request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). The body of the request must contain the new version of the schema.
 
@@ -245,6 +249,7 @@ Creating a new version of a schema requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Get the latest version of a schema
+{: #latest_schema}
 
 To retrieve the latest version of a particular schema, make a GET request to the /artifacts/{schema-id} endpoint, (where {schema-id} is the ID of the schema). If successful, the latest version of the schema is returned in the payload of the response.
 
@@ -266,6 +271,7 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Getting a specific version of a schema
+{: #schema_version}
 
 To retrieve a specific version of a schema, make a GET request to the /artifacts/{schema-id}/versions/{version} endpoint, (where {schema-id} is the ID of the schema, and {version} is the version number of the specific version you need to retrieve). If successful, the specified version of the schema is returned in the payload of the response.
 
@@ -287,6 +293,7 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Listing all of the versions of a schema
+{: #list_schemas}
 
 To list all versions of a schema currently stored in the registry, make a GET request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response.
 
@@ -308,6 +315,7 @@ Getting the list of available versions of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Deleting a version of a schema
+{: #delete_schema}
 
 Schema versions are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id}/versions/{version} endpoint (where {schema-id} is the ID of the schema, and {version} is the version number of the schema version). If successful, an empty response, and a status code of 204 (no content) is returned. Deleting the only remaining version of a schema will also delete the schema.
 
@@ -325,6 +333,7 @@ Deleting a schema version requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Updating a global rule
+{: #global_rule}
 
 Global compatibility rules can be updated by issuing a PUT request to the /rules/{rule-type} endpoint, (where {rule-type} identifies the type of global rule to be updated - currently the only supported type is COMPATIBILITY), with the new rule configuration in the body of the request. If the request is successful, the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -354,6 +363,7 @@ Updating a global rule configuration requires at least:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Getting the current value of a global rule
+{: #global_rule}
 
 The current value of a global rule is retrieved by issuing a GET request to the /rules/{rule-type} endpoint, (where {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the current rule configuration is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -374,6 +384,7 @@ Getting global rule configuration requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
 ### Creating a per-schema rule
+{: #schema_rule}
 
 Rules can be applied to a specific schema, overriding any global rules that have been set, by making a POST request to the /artifacts/{schema-id}/rules endpoint, (where {schema-id} is the ID of the schema), with the type and value of the new rule contained in the body of the request, (currently the only supported type is COMPATIBILITY). If successful, an empty response and a status code of 204 (no content) are returned.
 
@@ -391,6 +402,7 @@ Creating per-schema rules requires at least:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
  
 ### Getting a per-schema rule
+{: #get_rule}
 
 To retrieve the current value of a type of rule being applied to a specific schema, a GET request is made to the /artifacts/{schema-id}/rules/{rule-type} endpoint, (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the current rule value is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -498,7 +510,7 @@ To configure the Confluent SerDes to use the Schema Registry, you need to specif
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form:
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of ```/confluent```. For example, if ```$APIKEY``` is the API key to use and ```$HOST``` is the host from the ```kafka_http_url``` field in the **Service Credentials** tab, the value has the form:
 
 ```text
 https://token:{$APIKEY}@{$HOST}/{confluent}
