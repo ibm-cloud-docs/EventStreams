@@ -23,7 +23,7 @@ subcollection: EventStreams
 # Choosing your plan 
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan (Beta) depending on your requirements. 
+{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
 {: shortdesc}
 
 ## Lite plan
