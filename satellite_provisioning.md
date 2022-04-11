@@ -24,7 +24,7 @@ subcollection: EventStreams
 {: #satellite-provisioning}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
-{:beta: .beta}
+{: beta}
 
 ## Overview
 {: #satellite-provision-overview}
@@ -42,12 +42,9 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 
 1. Provision a {{site.data.keyword.satelliteshort}} location.
 
-    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). 
-    Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
-    2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. 
-    Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
-    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, 
-    the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your 
+    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+    2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
+    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your 
     infrastructure provider, where you plan to create hosts.
 
 2. Before you proceed to the next step, ensure that the following criteria is met:
@@ -101,8 +98,7 @@ After preparing your {{site.data.keyword.satelliteshort}} location, granting ser
 
 1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
 2. Look for the **Event Streams** tile in the **Integration** section and select it.
-3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} 
-location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
+3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
 4. Specify a **Service name** if something other than the default name is desired.
 5. Click **Create**.
 
