@@ -72,6 +72,7 @@ Include the following information in the ticket:
 - The set of patterns for the source topics to be mirrored.
 
 ### Example request
+{: #example_request}
 
 ```text
 We request the {{site.data.keyword.messagehub}} team to enable mirroring between the following 2 service instances:

@@ -138,12 +138,14 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 
 #### Schemas
 {: #schemas}
+
 * Maximum number of schemas that can be stored: 1000
 * Maximum number of schema versions for each schema that can be stored: 100
 * Maximum schema size 64kB
 
 #### Limits
 {: #limits}
+
 * Maximum request rate [HTTP Schema Admin] 10 per second
 * Maximum request rate [HTTP Serdes] 100 per second
 

@@ -60,7 +60,7 @@ Clone the following two repositories that contain the required files:
 
 1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace  `<BOOTSTRAP_SERVERS>`; in one place and `<APIKEY>` in three places with your {{site.data.keyword.messagehub}} credentials.
+    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace `<BOOTSTRAP_SERVERS>`; in one place and `<APIKEY>` in three places with your {{site.data.keyword.messagehub}} credentials.
 
     Provide `<BOOTSTRAP_SERVERS>` as a comma-separated list. If they are not valid, you get an error.
 
