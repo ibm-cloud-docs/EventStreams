@@ -44,7 +44,7 @@ Ensure you have the following software and services installed:
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
 * A recent version of kubectl.
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: new_window}
+* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: external}
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step2_clone_project_mq}
@@ -60,11 +60,11 @@ Clone the following two repositories that contain the required files:
 
 1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace  <BOOTSTRAP_SERVERS>; in one place and <APIKEY> in three places with your {{site.data.keyword.messagehub}} credentials.
+    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace  `<BOOTSTRAP_SERVERS>`; in one place and `<APIKEY>` in three places with your {{site.data.keyword.messagehub}} credentials.
 
-    Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you get an error.
+    Provide `<BOOTSTRAP_SERVERS>` as a comma-separated list. If they are not valid, you get an error.
 
-    Your <APIKEY> appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containershort}}.
+    Your `<APIKEY>` appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containershort}}.
 
     Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} cluster has more than one node and you want multiple Connect workers, edit the `kafka-connect.yaml` file, and edit the entry `replicas: 1`.
 
@@ -108,7 +108,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
-[Kafka Connect REST Interface ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
+[Kafka Connect REST Interface](http://kafka.apache.org/documentation/#connect_rest){: external}.
 
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the IBM MQ Connector.
 
@@ -123,18 +123,22 @@ Edit the `mq-source.json` file that is located in `kafka-connect-mq-source/confi
 
 Replace the placeholders in the `mq-source.json` file with your own values.
 
-<dl>
-<dt><strong>TOPIC</strong></dt>
-<dd>Required. Name of the destination Kafka topic</dd>
-<dt><strong>QUEUE_MANAGER</strong></dt>
-<dd>Required. Name of the source IBM MQ queue manager</dd>
-<dt><strong>QUEUE</strong></dt>
-<dd>Required. Name of the source IBM MQ queue </dd>
-<dt><strong>CHANNEL_NAME</strong></dt>
-<dd>Required (unless you're using bindings or a CCDT file). Name of the server-connection channel.</dd>
-<dt><strong>CONNECTION_NAME_LIST</strong></dt>
-<dd>Required (unless you're using bindings or a CCDT file). A list of one or more host(port) pairs for connecting to the queue manager. Separate entries with a comma. 
-</dl>
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+:   A color between red and yellow on the rainbow.
+
+
+TOPIC
+:   Required. Name of the destination Kafka topic
+QUEUE_MANAGER
+:   Required. Name of the source IBM MQ queue manager
+QUEUE
+:   Required. Name of the source IBM MQ queue 
+CHANNEL_NAME
+:   Required (unless you're using bindings or a CCDT file). Name of the server-connection channel.
+CONNECTION_NAME_LIST
+:   Required (unless you're using bindings or a CCDT file). A list of one or more host(port) pairs for connecting to the queue manager. Separate entries with a comma. 
+
 
 
 
@@ -151,7 +155,7 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ## Step 8. Monitor your connector 
 {: #step8_monitor_connector_mq}
 
-You can check your connector by going to the following address: <br/>
+You can check your connector by going to the following address: 
 `http://localhost:8083/connectors/mq-source/status`
 
 If the state of the connector is not running, restart the connector.
