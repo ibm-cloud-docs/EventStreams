@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -15,23 +15,19 @@ subcollection: EventStreams
 {:important: .important}
 {:note: .note}
 {:pre: .pre}
-{:beta: .beta}
 {:shortdesc: .shortdesc}
 {:step: data-tutorial-type='step'}
 {:tutorial: data-hd-content-type='tutorial'}
 
-# Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}} (Beta)
+# Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}}
 {: #satellite-provisioning}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="15m"}
-{:beta: .beta}
 
 ## Overview
 {: #satellite-provision-overview}
-{: beta}
 
 Complete the steps to set up the {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} in a {{site.data.keyword.satelliteshort}} location.
-{: beta}
 
 The following steps guide you through provisioning a {{site.data.keyword.satelliteshort}} location in your account, configuring service authorization, adding compute hosts to the {{site.data.keyword.satelliteshort}} location, provisioning an {{site.data.keyword.messagehub_full}} service instance, and configuring the block storage assignment, so that
 {{site.data.keyword.messagehub}} can allocate block storage.
@@ -42,12 +38,9 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 
 1. Provision a {{site.data.keyword.satelliteshort}} location.
 
-    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). 
-    Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
-    2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. 
-    Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
-    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, 
-    the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your 
+    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+    2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
+    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your 
     infrastructure provider, where you plan to create hosts.
 
 2. Before you proceed to the next step, ensure that the following criteria is met:
@@ -91,18 +84,17 @@ Attach the following hosts to your {{site.data.keyword.satelliteshort}} location
 
 The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance. If multiple {{site.data.keyword.messagehub}} 
 {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
-{:note}
+{: note}
 
 ## Provision {{site.data.keyword.messagehub}} service instance
-{: step}
 {: #satellite-provision-es-instance}
+{: step}
 
 After preparing your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching additional hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
 
 1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
 2. Look for the **Event Streams** tile in the **Integration** section and select it.
-3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} 
-location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
+3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
 4. Specify a **Service name** if something other than the default name is desired.
 5. Click **Create**.
 
@@ -118,8 +110,8 @@ While the service instance and cluster are provisioned, create the storage assig
 {: important}
 
 ## Create the block storage configuration assignment (using {{site.data.keyword.satelliteshort}} Storage UI)
-{: step}
 {: #satellite-create-storage-assignment}
+{: step}
 
 The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
 {: important}

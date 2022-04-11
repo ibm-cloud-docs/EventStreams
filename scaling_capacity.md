@@ -149,11 +149,15 @@ Scale this service instance to a configuration of a base capacity unit, one addi
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
-      ```ibmcloud login```
+      ```
+      ibmcloud login
+      ```
 
 3. Get the resource name of your {{site.data.keyword.messagehub}} service instance.
   
-      ```ibmcloud resource service-instances```
+      ```
+      ibmcloud resource service-instances
+      ```
      
       (You can find the name of your instance in the Name column.)
 
@@ -179,7 +183,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     a. Run the following from the CLI:
     
-    ```
+      ```
       ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' 
       ```
 

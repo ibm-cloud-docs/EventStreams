@@ -48,5 +48,5 @@ New Standard plan
 :   Support for Apache Kafka version 2.2.
 :   Support for fine-grained authorization to topic level.
 :   Support for availability zones to further increase the resiliency of the service.
-:   A brand new {{site.data.keyword.ibm}} Design Thinking-led developer and user experience.
+:   A brand new {{site.data.keyword.IBM}} Design Thinking-led developer and user experience.
 :   Available in the US-South region.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-1"
 
 keywords: IBM Event Streams, Satellite
 
@@ -17,15 +17,11 @@ subcollection: EventStreams
 {:pre: .pre}
 {:note: .note}
 {:important: .important}
-{:beta: .beta}
 
-# About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}} (Beta)
+# About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}
 {: #satellite_about}
-{: beta}
-
 
 The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} deploys functionality similar to the Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
-{: beta}
 
 For a detailed comparison of the {{site.data.keyword.messagehub}} plans and the functionality of each, refer to [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose).
 
@@ -70,8 +66,7 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
     3. Include the account ID to be given access.
     4. Wait for response to your support case before you attempt to provision the {{site.data.keyword.messagehub}} service.
 4. {{site.data.keyword.messagehub}} uses block storage for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance. During the provision of the {{site.data.keyword.messagehub}} service instance, the block storage configuration completes. To prepare for that configuration, review the following:
-    1. The performance of the hosts, network latency, and block storage performance can all impact maximum throughput. 
-    As you review the following block storage information and select a storage class, to achieve a maximum throughput, select block storage that provides a minimum of **4 IOPS per GB** of storage and that can support 75MB/s disk writes and 25MB/s disk reads concurrently.
+    1. The performance of the hosts, network latency, and block storage performance can all impact maximum throughput. As you review the following block storage information and select a storage class, to achieve a maximum throughput, select block storage that provides a minimum of **4 IOPS per GB** of storage and that can support 75MB/s disk writes and 25MB/s disk reads concurrently.
     2. To configure block storage, {{site.data.keyword.satelliteshort}} provides configuration templates for several storage infrastructure providers. The [Understanding Satellite storage templates](https://cloud.ibm.com/docs/satellite?topic=satellite-sat-storage-template-ov){: external} information explains how the storage templates work and how to configure them using the IBM Cloud CLI. The {{site.data.keyword.messagehub}} service instance provision helps simplify the configuration by prompting for the needed configuration. To prepare for the configuration, complete the following steps:
         1. Review the supported block storage classes in the [Storage class reference](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-class-ref){: external}.
         2. Identify the block storage classes available for your storage infrastructure provider.
