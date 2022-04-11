@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-11"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -91,11 +91,11 @@ Attach the following hosts to your {{site.data.keyword.satelliteshort}} location
 
 The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance. If multiple {{site.data.keyword.messagehub}} 
 {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
-{:note}
+{: note}
 
 ## Provision {{site.data.keyword.messagehub}} service instance
-{: step}
 {: #satellite-provision-es-instance}
+{: step}
 
 After preparing your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching additional hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
 
@@ -118,8 +118,8 @@ While the service instance and cluster are provisioned, create the storage assig
 {: important}
 
 ## Create the block storage configuration assignment (using {{site.data.keyword.satelliteshort}} Storage UI)
-{: step}
 {: #satellite-create-storage-assignment}
+{: step}
 
 The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
 {: important}
