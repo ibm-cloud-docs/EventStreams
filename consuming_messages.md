@@ -108,8 +108,7 @@ If there is no existing committed offset, the consumer can choose whether to sta
 the setting of the `auto.offset.reset` property as follows:
 
     - `latest` (the default): Your consumer receives and consumes only messages that arrive after you subscribe. 
-    Your consumer has no knowledge of messages that were sent before it subscribed, therefore don't expect that all messages 
-    are consumed from a topic.
+    Your consumer has no knowledge of messages that were sent before it subscribed, therefore don't expect that all messages are consumed from a topic.
     - `earliest`: Your consumer consumes all messages from the beginning because it is aware of all messages that were sent.
 
 If a consumer fails after processing a message but before committing its offset, the committed offset information does not reflect the processing of the message. 

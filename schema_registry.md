@@ -16,7 +16,6 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
-{:external: target="_blank" .external}
 
 
 # {{site.data.keyword.messagehub}} Schema Registry
