@@ -8,6 +8,11 @@ keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision
 
 subcollection: EventStreams
 
+content-type: tutorial
+services: messagehub
+account-plan:
+completion-time: 15m
+
 ---
 
 {:external: target="_blank" .external}
@@ -21,6 +26,7 @@ subcollection: EventStreams
 # Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}}
 {: #satellite-provisioning}
 {: toc-content-type="tutorial"}
+{: toc-services="messagehub"}
 {: toc-completion-time="15m"}
 
 ## Overview
