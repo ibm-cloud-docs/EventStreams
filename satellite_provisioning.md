@@ -17,7 +17,6 @@ subcollection: EventStreams
 {:pre: .pre}
 {:shortdesc: .shortdesc}
 {:step: data-tutorial-type='step'}
-{:tutorial: data-hd-content-type='tutorial'}
 
 # Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satellitelong}}
 {: #satellite-provisioning}
@@ -40,8 +39,7 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 
     1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
     2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
-    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your 
-    infrastructure provider, where you plan to create hosts.
+    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
 2. Before you proceed to the next step, ensure that the following criteria is met:
 
