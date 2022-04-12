@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -21,7 +21,7 @@ subcollection: EventStreams
 {: #report_problem_enterprise}
 
 
-If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/status?selected=status){: new_window}.
+If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 {: shortdesc}
 
 If you'd like help from the {{site.data.keyword.messagehub}} team, please gather all the following information. The more information that you can provide upfront, the more efficiently the team can help with the problem:
@@ -31,7 +31,7 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
    using?  You can provide this ID by pasting the full
    {{site.data.keyword.Bluemix_notm}} console URL after clicking on the
    service, or by pasting the output from the following CLI command:
-    ```
+    ```text
     ibmcloud resource service-instance NAME
     ```
     {: codeblock}
@@ -46,7 +46,7 @@ If you'd like help from the {{site.data.keyword.messagehub}} team, please gather
    transaction IDs are affected?
 8. What impact is the problem having on your service?
 
-You can provide the information you've gathered to IBM in a support ticket by [submitting a support request ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case){: new_window}.
+You can provide the information you've gathered to IBM in a support ticket by [submitting a support request](/docs/get-support?topic=get-support-open-case){: external}.
 
 
 
