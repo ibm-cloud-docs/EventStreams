@@ -67,7 +67,7 @@ The following table summarizes what is supported by the plans:
 |---|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
-| **Availability**  |  99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |  99.99% | 99.99%<br/>(99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |  Not applicable    |
+| **Availability**  |  99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |  99.99% | 99.99%  (99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |  Not applicable    |
 | **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |  Kafka 2.8   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
@@ -89,6 +89,7 @@ The following table summarizes what is supported by the plans:
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [<sup>8</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_sat_compliance)  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
+{: caption="Table 1. Plan comparison table" caption-side="top"}
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
@@ -98,11 +99,11 @@ For more information about limits, see [limits and quotas](/docs/EventStreams?to
 1. After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.) {: #footnote_lite notoc}
 2. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
 3. If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan. {: #footnote_partitions_lite notoc}
-4. This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: new_window}. {: #footnote_partitions notoc}
+4. This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}. {: #footnote_partitions notoc}
 5. Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_retention notoc}
 6. Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. 
-Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. 
-For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_throughput notoc}
+    Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. 
+    For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_throughput notoc}
 7. The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note the following items could impact throughput:
 
    - Performance of hosts attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}.

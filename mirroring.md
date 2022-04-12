@@ -78,7 +78,7 @@ The following table provides guidance for the achievable throughputs:
 | eu-gb <-> eu-de | 2.5 MB/s | 35 MB/s |
 | au-syd <-> jp-tok | 0.4 MB/s| 12 MB/s|
 | within same region eu-gb <-> eu-gb | 2.5 MB/s| 35 MB/s|
-{: caption="Figure 1. Throughput guidance" caption-side="bottom"}
+{: caption="Table 1. Throughput guidance" caption-side="bottom"}
 
 The numbers indicate:
 - **Max total throughput**: The maximum total MB/s that can be mirrored across all selected topics. 
@@ -107,7 +107,7 @@ Define the following IAM access policies on **both** clusters, where &lt;ALIAS&g
 |topic     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |txnid     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |topic (note, this is specific to the checkpoint topic)    | &lt;ALIAS&gt;.checkpoints.internal | Reader |
-{: caption="Figure 2. Access policies" caption-side="bottom"}
+{: caption="Table 2. Access policies" caption-side="bottom"}
 
 Fine-grained access policies should be granted to individual applications. For example, applications simply consuming should only have Reader access policies.
 
@@ -116,7 +116,7 @@ For mirroring user controls you will need to have the following permissions on t
 | Resource type | Resource ID| Role|
 |----------|---------|---------|
 |cluster |  |Manager |
-{: caption="Figure 3. Target cluster permissions" caption-side="bottom"}
+{: caption="Table 3. Target cluster permissions" caption-side="bottom"}
 
 ## Considerations when sharing clusters between multiple entities
 {: #sharing_clusters}
@@ -142,7 +142,7 @@ The required access policies must be adjusted. For example, for the accounting b
 |topic     | accounting.* |As required by the application |
 |txnid     | accounting.* |As required by the application |
 |topic (note, this is specific to the checkpoint topic)    | A.checkpoints.internal | Reader |
-{: caption="Figure 4. Access policies needed on cluster B" caption-side="bottom"}
+{: caption="Table 4. Access policies needed on cluster B" caption-side="bottom"}
 
 Cluster A should have the same access policies apart from the last one which should be on B.checkpoints.internal.
 
@@ -179,7 +179,7 @@ Example Patterns | Explanation
 `"topic1", "topic2"` | Full topic names.
 `".*"` | Mirror all source topics.
 `""` (via Administration REST API)  `--none` (via CLI) | Mirror no source topics.
-{: caption="Figure 5. Example patterns" caption-side="bottom"}
+{: caption="Table 5. Example patterns" caption-side="bottom"}
 
 Note: Updating a topic selection replaces the current set of patterns.
 
