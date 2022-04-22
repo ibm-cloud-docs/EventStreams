@@ -25,7 +25,7 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 {: #EventStreams-apr2022}
 {: release-note}
 
-Satellite
+Satellite plan
 :   The new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) enables you to create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 
 ## December 2021
@@ -38,7 +38,7 @@ Upgrade to Apache Kafka version 2.8.
 {: #EventStreams-oct2021}
 {: release-note}
 
-[IAM IP address access restrictions](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-restricting_access_iam).
+[IAM IP address access restrictions](/docs/EventStreams?topic=EventStreams-restricting_access_iam).
 
 ## August 2021
 {: #EventStreams-aug2021}
@@ -51,7 +51,7 @@ Sao Paolo region support.
 {: release-note}
 
 Streaming to Cloud Object Storage by using SQL Query
-:   [Event Streaming general availability](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to Cloud Object Storage buckets, and stream data automatically and securely using the fully-managed {{site.data.keyword.sqlquery_full}} service. 
+:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to Cloud Object Storage buckets, and stream data automatically and securely using the fully-managed {{site.data.keyword.sqlquery_full}} service. 
 
 ## May 2021
 {: #EventStreams-may2021}
