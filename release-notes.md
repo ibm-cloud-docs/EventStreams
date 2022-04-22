@@ -50,8 +50,8 @@ Sao Paolo region support.
 {: #EventStreams-jun2021}
 {: release-note}
 
-Streaming to Cloud Object Storage by using SQL Query
-:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to Cloud Object Storage buckets, and stream data automatically and securely using the fully-managed {{site.data.keyword.sqlquery_full}} service. 
+Streaming to {{site.data.keyword.cos_full}}  by using {{site.data.keyword.sqlquery_full}} 
+:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to {{site.data.keyword.cos_full}}  buckets, and stream data automatically and securely using the fully-managed {{site.data.keyword.sqlquery_short}} service. 
 
 ## May 2021
 {: #EventStreams-may2021}
