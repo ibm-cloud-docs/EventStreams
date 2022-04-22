@@ -98,8 +98,8 @@ Terraform support
 {: #EventStreams-jun2020}
 {: release-note}
 
-[Schema Registry Support for Enterprise plan](/docs/EventStreams?topic=EventStreams-ES_schema_registry)
-:   Add structure to your messages using the {{site.data.keyword.messagehub}} Schema registry.
+[Schema Registry support for Enterprise plan](/docs/EventStreams?topic=EventStreams-ES_schema_registry)
+:   Add structure to your messages using the {{site.data.keyword.messagehub}} Schema Registry.
 
 ## March 2020
 {: #EventStreams-mar2020}
