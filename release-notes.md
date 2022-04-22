@@ -32,19 +32,22 @@ Satellite plan
 {: #EventStreams-dec2021}
 {: release-note}
 
-Upgrade to Apache Kafka version 2.8.
+Apache Kafka upgrade
+:   Upgrade to Apache Kafka version 2.8.
 
 ## October 2021
 {: #EventStreams-oct2021}
 {: release-note}
 
-[IAM IP address access restrictions](/docs/EventStreams?topic=EventStreams-restricting_access_iam).
+IAM
+:  [IAM IP address access restrictions](/docs/EventStreams?topic=EventStreams-restricting_access_iam).
 
 ## August 2021
 {: #EventStreams-aug2021}
 {: release-note}
 
-Sao Paolo region support.
+New region support
+:   Sao Paolo region support.
 
 ## June 2021
 {: #EventStreams-jun2021}
@@ -57,39 +60,43 @@ Streaming to {{site.data.keyword.cos_full}}  by using {{site.data.keyword.sqlque
 {: #EventStreams-may2021}
 {: release-note}
 
-Toronto region support.
+New region support
+:   Toronto region support.
 
 ## April 2021
 {: #EventStreams-apr2021}
 {: release-note}
 
-[Security and compliance center support](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-manage-security-compliance).
+Security and compliance center support
+:  [Security and compliance center support](/docs/EventStreams?topic=EventStreams-manage-security-compliance) helps you manage security and compliance for your organization.
 
 ## March 2021
 {: #EventStreams-mar2021}
 {: release-note}
 
-Osaka region support.
+New region support
+:   Osaka region support.
 
 ## January 2021
 {: #EventStreams-jan2021}
 {: release-note}
 
-Upgrade to Apache Kafka version 2.6 for all plans.
+Apache Kafka upgrade
+:   Upgrade to Apache Kafka version 2.6 for all plans.
 
 ## September 2020
 {: #EventStreams-sep2020}
 {: release-note}
 
-[Scaling support for Enterprise Plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise)
-:   Scale your Enterprise Plan clusters to allow for greater throughput and higher retention.
+Scaling support for Enterprise Plan
+:   [Scale your Enterprise Plan clusters](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) to allow for greater throughput and higher retention.
 
 ## August 2020
 {: #EventStreams-aug2020}
 {: release-note}
 
-[Mirroring support for Enterprise Plan](/docs/EventStreams?topic=EventStreams-mirroring)
-:   Mirroring enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily.
+Mirroring support for Enterprise Plan
+:   [Mirroring](/docs/EventStreams?topic=EventStreams-mirroring) enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily.
 
 Terraform support
 :   Create your {{site.data.keyword.messagehub}} instances and subsequent configuration using Terraform.
@@ -98,8 +105,8 @@ Terraform support
 {: #EventStreams-jun2020}
 {: release-note}
 
-[Schema Registry support for Enterprise plan](/docs/EventStreams?topic=EventStreams-ES_schema_registry)
-:   Add structure to your messages using the {{site.data.keyword.messagehub}} Schema Registry.
+Schema Registry support for Enterprise plan
+:   Add structure to your messages using the {{site.data.keyword.messagehub}} [Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
 ## March 2020
 {: #EventStreams-mar2020}
@@ -112,7 +119,8 @@ Customer metrics support
 {: #EventStreams-nov2019}
 {: release-note}
 
-Upgrade to Apache Kafka version 2.3.
+Apache Kafka upgrade
+:   Upgrade to Apache Kafka version 2.3.
 
 Bring Your own key for Enterprise plan
 :   Allows users to secure their data at rest with their own encryption key.
@@ -142,8 +150,8 @@ Kafka version upgrade
 statement for these clients. If this is a concern, we would recommend performing any additional testing you require.
 :   Note: The Standard plan has already been updated to Apache Kafka version 2.2 and can be used for additional testing.
 
-Support for Cloud Service Endpoints
-:   {{site.data.keyword.messagehub}} supports Cloud Service Endpoints.
+Support for Cloud service endpoints
+:   {{site.data.keyword.messagehub}} supports Cloud service endpoints.
 :   This capability means that any data you publish or consume from the {{site.data.keyword.messagehub}} service will be over the private network and not public interfaces.
 
 ## 14 May 2019
