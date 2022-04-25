@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-10-05"
+  years: 2015, 2022
+lastupdated: "2022-04-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring, setup
 
@@ -27,7 +27,7 @@ This information describes how to set up a pair of {{site.data.keyword.messagehu
 
 Using mirroring with {{site.data.keyword.messagehub}} incurs an additional charge of $1.37 for each mirroring capacity unit hour. For more information, see [Multiple Enhancements for the Event Streams Enterprise Plan](https://www.ibm.com/cloud/blog/announcements/multiple-enhancements-for-the-event-streams-enterprise-plan).
 
-## Step 1: setup 
+## Step 1: Setup 
 {: #step1_setup}
 
 Ensure that you provisioned two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have suitable IAM access policies.
@@ -39,7 +39,7 @@ The selection must be specified as one or more patterns. For more information on
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams Metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
-## Step 2: enable service-to-service bindings
+## Step 2: Enable service-to-service bindings
 {: #step2_bindings}
 
 A service-to-service binding between both instances must be configured to allow both instances to communicate. To configure, complete the following steps:
@@ -59,7 +59,7 @@ ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-s
 
 For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](https://cloud.ibm.com/docs/iam?topic=iam-serviceauth).
 
-## Step 3: enable mirroring
+## Step 3: Enable mirroring
 {: #step3_enable}
 
 Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) to request enablement of mirroring. 
@@ -87,7 +87,7 @@ Mirrored topics are:
 ```
 {: codeblock}
 
-## Step 4: validation
+## Step 4: Validation
 {: #step4_validation}
 
 When the ticket is processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics that are suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
