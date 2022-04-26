@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -67,7 +67,7 @@ The following table summarizes what is supported by the plans:
 |---|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
-| **Availability**  |  99.99% [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_lite) |  99.99% | 99.99%<br/>(99.9% in single zone locations) [<sup>2</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_plans)  |  Not applicable    |
+| **Availability**  |  99.99% [^1] |  99.99% | 99.99%  (99.9% in single zone locations) [^2]  |  Not applicable    |
 | **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |  Kafka 2.8   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
@@ -78,35 +78,40 @@ The following table summarizes what is supported by the plans:
 | **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
 | **Cloud Service Endpoint support** | No   | No  |  Yes |  Not applicable  |
 | **Scale plan capacity** | No   | No  |  Yes |   No  |
-| **Maximum number of partitions**  | 1  [<sup>3</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions_lite)  | 100   |3000 - 9000 scales with throughput [<sup>4</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_partitions) | 3000    |
-| **Maximum retention limits**   | 100 MB for the partition   | 1 GB per partition  | 2 TB - 12 TB of scalable usable storage [<sup>5</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_retention)|  2 TB of usable storage   |
-| **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [<sup>6</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_throughput)  | 150 MB/s [<sup>7</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_sat_throughput)   |
+| **Maximum number of partitions**  | 1 [^3]  | 100   |3000 - 9000 scales with throughput [^4] | 3000    |
+| **Maximum retention limits**   | 100 MB for the partition   | 1 GB per partition  | 2 TB - 12 TB of scalable usable storage [^5] |  2 TB of usable storage   |
+| **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [^6] | 150 MB/s [^7]  |
 | **Maximum message size**  | 1 MB  | 1 MB   | 1 MB |   1 MB  |
 | **Maximum number of connected clients**  | 5   | 500  | 10 000  |   10 000  |
-| **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  **Your Satellite location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Toronto   \n Sao Paulo   |
+| **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  **Your Satellite location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Osaka   \n  Toronto   \n Sao Paulo   |
 | **APIs supported** |  Kafka API   \n Admin REST API  \n REST Producer API |  Kafka API   \n Admin REST API   \n REST Producer API    |  Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API  | Kafka API   \n Admin REST API   \n REST Producer API    |
 | **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 1 hour because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance   |
-| **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [<sup>8</sup>](/docs/EventStreams?topic=EventStreams-plan_choose#footnote_sat_compliance)  |
+| **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [^8]  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
+{: caption="Table 1. Plan comparison table" caption-side="bottom"}
 
-For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
+[1]: After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.)
 
-### Footnotes
-{: #footnote_plans notoc}
+[2]: For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 
-1. After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.) {: #footnote_lite notoc}
-2. For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr). {: #footnote_szr notoc}
-3. If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan. {: #footnote_partitions_lite notoc}
-4. This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: new_window}. {: #footnote_partitions notoc}
-5. Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_retention notoc}
-6. Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. 
-Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. 
-For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). {: #footnote_throughput notoc}
-7. The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note the following items could impact throughput:
+[3]: If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan.
 
+[4]: This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}. 
+
+[5]: Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+
+[6]: Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+
+[7]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note the following items could impact throughput:
    - Performance of hosts attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}.
    - Type, configuration, and performance of the block storage provided.
    - Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location {: #footnote_sat_throughput notoc}.
    - For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
-8. The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). {: #footnote_sat_compliance notoc}
+   
+[8]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). 
+
+For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
+
+
+

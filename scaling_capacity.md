@@ -75,6 +75,7 @@ The table below lists valid throughput and storage capacity unit combinations.
 |150 MB per second (75 MB/s producing, 75 MB/s consuming)|2 TB, 4 TB, 6 TB, 8 TB, 10 TB, 12 TB|
 |300 MB per second (150 MB/s producing, 150 MB/s consuming)|4 TB, 8 TB, 12 TB|
 |450 MB per second (225 MB/s producing, 225 MB/s consuming)|6 TB, 12 TB|
+{: caption="Table 1. Valid throughput and storage capacity unit combinations" caption-side="top"}
 
 For additional information about capacity limitations, refer to [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
 
@@ -99,6 +100,7 @@ The user ID in the account used to issue the **service-instance-** command must 
 See [creating resources](/docs/account?topic=account-manage_resource#creating-resources) for access requirements.
 
 ### During the scale-up process
+{: #scaleup_process}
 
 The time required to scale up the {{site.data.keyword.messagehub}} service instance is variable, but under normal circumstances should not exceed 3 hours. Both throughput and storage require provisioning extra infrastructure.
 
@@ -120,10 +122,12 @@ Valid combinations and values for the "throughput" and "storage_size" are as fol
 | | |12 TB|12288|
 |3  (450 MB/s )|450|6 TB|6144|
 | | |12 TB|12288|
+{: caption="Table 2. Valid combinations and values for 'throughput' and 'storage_size'" caption-side="top"}
 
 
 
 ### Example
+{: #scaleup_example}
 
 Deploy a service instance configured with a base capacity unit:
 * 150 MB/s of throughput capacity.
@@ -149,13 +153,13 @@ Scale this service instance to a configuration of a base capacity unit, one addi
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
-      ```
+      ```text
       ibmcloud login
       ```
 
 3. Get the resource name of your {{site.data.keyword.messagehub}} service instance.
   
-      ```
+      ```text
       ibmcloud resource service-instances
       ```
      
@@ -167,7 +171,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     Use the following command to display the current capacity configuration:
   
-      ```
+      ```text
       ibmcloud es init  --instance-name  "Event Streams resource instance name"
       ```
 
@@ -183,14 +187,14 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     a. Run the following from the CLI:
     
-      ```
+      ```text
       ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' 
       ```
 
     b. If there is an issue running the ibmcloud resource service-instance-update command and requires contacting IBM Support for assistance, 
     run the following command and include the output when contacting support:
 
-      ```
+      ```text
       ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
       ```
 
@@ -200,7 +204,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     You can get the current service instance information using the following command:
     
-      ```
+      ```text
       ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
       ```
         
@@ -213,7 +217,7 @@ Scale this service instance to a configuration of a base capacity unit, one addi
   
     Display the capacity configuration with the following command:
     
-      ```
+      ```text
       ibmcloud es init  --instance-name  "Event Streams resource instance name" 
       ```
         

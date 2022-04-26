@@ -16,7 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
-{:external: target="_blank" .external}
+
 
 
 # {{site.data.keyword.messagehub}} Schema Registry
@@ -489,7 +489,7 @@ These rules can be applied at two scopes:
 By default, the registry has a global compatibility rule setting of `NONE`. Per-schema level rules must be defined, otherwise the schema will default to using the global setting.
 
 ## Full API description
-{: full_api_description}
+{: #full_api_description}
 
 For a description of the REST API with examples, see 
 [{{site.data.keyword.messagehub}} schema-registry-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: external}.

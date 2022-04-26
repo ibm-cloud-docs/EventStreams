@@ -51,7 +51,7 @@ Many configuration settings exist for the consumer, which control aspects of its
 |max.poll.interval.ms |The maximum time interval between polls before the consumer leaves the group. | 1,... | 300000 (5 minutes) |
 {: caption="Table 1. Configuring consumer properties" caption-side="top"}
 
-Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/documentation/){: new_window} before starting to experiment with them.
+Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation](http://kafka.apache.org/documentation/){: external} before starting to experiment with them.
 
 ## Consumer groups
 {: #consumer_groups}
@@ -107,10 +107,9 @@ When a consumer starts and is assigned a partition to consume, it starts at its 
 If there is no existing committed offset, the consumer can choose whether to start with the earliest or latest available message based on 
 the setting of the `auto.offset.reset` property as follows:
 
-- `latest` (the default): Your consumer receives and consumes only messages that arrive after you subscribe. 
-Your consumer has no knowledge of messages that were sent before it subscribed, therefore don't expect that all messages 
-are consumed from a topic.
-- `earliest`: Your consumer consumes all messages from the beginning because it is aware of all messages that were sent.
+*`latest` (the default): Your consumer receives and consumes only messages that arrive after you subscribe. 
+    Your consumer has no knowledge of messages that were sent before it subscribed, therefore don't expect that all messages are consumed from a topic.
+* `earliest`: Your consumer consumes all messages from the beginning because it is aware of all messages that were sent.
 
 If a consumer fails after processing a message but before committing its offset, the committed offset information does not reflect the processing of the message. 
 This means that the message is processed again by the next consumer in that group to be assigned the partition.

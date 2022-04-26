@@ -62,7 +62,7 @@ Use one of the following methods to authenticate:
 * **To authenticate directly using the api_key:**  \n   
     Place the key directly as the value of the ```X-Auth-Token```HTTP header.
 
-  \n   
+    \n   
 The following code shows an example of sending a message using curl:
 
 ```text
@@ -71,6 +71,7 @@ curl -v -X POST -H "Authorization: Basic <base64 username:password>" -H "Content
 {: codeblock}
 
 ## Limitations
+{: #rest_producer_limitations}
 
 When using the REST producer API, there is a limitation on the record key and value size. These limitations are as follows:
 * Maximum key size is 4 K 

@@ -25,7 +25,6 @@ subcollection: EventStreams
 Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
 {: shortdesc}
 
-<!--17/10/17 - Karen: same info duplicated at messagehub104 -->
 ## How do I use Kafka APIs to create and delete topics?
 {: #topic_admin}
 {: faq}
@@ -81,8 +80,6 @@ Offset retention is system-wide so you cannot set it at an individual topic leve
 
 The internal Kafka `__consumer_offsets` topic is visible to you as read-only on the Enterpise plan. 
 You are strongly recommended not to attempt to manage the topic in any way. You cannot access the `__consumer_offsets` topic in any way on the Standard plan. 
-
-<!--following message retention info duplicated in known_restrictions.md-->
 
 
 ## How can I clean up a consumer group with no consumers?

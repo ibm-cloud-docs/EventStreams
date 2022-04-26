@@ -34,7 +34,7 @@ Complete the following steps to get set up:
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
-* An instance of [IBM MQ on Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){: external} or [IBM MQ Version 8](https://developer.ibm.com/messaging/mq-downloads){: external}, or later. 
+* An instance of [IBM MQ on Cloud](/docs/mqcloud?topic=mqcloud-mqoc_getting_started){: external} or [IBM MQ Version 8](https://www.ibm.com/support/pages/downloading-ibm-mq-80){: external}, or later. 
    
    You can configure the IBM MQ Connector to authenticate with IBM MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
    * CONNECT authority. The IBM MQ Connector must be able to connect to the MQ queue manager.
@@ -60,7 +60,7 @@ Clone the following two repositories that contain the required files:
 
 1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
-    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace  `<BOOTSTRAP_SERVERS>`; in one place and `<APIKEY>` in three places with your {{site.data.keyword.messagehub}} credentials.
+    From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, edit the `connect-distributed.properties` file and replace `<BOOTSTRAP_SERVERS>`; in one place and `<APIKEY>` in three places with your {{site.data.keyword.messagehub}} credentials.
 
     Provide `<BOOTSTRAP_SERVERS>` as a comma-separated list. If they are not valid, you get an error.
 

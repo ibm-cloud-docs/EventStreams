@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed using the fully-managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
 
-![Streaming to Cloud Object Storage by using SQL Query](ES_streams_landing.svg)
+![Streaming to Cloud Object Storage by using SQL Query](ES_streams_landing.svg){: caption="Figure 1. Diagram showing streaming to Cloud Object Storage by using SQL Query" caption-side="bottom"}
 
 The following task walks you through:
 
@@ -57,8 +57,7 @@ Ensure you have the following permissions:
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} stream landing
 {: #step2_setup_cos_landing}
 
-1. Click on the **Overflow menu** (3 vertical dots beside the topic) to start and select the **streaming** topic data option
-in order to see the streams landing overview page.
+1. Click on the **Overflow menu** (3 vertical dots beside the topic) to start and select the **streaming** topic data option to see the streams landing overview page.
 2. Click **Start** to start the wizard.
 3. Select the required Cloud {{site.data.keyword.cos_short}} instance, then click **Next**.
 4. Within the Cloud {{site.data.keyword.cos_short}} instance, select the bucket where the events should be stored, then click **Next**.
@@ -74,15 +73,15 @@ in order to see the streams landing overview page.
 ## Step 3. Validate that your stream landing job is working
 {: #step3_validate_landing}
 
-To validate that streams landing is working, do the following steps:
+To validate that streams landing is working, complete the following steps:
 
-    - Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
-    - Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
-    - Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs.
-    - In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
+* Verify that the specified prefix in {{site.data.keyword.cos_short}} is filled with Parquet objects.
+* Check the status of all streaming jobs in the {{site.data.keyword.sqlquery_short}} UI.
+* Alternatively, use the REST API of {{site.data.keyword.sqlquery_short}} to get the list and the details of running stream landing jobs.
+* In the {{site.data.keyword.messagehub}} UI, you also get information about the active stream landing jobs per topic. Using {{site.data.keyword.messagehub}}, you can view and stop the landing configuration.
 
 ## Estimating cost
-{: estimating-cost}
+{: #estimating-cost}
 
 To keep the example simple, assume to persist 1 MB per second of data in Cloud {{site.data.keyword.cos_short}} that originates from {{site.data.keyword.messagehub}}. All pricing in this example is in US currency.
 
@@ -93,13 +92,14 @@ Feature | Price
 {{site.data.keyword.sqlquery_short}} stream landing job | $0.11 per hour
 Cloud {{site.data.keyword.cos_short}} Class A requests for writing data | ~$0.02 per hour
 Cloud {{site.data.keyword.cos_short}} | $0.05 per month for each 3.6 GB using the smart storage tier class
+{: caption="Table 1. Cost overview" caption-side="top"}
 
 Your total cost per hour, with the data subsequently stored for a month, would be approximately: $0.474. The above is only an example, and you should evaluate your own planned usage with the IBM Cloud cost calculator.
 
 ## Limitations
-{: limitations-streams-landing}
+{: #limitations-streams-landing}
 
-- With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput depends on parameters, such as topic partitions,  and size and format of the events. 
+- With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput depends on parameters, such as topic partitions, and size and format of the events. 
 - For one {{site.data.keyword.sqlquery_short}} instance, the limit is five concurrent stream landing jobs. The limit can be raised upon request via support ticket. 
 - The {{site.data.keyword.messagehub}} feature is currently only available for instances created in the US-South region and in Frankfurt.
 
