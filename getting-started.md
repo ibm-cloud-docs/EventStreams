@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-02-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -26,12 +26,7 @@ subcollection: EventStreams
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [About {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}.
-
-<!-- 11/01/18 - Karen - removing diagram as requested by James
-![Java sample overview diagram](getting_started_sample.gif "Overview diagram of Java sample showing the flow of messages.")
--->
-<!-- 08/08/2019 - Chloe - Re-structuring to get UI components of the flow introduced earlier in the flow. Also moving pre-requsisites to a potentially collapsible section. -->
+To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples]](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
 ## Prerequisites
 {: #getting_started_prereqs}
@@ -40,7 +35,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    a. Log in to the {{site.data.keyword.Bluemix_notm}} console.
   
-   b. Click the [**{{site.data.keyword.messagehub}} service** ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){: new_window} in the **Catalog**.
+   b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
   
    c. Select the **Lite plan** on the service instance page.
   
@@ -50,8 +45,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
-	* [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/){: new_window}
-	* [Gradle ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://gradle.org/){: new_window}
+	* [Git](https://git-scm.com/){: external}
+	* [Gradle](https://gradle.org/){: external}
 	* Java™  8 or higher 
 
 ## Tutorial steps
@@ -101,16 +96,16 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
 
-   <br/>
-   When the repository is cloned, from the command line change into the <code>kafka-java-console-sample</code> directory.
+ 
+   When the repository is cloned, from the command line change into the `kafka-java-console-sample` directory.
 
    ```
    cd event-streams-samples/kafka-java-console-sample
    ```
    {: codeblock}
+   
 
-   <br/>
-   Build the contents of the <code>kafka-java-console-sample</code> directory.
+   Build the contents of the `kafka-java-console-sample` directory.
 
    ```
    gradle clean && gradle build
@@ -126,7 +121,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). 
    Use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
+   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. 
+   Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
    {: important}
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` indicates to start the consumer. 
@@ -141,7 +137,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 5. **Run the producing application**. {: #start_producer_step notoc}
 
-   Open a new command line window and change into the <code>kafka-java-console-sample</code> directory.
+   Open a new command line window and change into the `kafka-java-console-sample` directory.
 
    ```
    cd event-streams-samples/kafka-java-console-sample
@@ -154,7 +150,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). We recommend to use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. </br> Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
+   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. 
+   Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
    {: important}
 
    Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` initiates to start the producer. 
@@ -175,13 +172,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Next steps
 {: #next_steps}
 
-Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples){: new_window}. Explore [other ways to connect ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/EventStreams?topic=EventStreams-kafka_connect){: new_window} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) tutorial, or find out more about 
-[{{site.data.keyword.messagehub}} on IBM Cloud Private ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://ibm.github.io/event-streams/){: new_window}.
+Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) {: external} tutorial, or find out more about 
+[{{site.data.keyword.messagehub}} on IBM Cloud Private](https://ibm.github.io/event-streams/){: external}.
 
-To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}} ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=XyNy7TcfJOc){: new_window}.
- 
- 
-<!-- 07/06/18 - Karen: removing until a newer version available
-To watch a video that walks
-you through getting a Java sample to run against {{site.data.keyword.messagehub}}, see [{{site.data.keyword.messagehub}} - Getting started with IBM's Kafka in the cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.youtube.com/watch?v=tt-bLtFzC_4){: new_window}.
--->
+To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
