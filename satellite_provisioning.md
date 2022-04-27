@@ -44,6 +44,10 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 1. Provision a {{site.data.keyword.satelliteshort}} location.
 
     1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+
+       IBM Cloud Satellite provides Quick Start templates to help with the provisioning of a satellite location and initial set of host instances.  These templates only provision one type (size) of host instance.  Step 3 below outlines that Event Streams requires more than one type of host instance.  The recommendation above to use the manual steps to create your satellite location will allow you to provide multiple types of host instances.  An option would be to use a quick start template to create hosts for the satellite location's control plane and part of the Event Streams requirement, then use the manual steps to add additional host types required by Event Streams.
+       {: important}
+
     2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
     3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
@@ -84,6 +88,9 @@ Attach the following hosts to your {{site.data.keyword.satelliteshort}} location
 
 - 6 nodes of 4 vCPU and 16 GiB memory
 - 3 nodes of 8 vCPU and 32 GiB memory
+
+When Event Streams provisions, the provision process will discover the 4 vCPU and 8 vCPU hosts in the satellite location and automatically assign them to the Event Streams service instance.  If 4 vCPU and 8 vCPU hosts are not available in the satellite location as indicated above, the Event Streams provision will run until the hosts are attached to the satellite location.  The Event Streams provision will not use other types of hosts in replacmement of what is indicated above.
+{: important}
 
 The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance. If multiple {{site.data.keyword.messagehub}} 
 {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
