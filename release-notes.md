@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-27"
 
 keywords: event streams release notes
 
@@ -27,6 +27,9 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 
 Satellite plan
 :   The new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) enables you to create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+
+Additional topic and consumer group metrics
+:   Additional topic and consumer group metrics available, see [Monitoring Event Streams metrics using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
 
 ## December 2021
 {: #EventStreams-dec2021}
