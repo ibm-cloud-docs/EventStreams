@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-08-19"
+  years: 2015, 2022
+lastupdated: "2022-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -37,7 +37,7 @@ The Java™ Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an I
 
 Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for high availability, not all the broker IP addresses are known to the Kafka client, which prevents failover to a working broker. In these cases, failover requires a requery of the IP addresses for the broker URLs to get a working IP address. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This value ensures that if a bootstrap server’s IP address has issues, the Kafka client is able to look up and use a new IP address by querying the DNS.
 
-From the <code>java.security</code> file: 
+From the `java.security` file: 
 
 ```text
 # The Java-level namelookup cache policy for successful lookups:
@@ -61,8 +61,9 @@ From the <code>java.security</code> file:
 ### How to modify the JVM's TTL
 {: #jvm_ttl notoc}
 
-* To modify the JVM's TTL for all applications, set the `networkaddress.cache.ttl` value in the `<$JAVA_HOME>/jre/lib/security/java.security` file.
-* To modify the JVM TTL for a specific application, set the `networkaddress.cache.ttl` in your application code.
+- To modify the JVM's TTL for all applications, set the `networkaddress.cache.ttl` value in the `<$JAVA_HOME>/jre/lib/security/java.security` file.
+- To modify the JVM TTL for a specific application, set the `networkaddress.cache.ttl` in your application code.
+
    ```text
    java.security.Security.setProperty("networkaddress.cache.ttl" , "30");
    ```
@@ -84,23 +85,22 @@ A Kafka Improvement Proposal (KIP) #302 (available from Kafka 2.1.1) ensures tha
 and not a subset, so a failure in a single IP address does not cause a failure. 
 
 You need to opt into this functionality by using one of the following methods:
-* Specify a new allowed value in the Consumer and Producer properties of the configuration parameter <code>client.dns.lookup</code>:
+
+- Specify a new allowed value in the Consumer and Producer properties of the configuration parameter `client.dns.lookup`:
 
     ```text
     client.dns.lookup: "use_all_dns_ips" 
     ```
     {: codeblock}
 
-* use the constants CommonClientConfigs.CLIENT_DNS_LOOKUP_CONFIG: ClientDnsLookup.USE_ALL_DNS_IPS 
+- Use the constants `CommonClientConfigs.CLIENT_DNS_LOOKUP_CONFIG: ClientDnsLookup.USE_ALL_DNS_IPS`.
 
 
 ## Topics and partitions
 {: #topics_partitions}
 
-*  Topic names are restricted to a maximum of 200 characters.
-*  The default number of partitions for a topic is one.
-
-<!--following message retention info duplicted in FAQs faq.md-->
+- Topic names are restricted to a maximum of 200 characters.
+- The default number of partitions for a topic is one.
 
 ## Creating and deleting topics in Kafka
 {: #create_delete}
