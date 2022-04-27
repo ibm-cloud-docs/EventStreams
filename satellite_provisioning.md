@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -63,8 +63,7 @@ created.
 2. Choose the **Authorizations** tab from the left hand menu.
 3. Click the **Create** button to create an authorization that allows a service instance access to another service instance.
 
-   1. The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. 
-   The target service is the service you grant permission to be accessed by the source service, based on the assigned roles.
+   1. The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you grant permission to be accessed by the source service, based on the assigned roles.
    2. In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
    3. Scope the access to **All resources**.
    4. In the **Target Service** field, select **{{site.data.keyword.satelliteshort}}**.
