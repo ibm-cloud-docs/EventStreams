@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -44,6 +44,10 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 1. Provision a {{site.data.keyword.satelliteshort}} location.
 
     1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+
+       IBM Cloud {{site.data.keyword.satelliteshort}} provides Quick Start templates to help with the provisioning of a {{site.data.keyword.satelliteshort}} location and initial set of host instances. The templates however only provision one type (size) of host instance. {{site.data.keyword.messagehub}} requires more than one type of host instance. The recommendation to use the manual steps to create your {{site.data.keyword.satelliteshort}} location allows you to provide multiple types of host instances. Optionally, use the quick start template to create hosts for the {{site.data.keyword.satelliteshort}} location's control plane and part of the {{site.data.keyword.messagehub}} requirement, then use the manual steps to add additional host types required by {{site.data.keyword.messagehub}}.
+       {: important}
+
     2. {{site.data.keyword.messagehub_full}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
     3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
@@ -84,6 +88,9 @@ Attach the following hosts to your {{site.data.keyword.satelliteshort}} location
 
 - 6 nodes of 4 vCPU and 16 GiB memory
 - 3 nodes of 8 vCPU and 32 GiB memory
+
+When {{site.data.keyword.messagehub}} provisions, the provision process discovers the 4 vCPU and 8 vCPU hosts in the {{site.data.keyword.satelliteshort}} location and automatically assign them to the {{site.data.keyword.messagehub}} service instance. If 4 vCPU and 8 vCPU hosts are not available in the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.messagehub}} provision runs until the hosts are attached to the {{site.data.keyword.satelliteshort}} location. The {{site.data.keyword.messagehub}} provision does not use other types of hosts in replacmement of what is indicated above.
+{: important}
 
 The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instance. If multiple {{site.data.keyword.messagehub}} 
 {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
