@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-12-16"
+  years: 2015, 2022
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -34,7 +34,6 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
 
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
 
-
 |   |Enterprise Plan   |Standard Plan   |Lite Plan |
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 2.8  |  Kafka 2.8 | Kafka 2.8  |
@@ -43,7 +42,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported supported**   |  Yes |  No|  No |
 |**Authentication requirements**   |  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol | Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol|  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol |
-{: caption="Table 1.  Kafka client support in Standard, Enterprise, and Lite plans" caption-side="bottom"} 	
+{: caption="Table 1. Kafka client support in Standard, Enterprise, and Lite plans" caption-side="bottom"} 	
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
@@ -87,7 +86,7 @@ From these objects:
 
 For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values that you retrieved previously.
 
-```
+```config
 bootstrap.servers=KAFKA_BROKERS_SASL
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
 security.protocol=SASL_SSL
