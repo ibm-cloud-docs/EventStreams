@@ -25,7 +25,7 @@ subcollection: EventStreams
 Apache Kafka comes with a variety of console tools for simple administration and messaging operations. You can use many of them with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka has developed, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 {: shortdesc}
 
-You can find these console tools in the <code>bin</code> directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can find these console tools in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
 To provide the SASL credentials to these tools, create a properties file based on the following example:
 
@@ -93,6 +93,7 @@ After you created the properties file as described previously, run the consumer 
 {: codeblock}
 
 Replace the following variables in the example with your own values:
+
 - KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
 - CONFIG_FILE with the path of the configuration file.
 
@@ -159,4 +160,3 @@ Replace the following variables in the example with your own values:
 - KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). 
 - CONFIG_FILE with the path of the configuration file. 
 - APP_ID with your Streams application ID.
-
