@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -29,7 +29,7 @@ You can find these console tools in the `bin` directory of your Kafka download. 
 
 To provide the SASL credentials to these tools, create a properties file based on the following example:
 
-```
+```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     security.protocol=SASL_SSL
     sasl.mechanism=PLAIN
@@ -49,7 +49,7 @@ You can use the Kafka console producer tool with {{site.data.keyword.messagehub}
 
 After you've created the properties file as described previously, you can run the console producer in a terminal as follows:
 
-```
+```bash
     $ kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
 ```
 {: codeblock}
@@ -68,7 +68,7 @@ You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}
 
 After you created the properties file as described previously, run the console consumer in a terminal as follows:
 
-```
+```bash
     $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
 ```
 {: codeblock}
@@ -87,7 +87,7 @@ You can use the Kafka consumer groups tool with {{site.data.keyword.messagehub}}
 
 After you created the properties file as described previously, run the consumer groups tools in a terminal. For example, you can list the consumer groups as follows:
 
-```
+```bash
     $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
 ```
 {: codeblock}
@@ -99,7 +99,7 @@ Replace the following variables in the example with your own values:
 
 Using this tool, you can also display details like the current positions of the consumers, their lag, and client-id for each partition for a group. For example:
 
-```
+```bash
     $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
 ```
 {: codeblock}
@@ -108,7 +108,7 @@ Replace GROUP in the example with the group name that you want to retrieve detai
 
 Here is some sample output from running the **kafka-consumer-groups** tool:
 
-```
+```bash
 GROUP              TOPIC    PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG         CONSUMER-ID      HOST          CLIENT-ID
 consumer-group-1   foo        0          264             267            3          client-1-abc    example.com    client-1
 consumer-group-1   foo        1          124             124            0          client-1-abc    example.com    client-1
@@ -128,7 +128,7 @@ A scenario where you might want to use **kafka-topics** is to find out informati
 
 Here is some sample output from running the **kafka-topics** tool:
 
-```
+```bash
 $ bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
 
 Topic:sample-topic	PartitionCount:3	ReplicationFactor:3	 Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
