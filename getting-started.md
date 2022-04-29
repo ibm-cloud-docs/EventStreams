@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-27"
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -91,7 +91,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    The sample application is stored in GitHub. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
-   ```
+   ```bash
    git clone https://github.com/ibm-messaging/event-streams-samples.git
    ```
    {: codeblock}
@@ -99,7 +99,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
  
    When the repository is cloned, from the command line change into the `kafka-java-console-sample` directory.
 
-   ```
+   ```bash
    cd event-streams-samples/kafka-java-console-sample
    ```
    {: codeblock}
@@ -107,7 +107,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Build the contents of the `kafka-java-console-sample` directory.
 
-   ```
+   ```bash
    gradle clean && gradle build
    ```
    {: codeblock}
@@ -127,7 +127,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-consumer` indicates to start the consumer. 
 
-   ```
+   ```bash
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
    <kafka_brokers_sasl> <api_key> -consumer
    ```
@@ -139,7 +139,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Open a new command line window and change into the `kafka-java-console-sample` directory.
 
-   ```
+   ```bash
    cd event-streams-samples/kafka-java-console-sample
    ```
    {: codeblock}
@@ -156,7 +156,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    Use the `api_key` from the **Service credentials** created in [Step 2](/docs/EventStreams?topic=EventStreams-getting_started#create_credentials_step). `-producer` initiates to start the producer. 
 
-   ```
+   ```bash
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
    <kafka_brokers_sasl> <api_key> -producer
    ```
