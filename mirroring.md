@@ -152,7 +152,7 @@ Cluster A should have the same access policies apart from the last one which sho
 You can configure mirroring using the [CLI](/docs/EventStreams?topic=EventStreams-cli) or [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api). All mirroring user controls are performed on the target cluster.
 
 ### Setting the topic selection
-{: #topic_selection}
+{: #setting_topic_selection}
 
 The mirroring selection is made based on the topic names on the source cluster using patterns. It is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
@@ -196,7 +196,7 @@ ibmcloud es mirroring-topic-selection-set --select topic1,topic3
 ```
 
 ### Retrieving the topic selection
-{: #topic_selection}
+{: #retrieving_topic_selection}
 
 You can retrieve the mirroring selection using the following interfaces:
 
