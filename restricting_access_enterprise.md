@@ -218,13 +218,12 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 3. Use below VPC REST API to obtain the source IP addresses or check UI section `Cloud Service Endpoint source addresses`:
 
    ```bash
-   $ curl -H "Authorization: $IAM_TOKEN" "https://eu-de.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
-10.249.x.x/32
-10.249.x.x/32
-10.249.x.x/32
+   $ curl -H "Authorization: $IAM_TOKEN" "https://eu-de.iaas.cloud.ibm.com/v1/vpcs/$VPC_ID?version=2019-10-15&generation=1" 2>/dev/null | jq -r '.cse_source_ips | .[] | "\          (.ip.address)/32"'
+   10.249.x.x/32
+   10.249.x.x/32
+   10.249.x.x/32
    ```
    {: codeblock}
-
 
 ## Migrate applications to use private endpoints
 {: #migrate_endpoints}
