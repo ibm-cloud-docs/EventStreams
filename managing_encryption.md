@@ -23,9 +23,7 @@ subcollection: EventStreams
 # Managing encryption
 {: #managing_encryption}
 
-By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. 
-Although this default encryption model provides at-rest security, you might need a higher level of control. 
-For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption with the following IBM Cloud® Key Management Services:
+By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption with the following IBM Cloud® Key Management Services:
 
 - {{site.data.keyword.keymanagementservicefull}} (Bring Your Own Key - BYOK) helps you provision encrypted keys for apps across IBM Cloud services. 
 As you manage the lifecycle of your keys, you can benefit from knowing that your keys are secured by FIPS 140-2 Level 3 certified cloud-based hardware security modules (HSMs) that protect against the theft of information. You can find out more about using {{site.data.keyword.keymanagementserviceshort}} in the [Getting Started tutorial](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external}.
@@ -40,14 +38,16 @@ Consider using customer-managed keys if you require the following features:
 - Explicit control of the lifecycle of data stored at rest.
 {: #considerations_keys notoc}
 
-Be aware of the following information when deciding to enable customer-managed keys: 
-- This feature is available on the Enterprise plan only.
+Customer-managed keys is available on the Enterprise plan only.
+{: note}
 
 Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your {{site.data.keyword.messagehub}} instance.
 {: important}
 
 ## What is not covered by customer-managed encryption
-If customer-managed encryption feature is selected the user should be aware that **only** Message Payload data is covered by this encryption. {{site.data.keyword.messagehub}} encrypts at rest other data related to the use of the service. However, although encrypted, Non Message payload data **will not** be encrypted with the customer-managed encryption. Examples are client metadata such as Topic Names, Topic configuration data, Schemas stored in the Schema registry and metadata stored in relation to the configuration of the Enterprise instance. 
+{: #encryption_what}
+
+If customer-managed encryption feature is selected the user should be aware that **only** Message Payload data is covered by this encryption. {{site.data.keyword.messagehub}} encrypts at rest other data related to the use of the service. However, although encrypted, Non Message payload data **is not** encrypted with the customer-managed encryption. Examples are client metadata such as Topic Names, Topic configuration data, Schemas stored in the Schema registry and metadata stored in relation to the configuration of the Enterprise instance. 
 
 Therefore, you are not recommended to use confidential information in such client metadata.
 {: important}
@@ -77,7 +77,7 @@ Complete the following steps to provision your {{site.data.keyword.messagehub}} 
 
 If provisioning through {{site.data.keyword.Bluemix}} console, select a key management service instance and then select a root key from the instance.
 
-If provisioning through CLI, use this command: 
+If provisioning through CLI, use the following command: 
 
 ```
 ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub ibm.message.hub.enterprise.3nodes.2tb REGION -p '{"kms_key_crn":"KMS_KEY_CRN"}'
@@ -109,6 +109,7 @@ This operation is destructive and results in the loss of all message and topic d
 After a customer-managed key is enabled, the cluster operates as normal, but with the following additional capabilities:
 
 ### Preventing access to data
+{: #preventing_access}
 
 To temporarily prevent access, you can disable your root key. As a consequence, {{site.data.keyword.messagehub}} can no longer access the data because it can no longer access the key. 
 
@@ -123,19 +124,16 @@ You are charged for your instance of {{site.data.keyword.messagehub}} until you 
 {: important}
 
 ### Restoring access to data
+{: #restoring_access}
 
-Access can be restored only if the key was not deleted. To restore access, re-enable your root key.
-After a short period of initialization, your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. 
-All data is retained, subject to the normal retention limits configured in your instance.
+Access can be restored only if the key was not deleted. To restore access, re-enable your root key. After a short period of initialization, your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. All data is retained, subject to the normal retention limits configured in your instance.
 
-An activity tracker event is generated to report the action. 
-For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Rotating the key
+{: #rotating_key}
 
-{{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.hscrypto}} support the rotation of root keys, 
-either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described 
-previously in [how customer-managed encryption works](/docs/EventStreams?topic=EventStreams-managing_encryption#encryption_how). 
+{{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.hscrypto}} support the rotation of root keys, either on demand or on a schedule. When this occurs, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](/docs/EventStreams?topic=EventStreams-managing_encryption#encryption_how). 
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events). 
 
