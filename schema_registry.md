@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -293,7 +293,7 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Listing all of the versions of a schema
-{: #list_schemas}
+{: #list_schema_versions}
 
 To list all versions of a schema currently stored in the registry, make a GET request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response.
 
@@ -315,7 +315,7 @@ Getting the list of available versions of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Deleting a version of a schema
-{: #delete_schema}
+{: #delete_schema_version}
 
 Schema versions are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id}/versions/{version} endpoint (where {schema-id} is the ID of the schema, and {version} is the version number of the schema version). If successful, an empty response, and a status code of 204 (no content) is returned. Deleting the only remaining version of a schema will also delete the schema.
 
@@ -544,7 +544,6 @@ The *normalize* option for schema lookups and registration is not supported.
 The Schema Registry can be tested with third party tools, such as the `kafka-avro-console-producer.sh` and `kafka-avro-console-consumer.sh`, that allow testing of conformance to schema using the Confluent SerDes.
 
 To run either the producer or the consumer tool, a common properties is required with the connection options for the {{site.data.keyword.messagehub}} Enterprise instance.
-
 
 ```text
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="apikey";
