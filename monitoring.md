@@ -31,6 +31,7 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub}} metrics can broadly be categorized into two different groups: **Default** and **Enhanced**.
 
 ### Enabling default {{site.data.keyword.messagehub}} metrics
+{: #enabling_default_metrics}
 
 Before you can start using {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in and then enable platform metrics by completing the following steps:
 
@@ -561,10 +562,10 @@ Total disk size of all partitions of a topic.
 {: caption="Table 33. Topic size metric metadata" caption-side="bottom"}
 
 ## Attributes for segmentation
-{: attributes}
+{: #attributes}
 
 ### Global attributes
-{: global-attributes}
+{: #global-attributes}
 
 The following attributes are available for segmenting all of the metrics listed above.
 
@@ -580,7 +581,7 @@ The following attributes are available for segmenting all of the metrics listed 
 {: caption="Table 34. Global attributes" caption-side="bottom"}
 
 ### Additional attributes
-{: additional-attributes}
+{: #additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in the reference above.  Please see the individual metrics for segmentation options.
 
