@@ -77,7 +77,7 @@ If provisioning through {{site.data.keyword.Bluemix}} console, select a key mana
 
 If provisioning through CLI, use the following command: 
 
-```
+```bash
 ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub ibm.message.hub.enterprise.3nodes.2tb REGION -p '{"kms_key_crn":"KMS_KEY_CRN"}'
 ```
 {: codeblock}
@@ -90,7 +90,7 @@ If you wish to update your existing {{site.data.keyword.messagehub}} instance to
    You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking the {{site.data.keyword.messagehub}} service in the console. 
    Alternatively, paste in the output from the following CLI command:
 
-      ```
+      ```bash
       ibmcloud resource service-instance NAME
       ```
       {: codeblock}
@@ -99,7 +99,6 @@ If you wish to update your existing {{site.data.keyword.messagehub}} instance to
 
 This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
 {: important}
-
 
 ## Using a customer-managed key
 {: #using_encryption}
