@@ -25,7 +25,6 @@ Kafka provides a rich set of APIs and clients across a broad range of languages.
 
 - **Kafka's core API (Consumer, Producer, and Admin API)**  
     Use to send and receive messages directly from one or more Kafka topics. 
-    
     The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. It allows you to create, delete, and manage topics. You can also use the Admin client to manage consumer groups and configurations.
 - **Streams API**  
     A higher level stream processing API to easily consume, transform, and produce events between topics.
@@ -37,7 +36,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |   |Enterprise Plan   |Standard Plan   |Lite Plan |
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 2.8  |  Kafka 2.8 | Kafka 2.8  |
-| **Supported client versions**  |  Kafka 0.10.x, or later |Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
+| **Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported supported**   |  Yes |  No|  No |
