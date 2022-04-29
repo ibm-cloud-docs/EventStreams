@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -54,7 +54,7 @@ Before you can start using enhanced {{site.data.keyword.messagehub}} metrics, yo
 
 * Run the following command to update the service instance to start using enhanced metrics:
    
-   ```
+   ```bash
    ibmcloud resource service-instance-update <instance-name> -p '{"metrics":["topic","consumers"]}'
    ```
    {: codeblock}
@@ -63,7 +63,7 @@ When enhanced metrics are enabled, depending on the selection, new dashboards ar
 
 To opt out of enhanced metrics, run the following command:
 
-   ```
+   ```bash
    ibmcloud resource service-instance-update <instance-name> -p '{"metrics":[]}'
    ```
    {: codeblock}
@@ -326,7 +326,6 @@ The number of leader partitions in an {{site.data.keyword.messagehub}} instance.
 {: caption="Table 17. Number of partitions metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-plan_choose){: external} to determine what the recommended limits are for your plan and cluster.
-
 
 ### Number of topics
 {: #ibm_eventstreams_instance_topics}
