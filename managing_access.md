@@ -97,6 +97,7 @@ For an example of how to set policies, see: [IBM Cloud IAM Service IDs and API K
 
 ## Wildcarding
 {: #wildcarding }
+
 You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard){: external}.
 
 ## Connecting to {{site.data.keyword.messagehub}}
