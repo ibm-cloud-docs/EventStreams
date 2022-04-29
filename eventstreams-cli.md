@@ -163,14 +163,15 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 :   Set the number of partitions for the topic.
 
 --config KEY=VALUE, -c KEY=VALUE(optional)
-:   Set a configuration option for the topic as a KEY=VALUE pair.<p> You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
+:   Set a configuration option for the topic as a KEY=VALUE pair. 
+:   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
   
-   - cleanup.policy
-   - retention.ms
-   - retention.bytes
-   - segment.bytes
-   - segment.ms
-   - segment.index.bytes
+    - cleanup.policy
+    - retention.ms
+    - retention.bytes
+    - segment.bytes
+    - segment.ms
+    - segment.index.bytes
 
 ## ibmcloud es topic-delete
 {: #ibmcloud_es_topic_delete}
@@ -211,7 +212,8 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 :   Topic name.
 
 --partition-offset PARTITION:OFFSET, -p PARTITION:OFFSET
-:   The partition and offset to delete records from in PARTITION:OFFSET format. <p> You can specify multiple --partition-offset options or you can specify multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with quotations: 'PARTITION1:OFFSET1;PARTITION2:OFFSET2;PARTITION3:OFFSET3'.
+:   The partition and offset to delete records from in PARTITION:OFFSET format. 
+:   You can specify multiple --partition-offset options or you can specify multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with quotations: 'PARTITION1:OFFSET1;PARTITION2:OFFSET2;PARTITION3:OFFSET3'.
   
 --force, -f (optional)
 :   Delete records without confirmation.
@@ -220,7 +222,6 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 {: #ibmcloud_es_topic_partitions_set}
 
 Set the partitions for a topic.
-
 
 ```
 ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
@@ -243,7 +244,6 @@ ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 
 Update the configuration for a topic.
 
-
 ```
 ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
 
@@ -259,7 +259,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 --config KEY[=VALUE], -c KEY[=VALUE]
 :   Set a configuration option for the topic as a KEY[=VALUE] pair.
-    If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default. Multiple --config options can be specified.
+:   If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default. Multiple --config options can be specified.
 Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
 
     - cleanup.policy
@@ -276,7 +276,6 @@ Each '--config' option can specify a semicolon-delimited list of assignments. Th
 {: #ibmcloud_es_topics}
 
 List topics.
-
 
 ```
 ibmcloud es topics [--filter FILTER] [--json]
@@ -299,7 +298,6 @@ ibmcloud es topics [--filter FILTER] [--json]
 
 Display details of a consumer group.
 
-
 ```
 ibmcloud es group [--group] GROUP_ID [--json]
 
@@ -320,7 +318,6 @@ ibmcloud es group [--group] GROUP_ID [--json]
 {: #ibmcloud_es_group_reset}
 
 Reset the offsets for a consumer group.
-
 
 ```
 ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] --mode MODE --value VALUE [--dry-run] [--execute] [--json]
@@ -363,7 +360,6 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 
 List consumer groups.
 
-
 ```
 ibmcloud es groups [--filter FILTER] [--json]
 
@@ -386,7 +382,6 @@ ibmcloud es groups [--filter FILTER] [--json]
 
 Delete a consumer group.
 
-
 ```
 ibmcloud es group-delete [--group] GROUP_ID [--force]
 
@@ -407,7 +402,6 @@ ibmcloud es group-delete [--group] GROUP_ID [--force]
 {: #ibmcloud_es_mirroring_topic_selection}
 
 List mirroring topic selection.
-
 
 ```
 ibmcloud es mirroring-topic-selection [--json]
