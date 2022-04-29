@@ -10,6 +10,7 @@ subcollection: EventStreams
 
 ---
 
+{:external: target="_blank" .external}
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
@@ -22,13 +23,13 @@ subcollection: EventStreams
 
 Kafka provides a rich set of APIs and clients across a broad range of languages. For example:
 
-* **Kafka's core API (Consumer, Producer, and Admin API)**<br/>
+- **Kafka's core API (Consumer, Producer, and Admin API)**  
     Use to send and receive messages directly from one or more Kafka topics. 
-	
-	The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. It allows you to create, delete, and manage topics. You can also use the Admin client to manage consumer groups and configurations.
-* **Streams API**<br/>
+    
+    The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. It allows you to create, delete, and manage topics. You can also use the Admin client to manage consumer groups and configurations.
+- **Streams API**  
     A higher level stream processing API to easily consume, transform, and produce events between topics.
-* **Connect API**<br/>
+- **Connect API**  
     A framework allowing re-usable or standard integrations to stream events into and out of external systems, such as databases.
 
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
@@ -42,46 +43,30 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported supported**   |  Yes |  No|  No |
 |**Authentication requirements**   |  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol | Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol|  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol |
-
-{: caption="Table 1.  Kafka client support in Standard, Enterprise, and Lite plans" caption-side="top"} 	
+{: caption="Table 1.  Kafka client support in Standard, Enterprise, and Lite plans" caption-side="bottom"} 	
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: new_window} and 
-[Kafka Consumer API 2.8 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: new_window}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 2.8](https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 2.8](https://kafka.apache.org/28/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}. 
 
 For other languages, we recommend running one of the following clients, all of which are well-tested with {{site.data.keyword.messagehub}}.
 
 ### Support summary for all recommended clients
 {: #client_summary}
 
-| Client  | Language   | Recommended version   |Minimum version supported [<sup>1</sup>](/docs/EventStreams?topic=EventStreams-kafka_using#footnote1) |  Link to sample|
+| Client  | Language   | Recommended version   |Minimum version supported [^tabletext1] |  Link to sample|
 |---|---|---|---|---|
 |**Official Apache Kafka client:**         |   |   |   |    |
-| [Apache Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://kafka.apache.org/downloads)  |  Java   | Latest  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
+| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | Latest  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
 |**Third-party clients:**   |   |   |   |    |
-|[node-rdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
-|[confluent-kafka-python ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
-| [confluent-kafka-go ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/confluentinc/confluent-kafka-go) |  Golang | Latest  |  0.11.0  |   |
-| [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka) |  C or C++ | Latest  |  0.11.0  |   |
-{: caption="Table 2. Client support summary" caption-side="top"}
+|[node-rdkafka](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
+|[confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
+| [confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go) |  Golang | Latest  |  0.11.0  |   |
+| [librdkafka](https://github.com/edenhill/librdkafka) |  C or C++ | Latest  |  0.11.0  |   |
+{: caption="Table 2. Client support summary" caption-side="bottom"}
 
-### Footnote
-{: #footnote_clients notoc}
-
-1. This version is the earliest that we have validated in continual testing. Typically, this is the initial version available within the last 12 months, but it might be newer if significant issues are known to exist {: #footnote1 notoc}
-
-If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/edenhill/librdkafka/){: new_window}).
-* Supports Kafka 0.10, or later
-* Can connect and authenticate using SASL PLAIN with TLSv1.2
-* Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake
-* Supports elliptic curve cryptography
-
-However, we only test and have experience of the recommended third-party clients.
-
-In all cases, the latest version of the client is recommended.
-<br/>
+[^tabletext1]: The earliest version that was validated in continual testing. Typically, this is the initial version available within the last 12 months, or newer if significant issues are known to exist. If you can't run any of the clients listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka](https://github.com/edenhill/librdkafka/){: external}). 1) Supports Kafka 0.10, or later, 2) Can connect and authenticate using SASL PLAIN with TLSv1.2, 3) Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake, and 4) Supports elliptic curve cryptography. In all cases, the latest version of the client is recommended.
 
 ### Connecting your client to {{site.data.keyword.messagehub}}
 {: #connect_client}
@@ -93,12 +78,12 @@ For information about how to configure your Java client to connect to {{site.dat
 
 To establish a connection, clients must be configured to use SASL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. TLSv1.2 ensures connections are encrypted and validates the authenticity of the brokers (to prevent man-in-the-middle attacks). SASL enforces authentication on all connections.
 
-To retrieve the username, password, and list of bootstrap servers, a Service credentials object or service key is required for the service instance. For more information about creating these objects, see <link to Connecting to event Streams>
-[Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+To retrieve the username, password, and list of bootstrap servers, a Service credentials object or service key is required for the service instance. For more information about creating these objects, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 From these objects:
-* Use the <code>kafka_brokers_sasl property</code> as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, <code>host1:port1,host2:port2</code>. We recommend including details for all the hosts listed in the <code>kafka_brokers_sasl</code> property.
-* Use the <code>user</code> and <code>api_key</code> properties as the username and password
+
+- Use the `kafka_brokers_sasl property` as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, `host1:port1,host2:port2`. We recommend including details for all the hosts listed in the `kafka_brokers_sasl` property.
+- Use the `user` and `api_key` properties as the username and password.
 
 For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values that you retrieved previously.
 
@@ -113,4 +98,5 @@ ssl.endpoint.identification.algorithm=HTTPS
 ```
 {: codeblock}
 
-Note, if you're using a Kafka client earlier than 0.10.2.1, the <code>sasl.jaas.config</code> property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
+If you're using a Kafka client earlier than 0.10.2.1, the `sasl.jaas.config` property isn't supported and you must instead provide the client configuration in a JAAS configuration file. 
+{: note}
