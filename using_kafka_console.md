@@ -150,7 +150,7 @@ You can use this tool with {{site.data.keyword.messagehub}} to reset the process
 
 For example:
 
-```
+```bash
     $ kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
 ```
 {: codeblock}
