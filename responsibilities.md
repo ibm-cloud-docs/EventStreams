@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, responsibilities
 
@@ -24,18 +24,14 @@ subcollection: EventStreams
 
 # Understanding your responsibilities when using {{site.data.keyword.messagehub}}
 {: #event_streams_responsibilities}
-<!-- The title of your H1 should be Understanding your responsibilities with using _service-name_, where _service-name_ is the non-trademarked short version conref. -->
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.messagehub_full}}. For a high-level view of the service types in {{site.data.keyword.Bluemix}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
 {: shortdesc}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.messagehub_full}}. For the overall terms of use, see [{{site.data.keyword.Bluemix}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
-
   
 ## Incident, operations, and cluster management 
 {: #incident_ops_cluster}
-
-<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
@@ -46,13 +42,11 @@ Review the following sections for the specific responsibilities for you and for 
 |Client configuration, deployment, and lifecycle|   | Customer is responsible for managing client configuration, deployment, and lifecycle following [IBM best practice documentation](/docs/overview?topic=overview-shared-responsibilities#software-packages).|
 |Cluster management|  | Customer is responsible for managing the provided resource capacity of their clusters across their organizational user base. |
 |{{site.data.keyword.satelliteshort}} cluster management | {{site.data.keyword.messagehub}} deploys a service instance and cluster consisting of all required {{site.data.keyword.messagehub}} components onto the customer-provided infrastructure. {{site.data.keyword.messagehub}} is responsible for monitoring the health of the {{site.data.keyword.messagehub}} cluster and recovery of that cluster, unless recovery requires customer infrastructure actions. | [{{site.data.keyword.satelliteshort}} incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops) | 
-{: caption="Table 1. Responsibilities for incident, operations and cluster management" caption-side="top"}
+{: caption="Table 1. Responsibilities for incident, operations and cluster management" caption-side="bottom"}
 
 
 ## Security and regulation compliance
 {: #security_compliance}
-
-<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
@@ -62,13 +56,11 @@ Review the following sections for the specific responsibilities for you and for 
 |Manage users and access|   | Customer is responsible for managing your organizational account users and related access to the {{site.data.keyword.messagehub}} instance.|
 |Compliance controls|  | Customer is responsible for maintaining your organizational compliance controls.|
 |{{site.data.keyword.satelliteshort}} compliance and security | The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan is not yet certified for the same standards as the {{site.data.keyword.messagehub}} Enterprise plan. See [What is supported](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported) for specific compliance standards information. For additional information, see [IBM Cloud Service Description](https://www.ibm.com/support/customer/csol/terms?id=i126-6605&lc=en#detail-document) | For information, see [{{site.data.keyword.satelliteshort}} security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) |
-{: caption="Table 2. Responsibilities for security and regulation compliance" caption-side="top"}
+{: caption="Table 2. Responsibilities for security and regulation compliance" caption-side="bottom"}
 
 
 ## {{site.data.keyword.cloud_notm}} infrastructure and managing the environment
 {: #cloud_infrastructure}
-
-<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | IBM Cloud Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
@@ -76,12 +68,10 @@ Review the following sections for the specific responsibilities for you and for 
 |Monitor and repair| {{site.data.keyword.messagehub}} monitors and repairs infrastructure non-disruptively.  | |
 |Manage and configure|   | Customer is responsible for using the provided APIs, CLI, or console to manage topics and configuration. |
 |{{site.data.keyword.satelliteshort}} infrastructure and environment | {{site.data.keyword.messagehub}} deploys a service instance and cluster consisting of all required {{site.data.keyword.messagehub}} components onto the customer-provided infrastructure. {{site.data.keyword.messagehub}} is responsible for monitoring the health of the {{site.data.keyword.messagehub}} cluster and recovery of that cluster, unless recovery requires customer infrastructure actions.  | For information, see [{{site.data.keyword.satelliteshort}} incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops) and [{{site.data.keyword.satelliteshort}} change management](/docs/satellite?topic=satellite-responsibilities#change-management). |
-{: caption="Table 3. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="top"}
+{: caption="Table 3. Responsibilities for {{site.data.keyword.IBM_notm}} infrastructure and managing the environment" caption-side="bottom"}
 
 ## Disaster recovery
 {: #disaster-recovery}
-
-<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 If you have configured your {{site.data.keyword.messagehub}} instance in a multi-zone region, a regional disaster is very unlikely. However, we recommend customers have a plan for such circumstances. If, due to such an event, a customer's instance is no longer available (and a remote DR instance had not been already set up), the customer should consider configuring a new instance in a new region.  
 
@@ -92,20 +82,18 @@ If you have configured your {{site.data.keyword.messagehub}} instance in a multi
 |Message payload data backup|   | The customer is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure.|
 |Topic name and data backup|   | It is recommended good practice that a customer stores their topic names and configuration data for those topics in the same repository as their application source code. This way the topics can be restored into a new cluster should a disaster occur. |
 |Schema Registry|   | It is recommended good practice that a customer stores their schema in the same repository as their application source code. This way the schema can be restored into a new cluster should a disaster occur. |
-{: caption="Table 4. Responsibilities for disaster recovery" caption-side="top"}
+{: caption="Table 4. Responsibilities for disaster recovery" caption-side="bottom"}
 
 
 ## App orchestration
 {: #app_orchestration}
-
-<!-- Include an introductory sentence or two about this table. Leave the cell blank for the responsible party column if they do not have responsibility for the given task.  -->
 
 | Task | {{site.data.keyword.IBM_notm}} Responsibilities | Your Responsibilities |
 |----------|-----------------------|--------|
 |Integrate with select third-party partnership technologies| {{site.data.keyword.messagehub}} provides integrations with select third-party partnership technologies, such as IBM Cloud Activity Tracker with LogDNA.   |
 |Provide service binding to other {{site.data.keyword.IBM_notm}} services| {{site.data.keyword.messagehub}} provides the capability for service binding to other {{site.data.keyword.IBM_notm}} services.  | |
 |Manage, integrate, and monitor|   | Customer is responsible for using the provided tools and features to manage the lifecycle of customer-owned applications, for integrating with other services, and monitoring the health of the application (for example, Availability Monitoring).|
-{: caption="Table 5. Responsibilities for app orchestration" caption-side="top"}
+{: caption="Table 5. Responsibilities for app orchestration" caption-side="bottom"}
 
 ## Mirroring
 {: #mirroring_responsibilities}
@@ -119,7 +107,7 @@ If you have configured your {{site.data.keyword.messagehub}} instance in a multi
 |IAM  |    |Setting up required access policies    |
 |Failover  |    |Deciding when to failover and failover applications |
 |Failback  | Reconfiguring mirroring |Developing and executing failback plan. Coordinating with {{site.data.keyword.IBM_notm}} to reconfigure mirroring. |
-{: caption="Table 6. Responsibilities for mirroring" caption-side="top"}
+{: caption="Table 6. Responsibilities for mirroring" caption-side="bottom"}
 
 
 ## Support of client-side libraries
