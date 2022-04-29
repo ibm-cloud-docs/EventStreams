@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-04-26"
+  years: 2015, 2022
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -39,7 +39,7 @@ The stand-alone worker does not use any internal topics. Instead, it uses a file
 
 You must provide the bootstrap servers and SASL credentials information in the worker properties file that you supply when you start a Kafka Connect stand-alone worker. The following example lists the properties that you must provide in your properties file:
 
-```
+```config
     bootstrap.servers=KAFKA_BROKERS_SASL
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     security.protocol=SASL_SSL
@@ -57,7 +57,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 
 The following example lists the properties that you must provide in your properties file:
 
-```
+```config
     bootstrap.servers=KAFKA_BROKERS_SASL
     producer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     producer.security.protocol=SASL_SSL
@@ -75,7 +75,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 
 The following example lists the properties that you must provide in your properties file:
 
-```
+```config
     bootstrap.servers=KAFKA_BROKERS_SASL
     consumer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     consumer.security.protocol=SASL_SSL
@@ -93,7 +93,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 
 You must provide the bootstrap servers and SASL credentials information in the properties file that you supply when you start the Kafka Connect distributed workers. The following example lists the properties that you must provide in your properties file:
 
-```
+```config
     bootstrap.servers=KAFKA_BROKERS_SASL
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     security.protocol=SASL_SSL
@@ -108,7 +108,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 
 If you want to use a source connector, you must also specify the SSL and SASL configuration for the producer as follows:
 
-```
+```config
     producer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     producer.security.protocol=SASL_SSL
     producer.sasl.mechanism=PLAIN
@@ -120,7 +120,7 @@ If you want to use a source connector, you must also specify the SSL and SASL co
 
 If you want to use a sink connector, you must also specify the SSL and SASL configuration for the consumer as follows:
 
-```
+```config
     consumer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     consumer.security.protocol=SASL_SSL
     consumer.sasl.mechanism=PLAIN
@@ -143,7 +143,7 @@ In addition, Kafka Connect in distributed mode uses three topics internally. The
 
 For example, you can use the following key-value pairs in your properties file:
 
-```
+```config
     offset.storage.topic=connect-offsets
     config.storage.topic=connect-configs
     status.storage.topic=connect-status
@@ -153,6 +153,3 @@ For example, you can use the following key-value pairs in your properties file:
 Consider reducing the number of partitions if you are making only light use of Kafka Connect.
 
 For more detailed information about Kafka Connect, see [Kafka Connect overview](http://kafka.apache.org/documentation/#connect_overview){: external}.
-
-
-
