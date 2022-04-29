@@ -127,7 +127,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 | [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |
 | [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |   <br/>
+| [Utilized disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../../icons/checkmark-icon.svg)  |   |  |   /n 
 {: caption="Table 2. Metrics Available by Plan Names" caption-side="top"}
 
 ## Metrics available with mirroring enabled
@@ -167,6 +167,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 {: caption="Table 6. Metrics available for consumers" caption-side="bottom"}
 
 ### Metrics cost information with consumers enabled
+{: #metrics-cost}
 
 | Consumer Group | Topics| Partitions| Number of time series  | Monthly cost |
 |----------------|-------|----------|------------------------|--------------|
