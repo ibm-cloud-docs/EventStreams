@@ -50,7 +50,7 @@ You can use the Kafka console producer tool with {{site.data.keyword.messagehub}
 After you've created the properties file as described previously, you can run the console producer in a terminal as follows:
 
 ```bash
-    $ kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
+   kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
 ```
 {: codeblock}
 
@@ -69,7 +69,7 @@ You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}
 After you created the properties file as described previously, run the console consumer in a terminal as follows:
 
 ```bash
-    $ kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
+   kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
 ```
 {: codeblock}
 
@@ -88,7 +88,7 @@ You can use the Kafka consumer groups tool with {{site.data.keyword.messagehub}}
 After you created the properties file as described previously, run the consumer groups tools in a terminal. For example, you can list the consumer groups as follows:
 
 ```bash
-    $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
+   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
 ```
 {: codeblock}
 
@@ -100,7 +100,7 @@ Replace the following variables in the example with your own values:
 Using this tool, you can also display details like the current positions of the consumers, their lag, and client-id for each partition for a group. For example:
 
 ```bash
-    $ kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
+   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
 ```
 {: codeblock}
 
@@ -129,7 +129,7 @@ A scenario where you might want to use **kafka-topics** is to find out informati
 Here is some sample output from running the **kafka-topics** tool:
 
 ```bash
-$ bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
+   bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
 
 Topic:sample-topic	PartitionCount:3	ReplicationFactor:3	 Configs:min.insync.replicas=2,unclean.leader.election.enable=true,retention.bytes=1073741824,segment.bytes=536870912,retention.ms=86400000
     Topic: sample-topic    Partition: 0    Leader: 0    Replicas: 0,2,1    Isr: 0,2,1
@@ -151,7 +151,7 @@ You can use this tool with {{site.data.keyword.messagehub}} to reset the process
 For example:
 
 ```bash
-    $ kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
+   kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
 ```
 {: codeblock}
 
