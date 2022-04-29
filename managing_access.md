@@ -55,8 +55,7 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 
 - The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
 - The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
-- The type of resource to be secured. The valid values are `cluster`, `topic`, `group`, `schema`, or `txnid`. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance.
-If you want to specify more than one type of resource, you must create one policy per resource. 
+- The type of resource to be secured. The valid values are `cluster`, `topic`, `group`, `schema`, or `txnid`. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance. If you want to specify more than one type of resource, you must create one policy per resource. 
 - The resource to be secured. Specify for resources of type `topic`, `group`, `schema`, and `txnid`. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
 - The role assigned to the user. For example, Reader, Writer, or Manager. 
 
@@ -92,24 +91,18 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Delete records | Not applicable | Not applicable | Resource type: `topic`  \n Resource ID: <name_of_topic> |
 {: caption="Table 2. Access for common scenarios" caption-side="bottom"}
 
+For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 
-For more information about IAM, see 
-[IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
-
-For an example of how to set policies, see: 
-[IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
+For an example of how to set policies, see: [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
 
 ## Wildcarding
 {: #wildcarding }
-You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. 
-For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see 
-[Assigning access by using wildcard policies](/docs/account?topic=account-wildcard){: external}.
+You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics called `Dept1_*` and these policies will be applied to all topics with that prefix. For more information, see [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard){: external}.
 
 ## Connecting to {{site.data.keyword.messagehub}}
 {: #connect_message_enterprise }
 
-For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see 
-[Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+For information about how to bind a Cloud Foundry application or get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 ## Managing access to the Schema Registry
 {: #managing_access_schemas}
@@ -126,15 +119,12 @@ With the new `schema` IAM resource type it is possible to create policies that c
 - All of the schemas stored by an instance of IBM {{site.data.keyword.messagehub}}.
 - All of the schemas stored by all of the instances of IBM {{site.data.keyword.messagehub}} in an account.
 
-{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. This is used to control all access to the service instance,
-with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type will
-also be applied to the schema registry whereby a minimum role of Reader will be required to access the registry.
+{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. This is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type will also be applied to the schema registry whereby a minimum role of Reader will be required to access the registry.
 
 ### Example authorization scenarios
 {: #example_authorization_scenarios}
 
-The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the
-roles which would be required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application connecting to the registry
+The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the roles which would be required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application connecting to the registry
 
 Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
