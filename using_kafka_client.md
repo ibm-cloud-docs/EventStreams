@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-04-15"
+  years: 2015, 2022
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -41,7 +41,7 @@ You can find the sample code in the [event-streams-samples GitHub project](https
 
 If you're using a Kafka client at 0.10.2.1 or later, you can use the `sasl.jaas.config` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set `sasl.jaas.config` as follows:
 
-```
+```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
     username="USERNAME" \
     password="PASSWORD";</code>
@@ -62,17 +62,18 @@ If you're using the Java clients, you can use the publicly available Kafka clien
 You are strongly encouraged to move from 0.9.X to the latest version. You can download a Kafka client from [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads){: external}.
 
 ### Migrating a Kafka client to 0.10.2.X or later versions
+{: #kafka_migrate_later}
 
 From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplification allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
 
 Complete the following steps:
 
-1. Delete the JAAS file. Note that the JVM property java.security.auth.login.config=<PATH TO JAAS> is also no longer required.
+1. Delete the JAAS file. Note that the JVM property `java.security.auth.login.config=<PATH TO JAAS>` is also no longer required.
 2. Add the following to the client's properties:
 
-    ```
-	sasl.mechanism=PLAIN
+    ```config
+    sasl.mechanism=PLAIN
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
-	```
+    ```
 
     USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
