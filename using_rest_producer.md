@@ -53,9 +53,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 ## Producing messages using the REST producer API
 {: #rest_produce_messages}
 
-Use the v2 endpoint of the producer API to send messages of type text, binary, JSON, or avro to topics. It allows you to use the {{site.data.keyword.messagehub}} Schema Registry by specifying the schema for the avro data type.
-
-\n
+Use the v2 endpoint of the producer API to send messages of type text, binary, JSON, or avro to topics. The v2 endpoint allows you to use the {{site.data.keyword.messagehub}} Schema Registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of text type using curl:
 
@@ -88,7 +86,7 @@ For full details of the API, see the
 ## Producing messages conforming to a schema:
 {: #rest_producer_schema}
 
-The v2 endpoint of REST producer API also allows you to produce a message in a way that message key and value conform to a schema. You can specify different schemas for key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=ES_schema_registry).
+The v2 endpoint of REST producer API also allows you to produce a message in a way that message key and value conform to a schema. You can specify different schemas for key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in the {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=ES_schema_registry).
 
 The following schema naming strategies are allowed:
 
@@ -98,8 +96,6 @@ The following schema naming strategies are allowed:
     "\<composite-recordName\>-key for key and "<composite-recordName\>-value for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
 * TopicRecord naming strategy: Both the name of the topic and record are used to derive the schema artifact ID. The ID takes the form     "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
-
-\n
 
 The following code shows an example of sending a message conforming to a schema, that is specified under `schema` field using curl:
 
@@ -118,26 +114,30 @@ curl -v -X POST \
 ```
 {: codeblock}
 
-## Migrating from existing endpoint to the v2 end point of the REST producer API
+## Migrating from existing endpoint to the v2 endpoint of the REST producer API
 {: #migrating_endpoint}
 
 Several improvements have been made to the v2 endpoint for better usage and to align with the API standards. To make the most of these improvements, you should make changes to the existing applications.
 
-Below are the considerations to help you plan the migration: 
+The following considerations can help you plan the migration: 
 
 1. Accessing the REST producer API: 
+    
     The v2 endpoint can be accessed in the same way as the existing URL, that is by obtaining the value of `kafka_http_url` property for the service instance. The path to use is `/v2/topics/<topic_name>/records`.
     
        Example URL: https://service-instance-adsf1234asdf1234asdf1234-0000.us-south.containers.appdomain.cloud/v2/topics/topic_name/records
 2. Authentication: 
+    
     The supported authentication mechanism is a bearer token. To enhance security, basic auth using API keys is no longer accepted.
     
        Example Header:  –H "Authorization: Bearer $token"
 3. Headers: 
+    
     The Content-Type and the Accept headers must be set to `application/json`.
     
        Example Headers:  –H "Content-Type: application/json" -H "Accept: application/json"
 4. Payload: 
+    
     The payload for v2 endpoint should be provided in JSON format. The message key, headers, and data can be defined in the payload. The headers can be specified in the form of a list, whose values should be base64 encoded. However, the message key and headers are optional.
     
        Example payload:
@@ -156,7 +156,7 @@ Below are the considerations to help you plan the migration:
           "data": "Test Value"
          }
         }
-    One of the following supported data types must be specified for the field type under the key and value object:
+    You must specify one of the following supported data types for the field type under the key and value object:
 
     a.  Text: The data provided is validated as plain text format consisting of linear sequence of characters.
 
@@ -164,9 +164,10 @@ Below are the considerations to help you plan the migration:
 
     c.  JSON: The data provided is validated as [JSON](https://www.json.org/json-en.html) format.
 
-    d.  Avro: The data is validated as [Apache Avro data format](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry&locale=en#ES_apache_avro_data_format).
+    d.  Avro: The data is validated as [Apache Avro data format](/docs/EventStreams?topic=EventStreams-ES_schema_registry&locale=en#ES_apache_avro_data_format).
 
 5. Error Response: 
+    
     The error response contains `trace`,  `error message`, `error code`, `more_info` and, `target` properties.
 
        Example error response:
