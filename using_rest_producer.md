@@ -95,9 +95,9 @@ The following schema naming strategies are allowed:
 * Topic naming strategy: The name of the topic is used to derive the schema artifact ID. The ID takes the form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where topicName is the name of topic.
 
 * Record naming strategy: The name of the record in the schema is used to derive the schema artifact ID. The ID takes the form 
-"\<composite-recordName\>-key for key and "<composite-recordName\>-value for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
+    "\<composite-recordName\>-key for key and "<composite-recordName\>-value for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
-* TopicRecord naming strategy: Both the name of the topic and record are used to derive the schema artifact ID. The ID takes the form "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
+* TopicRecord naming strategy: Both the name of the topic and record are used to derive the schema artifact ID. The ID takes the form     "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
 \n
 
@@ -134,7 +134,7 @@ Below are the considerations to help you plan the migration:
     
        Example Header:  –H "Authorization: Bearer $token"
 3. Headers: 
-The Content-Type and the Accept headers must be set to `application/json`.
+    The Content-Type and the Accept headers must be set to `application/json`.
     
        Example Headers:  –H "Content-Type: application/json" -H "Accept: application/json"
 4. Payload: 
@@ -194,7 +194,7 @@ When using the REST producer API, there is a limitation on the maximum size of t
 {: #rest_api_reference}
 
 * For full details of the API reference of v2 endpoint, see the 
-[{{site.data.keyword.messagehub}} REST Producer v2 API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: external}.
+    [{{site.data.keyword.messagehub}} REST Producer v2 API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: external}.
 
 * For full details of the API reference of existing endpoint, see the 
-[{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.
+    [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.
