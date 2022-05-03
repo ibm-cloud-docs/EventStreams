@@ -32,6 +32,7 @@ Use the API to connect existing systems to {{site.data.keyword.messagehub}}. Cre
 
 ## Accessing the REST producer API:
 {: #rest_produce_access}
+
 You must retrieve the URL and credential details that are needed to connect to the API from a Service credentials object or service key for the service instance. For information about creating these objects, see 
 [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
@@ -39,6 +40,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
 ## Authentication:
 {: #rest_produce_authenticate}
+
 The supported authentication mechanism is to use a bearer token. To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud, then run the following command: 
 
 ```text
@@ -84,6 +86,8 @@ For full details of the API, see the
  [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.
 
 ## Producing messages conforming to a schema:
+{: #rest_producer_schema}
+
 The v2 endpoint of REST producer API also allows you to produce a message in a way that message key and value conform to a schema. You can specify different schemas for key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=ES_schema_registry).
 
 The following schema naming strategies are allowed:
@@ -115,14 +119,17 @@ curl -v -X POST \
 {: codeblock}
 
 ## Migrating from existing endpoint to the v2 end point of the REST producer API
+{: #migrating_endpoint}
+
 Several improvements have been made to the v2 endpoint for better usage and to align with the API standards. To make the most of these improvements, you should make changes to the existing applications.
 
 Below are the considerations to help you plan the migration: 
+
 1. Accessing the REST producer API: 
     The v2 endpoint can be accessed in the same way as the existing URL, that is by obtaining the value of `kafka_http_url` property for the service instance. The path to use is `/v2/topics/<topic_name>/records`.
     
        Example URL: https://service-instance-adsf1234asdf1234asdf1234-0000.us-south.containers.appdomain.cloud/v2/topics/topic_name/records
-3. Authentication: 
+2. Authentication: 
     The supported authentication mechanism is a bearer token. To enhance security, basic auth using API keys is no longer accepted.
     
        Example Header:  –H "Authorization: Bearer $token"
@@ -178,15 +185,16 @@ The Content-Type and the Accept headers must be set to `application/json`.
 
 
 ## Limitations
+{: #rest_producer_limitations}
 
 When using the REST producer API, there is a limitation on the maximum size of the message passed as request payload. The maximum size of the payload is limited to 64K.
 
 
 ## API reference
 {: #rest_api_reference}
-* For full details of the API reference of v2 endpoint, see the 
-[{{site.data.keyword.messagehub}} REST Producer v2 API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: new_window}.
 
+* For full details of the API reference of v2 endpoint, see the 
+[{{site.data.keyword.messagehub}} REST Producer v2 API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: external}.
 
 * For full details of the API reference of existing endpoint, see the 
-[{{site.data.keyword.messagehub}} REST Producer API reference ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/apidocs/event-streams){: new_window}.
+[{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.
