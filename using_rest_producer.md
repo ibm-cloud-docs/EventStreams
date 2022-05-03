@@ -86,14 +86,14 @@ For full details of the API, see the
 ## Producing messages conforming to a schema
 {: #rest_producer_schema}
 
-The v2 endpoint of the REST producer API also allows you to produce a message in a way that the message key and value conform to a schema. You can specify different schemas for the key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in the {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+The v2 endpoint of the REST producer API also allows you to produce a message in such a way that the message key and value conform to a schema. You can specify different schemas for the key and value. The serializer that is currently supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in the {{site.data.keyword.messagehub}} Schema Registry. For more details, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
 The following schema naming strategies are allowed:
 
-* Topic naming strategy: the name of the topic is used to derive the schema artifact ID. The ID takes the form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where <topicName> is the name of topic.
+* Topic naming strategy: the name of the topic is used to derive the schema artifact ID. The ID takes the form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where `topicName` is the name of topic.
 
 * Record naming strategy: the name of the record in the schema is used to derive the schema artifact ID. The ID takes the form 
-    "\<composite-recordName\>-key" for key and "<composite-recordName\>-value" for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>".
+    "\<composite-recordName\>-key" for key and "<composite-recordName\>-value" for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
 * TopicRecord naming strategy: Both the name of the topic and record are used to derive the schema artifact ID. The ID takes the form     "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
 
@@ -123,7 +123,7 @@ The following considerations can help you plan the migration:
 
 1. Accessing the REST producer API: 
     
-    The v2 endpoint can be accessed in the same way as the existing URL, that is by obtaining the value of `kafka_http_url` property for the service instance. The path to use is `/v2/topics/<topic_name>/records`.
+    You can access the v2 endpoint in the same way as the existing URL, that is by obtaining the value of `kafka_http_url` property for the service instance. The path to use is `/v2/topics/<topic_name>/records`.
     
        Example URL: https://service-instance-adsf1234asdf1234asdf1234-0000.us-south.containers.appdomain.cloud/v2/topics/topic_name/records
 2. Authentication: 
@@ -133,12 +133,12 @@ The following considerations can help you plan the migration:
        Example Header:  –H "Authorization: Bearer $token"
 3. Headers: 
     
-    The Content-Type and the Accept headers must be set to `application/json`.
+    Set the Content-Type and the Accept headers to `application/json`.
     
        Example Headers:  –H "Content-Type: application/json" -H "Accept: application/json"
 4. Payload: 
     
-    The payload for v2 endpoint should be provided in JSON format. The message key, headers, and data can be defined in the payload. The headers can be specified in the form of a list, whose values should be base64 encoded. However, the message key and headers are optional.
+    Provide the payload for the v2 endpoint in JSON format. The message key, headers, and data can be defined in the payload. You can specify the headers in the form of a list, with values that are base64 encoded. However, the message key and headers are optional.
     
        Example payload:
        {
@@ -158,9 +158,9 @@ The following considerations can help you plan the migration:
         }
     You must specify one of the following supported data types for the field type under the key and value object:
 
-    a.  Text: the data provided is validated as plain text format consisting of linear sequence of characters.
+    a.  Text: the data provided is validated as plain text format consisting of a linear sequence of characters.
 
-    b.  Binary: the data provided is validated as base64 encoded binary format.
+    b.  Binary: the data provided is validated as base64-encoded binary format.
 
     c.  JSON: the data provided is validated as [JSON](https://www.json.org/json-en.html) format.
 
