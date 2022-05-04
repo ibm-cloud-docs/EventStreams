@@ -65,7 +65,7 @@ Ensure you have the following permissions:
 6. Configure the streams landing by completing the following steps:
 
 - Define the prefix of the {{site.data.keyword.cos_short}} objects.
-- Specify the event format (JSON or AVRO).
+- Specify the event format (JSON).
 - Create or select a service ID with the correct IAM access policies. This service ID is used to create an API key.
 - Select a {{site.data.keyword.keymanagementservicelong}} instance to store the new API key that can be used later by {{site.data.keyword.sqlquery_short}} to run the landing until you stop it again.
 - Click **Start streaming data** to enable a stream landing job.
