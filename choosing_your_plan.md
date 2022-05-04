@@ -71,7 +71,7 @@ The following table summarizes what is supported by the plans:
 | **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |  Kafka 2.8   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
-| **Managed Schema Registry supported**  | No |  No |  Yes |  No   |
+| **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext9]  |
 | **Customer-managed encryption**  | No  |  No |  Yes |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  No   |
@@ -106,6 +106,8 @@ The following table summarizes what is supported by the plans:
 [^tabletext7]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note the following items could impact throughput: 1) Performance of hosts attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}. 2) Type, configuration, and performance of the block storage provided. 3) Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location {: #footnote_sat_throughput notoc}. 4) For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
    
 [^tabletext8]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards). 
+
+[^tabletext9]: The Schema Registry API is not automatically enabled on Satellite plan. see [Enable Schema Registry API](/[docs/satellite?topic=EventStreams-satellite-provisioning#enable-schema-registry)) how to enable it.
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
