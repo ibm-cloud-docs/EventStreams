@@ -139,20 +139,23 @@ During the {{site.data.keyword.messagehub}} service instance provision, block st
 After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
 
 
-## (Optional) Enable Schema Registry API
+## (Optional) Enable the Schema Registry API
 {: #satellite-enable-schema-registry}
 {: step}
 
 The Schema Registry API is not automatically enabled when you provision an {{site.data.keyword.messagehub}} Satellite instance. 
-You must provide an {{site.data.keyword.cos_full_notm}} bucket for Schema Registry as its backend storage to enable this API. You are responsible for managing this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
+You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend storage for Schema Registry to enable this API. You are responsible for managing this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
 
-1. Create an Cloud Object Storage instance either on {{site.data.keyword.Bluemix}} or on a Satellite location.
+1. Create a Cloud Object Storage instance either on {{site.data.keyword.Bluemix_notm}} or on a Satellite location.
+
     The COS instance on Cloud can be in the same account or in a different account as the {{site.data.keyword.messagehub}} Satellite instance.
     The COS instance on Satellite must be in the same account and in the same location as the {{site.data.keyword.messagehub}} Satellite instance.
 
 2. Create a bucket in the COS instance.
-    If the COS instance is on {{site.data.keyword.Bluemix}}, ensure the bucket is in the same region as the {{site.data.keyword.messagehub}} Satellite instance's control region.
-    If the COS instance is on Satellite, ensure the COS instance's location is the same as the {{site.data.keyword.messagehub}} Satellite instance's location.
+
+    If the COS instance is on {{site.data.keyword.Bluemix_notm}}, ensure that the bucket is in the same region as the {{site.data.keyword.messagehub}} Satellite instance's control region.
+    If the COS instance is on Satellite, ensure that the COS instance's location is the same as the {{site.data.keyword.messagehub}} Satellite instance's location.
+
     To obtain {{site.data.keyword.messagehub}} Satellite instance's control region or location, check its CRN. For example: 
 
     ```text
@@ -160,9 +163,10 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket for Schema Regist
     ```
     {: codeblock}
 
-    `satloc_dal_c9ntbe5f0gmsm06ofoq0` is the scope, in which `dal` is the control region's short name and stands for the us-south region, `c9ntbe5f0gmsm06ofoq0` is the location ID.
+    where `satloc_dal_c9ntbe5f0gmsm06ofoq0` is the scope, `dal` is the control region's short name and indicates the us-south region, and `c9ntbe5f0gmsm06ofoq0` is the location ID.
 
 3. Create an authorization policy between the {{site.data.keyword.messagehub}} Satellite instance and the COS bucket.
+
     The source is the {{site.data.keyword.messagehub}} Satellite instance, the target is the COS bucket, and the role is Writer.
     If the COS on Cloud instance is in a different account, ensure that the authorization policy is created in the COS instance's account and the {{site.data.keyword.messagehub}} instance's account is set as the source account.
 

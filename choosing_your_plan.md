@@ -95,7 +95,7 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext2]: For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 
-[^tabletext3]: The Schema Registry API is not automatically enabled on Satellite plan. see [Enable Schema Registry API](/[docs/satellite?topic=EventStreams-satellite-provisioning#enable-schema-registry)) how to enable it.
+[^tabletext3]: The Schema Registry API is not automatically enabled on the Satellite plan. See [Enable the Schema Registry API](/[docs/satellite?topic=EventStreams-satellite-provisioning#enable-schema-registry)) for information about how to enable it.
 
 [^tabletext4]: If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan.
 
