@@ -96,28 +96,6 @@ The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.da
 {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
 {: note}
 
-## Provision {{site.data.keyword.messagehub}} service instance
-{: #satellite-provision-es-instance}
-{: step}
-
-After preparing your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching additional hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
-
-1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
-2. Look for the **Event Streams** tile in the **Integration** section and select it.
-3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
-4. Specify a **Service name** if something other than the default name is desired.
-5. Click **Create**.
-
-When you provision an {{site.data.keyword.messagehub}} service instance, a service cluster is automatically deployed into your {{site.data.keyword.satelliteshort}} 
-location. You can verify the start of the deployment of the service cluster with the following steps:
-
-1. From the left hand **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
-2. Select your {{site.data.keyword.satelliteshort}} location.
-3. Select **Services**.
-4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before moving to the next step.
-
-While the service instance and cluster are provisioned, create the storage assignment. Proceed to the next step and complete the instructions.
-{: important}
 
 ## Create the block storage configuration assignment (using {{site.data.keyword.satelliteshort}} Storage UI)
 {: #satellite-create-storage-assignment}
@@ -170,6 +148,13 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend st
     The source is the {{site.data.keyword.messagehub}} Satellite instance, the target is the COS bucket, and the role is Writer.
     If the COS on Cloud instance is in a different account, ensure that the authorization policy is created in the COS instance's account and the {{site.data.keyword.messagehub}} instance's account is set as the source account.
 
+    If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional **-p** parameter.
+
+    ```sh
+    ibmcloud resource service-instance-create <instance-name> messagehub Satellite <location-id> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'
+    ```
+    {: codeblock}
+
     If the {{site.data.keyword.messagehub}} Satellite instance has been provisioned, use the following command to update the instance with the **-p** parameter.
 
     ```sh
@@ -177,9 +162,26 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend st
     ```
     {: codeblock}
 
-4. If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional **-p** parameter.
+## Provision {{site.data.keyword.messagehub}} service instance
+{: #satellite-provision-es-instance}
+{: step}
 
-    ```sh
-    ibmcloud resource service-instance-create <instance-name> messagehub Satellite <location-id> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'
-    ```
-    {: codeblock}
+After preparing your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching additional hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
+
+1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
+2. Look for the **Event Streams** tile in the **Integration** section and select it.
+3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
+4. Specify a **Service name** if something other than the default name is desired.
+5. Click **Create**.
+
+When you provision an {{site.data.keyword.messagehub}} service instance, a service cluster is automatically deployed into your {{site.data.keyword.satelliteshort}} 
+location. You can verify the start of the deployment of the service cluster with the following steps:
+
+1. From the left hand **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
+2. Select your {{site.data.keyword.satelliteshort}} location.
+3. Select **Services**.
+4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before moving to the next step.
+
+While the service instance and cluster are provisioned, create the storage assignment. Proceed to the next step and complete the instructions.
+{: important}
+
