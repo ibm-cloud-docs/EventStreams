@@ -170,14 +170,14 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend st
     The source is the {{site.data.keyword.messagehub}} Satellite instance, the target is the COS bucket, and the role is Writer.
     If the COS on Cloud instance is in a different account, ensure that the authorization policy is created in the COS instance's account and the {{site.data.keyword.messagehub}} instance's account is set as the source account.
 
-    If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional parameter.
+    If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional **-p** parameter.
 
     ```sh
     ibmcloud resource service-instance-create <instance-name> messagehub Satellite <location-id> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'
     ```
     {: codeblock}
 
-    If the {{site.data.keyword.messagehub}} Satellite instance has been provisioned, use the following command to update the instance with the -p parameter.
+    If the {{site.data.keyword.messagehub}} Satellite instance has been provisioned, use the following command to update the instance with the **-p** parameter.
 
     ```sh
     ibmcloud resource service-instance-update <instance-name> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'
