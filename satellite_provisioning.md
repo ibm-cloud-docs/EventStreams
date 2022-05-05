@@ -144,11 +144,10 @@ After the storage assignment is created, allow up to 60 minutes for the {{site.d
 {: step}
 
 The Schema Registry API is not automatically enabled when you provision an {{site.data.keyword.messagehub}} Satellite instance. 
-You must provide a Cloud Object Storage bucket for Schema Registry as its backend storage to enable this API.
-It is your responsibility to manage this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
+You must provide an {{site.data.keyword.cos_full_notm}} bucket for Schema Registry as its backend storage to enable this API. You are responsible for managing this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
 
-1. Create an Cloud Object Storage instance; it could be on {{site.data.keyword.Bluemix}}, or on a Satellite location.
-    The COS instance on Cloud could be in the same account or in a different account as the {{site.data.keyword.messagehub}} Satellite instance.
+1. Create an Cloud Object Storage instance either on {{site.data.keyword.Bluemix}} or on a Satellite location.
+    The COS instance on Cloud can be in the same account or in a different account as the {{site.data.keyword.messagehub}} Satellite instance.
     The COS instance on Satellite must be in the same account and in the same location as the {{site.data.keyword.messagehub}} Satellite instance.
 
 2. Create a bucket in the COS instance.
@@ -161,11 +160,11 @@ It is your responsibility to manage this bucket, including but not limited to: d
     ```
     {: codeblock}
 
-    satloc_dal_c9ntbe5f0gmsm06ofoq0 is the scope, in which dal is the control region's short name and stands for region us-south, c9ntbe5f0gmsm06ofoq0 is the location ID.
+    `satloc_dal_c9ntbe5f0gmsm06ofoq0` is the scope, in which `dal` is the control region's short name and stands for the us-south region, `c9ntbe5f0gmsm06ofoq0` is the location ID.
 
 3. Create an authorization policy between the {{site.data.keyword.messagehub}} Satellite instance and the COS bucket.
-    Source is {{site.data.keyword.messagehub}} Satellite instance, target is COS bucket, role is Writer.
-    If the COS on Cloud instance is in a different account, ensure the authorization policy is created in COS instance's account and {{site.data.keyword.messagehub}} instance's account is set as the source account.
+    The source is the {{site.data.keyword.messagehub}} Satellite instance, the target is the COS bucket, and the role is Writer.
+    If the COS on Cloud instance is in a different account, ensure that the authorization policy is created in the COS instance's account and the {{site.data.keyword.messagehub}} instance's account is set as the source account.
 
     If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional parameter.
 
@@ -174,7 +173,7 @@ It is your responsibility to manage this bucket, including but not limited to: d
     ```
     {: codeblock}
 
-    If the {{site.data.keyword.messagehub}} Satellite instance has been provisioned, use the following command to update the instance with the parameter.
+    If the {{site.data.keyword.messagehub}} Satellite instance has been provisioned, use the following command to update the instance with the -p parameter.
 
     ```sh
     ibmcloud resource service-instance-update <instance-name> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'

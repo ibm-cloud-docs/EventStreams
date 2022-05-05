@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-05"
 
 keywords: event streams release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## May 2022
+{: #EventStreams-may2022}
+{: release-note}
+
+Schema Registry support on the Satellite plan
+:   The new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) now supports the [Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
 
 ## April 2022
 {: #EventStreams-apr2022}
