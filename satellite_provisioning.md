@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -96,6 +96,27 @@ The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.da
 {{site.data.keyword.satelliteshort}} instances are required, the hosts requirement applies to each {{site.data.keyword.messagehub}} instance.
 {: note}
 
+
+## Create the block storage configuration assignment (using {{site.data.keyword.satelliteshort}} Storage UI)
+{: #satellite-create-storage-assignment}
+{: step}
+
+The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
+{: important}
+
+During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgement from the {{site.data.keyword.satelliteshort}} location administrator.
+
+1. Navigate to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
+2. Select your {{site.data.keyword.satelliteshort}} location.
+3. Select the **Services** tab.
+4. Look for the acknowledgement pop-up.
+
+   1. Complete the storage configuration set up.
+   2. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
+
+After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
+
+
 ## Provision {{site.data.keyword.messagehub}} service instance
 {: #satellite-provision-es-instance}
 {: step}
@@ -118,25 +139,6 @@ location. You can verify the start of the deployment of the service cluster with
 
 While the service instance and cluster are provisioned, create the storage assignment. Proceed to the next step and complete the instructions.
 {: important}
-
-## Create the block storage configuration assignment (using {{site.data.keyword.satelliteshort}} Storage UI)
-{: #satellite-create-storage-assignment}
-{: step}
-
-The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
-{: important}
-
-During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgement from the {{site.data.keyword.satelliteshort}} location administrator.
-
-1. Navigate to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
-2. Select your {{site.data.keyword.satelliteshort}} location.
-3. Select the **Services** tab.
-4. Look for the acknowledgement pop-up.
-
-   1. Complete the storage configuration set up.
-   2. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
-
-After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
 
 
 ## (Optional) Enable the Schema Registry API
@@ -170,7 +172,9 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend st
     The source is the {{site.data.keyword.messagehub}} Satellite instance, the target is the COS bucket, and the role is Writer.
     If the COS on Cloud instance is in a different account, ensure that the authorization policy is created in the COS instance's account and the {{site.data.keyword.messagehub}} instance's account is set as the source account.
 
-    If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional **-p** parameter.
+4. Create or update {{site.data.keyword.messagehub}} Satellite instance.
+   
+   If the {{site.data.keyword.messagehub}} Satellite instance has not been provisioned, use the following command to provision the instance with the additional **-p** parameter.
 
     ```sh
     ibmcloud resource service-instance-create <instance-name> messagehub Satellite <location-id> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'

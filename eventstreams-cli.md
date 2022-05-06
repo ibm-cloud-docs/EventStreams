@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-06"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -27,14 +27,16 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 
 | Version | Release date  | Changes  |
 |---|---|---|
-| v1.0 |  12 May 2019 | Initial release of the {{site.data.keyword.messagehub}} CLI  |
-| v1.0.1  | 27 May 2019  |  * Improved error message when running command without init \n * Sorted instances list during init \n * Translation update |
-|  v2.0  | 21 August 2019  | * init: removed the service-key requirement \n * Added group-delete command \n * Updated translations of help text  |
-| v2.1 | 24 June 2020  |   * init: displayed provision parameters for Enterprise instance \n * Translation update|
-|  v2.1.1| 10 July 2020  | * Replaced whitelist with allowlist \n * Fixed color configuration \n * Translation update  |
-| v2.2.0  | 3 August 2020  | Added support for the Mirroring feature  |
-| v2.2.1 | 7 August 2020 |  Refined the display of IP allowlist in the init command  |
-| v2.3 |  9 November 2020 | * Added support for configuring message audit on topic \n * init: display encryption key if parameter kms_key_crn is specified in provisioning  |
+| v1.0 |  12 May 2019 |  - Initial release of the {{site.data.keyword.messagehub}} CLI.  |
+| v1.0.1  | 27 May 2019 |  - Improved error message when running command without init.  \n - Sorted instances list during init.  \n -  Translation update. |
+|  v2.0  | 21 August 2019  |  - init: removed the service-key requirement.  \n - Added group-delete command. Updated translations of help text. |
+| v2.1 | 24 June 2020  |  - init: displayed provision parameters for Enterprise instance. \n - Translation update. |
+|  v2.1.1| 10 July 2020  |  - Replaced whitelist with allowlist.  \n - Fixed color configuration.  \n - Translation update.  |
+| v2.2.0  | 3 August 2020  |  - Added support for the Mirroring feature.  |
+| v2.2.1 | 7 August 2020 |  - init: refined the display of IP allowlist   |
+| v2.3 |  9 November 2020 |  - Added support for configuring message audit on topic. \n - init: display encryption key if parameter kms_key_crn is specified in provisioning.  |
+| v2.3.1 |  21 January 2021 |  - Added support for Satellite plan.  |
+| v2.3.2 |  5 May 2022 |  - Added support for Mac OS X M1/ARM. \n - init: display Object Storage bucket if parameter cos_bucket_crn is specified in provisioning. |
 {: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
