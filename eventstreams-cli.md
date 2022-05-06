@@ -25,8 +25,22 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 ## Changelog
 {: #es_cli_changelog}
 
+| Version | Date | Description |
+| --------- | -------- | -------- |
+| 1.0.54 | 09 April 2021 |  - Fixed the token expiration issue by increasing the frequency of refreshing IAM token.  |
+| 1.0.53 | 26 March 2021 |  - Explicitly display namespace names with **`ibmcloud fn list`** command. |
+| 1.0.50 | 12 March 2021 |  - Enabled Sydney(au-syd) region. |
+| 1.0.49 | 07 Jan 2021 |  - Fixed a bug that affects Tokyo(jp-tok) region. |
+| 1.0.48 | 16 Dec 2020 |  - Added notification about duplicate namespace names when using `namespace target` command. |
+| 1.0.47 | 25 Sept 2020 |  - Upgraded dependent `ibmcloud cli sdk` version. |
+| 1.0.45 | 12 August 2020 |  - Added runtime deprecation warning messages after users target namespaces. |
+| 1.0.44 | 16 July 2020 |  - Fixed a bug that is associated with `namespace target` command and improved the error messages. |
+| 1.0.43 | 8 July 2020 |  - Fixed IAM namespace targeting so that you can target a namespace without first targeting an `org` and `space`.  \n - Updated the default version for `Golang` actions to `Golang` versi
+| 1.0.40 | 30 May 2020 |  - Added new **`ibmcloud fn namespace target`** command to allow users to target any IAM or CF-based namespaces.  \n - Added `print out` information to notify users the region under which namespaces are listed when users issue `ibmcloud fn namespace list` command.  \n - Disallow users to set `apihost` by using the `ibmcloud fn property set --apihost` command. |
+
 | Version | Release date  | Changes  |
 |---|---|---|
+| 1.0.27 | 11 December 2018 |  - Added `namespace get` fixes.  \n - Added a fix for `--save-as` when an action is a black box action. |
 | v1.0 |  12 May 2019 | Initial release of the {{site.data.keyword.messagehub}} CLI  |
 | v1.0.1  | 27 May 2019 | Improved error message when running command without init. Sorted instances list during init. Translation update |
 |  v2.0  | 21 August 2019  | init: removed the service-key requirement. Added group-delete command. Updated translations of help text. |
