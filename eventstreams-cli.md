@@ -32,10 +32,10 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 |  v2.0  | 21 August 2019  | * init: removed the service-key requirement    \n  * Added group-delete command    \n  * Updated translations of help text  |
 | v2.1 | 24 June 2020  |   * init: displayed provision parameters for Enterprise instance    \n  * Translation update|
 |  v2.1.1| 10 July 2020  | * Replaced whitelist with allowlist * Fixed color configuration * Translation update  |
-| v2.2.0  | 3 August 2020  | Added support for the Mirroring feature  |
+| v2.2.0  | 3 August 2020  |  Added support for the Mirroring feature  |
 | v2.2.1 | 7 August 2020 |  init: refined the display of IP allowlist   |
 | v2.3 |  9 November 2020 | * Added support for configuring message audit on topic    \n  * init: display encryption key if parameter kms_key_crn is specified in provisioning  |
-| v2.3.1 |  21 January 2021 | * Added support for Satellite plan  |
+| v2.3.1 |  21 January 2021 |  Added support for Satellite plan  |
 | v2.3.2 |  5 May 2022 | * Added support for Mac OS X M1/ARM     \n  * init: display Object Storage bucket if parameter cos_bucket_crn is specified in provisioning |
 {: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
