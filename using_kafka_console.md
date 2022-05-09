@@ -88,7 +88,7 @@ You can use the Kafka consumer groups tool with {{site.data.keyword.messagehub}}
 After you created the properties file as described previously, run the consumer groups tools in a terminal. For example, you can list the consumer groups as follows:
 
 ```bash
-   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list
+   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list --timeout 60000
 ```
 {: codeblock}
 
@@ -100,7 +100,7 @@ Replace the following variables in the example with your own values:
 Using this tool, you can also display details like the current positions of the consumers, their lag, and client-id for each partition for a group. For example:
 
 ```bash
-   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP
+   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP --timeout 60000
 ```
 {: codeblock}
 
