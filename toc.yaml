@@ -16,6 +16,8 @@ toc:
         topics:
         - getting-started.md
         - overview.md
+        - topic: release-notes.md
+          navtitle: Release notes
         - apache_kafka_concepts.md
         - choosing_your_plan.md
     - navgroup:
@@ -49,13 +51,11 @@ toc:
             - using_rest_producer.md
             - mirroring.md
         - topicgroup:
-            label: IBM Event Streams enabled by IBM Cloud Satellite
+            label: Using IBM Cloud Satellite
             topics:
-            - satellite_getting_started.md
-            - setting_up_aws.md
+            - satellite_about.md
+            - satellite_provisioning.md
             - setting_up_app_vpn.md
-            - topic: setting_up_onprem.md
-              navtitle: Setting up on-premises Web Services location
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
@@ -81,6 +81,15 @@ toc:
         - monitoring.md
         - disaster_recovery.md
         - reserved_disk.md
+        - topicgroup:
+            label: API reference
+            topics:
+            - link:
+                label: IBM Event Streams REST Producer API
+                href: https://cloud.ibm.com/apidocs/event-streams/restproducer
+            - link:
+                label: IBM Event Streams Admin REST API
+                href: https://cloud.ibm.com/apidocs/event-streams/adminrest
         - eventstreams-cli.md
     - navgroup:
         id: help

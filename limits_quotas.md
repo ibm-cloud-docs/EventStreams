@@ -138,12 +138,14 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 
 #### Schemas
 {: #schemas}
+
 * Maximum number of schemas that can be stored: 1000
 * Maximum number of schema versions for each schema that can be stored: 100
 * Maximum schema size 64kB
 
 #### Limits
 {: #limits}
+
 * Maximum request rate [HTTP Schema Admin] 10 per second
 * Maximum request rate [HTTP Serdes] 100 per second
 
@@ -172,7 +174,7 @@ Throughput is expressed as the number of bytes per second that can be both sent 
 
 Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
-**The following figures are not verified for beta, they are guidelines only.**
+**The following figures are not verified, they are guidelines only.**
 
 The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
 

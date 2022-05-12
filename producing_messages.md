@@ -50,6 +50,7 @@ There are many configuration settings for the producer. You can control aspects 
 |max.block.ms     | The number of milliseconds that a send or metadata request can block waiting. | 0,...  | 60000 (1 minute) |
 |max.in.flight.requests.per.connection     | The maximum number of unacknowledged requests that the client sends on a connection before blocking further requests| 1,...  | 5 |
 |request.timeout.ms     | The maximum amount of time the producer waits for a response to a request. If the response is not received before the timeout elapses, the request is retried or fails if the number of retries has been exhausted.| 0,...  | 30000 (30 seconds) |
+{: caption="Table 1. Producer configuration settings" caption-side="top"}
 
 Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation](http://kafka.apache.org/documentation/){: external} thoroughly before experimenting with them.
 
@@ -190,5 +191,5 @@ producer.send(new ProducerRecord<String,String>("T1","key","value", new Callback
 });
 ```
 
-For more information, see the [Javadoc for the Kafka client ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://kafka.apache.org/11/javadoc/index.html?overview-summary.html){: new_window}, which is very comprehensive. 
+For more information, see the [Javadoc for the Kafka client](https://kafka.apache.org/11/javadoc/index.html?overview-summary.html){: external}, which is very comprehensive. 
 

@@ -58,12 +58,12 @@ Clone the following two repositories that contain the required files:
 1. You must set up this configuration only once. {{site.data.keyword.messagehub}} stores it for future use.
 
     From the event-streams-samples project, navigate to the `kafka-connect/IKS directory`, 
-    edit the `connect-distributed.properties` file, and replace <BOOTSTRAP_SERVERS> in one place and <APIKEY> 
+    edit the `connect-distributed.properties` file, and replace `<BOOTSTRAP_SERVERS>` in one place and `<APIKEY>` 
     in three places with your {{site.data.keyword.messagehub}} credentials.
 
-    Provide <BOOTSTRAP_SERVERS> as a comma-separated list. If they are not valid, you get an error.
+    Provide `<BOOTSTRAP_SERVERS>` as a comma-separated list. If they are not valid, you get an error.
 
-    Your <APIKEY> appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containerlong}}.
+    Your `<APIKEY>` appears in clear text on your machine but is secret when pushed to {{site.data.keyword.containerlong}}.
 
     Kafka Connect can run multiple workers for reliability and scalability reasons. If your {{site.data.keyword.containershort}} 
     cluster has more than one node and you want multiple Connect workers, edit the `kafka-connect.yaml` file and edit 
@@ -108,7 +108,7 @@ kubectl port-forward service/kafkaconnect-service 8083
 Keep the terminal that you used for port forwarding open, and use another terminal for the next steps.
 
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
-[Kafka Connect REST Interface](http://kafka.apache.org/documentation/#connect_rest){: new_window}.
+[Kafka Connect REST Interface](http://kafka.apache.org/documentation/#connect_rest){: external}.
 
 So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
 
@@ -137,7 +137,7 @@ cos.object.records | Optional. The maximum number of Kafka records to combine in
 {: caption="Table 1. cos-sink.json file properties" caption-side="bottom"}
  
 ### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.Bluemix_notm}} console
-{: #connect_enterprise_external_console}
+{: #connect_enterprise_console}
 
 1. Locate your {{site.data.keyword.cos_short}} service on the dashboard.
 2. Click your service tile.

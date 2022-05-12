@@ -43,7 +43,7 @@ Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluem
 
 Select one of the following methods:
 
-* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/catalog/event-streams){: new_window}.
+* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog](https://cloud.ibm.com/catalog/event-streams){: external}.
 
 * To create an instance from the CLI on the Enterprise plan, run the following command:
    ```text
@@ -95,8 +95,7 @@ ibmcloud es init
 ```
 {: codeblock}
 
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-eventstreams-cli#cli_reference).
-
+For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-04-29"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -10,13 +10,13 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:note: .note}
-{:external: target="_blank" .external}
+
 
 
 # {{site.data.keyword.messagehub}} Schema Registry
@@ -101,14 +101,14 @@ if you are granting access to multiple other people or teams. See the [Managing 
 The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the
 Kafka HTTP URL property of the service credentials):
 
-```
+```text
 curl -i –u token:$APIKEY $URL/artifacts
 ```
 
 Assuming you haven’t already used the Schema Registry, you should see the following output that indicates that there are no schemas
 stored in the registry:
 
-```
+```text
 HTTP/1.1 200 OK
 Date: Thu, 16 Jan 2020 15:45:26 GMT
 Content-Type: application/json
@@ -135,7 +135,7 @@ For actions that alter the schema version, such as create, update, or delete art
 As described above, you can authenticate to the Schema Registry using an API key. This is supplied as the password portion of a HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token).
 For example:
 
-```
+```text
 curl –H "Authorization: Bearer $TOKEN" ...
 ```
 
@@ -144,7 +144,7 @@ curl –H "Authorization: Bearer $TOKEN" ...
 
 If an error condition is encountered, the Schema Registry will return a non-2XX range HTTP status code. The body of the response will contain a JSON object in the following form:
 
-```
+```text
 {
     "error_code":404,
     "message":"No artifact with id 'my-schema' could be found."
@@ -160,18 +160,19 @@ message | A description of the cause of the problem.
 incident | This field is only included if the error is a result of a problem with the Schema Registry. This value can be used by IBM service to correlate a request to diagnostic information captured by the registry.
 
 ### Create a schema
+{: #create_schema}
 
 This endpoint is used to store a schema in the registry. The schema data is sent as the body of the POST request. An ID for the schema can be included using the ‘X-Registry-ArtifactId' request header. If this header is not present in the request, an ID will be generated. The content type header must be set to “application/json”.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY -H 'Content-Type: application/json' -H 'X-Registry-ArtifactId: my-schema' $URL/artifacts -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
 ```
 
 Example response:
 
-```
+```text
 {"id":"my-schema","type":"AVRO","version":1,"createdBy":"","createdOn":1579267788258,"modifiedBy":"","modifiedOn":1579267788258,"globalId":75}
 ```
 
@@ -183,18 +184,19 @@ Creating a schema requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### List schemas
+{: #list_schemas}
 
 You can generate a list of the IDs of all of the schemas stored in the registry by making a GET request to the /artifacts endpoint.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts
 ```
 
 Example response:
 
-```
+```text
 ["my-schema"]
 ```
 
@@ -203,12 +205,13 @@ Listing schemas requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
 ### Delete a schema
+{: #delete_schema}
 
 Schemas are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id} endpoint (where {schema-id} is the ID of the schema). If successful, an empty response and a status code of 204 (no content) is returned.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema
 ```
 
@@ -220,6 +223,7 @@ Deleting a schema requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Create a new version of a schema
+{: #new_schema}
 
 To create a new version of a schema, make a POST request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). The body of the request must contain the new version of the schema.
 
@@ -227,13 +231,13 @@ If the request is successful, the new schema version is created as the new lates
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY -H 'Content-Type: application/json' $URL/artifacts/my-schema/versions -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
 ```
 
 Example response:
 
-```
+```text
 {"id":"my-schema","type":"AVRO","version":2,"createdBy":"","createdOn": 1579267978382,"modifiedBy":"","modifiedOn":1579267978382,"globalId":83}
 ```
 
@@ -245,18 +249,19 @@ Creating a new version of a schema requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Get the latest version of a schema
+{: #latest_schema}
 
 To retrieve the latest version of a particular schema, make a GET request to the /artifacts/{schema-id} endpoint, (where {schema-id} is the ID of the schema). If successful, the latest version of the schema is returned in the payload of the response.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema
 ```
 
 Example response:
 
-```
+```text
 {"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}
 ```
 
@@ -266,18 +271,19 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Getting a specific version of a schema
+{: #schema_version}
 
 To retrieve a specific version of a schema, make a GET request to the /artifacts/{schema-id}/versions/{version} endpoint, (where {schema-id} is the ID of the schema, and {version} is the version number of the specific version you need to retrieve). If successful, the specified version of the schema is returned in the payload of the response.
 
 Example curl request
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions/3
 ```
 
 Example response:
 
-```
+```text
 {"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}
 ```
 
@@ -287,18 +293,19 @@ Getting the latest version of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Listing all of the versions of a schema
+{: #list_schema_versions}
 
 To list all versions of a schema currently stored in the registry, make a GET request to the /artifacts/{schema-id}/versions endpoint, (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions
 ```
 
 Example response:
 
-```
+```text
 [1,2,3,5,6,8,100]
 ```
 
@@ -308,12 +315,13 @@ Getting the list of available versions of a schema requires at least both:
 - Reader role access to the schema resource that matches the schema being retrieved.
 
 ### Deleting a version of a schema
+{: #delete_schema_version}
 
 Schema versions are deleted from the registry by issuing a DELETE request to the /artifacts/{schema-id}/versions/{version} endpoint (where {schema-id} is the ID of the schema, and {version} is the version number of the schema version). If successful, an empty response, and a status code of 204 (no content) is returned. Deleting the only remaining version of a schema will also delete the schema.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema/versions/3
 ```
 
@@ -325,6 +333,7 @@ Deleting a schema version requires at least both:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Updating a global rule
+{: #updating_global_rule}
 
 Global compatibility rules can be updated by issuing a PUT request to the /rules/{rule-type} endpoint, (where {rule-type} identifies the type of global rule to be updated - currently the only supported type is COMPATIBILITY), with the new rule configuration in the body of the request. If the request is successful, the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
 
@@ -337,13 +346,13 @@ config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TR
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X PUT $URL/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"BACKWARD"}
 ```
 
@@ -354,18 +363,19 @@ Updating a global rule configuration requires at least:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Getting the current value of a global rule
+{: #value_global_rule}
 
 The current value of a global rule is retrieved by issuing a GET request to the /rules/{rule-type} endpoint, (where {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the current rule configuration is returned in the payload of the response, together with a status code of 200 (OK).
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/rules/COMPATIBILITY
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"BACKWARD"}
 ```
 
@@ -374,12 +384,13 @@ Getting global rule configuration requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
 ### Creating a per-schema rule
+{: #schema_rule}
 
 Rules can be applied to a specific schema, overriding any global rules that have been set, by making a POST request to the /artifacts/{schema-id}/rules endpoint, (where {schema-id} is the ID of the schema), with the type and value of the new rule contained in the body of the request, (currently the only supported type is COMPATIBILITY). If successful, an empty response and a status code of 204 (no content) are returned.
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/rules -d '{"type":"COMPATIBILITY","config":"FORWARD"}'
 ```
 
@@ -391,18 +402,19 @@ Creating per-schema rules requires at least:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
  
 ### Getting a per-schema rule
+{: #get_rule}
 
 To retrieve the current value of a type of rule being applied to a specific schema, a GET request is made to the /artifacts/{schema-id}/rules/{rule-type} endpoint, (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the current rule value is returned in the payload of the response, together with a status code of 200 (OK).
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"FORWARD"}
 ```
 
@@ -412,18 +424,19 @@ Getting per-schema rules requires at least:
 - Reader role access to the schema resource to which the rule applies.
 
 ### Updating a per-schema rule
+{: #update_rule}
 
 The rules applied to a specific schema are modified by making a PUT request to the /artifacts/{schema-id}/rules/{rule-type} endpoint, (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, the newly updated rule config is returned in the payload of the response, together with a status code of 200 (OK).
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
 Example response:
 
-```
+```text
 {"type":"COMPATIBILITY","config":"BACKWARD"}
 ```
 
@@ -435,13 +448,14 @@ Updating a per-schema rule requires at least:
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
 ### Deleting a per-schema rule
+{: #delete_rule}
 
 The rules applied to a specific schema are deleted by making a DELETE request to the /artifacts/{schema-id}/rules/{rule-type} endpoint,
 (where {schema-id} is the ID of the schema, and {rule-type} is the type of global rule to be retrieved - currently the only supported type is COMPATIBILITY). If the request is successful, an empty response is returned, with a status code of 204 (no content).
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 
@@ -475,12 +489,13 @@ These rules can be applied at two scopes:
 By default, the registry has a global compatibility rule setting of `NONE`. Per-schema level rules must be defined, otherwise the schema will default to using the global setting.
 
 ## Full API description
-{: full_api_description}
-For a description of the REST API with examples, see 
-[{{site.data.keyword.messagehub}} schema-registry-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: new_window}.
+{: #full_api_description}
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: new_window}.
-To view the Swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
+For a description of the REST API with examples, see 
+[{{site.data.keyword.messagehub}} schema-registry-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: external}.
+
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: external}.
+To view the Swagger file, use Swagger tools, for example [Swagger editor](http://editor.swagger.io/#/){: external}.
 
 For details about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 
@@ -497,8 +512,14 @@ To configure the Confluent SerDes to use the Schema Registry, you need to specif
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of <code>/confluent</code>. For example, if <code>$APIKEY</code> is the API key to use and <code>$HOST</code> is the host from the <code>kafka_http_url</code> field in the **Service Credentials** tab, the value has the form: <code>https://token:{$APIKEY}@{$HOST}/{confluent}</code>
-BASIC_AUTH_CREDENTIALS_SOURCE | Set to <code>URL</code>. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of ```/confluent```. For example, if ```$APIKEY``` is the API key to use and ```$HOST``` is the host from the ```kafka_http_url``` field in the **Service Credentials** tab, the value has the form:
+
+```text
+https://token:{$APIKEY}@{$HOST}/{confluent}
+```
+{: screen}
+
+BASIC_AUTH_CREDENTIALS_SOURCE | Set to ```URL```. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
 
 You can also optionally provide the following properties to control the schema selection (subject naming strategy):
 
@@ -514,25 +535,24 @@ The following diagram shows an example of the properties required to create a Ka
 
 If a message is sent using a schema that isn’t in the registry, the SerDes attempts to create the new schema, or version of the schema, in the registry. If this behaviour is not required, it can be disabled by removing the writer permission for schema resources from the application. See [Managing access to the schema registry](/docs/EventStreams?topic=EventStreams-security#managing_access_schemas).
 
-Note: The *normalize* option for schema lookups and registration is not supported.
-{:note: .note}
+The *normalize* option for schema lookups and registration is not supported.
+{: note}
 
 ## Using the Schema Registry with third party tools
+{: #third_party}
 
 The Schema Registry can be tested with third party tools, such as the `kafka-avro-console-producer.sh` and `kafka-avro-console-consumer.sh`, that allow testing of conformance to schema using the Confluent SerDes.
 
 To run either the producer or the consumer tool, a common properties is required with the connection options for the {{site.data.keyword.messagehub}} Enterprise instance.
 
-<pre>
-<code>
+```text
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="apikey";
 security.protocol=SASL_SSL
 sasl.mechanism=PLAIN
 ssl.protocol=TLSv1.2
 ssl.enabled.protocols=TLSv1.2
 ssl.endpoint.identification.algorithm=HTTPS
-</code>
-</pre>
+```
 {: codeblock}
 
 ## Avro console producer and consumer
@@ -542,11 +562,9 @@ You can use the Kafka avro console producer and consumer tools with {{site.data.
 
 To execute using the credentials source method of URL, use the following code:
 
-<pre>
-<code>
+```text
     ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
-</code>
-</pre>
+```
 {: codeblock}
 
 Replace the following variables in the example with your own values:
@@ -556,11 +574,9 @@ Replace the following variables in the example with your own values:
 
 To execute using the credentials source method of USER_INFO, use the following code:
 
-<pre>
-<code>
+```text
     ./kafka-avro-console-[producer|consumer] --broker-list $KAFKA_BROKERS_SASL --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
-</code>
-</pre>
+```
 {: codeblock}
 
 Replace the following variables in the example with your own values:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-03-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -16,13 +16,10 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-
 # Data security and privacy
 {: #data_security}
 
-
-{{site.data.keyword.IBM}} uses the following methods to help ensure the security and
-privacy of your data:
+{{site.data.keyword.IBM}} uses the following methods to help ensure the security and privacy of your data.
 {: shortdesc}
 
 ## Cryptographic protocols
@@ -36,13 +33,11 @@ For TLS v1.2:
       * TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
       * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 
-
 For TLS v1.3:
 
       * TLS_AES_128_GCM_SHA256
       * TLS_AES_256_GCM_SHA384
       * TLS_CHACHA20_POLY1305_SHA256
-
 
 * To be a fully supported configuration, all clients must support the following:
     * TLS v1.2 or v1.3
@@ -53,7 +48,6 @@ For TLS v1.3:
     * for making connections to the Kafka native and REST interfaces 
     * the browser that you use to access the {{site.data.keyword.messagehub}} dashboard must support TLS v1.2 or v1.3
 
-   
 ## Encryption of message payloads, topic names, and consumer groups
 {: #encryption_payloads}
 
@@ -68,7 +62,7 @@ Topic names and consumer groups are encrypted for transmission between
 On the Satellite plan, all encryption is determined by the options that you specify on your chosen storage provider.
 
 For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see 
-[What's supported by the Lite, Standard, Enterprise, and Satellite plans](/docs/EventStreams?topic=EventStreams-plan_choose##what-is-supported-by-the-lite-standard-enterprise-and-satellite-plans).
+[What's supported by the Lite, Standard, Enterprise, and Satellite plans](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported).
 
 ## Data isolation model
 {: #data_isolation}
@@ -93,10 +87,7 @@ The Satellite plan provides a tenant-specific service in the IBM Service domain 
 
 The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster using hosts (physical and virtual) that you provided and attached to your Satellite location.
 
-The Satellite plan provides Public endpoints.
-
 The Satellite plan creates single tenant Block Storage for each new instance using the Block Storage configuration you have specified for your storage provider.
-
 
 ### Standard plan
 {: #data_isolation_standard}

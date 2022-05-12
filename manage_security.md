@@ -14,20 +14,22 @@ subcollection: EventStreams
 {:term: .term}
 {:shortdesc: .shortdesc}
 {:table: .aria-labeledby="caption"}
+{:important: .important}
 
 
 # Managing security and compliance with {{site.data.keyword.messagehub}}
 {: #manage-security-compliance}
-
-<!-- Name this file `manage-scc.md` and place it in the "Enhancing security" topic group. -->
 
 {{site.data.keyword.messagehub}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
 {: shortdesc}
 
 With the {{site.data.keyword.compliance_short}}, you can:
 
-* Monitor for controls and goals that pertain to {{site.data.keyword.messagehub}}.
-* Define rules for {{site.data.keyword.messagehub}} that can help to standardize resource configuration.
+- Monitor for controls and goals that pertain to {{site.data.keyword.messagehub}}.
+- Define rules for {{site.data.keyword.messagehub}} that can help to standardize resource configuration.
+
+{{site.data.keyword.compliance_short}} is only applicable to the Enterprise plan.
+{: important}
 
 ## Monitoring security and compliance posture with {{site.data.keyword.messagehub}}
 {: #monitor-eventstreams}
@@ -56,9 +58,9 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource type | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
-| instance | public_network_enabled | is_true <br>is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a public network. |
-| instance | private_network_enabled | is_true   \n   is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a private network. |
+| instance | public_network_enabled | is_true \n is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a public network. |
+| instance | private_network_enabled | is_true \n is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a private network. |
 | instance | private_access_allowlist | ips_in_range | - | If private networking is enabled, this property indicates whether access to a {{site.data.keyword.messagehub}} instance should be restricted to a given range of private IP CIDR formatted subnets. |
-{: caption="Table 1. Rule properties for {{site.data.keyword.messagehub}}" caption-side="top"}
+{: caption="Table 1. Rule properties for {{site.data.keyword.messagehub}}" caption-side="bottom"}
 
 To learn more about config rules, check out [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-governance)

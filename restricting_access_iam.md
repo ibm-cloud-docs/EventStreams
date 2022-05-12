@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -36,7 +36,7 @@ If you use {{site.data.keyword.messagehub}} over the public network, you must ad
 
 If you use {{site.data.keyword.messagehub}} over the private network, you must add the {{site.data.keyword.messagehub}}'s own private IP addresses for the appropriate cluster to the {{site.data.keyword.iamshort}} (IAM) IP allowlist. You can find these IP addresses with the following command: 
 
-```
+```text
 ibmcloud resource service-instance <event-streams-instance-name> --output json
 ```
 

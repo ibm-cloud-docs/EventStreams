@@ -10,7 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}
@@ -37,7 +37,7 @@ The credentials depend on the authentication method and three types of credentia
 
     To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
-    ```
+    ```text
     ibmcloud iam oauth-tokens
     ```
     {: codeblock}
@@ -49,10 +49,10 @@ The credentials depend on the authentication method and three types of credentia
     Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
 For a description of the API with examples, see 
-[{{site.data.keyword.messagehub}} admin-rest ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: new_window}.
+[{{site.data.keyword.messagehub}} admin-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: external}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: new_window}.
-To view the swagger file, use Swagger tools, for example [Swagger editor ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://editor.swagger.io/#/){: new_window}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: external}.
+To view the swagger file, use Swagger tools, for example [Swagger editor](http://editor.swagger.io/#/){: external}.
 
 
 
