@@ -44,10 +44,10 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 ### Available goals for Event Streams
 {: #eventstreams-available-goals}
 
-* Check whether {{site.data.keyword.messagehub}} is accessible through public endpoints
-* Check whether {{site.data.keyword.messagehub}} is accessible only by using private endpoints
-* Check whether {{site.data.keyword.messagehub}} network access is restricted to a specific IP range
-* Check whether {{site.data.keyword.messagehub}} is enabled with customer-managed encryption and Keep Your Own Key (KYOK)
+* Check whether {{site.data.keyword.messagehub}} is accessible through public endpoints.
+* Check whether {{site.data.keyword.messagehub}} is accessible only by using private endpoints.
+* Check whether {{site.data.keyword.messagehub}} network access is restricted to a specific IP range.
+* Check whether {{site.data.keyword.messagehub}} is enabled with customer-managed encryption and Keep Your Own Key (KYOK).
 
 ## Governing Event Streams resource configuration
 {: #govern-eventstreams}
