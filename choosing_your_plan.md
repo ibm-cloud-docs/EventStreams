@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -89,6 +89,7 @@ The following table summarizes what is supported by the plans:
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [^tabletext9]  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
+| **Mirroring** | No | No | Yes | No |
 {: caption="Table 1. Plan comparison table" caption-side="bottom"}
 
 [^tabletext1]: After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.)
