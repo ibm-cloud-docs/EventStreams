@@ -86,20 +86,14 @@ The following table lists the instance events:
 
 | Action | Description |
 |:-------|:------------|
-| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed. 
-{: caption="Table 4. {{site.data.keyword.messagehub}} other events" caption-side="top"}
-
-If the outcome of this event is `success`, access to the disk encryption key is restored and the {{site.data.keyword.messagehub}} instance is available for use.
-
-If the outcome is `failure`, access to the disk encryption key was withdrawn and the {{site.data.keyword.messagehub}} instance is not available for use. |
+| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed. If the outcome of this event is `success`, access to the disk encryption key is restored and the {{site.data.keyword.messagehub}} instance is available for use. If the outcome is `failure`, access to the disk encryption key was withdrawn and the {{site.data.keyword.messagehub}} instance is not available for use. |
 | event-streams.storage-key.update | The disk encryption key in {{site.data.keyword.keymanagementserviceshort}} was rotated and the {{site.data.keyword.messagehub}} instance was updated to use the new key. |
 | event-streams.schema.create | A schema  or schema version was created or updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance either through the administration API or through the Confluent Serdes.
 | event-streams.schema.delete | A schema or schema version was deleted from the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.create | A new rule or global rule was created in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.update | An existing rule or global rule was updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.delete | A rule was deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
-{: caption="Table 5. {{site.data.keyword.messagehub}} events" caption-side="top"}
-
+{: caption="Table 4. {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 ## Where to view the events
 {: #ui}
