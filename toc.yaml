@@ -86,10 +86,13 @@ toc:
             topics:
             - link:
                 label: IBM Event Streams REST Producer API
-                href: https://cloud.ibm.com/apidocs/event-streams/restproducer
+                href: https://{DomainName}/apidocs/event-streams/restproducer
+            - link:
+                label: IBM Event Streams REST Producer v2 endpoint API
+                href: https://{DomainName}/apidocs/event-streams/restproducer_v2
             - link:
                 label: IBM Event Streams Admin REST API
-                href: https://cloud.ibm.com/apidocs/event-streams/adminrest
+                href: https://{DomainName}/apidocs/event-streams/adminrest
         - eventstreams-cli.md
     - navgroup:
         id: help
