@@ -39,9 +39,9 @@ The following table summarizes what you can use with {{site.data.keyword.message
 | **Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
-|**ksqlDB supported supported**   |  Yes |  No|  No |
+|**ksqlDB supported**   |  Yes |  No|  No |
 |**Authentication requirements**   |  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol | Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol|  Client must support authentication using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol |
-{: caption="Table 1. Kafka client support in Standard, Enterprise, and Lite plans" caption-side="bottom"} 	
+{: caption="Table 1. Kafka client support in Standard, Enterprise, and Lite plans" caption-side="bottom"}
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
