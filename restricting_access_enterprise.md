@@ -16,6 +16,7 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:important: .important}
+{:note: .note}
 
 
 # Restricting network access using the Enterprise plan
@@ -106,7 +107,7 @@ where CIDR1, 2 are IP addresses of the form a.b.c.d/e
 ## Updating the network configuration or IP allowlist
 {: #update_endpoints}
 
-You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this,use the following CLI commands.
+You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
 * To enable private endpoints:
 
@@ -133,9 +134,9 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 ```
 {: codeblock}
 
-Next, update the broker address to be private endpoints and new API key in the application.
+Next, update the broker address to be private endpoints and a new API key in the application.
 
-Next, once applications migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
+Next, after applications are migrated to the private endpoints, you can issue the following command to turn off the public endpoints:
 
 ```bash
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
@@ -185,14 +186,15 @@ ibmcloud resource service-instance <instance-name>
 
 when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
 
-## How to set private IP allowlist via Schematics
+## How to set the private IP allowlist using {{site.data.keyword.bplong_notm}}
 {: #schematics_integration}
 
-Event Streams supports integration with [Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-getting-started).
+{{site.data.keyword.messagehub}} supports integration with [{{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-getting-started).
 
-Refer to this [example](https://cloud.ibm.com/docs/terraform?topic=terraform-event-streams-resources) about how to set the `private_ip_allowlist` in a Terraform script. 
+Refer to this [example](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#event-stream-snippet) about how to set the `private_ip_allowlist` in a Terraform script. 
 
-Note: If the terraform script is executed from Schematics, additional IPs are required to be added into the `private_ip_allowlist` of {{site.data.keyword.messagehub}}' to allow Schematics to access {{site.data.keyword.messagehub}}' API endpoints. You can find the IPs of Schematics in each region from [Opening required IP addresses for IBM Cloud Schematics in your firewall](https://cloud.ibm.com/docs/schematics?topic=schematics-allowed-ipaddresses).
+If the terraform script is run from {{site.data.keyword.bpshort}}, additional IPs are required to be added into the `private_ip_allowlist` of {{site.data.keyword.messagehub}} to allow {{site.data.keyword.bpshort}} to access {{site.data.keyword.messagehub}}' API endpoints. You can find the IPs of {{site.data.keyword.bpshort}} in each region from [Opening required IP addresses for {{site.data.keyword.bplong_notm}} in your firewall](/docs/schematics?topic=schematics-allowed-ipaddresses).
+{: note}
 
 
 ## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
