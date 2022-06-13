@@ -64,12 +64,12 @@ The following table lists the message audit events:
 {{site.data.keyword.messagehub}} can sustain high requests rate so not every request triggers an event. Instead, events are aggregated by 
 initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1 hour period.
 
-## Instance events
+## Instance events (deprecated)
 {: #instance-events}
 
 {{site.data.keyword.messagehub}} instances that are on the Enterprise plan automatically generate instance events.
 
-The following table lists the instance events:
+The following table lists the instance events, and they are replaced by [service instance events](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_provision).
 
 
 | Action | Description |
