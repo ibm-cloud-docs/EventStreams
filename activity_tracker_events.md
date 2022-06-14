@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2022-06-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
@@ -18,6 +18,7 @@ subcollection: EventStreams
 {:tip: .tip}
 {:download: .download}
 {:table: .aria-labeledby="caption"}
+{:deprecated: .deprecated}
 
 # {{site.data.keyword.cloudaccesstrailshort}} events 
 {: #at_events}
@@ -64,12 +65,13 @@ The following table lists the message audit events:
 {{site.data.keyword.messagehub}} can sustain high requests rate so not every request triggers an event. Instead, events are aggregated by 
 initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1 hour period.
 
-## Instance events
+## Instance events (deprecated)
 {: #instance-events}
 
 {{site.data.keyword.messagehub}} instances that are on the Enterprise plan automatically generate instance events.
 
-The following table lists the instance events:
+The following table lists the instance events, which are now replaced by [service instance events](/docs/activity-tracker?topic=activity-tracker-at_events_rc#rc_provision).
+{: deprecated}
 
 
 | Action | Description |
