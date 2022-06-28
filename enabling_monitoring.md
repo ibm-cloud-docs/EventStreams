@@ -50,7 +50,7 @@ A service-to-service binding between both instances must be configured to allow 
 If your requirement is to fail back, you need also the service-to-service binding in the opposite direction.
 {: important}
 
-Following is an example of how to use the command line to configure service-to-service binding. 
+The following is an example of how to use the command line to configure service-to-service binding. 
 Note, in this command we are using IAM source and target definitions, which are the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
 
 ```text
