@@ -11,7 +11,6 @@ subcollection: EventStreams
 ---
 
 {:external: target="_blank" .external}
-{:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
 {:codeblock: .codeblock}

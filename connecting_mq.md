@@ -43,8 +43,8 @@ Ensure you have the following software and services installed:
 
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
-* A recent version of kubectl.
-* [git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads){: external}
+* A recent version of kubectl
+* [git](https://git-scm.com/downloads){: external}
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step2_clone_project_mq}
