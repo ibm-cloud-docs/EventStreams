@@ -75,7 +75,7 @@ Include the following information in the ticket:
 {: #example_request}
 
 ```text
-We request the {{site.data.keyword.messagehub}} team to enable mirroring between the following 2 service instances:
+We request the Event Streams team to enable mirroring between the following 2 service instances:
 - crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa:: aliased with "us-south"
 - crn:v1:bluemix:public:messagehub:us-east:a/bbb:bbbb:: aliased with "us-east"
 
