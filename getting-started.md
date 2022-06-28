@@ -174,7 +174,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Next steps
 {: #next_steps}
 
-Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1) {: external} tutorial, or find out more about 
+Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service, look at the [IBM Event Streams on IBM Cloud Private and Red Hat OpenShift](https://www.ibm.com/cloud/garage/dte/tutorial/ibm-event-streams-tutorial-part-1){: external} tutorial, or find out more about 
 [{{site.data.keyword.messagehub}} on IBM Cloud Private](https://ibm.github.io/event-streams/){: external}.
 
 To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
