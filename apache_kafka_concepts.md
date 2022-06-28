@@ -47,7 +47,7 @@ If a topic has more than one partition, it allows data to be fed through in para
 
 For more information, see [Partition leadership](/docs/EventStreams?topic=EventStreams-partition_leadership#partition_leadership).
 
-![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers."{: caption="Figure 3. Diagram that shows 1 topic with 3 partitions spread across 3 brokers" caption-side="bottom"}
+![Topics and partitions diagram.](concepts_topics_and_partitions.png "Diagram that shows 1 topic with 3 partitions spread across 3 brokers."){: caption="Figure 3. Diagram that shows 1 topic with 3 partitions spread across 3 brokers" caption-side="bottom"}
 
 
 ## Replication
@@ -75,7 +75,7 @@ A producer publishes messages to one or more topics. A producer can publish to o
 
 You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgement the producer receives for messages it publishes.
 
-For more information, see [Producing Messages](/docs/EventStreams?topic=EventStreams-producing_messages#producing_messages).
+For more information, see [Producing messages](/docs/EventStreams?topic=EventStreams-producing_messages#producing_messages).
 
 ![Producers diagram.](concepts_producers.png "Diagram that shows a producer publishing messages to one topic across three brokers."){: caption="Figure 6. Diagram that shows a producer publishing messages to one topic across three brokers" caption-side="bottom"}
 
