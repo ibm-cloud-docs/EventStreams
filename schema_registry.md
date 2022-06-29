@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-06-28"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -499,7 +499,7 @@ To view the Swagger file, use Swagger tools, for example [Swagger editor](http:/
 
 For details about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 
-For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-index-of-terraform-on-ibm-cloud-resources-and-data-sources#ibm-event-streams_rd){: external}.
+For information about {{site.data.keyword.messagehub}} resources and data sources on Terraform, see [resources and data sources](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-resources-datasource-list#ibm-event-streams_rd){: external}.
 
 ## Using the Schema Registry with the third party SerDes
 {: #using_schema_registry_serdes}
