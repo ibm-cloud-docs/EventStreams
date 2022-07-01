@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-07-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -156,6 +156,8 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 * Maximum concurrently active Kafka clients: 10000
 * Maximum record key size when using REST Producer API is 4 K 
 * Maximum record value size when using REST Producer API is 64 K
+* Maximum messages per second when using REST Producer API is 200
+
 
 ## Satellite plan
 {: #limits_satellite }
