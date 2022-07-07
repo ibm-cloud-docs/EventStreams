@@ -55,7 +55,6 @@ toc:
             topics:
             - satellite_about.md
             - satellite_provisioning.md
-            - setting_up_app_vpn.md
         - streaming_cos_sql.md
         - topicgroup:
             label: Integrating with other services
@@ -81,6 +80,7 @@ toc:
         - monitoring.md
         - disaster_recovery.md
         - reserved_disk.md
+        - setting_up_app_vpn.md
         - topicgroup:
             label: API reference
             topics:
