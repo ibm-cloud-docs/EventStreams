@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-1"
+lastupdated: "2022-07-07"
 
 keywords: IBM Event Streams, Satellite
 
@@ -83,7 +83,12 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
         The information regarding the amount of storage is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the information applies to each instance of {{site.data.keyword.messagehub}}.
 {: note}
 
-## Provision {{site.data.keyword.messagehub}}
-{: #satellite_provision_es}
+To provision {{site.data.keyword.messagehub}}, complete the steps in [Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satelliteshort}}](/docs/EventStreams?topic=EventStreams-satellite-provisioning).
 
-Complete the steps in [Provisioning Event Streams for Satellite](/docs/EventStreams?topic=EventStreams-satellite-provisioning).
+For an example how to connect your provider to {{site.data.keyword.satelliteshort}}, see [Connecting applications running outside AWS with VPN access to the {{site.data.keyword.satelliteshort}} location](/docs/EventStreams?topic=EventStreams-satellite_vpn).
+
+
+
+
+
+
