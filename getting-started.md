@@ -54,7 +54,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 ## Tutorial steps
 {: #getting_started_steps}
 
-1. **Create a topic**. {: #Create_topic_step notoc}
+1. **Create a topic**. 
+   {: #Create_topic_step notoc}
 
    The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
 
@@ -62,7 +63,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
       a. Go to the **Topics** tab.
   
-      b. Click **New topic**.
+      b. Click **Create topic**.
   
       c. Name your topic.
   
@@ -73,7 +74,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
       e. The topic appears in the table. You just created a topic!
   
-2. **Create credentials**. {: #create_credentials_step}
+2. **Create credentials**. 
+   {: #create_credentials_step}
 
     To allow the sample application to access your topic, we need to create some credentials for it. 
 
@@ -87,9 +89,10 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
      e. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-     f. Click **View credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+     f. Click the dropdown button next to **Service credentials** to see the `api_key` and `kafka_brokers_sasl` values.
 
-3. **Clone the GitHub repository for the sample application**. {: #clone_repository_step notoc}
+3. **Clone the GitHub repository for the sample application**. 
+   {: #clone_repository_step notoc}
 
    The sample application is stored in GitHub. Clone the `event-streams-samples` repository by running the clone command from the command line. 
 
@@ -114,7 +117,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
 
-4. **Run the consuming application** {: #start_consumer_step notoc}
+4. **Run the consuming application** 
+   {: #start_consumer_step notoc}
    
    Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
 
@@ -137,7 +141,8 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
    An `INFO No messages consumed` is displayed when the consuming application is running, but no data is consumed. 
 
-5. **Run the producing application**. {: #start_producer_step notoc}
+5. **Run the producing application**. 
+   {: #start_producer_step notoc}
 
    Open a new command line window and change into the `kafka-java-console-sample` directory.
 
