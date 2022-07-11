@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-07-11"
 
 keywords: event streams release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## July 2022
+{: #EventStreams-jul2022}
+{: release-note}
+
+Enhanced support for matching schemas
+:   Enhanced support for matching schemas when using Confluent SerDes with the Schema Registry.
 
 ## May 2022
 {: #EventStreams-may2022}
