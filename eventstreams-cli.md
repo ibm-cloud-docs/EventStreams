@@ -101,7 +101,8 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 --verbose, -v  (optional)
 :   Display verbose configuration information.
 
---filter value, -f value(optional)
+--filter value, -f value (optional)
+:   
 
 --json (optional)
 :   Output format in JSON.
