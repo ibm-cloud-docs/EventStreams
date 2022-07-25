@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-11"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -87,7 +87,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
   
      e. Click **Add**. The new credential is listed in the table in **Service credentials**.
   
-     f. Click the dropdown button next to **Service credentials** to see the `api_key` and `kafka_brokers_sasl` values.
+     f. Click the dropdown button next to **Service credentials** to see the `api_key` and `bootstrap_endpoints` values.
 
 3. **Clone the GitHub repository for the sample application**. {: #clone_repository_step notoc}
 
@@ -116,22 +116,19 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 4. **Run the consuming application**. {: #start_consumer_step notoc}
    
-   Start the sample consuming application from the command line, replacing the `kafka_brokers_sasl` and `api_key` values. 
+   Start the sample consuming application from the command line, replacing the `bootstrap_endpoints` and `api_key` values. 
 
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this value. 
    
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](#create_credentials_step). 
-   Use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
+   Use the `bootstrap_endpoints` from the **Service credentials** created in [Step 2](#create_credentials_step). 
 
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. 
-   Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
    {: important}
 
    Then, use the `api_key` from the **Service credentials** created in [Step 2](#create_credentials_step). `-consumer` indicates to start the consumer. 
 
    ```bash
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
-   <kafka_brokers_sasl> <api_key> -consumer
+   <bootstrap_endpoints> <api_key> -consumer
    ```
    {: codeblock}
 
@@ -146,21 +143,17 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
    ```
    {: codeblock}
    
-   Then, start the application that produces the sample from the command line, and replace the `kafka_brokers_sasl` and `api_key` values. 
+   Then, start the application that produces the sample from the command line, and replace the `bootstrap_endpoints` and `api_key` values. 
 
    The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this value. 
 
-   Use the `kafka_brokers_sasl` from the **Service credentials** created in [Step 2](#create_credentials_step). We recommend to use all the `kafka_brokers_sasl` listed in the **Service credentials** that you created.
-
-   The `kafka_brokers_sasl` must be formatted as `"host:port,host2:port2"`. 
-   Format the contents of `kafka_brokers_sasl` in a text editor before you enter it in the command line.
-   {: important}
+   Use the `bootstrap_endpoints` from the **Service credentials** created in [Step 2](#create_credentials_step). 
 
    Use the `api_key` from the **Service credentials** created in [Step 2](#create_credentials_step). `-producer` initiates starting the producer. 
 
    ```bash
    java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
-   <kafka_brokers_sasl> <api_key> -producer
+   <bootstrap_endpoints> <api_key> -producer
    ```
    {: codeblock}
 

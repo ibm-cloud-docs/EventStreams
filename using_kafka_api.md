@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -79,13 +79,13 @@ To retrieve the username, password, and list of bootstrap servers, a Service cre
 
 From these objects:
 
-- Use the `kafka_brokers_sasl property` as the list of bootstrap servers. Format this list as a comma-separated list of host:port entries. For example, `host1:port1,host2:port2`. We recommend including details for all the hosts listed in the `kafka_brokers_sasl` property.
+- Use the `bootstrap_endpoints` string as the list of bootstrap servers and pass this string of host/port pairs to your Kafka client.
 - Use the `user` and `api_key` properties as the username and password.
 
-For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and KAFKA_BROKERS_SASL should be replaced by the values that you retrieved previously.
+For a Java client, the following example shows the minimum set of properties, where USERNAME, PASSWORD, and BOOTSTRAP_ENDPOINTS should be replaced by the values that you retrieved previously.
 
 ```config
-bootstrap.servers=KAFKA_BROKERS_SASL
+bootstrap.servers=BOOTSTRAP_ENDPOINTS
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
 security.protocol=SASL_SSL
 sasl.mechanism=PLAIN
