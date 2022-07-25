@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -171,7 +171,7 @@ The following tables describe the specific metrics provided by {{site.data.keywo
 ### Metrics cost information with consumers enabled
 {: #metrics-cost}
 
-| Consumer Group | Topics| Partitions| Number of time series  | Monthly cost |
+| Consumer group | Topics| Partitions| Number of time series  | Monthly cost |
 |----------------|-------|----------|------------------------|--------------|
 | 1              | 1     | 3        | 1 x 1 x 3  = 3         | $0.08 x 3 = $0.24     |
 | 10             | 10    | 3        | 10 x 10 x 3 = 300      | $0.08 x 300 = $24.00  |
@@ -442,7 +442,7 @@ The number of stable consumer groups in an {{site.data.keyword.messagehub}} inst
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 25. Stable consumer groups metric metadata" caption-side="bottom"}
 
-Use in conjunction with re-balancing consumer groups. If this is consistently zero and re-balancing high, then it indicates a cluster problem. If this is non-zero and re-balancing high, then it indicates a consumer group issue.
+Use in conjunction with re-balancing consumer groups. If this is consistently zero and re-balancing high, then it indicates a cluster problem. If this is non-zero and re-balancing high, it indicates a consumer group issue.
 
 ### Topic bytes in per second
 {: #ibm_eventstreams_instance_topic_bytes_in_per_second}
@@ -492,7 +492,7 @@ This is for information to help you monitor trends in your usage. Refer to [{{si
 ### Rest-producer requests per second
 {: #ibm_eventstreams_instance_rest_producer_requests_per_sec}
 
-Number of requests per second made to the rest-producer API
+Number of requests per second made to the REST Producer API
 
 | Metadata | Description |
 |----------|-------------|
@@ -502,7 +502,7 @@ Number of requests per second made to the rest-producer API
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 29: Rest-producer requests per second metric metadata" caption-side="top"}
 
-This is for information to help you monitor usage of the rest-producer API, including use of schema encoders.
+This is for information to help you monitor usage of the REST Producer API, including use of schema encoders.
 
 ### Mirroring_throughput
 {: #ibm_eventstreams_instance_mirroring_throughput}
@@ -608,7 +608,7 @@ The following attributes are available for segmenting one or more attributes as 
 |-----------|----------------|-----------------------|
 | `Client software name` | `ibm_eventstreams_clientsoftwarename` | Client software name |
 | `Client software version` | `ibm_eventstreams_clientsoftwareversion` | Client software version |
-| `IBM Event Streams Consumer Group` | `ibm_eventstreams_consumergroup` | IBM Event Streams Consumer Group |
+| `IBM Event Streams Consumer Group` | `ibm_eventstreams_consumergroup` | IBM Event Streams consumer group |
 | `IBM Event Streams Kafka partition` | `ibm_eventstreams_partition` | IBM Event Streams Kafka partition |
 | `IBM Event Streams Kafka topic` | `ibm_eventstreams_topic` | IBM Event Streams Kafka topic |
 | `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile |
