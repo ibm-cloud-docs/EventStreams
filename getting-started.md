@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-26"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -47,127 +47,27 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 
 2. **If you don't already have them, install the following prerequisites:**
 	
-	* [Git](https://git-scm.com/){: external}
-	* [Gradle](https://gradle.org/){: external}
-	* Java™  8 or higher 
+	- [Git](https://git-scm.com/){: external}
+	- Java™  8 or higher 
 
 ## Tutorial steps
 {: #getting_started_steps}
 
-1. **Create a topic**. {: #Create_topic_step notoc}
-
-   The topic is the core of {{site.data.keyword.messagehub}} flows. Data passes through a topic from producing applications to consuming applications. 
-
-   We use the {{site.data.keyword.Bluemix_notm}} console (UI) to create the topic and reference it when we start the application.
-
-      a. Go to the **Topics** tab.
-  
-      b. Click **Create topic**.
-  
-      c. Name your topic.
-  
-     The sample application is configured to connect to topic `kafka-java-console-sample-topic`. If the topic does not exist, it is created when the application is started. 
-     {: important}
-
-      d. Keep the defaults set in the rest of the topic creation, click **Next**, and then **Create topic**.
-
-      e. The topic appears in the table. You just created a topic!
-  
-2. **Create credentials**. {: #create_credentials_step}
-
-    To allow the sample application to access your topic, we need to create some credentials for it. 
-
-     a. Go to **Service credentials** in the navigation pane.
-  
-     b. Click **New credential**.
-  
-     c. Give the credential a name so you can identify its purpose later. You can accept the default value.
-  
-     d. Give the credential the **Manager** role so that it can access the topics, and create them if necessary. 
-  
-     e. Click **Add**. The new credential is listed in the table in **Service credentials**.
-  
-     f. Click the dropdown button next to **Service credentials** to see the `api_key` and `bootstrap_endpoints` values.
-
-3. **Clone the GitHub repository for the sample application**. {: #clone_repository_step notoc}
-
-   The sample application is stored in GitHub. Clone the `event-streams-samples` repository by running the clone command from the command line. 
-
-   ```bash
-   git clone https://github.com/ibm-messaging/event-streams-samples.git
-   ```
-   {: codeblock}
-
- 
-   When the repository is cloned, from the command line change into the `kafka-java-console-sample` directory.
-
-   ```bash
-   cd event-streams-samples/kafka-java-console-sample
-   ```
-   {: codeblock}
-   
-
-   Build the contents of the `kafka-java-console-sample` directory.
-
-   ```bash
-   gradle clean && gradle build
-   ```
-   {: codeblock}
-
-4. **Run the consuming application**. {: #start_consumer_step notoc}
-   
-   Start the sample consuming application from the command line, replacing the `bootstrap_endpoints` and `api_key` values. 
-
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this value. 
-   
-   Use the `bootstrap_endpoints` from the **Service credentials** created in [Step 2](#create_credentials_step). 
-
-   {: important}
-
-   Then, use the `api_key` from the **Service credentials** created in [Step 2](#create_credentials_step). `-consumer` indicates to start the consumer. 
-
-   ```bash
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
-   <bootstrap_endpoints> <api_key> -consumer
-   ```
-   {: codeblock}
-
-   An `INFO No messages consumed` is displayed when the consuming application is running, but no data is consumed. 
-
-5. **Run the producing application**. {: #start_producer_step notoc}
-
-   Open a new command line window and change into the `kafka-java-console-sample` directory.
-
-   ```bash
-   cd event-streams-samples/kafka-java-console-sample
-   ```
-   {: codeblock}
-   
-   Then, start the application that produces the sample from the command line, and replace the `bootstrap_endpoints` and `api_key` values. 
-
-   The `java -jar ./build/libs/kafka-java-console-sample-2.0.jar` part of the command identifies the locations of the .JAR file to run within the cloned repository. You do not need to change this value. 
-
-   Use the `bootstrap_endpoints` from the **Service credentials** created in [Step 2](#create_credentials_step). 
-
-   Use the `api_key` from the **Service credentials** created in [Step 2](#create_credentials_step). `-producer` initiates starting the producer. 
-
-   ```bash
-   java -jar ./build/libs/kafka-java-console-sample-2.0.jar \
-   <bootstrap_endpoints> <api_key> -producer
-   ```
-   {: codeblock}
-
-6. **Success!** {: #success_step notoc}
-
-   When the producer starts, messages are produced to the topic. Messages are then consumed from the topic by the consuming application.
-   You can verify the successful flow of messages when you see`INFO Message consumed` from the consumer. 
-
-   The sample runs indefinitely until you stop it. To stop the process, run an exit command `Ctrl+C`.
+1. In the {{site.data.keyword.Bluemix_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click on the **Get started with a sample application** tile.
+2. Follow the **Configure & run starter application** steps:
+     a. Click the **Download .JAR from GitHub** button to download the latest .JAR release. 
+     b. Click the **Generate properties** button to generate and download the properties file. The **Topic** panel opens.
+     c. Enter a name for a **New topic** that you want to create. Or, click on **Existing topic** to select an existing topic that you want to use. If you are on the Lite plan and a topic already exists, the **New topic** button is disabled. {: note}
+     d. Select the **Service credential** that you want to use, or select **Create new** to create a new one. 
+     e. Click the **Generate and download** button. The kafka.properties file gets downloaded to your local machine. It contains the necessary configuration to connect to {{site.data.keyword.messagehub}}. You can open it in a text editor to see how it works.
+     f. The panel shows your selected configuration. Clicking on the **Regenerate** button starts the process again. Clicking on the **Download** button downloads the properties file again.
+3. Navigate to the folder that contains the downloaded .JAR file by using the command line or a terminal and run the command. Replace the value `<path-to-properties>` with the file path to the kafka.properties file.
+4. Once the application starts, click the **'localhost:8080'** link at the bottom of the form to open the starter app and see messages flowing through the topic.
 
 ## Next steps
 {: #next_steps}
 
-Now that ran the Java sample application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service or find out more about 
+Now that ran the starter application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service or find out more about 
 [{{site.data.keyword.messagehub}} on IBM Cloud Private](https://ibm.github.io/event-streams/){: external}.
 
-To watch a video that walks you through getting this Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
+To watch a video that walks you through getting a Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
