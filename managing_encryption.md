@@ -81,7 +81,7 @@ ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub
 ```
 {: codeblock}
 
-If you wish to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket](/docs/get-support?topic=get-support-open-case){: external} on {{site.data.keyword.messagehub}} that contains the following information:
+If you want to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket](/docs/get-support?topic=get-support-open-case){: external} on {{site.data.keyword.messagehub}} that contains the following information:
 
    - The CRN of the root key that you want to use in your key management service instance.
    - The CRN of your {{site.data.keyword.messagehub}} service instance.
@@ -93,6 +93,14 @@ If you wish to update your existing {{site.data.keyword.messagehub}} instance to
       ibmcloud resource service-instance NAME
       ```
       {: codeblock}
+      ```python
+# Python example
+
+message = 'Hello, world!'
+
+print(message)
+```
+{: codeblock}
 
    The {{site.data.keyword.messagehub}} Operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
 
