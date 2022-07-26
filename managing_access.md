@@ -76,18 +76,18 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
 | Allow full access to all resources | Not applicable  | Not applicable  | Service instance: <your_service_instance> |
-| Allow an app or user to create or delete topic | Resource type: `cluster` |Not applicable  |Resource type: topic  \n  \n Optional: Resource ID: <name_of_topic> |
+| Allow an app or user to create or delete topic | Resource type: `cluster` |Not applicable  |Resource type: topic  Optional: Resource ID: <name_of_topic> |
 | List groups, topics, and offsets  \n  Describe group, topic, and broker configurations | Resource type: `cluster` | Not applicable  | Not applicable |
 | Allow an app to connect to the cluster  | Resource type: `cluster`| Not applicable | Not applicable |
 | Allow an app to produce to any topic  | Resource type: `cluster`|Resource type: `topic` | Not applicable |
-| Allow an app to produce to a specific topic  | Resource type: `cluster`| Resource type: `topic`  \n Resource ID: <name_of_topic> | Not applicable |
-| Allow an app to connect and consume from any topic (no consumer group)  | Resource type: `cluster`  \n Resource type: `topic` | Not applicable    | Not applicable |
-| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: `cluster`  \n Resource type: `topic`  \n Resource ID: <name_of_topic> |Not applicable | Not applicable |
+| Allow an app to produce to a specific topic  | Resource type: `cluster`| Resource type: `topic`  Resource ID: <name_of_topic> | Not applicable |
+| Allow an app to connect and consume from any topic (no consumer group)  | Resource type: `cluster` Resource type: `topic` | Not applicable    | Not applicable |
+| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: `cluster` Resource type: `topic`  \n Resource ID: <name_of_topic> |Not applicable | Not applicable |
 | Allow an app to consume a topic (consumer group) | Resource type: `cluster`  \n Resource type: `topic`  \n Resource type: `group` |Not applicable |Not applicable |
-| Allow an app to produce to a topic transactionally  | Resource type: `cluster`  \n Resource type: `group` | Resource type: `topic`  Resource ID: <name_of_topic>  \n Resource type: `txnid` | Not applicable |
-| Delete consumer group | Resource type: `cluster` | Not applicable  | Resource type: `group`  \n Resource ID: <group_ID> |
-| To use Streams | Resource type: `cluster`  \n Resource type: `group`| Not applicable  |Resource type: `topic` |
-| Delete records | Not applicable | Not applicable | Resource type: `topic`  \n Resource ID: <name_of_topic> |
+| Allow an app to produce to a topic transactionally  | Resource type: `cluster` Resource type: `group` | Resource type: `topic`  Resource ID: <name_of_topic> Resource type: `txnid` | Not applicable |
+| Delete consumer group | Resource type: `cluster` | Not applicable  | Resource type: `group` Resource ID: <group_ID> |
+| To use Streams | Resource type: `cluster` Resource type: `group`| Not applicable  |Resource type: `topic` |
+| Delete records | Not applicable | Not applicable | Resource type: `topic` Resource ID: <name_of_topic> |
 {: caption="Table 2. Access for common scenarios" caption-side="bottom"}
 
 For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
