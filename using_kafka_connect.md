@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -39,7 +39,7 @@ The stand-alone worker does not use any internal topics. Instead, it uses a file
 You must provide the bootstrap servers and SASL credentials information in the worker properties file that you supply when you start a Kafka Connect stand-alone worker. The following example lists the properties that you must provide in your properties file:
 
 ```config
-    bootstrap.servers=KAFKA_BROKERS_SASL
+    bootstrap.servers=BOOTSTRAP_ENDPOINTS
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     security.protocol=SASL_SSL
     sasl.mechanism=PLAIN
@@ -49,7 +49,7 @@ You must provide the bootstrap servers and SASL credentials information in the w
 ```
 {: codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
 ### Source connector
 {: #source_connector notoc}
@@ -57,7 +57,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 The following example lists the properties that you must provide in your properties file:
 
 ```config
-    bootstrap.servers=KAFKA_BROKERS_SASL
+    bootstrap.servers=BOOTSTRAP_ENDPOINTS
     producer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     producer.security.protocol=SASL_SSL
     producer.sasl.mechanism=PLAIN
@@ -67,7 +67,7 @@ The following example lists the properties that you must provide in your propert
 ```
 {: codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
 ### Sink connector
 {: #sink_connector}
@@ -75,7 +75,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 The following example lists the properties that you must provide in your properties file:
 
 ```config
-    bootstrap.servers=KAFKA_BROKERS_SASL
+    bootstrap.servers=BOOTSTRAP_ENDPOINTS
     consumer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     consumer.security.protocol=SASL_SSL
     consumer.sasl.mechanism=PLAIN
@@ -85,7 +85,7 @@ The following example lists the properties that you must provide in your propert
 ```
 {: codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
 ## Distributed worker configuration
 {: #distributed_worker notoc}
@@ -93,7 +93,7 @@ Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.
 You must provide the bootstrap servers and SASL credentials information in the properties file that you supply when you start the Kafka Connect distributed workers. The following example lists the properties that you must provide in your properties file:
 
 ```config
-    bootstrap.servers=KAFKA_BROKERS_SASL
+    bootstrap.servers=BOOTSTRAP_ENDPOINTS
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
     security.protocol=SASL_SSL
     sasl.mechanism=PLAIN
@@ -103,7 +103,7 @@ You must provide the bootstrap servers and SASL credentials information in the p
 ```
 {: codeblock}
 
-Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
 If you want to use a source connector, you must also specify the SSL and SASL configuration for the producer as follows:
 

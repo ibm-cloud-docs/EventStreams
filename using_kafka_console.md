@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -49,13 +49,13 @@ You can use the Kafka console producer tool with {{site.data.keyword.messagehub}
 After you've created the properties file as described previously, you can run the console producer in a terminal as follows:
 
 ```bash
-   kafka-console-producer.sh --broker-list KAFKA_BROKERS_SASL --producer.config CONFIG_FILE --topic TOPIC_NAME
+   kafka-console-producer.sh --broker-list BOOTSTRAP_ENDPOINTS --producer.config CONFIG_FILE --topic TOPIC_NAME
 ```
 {: codeblock}
 
 Replace the following variables in the example with your own values:
 
-- KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
 You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
@@ -68,13 +68,13 @@ You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}
 After you created the properties file as described previously, run the console consumer in a terminal as follows:
 
 ```bash
-   kafka-console-consumer.sh --bootstrap-server KAFKA_BROKERS_SASL --consumer.config CONFIG_FILE --topic TOPIC_NAME 
+   kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
 ```
 {: codeblock}
 
 Replace the following variables in the example with your own values:
 
-- KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
 - CONFIG_FILE with the path of the configuration file. 
 
 You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
@@ -87,19 +87,19 @@ You can use the Kafka consumer groups tool with {{site.data.keyword.messagehub}}
 After you created the properties file as described previously, run the consumer groups tools in a terminal. For example, you can list the consumer groups as follows:
 
 ```bash
-   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --list --timeout 60000
+   kafka-consumer-groups.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --command-config CONFIG_FILE --list --timeout 60000
 ```
 {: codeblock}
 
 Replace the following variables in the example with your own values:
 
-- KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (for example, `host1:port1,host2:port2`). 
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file.
 
 Using this tool, you can also display details like the current positions of the consumers, their lag, and client-id for each partition for a group. For example:
 
 ```bash
-   kafka-consumer-groups.sh --bootstrap-server KAFKA_BROKERS_SASL --command-config CONFIG_FILE --describe --group GROUP --timeout 60000
+   kafka-consumer-groups.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --command-config CONFIG_FILE --describe --group GROUP --timeout 60000
 ```
 {: codeblock}
 
@@ -150,12 +150,12 @@ You can use this tool with {{site.data.keyword.messagehub}} to reset the process
 For example:
 
 ```bash
-   kafka-streams-application-reset.sh --bootstrap-servers KAFKA_BROKERS_SASL --config-file CONFIG_FILE --application-id APP_ID
+   kafka-streams-application-reset.sh --bootstrap-servers BOOTSTRAP_ENDPOINTS --config-file CONFIG_FILE --application-id APP_ID
 ```
 {: codeblock}
 
 Replace the following variables in the example with your own values:
 
-- KAFKA_BROKERS_SASL with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as a list of host:port pairs separated with commas (like `host1:port1,host2:port2`). 
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
 - CONFIG_FILE with the path of the configuration file. 
 - APP_ID with your Streams application ID.
