@@ -54,14 +54,23 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 {: #getting_started_steps}
 
 1. In the {{site.data.keyword.Bluemix_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click on the **Get started with a sample application** tile.
+
 2. Follow the **Configure & run starter application** steps:
+
      a. Click the **Download .JAR from GitHub** button to download the latest .JAR release. 
+     
      b. Click the **Generate properties** button to generate and download the properties file. The **Topic** panel opens.
+     
      c. Enter a name for a **New topic** that you want to create. Or, click on **Existing topic** to select an existing topic that you want to use. If you are on the Lite plan and a topic already exists, the **New topic** button is disabled. {: note}
+     
      d. Select the **Service credential** that you want to use, or select **Create new** to create a new one. 
+     
      e. Click the **Generate and download** button. The kafka.properties file gets downloaded to your local machine. It contains the necessary configuration to connect to {{site.data.keyword.messagehub}}. You can open it in a text editor to see how it works.
+     
      f. The panel shows your selected configuration. Clicking on the **Regenerate** button starts the process again. Clicking on the **Download** button downloads the properties file again.
+     
 3. Navigate to the folder that contains the downloaded .JAR file by using the command line or a terminal and run the command. Replace the value `<path-to-properties>` with the file path to the kafka.properties file.
+
 4. Once the application starts, click the **'localhost:8080'** link at the bottom of the form to open the starter app and see messages flowing through the topic.
 
 ## Next steps
