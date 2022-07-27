@@ -89,18 +89,10 @@ If you want to update your existing {{site.data.keyword.messagehub}} instance to
    You can find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after clicking the {{site.data.keyword.messagehub}} service in the console. 
    Alternatively, paste in the output from the following CLI command:
 
-      ```bash
-      ibmcloud resource service-instance NAME
-      ```
-      {: codeblock}
-      ```python
-# Python example
-
-message = 'Hello, world!'
-
-print(message)
-```
-{: codeblock}
+   ```bash
+   ibmcloud resource service-instance NAME
+   ```
+   {: codeblock}
 
    The {{site.data.keyword.messagehub}} Operations team will respond to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
 
