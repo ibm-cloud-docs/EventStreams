@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-07-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -61,11 +61,13 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
      
      b. Click the **Generate properties** button to generate and download the properties file. The **Topic** panel opens.
      
-     c. Enter a name for a **New topic** that you want to create. Or, click on **Existing topic** to select an existing topic that you want to use. If you are on the Lite plan and a topic already exists, the **New topic** button is disabled. {: note}
+     c. Enter a name for a **New topic** that you want to create. Or, click on **Existing topic** to select an existing topic that you want to use. 
+     
+     If you are on the Lite plan and a topic already exists, the **New topic** button is disabled. {: note}
      
      d. Select the **Service credential** that you want to use, or select **Create new** to create a new one. 
      
-     e. Click the **Generate and download** button. The kafka.properties file gets downloaded to your local machine. It contains the necessary configuration to connect to {{site.data.keyword.messagehub}}. You can open it in a text editor to see how it works.
+     e. Click the **Generate and download** button. The kafka.properties file is downloaded to your local machine. It contains the necessary configuration to connect to {{site.data.keyword.messagehub}}. You can open it in a text editor to see how it works.
      
      f. The panel shows your selected configuration. Clicking on the **Regenerate** button starts the process again. Clicking on the **Download** button downloads the properties file again.
      
