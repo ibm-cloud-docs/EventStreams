@@ -73,7 +73,7 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
      
 3. Navigate to the folder that contains the downloaded .JAR file by using the command line or a terminal and run the command. Replace the value `<path-to-properties>` with the file path to the kafka.properties file.
 
-4. Once the application starts, click the **'localhost:8080'** link at the bottom of the form to open the starter app and see messages flowing through the topic.
+4. Once the application starts, click the **localhost:8080** link at the bottom of the form to open the starter app and see messages flowing through the topic.
 
 ## Next steps
 {: #next_steps}
