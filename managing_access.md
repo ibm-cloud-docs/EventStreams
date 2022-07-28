@@ -84,11 +84,22 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Allow an app to connect and consume from any topic (no consumer group)  | Resource type: `cluster`  \n Resource type: `topic` | Not applicable    | Not applicable |
 | Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: `cluster` Resource type: `topic`  \n Resource ID: <name_of_topic> |Not applicable | Not applicable |
 | Allow an app to consume a topic (consumer group) | Resource type: `cluster`  \n Resource type: `topic`  \n Resource type: `group` |Not applicable |Not applicable |
-| Allow an app to produce to a topic transactionally  | Resource type: `cluster` Resource type: `group` | Resource type: `topic`  Resource ID: <name_of_topic> Resource type: `txnid` | Not applicable |
+| Allow an app to produce to a topic transactionally  | Resource type: `cluster` Resource type: `group` | Resource type: `topic`  \n Resource ID: <name_of_topic>  \n Resource type: `txnid` | Not applicable |
 | Delete consumer group | Resource type: `cluster` | Not applicable  | Resource type: `group`  \n Resource ID: <group_ID> |
 | To use Streams | Resource type: `cluster`  \n Resource type: `group`| Not applicable  |Resource type: `topic` |
 | Delete records | Not applicable | Not applicable | Resource type: `topic` Resource ID: <name_of_topic> |
 {: caption="Table 2. Access for common scenarios" caption-side="bottom"}
+For example:
+
+```
+| Header | Header |
+| --- | --- |
+| Single line break | This is a cell with a new line.  \n This is a separate line. |
+| Paragraph | This is a cell with two new lines.  \n  \n This is a separate line in a new paragraph. |
+| Unordered lists (asterisks) | * This is a list item \n * This is a list item \n * This is a list item |
+| Unordered lists (hyphens) | - This is a list item \n - This is a list item \n - This is a list item |
+| Ordered lists | 1. This is a list item \n 1. This is a list item \n 1. This is a list item |
+{: caption="Table 2. Advanced Markdown coding for tables" caption-side="bottom"}
 
 For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 
