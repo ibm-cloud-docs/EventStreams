@@ -89,9 +89,7 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | To use Streams | Resource type: `cluster`  \n Resource type: `group`| Not applicable  |Resource type: `topic` |
 | Delete records | Not applicable | Not applicable | Resource type: `topic` Resource ID: <name_of_topic> |
 {: caption="Table 2. Access for common scenarios" caption-side="bottom"}
-For example:
 
-```
 | Header | Header |
 | --- | --- |
 | Single line break | This is a cell with a new line.  \n This is a separate line. |
