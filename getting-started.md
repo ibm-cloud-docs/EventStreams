@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-27"
+lastupdated: "2022-08-01"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -79,6 +79,6 @@ To access other {{site.data.keyword.messagehub}} samples, including samples for 
 {: #next_steps}
 
 Now that you've run the starter application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service or find out more about 
-[{{site.data.keyword.messagehub}} on IBM Cloud Private](https://ibm.github.io/event-streams/){: external}.
+[{{site.data.keyword.messagehub}} on {{site.data.keyword.satellitelong_notm}}](/docs/EventStreams?topic=EventStreams-satellite_about), a hybrid environment combining public cloud services running in your secure private cloud{: external}.
 
 To watch a video that walks you through getting a Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
