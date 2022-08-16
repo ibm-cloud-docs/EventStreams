@@ -58,8 +58,8 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource type | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
-| instance | public_network_enabled | is_true \n is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a public network. |
-| instance | private_network_enabled | is_true \n is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a private network. |
+| instance | public_network_enabled | is_true  is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a public network. |
+| instance | private_network_enabled | is_true  is_false | - | Indicates whether access to a {{site.data.keyword.messagehub}} instance is allowed through a private network. |
 | instance | private_access_allowlist | ips_in_range | - | If private networking is enabled, this property indicates whether access to a {{site.data.keyword.messagehub}} instance should be restricted to a given range of private IP CIDR formatted subnets. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.messagehub}}" caption-side="bottom"}
 

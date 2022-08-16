@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-05-07"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -143,11 +143,11 @@ To enable exactly once semantics, you must use the idempotent or transactional p
 
 These code snippets are at a very high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need these properties at a minimum. Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with your own service credentials:
+To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need these properties at a minimum. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
 
 ```text
 Properties props = new Properties();
- props.put("bootstrap.servers", KAFKA_BROKERS_SASL);
+ props.put("bootstrap.servers", BOOTSTRAP_ENDPOINTS);
  props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USER\" password=\"PASSWORD\";");
  props.put("security.protocol", "SASL_SSL");
  props.put("sasl.mechanism", "PLAIN");

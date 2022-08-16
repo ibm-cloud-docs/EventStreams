@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2022-07-25"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -107,7 +107,7 @@ When a consumer starts and is assigned a partition to consume, it starts at its 
 If there is no existing committed offset, the consumer can choose whether to start with the earliest or latest available message based on 
 the setting of the `auto.offset.reset` property as follows:
 
-*`latest` (the default): Your consumer receives and consumes only messages that arrive after you subscribe. 
+* `latest` (the default): Your consumer receives and consumes only messages that arrive after you subscribe. 
     Your consumer has no knowledge of messages that were sent before it subscribed, therefore don't expect that all messages are consumed from a topic.
 * `earliest`: Your consumer consumes all messages from the beginning because it is aware of all messages that were sent.
 
@@ -161,13 +161,13 @@ You might use a ConsumerRebalanceListener to manually commit offsets (if you are
 ## Code snippets
 {: #consumer_code_snippets notoc}
 
-These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples).
+These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external} .
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user/password authentication, so you need at least these properties. Replace KAFKA_BROKERS_SASL, USER, and PASSWORD with your own service credentials:
+To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user/password authentication, so you need at least these properties. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
 
 ```text
 Properties props = new Properties();
- props.put("bootstrap.servers", KAFKA_BROKERS_SASL);
+ props.put("bootstrap.servers", BOOTSTRAP_ENDPOINTS);
  props.put("sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"USER\" password=\"PASSWORD\";");
  props.put("security.protocol", "SASL_SSL");
  props.put("sasl.mechanism", "PLAIN");
@@ -230,7 +230,7 @@ finally {
 {: #exceptions}
 
 Any robust application that uses the Kafka client needs to handle exceptions for certain expected situations. 
-In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results by using a `Future` or a callback. You can find example code in [GitHub](https://github.com/ibm-messaging/event-streams-samples) that shows complete examples.
+In some cases, the exceptions are not thrown directly because some methods are asynchronous and deliver their results by using a `Future` or a callback. You can find example code in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external} that shows complete examples.
 
 Here's a list of exceptions that you should handle in your code:
 

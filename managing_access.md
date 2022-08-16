@@ -76,18 +76,18 @@ This table summarizes some common {{site.data.keyword.messagehub}} scenarios and
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
 | Allow full access to all resources | Not applicable  | Not applicable  | Service instance: <your_service_instance> |
-| Allow an app or user to create or delete topic | Resource type: `cluster` |Not applicable  |Resource type: topic   \n   \n Optional: Resource ID: <name_of_topic> |
-| List groups, topics, and offsets   \n  Describe group, topic, and broker configurations | Resource type: `cluster` | Not applicable  | Not applicable |
+| Allow an app or user to create or delete topic | Resource type: `cluster` |Not applicable  |Resource type: topic  Optional: Resource ID: <name_of_topic> |
+| List groups, topics, and offsets  \n  Describe group, topic, and broker configurations | Resource type: `cluster` | Not applicable  | Not applicable |
 | Allow an app to connect to the cluster  | Resource type: `cluster`| Not applicable | Not applicable |
 | Allow an app to produce to any topic  | Resource type: `cluster`|Resource type: `topic` | Not applicable |
-| Allow an app to produce to a specific topic  | Resource type: `cluster`| Resource type: `topic`  \n Resource ID: <name_of_topic> | Not applicable |
-| Allow an app to connect and consume from any topic (no consumer group)  | Resource type: `cluster`   \n Resource type: `topic` | Not applicable    | Not applicable |
-| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: `cluster`   \n Resource type: `topic`  \n Resource ID: <name_of_topic> |Not applicable | Not applicable |
-| Allow an app to consume a topic (consumer group) | Resource type: `cluster`   \n Resource type: `topic`  \n Resource type: `group` |Not applicable |Not applicable |
-| Allow an app to produce to a topic transactionally  | Resource type: `cluster`   \n Resource type: `group` | Resource type: `topic`  \n >Resource ID: <name_of_topic>   \n >Resource type: `txnid` | Not applicable |
-| Delete consumer group | Resource type: `cluster` | Not applicable  | Resource type: `group`   \n Resource ID: <group_ID> |
+| Allow an app to produce to a specific topic  | Resource type: `cluster`| Resource type: `topic` Resource ID: <name_of_topic> | Not applicable |
+| Allow an app to connect and consume from any topic (no consumer group)  | Resource type: `cluster`  \n Resource type: `topic` | Not applicable    | Not applicable |
+| Allow an app to connect and consume from a specific topic (no consumer group)  | Resource type: `cluster` Resource type: `topic` Resource ID: <name_of_topic> |Not applicable | Not applicable |
+| Allow an app to consume a topic (consumer group) | Resource type: `cluster`  \n Resource type: `topic`  \n Resource type: `group` |Not applicable |Not applicable |
+| Allow an app to produce to a topic transactionally  | Resource type: `cluster` Resource type: `group` | Resource type: `topic`  Resource ID: <name_of_topic> Resource type: `txnid` | Not applicable |
+| Delete consumer group | Resource type: `cluster` | Not applicable  | Resource type: `group` Resource ID: <group_ID> |
 | To use Streams | Resource type: `cluster`  \n Resource type: `group`| Not applicable  |Resource type: `topic` |
-| Delete records | Not applicable | Not applicable | Resource type: `topic`  \n Resource ID: <name_of_topic> |
+| Delete records | Not applicable | Not applicable | Resource type: `topic` Resource ID: <name_of_topic> |
 {: caption="Table 2. Access for common scenarios" caption-side="bottom"}
 
 For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
@@ -128,8 +128,8 @@ The following table describes some examples of scenarios for interacting with th
 
 Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
- New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| `Reader`   \n `Writer`| `cluster`   \n `schema` | `Reader`   \n `Reader` | `cluster`   \n `schema`
-Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |`Reader`   \n `Manager` | `cluster`  \n `schema` | Not applicable |  Not applicable
-Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not applicable | Not applicable | `Reader`   \n `Writer`| `cluster`   \n `schema`
+ New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| `Reader`  \n `Writer`| `cluster`  \n `schema` | `Reader`  \n `Reader` | `cluster`   \n `schema`
+Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |`Reader`  \n `Manager` | `cluster`  \n `schema` | Not applicable |  Not applicable
+Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point an application tries to make use of the new schema version. | Not applicable | Not applicable | `Reader`  \n `Writer`| `cluster`  \n `schema`
 The global default rule that controls schema evolution is changed. | `Manager` | `cluster` | Not applicable | Not applicable
 {: caption="Table 3. Examples authorization scenarios" caption-side="bottom"}

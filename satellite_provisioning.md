@@ -104,9 +104,10 @@ After preparing your {{site.data.keyword.satelliteshort}} location, granting ser
 
 1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
 2. Look for the **Event Streams** tile in the **Integration** section and select it.
-3. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When your {{site.data.keyword.satelliteshort}} location is selected, the pricing plan information will be updated. Review the {{site.data.keyword.satelliteshort}} plan details.
-4. Specify a **Service name** if something other than the default name is desired.
-5. Click **Create**.
+3. In the Platform section of the **Event Streams** page, select the **Satellite** tile.
+4. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location you provisioned. When the Satellite tile was selected, the pricing plan information was updated. Review the {{site.data.keyword.satelliteshort}} plan details.
+5. Specify a **Service name** if something other than the default name is desired.
+6. Click **Create**.
 
 When you provision an {{site.data.keyword.messagehub}} service instance, a service cluster is automatically deployed into your {{site.data.keyword.satelliteshort}} 
 location. You can verify the start of the deployment of the service cluster with the following steps:

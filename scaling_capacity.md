@@ -147,9 +147,9 @@ Scale this service instance to a configuration of a base capacity unit, one addi
     
     d. Review capacity selections of 150 MB/s throughput and 2 TB storage.
         
-    g. Enter a name for your service instance. You can use the default value.
+    e. Enter a name for your service instance. You can use the default value.
     
-    h. Click Create. (See [Choosing your plan](/docs/EventStreams?topic=EventStreams-choosing-your-plan#what-is-supported) for information on the amount of time needed to create the service instance).
+    f. Click Create. (See [Choosing your plan](/docs/EventStreams?topic=EventStreams-choosing-your-plan#what-is-supported) for information on the amount of time needed to create the service instance).
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
