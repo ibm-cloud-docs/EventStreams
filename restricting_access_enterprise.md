@@ -233,32 +233,36 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
 
 To migrate directly from public or private to public-and-private:
 
+```
 ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
-
+```
 {: codeblock}
 
 To migrate from public-and-private to public:
 
+```
 ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
-
+```
 {: codeblock}
 
 To migrate from public-and-private to private:
 
+```
 ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
-
+```
 {: codeblock}
 
-Note that migrating from public to private endpoints or private to public endpoints is not allowed
+Migrating from public to private endpoints or private to public endpoints is not allowed.
 {: important}
 
 If you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
 
+```
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
-
+```
 {: codeblock}
 
-and update the credentials in the application to use the newly created one:
+and update the credentials in the application to use the newly created one.
 
 
 ## Migrate applications to use private endpoints
