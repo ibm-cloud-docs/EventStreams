@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-08-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -226,6 +226,40 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
    10.249.x.x/32
    ```
    {: codeblock}
+
+
+## Migrate applications to either private, public, or public-and-private endpoints
+{: #migrate_endpoints_new}
+
+To migrate directly from public or private to public-and-private:
+
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
+
+{: codeblock}
+
+To migrate from public-and-private to public:
+
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
+
+{: codeblock}
+
+To migrate from public-and-private to private:
+
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
+
+{: codeblock}
+
+Note that migrating from public to private endpoints or private to public endpoints is not allowed
+{: important}
+
+If you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
+
+ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+
+{: codeblock}
+
+and update the credentials in the application to use the newly created one:
+
 
 ## Migrate applications to use private endpoints
 {: #migrate_endpoints}
