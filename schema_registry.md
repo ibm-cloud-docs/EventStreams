@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-19"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -80,7 +80,7 @@ Schemas are compared syntactically, meaning that other then minor textual format
 
 The Schema Registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances.
 
-The Schema Registry is not automatically enabled on the {{site.data.keyword.messagehub}} Satellite plan service instances. See [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry) for information about how to enable it on the Satellite plan.
+The Schema Registry is not automatically enabled for {{site.data.keyword.messagehub}} Satellite plan service instances. For information about how to enable it for the Satellite plan, see [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
 
 The Schema Registry is not available for other {{site.data.keyword.messagehub}} plans.
 
