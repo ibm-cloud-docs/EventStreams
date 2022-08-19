@@ -79,6 +79,9 @@ Schemas are compared syntactically, meaning that other then minor textual format
 {: #enabling_schema_registry}
 
 The Schema Registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances.
+
+The Schema Registry is not automatically enabled on the {{site.data.keyword.messagehub}} Satellite plan service instances. See [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry) for information about how to enable it on the Satellite plan.
+
 The Schema Registry is not available for other {{site.data.keyword.messagehub}} plans.
 
 ## Accessing the Schema Registry
