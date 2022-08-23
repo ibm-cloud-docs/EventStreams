@@ -109,14 +109,7 @@ where CIDR1, 2 are IP addresses of the form a.b.c.d/e
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
-* To enable private endpoints:
-
-    ```bash
-    ibmcloud resource service-instance-update <instance-name> --service-endpoints private
-    ```
-    {: codeblock}
-
-Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
+Note that switching to private endpoints whilst the cluster is in use is **not supported**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
 
 
