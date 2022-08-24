@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-08-18"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -109,14 +109,7 @@ where CIDR1, 2 are IP addresses of the form a.b.c.d/e
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
-* To enable private endpoints:
-
-    ```bash
-    ibmcloud resource service-instance-update <instance-name> --service-endpoints private
-    ```
-    {: codeblock}
-
-Note that switching to private endpoints whilst the cluster is in use is **not recommended**. It will disable all public endpoints and your applications will lose access to the cluster. This can be avoided if you first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
+Switching to private endpoints while the cluster is in use is **not supported**. It will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
 
 
@@ -227,17 +220,43 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
    ```
    {: codeblock}
 
-## Migrate applications to use private endpoints
+
+## Migrate applications to either private, public, or public-and-private endpoints
 {: #migrate_endpoints}
 
-After you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
+To migrate directly from public or private to public-and-private endpoints:
+
+```bash
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
+```
+{: codeblock}
+
+To migrate from public-and-private to public endpoints:
+
+```bash
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
+```
+{: codeblock}
+
+To migrate from public-and-private to private endpoints:
+
+```bash
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
+```
+{: codeblock}
+
+Migrating from public to private endpoints or private to public endpoints is not supported.
+{: important}
+
+If you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
 
 ```bash
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
 {: codeblock}
 
-and update the credentials in the application to use the newly created one:
+and update the credentials in the application to use the newly created one.
+
 
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
 {: #access_console}
