@@ -105,7 +105,7 @@ The curl command to use is as follows (where $APIKEY is substituted with your AP
 Kafka HTTP URL property of the service credentials):
 
 ```text
-curl -i –u token:$APIKEY $URL/artifacts
+curl -i -u token:$APIKEY $URL/artifacts
 ```
 
 Assuming you haven’t already used the Schema Registry, you should see the following output that indicates that there are no schemas
@@ -139,7 +139,7 @@ As described above, you can authenticate to the Schema Registry using an API key
 For example:
 
 ```text
-curl –H "Authorization: Bearer $TOKEN" ...
+curl -H "Authorization: Bearer $TOKEN" ...
 ```
 
 ### Errors
@@ -215,7 +215,7 @@ Schemas are deleted from the registry by issuing a DELETE request to the /artifa
 Example curl request:
 
 ```text
-curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema
+curl -u token:$APIKEY -X DELETE $URL/artifacts/my-schema
 ```
 
 Deleting a schema requires at least both:
@@ -325,7 +325,7 @@ Schema versions are deleted from the registry by issuing a DELETE request to the
 Example curl request:
 
 ```text
-curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema/versions/3
+curl -u token:$APIKEY -X DELETE $URL/artifacts/my-schema/versions/3
 ```
 
 Deleting a schema version requires at least both:
@@ -350,7 +350,7 @@ config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TR
 Example curl request:
 
 ```text
-curl -u token:$APIKEY –X PUT $URL/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
+curl -u token:$APIKEY -X PUT $URL/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
 Example response:
@@ -434,7 +434,7 @@ The rules applied to a specific schema are modified by making a PUT request to t
 Example curl request:
 
 ```text
-curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
+curl -u token:$APIKEY -X PUT $URL/artifacts/my-schema/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
 Example response:
@@ -459,7 +459,7 @@ The rules applied to a specific schema are deleted by making a DELETE request to
 Example curl request:
 
 ```text
-curl -u token:$APIKEY –X DELETE $URL/artifacts/my-schema/rules/COMPATIBILITY
+curl -u token:$APIKEY -X DELETE $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 
 Deleting a per-schema rule requires at least:
