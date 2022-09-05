@@ -59,7 +59,7 @@ The following code shows an example of sending a message of `text` type using cu
 
 ```text
 curl -v -X POST \
-–H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
+-H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
 -d '{
   "headers": [
     {
@@ -101,7 +101,7 @@ The following code shows an example of sending a message conforming to a schema,
 
 ```text
 curl -v -X POST \
-–H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
+-H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
 -d '{
   "value": {
     "type": "avro",
@@ -130,12 +130,12 @@ The following considerations can help you plan the migration:
     
     The supported authentication mechanism is a bearer token. To enhance security, basic auth using API keys is no longer accepted.
     
-       Example Header:  –H "Authorization: Bearer $token"
+       Example Header:  -H "Authorization: Bearer $token"
 3. Headers: 
     
     Set the Content-Type and the Accept headers to `application/json`.
     
-       Example Headers:  –H "Content-Type: application/json" -H "Accept: application/json"
+       Example Headers:  -H "Content-Type: application/json" -H "Accept: application/json"
 4. Payload: 
     
     Provide the payload for the v2 endpoint in JSON format. The message key, headers, and data can be defined in the payload. You can specify the headers in the form of a list, with values that are base64 encoded. However, the message key and headers are optional.
