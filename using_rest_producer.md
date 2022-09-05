@@ -41,7 +41,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 ## Authentication
 {: #rest_produce_authenticate}
 
-The supported authentication mechanism is to use a bearer token. To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud, then run the following command: 
+The supported authentication mechanism is to use a bearer token. To obtain your token using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
 
 ```text
 ibmcloud iam oauth-tokens

@@ -88,7 +88,7 @@ The Schema Registry is not available for other {{site.data.keyword.messagehub}} 
 {: #accessing_schema_registry}
 
 To access the Schema Registry, you need the URL of the Schema Registry, as well as a set of credentials that can be used to
-authenticate with the registry. Both of these pieces of information can be found by inspecting the service credentials of your service.
+authenticate with the registry. You can find both of these pieces of information by inspecting the service credentials of your service.
 To view these in the UI, click on your service instance, select **Service Credentials** in the left-hand navigation pane, then click on
 the **View Credentials** link located next to one of the service credentials listed in the table:
 
