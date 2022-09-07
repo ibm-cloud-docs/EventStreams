@@ -66,14 +66,79 @@ This process provides an efficient way of ensuring that data in messages conform
 The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer)
 ![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
 
+![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
+
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
 
 Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. You simply create a new version of an existing schema, and the Schema Registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
 
-Schemas are compared syntactically, meaning that other then minor textual formatting differences, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. 
+Schemas are compared to avoid creating duplicate schemas where the schema only differ in a way which does not affect the semantics of the schema. In some cases, the ordering of the JSON properties within a schema may be crucial to how the schema is used for encoding/decoding data, whilst in other cases it may not be relevant. 
+ 
+ For example: the “name” property of a record schema is not used as part of the encoding / decoding process - it can be positioned anywhere inside the record JSON object, and all these variations would be considered the same schema.
+ 
+The “fields” property in the JSON of a record schema is a situation where the ordering of the is important. The Avro specification requires that a record’s fields are encoded (and decoded) in the order they appear in the schema used for the encode / decode operation. 
 
-![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
+As an example consider the following 3 schema :- 
+
+Schema 1
+
+{
+  "type": "record",
+  "name": "book",
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "author",
+      "type": "string"
+    }
+  ]
+}
+        
+Schema 2
+
+{
+  "type": "record",
+  "name": "book",
+  "fields": [
+    {
+      "name": "author",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    }
+  ]
+}
+
+Schema 3
+
+{
+  "type": "record",
+  "name": "book",
+  "fields": [
+    {
+      "type": "string"
+      "name": "author",
+    },
+    {
+      "type": "string"
+      "name": "title",
+    }
+  ]
+}
+
+
+If one application encoded messages using Schema 1 and a second application decoded them using Schema 2, this would have the effect of swapping the values for “title” and “author”. This is because the encoding used for the “fields” property of a record is not self-describing, so the decoding process has to assume the fields in the encoded data occur in the order describe by the schema it is using for the decoding process. 
+
+When using the SerDes to create the above new schema in the order Schema 1, Schema 2, Schema 3, the result would be 2 new schema. Schema 1 and 2 are different whereas Schema 3 is the equivalent of Schema 2.
+
+N.B. When creating schema through the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you wish Schema 3 to be a different schema.
+
 
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
