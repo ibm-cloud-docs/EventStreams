@@ -133,7 +133,7 @@ Schema 3
 }
 
 
-If one application encoded messages using Schema 1 and a second application decoded them using Schema 2, this would have the effect of swapping the values for “title” and “author”. This is because the encoding used for the “fields” property of a record is not self-describing, so the decoding process has to assume the fields in the encoded data occur in the order describe by the schema it is using for the decoding process. 
+Schema 1 and Schema 2 are distinct schemas, and the registry will store them as separate schemas. This is because they cannot be used interchangeably, as they list the "author" and "title" fields in different orders. Data encoded with Schema 1 would not be decoded correctly if the decoding process used Schema 2.
 
 When using the SerDes to create the above new schema in the order Schema 1, Schema 2, Schema 3, the result would be 2 new schema. Schema 1 and 2 are different whereas Schema 3 is the equivalent of Schema 2.
 
@@ -651,4 +651,3 @@ Replace the following variables in the example with your own values:
 * BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as the list of your bootstrap servers.  
 * SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the path `/confluent` (for example, `https://{kafka_http_url}/{confluent}`).
 * CONFIG_FILE with the path of the configuration file. 
-
