@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-09-12"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -71,18 +71,19 @@ The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO se
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
 
-Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. You simply create a new version of an existing schema, and the Schema Registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
+Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. Create a new version of an existing schema, and the Schema Registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
 
-Schemas are compared to avoid creating duplicate schemas where the schema only differ in a way which does not affect the semantics of the schema. In some cases, the ordering of the JSON properties within a schema may be crucial to how the schema is used for encoding/decoding data, whilst in other cases it may not be relevant. 
+Schemas are compared to avoid creating duplicate schemas where the schemass differ only in a way that does not affect the semantics of the schema. In some cases, the ordering of the JSON properties within a schema can be crucial to how the schema is used for encoding and decoding data, while in other cases it might not be relevant. 
  
- For example: the “name” property of a record schema is not used as part of the encoding / decoding process - it can be positioned anywhere inside the record JSON object, and all these variations would be considered the same schema.
+For example, the `name` property of a record schema is not used as part of the encoding and decoding process so it can be positioned anywhere inside the record JSON object, and all these variations are considered the same schema.
  
-The “fields” property in the JSON of a record schema is a situation where the ordering of the is important. The Avro specification requires that a record’s fields are encoded (and decoded) in the order they appear in the schema used for the encode / decode operation. 
+The `fields` property in the JSON of a record schema is a situation where the ordering of the is important. The Avro specification requires that a record’s fields are encoded (and decoded) in the order they appear in the schema used for the encode and decode operation. 
 
-As an example consider the following 3 schema :- 
+As an example consider the following 3 schema:
 
-Schema 1
+### Schema 1
 
+```json
 {
   "type": "record",
   "name": "book",
@@ -97,9 +98,12 @@ Schema 1
     }
   ]
 }
-        
-Schema 2
+```
+{: codeblock}
 
+### Schema 2
+
+```json
 {
   "type": "record",
   "name": "book",
@@ -114,9 +118,12 @@ Schema 2
     }
   ]
 }
+```
+{: codeblock}
 
-Schema 3
+### Schema 3
 
+```json
 {
   "type": "record",
   "name": "book",
@@ -131,13 +138,16 @@ Schema 3
     }
   ]
 }
+```
+{: codeblock}
 
 
-Schema 1 and Schema 2 are distinct schemas, and the registry will store them as separate schemas. This is because they cannot be used interchangeably, as they list the "author" and "title" fields in different orders. Data encoded with Schema 1 would not be decoded correctly if the decoding process used Schema 2.
+Schema 1 and Schema 2 are distinct schemas and the registry stores them as separate schemas. This is because they cannot be used interchangeably, because they list the `author` and `title` fields in different orders. Data encoded with Schema 1 would not be decoded correctly if the decoding process used Schema 2.
 
-When using the SerDes to create the above new schema in the order Schema 1, Schema 2, Schema 3, the result would be 2 new schema. Schema 1 and 2 are different whereas Schema 3 is the equivalent of Schema 2.
+When using the SerDes to create the above new schema in the order Schema 1, Schema 2, and Schema 3, the result would be 2 new schema. Schema 1 and 2 are different whereas Schema 3 is the equivalent of Schema 2.
 
-N.B. When creating schema through the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you wish Schema 3 to be a different schema.
+When creating schema using the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you want Schema 3 to be a different schema.
+{: note}
 
 
 ## Enabling the Schema Registry
