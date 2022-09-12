@@ -73,15 +73,16 @@ The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO se
 
 Whenever you add a schema, and any subsequent versions of the same schema, {{site.data.keyword.messagehub}} can validate the format automatically and reject the schema if there are any issues. You can evolve your schemas over time to accommodate changing requirements. Create a new version of an existing schema, and the Schema Registry ensures that the new version is compatible with the existing version, meaning that producers and consumers using the existing version are not broken by the new version.
 
-Schemas are compared to avoid creating duplicate schemas where the schemass differ only in a way that does not affect the semantics of the schema. In some cases, the ordering of the JSON properties within a schema can be crucial to how the schema is used for encoding and decoding data, while in other cases it might not be relevant. 
+Schemas are compared to avoid creating duplicate schemas where the schemas differ only in a way that does not affect the semantics of the schema. In some cases, the ordering of the JSON properties within a schema can be crucial to how the schema is used for encoding and decoding data, while in other cases it might not be relevant. 
  
-For example, the `name` property of a record schema is not used as part of the encoding and decoding process so it can be positioned anywhere inside the record JSON object, and all these variations are considered the same schema.
+For example, the `name` property of a record schema is not used as part of the encoding and decoding process so it can be positioned anywhere inside the record JSON object. All these variations are considered the same schema.
  
-The `fields` property in the JSON of a record schema is a situation where the ordering of the is important. The Avro specification requires that a record’s fields are encoded (and decoded) in the order they appear in the schema used for the encode and decode operation. 
+The `fields` property in the JSON of a record schema is a case where its ordering is important. The Avro specification requires that a record’s fields are encoded (and decoded) in the order they appear in the schema used for the encode and decode operation. 
 
 As an example consider the following 3 schema:
 
 ### Schema 1
+{: #schema_1}
 
 ```json
 {
@@ -99,9 +100,9 @@ As an example consider the following 3 schema:
   ]
 }
 ```
-{: codeblock}
 
 ### Schema 2
+{: #schema_2}
 
 ```json
 {
@@ -119,9 +120,9 @@ As an example consider the following 3 schema:
   ]
 }
 ```
-{: codeblock}
 
 ### Schema 3
+{: #schema_3}
 
 ```json
 {
@@ -139,10 +140,8 @@ As an example consider the following 3 schema:
   ]
 }
 ```
-{: codeblock}
 
-
-Schema 1 and Schema 2 are distinct schemas and the registry stores them as separate schemas. This is because they cannot be used interchangeably, because they list the `author` and `title` fields in different orders. Data encoded with Schema 1 would not be decoded correctly if the decoding process used Schema 2.
+Schema 1 and Schema 2 are distinct schemas and the registry stores them as separate schemas. They cannot be used interchangeably, because they list the `author` and `title` fields in different orders. Data encoded with Schema 1 would not be decoded correctly if the decoding process used Schema 2.
 
 When using the SerDes to create the above new schema in the order Schema 1, Schema 2, and Schema 3, the result would be 2 new schema. Schema 1 and 2 are different whereas Schema 3 is the equivalent of Schema 2.
 
