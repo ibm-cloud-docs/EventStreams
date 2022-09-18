@@ -102,6 +102,7 @@ toc:
               label: Troubleshooting
               topics:
               - troubleshooting.md
+              - getting_support_new.md
               - known_restrictions.md
               - reporting_problem.md
           - topicgroup:
