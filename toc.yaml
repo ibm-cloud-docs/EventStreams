@@ -101,17 +101,17 @@ toc:
                   label: Event Streams Java Kafka sample
                   href: https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
               - link:
-                  label: Apache Kafka 2.2.0 client
-                  href: https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.0/kafka-2.2.0-src.tgz
-              - link:
                   label: Apache Kafka client downloads
                   href: https://kafka.apache.org/downloads
               - link:
                   label: IBM Event Streams on ibm.com
                   href: https://www.ibm.com/cloud/event-streams
               - link:
-                  label: {{site.data.keyword.Bluemix_notm}} pricing information
+                  label: IBM Cloud pricing information
                   href: /docs/billing-usage?topic=billing-usage-cost#cost
+              - link:
+                  label: Apache Kafka documentation
+                  href: http://kafka.apache.org/documentation.html
     - navgroup:
         id: help
         topics:
