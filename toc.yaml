@@ -108,7 +108,7 @@ toc:
                   href: https://www.ibm.com/cloud/event-streams
               - link:
                   label: IBM Cloud pricing information
-                  href: /docs/billing-usage?topic=billing-usage-cost#cost
+                  href: https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost#cost
               - link:
                   label: Apache Kafka documentation
                   href: http://kafka.apache.org/documentation.html
