@@ -94,6 +94,24 @@ toc:
                 label: IBM Event Streams Admin REST API
                 href: https://{DomainName}/apidocs/event-streams/adminrest
         - eventstreams-cli.md
+        - topicgroup:
+              label: Related links
+              topics:
+              - link:
+                  label: Event Streams Java Kafka sample
+                  href: https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
+              - link:
+                  label: Apache Kafka 2.2.0 client
+                  href: https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.0/kafka-2.2.0-src.tgz
+              - link:
+                  label: Apache Kafka client downloads
+                  href: https://kafka.apache.org/downloads
+              - link:
+                  label: IBM Event Streams on ibm.com
+                  href: https://www.ibm.com/cloud/event-streams
+              - link:
+                  label: {{site.data.keyword.Bluemix_notm}} pricing information
+                  href: /docs/billing-usage?topic=billing-usage-cost#cost
     - navgroup:
         id: help
         topics:
@@ -105,15 +123,4 @@ toc:
               - getting_support_new.md
               - known_restrictions.md
               - reporting_problem.md
-          - topicgroup:
-              label: Related links
-              topics:
-              - link:
-                  label: Event Streams Java Kafka sample
-                  href: https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample
-              - link:
-                  label: Apache Kafka client downloads
-                  href: https://kafka.apache.org/downloads
-              - link:
-                  label: IBM Event Streams on ibm.com
-                  href: https://www.ibm.com/cloud/event-streams
+
