@@ -119,7 +119,7 @@ toc:
           - topicgroup:
               label: Troubleshooting
               topics:
-              - getting_support_new.md
+              - getting_support.md
               - troubleshooting.md
               - known_restrictions.md
               - reporting_problem.md
