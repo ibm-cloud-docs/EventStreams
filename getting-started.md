@@ -26,7 +26,7 @@ subcollection: EventStreams
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [{{site.data.keyword.messagehub}} overview](/docs/EventStreams?topic=EventStreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.
 
-To access other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, see [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}.
+To access {{site.data.keyword.messagehub}} samples, see our primary sample repository at [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.  Other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, are available at the previous [{{site.data.keyword.messagehub}} repository](https://github.com/ibm-messaging/event-streams-samples){: external} and will be migrated to our primary sample repository.
 
 ![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
