@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03d"
+lastupdated: "2022-10-04"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -32,6 +32,7 @@ Network type (Enterprise instances only)
 
 Context-based restrictions (CBR)
 :   You can define access rules that limit the network locations where connections are accepted from. For example, network type, IP ranges, VPC or other services. For more information, see: [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external}. 
+
 :   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.
 
 ## Configuring the network type (Enterprise instances only)
@@ -247,6 +248,8 @@ Creating context-based restrictions rules is a two-step process:
 
 2. Create rules specifying one or more network zones against {{site.data.keyword.messagehub}} resource. For more information on rule creation, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules){: external}.
 
+Note the following considerations:
+
 * You must be the account owner or have an access policy with the administrator role on all account management services to restrict access. 
 * After creating or updating a zone or a rule it can take a few minutes for the change to take effect.
 * When you create context-based restrictions for the IAM Access Groups service, users who don't satisfy the rule will not be able to view any groups in the account, including the public access group.
@@ -261,7 +264,7 @@ If an {{site.data.keyword.messagehub}} service instance is configured to use cus
 The administrator of the account can set this up as follows: 
 * Add a service reference for the '{{site.data.keyword.messagehub}}’ service to the required network zone.
 
-* Ensure that access from this zone is permitted via the context-based restrictions rules applicable to other cloud services
+* Ensure that access from this zone is permitted by way of the context-based restrictions rules applicable to other cloud services.
 
 For more information about the service reference creation, see [Service references](/docs/account?topic=account-context-restrictions-whatis#service-attribute){: external}.
 
@@ -278,70 +281,3 @@ If both context-based restrictions rules and IP allowlists are defined against t
 The customer is responsible for migration. You can create IP allowlist definitions again as context-based restrictions network zones and apply them  to the service instance by creating a context-based restrictions rule. You can then delete the previous private IP allowlist.
 
 
-<!-- 03/10/22 - are these sections needed any longer?
-
-
-
-
-## How to check if an instance update is completed
-{: #check_endpoints}
-
-Typically, the updates described previously take less than an hour. To check status use the following command:
-
-```bash
-ibmcloud resource service-instance <instance-name>
-```
-{: codeblock}
-
-when **Last Operation.Status** shows **"sync succeeded"**, instance update is complete.
-
-## How to set the private IP allowlist using {{site.data.keyword.bplong_notm}}
-{: #schematics_integration}
-
-{{site.data.keyword.messagehub}} supports integration with [{{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-getting-started).
-
-Refer to this [example](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-provider-template#event-stream-snippet) about how to set the `private_ip_allowlist` in a Terraform script. 
-
-If the terraform script is run from {{site.data.keyword.bpshort}}, additional IPs are required to be added into the `private_ip_allowlist` of {{site.data.keyword.messagehub}} to allow {{site.data.keyword.bpshort}} to access {{site.data.keyword.messagehub}}' API endpoints. You can find the IPs of {{site.data.keyword.bpshort}} in each region from [Opening required IP addresses for {{site.data.keyword.bplong_notm}} in your firewall](/docs/schematics?topic=schematics-allowed-ipaddresses).
-{: note}
-
-
-## Obtaining Virtual Private Cloud (VPC) CSE source IP addresses
-{: #vpc_ip}
-
-If you want to restrict access to VSIs hosted within a specific VPC, you first have to discover the VPC source IP addresses. 
-
-1. Obtain the ID of the VPC from the {{site.data.keyword.Bluemix_notm}} Infrastructure console:
-
-    ```bash
-    export VPC_ID=<vpc_id>
-    export VPC_REGION=<vpc_region>
-    ```
-   {: codeblock}
-
-2. Obtain a bearer token from IAM using the ibmcloud CLI:
-    
-    ```bash
-    export IAM_TOKEN=$(ibmcloud iam oauth-tokens --output json | jq -r .iam_token | tr -d '"')
-    ```
-    {: codeblock}
-
-3. Use below VPC REST API to obtain the source IP addresses or check UI section `Cloud Service Endpoint source addresses`:
-
-   ```bash
-   $ curl -H "Authorization: ${IAM_TOKEN}" "https://${VPC_REGION}.iaas.cloud.ibm.com/v1/vpcs/${VPC_ID}?version=2019-10-15" 2>/dev/null | jq -r '.cse_source_ips | .[] | "\(.ip.address)/32"'
-   10.249.x.x/32
-   10.249.x.x/32
-   10.249.x.x/32
-   ```
-   {: codeblock}
-
-OLD WORDS
-
-If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. If required, further isolation is also possible by specifying an allowlist of the IP addresses (source IPs) from which private traffic will be accepted, for instance, the IPs of the VSIs or VPCs within the {{site.data.keyword.Bluemix_notm}} where your workload is running.
-
-Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks, where your workload can use the most appropriate interface for its location.
-
-You can find more information about {{site.data.keyword.Bluemix_notm}} private networking setup at: [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
-
--->
