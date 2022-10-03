@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03b"
+lastupdated: "2022-10-03c"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -64,7 +64,7 @@ Ensure that you complete the following tasks:
     ```
     {: codeblock}
 
-## Selecting a network configuration during provisioning
+### Selecting a network configuration during provisioning
 {: #enable_endpoints}
 
 You have a number of options for selecting the network configuration of your Enterprise cluster.
@@ -102,7 +102,7 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
     use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
 
-## Updating the network configuration
+### Updating the network configuration
 {: #update_endpoints}
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
@@ -169,7 +169,7 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 
 and update the credentials in the application to use the newly created one.
 
-## Specifying an IP allowlist
+### Specifying an IP allowlist
 
 This feature is now deprecated, instead use context-based restrictions [Configuring CBR](#configuring_cbr).
 {: deprecated}
@@ -212,7 +212,7 @@ Note that if the private endpoint is enabled using the CLI, next time when updat
 
 Switching IP allowlists will disable any allowed IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
 
-## Retrieving endpoint information
+### Retrieving endpoint information
 {: #retrieve_endpoint}
 
 The endpoint information for your service instance is specific to the network type. Service instances with both public and private networking is selected will have an endpoint for each.
@@ -229,7 +229,7 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 
 After the required network configuration has been selected, all subsequent connections to the APIs and user console must adopt this method. The associated endpoint information can be retrieved by creating a new service credential.
 
-### Configuring context-cased restrictions
+## Configuring context-cased restrictions
 {: #configuring_cbr}
 
 You can define rules that limit the network locations where connections are accepted from. For example, by network type, IP ranges, VPC, or from other services. For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis).
