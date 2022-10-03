@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-10-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -21,18 +21,118 @@ subcollection: EventStreams
 # Connecting to {{site.data.keyword.messagehub}}
 {: #connecting}
 
-The way how you connect to {{site.data.keyword.messagehub}} varies depending on whether your application is running natively or as a Cloud Foundry application. However, in both cases two pieces of information are required: 
-{: shortdesc}
+The following information is required to connect to your {{site.data.keyword.messagehub}} instance:
+* The endpoint URLs for the APIs
+* Credentials for authentication
 
-- The endpoint URLs for the APIs.
-- Credentials for authentication.
+Read the following information about how to obtain these details and the connectivity options that you can use. Ensure that you complete the appropriate steps for your instance.
+{: #shortdesc}
 
-Read the following information about how to obtain these details. Ensure that you complete the appropriate steps for your instance.
 
 ## Overview
 {: #connect_enterprise}
 
-Services that are provisioned using the Standard or the Enterprise plans are grouped in the dashboard under the heading **Services**. The plans are [IAM enabled](/docs/account?topic=account-overview){: external}. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security).
+Services that are provisioned using the Lite, Standard, or Enterprise plans are grouped in the dashboard under the heading **Services**. 
+
+All plans use [IAM](docs/account?topic=account-overview){: external} for authentication. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security). To complete the following steps and be authorized to create topics, your application or Service Key must have a Manager access role. By default, the owner of the account containing the service instance will have this role.
+
+By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.Bluemix_short}} public network, so they are accessible over the public Internet. If required, you can restrict this access by selecting an alternate networking type or restricting the location that connections will be accepted from. For more information, see [Restricting Network Access](/docs/EventStreams?topic=EventStreams-restrict_access).
+
+## Connection information
+{: #connection_information}
+
+To access a service instance, create a service key. A service key contains the information needed to access the instance including the endpoint details for its APIs and a unique API key credential.
+
+To create a service key using the {{site.data.keyword.Bluemix_notm}} console:
+ 1. Locate your {{site.data.keyword.messagehub}} service on the dashboard. 
+ 2. Click your service tile. 
+ 3. Click **Service Credentials**. 
+ 4. Click **New Credential**. 
+ 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list. 
+ 6. Click this credential using **View Credentials** to reveal the details in JSON format. 
+
+ To create a service key using the {{site.data.keyword.Bluemix_notm}} CLI:
+
+ 1. Locate your service: `ibmcloud resource service-instances` 
+ 2. Create a service key: `ibmcloud resource service-key-create <key_name> <key_role> --instance-name <your_service_name>`
+ 3. Print the service key: `ibmcloud resource service-key <key_name>`
+
+A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} public network (the default) or the {{site.data.keyword.Bluemix_notm}} private network, the service key will contain the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network will be returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command. For example: 
+{: note}
+ 
+```
+ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+```
+{: codeblock}
+ 
+Further details on network types can be found <here>
+
+## Establishing a connection
+{: #establishing_connection}
+
+To connect a Kafka application:
+* Use the <bootstrap_endpoints> field from the service key as the `bootstrap.servers` property of your kafka application
+* Set the security.protocol property to SASL_SSL and the sasl.mechanism property to PLAIN
+* Use the <user> field from the service key as the username and the <api_key> field from the service key as the password. Ensure that your application parses the details. 
+* For more information, see [Configuring your Kafka API client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client). 
+
+To call an HTTP API:
+* Use the <kafka_admin_url> field of the service key as the base URL for HTTP requests 
+* Use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate an auth token. Place this token in the `Authorization` header of the HTTP request with the value formatted as 'Bearer <token>'. Both API key or JWT tokens are supported.
+* Further documentation is provided for each API, for example:
+   *[REST Admin API](/docs/EventStreams?topic=EventStreams-admin_api)
+   *[REST Producer API](/docs/EventStreams?topic=EventStreams-rest_producer_using)
+   *[Schema Registry API](/docs/EventStreams?topic=EventStreams-ES_schema_registry#schema_registry_rest_endpoints)
+
+## Network connectivity
+{: #network_connectivity}
+
+By default, all {{site.data.keyword.messagehub}} instances are configured to be accessible over the public Internet. If using the Enterprise plan, connectivity can be restricted as follows:
+
+Private networking
+:   If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks.
+
+Context-based restrictions
+:   You can define access rules that limit the network locations where connections are accepted from, according to certain characteristics. For example, network type, IP ranges, VPC, or other services.
+
+For more information, see [Restricting network access](docs/EventStreams?topic=EventStreams-restrict_access).
+
+### Accessing an Enterprise instance over the private network from Classic infrastructure
+{: #private_network_classic}
+
+To access your Enterprise instance over the private network for workloads deployed on {{site.data.keyword.Bluemix_notm}} classic infrastructure, the Virtual Route Forwarding (VRF) and Service Endpoints features must be enabled in your account. For more information, see [Restricting network access](docs/EventStreams?topic=EventStreams-restrict_access).
+
+### Accessing an Enterprise Instance over the Private Network from a VPC
+{: #private_network_vpc}
+
+For workloads deployed in an {{site.data.keyword.Bluemix_notm}} VPC to access your Enterprise instance over the private network, a Virtual Private Endpoint (VPE) must be created in the VPC:
+1. In the {{site.data.keyword.Bluemix_notm}} console, click the menu icon and select **VPC Infrastructure** > **Network** > **Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.messagehub}} instance using the guidance in [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe). 
+2. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui) of the VPE. 
+
+
+### Accessing an Enterprise instance over the private network from outside the {{site.data.keyword.Bluemix_notm}}
+{: #private_network_outside_cloud}
+
+
+You can use solutions like [Direct Link 2.0](https://cloud.ibm.com/docs/dl){: external} to connect an external network, such as in an on-premise data-center, directly to the {{site.data.keyword.Bluemix_notm}} private network. For workloads running on an external network the following additional consideration must be taken in to account in order to connect successfully to Kafka. Note, these restrictions do not apply to HTTP workloads.
+
+The private endpoint details allocated to your instance (as described in the service key) must be resolvable and route-able from the network the workload is running in. It is not possible to specify alternate hostname entries in the workloads `bootstrap.servers` properties as a way to route traffic from the external network.
+
+This is because of Kafka's two step connection process. In the initial step, the hostnames provided in the clients 'bootstrap.servers' property are used to establish the first bootstrap connection. However, the server then responds to the client with the actual endpoint hostname details it should use. These hostname details will be the private endpoint details originally allocated to your instance and cannot be changed - and hence must be resolvable and route-able directly from the external network.
+
+
+For further information see: https://cloud.ibm.com/docs/vpc?topic=vpc-end-to-end-private-connectivity&interface=cli
+
+
+What to do next
+
+
+Now you have connection and credential information, you can choose an Event Streams client. For more information, see Using the Kafka API.
+
+
+
+
+
 
 Complete the following steps to bind your application and obtain Service Keys for your service. To be authorized to create topics, your application or Service Key must have a Manager access role.
 
@@ -48,7 +148,7 @@ As a prerequisite, you must first provision an {{site.data.keyword.messagehub}} 
 
 For applications that run outside Cloud Foundry, credentials are generated by creating a service key. When you obtain the service key, manually pass the details of the key to your application by using your chosen method.
 
-### Get credentials by using the IBM Cloud console
+### Get credentials by using the {{site.data.keyword.Bluemix_notm}} console
 {: #connect_enterprise_external_console}
 
 1. Locate your {{site.data.keyword.messagehub}} service on the dashboard.
@@ -61,7 +161,7 @@ For applications that run outside Cloud Foundry, credentials are generated by cr
 
     Ensure that your application parses the details.
 
-### Get credentials by using the IBM Cloud CLI
+### Get credentials by using the {{site.data.keyword.Bluemix_notm}} CLI
 {: #connect_enterprise_external_cli}
 
 1. Locate your service: `ibmcloud resource service-instances`
@@ -83,9 +183,9 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 
 Your application must be bound to the {{site.data.keyword.messagehub}} service instance. To bind a Cloud Foundry application to a non-Cloud Foundry service, create a Cloud Foundry service alias first and then reference this alias from your Cloud Foundry application when binding. 
 
-When bound, the connection details are then made available to the application in JSON format using the VCAP_SERVICES environment variable. You can bind an application and service by using either the [IBM Cloud console](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_cf_console) or the [IBM Cloud CLI](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_cf_cli).
+When bound, the connection details are then made available to the application in JSON format using the VCAP_SERVICES environment variable. You can bind an application and service by using either the [{{site.data.keyword.Bluemix_notm}} console](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_cf_console) or the [{{site.data.keyword.Bluemix_notm}} CLI](/docs/EventStreams?topic=EventStreams-connecting#connect_enterprise_cf_cli).
 
-### Bind an application by using the IBM Cloud console
+### Bind an application by using the {{site.data.keyword.Bluemix_notm}} console
 {: #connect_enterprise_cf_console}
 
 1. Ensure that you are in the intended Cloud Foundry Organization and Space.
@@ -101,7 +201,7 @@ When bound, the connection details are then made available to the application in
     Restage your application for the changes to take effect.
 8. Click the **Runtime** tab on the left and select the **Environment variables** tab in the center. You can now verify your VCAP_SERVICES information. Your application can now access these variables as environment variables. 
 
-### Bind an application by using the IBM Cloud CLI
+### Bind an application by using the {{site.data.keyword.Bluemix_notm}} CLI
 {: #connect_enterprise_cf_cli}
 
 1. Ensure that you are in the intended Cloud Foundry Organization and Space. You can navigate interactively by running the following command:
