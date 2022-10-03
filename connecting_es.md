@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03d"
+lastupdated: "2022-10-03e"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -56,22 +56,28 @@ To create a service key using the {{site.data.keyword.Bluemix_notm}} CLI:
 
 1. Locate your service: 
     ```
-    ibmcloud resource service-instances` 
+    ibmcloud resource service-instances
     ```
+    {: codeblock}
 2. Create a service key: 
-    ```ibmcloud resource service-key-create <key_name> <key_role> --instance-name <your_service_name>`
     ```
+    ibmcloud resource service-key-create <key_name> <key_role> --instance-name <your_service_name>
+    ```
+    {: codeblock}
+
 3. Print the service key: 
     ```
     ibmcloud resource service-key <key_name>
     ```
+    {: codeblock}
 
 A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} public network (the default) or the {{site.data.keyword.Bluemix_notm}} private network, the service key will contain the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network will be returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command. For example: 
 {: note}
 
-```text
-ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
-```
+    ```text
+    ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+    ```
+    {: codeblock}
 
  
 For more information, see [Network types](/docs/EventStreams?topic=EventStreams-restrict_access#network_type).
@@ -96,7 +102,7 @@ To call an HTTP API:
 ## Network connectivity
 {: #network_connectivity}
 
-By default, all {{site.data.keyword.messagehub}} instances are configured to be accessible over the public Internet. If using the Enterprise plan, you can restrict connectivity as follows:
+By default, all {{site.data.keyword.messagehub}} instances are configured to be accessible over the public Internet. If you're using the Enterprise plan, you can restrict connectivity as follows:
 
 Private networking
 :   If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to be accessible only over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks.
