@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2022
 lastupdated: "2022-10-04"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
 
 subcollection: EventStreams
 
@@ -71,15 +71,15 @@ To create a service key using the {{site.data.keyword.Bluemix_notm}} CLI:
     ```
     {: codeblock}
 
-A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} public network (the default) or the {{site.data.keyword.Bluemix_notm}} private network, the service key will contain the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network will be returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command. For example: 
+A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} public network (the default) or the {{site.data.keyword.Bluemix_notm}} private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command. 
 {: note}
 
+    For example:
     ```text
     ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
     ```
     {: codeblock}
 
- 
 For more information, see [Network types](/docs/EventStreams?topic=EventStreams-restrict_access#network_type).
 
 ## Establishing a connection
@@ -93,7 +93,9 @@ To connect a Kafka application:
 
 To call an HTTP API:
 * Use the <kafka_admin_url> field of the service key as the base URL for HTTP requests. 
-* Use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate an auth token. Place this token in the `Authorization` header of the HTTP request with the value formatted as `Bearer <token>`. Both API key or JWT tokens are supported.
+* Use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate an auth token. 
+
+    Place this token in the `Authorization` header of the HTTP request with the value formatted as `Bearer <token>`. Both API key or JWT tokens are supported.
 * Further documentation is provided for each API, for example:
     * [REST Admin API](/docs/EventStreams?topic=EventStreams-admin_api)
     * [REST Producer API](/docs/EventStreams?topic=EventStreams-rest_producer_using)
@@ -108,7 +110,7 @@ Private networking
 :   If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to be accessible only over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks.
 
 Context-based restrictions
-:   You can define access rules that limit the network locations where connections are accepted from, according to certain characteristics. For example, network type, IP ranges, VPC, or other services.
+:   You can define access rules that limit the network locations that connections are accepted from according to certain characteristics. For example, network type, IP ranges, VPC, or other services.
 
 For more information, see [Restricting network access](docs/EventStreams?topic=EventStreams-restrict_access).
 
@@ -117,13 +119,13 @@ For more information, see [Restricting network access](docs/EventStreams?topic=E
 
 To access your Enterprise instance over the private network for workloads deployed on {{site.data.keyword.Bluemix_notm}} classic infrastructure, the Virtual Route Forwarding (VRF) and Service Endpoints features must be enabled in your account. For more information, see [Restricting network access](docs/EventStreams?topic=EventStreams-restrict_access).
 
-### Accessing an Enterprise Instance over the Private Network from a VPC
+### Accessing an Enterprise instance over the private network from a VPC
 {: #private_network_vpc}
 
-For workloads deployed in an {{site.data.keyword.Bluemix_notm}} VPC to access your Enterprise instance over the private network, a Virtual Private Endpoint (VPE) must be created in the VPC:
+For workloads deployed in an {{site.data.keyword.Bluemix_notm}} VPC to be able to access your Enterprise instance over the private network, a Virtual Private Endpoint (VPE) must be created in the VPC:
 1. In the {{site.data.keyword.Bluemix_notm}} console, click the menu icon and select **VPC Infrastructure** > **Network** > **Virtual private endpoint gateways**. 
-2. Create a VPE for your {{site.data.keyword.messagehub}} instance using the guidance in [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe). 
-3. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui) of the VPE. 
+2. Create a VPE for your {{site.data.keyword.messagehub}} instance using the guidance in [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe){: external}. 
+3. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui){: external} of the VPE. 
 
 
 ### Accessing an Enterprise instance over the private network from outside the {{site.data.keyword.Bluemix_notm}}
@@ -131,9 +133,9 @@ For workloads deployed in an {{site.data.keyword.Bluemix_notm}} VPC to access yo
 
 You can use solutions like [Direct Link 2.0](https://cloud.ibm.com/docs/dl){: external} to connect an external network, for example in an on-premise data center, directly to the {{site.data.keyword.Bluemix_notm}} private network. For workloads running on an external network you must take the following additional consideration into account to connect successfully to Kafka. Note, these restrictions do not apply to HTTP workloads.
 
-The private endpoint details allocated to your instance (as described in the service key) must be resolvable and routeable from the network that the workload is running in. It is not possible to specify alternate hostname entries in the workloads `bootstrap.servers` properties as a way to route traffic from the external network.
+The private endpoint details allocated to your instance (as described in the service key) must be resolvable and routable from the network that the workload is running in. It is not possible to specify alternate hostname entries in the workload's `bootstrap.servers` properties as a way to route traffic from the external network.
 
-This is because of Kafka's two-step connection process. In the initial step, the hostnames provided in the client's `bootstrap.servers` property are used to establish the first bootstrap connection. However, the server then responds to the client with the actual endpoint hostname details it should use. These hostname details will be the private endpoint details originally allocated to your instance and cannot be changed. Hence, the details must be resolvable and routeable directly from the external network.
+This is because of Kafka's two-step connection process. In the initial step, the hostnames provided in the client's `bootstrap.servers` property are used to establish the first bootstrap connection. However, the server then responds to the client with the actual endpoint hostname details it should use. These hostname details will be the private endpoint details originally allocated to your instance and cannot be changed. Hence, the details must be resolvable and routable directly from the external network.
 
 For further information, see [Accessing private API endpoints from an on-premises network using IBM Cloud Direct Link](https://cloud.ibm.com/docs/vpc?topic=vpc-end-to-end-private-connectivity&interface=cli){: external}.
 
