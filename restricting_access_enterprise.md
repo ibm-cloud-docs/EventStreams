@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03c"
+lastupdated: "2022-10-03d"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -32,8 +32,7 @@ Network type (Enterprise instances only)
 
 Context-based restrictions (CBR)
 :   You can define access rules that limit the network locations where connections are accepted from. For example, network type, IP ranges, VPC or other services. For more information, see: [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external}. 
-
-Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.
+:   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.
 
 ## Configuring the network type (Enterprise instances only)
 {: #configuring_network_type}
@@ -105,10 +104,10 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 ### Updating the network configuration
 {: #update_endpoints}
 
-You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
-
 Switching to private endpoints while the cluster is in use is **not supported**. It will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
+
+You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
 An initial first step is to enable both public and private endpoints:
 
@@ -187,7 +186,7 @@ To change the IP allowlist, complete the following steps:
 
 1. Obtain the original IP allowlist applied on the instance
 
-```
+```text
 $ibmcloud es init -i <instance-name>
 API Endpoint:		https://mh-cktmqpdbvkfczhmn.us-south.containers.appdomain.cloud
 Service endpoints:	public-and-private
@@ -198,12 +197,11 @@ OK
 ```
 
 2. Add CIDRs into or delete CIDRs from the `Private IP allowlist`.
-
 3. Run the following command to update the service instance with a new list:
 
-  ```
-  ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
-  ```
+    ```text
+    ibmcloud resource service-instance-update <instance-name> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}'
+    ```
     {: codeblock}
 
     where CIDR1, 2 are IP addressess of the form a.b.c.d/e
@@ -219,7 +217,7 @@ The endpoint information for your service instance is specific to the network ty
 
 The endpoint information for the required network type can be retrieved by using the `--service-endpoint` option of the `service-key-create` CLI command as follows:
 
-```
+```text
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
 {: codeblock}
