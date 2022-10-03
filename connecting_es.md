@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-03"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
 
@@ -55,19 +55,19 @@ To create a service key using the {{site.data.keyword.Bluemix_notm}} console:
 To create a service key using the {{site.data.keyword.Bluemix_notm}} CLI:
 
 1. Locate your service: 
-    ```
+    ```bash
     ibmcloud resource service-instances
     ```
     {: codeblock}
 
 2. Create a service key: 
-    ```
+    ```bash
     ibmcloud resource service-key-create <key_name> <key_role> --instance-name <your_service_name>
     ```
     {: codeblock}
 
 3. Print the service key: 
-    ```
+    ```bash
     ibmcloud resource service-key <key_name>
     ```
     {: codeblock}
@@ -77,7 +77,7 @@ To create a service key using the {{site.data.keyword.Bluemix_notm}} CLI:
 
     For example:
 
-    ```text
+    ```bash
     ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
     ```
     {: codeblock}
@@ -96,7 +96,6 @@ To connect a Kafka application:
 To call an HTTP API:
 * Use the <kafka_admin_url> field of the service key as the base URL for HTTP requests. 
 * Use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate an auth token. 
-
     Place this token in the `Authorization` header of the HTTP request with the value formatted as `Bearer <token>`. Both API key or JWT tokens are supported.
 * Further documentation is provided for each API, for example:
     * [REST Admin API](/docs/EventStreams?topic=EventStreams-admin_api)
