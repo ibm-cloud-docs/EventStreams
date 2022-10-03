@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-10-03b"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -27,24 +27,20 @@ By default, {{site.data.keyword.messagehub}} instances are configured to use the
 
 If required, you can use network type or context-based restrictions to restrict the network connectivity as follows:
 
+Network type (Enterprise instances only)
+:   {{site.data.keyword.Bluemix_notm}} offers both private and public networking. If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks, where your workload can use the most appropriate interface for its location. You can find further information about private networking at [Virtual routing and forwarding on IBM Cloud](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
 
-## Network type (Enterprise instances only)
-{: #network_type}
-
-{{site.data.keyword.Bluemix_notm}} offers both private and public networking. If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks, where your workload can use the most appropriate interface for its location. You can find further information about private networking at [Virtual routing and forwarding on IBM Cloud](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
-
-## Context-based restrictions (CBR)
-{: #cbr}
-
-You can define access rules that limit the network locations where connections are accepted from. For example, network type, IP ranges, VPC or other services. For more information, see: [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external}. 
+Context-based restrictions (CBR)
+:   You can define access rules that limit the network locations where connections are accepted from. For example, network type, IP ranges, VPC or other services. For more information, see: [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external}. 
 
 Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.
 
 ## Configuring the network type (Enterprise instances only)
+{: #configuring_network_type}
 
-Enterprise service instances can be configured to be available on the IBM Cloud private, public or private and public networks. This section describes how to select and update the required networking type. Public networking is selected by default.
+Enterprise service instances can be configured to be available on the {{site.data.keyword.Bluemix_notm}} private, public, or private and public networks. This section describes how to select and update the required networking type. Public networking is selected by default.
 
-## Prerequisites
+### Prerequisites
 {: #prereqs_restrict_access}
 
 Ensure that you complete the following tasks:
@@ -73,13 +69,13 @@ Ensure that you complete the following tasks:
 
 You have a number of options for selecting the network configuration of your Enterprise cluster.
 
-1. Use the {{site.data.keyword.Bluemix_notm}} public network - Endpoints are accessible on the public Internet. This is the default.
+1. Use the {{site.data.keyword.Bluemix_notm}} public network. Endpoints are accessible on the public Internet. This is the default.
 
-2. Use the {{site.data.keyword.Bluemix_notm}} private network - Endpoints are not visible on the public Internet.
+2. Use the {{site.data.keyword.Bluemix_notm}} private network. Endpoints are not visible on the public Internet.
 
-3. Use the {{site.data.keyword.Bluemix_notm}} public and private network - Endpoints are visible on both the public Internet and internally within the {{site.data.keyword.Bluemix_notm}}.
+3. Use the {{site.data.keyword.Bluemix_notm}} public and private network. Endpoints are visible on both the public Internet and internally within the {{site.data.keyword.Bluemix_notm}}.
 
-This selection can be made at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either "Public" (default), "Private" or "Public and Private".
+This selection can be made at provision time through the {{site.data.keyword.messagehub}} catalog provisioning page. Use the Service Endpoints menu pull down to select either **Public** (default), **Private** or **Public and Private**.
 
 Alternatively, if you want to use the CLI to provision an {{site.data.keyword.messagehub}} service, use the following commands:
 
@@ -113,7 +109,6 @@ You are also able to switch the endpoints that your Enterprise cluster uses afte
 
 Switching to private endpoints while the cluster is in use is **not supported**. It will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
-
 
 An initial first step is to enable both public and private endpoints:
 
@@ -218,6 +213,7 @@ Note that if the private endpoint is enabled using the CLI, next time when updat
 Switching IP allowlists will disable any allowed IP address not in the new list. Applications accessing the cluster from those addresses will lose access to the cluster.
 
 ## Retrieving endpoint information
+{: #retrieve_endpoint}
 
 The endpoint information for your service instance is specific to the network type. Service instances with both public and private networking is selected will have an endpoint for each.
 
@@ -236,6 +232,8 @@ After the required network configuration has been selected, all subsequent conne
 ### Configuring context-cased restrictions
 {: #configuring_cbr}
 
+You can define rules that limit the network locations where connections are accepted from. For example, by network type, IP ranges, VPC, or from other services. For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis).
+
 When context-based restrictions rules are defined against an {{site.data.keyword.messagehub}} instance, the following rules apply:
 
 * Admin REST API, REST Producer API, Schema Registry API and Kafka client calls are under the scope of context-based restrictions rules created against an {{site.data.keyword.messagehub}} instance.
@@ -251,22 +249,16 @@ Creating context-based restrictions rules is a two-step process:
 
 2. Create rules specifying one or more network zones against {{site.data.keyword.messagehub}} resource. For more information on rule creation, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules){: external}.
 
-
-1. You must be the account owner or have an access policy with the administrator role on all account management services to restrict access. 
-
-2. After creating or updating a zone or a rule it can take a few minutes for the change to take effect.
-{: note}
-
+* You must be the account owner or have an access policy with the administrator role on all account management services to restrict access. 
+* After creating or updating a zone or a rule it can take a few minutes for the change to take effect.
 * When you create context-based restrictions for the IAM Access Groups service, users who don't satisfy the rule will not be able to view any groups in the account, including the public access group.
-{: note}
-
 * Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Also, the rules might not take effect immediately beecause of synchronization and resource availability.
 {: important}
 
-### Supporting connections between services (Service to Service) with context-based restrictions
+### Supporting connections between services (service-to-service) with context-based restrictions
 {: #services_cbr}
 
-If an {{site.data.keyword.messagehub}} service instance is configured to use customer-managed encryption [Managing Encryption](/docs/EventStreams?topic=EventStreams-managing_encryption), thee service must also be granted the ability to connect to the selected IBM Key Management Services. 
+If an {{site.data.keyword.messagehub}} service instance is configured to use customer-managed encryption [Managing Encryption](/docs/EventStreams?topic=EventStreams-managing_encryption), the service must also be granted the ability to connect to the selected IBM Key Management Services. 
 
 The administrator of the account can set this up as follows: 
 * Add a service reference for the '{{site.data.keyword.messagehub}}’ service to the required network zone.
@@ -288,11 +280,7 @@ If both context-based restrictions rules and IP allowlists are defined against t
 The customer is responsible for migration. You can create IP allowlist definitions again as context-based restrictions network zones and apply them  to the service instance by creating a context-based restrictions rule. You can then delete the previous private IP allowlist.
 
 
-
-
-
-
-
+<!-- 03/10/22 - are these sections needed any longer?
 
 
 
@@ -350,13 +338,6 @@ If you want to restrict access to VSIs hosted within a specific VPC, you first h
    ```
    {: codeblock}
 
-
-
-
-
-
-
-
 OLD WORDS
 
 If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. If required, further isolation is also possible by specifying an allowlist of the IP addresses (source IPs) from which private traffic will be accepted, for instance, the IPs of the VSIs or VPCs within the {{site.data.keyword.Bluemix_notm}} where your workload is running.
@@ -364,3 +345,5 @@ If your workload is running entirely within the {{site.data.keyword.Bluemix_notm
 Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks, where your workload can use the most appropriate interface for its location.
 
 You can find more information about {{site.data.keyword.Bluemix_notm}} private networking setup at: [Cloud Service Endpoints (CSE)](https://cloud.ibm.com/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
+
+-->

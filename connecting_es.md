@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03a"
+lastupdated: "2022-10-03b"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -59,10 +59,10 @@ To create a service key using the {{site.data.keyword.Bluemix_notm}} CLI:
 3. Print the service key: `ibmcloud resource service-key <key_name>`
 
 A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} public network (the default) or the {{site.data.keyword.Bluemix_notm}} private network, the service key will contain the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network will be returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command. For example: 
+
 ```text
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
-{: codeblock}
 {: note}
  
 For more information, see [Network types](/docs/EventStreams?topic=EventStreams-restrict_access#network_type).
@@ -127,9 +127,6 @@ For further information, see [Accessing private API endpoints from an on-premise
 {: #after_connecting}
 
 Now you have connection and credential information, you can choose an {{site.data.keyword.messagehub}}. For more information, see [Using the Kafka API](/docs/EventStreams?topic=EventStreams-kafka_using).
-
-
-
 
 
 <!-- 03/10/22 comment out while I make Charlie's changes
