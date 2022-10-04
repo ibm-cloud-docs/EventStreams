@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -170,13 +170,14 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 and update the credentials in the application to use the newly created one.
 
 ### Specifying an IP allowlist (deprecated)
+{: #specify_allowlist}
 
 This feature is now deprecated, instead use context-based restrictions [Configuring CBR](#configuring_cbr).
 {: deprecated}
 
 When provisioning an instance of the Enterprise plan, if you select private endpoints and want to further restrict access to only known VSIs with specific VPCs, you can add an IP allowlist using the CLI by appending as follows:
 
-```
+```bash
 ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private -p '{"private_ip_allowlist":["CIDR1","CIDR2"]}' "
 ```
 {: codeblock}
@@ -228,7 +229,7 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 
 After you've selected the required network configuration, all subsequent connections to the APIs and user console must adopt this method. You can retrieve the associated endpoint information by creating a new service credential.
 
-## Configuring context-cased restrictions
+## Configuring context-based restrictions
 {: #configuring_cbr}
 
 You can define rules that limit the network locations that connections are accepted from. For example, by network type, IP ranges, VPC, or from other services. For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external}
@@ -252,8 +253,6 @@ Next, note the following considerations:
 
 * You must be the account owner or have an access policy with the administrator role on all account management services to restrict access. 
 * After creating or updating a zone or a rule it can take a few minutes for the change to take effect.
-* When you create context-based restrictions for the IAM access group service, users who don't satisfy the rule will not be able to view any groups in the account, including the public access group.
-* Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Also, the rules might not take effect immediately beecause of synchronization and resource availability.
 {: important}
 
 ### Supporting connections between services (service-to-service) with context-based restrictions
@@ -262,7 +261,7 @@ Next, note the following considerations:
 If an {{site.data.keyword.messagehub}} service instance is configured to use [customer-managed encryption](/docs/EventStreams?topic=EventStreams-managing_encryption), the service must also be granted the ability to connect to the selected IBM Key Management Services. 
 
 The administrator of the account can set this up as follows: 
-1. Add a service reference for the '{{site.data.keyword.messagehub}}’ service to the required network zone.
+1. Add a service reference for the {{site.data.keyword.messagehub}} service to the required network zone.
 2. Ensure that access from this zone is permitted by way of the context-based restrictions rules applicable to other Cloud services.
 
 For more information about service reference creation, see [Service references](/docs/account?topic=account-context-restrictions-whatis#service-attribute){: external}.

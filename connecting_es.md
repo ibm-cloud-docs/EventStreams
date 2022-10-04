@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
 
@@ -113,7 +113,7 @@ Private networking
 Context-based restrictions
 :   You can define access rules that limit the network locations that connections are accepted from according to certain characteristics. For example, network type, IP ranges, VPC, or other services.
 
-For more information, see [Restricting network access](docs/EventStreams?topic=EventStreams-restrict_access).
+For more information, see [Restricting network access](/docs/EventStreams?topic=EventStreams-restrict_access).
 
 ### Accessing an Enterprise instance over the private network from Classic infrastructure
 {: #private_network_classic}
