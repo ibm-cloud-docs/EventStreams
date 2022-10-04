@@ -108,6 +108,30 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 ### Updating the network configuration
 {: #update_endpoints}
 
+To migrate directly from public or private to public-and-private endpoints:
+
+```bash
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
+```
+{: codeblock}
+
+To migrate from public-and-private to public endpoints:
+
+```bash
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
+```
+{: codeblock}
+
+To migrate from public-and-private to private endpoints:
+
+```bash
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
+```
+{: codeblock}
+
+Migrating from public to private endpoints or private to public endpoints is not supported.
+{: important}
+
 Switching to private endpoints while the cluster is in use is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
 
@@ -138,30 +162,6 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 
 #### Migrate applications to either private, public, or public-and-private endpoints
 {: #migrate_endpoints}
-
-To migrate directly from public or private to public-and-private endpoints:
-
-```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
-```
-{: codeblock}
-
-To migrate from public-and-private to public endpoints:
-
-```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
-```
-{: codeblock}
-
-To migrate from public-and-private to private endpoints:
-
-```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
-```
-{: codeblock}
-
-Migrating from public to private endpoints or private to public endpoints is not supported.
-{: important}
 
 If you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
 
