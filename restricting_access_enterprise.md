@@ -108,6 +108,8 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 Switching to private endpoints while the cluster is in use is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
 
+When using private endpoints, you will not receive all the activity tracker alerts that you received when using publicc endpoints.
+
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
 An initial first step is to enable both public and private endpoints:
