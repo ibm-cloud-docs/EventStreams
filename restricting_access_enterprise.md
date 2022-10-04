@@ -25,17 +25,20 @@ subcollection: EventStreams
 By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.Bluemix_short}} public network, so they are accessible over the public Internet.
 {: #shortdesc} 
 
+The following features are available in the Enterprise plan only.
+{: note}
+
 If required, you can use network type or context-based restrictions to restrict the network connectivity as follows:
 
-Network type (Enterprise instances only)
+Network type 
 :   {{site.data.keyword.Bluemix_notm}} offers both private and public networking. If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to only be accessible over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks, where your workload can use the most appropriate interface for its location. You can find further information about private networking at [Virtual routing and forwarding on IBM Cloud](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
 
 Context-based restrictions (CBR)
 :   You can define access rules that limit the network locations that connections are accepted from. For example, network type, IP ranges, VPC, or other services. For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external} 
 
-:   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.
+:   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.Activity Tracker events related to CBR enforcement are unavailable on private endpoints.
 
-## Configuring the network type (Enterprise instances only)
+## Configuring the network type 
 {: #configuring_network_type}
 
 You can configure Enterprise service instances to be available on the {{site.data.keyword.Bluemix_notm}} private, public, or private and public networks. The following information describes how to select and update the required networking type. Public networking is selected by default.
@@ -107,8 +110,6 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 
 Switching to private endpoints while the cluster is in use is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
-
-When using private endpoints, you will not receive all the activity tracker alerts that you received when using publicc endpoints.
 
 You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
 
