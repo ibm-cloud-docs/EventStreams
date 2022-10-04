@@ -36,7 +36,7 @@ Network type
 Context-based restrictions (CBR)
 :   You can define access rules that limit the network locations that connections are accepted from. For example, network type, IP ranges, VPC, or other services. For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external} 
 
-:   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}.Activity Tracker events related to CBR enforcement are unavailable on private endpoints.
+:   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}. Activity Tracker events related to CBR enforcement are unavailable on private endpoints.
 
 ## Configuring the network type 
 {: #configuring_network_type}

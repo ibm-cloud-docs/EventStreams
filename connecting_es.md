@@ -118,7 +118,7 @@ For more information, see [Restricting network access](/docs/EventStreams?topic=
 ### Accessing an Enterprise instance over the private network from Classic infrastructure
 {: #private_network_classic}
 
-To access your Enterprise instance over the private network for workloads deployed on {{site.data.keyword.Bluemix_notm}} classic infrastructure, the Virtual Route Forwarding (VRF) and Service Endpoints features must be enabled in your account. For more information, see [Restricting network access](docs/EventStreams?topic=EventStreams-restrict_access).
+To access your Enterprise instance over the private network for workloads deployed on {{site.data.keyword.Bluemix_notm}} classic infrastructure, the Virtual Route Forwarding (VRF) and Service Endpoints features must be enabled in your account. For more information, see [Restricting network access](/docs/EventStreams?topic=EventStreams-restrict_access).
 
 ### Accessing an Enterprise instance over the private network from a VPC
 {: #private_network_vpc}
