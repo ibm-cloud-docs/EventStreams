@@ -120,7 +120,6 @@ toc:
               label: Troubleshooting
               topics:
               - getting_support.md
-              - troubleshooting.md
               - known_restrictions.md
               - reporting_problem.md
 
