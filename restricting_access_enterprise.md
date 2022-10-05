@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-05"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -108,6 +108,8 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 ### Updating the network configuration
 {: #update_endpoints}
 
+You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands:
+
 To migrate directly from public or private to public-and-private endpoints:
 
 ```bash
@@ -128,6 +130,35 @@ To migrate from public-and-private to private endpoints:
 ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
 ```
 {: codeblock}
+
+Switching directly from public to private endpoints or from private to public endpoints is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
+{: note}
+
+For example, to migrate directly from public to public-and-private endpoints:
+
+Firstly enable both public and private endpoints:
+
+```bash
+ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
+```
+{: codeblock}
+
+Next, create a new credential containing private endpoints and new API key, as follows:
+
+```bash
+ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
+```
+{: codeblock}
+
+Then, update the any applications which use the instance with the new endpoint details
+Finally, after applications are migrated to the private endpoints, run the following command to turn off the public endpoints:
+
+```bash
+ibmcloud resource service-instance-update <instance-name> --service-endpoints private
+```
+{: codeblock}
+
+---------------
 
 Migrating from public to private endpoints or private to public endpoints is not supported.
 {: important}
