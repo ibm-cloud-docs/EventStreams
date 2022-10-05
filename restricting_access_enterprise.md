@@ -131,12 +131,12 @@ ibmcloud resource service-instance-update --name <instance-name> --service-endpo
 ```
 {: codeblock}
 
-Switching directly from public to private endpoints or from private to public endpoints is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
-{: note}
+Switching directly from public to private endpoints or from private to public endpoints is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then reconfigure applications to use private endpoints, and finally switch to private only endpoints.
+{: important}
 
 For example, to migrate directly from public to public-and-private endpoints:
 
-Firstly enable both public and private endpoints:
+Firstly, enable both public and private endpoints:
 
 ```bash
 ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
@@ -150,58 +150,14 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 ```
 {: codeblock}
 
-Then, update the any applications which use the instance with the new endpoint details
+Then, update any applications that use the instance with the new endpoint details.
+
 Finally, after applications are migrated to the private endpoints, run the following command to turn off the public endpoints:
 
 ```bash
 ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
 {: codeblock}
-
----------------
-
-Migrating from public to private endpoints or private to public endpoints is not supported.
-{: important}
-
-Switching to private endpoints while the cluster is in use is **not supported**. The switch will disable all public endpoints and your applications will lose access to the cluster. To avoid this, first enable both public and private endpoints, then re-configure applications to use private endpoints, and finally switch to private only endpoints.
-{: important}
-
-You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands.
-
-An initial first step is to enable both public and private endpoints:
-
-```bash
-ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
-```
-{: codeblock}
-
-Next, create a new credential containing private endpoints and new API key, as follows: 
-
-```bash
-ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
-```
-{: codeblock}
-
-Then, update the broker address to be private endpoints and a new API key in the application.
-
-Finally, after applications are migrated to the private endpoints, you can run the following command to turn off the public endpoints:
-
-```bash
-ibmcloud resource service-instance-update <instance-name> --service-endpoints private
-```
-{: codeblock}
-
-#### Migrate applications to either private, public, or public-and-private endpoints
-{: #migrate_endpoints}
-
-If you have enabled private endpoints, you will need new access credentials. Create a new service key with private service endpoint:
-
-```bash
-ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
-```
-{: codeblock}
-
-and update the credentials in the application to use the newly created one.
 
 ### Specifying an IP allowlist (deprecated)
 {: #specify_allowlist}
