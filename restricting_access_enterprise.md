@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-10-06"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -108,7 +108,7 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 ### Updating the network configuration
 {: #update_endpoints}
 
-You are also able to switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands:
+You can also switch the endpoints that your Enterprise cluster uses after provisioning. To do this, use the following CLI commands:
 
 To migrate directly from public or private to public-and-private endpoints:
 
@@ -143,7 +143,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pu
 ```
 {: codeblock}
 
-Next, create a new credential containing private endpoints and new API key, as follows:
+Next, create a new credential containing private endpoints and a new API key, as follows:
 
 ```bash
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
