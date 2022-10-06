@@ -217,7 +217,8 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
 {: #access_console}
 
-After you've selected the required network configuration, all subsequent connections to the APIs and user console must adopt this method. You can retrieve the associated endpoint information by creating a new service credential.
+The console will continue to be accessible if private only networking is selected.
+
 
 ## Configuring context-based restrictions
 {: #configuring_cbr}
