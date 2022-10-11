@@ -94,17 +94,7 @@ toc:
                 label: IBM Event Streams Admin REST API
                 href: https://{DomainName}/apidocs/event-streams/adminrest
         - eventstreams-cli.md
-    - navgroup:
-        id: help
-        topics:
-          - faq.md
-          - topicgroup:
-              label: Troubleshooting
-              topics:
-              - troubleshooting.md
-              - known_restrictions.md
-              - reporting_problem.md
-          - topicgroup:
+        - topicgroup:
               label: Related links
               topics:
               - link:
@@ -116,3 +106,20 @@ toc:
               - link:
                   label: IBM Event Streams on ibm.com
                   href: https://www.ibm.com/cloud/event-streams
+              - link:
+                  label: IBM Cloud pricing information
+                  href: https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost#cost
+              - link:
+                  label: Apache Kafka documentation
+                  href: http://kafka.apache.org/documentation.html
+    - navgroup:
+        id: help
+        topics:
+          - faq.md
+          - topicgroup:
+              label: Troubleshooting
+              topics:
+              - getting_support.md
+              - known_restrictions.md
+              - reporting_problem.md
+

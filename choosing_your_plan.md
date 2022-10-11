@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-10-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
 
@@ -68,7 +68,7 @@ The following table summarizes what is supported by the plans:
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
-| **Kafka version on cluster**  | Kafka 2.8 | Kafka 2.8  | Kafka 2.8 |  Kafka 2.8   |
+| **Kafka version on cluster**  | Kafka 3.1 | Kafka 3.1  | Kafka 3.1 |  Kafka 3.1   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
