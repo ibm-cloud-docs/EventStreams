@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-12"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
 
@@ -105,9 +105,8 @@ To call an HTTP API:
 ## Network connectivity
 {: #network_connectivity}
 
-For the Satellite plan, network connectivity is controlled by the infrastructure used and is therefore the responsibility of the user.
+For the Satellite plan, the network connectivity is dependent on the infrastructure used and is therefore the responsibility of the user.
 {: note}
-
 
 By default, Lite, Standard,and Enterprise instances are configured to be accessible over the public Internet. If you're using the Enterprise plan, you can restrict connectivity as follows:
 
