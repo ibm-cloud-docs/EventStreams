@@ -2,8 +2,7 @@
 
 copyright:
   years: 2022
-
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-04"
 
 keywords: event streams release notes
 
@@ -25,6 +24,9 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 ## October 2022
 {: #EventStreams-oct2022}
 {: release-note}
+
+Context-based restrictions
+:   You can use network type or context-based restrictions to restrict the network connectivity on the Enterprise plan. For more information, see [Restricting Network Access](/docs/EventStreams?topic=EventStreams-restrict_access).
 
 Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.1.
