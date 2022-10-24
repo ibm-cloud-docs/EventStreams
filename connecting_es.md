@@ -88,13 +88,13 @@ For more information, see [Network types](/docs/EventStreams?topic=EventStreams-
 {: #establishing_connection}
 
 To connect a Kafka application:
-* Use the <bootstrap_endpoints> field from the service key as the `bootstrap.servers` property of your kafka application.
+* Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your kafka application.
 * Set the security.protocol property to SASL_SSL and the sasl.mechanism property to PLAIN.
 * Use the `<user>` field from the service key as the username and the `<api_key>` field from the service key as the password. Ensure that your application parses the details. 
 * For more information, see [Configuring your Kafka API client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client). 
 
 To call an HTTP API:
-* Use the <kafka_admin_url> field of the service key as the base URL for HTTP requests. 
+* Use the `<kafka_admin_url>` field of the service key as the base URL for HTTP requests. 
 * Use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate an auth token. 
     Place this token in the `Authorization` header of the HTTP request with the value formatted as `Bearer <token>`. Both API key or JWT tokens are supported.
 * Further documentation is provided for each API, for example:
