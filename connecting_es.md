@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
 
@@ -147,6 +147,6 @@ For further information, see [Accessing private API endpoints from an on-premise
 ## What to do next
 {: #after_connecting}
 
-Now you have connection and credential information, you can choose an {{site.data.keyword.messagehub}}. For more information, see [Using the Kafka API](/docs/EventStreams?topic=EventStreams-kafka_using).
+Now you have connection and credential information, you can choose a Kafka client. For more information, see [Using the Kafka API](/docs/EventStreams?topic=EventStreams-kafka_using).
 
 
