@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-30"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite, pricing
 
 subcollection: EventStreams
 
@@ -25,6 +25,8 @@ subcollection: EventStreams
 
 {{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
 {: shortdesc}
+
+For information about {{site.data.keyword.messagehub}} plan pricing, see [Select a pricing plan] ({{site.data.keyword.messagehub}}){: external}.
 
 ## Lite plan
 {: #plan_lite}
@@ -114,6 +116,19 @@ The following table summarizes what is supported by the plans:
 
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
+
+## Pricing
+{: #pricing}
+
+|   | Plan  |  Price |  |   |
+|---|---|---|---|---|
+|   | **Lite**  |Free   |   |  |     |
+|   | **Standard**   |  $0.014 USD/Partition-hour   \n  
+$0.08 USD/Gigabyte Transmitted Outbound  |   3  |3    \n   (1 in single zone locations)   |   3  |
+|   | **Enterprise**  |  $6.85 USD/Base Capacity Unit-Hour   \n  $6.85 USD/Additional Capacity Unit-Hour   \n  $0.60 USD/Additional Storage Terabyte per hour   \n  
+$0.08 USD/Gigabyte Transmitted Outbound   \n  $1.37 USD/Mirroring Capacity Unit-Hour |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
+|   | **{site.data.keyword.satelliteshort}}**  |  $6.85 USD/Base Capacity Unit-Hour
+$6.85 USD/Additional Capacity Unit-hour |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
 
 
 
