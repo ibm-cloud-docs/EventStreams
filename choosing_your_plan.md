@@ -122,10 +122,10 @@ For more information about limits, see [limits and quotas](/docs/EventStreams?to
 
 | Plan  |  Price |  |
 |---|---|---|
-| **Lite**  |Free   |     |
-| **Standard**   |  $0.014 USD/Partition-hour   \n  $0.08 USD/Gigabyte Transmitted Outbound  |    |
-| **Enterprise**  |  $6.85 USD/Base Capacity Unit-Hour   \n  $6.85 USD/Additional Capacity Unit-Hour   \n  $0.60 USD/Additional Storage Terabyte per hour   \n  $0.08 USD/Gigabyte Transmitted Outbound   \n  $1.37 USD/Mirroring Capacity Unit-Hour |   |
-| **{{site.data.keyword.satelliteshort}}**  |  $6.85 USD/Base Capacity Unit-Hour $6.85 USD/Additional Capacity Unit-hour |   |
+| Lite  |Free   |     |
+| Standard   |  $0.014 USD/Partition-hour   \n  $0.08 USD/Gigabyte Transmitted Outbound  |    |
+| Enterprise  |  $6.85 USD/Base Capacity Unit-Hour   \n  $6.85 USD/Additional Capacity Unit-Hour   \n  $0.60 USD/Additional Storage Terabyte per hour   \n  $0.08 USD/Gigabyte Transmitted Outbound   \n  $1.37 USD/Mirroring Capacity Unit-Hour |   |
+|{{site.data.keyword.satelliteshort}}  |  $6.85 USD/Base Capacity Unit-Hour   \n  $6.85 USD/Additional Capacity Unit-hour |   |
 {: caption="Table 2. Plan pricing table" caption-side="bottom"}
 
 
