@@ -60,17 +60,6 @@ The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deplo
 The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan does not yet provide the compliance certifications that the Enterprise or Standard plans conform to.
 {: important}
 
-## Pricing
-{: #pricing}
-
-| Plan  |  Price |  |
-|---|---|---|
-| Lite  |Free   |     |
-| Standard   |  $0.014 USD/Partition-hour   \n  $0.08 USD/Gigabyte Transmitted Outbound  |    |
-| Enterprise  |  $6.85 USD/Base Capacity Unit-Hour   \n  $6.85 USD/Additional Capacity Unit-Hour   \n  $0.60 USD/Additional Storage Terabyte per hour   \n  $0.08 USD/Gigabyte Transmitted Outbound   \n  $1.37 USD/Mirroring Capacity Unit-Hour |   |
-|{{site.data.keyword.satelliteshort}}  |  $6.85 USD/Base Capacity Unit-Hour   \n  $6.85 USD/Additional Capacity Unit-hour |   |
-{: caption="Table 1. Plan pricing table" caption-side="bottom"}
-
 ## What is supported by the Lite, Standard, Enterprise, and Satellite plans
 {: #what_is_supported}
 
@@ -103,7 +92,7 @@ The following table summarizes what is supported by the plans:
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
 | **Mirroring** | No | No | Yes | No |
-{: caption="Table 2. Plan comparison table" caption-side="bottom"}
+{: caption="Table 1. Plan comparison table" caption-side="bottom"}
 
 [^tabletext1]: After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.)
 
