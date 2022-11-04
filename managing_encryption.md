@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-11-04"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
 
@@ -36,7 +36,7 @@ Consider using customer-managed keys if you require the following features:
 - Explicit control of the lifecycle of data stored at rest.
 {: #considerations_keys notoc}
 
-Customer-managed keys is available on the Enterprise plan only.
+Customer-managed keys is available on the Enterprise plan only and only on clusters that were created after October 2019.
 {: note}
 
 Deletion of the customer-managed key is non-recoverable and will result in the loss of any data stored in your {{site.data.keyword.messagehub}} instance.
