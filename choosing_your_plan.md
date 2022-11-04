@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-31"
+lastupdated: "2022-11-04"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite, pricing
 
@@ -85,8 +85,8 @@ The following table summarizes what is supported by the plans:
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
-| **Customer-managed encryption**  | No  |  No |  Yes |  No   |
-| **Fine-grained access control**  | Yes  |  Yes |  Yes |  Yes   |
+| **f**  | No  |  No |  Yes [^tabletext11] |  No   |
+| **Fine-grained access control**  | Yes  |  Yes |  Yes  |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  No   |
 | **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
 | **Cloud Service Endpoint support** | No   | No  |  Yes |  Not applicable  |
@@ -124,6 +124,8 @@ The following table summarizes what is supported by the plans:
 [^tabletext9]: The Schema Registry API is not automatically enabled on the Satellite plan. See [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry) for information about how to enable it.
    
 [^tabletext10]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}. 
+
+[^tabletex11]: Only supported on clusters that were created after October 2019.
 
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
