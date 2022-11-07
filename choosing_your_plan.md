@@ -74,7 +74,7 @@ The following table summarizes what is supported by the plans:
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
-| **f**  | No  |  No |  Yes [^tabletext11] |  No   |
+| **Customer-managed encryption**  | No  |  No |  Yes [^tabletext11]  |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes  |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  No   |
 | **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
