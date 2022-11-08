@@ -41,7 +41,7 @@ Ensure you have the following software and services installed:
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
 * A recent version of kubectl.
-* [git](https://git-scm.com/downloads){: external}
+* [Git](https://git-scm.com/downloads){: external}
 
 ## Step 2. Clone the kafka-connect repositories
 {: #step2_clone project}
@@ -110,13 +110,13 @@ Keep the terminal that you used for port forwarding open, and use another termin
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
 [Kafka Connect REST Interface](http://kafka.apache.org/documentation/#connect_rest){: external}.
 
-So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure and start the {{site.data.keyword.cos_short}} connector.
+So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, configure, and start the {{site.data.keyword.cos_short}} connector.
 
 
 ## Step 6. Configure the cos-sink JSON file
 {: #step6_config_json}
 
-Edit the `cos-sink.json` file located in `kafka-connect-ibmcos-sink/config/` so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a non-default value.
+Edit the `cos-sink.json` file located in `kafka-connect-ibmcos-sink/config/` so that at a minimum your required properties are completed with your information. Although the configuration properties cos.object.deadline.seconds, cos.interval.seconds, and cos.object.records are listed as optional, you must set at least one of these properties to a nondefault value.
 
 ### cos-sink.json file properties
 {: #cos-sink_props}
@@ -129,8 +129,8 @@ cos.api.key | Required. API key used to connect to the Cloud {{site.data.keyword
 cos.bucket.location | Required. Location of the Cloud {{site.data.keyword.cos_short}} service bucket. For example, for a [regional bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-region) `eu-gb`, or for a [global bucket](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo) `eu`.
 cos.bucket.name | Required. Name of the Cloud {{site.data.keyword.cos_short}} service bucket to write data into.
 cos.bucket.resiliency | Required. Resiliency of the Cloud {{site.data.keyword.cos_short}} bucket. Must be one of: cross-region, regional, or single-site.
-cos.service.crn | Required. CRN for the Cloud {{site.data.keyword.cos_short}} service instance. Ensure you enter the correct CRN:it is the resource instance ID ending with double colons, for example, `crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::`.
-cos.endpoint.visibility | Optional. Specify *public* to connect to the Cloud {{site.data.keyword.cos_short}} service over the public internet, or *private* to connect from a connector that runs inside the IBM Cloud network, for example, from an IBM Cloud Kubernetes Service cluster. The default is public.
+cos.service.crn | Required. CRN for the Cloud {{site.data.keyword.cos_short}} service instance. Ensure you enter the correct CRN: it is the resource instance ID ending with double colons, for example, `crn:v1:staging:public:cloud-object-storage:global:a/8c226dc8c8bfb9bc3431515a16957954:b25fe12c-9cf5-4ee8-8285-2c7e6ae707f6::`.
+cos.endpoint.visibility | Optional. Specify *public* to connect to the Cloud {{site.data.keyword.cos_short}} service over the public internet. Specify *private* to connect from a connector that runs inside the IBM Cloud network, for example, from an IBM Cloud Kubernetes Service cluster. The default is public.
 cos.object.deadline.seconds | Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object. This property can be useful in situations that have long pauses between Kafka records being produced to a topic. It ensures that any records that are received by this connector are always written into {{site.data.keyword.cos_short}} within the specified time.
 cos.object.interval.seconds | Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object.
 cos.object.records | Optional. The maximum number of Kafka records to combine into an object.
@@ -160,7 +160,8 @@ curl -X POST -H "Content-Type: application/json" http://localhost:8083/connector
 ## Step 8. Monitor your connector 
 {: #step8_monitor_connector}
 
-You can check your connector by going to:
+You can check your connector by going to the following location.
+
 `http://localhost:8083/connectors/cos-sink/status`
 
 If the state of the connector is not running, restart the connector.
