@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-07"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan. Enterprise, Standard, Lite, pricing
+keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
 
 subcollection: EventStreams
 
@@ -31,7 +31,7 @@ For information about {{site.data.keyword.messagehub}} plan pricing, see [Select
 ## Lite plan
 {: #plan_lite}
 
-The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. We do not recommend the Lite plan for production use. The Lite plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. The Lite plan is not recommended for production use. It offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Standard plan
 {: #plan_standard}
@@ -72,12 +72,12 @@ The following table summarizes what is supported by the plans:
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
 | **Kafka version on cluster**  | Kafka 3.1 | Kafka 3.1  | Kafka 3.1 |  Kafka 3.1   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
-| **Stream to Cloud Object Storage using SQL Query**  | No |  Yes | Yes  |   No  |
+| **Stream to Cloud Object Storage by using SQL Query**  | No |  Yes | Yes  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
 | **Customer-managed encryption**  | No  |  No |  Yes [^tabletext4]  |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes  |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  No   |
-| **Monitoring Event Streams metrics using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
+| **Monitoring Event Streams metrics by using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
 | **Cloud Service Endpoint support** | No   | No  |  Yes |  Not applicable  |
 | **Scale plan capacity** | No   | No  |  Yes |   No  |
 | **Maximum number of partitions**  | 1 [^tabletext5]  | 100   |3000 - 9000 scales with throughput [^tabletext6] | 3000    |
@@ -85,9 +85,9 @@ The following table summarizes what is supported by the plans:
 | **Maximum throughput**  | 100 KB per second per partition  |  1 MB per second per partition (20 MB per service instance) | 150 MB/s - 450 MB/s of scalable throughput [^tabletext8] | 150 MB/s [^tabletext9]  |
 | **Maximum message size**  | 1 MB  | 1 MB   | 1 MB |   1 MB  |
 | **Maximum number of connected clients**  | 5   | 500  | 10 000  |   10 000  |
-| **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Seoul (seo01)   \n Chennai (che01)  |  **Your Satellite location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Osaka   \n  Toronto   \n Sao Paulo   |
+| **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Chennai (che01)  |  **Your Satellite location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Osaka   \n  Toronto   \n Sao Paulo   |
 | **APIs supported** |  Kafka API   \n Admin REST API  \n REST Producer API |  Kafka API   \n Admin REST API   \n REST Producer API    |  Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API  | Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API [^tabletext10] |
-| **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning  |  If all your infrastructure is correctly in place, expect provisioning to take up to 1 hour because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance   |
+| **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. As Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning.  |  If all your infrastructure is correctly in place, expect provisioning to take up to 1 hour because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance.   |
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [^tabletext11]  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
@@ -98,7 +98,7 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext2]: For more information about availability, see [single zone location deployments](/docs/EventStreams?topic=EventStreams-sla#sla_szr).
 
-[^tabletext3]: The Schema Registry API is not automatically enabled on the Satellite plan. See [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry) for information about how to enable it.
+[^tabletext3]: The Schema Registry API is not automatically enabled on the Satellite plan. For more information about how to enable it, see [Enable the schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
 
 [^tabletext4]: Only supported on clusters that were created after October 2019.
 
@@ -106,22 +106,15 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext6]: This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}. 
 
-[^tabletext7]: Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams Capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+[^tabletext7]: Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 [^tabletext8]: Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
-[^tabletext9]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When providing infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note the following items could impact throughput: 1) Performance of hosts attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}. 2) Type, configuration, and performance of the block storage provided. 3) Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location {: #footnote_sat_throughput notoc}. 4) For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
+[^tabletext9]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When you provide infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note that the following items could impact throughput: 1) Performance of hosts that are attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}. 2) Type, configuration, and performance of the block storage provided. 3) Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location. 4) For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
 
-[^tabletext10]: The Schema Registry API is not automatically enabled on the Satellite plan. See [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry) for information about how to enable it.
+[^tabletext10]: The Schema Registry API is not automatically enabled on the Satellite plan. For information about how to enable it, see [Enable the schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
    
 [^tabletext11]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}. 
 
 
-
-
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2021
-lastupdated: "2022-06-14"
+lastupdated: "2022-11-07"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
@@ -57,13 +57,13 @@ The following table lists the message audit events:
 
 | Action | Description |
 |:-------|:------------|
-| event-streams.message.read | An event is created when message audit is enabled on a topic and a consumer is reading data from this topic.|
-| event-streams.message.write | An event is created when message audit is enabled on a topic and a producer is writing data to this topic.|
-| event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from this topic. Records deletion because of retention policy does not generate.|
+| event-streams.message.read | An event is created when message audit is enabled on a topic and a consumer is reading data from the topic.|
+| event-streams.message.write | An event is created when message audit is enabled on a topic and a producer is writing data to the topic.|
+| event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from the topic. Records deletion because of retention policy does not generate.|
 {: caption="Table 2. {{site.data.keyword.messagehub}} message events" caption-side="top"}
 
-{{site.data.keyword.messagehub}} can sustain high requests rate so not every request triggers an event. Instead, events are aggregated by 
-initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1 hour period.
+{{site.data.keyword.messagehub}} can sustain high request rates, so not every request triggers an event. Instead, events are aggregated by 
+initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1-hour period.
 
 ## Instance events (deprecated)
 {: #instance-events}
@@ -78,7 +78,7 @@ The following table lists the instance events, which are now replaced by [servic
 |:-------|:------------|
 | event-streams.instance.create | An event is created when you create an instance.|
 | event-streams.instance.delete | An event is created when you delete an instance.|
-| event-streams.instance.update | An event is created when you update an instance’s throughput, storage, service endpoint type (public/private), and allowlist.|
+| event-streams.instance.update | An event is created when you update an instance’s throughput, storage, service endpoint type (public or private), and allowlist.|
 {: caption="Table 3. {{site.data.keyword.messagehub}} instance events" caption-side="top"}
 
 ## Other events
@@ -88,7 +88,7 @@ The following table lists the instance events, which are now replaced by [servic
 
 | Action | Description |
 |:-------|:------------|
-| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed. If the outcome of this event is `success`, access to the disk encryption key is restored and the {{site.data.keyword.messagehub}} instance is available for use. If the outcome is `failure`, access to the disk encryption key was withdrawn and the {{site.data.keyword.messagehub}} instance is not available for use. |
+| event-streams.storage-key.read | An event is created when access to the disk encryption key in {{site.data.keyword.keymanagementserviceshort}} changed. If the outcome of this event is `success`, access to the disk encryption key is restored, and the {{site.data.keyword.messagehub}} instance is available for use. If the outcome is `failure`, access to the disk encryption key was withdrawn, and the {{site.data.keyword.messagehub}} instance is not available for use. |
 | event-streams.storage-key.update | The disk encryption key in {{site.data.keyword.keymanagementserviceshort}} was rotated and the {{site.data.keyword.messagehub}} instance was updated to use the new key. |
 | event-streams.schema.create | A schema  or schema version was created or updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance either through the administration API or through the Confluent Serdes.
 | event-streams.schema.delete | A schema or schema version was deleted from the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
@@ -140,4 +140,4 @@ Additionally, be aware of the implications of enabling message audit events:
 
 1. An internal Kafka topic is used for streaming events to {{site.data.keyword.cloudaccesstrailshort}}, thus it uses a small amount of the cluster's network bandwidth and storage. Typically throughput is less than 1 KB/s, and storage does not exceed 1 GB.
    
-2. Because more events are sent to {{site.data.keyword.cloudaccesstrailshort}}, this incurs extra storage costs for {{site.data.keyword.cloudaccesstrailshort}}. Each event's size is about 1 KB, a rough estimation of how much storage it takes: Assuming cluster has 100 topics, each topic has 10 clients actively producing and consuming, each client runs on three different locations, then it generates 100x10x3=3000 events per hour, that is 2 GB per month.
+2. Because more events are sent to {{site.data.keyword.cloudaccesstrailshort}}, enabling message audit events incurs extra storage costs for {{site.data.keyword.cloudaccesstrailshort}}. Each event's size is about 1 KB, see the following rough estimation of how much storage it takes. Assuming that the cluster has 100 topics, each topic has 10 clients actively producing and consuming, and each client runs on three different locations, then it generates 100x10x3=3000 events per hour, that is 2 GB per month.
