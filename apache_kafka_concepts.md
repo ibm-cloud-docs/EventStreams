@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-07"
+lastupdated: "2022-11-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,26 +10,19 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Apache Kafka concepts
 {: #apache_kafka}
 
-
 ![Kafka architecture diagram.](kafka_overview.png "The diagram shows a Kafka architecture. A producer is feeding into a Kafka topic over three partitions and the messages are then subscribed to by consumers."){: caption="Figure 1. The diagram shows a Kafka architecture." caption-side="bottom"}
-
 
 The following list defines some Apache Kafka concepts:
 
 ## Brokers
 {: #kafka_brokers}
 
-Apache Kafka is a distributed messaging system. A Kafka cluster consists of a set of brokers.
-A cluster has a minimum of three brokers.
+Apache Kafka is a distributed messaging system. A Kafka cluster consists of a set of brokers. A cluster has a minimum of three brokers.
 
 ![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker."){: caption="Figure 2. Diagram that shows an example broker." caption-side="bottom"}
 
@@ -41,7 +34,7 @@ A message is a unit of data in Kafka. Each message is represented as a record, w
 ## Topics and partitions
 {: #kafka_topics_partitions}
 
-Each topic is a named stream of messages. A topic is made up of one or more partitions. The messages on a partition are ordered by a number that is called the offset. By having multiple partitions distributed across the brokers, the scalability of a topic is increased.
+Each topic is a named stream of messages. A topic is made up of one or more partitions. The messages on a partition are ordered by a number that is called the offset. With multiple partitions distributed across the brokers, the scalability of a topic is increased.
 
 If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.
 
@@ -63,7 +56,7 @@ Replication works by the followers repeatedly fetching messages from the leader.
 
 A follower replica that is keeping up with the partition leader is in-sync. Any follower with an in-sync replica can become the leader without losing any messages.
 
-If the partition leader fails, another leader is chosen from the followers. All the replicas should usually be in-sync. It is acceptable for a replica to be temporarily not in-sync while it is catching up after a failure.
+If the partition leader fails, another leader is chosen from the followers. All the replicas are to be usually in-sync. It is acceptable for a replica to be temporarily not in-sync while it is catching up after a failure.
 
 ![In-sync-replicas diagram.](concepts_in_sync_replicas.png "The diagram shows a topic partition that is replicated across three brokers and staying in-sync across all replicas."){: caption="Figure 5. The diagram shows a topic partition that is replicated across three brokers and staying in-sync across all replicas." caption-side="bottom"}
 
@@ -103,5 +96,4 @@ If more partitions than consumers exist in a group, some consumers have multiple
 ## More information
 {: #kafka_information}
 
-To learn more, see the following information:
-- [Apache Kafka documentation](http://kafka.apache.org/documentation.html){: external}
+For more information, see [Apache Kafka documentation](http://kafka.apache.org/documentation.html){: external}.
