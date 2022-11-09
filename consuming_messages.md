@@ -148,14 +148,14 @@ If you have problems with message handling that is caused by message flooding, y
 
 When consumers are added to or removed from a group, a group rebalance takes place, and consumers are not able to consume messages. This results in all the consumers in a consumer group to be unavailable for a short period.
 
-If you are notified with the "on partitions revoked" callback, use a ConsumerRebalanceListener to manually commit offsets (if you are not using auto-commit) and to pause further processing until notified of the successful rebalance using the "on partition assigned" callback.
+If you are notified with the "on partitions revoked" callback, use a ConsumerRebalanceListener to manually commit offsets (if you are not using auto-commit) and to pause further processing until notified of the successful rebalance by using the "on partition assigned" callback.
 
 ## Code snippets
 {: #consumer_code_snippets notoc}
 
 These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user/password authentication, so you need at least these properties. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
+To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user-password authentication, so you need at least these properties. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
 
 ```text
 Properties props = new Properties();
@@ -229,20 +229,20 @@ Handle the following list of exceptions in your code:
 ### org.apache.kafka.common.errors.WakeupException
 {: #wakeup_exception}
 
-Thrown by `Consumer.poll(...)` as a result of `Consumer.wakeup()` being called. It is the standard way to interrupt the consumer's polling loop. The polling loop should exit and `Consumer.close()` should be called to disconnect cleanly.
+Thrown by `Consumer.poll(...)` as a result of `Consumer.wakeup()` being called. It is the standard way to interrupt the consumer's polling loop. The polling loop exits and `Consumer.close()` is called to disconnect cleanly.
 
 ### org.apache.kafka.common.errors.NotLeaderForPartitionException
 {: #notleaderforpartition_exception}
 
-Thrown as a result of `Producer.send(...)` when the leadership for a partition changes. The client automatically refreshes its metadata to find the up-to-date leader information. Retry the operation, which should succeed with the updated metadata.
+Thrown as a result of `Producer.send(...)` when the leadership for a partition changes. The client automatically refreshes its metadata to find the up-to-date leader information. Retry the operation that succeeds with the updated metadata.
 
 ### org.apache.kafka.common.errors.CommitFailedException
 {: #commitfailed_exception}
 
-Thrown as a result of `Consumer.commitSync(...)` when an unrecoverable error occurs. In some cases, it is not possible to repeat the operation because the partition assignment might have changed and the consumer might no longer be able to commit its offsets. Because `Consumer.commitSync(...)` can be partially successful when used with multiple partitions in a single call, the error recovery can be simplified by using a separate `Consumer.commitSync(...)` call for each partition.
+Thrown as a result of `Consumer.commitSync(...)` when an unrecoverable error occurs. In some cases, it is not possible to repeat the operation because the partition assignment has changed and the consumer is no longer be able to commit its offsets. Because `Consumer.commitSync(...)` can be partially successful when used with multiple partitions in a single call, the error recovery can be simplified by using a separate `Consumer.commitSync(...)` call for each partition.
 
 ### org.apache.kafka.common.errors.TimeoutException
 {: #timeout_exception}
 
-Thrown by `Producer.send(...),  Consumer.listTopics()` if the metadata cannot be retrieved. The exception is also seen in the send callback (or the returned Future) when the requested acknowledgment does not come back within `request.timeout.ms`. The client can retry the operation, but the effect of a repeated operation depends on the specific operation. For example, if sending a message is retried, the message might be duplicated.
+Thrown by `Producer.send(...),  Consumer.listTopics()` if the metadata cannot be retrieved. The exception is also seen in the send callback (or the returned Future) when the requested acknowledgment does not come back within `request.timeout.ms`. The client can retry the operation, but the effect of a repeated operation depends on the specific operation. For example, if sending a message is retried, the message is possibly duplicated.
 
