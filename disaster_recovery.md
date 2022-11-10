@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -38,8 +38,8 @@ Perform the following steps to fail over:
 
 1. Stop the producers that were pointing to cluster A.
 2. Restart the producers that were pointing to cluster B's endpoints.
-   If cluster A and the link from A to cluster B is still operational, ensure that all data was mirrored by checking that the lag on those topics on cluster B is zero.
-3. Disable any mirroring that is still enabled on topics from cluster A to cluster B. This can be done by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
+3. If cluster A and the link from A to cluster B is still operational, ensure that all data was mirrored by checking that the lag on those topics on cluster B is zero.
+4. Disable any mirroring that is still enabled on topics from cluster A to cluster B. This can be done by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
 ![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Figure 3. Producer switched to cluster B." caption-side="bottom"}
 
