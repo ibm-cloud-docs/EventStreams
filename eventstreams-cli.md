@@ -266,7 +266,7 @@ Each '--config' option can specify a semicolon-delimited list of assignments. Th
     - segment.index.bytes
 
 --default, -d  (optional)
-:   Reset each configuration parameter specified by using '--config' to its default value.
+:   Reset each configuration parameter that is specified by using '--config' to its default value.
 
 ## ibmcloud es topics
 {: #ibmcloud_es_topics}

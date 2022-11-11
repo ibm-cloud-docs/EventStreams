@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-07-28"
+  years: 2015, 2022
+lastupdated: "2022-11-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -24,7 +24,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Lite, Stan
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-For information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
 
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
@@ -66,7 +66,7 @@ Select one of the following methods:
 ## Step 4. Optional: Create a service API key for this instance
 {: #step4_es_api}
 
-Optionally, you can create a service API key. The valid `ROLE_NAME`s are Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security#security).
+Optionally, you can create a service API key. Valid values for `ROLE_NAME` are Manager, Writer, and Reader. Their permissions are described in [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security#security).
 
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
@@ -95,7 +95,7 @@ ibmcloud es init
 ```
 {: codeblock}
 
-For information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
+For more information about the {{site.data.keyword.messagehub}} CLI commands, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
 
 
 

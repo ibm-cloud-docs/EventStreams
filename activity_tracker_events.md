@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2021
-lastupdated: "2022-11-07"
+lastupdated: "2022-11-09"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
@@ -28,8 +28,7 @@ Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users an
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started){: external}.
 
-Events are formatted according to the Cloud Auditing Data Federation (CADF) standard, further details of the information 
-they include can be found [here](https://cloud.ibm.com/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event).
+Events are formatted according to the Cloud Auditing Data Federation (CADF) standard, further details of the information they include can be found [here](https://cloud.ibm.com/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event).
 
 ## Topic events
 {: #topic-events}
@@ -62,8 +61,7 @@ The following table lists the message audit events:
 | event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from the topic. Records deletion because of retention policy does not generate.|
 {: caption="Table 2. {{site.data.keyword.messagehub}} message events" caption-side="top"}
 
-{{site.data.keyword.messagehub}} can sustain high request rates, so not every request triggers an event. Instead, events are aggregated by 
-initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1-hour period.
+{{site.data.keyword.messagehub}} can sustain high request rates, so not every request triggers an event. Instead, events are aggregated by initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1-hour period.
 
 ## Instance events (deprecated)
 {: #instance-events}
@@ -140,4 +138,4 @@ Additionally, be aware of the implications of enabling message audit events:
 
 1. An internal Kafka topic is used for streaming events to {{site.data.keyword.cloudaccesstrailshort}}, thus it uses a small amount of the cluster's network bandwidth and storage. Typically throughput is less than 1 KB/s, and storage does not exceed 1 GB.
    
-2. Because more events are sent to {{site.data.keyword.cloudaccesstrailshort}}, enabling message audit events incurs extra storage costs for {{site.data.keyword.cloudaccesstrailshort}}. Each event's size is about 1 KB, see the following rough estimation of how much storage it takes. Assuming that the cluster has 100 topics, each topic has 10 clients actively producing and consuming, and each client runs on three different locations, then it generates 100x10x3=3000 events per hour, that is 2 GB per month.
+2. Because more events are sent to {{site.data.keyword.cloudaccesstrailshort}}, enabling message audit events incurs extra storage costs for {{site.data.keyword.cloudaccesstrailshort}}. Each event's size is about 1 KB, see the following rough estimation of how much storage it takes. Assuming that the cluster has 100 topics, each topic has 10 clients actively producing and consuming, and each client runs on three different locations. It then generates 100x10x3=3000 events per hour, that is 2 GB per month.

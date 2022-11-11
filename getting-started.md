@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-11-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,13 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with IBM Event Streams for IBM Cloud
 {: #getting-started}
@@ -26,7 +20,7 @@ subcollection: EventStreams
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [{{site.data.keyword.messagehub}} overview](/docs/EventStreams?topic=EventStreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.
 
-To access {{site.data.keyword.messagehub}} samples, see our primary sample repository at [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.  Other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, are available at the previous [{{site.data.keyword.messagehub}} repository](https://github.com/ibm-messaging/event-streams-samples){: external} and will be migrated to our primary sample repository.
+To access {{site.data.keyword.messagehub}} samples, see our primary sample repository at [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.  Other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, are available at the previous [{{site.data.keyword.messagehub}} repository](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
 ![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
@@ -53,9 +47,9 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 ## Tutorial steps
 {: #getting_started_steps}
 
-1. In the {{site.data.keyword.Bluemix_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click on the **Get started with a sample application** tile.
+1. In the {{site.data.keyword.Bluemix_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click the **Get started with a sample application** tile.
 
-2. Complete the **Configure & run starter application** steps:
+2. Complete the **Configure and run starter application** steps:
 
      a. Click the **Download .JAR from GitHub** button to download the latest .JAR release. 
      
@@ -73,12 +67,12 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
      
 3. Navigate to the folder that contains the downloaded .JAR file by using the command line or a terminal and run the command. Replace the value `<path-to-properties>` with the file path to the `kafka.properties` file.
 
-4. When the application starts, click the **localhost:8080** link at the bottom of the form to open the starter app and see messages flowing through the topic.
+4. When the application starts, click the **localhost:8080** link to open the starter app and see messages flowing through the topic.
 
 ## Next steps
 {: #next_steps}
 
-Now that you've run the starter application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service or find out more about 
-[{{site.data.keyword.messagehub}} on {{site.data.keyword.satellitelong_notm}}](/docs/EventStreams?topic=EventStreams-satellite_about){: external}, a hybrid environment combining public cloud services running in your secure private cloud.
+Now that you ran the starter application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service or find out more about 
+[{{site.data.keyword.messagehub}} on {{site.data.keyword.satellitelong_notm}}](/docs/EventStreams?topic=EventStreams-satellite_about){: external}, a hybrid environment that combines public cloud services running in your secure private cloud.
 
 To watch a video that walks you through getting a Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
