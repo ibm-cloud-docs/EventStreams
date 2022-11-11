@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-01"
+lastupdated: "2022-11-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,12 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Limits and quotas
 {: #kafka_quotas }
@@ -28,21 +23,19 @@ subcollection: EventStreams
 ### Network throughput
 {: #lite_throughput }
 
-A recommended maximum of 100 KB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
+A recommended maximum for network throughput is 100 KB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 
-The recommended figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
-
+The recommended figure is based on a typical workload and considers the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.
 
 ### Partitions
 {: #lite_partitions}
 
-1 partition for each service instance.
+One partition for each service instance.
 
 ### Retention
 {: #lite_retention}
 
 A maximum of 100 MB for the partition. 
-
 
 ### Consumer groups
 {: #lite_consumer_groups}
@@ -56,8 +49,8 @@ A maximum of 10 consumer groups. When the limit is exceeded, the `GROUP_MAX_SIZE
 * Maximum concurrently active Kafka clients: 5
 * Maximum request rate [HTTP Produce API]: 5 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
-* Maximum record key size when using REST Producer API is 4 K 
-* Maximum record value size when using REST Producer API is 64 K
+* Maximum record key size when using REST Producer API is 4 K.
+* Maximum record value size when using REST Producer API is 64 K.
 
 ## Standard plan
 {: #limits_standard }
@@ -72,7 +65,7 @@ The throughput is measured separately for producers and consumers. When exceeded
 ### Partitions
 {: #standard_partitions}
 
-100 partitions for each service instance.
+Hundred partitions for each service instance.
 
 ### Retention
 {: #standard_retention}
@@ -91,8 +84,8 @@ A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SI
 * Maximum concurrently active Kafka clients: 500
 * Maximum request rate [HTTP Produce API]: 100 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
-* Maximum record key size when using REST Producer API is 4 K 
-* Maximum record value size when using REST Producer API is 64 K
+* Maximum record key size when using REST Producer API is 4 K. 
+* Maximum record value size when using REST Producer API is 64 K.
 
 ## Enterprise plan
 {: #limits_enterprise }
@@ -100,7 +93,7 @@ A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SI
 ### Network throughput
 {: #enterprise_throughput }
 
-Network throughput capacity is based on the peak maximum.  Each peak maximum has a recommended maximum for typical production workloads.
+Network throughput capacity is based on the peak maximum. Each peak maximum has a recommended maximum for typical production workloads.
 
 | Peak Maximum | Recommended maximum | 
 |--------------|-----------------------|
@@ -109,29 +102,29 @@ Network throughput capacity is based on the peak maximum.  Each peak maximum ha
 |450 MB/s (225 MB/s producing and 225 MB/s consuming)|300 MB/s (150 MB/s producing and 150 MB/s consuming)|
 {: caption="Table 1. Network throughput capacity on Enterprise" caption-side="top"}
 
-Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance.  The throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
+Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. The throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
 
-Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+Throughput capacity cannot be scaled down. To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
-The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
+The recommended maximum figure is based on a typical workload and considers the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions. It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum. For example, two-thirds of the 150 MB/s peak maximum with one capacity unit are 100 MB/s.
 
-For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Partitions
 {: #enterprise_partitions}
 
-The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150MB/s, 6000 for 300MB/s and 9000 for 450MB/s in Enterprise. 
+The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150MB/s, 6000 for 300MB/s and 9000 for 450 MB/s in Enterprise. 
 
-This is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond this, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
+This is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
 
 ### Retention
 {: #enterprise_retention}
 
-The storage capacity can be selected when the service instance is created, and later scaled as demands increase.  Storage capacity is dependent upon the configured throughput capacity.  Refer to [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) for additional information on storage capacity options.
+The storage capacity can be selected when the service instance is created, and later scaled as demands increase. Storage capacity is dependent upon the configured throughput capacity. For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) on storage capacity options.
 
-Storage capacity cannot be scaled down.  To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit
+Storage capacity cannot be scaled down. To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
-For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Schema Registry
 {: #enterprise_schema_registry}
@@ -141,7 +134,7 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 
 * Maximum number of schemas that can be stored: 1000
 * Maximum number of schema versions for each schema that can be stored: 100
-* Maximum schema size 64kB
+* Maximum schema size: 64 kB
 
 #### Limits
 {: #limits}
@@ -154,10 +147,9 @@ For additional information see [Scaling {{site.data.keyword.messagehub}}](/docs/
 
 * Maximum message size: 1 MB
 * Maximum concurrently active Kafka clients: 10000
-* Maximum record key size when using REST Producer API is 4 K 
-* Maximum record value size when using REST Producer API is 64 K
-* Maximum messages per second when using REST Producer API is 200
-
+* Maximum record key size when using REST Producer API is 4 K.
+* Maximum record value size when using REST Producer API is 64 K.
+* Maximum messages per second when using REST Producer API is 200.
 
 ## Satellite plan
 {: #limits_satellite }
@@ -174,17 +166,16 @@ Network throughput capacity is based on the peak maximum. Each peak maximum has 
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
 
-Throughput capacity cannot be scaled down.  To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+Throughput capacity cannot be scaled down. To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
-**The following figures are not verified, they are guidelines only.**
+**The following figures are not verified. They are guidelines only.**
 
-The recommended maximum figure is based on a typical workload and takes into account the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions.  It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum.  For example two-thirds of the 150 MB/s peak maximum with one capacity unit is 100 MB/s.
-
+The recommended maximum figure is based on a typical workload and considers the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions. It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum. For example, two-thirds of the 150 MB/s peak maximum with one capacity unit are 100 MB/s.
 
 ### Partitions
 {: #satellite_partitions}
 
-The maximum number of partitions is related to the number of capacity units, so 3000 for 150MB/s in Satellite. 
+The maximum number of partitions is related to the number of capacity units, so 3000 for 150 MB/s in Satellite. 
 
 This is a hard limit for the Satellite plan. If you reach this limit, you can no longer create topics. 
 
@@ -203,9 +194,3 @@ The Schema Registry is not supported on the Satellite plan.
 
 * Maximum message size: 1 MB
 * Maximum concurrently active Kafka clients: 10000
-
-
-
-
-
-
