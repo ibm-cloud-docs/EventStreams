@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-11-10"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,13 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Known restrictions
 {: #restrictions}
@@ -35,9 +29,9 @@ The Java™ Virtual Machine (JVM) caches DNS lookups. When the JVM resolves an I
 ### Workaround
 {: #calls_failover_workaround notoc}
 
-Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for high availability, not all the broker IP addresses are known to the Kafka client, which prevents failover to a working broker. In these cases, failover requires a requery of the IP addresses for the broker URLs to get a working IP address. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This value ensures that if a bootstrap server’s IP address has issues, the Kafka client is able to look up and use a new IP address by querying the DNS.
+Because {{site.data.keyword.messagehub}} uses Kafka bootstrap server URLs with multiple IP addresses for high availability, not all the broker IP addresses are known to the Kafka client, which prevents failover to a working broker. In these cases, a failover requires a requery of the IP addresses for the broker URLs to get a working IP address. You are recommended to configure your JVM with a TTL value of 30 to 60 seconds. This value ensures that if a bootstrap server’s IP address has issues, the Kafka client is able to look up and use a new IP address by querying the DNS.
 
-From the `java.security` file: 
+See the following example from the `java.security` file: 
 
 ```text
 # The Java-level namelookup cache policy for successful lookups:
@@ -79,7 +73,7 @@ Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is 
 ### Workaround
 {: #calls_timeout_workaround notoc}
 
-Retry your calls after waiting long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address should be returned from the DNS query and used. 
+Retry your calls after you wait long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address is returned from the DNS query. 
 
 A Kafka Improvement Proposal (KIP) #302 (available from Kafka 2.1.1) ensures that Kafka clients try all available broker IP addresses 
 and not a subset, so a failure in a single IP address does not cause a failure. 
@@ -94,7 +88,6 @@ You need to opt into this functionality by using one of the following methods:
     {: codeblock}
 
 - Use the constants `CommonClientConfigs.CLIENT_DNS_LOOKUP_CONFIG: ClientDnsLookup.USE_ALL_DNS_IPS`.
-
 
 ## Topics and partitions
 {: #topics_partitions}
