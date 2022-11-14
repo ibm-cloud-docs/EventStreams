@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding, IAM, wildcard, policies
 
@@ -18,7 +18,7 @@ subcollection: EventStreams
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
 {: shortdesc}
 
-When you make changes to IAM policies and permissions, they can sometimes take several minutes to be reflected in the underlying service.
+When you change IAM policies and permissions, they can sometimes take several minutes to be reflected in the underlying service.
 {: important}
 
 ## What can I secure?
@@ -57,7 +57,7 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 
 By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access. 
 
-You can then apply additional policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
+You can then apply more policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
 
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands. 
 
@@ -65,7 +65,7 @@ Only users with an administration role for an account can assign policies to use
 ## Common scenarios
 {: #security_scenarios }
 
-The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access you need to assign.
+The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access that you need to assign.
 
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ With the new `schema` IAM resource type, it is possible to create policies that 
 - All of the schemas stored by an instance of IBM {{site.data.keyword.messagehub}}.
 - All of the schemas stored by all of the instances of IBM {{site.data.keyword.messagehub}} in an account.
 
-{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type will also be applied to the Schema Registry whereby a minimum role of Reader is required to access the registry.
+{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type is also applied to the Schema Registry whereby a minimum role of Reader is required to access the registry.
 
 ### Example authorization scenarios
 {: #example_authorization_scenarios}
@@ -123,7 +123,7 @@ The following table describes some examples of scenarios for interacting with th
 Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
  New schema versions are placed into the registry by a person or process that is separate from the applications that use the schemas.| `Reader`  \n `Writer`| `cluster`  \n `schema` | `Reader`  \n `Reader` | `cluster`   \n `schema`
-Adding a new schema to the registry needs to specify a non-default rule that controls how versions of the schema are allowed to evolve. |`Reader`  \n `Manager` | `cluster`  \n `schema` | Not applicable |  Not applicable
+Adding a schema to the registry needs to specify a nondefault rule that controls how versions of the schema are allowed to evolve. |`Reader`  \n `Manager` | `cluster`  \n `schema` | Not applicable |  Not applicable
 Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point that an application tries to use the new schema version. | Not applicable | Not applicable | `Reader`  \n `Writer`| `cluster`  \n `schema`
 The global default rule that controls schema evolution is changed. | `Manager` | `cluster` | Not applicable | Not applicable
 {: caption="Table 3. Examples authorization scenarios" caption-side="bottom"}
