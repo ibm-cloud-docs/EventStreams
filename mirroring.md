@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-04-30"
+  years: 2015, 2022
+lastupdated: "2022-11-14"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -10,14 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:deprecated: .deprecated}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Mirroring 
 {: #mirroring}
@@ -37,7 +30,7 @@ The current limitations are:
 - Unidirectional
 
 Before starting mirroring, consider the following:
-- For seamless switchover, applications are recommended to follow the coding guidelines as outlined below.
+- For seamless switchover, applications are to follow the coding guidelines as outlined below.
 - [Capacity planning](#capacity_planning)
 
 To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup).
@@ -53,7 +46,7 @@ To select which topics are mirrored, a regular expression pattern can be configu
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
-Finally, because of the naming of remote topics, we recommend avoiding using cluster aliases as part of the Kafka resource names.
+Finally, because of the naming of remote topics, avoid using cluster aliases as part of the Kafka resource names.
 
 ## Capacity planning
 {: #capacity_planning}
@@ -68,7 +61,7 @@ The network bandwidth needed to mirror the selected topics must be taken into ac
 ### Geographical location
 {: #geographical_location}
 
-As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput which can be achieved between the source and target instances. It is recommended to place the target service instances in as geographically close location as possible to the source.
+As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput which can be achieved between the source and target instances. Place the target service instances in as geographically close location as possible to the source.
 
 The following table provides guidance for the achievable throughputs:
 
@@ -121,9 +114,9 @@ For mirroring user controls you will need to have the following permissions on t
 ## Considerations when sharing clusters between multiple entities
 {: #sharing_clusters}
 
-When multiple entities, such as different business units, are sharing an instance and require isolation from each other, it is recommended that you follow naming guidelines to simplify the management and operation of mirrored clusters.
+When multiple entities, such as different business units, are sharing an instance and require isolation from each other, follow naming guidelines to simplify the management and operation of mirrored clusters.
 
-We recommend naming Kafka resources using the following template:
+Name Kafka resources using the following template:
 &lt;ENTITY_PREFIX&gt;&lt;SEPARATOR&gt;&lt;NAME&gt;
 
 where:
@@ -278,10 +271,10 @@ The recovery time objective is fully controlled by users and is made of the foll
 
 We recommend that you test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
 
-## Deleting and recreating topics with the same name on the source cluster
+## Deleting and re-creating topics with the same name on the source cluster
 {: #delete_recreate_topics}
 
-When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then recreate a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to recreate the source topic, we recommend that you delete the corresponding topic on the target cluster before you recreate the topic on the source cluster. It is not recommended that topics are deleted and then recreated with the same name.
+When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then re-create a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to re-create the source topic, we recommend that you delete the corresponding topic on the target cluster before you re-create the topic on the source cluster. It is not recommended that topics are deleted and then re-created with the same name.
 
 ## Considerations for Kafka Streams and Kafka Connect
 {: #kafka_considerations}
