@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -44,7 +44,7 @@ A topic called `mytopic` from the source cluster (A) appears on the target clust
 
 To select which topics are mirrored, a regular expression pattern can be configured by using [Mirroring User Controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
+To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example, `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
 Finally, because of the naming of remote topics, avoid to use cluster aliases as part of the Kafka resource names.
 
@@ -56,12 +56,12 @@ Both the network usage and geographical location of the source and target servic
 ### Network bandwidth
 {: #network_bandwidth}
 
-The network bandwidth needed to mirror the selected topics must be taken into account in the bandwidth allowance of both the source and target service instances. For example, if 10 MB/s of message traffic is being produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth already being used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
+The network bandwidth needed to mirror the selected topics must be taken into account in the bandwidth allowance of both the source and target service instances. For example, if 10 MB/s of message traffic is produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth that is already used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
 
 ### Geographical location
 {: #geographical_location}
 
-As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput which can be achieved between the source and target instances. Place the target service instances in as geographically close location as possible to the source.
+As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput that can be achieved between the source and target instances. Place the target service instances in as geographically close location as possible to the source.
 
 The following table provides guidance for the achievable throughputs:
 
@@ -75,23 +75,23 @@ The following table provides guidance for the achievable throughputs:
 
 The numbers indicate:
 - **Max total throughput**: The maximum total MB/s that can be mirrored across all selected topics. 
-- **Max per-partition throughput**: The maximum MB/s that can be mirrored within a single partition. The number of partitions configured for the source topics should be selected to ensure the per partition load remains within this limit.
+- **Max per-partition throughput**: The maximum MB/s that can be mirrored within a single partition. Select the number of partitions that are configured for the source topics to ensure the per partition load remains within this limit.
 
 Exceeding the limits results in an increasing time lag between the data in the source and target instances. Having a large data lag can result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring).
 
 ### Deleting redundant target topics
 {: #delete_redundant}
 
-To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created, this can lead to additional disk and partition allowance being consumed in the target cluster. This usage can be monitored by using the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). You can delete topics that are no longer required by using the UI or Admin interfaces.
+To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created, more disk and partition allowance can be consumed in the target cluster. The usage can be monitored with the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). You can delete topics that are no longer required by using the UI or admin interfaces.
 
 ## IAM access policies for mirroring
 {: #iam_mirroring}
 
-Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters and use the API key from the service ID that the policies are attached to.  We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard) to simplify the access policies that control access to the mirrored resources.
+Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters, and use the API key from the service ID that the policies are attached to. We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard) to simplify the access policies that control access to the mirrored resources.
 
-If you are new to IAM access policies, see [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security) for more details before reading further.
+If you are new to IAM access policies, see [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security) for more details.
 
-Define the following IAM access policies on **both** clusters, where &lt;ALIAS&gt; is the alias for other cluster. For example, on cluster B, the Resource ID should be `A.checkpoints.internal`:
+Define the following IAM access policies on **both** clusters, where &lt;ALIAS&gt; is the alias for the other cluster. For example, on cluster B, the resource ID is `A.checkpoints.internal`.
 
 | Resource type | Resource ID| Role|
 |----------|---------|---------|
@@ -99,12 +99,12 @@ Define the following IAM access policies on **both** clusters, where &lt;ALIAS&g
 |group     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |topic     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |txnid     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
-|topic (note, this is specific to the checkpoint topic)    | &lt;ALIAS&gt;.checkpoints.internal | Reader |
+|topic (specific to the checkpoint topic)    | &lt;ALIAS&gt;.checkpoints.internal | Reader |
 {: caption="Table 2. Access policies" caption-side="bottom"}
 
-Fine-grained access policies should be granted to individual applications. For example, applications simply consuming should only have Reader access policies.
+Grant fine-grained access policies to individual applications. For example, for applications simply consuming grant only Reader access.
 
-As mirroring user controls you must have the following permissions on the target cluster.
+For mirroring user controls, you must have the following permissions on the target cluster.
 
 | Resource type | Resource ID| Role|
 |----------|---------|---------|
@@ -120,11 +120,11 @@ Name Kafka resources using the following template:
 &lt;ENTITY_PREFIX&gt;&lt;SEPARATOR&gt;&lt;NAME&gt;
 
 where:
-- &lt;ENTITY_PREFIX&gt; is the prefix for the entity using this topic
-- &lt;SEPARATOR&gt; is an optional character used to easily separate the entities and resource names
+- &lt;ENTITY_PREFIX&gt; is the prefix for the entity that uses this topic
+- &lt;SEPARATOR&gt; is an optional character that is used to easily separate the entities and resource names
 - &lt;NAME&gt; is the name of the Kafka resource
 
-For example, if the accounting business unit requires a topic called invoices, you can call it `accounting.invoices`.
+For example, if the accounting business unit requires a topic that is called invoices, you can call it `accounting.invoices`.
 
 The required access policies must be adjusted. For example, for the accounting business unit, the following policies are required on cluster B:
 
@@ -137,7 +137,7 @@ The required access policies must be adjusted. For example, for the accounting b
 |topic (note, this is specific to the checkpoint topic)    | A.checkpoints.internal | Reader |
 {: caption="Table 4. Access policies needed on cluster B" caption-side="bottom"}
 
-Cluster A should have the same access policies apart from the last one which should be on B.checkpoints.internal.
+Cluster A should have the same access policies apart from the last one that should be on `B.checkpoints.internal`.
 
 ## Mirroring user controls
 {: #user_controls}
@@ -147,9 +147,9 @@ You can configure mirroring by using the [CLI](/docs/EventStreams?topic=EventStr
 ### Setting the topic selection
 {: #setting_topic_selection}
 
-The mirroring selection is made based on the topic names on the source cluster by using patterns. It is advised that you think carefully about the names of the topics on your source cluster taking into account the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
+The mirroring selection is made based on the topic names on the source cluster by using patterns. Choose the names of the topics on your source cluster carefully, by considering the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
-With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics matching the pattern are automatically be mirrored without the need for additional changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics matching the pattern are automatically be mirrored without the need for more changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
 
 The first example shows enabling by using the CLI.
 
@@ -280,4 +280,4 @@ When topics are deleted on the source cluster, the corresponding topic on the ta
 ## Considerations for Kafka Streams and Kafka Connect
 {: #kafka_considerations}
 
-Kafka Streams and Kafka Connect rely on internal topics with specific names to store state and configuration. When these are mirrored, they are going to be renamed on the target cluster. For this reason Kafka Streams and Kafka Connect applications cannot failover and failback seamlessly between clusters. You should consider this when planning disaster recovery of such applications.
+Kafka Streams and Kafka Connect rely on internal topics with specific names to store state and configuration. When these topics are mirrored, they are renamed on the target cluster. For this reason, Kafka Streams and Kafka Connect applications cannot failover and failback seamlessly between clusters. Consider this when you plan disaster recovery of such applications.
