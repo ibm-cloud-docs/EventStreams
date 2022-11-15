@@ -51,7 +51,7 @@ Finally, because of the naming of remote topics, avoid to use cluster aliases as
 ## Capacity planning
 {: #capacity_planning}
 
-Both the network usage and geographical location of the source and target service instances must be taken into account when planning capacity.
+Both the network usage and geographical location of the source and target service instances must be taken into account when you plan capacity.
 
 ### Network bandwidth
 {: #network_bandwidth}
@@ -149,7 +149,7 @@ You can configure mirroring by using the [CLI](/docs/EventStreams?topic=EventStr
 
 The mirroring selection is made based on the topic names on the source cluster by using patterns. Choose the names of the topics on your source cluster carefully, by considering the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
 
-With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics matching the pattern are automatically be mirrored without the need for more changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics that match the pattern are automatically be mirrored without the need for more changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
 
 The first example shows enabling by using the CLI.
 
@@ -182,7 +182,7 @@ You can also disable mirroring on previously enabled topics.
 ```text
 ibmcloud es mirroring-topic-selection-set --none
 ```
-To selectively disable mirroring just re-apply the topic selection leaving out the topic you want to disable.
+To selectively disable mirroring re-apply the topic selection leaving out the topic you want to disable.
 For example, when topic1, topic2, topic3 are currently being mirrored, the following command disables mirroring for topic2 but leaves the other two enabled.
 
 ```text
@@ -229,7 +229,7 @@ curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/ac
 ### Producers
 {: #producers}
 
-We recommend producers to only produce to local topics, hence they should not require changes when switching between clusters.
+We recommend producers to produce to local topics only, hence they should not require changes when switching between clusters.
 
 ### Consumers
 {: #consumers}
@@ -241,7 +241,8 @@ When consuming both local and remote topics, take care if the application requir
 ### Consumer offsets
 {: #consumer_offsets}
 
-Note that while consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when switching cluster.
+While consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when switching cluster.
+{: note}
 
 The RemoteClusterUtils package allows to easily make these changes. Such logic is demonstrated in [ConsumerRunnable.java](https://github.ibm.com/messagehub/event-streams-samples/blob/mm2/kafka-java-console-sample/src/main/java/com/eventstreams/samples/ConsumerRunnable.java#L68-L119).
 
@@ -251,31 +252,31 @@ The RemoteClusterUtils package allows to easily make these changes. Such logic i
 You can monitor mirroring by using IBM Cloud Monitoring. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). The **Monitoring** dashboard is available on the target cluster.
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
-- Mirroring throughput: The bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see if mirroring is active and for capacity planning.
-- Mirroring latency: The per-topic mirroring latency in second from the source {{site.data.keyword.messagehub}} instance. This is useful to determine how far behind a given topic on the target cluster is.
+- Mirroring throughput: The bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see whether mirroring is active and for capacity planning.
+- Mirroring latency: The per-topic mirroring latency in second from the source {{site.data.keyword.messagehub}} instance. This is useful to determine how far behind a topic on the target cluster is.
 
-Data produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However, if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
+Data that is produced within the latency window might not be present on the target cluster yet and still might be lost if a disaster happens on the source cluster. However, if mirroring is up to date, failing over while both clusters stay healthy can be achieved without any data loss.
 
 ## Understanding recovery objectives with mirroring
 {: #recovery_objectives}
 
-In a data protection plan such as mirroring, recovery point objective (RPO) and recovery time objective (RTO) are key parameters. You must understand the decisions associated with these objectives.
+In a data protection plan such as mirroring, recovery point objective (RPO) and recovery time objective (RTO) are key parameters. You must understand the decisions that are associated with these objectives.
 
-You can monitor the recovery point objective by using the mirroring latency metric provided in the **Mirroring dashboard**. This metric shows the lag between both clusters and allows you to estimate the amount of data loss in the event of a disaster. You are responsible for monitoring that value and ensuring it fits in your RPO.
+You can monitor the recovery point objective by using the mirroring latency metric that is provided in the **Mirroring dashboard**. This metric shows the lag between both clusters and lets you to estimate the amount of data loss if a disaster occurs. You are responsible for monitoring that value and ensuring it fits in your RPO.
 
 The recovery time objective is fully controlled by users and is made of the following timing windows:
-- the time it takes the user to decide to fail over
-- the time it takes the user to fail over their applications
+- the time that it takes the user to decide to fail over
+- the time that it takes the user to fail over their applications
 
 ### Testing
 {: #mirroring_testing}
 
-Test failing over and back when you have made your applications mirroring aware. You can complete the steps outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure all steps complete as expected.
+Test failing over and back when you made your applications mirroring aware. Complete the steps that are outlined in the [Disaster recovery example scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) and use the **Monitoring** dashboards to ensure that all steps complete as expected.
 
 ## Deleting and re-creating topics with the same name on the source cluster
 {: #delete_recreate_topics}
 
-When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then re-create a topic of the same name, replication of topic may not start immediately. Therefore, if you intend to re-create the source topic, delete the corresponding topic on the target cluster before you re-create the topic on the source cluster. Do not delete and then re-create topics with the same name.
+When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then re-create a topic of the same name, replication of topic might not start immediately. Therefore, if you intend to re-create the source topic, delete the corresponding topic on the target cluster before you re-create the topic on the source cluster. Do not delete and then re-create topics with the same name.
 
 ## Considerations for Kafka Streams and Kafka Connect
 {: #kafka_considerations}
