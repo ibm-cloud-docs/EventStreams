@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -87,7 +87,7 @@ acks=0 (least reliable)
 :   The message is considered sent as soon as it was written to the network. There is no acknowledgment from the partition leader. As a result, messages can be lost if the partition leadership changes. This level of acknowledgment is fast, but comes with the possibility of message loss in some situations.
 
 acks=1 (the default)
-:   The message is acknowledged to the producer as soon as the partition leader successfully wrote its record to the partition. Because the acknowledgment occurs before the record is known to have reached the in-sync replicas, the message could be lost if the leader fails, but the followers do not yet have the message. If partition leadership changes, the old leader informs the producer, which can handle the error and retry to send the message to the new leader. Because messages are acknowledged before their receipt was confirmed by all replicas, messages that were acknowledged but not yet fully replicated can be lost if the partition leadership changes.
+:   The message is acknowledged to the producer as soon as the partition leader successfully wrote its record to the partition. Because the acknowledgment occurs before the record is known to have reached the in-sync replicas, the message might be lost if the leader fails, but the followers do not yet have the message. If partition leadership changes, the old leader informs the producer, which can handle the error and retry to send the message to the new leader. Because messages are acknowledged before their receipt was confirmed by all replicas, messages that were acknowledged but not yet fully replicated can be lost if the partition leadership changes.
 
 acks=all (most reliable)
 :   The message is acknowledged to the producer when the partition leader successfully wrote its record and all in-sync replicas did the same. The message is not lost if the partition leadership changes provided that at least one in-sync replica is available.
@@ -108,7 +108,7 @@ There is another factor that has an impact. To prevent individual producers or c
 
 For more information on throughput guidance, see [Limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#kafka_quotas). 
  
-In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately could fail with an exception.
+In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed but ultimately might fail with an exception.
 
 
 ## Delivery semantics
@@ -116,9 +116,9 @@ In summary, when a message is published, its record is first written into a buff
 
 Kafka offers the following multiple different message delivery semantics:
 
-* At most once: messages might get lost and do not get redelivered.
-* At least once: messages are never lost but there might be duplicates.
-* Exactly once: messages are never lost and there are no duplicates.
+* *At most once*: messages might get lost and do not get redelivered.
+* *At least once*: messages are never lost but there might be duplicates.
+* *Exactly once*: messages are never lost and there are no duplicates.
 
 
 The delivery semantics are determined by the following settings:
@@ -127,9 +127,9 @@ The delivery semantics are determined by the following settings:
 * `retries`
 * `enable.idempotence`
 
-By default, Kafka uses at least once semantics.
+By default, Kafka uses *at least once* semantics.
 
-To enable exactly once semantics, you must use the idempotent or transactional producers. The idempotent producer is enabled by setting `enable.idempotence` to `true` and guarantees that exactly one copy of each message is written to Kafka, even if it retries. The transactional producer enables the sending of data to multiple partitions such that either all messages are successfully delivered, or none of them are. That is, a transaction is either fully committed or fully discarded. You can also include offsets in transactions to enable you to build applications that read, process, and write messages to Kafka.
+To enable *exactly once* semantics, you must use the idempotent or transactional producers. The idempotent producer is enabled by setting `enable.idempotence` to `true` and guarantees that exactly one copy of each message is written to Kafka, even if it retries. The transactional producer enables the sending of data to multiple partitions such that either all messages are successfully delivered, or none of them are. That is, a transaction is either fully committed or fully discarded. You can also include offsets in transactions to enable you to build applications that read, process, and write messages to Kafka.
 
 
 ## Code snippets
@@ -137,7 +137,7 @@ To enable exactly once semantics, you must use the idempotent or transactional p
 
 These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user/password authentication, so you need these properties at a minimum. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
+To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured using TLS and user and password authentication, so you need these properties at a minimum. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
 
 ```text
 Properties props = new Properties();
