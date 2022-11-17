@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-11-16"
 
 keywords: event streams release notes
 
@@ -36,7 +36,7 @@ Apache Kafka upgrade
 {: release-note}
 
 Enhanced support for matching schemas
-:   Enhanced support for matching schemas when using Confluent SerDes with the Schema Registry.
+:   Enhanced support for matching schemas when you use Confluent SerDes with the Schema Registry.
 
 ## May 2022
 {: #EventStreams-may2022}
@@ -50,10 +50,10 @@ Schema Registry support on the Satellite plan
 {: release-note}
 
 Satellite plan
-:   The new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) enables you to create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+:   With the new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 
-Additional topic and consumer group metrics
-:   Additional topic and consumer group metrics available, see [Monitoring Event Streams metrics using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+More topic and consumer group metrics
+:   There are more topic and consumer group metrics available, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
 
 ## December 2021
 {: #EventStreams-dec2021}
@@ -74,14 +74,14 @@ IAM
 {: release-note}
 
 New region support
-:   Sao Paolo region support.
+:   Sao Paulo region support.
 
 ## June 2021
 {: #EventStreams-jun2021}
 {: release-note}
 
 Streaming to {{site.data.keyword.cos_full}}  by using {{site.data.keyword.sqlquery_full}} 
-:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to {{site.data.keyword.cos_full}}  buckets, and stream data automatically and securely using the fully-managed {{site.data.keyword.sqlquery_short}} service. 
+:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to {{site.data.keyword.cos_full}}  buckets, and stream data automatically and securely by using the fully managed {{site.data.keyword.sqlquery_short}} service. 
 
 ## May 2021
 {: #EventStreams-may2021}
@@ -126,14 +126,14 @@ Mirroring support for Enterprise Plan
 :   [Mirroring](/docs/EventStreams?topic=EventStreams-mirroring) enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily.
 
 Terraform support
-:   Create your {{site.data.keyword.messagehub}} instances and subsequent configuration using Terraform.
+:   Create your {{site.data.keyword.messagehub}} instances and subsequent configuration by using Terraform.
 
 ## June 2020
 {: #EventStreams-jun2020}
 {: release-note}
 
 Schema Registry support for Enterprise plan
-:   Add structure to your messages using the {{site.data.keyword.messagehub}} [Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+:   Add structure to your messages by using the {{site.data.keyword.messagehub}} [Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
 ## March 2020
 {: #EventStreams-mar2020}
@@ -171,15 +171,15 @@ Updates to Enterprise plan
 :   Support for Cloud Service Endpoints.
 
 Kafka version upgrade
-:   {{site.data.keyword.messagehub}} Enterprise will now be supporting version 2.2 of Apache Kafka to align with our recently released and upgraded Standard plan.
-:   This update for {{site.data.keyword.messagehub}} will be non-disruptive and has been tested with our supported Kafka client list.
-:   If your Kafka client is not on this list, then whilst we expect the upgrade to be non-disruptive, these clients have not been tested and we cannot offer any support
-statement for these clients. If this is a concern, we would recommend performing any additional testing you require.
-:   Note: The Standard plan has already been updated to Apache Kafka version 2.2 and can be used for additional testing.
+:   {{site.data.keyword.messagehub}} Enterprise supports version 2.2 of Apache Kafka to align with our recently released and upgraded Standard plan.
+:   This update for {{site.data.keyword.messagehub}} is nondisruptive and was tested with our supported Kafka client list.
+:   If your Kafka client is not on this list, then while we expect the upgrade to be nondisruptive, these clients were not tested and we cannot offer any support
+statement for these clients. If this is a concern, do any etra testing that you require.
+:   Note: The Standard plan is already updated to Apache Kafka version 2.2 and can be used for extra testing.
 
 Support for Cloud service endpoints
 :   {{site.data.keyword.messagehub}} supports Cloud service endpoints.
-:   This capability means that any data you publish or consume from the {{site.data.keyword.messagehub}} service will be over the private network and not public interfaces.
+:   This capability means that any data that you publish or consume from the {{site.data.keyword.messagehub}} service is over the private network and not public interfaces.
 
 ## 14 May 2019
 {: #EventStreams-may2019}
