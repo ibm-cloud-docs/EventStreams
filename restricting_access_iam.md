@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-11-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive
 
@@ -10,18 +10,12 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:important: .important}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using IAM IP address access restrictions with {{site.data.keyword.messagehub}}
 {: #restricting_access_iam}
 
-If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips) when you're using {{site.data.keyword.messagehub}}, you must ensure that the {{site.data.keyword.iamshort}} (IAM) IP allowlist is configured so that the {{site.data.keyword.messagehub}} authentication and authorization service, which is used to authenticate and authorize the Kafka client, can still function.
+If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips), you must ensure that the {{site.data.keyword.iamshort}} (IAM) IP allowlist is configured so that the {{site.data.keyword.messagehub}} authentication and authorization service, which is used to authenticate and authorize the Kafka client, can still function.
 
 Using the {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan with the IP address restrictions is not yet supported. Although you can enable IP address restrictions in your account, {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan clusters do not accept messages. Support for co-existence is in plan. As a workaround, provision {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan clusters from a separate account.
 {: note}
@@ -81,6 +75,6 @@ Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section fro
 
 This action is required for private connections because the source IP address that {{site.data.keyword.messagehub}} receives is the IP address of the {{site.data.keyword.cloud_notm}} service endpoint and not the IP from where the request originated.
 
-You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance through the Private IP Allowlist. For more information, refer to [Restricting network access using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access).
+You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance through the Private IP allowlist. For more information, see [Restricting network access by using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access).
 {: note}
 
