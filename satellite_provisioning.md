@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-11-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -15,13 +15,7 @@ completion-time: 15m
 
 ---
 
-{:external: target="_blank" .external}
-{:codeblock: .codeblock}
-{:important: .important}
-{:note: .note}
-{:pre: .pre}
-{:shortdesc: .shortdesc}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satelliteshort}}
 {: #satellite-provisioning}
@@ -64,8 +58,8 @@ In order for the {{site.data.keyword.messagehub}} service to access the {{site.d
 created.
 
 1. In the {{site.data.keyword.cloud}} console account where your {{site.data.keyword.satelliteshort}} location was provisioned, from the **Manage** tab, select **Access (IAM)**.
-2. Choose the **Authorizations** tab from the left hand menu.
-3. Click the **Create** button to create an authorization that allows a service instance access to another service instance.
+2. Choose the **Authorizations** tab from the left menu.
+3. Click **Create** to create an authorization that allows a service instance access to another service instance.
 
    1. The source service is the service that is granted access to the target service. The roles you select define the level of access for this service. The target service is the service you grant permission to be accessed by the source service, based on the assigned roles.
    2. In the **Source Service** field, select **{{site.data.keyword.messagehub}}**.
@@ -76,7 +70,7 @@ created.
         - **{{site.data.keyword.satelliteshort}} Cluster Creator**
         - **{{site.data.keyword.satelliteshort}} Link Administrator**
         - **{{site.data.keyword.satelliteshort}} Link Source Access Controller**
-   7. Click the **Authorize** button.
+   7. Click **Authorize**.
 
 ## Attach additional hosts to the {{site.data.keyword.satelliteshort}} location
 {: #satellite-attach-additional-hosts}
@@ -112,7 +106,7 @@ After preparing your {{site.data.keyword.satelliteshort}} location, granting ser
 When you provision an {{site.data.keyword.messagehub}} service instance, a service cluster is automatically deployed into your {{site.data.keyword.satelliteshort}} 
 location. You can verify the start of the deployment of the service cluster with the following steps:
 
-1. From the left hand **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
+1. From the left **Navigation Menu**, select **{{site.data.keyword.satelliteshort}}**, then **Locations**.
 2. Select your {{site.data.keyword.satelliteshort}} location.
 3. Select **Services**.
 4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before moving to the next step.
