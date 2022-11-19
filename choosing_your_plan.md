@@ -26,7 +26,7 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
 {: shortdesc}
 
-You can find information about {{site.data.keyword.messagehub}} plan pricing in the [catalog](https://cloud.ibm.com/catalog){: external}. Search for "{{site.data.keyword.messagehub}}" and click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
+You can find information about {{site.data.keyword.messagehub}} plan pricing in the [catalog](https://cloud.ibm.com/catalog){: external}. Search for "{{site.data.keyword.messagehub}}" then click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
 
 ## Lite plan
 {: #plan_lite}
