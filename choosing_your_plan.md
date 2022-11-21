@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
 
@@ -26,7 +26,7 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
 {: shortdesc}
 
-You can find information about {{site.data.keyword.messagehub}} plan pricing in the [catalog](https://cloud.ibm.com/catalog){: external}. Search for `{{site.data.keyword.messagehub}}` then click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
+For information about {{site.data.keyword.messagehub}} plan pricing, see the [catalog](https://cloud.ibm.com/catalog){: external}. Search for `{{site.data.keyword.messagehub}}`, then click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
 
 ## Lite plan
 {: #plan_lite}
