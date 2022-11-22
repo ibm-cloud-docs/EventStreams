@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,11 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using the Kafka Java client
 {: #kafka_java_using}
@@ -38,7 +34,7 @@ You can find the sample code in the [event-streams-samples GitHub project](https
 ## Using the sasl.jaas.config property
 {: #sasl_prop}
 
-If you're using a Kafka client at 0.10.2.1 or later, you can use the `sasl.jaas.config` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set `sasl.jaas.config` as follows:
+If you use a Kafka client at 0.10.2.1 or later, you can use the `sasl.jaas.config` property for client configuration instead of a JAAS file. To connect to {{site.data.keyword.messagehub}}, set `sasl.jaas.config` as in the following example:
 
 ```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required \
@@ -47,27 +43,27 @@ If you're using a Kafka client at 0.10.2.1 or later, you can use the `sasl.jaas.
 ```
 {: codeblock}
 
-USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
+`USERNAME` and `PASSWORD` are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
-If you use `sasl.jaas.config`, clients running in the same JVM can use different credentials. For more information, see [Configuring Kafka clients](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){: external}.
+If you use `sasl.jaas.config`, clients that run in the same JVM can use different credentials. For more information, see [Configuring Kafka clients](http://kafka.apache.org/documentation/#security_sasl_plain_clientconfig){: external}.
 
-For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient therefore we recommend using the `sasl.jaas.config` property instead.
+For an earlier Kafka client, you must use a JAAS configuration file to specify the credentials. This mechanism is less convenient, therefore use the `sasl.jaas.config` property instead.
 
-## Migrating a Kafka client from 0.9.X or 0.10.X to later client versions
+## Migrating a Kafka client from version 0.9.X or 0.10.X to later client versions
 {: #kafka_migrate}
 
-If you're using the Java clients, you can use the publicly available Kafka clients at 0.10 or later. 
+If you use the Java clients, you can use the publicly available Kafka clients version 0.10 or later. 
 
-You are strongly encouraged to move from 0.9.X to the latest version. You can download a Kafka client from [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads){: external}.
+You are encouraged to move from version 0.9.X to the latest version. You can download a Kafka client from [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads){: external}.
 
-### Migrating a Kafka client to 0.10.2.X or later versions
+### Migrating a Kafka client to version 0.10.2.X or later versions
 {: #kafka_migrate_later}
 
-From 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplification allows you to run multiple clients in the same JVM using different sets of credentials, which is not possible with a JAAS file.
+From version 0.10.2, you can configure SASL authentication directly in the client's properties instead of using a JAAS file. This simplification lets you to run multiple clients in the same JVM by using different sets of credentials, which is not possible with a JAAS file.
 
 Complete the following steps:
 
-1. Delete the JAAS file. Note that the JVM property `java.security.auth.login.config=<PATH TO JAAS>` is also no longer required.
+1. Delete the JAAS file. The JVM property `java.security.auth.login.config=<PATH TO JAAS>` is also no longer required.
 2. Add the following to the client's properties:
 
     ```config
@@ -75,4 +71,4 @@ Complete the following steps:
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
     ```
 
-    USERNAME and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
+    `USERNAME` and `PASSWORD` are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
