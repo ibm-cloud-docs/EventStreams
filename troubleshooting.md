@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2019
-lastupdated: "2019-10-01"
+  years: 2015, 2022
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,25 +10,15 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting and useful links
 {: #troubleshooting}
 
-If you have a question about {{site.data.keyword.messagehub}}, have a look at the
-dedicated [Stack Overflow channel](https://stackoverflow.com/questions/tagged/ibm-eventstreams){: external} to see if it's already been answered.
-If not, post your question and it'll be answered either by a
-member of the {{site.data.keyword.messagehub}} development team or the wider
-community.
+If you have a question about {{site.data.keyword.messagehub}}, have a look at the dedicated [Stack Overflow channel](https://stackoverflow.com/questions/tagged/ibm-eventstreams){: external} to see whether it was already answered. If not, post your question to get it answered either by a member of the {{site.data.keyword.messagehub}} development team or the wider community.
 {: shortdesc}
 
-If you're experiencing a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}. If you'd then 
-like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information required as detailed in [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise#report_problem_enterprise).
+If you experience a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}. If you like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information that is required as detailed in [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise#report_problem_enterprise).
 {: shortdesc}
 
 ## Useful links
