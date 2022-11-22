@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2020
-lastupdated: "2020-03-04"
+  years: 2015, 2022
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,23 +10,19 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using Kafka Streams with {{site.data.keyword.messagehub}}
 {: #kafka_streams }
 
 Kafka Streams is a stream processing library that is part of the Apache Kafka project. It simplifies building applications that process and analyze data in Kafka. 
 
-The topic APIs work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
+The topic APIs work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials by using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
 {: shortdesc}
 
-Ensure that you are using Streams at 0.10.2, or later.   
+Ensure that you use Streams version 0.10.2, or later.   
 
-For example:
+See the following example:
 
 ```text
     props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, "3");
@@ -39,7 +35,7 @@ For example:
 ```
 {: codeblock}
 
-where BOOTSTRAP_SERVERS, USERNAME, and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
+Where `BOOTSTRAP_SERVERS`, `USERNAME`, and `PASSWORD` are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in
 {{site.data.keyword.Bluemix_notm}}.
 
 
