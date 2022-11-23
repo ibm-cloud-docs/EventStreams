@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -49,8 +49,8 @@ A maximum of 10 consumer groups. When the limit is exceeded, the `GROUP_MAX_SIZE
 * Maximum concurrently active Kafka clients: 5
 * Maximum request rate [HTTP Produce API]: 5 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
-* Maximum record key size when using REST Producer API is 4 K.
-* Maximum record value size when using REST Producer API is 64 K.
+* Maximum record key size when you use REST Producer API is 4 K.
+* Maximum record value size when you use REST Producer API is 64 K.
 
 ## Standard plan
 {: #limits_standard }
@@ -84,8 +84,8 @@ A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SI
 * Maximum concurrently active Kafka clients: 500
 * Maximum request rate [HTTP Produce API]: 100 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
-* Maximum record key size when using REST Producer API is 4 K. 
-* Maximum record value size when using REST Producer API is 64 K.
+* Maximum record key size when you use REST Producer API is 4 K. 
+* Maximum record value size when you use REST Producer API is 64 K.
 
 ## Enterprise plan
 {: #limits_enterprise }
@@ -113,9 +113,9 @@ For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/Event
 ### Partitions
 {: #enterprise_partitions}
 
-The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150MB/s, 6000 for 300MB/s and 9000 for 450 MB/s in Enterprise. 
+The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150 MB/s, 6000 for 300 MB/s and 9000 for 450 MB/s in Enterprise. 
 
-This is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
+It is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
 
 ### Retention
 {: #enterprise_retention}
@@ -147,9 +147,9 @@ For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/Event
 
 * Maximum message size: 1 MB
 * Maximum concurrently active Kafka clients: 10000
-* Maximum record key size when using REST Producer API is 4 K.
-* Maximum record value size when using REST Producer API is 64 K.
-* Maximum messages per second when using REST Producer API is 200.
+* Maximum record key size when you use REST Producer API is 4 K.
+* Maximum record value size when you use REST Producer API is 64 K.
+* Maximum messages per second when you use REST Producer API is 200.
 
 ## Satellite plan
 {: #limits_satellite }
@@ -166,7 +166,7 @@ Network throughput capacity is based on the peak maximum. Each peak maximum has 
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
 
-Throughput capacity cannot be scaled down. To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
+Throughput capacity cannot be scaled down. To move to a lower throughput capacity, requires creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
 **The following figures are not verified. They are guidelines only.**
 
@@ -177,7 +177,7 @@ The recommended maximum figure is based on a typical workload and considers the 
 
 The maximum number of partitions is related to the number of capacity units, so 3000 for 150 MB/s in Satellite. 
 
-This is a hard limit for the Satellite plan. If you reach this limit, you can no longer create topics. 
+It is a hard limit for the Satellite plan. If you reach this limit, you can no longer create topics. 
 
 ### Retention
 {: #satellite_retention}
