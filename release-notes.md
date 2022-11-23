@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-23"
 
 keywords: event streams release notes
 
@@ -36,24 +36,24 @@ Apache Kafka upgrade
 {: release-note}
 
 Enhanced support for matching schemas
-:   Enhanced support for matching schemas when you use Confluent SerDes with the Schema Registry.
+:   Enhanced support for matching schemas when you use Confluent SerDes with the schema registry.
 
 ## May 2022
 {: #EventStreams-may2022}
 {: release-note}
 
-Schema Registry support on the Satellite plan
-:   The new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) now supports the [Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
+Schema registry support on the Satellite plan
+:   The new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) now supports the [Schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
 
 ## April 2022
 {: #EventStreams-apr2022}
 {: release-note}
 
 Satellite plan
-:   With the new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about) you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+:   With the new [Satellite plan](/docs/EventStreams?topic=EventStreams-satellite_about), you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 
 More topic and consumer group metrics
-:   There are more topic and consumer group metrics available, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+:   More topic and consumer group metrics are available, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
 
 ## December 2021
 {: #EventStreams-dec2021}
@@ -132,8 +132,8 @@ Terraform support
 {: #EventStreams-jun2020}
 {: release-note}
 
-Schema Registry support for Enterprise plan
-:   Add structure to your messages by using the {{site.data.keyword.messagehub}} [Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+Schema registry support for Enterprise plan
+:   Add structure to your messages by using the {{site.data.keyword.messagehub}} [Schema registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
 ## March 2020
 {: #EventStreams-mar2020}
@@ -174,7 +174,7 @@ Kafka version upgrade
 :   {{site.data.keyword.messagehub}} Enterprise supports version 2.2 of Apache Kafka to align with our recently released and upgraded Standard plan.
 :   This update for {{site.data.keyword.messagehub}} is nondisruptive and was tested with our supported Kafka client list.
 :   If your Kafka client is not on this list, then while we expect the upgrade to be nondisruptive, these clients were not tested and we cannot offer any support
-statement for these clients. If this is a concern, do any etra testing that you require.
+statement for these clients. If this is a concern, do any extra testing that you require.
 :   Note: The Standard plan is already updated to Apache Kafka version 2.2 and can be used for extra testing.
 
 Support for Cloud service endpoints
