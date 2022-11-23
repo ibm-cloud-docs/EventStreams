@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
 
@@ -21,13 +21,15 @@ Mirroring enables messages in one service instance to be copied continually to a
 This feature is only available for service instances that use the Enterprise plan.
 
 The current features are:
-- Mirror topics and consumer groups between two {{site.data.keyword.messagehub}} service instances
-- SLA of 99.99% availability, consistent with that of the {{site.data.keyword.messagehub}} service
-- Monitoring by using {{site.data.keyword.mon_full}}
+
+- Mirror topics and consumer groups between two {{site.data.keyword.messagehub}} service instances.
+- SLA of 99.99% availability, consistent with the {{site.data.keyword.messagehub}} service.
+- Monitoring by using {{site.data.keyword.mon_full}}.
 
 The current limitations are:
-- Enablement and disablement is by using a support ticket
-- Unidirectional
+
+- Enablement and disablement are by using a support ticket.
+- Unidirectional.
 
 Before you start mirroring, consider the following points:
 - For seamless switchover, applications are to follow the coding guidelines.
@@ -46,17 +48,17 @@ To select which topics are mirrored, a regular expression pattern can be configu
 
 To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example, `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
-Finally, because of the naming of remote topics, avoid to use cluster aliases as part of the Kafka resource names.
+Finally, because of the naming of remote topics, avoid using cluster aliases as part of the Kafka resource names.
 
 ## Capacity planning
 {: #capacity_planning}
 
-Both the network usage and geographical location of the source and target service instances must be taken into account when you plan capacity.
+Both the network usage and geographical location of the source and target service instances must be considered when you plan capacity.
 
 ### Network bandwidth
 {: #network_bandwidth}
 
-The network bandwidth needed to mirror the selected topics must be taken into account in the bandwidth allowance of both the source and target service instances. For example, if 10 MB/s of message traffic is produced by applications in the source service instance to the mirrored topics, an additional 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth that is already used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
+The network bandwidth needed to mirror the selected topics must be considered in the bandwidth allowance of both the source and target service instances. For example, if 10 MB/s of message traffic is produced by applications in the source service instance to the mirrored topics, an extra 10 MB/s of outgoing bandwidth is required to mirror these messages into the target instance. This must be allowed for alongside any existing outgoing bandwidth that is already used by consuming applications. The monitoring dashboards can be used to determine the network usage in a service instance. For more information, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics).
 
 ### Geographical location
 {: #geographical_location}
@@ -111,18 +113,18 @@ For mirroring user controls, you must have the following permissions on the targ
 |cluster |  |Manager |
 {: caption="Table 3. Target cluster permissions" caption-side="bottom"}
 
-## Considerations when sharing clusters between multiple entities
+## Considerations when you share clusters between multiple entities
 {: #sharing_clusters}
 
 When multiple entities, such as different business units, are sharing an instance and require isolation from each other, follow naming guidelines to simplify the management and operation of mirrored clusters.
 
-Name Kafka resources using the following template:
+Name Kafka resources by using the following template:
 &lt;ENTITY_PREFIX&gt;&lt;SEPARATOR&gt;&lt;NAME&gt;
 
-where:
-- &lt;ENTITY_PREFIX&gt; is the prefix for the entity that uses this topic
-- &lt;SEPARATOR&gt; is an optional character that is used to easily separate the entities and resource names
-- &lt;NAME&gt; is the name of the Kafka resource
+Where:
+- &lt;ENTITY_PREFIX&gt; is the prefix for the entity that uses this topic.
+- &lt;SEPARATOR&gt; is an optional character that is used to easily separate the entities and resource names.
+- &lt;NAME&gt; is the name of the Kafka resource.
 
 For example, if the accounting business unit requires a topic that is called invoices, you can call it `accounting.invoices`.
 
@@ -137,7 +139,7 @@ The required access policies must be adjusted. For example, for the accounting b
 |topic (note, this is specific to the checkpoint topic)    | A.checkpoints.internal | Reader |
 {: caption="Table 4. Access policies needed on cluster B" caption-side="bottom"}
 
-Cluster A should have the same access policies apart from the last one that should be on `B.checkpoints.internal`.
+Cluster A must have the same access policies apart from the last one that must be on `B.checkpoints.internal`.
 
 ## Mirroring user controls
 {: #user_controls}
@@ -147,9 +149,9 @@ You can configure mirroring by using the [CLI](/docs/EventStreams?topic=EventStr
 ### Setting the topic selection
 {: #setting_topic_selection}
 
-The mirroring selection is made based on the topic names on the source cluster by using patterns. Choose the names of the topics on your source cluster carefully, by considering the advice from the [Considerations when sharing clusters between multiple entities](#sharing_clusters) section.
+The mirroring selection is made based on the topic names on the source cluster by using patterns. Choose the names of the topics on your source cluster carefully, by considering the advice from the [Considerations when you share clusters between multiple entities](#sharing_clusters) section.
 
-With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics that match the pattern are automatically be mirrored without the need for more changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics that match the pattern are automatically mirrored without the need for more changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
 
 The first example shows enabling by using the CLI.
 
@@ -171,7 +173,7 @@ Example Patterns | Explanation
 `^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names.
 `"topic1", "topic2"` | Full topic names.
 `".*"` | Mirror all source topics.
-`""` (via Administration REST API)  `--none` (via CLI) | Mirror no source topics.
+`""` (by Administration REST API)  `--none` (by CLI) | Mirror no source topics.
 {: caption="Table 5. Example patterns" caption-side="bottom"}
 
 Updating a topic selection replaces the current set of patterns.
@@ -182,7 +184,7 @@ You can also disable mirroring on previously enabled topics.
 ```text
 ibmcloud es mirroring-topic-selection-set --none
 ```
-To selectively disable mirroring re-apply the topic selection leaving out the topic you want to disable.
+To selectively disable mirroring, re-apply the topic selection leaving out the topic that you want to disable.
 For example, when topic1, topic2, topic3 are currently being mirrored, the following command disables mirroring for topic2 but leaves the other two enabled.
 
 ```text
@@ -229,19 +231,19 @@ curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/ac
 ### Producers
 {: #producers}
 
-We recommend producers to produce to local topics only, hence they should not require changes when switching between clusters.
+We recommend producers to produce to local topics only, hence they should not require changes when they switch between clusters.
 
 ### Consumers
 {: #consumers}
 
 Consumers should subscribe to and consume from both the local and remote topics. This can be done with one wild-carded subscription. For example, to consume from both  `accounting.invoice` and `accounting.invoice.<ALIAS>`, use the subscription to `accounting.invoice.*`.
 
-When consuming both local and remote topics, take care if the application requires strict ordering. In such a case, remote topics should be fully consumed first before starting to consume from local topics. This way messages are processed in the order that they were produced.
+When you consume both local and remote topics, check if the application requires strict ordering. In such a case, remote topics are to be fully consumed first before you start to consume from local topics. This way messages are processed in the order that they were produced.
 
 ### Consumer offsets
 {: #consumer_offsets}
 
-While consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when switching cluster.
+While consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when they switch cluster.
 {: note}
 
 The RemoteClusterUtils package allows to easily make these changes. Such logic is demonstrated in [ConsumerRunnable.java](https://github.ibm.com/messagehub/event-streams-samples/blob/mm2/kafka-java-console-sample/src/main/java/com/eventstreams/samples/ConsumerRunnable.java#L68-L119).
@@ -252,6 +254,7 @@ The RemoteClusterUtils package allows to easily make these changes. Such logic i
 You can monitor mirroring by using IBM Cloud Monitoring. To enable monitoring, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). The **Monitoring** dashboard is available on the target cluster.
 
 The **{{site.data.keyword.messagehub}} Mirroring** dashboard exposes the following metrics:
+
 - Mirroring throughput: The bytes per second of mirroring throughput from the source {{site.data.keyword.messagehub}} instance. This is useful to see whether mirroring is active and for capacity planning.
 - Mirroring latency: The per-topic mirroring latency in second from the source {{site.data.keyword.messagehub}} instance. This is useful to determine how far behind a topic on the target cluster is.
 
@@ -262,11 +265,12 @@ Data that is produced within the latency window might not be present on the targ
 
 In a data protection plan such as mirroring, recovery point objective (RPO) and recovery time objective (RTO) are key parameters. You must understand the decisions that are associated with these objectives.
 
-You can monitor the recovery point objective by using the mirroring latency metric that is provided in the **Mirroring dashboard**. This metric shows the lag between both clusters and lets you to estimate the amount of data loss if a disaster occurs. You are responsible for monitoring that value and ensuring it fits in your RPO.
+You can monitor the recovery point objective by using the mirroring latency metric that is provided in the **Mirroring dashboard**. This metric shows the lag between both clusters, so you can estimate the amount of data loss if a disaster occurs. You are responsible for monitoring that value and ensuring that it fits in your RPO.
 
 The recovery time objective is fully controlled by users and is made of the following timing windows:
-- the time that it takes the user to decide to fail over
-- the time that it takes the user to fail over their applications
+
+- The time that it takes the user to decide to fail over.
+- The time that it takes the user to fail over their applications.
 
 ### Testing
 {: #mirroring_testing}
