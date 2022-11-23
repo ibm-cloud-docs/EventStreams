@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding, IAM, wildcard, policies
 
@@ -44,7 +44,7 @@ The levels of access (also known as a role) that you can assign to a user to eac
 ## How do I assign access?
 {: #assign_access }
 
-Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user should have and to which resource or set of resources. A policy consists of the following information: 
+Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user must have and to which resource or set of resources. A policy consists of the following information: 
 
 - The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
 - The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
@@ -98,10 +98,10 @@ You can take advantage of the IAM wildcarding facility to set policies for group
 
 For more information about how to bind a Cloud Foundry application or get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
-## Managing access to the Schema Registry
+## Managing access to the schema registry
 {: #managing_access_schemas}
 
-The authorization model for the Schema Registry used the same style of policies that are described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document.
+The authorization model for the schema registry used the same style of policies that are described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document.
 
 ### IAM resources
 {: #iam_resources}
@@ -113,12 +113,12 @@ With the new `schema` IAM resource type, it is possible to create policies that 
 - All of the schemas stored by an instance of IBM {{site.data.keyword.messagehub}}.
 - All of the schemas stored by all of the instances of IBM {{site.data.keyword.messagehub}} in an account.
 
-{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type is also applied to the Schema Registry whereby a minimum role of Reader is required to access the registry.
+{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type is also applied to the schema registry whereby a minimum role of Reader is required to access the registry.
 
 ### Example authorization scenarios
 {: #example_authorization_scenarios}
 
-The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} Schema Registry, together with the roles that are required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application that connects to the registry.
+The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the roles that are required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application that connects to the registry.
 
 Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
