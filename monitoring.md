@@ -32,16 +32,16 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 
    The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started with {{site.data.keyword.mon_full_notm}} - manage user access](/docs/monitoring?topic=monitoring-getting-started#getting-started-step1){: external}.
 
-2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.monitoringshort}} dashboard, click the three vertical dots in the upper right corner of the instance page (**Service instance options**) and select **Monitoring**.
+2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.monitoringshort}} dashboard, click the three vertical dots of the instance page (**Service instance options**) and select **Monitoring**.
 
-   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** at the bottom of the **Choosing an installation method** page. Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan that you use.
+   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** on the **Choosing an installation method** page. Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan that you use.
 
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
 The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
 
-Enabling enhanced metrics introduces additional global gauge and therefore increases the costs.
+Enabling enhanced metrics introduces more global gauge and therefore increases the costs.
 
 Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
 
@@ -61,7 +61,7 @@ To opt out of enhanced metrics, run the following command:
    ```
    {: codeblock}
 
-Dashboards are available only after metrics started to be recorded; this might take a few minutes to initialize.
+Dashboards are available only after metrics started to be recorded; it might take a few minutes to initialize.
 {: note}
 
 ## {{site.data.keyword.messagehub}} metrics cost information
@@ -86,7 +86,7 @@ Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be awa
 |      | 3000        |   3000 x 2 + 19 = 6019    | $0.08 x 6019 = $481.52  |
 {: caption="Table 1. Cost for each plan" caption-side="bottom"}
 
-Enabling mirroring for Enterprise clusters introduces one more global gauge and an additional gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs.
+Enabling mirroring for Enterprise clusters introduces one more global gauge and an extra gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs.
 
 For more information, see [{{site.data.keyword.monitoringshort}} pricing](/docs/monitoring?topic=monitoring-pricing_plans).
 
@@ -188,7 +188,7 @@ Ideally zero. A nonzero value on this indicates that clients attempt to connect 
 ### Consume message conversion time
 {: #ibm_eventstreams_instance_consume_conversions_time_quantile}
 
-Indicates that the accumulated time spent performing message conversion from clients that are consuming using older protocol versions.
+Indicates that the accumulated time spent performing message conversion from clients that are consuming by using older protocol versions.
 
 | Metadata | Description |
 |----------|-------------|
@@ -198,7 +198,7 @@ Indicates that the accumulated time spent performing message conversion from cli
 | `Segment By` | `Service instance, Quantile, Service instance name` |
 {: caption="Table 9. Consume message conversion time metric metadata" caption-side="bottom"}
 
-Ideally zero, as nonzero indicates clients are experiencing more latency because of using an older protocol level. Those clients are down-level and should be upgraded. Ensure that all clients are at the latest levels.
+Ideally zero, as nonzero indicates that clients are experiencing more latency because of using an older protocol level. Those clients are down-level and must be upgraded. Ensure that all clients are at the latest levels.
 
 ### Estimated connected clients percentage
 {: #ibm_eventstreams_kafka_recommended_max_connected_clients_percent}
@@ -353,7 +353,7 @@ Ideally this value should be zero. A nonzero value might highlight a temporary i
 ### Produce message conversion time
 {: #ibm_eventstreams_instance_produce_conversions_time_quantile}
 
-Indicates that the accumulated time spent performing message conversion from clients that are producing using older protocol versions.
+Indicates that the accumulated time spent performing message conversion from clients that are producing by using older protocol versions.
 
 | Metadata | Description |
 |----------|-------------|
@@ -539,7 +539,7 @@ Lag for each consumer group for each topic-partition in an {{site.data.keyword.m
 | `Segment By` | `Service instance name, IBM Event Streams consumer groups, IBM Event Streams Kafka topic, IBM Event Streams Kafka partitions` |
 {: caption="Table 32. Consumer group lag metric metadata" caption-side="bottom"}
 
-An increasing lag might highlight that the consumers in the group are not keeping pace with the rate that messages are being produced. This might require you to scale the number of consumers processing messages for the group.
+An increasing lag might highlight that the consumers in the group are not keeping pace with the rate that messages are being produced. This might require you to scale the number of consumers that process messages for the group.
 
 It is normal for this metric to fluctuate when viewed over short time periods because of sampling and batch processing effects.
 {: note}
@@ -583,11 +583,11 @@ The following attributes are available for segmenting all of the listed metrics.
 | `Cloud Type` | `ibm_ctype` | The Cloud type is a value of public, dedicated, or local. |
 | `Location` | `ibm_location` | The location of the monitored resource - this might be a region, data center or global. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
-| `Service name` | `ibm_service_name` | Name of the service generating this metric. |
+| `Service name` | `ibm_service_name` | Name of the service that generates this metric. |
 | `Service instance` | `ibm_service_instance` | The service instance GUID identifies the instance that the metric is associated with. |
-| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance that isn't necessarily a unique value depending on the name that is provided by the user. |
-| `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID |
-| `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service |
+| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance that isn't necessarily a unique value that depends on the name that is provided by the user. |
+| `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID. |
+| `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created. |
 {: caption="Table 35. Global attributes" caption-side="bottom"}
 
@@ -598,14 +598,14 @@ The following attributes are available for segmenting one or more attributes. Se
 
 | Attribute | Attribute name | Attribute description |
 |-----------|----------------|-----------------------|
-| `Client software name` | `ibm_eventstreams_clientsoftwarename` | Client software name |
-| `Client software version` | `ibm_eventstreams_clientsoftwareversion` | Client software version |
-| `IBM Event Streams Consumer Group` | `ibm_eventstreams_consumergroup` | IBM {{site.data.keyword.messagehub}} consumer group |
-| `IBM Event Streams Kafka partition` | `ibm_eventstreams_partition` | IBM {{site.data.keyword.messagehub}} Kafka partition |
-| `IBM Event Streams Kafka topic` | `ibm_eventstreams_topic` | IBM Event Streams Kafka topic |
-| `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile |
-| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with |
-| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value depending on the name tht is provided by the user. |
-{: caption="Table 36. Additional attributes" caption-side="bottom"}
+| `Client software name` | `ibm_eventstreams_clientsoftwarename` | Client software name. |
+| `Client software version` | `ibm_eventstreams_clientsoftwareversion` | Client software version. |
+| `IBM Event Streams Consumer Group` | `ibm_eventstreams_consumergroup` | IBM {{site.data.keyword.messagehub}} consumer group. |
+| `IBM Event Streams Kafka partition` | `ibm_eventstreams_partition` | IBM {{site.data.keyword.messagehub}} Kafka partition. |
+| `IBM Event Streams Kafka topic` | `ibm_eventstreams_topic` | IBM Event Streams Kafka topic. |
+| `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile. |
+| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
+| `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value that depends on the name that is provided by the user. |
+{: caption="Table 36. More attributes" caption-side="bottom"}
 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/monitoring?topic=monitoring-monitoring){: external}.
