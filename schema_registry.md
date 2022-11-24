@@ -586,12 +586,12 @@ Property name | Value
 VALUE_SUBJECT_NAME_STRATEGY | `TopicNameStrategy`(default), `RecordNameStrategy`, and `TopicRecordNameStrategy` are supported. For example, to specify that the schema for the message value is selected using a `TopicRecordNameStrategy`, you might use the following client properties: configs.put(KafkaAvroSerializerConfig.VALUE_SUBJECT_NAME_STRATEGY, TopicRecordNameStrategy.class.getName());
 KEY_SUBJECT_NAME_STRATEGY | `TopicNameStrategy` (default), `RecordNameStrategy`, and `TopicRecordNameStrategy` are supported. See VALUE_SUBJECT_NAME_STRATEGY for an example.
 
-The following diagram shows an example of the properties required to create a Kafka producer that uses the Confluent SerDes and can be connected to the {{site.data.keyword.messagehub}} service:
+The following diagram shows an example of the properties that are required to create a Kafka producer that uses the Confluent SerDes and can be connected to the {{site.data.keyword.messagehub}} service:
 
 
 ![Kafka properties for Confluent Serdes](schema_registry7.png "Diagram showing showing the properties required to create a Kafka producer that uses the Confluent SerDes, and can be connected to the {{site.data.keyword.messagehub}} service"){: caption="Figure 1. Kafka properties for Confluent Serdes" caption-side="bottom"}
 
-If a message is sent using a schema that isn’t in the registry, the SerDes attempts to create the new schema, or version of the schema, in the registry. If this behavior is not required, it can be disabled by removing the writer permission for schema resources from the application. See [Managing access to the schema registry](/docs/EventStreams?topic=EventStreams-security#managing_access_schemas).
+If a message is sent by using a schema that isn’t in the registry, the SerDes attempts to create the new schema, or version of the schema, in the registry. If this behavior is not required, it can be disabled by removing the writer permission for schema resources from the application. See [Managing access to the schema registry](/docs/EventStreams?topic=EventStreams-security#managing_access_schemas).
 
 The *normalize* option for schema lookups and registration is not supported.
 {: note}
@@ -616,28 +616,30 @@ ssl.endpoint.identification.algorithm=HTTPS
 ## Avro console producer and consumer
 {: #avro_console_producer }
 
-You can use the Kafka avro console producer and consumer tools with {{site.data.keyword.messagehub}}. You must provide a client property, as detailed above, and in addition, the connection method and credentials for the schema registry are required to be supplied as command line `--property` arguments. There are two connection methods using a credentials source of USER_INFO or of URL detailed below.
+You can use the Kafka avro console producer and consumer tools with {{site.data.keyword.messagehub}}. You must provide a client property, and in addition, the connection method and credentials for the schema registry are required to be supplied as command line `--property` arguments. There are two connection methods by using a credentials source of USER_INFO or of URL.
 
-To execute using the credentials source method of URL, use the following code:
+To execute using the credentials source method of URL, use the following code.
 
 ```text
     ./kafka-avro-console-[producer|consumer] --broker-list $BOOTSTRAP_ENDPOINTS --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=URL --producer.config $CONFIG_FILE
 ```
 {: codeblock}
 
-Replace the following variables in the example with your own values:
+Replace the following variables in the example with your own values.
+
 * BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as the list of your bootstrap servers. 
 * SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the username `token` and apikey, along with the path `/confluent` (for example, `https://{token}:{apikey}@{kafka_http_url}/{confluent}`).
 * CONFIG_FILE with the path of the configuration file. 
 
-To execute using the credentials source method of USER_INFO, use the following code:
+To execute using the credentials source method of USER_INFO, use the following code.
 
 ```text
     ./kafka-avro-console-[producer|consumer] --broker-list $BOOTSTRAP_ENDPOINTS --topic schema-test --property schema.registry.url=$SCHEMA_REGISTRY_URL --property value.schema='{"type":"record","name":"myrecord","fields":[{"name":"f1","type":"string"}]}' --property basic.auth.credentials.source=USER_INFO --property basic.auth.user.info=token:apikey --producer.config $CONFIG_FILE
 ```
 {: codeblock}
 
-Replace the following variables in the example with your own values:
+Replace the following variables in the example with your own values.
+
 * BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, as the list of your bootstrap servers.
 * SCHEMA_REGISTRY_URL with the `kafka_http_url` value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console, with the path `/confluent` (for example, `https://{kafka_http_url}/{confluent}`).
 * CONFIG_FILE with the path of the configuration file. 
