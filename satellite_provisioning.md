@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -39,7 +39,7 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 
     1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
 
-       IBM Cloud {{site.data.keyword.satelliteshort}} provides Quick Start templates to help with the provisioning of a {{site.data.keyword.satelliteshort}} location and initial set of host instances. However, the templates only provision one type (size) of host instance. {{site.data.keyword.messagehub}} requires more than one type of host instance. The recommendation to use the manual steps to create your {{site.data.keyword.satelliteshort}} location lets you to provide multiple types of host instances. Optionally, use the quick start template to create hosts for the {{site.data.keyword.satelliteshort}} location's control plane and part of the {{site.data.keyword.messagehub}} requirement, then use the manual steps to add extra host types required by {{site.data.keyword.messagehub}}.
+       IBM Cloud {{site.data.keyword.satelliteshort}} provides Quick Start templates to help with the provisioning of a {{site.data.keyword.satelliteshort}} location and initial set of host instances. However, the templates only provision one type (size) of host instance. {{site.data.keyword.messagehub}} requires more than one type of host instance. The recommendation to use the manual steps to create your {{site.data.keyword.satelliteshort}} location lets you provide multiple types of host instances. Optionally, use the quick start template to create hosts for the {{site.data.keyword.satelliteshort}} location's control plane and part of the {{site.data.keyword.messagehub}} requirement, then use the manual steps to add extra host types required by {{site.data.keyword.messagehub}}.
        {: important}
 
     2. {{site.data.keyword.messagehub}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
@@ -96,7 +96,7 @@ The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.da
 
 After you prepare your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching extra hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
 
-1. Navigate to the catalog, by clicking **Catalog** in the navigation bar.
+1. Go to the catalog, by clicking **Catalog** in the navigation bar.
 2. Look for the **Event Streams** tile in the **Integration** section and select it.
 3. In the Platform section of the **Event Streams** page, select the **Satellite** tile.
 4. In the **Select a location** field, select the {{site.data.keyword.satelliteshort}} location that you provisioned. When the Satellite tile was selected, the pricing plan information was updated. Review the {{site.data.keyword.satelliteshort}} plan details.
@@ -118,28 +118,28 @@ While the service instance and cluster are provisioned, create the storage assig
 {: #satellite-create-storage-assignment}
 {: step}
 
-The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} messagehub service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
+The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} `messagehub` service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
 {: important}
 
 During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgment from the {{site.data.keyword.satelliteshort}} location administrator.
 
-1. Navigate to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
+1. Go to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
 2. Select your {{site.data.keyword.satelliteshort}} location.
 3. Select the **Services** tab.
 4. Look for the acknowledgment window.
 
-   1. Complete the storage configuration set-up.
+   1. Complete the storage configuration setup.
    2. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
 
 After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
 
 
-## (Optional) Enable the Schema Registry API
+## (Optional) Enable the schema registry API
 {: #satellite-enable-schema-registry}
 {: step}
 
-The Schema Registry API is not automatically enabled when you provision an {{site.data.keyword.messagehub}} Satellite instance. 
-You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend storage for Schema Registry to enable this API. You are responsible for managing this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
+The schema registry API is not automatically enabled when you provision an {{site.data.keyword.messagehub}} Satellite instance. 
+You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend storage for schema registry to enable this API. You are responsible for managing this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
 
 1. Create a Cloud {{site.data.keyword.cos_short}} instance either on {{site.data.keyword.Bluemix_notm}} or on a Satellite location.
 
@@ -151,7 +151,7 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend st
     If the Cloud {{site.data.keyword.cos_short}} instance is on {{site.data.keyword.Bluemix_notm}}, ensure that the bucket is in the same region as the {{site.data.keyword.messagehub}} Satellite instance's control region.
     If the Cloud {{site.data.keyword.cos_short}} instance is on Satellite, ensure that the Cloud {{site.data.keyword.cos_short}} instance's location is the same as the {{site.data.keyword.messagehub}} Satellite instance's location.
 
-    To obtain {{site.data.keyword.messagehub}} Satellite instance's control region or location, check its CRN. For example: 
+    To obtain {{site.data.keyword.messagehub}} Satellite instance's control region or location, check its CRN, as in the following example. 
 
     ```text
     crn:v1:bluemix:public:messagehub:satloc_dal_c9ntbe5f0gmsm06ofoq0:a/b5b95705e299425cb5c3c82e54d4533b:6b6e769a-f3c8-4e36-aa59-0736cdc036af::
@@ -170,7 +170,7 @@ You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend st
    If the {{site.data.keyword.messagehub}} Satellite instance was not provisioned, use the following command to provision the instance with the additional **-p** parameter.
 
     ```sh
-    ibmcloud resource service-instance-create <instance-name> messagehub Satellite <location-id> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'
+    ibmcloud resource service-instance-create <instance-name> `messagehub` Satellite <location-id> -p '{"cos_bucket_crn":"<cos-bucket-crn>"}'
     ```
     {: codeblock}
 
