@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -26,7 +26,7 @@ Use the API to connect existing systems to {{site.data.keyword.messagehub}}. Cre
 ## Accessing the REST producer API
 {: #rest_produce_access}
 
-You must retrieve the URL and credential details that are needed to connect to the API from a Service credentials object or service key for the service instance. For information about creating these objects, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+You must retrieve the URL and credential details that are needed to connect to the API from a Service credentials object or service key for the service instance. For more information about creating these objects, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
@@ -45,7 +45,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 ## Producing messages by using the REST producer API
 {: #rest_produce_messages}
 
-Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. The v2 endpoint lets you to use the {{site.data.keyword.messagehub}} Schema Registry by specifying the schema for the avro data type.
+Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of `text` type by using curl:
 
@@ -77,17 +77,17 @@ For more information about the API, see the [{{site.data.keyword.messagehub}} RE
 ## Producing messages that conform to a schema
 {: #rest_producer_schema}
 
-The v2 endpoint of the REST producer API also lets you to produce a message in such a way that the message key and value conform to a schema. You can specify different schemas for the key and value. The serializer that is supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in the {{site.data.keyword.messagehub}} Schema Registry. For more information, see [{{site.data.keyword.messagehub}} Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+With the v2 endpoint of the REST producer API you can produce a message in such a way that the message key and value conform to a schema. You can specify different schemas for the key and value. The serializer that is supported is `confluent` and the data type supported is `avro`. The schemas are created and stored in the {{site.data.keyword.messagehub}} schema registry. For more information, see [{{site.data.keyword.messagehub}} schema registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
 The following schema naming strategies are allowed:
 
 * Topic naming strategy: the name of the topic is used to derive the schema artifact ID. The ID takes the form "\<topicName\>-key" for key and "\<topicName\>-value" for value, where `topicName` is the name of topic.
 
-* Record naming strategy: the name of the record in the schema is used to derive the schema artifact ID. The ID takes the form "\<composite-recordName\>-key" for key and "<composite-recordName\>-value" for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
+* Record naming strategy: the name of the record in the schema is used to derive the schema artifact ID. The ID takes the form "\<composite-recordName\>-key" for key and "<composite-recordName\>-value" for value. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>".
 
-* TopicRecord naming strategy: Both the name of the topic and the name of the record are used to derive the schema artifact ID. The ID takes the form "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>.
+* TopicRecord naming strategy: Both the name of the topic and the name of the record are used to derive the schema artifact ID. The ID takes the form "\<topicName\>-\<recordName\>-key" for key and "\<topicName\>-\<composite-recordName\>-value" for value, where topicName is the name of topic. If the schema namespace field is specified, the composite-recordName takes the value of "\<namespace\>.\<recordName\>", otherwise it takes the value of "\<recordName\>".
 
-The following code shows an example of sending a message that conform to a schema that is specified under the `schema` field by using curl:
+The following code shows an example of sending a message that conforms to a schema that is specified under the `schema` field by using curl:
 
 ```text
 curl -v -X POST \
@@ -116,16 +116,19 @@ The following considerations can help you plan the migration:
     You can access the v2 endpoint in the same way as the existing URL, which is by obtaining the value of `kafka_http_url` property for the service instance. The path to use is `/v2/topics/<topic_name>/records`.
     
        Example URL: https://service-instance-adsf1234asdf1234asdf1234-0000.us-south.containers.appdomain.cloud/v2/topics/topic_name/records
+       
 2. Authentication: 
     
-    The supported authentication mechanism is a bearer token. To enhance security, basic auth by using API keys is no longer accepted.
+    The supported authentication mechanism is a bearer token. To enhance security, basic authentification by using API keys is no longer accepted.
     
        Example Header:  -H "Authorization: Bearer $token"
+       
 3. Headers: 
     
     Set the Content-Type and the Accept headers to `application/json`.
     
        Example Headers:  -H "Content-Type: application/json" -H "Accept: application/json"
+       
 4. Payload: 
     
     Provide the payload for the v2 endpoint in JSON format. The message key, headers, and data can be defined in the payload. You can specify the headers in the form of a list, with values that are base64 encoded. However, the message key and headers are optional.
@@ -146,6 +149,7 @@ The following considerations can help you plan the migration:
           "data": "Test Value"
          }
         }
+        
     You must specify one of the following supported data types for the field type under the key and value object:
 
     a.  Text: the data that is provided is validated as plain text format that consists of a linear sequence of characters.
@@ -178,8 +182,7 @@ The following considerations can help you plan the migration:
 ## Limitations
 {: #rest_producer_limitations}
 
-When you use the REST producer API, there is a limitation on the maximum size of the message that is passed as request payload. The maximum size of the payload is limited to 64 K.
-
+When you use the REST producer API, a limitation exists on the maximum size of the message that is passed as request payload. The maximum size of the payload is limited to 64 K.
 
 ## API reference
 {: #rest_api_reference}
