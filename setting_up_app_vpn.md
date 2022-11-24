@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-24"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location, VPN
 
@@ -17,7 +17,7 @@ subcollection: EventStreams
 
 To connect applications that run outside Amazon Web Services (AWS) with VPN access to the Satellite location to an {{site.data.keyword.messagehub}} instance, complete the following set of steps.
 
-![VPN diagram](satellite_vpn.png "VPN"){: caption="Figure 1. Diagram showing an app that connects to clients by using a VPN endpoint " caption-side="bottom"}
+![VPN diagram](satellite_vpn.png "VPN"){: caption="Figure 1. Diagram showing an app that connects to clients by using a VPN endpoint." caption-side="bottom"}
 
 ## Set up the Satellite plan for {{site.data.keyword.messagehub_full}} in a Satellite location by using AWS
 {: #prepare-satellite-aws}
@@ -29,7 +29,7 @@ Complete the steps in [Getting started with the Satellite plan for Event Streams
 {: #create_vpn_endpoint}
 {: step}
 
-1. Create a Client VPN endpoint that does the following:
+1. Create a Client VPN endpoint with the following criteria.
    * Provides all clients with access to a single VPC.
    * Provides all clients with access to the internet.
    * Uses mutual authentication.
@@ -49,10 +49,6 @@ Alternatively, you can also use your own applications to perform this validation
 {: #test_cli}
 {: step}
 
-In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. The {{site.data.keyword.messagehub}} CLI lets you to easily work with topics and consumer groups.
+In the previous step, you used the sample application to produce and consume messages. You can optionally use the information in [{{site.data.keyword.messagehub}} CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference) to verify that the {{site.data.keyword.messagehub}} CLI can communicate with your {{site.data.keyword.messagehub}} deployment. With the {{site.data.keyword.messagehub}} CLI you can easily work with topics and consumer groups.
 
 Alternatively, you can also use your own applications to perform this validation.
-
-
-
-
