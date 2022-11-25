@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,13 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
-{:deprecated: .deprecated}
+{{site.data.keyword.attribute-definition-list}}
 
 # Service Level Agreement (SLA) for {{site.data.keyword.messagehub}} availability 
 {: #sla}
@@ -26,7 +20,7 @@ subcollection: EventStreams
 
 The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the {{site.data.keyword.messagehub}} service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
-The {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
+The {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
 [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
 
 ## Enterprise plan
@@ -34,9 +28,9 @@ The {{site.data.keyword.messagehub}} service is provided with an availability of
 
 The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
-In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with an availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
+In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
 
-When the {{site.data.keyword.messagehub}} service is run in a non highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non highly-availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
+When the {{site.data.keyword.messagehub}} service is run in a non-highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non-highly availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
 
 ## Satellite plan
 {: #sla_satellite}
@@ -69,7 +63,7 @@ Kafka clients provide reconnect logic, but you must explicitly enable reconnects
 #### Duplicates
 {: #sla_duplicates}
 
-Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send the message again when reconnected. You are recommended to design applications to expect duplicate messages.
+Enabling retries might result in duplicate messages. Depending on when a connection is lost, the producer might not be able to determine if a message was successfully processed by the server and therefore must send the message again when reconnected. Design applications to expect duplicate messages.
 
 If duplicates cannot be tolerated, you can use the `idempotent` producer feature (from Kafka 1.1) to prevent duplicates during retries. For more information, see the [`enable.idempotence` property](http://kafka.apache.org/documentation.html#producerconfigs){: external}.
 
@@ -96,7 +90,7 @@ For throughput guidance information, see [Limits and quotas - Satellite](/docs/E
 #### Measurement
 {: #sla_measurement}
 
-You are recommended to instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
+Instrument applications to be aware of how they are performing. For example, the number of messages sent and received, message sizes, and return codes. Understanding an application's usage helps you configure its resources appropriately, such as the retention time for messages on topics.
 
 #### Saturation
 {: #sla_saturation}
@@ -111,17 +105,17 @@ Kafka achieves its availability and durability by replicating the messages it re
 #### Producer `acks` mode
 {: #sla_acks}
 
-Although all message are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. The default setting is `acks=1`, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The recommended and most assured setting is `acks=all` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
+Although all messages are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. The default setting is `acks=1`, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The most assured setting is `acks=all` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
 
 ## Single zone location deployments
 {: #sla_szr}
 
-For the highest availability we recommend our high availability Public environments, which are built in our multizone locations. In a multizone location, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. Some customers require geographic locality and therefore want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone location. {{site.data.keyword.messagehub}} supports this deployment model, however be aware of the following availability trade-offs:
+For the highest availability we recommend our high availability Public environments, which are built in our multizone locations. In a multizone location, our Kafka clusters are distributed across 3 availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone. Some customers require geographic locality and therefore want to provision an {{site.data.keyword.messagehub}} cluster in a geographically local but single zone location. {{site.data.keyword.messagehub}} supports this deployment model, however be aware of the following availability tradeoffs:
 
 - In a single zone location, there are categories of single failures that might lead to the cluster going offline for a period of time. For example, the failure of an entire data center or the update or failure of a shared component such as the underlying hypervisor, SAN, or network. These failures are reflected in the reduced SLA for single zone locations.
 
-- An advantage of spreading Kafka across many zones is to minimize the chance of a failure that could bring down an entire cluster. In contrast, there is the small possibility that a single failure could bring down the entire cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if `acks=all` is used by the producers, if all Kafka nodes went down simultaneously, there might be some messages that the brokers had acknowledged receipt for, but the underlying file system had not completed the flush to disk. Potentially, those un-flushed messages could be lost.
+- An advantage of spreading Kafka across many zones is to minimize the chance of a failure that might bring down an entire cluster. In contrast, there is the small possibility that a single failure might bring down the entire cluster within one zone. In extreme cases there is also the potential of data loss. For example, even if `acks=all` is used by the producers, if all Kafka nodes went down simultaneously, there might be some messages that the brokers had acknowledged receipt for, but the underlying file system had not completed the flush to disk. Potentially, those un-flushed messages might be lost.
 
-For more information, see [Message acknowledgments](/docs/EventStreams?topic=EventStreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
+For more information, see [message acknowledgments](/docs/EventStreams?topic=EventStreams-producing_messages#message_acknowledgments). In many use cases this is not necessarily an issue. However, if message loss is unacceptable under any circumstance, consider other strategies such as using a multi-availability zone cluster, cross region replication, or producer side message checkpointing.
 
 For more information, see [single zone clusters](/docs/containers?topic=containers-regions-and-zones#regions_single_zone) and [multizone clusters](/docs/containers?topic=containers-regions-and-zones#regions_multizone).

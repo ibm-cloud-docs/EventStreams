@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-04-26"
+  years: 2015, 2022
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,17 +10,12 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using the administration Kafka Java client API
 {: #kafka_java_api}
 
-If you're using a Kafka client at 0.11 or later, or Kafka Streams at 0.10.2.0 or later, you can use APIs to create and delete topics. We've put some restrictions on the settings allowed when you create topics. Currently, you can modify the following settings only:
+If you use a Kafka client version 0.11 or later, or Kafka Streams version 0.10.2.0 or later, you can use APIs to create and delete topics. We put some restrictions on the settings that are allowed when you create topics. See the following settings that you can modify.
 {: shortdesc}
 
 cleanup.policy
@@ -29,7 +24,7 @@ cleanup.policy
 retention.ms
 :   The default retention period is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
-    In the Enterprise plan, you can set this to any value.
+    In the Enterprise plan, you can set retention to any value.
     {: note}
 
 retention.bytes
@@ -51,7 +46,7 @@ segment.index.bytes
     {: note}
 
 segment.ms
-:   The period of time after which Kafka will force the log to roll even if the segment file isn't full. 
+:   The period after which Kafka forces the log to roll even if the segment file isn't full. 
 
     Enterprise plan only. Set to any value between 5 minutes and 30 days.
     {: note}

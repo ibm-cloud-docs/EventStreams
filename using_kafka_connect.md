@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,11 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using Kafka Connect with {{site.data.keyword.messagehub}}
 {: #kafka_connect}
@@ -23,7 +19,7 @@ Kafka Connect is part of the Apache Kafka project and allows connecting external
 
 - Scalability: It can easily scale from a single worker to many. 
 - Reliability: It automatically manages offsets and the lifecycle of connectors.
-- Extensibility: The community has built connectors for most popular systems. IBM has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
+- Extensibility: The community built connectors for most popular systems. IBM has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
  
 You can use Kafka Connect with {{site.data.keyword.messagehub}} and can run the workers inside or outside {{site.data.keyword.Bluemix_short}}.
 {: shortdesc}
@@ -138,7 +134,7 @@ In addition, Kafka Connect in distributed mode uses three topics internally. The
 | `config.storage.topic`      | Connector configuration topic                                       |
 | `status.storage.topic`      | Connector status topic                                              |
 | `status.storage.partitions` | Number of partitions for connector status topic (default 5)         |
-{: caption="Table 1. Topics in Kafa Connect" caption-side="bottom"}
+{: caption="Table 1. Topics in Kafka Connect" caption-side="bottom"}
 
 For example, you can use the following key-value pairs in your properties file:
 
@@ -151,4 +147,4 @@ For example, you can use the following key-value pairs in your properties file:
 
 Consider reducing the number of partitions if you are making only light use of Kafka Connect.
 
-For more detailed information about Kafka Connect, see [Kafka Connect overview](http://kafka.apache.org/documentation/#connect_overview){: external}.
+For more information about Kafka Connect, see [Kafka Connect overview](http://kafka.apache.org/documentation/#connect_overview){: external}.

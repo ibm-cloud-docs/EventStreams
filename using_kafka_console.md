@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,18 +10,13 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:note: .note}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Using Kafka console tools with {{site.data.keyword.messagehub}}
 {: #kafka_console_tools}
 
-Apache Kafka comes with a variety of console tools for simple administration and messaging operations. You can use many of them with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka has developed, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
+Apache Kafka comes with various console tools for simple administration and messaging operations. You can use many of them with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka developed, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 {: shortdesc}
 
 You can find these console tools in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
@@ -46,7 +41,7 @@ Replace USER and PASSWORD with the values from your {{site.data.keyword.messageh
 
 You can use the Kafka console producer tool with {{site.data.keyword.messagehub}}. You must provide a list of brokers and SASL credentials.
 
-After you've created the properties file as described previously, you can run the console producer in a terminal as follows:
+After you created the properties file, you can run the console producer in a terminal as follows:
 
 ```bash
    kafka-console-producer.sh --broker-list BOOTSTRAP_ENDPOINTS --producer.config CONFIG_FILE --topic TOPIC_NAME
@@ -58,7 +53,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
+You can use many of the other options of this tool, except for those that require access to ZooKeeper.
 
 ## Console consumer
 {: #console_consumer}
@@ -77,7 +72,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, with the exception of those that require access to ZooKeeper.
+You can use many of the other options of this tool, except for those that require access to ZooKeeper.
 
 ## Consumer groups
 {: #consumer_groups_tool}
@@ -105,7 +100,7 @@ Using this tool, you can also display details like the current positions of the 
 
 Replace GROUP in the example with the group name that you want to retrieve details for. 
 
-Here is some sample output from running the **kafka-consumer-groups** tool:
+See the following sample output from running the **kafka-consumer-groups** tool:
 
 ```bash
 GROUP              TOPIC    PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG         CONSUMER-ID      HOST          CLIENT-ID
@@ -115,17 +110,17 @@ consumer-group-1   foo        2          212          
 ```
 {: codeblock}
 
-From the example above, you can see consumer group `consumer-group-1` has 2 consumer members consuming messages from topic `foo` with 3 partitions. It also shows that the consumer `client-1-abc` that is consuming from partition `0` is 3 messages behind, because the current offset of the consumer is `264` but the offset of the last message on partition `0` is `267`. 
+From the example, you can see consumer group `consumer-group-1` has two consumer members that consume messages from topic `foo` with three partitions. It also shows that the consumer `client-1-abc` that is consuming from partition `0` is three messages behind because the current offset of the consumer is `264` but the offset of the last message on partition `0` is `267`. 
 
 ## Topics
 {: #topics_tool}
 
 You can use the **kafka-topics** tool with {{site.data.keyword.messagehub}}. Ensure that you use V2.8 of the tool, because it does not require Zookeeper access.
 
-A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster, so that you can recreate them in a new cluster. You can use the information that is output from **kafka-topics** to create the same named topics in the new cluster. For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/EventStreams?topic=EventStreams-kafka_java_api) or the 
+A scenario where you might want to use **kafka-topics** is to find out information about your topics and their configuration in an existing cluster so that you can re-create them in a new cluster. You can use the information that is output from **kafka-topics** to create the same named topics in the new cluster. For more information about how to create topics, see [Using the administration Kafka Java client API](/docs/EventStreams?topic=EventStreams-kafka_java_api) or the 
 [ibmcloud es topic-create command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es). Alternatively, you can also use the IBM {{site.data.keyword.messagehub}} console.
 
-Here is some sample output from running the **kafka-topics** tool:
+See the following sample output from running the **kafka-topics** tool:
 
 ```bash
    bin/kafka-topics.sh --bootstrap-server kafka03-prod01.messagehub.services.us-south.bluemix.net:9093 --command-config vcurr_dal06.properties --describe
@@ -139,7 +134,7 @@ Topic:testtopic	 PartitionCount:1	 ReplicationFactor:3	Configs:min.insync.replic
 ```
 {: codeblock}
 
-From the sample above, you can see that topic `sample-topic` has 3 partitions and a replication factor of 3. The example also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, the leader of partition `0`  is on broker `0`, the followers are on brokers `2` and `1` and all 3 replicas are in sync. If you look at the second topic `testtopic`, it has only 1 partition, replicated on brokers `0`, `2` and `1` but the in-sync replica list only shows `0` and `2`. This means the follower on broker `1` is falling behind and is therefore not in the `Isr` list. 
+From the sample, you can see that topic `sample-topic` has three partitions and a replication factor of three. The example also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, the leader of partition `0` is on broker `0`, the followers are on brokers `2` and `1` and all three replicas are in sync. If you look at the second topic `testtopic`, it has only one partition, which is replicated on brokers `0`, `2`, and `1` but the in-sync replica list shows only `0` and `2`. This means the follower on broker `1` is falling behind and is therefore not in the `Isr` list. 
 
 
 ## Kafka Streams reset

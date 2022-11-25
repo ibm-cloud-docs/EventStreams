@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-11-22"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -20,14 +20,14 @@ subcollection: EventStreams
 # Streaming to Cloud {{site.data.keyword.cos_short}} by using {{site.data.keyword.sqlquery_short}}
 {: #streaming_cos_sql}
 
-Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed using the fully-managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
+Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed by using the fully managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
 
 ![Streaming to Cloud Object Storage by using{{site.data.keyword.sqlquery_short}}](ES_streams_landing.svg){: caption="Figure 1. Diagram showing streaming to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}" caption-side="bottom"}
 
 The following task walks you through:
 
 - Creating the required services.
-- Setting up Cloud {{site.data.keyword.cos_short}} landing using {{site.data.keyword.sqlquery_short}}.
+- Setting up Cloud {{site.data.keyword.cos_short}} landing by using {{site.data.keyword.sqlquery_short}}.
 - Verifying that the events are stored in {{site.data.keyword.cos_short}}.
 
 {{site.data.keyword.sqlquery_short}} consumes batches of events from Kafka and stores the data as Parquet objects in the Cloud {{site.data.keyword.cos_short}} service. The process is triggered in the background by {{site.data.keyword.messagehub}} submitting an SQL landing statement to {{site.data.keyword.sqlquery_short}}.
@@ -37,16 +37,16 @@ Complete the following steps to start the streams landing.
 ## Step 1. Prerequisites
 {: #step1_install_prereqs_cos}
 
-Ensure you have the following services configured:
+Ensure that you configured the following services:
 
 - An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. You must create credentials.
 - A Cloud {{site.data.keyword.cos_short}} instance with at least one bucket.
-- An {{site.data.keyword.sqlquery_short}} instance - Standard plan.
+- A {{site.data.keyword.sqlquery_short}} instance - Standard plan.
 - An {{site.data.keyword.keymanagementservicelong}} instance.
 
-These services can also be created after you start configuring your stream landing job in the set up wizard.
+These services can also be created after you start configuring your stream landing job in the set-up wizard.
 
-Ensure you have the following permissions:
+Ensure that you have the following permissions:
 
 - Permission to create service-to-service authentication.
 - Permission to create service IDs and API keys.
@@ -57,10 +57,10 @@ Ensure you have the following permissions:
 ## Step 2. Set up the Cloud {{site.data.keyword.cos_short}} stream landing
 {: #step2_setup_cos_landing}
 
-1. Click on the **Overflow menu** (3 vertical dots beside the topic) to start and select the **streaming** topic data option to see the streams landing overview page.
+1. Click the **Overflow menu** (three vertical dots next to the topic) to start and select the **streaming** topic data option to see the streams landing overview page.
 2. Click **Start** to start the wizard.
 3. Select the required Cloud {{site.data.keyword.cos_short}} instance, then click **Next**.
-4. Within the Cloud {{site.data.keyword.cos_short}} instance, select the bucket where the events should be stored, then click **Next**.
+4. Within the Cloud {{site.data.keyword.cos_short}} instance, select the bucket where you want the events to be stored, then click **Next**.
 5. Select the {{site.data.keyword.sqlquery_short}} instance. Only instances with a Standard plan are listed.
 6. Configure the streams landing by completing the following steps:
 
@@ -94,13 +94,13 @@ Cloud {{site.data.keyword.cos_short}} Class A requests for writing data | ~$0.02
 Cloud {{site.data.keyword.cos_short}} | $0.05 per month for each 3.6 GB using the smart storage tier class
 {: caption="Table 1. Cost overview" caption-side="top"}
 
-Your total cost per hour, with the data subsequently stored for a month, would be approximately: $0.474. The above is only an example, and you should evaluate your own planned usage with the IBM Cloud cost calculator.
+Subsequently, your total cost per hour, with the data that is stored for a month, would be approximately: $0.474. This is only an example, so evaluate your own planned usage with the IBM Cloud cost calculator.
 
 ## Limitations
 {: #limitations-streams-landing}
 
 - With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput depends on parameters, such as topic partitions, and size and format of the events. 
-- For one {{site.data.keyword.sqlquery_short}} instance, the limit is five concurrent stream landing jobs. The limit can be raised upon request via support ticket. 
-- The {{site.data.keyword.messagehub}} feature is currently only available for instances created in the US-South region and in Frankfurt.
+- For one {{site.data.keyword.sqlquery_short}} instance, the limit is five concurrent stream landing jobs. The limit can be raised upon request by a support ticket. 
+- The {{site.data.keyword.messagehub}} feature is only available for instances that are created in the US-South region and in Frankfurt.
 
 For more information, see [Streaming to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}](/docs/sql-query?topic=sql-query-event-streams-landing) in the {{site.data.keyword.sqlquery_short}} documentation.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-07"
+lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
 
@@ -10,15 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:note: .note}
-{:deprecated: .deprecated}
-{:important: .important}
+{{site.data.keyword.attribute-definition-list}}
 
 # Choosing your plan 
 {: #plan_choose}
@@ -26,12 +18,12 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
 {: shortdesc}
 
-For information about {{site.data.keyword.messagehub}} plan pricing, see [Select a pricing plan](https://cloud.ibm.com/eventstreams-provisioning/6a7f4e38-f218-48ef-9dd2-df408747568e/create){: external}.
+For information about {{site.data.keyword.messagehub}} plan pricing, see the [catalog](https://cloud.ibm.com/catalog){: external}. Search for `{{site.data.keyword.messagehub}}`, then click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
 
 ## Lite plan
 {: #plan_lite}
 
-The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. The Lite plan is not recommended for production use. It offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
+The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. Do not use the Lite plan for production use. It offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Standard plan
 {: #plan_standard}
@@ -110,11 +102,10 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext8]: Maximum throughput can be specified when the service instance is created. Throughput is expressed as the sum of the number of bytes per second that can be both sent and received in a service instance. Throughput can be later scaled as demands increase. Although throughput scaling is independent of storage, a defined minimum storage amount is required for each tier. For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
-[^tabletext9]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When you provide infrastructure for your {{site.data.keyword.satelliteshort}} deployment, note that the following items could impact throughput: 1) Performance of hosts that are attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}. 2) Type, configuration, and performance of the block storage provided. 3) Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location. 4) For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
+[^tabletext9]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When you provide infrastructure for your {{site.data.keyword.satelliteshort}} deployment, the following items might impact throughput: 1) Performance of hosts that are attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}. 2) Type, configuration, and performance of the block storage provided. 3) Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location. 4) For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
 
 [^tabletext10]: The Schema Registry API is not automatically enabled on the Satellite plan. For information about how to enable it, see [Enable the schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
    
 [^tabletext11]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}. 
-
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
