@@ -41,7 +41,7 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 
 The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
 
-Enabling enhanced metrics introduces more global gauge metric and therefore increases the costs.
+Enabling enhanced metrics introduces more global gauge metrics and therefore increases the costs.
 
 Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
 
