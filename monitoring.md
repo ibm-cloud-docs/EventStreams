@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-28"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -41,7 +41,7 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 
 The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
 
-Enabling enhanced metrics introduces more global gauge and therefore increases the costs.
+Enabling enhanced metrics introduces more global gauge metrics and therefore increases the costs.
 
 Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
 
@@ -86,7 +86,7 @@ Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be awa
 |      | 3000        |   3000 x 2 + 19 = 6019    | $0.08 x 6019 = $481.52  |
 {: caption="Table 1. Cost for each plan" caption-side="bottom"}
 
-Enabling mirroring for Enterprise clusters introduces one more global gauge and an extra gauge per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs.
+Enabling mirroring for Enterprise clusters introduces one more global gauge metric and an extra gauge metric per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs.
 
 For more information, see [{{site.data.keyword.monitoringshort}} pricing](/docs/monitoring?topic=monitoring-pricing_plans).
 
