@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2021
-lastupdated: "2021-04-26"
+  years: 2015, 2022
+lastupdated: "2022-12-08"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -10,14 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:faq: data-hd-content-type='faq'}
-{:deprecated: .deprecated}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs
 {: #faqs}
@@ -67,7 +60,28 @@ segment.ms
 
     **Note:**
     Set to any value between 5 minutes and 30 days.
+    
+ See the following example of default value settings.
+ 
+ ```
+ Details for topic testit
+Topic name   Internal?   Partition count   Replication factor   
+testit       false       1                 3   
 
+Partition details for topic testit
+Partition ID   Leader   Replicas   In-sync   
+0              1        [1 5 0]    [1 5 0]   
+
+Configuration parameters for topic testit
+Name                  Value   
+cleanup.policy        delete   
+min.insync.replicas   2   
+segment.bytes         536870912   
+retention.ms          86400000   
+segment.ms            604800000   
+retention.bytes       1073741824   
+segment.index.bytes   10485760  
+ ```
 
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
 {: #offsets }

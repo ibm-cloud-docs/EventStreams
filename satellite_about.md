@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-12-13"
 
 keywords: IBM Event Streams, Satellite
 
@@ -54,12 +54,7 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 
 2. Set up the [IBM Cloud command line interface (CLI)](https://cloud.ibm.com/docs/satellite?topic=satellite-setup-cli), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
 
-3. The [Provisioning Event Streams for {{site.data.keyword.satelliteshort}}](/docs/EventStreams?topic=EventStreams-satellite-provisioning) steps simplify block storage configuration and assignment by using the Storage user interface for {{site.data.keyword.satelliteshort}}. To enable your access to the Storage user interface for {{site.data.keyword.satelliteshort}}, you must be added to the allowlist. Raise a [support case](https://cloud.ibm.com/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) to request allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} `messagehub` service cluster, you do not need access to the Storage user interface for {{site.data.keyword.satelliteshort}}.
-    1. Set the Topic field of the support case to **IBM Cloud {{site.data.keyword.satelliteshort}}**.
-    2. State in the support case that you are requesting allowlist access to the {{site.data.keyword.satelliteshort}} Storage user interface so you can provision an {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. 
-    3. Include the account ID to be given access.
-    4. Wait for response to your support case before you attempt to provision the {{site.data.keyword.messagehub}} service.
-4. {{site.data.keyword.messagehub}} uses block storage for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance. During the provision of the {{site.data.keyword.messagehub}} service instance, the block storage configuration completes. To prepare for that configuration, review the following:
+3. {{site.data.keyword.messagehub}} uses block storage for retention of message data, management of message data, and for monitoring the operation of the {{site.data.keyword.messagehub}} service instance. During the provision of the {{site.data.keyword.messagehub}} service instance, the block storage configuration completes. To prepare for that configuration, review the following information.
     1. The performance of the hosts, network latency, and block storage performance can all impact maximum throughput. As you review the following block storage information and select a storage class to achieve a maximum throughput, select block storage that provides a minimum of **4 IOPS per GB** of storage and that can support 75 MB/s disk writes and 25 MB/s disk reads concurrently.
     2. To configure block storage, {{site.data.keyword.satelliteshort}} proviandes configuration templates for several storage infrastructure providers. The [Understanding Satellite storage templates](https://cloud.ibm.com/docs/satellite?topic=satellite-sat-storage-template-ov){: external} information explains how the storage templates work and how to configure them using the IBM Cloud CLI. The {{site.data.keyword.messagehub}} service instance provision helps simplify the configuration by prompting for the needed configuration. To prepare for the configuration, complete the following steps:
         1. Review the supported block storage classes in the [Storage class reference](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-class-ref){: external}.
