@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-24"
+lastupdated: "2022-12-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -80,8 +80,9 @@ created.
 
 Attach the following hosts to your {{site.data.keyword.satelliteshort}} location:
 
-- 6 nodes of 4 vCPU and 16 GiB memory
-- 3 nodes of 8 vCPU and 32 GiB memory
+- {{site.data.keyword.messagehub}} requires hosts running Red Hat Enterprise Linux 8 (RHEL 8)
+- 6 hosts of 4 vCPU and 16 GiB memory
+- 3 hosts of 8 vCPU and 32 GiB memory
 
 When {{site.data.keyword.messagehub}} provisions, the provision process discovers the 4 vCPU and 8 vCPU hosts in the {{site.data.keyword.satelliteshort}} location and automatically assigns them to the {{site.data.keyword.messagehub}} service instance. If 4 vCPU and 8 vCPU hosts are not available in the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.messagehub}} provision runs until the hosts are attached to the {{site.data.keyword.satelliteshort}} location. The {{site.data.keyword.messagehub}} provision does not use other types of hosts in replacement of what is indicated precedingly.
 {: important}
@@ -118,10 +119,9 @@ While the service instance and cluster are provisioned, create the storage assig
 {: #satellite-create-storage-assignment}
 {: step}
 
-The following steps require that you have access to Storage UI for {{site.data.keyword.satelliteshort}}. To enable your access, you must be added to the allowlist. See [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin) for details on requesting allowlist access. If you prefer to use the CLI to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} `messagehub` service cluster, you do not need access to the Storage UI for Satellite. If you use the CLI, complete the storage configuration and assignment.
-{: important}
-
 During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgment from the {{site.data.keyword.satelliteshort}} location administrator.
+
+The following steps use the Storage user interface for {{site.data.keyword.satelliteshort}}. If you prefer to use the CLI, you can use it to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} `messagehub` service cluster.
 
 1. Go to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
 2. Select your {{site.data.keyword.satelliteshort}} location.
