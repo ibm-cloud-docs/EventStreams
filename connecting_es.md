@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-11-07"
+lastupdated: "2022-12-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
 
@@ -141,7 +141,7 @@ The private endpoint details allocated to your instance (as described in the ser
 
 The reason for this behavior is Kafka's two-step connection process. In the initial step, the hostnames that are provided in the client's `bootstrap.servers` property are used to establish the first bootstrap connection. However, the server then responds to the client with the actual endpoint hostname details it uses. These hostname details are the private endpoint details originally allocated to your instance and cannot be changed. Hence, the details must be resolvable and routable directly from the external network.
 
-For more information, see [Accessing private API endpoints from an on-premises network by using IBM Cloud Direct Link](https://cloud.ibm.com/docs/vpc?topic=vpc-end-to-end-private-connectivity&interface=cli){: external}.
+For more information, see [Accessing private API endpoints from an on-premises network by using IBM Cloud Direct Link](https://cloud.ibm.com/docs/vpc?topic=vpc-end-to-end-private-connectivity-vpe&interface=cli){: external}.
 
 
 ## What to do next
