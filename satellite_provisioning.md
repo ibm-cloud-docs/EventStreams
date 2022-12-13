@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-24"
+lastupdated: "2022-12-13"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
 
@@ -121,7 +121,7 @@ While the service instance and cluster are provisioned, create the storage assig
 
 During the {{site.data.keyword.messagehub}} service instance provision, block storage configuration is automatically queued for confirmation and assignment. This confirmation and assignment requires acknowledgment from the {{site.data.keyword.satelliteshort}} location administrator.
 
-The following steps use the Storage user interface for {{site.data.keyword.satelliteshort}}.  If you prefer to use the CLI, you can use it to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} `messagehub` service cluster.
+The following steps use the Storage user interface for {{site.data.keyword.satelliteshort}}. If you prefer to use the CLI, you can use it to create the storage configuration from templates, and then assign that configuration to the {{site.data.keyword.messagehub}} `messagehub` service cluster.
 
 1. Go to **{{site.data.keyword.satelliteshort}}**, by clicking **{{site.data.keyword.satelliteshort}}** > **Locations** in the navigation bar.
 2. Select your {{site.data.keyword.satelliteshort}} location.
