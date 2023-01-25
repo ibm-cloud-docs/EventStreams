@@ -139,50 +139,57 @@ ssl.endpoint.identification.algorithm=HTTPS
 
 For more information, see [Configuring your Kafka API client](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client).
 
-3. Usage examples:
+#### Usage examples
+{: usage_examples}
 
-# alter quotas for user
-
+: alter quotas for user
+```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
 consumer_byte_rate=2048' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+```
 
 Completed updating config for user iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab.
 
-# describe quotas for user
-
+: describe quotas for user
+```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users --entity-name 
 iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+```
 
-Quota configs for user-principal 'iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab' are consumer_byte_rate=2048.0, producer_byte_rate=1024.0
+Quota configs for user-principal 'iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab' are consumer_byte_rate=2048.0 and producer_byte_rate=1024.0.
 
-# remove quotas for user
-
+: remove quotas for user
+```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,consumer_byte_rate' 
 --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+```
 
 Completed updating config for user iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab.
 
-# describe all quotas that have been set to any user, including the default user
-
+: describe all quotas that were set to any user, including the default user
+```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users
+```
 
-# alter quotas for the default user
-
+: alter quotas for the default user
+```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
 consumer_byte_rate=2048' --entity-type users --entity-default
+```
 
 Completed updating default config for users in the cluster.
 
-# remove quotas for the default user
-
+: remove quotas for the default user
+```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,
 consumer_byte_rate' --entity-type users --entity-default
+```
 
 Completed updating default config for users in the cluster.
 
-Example: Alter throughput quota usage through the Java API 
+Example: Alter throughput quota usage through the Java API.
 
-This is a short sample snippet showing how to invoke the KafkaAdminClient.alterclientQuotas method
+The following example is a short sample snippet showing how to invoke the KafkaAdminClient.alterclientQuotas method.
 
 ```
 https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#alterClientQuotas(java.util.Collection,org.apache.kafka.clients.admin.AlterClientQuotas
@@ -283,5 +290,4 @@ See the following example of an emitted Activity Tracker Event on adding `produc
 "value":1000.0,"remove":false}]},"severity":"normal","eventTime":"2022-06-30T14:05:52.993+0000","initiator.host.address":"123.123.123.1","action":"event-streams.config.update"}
 ```
 
-For more information about Activity Tracker events for Event Streams, see the [Activity tracker documentation]
-(https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
+For more information about Activity Tracker events for Event Streams, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
