@@ -88,7 +88,7 @@ The Kafka API quotas are per-broker, however Enterprise plan capacity is describ
 
 To find the number of brokers in a cluster, you can use the `KafkaAdminClient.describeCluster` call.
 
-For more information, see the [Java documentation](https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#describeCluster(org.apache.kafka.clients.admin.DescribeClusterOptions).
+For more information, see the [Java documentation](https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#describeClusterorg.apache.kafka.clients.admin.DescribeClusterOptions).
 
 The number of brokers can also be found by using the `kafka-configs.sh` shell script bundled in the Apache Kafka distribution.
 
