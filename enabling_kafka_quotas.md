@@ -20,8 +20,7 @@ Kafka quotas enforce limits on produce and fetch requests to control the broker 
 ## About Kafka quotas
 {: intro_kafka_quotas}
 
-It is possible for a consumer to consume extremely fast and thus to monopolize broker resources and cause network saturation. It is also possible for a producer 
-to push significantly large amounts of data, thus causing memory pressure and large IO on broker instances. 
+It is possible for a consumer to consume extremely fast and thus to monopolize broker resources and cause network saturation. It is also possible for a producer to push significantly large amounts of data, thus causing memory pressure and large IO on broker instances. 
 
 Kafka brokers support quotas that enforce rate limits to prevent clients saturating the network or monopolizing broker resources. For more information, see the 
 [Apache Kafka documentation](https://kafka.apache.org/documentation/#design_quotas).
@@ -29,9 +28,7 @@ Kafka brokers support quotas that enforce rate limits to prevent clients saturat
 Kafka quotas can be configured to limit network bandwidth usage, Kafka measures this throughput in bytes per second. If throughput over a 30 second window is found to 
 exceed a configured quota, Kafka calculates a sufficient delay to bring throughput within the quota limit.
 
-Kafka brokers then send the delay information to clients as part of protocol responses. A cooperative client waits for this delay before making new requests; 
-an uncooperative client may not respect the throttling request, but in such a case, the broker does not read that client's requests until the throttling delay 
-has elapsed (which may cause timeouts on the uncooperative client).
+Kafka brokers then send the delay information to clients as part of protocol responses. A cooperative client waits for this delay before making new requests; an uncooperative client may not respect the throttling request, but in such a case, the broker does not read that client's requests until the throttling delay has elapsed (which may cause timeouts on the uncooperative client).
 
 The following information applies for quotas:
 
@@ -56,8 +53,7 @@ The Java client also exposes throttling information with the following per-broke
 
 The IBM Event Streams Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters.
 
-With reference to the [Kafka documentation on quotas](https://kafka.apache.org/documentation/#quotas), only throughput quota types 
-("producer_byte_rate" and "consumer_byte_rate" quota types) applied to the "user" entity (or the "default user") are supported. 
+With reference to the [Kafka documentation on quotas](https://kafka.apache.org/documentation/#quotas), only throughput quota types ("producer_byte_rate" and "consumer_byte_rate" quota types) applied to the "user" entity (or the "default user") are supported. 
 
 The "client-id" entity, the "request", and the "controller-mutation" quota types are not supported as user-settable quotas. In IBM Event Streams, an authenticated user identity 
 is represented by an IBM Cloud IAM ID. Because Kafka quotas are applied per IAM ID, a single quota can be shared by a group of API keys, if these all belong to the same 
@@ -94,8 +90,7 @@ The Kafka API quotas are per-broker, however Enterprise plan capacity is describ
 
 To find the number of brokers in a cluster, you can use the KafkaAdminClient.describeCluster call.
 
-For more information, see the [Java documentation]
-(https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#describeCluster(org.apache.kafka.clients.admin.DescribeClusterOptions).
+For more information, see the [Java documentation](https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#describeCluster(org.apache.kafka.clients.admin.DescribeClusterOptions).
 
 The number of brokers can also be found by using the kafka-configs.sh shell script bundled in the Apache Kafka distribution.
 
@@ -139,55 +134,60 @@ ssl.endpoint.identification.algorithm=HTTPS
 
 For more information, see [Configuring your Kafka API client](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client).
 
-#### Usage examples
-{: usage_examples}
+3.  Work with the following usage examples.
 
-: alter quotas for user
-```
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
-consumer_byte_rate=2048' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
-```
+    - Alter quotas for user:
 
-Completed updating config for user iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab.
+    ```
+    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
+    consumer_byte_rate=2048' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+    ```
 
-: describe quotas for user
-```
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users --entity-name 
-iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
-```
+    Completed updating configuration for user `iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab`.
 
-Quota configs for user-principal 'iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab' are consumer_byte_rate=2048.0 and producer_byte_rate=1024.0.
+    - Describe quotas for user:
+    
+    ```
+    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users --entity-name 
+    iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+    ```
 
-: remove quotas for user
-```
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,consumer_byte_rate' 
---entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
-```
+    The quota configurations for user-principal `iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab` are `consumer_byte_rate=2048.0` and `producer_byte_rate=1024.0`.
 
-Completed updating config for user iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab.
+    - Remove quotas for user:
 
-: describe all quotas that were set to any user, including the default user
-```
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users
-```
+    ```
+    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config       'producer_byte_rate,consumer_byte_rate' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+    ```
 
-: alter quotas for the default user
-```
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
-consumer_byte_rate=2048' --entity-type users --entity-default
-```
+    Completed updating config for user iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab.
 
-Completed updating default config for users in the cluster.
+    - Describe all quotas that were set to any user, including the default user:
 
-: remove quotas for the default user
-```
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,
-consumer_byte_rate' --entity-type users --entity-default
-```
+    ```
+    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users
+    ```
 
-Completed updating default config for users in the cluster.
+    - Alter quotas for the default user:
 
-Example: Alter throughput quota usage through the Java API.
+    ```
+    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
+    consumer_byte_rate=2048' --entity-type users --entity-default
+    ```
+
+    Completed updating default configuration for users in the cluster.
+
+    - Remove quotas for the default user:
+
+    ```
+    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,
+    consumer_byte_rate' --entity-type users --entity-default
+    ```
+
+    Completed updating default configuration for users in the cluster.
+
+#### Example: Alter throughput quota usage through the Java API
+{: example_alter_throughput_quota}
 
 The following example is a short sample snippet showing how to invoke the KafkaAdminClient.alterclientQuotas method.
 
@@ -280,7 +280,7 @@ class Snippet {
 Whenever throughput quotas are updated, an Event Streams config event is generated, which can be monitored in IBM Cloud Activity Tracker.
 
 See the following example of an emitted Activity Tracker Event on adding `producer_byte_rate` and `consumer_byte_rate` quotas to IAM id 
-"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab"}]:
+"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab"}].
 
 ```
 {"initiator.id":"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab","initiator.name":"Service credentials-1","initiator.typeURI":"",
