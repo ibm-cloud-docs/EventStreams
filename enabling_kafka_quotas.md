@@ -157,7 +157,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config       'producer_byte_rate,consumer_byte_rate' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
 
-    Completed updating config for user iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab.
+    Completed updating config for user `iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab`.
 
     - Describe all quotas that were set to any user, including the default user:
 
@@ -276,8 +276,8 @@ class Snippet {
 
 Whenever throughput quotas are updated, an Event Streams config event is generated, which can be monitored in {{site.data.keyword.cloudaccesstraillong}}.
 
-See the following example of an emitted {{site.data.keyword.at_short}} Event on adding `producer_byte_rate` and `consumer_byte_rate` quotas to {{site.data.keyword.iamshort}} ID 
-"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab"}].
+See the following example of an emitted {{site.data.keyword.at_short}} event on adding `producer_byte_rate` and `consumer_byte_rate` quotas to {{site.data.keyword.iamshort}} ID 
+`iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab`.
 
 ```
 {"initiator.id":"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab","initiator.name":"Service credentials-1","initiator.typeURI":"",
