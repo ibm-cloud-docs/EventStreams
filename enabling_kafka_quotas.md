@@ -51,15 +51,13 @@ The Java client also exposes throttling information with the following per-broke
 ## Setting client quotas
 {: setting_quotas}
 
-The IBM Event Streams Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters.
+The {{site.data.keyword.messagehub_full}} Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters.
 
 With reference to the [Kafka documentation on quotas](https://kafka.apache.org/documentation/#quotas), only throughput quota types ("producer_byte_rate" and "consumer_byte_rate" quota types) applied to the "user" entity (or the "default user") are supported. 
 
-The "client-id" entity, the "request", and the "controller-mutation" quota types are not supported as user-settable quotas. In IBM Event Streams, an authenticated user identity 
-is represented by an IBM Cloud IAM ID. Because Kafka quotas are applied per IAM ID, a single quota can be shared by a group of API keys, if these all belong to the same 
-IAM Service ID.
+The "client-id" entity, the "request", and the "controller-mutation" quota types are not supported as user-settable quotas. In {{site.data.keyword.messagehub}}, an authenticated user identity is represented by an {{site.data.keyword.iamlong}} ID. Because Kafka quotas are applied per {{site.data.keyword.iamshort}} ID, a single quota can be shared by a group of API keys, if these all belong to the same {{site.data.keyword.iamshort}} service ID.
 
-To obtain the IAM ID of an IAM ServiceID, the IBM Cloud CLI can be used:
+To obtain the {{site.data.keyword.iamshort}} ID of an {{site.data.keyword.iamshort}} service ID, the IBM Cloud CLI can be used.
 
 ```
 ibmcloud iam service-id ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab --output json
@@ -88,35 +86,34 @@ See the following example output:
 
 The Kafka API quotas are per-broker, however Enterprise plan capacity is described as a [per-cluster throughput](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput). Therefore, if you want to limit a user to 10 MB/s in total, you apply a quota of 10/n MB/s to each broker (where n is the number of brokers in the cluster).
 
-To find the number of brokers in a cluster, you can use the KafkaAdminClient.describeCluster call.
+To find the number of brokers in a cluster, you can use the `KafkaAdminClient.describeCluster` call.
 
 For more information, see the [Java documentation](https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#describeCluster(org.apache.kafka.clients.admin.DescribeClusterOptions).
 
-The number of brokers can also be found by using the kafka-configs.sh shell script bundled in the Apache Kafka distribution.
+The number of brokers can also be found by using the `kafka-configs.sh` shell script bundled in the Apache Kafka distribution.
 
 ```
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type brokers
 ```
 
-## IBM Event Streams authorization
+## {{site.data.keyword.messagehub}} authorization
 {: es_authorization}
 
-To be authorized to set client quotas, a user must have the Manager role on the "cluster" resource in IAM.
+To be authorized to set client quotas, a user must have the Manager role on the "cluster" resource in {{site.data.keyword.iamshort}}.
 
-A set of credentials created with the IBM Event Streams UI with the Manager role on the instance also has the Manager role on cluster. Thus, you are able to create, 
-delete, and alter topics in addition to setting quotas. Any authenticated user has an implied Reader role on cluster and is able to describe quotas.
+A set of credentials created with the {{site.data.keyword.messagehub}} UI with the Manager role on the instance also has the Manager role on cluster. Thus, you are able to create, delete, and alter topics in addition to setting quotas. Any authenticated user has an implied Reader role on cluster and is able to describe quotas.
 {: note}
 
 To create a set of credentials that can manage topics, groups, and participate in transactions but are not authrorized to set quotas, an IAM access policy that has 
 Manager role on resource types "topic", "group", and "txnid" and Reader role on "cluster" must to be associated with the service ID. 
 
-### Example: Managing quotas with the kafka-config.sh script (Apache client)
+### Example: Managing quotas with `the kafka-config.sh` script (Apache client)
 {: example_managing_quotas_kafka_script}
 
 1. Download a Kafka distribution (at least V3.1.0).
 
 2. Create a properties file (named command-config.properties in the following command lines examples), containing the following entries (replacing "myapikey" with the 
-actual API key):
+actual API key).
 
 ```
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="myapikey";
@@ -189,7 +186,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
 #### Example: Alter throughput quota usage through the Java API
 {: example_alter_throughput_quota}
 
-The following example is a short sample snippet showing how to invoke the KafkaAdminClient.alterclientQuotas method.
+The following example is a short sample snippet showing how to invoke the `KafkaAdminClient.alterclientQuotas` method.
 
 ```
 https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#alterClientQuotas(java.util.Collection,org.apache.kafka.clients.admin.AlterClientQuotas
@@ -274,12 +271,12 @@ class Snippet {
 }
 ```
 
-## IBM Cloud Activity Tracker events
+## {{site.data.keyword.cloudaccesstraillong_notm}} events
 {: activity_tracker_events}
 
-Whenever throughput quotas are updated, an Event Streams config event is generated, which can be monitored in IBM Cloud Activity Tracker.
+Whenever throughput quotas are updated, an Event Streams config event is generated, which can be monitored in {{site.data.keyword.cloudaccesstraillong}}.
 
-See the following example of an emitted Activity Tracker Event on adding `producer_byte_rate` and `consumer_byte_rate` quotas to IAM id 
+See the following example of an emitted {{site.data.keyword.at_short}} Event on adding `producer_byte_rate` and `consumer_byte_rate` quotas to {{site.data.keyword.iamshort}} ID 
 "iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab"}].
 
 ```
@@ -290,4 +287,4 @@ See the following example of an emitted Activity Tracker Event on adding `produc
 "value":1000.0,"remove":false}]},"severity":"normal","eventTime":"2022-06-30T14:05:52.993+0000","initiator.host.address":"123.123.123.1","action":"event-streams.config.update"}
 ```
 
-For more information about Activity Tracker events for Event Streams, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
+For more information about {{site.data.keyword.at_short}} events for {{site.data.keyword.messagehub}}, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
