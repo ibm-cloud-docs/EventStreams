@@ -15,12 +15,12 @@ subcollection: EventStreams
 # Setting Kafka quotas
 {: #enabling_kafka_quotas}
 
-Kafka quotas enforce limits on produce and fetch requests to control the broker resources used by clients. Using quotas, administrators can throttle client access to the brokers by imposing network bandwidth or data limits, or both.
+Kafka quotas enforce limits on produce and fetch requests to control the broker resources used by clients. Kafka quotas enable an administrator to enforce limits on the network throughput that can be consumed by individual producer and consumer applications.
 
 ## About Kafka quotas
 {: intro_kafka_quotas}
 
-It is possible for a consumer to consume extremely fast and thus to monopolize broker resources and cause network saturation. It is also possible for a producer to push significantly large amounts of data, thus causing memory pressure and large IO on broker instances. 
+If left unconstrained, it is possible for a small number of consumers or producers to monopolize the available network throughput for your service instance.
 
 Kafka brokers support quotas that enforce rate limits to prevent clients saturating the network or monopolizing broker resources. For more information, see the 
 [Apache Kafka documentation](https://kafka.apache.org/documentation/#design_quotas).
@@ -28,7 +28,7 @@ Kafka brokers support quotas that enforce rate limits to prevent clients saturat
 Kafka quotas can be configured to limit network bandwidth usage, Kafka measures this throughput in bytes per second. If throughput over a 30 second window is found to 
 exceed a configured quota, Kafka calculates a sufficient delay to bring throughput within the quota limit.
 
-Kafka brokers then send the delay information to clients as part of protocol responses. A cooperative client waits for this delay before making new requests; an uncooperative client may not respect the throttling request, but in such a case, the broker does not read that client's requests until the throttling delay has elapsed (which may cause timeouts on the uncooperative client).
+Kafka brokers then send the delay information to clients as part of standard Kafka protocol responses. A cooperative client, respecting the protocol contract, waits for this delay before making new requests; an uncooperative client may not respect the throttling request, but in such a case, the broker does not read that client's requests until the throttling delay has elapsed (which may cause timeouts on the uncooperative client).
 
 The following information applies for quotas:
 
@@ -36,7 +36,7 @@ The following information applies for quotas:
 - By default, client quotas are unlimited.
 - Quotas are applied per broker, rather than per cluster.
 - A quota is applied to all clients that share a single user identity.
-- A quota can be applied to the 'default' user, so it applies to any user for whom no user-specific quota was set.
+- A quota can be applied to the 'default' user, so it applies to any user, even for whom no user-specific quota was set.
 
 ## Client metrics
 {: client_metrics}
@@ -57,7 +57,7 @@ With reference to the [Kafka documentation on quotas](https://kafka.apache.org/d
 
 The "client-id" entity, the "request", and the "controller-mutation" quota types are not supported as user-settable quotas. In {{site.data.keyword.messagehub}}, an authenticated user identity is represented by an {{site.data.keyword.iamlong}} ID. Because Kafka quotas are applied per {{site.data.keyword.iamshort}} ID, a single quota can be shared by a group of API keys, if these all belong to the same {{site.data.keyword.iamshort}} service ID.
 
-To obtain the {{site.data.keyword.iamshort}} ID of an {{site.data.keyword.iamshort}} service ID, the IBM Cloud CLI can be used.
+To obtain the {{site.data.keyword.iamshort}} ID of an {{site.data.keyword.iamshort}} (IAM) service ID, the IBM Cloud CLI can be used.
 
 ```
 ibmcloud iam service-id ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab --output json
@@ -110,7 +110,7 @@ Manager role on resource types "topic", "group", and "txnid" and Reader role on 
 ### Example: Managing quotas with `the kafka-config.sh` script (Apache client)
 {: example_managing_quotas_kafka_script}
 
-1. Download a Kafka distribution (at least V3.1.0).
+1. Download a Kafka *binary* distribution (at least V3.1.0).
 
 2. Create a properties file (named command-config.properties in the following command lines examples), containing the following entries (replacing "myapikey" with the 
 actual API key).
@@ -287,4 +287,4 @@ See the following example of an emitted {{site.data.keyword.at_short}} event on 
 "value":1000.0,"remove":false}]},"severity":"normal","eventTime":"2022-06-30T14:05:52.993+0000","initiator.host.address":"123.123.123.1","action":"event-streams.config.update"}
 ```
 
-For more information about {{site.data.keyword.at_short}} events for {{site.data.keyword.messagehub}}, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
+For more information about configuring {{site.data.keyword.at_short}} events for {{site.data.keyword.messagehub}}, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
