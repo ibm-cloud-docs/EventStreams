@@ -276,15 +276,4 @@ class Snippet {
 
 Whenever throughput quotas are updated, an Event Streams config event is generated, which can be monitored in {{site.data.keyword.cloudaccesstraillong}}.
 
-See the following example of an emitted {{site.data.keyword.at_short}} event on adding `producer_byte_rate` and `consumer_byte_rate` quotas to {{site.data.keyword.iamshort}} ID 
-`iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab`.
-
-```
-{"initiator.id":"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab","initiator.name":"Service credentials-1","initiator.typeURI":"",
-"initiator.credential.type":"apikey","target.id":"crn:v1:staging:public:messagehub-vnext-integration:eu-gb:a/123456789abcdefghijklmnopqrs:a123b456-ab12-1234-5678-1234abcd5678::",
-"outcome":"success","reason.reasonCode":0,"correlationId":"4","initiator.host.agent":"adminclient-1","responseData":{"errorCode":0,"errorMessage":null,"entities":
-[{"type":"user","name":"iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab"}],"ops":[{"key":"producer_byte_rate","value":1000.0,"remove":false},{"key":"consumer_byte_rate",
-"value":1000.0,"remove":false}]},"severity":"normal","eventTime":"2022-06-30T14:05:52.993+0000","initiator.host.address":"123.123.123.1","action":"event-streams.config.update"}
-```
-
 For more information about configuring {{site.data.keyword.at_short}} events for {{site.data.keyword.messagehub}}, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
