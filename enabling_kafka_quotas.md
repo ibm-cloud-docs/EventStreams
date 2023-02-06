@@ -51,7 +51,7 @@ The Java client also exposes throttling information with the following per-broke
 ## Setting client quotas
 {: setting_quotas}
 
-The {{site.data.keyword.messagehub_full}} Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters.
+The {{site.data.keyword.messagehub_full}} Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters. For more information, see the [Quota Operations section](https://cloud.ibm.com/apidocs/event-streams/adminrest#create-quotas) of the {{site.data.keyword.messagehub_full}} Admin REST API.
 
 With reference to the [Kafka documentation on quotas](https://kafka.apache.org/documentation/#quotas), only throughput quota types ("producer_byte_rate" and "consumer_byte_rate" quota types) applied to the "user" entity (or the "default user") are supported. 
 
@@ -274,6 +274,6 @@ class Snippet {
 ## {{site.data.keyword.cloudaccesstraillong_notm}} events
 {: activity_tracker_events}
 
-Whenever throughput quotas are updated, an Event Streams config event is generated, which can be monitored in {{site.data.keyword.cloudaccesstraillong}}.
+Whenever throughput quotas are updated, an {{site.data.keyword.messagehub}} configuration event is generated, which can be monitored in {{site.data.keyword.cloudaccesstraillong}}.
 
 For more information about configuring {{site.data.keyword.at_short}} events for {{site.data.keyword.messagehub}}, see the [Activity tracker documentation](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-at_events).
