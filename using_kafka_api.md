@@ -114,14 +114,14 @@ If Maven is used in build system, adding below to the file `pom.xml` in dependen
 <dependency>
     <groupId>com.ibm.eventstreams</groupId>
     <artifactId>oauth-client</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
 </dependency>
 ```
 
 If Gradle is used in build system, adding below to the file `build.gradle` in dependencies section.
 
 ```gradle
-implementation com.ibm.eventstreams:oauth-client:0.1.1
+implementation com.ibm.eventstreams:oauth-client:0.1.2
 ```
 
  Use the following strings and properties.
