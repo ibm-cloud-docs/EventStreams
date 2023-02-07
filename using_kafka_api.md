@@ -13,12 +13,13 @@ subcollection: EventStreams
 {{site.data.keyword.attribute-definition-list}}
 
 # Using the Kafka API
+
 {: #kafka_using}
 
 Kafka provides a rich set of APIs and clients across a broad range of languages.
 
 - **Kafka's core API (Consumer, Producer, and Admin API)**  
-    Use to send and receive messages directly from one or more Kafka topics. 
+    Use to send and receive messages directly from one or more Kafka topics.
     The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. You can create, delete, and manage topics. You can also use the Admin client to manage consumer groups and configurations.
 - **Streams API**  
     A higher-level stream processing API to easily consume, transform, and produce events between topics.
@@ -38,13 +39,15 @@ The following table summarizes what you can use with {{site.data.keyword.message
 {: caption="Table 1. Kafka client support in Standard, Enterprise, and Lite plans." caption-side="bottom"}
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
+
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 3.1](https://kafka.apache.org/31/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 3.1](https://kafka.apache.org/31/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}. 
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 3.1](https://kafka.apache.org/31/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 3.1](https://kafka.apache.org/31/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}.
 
 For other languages, run one of the following clients, all of which are tested with {{site.data.keyword.messagehub}}.
 
 ### Support summary for all recommended clients
+
 {: #client_summary}
 
 | Client  | Language   | Recommended version   |Minimum version supported [^tabletext1] |  Link to sample|
@@ -61,34 +64,95 @@ For other languages, run one of the following clients, all of which are tested w
 [^tabletext1]: The earliest version that was validated in continual testing. Typically, it is the initial version available within the last 12 months, or newer if significant issues are known to exist. If you can't run any of the clients that are listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka](https://github.com/edenhill/librdkafka/){: external}). 1. Supports Kafka 0.10, or later. 2. Can connect and authenticate by using SASL PLAIN with TLSv1.2. 3. Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake. 4. Supports elliptic curve cryptography. In all cases, use the latest version of the client.
 
 ### Connecting your client to {{site.data.keyword.messagehub}}
+
 {: #connect_client}
 
 For information about how to configure your Java client to connect to {{site.data.keyword.messagehub}}, see [Configuring your client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client).
 
 ## Configuring your Kafka API client
+
 {: #kafka_api_client}
 
-To establish a connection, clients must be configured to use SASL PLAIN over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. TLSv1.2 ensures that connections are encrypted and validates the authenticity of the brokers (to prevent man-in-the-middle attacks). SASL enforces authentication on all connections.
+To establish a connection, clients must be configured to use SASL PLAIN or SASL OAUTHBEARER over TLSv1.2 at a minimum and to require a username, and a list of the bootstrap servers. TLSv1.2 ensures that connections are encrypted and validates the authenticity of the brokers (to prevent man-in-the-middle attacks). SASL enforces authentication on all connections.
 
 To retrieve the username, password, and list of bootstrap servers, a service credentials object, or service key is required for the service instance. For more information about creating these objects, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+
+### Using SASL PLAIN (deprecated)
 
 Use the following strings and properties.
 
 - Use the `bootstrap_endpoints` string as the list of bootstrap servers and pass this string of host and port pairs to your Kafka client.
 - Use the `user` and `api_key` properties as the username and password.
 
-For a Java client, the following example shows the minimum set of properties, where `USERNAME`, `PASSWORD`, and `BOOTSTRAP_ENDPOINTS` are to be replaced by the values that you retrieved previously.
+For a Java client, the following example shows the minimum set of properties, where `${USERNAME}`, `${PASSWORD}`, and `${BOOTSTRAP_ENDPOINTS}` are to be replaced by the values that you retrieved previously.
 
 ```config
-bootstrap.servers=BOOTSTRAP_ENDPOINTS
-sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USERNAME" password="PASSWORD";
-security.protocol=SASL_SSL
+bootstrap.servers=${BOOTSTRAP_ENDPOINTS}
 sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="${USERNAME}" password="${PASSWORD}";
+security.protocol=SASL_SSL
 ssl.protocol=TLSv1.2
 ssl.enabled.protocols=TLSv1.2
 ssl.endpoint.identification.algorithm=HTTPS
 ```
+
 {: codeblock}
 
-If you use a Kafka client earlier than version 0.10.2.1, the `sasl.jaas.config` property isn't supported, and you must instead provide the client configuration in a JAAS configuration file. 
+If you use a Kafka client earlier than version 0.10.2.1, the `sasl.jaas.config` property isn't supported, and you must instead provide the client configuration in a JAAS configuration file.
+{: note}
+
+### Using SASL OAUTHBEARER
+
+Before configurating SASL mechanism for Java client, there are 2 prerequisites:
+
+- The minimum supported Kafka Java client version is 3.1.0.
+- Additional jar package needs to be downloaded from Maven Central and made available in the classpath.
+
+If Maven is used in build system, adding below to the file `pom.xml` in dependencies section.
+
+```xml
+<dependency>
+    <groupId>com.ibm.eventstreams</groupId>
+    <artifactId>oauth-client</artifactId>
+    <version>0.1.1</version>
+</dependency>
+```
+
+If Gradle is used in build system, adding below to the file `build.gradle` in dependencies section.
+
+```gradle
+implementation com.ibm.eventstreams:oauth-client:0.1.1
+```
+
+ Use the following strings and properties.
+
+- Use the `bootstrap_endpoints` string as the list of bootstrap servers and pass this string of host and port pairs to your Kafka client.
+- Use `api_key` string as the API key.
+- The `IAMOAuthBearerLoginCallbackHandler` is provided by the jar package `com.ibm.eventstreams:oauth-client:+`
+- IBM Cloud IAM's token endpoint `https://iam.cloud.ibm.com/identity/token` is configured to generate token from API key using specified grant type in jaas config. And this is done at client side thus API key is never sent to the server side and provides better security than a long-lived API key.
+- IBM Cloud IAM's key endpoint `https://iam.cloud.ibm.com/identity/keys` is configured to validate the token.
+
+For a Java client, the following example shows the minimum set of properties, where `${BOOTSTRAP_ENDPOINTS}`, and `${APIKEY}` are to be replaced by the values that you retrieved previously.
+
+```config
+bootstrap.servers=${BOOTSTRAP_ENDPOINTS}
+sasl.mechanism=OAUTHBEARER
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type="urn:ibm:params:oauth:grant-type:apikey" apikey=${APIKEY};
+sasl.login.callback.handler.class=com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
+sasl.oauthbearer.token.endpoint.url=https://iam.cloud.ibm.com/identity/token
+sasl.oauthbearer.jwks.endpoint.url=https://iam.cloud.ibm.com/identity/keys
+security.protocol=SASL_SSL
+ssl.protocol=TLSv1.2
+ssl.enabled.protocols=TLSv1.2
+ssl.endpoint.identification.algorithm=HTTPS
+```
+
+Sample code refers to [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.
+
+Enterprise instance can have SASL PLAIN disabled and use SASL OAUTHBEARER as the only authentication mechanism for enhanced security. Use command:
+
+```sh
+ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":true}'
+```
+
 {: note}
