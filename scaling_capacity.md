@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-02-19"
 
 keywords: IBM Event Streams, scaling capacity
 
@@ -32,13 +32,13 @@ For example, selecting a base capacity unit, one additional capacity unit, and 4
 ## Throughput capacity
 {: #ES_thruput_capacity}
 
-Throughput capacity is the recommended peak MB/s maximum for producing and consuming messages. 
+Throughput capacity is the recommended MB/s maximum for producing and consuming messages. 
 
 Each capacity unit provides 150 MB/s of throughput capacity. It consists of 75 MB/s data ingress and 75 MB/s data egress capacity.
 
 To scale up throughput capacity, you can add more capacity units. Each extra capacity unit adds 150 MB/s of throughput to your service instance, to a total of 450 MB/s.
 
-The recommended throughput maximum is based on a typical workload and considers the possible impact of operational actions or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions. Plan your maximum throughput capacity as two-thirds of the peak maximum. For example, two-thirds of the 150 MB/s peak maximum are 100 MB/s. For more information on capacity recommendations and limitations, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
+The recommended throughput maximum is based on a typical workload and considers the possible impact of operational actions or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions. Plan your maximum throughput capacity as two-thirds of the maximum. For example, two-thirds of the 150 MB/s maximum are 100 MB/s. For more information on capacity recommendations and limitations, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
 
 Although throughput scaling is independent of storage, for each tier a defined minimum of storage amount is required. 
 
@@ -91,7 +91,7 @@ During this time, the flow of Kafka data is not affected (the scaling operation 
 
 Valid combinations and values for the "throughput" and "storage_size" are listed in the following table.
 
-|**Throughput capacity (peak maximum)**|**"throughput" value to specify**|**Storage capacity**|**"storage_size" value to specify**|
+|**Throughput capacity (maximum)**|**"throughput" value to specify**|**Storage capacity**|**"storage_size" value to specify**|
 |----------------------------------------|-----------------------------|----------------------|------------------------------|
 |1  (150 MB/s)|150|2 TB|2048|
 | | |4 TB|4096|
