@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-02-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
 
@@ -13,7 +13,6 @@ subcollection: EventStreams
 {{site.data.keyword.attribute-definition-list}}
 
 # Choosing your plan
-
 {: #plan_choose}
 
 {{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements.
@@ -22,13 +21,11 @@ subcollection: EventStreams
 For information about {{site.data.keyword.messagehub}} plan pricing, see the [catalog](https://cloud.ibm.com/catalog){: external}. Search for `{{site.data.keyword.messagehub}}`, then click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
 
 ## Lite plan
-
 {: #plan_lite}
 
 The Lite plan is free for users who want to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. Do not use the Lite plan for production use. It offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster.
 
 ## Standard plan
-
 {: #plan_standard}
 
 The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are using for your workload.
@@ -36,7 +33,6 @@ The Standard plan is appropriate if you require event ingest and distribution ca
 The architecture is highly available by default. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 ## Enterprise plan
-
 {: #plan_enterprise}
 
 The Enterprise plan is appropriate if data isolation, performance, and increased retention are important considerations.
@@ -49,7 +45,6 @@ The Enterprise plan includes the following features:
 The architecture is highly available when you choose to deploy into a multi-zone region. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
 ## Satellite plan
-
 {: #plan_satellite}
 
 The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satelliteshort}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
@@ -58,7 +53,6 @@ The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan d
 {: important}
 
 ## What is supported by the Lite, Standard, Enterprise, and Satellite plans
-
 {: #what_is_supported}
 
 The following table summarizes what is supported by the plans:
