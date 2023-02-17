@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-23"
+  years: 2015, 2023
+lastupdated: "2023-02-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding, IAM, wildcard, policies
 
@@ -12,7 +12,24 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing access to your {{site.data.keyword.messagehub}} resources 
+# Managing authentication to your {{site.data.keyword.messagehub}} instances
+{: #security}
+
+{{site.data.keyword.messagehub}} supports 2 [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)(Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
+
+Kafka client configured with SASL PLAIN uses IAM API key as a plain text password in the authentication process, {{site.data.keyword.messagehub}} sends API key to IAM for verification. Once authenticated, this client will keep connected and will not require re-authentication until it is disconnected and wants to re-connect.
+
+Kafka client configured with SASL OAUTHBEARER uses IAM access token in the authentication process, {{site.data.keyword.messagehub}} verifies the token via IAM public key. Since IAM access token has expiration time (usually at 1 hour), Kafka client is required to re-generate a new token and go through the authentication process again when previous token is approaching expiration time. This approach provides better security comparing to SASL PLAIN in 2 ways: 1. API key always stays at client side to generate access token and is no longer sent to Kafka brokers over network, this removes the risk of API key exposure. 2. Authentication process happens at a regular basis when access token is expiring, this minimizes the risk of token exposure.
+
+For more secure authentication, SASL OAUTHBEARER is the only recommended authentication method for Kafka clients. See [Configuring your Kafka API client](/docs/EventStreams?topic=using_kafka_api#kafka_api_client) how to configure SASL OAUTHBEARER in Kafka clients.
+
+Enterprise users have the option to disable SASL PLAIN in their Enterprise instances. Use command:
+
+```sh
+ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":true}'
+```
+
+# Managing authorization to your {{site.data.keyword.messagehub}} resources
 {: #security}
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
@@ -37,30 +54,28 @@ The levels of access (also known as a role) that you can assign to a user to eac
 |:-----------------|:-----------------|:-----------------|
 |  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing resources. | Allow an app to connect to a cluster by assigning read access to cluster resource type. |
 | Writer | Writers have permissions beyond the reader role, including editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types. |
-| Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance. 
+| Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance.
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="bottom"}
-
 
 ## How do I assign access?
 {: #assign_access }
 
-Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user must have and to which resource or set of resources. A policy consists of the following information: 
+Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user must have and to which resource or set of resources. A policy consists of the following information:
 
-- The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types. 
-- The instance of the service to be secured. You can scope a policy to include all instances of a service type. 
-- The type of resource to be secured. The valid values are `cluster`, `topic`, `group`, `schema`, or `txnid`. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance. If you want to specify more than one type of resource, you must create one policy per resource. 
-- The resource to be secured. Specify for resources of type `topic`, `group`, `schema`, and `txnid`. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance. 
-- The role that is assigned to the user. For example, Reader, Writer, or Manager. 
+- The type of service the policy applies to. For example, {{site.data.keyword.messagehub}}. You can scope a policy to include all service types.
+- The instance of the service to be secured. You can scope a policy to include all instances of a service type.
+- The type of resource to be secured. The valid values are `cluster`, `topic`, `group`, `schema`, or `txnid`. Specifying a type is optional. If you do not specify a type, the policy then applies to all resources in the service instance. If you want to specify more than one type of resource, you must create one policy per resource.
+- The resource to be secured. Specify for resources of type `topic`, `group`, `schema`, and `txnid`. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance.
+- The role that is assigned to the user. For example, Reader, Writer, or Manager.
 
 ## What are the default security settings?
 {: #default_settings }
 
-By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access. 
+By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access.
 
 You can then apply more policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
 
-Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands. 
-
+Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
 ## Common scenarios
 {: #security_scenarios }
