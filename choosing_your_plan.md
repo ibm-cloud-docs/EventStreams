@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-02-16"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
 
@@ -12,10 +12,10 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Choosing your plan 
+# Choosing your plan
 {: #plan_choose}
 
-{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements. 
+{{site.data.keyword.messagehub}} is available as Lite plan, Standard plan, Enterprise plan, or {{site.data.keyword.satelliteshort}} plan depending on your requirements.
 {: shortdesc}
 
 For information about {{site.data.keyword.messagehub}} plan pricing, see the [catalog](https://cloud.ibm.com/catalog){: external}. Search for `{{site.data.keyword.messagehub}}`, then click the {{site.data.keyword.messagehub}} tile to go to the provisioning page.
@@ -28,14 +28,14 @@ The Lite plan is free for users who want to try out {{site.data.keyword.messageh
 ## Standard plan
 {: #plan_standard}
 
-The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are using for your workload. 
+The Standard plan is appropriate if you require event ingest and distribution capabilities but do not require any additional benefits of the Enterprise plan. The Standard plan offers shared access to a multi-tenant {{site.data.keyword.messagehub}} cluster that seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
 The architecture is highly available by default. The service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
-## Enterprise plan 
+## Enterprise plan
 {: #plan_enterprise}
 
-The Enterprise plan is appropriate if data isolation, performance, and increased retention are important considerations. 
+The Enterprise plan is appropriate if data isolation, performance, and increased retention are important considerations.
 The Enterprise plan includes the following features:
 
 - Exclusive access to a single-tenant {{site.data.keyword.messagehub}} service instance deployed in a highly available multi zone region (MZR).
@@ -47,7 +47,7 @@ The architecture is highly available when you choose to deploy into a multi-zone
 ## Satellite plan
 {: #plan_satellite}
 
-The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satelliteshort}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. 
+The {{site.data.keyword.satellitelong}} plan is appropriate if you want to deploy an Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your own choice. Using {{site.data.keyword.satelliteshort}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 
 The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan does not yet provide the compliance certifications that the Enterprise or Standard plans conform to.
 {: important}
@@ -83,6 +83,7 @@ The following table summarizes what is supported by the plans:
 | **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready    \n  PCI |   None [^tabletext11]  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
+| **IAM token authentication only** | No | No | Yes | Yes |
 | **Mirroring** | No | No | Yes | No |
 {: caption="Table 1. Plan comparison table" caption-side="bottom"}
 
@@ -96,7 +97,7 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext5]: If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan.
 
-[^tabletext6]: This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}. 
+[^tabletext6]: This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
 
 [^tabletext7]: Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
@@ -105,7 +106,7 @@ The following table summarizes what is supported by the plans:
 [^tabletext9]: The {{site.data.keyword.satelliteshort}} plan design and deployment is similar to the Enterprise plan and provides a maximum throughput of 150 MB/s. The flexibility of the {{site.data.keyword.satelliteshort}} environment can impact the actual maximum throughput. When you provide infrastructure for your {{site.data.keyword.satelliteshort}} deployment, the following items might impact throughput: 1) Performance of hosts that are attached to your {{site.data.keyword.satelliteshort}} location for use by {{site.data.keyword.messagehub}}. 2) Type, configuration, and performance of the block storage provided. 3) Network latency between the hosts, block storage, and the {{site.data.keyword.satelliteshort}} location. 4) For information about infrastructure, see [Before you begin](/docs/EventStreams?topic=EventStreams-satellite_about#satellite_before_you_begin).
 
 [^tabletext10]: The Schema Registry API is not automatically enabled on the Satellite plan. For information about how to enable it, see [Enable the schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
-   
-[^tabletext11]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}. 
+
+[^tabletext11]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}.
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
