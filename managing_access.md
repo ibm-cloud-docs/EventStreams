@@ -111,7 +111,7 @@ You can take advantage of the IAM wildcarding facility to set policies for group
 ## Connecting to {{site.data.keyword.messagehub}}
 {: #connect_message_enterprise }
 
-For more information about how to bind a Cloud Foundry application or get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+For more information about how to get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 ## Managing access to the schema registry
 {: #managing_access_schemas}
