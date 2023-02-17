@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-17"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding, IAM, wildcard, policies
 
@@ -13,7 +13,6 @@ subcollection: EventStreams
 {{site.data.keyword.attribute-definition-list}}
 
 # Managing authentication to your {{site.data.keyword.messagehub}} instances
-
 {: #security}
 
 {{site.data.keyword.messagehub}} supports 2 [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)(Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
@@ -31,7 +30,6 @@ ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":
 ```
 
 # Managing authorization to your {{site.data.keyword.messagehub}} resources
-
 {: #security}
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
@@ -41,7 +39,6 @@ When you change IAM policies and permissions, they can sometimes take several mi
 {: important}
 
 ## What can I secure?
-
 {: #what_secure}
 
 Within {{site.data.keyword.messagehub}}, you have secure access to the following resources:
@@ -61,7 +58,6 @@ The levels of access (also known as a role) that you can assign to a user to eac
 {: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="bottom"}
 
 ## How do I assign access?
-
 {: #assign_access }
 
 Cloud Identity and Access Management (IAM) policies are attached to the resources to be controlled. Each policy defines the level of access that a particular user must have and to which resource or set of resources. A policy consists of the following information:
@@ -73,7 +69,6 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 - The role that is assigned to the user. For example, Reader, Writer, or Manager.
 
 ## What are the default security settings?
-
 {: #default_settings }
 
 By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access.
@@ -83,7 +78,6 @@ You can then apply more policies to extend access to other users. You can either
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
 ## Common scenarios
-
 {: #security_scenarios }
 
 The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access that you need to assign.
@@ -110,25 +104,21 @@ For more information about IAM, see [IBM Cloud Identity and Access Management](/
 For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
 
 ## Wildcarding
-
 {: #wildcarding }
 
 You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics that are called `Dept1_*` and these policies are applied to all topics with that prefix. For more information, see [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard){: external}.
 
 ## Connecting to {{site.data.keyword.messagehub}}
-
 {: #connect_message_enterprise }
 
 For more information about how to bind a Cloud Foundry application or get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 ## Managing access to the schema registry
-
 {: #managing_access_schemas}
 
 The authorization model for the schema registry used the same style of policies that are described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document.
 
 ### IAM resources
-
 {: #iam_resources}
 
 With the new `schema` IAM resource type, it is possible to create policies that control access by using varying degrees of granularity, as in the following examples.
@@ -141,7 +131,6 @@ With the new `schema` IAM resource type, it is possible to create policies that 
 {{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type is also applied to the schema registry whereby a minimum role of Reader is required to access the registry.
 
 ### Example authorization scenarios
-
 {: #example_authorization_scenarios}
 
 The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the roles that are required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application that connects to the registry.
