@@ -25,7 +25,6 @@ If you experience a problem with {{site.data.keyword.messagehub}}, first check t
 {: #troubleshooting_links notoc}
 
 *  [{{site.data.keyword.messagehub}} Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: external}
-*  [Creating web applications with {{site.data.keyword.Bluemix_notm}} and deploying your app with Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-cf-deploy-cli#download-modify-and-redeploy-your-cloud-foundry-app-with-the-command-line-interface){: external}
 *  [Apache Kafka documentation](http://kafka.apache.org/documentation.html){: external}
 *  [Apache Kafka 2.2.0 client](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.2.0/kafka-2.2.0-src.tgz){: external}
 *  [{{site.data.keyword.Bluemix_notm}} pricing information](/docs/billing-usage?topic=billing-usage-cost#cost){: external}
