@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-02-20"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Using ksqlDB with {{site.data.keyword.messagehub}}
 {: #ksql_using}
 
-You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. Ensure that you use ksqlDB version 5.5.0.
+You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
 {: shortdesc}
 
 The quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
@@ -32,11 +32,14 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ```text
     ---
     version: '2'
+
     services:
       ksqldb-server:
-        image: confluentinc/cp-ksqldb-server:5.5.0
+        image: confluentinc/ksqldb-server:0.28.2
         hostname: ksqldb-server
         container_name: ksqldb-server
+        depends_on:
+          - broker
         ports:
           - "8088:8088"
         environment:
@@ -51,13 +54,15 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
           KSQL_SASL_MECHANISM: PLAIN
 
       ksqldb-cli:
-        image: confluentinc/cp-ksqldb-cli:5.5.0
+        image: confluentinc/ksqldb-cli:0.28.2
         container_name: ksqldb-cli
         depends_on:
+          - broker
           - ksqldb-server
         entrypoint: /bin/sh
-        tty: true
-    ```
+       tty: true
+    
+       ```
     
     Where BOOTSTRAP_SERVERS and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
@@ -117,22 +122,4 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ./bin/ksql
     ```
 
-4. You can use `ksql-datagen` command-line tool to generate a test data. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create two topics with one partition each: `users` and `pageviews`.
-
-    Then, start `DataGen` twice as follows:
-    
-    a. Run the following command to start creating `users` events.
-    
-    ```text
-    ./bin/ksql-datagen quickstart=users format=json topic=users maxInterval=10000 propertiesFile=./config/ibm-eventstreams.properties
-    ```
-
-    b. Run the following command to start creating `pageviews` events.
-    
-    ```text
-    ./bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=10000 propertiesFile=./config/ibm-eventstreams.properties
-    ```
-    
-	Ensure you insert all the Kafka hosts listed in the **Service Credentials** page as values for `bootstrap-server`. To find this information, go to your {{site.data.keyword.messagehub}} instance in {{site.data.keyword.Bluemix_notm}}, go to the **Service Credentials** tab, and select the **Credentials** that you want to use.
-
-When you completed these steps, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://github.com/confluentinc/ksql/tree/0.1.x/docs/quickstart#create-a-stream-and-table){: external}.
+When you completed these steps, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}.
