@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -35,11 +35,9 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
 
     services:
       ksqldb-server:
-        image: confluentinc/ksqldb-server:0.28.2
+        image: confluentinc/ksqldb-server:latest
         hostname: ksqldb-server
         container_name: ksqldb-server
-        depends_on:
-          - broker
         ports:
           - "8088:8088"
         environment:
@@ -54,11 +52,8 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
           KSQL_SASL_MECHANISM: PLAIN
 
       ksqldb-cli:
-        image: confluentinc/ksqldb-cli:0.28.2
+        image: confluentinc/ksqldb-cli:latest
         container_name: ksqldb-cli
-        depends_on:
-          - broker
-          - ksqldb-server
         entrypoint: /bin/sh
        tty: true
     
@@ -75,7 +70,7 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     c. Run the following command to connect to the ksqlDB server and start an interactive command-line interface (CLI) session. 
     
     ```text
-    docker exec -it ksqldb-cli ksql http://localhost:8088
+    docker exec -it ksqldb-cli ksql http://ksqldb-server:8088
     ```
 
 3. If you are not running ksqlDB in docker container, then follow these steps:
