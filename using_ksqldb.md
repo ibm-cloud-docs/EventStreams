@@ -54,8 +54,10 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
       ksqldb-cli:
         image: confluentinc/ksqldb-cli:latest
         container_name: ksqldb-cli
+        depends_on:
+          - ksqldb-server
         entrypoint: /bin/sh
-       tty: true
+        tty: true
     
        ```
     
