@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Restricting network access 
+# Restricting network access
 {: #restrict_access}
 
 By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.Bluemix_short}} public network, so they are accessible over the public internet.
@@ -23,15 +23,15 @@ The following features are available in the Enterprise plan only.
 
 If required, you can use network type or context-based restrictions to restrict the network connectivity as follows:
 
-Network type 
+Network type
 :   {{site.data.keyword.Bluemix_notm}} offers both private and public networking. If your workload is running entirely within the {{site.data.keyword.Bluemix_notm}}, and public access to the service is not required, {{site.data.keyword.messagehub}} instances can instead be configured to be accessible only over the {{site.data.keyword.Bluemix_notm}} private network. This offers increased isolation and does not incur the egress bandwidth charges associated with public traffic. Instances can also be configured to be accessible over both the {{site.data.keyword.Bluemix_notm}} public and private networks, where your workload can use the most appropriate interface for its location. You can find further information about private networking at [Virtual routing and forwarding on IBM Cloud](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external}.
 
 Context-based restrictions (CBR)
-:   You can define access rules that limit the network locations that connections are accepted from. For example, network type, IP ranges, VPC, or other services. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).{: external} 
+:   You can define access rules that limit the network locations that connections are accepted from. For example, network type, IP ranges, VPC, or other services. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).{: external}
 
 :   Auditing events for context-based restrictions are published under context-based restrictions {{site.data.keyword.at_full_notm}} events [Context-based restrictions rules events](/docs/activity-tracker?topic=activity-tracker-events_context_based#restriction_rules_events){: external}. Activity Tracker events related to CBR enforcement are unavailable on private endpoints.
 
-## Configuring the network type 
+## Configuring the network type
 {: #configuring_network_type}
 
 You can configure Enterprise service instances to be available on the {{site.data.keyword.Bluemix_notm}} private, public, or private and public networks. The following information describes how to select and update the required networking type. Public networking is selected by default.
@@ -51,7 +51,7 @@ Ensure that you complete the following tasks:
     {: codeblock}
 
     To check whether prerequisites are completed, run the following command, and then check whether the following two properties are true:
-    
+
     ```bash
     ibmcloud account show
 
@@ -106,21 +106,21 @@ You can also switch the endpoints that your Enterprise cluster uses after provis
 To migrate directly from public or private to public-and-private endpoints:
 
 ```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
+ibmcloud resource service-instance-update <instance-name> --service-endpoints public-and-private
 ```
 {: codeblock}
 
 To migrate from public-and-private to public endpoints:
 
 ```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
+ibmcloud resource service-instance-update <instance-name> --service-endpoints public
 ```
 {: codeblock}
 
 To migrate from public-and-private to private endpoints:
 
 ```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
+ibmcloud resource service-instance-update <instance-name> --service-endpoints private
 ```
 {: codeblock}
 
@@ -225,7 +225,7 @@ When context-based restrictions rules are defined against an {{site.data.keyword
 * The Administration functions for the service instance itself (for example the {{site.data.keyword.Bluemix_notm}} CLI `service-instance-create`, `service-instance-delete` or `service-instance-update` commands, or equivalent) are not under the scope of the context-based restrictions rules that are created against an {{site.data.keyword.messagehub}} instance.
 
 ### Managing context-based restrictions settings
-{: #managing_cbr} 
+{: #managing_cbr}
 
 Creating context-based restrictions rules is a two-step process:
 
@@ -235,16 +235,16 @@ Creating context-based restrictions rules is a two-step process:
 
 Next, note the following considerations:
 
-* You must be the account owner or have an access policy with the administrator role on all account management services to restrict access. 
+* You must be the account owner or have an access policy with the administrator role on all account management services to restrict access.
 * After creating or updating a zone or a rule, it can take a few minutes for the change to take effect.
 {: important}
 
 ### Supporting connections between services (service-to-service) with context-based restrictions
 {: #services_cbr}
 
-If an {{site.data.keyword.messagehub}} service instance is configured to use [customer-managed encryption](/docs/EventStreams?topic=EventStreams-managing_encryption), the service must also be granted the ability to connect to the selected IBM Key Management Services. 
+If an {{site.data.keyword.messagehub}} service instance is configured to use [customer-managed encryption](/docs/EventStreams?topic=EventStreams-managing_encryption), the service must also be granted the ability to connect to the selected IBM Key Management Services.
 
-The administrator of the account can set this up as follows: 
+The administrator of the account can set this up as follows:
 1. Add a service reference for the {{site.data.keyword.messagehub}} service to the required network zone.
 2. Ensure that access from this zone is permitted by way of the context-based restrictions rules applicable to other Cloud services.
 
@@ -253,7 +253,7 @@ For more information about service reference creation, see [Service references](
 ### Coexistence of context-based restrictions rules and private IP allowlists
 {: #cbr_coexistence}
 
-Context-based restrictions rules now supersede the use of private IP allowlists as the recommended approach for implementing allowlists against an {{site.data.keyword.messagehub}} instance. The use of private IP allowlists continues to be supported but is now deprecated. 
+Context-based restrictions rules now supersede the use of private IP allowlists as the recommended approach for implementing allowlists against an {{site.data.keyword.messagehub}} instance. The use of private IP allowlists continues to be supported but is now deprecated.
 
 If both context-based restrictions rules and IP allowlists are defined against the same {{site.data.keyword.messagehub}} instance, the IP allowlist is ignored because the context-based restrictions rules override any previous private IP allowlist.
 
