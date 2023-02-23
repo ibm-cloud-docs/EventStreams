@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2022
-lastupdated: "2022-11-23"
+  years: 2016, 2023
+lastupdated: "2023-02-23"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
 
