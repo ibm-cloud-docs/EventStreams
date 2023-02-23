@@ -106,21 +106,21 @@ You can also switch the endpoints that your Enterprise cluster uses after provis
 To migrate directly from public or private to public-and-private endpoints:
 
 ```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public-and-private
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoints public-and-private
 ```
 {: codeblock}
 
 To migrate from public-and-private to public endpoints:
 
 ```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint public
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoints public
 ```
 {: codeblock}
 
 To migrate from public-and-private to private endpoints:
 
 ```bash
-ibmcloud resource service-instance-update --name <instance-name> --service-endpoint private
+ibmcloud resource service-instance-update --name <instance-name> --service-endpoints private
 ```
 {: codeblock}
 
