@@ -21,7 +21,7 @@ Kafka client configured with SASL PLAIN uses IAM API key as a plain text passwor
 
 Kafka client configured with SASL OAUTHBEARER uses IAM access token in the authentication process, {{site.data.keyword.messagehub}} verifies the token via IAM public key. Since IAM access token has expiration time (usually at 1 hour), Kafka client is required to re-generate a new token and go through the authentication process again when previous token is approaching expiration time. This approach provides better security comparing to SASL PLAIN in 2 ways: 1. API key always stays at client side to generate access token and is no longer sent to Kafka brokers over network, this removes the risk of API key exposure. 2. Authentication process happens at a regular basis when access token is expiring, this minimizes the risk of token exposure.
 
-For more secure authentication, SASL OAUTHBEARER is the only recommended authentication method for Kafka clients. See [Configuring your Kafka API client](/docs/EventStreams?topic=using_kafka_api#kafka_api_client) how to configure SASL OAUTHBEARER in Kafka clients.
+For more secure authentication, SASL OAUTHBEARER is the only recommended authentication method for Kafka clients. See [Configuring your Kafka API client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client) how to configure SASL OAUTHBEARER in Kafka clients.
 
 Enterprise users have the option to disable SASL PLAIN in their Enterprise instances. Use command:
 
