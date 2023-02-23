@@ -100,7 +100,7 @@ If you use a Kafka client earlier than version 0.10.2.1, the `sasl.jaas.config` 
 ### Using SASL OAUTHBEARER
 {: #using_sasl_oauthbearer}
 
-Before configurating SASL mechanism for Java client, there are two prerequisites.
+Before configuring the SASL mechanism for Java client, there are two prerequisites.
 
 - The minimum supported Kafka Java client version is 3.1.0.
 - Additional jar package needs to be downloaded from Maven Central and made available in the classpath.
