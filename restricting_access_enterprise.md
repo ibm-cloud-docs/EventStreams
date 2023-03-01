@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-17"
+  years: 2015, 2023
+lastupdated: "2023-02-23"
 
 keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
