@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-28"
+  years: 2015, 2023
+lastupdated: "2023-03-2806"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -72,23 +72,12 @@ Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be awa
 - The {{site.data.keyword.messagehub}} plan that you use.
 - How many unique time series are sent for each plan.
 - The number of topics that you created.
-
-| Plan            | Topics         | Number of time series  | Monthly cost |
-|------------------|--------------|------------------|------------------|
-| `Lite`          | 1        |1 x 2 + 5 = 7 | $0.08 x 7 = $0.56      |
-| `Standard` | 1      | 1 x 2 + 5 = 7 | $0.08 x 7 = $0.56   |
-| | 10      | 10 x 2 + 5 = 25 | $0.08 x 25 = $2   |
-|  | 100      | 100 x 2 + 5 = 205 | $0.08 x 205 = $16.40   |
-| `Enterprise` | 1        | 1 x 2 + 19 = 21 | $0.08 x 21 = $1.68  |
-|           | 10        | 10 x 2 + 19 = 39 | $0.08 x 39 = $3.12  |
-|         | 100        |  100 x 2 + 19 = 219   | $0.08 x 219 = $17.52  |
-|        | 1000        |  1000 x 2 + 19 = 2019  | $0.08 x 2019 = $161.52   |
-|      | 3000        |   3000 x 2 + 19 = 6019    | $0.08 x 6019 = $481.52  |
-{: caption="Table 1. Cost for each plan" caption-side="bottom"}
+- Whether you have topics, consumers, or both enabled.
 
 Enabling mirroring for Enterprise clusters introduces one more global gauge metric and an extra gauge metric per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs.
 
 For more information, see [{{site.data.keyword.monitoringshort}} pricing](/docs/monitoring?topic=monitoring-pricing_plans).
+
 
 ## {{site.data.keyword.messagehub}} metrics details
 {: #metric_details}
@@ -142,15 +131,6 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  | |
 {: caption="Table 4. Metrics available for topic" caption-side="bottom"}
 
-### Metrics cost information with topic enabled
-{: #metrics_cost_topic}
-
- Topics| Number of time series  | Monthly cost |
-|----------------|-------|----------|
-| 1        | 1 x 2 = 2         | $0.08 x 2 = $0.16     |
-| 10        | 10 x 2  = 20     | $0.08 x 20 = $1.60  |
-| 100        |  100 x 2 = 200    | $0.08 x 200 = $16.00  |
-{: caption="Table 5. Cost for topic metrics" caption-side="bottom"}
 
 ## Enhanced metrics available with consumers enabled
 {: #metrics-consumers}
@@ -160,15 +140,6 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
 {: caption="Table 6. Metrics available for consumers" caption-side="bottom"}
 
-### Metrics cost information with consumers enabled
-{: #metrics-cost}
-
-| Consumer group | Topics| Partitions| Number of time series  | Monthly cost |
-|----------------|-------|----------|------------------------|--------------|
-| 1              | 1     | 3        | 1 x 1 x 3  = 3         | $0.08 x 3 = $0.24     |
-| 10             | 10    | 3        | 10 x 10 x 3 = 300      | $0.08 x 300 = $24.00  |
-| 25             | 25    | 6        |  25 x 25 x 6 = 3750    | $0.08 x 15000 = $300.00  |
-{: caption="Table 7. Cost for consumers metric" caption-side="bottom"}
 
 ### Authentication failures
 {: #ibm_eventstreams_kafka_authentication_failure_total}
