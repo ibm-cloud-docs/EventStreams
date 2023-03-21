@@ -83,8 +83,7 @@ To validate that streams landing is working, complete the following steps:
 ## Estimating cost
 {: #estimating-cost}
 
-You can evaluate your own planned usage with the [{{site.data.keyword.Bluemix_notm}} cost estimator]
-(https://cloud.ibm.com/estimator){: external}.
+You can evaluate the cost of your own planned usage with the [{{site.data.keyword.Bluemix_notm}} cost estimator](https://cloud.ibm.com/estimator){: external}.
 
 ## Limitations
 {: #limitations-streams-landing}

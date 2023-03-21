@@ -184,7 +184,7 @@ The percentage of maximum number of connected clients.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 10. Estimated connected clients percentage metric metadata" caption-side="bottom"}
 
-This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-plan_choose){: external} to determine what the recommended limits are for your plan and cluster.
+This is for information to help you monitor trends in your usage. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) to determine what the recommended limits are for your plan and cluster.
 
 ### Connected clients software name and version
 {: #ibm_eventstreams_connected_clients_software_name_and_version}
