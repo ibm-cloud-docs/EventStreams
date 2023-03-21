@@ -59,9 +59,10 @@ The "client-id" entity, the "request", and the "controller-mutation" quota types
 
 To obtain the {{site.data.keyword.iamshort}} ID of an {{site.data.keyword.iamshort}} (IAM) service ID, the IBM Cloud CLI can be used.
 
-```
+```bash
 ibmcloud iam service-id ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab --output json
 ```
+{: codeblock}
 
 See the following example output:
 
@@ -80,6 +81,7 @@ See the following example output:
 
 }
 ```
+{: codeblock}
 
 ## Mapping quotas onto an IBM Event Streams Enterprise cluster
 {: mapping_quotas_enterprise}
@@ -92,9 +94,10 @@ For more information, see the [Java documentation](https://kafka.apache.org/32/j
 
 The number of brokers can also be found by using the `kafka-configs.sh` shell script bundled in the Apache Kafka distribution.
 
-```
+```bash
 $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type brokers
 ```
+{: codeblock}
 
 ## {{site.data.keyword.messagehub}} authorization
 {: es_authorization}
@@ -128,6 +131,7 @@ ssl.enabled.protocols=TLSv1.2
 
 ssl.endpoint.identification.algorithm=HTTPS
 ```
+{: codeblock}
 
 For more information, see [Configuring your Kafka API client](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client).
 
@@ -135,51 +139,57 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
 
     - Alter quotas for user:
 
-    ```
+    ```bash
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
     consumer_byte_rate=2048' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
+    {: codeblock}
 
     Completed updating configuration for user `iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab`.
 
     - Describe quotas for user:
     
-    ```
+    ```bash
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users --entity-name 
     iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
+    {: codeblock}
 
     The quota configurations for user-principal `iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab` are `consumer_byte_rate=2048.0` and `producer_byte_rate=1024.0`.
 
     - Remove quotas for user:
 
-    ```
+    ```bash
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config       'producer_byte_rate,consumer_byte_rate' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
+    {: codeblock}
 
     Completed updating config for user `iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab`.
 
     - Describe all quotas that were set to any user, including the default user:
 
-    ```
+    ```bash
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users
     ```
+    {: codeblock}
 
     - Alter quotas for the default user:
 
-    ```
+    ```bash
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
     consumer_byte_rate=2048' --entity-type users --entity-default
     ```
+    {: codeblock}
 
     Completed updating default configuration for users in the cluster.
 
     - Remove quotas for the default user:
 
-    ```
+    ```bash
     $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,
     consumer_byte_rate' --entity-type users --entity-default
     ```
+    {: codeblock}
 
     Completed updating default configuration for users in the cluster.
 
@@ -270,6 +280,7 @@ class Snippet {
 
 }
 ```
+{: codeblock}
 
 ## {{site.data.keyword.cloudaccesstraillong_notm}} events
 {: activity_tracker_events}
