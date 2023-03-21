@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-03-21"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
 
@@ -145,3 +145,10 @@ ssl.endpoint.identification.algorithm=HTTPS
 ```
 
 The sample code refers to the [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.
+
+For other Kafka client libaries, refer to their documentation about how to implement OAUTHBEARER support. For example:.
+
+- [sarama](https://github.com/Shopify/sarama): an implementation of `AccessTokenProvider` interface is required.
+- [librdkafka](https://github.com/confluentinc/librdkafka): an implementation of `oauthbearer_token_refresh_cb` callback is required.
+
+For information about how to generate an {{site.data.keyword.Bluemix_notm}} IAM token by using an API key, see {{site.data.keyword.iamlong}}'s [document](https://cloud.ibm.com/docs/account?topic=account-iamtoken_from_apikey).
