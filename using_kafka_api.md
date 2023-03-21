@@ -127,7 +127,7 @@ implementation com.ibm.eventstreams:oauth-client:0.1.2
 - Use the `api_key` string as the API key.
 - The `IAMOAuthBearerLoginCallbackHandler` is provided by the jar package `com.ibm.eventstreams:oauth-client:+`.
 - The {{site.data.keyword.iamlong}}'s token endpoint `https://iam.cloud.ibm.com/identity/token` is configured to generate token from the API key by using specified grant type in jaas config. It is done on client side, thus the API key is never sent to the server side and provides better security than a long-lived API key.
-- The {{site.data.keyword.iamlong}}'s key endpoint `https://iam.cloud.ibm.com/identity/keys` is configured to validate the token.
+- The {{site.data.keyword.iamshort}}'s key endpoint `https://iam.cloud.ibm.com/identity/keys` is configured to validate the token.
 
 For a Java client, the following example shows the minimum set of properties, where `${BOOTSTRAP_ENDPOINTS}`, and `${APIKEY}` are to be replaced by the values that you retrieved previously.
 
@@ -146,9 +146,9 @@ ssl.endpoint.identification.algorithm=HTTPS
 
 The sample code refers to the [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.
 
-For other Kafka client libaries, refer to their documentation about how to implement OAUTHBEARER support. eg.
+For other Kafka client libaries, refer to their documentation about how to implement OAUTHBEARER support. For example:.
 
 - [sarama](https://github.com/Shopify/sarama): an implementation of `AccessTokenProvider` interface is required.
 - [librdkafka](https://github.com/confluentinc/librdkafka): an implementation of `oauthbearer_token_refresh_cb` callback is required.
 
-See {{site.data.keyword.iamlong}}'s [document](https://cloud.ibm.com/docs/account?topic=account-iamtoken_from_apikey) to know how to generate an IBM Cloud IAM token by using an API key.
+For information about how to generate an {{site.data.keyword.Bluemix_notm}} IAM token by using an API key, see {{site.data.keyword.iamlong}}'s [document](https://cloud.ibm.com/docs/account?topic=account-iamtoken_from_apikey).
