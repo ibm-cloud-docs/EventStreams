@@ -63,7 +63,7 @@ segment.ms
     
  See the following example of default value settings.
  
- ```
+```bash
  Details for topic testit
 Topic name   Internal?   Partition count   Replication factor   
 testit       false       1                 3   
@@ -81,7 +81,9 @@ retention.ms          86400000
 segment.ms            604800000   
 retention.bytes       1073741824   
 segment.index.bytes   10485760  
- ```
+```
+{: codeblock}
+
 
 ## How long does {{site.data.keyword.messagehub}} set the log retention window for the consumer offsets topic?
 {: #offsets }
