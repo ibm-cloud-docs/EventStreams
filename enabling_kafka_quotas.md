@@ -18,7 +18,7 @@ subcollection: EventStreams
 Kafka quotas enforce limits on produce and fetch requests to control the broker resources used by clients. Kafka quotas enable an administrator to enforce limits on the network throughput that can be consumed by individual producer and consumer applications.
 
 ## About Kafka quotas
-{: intro_kafka_quotas}
+{: #intro_kafka_quotas}
 
 If left unconstrained, it is possible for a small number of consumers or producers to monopolize the available network throughput for your service instance.
 
@@ -39,7 +39,7 @@ The following information applies for quotas:
 - A quota can be applied to the 'default' user, so it applies to any user, even for whom no user-specific quota was set.
 
 ## Client metrics
-{: client_metrics}
+{: #client_metrics}
 
 The Java client also exposes throttling information with the following per-broker metrics:
 
@@ -49,7 +49,7 @@ The Java client also exposes throttling information with the following per-broke
 - fetch-throttle-time-avg
 
 ## Setting client quotas
-{: setting_quotas}
+{: #setting_quotas}
 
 The {{site.data.keyword.messagehub_full}} Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters. For more information, see the [Quota Operations section](https://cloud.ibm.com/apidocs/event-streams/adminrest#create-quotas) of the {{site.data.keyword.messagehub_full}} Admin REST API.
 
@@ -84,7 +84,7 @@ See the following example output:
 {: codeblock}
 
 ## Mapping quotas onto an IBM Event Streams Enterprise cluster
-{: mapping_quotas_enterprise}
+{: #mapping_quotas_enterprise}
 
 The Kafka API quotas are per-broker, however Enterprise plan capacity is described as a [per-cluster throughput](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput). Therefore, if you want to limit a user to 10 MB/s in total, you apply a quota of 10/n MB/s to each broker (where n is the number of brokers in the cluster).
 
@@ -100,7 +100,7 @@ $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-se
 {: codeblock}
 
 ## {{site.data.keyword.messagehub}} authorization
-{: es_authorization}
+{: #es_authorization}
 
 To be authorized to set client quotas, a user must have the Manager role on the "cluster" resource in {{site.data.keyword.iamshort}}.
 
@@ -111,7 +111,7 @@ To create a set of credentials that can manage topics, groups, and participate i
 Manager role on resource types "topic", "group", and "txnid" and Reader role on "cluster" must to be associated with the service ID. 
 
 ### Example: Managing quotas with `the kafka-config.sh` script (Apache client)
-{: example_managing_quotas_kafka_script}
+{: #example_managing_quotas_kafka_script}
 
 1. Download a Kafka *binary* distribution (at least V3.1.0).
 
@@ -194,7 +194,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     Completed updating default configuration for users in the cluster.
 
 #### Example: Alter throughput quota usage through the Java API
-{: example_alter_throughput_quota}
+{: #example_alter_throughput_quota}
 
 The following example is a short sample snippet showing how to invoke the `KafkaAdminClient.alterclientQuotas` method.
 
@@ -283,7 +283,7 @@ class Snippet {
 {: codeblock}
 
 ## {{site.data.keyword.cloudaccesstraillong_notm}} events
-{: activity_tracker_events}
+{: #activity_tracker_events}
 
 Whenever throughput quotas are updated, an {{site.data.keyword.messagehub}} configuration event is generated, which can be monitored in {{site.data.keyword.cloudaccesstraillong}}.
 

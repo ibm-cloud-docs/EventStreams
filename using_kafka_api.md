@@ -72,7 +72,7 @@ To establish a connection, clients must be configured to use SASL PLAIN or SASL 
 
 To retrieve the username, password, and list of bootstrap servers, a service credentials object, or service key is required for the service instance. For more information about creating these objects, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
-### Using SASL PLAIN (deprecated)
+### Using SASL PLAIN
 {: #using_sasl_plain}
 
 Use the following strings and properties.
