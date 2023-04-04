@@ -28,7 +28,7 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 ISMAP and C5 Certification
 :   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by ISMAP (Information System Security Management and Assessment Program), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to C5 (Cloud Computing Compliance Controls Catalogue) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
 
-Kafka Version via CLI
+Kafka version via CLI
 :   You can now check the version of Kafka through the command line.
 
 ## January 2023
