@@ -36,7 +36,7 @@ Kafka Version via CLI
 {: release-note}
 
 Quota management through REST API
-:   You can enforce production and consumption rate limits by settings quotas through admin rest to prevent network saturation or monopolizing broker resources.
+:   You can enforce production and consumption rate limits by settings quotas through [Administrative REST API](https://cloud.ibm.com/apidocs/event-streams/adminrest#list-quotas) to prevent network saturation or monopolizing broker resources.
 
 ## October 2022
 {: #EventStreams-oct2022}
