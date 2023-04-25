@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-25"
 
 keywords: event streams release notes
 
@@ -24,6 +24,9 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 ## March 2023
 {: #EventStreams-mar2023}
 {: release-note}
+
+OAUTHBEARER users app to service authentication
+:   {{site.data.keyword.messagehub}} users can configure their Kafka client with more secure and ephemeral SASL OAUTHBEARER, in addition to API keys.
 
 ISMAP and C5 Certification
 :   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by ISMAP (Information System Security Management and Assessment Program), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to C5 (Cloud Computing Compliance Controls Catalogue) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
