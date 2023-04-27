@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-04-27"
 
 keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, cloud notice, terms of use, event streams
 
@@ -31,30 +31,42 @@ If you have an account with {{site.data.keyword.cloud_notm}}, your personal data
 
 {{site.data.keyword.messagehub}} provides a [Data Sheet Addendum (DSA)](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=AC17FFB0B52911E7A9EB066095601ABB) with its policies as a data processor regarding content and data protection.
 
+All plans are GDPR certified.
+
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #hipaa}
 
 {{site.data.keyword.messagehub}} with {{site.data.keyword.keymanagementservicelong}} for managing encryption keys meets the required IBM controls that are commensurate with the Health Insurance Portability and Accountability Act of 1996 (HIPAA) Security and Privacy Rule requirements. These requirements include the appropriate administrative, physical, and technical safeguards required of Business Associates in 45 CFR Part 160 and Subparts A and C of Part 164. HIPAA must be requested at the time of provisioning and requires a representative to sign a Business Associate Addendum (BAA) agreement with IBM.
+
+The Enterprise plan meets HIPAA requirements.
 
 ## ISO 27001/27017/27018 and ISO 27701
 {: #iso}
 
 {{site.data.keyword.messagehub}} is ISO 27001, 27017, 27018, and ISO 27701 certified. The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance/global).
 
+The Standard, Enterprise, and Satellite plans ISO 27001, 27017, 27018, and ISO 27701 certified.
+
 ## Information System Security Management and Assessment Program (ISMAP) 
 {: #ismap}
 
 {{site.data.keyword.messagehub}} Standard and Enteprise plans are certified by ISMAP (Information System Security Management and Assessment Program), the Japanese government program for assessing the security of public cloud services.
+
+The Standard and Enterprise plans are ISMAP certified.
 
 ## Cloud Computing Compliance Controls Catalogue (C5)
 {: #c5}
 
 {{site.data.keyword.messagehub}} Standard and Enterprise plans are certified to C5 (Cloud Computing Compliance Controls Catalogue) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
 
+The Standard and Enterprise plans are C5 certified.
+
 ## SOC 2 Type 1 Certification
 {: #soc2_type1}
 
 {{site.data.keyword.messagehub}} is SOC 2 Type 1 certified. For information about requesting an {{site.data.keyword.cloud_notm}} SOC 2 report, see [IBM Cloud global compliance programs](https://www.ibm.com/cloud/compliance).
+
+The Standard and Enterprise plans are SOC 2 Type 1 certified.
 
 ## SOC 2 Type 2 Certification
 {: #soc2_type2}
@@ -63,7 +75,9 @@ If you have an account with {{site.data.keyword.cloud_notm}}, your personal data
 
 You can request a SOC 2 Type 2 report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [IBM Cloud support](https://cloud.ibm.com/unifiedsupport/supportcenter).
 
-## PCI DSS
+The Standard and Enterprise plans are SOC 2 Type 2 certified.
+
+## Payment Card Industry Data Security Standard (PCI DSS)
 {: #pci_dss}
 
 {{site.data.keyword.messagehub}} is compliant with the Payment Card Industry Data Security Standard (PCI DSS). {{site.data.keyword.cloud_notm}} completes annual PCI DSS assessments by using an approved Qualified Security Assessor (QSA), and the resulting Attestations of Compliance (AOCs) and Service Responsibility Matrix (SRM) guides are available upon customer request. Auditors reviewed {{site.data.keyword.messagehub}} for compliance under PCI DSS version 3.2.1 at Service Provider Level 1.
@@ -77,4 +91,6 @@ Customers are responsible for the storing, processing, and transmission of their
 d to manage data retention and removal from the service according to the customer’s policies. To facilitate this process, no cardholder data can be used in an {{site.data.keyword.messagehub}} document ID. If PAN data is to be stored in {{site.data.keyword.messagehub}}, they must be rendered unreadable (in accordance with PCI requirement 3.4) before transmission to the {{site.data.keyword.messagehub}} service.
 
 A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services, and options to request a PCI DSS AOC and SRM guide, can be found at the [IBM Cloud compliance page](https://www.ibm.com/cloud/compliance).
+
+The Standard and Enterprise plans are PCI DSS certified.
 
