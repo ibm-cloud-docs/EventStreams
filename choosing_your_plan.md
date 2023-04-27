@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-27"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
 
@@ -80,7 +80,7 @@ The following table summarizes what is supported by the plans:
 | **Location (region) availability** | Dallas (us-south)  |  **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)  \n Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)   |   **Multizone location (MZR)**   \n Dallas (us-south)   \n Washington (us-east)   \n London (eu-gb)   \n Sydney (au-syd)   \n Frankfurt (eu-de)   \n  Tokyo (jp-tok)   \n  Osaka (jp-osa)  \n Toronto (ca-tor)   \n Sao Paulo (br-sao)    \n    \n  **Single zone location (SZR)**   \n Chennai (che01)  |  **Your Satellite location managed in**   \n Dallas   \n Washington   \n London   \n Sydney   \n Frankfurt   \n  Tokyo   \n  Osaka   \n  Toronto   \n Sao Paulo   |
 | **APIs supported** |  Kafka API   \n Admin REST API  \n REST Producer API |  Kafka API   \n Admin REST API   \n REST Producer API    |  Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API  | Kafka API   \n Admin REST API   \n REST Producer API   \n  Schema Registry API [^tabletext10] |
 | **Deployment timeframe** | Instantaneous provisioning  | Instantaneous provisioning    |Expect provisioning to take up to 3 hours. As Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning.  |  If all your infrastructure is correctly in place, expect provisioning to take up to 1 hour because {{site.data.keyword.satelliteshort}} has its own dedicated resources for each instance.   |
-| **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI \n ISMAP \n C5 |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready   \n  PCI  \n ISMAP \n C5 |   None [^tabletext11]  |
+| **Compliance** |GDPR   \n  Privacy Shield  | GDPR   \n  Privacy Shield   \n  ISO 27001, 27017, 27018, 2701    \n  SOC 1 Type     \n  SOC 2 Type 2   \n  PCI \n ISMAP \n C5 |  GDPR   \n Privacy Shield   \n ISO 27001, 27017, 27018, 2701   \n  SOC 1 Type 2   \n  SOC 2 Type 2 \n HIPAA ready   \n  PCI  \n ISMAP \n C5 |   GDPR   \n   ISO 27001, 27017, 27018, 2701 [^tabletext11]  |
 | **Manage security and compliance**  | No  |  No |  Yes |  No   |
 | **IAM address restrictions** | No | Yes | Yes | No |
 | **IAM token authentication only** | No | No | Yes | Yes |
@@ -107,6 +107,6 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext10]: The Schema Registry API is not automatically enabled on the Satellite plan. For information about how to enable it, see [Enable the schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
 
-[^tabletext11]: The compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}.
+[^tabletext11]: All compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}.
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
