@@ -6,7 +6,7 @@ lastupdated: "2022-11-22"
 
 keywords: IBM Event Streams, Log Analysis, streaming
 
-subcollection: eventstreams
+subcollection: EventStreams
 
 ---
 
