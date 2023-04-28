@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-04-28"
 
-keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, cloud notice, terms of use, event streams
+keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, cloud notice, terms of use, event streams, iso, financial services, ismap, c5, soc 2, type 2, pci
 
 subcollection: EventStreams
 
