@@ -15,35 +15,35 @@ subcollection: EventStreams
 # Security and compliance
 {: #compliance}
 
-{{site.data.keyword.messagehub_full}} provides a trustworthy and secure cloud database system. The service is built on best-in-industry standards, including ISO 27001:2013.
+{{site.data.keyword.messagehub_full}} is a secure and highly available message bus that is built with Apache Kafka. The service is built on the following best industry standards.
 
 ## {{site.data.keyword.cloud_notm}} for Financial Services
 {: #cloud_fs}
 
-{{site.data.keyword.hscrypto}} is {{site.data.keyword.cloud}} for [Financial Services](https://www.ibm.com/cloud/financial-services) certified. For information about requesting an {{site.data.keyword.cloud_notm}} for Financial Services report, see [{{site.data.keyword.cloud_notm}} industry compliance programs](https://www.ibm.com/cloud/compliance).
+{{site.data.keyword.messagehub}} is {{site.data.keyword.cloud}} for [Financial Services](https://www.ibm.com/cloud/financial-services) certified. For information about requesting an {{site.data.keyword.cloud_notm}} for Financial Services report, see [{{site.data.keyword.cloud_notm}} industry compliance programs](https://www.ibm.com/cloud/compliance).
 
 ## General Data Protection Regulation (GDPR)
 {: #gdpr}
 
-If you have an account with {{site.data.keyword.cloud_notm}}, your personal data is held by {{site.data.keyword.cloud_notm}}. The [IBM Data Processing Addendum (IBM DPA)](https://www.ibm.com/support/customer/csol/terms/?cat=dpa) applies to the processing of clients' personal data by IBM on behalf of the client to provide IBM standard services.
+The GDPR seeks to create a harmonized data protection law framework across the EU. It aims to give citizens back the control of their personal data, while it imposes strict rules on the ones who host and "process" this data, anywhere in the world. The Regulation also introduces rules that relate to the free movement of personal data within and outside the EU.
 
-{{site.data.keyword.messagehub}} processes limited client Personal Information (PI) in the course of running the service and optimizing the user experience.
-
-{{site.data.keyword.messagehub}} provides a [Data Sheet Addendum (DSA)](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=AC17FFB0B52911E7A9EB066095601ABB) with its policies as a data processor regarding content and data protection.
+With the [General Data Protection Regulation](https://gdpr.eu/), {{site.data.keyword.messagehub}} customers can rely on the {{site.data.keyword.messagehub}} team's understanding and compliance with emerging data privacy standards and legislation. Customers can also rely on IBM's wider ability to provide a comprehensive suite of solutions to assist businesses of all sizes with their own internal data governance requirements.
 
 All plans are GDPR certified.
 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #hipaa}
 
-{{site.data.keyword.messagehub}} with {{site.data.keyword.keymanagementservicelong}} for managing encryption keys meets the required IBM controls that are commensurate with the Health Insurance Portability and Accountability Act of 1996 (HIPAA) Security and Privacy Rule requirements. These requirements include the appropriate administrative, physical, and technical safeguards required of Business Associates in 45 CFR Part 160 and Subparts A and C of Part 164. HIPAA must be requested at the time of provisioning and requires a representative to sign a Business Associate Addendum (BAA) agreement with IBM.
+{{site.data.keyword.messagehub}} meets the required IBM controls that are commensurate with the Health Insurance Portability and Accountability Act of 1996 (HIPAA) Security and Privacy Rule requirements. These requirements include the appropriate administrative, physical, and technical safeguards required of Business Associates in 45 CFR Part 160 and Subparts A and C of Part 164. HIPAA must be requested at the time of provisioning and requires a representative to sign a Business Associate Addendum (BAA) agreement with IBM.
 
 The Enterprise plan meets HIPAA requirements.
 
 ## ISO 27001/27017/27018 and ISO 27701
 {: #iso}
 
-{{site.data.keyword.messagehub}} is ISO 27001, 27017, 27018, and ISO 27701 certified. The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance/global).
+{{site.data.keyword.messagehub}} is ISO 27001, 27017, 27018, and ISO 27701 certified. ISO 27001 (International Organisation for Standardisation) is an international standard for information security. ISO 27017/27018 is an information security framework for Cloud service providers. ISO 27701 is a privacy add on and requires developing and managing a privacy information management system (PIMS). 
+
+The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance/global).
 
 The Standard, Enterprise, and Satellite plans ISO 27001, 27017, 27018, and ISO 27701 certified.
 
@@ -87,8 +87,7 @@ If you intend to store sensitive information in an IBM Cloudant database, you mu
 
 Customers are responsible for the storing, processing, and transmission of their cardholder data, and can create cardholder data environments (CDEs) that can store, transmit, or process cardholder data by using {{site.data.keyword.messagehub}}. Customers can request and use the {{site.data.keyword.cloud_notm}} AOCs and SRM guides when they seek their own PCI DSS certifications. It is the responsibility of the customer to document and operate CDEs and applications that are built by using {{site.data.keyword.cloud_notm}} Platform services in a PCI DSS-compliant manner.
 
-{{site.data.keyword.messagehub}} documentation on service security and deletion of data covers methods to manage cardholder data within the environment in accordance with PCI requirements. It is the customer’s responsibility to familiarize themselves with these processes an
-d to manage data retention and removal from the service according to the customer’s policies. To facilitate this process, no cardholder data can be used in an {{site.data.keyword.messagehub}} document ID. If PAN data is to be stored in {{site.data.keyword.messagehub}}, they must be rendered unreadable (in accordance with PCI requirement 3.4) before transmission to the {{site.data.keyword.messagehub}} service.
+{{site.data.keyword.messagehub}} documentation on service security and deletion of data covers methods to manage cardholder data within the environment in accordance with PCI requirements. It is the customer’s responsibility to familiarize themselves with these processes and to manage data retention and removal from the service according to the customer’s policies. To facilitate this process, no cardholder data can be used in an {{site.data.keyword.messagehub}} document ID. If PAN data is to be stored in {{site.data.keyword.messagehub}}, they must be rendered unreadable (in accordance with PCI requirement 3.4) before transmission to the {{site.data.keyword.messagehub}} service.
 
 A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services, and options to request a PCI DSS AOC and SRM guide, can be found at the [IBM Cloud compliance page](https://www.ibm.com/cloud/compliance).
 
