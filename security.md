@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-05-09"
 
 keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci
 
@@ -22,7 +22,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.messagehub}} is {{site.data.keyword.cloud}} for [Financial Services](https://www.ibm.com/cloud/financial-services) certified. For information about requesting an {{site.data.keyword.cloud_notm}} for Financial Services report, see [{{site.data.keyword.cloud_notm}} industry compliance programs](https://www.ibm.com/cloud/compliance).
 
-The Enterprise plan is {{site.data.keyword.cloud}} for Financial Services certified.
+The Enterprise plan is {{site.data.keyword.cloud}} Financial Services certified.
 
 ## General Data Protection Regulation (GDPR)
 {: #gdpr}
@@ -63,14 +63,14 @@ The Enterprise and Standard plans are ISMAP certified.
 
 The Enterprise and Standard plans are C5 certified.
 
-## SOC 1, SOC 2 Type 2, and SOC 3 Certification
+## SOC 1 Type 2, SOC 2 Type 2, and SOC 3 Certification
 {: #soc_type}
 
 {{site.data.keyword.IBM}} provides a Service Organization Controls (SOC) report for {{site.data.keyword.messagehub}}. The reports evaluate {{site.data.keyword.IBM_notm}}'s operational controls according to the criteria set by the American Institute of Certified Public Accountants (AICPA) Trust Services Principles. The Trust Services Principles define adequate control systems and establish industry standards for service providers such as {{site.data.keyword.cloud_notm}} to safeguard their customers' data and information.
 
 You can request a SOC report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [IBM Cloud support](https://cloud.ibm.com/unifiedsupport/supportcenter).
 
-The Enterprise and Standard plans are SOC 2 Type 2 certified.
+The Enterprise and Standard plans are SOC certified.
 
 ## Payment Card Industry Data Security Standard (PCI DSS)
 {: #pci_dss}
