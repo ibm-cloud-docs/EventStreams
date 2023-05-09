@@ -4,7 +4,7 @@ copyright:
   years: 2023
 lastupdated: "2023-04-28"
 
-keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, cloud notice, terms of use, event streams, iso, financial services, ismap, c5, soc 2, type 2, pci
+keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci
 
 subcollection: EventStreams
 
@@ -22,6 +22,8 @@ subcollection: EventStreams
 
 {{site.data.keyword.messagehub}} is {{site.data.keyword.cloud}} for [Financial Services](https://www.ibm.com/cloud/financial-services) certified. For information about requesting an {{site.data.keyword.cloud_notm}} for Financial Services report, see [{{site.data.keyword.cloud_notm}} industry compliance programs](https://www.ibm.com/cloud/compliance).
 
+The Enterprise plan is {{site.data.keyword.cloud}} for Financial Services certified.
+
 ## General Data Protection Regulation (GDPR)
 {: #gdpr}
 
@@ -29,7 +31,7 @@ The GDPR seeks to create a harmonized data protection law framework across the E
 
 With the [General Data Protection Regulation](https://gdpr.eu/), {{site.data.keyword.messagehub}} customers can rely on the {{site.data.keyword.messagehub}} team's understanding and compliance with emerging data privacy standards and legislation. Customers can also rely on IBM's wider ability to provide a comprehensive suite of solutions to assist businesses of all sizes with their own internal data governance requirements.
 
-All plans are GDPR certified.
+The Enterprise, Standard, and Satellite plans are GDPR certified.
 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #hipaa}
@@ -45,37 +47,30 @@ The Enterprise plan meets HIPAA requirements.
 
 The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance/global).
 
-The Standard, Enterprise, and Satellite plans ISO 27001, 27017, 27018, and ISO 27701 certified.
+The Enterprise, Standard, and Satellite plans ISO 27001, 27017, 27018, and ISO 27701 certified.
 
 ## Information System Security Management and Assessment Program (ISMAP) 
 {: #ismap}
 
 {{site.data.keyword.messagehub}} Standard and Enteprise plans are certified by ISMAP (Information System Security Management and Assessment Program), the Japanese government program for assessing the security of public cloud services.
 
-The Standard and Enterprise plans are ISMAP certified.
+The Enterprise and Standard plans are ISMAP certified.
 
 ## Cloud Computing Compliance Controls Catalogue (C5)
 {: #c5}
 
 {{site.data.keyword.messagehub}} Standard and Enterprise plans are certified to C5 (Cloud Computing Compliance Controls Catalogue) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
 
-The Standard and Enterprise plans are C5 certified.
+The Enterprise and Standard plans are C5 certified.
 
-## SOC 2 Type 1 Certification
-{: #soc2_type1}
+## SOC 1, SOC 2 Type 2, and SOC 3 Certification
+{: #soc_type}
 
-{{site.data.keyword.messagehub}} is SOC 2 Type 1 certified. For information about requesting an {{site.data.keyword.cloud_notm}} SOC 2 report, see [IBM Cloud global compliance programs](https://www.ibm.com/cloud/compliance).
+{{site.data.keyword.IBM}} provides a Service Organization Controls (SOC) report for {{site.data.keyword.messagehub}}. The reports evaluate {{site.data.keyword.IBM_notm}}'s operational controls according to the criteria set by the American Institute of Certified Public Accountants (AICPA) Trust Services Principles. The Trust Services Principles define adequate control systems and establish industry standards for service providers such as {{site.data.keyword.cloud_notm}} to safeguard their customers' data and information.
 
-The Standard and Enterprise plans are SOC 2 Type 1 certified.
+You can request a SOC report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [IBM Cloud support](https://cloud.ibm.com/unifiedsupport/supportcenter).
 
-## SOC 2 Type 2 Certification
-{: #soc2_type2}
-
-{{site.data.keyword.IBM}} provides a Service Organization Controls (SOC) 2 Type 2 report for {{site.data.keyword.messagehub}}. The reports evaluate {{site.data.keyword.IBM_notm}}'s operational controls according to the criteria set by the American Institute of Certified Public Accountants (AICPA) Trust Services Principles. The Trust Services Principles define adequate control systems and establish industry standards for service providers such as {{site.data.keyword.cloud_notm}} to safeguard their customers' data and information.
-
-You can request a SOC 2 Type 2 report from the customer portal or contact your sales representative. Alternatively, you can open a support ticket with [IBM Cloud support](https://cloud.ibm.com/unifiedsupport/supportcenter).
-
-The Standard and Enterprise plans are SOC 2 Type 2 certified.
+The Enterprise and Standard plans are SOC 2 Type 2 certified.
 
 ## Payment Card Industry Data Security Standard (PCI DSS)
 {: #pci_dss}
@@ -91,5 +86,5 @@ Customers are responsible for the storing, processing, and transmission of their
 
 A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services, and options to request a PCI DSS AOC and SRM guide, can be found at the [IBM Cloud compliance page](https://www.ibm.com/cloud/compliance).
 
-The Standard and Enterprise plans are PCI DSS certified.
+The Enterprise and Standard plans are PCI DSS certified.
 
