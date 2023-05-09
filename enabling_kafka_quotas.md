@@ -66,7 +66,7 @@ ibmcloud iam service-id ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab --output 
 
 See the following example output:
 
-```
+```bash
 {
 
     "active":true,
@@ -95,7 +95,7 @@ For more information, see the [Java documentation](https://kafka.apache.org/32/j
 The number of brokers can also be found by using the `kafka-configs.sh` shell script bundled in the Apache Kafka distribution.
 
 ```bash
-$ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type brokers
+bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type brokers
 ```
 {: codeblock}
 
@@ -118,7 +118,7 @@ Manager role on resource types "topic", "group", and "txnid" and Reader role on 
 2. Create a properties file (named command-config.properties in the following command lines examples), containing the following entries (replacing "myapikey" with the 
 actual API key).
 
-```
+```bash
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="myapikey";
 
 security.protocol=SASL_SSL
@@ -140,7 +140,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     - Alter quotas for user:
 
     ```bash
-    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
+    bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
     consumer_byte_rate=2048' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
     {: codeblock}
@@ -150,7 +150,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     - Describe quotas for user:
     
     ```bash
-    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users --entity-name 
+    bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users --entity-name 
     iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
     {: codeblock}
@@ -160,7 +160,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     - Remove quotas for user:
 
     ```bash
-    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config       'producer_byte_rate,consumer_byte_rate' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
+    bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config       'producer_byte_rate,consumer_byte_rate' --entity-type users --entity-name iam-ServiceId-12345678-aaaa-bbbb-cccc-1234567890ab
     ```
     {: codeblock}
 
@@ -169,14 +169,14 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     - Describe all quotas that were set to any user, including the default user:
 
     ```bash
-    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users
+    bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --describe --entity-type users
     ```
     {: codeblock}
 
     - Alter quotas for the default user:
 
     ```bash
-    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
+    bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --add-config 'producer_byte_rate=1024,
     consumer_byte_rate=2048' --entity-type users --entity-default
     ```
     {: codeblock}
@@ -186,7 +186,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
     - Remove quotas for the default user:
 
     ```bash
-    $ bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,
+    bin/kafka-configs.sh --command-config command-config.properties --bootstrap-server "kafka-0.blah.cloud:9093" --alter --delete-config 'producer_byte_rate,
     consumer_byte_rate' --entity-type users --entity-default
     ```
     {: codeblock}
@@ -198,7 +198,7 @@ For more information, see [Configuring your Kafka API client](https://cloud.ibm.
 
 The following example is a short sample snippet showing how to invoke the `KafkaAdminClient.alterclientQuotas` method.
 
-```
+```bash
 https://kafka.apache.org/32/javadoc/org/apache/kafka/clients/admin/KafkaAdminClient.html#alterClientQuotas(java.util.Collection,org.apache.kafka.clients.admin.AlterClientQuotas
 Options)
 

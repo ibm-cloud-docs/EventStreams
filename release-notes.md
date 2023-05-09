@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-23"
+  years: 2022, 2023
+lastupdated: "2023-04-27"
 
 keywords: event streams release notes
 
@@ -20,6 +20,26 @@ content-type: release-note
 
 Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## March 2023
+{: #EventStreams-mar2023}
+{: release-note}
+
+OAUTHBEARER users app to service authentication
+:   {{site.data.keyword.messagehub}} users can configure their Kafka client with more secure and ephemeral [SASL OAUTHBEARER](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client), in addition to API keys.
+
+ISMAP and C5 Certification
+:   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by [ISMAP (Information System Security Management and Assessment Program)](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-compliance#ismap), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to [C5 (Cloud Computing Compliance Controls Catalogue)](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-compliance#c5) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
+
+Kafka version via CLI
+:   You can now check the version of Kafka through the command line.
+
+## January 2023
+{: #EventStreams-jan2023}
+{: release-note}
+
+Quota management through REST API
+:   You can enforce production and consumption rate limits by settings quotas through [Administrative REST API](https://cloud.ibm.com/apidocs/event-streams/adminrest#list-quotas) to prevent network saturation or monopolizing broker resources.
 
 ## October 2022
 {: #EventStreams-oct2022}
