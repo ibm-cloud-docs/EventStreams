@@ -596,10 +596,10 @@ If a message is sent by using a schema that isn’t in the registry, the SerDes 
 The *normalize* option for schema lookups and registration is not supported.
 {: note}
 
-## Using the schema registry with the tools that use the Confluent registry API
+## Using the schema registry with tools that use the Confluent registry API
 {: #using_schema_registry_confluent}
 
-The schema registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that has been designed to work with the Confluent Schema Registry. Only HTTP REST endpoint with the following paths are implemented:
+The schema registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that has been designed to work with the Confluent Schema Registry. Only the HTTP REST endpoint with the following paths are implemented:
 
 * compatibility
 * config
@@ -615,7 +615,7 @@ https://token:{$APIKEY}@{$HOST}/{confluent}
 
 where:
 * `$APIKEY` is the API key to use from the **Service Credentials** tab
-* `$HOST` is the host from the `kafka_http_ur`l field in the **Service Credentials** tab.
+* `$HOST` is the host from the `kafka_http_ur`l field in the **Service Credentials** tab
 
 
 ## Using the schema registry with third-party tools
