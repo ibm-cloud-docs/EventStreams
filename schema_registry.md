@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-14"
+lastupdated: "2023-05-16"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -392,6 +392,31 @@ Deleting a schema version requires at least both:
 - Manager role access to the schema resource that matches the schema that is deleted.
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+
+
+
+### Getting the specific global unique ID of a schema version
+{: #get_schema_version_ID}
+
+To retrieve a specific global unique ID of a schema version, make a GET request to the `/artifacts/{artifactId}/versions/{version}/meta` endpoint (where {artifactId} is the ID of the artifact, and {version} is the version number of the specific version you need to retrieve). If successful, the specific global unique ID of a schema version is returned in the payload of the response.
+
+Example curl request:
+
+```text
+curl -u token:$APIKEY $URL/artifacts/9030f450-45fb-4750-bb37-771ad49ee0e8/versions/1/meta
+```
+
+Example response:
+
+```text
+{"id":"9030f450-45fb-4750-bb37-771ad49ee0e8","type":"AVRO","version":1,"createdOn":1682340169202,"modifiedOn":1682340169202,"globalId":1}
+```
+
+Getting the global unique ID of a schema version requires at least both the following types of access:
+
+* Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
+* Reader role access to the schema resource that matches the schema that is retrieved.
+
 
 ### Updating a global rule
 {: #updating_global_rule}
