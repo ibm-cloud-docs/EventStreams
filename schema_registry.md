@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-24"
+  years: 2020, 2023
+lastupdated: "2023-05-16"
 
 keywords: IBM Event Streams, Schema Registry
 
@@ -393,6 +393,31 @@ Deleting a schema version requires at least both:
 
 An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
+
+
+### Getting the specific global unique ID of a schema version
+{: #get_schema_version_ID}
+
+To retrieve a specific global unique ID of a schema version, make a GET request to the `/artifacts/{artifactId}/versions/{version}/meta` endpoint (where {artifactId} is the ID of the artifact, and {version} is the version number of the specific version you need to retrieve). If successful, the specific global unique ID of a schema version is returned in the payload of the response.
+
+Example curl request:
+
+```text
+curl -u token:$APIKEY $URL/artifacts/9030f450-45fb-4750-bb37-771ad49ee0e8/versions/1/meta
+```
+
+Example response:
+
+```text
+{"id":"9030f450-45fb-4750-bb37-771ad49ee0e8","type":"AVRO","version":1,"createdOn":1682340169202,"modifiedOn":1682340169202,"globalId":1}
+```
+
+Getting the global unique ID of a schema version requires at least both the following types of access:
+
+* Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
+* Reader role access to the schema resource that matches the schema that is retrieved.
+
+
 ### Updating a global rule
 {: #updating_global_rule}
 
@@ -595,6 +620,28 @@ If a message is sent by using a schema that isn’t in the registry, the SerDes 
 
 The *normalize* option for schema lookups and registration is not supported.
 {: note}
+
+## Using the schema registry with tools that use the Confluent registry API
+{: #using_schema_registry_confluent}
+
+The schema registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that has been designed to work with the Confluent Schema Registry. Only the HTTP REST endpoint with the following paths are implemented:
+
+* compatibility
+* config
+* schemas
+* subjects
+
+To configure an application to use this compatibility API, specify the schema registry endpoint in the following format:
+
+```text
+https://token:{$APIKEY}@{$HOST}/{confluent}
+```
+{: codeblock}
+
+where:
+* `$APIKEY` is the API key to use from the **Service Credentials** tab
+* `$HOST` is the host from the `kafka_http_ur`l field in the **Service Credentials** tab
+
 
 ## Using the schema registry with third-party tools
 {: #third_party}
