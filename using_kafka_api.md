@@ -29,7 +29,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 |   |Enterprise plan   |Standard plan   |Lite plan |
 |---|---|---|---|
-|**Kafka version on cluster**  | Kafka 3.1  |  Kafka 3.1 | Kafka 3.1  |
+|**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
 | **Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
@@ -40,7 +40,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 3.1](https://kafka.apache.org/31/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 3.1](https://kafka.apache.org/31/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}.
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 3.3](https://kafka.apache.org/33/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 3.3](https://kafka.apache.org/33/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}.
 
 For other languages, run one of the following clients, all of which are tested with {{site.data.keyword.messagehub}}.
 

@@ -62,7 +62,7 @@ The following table summarizes what is supported by the plans:
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant | Single tenant     |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |   3  |
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
-| **Kafka version on cluster**  | Kafka 3.1 | Kafka 3.1  | Kafka 3.1 |  Kafka 3.1   |
+| **Kafka version on cluster**  | Kafka 3.3 | Kafka 3.3  | Kafka 3.3 |  Kafka 3.3   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
 | **Stream to Cloud Object Storage by using SQL Query**  | No |  Yes | Yes  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
