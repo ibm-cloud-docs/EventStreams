@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-06-06"
 
 keywords: event streams release notes
 
@@ -20,6 +20,14 @@ content-type: release-note
 
 Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## May 2023
+{: #EventStreams-may2023}
+{: release-note}
+
+Apache Kafka upgrade
+:   Upgrade to Apache Kafka version 3.3.
+
 
 ## March 2023
 {: #EventStreams-mar2023}
