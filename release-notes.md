@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-06-06"
 
 keywords: event streams release notes
 
