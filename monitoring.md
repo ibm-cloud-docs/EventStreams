@@ -39,7 +39,7 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
-The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic` and `consumers`. You can opt in to either one or both. The metrics available are described in the [topic](#metrics-topic) and [consumers](#metrics-consumers) tables.
+The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic`, `partition` and `consumers`. You can opt in to either one or all. The metrics available are described in the [topic](#metrics-topic), [partition](#metrics-partition) and [consumers](#metrics-consumers) tables.
 
 Enabling enhanced metrics introduces more global gauge metrics and therefore increases the costs.
 
@@ -48,11 +48,11 @@ Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, y
 * Run the following command to update the service instance to start using enhanced metrics:
    
    ```bash
-   ibmcloud resource service-instance-update <instance-name> -p '{"metrics":["topic","consumers"]}'
+   ibmcloud resource service-instance-update <instance-name> -p '{"metrics":["topic","partition","consumers"]}'
    ```
    {: codeblock}
 
-When enhanced metrics are enabled, depending on the selection, new dashboards are available; **IBM Event Streams(Topic)** and **IBM Event Streams(Consumers)**.
+When enhanced metrics are enabled, depending on the selection, new dashboards are available; **IBM Event Streams(Topic)**, **IBM Event Streams(Partitions)** and **IBM Event Streams(Consumers)**.
 
 To opt out of enhanced metrics, run the following command:
 
@@ -72,7 +72,8 @@ Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be awa
 - The {{site.data.keyword.messagehub}} plan that you use.
 - How many unique time series are sent for each plan.
 - The number of topics that you created.
-- Whether you have topics, consumers, or both enabled.
+- The number of partitions that you created.
+- Whether you have topics, partitions, consumers, or all enabled.
 
 Enabling mirroring for Enterprise clusters introduces one more global gauge metric and an extra gauge metric per topic in the target cluster (with the target cluster already emitting metrics in accordance with the preceding table), therefore increasing the costs.
 
@@ -140,6 +141,13 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
 {: caption="Table 6. Metrics available for consumers" caption-side="bottom"}
 
+## Enhanced metrics available with partition enabled
+{: #metrics-partition}
+
+| Metric name |Enterprise|Lite|Standard|
+|-----------|--------|--------|--------|
+| [Message rate per partition](#ibm_eventstreams_instance_message_rate_per_partition) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
+{: caption="Table 7. Metrics available for partition" caption-side="bottom"}
 
 ### Authentication failures
 {: #ibm_eventstreams_kafka_authentication_failure_total}
@@ -514,6 +522,19 @@ An increasing lag might highlight that the consumers in the group are not keepin
 
 It is normal for this metric to fluctuate when viewed over short time periods because of sampling and batch processing effects.
 {: note}
+
+### Message rate per partition 
+{: #ibm_eventstreams_instance_message_rate_per_partition}
+
+A rate of change of this metric gives the messages/sec incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_message_rate_per_partition`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance name, IBM Event Streams Kafka topic, IBM Event Streams Kafka partitions` |
+{: caption="Table 32. Message rate per partition metric metadata" caption-side="bottom"}
 
 ### Maximum partition retention percentage
 {: #ibm_eventstreams_instance_max_partition_retention_percent}
