@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-06-20"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -39,7 +39,7 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
-The enhanced {{site.data.keyword.messagehub}} metrics consist of two groups; `topic`, `partition` and `consumers`. You can opt in to either one or all. The metrics available are described in the [topic](#metrics-topic), [partition](#metrics-partition) and [consumers](#metrics-consumers) tables.
+The enhanced {{site.data.keyword.messagehub}} metrics consist of three groups; `topic`, `partition` and `consumers`. You can opt in to either one or all. The metrics available are described in the [topic](#metrics-topic), [partition](#metrics-partition) and [consumers](#metrics-consumers) tables.
 
 Enabling enhanced metrics introduces more global gauge metrics and therefore increases the costs.
 
@@ -141,13 +141,13 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
 {: caption="Table 6. Metrics available for consumers" caption-side="bottom"}
 
-## Enhanced metrics available with partition enabled
+## Enhanced metrics available with partitions enabled
 {: #metrics-partition}
 
 | Metric name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
 | [Message rate per partition](#ibm_eventstreams_instance_message_rate_per_partition) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
-{: caption="Table 7. Metrics available for partition" caption-side="bottom"}
+{: caption="Table 7. Metrics available for partitions" caption-side="bottom"}
 
 ### Authentication failures
 {: #ibm_eventstreams_kafka_authentication_failure_total}
@@ -526,7 +526,7 @@ It is normal for this metric to fluctuate when viewed over short time periods be
 ### Message rate per partition 
 {: #ibm_eventstreams_instance_message_rate_per_partition}
 
-A rate of change of this metric gives the messages/sec incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
+The rate of change of this metric gives the message per seccond incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
 
 | Metadata | Description |
 |----------|-------------|
@@ -534,7 +534,7 @@ A rate of change of this metric gives the messages/sec incoming in to a partitio
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance name, IBM Event Streams Kafka topic, IBM Event Streams Kafka partitions` |
-{: caption="Table 32. Message rate per partition metric metadata" caption-side="bottom"}
+{: caption="Table 33. Message rate per partition metric metadata" caption-side="bottom"}
 
 ### Maximum partition retention percentage
 {: #ibm_eventstreams_instance_max_partition_retention_percent}
@@ -547,7 +547,7 @@ Maximum percentage of the retention size used for partitions of a topic.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 33. Maximum partition retention percentage metric metadata" caption-side="bottom"}
+{: caption="Table 34. Maximum partition retention percentage metric metadata" caption-side="bottom"}
 
 ### Topic size
 {: #ibm_eventstreams_instance_topic_size}
@@ -560,7 +560,7 @@ Total disk size of all partitions of a topic.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
-{: caption="Table 34. Topic size metric metadata" caption-side="bottom"}
+{: caption="Table 35. Topic size metric metadata" caption-side="bottom"}
 
 ## Attributes for segmentation
 {: #attributes}
@@ -581,7 +581,7 @@ The following attributes are available for segmenting all of the listed metrics.
 | `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created. |
-{: caption="Table 35. Global attributes" caption-side="bottom"}
+{: caption="Table 36. Global attributes" caption-side="bottom"}
 
 ### More attributes
 {: #additional-attributes}
@@ -598,6 +598,6 @@ The following attributes are available for segmenting one or more attributes. Se
 | `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value that depends on the name that is provided by the user. |
-{: caption="Table 36. More attributes" caption-side="bottom"}
+{: caption="Table 37. More attributes" caption-side="bottom"}
 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/monitoring?topic=monitoring-monitoring){: external}.
