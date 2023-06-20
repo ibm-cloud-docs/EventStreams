@@ -39,7 +39,7 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
 
-The enhanced {{site.data.keyword.messagehub}} metrics consist of three groups; `topic`, `partition` and `consumers`. You can opt in to either one or all. The metrics available are described in the [topic](#metrics-topic), [partition](#metrics-partition) and [consumers](#metrics-consumers) tables.
+The enhanced {{site.data.keyword.messagehub}} metrics consist of three groups; `topic`, `partition` and `consumers`. You can opt in to either one, two, or all. The metrics available are described in the [topic](#metrics-topic), [partition](#metrics-partition) and [consumers](#metrics-consumers) tables.
 
 Enabling enhanced metrics introduces more global gauge metrics and therefore increases the costs.
 
@@ -52,7 +52,7 @@ Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, y
    ```
    {: codeblock}
 
-When enhanced metrics are enabled, depending on the selection, new dashboards are available; **IBM Event Streams(Topic)**, **IBM Event Streams(Partitions)** and **IBM Event Streams(Consumers)**.
+When enhanced metrics are enabled, depending on the selection, the following new dashboards are available; **IBM Event Streams(Topic)**, **IBM Event Streams(Partitions)** and **IBM Event Streams(Consumers)**.
 
 To opt out of enhanced metrics, run the following command:
 
@@ -526,7 +526,7 @@ It is normal for this metric to fluctuate when viewed over short time periods be
 ### Message rate per partition 
 {: #ibm_eventstreams_instance_message_rate_per_partition}
 
-The rate of change of this metric gives the message per seccond incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
+The rate of change of this metric gives the message per seccond that is incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
 
 | Metadata | Description |
 |----------|-------------|
