@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-06-22"
 
 keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
 
@@ -160,7 +160,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [IAM ID bytes out quota used percentage](#ibm_eventstreams_iam_id_bytes_out_quota_used_percentage) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
 {: caption="Table 6. Metrics available for quotas" caption-side="bottom"}
 
-Kafka quotas use sampling to determine how long clients should be paused for before they can send or receive more data. For unpredictable workloads, or configurations that result in quota decisions being made using only a few samples, you may observe the percentage quota used metric being above 100%.
+Kafka quotas use sampling to determine how long clients should be paused before they can send or receive more data. For unpredictable workloads, or configurations that result in quota decisions being made using only a few samples, you might observe the percentage quota used metric going above 100%.
 
 ### Authentication failures
 {: #ibm_eventstreams_kafka_authentication_failure_total}
@@ -441,7 +441,7 @@ The number of bytes produced per second to a topic.
 | `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
 {: caption="Table 25. Topic bytes in per second metric metadata" caption-side="bottom"}
 
-This is for information to help you monitor trends in your usage, particularly if any topics are producing unusually more or less throughput than expected.
+This is for information to help you monitor trends in your usage, particularly if any topics are producing unusual throughput, which is more or less than expected.
 
 ### Topic bytes out per second
 {: #ibm_eventstreams_instance_topic_bytes_out_per_second}
@@ -471,7 +471,7 @@ The number of bytes in per second per IAM ID.
 | `Segment By` | `Service instance, Service instance name, Iam Id` |
 {: caption="Table 27. The number of bytes in per second per IAM ID" caption-side="bottom"}
 
-This is for information to help you monitor trends in your usage, particularly if any IAM Ids are producing unusually more throughput than expected.
+This is for information to help you monitor trends in your usage, particularly if any IAM IDs are producing unusually more throughput than expected.
 
 ### IAM ID bytes out per second
 {: #ibm_eventstreams_iam_id_bytes_out_per_second}
@@ -486,7 +486,7 @@ The number of bytes out per second per IAM ID.
 | `Segment By` | `Service instance, Service instance name, Iam Id` |
 {: caption="Table 28. The number of bytes out per second per IAM ID" caption-side="bottom"}
 
-This is for information to help you monitor trends in your usage, particularly if any IAM Ids are consuming unusually more throughput than expected.
+This is for information to help you monitor trends in your usage, particularly if any IAM IDs are consuming unusually more throughput than expected.
 
 ### IAM ID bytes in quota used percentage
 {: #ibm_eventstreams_iam_id_bytes_in_quota_used_percentage}
@@ -501,7 +501,7 @@ The percentage of bytes in quota used per IAM ID.
 | `Segment By` | `Service instance, Service instance name, Iam Id` |
 {: caption="Table 29. The percentage of bytes in quota used per IAM ID" caption-side="bottom"}
 
-This is for information to help you monitor trends in your usage, particularly if any IAM Ids are producing close to their quota limits. 
+This is for information to help you monitor trends in your usage, particularly if any IAM IDs are producing close to their quota limits. 
 
 ### IAM ID bytes out quota used percentage
 {: #ibm_eventstreams_iam_id_bytes_out_quota_used_percentage}
@@ -516,7 +516,7 @@ The percentage of bytes out quota used per IAM ID.
 | `Segment By` | `Service instance, Service instance name, Iam Id` |
 {: caption="Table 30. The percentage of bytes out quota used per IAM ID" caption-side="bottom"}
 
-This is for information to help you monitor trends in your usage, particularly if any IAM Ids are consuming close to their quota limits. 
+This is for information to help you monitor trends in your usage, particularly if any IAM IDs are consuming close to their quota limits. 
 
 ### Used disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
