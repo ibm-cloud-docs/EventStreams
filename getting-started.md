@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2022
 lastupdated: "2022-11-10"
 
-keywords: Event Streams, Kafka as a service, managed Apache Kafka
+keywords: event streams, kafka as a service, managed apache kafka, message hub, kafka on cloud
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting started with {{site.data.keyword.messagehub}} for IBM Cloud
+# Getting started with {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #getting-started}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. To get started with {{site.data.keyword.messagehub}} and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends messages to a consumer by using a topic. The same sample program is used to consume messages and produce messages.
@@ -29,7 +29,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
 
-   a. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+   a. Log in to the {{site.data.keyword.cloud_notm}} console.
   
    b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
   
@@ -47,7 +47,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 ## Tutorial steps
 {: #getting_started_steps}
 
-1. In the {{site.data.keyword.Bluemix_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click the **Get started with a sample application** tile.
+1. In the {{site.data.keyword.cloud_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click the **Get started with a sample application** tile.
 
 2. Complete the **Configure and run starter application** steps:
 
