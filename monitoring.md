@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-28"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, IBM Cloud Monitoring, metrics, cost, billing, opting in
+keywords: Kafka as a service, managed Apache Kafka, cloud monitoring, metrics, cost, billing, opting in
 
 subcollection: EventStreams
 
@@ -34,7 +34,7 @@ Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword
 
 2. To navigate from the {{site.data.keyword.messagehub}} instance page to the {{site.data.keyword.monitoringshort}} dashboard, click **Actions** on the instance page and select **Monitoring**.
 
-   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** on the **Choosing an installation method** page. Accept the prompts that follow. You can then select the **IBM Event Streams** or **IBM Event Streams (Enterprise)** dashboard, depending on the plan that you use.
+   On your first usage, you might see a welcome wizard. To advance to the dashboard selection menu, select **Next** and then **Skip** on the **Choosing an installation method** page. Accept the prompts that follow. You can then select the **IBM {{site.data.keyword.messagehub}}** or **IBM {{site.data.keyword.messagehub}} (Enterprise)** dashboard, depending on the plan that you use.
 
 ### Enabling enhanced {{site.data.keyword.messagehub}} metrics
 {: #opt_in_enhanced_metrics}
@@ -52,7 +52,7 @@ Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, y
    ```
    {: codeblock}
 
-When enhanced metrics are enabled, depending on the selection, the following new dashboards are available; **IBM Event Streams(Topic)**, **IBM Event Streams(Partitions)** and **IBM Event Streams(Consumers)**.
+When enhanced metrics are enabled, depending on the selection, the following new dashboards are available; **IBM {{site.data.keyword.messagehub}}(Topic)**, **IBM {{site.data.keyword.messagehub}}(Partitions)** and **IBM {{site.data.keyword.messagehub}}(Consumers)**.
 
 To opt out of enhanced metrics, run the following command:
 
@@ -438,7 +438,7 @@ The number of bytes produced per second to a topic.
 | `Metric Name` | `ibm_eventstreams_instance_topic_bytes_in_per_second`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+| `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 25. Topic bytes in per second metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any topics are producing unusual throughput, which is more or less than expected.
@@ -453,7 +453,7 @@ The number of bytes consumed per second from a topic.
 | `Metric Name` | `ibm_eventstreams_instance_topic_bytes_out_per_second`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+| `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 26. Topic bytes out per second metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any topics are consuming unusually more or less throughput than expected.
@@ -558,7 +558,7 @@ The bytes per second of mirroring throughput from the source {{site.data.keyword
 | `Metric Name` | `ibm_eventstreams_instance_mirroring_throughput_bytes_per_second`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `bytes_per_second` |
-| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+| `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 33. Mirroring throughput" caption-side="bottom"}
 
 This is useful to see whether mirroring is active and for capacity planning.
@@ -573,7 +573,7 @@ The per-topic mirroring latency in seconds from the source {{site.data.keyword.m
 | `Metric Name` | `ibm_eventstreams_instance_mirroring_latency_seconds`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `seconds` |
-| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+| `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 34. Mirroring latency" caption-side="bottom"}
 
 This is useful to determine how far behind a topic on the target cluster is.
@@ -588,7 +588,7 @@ Lag for each consumer group for each topic-partition in an {{site.data.keyword.m
 | `Metric Name` | `ibm_eventstreams_instance_consumer_groups_lag`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance name, IBM Event Streams consumer groups, IBM Event Streams Kafka topic, IBM Event Streams Kafka partitions` |
+| `Segment By` | `Service instance name, IBM {{site.data.keyword.messagehub}} consumer groups, IBM {{site.data.keyword.messagehub}} Kafka topic, IBM {{site.data.keyword.messagehub}} Kafka partitions` |
 {: caption="Table 35. Consumer group lag metric metadata" caption-side="bottom"}
 
 An increasing lag might highlight that the consumers in the group are not keeping pace with the rate that messages are being produced. This might require you to scale the number of consumers that process messages for the group.
@@ -606,7 +606,7 @@ The rate of change of this metric gives the message per seccond that is incoming
 | `Metric Name` | `ibm_eventstreams_instance_message_rate_per_partition`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance name, IBM Event Streams Kafka topic, IBM Event Streams Kafka partitions` |
+| `Segment By` | `Service instance name, IBM {{site.data.keyword.messagehub}} Kafka topic, IBM {{site.data.keyword.messagehub}} Kafka partitions` |
 {: caption="Table 36. Message rate per partition metric metadata" caption-side="bottom"}
 
 ### Maximum partition retention percentage
@@ -619,7 +619,7 @@ Maximum percentage of the retention size used for partitions of a topic.
 | `Metric Name` | `ibm_eventstreams_instance_max_partition_retention_percent`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
-| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+| `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 37. Maximum partition retention percentage metric metadata" caption-side="bottom"}
 
 ### Topic size
@@ -632,7 +632,7 @@ Total disk size of all partitions of a topic.
 | `Metric Name` | `ibm_eventstreams_instance_topic_size`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-| `Segment By` | `Service instance, IBM Event Streams Kafka topic, Service instance name` |
+| `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 38. Topic size metric metadata" caption-side="bottom"}
 
 ## Attributes for segmentation
@@ -665,9 +665,9 @@ The following attributes are available for segmenting one or more attributes. Se
 |-----------|----------------|-----------------------|
 | `Client software name` | `ibm_eventstreams_clientsoftwarename` | Client software name. |
 | `Client software version` | `ibm_eventstreams_clientsoftwareversion` | Client software version. |
-| `IBM Event Streams Consumer Group` | `ibm_eventstreams_consumergroup` | IBM {{site.data.keyword.messagehub}} consumer group. |
-| `IBM Event Streams Kafka partition` | `ibm_eventstreams_partition` | IBM {{site.data.keyword.messagehub}} Kafka partition. |
-| `IBM Event Streams Kafka topic` | `ibm_eventstreams_topic` | IBM Event Streams Kafka topic. |
+| `IBM {{site.data.keyword.messagehub}} Consumer Group` | `ibm_eventstreams_consumergroup` | IBM {{site.data.keyword.messagehub}} consumer group. |
+| `IBM {{site.data.keyword.messagehub}} Kafka partition` | `ibm_eventstreams_partition` | IBM {{site.data.keyword.messagehub}} Kafka partition. |
+| `IBM {{site.data.keyword.messagehub}} Kafka topic` | `ibm_eventstreams_topic` | IBM {{site.data.keyword.messagehub}} Kafka topic. |
 | `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value that depends on the name that is provided by the user. |
