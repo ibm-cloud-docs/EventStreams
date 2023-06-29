@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-06-29"
 
 keywords: Cloud Object Storage, SQL query, streaming
 
@@ -91,6 +91,6 @@ You can evaluate the cost of your own planned usage with the
 
 - With {{site.data.keyword.sqlquery_short}} you can process up to 1 MB event data per second. The final reached data throughput depends on parameters, such as topic partitions, and size and format of the events. 
 - For one {{site.data.keyword.sqlquery_short}} instance, the limit is five concurrent stream landing jobs. The limit can be raised upon request by a support ticket. 
-- The {{site.data.keyword.messagehub}} feature is only available for instances that are created in the US-South region and in Frankfurt.
+- The {{site.data.keyword.messagehub}} feature is available only for {{site.data.keyword.sqlquery_short}} instances that are created in the US-South region and in Frankfurt. 
 
 For more information, see [Streaming to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}](/docs/sql-query?topic=sql-query-event-streams-landing) in the {{site.data.keyword.sqlquery_short}} documentation.
