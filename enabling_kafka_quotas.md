@@ -115,8 +115,7 @@ Manager role on resource types "topic", "group", and "txnid" and Reader role on 
 
 1. Download a Kafka *binary* distribution (at least V3.1.0).
 
-2. Create a properties file (named command-config.properties in the following command lines examples), containing the following entries (replacing "myapikey" with the 
-actual API key).
+2. Create a properties file (named command-config.properties in the following command lines examples), containing the following entries (replacing "myapikey" with the actual API key).
 
 ```bash
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="myapikey";
