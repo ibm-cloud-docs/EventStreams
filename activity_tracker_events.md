@@ -2,9 +2,9 @@
 
 copyright:
   years: 2016, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-06-29"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, activity
+keywords: Kafka as a service, managed Apache Kafka, activity
 
 subcollection: EventStreams
 

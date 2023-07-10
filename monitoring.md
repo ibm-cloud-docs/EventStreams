@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-06-28"
 
-keywords: Kafka as a service, managed Apache Kafka, cloud monitoring, metrics, cost, billing, opting in
+keywords: Kafka as a service, managed Apache Kafka, monitoring, metrics, cost, billing, opting in
 
 subcollection: EventStreams
 
@@ -150,6 +150,8 @@ The following tables describe the specific metrics that are provided by {{site.d
 |-----------|--------|--------|--------|
 | [Message rate per partition](#ibm_eventstreams_instance_message_rate_per_partition) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
 {: caption="Table 5. Metrics available for partitions" caption-side="bottom"}
+
+This information is useful to detect if the distribution of message activity across the partitions in a topic is not balanced and if the number of partitions a topic has is scaled appropriately.
 
 ## Metrics available with quotas enabled
 {: #metrics-quotas}
@@ -461,7 +463,7 @@ This is for information to help you monitor trends in your usage, particularly i
 ### IAM ID bytes in per second
 {: #ibm_eventstreams_iam_id_bytes_in_per_second}
 
-The number of bytes in per second per IAM ID.
+The number of bytes in per second from an IAM ID.
 
 | Metadata | Description |
 |----------|-------------|
@@ -472,11 +474,12 @@ The number of bytes in per second per IAM ID.
 {: caption="Table 27. The number of bytes in per second per IAM ID" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any IAM IDs are producing unusually more throughput than expected.
+It allows to see any differences in the amount of data that is sent to the service from different users (IAM IDs) and if required, guides the setting of any quotas needed.
 
 ### IAM ID bytes out per second
 {: #ibm_eventstreams_iam_id_bytes_out_per_second}
 
-The number of bytes out per second per IAM ID.
+The number of bytes out per second from an IAM ID.
 
 | Metadata | Description |
 |----------|-------------|
@@ -487,11 +490,13 @@ The number of bytes out per second per IAM ID.
 {: caption="Table 28. The number of bytes out per second per IAM ID" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any IAM IDs are consuming unusually more throughput than expected.
+It allows to see any differences in the amount of data that is sent from the service to different users (IAM IDs) and if required, guides the setting of any quotas needed.
 
 ### IAM ID bytes in quota used percentage
 {: #ibm_eventstreams_iam_id_bytes_in_quota_used_percentage}
 
-The percentage of bytes in quota used per IAM ID.
+The percentage of bytes in quota used per IAM ID. 
+Where a bytes in quota was set for a user (IAM ID), this value shows the percentage of that quota being used.
 
 | Metadata | Description |
 |----------|-------------|
@@ -502,11 +507,13 @@ The percentage of bytes in quota used per IAM ID.
 {: caption="Table 29. The percentage of bytes in quota used per IAM ID" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any IAM IDs are producing close to their quota limits. 
+Quota metrics might sometimes exceed 100 %. Kafka quotas use sampling and are applied asynchronously. For some workloads, especially where data is sent in large batches, this may result in small deviations from the limit.
 
 ### IAM ID bytes out quota used percentage
 {: #ibm_eventstreams_iam_id_bytes_out_quota_used_percentage}
 
 The percentage of bytes out quota used per IAM ID.
+Where a bytes out quota was set for a user (IAM ID), this value shows the percentage of that quota being used.
 
 | Metadata | Description |
 |----------|-------------|
@@ -517,6 +524,7 @@ The percentage of bytes out quota used per IAM ID.
 {: caption="Table 30. The percentage of bytes out quota used per IAM ID" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any IAM IDs are consuming close to their quota limits. 
+Quota metrics might sometimes exceed 100 %. Kafka quotas use sampling and are applied asynchronously. For some workloads, especially where data is sent in large batches, this may result in small deviations from the limit.
 
 ### Used disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
