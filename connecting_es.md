@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-12-13"
+  years: 2015, 2023
+lastupdated: "2023-07-13"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, connections, endpoints
+keywords: Kafka as a service, managed Apache Kafka, connections, endpoints, cli, connect Kafka, vpc, create service key
 
 subcollection: EventStreams
 
@@ -21,11 +21,7 @@ subcollection: EventStreams
 # Connecting to {{site.data.keyword.messagehub}}
 {: #connecting}
 
-To connect to your {{site.data.keyword.messagehub}} instance, the following information is required:
-* The endpoint URLs for the APIs
-* Credentials for authentication
-
-Read the following information about how to obtain these details and the connectivity options that you can use. Ensure that you complete the appropriate steps for your instance.
+To connect to your {{site.data.keyword.messagehub}} instance, you need the endpoint URLs for the APIs and the credentials for authentication. Learn how to obtain these details and the connectivity options that you can use.
 {: #shortdesc}
 
 
@@ -49,8 +45,8 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 2. Click your service tile.
 3. Click **Service Credentials**.
 4. Click **New Credential**. 
-5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Click this credential by using **View Credentials** to reveal the details in JSON format.
+5. Complete the details for your new credential. Choose a name and a role and click **Add**. A new credential appears in the credentials list.
+6. Click the new credential by using **View Credentials** to reveal the details in JSON format.
 
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps.
 
