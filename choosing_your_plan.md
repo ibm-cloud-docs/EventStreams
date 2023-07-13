@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-07-13"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing
+keywords: Kafka as a service, managed Apache Kafka, plan, Enterprise, Standard, Lite, pricing, Satellite, throughput, partitions, tenancy, compliance
 
 subcollection: EventStreams
 
