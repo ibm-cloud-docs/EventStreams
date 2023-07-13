@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-24"
+  years: 2020, 2023
+lastupdated: "2023-07-13"
 
-keywords: IBM Event Streams, reserved disk usage
+keywords: reserved disk usage, Kafka, store data, storage
 
 subcollection: EventStreams
 
@@ -15,7 +15,8 @@ subcollection: EventStreams
 # Understanding reserved disk usage
 {: #ES_understanding_reserved_disk_usage}
 
-This section describes how the usable storage of an Event Streams instance is used by the topics and partitions that are created and the configuration settings that you apply.
+Learn how the usable storage of an Event Streams instance is used by the topics and partitions that are created and the configuration settings that you apply.
+{: shortdesc}
 
 First of all, it's important to note that the defined storage of an Event Streams instance is usable storage. That means that you do not need to worry about storage used by replicas (as all topics have their replication factor set to 3) that is not taken from the usable storage. This keeps things simple and you can plan how to map the retention 
 of those messages to storage usage.
@@ -49,7 +50,7 @@ Where
 
      number.of.log.segments = floor(retention.bytes/log.segment.size) + 1
      
-## Managing Storage with {{site.data.keyword.messagehub}}
+## Managing storage with {{site.data.keyword.messagehub}}
 {: #ES_managing_storage_with_event_streams}     
 
 When doing topic administration operations, such as creating topics, creating partitions, or changing topic configurations, Event Streams ensures that enough storage is available to satisfy the operation. To do this, for each topic, Event Streams computes the "reserved size" per topic by using the following method.
