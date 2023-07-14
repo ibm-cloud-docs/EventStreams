@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: kafka console tools, console producer, console consumer, kafka streams, consumer groups
 
 subcollection: EventStreams
 
@@ -12,14 +12,13 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Using Kafka console tools with {{site.data.keyword.messagehub}}
 {: #kafka_console_tools}
 
 Apache Kafka comes with various console tools for simple administration and messaging operations. You can use many of them with {{site.data.keyword.messagehub}}, although {{site.data.keyword.messagehub}} does not permit connection to its ZooKeeper cluster. As Kafka developed, many of the tools that previously required connection to ZooKeeper no longer have that requirement.
 {: shortdesc}
 
-You can find these console tools in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
 To provide the SASL credentials to these tools, create a properties file based on the following example:
 
@@ -135,7 +134,6 @@ Topic:testtopic	 PartitionCount:1	 ReplicationFactor:3	Configs:min.insync.replic
 {: codeblock}
 
 From the sample, you can see that topic `sample-topic` has three partitions and a replication factor of three. The example also shows which broker the leader of each partitions is on and which replicas are in sync (`Isr`). For example, the leader of partition `0` is on broker `0`, the followers are on brokers `2` and `1` and all three replicas are in sync. If you look at the second topic `testtopic`, it has only one partition, which is replicated on brokers `0`, `2`, and `1` but the in-sync replica list shows only `0` and `2`. This means the follower on broker `1` is falling behind and is therefore not in the `Isr` list. 
-
 
 ## Kafka Streams reset
 {: #kafka_streams_reset}
