@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-23"
+  years: 2015, 2023
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: apache kafka, producer, producing messages, message ordering, batching, throttling, compression
 
 subcollection: EventStreams
 
@@ -110,7 +110,6 @@ For more information about throughput guidance, see [Limits and quotas](/docs/Ev
  
 In summary, when a message is published, its record is first written into a buffer in the producer. In the background, the producer batches up and sends the records to the server. The server then responds to the producer, possibly applying a throttling delay if the producer is publishing too fast. If the buffer in the producer fills up, the producer's send call is delayed, but ultimately might fail with an exception.
 
-
 ## Delivery semantics
 {: #delivery_semantics}
 
@@ -119,7 +118,6 @@ Kafka offers the following multiple different message delivery semantics:
 * *At most once*: Messages might get lost and do not get redelivered.
 * *At least once*: Messages are never lost but there might be duplicates.
 * *Exactly once*: Messages are never lost and there are no duplicates.
-
 
 The delivery semantics are determined by the following settings:
 
@@ -130,7 +128,6 @@ The delivery semantics are determined by the following settings:
 By default, Kafka uses *at least once* semantics.
 
 To enable *exactly once* semantics, you must use the idempotent or transactional producers. The idempotent producer is enabled by setting `enable.idempotence` to `true` and guarantees that exactly one copy of each message is written to Kafka, even if it retries. The transactional producer enables the sending of data to multiple partitions such that either all messages are successfully delivered, or none of them are. That is, a transaction is either fully committed or fully discarded. You can also include offsets in transactions to build applications that read, process, and write messages to Kafka.
-
 
 ## Code snippets
 {: #code_snippets}
