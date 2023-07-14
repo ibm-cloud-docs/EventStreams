@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-23"
+  years: 2015, 2023
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: Kafka as a service, managed Apache Kafka, limits, quotas, network throughput, retention, consumer groups, schema
 
 subcollection: EventStreams
 
@@ -12,16 +12,17 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Limits and quotas
-{: #kafka_quotas }
+# How {{site.data.keyword.messagehub}} uses limits and quotas
+{: #kafka_quotas}
 
-{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you're using the Lite, Standard, Enterprise, or Satellite plan.
+{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you use the Lite, Standard, Enterprise, or Satellite plan.
+{: shortdesc}
 
 ## Lite plan
-{: #limits_lite }
+{: #limits_lite}
 
 ### Network throughput
-{: #lite_throughput }
+{: #lite_throughput}
 
 A recommended maximum for network throughput is 100 KB per second. Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 
@@ -53,10 +54,10 @@ A maximum of 10 consumer groups. When the limit is exceeded, the `GROUP_MAX_SIZE
 * Maximum record value size when you use REST Producer API is 64 K.
 
 ## Standard plan
-{: #limits_standard }
+{: #limits_standard}
 
 ### Network throughput
-{: #standard_throughput }
+{: #standard_throughput}
 
 The maximum throughput for each service instance equates to 1 MB per second per partition up to a maximum of 20 MB per second. For example, for a service instance with 10 partitions, the maximum throughput is 10 MB per second and for 30 partitions it is 20 MB per second.
 
@@ -88,10 +89,10 @@ A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SI
 * Maximum record value size when you use REST Producer API is 64 K.
 
 ## Enterprise plan
-{: #limits_enterprise }
+{: #limits_enterprise}
 
 ### Network throughput
-{: #enterprise_throughput }
+{: #enterprise_throughput}
 
 Network throughput capacity is based on the peak maximum. Each peak maximum has a recommended maximum for typical production workloads.
 
@@ -152,10 +153,10 @@ For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/Event
 * Maximum messages per second when you use REST Producer API is 200.
 
 ## Satellite plan
-{: #limits_satellite }
+{: #limits_satellite}
 
 ### Network throughput
-{: #satellite_throughput }
+{: #satellite_throughput}
 
 Network throughput capacity is based on the peak maximum. Each peak maximum has a recommended maximum for typical production workloads.
 
