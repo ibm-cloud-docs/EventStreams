@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-09"
+  years: 2015, 2023
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: Kafka as a service, managed Apache Kafka, kafka concepts, brokers, messages, topics, partitions, replication, replica, producer, consumer, consumer group
 
 subcollection: EventStreams
 
@@ -14,6 +14,9 @@ subcollection: EventStreams
 
 # Apache Kafka concepts
 {: #apache_kafka}
+
+Apache Kafka is a distributed streaming platform used by many companies for numerous batch, as well as real-time data integration and data streaming use cases.
+{: shortdesc}
 
 ![Kafka architecture diagram.](kafka_overview.png "The diagram shows a Kafka architecture. A producer is feeding into a Kafka topic over three partitions and the messages are then subscribed to by consumers."){: caption="Figure 1. The diagram shows a Kafka architecture." caption-side="bottom"}
 
