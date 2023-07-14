@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-09"
+  years: 2015, 2023
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: Kafka as a service, managed Apache Kafka, messages, consumer, record, offset, rebalancing, consumer group, consumer properties
 
 subcollection: EventStreams
 
@@ -51,7 +51,7 @@ Many configuration settings exist for the consumer that control aspects of its b
 |max.poll.interval.ms |The maximum time interval between polls before the consumer leaves the group. | 1,... | 300000 (5 minutes) |
 {: caption="Table 1. Configuring consumer properties" caption-side="top"}
 
-Many more configuration settings are available, but ensure that you read the [Apache Kafka documentation](http://kafka.apache.org/documentation/){: external} before you start to experiment with them.
+Many more configuration settings are available, but read the [Apache Kafka documentation](http://kafka.apache.org/documentation/){: external} before you start to experiment with them.
 
 ## Consumer groups
 {: #consumer_groups}

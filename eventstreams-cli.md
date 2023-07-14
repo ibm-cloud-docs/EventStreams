@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: cli reference
 
 subcollection: EventStreams
 
@@ -16,6 +16,7 @@ subcollection: EventStreams
 {: #cli_reference}
 
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see [Getting started with the {{site.data.keyword.messagehub}} CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
+{: shortdesc}
 
 ## Changelog
 {: #es_cli_changelog}

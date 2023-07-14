@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: kafka api, consumer, producer, admin, streams, connect, kafka client
 
 subcollection: EventStreams
 
@@ -15,7 +15,8 @@ subcollection: EventStreams
 # Using the Kafka API
 {: #kafka_using}
 
-Kafka provides a rich set of APIs and clients across a broad range of languages.
+Kafka provides a rich set of APIs and clients across a broad range of languages. APIs include core API, Streams API, and Connect API.
+{: shortdesc}
 
 - **Kafka's core API (Consumer, Producer, and Admin API)**  
     Use to send and receive messages directly from one or more Kafka topics.
@@ -30,7 +31,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |   |Enterprise plan   |Standard plan   |Lite plan |
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
-| **Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
+|**Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported**   |  Yes |  No|  No |
