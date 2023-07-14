@@ -78,7 +78,8 @@ toc:
         topics:
         - sla.md
         - responsibilities.md
-        - limits_quotas.md
+        - topic: limits_quotas.md
+          navtitle: Limits and quotas
         - data_security.md
         - activity_tracker_events.md
         - monitoring.md
