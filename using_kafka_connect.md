@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-07-14"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: kafka connect, stand-alone, source connector, sink connector, distributed worker
 
 subcollection: EventStreams
 
@@ -15,17 +15,16 @@ subcollection: EventStreams
 # Using Kafka Connect with {{site.data.keyword.messagehub}}
 {: #kafka_connect}
 
-Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster. Its main characteristics are:
+Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime that can run connectors to copy data to and from a cluster. Its main characteristics are:
+{: shortdesc}
 
 - Scalability: It can easily scale from a single worker to many. 
 - Reliability: It automatically manages offsets and the lifecycle of connectors.
 - Extensibility: The community built connectors for most popular systems. IBM has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
  
-You can use Kafka Connect with {{site.data.keyword.messagehub}} and can run the workers inside or outside {{site.data.keyword.Bluemix_short}}.
-{: shortdesc}
+You can use Kafka Connect with {{site.data.keyword.messagehub}} and can run the workers inside or outside {{site.data.keyword.cloud}}.
 
 Kafka Connect can run in either stand-alone or distributed mode. Stand-alone mode is intended for testing and temporary connections between systems. Distributed mode is more appropriate for production use. The configuration required to use {{site.data.keyword.messagehub}} with these two modes is slightly different.
-{: shortdesc}
 
 ## Stand-alone worker configuration
 {: #standalone_worker notoc}
