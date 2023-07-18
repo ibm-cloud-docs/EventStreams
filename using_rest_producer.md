@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-24"
+  years: 2015, 2023
+lastupdated: "2023-07-18"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: rest producer api, producing messages
 
 subcollection: EventStreams
 
@@ -15,9 +15,10 @@ subcollection: EventStreams
 # Using the REST producer API
 {: #rest_producer_using}
 
-**The REST producer API is available as part of the {{site.data.keyword.messagehub}} Standard and Enterprise plans only.**
-
 {{site.data.keyword.messagehub}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. By using the API, you can integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
+{: shortdesc}
+
+The REST producer API is available as part of the {{site.data.keyword.messagehub}} Standard and Enterprise plans only.
 
 The REST producer API is a scalable REST interface for producing messages to {{site.data.keyword.messagehub}} over a secure HTTP endpoint. Send event data to {{site.data.keyword.messagehub}}, use Kafka technology to handle data feeds, and take advantage of {{site.data.keyword.messagehub}} features to manage your data.
 
