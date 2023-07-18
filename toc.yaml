@@ -18,7 +18,8 @@ toc:
         - overview.md
         - topic: release-notes.md
           navtitle: Release notes
-        - apache_kafka_concepts.md
+        - topic: apache_kafka_concepts.md
+          navtitle: Apache Kafka concepts
         - choosing_your_plan.md
     - navgroup:
         id: howto
