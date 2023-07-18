@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-02-22"
+  years: 2015, 2023
+lastupdated: "2023-07-18"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: Kafka as a service, managed Apache Kafka, kafka connect, archive, connector, connect to cos, using kubernetes
 
 subcollection: EventStreams
 
@@ -19,15 +19,10 @@ subcollection: EventStreams
 # Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.cos_full_notm}} by using the Kubernetes Service
 {: #cos_connector}
 
-The following task walks you through:
-* Getting the Kafka Connect runtime to run in an {{site.data.keyword.containershort}} cluster.
-* Starting the {{site.data.keyword.cos_full}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
-
-The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the 
-Cloud {{site.data.keyword.cos_short}} service. 
-
-Complete the following steps to get set up:
+Get the Kafka Connect runtime to run in an {{site.data.keyword.containershort}} cluster. Then, start the {{site.data.keyword.cos_full}} Sink Connector to archive data from Kafka topics in {{site.data.keyword.messagehub}} to an instance of the {{site.data.keyword.cos_full}} service. 
 {: shortdesc}
+
+The Connector consumes batches of messages from Kafka and uploads the message data as objects to a bucket in the Cloud {{site.data.keyword.cos_short}} service. 
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs}
