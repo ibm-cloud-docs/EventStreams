@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Apache Kafka concepts
+# Learning Apache Kafka concepts
 {: #apache_kafka}
 
 Apache Kafka is a distributed streaming platform used by many companies for numerous batch workloads, as well as real-time data integration, and data streaming use cases.
