@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-12-08"
+  years: 2015, 2023
+lastupdated: "2023-07-18"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: kafka api, frequently asked questions, consumer group, log retention, message size, replication settings
 
 subcollection: EventStreams
 
@@ -12,10 +12,10 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs
+# FAQs about {{site.data.keyword.messagehub}}
 {: #faqs}
 
-Answers to common questions about the {{site.data.keyword.IBM}} {{site.data.keyword.messagehub}} service.
+This document contains information about common questions or problems encountered by users of the {{site.data.keyword.messagehub_full}} service. It aims to answer questions or provide instruction on how to resolve issues without the need to raise a support ticket.
 {: shortdesc}
 
 ## How do I use Kafka APIs to create and delete topics?
