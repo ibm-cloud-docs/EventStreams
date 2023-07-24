@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, wildcarding, IAM, wildcard, policies
+keywords: Kafka client, wildcarding, IAM, wildcard, policies
 
 subcollection: EventStreams
 
@@ -16,6 +16,7 @@ subcollection: EventStreams
 {: #security}
 
 {{site.data.keyword.messagehub}} supports 2 [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)(Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
+{: shortdesc}
 
 Kafka client configured with SASL PLAIN uses IAM API key as a plain text password in the authentication process, {{site.data.keyword.messagehub}} sends API key to IAM for verification. Once authenticated, this client will keep connected and will not require re-authentication until it is disconnected and wants to re-connect.
 
