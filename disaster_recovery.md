@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-10"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
+keywords: replication, failover, scenario, disaster recovery, mirroring, failing over, failback, source cluster, mirroring
 
 subcollection: EventStreams
 
@@ -12,13 +12,13 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Disaster recovery example scenario 
+# Using mirroring in a disaster recovery example scenario 
 {: #disaster_recovery_scenario}
 
-Let's look at an end-to-end disaster recovery scenario. This scenario demonstrates how mirroring can be used to provide increased availability and keep applications working in a major incident that affects a full region. Two clusters were provisioned in different regions and configured for mirroring (following the information in [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup)) by using A and B as cluster aliases. 
+This end-to-end disaster scenario demonstrates how to use mirroring to provide increased availability and keep applications working in a major incident that affects a full region.
 {: shortdesc}
 
-A producer publishes records to a topic called `accounting.invoices` and a consumer reads the messages from that topic in cluster A.
+Two clusters were provisioned in different regions and configured for mirroring (following the information in [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup)) by using A and B as cluster aliases. A producer publishes records to a topic called `accounting.invoices` and a consumer reads the messages from that topic in cluster A.
 
 ![Mirroring overview diagram.](disaster1.png "Diagram that shows a producer publishing messages to a topic. The consumer reads the messages from that topic."){: caption="Figure 1. Mirroring overview" caption-side="bottom"}
 
