@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: troubleshooting, question, problem
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting and useful links
+# Troubleshooting {{site.data.keyword.messagehub}} and useful links
 {: #troubleshooting}
 
 If you have a question about {{site.data.keyword.messagehub}}, have a look at the dedicated [Stack Overflow channel](https://stackoverflow.com/questions/tagged/ibm-eventstreams){: external} to see whether it was already answered. If not, post your question to get it answered either by a member of the {{site.data.keyword.messagehub}} development team or the wider community.
