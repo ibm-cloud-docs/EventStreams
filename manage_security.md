@@ -1,9 +1,9 @@
 ---
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-11-11"
+  years: 2021, 2023
+lastupdated: "2023-07-24"
 
-keywords: security and compliance for Event Streams, security for Event streams, compliance for Event Streams,
+keywords: security, compliance, resource configuration
 
 subcollection: EventStreams
 
