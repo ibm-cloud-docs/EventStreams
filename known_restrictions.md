@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-10"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: restrictions, kafka fails, kafka failover, jvm ttl, creating topic, deleting topic
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Known restrictions
+# Known restrictions for {{site.data.keyword.messagehub}}
 {: #restrictions}
 
 If you find a problem while you use {{site.data.keyword.messagehub}}, review the following known restrictions and workarounds. 
