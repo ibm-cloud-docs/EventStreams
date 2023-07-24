@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-23"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, replication, failover, scenario, disaster recovery, mirroring
+keywords: replication, failover, scenario, disaster recovery, mirroring
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Mirroring 
+# Using mirroring 
 {: #mirroring}
 
 Mirroring enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily. This feature improves resilience because if a service instance becomes unavailable, applications can, without change, reconnect to the second instance and continue their normal operation, by using the same credentials, authorizations, and topic definitions. This feature is provided as a fully managed capability.
