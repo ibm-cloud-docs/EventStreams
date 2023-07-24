@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-10"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: cli, api key, cli plug-in
 
 subcollection: EventStreams
 
@@ -20,6 +20,7 @@ subcollection: EventStreams
 {: #cli}
 
 To install and set up the {{site.data.keyword.messagehub}} CLI on the Lite, Standard, and Enterprise plans, complete the following steps:
+{: shortdesc}
 
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
