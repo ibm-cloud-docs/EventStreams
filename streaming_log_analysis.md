@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-11-22"
+  years: 2021, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Log Analysis, streaming
+keywords: log analysis, streaming
 
 subcollection: EventStreams
 
