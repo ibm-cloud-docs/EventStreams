@@ -35,7 +35,8 @@ toc:
             - managing_access.md
             - restricting_access_iam.md
             - restricting_access_enterprise.md
-            - managing_encryption.md
+            - topic: managing_encryption.md
+              navtitle: Managing encryption
             - scaling_capacity.md
             - enabling_monitoring.md
             - enabling_kafka_quotas.md
@@ -45,7 +46,8 @@ toc:
             - using_kafka_api.md
             - producing_messages.md
             - consuming_messages.md
-            - partition_leadership.md
+            - topic: partition_leadership.md
+              navtitle: Partition leadership
             - schema_registry.md
             - using_kafka_connect.md
             - using_kafka_streams.md
@@ -68,8 +70,10 @@ toc:
         - topicgroup:
             label: Enhancing security
             topics:
-            - security.md
-            - manage_security.md
+            - topic: security.md
+              navtitle: Understanding security and compliance
+            - topic: manage_security.md
+              navtitle: Managing security and compliance
         - using_kafka_client.md
         - link:
              label: Asynchronous data processing using object storage and pub/sub messaging tutorial
@@ -126,7 +130,9 @@ toc:
           - topicgroup:
               label: Troubleshooting
               topics:
-              - getting_support.md
-              - known_restrictions.md
+              - topic: getting_support.md
+                navtitle: Getting help and support
+              - topic: known_restrictions.md
+                navtitle: Known restrictions
               - reporting_problem.md
 
