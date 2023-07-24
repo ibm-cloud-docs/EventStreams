@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-12-13"
+  years: 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Satellite
+keywords: Satellite, hybrid environment
 
 subcollection: EventStreams
 
@@ -12,10 +12,11 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}
+# Using {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}
 {: #satellite_about}
 
 The {{site.data.keyword.satellitelong}} plan for {{site.data.keyword.messagehub_full}} deploys functionality similar to the Enterprise plan into {{site.data.keyword.satelliteshort}} locations of your choice. Using {{site.data.keyword.satellitelong}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+{: shortdesc}
 
 For a detailed comparison of the {{site.data.keyword.messagehub}} plans and the functionality of each, refer to [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose).
 
