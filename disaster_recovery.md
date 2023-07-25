@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Using mirroring in a disaster recovery example scenario 
 {: #disaster_recovery_scenario}
 
-This end-to-end disaster scenario demonstrates how to use mirroring to provide increased availability and keep applications working in a major incident that affects a full region.
+This end-to-end disaster recovery scenario demonstrates how to use mirroring to provide increased availability and keep applications working in a major incident that affects a full region.
 {: shortdesc}
 
 Two clusters were provisioned in different regions and configured for mirroring (following the information in [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup)) by using A and B as cluster aliases. A producer publishes records to a topic called `accounting.invoices` and a consumer reads the messages from that topic in cluster A.
