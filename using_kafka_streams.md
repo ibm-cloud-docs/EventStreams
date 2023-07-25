@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: kafka streams, apache kafka, sasl.jaas.config
 
 subcollection: EventStreams
 
@@ -16,9 +16,9 @@ subcollection: EventStreams
 {: #kafka_streams }
 
 Kafka Streams is a stream processing library that is part of the Apache Kafka project. It simplifies building applications that process and analyze data in Kafka. 
+{: shortdesc}
 
 The topic APIs work with {{site.data.keyword.messagehub}} with no setup required. Specify your SASL credentials by using ```sasl.jaas.config``` or a JAAS file and set ```replication.factor``` to 3.
-{: shortdesc}
 
 Ensure that you use Streams version 0.10.2, or later.   
 

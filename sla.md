@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: sla, service level agreement, connectivity, throughput
 
 subcollection: EventStreams
 
@@ -19,6 +19,7 @@ subcollection: EventStreams
 {: #sla_standard}
 
 The {{site.data.keyword.messagehub}} Standard Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the {{site.data.keyword.messagehub}} service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
+{: shortdesc}
 
 The {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
 [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.

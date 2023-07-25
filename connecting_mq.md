@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-09"
+  years: 2015, 2023
+lastupdated: "2023-07-18"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, MQ bridge
+keywords: Kafka as a service, managed Apache Kafka, MQ bridge, kafka connect configuration, kafka connect
 
 subcollection: EventStreams
 
@@ -19,14 +19,11 @@ subcollection: EventStreams
 # Connecting IBM MQ to {{site.data.keyword.messagehub}} by using the Kubernetes Service
 {: #mq_connector}
 
-The following task walks you through:
-* Getting the Kafka Connect runtime to run in an {{site.data.keyword.containerlong}} cluster.
-* Starting the IBM MQ Source Connector to copy messages from an IBM MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}.
+Get the Kafka Connect runtime to run in an {{site.data.keyword.containerlong}} cluster. Then, start the IBM MQ Source Connector to copy messages from an IBM MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}.
+{: shortdesc}
 
 The IBM MQ Source Connector connects to an IBM MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 
-Complete the following steps to get set up:
-{: shortdesc}
 
 ## Step 1. Install the prerequisites
 {: #step1_install_prereqs_mq}

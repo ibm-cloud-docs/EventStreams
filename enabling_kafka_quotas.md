@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka, plan, Enterprise, quotas, kafka quotas, quota implementation, mapping quotas, authorization, activity tracker, client metrics
+keywords: Kafka, plan, Enterprise, quotas, kafka quotas, quota implementation, mapping quotas, authorization, activity tracker, client metrics
 
 subcollection: EventStreams
 
@@ -16,6 +16,7 @@ subcollection: EventStreams
 {: #enabling_kafka_quotas}
 
 Kafka quotas enforce limits on produce and fetch requests to control the broker resources used by clients. Kafka quotas enable an administrator to enforce limits on the network throughput that can be consumed by individual producer and consumer applications.
+{: shortdesc}
 
 ## About Kafka quotas
 {: #intro_kafka_quotas}

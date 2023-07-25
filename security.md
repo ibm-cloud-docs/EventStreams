@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-07-14"
 
-keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci
+keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, apache kafka
 
 subcollection: EventStreams
 
@@ -12,10 +12,11 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Security and compliance
+# Understanding security and compliance for {{site.data.keyword.messagehub}}
 {: #compliance}
 
 {{site.data.keyword.messagehub_full}} is a secure and highly available message bus that is built with Apache Kafka. The service is built on the following best industry standards.
+{: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} for Financial Services
 {: #cloud_fs}

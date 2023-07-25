@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, AWS, location, VPN
+keywords: Satellite location, AWS, location, VPN
 
 subcollection: EventStreams
 
@@ -16,6 +16,7 @@ subcollection: EventStreams
 {: #satellite_vpn}
 
 To connect applications that run outside Amazon Web Services (AWS) with VPN access to the Satellite location to an {{site.data.keyword.messagehub}} instance, complete the following set of steps.
+{: shortdesc}
 
 ![VPN diagram](satellite_vpn.png "VPN"){: caption="Figure 1. Diagram showing an app that connects to clients by using a VPN endpoint." caption-side="bottom"}
 

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-12-13"
+  years: 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka, provision, location
+keywords: provision satellite, satellite location, extra hosts, grant authorization, block storage, enable schema registry
 
 subcollection: EventStreams
 
@@ -30,6 +30,7 @@ Complete the steps to set up the {{site.data.keyword.satellitelong}} plan for {{
 
 The following steps guide you through provisioning a {{site.data.keyword.satelliteshort}} location in your account, configuring service authorization, adding compute hosts to the {{site.data.keyword.satelliteshort}} location, provisioning an {{site.data.keyword.messagehub}} service instance, and configuring the block storage assignment, so that
 {{site.data.keyword.messagehub}} can allocate block storage.
+{: shortdesc}
 
 ## Provision a {{site.data.keyword.satelliteshort}} location
 {: #satellite-provision-location}

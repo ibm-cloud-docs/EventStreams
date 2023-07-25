@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-19"
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, scaling capacity
+keywords: scaling capacity, enterprise plan, throughput, storage, scaling
 
 subcollection: EventStreams
 
@@ -18,7 +18,8 @@ subcollection: EventStreams
 ## Event Streams capacity
 {: #ES_capacity}
 
-The {{site.data.keyword.messagehub}} Enterprise plan lets you to specify throughput and storage capacity when a new instance of the service is created. If after using the service instance, you find that the current capacity configuration of your service instance is not meeting the demands of your solution, throughput and storage capacity can be scaled up to meet demands.
+The {{site.data.keyword.messagehub}} Enterprise plan lets you specify throughput and storage capacity when a new instance of the service is created. If after using the service instance, you find that the current capacity configuration of your service instance is not meeting the demands of your solution, throughput and storage capacity can be scaled up to meet demands.
+{: shortdesc}
 
 Each base or additional capacity unit includes the following capacity:
 * 150 MB/s of throughput capacity.

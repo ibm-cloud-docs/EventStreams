@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-14"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM {{site.data.keyword.messagehub}}, Kafka as a service, managed Apache Kafka, BYOK
+keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing encryption
+# Managing encryption in {{site.data.keyword.messagehub}}
 {: #managing_encryption}
 
 By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest by using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption with the following IBM Cloud® Key Management Services:

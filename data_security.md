@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-09"
+  years: 2015, 2023
+lastupdated: "2023-07-20"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: protocols, encryption, data isolation, data retention, data isolation model
 
 subcollection: EventStreams
 
@@ -16,10 +16,10 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Data security and privacy
+# Data security and privacy in {{site.data.keyword.messagehub}}
 {: #data_security}
 
-{{site.data.keyword.IBM}} uses the following methods to help ensure the security and privacy of your data.
+{{site.data.keyword.IBM}} uses the following methods to help ensure the security and privacy of your data: cryptographic protocols, encryption, and data isolation. Each plan provides different data isolation models.
 {: shortdesc}
 
 ## Cryptographic protocols

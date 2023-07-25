@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-22"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: kafka java client, api, kafka api, admin api, liberty, migrate kafka client, kafka client, sasl.jaas.config property
 
 subcollection: EventStreams
 
@@ -24,10 +24,10 @@ For more information about the setup and running of the sample, see the [README.
 
 For a detailed walkthrough of how to run the sample, see [Getting started with {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps).
 
-## How to use, download, and run the Liberty for Java sample
+## How to use, download, and run the {{site.data.keyword.runtime_liberty_notm}} sample
 {: #liberty_sample}
 
-The Liberty for Java sample implements a simple application that is deployed onto the Liberty runtime. The application uses the Kafka API for {{site.data.keyword.messagehub}} to produce and consume messages. The application also serves up a web front end that you can use for administration.
+The {{site.data.keyword.runtime_liberty_full}} sample implements a simple application that is deployed onto the Liberty runtime. The application uses the Kafka API for {{site.data.keyword.messagehub}} to produce and consume messages. The application also serves up a web front end that you can use for administration.
 
 You can find the sample code in the [event-streams-samples GitHub project](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample){: external}.
 

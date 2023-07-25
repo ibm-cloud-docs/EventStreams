@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-15"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: partition leadership, partition leader, 
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Partition leadership
+# Understanding partition leadership
 {: #partition_leadership }
 
 Each partition has one server in the cluster that acts as the partition's leader and other servers that act as the followers. All produce and consume requests for the partition are handled by the leader. The followers replicate the partition data from the leader with the aim of keeping up with the leader. If a follower is keeping up with the leader of a partition, the follower's replica is in-sync. 

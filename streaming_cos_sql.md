@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-06-29"
 
-keywords: Cloud Object Storage, SQL query, streaming
+keywords: Cloud Object Storage, query, streaming, stream landing
 
 subcollection: EventStreams
 
@@ -21,6 +21,7 @@ subcollection: EventStreams
 {: #streaming_cos_sql}
 
 Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed by using the fully managed {{site.data.keyword.sqlquery_full}} service. All data is stored in Parquet format, making it easy to manage and process.
+{: shortdesc}
 
 ![Streaming to Cloud Object Storage by using{{site.data.keyword.sqlquery_short}}](ES_streams_landing.svg){: caption="Figure 1. Diagram showing streaming to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}" caption-side="bottom"}
 

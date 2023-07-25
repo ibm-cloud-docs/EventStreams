@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-09"
+  years: 2015, 2023
+lastupdated: "2023-07-24"
 
-keywords: getting help, getting support, troubleshooting, IBM Event Streams, Kafka as a service, managed Apache Kafka
+keywords: getting help, getting support, troubleshooting
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting help and support
+# Getting help and support for {{site.data.keyword.messagehub}}
 {: #gettinghelp}
 
 If you have problems or questions while you use {{site.data.keyword.messagehub}}, go directly to the [{{site.data.keyword.Bluemix}} Support page](https://{DomainName}/unifiedsupport/supportcenter) to review featured FAQs, view cloud status, or post questions on Stack Overflow. Or, open a support case.
