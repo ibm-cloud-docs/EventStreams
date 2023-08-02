@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2015, 2022
-lastupdated: "2022-11-15"
+  years: 2015, 2023
+lastupdated: "2023-08-02"
 
-keywords: kafka as a service, managed apache kafka, message hub, kafka on cloud
+keywords: kafka as a service, managed apache kafka, message hub, kafka on cloud, managed kafka
 
 subcollection: EventStreams
 
@@ -12,10 +12,10 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overview
+# {{site.data.keyword.messagehub}} overview
 {: #about}
 
-{{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.cloud}} and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
+{{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. This managed Kafka service is optimized for event ingestion into {{site.data.keyword.cloud}} and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
 {: shortdesc}
 
 You can use {{site.data.keyword.messagehub}} to complete the following tasks:
