@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-08-02"
 
-keywords: event streams, kafka as a service, managed apache kafka, message hub
+keywords: event streams, kafka as a service, managed apache kafka, message hub, kafka on cloud
 
 subcollection: EventStreams
 
@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Getting started with {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #getting-started}
 
-{{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. To get started with {{site.data.keyword.messagehub}} and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends messages to a consumer by using a topic. The same sample program is used to consume messages and produce messages.
+{{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. To get started with this managed Kafka on {{site.data.keyword.cloud}} service and start sending and receiving messages, you can use the Java™ sample. The sample shows how a producer sends messages to a consumer by using a topic. The same sample program is used to consume messages and produce messages.
 {: shortdesc}
 
 To understand more about how {{site.data.keyword.messagehub}} works, see [{{site.data.keyword.messagehub}} overview](/docs/EventStreams?topic=EventStreams-about). {{site.data.keyword.messagehub}} was previously called Message Hub.

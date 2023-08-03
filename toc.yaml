@@ -15,7 +15,8 @@ toc:
         id: learn
         topics:
         - getting-started.md
-        - overview.md
+        - topic: overview.md
+          navtitle: Overview
         - topic: release-notes.md
           navtitle: Release notes
         - topic: apache_kafka_concepts.md
