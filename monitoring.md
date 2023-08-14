@@ -607,7 +607,7 @@ It is normal for this metric to fluctuate when viewed over short time periods be
 ### Message rate per partition 
 {: #ibm_eventstreams_instance_message_rate_per_partition}
 
-The rate of change of this metric gives the message per seccond that is incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
+The rate of change of this metric gives the message per second that is incoming in to a partition of a {{site.data.keyword.messagehub}} instance topic.
 
 | Metadata | Description |
 |----------|-------------|
