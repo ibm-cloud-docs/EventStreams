@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-08-15"
 
 keywords: cli reference
 
@@ -105,7 +105,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 ## ibmcloud es cluster
 {: #ibmcloud_es_cluster}
 
-Display the details of the cluster.
+Display the details of the cluster, including the Kafka version.
 
 ```bash
 ibmcloud es cluster [--json]
