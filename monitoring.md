@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-14"
+lastupdated: "2023-08-15"
 
 keywords: Kafka as a service, managed Apache Kafka, monitoring, metrics, cost, billing, opting in
 
@@ -528,7 +528,7 @@ Where a bytes out quota was set for a user (IAM ID), this value shows the percen
 
 This is for information to help you monitor trends in your usage, particularly if any IAM IDs are consuming close to their quota limits. 
 
-Quota metrics might sometimes exceed 100 %. Kafka quotas use sampling and are applied asynchronously. For some workloads, especially where data is sent in large batches, this might result in small deviations from the limit.
+Quota metrics might sometimes exceed 100%. Kafka quotas use sampling and are applied asynchronously. For some workloads, especially where data is sent in large batches, this might result in small deviations from the limit.
 
 ### Used disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
