@@ -31,7 +31,7 @@ ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":
 ```
 
 # Managing authorization to your {{site.data.keyword.messagehub}} resources
-{: #security}
+{: #security_resources}
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
 {: shortdesc}
@@ -79,7 +79,7 @@ You can then apply more policies to extend access to other users. You can either
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
 ## Common scenarios
-{: #security_scenarios }
+{: #security_scenarios}
 
 The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access that you need to assign.
 

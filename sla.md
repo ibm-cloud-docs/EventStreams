@@ -74,17 +74,17 @@ If duplicates cannot be tolerated, you can use the `idempotent` producer feature
 Throughput is expressed as the number of bytes per second that can be both sent and received in a cluster.
 
 #### Specific guidance for the Standard plan
-{: #sla_standard}
+{: #sla_standard_specifics}
 
 For throughput guidance information, see [Limits and quotas - Standard](/docs/EventStreams?topic=EventStreams-kafka_quotas#standard_throughput).
 
 #### Specific guidance for the Enterprise plan
-{: #sla_enterprise}
+{: #sla_enterprise_specifics}
 
 For throughput guidance information, see [Limits and quotas - Enterprise](/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput).
 
 #### Specific guidance for the Satellite plan
-{: #sla_satellite}
+{: #sla_satellite_specifics}
 
 For throughput guidance information, see [Limits and quotas - Satellite](/docs/EventStreams?topic=EventStreams-kafka_quotas#satellite_throughput).
 
