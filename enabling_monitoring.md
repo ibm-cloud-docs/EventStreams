@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-08-15"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -59,12 +59,16 @@ For more information about service-to-service bindings, see [Manage authorizatio
 
 Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) to request enablement of mirroring. 
 
+
 Include the following information in the ticket:
 - CRN of both {{site.data.keyword.messagehub}} service instances.
 - Whether it is a new enablement of mirroring, failback on an existing mirroring setup, or restoring the original configuration after a failback.
 - Aliases that you want to use for each of the two instances. You configure an alias for each service instance when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
 - The wanted direction for mirroring.
 - The set of patterns for the source topics to be mirrored.
+
+When you request to enable mirroring using a ticket, be aware that the ticket will only be processed during weekday business hours. Please plan ahead and assume 1-2 days for mirroring to be enabled.
+{: note}
 
 ### Example request
 {: #example_request}
