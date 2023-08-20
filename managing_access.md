@@ -30,7 +30,7 @@ Enterprise users have the option to disable SASL PLAIN in their Enterprise insta
 ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":true}'
 ```
 
-# Managing authorization to your {{site.data.keyword.messagehub}} resources
+## Managing authorization to your {{site.data.keyword.messagehub}} resources
 {: #security_resources}
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
