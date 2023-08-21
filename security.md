@@ -89,3 +89,9 @@ A full list of PCI DSS-ready {{site.data.keyword.cloud_notm}} Platform services,
 
 The Enterprise and Standard plans are PCI DSS certified.
 
+##  Information Security (InfoSec) Registered Assessors Program (IRAP)
+{: #irap}
+
+Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of Event Streams and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM).Event Streams for IBM Cloud Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, Learn [more](https://www.ibm.com/cloud/compliance/irap-australia). 
+
+The Enterprise Plan is IRAP Protected. 
