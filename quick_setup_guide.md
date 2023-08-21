@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-13"
+lastupdated: "2023-08-21"
 
 keywords: quick setup guide
 
@@ -29,7 +29,7 @@ completion-time: 45m
 This tutorial guides you through how to start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect Cloud Monitoring and Activity Tracker and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how you can get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
-* Prerequisites
+* [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_ui)
 * [Step 3: Create a topic](#create_topic) 
@@ -112,6 +112,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     Select one of the following methods:
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
+
     ```text
    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
    ```
@@ -315,6 +316,7 @@ Use {{site.data.keyword.monitoringshort}} to gain operational visibility into th
 ## Step 9: (Optional) Using Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
 {: step} 
+
 Link to additional docs page content, highlight that this is not part of the managed service
 
 Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
@@ -350,7 +352,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 ![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Prerequisites
-{: #getting_started_prereqs}
+{: #getting_started_prereqs1}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
 
