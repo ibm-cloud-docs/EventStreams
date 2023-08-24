@@ -20,10 +20,6 @@ content-type: release-note
 
 Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
-## July 2023
-{: #EventStreams-may2023}
-{: release-note}
-
 
 ## June 2023
 {: #EventStreams-may2023}
