@@ -25,10 +25,10 @@ Use these release notes to learn about the latest {{site.data.keyword.messagehub
 {: #EventStreams-may2023}
 {: release-note}
 Additional Topic Partition Metrics
-:   Message rate per partition is [now available](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition) 
+:   Message rate per partition is [now available.](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition) 
 
 Usage Quotas per User available
-:   Kafka administrator can now use metrics to spot users who are consuming unexpectedly large amount of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before they get throttled. [Learn more](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second)
+:   Kafka administrator can now use metrics to spot users who are consuming unexpectedly large amount of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before they get throttled. [Learn more.](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second)
  
 ## May 2023
 {: #EventStreams-may2023}
