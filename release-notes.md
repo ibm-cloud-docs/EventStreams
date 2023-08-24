@@ -20,14 +20,37 @@ content-type: release-note
 
 Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
+## July 2023
+{: #EventStreams-may2023}
+{: release-note}
 
+
+## June 2023
+{: #EventStreams-may2023}
+{: release-note}
+Additional Topic Partition Metrics
+:   Message rate per partition is [now available](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition) 
+
+Usage Quotas per User available
+:   Kafka administrator can now use metrics to spot users who are consuming unexpectedly large amount of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before they get throttled. [Learn more](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second)
+ 
 ## May 2023
 {: #EventStreams-may2023}
 {: release-note}
+Schema Registry Endpoints
+:   An Event Streams user can use a larger subset of the Confluent Schema registry REST API to manage their schema registry. 
+
+Lenses.io Integration
+: Event Streams now integrates Lenses, a third part DataOps platform for Apache Kafka. Find out how to Install Lenses with Event Streams on IBM Cloud [here](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
 
 Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.3.
 
+## April 2023
+{: #EventStreams-may2023}
+{: release-note}
+Event Streams Enterprise plan is certified IRAP Protected
+:   Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of Event Streams and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM).Event Streams for IBM Cloud Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, [Learn more](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA..)
 
 ## March 2023
 {: #EventStreams-mar2023}
@@ -39,8 +62,8 @@ OAUTHBEARER users app to service authentication
 ISMAP and C5 Certification
 :   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by [ISMAP (Information System Security Management and Assessment Program)](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-compliance#ismap), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to [C5 (Cloud Computing Compliance Controls Catalogue)](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-compliance#c5) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
 
-Kafka version via CLI
-:   You can now check the version of Kafka through the command line.
+Kafka version via CLI & UI
+:   You can now check the version of Kafka through the command line and GUI.
 
 ## January 2023
 {: #EventStreams-jan2023}
