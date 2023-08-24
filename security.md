@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-08-21"
 
-keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, apache kafka
+keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, irap, apache kafka
 
 subcollection: EventStreams
 
@@ -92,6 +92,6 @@ The Enterprise and Standard plans are PCI DSS certified.
 ##  Information Security (InfoSec) Registered Assessors Program (IRAP)
 {: #irap}
 
-Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of Event Streams and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM).Event Streams for IBM Cloud Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, Learn [more](https://www.ibm.com/cloud/compliance/irap-australia). 
+The Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of {{site.data.keyword.messagehub}} and {{site.data.keyword.Bluemix}}'s security controls against the Australian government's Information Security Manual (ISM). The {{site.data.keyword.messagehub_full}} Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation, and further details about {{site.data.keyword.Bluemix}} IRAP Protected Offerings, see [IBM Cloud compliance: IRAP (Australia)](https://www.ibm.com/cloud/compliance/irap-australia). 
 
 The Enterprise Plan is IRAP Protected. 
