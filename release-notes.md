@@ -37,7 +37,7 @@ Schema Registry Endpoints
 :   An Event Streams user can use a larger subset of the Confluent Schema registry REST API to manage their schema registry. 
 
 Lenses.io Integration
-: Event Streams now integrates Lenses, a third part DataOps platform for Apache Kafka. Find out how to Install Lenses with Event Streams on IBM Cloud [here](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
+: Event Streams now integrates with Lenses, a third part DataOps platform for Apache Kafka. Find out how to Install Lenses with Event Streams on IBM Cloud [here](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
 
 Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.3.
