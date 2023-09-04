@@ -18,26 +18,28 @@ content-type: release-note
 # Release notes for {{site.data.keyword.messagehub}}
 {: #event-streams-relnotes}
 
-Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
+Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
 
 ## June 2023
 {: #EventStreams-jun2023}
 {: release-note}
+
 Additional topic partition metrics
-:   The Message rate per partition is now available. For more information, see [Message rate per partition metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition). 
+:   The message rate per partition is now available. For more information, see [Message rate per partition metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition). 
 
 Usage quotas per user available
-:   Kafka administrators can now use metrics to spot users who are consuming unexpectedly large amounts of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before throttling. For more information, see [IAM ID bytes](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second).
+:   Kafka administrators can now use metrics to identify users who are consuming unexpectedly large amounts of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before throttling starts. For more information, see [IAM ID bytes](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second).
  
 ## May 2023
 {: #EventStreams-may2023}
 {: release-note}
-Schema Registry endpoints
-:   An {{site.data.keyword.messagehub}} user can use a larger subset of the Confluent Schema registry REST API to manage their schema registry. 
+
+Schema registry endpoints
+:   An {{site.data.keyword.messagehub}} user can use a larger subset of the Confluent Schema Registry REST API to manage their schema registry. 
 
 Lenses.io integration
-: {{site.data.keyword.messagehub}} now integrates with Lenses, a third party DataOps platform for Apache Kafka. To find out how to install Lenses with {{site.data.keyword.messagehub}}, see [Getting Started with {{site.data.keyword.messagehub}}](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
+: {{site.data.keyword.messagehub}} now integrates with Lenses, a third party DataOps platform for Apache Kafka. To find out how to install Lenses with {{site.data.keyword.messagehub}}, see [Getting started with {{site.data.keyword.messagehub}}](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
 
 Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.3.
@@ -45,8 +47,9 @@ Apache Kafka upgrade
 ## April 2023
 {: #EventStreams-apr2023}
 {: release-note}
+
 {{site.data.keyword.messagehub}} Enterprise plan is certified IRAP Protected
-:   Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of {{site.data.keyword.messagehub}} and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM). The {{site.data.keyword.messagehub_full_notm}} Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, see [IBM Cloud compliance: IRAP (Australia)](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA).
+:   The Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of {{site.data.keyword.messagehub}} and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM). The {{site.data.keyword.messagehub_full_notm}} Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, see [IBM Cloud compliance: IRAP (Australia)](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA).
 
 ## March 2023
 {: #EventStreams-mar2023}
