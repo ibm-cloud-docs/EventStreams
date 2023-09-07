@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-07"
 
 keywords: network access, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -237,6 +237,7 @@ Next, note the following considerations:
 
 * You must be the account owner or have an access policy with the administrator role on all account management services to restrict access.
 * After creating or updating a zone or a rule, it can take a few minutes for the change to take effect.
+* Context-based restrictions that are applied are enforced for clients that authenticate only after the rule has been created. Existing clients should reauthenticate for restriction rules to be enforced.
 {: important}
 
 ### Supporting connections between services (service-to-service) with context-based restrictions
