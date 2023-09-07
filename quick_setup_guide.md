@@ -351,7 +351,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 
 ![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-## Prerequisites
+## Prerequisites backup
 {: #getting_started_prereqs1}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
