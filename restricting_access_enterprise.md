@@ -41,7 +41,7 @@ Ensure that you complete the following tasks:
 - Create your service instance by using the Enterprise plan in one of the supported multi-zone locations. For more information, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose). 
 
 The Enterprise plan in a single-zone location does not support private endpoints. 
-{: codeblock}
+{: note}
 
 - Enable [Virtual Route Forwarding (VRF)](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external} for your {{site.data.keyword.Bluemix_notm}} account.
 - Enable service endpoints connectivity by running the following command:
