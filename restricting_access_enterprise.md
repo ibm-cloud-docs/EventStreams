@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-07"
+lastupdated: "2023-09-10"
 
 keywords: network access, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -38,7 +38,11 @@ You can configure Enterprise service instances to be available on the {{site.dat
 
 Ensure that you complete the following tasks:
 
-- Create your service instance by using the Enterprise plan in one of the supported multi-zone locations. For more information, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose). Note: Enterprise plan in single zone location does not support private endpoint. 
+- Create your service instance by using the Enterprise plan in one of the supported multi-zone locations. For more information, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose). 
+
+The Enterprise plan in a single-zone location does not support private endpoints. 
+{: codeblock}
+
 - Enable [Virtual Route Forwarding (VRF)](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external} for your {{site.data.keyword.Bluemix_notm}} account.
 - Enable service endpoints connectivity by running the following command:
 
