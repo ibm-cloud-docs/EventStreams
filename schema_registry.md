@@ -144,6 +144,19 @@ When you use the SerDes to create the new schema in the order Schema 1, Schema 2
 When you create schemas by using the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you want Schema 3 to be a different schema.
 {: note}
 
+## State and Deletion of Schemas
+{: #state_deletion_schema}
+
+Deletion of Schemas is made into a two stage process. 
+
+The first stage of deletion preserves the schema in the registry, but hides it from some operations. 
+The second stage will permanently remove the schema, but can only be applied after the first stage. Two stage deletion process applies at the artifact level and also at the version level. 
+
+The two stages of deletion is done by having an enabled/disabled status associated with both artifacts and versions (this is the first stage), and delete APIs for resources and versions (the second stage). 
+
+artifact or version has been disabled can be discovered via a ‘state’ property returned by operations that list artifacts/versions or get the details of an artifact/version.
+
+
 
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
@@ -223,6 +236,36 @@ Error_code | The HTTP status code of the response.
 Message | A description of the cause of the problem.
 Incident | This field is only included if the error is a result of a problem with the Schema Registry. This value can be used by IBM service to correlate a request to diagnostic information captured by the registry.
 
+### Set a schema state
+This endpoint is used to set state of a schema in the registry to either enable or disable.
+State of a schemas can be set by issuing a PUT request to the `/artifacts/{schema-id}/state` endpoint (where {schema-id} is the ID of the schema). If successful, an empty response, and a status code of 204 (no content) is returned. 
+Only `ENABLED` and `DISABLED` states are supported.
+
+Example curl request:
+
+```
+curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/state -d '{"state": "DISABLED"}'
+```
+
+Setting a schema state requires:
+
+- Manager role access to the schema resource that matches the schema being modified.
+
+### Set a schema version state
+This endpoint is used to set state of a schema version in the registry to either enable or disable.
+State of a schema versions can be set by issuing a PUT request to the `/artifacts/{schema-id}/versions/{version}/state` endpoint (where {schema-id} is the ID of the schema, and {version} is the version number of the schema version). If successful, an empty response, and a status code of 204 (no content) is returned.
+Only `ENABLED` and `DISABLED` states are supported.
+
+Example curl request:
+
+```
+curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/versions/1/state -d '{"state": "DISABLED"}'
+```
+
+Setting a schema version state requires:
+
+- Manager role access to the schema resource that matches the schema being modified.
+
 ### Create a schema
 {: #create_schema}
 
@@ -250,18 +293,26 @@ An activity tracker event is generated to report the action. For more informatio
 ### List schemas
 {: #list_schemas}
 
-You can generate a list of the IDs of all of the schemas that are stored in the registry by making a GET request to the `/artifacts` endpoint.
-
+You can generate a list of the IDs of all of the schemas that are stored in the registry by making a GET request to the `/artifacts` endpoint. Response can be queried using jsonformat parameter (Only `string` and `object` formats are supported)
+string (the default) - return an array of artifact IDs (strings), as is the current behavior for this endpoint. Only enabled artifacts are included in the array when this options is set.
+object - return an JSON objects containing an array where each entry in the array is a corresponds to an artifact in the registry. Both enabled and disabled artifacts are returned when this option is set.
 Example curl request:
 
 ```text
 curl -u token:$APIKEY $URL/artifacts
+or
+curl -u token:$APIKEY $URL/artifacts?jsonformat=$jsonformat
 ```
 
-Example response:
+Example response where string jsonformat is default:
 
 ```text
 ["my-schema"]
+```
+
+Example response when jsonformat is object:
+```
+{"artifacts":[{"id":"my-schema","state":"DISABLED"},{"id":"my-schema-2","state":"ENABLED"},{"id":"my-schema-3","state":"ENABLED"},{"id":"my-schema-4","state":"ENABLED"}],"count":4}
 ```
 
 Listing schemas requires at least:
@@ -271,7 +322,7 @@ Listing schemas requires at least:
 ### Delete a schema
 {: #delete_schema}
 
-Schemas are deleted from the registry by issuing a DELETE request to the `/artifacts/{schema-id}` endpoint (where {schema-id} is the ID of the schema). If successful, an empty response and a status code of 204 (no content) is returned.
+Schemas are deleted from the registry by issuing a DELETE request to the `/artifacts/{schema-id}` endpoint (where {schema-id} is the ID of the schema). If successful, an empty response and a status code of 204 (no content) is returned. 
 
 Example curl request:
 
@@ -359,18 +410,27 @@ Getting the latest version of a schema requires at least both:
 ### Listing all of the versions of a schema
 {: #list_schema_versions}
 
-To list all versions of a schema currently stored in the registry, make a GET request to the `/artifacts/{schema-id}/versions` endpoint (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response.
+To list all versions of a schema currently stored in the registry, make a GET request to the `/artifacts/{schema-id}/versions` endpoint (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response. Response can be queried using jsonformat parameter (Only `number` and `object` formats are supported)
+‘number’ (the default) - when this is specified the response is an array of numeric values corresponding to enabled versions of the artifact (disabled versions are omitted). This is the same format as the endpoint currently generates.
+‘object’ - the response is a JSON object containing an array of JSON objects representing versions of the artifact. Both enabled and disabled versions are included in the array.
 
 Example curl request:
 
 ```text
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions
+or
+curl -u token:$APIKEY $URL/artifacts/my-schema/versions?jsonformat=$jsonformat
 ```
 
-Example response:
+Example response where number jsonformat is default:
 
 ```text
 [1,2,3,5,6,8,100]
+```
+
+Example response when jsonformat is object:
+```
+{"versions":[{"id":1,"state":"ENABLED"},{"id":2,"state":"DISABLED"},{"id":3,"state":"ENABLED"},{"id":4,"state":"ENABLED"},{"id":5,"state":"DISABLED"},{"id":6,"state":"ENABLED"},{"id":7,"state":"ENABLED"}],"count":7}
 ```
 
 Getting the list of available versions of a schema requires at least both:
