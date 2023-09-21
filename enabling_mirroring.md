@@ -27,8 +27,8 @@ Ensure that you provisioned two Enterprise plan clusters. Both clusters must hav
 
 Because mirroring is unidirectional, decide which direction mirroring you want. One cluster is the source and the other cluster is the target.
 
-Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls when you are ready. Alternatively you can provide details of which topics to include at set up time. 
-The selection must be specified as one or more patterns. For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
+Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls when you are ready. The selection must be specified as one or more patterns. 
+For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams Metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
@@ -57,32 +57,25 @@ For more information about service-to-service bindings, see [Manage authorizatio
 ## Step 3: Enable mirroring
 {: #step3_enable}
 
-Raise a [support ticket](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case) to request enablement of mirroring. 
+To enable mirroring, you will need to run a update against your target cluster via CLI with the following required parameters:
 
+| Required Parameters | Description |
+| ---------- | ----------- |
+| source_crn | The crn of the source cluster to be mirrored |
+| source_alias | The alias used for the source cluster | 
+| target_alias | The alias used for the target cluster | 
 
-Include the following information in the ticket:
-- CRN of both {{site.data.keyword.messagehub}} service instances.
-- Whether it is a new enablement of mirroring, failback on an existing mirroring setup, or restoring the original configuration after a failback.
-- Aliases that you want to use for each of the two instances. You configure an alias for each service instance when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
-- The wanted direction for mirroring.
-- The set of patterns for the source topics to be mirrored.
-
-When you raise a ticket to enable mirroring, be aware that the ticket will only be processed during weekday business hours. Please plan ahead and assume it will take 1-2 days for mirroring to be enabled.
+We currently do not support mirroring a single-zone region cluster, therefore can not be a source cluster.
 {: note}
 
-### Example request
-{: #example_request}
+- The source crn will be in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
+- Aliases that you want to use for each of the two instances. You configure an alias for each service instance when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
 
-```text
-We request the Event Streams team to enable mirroring between the following 2 service instances:
-- crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa:: aliased with "us-south"
-- crn:v1:bluemix:public:messagehub:us-east:a/bbb:bbbb:: aliased with "us-east"
+### Example cli command
+{: #example_cli_command}
 
-Data is to flow from "us-south" to "us-east".
-
-Mirrored topics are:
-"aaa.*"
-"bbb.*"
+```sh
+ibmcloud resource service-instance-update <service_instance_name> -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}
 ```
 {: codeblock}
 
