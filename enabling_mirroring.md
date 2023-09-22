@@ -20,6 +20,14 @@ This information describes how to set up a pair of {{site.data.keyword.messagehu
 
 Using mirroring with {{site.data.keyword.messagehub}} incurs an extra charge for each mirroring capacity unit hour. For more information, go to the [Catalog](https://cloud.ibm.com/catalog#services) and search for `Event Streams`. You can then view pricing plans.
 
+Currently, enabling mirroring for an {{site.data.keyword.messagehub}} service instance requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
+
+To install this tool, see [install devtools](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
+
+The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to issue the **service-instance-** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
+
+The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance is variable, but under normal circumstances it does not exceed 2 hours
+
 ## Step 1: Setup 
 {: #step1_setup}
 
@@ -74,13 +82,22 @@ We currently do not support mirroring a single-zone region cluster, therefore ca
 ### Example cli command
 {: #example_cli_command}
 
-```sh
-ibmcloud resource service-instance-update <service_instance_name> -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}
-```
-{: codeblock}
+  ```text
+  ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}
+  ```
 
 ## Step 4: Validation
 {: #step4_validation}
 
-When the ticket is processed by the {{site.data.keyword.messagehub}} team, the target cluster shows the topics that are suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
+You can get the current service instance information by using the following command.
+
+  ```text
+  ibmcloud resource service-instance "Event Streams resource instance name" --output=json
+  ```
+
+Review the Last Operation section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates update succeeded or sync succeeded.
+
+Run the command again until success is indicated.
+
+When the service instance update has completed, the target cluster shows the topics that are suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
 
