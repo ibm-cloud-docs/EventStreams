@@ -35,7 +35,7 @@ Ensure that you provisioned two Enterprise plan clusters. Both clusters must hav
 
 Because mirroring is unidirectional, decide which direction mirroring you want. One cluster is the source and the other cluster is the target.
 
-Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls when you are ready. The selection must be specified as one or more patterns. 
+Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in step 4 below. The selection must be specified as one or more patterns.
 For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams Metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
@@ -77,14 +77,14 @@ To enable mirroring, you will need to run a update against your target cluster v
 We currently do not support mirroring a single-zone region cluster, therefore it can not be a source or a target cluster.
 {: note}
 
-- The source crn will be in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
-- Aliases that you want to use for each of the two instances. You configure an alias for each service instance when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
+- The `source_crn` will be in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
+- The `source_alias` and the `target_alias` are the aliases that you want to configure for each of the two service instances when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
 
 ### Example cli command
 {: #example_cli_command}
 
   ```text
-  ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}
+  ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}'
   ```
 
 ## Step 4: Validation
