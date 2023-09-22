@@ -72,6 +72,7 @@ To enable mirroring, you will need to run a update against your target cluster v
 | source_crn | The crn of the source cluster to be mirrored |
 | source_alias | The alias used for the source cluster | 
 | target_alias | The alias used for the target cluster | 
+{: caption="Table 1. Required parameters when enabling mirroring" caption-side="bottom"}
 
 We currently do not support mirroring a single-zone region cluster, therefore it can not be a source or a target cluster.
 {: note}
