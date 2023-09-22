@@ -26,7 +26,7 @@ To install this tool, see [install devtools](/docs/cli?topic=cli-install-devtool
 
 The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to issue the **service-instance-** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
-The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance is variable, but under normal circumstances it does not exceed 2 hours
+The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance is variable, but under normal circumstances it does not exceed 2 hours.
 
 ## Step 1: Setup 
 {: #step1_setup}
@@ -74,7 +74,7 @@ To enable mirroring, you will need to run a update against your target cluster v
 | target_alias | The alias used for the target cluster | 
 {: caption="Table 1. Required parameters when enabling mirroring" caption-side="bottom"}
 
-We currently do not support mirroring a single-zone region cluster, therefore it can not be a source or a target cluster.
+Mirroring is not supported for an Enterprise single-zone-region cluster or a Satellite cluster, therefore neither can be a source or a target cluster.
 {: note}
 
 - The `source_crn` will be in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
@@ -98,7 +98,16 @@ You can get the current service instance information by using the following comm
 
 Review the Last Operation section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates update succeeded or sync succeeded.
 
-Run the command again until success is indicated.
+Run the command again until success is indicated:
+  ```text
+  "last_operation": {
+    "type": "update",
+    "state": "succeeded",
+    "description": "Update succeeded.",
+    "updated_at": null,
+    "cancelable": false
+  }
+  ```
 
-When the service instance update has completed, the target cluster shows the topics that are suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
+When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring via the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
 
