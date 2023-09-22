@@ -73,7 +73,7 @@ To enable mirroring, you will need to run a update against your target cluster v
 | source_alias | The alias used for the source cluster | 
 | target_alias | The alias used for the target cluster | 
 
-We currently do not support mirroring a single-zone region cluster, therefore can not be a source cluster.
+We currently do not support mirroring a single-zone region cluster, therefore it can not be a source or a target cluster.
 {: note}
 
 - The source crn will be in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
