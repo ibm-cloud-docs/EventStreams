@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Enabling mirroring
 {: #mirroring_setup}
 
-This information describes how to set up a pair of {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
+This information describes how to set up two {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
 {: shortdesc}
 
 Using mirroring with {{site.data.keyword.messagehub}} incurs an extra charge for each mirroring capacity unit hour. For more information, go to the [Catalog](https://cloud.ibm.com/catalog#services) and search for `Event Streams`. You can then view pricing plans.
@@ -24,7 +24,7 @@ Currently, enabling mirroring for an {{site.data.keyword.messagehub}} service in
 
 To install this tool, see [install devtools](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
 
-The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to issue the **service-instance-** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
+The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to issue the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
 The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance is variable, but under normal circumstances it does not exceed 2 hours.
 
@@ -32,6 +32,9 @@ The time required to enable mirroring for the {{site.data.keyword.messagehub}} s
 {: #step1_setup}
 
 Ensure that you provisioned two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have suitable IAM access policies.
+
+Mirroring is not supported for an Enterprise single-zone-region cluster or a Satellite cluster, therefore neither can be a source or a target cluster.
+{: note}
 
 Because mirroring is unidirectional, decide which direction mirroring you want. One cluster is the source and the other cluster is the target.
 
@@ -57,7 +60,7 @@ In this command we are using IAM source and target definitions, which are the op
 {: note}
 
 ```text
-ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the source cluster> --source-service-account <account id> --target-service-instance-id <instance id of target>
+ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of target> --source-service-account <account id> --target-service-instance-id <instance id of the source cluster>
 ```
 
 For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](https://cloud.ibm.com/docs/iam?topic=iam-serviceauth).
@@ -65,7 +68,7 @@ For more information about service-to-service bindings, see [Manage authorizatio
 ## Step 3: Enable mirroring
 {: #step3_enable}
 
-To enable mirroring, you will need to run a update against your target cluster via CLI with the following required parameters:
+To enable mirroring, you will need to run a **service-instance-update** against your target cluster via CLI with the following required parameters:
 
 | Required Parameters | Description |
 | ---------- | ----------- |
@@ -73,9 +76,6 @@ To enable mirroring, you will need to run a update against your target cluster v
 | source_alias | The alias used for the source cluster | 
 | target_alias | The alias used for the target cluster | 
 {: caption="Table 1. Required parameters when enabling mirroring" caption-side="bottom"}
-
-Mirroring is not supported for an Enterprise single-zone-region cluster or a Satellite cluster, therefore neither can be a source or a target cluster.
-{: note}
 
 - The `source_crn` will be in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
 - The `source_alias` and the `target_alias` are the aliases that you want to configure for each of the two service instances when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
