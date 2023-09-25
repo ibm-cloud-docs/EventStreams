@@ -31,7 +31,7 @@ The time required to enable mirroring for the {{site.data.keyword.messagehub}} s
 ## Step 1: Setup 
 {: #step1_setup}
 
-Ensure that you provisioned two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have suitable IAM access policies.
+Ensure that you provisioned two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have service-to-service bindings (see step 2 below).
 
 Mirroring is not supported for an Enterprise single-zone-region cluster or a Satellite cluster, therefore neither can be a source or a target cluster.
 {: note}
@@ -60,7 +60,7 @@ In this command we are using IAM source and target definitions, which are the op
 {: note}
 
 ```text
-ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of target> --source-service-account <account id> --target-service-instance-id <instance id of the source cluster>
+ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account id>] --target-service-instance-id <instance id of the mirroring source cluster>
 ```
 
 For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](https://cloud.ibm.com/docs/iam?topic=iam-serviceauth).
