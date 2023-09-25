@@ -87,7 +87,7 @@ To enable mirroring, you will need to run a **service-instance-update** against 
   ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}'
   ```
 
-If the cluster has been provisioned with or scaled up to a throughput higher than the default value of 150, the service-instance-update command may need "thoughput":"_current throughput value_" to also be included in the update parameter body.
+If the cluster has been provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "thoughput":"_current throughput value_" in the update parameter body.
 {: note}
 
 ## Step 4: Validation
