@@ -99,7 +99,7 @@ You can get the current service instance information by using the following comm
   ibmcloud resource service-instance "Event Streams resource instance name" --output=json
   ```
 
-Review the Last Operation section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates update succeeded or sync succeeded.
+Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or sync succeeded.
   ```text
   "last_operation": {
     "type": "update",

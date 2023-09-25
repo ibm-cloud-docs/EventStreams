@@ -65,9 +65,9 @@ If the application requires strict ordering, remote topics are to be fully consu
 
 At that point, the {{site.data.keyword.messagehub}} service instance owner is responsible for deciding what happens when cluster A is recovered. 
 
-In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} service instance owner is responsible for enabling mirroring between cluster B and a newly provisioned instance. In order to enable mirroring to a new instance:
+In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} service instance owner is responsible for enabling mirroring between cluster B and a newly provisioned instance. To enable mirroring to a new instance, complete the following steps:
 
-- Fail over the producers and consumers from A to B as described above.
+- Fail over the producers and consumers from A to B as described previously.
 - Raise a support ticket to request disabling of the current mirroring from cluster A to cluster B.
 - After the support ticket has been processed, enable mirroring between cluster B (now the source) to the newly provisioned cluster (the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 
