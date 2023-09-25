@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-10"
 
 keywords: network access, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -17,9 +17,6 @@ subcollection: EventStreams
 
 By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.Bluemix_short}} public network, so they are accessible over the public internet.
 {: #shortdesc} 
-
-The following features are available in the Enterprise plan only.
-{: note}
 
 If required, you can use network type or context-based restrictions to restrict the network connectivity as follows:
 
@@ -41,7 +38,11 @@ You can configure Enterprise service instances to be available on the {{site.dat
 
 Ensure that you complete the following tasks:
 
-- Create your service instance by using the Enterprise plan. For more information, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose).
+- Create your service instance by using the Enterprise plan in one of the supported multi-zone locations. For more information, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose). 
+
+The Enterprise plan in a single-zone location does not support private endpoints. 
+{: note}
+
 - Enable [Virtual Route Forwarding (VRF)](/docs/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud){: external} for your {{site.data.keyword.Bluemix_notm}} account.
 - Enable service endpoints connectivity by running the following command:
 
@@ -218,7 +219,8 @@ The console continues to be accessible if private only networking is selected.
 
 You can define rules that limit the network locations that connections are accepted from. For example, by network type, IP ranges, VPC, or from other services. For more information, see [What are context-based restrictions?](/docs/account?topic=account-context-restrictions-whatis){: external}
 
-When context-based restrictions rules are defined against an {{site.data.keyword.messagehub}} instance, the following rules apply:
+Context-based restrictions can be defined for both Standard and Enterprise plan {{site.data.keyword.messagehub}} instances.
+When context-based restrictions rules are defined, the following rules apply:
 
 * Admin REST API, REST Producer API, Schema Registry API, and Kafka client calls are under the scope of context-based restrictions rules that are created against an {{site.data.keyword.messagehub}} instance.
 
@@ -236,7 +238,8 @@ Creating context-based restrictions rules is a two-step process:
 Next, note the following considerations:
 
 * You must be the account owner or have an access policy with the administrator role on all account management services to restrict access.
-* After creating or updating a zone or a rule, it can take a few minutes for the change to take effect.
+* After creating or updating a zone or a rule, it can take a few minutes (up to 10 minutes) for the change to take effect.
+* After context-based restrictions are applied, they are only enforced for clients that authenticate after the rule has been created. Existing clients should reauthenticate for restriction rules to be enforced.
 {: important}
 
 ### Supporting connections between services (service-to-service) with context-based restrictions

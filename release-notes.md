@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-08-24"
 
 keywords: event streams release notes
 
@@ -18,35 +18,38 @@ content-type: release-note
 # Release notes for {{site.data.keyword.messagehub}}
 {: #event-streams-relnotes}
 
-Use these release notes to learn about the latest {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
+Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
 {: shortdesc}
 
 ## June 2023
-{: #EventStreams-may2023}
+{: #EventStreams-jun2023}
 {: release-note}
-Additional Topic Partition Metrics
-:   Message rate per partition is [now available.](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition) 
 
-Usage Quotas per User available
-:   Kafka administrator can now use metrics to spot users who are consuming unexpectedly large amount of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before they get throttled. [Learn more.](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second)
+Additional topic partition metrics
+:   The message rate per partition is now available. For more information, see [Message rate per partition metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition). 
+
+Usage quotas per user available
+:   Kafka administrators can now use metrics to identify users who are consuming unexpectedly large amounts of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before throttling starts. For more information, see [IAM ID bytes](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second).
  
 ## May 2023
 {: #EventStreams-may2023}
 {: release-note}
-Schema Registry Endpoints
-:   An Event Streams user can use a larger subset of the Confluent Schema registry REST API to manage their schema registry. 
 
-Lenses.io Integration
-: Event Streams now integrates Lenses, a third part DataOps platform for Apache Kafka. Find out how to Install Lenses with Event Streams on IBM Cloud [here](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
+Schema registry endpoints
+:   An {{site.data.keyword.messagehub}} user can use a larger subset of the Confluent Schema Registry REST API to manage their schema registry. 
+
+Lenses.io integration
+: {{site.data.keyword.messagehub}} now integrates with Lenses, a third party DataOps platform for Apache Kafka. To find out how to install Lenses with {{site.data.keyword.messagehub}}, see [Getting started with {{site.data.keyword.messagehub}}](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
 
 Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.3.
 
 ## April 2023
-{: #EventStreams-may2023}
+{: #EventStreams-apr2023}
 {: release-note}
-Event Streams Enterprise plan is certified IRAP Protected
-:   Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of Event Streams and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM).Event Streams for IBM Cloud Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, [Learn more](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA..)
+
+{{site.data.keyword.messagehub}} Enterprise plan is certified IRAP Protected
+:   The Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of {{site.data.keyword.messagehub}} and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM). The {{site.data.keyword.messagehub_full_notm}} Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, see [IBM Cloud compliance: IRAP (Australia)](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA).
 
 ## March 2023
 {: #EventStreams-mar2023}
@@ -56,17 +59,17 @@ OAUTHBEARER users app to service authentication
 :   {{site.data.keyword.messagehub}} users can configure their Kafka client with more secure and ephemeral [SASL OAUTHBEARER](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client), in addition to API keys.
 
 ISMAP and C5 Certification
-:   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by [ISMAP (Information System Security Management and Assessment Program)](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-compliance#ismap), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to [C5 (Cloud Computing Compliance Controls Catalogue)](https://test.cloud.ibm.com/docs/EventStreams?topic=EventStreams-compliance#c5) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
+:   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by the [ISMAP (Information System Security Management and Assessment Program)](/docs/EventStreams?topic=EventStreams-compliance#ismap), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to [C5 (Cloud Computing Compliance Controls Catalogue)](/docs/EventStreams?topic=EventStreams-compliance#c5) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
 
-Kafka version via CLI & UI
-:   You can now check the version of Kafka through the command line and GUI.
+Kafka version by using the CLI and console
+:   You can now check the version of Kafka by using through the command line and console.
 
 ## January 2023
 {: #EventStreams-jan2023}
 {: release-note}
 
-Quota management through REST API
-:   You can enforce production and consumption rate limits by settings quotas through [Administrative REST API](https://cloud.ibm.com/apidocs/event-streams/adminrest#list-quotas) to prevent network saturation or monopolizing broker resources.
+Quota management by using the REST API
+:   You can enforce production and consumption rate limits by settings quotas using the Admin REST API. For more information, see [List each entity's quota information](/apidocs/event-streams/adminrest#list-quotas) to prevent network saturation or monopolizing broker resources.
 
 ## October 2022
 {: #EventStreams-oct2022}

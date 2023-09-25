@@ -51,7 +51,7 @@ Before you get started, we highly recommend you read the following information t
 * [Apache Kafka fundamentals](https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=event%20streams)
 
 
-## Step 1: Choose your plan 
+## Choose your plan 
 {: #choose_plan}
 {: step}
 
@@ -66,7 +66,7 @@ To help you decide which plan to choose, see [Choosing your plan](/docs/EventStr
 _Direct to choosing your plan page, give a high level summary of the plans? and highlight that Enterprise plan allows for customer managed encryption and private end points and different throughput/storage options - the intent here is to upsell_
 _Encourage users to familiarise themselves with Apache Concepts docs page_
 
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
+## Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
 {: step}
 {: ui}
@@ -85,7 +85,7 @@ _Encourage users to familiarise themselves with Apache Concepts docs page_
 
 
 
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the CLI
+## Provision an {{site.data.keyword.messagehub}} instance by using the CLI
 {: #provision_instance_cli}
 {: step}
 {: cli}
@@ -131,7 +131,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
 
 
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the API
+## Provision an {{site.data.keyword.messagehub}} instance by using the API
 {: #provision_instance_api}
 {: step}
 {: api}
@@ -139,7 +139,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 **Which API should we focus on?**
 
 
-## Step 3: Create a topic and select number of partitions by using the console
+## Create a topic and select number of partitions by using the console
 {: #create_topic}
 {: step}
 {: ui}
@@ -161,7 +161,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
     If your messages are not read by a consumer within this time, they will be missed.
 
-## Step 3: Create a topic and select number of partitions by using the CLI 
+## Create a topic and select number of partitions by using the CLI 
 {: #create_topic}
 {: step}
 {: cli}
@@ -170,7 +170,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
-## Step 3: Create a topic and select number of partitions by using the API
+## Create a topic and select number of partitions by using the API
 {: #create_topic}
 {: step}
 {: api}
@@ -214,7 +214,7 @@ The REST endpoint for creating a Kafka topic can be exercised using the followin
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster._
 _Bring in information like suggested topic naming strategies_
 
-## Step 4: Create an IAM service credential by using the console
+## Create an IAM service credential by using the console
 {: #create_credential}
 {: step}
 {: ui}
@@ -228,7 +228,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
 6. Click this credential by using **View Credentials** to reveal the details in JSON format.
 
-## Step 4: Create an IAM service credential by using the CLI
+## Create an IAM service credential by using the CLI
 {: #create_credential}
 {: step}
 {: cli}
@@ -261,12 +261,12 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-## Step 4: Create an IAM service credential by using the resource controller API
+## Create an IAM service credential by using the resource controller API
 {: #create_credential}
 {: step}
 {: api}
 
-## Step 5: Produce data
+## Produce data
 {: #produce_data}
 {: step}
 
@@ -276,7 +276,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 
     Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)
 
-## Step 6: Consume data (a. UI Not available b. via CLI - support different languages - show Java library)
+## Consume data (a. UI Not available b. via CLI - support different languages - show Java library)
 {: #consume_data}
 {: step}
 {: cli}
@@ -287,7 +287,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 
     Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness,
 
-## Step 6: Consume data (a. UI Not available - support different languages - show Java library)
+## Consume data (a. UI Not available - support different languages - show Java library)
 {: #consume_data}
 {: step}
 {: api}
@@ -298,14 +298,14 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 
     Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness,
 
-## Step 7: Connect IBM Cloud Monitoring for Operational Visibility by using the console (a. via UI only - walk through steps ), (Explain benefits)
+## Connect IBM Cloud Monitoring for Operational Visibility by using the console (a. via UI only - walk through steps ), (Explain benefits)
 {: #connect_monitoring}
 {: step}
 
 Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics)
 
-## Step 8: Connect {{site.data.keyword.cloudaccesstrailshort}} to audit service activity (using the console - walk through steps ), (Explain benefits)
+## Connect {{site.data.keyword.cloudaccesstrailshort}} to audit service activity (using the console - walk through steps ), (Explain benefits)
 {: #activity_tracker}
 {: step}
 
@@ -313,7 +313,7 @@ Use {{site.data.keyword.monitoringshort}} to gain operational visibility into th
 
 [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events)
 
-## Step 9: (Optional) Using Kafka Connect or kSQLdb
+## (Optional) Using Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
 {: step} 
 
@@ -327,7 +327,7 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site
 
 
 
-## Step 10: Help section.
+## Help section.
 {: #getting_help}
 {: step}
 
@@ -351,7 +351,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 
 ![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-## Prerequisites
+## Prerequisites backup
 {: #getting_started_prereqs1}
 
 1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
