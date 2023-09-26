@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-14"
 
-keywords: apache kafka, producer, producing messages, message ordering, batching, throttling, compression
+keywords: producer, producing messages, message ordering, batching, throttling, compression
 
 subcollection: EventStreams
 
