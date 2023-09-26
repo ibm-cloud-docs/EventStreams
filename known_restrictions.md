@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-24"
 
-keywords: restrictions, kafka fails, kafka failover, jvm ttl, creating topic, deleting topic
+keywords: restrictions, failover, jvm ttl, creating topic, deleting topic
 
 subcollection: EventStreams
 

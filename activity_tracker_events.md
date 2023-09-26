@@ -4,7 +4,7 @@ copyright:
   years: 2016, 2023
 lastupdated: "2023-06-29"
 
-keywords: Kafka as a service, managed Apache Kafka, activity
+keywords: activity
 
 subcollection: EventStreams
 

@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-24"
 
-keywords: Kafka client, wildcarding, IAM, wildcard, policies
+keywords: client, wildcarding, wildcard, policies
 
 subcollection: EventStreams
 

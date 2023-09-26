@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2023
 lastupdated: "2023-07-24"
 
-keywords: scaling capacity, enterprise plan, throughput, storage, scaling
+keywords: scaling capacity, throughput, storage, scaling
 
 subcollection: EventStreams
 

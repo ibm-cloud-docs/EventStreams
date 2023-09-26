@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-14"
 
-keywords: kafka connect, stand-alone, source connector, sink connector, distributed worker
+keywords: stand-alone, source connector, sink connector, distributed worker
 
 subcollection: EventStreams
 

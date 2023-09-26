@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-09-26"
 
-keywords: kafka api, consumer, producer, admin, streams, connect, kafka client
+keywords: api, consumer, producer, admin, streams, connect, client
 
 subcollection: EventStreams
 
@@ -55,8 +55,9 @@ For other languages, run one of the following clients, all of which are tested w
 |**Third-party clients:**   |   |   |   |    |
 |[node-rdkafka](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
 |[confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
-| [confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go) |  Golang | Latest  |  0.11.0  |   |
+| [confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go) |  Go | Latest  |  0.11.0  |   |
 | [librdkafka](https://github.com/edenhill/librdkafka) |  C or C++ | Latest  |  0.11.0  |   |
+| [sarama](https://github.com/IBM/sarama) | Go | Latest | 1.18.0 | [Sarama examples](https://github.com/IBM/sarama/tree/v1.41.1/examples) |
 {: caption="Table 2. Client support summary" caption-side="bottom"}
 
 [^tabletext1]: The earliest version that was validated in continual testing. Typically, it is the initial version available within the last 12 months, or newer if significant issues are known to exist. If you can't run any of the clients that are listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka](https://github.com/edenhill/librdkafka/){: external}). 1. Supports Kafka 0.10, or later. 2. Can connect and authenticate by using SASL PLAIN with TLSv1.2. 3. Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake. 4. Supports elliptic curve cryptography. In all cases, use the latest version of the client.

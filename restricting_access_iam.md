@@ -4,7 +4,7 @@ copyright:
   years: 2021, 2023
 lastupdated: "2023-07-24"
 
-keywords: service endpoints, VSIs, VPC, CSE, disruptive, iam ip address, granting access, kafka client
+keywords: service endpoints, VSIs, VPC, CSE, disruptive, iam ip address, granting access
 
 subcollection: EventStreams
 

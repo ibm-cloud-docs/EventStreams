@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-14"
 
-keywords: kafka console tools, console producer, console consumer, kafka streams, consumer groups
+keywords: console tools, console producer, console consumer, consumer groups
 
 subcollection: EventStreams
 
