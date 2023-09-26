@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-24"
 
-keywords: kafka java client, api, kafka api, admin api, liberty, migrate kafka client, kafka client, sasl.jaas.config property
+keywords: java client, api, admin api, liberty, migrate client, sasl.jaas.config property
 
 subcollection: EventStreams
 
