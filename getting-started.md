@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-08-02"
 
-keywords: event streams, kafka as a service, managed apache kafka, message hub, kafka on cloud
+keywords: event streams, message hub
 
 subcollection: EventStreams
 

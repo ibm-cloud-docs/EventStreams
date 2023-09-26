@@ -4,7 +4,7 @@ copyright:
   years: 2023
 lastupdated: "2023-07-24"
 
-keywords: Kafka, plan, Enterprise, quotas, kafka quotas, quota implementation, mapping quotas, authorization, activity tracker, client metrics
+keywords: quotas, kafka quotas, quota implementation, mapping quotas, authorization, activity tracker, client metrics
 
 subcollection: EventStreams
 

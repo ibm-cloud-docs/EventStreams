@@ -46,7 +46,7 @@ To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud then 
 
 Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
-# Next steps
+## Next steps
 {: #admin_api_next_steps}
 
 For a description of the API with examples, see [{{site.data.keyword.messagehub}} admin-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: external}.

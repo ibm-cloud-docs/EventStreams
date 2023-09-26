@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-13"
 
-keywords: Kafka as a service, managed Apache Kafka, connections, endpoints, cli, connect Kafka, vpc, create service key
+keywords: connections, endpoints, cli, connect Kafka, vpc, create service key
 
 subcollection: EventStreams
 

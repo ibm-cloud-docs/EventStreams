@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-18"
 
-keywords: Kafka as a service, managed Apache Kafka, kafka connect, archive, connector, connect to cos, using kubernetes
+keywords: kafka connect, archive, connector, connect to cos, using kubernetes
 
 subcollection: EventStreams
 

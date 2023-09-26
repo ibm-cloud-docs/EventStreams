@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2023
 lastupdated: "2023-08-24"
 
-keywords: event streams release notes
+keywords: release notes
 
 subcollection: EventStreams
 

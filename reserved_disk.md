@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2023
 lastupdated: "2023-07-13"
 
-keywords: reserved disk usage, Kafka, store data, storage
+keywords: reserved disk usage, store data, storage
 
 subcollection: EventStreams
 
