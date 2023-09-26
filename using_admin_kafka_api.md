@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-24"
 
-keywords: kafka java client, api, settings, create topics, delete topics
+keywords: java client, api, settings, create topics, delete topics
 
 subcollection: EventStreams
 
