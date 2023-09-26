@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-24"
 
-keywords: kafka streams, apache kafka, sasl.jaas.config
+keywords: asl.jaas.config
 
 subcollection: EventStreams
 
