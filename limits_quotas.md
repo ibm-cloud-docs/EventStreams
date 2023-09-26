@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-14"
 
-keywords: Kafka as a service, managed Apache Kafka, limits, quotas, network throughput, retention, consumer groups, schema
+keywords: limits, quotas, network throughput, retention, consumer groups, schema
 
 subcollection: EventStreams
 
