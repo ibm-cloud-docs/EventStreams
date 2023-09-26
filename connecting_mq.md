@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-18"
 
-keywords: MQ bridge, kafka connect configuration, kafka connect
+keywords: MQ bridge, connect configuration
 
 subcollection: EventStreams
 
