@@ -4,7 +4,7 @@ copyright:
   years: 2023
 lastupdated: "2023-08-21"
 
-keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, irap, apache kafka
+keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, irap
 
 subcollection: EventStreams
 
