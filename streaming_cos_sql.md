@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-06-29"
 
-keywords: Cloud Object Storage, query, streaming, stream landing
+keywords: query, streaming, stream landing
 
 subcollection: EventStreams
 
