@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-09-26"
 
 keywords: kafka api, consumer, producer, admin, streams, connect, kafka client
 
