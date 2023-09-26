@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-18"
 
-keywords: kafka connect, archive, connector, connect to cos, using kubernetes
+keywords: archive, connector, connect to cos, using kubernetes
 
 subcollection: EventStreams
 

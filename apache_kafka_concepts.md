@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-07-14"
 
-keywords: kafka concepts, brokers, messages, topics, partitions, replication, replica, producer, consumer, consumer group
+keywords: brokers, messages, topics, partitions, replication, replica, producer, consumer, consumer group
 
 subcollection: EventStreams
 

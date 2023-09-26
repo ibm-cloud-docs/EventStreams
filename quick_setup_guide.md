@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-21"
+lastupdated: "2023-09-26"
 
 keywords: quick setup guide
 
@@ -26,7 +26,7 @@ completion-time: 45m
 {: toc-services="eventstreams"}
 {: toc-completion-time="45m"}
 
-This tutorial guides you through how to start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect Cloud Monitoring and Activity Tracker and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how you can get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through starting to use {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect Cloud Monitoring and Activity Tracker and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how you can get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 * [Prerequisites](#prereqs)
@@ -61,7 +61,7 @@ To help you decide which plan to choose, see [Choosing your plan](/docs/EventStr
 
 * The Standard plan offers pay as you go access to the multi-tenant {{site.data.keyword.messagehub}} service. Charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
 
-* The Enterprise plan offers pay as you go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. It also offers customer managed encryption, private endpoints, and a selection of throughput and storage options. 
+* The Enterprise plan offers pay as you go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. It also offers customer-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
 _Direct to choosing your plan page, give a high level summary of the plans? and highlight that Enterprise plan allows for customer managed encryption and private end points and different throughput/storage options - the intent here is to upsell_
 _Encourage users to familiarise themselves with Apache Concepts docs page_
@@ -317,17 +317,19 @@ Use {{site.data.keyword.monitoringshort}} to gain operational visibility into th
 {: #kafka_connect_ksql}
 {: step} 
 
-Link to additional docs page content, highlight that this is not part of the managed service
+_Link to additional docs page content, highlight that this is not part of the managed service_
 
 Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
 [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect)
+
+Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
 
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
 [Using ksqlDB with Event Streams](/docs/EventStreams?topic=EventStreams-ksql_using)
 
 
 
-## Help section.
+## Getting help
 {: #getting_help}
 {: step}
 
@@ -343,63 +345,3 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site
 For 
 Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
 
--------------------------------------------------------
-
-To understand more about how {{site.data.keyword.messagehub}} works, see [{{site.data.keyword.messagehub}} overview](/docs/EventStreams?topic=EventStreams-about). 
-
-To access {{site.data.keyword.messagehub}} samples, see our primary sample repository at [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.  Other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, are available at the previous [{{site.data.keyword.messagehub}} repository](https://github.com/ibm-messaging/event-streams-samples){: external}.
-
-![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-## Prerequisites backup
-{: #getting_started_prereqs1}
-
-1. **If you don't already have one, create an {{site.data.keyword.messagehub}} service instance.**
-
-   a. Log in to the {{site.data.keyword.cloud_notm}} console.
-  
-   b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
-  
-   c. Select the **Lite plan** on the service instance page.
-  
-   d. Enter a name for your service. You can use the default value.
-  
-   e. Click **Create**. The {{site.data.keyword.messagehub}} **Getting started** page opens. 
-
-2. **If you don't already have them, install the following prerequisites:**
-	
-	- [Git](https://git-scm.com/){: external}
-	- Java™  8 or higher 
-
-## Tutorial steps
-{: #getting_started_steps}
-
-1. In the {{site.data.keyword.cloud_notm}} console (UI), go to your **Resource list**, select your {{site.data.keyword.messagehub}} resource, and click the **Get started with a sample application** tile.
-
-2. Complete the **Configure and run starter application** steps:
-
-     a. Click the **Download .JAR from GitHub** button to download the latest .JAR release. 
-     
-     b. Click the **Generate properties** button to generate and download the properties file. The **Topic** panel opens.
-     
-     c. Enter a name for a **New topic** that you want to create. Or, click **Existing topic** to select an existing topic that you want to use. 
-     
-     If you are on the Lite plan and a topic already exists, the **New topic** button is disabled. {: note}
-     
-     d. Select the **Service credential** that you want to use, or select **Create new** to create a new one. 
-     
-     e. Click the **Generate and download** button. The `kafka.properties` file is downloaded to your local machine. It contains the necessary configuration to connect to {{site.data.keyword.messagehub}}. You can open it in a text editor to see how it works.
-     
-     f. The panel shows your selected configuration. Clicking the **Regenerate** button starts the process again. Clicking the **Download** button downloads the properties file again.
-     
-3. Navigate to the folder that contains the downloaded .JAR file by using the command line or a terminal and run the command. Replace the value `<path-to-properties>` with the file path to the `kafka.properties` file.
-
-4. When the application starts, click the **localhost:8080** link to open the starter app and see messages flowing through the topic.
-
-## Next steps
-{: #next_steps}
-
-Now that you ran the starter application, you can try other [{{site.data.keyword.messagehub}} samples](https://github.com/ibm-messaging/event-streams-samples){: external}. Explore [other ways to connect](/docs/EventStreams?topic=EventStreams-kafka_connect){: external} to the {{site.data.keyword.messagehub}} service or find out more about 
-[{{site.data.keyword.messagehub}} on {{site.data.keyword.satellitelong_notm}}](/docs/EventStreams?topic=EventStreams-satellite_about){: external}, a hybrid environment that combines public cloud services running in your secure private cloud.
-
-To watch a video that walks you through getting a Java sample to run, see [Getting started with IBM {{site.data.keyword.messagehub}}](https://www.youtube.com/watch?v=XyNy7TcfJOc).{: external}
