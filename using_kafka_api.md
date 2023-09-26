@@ -4,7 +4,7 @@ copyright:
   years: 2015, 2023
 lastupdated: "2023-09-26"
 
-keywords: kafka api, consumer, producer, admin, streams, connect, kafka client
+keywords: api, consumer, producer, admin, streams, connect, client
 
 subcollection: EventStreams
 
