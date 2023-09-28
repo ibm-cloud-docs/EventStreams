@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-23"
+lastupdated: "2023-09-28"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -22,27 +22,27 @@ Using mirroring with {{site.data.keyword.messagehub}} incurs an extra charge for
 
 Currently, enabling mirroring for an {{site.data.keyword.messagehub}} service instance requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
 
-To install the CLI, see [install devtools](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
+To install the CLI, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
 
-The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to run the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
+The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to run the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [Required access for creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
 The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance varies, but under normal circumstances it does not exceed 2 hours.
 
 ## Step 1: Setup 
 {: #step1_setup}
 
-Ensure that you provision two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have service-to-service bindings (see [service-to-service bindings](#step2_bindings) for more information).
-
 Mirroring is not supported for an Enterprise single-zone-region cluster or a Satellite cluster, therefore neither can be a source nor a target cluster.
 {: note}
 
+Ensure that you provision two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have service-to-service bindings (see [Step 2](#step2_bindings) for more information).
+
 Because mirroring is unidirectional, decide which direction of mirroring you want. One cluster is the source and the other cluster is the target.
 
-Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [Validation](#step4_validation). The selection must be specified as one or more patterns.
+Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
 
 For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams Metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
+Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
 ## Step 2: Enable service-to-service bindings
 {: #step2_bindings}
@@ -63,13 +63,14 @@ In this command we are using IAM source and target definitions, which are the op
 ```text
 ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account id>] --target-service-instance-id <instance id of the mirroring source cluster>
 ```
+{: codeblock}
 
-For more information about service-to-service bindings, see [Manage authorizations panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/iam?topic=iam-serviceauth).
+For more information about service-to-service bindings, see [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
 
 ## Step 3: Enable mirroring
 {: #step3_enable}
 
-To enable mirroring, you need to run a **service-instance-update** command against your target cluster via the CLI with the following required parameters:
+To enable mirroring, you need to run a **service-instance-update** command against your target cluster by using the CLI with the following required parameters:
 
 | Required Parameters | Description |
 | ---------- | ----------- |
@@ -87,6 +88,7 @@ To enable mirroring, you need to run a **service-instance-update** command again
   ```text
   ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}'
   ```
+  {: codeblock}
 
 If the cluster has been provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "thoughput":"_current throughput value_" in the update parameter body.
 {: note}
@@ -99,6 +101,7 @@ You can get the current service instance information by using the following comm
   ```text
   ibmcloud resource service-instance "Event Streams resource instance name" --output=json
   ```
+  {: codeblock}
 
 Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or sync succeeded.
   ```text
