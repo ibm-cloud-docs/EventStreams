@@ -85,10 +85,10 @@ To enable mirroring, you need to run a **service-instance-update** command again
 ### Example CLI command
 {: #example_cli_command}
 
-  ```text
-  ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}'
-  ```
-  {: codeblock}
+    ```text
+    ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}'
+    ```
+    {: codeblock}
 
 If the cluster has been provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "thoughput":"_current throughput value_" in the update parameter body.
 {: note}
@@ -98,32 +98,32 @@ If the cluster has been provisioned with or scaled up to a throughput higher tha
 
 You can get the current service instance information by using the following command.
 
-  ```text
-  ibmcloud resource service-instance "Event Streams resource instance name" --output=json
-  ```
-  {: codeblock}
+    ```text
+    ibmcloud resource service-instance "Event Streams resource instance name" --output=json
+    ```
+    {: codeblock}
 
 Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or sync succeeded.
-  ```text
-  "last_operation": {
-    "type": "update",
-    "state": "in progress",
-    "description": "Update in progress.",
-    "updated_at": null,
-    "cancelable": false
-  }
-  ```
+    ```text
+    "last_operation": {
+      "type": "update",
+      "state": "in progress",
+      "description": "Update in progress.",
+      "updated_at": null,
+      "cancelable": false
+    }
+    ```
 
 Run the command again until success is indicated:
-  ```text
-  "last_operation": {
-    "type": "update",
-    "state": "succeeded",
-    "description": "Update succeeded.",
-    "updated_at": null,
-    "cancelable": false
-  }
-  ```
+    ```text
+    "last_operation": {
+      "type": "update",
+      "state": "succeeded",
+      "description": "Update succeeded.",
+      "updated_at": null,
+      "cancelable": false
+    }
+    ```
 
 When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring bu using the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard "{{site.data.keyword.messagehub}} Mirroring" shows the state of mirroring.
 
