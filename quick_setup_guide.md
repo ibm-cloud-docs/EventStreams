@@ -177,18 +177,19 @@ _Bring in information like suggested topic naming strategies_
 
 **Which API should we focus on?**
 
-    Creating a Kafka topic
-
 You can create a Kafka topic by issuing a POST request to the /admin/topics path. The body of the request must contain a JSON document, for example:
 
-{
-    "name": "topicname",
-    "partitions": 1,
-    "configs": {
-        "retentionMs": 86400000,
-        "cleanupPolicy": "delete"
+    ```
+    {
+        "name": "topicname",
+        "partitions": 1,
+        "configs": {
+            "retentionMs": 86400000,
+            "cleanupPolicy": "delete"
+        }
     }
-}
+    ```
+    {: codeblock}
 
 The JSON document must contain a name attribute, specifying the name of the Kafka topic to create. The JSON may also specify the number of partitions to assign to the topic (using the partitions property). If the number of partitions is not specified then the topic will be created with a single partition.
 
@@ -196,12 +197,12 @@ You can also specify an optional configs object within the request. This allows 
 
 Expected HTTP status codes:
 
-    202: Topic creation request was accepted.
-    400: Invalid request JSON.
-    403: Not authorized to create topic.
-    422: Semantically invalid request.
+* 202: Topic creation request was accepted.
+* 400: Invalid request JSON.
+* 403: Not authorized to create topic.
+* 422: Semantically invalid request.
 
-If the request to create a Kafka topic succeeds then HTTP status code 202 (Accepted) is returned. If the operation fails then a HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
+If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails then a HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
 Example
 
 The REST endpoint for creating a Kafka topic can be exercised using the following snippet of curl. You will need to supply your own API key or token and specify the correct endpoint for ADMIN API.
