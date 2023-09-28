@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# API reference
+# API overview
 {: #api_reference}
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.cloud_notm}} 
