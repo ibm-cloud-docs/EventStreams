@@ -129,5 +129,5 @@ Run the command again until success is indicated as follows:
 ```
 {: screen}
 
-When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring using the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
+When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring using the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source cluster's alias. The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
 
