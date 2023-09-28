@@ -15,9 +15,6 @@ subcollection: EventStreams
 # API overview
 {: #api_reference}
 
-{{site.data.keyword.messagehub_full}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.cloud_notm}} 
-and event stream distribution between your services and applications.
-
 {{site.data.keyword.messagehub}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can 
 integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
 {: shortdesc}
