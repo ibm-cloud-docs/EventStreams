@@ -90,13 +90,13 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 ```
 {: codeblock}
 
-If the cluster has been provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "thoughput":"_current throughput value_" in the update parameter body.
+If the cluster is provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "thoughput":"_current throughput value_" in the update parameter body.
 {: note}
 
 ## Step 4: Validation
 {: #step4_validation}
 
-You can get the current service instance information by running the following command.
+You can get the current service instance information by running the following command:
 
 ```text
 ibmcloud resource service-instance "Event Streams resource instance name" --output=json
@@ -116,7 +116,7 @@ Review the **last operation** section of the output. The information is continu
 ```
 {: screen}
 
-Run the command again until success is indicated:
+Run the command again until success is indicated as follows:
 
 ```text
 "last_operation": {
@@ -129,5 +129,5 @@ Run the command again until success is indicated:
 ```
 {: screen}
 
-When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring by using the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
+When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring using the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source clusters alias. The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
 
