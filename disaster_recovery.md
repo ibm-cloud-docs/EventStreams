@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-28"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, failing over, failback, source cluster, mirroring
 
@@ -71,7 +71,7 @@ In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} servi
 - Raise a support ticket to request disabling of the current mirroring from cluster A to cluster B.
 - After the support ticket has been processed, enable mirroring between cluster B (now the source) to the newly provisioned cluster (the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 
-Alternatively, if cluster A has recovered, then typically a user returns operations to cluster A. Perform the following steps to return primary operations to cluster A.
+Alternatively, if cluster A has recovered, typically a user returns operations to cluster A. Complete the following steps to return primary operations to cluster A.
 
 Before failing back, mirroring must be enabled in the opposite direction:
 
@@ -80,7 +80,7 @@ Before failing back, mirroring must be enabled in the opposite direction:
 - After the support ticket has been processed, enable mirroring between cluster B (now the source) and cluster A (now the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 - The source cluster A now becomes the target cluster.
 - The target cluster B becomes the new source cluster.
-- Enable any topics to be mirrored from cluster B to cluster A. This can be done by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
+- Enable any topics to be mirrored from cluster B to cluster A. You can do this by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
   
 Next, make sure that data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. These topics have the suffix from the new source cluster, B.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-28"
 
 keywords: responsibilities, incident, operations, cluster management, security, compliance, infrastructure, disaster recovery, client-side libraries, app orchestration
 
@@ -89,7 +89,7 @@ If you configured your {{site.data.keyword.messagehub}} instance in a multi-zone
 |----------|-----------------------|--------|
 |Clusters| Checking clusters are viable mirroring pairs|Provisioning both clusters. |
 |Setup  | Setting up mirroring    |  Setting up service to service binding. |
-|Enablement and monitoring | Monitoring health and SLA of mirroring link .  |  Requesting enablement by using the service-instance-update CLI comamnd.  |
+|Enablement and monitoring | Monitoring health and SLA of mirroring link .  |  Requesting enablement by using the **service-instance-update** CLI comamnd.  |
 |Metrics and applications  | Providing metrics to enable customer to understand the current recovery point objective (RPO).   |  Enabling applications to switch clusters.  |
 |IAM  |    | Setting up required access policies.    |
 |Failover  |  Disabling any existing mirroring configurations.  | Deciding when to fail over and failover applications. |
