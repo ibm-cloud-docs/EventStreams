@@ -96,7 +96,7 @@ toc:
         - topicgroup:
             label: API reference
             topics:
-            - topic: api_reference.md
+            - topic: api_overview.md
             - link:
                 label: IBM Event Streams REST Producer API
                 href: https://{DomainName}/apidocs/event-streams/restproducer
