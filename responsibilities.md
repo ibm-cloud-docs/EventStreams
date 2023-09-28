@@ -89,10 +89,10 @@ If you configured your {{site.data.keyword.messagehub}} instance in a multi-zone
 |----------|-----------------------|--------|
 |Clusters| Checking clusters are viable mirroring pairs|Provisioning both clusters. |
 |Setup  | Setting up mirroring    |  Setting up service to service binding. |
-|Enablement and monitoring | Monitoring health and SLA of mirroring link .  |  Requesting enablement by support ticket.  |
+|Enablement and monitoring | Monitoring health and SLA of mirroring link .  |  Requesting enablement by using the service-instance-update CLI comamnd.  |
 |Metrics and applications  | Providing metrics to enable customer to understand the current recovery point objective (RPO).   |  Enabling applications to switch clusters.  |
 |IAM  |    | Setting up required access policies.    |
-|Failover  |    | Deciding when to fail over and failover applications. |
+|Failover  |  Disabling any existing mirroring configurations.  | Deciding when to fail over and failover applications. |
 |Failback  | Reconfiguring mirroring |Developing and executing failback plan. Coordinating with {{site.data.keyword.IBM_notm}} to reconfigure mirroring. |
 {: caption="Table 6. Responsibilities for mirroring" caption-side="bottom"}
 

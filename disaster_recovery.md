@@ -65,14 +65,19 @@ If the application requires strict ordering, remote topics are to be fully consu
 
 At that point, the {{site.data.keyword.messagehub}} service instance owner is responsible for deciding what happens when cluster A is recovered. 
 
-In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} service instance owner is responsible for enabling mirroring between cluster B and a newly provisioned instance.
+In case cluster A is not recoverable, the {{site.data.keyword.messagehub}} service instance owner is responsible for enabling mirroring between cluster B and a newly provisioned instance. To enable mirroring to a new instance, complete the following steps:
+
+- Fail over the producers and consumers from A to B as described previously.
+- Raise a support ticket to request disabling of the current mirroring from cluster A to cluster B.
+- After the support ticket has been processed, enable mirroring between cluster B (now the source) to the newly provisioned cluster (the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 
 Alternatively, if cluster A has recovered, then typically a user returns operations to cluster A. Perform the following steps to return primary operations to cluster A.
 
 Before failing back, mirroring must be enabled in the opposite direction:
 
 - Ensure that cluster A is fully operational.
-- Enable mirroring between cluster B (now the source) and cluster A (now the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
+- Raise a support ticket to request disabling of the current mirroring from cluster A to cluster B.
+- After the support ticket has been processed, enable mirroring between cluster B (now the source) and cluster A (now the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
 - The source cluster A now becomes the target cluster.
 - The target cluster B becomes the new source cluster.
 - Enable any topics to be mirrored from cluster B to cluster A. This can be done by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
@@ -93,4 +98,7 @@ Unlike the failover case, in this case there was no disaster on cluster B. There
 
 ![Mirroring switched back to the original configuration diagram.](disaster6.png "Diagram that shows mirroring has now switched back to the original configuration."){: caption="Figure 6. Mirroring switched back to the original configuration." caption-side="bottom"}
 
-Finally, switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target. See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
+Finally, switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target. 
+- Ensure that cluster A and cluster B are fully operational.
+- Raise a support ticket to request disabling of the current mirroring from cluster B to cluster A.
+- After the support ticket has been processed, enable mirroring between cluster A (now the source) and cluster B (now the target). See [Mirroring setup](/docs/EventStreams?topic=EventStreams-mirroring_setup) for further details.
