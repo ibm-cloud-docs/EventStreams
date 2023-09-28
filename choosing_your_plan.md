@@ -70,7 +70,7 @@ The following table summarizes what is supported by the plans:
 | **Fine-grained access control**  | Yes  |  Yes |  Yes  |  Yes   |
 | **Activity tracker events**  | No  |  Yes |  Yes |  No   |
 | **Monitoring Event Streams metrics by using IBM Cloud Monitoring**  | Yes  |  Yes |  Yes |  Yes  |
-| **Cloud Service Endpoint support** | No   | No  |  Yes |  Not applicable  |
+| **Private Networking (Cloud Service Endpoint support)** | No   | No  |  Yes |  Not applicable  |
 | **Scale plan capacity** | No   | No  |  Yes |   No  |
 | **Maximum number of partitions**  | 1 [^tabletext5]  | 100   |3000 - 9000 scales with throughput [^tabletext6] | 3000    |
 | **Maximum retention limits**   | 100 MB for the partition   | 1 GB per partition  | 2 TB - 12 TB of scalable usable storage [^tabletext7] |  2 TB of usable storage   |
