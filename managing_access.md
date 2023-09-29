@@ -85,7 +85,7 @@ The following table summarizes some common {{site.data.keyword.messagehub}} scen
 
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
-| Allow full access to all resources. | Not applicable  | Not applicable  | Service instance: <your_service_instance> |
+| Allow full access to all resources. | &#10004; Not applicable  | Not applicable  | Service instance: <your_service_instance> |
 | Allow an app or user to create or delete topic. | Resource type: `cluster` |Not applicable  |Resource type: topic  Optional: Resource ID: <name_of_topic> |
 | List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | Resource type: `cluster` | Not applicable  | Not applicable |
 | Allow an app to connect to the cluster.  | Resource type: `cluster`| Not applicable | Not applicable |
