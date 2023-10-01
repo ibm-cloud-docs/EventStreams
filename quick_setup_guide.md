@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-10-01"
 
 keywords: quick setup guide
 
@@ -32,8 +32,23 @@ This tutorial guides you through starting to use {{site.data.keyword.messagehub}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_ui)
-* [Step 3: Create a topic](#create_topic) 
-* [Step 4: Create an IAM service credential](#create_credential)
+{: ui}
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_cli)
+{: cli}
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_api)
+{: api}
+* [Step 3: Create a topic](#create_topic_ui)
+{: ui} 
+* [Step 3: Create a topic](#create_topic_cli) 
+{: cli}
+* [Step 3: Create a topic](#create_topic_api) 
+{: api}
+* [Step 4: Create an IAM service credential](#create_credential_ui)
+{: ui} 
+* [Step 4: Create an IAM service credential](#create_credential_cli)
+{: cli}
+* [Step 4: Create an IAM service credential](#create_credential_api)
+{: api}
 * [Step 5: Produce data](#produce_data)
 * [Step 6: Consume data](#consume_data)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring)
@@ -140,7 +155,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 
 ## Create a topic and select number of partitions by using the console
-{: #create_topic}
+{: #create_topic_ui}
 {: step}
 {: ui}
 
@@ -162,7 +177,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     If your messages are not read by a consumer within this time, they will be missed.
 
 ## Create a topic and select number of partitions by using the CLI 
-{: #create_topic}
+{: #create_topic_cli}
 {: step}
 {: cli}
 
@@ -191,7 +206,7 @@ _Talk about Creating, listing, updating, and deleting topics, Describing the clu
 _Bring in information like suggested topic naming strategies_
 
 ## Create a topic and select number of partitions by using the API
-{: #create_topic}
+{: #create_topic_api}
 {: step}
 {: api}
 
@@ -236,7 +251,7 @@ _Talk about Creating, listing, updating, and deleting topics, Describing the clu
 _Bring in information like suggested topic naming strategies_
 
 ## Create an IAM service credential by using the console
-{: #create_credential}
+{: #create_credential_ui}
 {: step}
 {: ui}
 
@@ -250,7 +265,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 6. Click this credential by using **View Credentials** to reveal the details in JSON format.
 
 ## Create an IAM service credential by using the CLI
-{: #create_credential}
+{: #create_credential_cli}
 {: step}
 {: cli}
 
@@ -283,19 +298,48 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     {: codeblock}
 
 ## Create an IAM service credential by using the resource controller API
-{: #create_credential}
+{: #create_credential_api}
 {: step}
 {: api}
 
 ## Produce data
-{: #produce_data}
+{: #produce_data_ui}
 {: step}
 {: ui}
 
 You cannot produce data by using the console. You can use the CLI or API.
 
 ## Produce data
-{: #produce_data}
+{: #produce_data_cli}
+{: step}
+{: cli}
+
+_b. via CLI c. via API - support different languages - show Java library_
+
+_Include connection details and sample code to connect to the event streams instance_
+
+_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+
+## Produce data
+{: #produce_data_api}
+{: step}
+{: api}
+
+_ b. via CLI c. via API - support different languages - show Java library)_
+
+_Include connection details and sample code to connect to the event streams instance_
+
+_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+
+## Consume data using the console
+{: #consume_data_ui}
+{: step}
+{: ui}
+
+You cannot consume data by using the console. You can use the CLI or API.
+
+## Consume data (a. UI Not available b. via CLI - support different languages - show Java library)
+{: #consume_data_cli}
 {: step}
 {: cli}
 
@@ -303,51 +347,33 @@ _a. UI Not available b. via CLI c. via API - support different languages - show 
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+_Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Produce data
-{: #produce_data}
+## Consume data (support different languages - show Java library)
+{: #consume_data_api}
 {: step}
 {: api}
 
-_a. UI Not available b. via CLI c. via API - support different languages - show Java library)_
+_a. UI Not available b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
-
-## Consume data (a. UI Not available b. via CLI - support different languages - show Java library)
-{: #consume_data}
-{: step}
-{: cli}
-
-    (a. UI Not available b. via CLI c. via API - support different languages - show Java library)
-
-    Include connection details and sample code to connect to the event streams instance
-
-    Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness,
-
-## Consume data (a. UI Not available - support different languages - show Java library)
-{: #consume_data}
-{: step}
-{: api}
-
-    (a. UI Not available b. via CLI c. via API - support different languages - show Java library)
-
-    Include connection details and sample code to connect to the event streams instance
-
-    Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness,
+_Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
 ## Connect IBM Cloud Monitoring for Operational Visibility by using the console (a. via UI only - walk through steps ), (Explain benefits)
 {: #connect_monitoring}
 {: step}
+{: ui}
 
 Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-[Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics)
+[Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+
+You can only use the console for this capability.
 
 ## Connect {{site.data.keyword.cloudaccesstrailshort}} to audit service activity (using the console - walk through steps ), (Explain benefits)
 {: #activity_tracker}
 {: step}
+{: ui}
 
 {{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
