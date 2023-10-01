@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-09-26"
+lastupdated: "2023-09-28"
 
 keywords: quick setup guide
 
@@ -166,6 +166,26 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: step}
 {: cli}
 
+Run the [**ibmcloud es topic-create** command](docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
+
+```bash
+ibmcloud es topic-create [--name] topic1 [--partitions 1] 
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--name value
+:   Topic name.
+
+--partitions value
+:   Set the number of partitions for the topic.
+
+One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
+
+Partitions are distributed across the brokers in order to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
@@ -270,12 +290,31 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 ## Produce data
 {: #produce_data}
 {: step}
+{: ui}
 
-    (a. UI Not available b. via CLI c. via API - support different languages - show Java library)
+You cannot produce data by using the console. You can use the CLI or API.
 
-    Include connection details and sample code to connect to the event streams instance
+## Produce data
+{: #produce_data}
+{: step}
+{: cli}
 
-    Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)
+_a. UI Not available b. via CLI c. via API - support different languages - show Java library_
+
+_Include connection details and sample code to connect to the event streams instance_
+
+_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+
+## Produce data
+{: #produce_data}
+{: step}
+{: api}
+
+_a. UI Not available b. via CLI c. via API - support different languages - show Java library)_
+
+_Include connection details and sample code to connect to the event streams instance_
+
+_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
 ## Consume data (a. UI Not available b. via CLI - support different languages - show Java library)
 {: #consume_data}
