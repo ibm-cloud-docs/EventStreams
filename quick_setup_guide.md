@@ -302,14 +302,14 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: api}
 
-## Produce data
+## Produce data using the console
 {: #produce_data_ui}
 {: step}
 {: ui}
 
 You cannot produce data by using the console. You can use the CLI or API.
 
-## Produce data
+## Produce data using the CLI
 {: #produce_data_cli}
 {: step}
 {: cli}
@@ -320,7 +320,7 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Produce data
+## Produce data using the API
 {: #produce_data_api}
 {: step}
 {: api}
