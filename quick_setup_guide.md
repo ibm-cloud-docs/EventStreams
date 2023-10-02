@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-01"
+lastupdated: "2023-10-02"
 
 keywords: quick setup guide
 
@@ -33,22 +33,31 @@ This tutorial guides you through starting to use {{site.data.keyword.messagehub}
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_ui)
 {: ui}
+
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_cli)
 {: cli}
+
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance](#provision_instance_api)
 {: api}
+
 * [Step 3: Create a topic](#create_topic_ui)
 {: ui} 
+
 * [Step 3: Create a topic](#create_topic_cli) 
 {: cli}
+
 * [Step 3: Create a topic](#create_topic_api) 
 {: api}
+
 * [Step 4: Create an IAM service credential](#create_credential_ui)
 {: ui} 
+
 * [Step 4: Create an IAM service credential](#create_credential_cli)
 {: cli}
+
 * [Step 4: Create an IAM service credential](#create_credential_api)
 {: api}
+
 * [Step 5: Produce data](#produce_data)
 * [Step 6: Consume data](#consume_data)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring)
