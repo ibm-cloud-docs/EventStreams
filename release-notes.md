@@ -28,6 +28,15 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 Self-service mirroring enablement 
 :   You can enable mirroring by running a **service-instance-update** CLI command against your target cluster, instead of raising a support ticket. To find out more, see [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
+## August 2023
+{: #EventStreams-sep2023}
+{: release-note}
+
+UI Enhancements  
+:   Topics Page Upgrade - Users interacting the UI now have improved topic overview page with core components redesigned including topic details and streamlanding wizard
+:   Topic Editing - Users can configure their topics directly from the GUI
+:   Topics Pagination - Topic overview page now paginates topics, providing users with a better layout and easier navigation of the UI.
+
 ## June 2023
 {: #EventStreams-jun2023}
 {: release-note}
