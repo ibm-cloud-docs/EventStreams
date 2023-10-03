@@ -238,7 +238,7 @@ This endpoint is used to set the state of a schema in the registry to either `EN
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/state -d '{"state": "DISABLED"}'
 ```
 
@@ -253,7 +253,7 @@ This endpoint is used to set the state of a schema version in the registry to ei
 
 Example curl request:
 
-```
+```text
 curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/versions/1/state -d '{"state": "DISABLED"}'
 ```
 
@@ -309,7 +309,8 @@ Example response where string jsonformat is default:
 ```
 
 Example response when jsonformat is object:
-```
+
+```text
 {"artifacts":[{"id":"my-schema","state":"DISABLED"},{"id":"my-schema-2","state":"ENABLED"},{"id":"my-schema-3","state":"ENABLED"},{"id":"my-schema-4","state":"ENABLED"}],"count":4}
 ```
 
