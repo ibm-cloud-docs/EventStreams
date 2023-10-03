@@ -174,11 +174,17 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 ### Working with topics
 {: #work_topic_ui}
+{: ui}
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
-You can list the topics you've created by clicking **Topics** in the console.
+From instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+
+From the **Topics page**, you can view the following information about your topics: 
+**Name**, **Partitions**, **Retention time**, **Retention size**, **Cleanup policy**, and **Stream landing**.
+
+To delete a topic, from the **Topics page**, click the three dots to the very right of the topic name and click **Delete this topic**. 
 
 
 
@@ -199,7 +205,7 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 **Command options**:
 
 --name value
-:   Topic name.
+:   Topic name. Topic names are restricted to a maximum of 100 characters.
 
 --partitions value
 :   Set the number of partitions for the topic.
@@ -210,14 +216,15 @@ Partitions are distributed across the brokers to increase the scalability of you
 
 ### Working with topics
 {: #work_topic_cli}
+{: cli}
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
-## ibmcloud es topics
+#### List topics using the **ibmcloud es topics** command
 {: #ibmcloud_es_topics}
 
-List topics.
+Run the **ibmcloud es topics** command to list your topics using the CLI.
 
 ```bash
 ibmcloud es topics [--filter FILTER] [--json]
@@ -233,6 +240,24 @@ ibmcloud es topics [--filter FILTER] [--json]
   
 --json (optional)
 :   Format output in JSON. Up to 1000 topics are returned.
+
+
+#### Display cluster details using the **ibmcloud es cluster** command
+{: #ibmcloud_es_cluster}
+
+Display the details of the cluster, including the Kafka version.
+
+```bash
+ibmcloud es cluster [--json]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--json (optional)
+:   Output format in JSON.
 
 
 ## Create a topic and select number of partitions by using the API
