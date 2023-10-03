@@ -179,12 +179,22 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
-From instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+#### List topics
+{: #list_topic_ui}
+{: ui}
+
+From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
 
 From the **Topics page**, you can view the following information about your topics: 
 **Name**, **Partitions**, **Retention time**, **Retention size**, **Cleanup policy**, and **Stream landing**.
 
-To delete a topic, from the **Topics page**, click the three dots to the very right of the topic name and click **Delete this topic**. 
+#### Delete a topic
+{: #delete_topic_ui}
+{: ui}
+
+From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+
+From the **Topics page**, click the three dots to the very right of the topic name and click **Delete this topic**. 
 
 
 
@@ -483,10 +493,12 @@ Use {{site.data.keyword.monitoringshort}} to gain operational visibility into th
 
 You can only use the console for this capability.
 
-## Connect {{site.data.keyword.cloudaccesstrailshort}} to audit service activity (using the console - walk through steps ), (Explain benefits)
+## Connect {{site.data.keyword.at_full}} to audit service activity (using the console - walk through steps ), (Explain benefits)
 {: #activity_tracker}
 {: step}
 {: ui}
+
+{{site.data.keyword.atracker_short}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations.
 
 {{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
