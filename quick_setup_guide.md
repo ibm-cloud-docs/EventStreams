@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-02"
+lastupdated: "2023-10-03"
 
 keywords: quick setup guide
 
@@ -43,7 +43,7 @@ This tutorial guides you through starting to use {{site.data.keyword.messagehub}
 * [Step 5: Produce data using the console](#produce_data_ui){: ui}
 * [Step 5: Produce data using the CLI](#produce_data_cli){: cli}
 * [Step 5: Produce data using the API](#produce_data_api){: api}
-* [Step 6: Consume data using the consoke](#consume_data_ui){: ui}
+* [Step 6: Consume data using the console](#consume_data_ui){: ui}
 * [Step 6: Consume data using the CLI](#consume_data_cli){: cli}
 * [Step 6: Consume data using the API](#consume_data_api){: api}
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring)
@@ -94,11 +94,12 @@ _Encourage users to familiarise themselves with Apache Concepts docs page_
 6. When your instance has been created, click on the instance name to view more information.
 
 
-
 ## Provision an {{site.data.keyword.messagehub}} instance by using the CLI
 {: #provision_instance_cli}
 {: step}
 {: cli}
+
+To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
 
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
@@ -155,7 +156,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: ui}
 
 1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
-2. Click the **Create topic** button and an enter a topic name. Click **Next**.
+2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
 3. Select the number of partitions. Click **Next**.
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
@@ -170,6 +171,16 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     This is how long messages are retained before they are deleted.
 
     If your messages are not read by a consumer within this time, they will be missed.
+
+### Working with topics
+{: #work_topic_ui}
+
+_Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
+_Bring in information like suggested topic naming strategies_
+
+You can list the topics you've created by clicking **Topics** in the console.
+
+
 
 ## Create a topic and select number of partitions by using the CLI 
 {: #create_topic_cli}
@@ -195,10 +206,34 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 
 One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
-Partitions are distributed across the brokers in order to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+
+### Working with topics
+{: #work_topic_cli}
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
+
+## ibmcloud es topics
+{: #ibmcloud_es_topics}
+
+List topics.
+
+```bash
+ibmcloud es topics [--filter FILTER] [--json]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--filter value, -f value (optional)
+:   Topic name.
+  
+--json (optional)
+:   Format output in JSON. Up to 1000 topics are returned.
+
 
 ## Create a topic and select number of partitions by using the API
 {: #create_topic_api}
@@ -302,7 +337,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: ui}
 
-You can produce data only using the [CLI]({: #produce_data_cli}) or [API]({: #produce_data_cli}).
+You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
 
 
 ## Produce data using the CLI
@@ -321,7 +356,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: api}
 
-_ b. via CLI c. via API - support different languages - show Java library)_
+_b. via CLI c. via API - support different languages - show Java library)_
 
 _Include connection details and sample code to connect to the event streams instance_
 
@@ -332,9 +367,9 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: ui}
 
-You cannot consume data by using the console. You can use the CLI or API.
+You cannot consume data by using the console. You can consume data only using the [CLI]({#consume_data_cli}) or [API]({#consume_data_cli}).
 
-## Consume data (a. UI Not available b. via CLI - support different languages - show Java library)
+## Consume data using the CLI
 {: #consume_data_cli}
 {: step}
 {: cli}
@@ -345,7 +380,7 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Consume data (support different languages - show Java library)
+## Consume data using the API 
 {: #consume_data_api}
 {: step}
 {: api}
@@ -356,10 +391,12 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Connect IBM Cloud Monitoring for Operational Visibility by using the console (a. via UI only - walk through steps ), (Explain benefits)
+## Connect IBM Cloud Monitoring for Operational Visibility by using the console 
 {: #connect_monitoring}
 {: step}
 {: ui}
+
+_(a. via UI only - walk through steps ), (Explain benefits)_
 
 Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
@@ -381,7 +418,7 @@ You can only use the console for this capability.
 
 _Link to additional docs page content, highlight that this is not part of the managed service_
 
-Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
+Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
 [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect)
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
