@@ -218,13 +218,16 @@ Partitions are distributed across the brokers to increase the scalability of you
 {: #work_topic_cli}
 {: cli}
 
+You can use the CLI to create, list, update the configuration of, and delete topics. You can also use the CLI to view details about your cluster.
+
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
+
 _Bring in information like suggested topic naming strategies_
 
-#### List topics using the **ibmcloud es topics** command
-{: #ibmcloud_es_topics}
+#### List a topic using the **ibmcloud es topics** command
+{: #ibmcloud_es_topics_cli}
 
-Run the **ibmcloud es topics** command to list your topics using the CLI.
+Run the **ibmcloud es topics** command to list your topics.
 
 ```bash
 ibmcloud es topics [--filter FILTER] [--json]
@@ -241,9 +244,61 @@ ibmcloud es topics [--filter FILTER] [--json]
 --json (optional)
 :   Format output in JSON. Up to 1000 topics are returned.
 
+#### Update the configuration of a topic using the **ibmcloud es topic-update** command
+{: #ibmcloud_es_topic_update_cli}
+
+Update the configuration for a topic.
+
+```bash
+ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--name value, -n value
+:   Topic name.
+
+--config KEY[=VALUE], -c KEY[=VALUE]
+:   Set a configuration option for the topic as a KEY[=VALUE] pair.
+:   If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default. Multiple '--config' options can be specified. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
+
+    - cleanup.policy
+    - retention.ms
+    - retention.bytes
+    - segment.bytes
+    - segment.ms
+    - segment.index.bytes
+
+--default, -d  (optional)
+:   Reset each configuration parameter that is specified by using '--config' to its default value.
+
+
+#### Delete a topic using the **ibmcloud es topic-delete** command
+{: #ibmcloud_es_topic_delete_cli}
+
+Run the **ibmcloud es topic-delete** command to delete a topic.
+
+```bash
+ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--name value, -n value
+:   Topic name.
+
+--force, -f (optional)
+:   Delete without confirmation.
+
 
 #### Display cluster details using the **ibmcloud es cluster** command
-{: #ibmcloud_es_cluster}
+{: #ibmcloud_es_cluster_cli}
 
 Display the details of the cluster, including the Kafka version.
 
