@@ -19,16 +19,11 @@ subcollection: EventStreams
 integrate {{site.data.keyword.messagehub}} with any system that supports RESTful APIs.
 {: shortdesc}
 
+![Apache Kafka API and CLI](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_18293q1v){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
 The following API versions are available:
 
 - [Kafka native API](https://kafka.apache.org/documentation/): Kafka exposes all its functionality over a language independent protocol that has clients available in many programming languages. Kafka includes three protocol APIs (Producer, Consumer, Admin) and two additional framework APIs (Streams, Connect).
-- [{{site.data.keyword.messagehub}} REST Producer v2 endpoint](/apidocs/event-streams/restproducer_v2): Producer RESTful API that you can use for writing (publishing) data to topics.
-- [{{site.data.keyword.messagehub}} Admin REST API](/apidocs/event-streams/adminrest): Administration RESTful API that you can use to create, delete, list, and update topics.
-
-![Apache Kafka API and CLI](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_18293q1v){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-As shown in the video, the following additional APIs are available:
-
 - [Kafka console tools](/docs/EventStreams?topic=EventStreams-kafka_console_tools): Apache Kafka comes with various console tools for simple administration and messaging operations.
 - {{site.data.keyword.messagehub}} provides REST APIs for [administration](/apidocs/event-streams/adminrest) that you can use to create, delete, list, and update topics, as well as [producing](/apidocs/event-streams/restproducer_v2) to your cluster.
 - [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference): {{site.data.keyword.messagehub}} also provides a dedicated CLI plugin that provides a seamless mechanism by which to view and administer the topics, partitions, consumer groups, and configuration of your {{site.data.keyword.messagehub}}'s Kafka instances.
@@ -38,8 +33,4 @@ As shown in the video, the following additional APIs are available:
 
 
 
-
-- 
-- 
-- It provides a seamless mechanism by which to view and administer the topics, partitions, consumer groups, and configuration of your {{site.data.keyword.messagehub}}'s Kafka instances.
 
