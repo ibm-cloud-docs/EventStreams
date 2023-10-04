@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-10-04"
 
 keywords: managed kafka, kafka as a service, managed apache kafka, kafka on cloud
 
@@ -23,6 +23,8 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 - Offload work to back-end worker applications.
 - Connect {{site.data.keyword.messagehub}} to streaming analytics to realize powerful insights.
 - Publish event data to multiple applications to react in real time.
+
+![Kafka use cases with {{site.data.keyword.messagehub}}](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_us1in0l0){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 {{site.data.keyword.messagehub}} offers a fully managed Apache Kafka service, ensuring durability and high availability for our clients. By using {{site.data.keyword.messagehub}}, you have support around the clock from our team of Kafka experts.
 
