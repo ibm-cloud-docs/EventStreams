@@ -24,8 +24,6 @@ You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 - Connect {{site.data.keyword.messagehub}} to streaming analytics to realize powerful insights.
 - Publish event data to multiple applications to react in real time.
 
-![Kafka use cases with {{site.data.keyword.messagehub}}](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_us1in0l0){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
 {{site.data.keyword.messagehub}} offers a fully managed Apache Kafka service, ensuring durability and high availability for our clients. By using {{site.data.keyword.messagehub}}, you have support around the clock from our team of Kafka experts.
 
 By being built with Apache Kafka, our offering directly benefits from all the innovation that occurs in the community and supports Kafka client APIs, Kafka Streams, and Kafka Connect. Kafka is highly reliable and lets you build scalable data pipelines for many use cases, including connecting microservices, doing log aggregation, event sourcing, and stream processing.
