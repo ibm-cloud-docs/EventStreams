@@ -13,7 +13,7 @@ subcollection: EventStreams
 {{site.data.keyword.attribute-definition-list}}
 
 # Kafka use cases with {{site.data.keyword.messagehub}}
-{: #api_reference}
+{: #use_cases}
 
 The use cases for Kafka break down into three broad catagories: Stream processing, data pipelines, and event streaming. Some real-life examples of Kafka include streaming 
 real-time rail data to provide passengers with up-to-the-minute information about their journeys, providing seamless streaming experience to users watching movies online, 
