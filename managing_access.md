@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-29"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -78,15 +78,79 @@ You can then apply more policies to extend access to other users. You can either
 
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
-## Common scenarios
-{: #security_scenarios}
+## Common actions
+{: #common_actions}
 
-The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access that you need to assign.
+The following tables summarize some common {{site.data.keyword.messagehub}} actions and the access that you need to assign.
 
+### Cluster actions
+{: #cluster_actions}
+
+| Cluster actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| Allow an app or user to create or delete topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect to the cluster. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to produce to any topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Delete consumer group.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Use Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+
+### Topic actions
+{: #topic_actions}
+
+| Topic actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Allow an app to produce to any topic. | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- |
+| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to produce to a topic transactionally. | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- |
+| Use Streams.  | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+
+### Consumer group actions
+{: #consumer_group_actions}
+
+| Consumer group actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Delete consumer group.  | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Use Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+
+### Schema Registry actions
+{: #schema_registry_actions}
+
+| Schema Registry actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+
+
+### TransactionId  actions
+{: #transactionId_actions}
+
+| TransactionId actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+
+
+
+**OLD!!!**
 | Action | Reader role | Writer role | Manager role |
 | --- | --- | --- | --- |
 | Allow full access to all resources. | Not applicable  | Not applicable  | Service instance: <your_service_instance> |
-| Allow an app or user to create or delete topic. | Resource type: `cluster` |Not applicable  |Resource type: topic  Optional: Resource ID: <name_of_topic> |
+| Allow an app or user to create or delete topic. | Resource type: `cluster` |Not applicable  |Resource type: `topic`  Optional: Resource ID: <name_of_topic> |
 | List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | Resource type: `cluster` | Not applicable  | Not applicable |
 | Allow an app to connect to the cluster.  | Resource type: `cluster`| Not applicable | Not applicable |
 | Allow an app to produce to any topic.  | Resource type: `cluster`|Resource type: `topic` | Not applicable |
