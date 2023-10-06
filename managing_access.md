@@ -88,48 +88,48 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 
 | Cluster actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
-| Allow an app or user to create or delete topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect to the cluster. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to produce to any topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Delete consumer group.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Use Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app or user to create or delete topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect to the cluster. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to any topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Delete consumer group.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Use Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
 
 ### Topic actions
 {: #topic_actions}
 
 | Topic actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
-| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
-| Allow an app to produce to any topic. | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- |
-| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to produce to a topic transactionally. | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- |
-| Use Streams.  | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Allow an app to produce to any topic. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Use Streams.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 
 ### Consumer group actions
 {: #consumer_group_actions}
 
 | Consumer group actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
-| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
-| Delete consumer group.  | --- | --- | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Use Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") | --- | --- |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Delete consumer group.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Use Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
 
 ### Schema Registry actions
 {: #schema_registry_actions}
