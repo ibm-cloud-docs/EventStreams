@@ -21,6 +21,8 @@ toc:
           navtitle: Release notes
         - topic: apache_kafka_concepts.md
           navtitle: Apache Kafka concepts
+        - topic: use_cases.md
+          navtitle: Apache Kafka use cases
         - choosing_your_plan.md
     - navgroup:
         id: howto
@@ -96,6 +98,7 @@ toc:
         - topicgroup:
             label: API reference
             topics:
+            - topic: api_overview.md
             - link:
                 label: IBM Event Streams REST Producer API
                 href: https://{DomainName}/apidocs/event-streams/restproducer
@@ -136,6 +139,7 @@ toc:
               - topic: known_restrictions.md
                 navtitle: Known restrictions
               - reporting_problem.md
+              
               
                  
 
