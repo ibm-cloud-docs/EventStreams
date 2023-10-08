@@ -171,14 +171,18 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 | Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Delete the specified subject-level compatibility level config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 
-### TransactionId  actions
+### TransactionId actions
 {: #transactionId_actions}
 
 | TransactionId actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
 | Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-
-
+| Create transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| InitProducerId transaction. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Add partitions to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Add offsets to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| End transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Transaction offset commit. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 
 **OLD!!!**
 | Action | Reader role | Writer role | Manager role |
