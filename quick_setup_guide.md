@@ -435,12 +435,25 @@ You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produc
 {: step}
 {: cli}
 
-## Console producer
-{: #console_producer}
+You can use the Kafka console producer tool with {{site.data.keyword.messagehub}} to produce data. These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
-You can use the Kafka console producer tool with {{site.data.keyword.messagehub}}. You must provide a list of brokers and SASL credentials.
+You must provide a list of brokers and SASL credentials.
 
-After you created the properties file, you can run the console producer in a terminal as follows:
+To provide the SASL credentials to these tools, create a properties file based on the following example:
+
+```config
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
+    security.protocol=SASL_SSL
+    sasl.mechanism=PLAIN
+    ssl.protocol=TLSv1.2
+    ssl.enabled.protocols=TLSv1.2
+    ssl.endpoint.identification.algorithm=HTTPS
+```
+{: codeblock}
+
+Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+
+After you create the properties file, you can run the console producer in a terminal as follows:
 
 ```bash
    kafka-console-producer.sh --broker-list BOOTSTRAP_ENDPOINTS --producer.config CONFIG_FILE --topic TOPIC_NAME
@@ -454,7 +467,18 @@ Replace the following variables in the example with your own values:
 
 You can use many of the other options of this tool, except for those that require access to ZooKeeper.
 
-_b. via CLI c. via API - support different languages - show Java library_
+For more information, see [Using Kafka console tools with Event Streams](docs/EventStreams?topic=EventStreams-kafka_console_tools).
+
+You also have the option of using the Java sample to produce data. To find out more, see https://github.com/IBM/eventstreams-samples/blob/main/Instructions.md
+
+### Configuration settings
+{: #producer_config_cli}
+{: cli}
+
+For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+[configuration settings](docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+
+_b. via CLI support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
@@ -502,6 +526,12 @@ Replace the following variables in the example with your own values:
 
 You can use many of the other options of this tool, except for those that require access to ZooKeeper.
 
+### Configuration settings
+{: #consumer_config_cli}
+{: cli}
+
+For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 _a. UI Not available b. via CLI c. via API - support different languages - show Java library_
 
