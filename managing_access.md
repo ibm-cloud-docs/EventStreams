@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-10-08"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -136,13 +136,47 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 
 | Schema Registry actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
-
+| Create artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| Get latest artifact. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |   |
+| Update artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |  
+| Delete artifact. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Update artifact state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Create version. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| List versions. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get version. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Delete version. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Update version state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Get metadata by content. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |   |
+| Get metadata. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get version metadata. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Create artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Get artifact compatibility rule. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Update artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Get the schema string identified by the input ID.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Retrieve only the schema identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get the subject-version pairs identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a list of versions registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Deletes the specified subject and its associated compatibility level if registered. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Get a specific version of the schema registered under this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get the schema for the specified version of this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Register a new schema under the specified subject (if version already exists). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Register a new schema under the specified subject (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| Check if a schema has already been registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Delete a specific version of the schema registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Get a list of IDs of schemas that reference the schema with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Test input schema against a particular version of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Perform a compatibility check on the schema against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Update compatibility level for the specified subject. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Delete the specified subject-level compatibility level config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 
 ### TransactionId  actions
 {: #transactionId_actions}
 
 | TransactionId actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
+| Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 
 
 
