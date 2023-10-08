@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-05"
+lastupdated: "2023-10-08"
 
 keywords: quick setup guide
 
@@ -435,6 +435,25 @@ You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produc
 {: step}
 {: cli}
 
+## Console producer
+{: #console_producer}
+
+You can use the Kafka console producer tool with {{site.data.keyword.messagehub}}. You must provide a list of brokers and SASL credentials.
+
+After you created the properties file, you can run the console producer in a terminal as follows:
+
+```bash
+   kafka-console-producer.sh --broker-list BOOTSTRAP_ENDPOINTS --producer.config CONFIG_FILE --topic TOPIC_NAME
+```
+{: codeblock}
+
+Replace the following variables in the example with your own values:
+
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+- CONFIG_FILE with the path of the configuration file. 
+
+You can use many of the other options of this tool, except for those that require access to ZooKeeper.
+
 _b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
@@ -463,6 +482,26 @@ You cannot consume data by using the console. You can consume data only using th
 {: #consume_data_cli}
 {: step}
 {: cli}
+
+## Console consumer
+{: #console_consumer}
+
+You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}}. You must provide a bootstrap server and SASL credentials.
+
+After you created the properties file as described previously, run the console consumer in a terminal as follows:
+
+```bash
+   kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
+```
+{: codeblock}
+
+Replace the following variables in the example with your own values:
+
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
+- CONFIG_FILE with the path of the configuration file. 
+
+You can use many of the other options of this tool, except for those that require access to ZooKeeper.
+
 
 _a. UI Not available b. via CLI c. via API - support different languages - show Java library_
 
