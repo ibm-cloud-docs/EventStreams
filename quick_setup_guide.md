@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-05"
 
 keywords: quick setup guide
 
