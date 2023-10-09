@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-08"
+lastupdated: "2023-10-09"
 
 keywords: quick setup guide
 
@@ -11,7 +11,7 @@ subcollection: EventStreams
 content-type: tutorial
 services: eventstreams
 account-plan:
-completion-time: 45m
+completion-time: 60m
 
 ---
 
@@ -203,7 +203,7 @@ From the **Topics page**, click the three dots to the very right of the topic na
 {: step}
 {: cli}
 
-Run the [**ibmcloud es topic-create** command](docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
+Run the [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
 
 ```bash
 ibmcloud es topic-create [--name] topic1 [--partitions 1] 
@@ -435,9 +435,9 @@ You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produc
 {: step}
 {: cli}
 
-You can use the Kafka console producer tool with {{site.data.keyword.messagehub}} to produce data. These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can use the Kafka console producer tool with {{site.data.keyword.messagehub}} to produce data. The console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
-You must provide a list of brokers and SASL credentials.
+You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials.
 
 To provide the SASL credentials to these tools, create a properties file based on the following example:
 
@@ -465,18 +465,16 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper.
+You can use many of the other options of this tool, except for those that require access to ZooKeeper.For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
-For more information, see [Using Kafka console tools with Event Streams](docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
-You also have the option of using the Java sample to produce data. To find out more, see https://github.com/IBM/eventstreams-samples/blob/main/Instructions.md
 
 ### Configuration settings
 {: #producer_config_cli}
 {: cli}
 
 For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
-[configuration settings](docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
 
 _b. via CLI support different languages - show Java library_
 
@@ -488,6 +486,14 @@ _Highlight the most important kafka settings for producers are here including de
 {: #produce_data_api}
 {: step}
 {: api}
+
+### Configuration settings
+{: #producer_config_api}
+{: api}
+
+For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+
 
 _b. via CLI c. via API - support different languages - show Java library)_
 
@@ -507,12 +513,13 @@ You cannot consume data by using the console. You can consume data only using th
 {: step}
 {: cli}
 
-## Console consumer
-{: #console_consumer}
+You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}}. 
 
-You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}}. You must provide a bootstrap server and SASL credentials.
+These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
-After you created the properties file as described previously, run the console consumer in a terminal as follows:
+You must provide a list of brokers and SASL credentials.
+
+After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
 
 ```bash
    kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
@@ -524,7 +531,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper.
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 ### Configuration settings
 {: #consumer_config_cli}
@@ -543,6 +550,14 @@ _Highlight the most important kafka settings for consumers are here including co
 {: #consume_data_api}
 {: step}
 {: api}
+
+### Configuration settings
+{: #consumer_config_api}
+{: api}
+
+For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+
 
 _a. UI Not available b. via CLI c. via API - support different languages - show Java library_
 
@@ -593,11 +608,13 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site
 {: #getting_help}
 {: step}
 
+One of the main goals of your documentation is to provide ways for customers to find self-help resources to solve any issues with your product to reduce the number of support cases that are opened. This includes general product documentation, FAQs, troubleshooting topics, and documented known issues. However, knowing that customers experience issues that require opening a support case, we want them to find that information on how to do that in a consistent manner across all IBM Cloud subcollections by using the following template.
+
 [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp)
 
-[FAQs](/docs/EventStreams?topic=EventStreams-faqs) 
+[FAQs](/docs/EventStreams?topic=EventStreams-faqs) details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
-[Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise)
+If you're experiencing a problem, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
 
 
 
