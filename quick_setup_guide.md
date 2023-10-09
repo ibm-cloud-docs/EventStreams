@@ -427,7 +427,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: ui}
 
-You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
+You cannot produce data by using the console. You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
 
 
 ## Produce data using the CLI
@@ -435,11 +435,14 @@ You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produc
 {: step}
 {: cli}
 
+_Config and properties files the same?_
+_What is property file name and where is it stored?_
+
 You can use the Kafka console producer tool with {{site.data.keyword.messagehub}} to produce data. The console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials.
 
-To provide the SASL credentials to these tools, create a properties file based on the following example:
+To provide the SASL credentials to this tool, create a properties file based on the following example:
 
 ```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
@@ -517,9 +520,7 @@ You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}
 
 These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
-You must provide a list of brokers and SASL credentials.
-
-After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
+You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
 
 ```bash
    kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
@@ -540,7 +541,7 @@ You can use many of the other options of this tool, except for those that requir
 For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
-_a. UI Not available b. via CLI c. via API - support different languages - show Java library_
+_b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
@@ -559,7 +560,7 @@ For details of settings that you can configure for the consumer, for example ```
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 
-_a. UI Not available b. via CLI c. via API - support different languages - show Java library_
+b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
