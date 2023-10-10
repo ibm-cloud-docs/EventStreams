@@ -124,7 +124,6 @@ With topic actions, you can control the ability of users and applications to cre
 | Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 | List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
 | Use Kafka Streams.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-
 | Allow an app to connect and consume from a specific topic (no consumer group).  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 {: caption="Table 3. Topic actions" caption-side="bottom"}
 
@@ -167,18 +166,18 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Get a list of IDs of schemas that reference the schema with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Test input schema against a particular version of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Perform a compatibility check on the schema against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Update compatibility level for the specified subject. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Create artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Update artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |  
 | Disable artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   | 
-| Update artifact state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
 | Create version. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Delete version. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Update artifact state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
 | Update version state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Delete artifact. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
 | Create artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Update artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Update compatibility level for the specified subject. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Delete artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Deletes the specified subject and its associated compatibility level if registered. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Delete a specific version of the schema registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
