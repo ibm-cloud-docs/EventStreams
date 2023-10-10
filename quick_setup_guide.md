@@ -24,9 +24,9 @@ completion-time: 60m
 {: #quick-setup-guide}
 {: toc-content-type="tutorial"}
 {: toc-services="eventstreams"}
-{: toc-completion-time="45m"}
+{: toc-completion-time="60m"}
 
-This tutorial guides you through starting to use {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect Cloud Monitoring and Activity Tracker and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how you can get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through starting to use {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 * [Prerequisites](#prereqs)
