@@ -37,5 +37,5 @@ If you need help from the {{site.data.keyword.messagehub}} team, gather all the 
 7. What is the issue that you are seeing? Which topics, client IDs, group IDs, and transaction IDs are affected?
 8. What impact does the problem have on your service?
 
-You can provide the information that you gathered to IBM in a support ticket by [submitting a support request](/docs/get-support?topic=get-support-open-case){: external}.
+You can provide the information that you gathered to IBM in a support ticket by [creating a support case](/docs/get-support?topic=get-support-open-case){: external}.
 
