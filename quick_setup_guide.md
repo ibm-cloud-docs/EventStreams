@@ -336,25 +336,25 @@ ibmcloud es cluster [--json]
 
 For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-**Which API should we focus on?**
 
-You can create a Kafka topic by issuing a POST request to the /admin/topics path. The body of the request must contain a JSON document, for example:
+You can create a Kafka topic by issuing a POST request to the `/admin/topics` path. The body of the request must contain a JSON document, for example:
 
-    ```
-    {
-        "name": "topicname",
-        "partitions": 1,
-        "configs": {
-            "retentionMs": 86400000,
-            "cleanupPolicy": "delete"
-        }
+```json
+{
+    "name": "topicname",
+    "partitions": 1,
+    "configs": {
+        "retentionMs": 86400000,
+        "cleanupPolicy": "delete"
     }
-    ```
-    {: codeblock}
+}
+```
+{: codeblock}
 
-The JSON document must contain a name attribute, specifying the name of the Kafka topic to create. The JSON may also specify the number of partitions to assign to the topic (using the partitions property). If the number of partitions is not specified then the topic will be created with a single partition.
 
-You can also specify an optional configs object within the request. This allows the specification of the `retentionMs` property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
+The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified then the topic will be created with a single partition.
+
+You can also specify an optional `configs` object within the request. This allows the specification of the `retentionMs` property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
 
 Expected HTTP status codes:
 
