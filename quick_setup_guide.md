@@ -632,7 +632,12 @@ You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [
 _Link to additional docs page content, highlight that this is not part of the managed service_
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
-[Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect)
+Its key benefits are as follows:
+
+* Scalability: it can easily scale from a single worker to many.
+* Reliability: it automatically manages offsets and the lifecycle of connectors.* Extensibility: the community has built connectors for most popular systems.
+
+For more information about how to use it, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
 
@@ -645,13 +650,11 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site
 {: #getting_help}
 {: step}
 
-One of the main goals of your documentation is to provide ways for customers to find self-help resources to solve any issues with your product to reduce the number of support cases that are opened. This includes general product documentation, FAQs, troubleshooting topics, and documented known issues. However, knowing that customers experience issues that require opening a support case, we want them to find that information on how to do that in a consistent manner across all IBM Cloud subcollections by using the following template.
-
-[Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp)
+For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp).
 
 [FAQs](/docs/EventStreams?topic=EventStreams-faqs) details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
-If you're experiencing a problem, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
+If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
 
 
 
