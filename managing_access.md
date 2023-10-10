@@ -161,12 +161,12 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Get a specific version of the schema registered under this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get the schema for the specified version of this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Register a new schema under the specified subject (if version already exists). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Register a new schema under the specified subject (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Check if a schema has already been registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get a list of IDs of schemas that reference the schema with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Test input schema against a particular version of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Perform a compatibility check on the schema against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Register a new schema under the specified subject (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Create artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Update artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |  
 | Disable artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   | 
