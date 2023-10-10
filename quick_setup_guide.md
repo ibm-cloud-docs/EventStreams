@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-10"
 
 keywords: quick setup guide
 
@@ -155,16 +155,18 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: step}
 {: ui}
 
+For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+
 1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
 3. Select the number of partitions. Click **Next**.
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
-    Partitions are distributed across the brokers in order to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+    Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-    *Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
-    Bring in information like suggested topic naming strategies*
+    _Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
+    Bring in information like suggested topic naming strategies_
 
 4. Set the message retention period. Click **Create topic**.
 
@@ -202,6 +204,8 @@ From the **Topics page**, click the three dots to the very right of the topic na
 {: #create_topic_cli}
 {: step}
 {: cli}
+
+For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
 Run the [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
 
@@ -330,6 +334,8 @@ ibmcloud es cluster [--json]
 {: step}
 {: api}
 
+For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+
 **Which API should we focus on?**
 
 You can create a Kafka topic by issuing a POST request to the /admin/topics path. The body of the request must contain a JSON document, for example:
@@ -348,7 +354,7 @@ You can create a Kafka topic by issuing a POST request to the /admin/topics path
 
 The JSON document must contain a name attribute, specifying the name of the Kafka topic to create. The JSON may also specify the number of partitions to assign to the topic (using the partitions property). If the number of partitions is not specified then the topic will be created with a single partition.
 
-You can also specify an optional configs object within the request. This allows the specification of the retentionMs property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the retentionMs property must be specified in a whole number of hours (e.g. multiples of 3600000).
+You can also specify an optional configs object within the request. This allows the specification of the `retentionMs` property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
 
 Expected HTTP status codes:
 
@@ -566,20 +572,35 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Connect IBM Cloud Monitoring for Operational Visibility by using the console 
-{: #connect_monitoring}
+## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
+{: #connect_monitoring_ui}
 {: step}
 {: ui}
 
 _(a. via UI only - walk through steps ), (Explain benefits)_
 
-Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-[Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+To find out more, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
 
-You can only use the console for this capability.
 
-## Connect {{site.data.keyword.at_full}} to audit service activity (using the console - walk through steps ), (Explain benefits)
-{: #activity_tracker}
+
+## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
+{: #connect_monitoring_cli}
+{: step}
+{: cli}
+
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console]({#connect_monitoring_ui}) to complete this task.
+
+## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
+{: #connect_monitoring_api}
+{: step}
+{: api}
+
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console]({#connect_monitoring_ui}) to complete this task.
+
+
+## Connect {{site.data.keyword.at_full}} to audit service activity (using the console only - walk through steps ), (Explain benefits)
+{: #activity_tracker_ui}
 {: step}
 {: ui}
 
@@ -587,7 +608,22 @@ You can only use the console for this capability.
 
 {{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
-[{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events)
+[{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
+
+## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
+{: #activity_tracker_cli}
+{: step}
+{: cli}
+
+You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console]({#activity_tracker_ui}) to complete this task.
+
+## Connect {{site.data.keyword.at_full}} using the API to audit service activity
+{: #activity_tracker_api}
+{: step}
+{: api}
+
+You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console]({#activity_tracker_ui}) to complete this task.
+
 
 ## (Optional) Using Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
