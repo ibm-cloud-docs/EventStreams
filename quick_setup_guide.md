@@ -232,14 +232,14 @@ Partitions are distributed across the brokers to increase the scalability of you
 {: #work_topic_cli}
 {: cli}
 
-You can use the CLI to create, list, update the configuration of, and delete topics. You can also use the CLI to view details about your cluster.
+You can use the CLI to create, list, delete, and update the configuration of topics. You can also use the CLI to view details about your cluster.
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 
 _Bring in information like suggested topic naming strategies_
 
 #### List a topic using the **ibmcloud es topics** command
-{: #ibmcloud_es_topics_cli}
+{: #ibmcloud_es_topic_list_cli}
 
 Run the **ibmcloud es topics** command to list your topics.
 
@@ -261,7 +261,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 #### Update the configuration of a topic using the **ibmcloud es topic-update** command
 {: #ibmcloud_es_topic_update_cli}
 
-Update the configuration for a topic.
+Run the **ibmcloud es topic-update** command to update the configuration of a topic.
 
 ```bash
 ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
@@ -314,7 +314,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 #### Display cluster details using the **ibmcloud es cluster** command
 {: #ibmcloud_es_cluster_cli}
 
-Display the details of the cluster, including the Kafka version.
+Run the **ibmcloud es cluster** command to display the details of the cluster, including the Kafka version.
 
 ```bash
 ibmcloud es cluster [--json]
@@ -372,6 +372,123 @@ The REST endpoint for creating a Kafka topic can be exercised using the followin
     curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
     ```
     {: codeblock}
+
+
+### Working with topics
+{: #work_topic_api}
+{: api}
+
+#### List Kafka topics
+{: #topic_list_api}
+
+You can list all of your Kafka topics by issuing a GET request to the
+`/admin/topics` path. 
+
+Expected status codes:
+  - 200: the topic list is returned as JSON in the following format:
+```json
+[
+  {
+    "name": "topic1",
+    "partitions": 1,
+    "retentionMs": 86400000,
+    "cleanupPolicy": "delete"
+  },
+  { "name": "topic2",
+    "partitions": 2,
+    "retentionMs": 86400000,
+    "cleanupPolicy": "delete"
+  }
+]
+```
+
+A successful response will have HTTP status code 200 (OK) and contain an
+array of JSON objects, where each object represents a Kafka topic and has the
+following properties:
+
+| Property name     | Description                                             |
+|-------------------|---------------------------------------------------------|
+| name              | The name of the Kafka topic.                            |
+| partitions        | The number of partitions assigned to the Kafka topic.   |
+| retentionsMs      | The retention period for messages on the topic (in ms). |
+| cleanupPolicy     | The cleanup policy of the Kafka topic.                  |
+
+##### Example
+
+You can use the following curl command to list all of your Kafka topics.
+
+```bash
+curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics
+```
+{: codeblock}
+
+#### Delete a Kafka topic
+{: #topic_delete_api}
+
+To delete a Kafka topic, issue a DELETE request to the `/admin/topics/TOPICNAME`
+path (where TOPICNAME is the name of the Kafka topic that you want to delete).
+
+Expected return codes:
+- 202: Topic deletion request was accepted.
+- 403: Not authorized to delete topic.
+- 404: Topic does not exist.
+  
+A 202 (Accepted) status code is returned if the REST API accepts the delete
+request or status code 422 (Unprocessable Entity) if the delete request is
+rejected. If a delete request is rejected then the body of the HTTP response
+will contain a [JSON object](#information-returned-when-a-request-fails) which
+provides additional information about why the request was rejected.
+
+Kafka deletes topics asynchronously. Deleted topics may still appear in the
+response to a [list topics request](#listing-kafka-topics) for a short period
+of time after the completion of a REST request to delete the topic.
+
+##### Example
+
+The following curl command deletes a topic called `MYTOPIC`
+
+```bash
+curl -i -H 'Content-Type: application/json' -X DELETE -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics/MYTOPIC
+```
+{: codeblock}
+
+#### Updating a Kafka topic's configuration
+{: #topic_update_api}
+
+To increase a topic's partition number or to update a topic's configuration, issue an
+`PATCH` request to `/admin/topics/{topic}` with the following body:
+
+```json
+{
+  "new_total_partition_count": 4,
+  "configs": [
+    {
+      "name": "cleanup.policy",
+      "value": "compact"
+    }
+  ]
+}
+```
+{: codeblock}
+
+Supported configuration keys are 'cleanup.policy', 'retention.ms', 'retention.bytes', 'segment.bytes', 'segment.ms', 'segment.index.bytes'.
+The partition number can only be increased, not decreased.
+
+Expected status codes
+  - 202: Update topic request was accepted.
+  - 400: Invalid request JSON/number of partitions is invalid.
+  - 404: Topic specified does not exist.
+  - 422: Semantically invalid request.
+
+##### Example
+
+The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
+
+```bash
+curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{"new_total_partition_count": 4,"configs":[{"name":"cleanup.policy","value":"compact"}]}' ${ADMIN_URL}/admin/topics/MYTOPIC
+```
+{: codeblock}
+
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster._
 _Bring in information like suggested topic naming strategies_
@@ -632,10 +749,12 @@ You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [
 _Link to additional docs page content, highlight that this is not part of the managed service_
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
+
 Its key benefits are as follows:
 
 * Scalability: it can easily scale from a single worker to many.
-* Reliability: it automatically manages offsets and the lifecycle of connectors.* Extensibility: the community has built connectors for most popular systems.
+* Reliability: it automatically manages offsets and the lifecycle of connectors
+* Extensibility: the community has built connectors for most popular systems.
 
 For more information about how to use it, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
 
@@ -659,6 +778,5 @@ If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a
 
 
 
-For 
-Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
+For Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
 
