@@ -385,7 +385,9 @@ You can list all of your Kafka topics by issuing a GET request to the
 `/admin/topics` path. 
 
 Expected status codes:
+
   - 200: the topic list is returned as JSON in the following format:
+
 ```json
 [
   {
@@ -411,9 +413,11 @@ following properties:
 | name              | The name of the Kafka topic.                            |
 | partitions        | The number of partitions assigned to the Kafka topic.   |
 | retentionsMs      | The retention period for messages on the topic (in ms). |
-| cleanupPolicy     | The cleanup policy of the Kafka topic.                  |
+| cleanupPolicy     | The cleanup policy of the Kafka topic.  
+{: caption="Table 1. {{site.data.keyword.messagehub}} topic properties" caption-side="top"}                |
 
 ##### Example
+{: #topic_list_example_api}
 
 You can use the following curl command to list all of your Kafka topics.
 
@@ -444,6 +448,7 @@ response to a [list topics request](#listing-kafka-topics) for a short period
 of time after the completion of a REST request to delete the topic.
 
 ##### Example
+{: #topic_delete_example_api}
 
 The following curl command deletes a topic called `MYTOPIC`
 
@@ -481,6 +486,7 @@ Expected status codes
   - 422: Semantically invalid request.
 
 ##### Example
+{: #topic_update_example_api}
 
 The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
 
