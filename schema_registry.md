@@ -144,15 +144,6 @@ When you use the SerDes to create the new schema in the order Schema 1, Schema 2
 When you create schemas by using the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you want Schema 3 to be a different schema.
 {: note}
 
-## State and deletion of schemas
-{: #state_deletion_schema}
-
-Deletion of schemas is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
-
-The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
-
-An artifact or version that has been disabled can be discovered via a ‘state’ property that is returned by operations that lists artifacts or versions or gets the details of an artifact or version.
-
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
 
@@ -317,6 +308,15 @@ Example response when jsonformat is object:
 Listing schemas requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
+
+### State and deletion of schemas
+{: #state_deletion_schema}
+
+Deletion of schemas is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
+
+The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
+
+An artifact or version that has been disabled can be discovered via a ‘state’ property that is returned by operations that lists artifacts or versions or gets the details of an artifact or version. Disabled Schemas count towards the schema quota: maximum 1000 schemas can be stored in an Enterprise instance. 
 
 ### Delete a schema
 {: #delete_schema}
