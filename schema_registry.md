@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-10-04"
 
 keywords: schema registry, schema
 
@@ -18,6 +18,8 @@ subcollection: EventStreams
 
 Schema Registry provides a centralized repository for managing and validating schemas. Schemas in a Schema Registry provide the explicit contract that a program generating an event provides to other programs that are consuming those events.
 {: shortdesc}
+
+![Supporting Kafka with Schema Registry](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_9024gxsq){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Schemas overview
 {: #ES_overview}

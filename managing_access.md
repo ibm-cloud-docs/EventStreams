@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-10-10"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -78,27 +78,127 @@ You can then apply more policies to extend access to other users. You can either
 
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
-## Common scenarios
-{: #security_scenarios}
+## Common actions
+{: #common_actions}
 
-The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access that you need to assign.
+The following tables summarize some common {{site.data.keyword.messagehub}} actions and the access that you need to assign.
 
-| Action | Reader role | Writer role | Manager role |
+### Cluster actions
+{: #cluster_actions}
+
+With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the Cluster resource group is instance.
+
+| Cluster actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
-| Allow full access to all resources. | Not applicable  | Not applicable  | Service instance: <your_service_instance> |
-| Allow an app or user to create or delete topic. | Resource type: `cluster` |Not applicable  |Resource type: topic  Optional: Resource ID: <name_of_topic> |
-| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | Resource type: `cluster` | Not applicable  | Not applicable |
-| Allow an app to connect to the cluster.  | Resource type: `cluster`| Not applicable | Not applicable |
-| Allow an app to produce to any topic.  | Resource type: `cluster`|Resource type: `topic` | Not applicable |
-| Allow an app to produce to a specific topic.  | Resource type: `cluster`| Resource type: `topic` Resource ID: <name_of_topic> | Not applicable |
-| Allow an app to connect and consume from any topic (no consumer group).  | Resource type: `cluster`  \n Resource type: `topic` | Not applicable | Not applicable |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | Resource type: `cluster` Resource type: `topic` Resource ID: <name_of_topic> |Not applicable | Not applicable |
-| Allow an app to consume a topic (consumer group). | Resource type: `cluster`  \n Resource type: `topic`  \n Resource type: `group` | Not applicable |Not applicable |
-| Allow an app to produce to a topic transactionally.  | Resource type: `cluster` Resource type: `group` | Resource type: `topic`  Resource ID: <name_of_topic> Resource type: `txnid` | Not applicable |
-| Delete consumer group. | Resource type: `cluster` | Not applicable  | Resource type: `group` Resource ID: <group_ID> |
-| To use Streams. | Resource type: `cluster`  \n Resource type: `group`| Not applicable  |Resource type: `topic` |
-| Delete records. | Not applicable | Not applicable | Resource type: `topic` Resource ID: <name_of_topic> |
-{: caption="Table 2. Access for common scenarios" caption-side="bottom"}
+| Allow an app or user to create or delete topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect to the cluster. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to any topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Delete consumer group.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Use Kafka Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+{: caption="Table 2. Cluster actions" caption-side="bottom"}
+
+### Topic actions
+{: #topic_actions}
+
+With topic actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
+
+| Topic actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to any topic. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Use Kafka Streams.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Allow an app to connect and consume from a specific topic (no consumer group).  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+{: caption="Table 3. Topic actions" caption-side="bottom"}
+
+### Consumer group actions
+{: #consumer_group_actions}
+
+With consumer group actions, you can control an application's ability to join a consumer group.
+
+| Consumer group actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Use Kafka Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Delete consumer group.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+{: caption="Table 4. Consumer group actions" caption-side="bottom"}
+
+### Schema Registry actions
+{: #schema_registry_actions}
+
+With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). Note that *artifact* is the general Kafka term for schemas, and they can also be referred to as *subjects*. For more information, see [Using Event Streams Schema Registry](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+
+| Schema Registry actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| Get latest artifact. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |   |
+| List versions. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get version. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get metadata by content. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |   |
+| Get metadata. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get version metadata. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get the schema string identified by the input ID.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Retrieve only the schema identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get the subject-version pairs identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a list of versions registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get artifact compatibility rule. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a specific version of the schema registered under this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get the schema for the specified version of this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Register a new schema under the specified subject (if version already exists). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Check if a schema has already been registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a list of IDs of schemas that reference the schema with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Test input schema against a particular version of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Perform a compatibility check on the schema against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Register a new schema under the specified subject (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| Create artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| Update artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |  
+| Disable artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   | 
+| Create version. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| Delete version. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Update artifact state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Update version state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete artifact. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
+| Create artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Update artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Update compatibility level for the specified subject. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Deletes the specified subject and its associated compatibility level if registered. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete a specific version of the schema registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete the specified subject-level compatibility level config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+{: caption="Table 5. Schema Registry actions" caption-side="bottom"}
+
+### TransactionId actions 
+{: #transactionId_actions}
+
+With TransactionId actions (txnid), you can control the ability to use the transactional producer capability in Kafka (that is, single, atomic writes across multiple partitions). TransactionId actions are also referred to as *producer transactions*.
+
+| TransactionId actions | Reader  | Writer  | Manager  |
+| --- | --- | --- | --- |
+| Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Create transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| InitProducerId transaction. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Add partitions to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Add offsets to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| End transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Transaction offset commit. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+{: caption="Table 6. TransactionId actions" caption-side="bottom"}
 
 For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 

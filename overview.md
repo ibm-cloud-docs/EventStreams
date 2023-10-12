@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-10-04"
 
 keywords: managed kafka, kafka as a service, managed apache kafka, kafka on cloud
 

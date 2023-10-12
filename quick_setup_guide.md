@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-10-10"
 
 keywords: quick setup guide
 
@@ -11,7 +11,7 @@ subcollection: EventStreams
 content-type: tutorial
 services: eventstreams
 account-plan:
-completion-time: 45m
+completion-time: 60m
 
 ---
 
@@ -24,9 +24,9 @@ completion-time: 45m
 {: #quick-setup-guide}
 {: toc-content-type="tutorial"}
 {: toc-services="eventstreams"}
-{: toc-completion-time="45m"}
+{: toc-completion-time="60m"}
 
-This tutorial guides you through starting to use {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect Cloud Monitoring and Activity Tracker and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how you can get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through starting to use {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 * [Prerequisites](#prereqs)
@@ -155,16 +155,18 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: step}
 {: ui}
 
+For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+
 1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
 3. Select the number of partitions. Click **Next**.
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
-    Partitions are distributed across the brokers in order to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+    Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-    *Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
-    Bring in information like suggested topic naming strategies*
+    _Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
+    Bring in information like suggested topic naming strategies_
 
 4. Set the message retention period. Click **Create topic**.
 
@@ -203,7 +205,9 @@ From the **Topics page**, click the three dots to the very right of the topic na
 {: step}
 {: cli}
 
-Run the [**ibmcloud es topic-create** command](docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
+For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+
+Run the [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
 
 ```bash
 ibmcloud es topic-create [--name] topic1 [--partitions 1] 
@@ -228,14 +232,14 @@ Partitions are distributed across the brokers to increase the scalability of you
 {: #work_topic_cli}
 {: cli}
 
-You can use the CLI to create, list, update the configuration of, and delete topics. You can also use the CLI to view details about your cluster.
+You can use the CLI to create, list, delete, and update the configuration of topics. You can also use the CLI to view details about your cluster.
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 
 _Bring in information like suggested topic naming strategies_
 
 #### List a topic using the **ibmcloud es topics** command
-{: #ibmcloud_es_topics_cli}
+{: #ibmcloud_es_topic_list_cli}
 
 Run the **ibmcloud es topics** command to list your topics.
 
@@ -257,7 +261,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 #### Update the configuration of a topic using the **ibmcloud es topic-update** command
 {: #ibmcloud_es_topic_update_cli}
 
-Update the configuration for a topic.
+Run the **ibmcloud es topic-update** command to update the configuration of a topic.
 
 ```bash
 ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
@@ -310,7 +314,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 #### Display cluster details using the **ibmcloud es cluster** command
 {: #ibmcloud_es_cluster_cli}
 
-Display the details of the cluster, including the Kafka version.
+Run the **ibmcloud es cluster** command to display the details of the cluster, including the Kafka version.
 
 ```bash
 ibmcloud es cluster [--json]
@@ -330,25 +334,27 @@ ibmcloud es cluster [--json]
 {: step}
 {: api}
 
-**Which API should we focus on?**
+For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-You can create a Kafka topic by issuing a POST request to the /admin/topics path. The body of the request must contain a JSON document, for example:
 
-    ```
-    {
-        "name": "topicname",
-        "partitions": 1,
-        "configs": {
-            "retentionMs": 86400000,
-            "cleanupPolicy": "delete"
-        }
+You can create a Kafka topic by issuing a POST request to the `/admin/topics` path. The body of the request must contain a JSON document, for example:
+
+```json
+{
+    "name": "topicname",
+    "partitions": 1,
+    "configs": {
+        "retentionMs": 86400000,
+        "cleanupPolicy": "delete"
     }
-    ```
-    {: codeblock}
+}
+```
+{: codeblock}
 
-The JSON document must contain a name attribute, specifying the name of the Kafka topic to create. The JSON may also specify the number of partitions to assign to the topic (using the partitions property). If the number of partitions is not specified then the topic will be created with a single partition.
 
-You can also specify an optional configs object within the request. This allows the specification of the retentionMs property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the retentionMs property must be specified in a whole number of hours (e.g. multiples of 3600000).
+The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified then the topic will be created with a single partition.
+
+You can also specify an optional `configs` object within the request. This allows the specification of the `retentionMs` property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
 
 Expected HTTP status codes:
 
@@ -366,6 +372,129 @@ The REST endpoint for creating a Kafka topic can be exercised using the followin
     curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
     ```
     {: codeblock}
+
+
+### Working with topics
+{: #work_topic_api}
+{: api}
+
+#### List Kafka topics
+{: #topic_list_api}
+
+You can list all of your Kafka topics by issuing a GET request to the
+`/admin/topics` path. 
+
+Expected status codes:
+
+  - 200: the topic list is returned as JSON in the following format:
+
+```json
+[
+  {
+    "name": "topic1",
+    "partitions": 1,
+    "retentionMs": 86400000,
+    "cleanupPolicy": "delete"
+  },
+  { "name": "topic2",
+    "partitions": 2,
+    "retentionMs": 86400000,
+    "cleanupPolicy": "delete"
+  }
+]
+```
+
+A successful response will have HTTP status code 200 (OK) and contain an
+array of JSON objects, where each object represents a Kafka topic and has the
+following properties:
+
+| Property name     | Description                                             |
+|-------------------|---------------------------------------------------------|
+| name              | The name of the Kafka topic.                            |
+| partitions        | The number of partitions assigned to the Kafka topic.   |
+| retentionsMs      | The retention period for messages on the topic (in ms). |
+| cleanupPolicy     | The cleanup policy of the Kafka topic.  
+{: caption="Table 1. {{site.data.keyword.messagehub}} topic properties" caption-side="top"}                |
+
+##### Example
+{: #topic_list_example_api}
+
+You can use the following curl command to list all of your Kafka topics.
+
+```bash
+curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics
+```
+{: codeblock}
+
+#### Delete a Kafka topic
+{: #topic_delete_api}
+
+To delete a Kafka topic, issue a DELETE request to the `/admin/topics/TOPICNAME`
+path (where TOPICNAME is the name of the Kafka topic that you want to delete).
+
+Expected return codes:
+- 202: Topic deletion request was accepted.
+- 403: Not authorized to delete topic.
+- 404: Topic does not exist.
+  
+A 202 (Accepted) status code is returned if the REST API accepts the delete
+request or status code 422 (Unprocessable Entity) if the delete request is
+rejected. If a delete request is rejected then the body of the HTTP response
+will contain a [JSON object](#information-returned-when-a-request-fails) which
+provides additional information about why the request was rejected.
+
+Kafka deletes topics asynchronously. Deleted topics may still appear in the
+response to a [list topics request](#listing-kafka-topics) for a short period
+of time after the completion of a REST request to delete the topic.
+
+##### Example
+{: #topic_delete_example_api}
+
+The following curl command deletes a topic called `MYTOPIC`
+
+```bash
+curl -i -H 'Content-Type: application/json' -X DELETE -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics/MYTOPIC
+```
+{: codeblock}
+
+#### Updating a Kafka topic's configuration
+{: #topic_update_api}
+
+To increase a topic's partition number or to update a topic's configuration, issue an
+`PATCH` request to `/admin/topics/{topic}` with the following body:
+
+```json
+{
+  "new_total_partition_count": 4,
+  "configs": [
+    {
+      "name": "cleanup.policy",
+      "value": "compact"
+    }
+  ]
+}
+```
+{: codeblock}
+
+Supported configuration keys are 'cleanup.policy', 'retention.ms', 'retention.bytes', 'segment.bytes', 'segment.ms', 'segment.index.bytes'.
+The partition number can only be increased, not decreased.
+
+Expected status codes
+  - 202: Update topic request was accepted.
+  - 400: Invalid request JSON/number of partitions is invalid.
+  - 404: Topic specified does not exist.
+  - 422: Semantically invalid request.
+
+##### Example
+{: #topic_update_example_api}
+
+The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
+
+```bash
+curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{"new_total_partition_count": 4,"configs":[{"name":"cleanup.policy","value":"compact"}]}' ${ADMIN_URL}/admin/topics/MYTOPIC
+```
+{: codeblock}
+
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster._
 _Bring in information like suggested topic naming strategies_
@@ -427,7 +556,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: ui}
 
-You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
+You cannot produce data by using the console. You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
 
 
 ## Produce data using the CLI
@@ -435,7 +564,51 @@ You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produc
 {: step}
 {: cli}
 
-_b. via CLI c. via API - support different languages - show Java library_
+_Config and properties files the same?_
+_What is property file name and where is it stored?_
+
+You can use the Kafka console producer tool with {{site.data.keyword.messagehub}} to produce data. The console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+
+You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials.
+
+To provide the SASL credentials to this tool, create a properties file based on the following example:
+
+```config
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
+    security.protocol=SASL_SSL
+    sasl.mechanism=PLAIN
+    ssl.protocol=TLSv1.2
+    ssl.enabled.protocols=TLSv1.2
+    ssl.endpoint.identification.algorithm=HTTPS
+```
+{: codeblock}
+
+Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+
+After you create the properties file, you can run the console producer in a terminal as follows:
+
+```bash
+   kafka-console-producer.sh --broker-list BOOTSTRAP_ENDPOINTS --producer.config CONFIG_FILE --topic TOPIC_NAME
+```
+{: codeblock}
+
+Replace the following variables in the example with your own values:
+
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+- CONFIG_FILE with the path of the configuration file. 
+
+You can use many of the other options of this tool, except for those that require access to ZooKeeper.For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+
+
+
+### Configuration settings
+{: #producer_config_cli}
+{: cli}
+
+For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+
+_b. via CLI support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
@@ -445,6 +618,14 @@ _Highlight the most important kafka settings for producers are here including de
 {: #produce_data_api}
 {: step}
 {: api}
+
+### Configuration settings
+{: #producer_config_api}
+{: api}
+
+For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+
 
 _b. via CLI c. via API - support different languages - show Java library)_
 
@@ -464,7 +645,32 @@ You cannot consume data by using the console. You can consume data only using th
 {: step}
 {: cli}
 
-_a. UI Not available b. via CLI c. via API - support different languages - show Java library_
+You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}}. 
+
+These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+
+You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
+
+```bash
+   kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
+```
+{: codeblock}
+
+Replace the following variables in the example with your own values:
+
+- BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
+- CONFIG_FILE with the path of the configuration file. 
+
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+
+### Configuration settings
+{: #consumer_config_cli}
+{: cli}
+
+For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+
+_b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
@@ -475,26 +681,49 @@ _Highlight the most important kafka settings for consumers are here including co
 {: step}
 {: api}
 
-_a. UI Not available b. via CLI c. via API - support different languages - show Java library_
+### Configuration settings
+{: #consumer_config_api}
+{: api}
+
+For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+[configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+
+
+b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Connect IBM Cloud Monitoring for Operational Visibility by using the console 
-{: #connect_monitoring}
+## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
+{: #connect_monitoring_ui}
 {: step}
 {: ui}
 
 _(a. via UI only - walk through steps ), (Explain benefits)_
 
-Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-[Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+To find out more, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
 
-You can only use the console for this capability.
 
-## Connect {{site.data.keyword.at_full}} to audit service activity (using the console - walk through steps ), (Explain benefits)
-{: #activity_tracker}
+
+## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
+{: #connect_monitoring_cli}
+{: step}
+{: cli}
+
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console]({#connect_monitoring_ui}) to complete this task.
+
+## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
+{: #connect_monitoring_api}
+{: step}
+{: api}
+
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console]({#connect_monitoring_ui}) to complete this task.
+
+
+## Connect {{site.data.keyword.at_full}} to audit service activity (using the console only - walk through steps ), (Explain benefits)
+{: #activity_tracker_ui}
 {: step}
 {: ui}
 
@@ -502,7 +731,22 @@ You can only use the console for this capability.
 
 {{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
-[{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events)
+[{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
+
+## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
+{: #activity_tracker_cli}
+{: step}
+{: cli}
+
+You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console]({#activity_tracker_ui}) to complete this task.
+
+## Connect {{site.data.keyword.at_full}} using the API to audit service activity
+{: #activity_tracker_api}
+{: step}
+{: api}
+
+You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console]({#activity_tracker_ui}) to complete this task.
+
 
 ## (Optional) Using Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
@@ -511,7 +755,14 @@ You can only use the console for this capability.
 _Link to additional docs page content, highlight that this is not part of the managed service_
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
-[Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect)
+
+Its key benefits are as follows:
+
+* Scalability: it can easily scale from a single worker to many.
+* Reliability: it automatically manages offsets and the lifecycle of connectors
+* Extensibility: the community has built connectors for most popular systems.
+
+For more information about how to use it, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
 
@@ -524,15 +775,14 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site
 {: #getting_help}
 {: step}
 
-[Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp)
+For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp).
 
-[FAQs](/docs/EventStreams?topic=EventStreams-faqs) 
+[FAQs](/docs/EventStreams?topic=EventStreams-faqs) details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
-[Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise)
-
-
+If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
 
 
-For 
-Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
+
+
+For Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
 
