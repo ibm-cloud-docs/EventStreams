@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-12"
 
 keywords: quick setup guide
 
@@ -26,7 +26,7 @@ completion-time: 60m
 {: toc-services="eventstreams"}
 {: toc-completion-time="60m"}
 
-This tutorial guides you through starting to use {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 * [Prerequisites](#prereqs)
@@ -65,16 +65,13 @@ Before you get started, we highly recommend you read the following information t
 {: #choose_plan}
 {: step}
 
-To help you decide which plan to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external} for more information.
+{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external} for more information.
 
 * The Lite plan offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
 
-* The Standard plan offers pay as you go access to the multi-tenant {{site.data.keyword.messagehub}} service. Charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
+* The Standard plan offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
 
-* The Enterprise plan offers pay as you go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. It also offers customer-managed encryption, private endpoints, and a selection of throughput and storage options. 
-
-_Direct to choosing your plan page, give a high level summary of the plans? and highlight that Enterprise plan allows for customer managed encryption and private end points and different throughput/storage options - the intent here is to upsell_
-_Encourage users to familiarise themselves with Apache Concepts docs page_
+* The Enterprise plan offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
 ## Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
@@ -106,12 +103,12 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-    For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
 
 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
 
-    Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
     ```text
     ibmcloud login -a cloud.ibm.com
     ```
@@ -120,9 +117,9 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
      
-    Select one of the following methods:
+Select one of the following methods:
 
-    * To create an instance from the CLI on the Enterprise plan, run the following command:
+  * To create an instance from the CLI on the Enterprise plan, run the following command:
 
     ```text
    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
@@ -155,7 +152,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: step}
 {: ui}
 
-For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
 1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
@@ -205,7 +202,7 @@ From the **Topics page**, click the three dots to the very right of the topic na
 {: step}
 {: cli}
 
-For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
 Run the [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
 
@@ -329,15 +326,15 @@ ibmcloud es cluster [--json]
 :   Output format in JSON.
 
 
-## Create a topic and select number of partitions by using the API
+## Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
 {: step}
 {: api}
 
-For guidance about settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
 
-You can create a Kafka topic by issuing a POST request to the `/admin/topics` path. The body of the request must contain a JSON document, for example:
+You can create a Kafka topic by issuing a POST request to the `/admin/topics` path. The body of the request must contain a JSON document. For example:
 
 ```json
 {
@@ -352,9 +349,9 @@ You can create a Kafka topic by issuing a POST request to the `/admin/topics` pa
 {: codeblock}
 
 
-The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified then the topic will be created with a single partition.
+The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified, the topic is created with a single partition.
 
-You can also specify an optional `configs` object within the request. This allows the specification of the `retentionMs` property which controls how long (in milliseconds) Kafka will retain messages published to the topic. After this time elapses the messages will automatically be deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
+You can also specify an optional `configs` object within the request. This allows the specification of the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
 
 Expected HTTP status codes:
 
@@ -366,7 +363,7 @@ Expected HTTP status codes:
 If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails then a HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
 Example
 
-The REST endpoint for creating a Kafka topic can be exercised using the following snippet of curl. You will need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+The REST endpoint for creating a Kafka topic can be exercised using the following snippet of curl. You need to supply your own API key or token and specify the correct endpoint for ADMIN API.
 
     ```
     curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
@@ -439,11 +436,10 @@ Expected return codes:
   
 A 202 (Accepted) status code is returned if the REST API accepts the delete
 request or status code 422 (Unprocessable Entity) if the delete request is
-rejected. If a delete request is rejected then the body of the HTTP response
-will contain a [JSON object](#information-returned-when-a-request-fails) which
+rejected. If a delete request is rejected, the body of the HTTP response contains a [JSON object](#information-returned-when-a-request-fails) which
 provides additional information about why the request was rejected.
 
-Kafka deletes topics asynchronously. Deleted topics may still appear in the
+Kafka deletes topics asynchronously. Deleted topics can still appear in the
 response to a [list topics request](#listing-kafka-topics) for a short period
 of time after the completion of a REST request to delete the topic.
 
