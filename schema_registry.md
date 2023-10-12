@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-10-12"
 
 keywords: schema registry, schema
 
@@ -316,7 +316,7 @@ Deletion of schemas is a two-stage process. The first stage of deletion preserve
 
 The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
 
-An artifact or version that has been disabled can be discovered via a ‘state’ property that is returned by operations that lists artifacts or versions or gets the details of an artifact or version. Disabled Schemas count towards the schema quota: maximum 1000 schemas can be stored in an Enterprise instance. 
+An artifact or version that has been disabled can be discovered via a ‘state’ property that is returned by operations that lists artifacts or versions or gets the details of an artifact or version. Disabled schemas count towards the schema quota, a maximum of 1000 schemas can be stored in an Enterprise instance. 
 
 ### Delete a schema
 {: #delete_schema}
