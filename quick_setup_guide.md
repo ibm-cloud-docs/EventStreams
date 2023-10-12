@@ -103,28 +103,28 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+    For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
 
 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
 
-Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-    ```text
-    ibmcloud login -a cloud.ibm.com
-    ```
-    {: codeblock}
+    Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+        ```text
+        ibmcloud login -a cloud.ibm.com
+        ```
+        {: codeblock}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
      
 Select one of the following methods:
 
-  * To create an instance from the CLI on the Enterprise plan, run the following command:
+    * To create an instance from the CLI on the Enterprise plan, run the following command:
 
     ```text
-   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
-   ```
-   {: codeblock}
+    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
+    ```
+    {: codeblock}
    
     Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
@@ -165,11 +165,10 @@ For guidance about the settings that you can modify when creating topics, see [t
     _Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
     Bring in information like suggested topic naming strategies_
 
-4. Set the message retention period. Click **Create topic**.
-
-    This is how long messages are retained before they are deleted.
-
+4. Set the message retention period. This is how long messages are retained before they are deleted.
     If your messages are not read by a consumer within this time, they will be missed.
+
+    Click **Create topic**.
 
 ### Working with topics
 {: #work_topic_ui}
@@ -193,8 +192,7 @@ From the **Topics page**, you can view the following information about your topi
 
 From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
 
-From the **Topics page**, click the three dots to the very right of the topic name and click **Delete this topic**. 
-
+From the **Topics page**, click the three dots to the right of the topic name and click **Delete this topic**. 
 
 
 ## Create a topic and select number of partitions by using the CLI 
@@ -410,8 +408,8 @@ following properties:
 | name              | The name of the Kafka topic.                            |
 | partitions        | The number of partitions assigned to the Kafka topic.   |
 | retentionsMs      | The retention period for messages on the topic (in ms). |
-| cleanupPolicy     | The cleanup policy of the Kafka topic.  
-{: caption="Table 1. {{site.data.keyword.messagehub}} topic properties" caption-side="top"}                |
+| cleanupPolicy     | The cleanup policy of the Kafka topic.        |
+{: caption="Table 1. {{site.data.keyword.messagehub}} topic properties" caption-side="top"}               
 
 ##### Example
 {: #topic_list_example_api}
@@ -475,11 +473,11 @@ To increase a topic's partition number or to update a topic's configuration, iss
 Supported configuration keys are 'cleanup.policy', 'retention.ms', 'retention.bytes', 'segment.bytes', 'segment.ms', 'segment.index.bytes'.
 The partition number can only be increased, not decreased.
 
-Expected status codes
-  - 202: Update topic request was accepted.
-  - 400: Invalid request JSON/number of partitions is invalid.
-  - 404: Topic specified does not exist.
-  - 422: Semantically invalid request.
+Expected status codes:
+    - 202: Update topic request was accepted.
+    - 400: Invalid request JSON/number of partitions is invalid.
+    - 404: Topic specified does not exist.
+    - 422: Semantically invalid request.
 
 ##### Example
 {: #topic_update_example_api}
