@@ -122,22 +122,22 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
 
-    ```text
-    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
-    ```
-    {: codeblock}
+        ```text
+        ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
+        ```
+        {: codeblock}
    
-    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
+        Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
 
     * To create an instance from the CLI on the Standard plan, run the following command:
 
-    ```text
-    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
-    ```
-    {: codeblock}
+        ```text
+        ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
+        ```
+        {: codeblock}
 
-    Provisioning a new Standard instance is instantaneous because the underlying resources are already set up.
+        Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
 
 
 ## Provision an {{site.data.keyword.messagehub}} instance by using the API
