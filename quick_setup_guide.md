@@ -46,8 +46,12 @@ This tutorial guides you through the steps to start using {{site.data.keyword.me
 * [Step 6: Consume data using the console](#consume_data_ui){: ui}
 * [Step 6: Consume data using the CLI](#consume_data_cli){: cli}
 * [Step 6: Consume data using the API](#consume_data_api){: api}
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring)
-* [Step 8: Connect Activity Tracker](#activity_tracker)
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui){: ui}
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli){: cli}
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api){: api}
+* [Step 8: Connect Activity Tracker](#activity_tracker_ui){: ui}
+* [Step 8: Connect Activity Tracker](#activity_tracker_cli){: cli}
+* [Step 8: Connect Activity Tracker](#activity_tracker_api){: api}
 * [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 
