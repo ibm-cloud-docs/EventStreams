@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-10-15"
 
 keywords: quick setup guide
 
@@ -109,15 +109,16 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #step2_login}
 
     Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-        ```text
-        ibmcloud login -a cloud.ibm.com
-        ```
-        {: codeblock}
+
+    ```text
+    ibmcloud login -a cloud.ibm.com
+    ```
+    {: codeblock}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
      
-Select one of the following methods:
+    Select one of the following methods:
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
 
