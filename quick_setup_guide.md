@@ -175,6 +175,9 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
+After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [view details about your cluster](#ibmcloud_es_cluster_cli).
+
+
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
@@ -203,7 +206,7 @@ From the **Topics page**, click the three dots to the right of the topic name an
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-Run the [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition. For example:
+Run the following [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition: 
 
 ```bash
 ibmcloud es topic-create [--name] topic1 [--partitions 1] 
@@ -220,17 +223,16 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 --partitions value
 :   Set the number of partitions for the topic.
 
-One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
+    One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
-Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+    Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
 ### Working with topics
 {: #work_topic_cli}
 {: cli}
 
-You can use the CLI to create, list, delete, and update the configuration of topics. You can also use the CLI to view details about your cluster.
+After you create topics, you can use the CLI to [list](#ibmcloud_es_topic_list_cli), [delete](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [view details about your cluster](#ibmcloud_es_cluster_cli).
 
-_Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 
 _Bring in information like suggested topic naming strategies_
 
@@ -253,38 +255,6 @@ ibmcloud es topics [--filter FILTER] [--json]
   
 --json (optional)
 :   Format output in JSON. Up to 1000 topics are returned.
-
-#### Update the configuration of a topic using the **ibmcloud es topic-update** command
-{: #ibmcloud_es_topic_update_cli}
-
-Run the **ibmcloud es topic-update** command to update the configuration of a topic.
-
-```bash
-ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
-```
-{: codeblock}
-
-**Prerequisites**: None
-
-**Command options**:
-
---name value, -n value
-:   Topic name.
-
---config KEY[=VALUE], -c KEY[=VALUE]
-:   Set a configuration option for the topic as a KEY[=VALUE] pair.
-:   If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default. Multiple '--config' options can be specified. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
-
-    - cleanup.policy
-    - retention.ms
-    - retention.bytes
-    - segment.bytes
-    - segment.ms
-    - segment.index.bytes
-
---default, -d  (optional)
-:   Reset each configuration parameter that is specified by using '--config' to its default value.
-
 
 #### Delete a topic using the **ibmcloud es topic-delete** command
 {: #ibmcloud_es_topic_delete_cli}
@@ -323,6 +293,40 @@ ibmcloud es cluster [--json]
 
 --json (optional)
 :   Output format in JSON.
+
+
+
+#### Update the configuration of a topic using the **ibmcloud es topic-update** command
+{: #ibmcloud_es_topic_update_cli}
+
+Run the **ibmcloud es topic-update** command to update the configuration of a topic.
+
+```bash
+ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--name value, -n value
+:   Topic name.
+
+--config KEY[=VALUE], -c KEY[=VALUE]
+:   Set a configuration option for the topic as a KEY[=VALUE] pair.
+:   If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default. Multiple '--config' options can be specified. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
+
+    - cleanup.policy
+    - retention.ms
+    - retention.bytes
+    - segment.bytes
+    - segment.ms
+    - segment.index.bytes
+
+--default, -d  (optional)
+:   Reset each configuration parameter that is specified by using '--config' to its default value.
+
 
 
 ## Create a topic and select number of partitions by using the Admin REST API
@@ -373,6 +377,8 @@ The REST endpoint for creating a Kafka topic can be exercised using the followin
 ### Working with topics
 {: #work_topic_api}
 {: api}
+
+After you create topics, you can use the API to 
 
 #### List Kafka topics
 {: #topic_list_api}
@@ -699,6 +705,9 @@ _(a. via UI only - walk through steps ), (Explain benefits)_
 
 Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 To find out more, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+
+After creating an instance
+Resource list - select instance- Actions-> Add monitoring
 
 
 
