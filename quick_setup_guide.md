@@ -31,16 +31,25 @@ This tutorial guides you through the steps to start using {{site.data.keyword.me
 
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
-* {: ui} [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui){: ui}
-* {: cli} [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli){: cli}
-{: api} * {: api} [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api){: api}
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui){: ui}
 * [Step 3: Create a topic and partitions using the console](#create_topic_ui){: ui} 
-* [Step 3: Create a topic and partitions using the CLI](#create_topic_cli){: cli}
-* [Step 3: Create a topic and partitions using the API](#create_topic_api){: api}
-* [Step 4: Create an IAM service credential using the console](#create_credential_ui){: ui} 
-* [Step 4: Create an IAM service credential using the CLI](#create_credential_cli){: cli}
-* [Step 4: Create an IAM service credential using the API](#create_credential_api){: api}
+* [Step 4: Create an IAM service credential using the console](#create_credential_ui){: ui}
 * [Step 5: Produce data using the console](#produce_data_ui){: ui}
+{: ui}
+
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli){: cli}
+* [Step 3: Create a topic and partitions using the CLI](#create_topic_cli){: cli}
+* [Step 4: Create an IAM service credential using the CLI](#create_credential_cli){: cli}
+{: cli}
+
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api){: api}
+* [Step 3: Create a topic and partitions using the API](#create_topic_api){: api}
+* [Step 4: Create an IAM service credential using the API](#create_credential_api){: api}
+
+ 
+
+
+
 * [Step 5: Produce data using the CLI](#produce_data_cli){: cli}
 * [Step 5: Produce data using the API](#produce_data_api){: api}
 * [Step 6: Consume data using the console](#consume_data_ui){: ui}
