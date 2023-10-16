@@ -35,34 +35,53 @@ This tutorial guides you through the steps to start using {{site.data.keyword.me
 * [Step 3: Create a topic and partitions using the console](#create_topic_ui){: ui} 
 * [Step 4: Create an IAM service credential using the console](#create_credential_ui){: ui}
 * [Step 5: Produce data using the console](#produce_data_ui){: ui}
+* [Step 6: Consume data using the console](#consume_data_ui){: ui}
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui){: ui}
+* [Step 8: Connect Activity Tracker](#activity_tracker_ui){: ui}
+* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 10: If you need more help](#getting_help)
 {: ui}
 
+* [Prerequisites](#prereqs)
+* [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli){: cli}
 * [Step 3: Create a topic and partitions using the CLI](#create_topic_cli){: cli}
 * [Step 4: Create an IAM service credential using the CLI](#create_credential_cli){: cli}
+* [Step 5: Produce data using the CLI](#produce_data_cli){: cli}
+* [Step 6: Consume data using the CLI](#consume_data_cli){: cli}
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli){: cli}
+* [Step 8: Connect Activity Tracker](#activity_tracker_cli){: cli}
+* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 10: If you need more help](#getting_help)
 {: cli}
 
+* [Prerequisites](#prereqs)
+* [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api){: api}
 * [Step 3: Create a topic and partitions using the API](#create_topic_api){: api}
 * [Step 4: Create an IAM service credential using the API](#create_credential_api){: api}
-
- 
-
-
-
-* [Step 5: Produce data using the CLI](#produce_data_cli){: cli}
 * [Step 5: Produce data using the API](#produce_data_api){: api}
-* [Step 6: Consume data using the console](#consume_data_ui){: ui}
-* [Step 6: Consume data using the CLI](#consume_data_cli){: cli}
 * [Step 6: Consume data using the API](#consume_data_api){: api}
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui){: ui}
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli){: cli}
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api){: api}
-* [Step 8: Connect Activity Tracker](#activity_tracker_ui){: ui}
-* [Step 8: Connect Activity Tracker](#activity_tracker_cli){: cli}
 * [Step 8: Connect Activity Tracker](#activity_tracker_api){: api}
 * [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
+{: api}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Prerequisites
