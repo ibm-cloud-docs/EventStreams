@@ -412,7 +412,7 @@ You can list all your Kafka topics by issuing a GET request to the
 
 Expected status code:
 
-  - 200: the topic list is returned as JSON in the following format:
+* 200: the topic list is returned as JSON in the following format:
 
 ```json
 [
@@ -429,6 +429,7 @@ Expected status code:
   }
 ]
 ```
+{: codeblock}
 
 A successful response will have HTTP status code 200 (OK) and contain an
 array of JSON objects, where each object represents a Kafka topic and has the following properties:
@@ -441,10 +442,10 @@ array of JSON objects, where each object represents a Kafka topic and has the fo
 | cleanupPolicy     | The cleanup policy of the Kafka topic.        |
 {: caption="Table 1. {{site.data.keyword.messagehub}} topic properties" caption-side="top"}               
 
-##### Example
+##### List topics example
 {: #topic_list_example_api}
 
-You can use the following curl command to list all of your Kafka topics.
+You can use the following curl command to list all your Kafka topics.
 
 ```bash
 curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics
@@ -469,7 +470,7 @@ provides additional information about why the request was rejected.
 Kafka deletes topics asynchronously. Deleted topics can still appear in the
 response to a [list topics request](#listing-kafka-topics) for a short period of time after the completion of a REST request to delete the topic.
 
-##### Example
+##### Delete topic example
 {: #topic_delete_example_api}
 
 The following curl command deletes a topic called `MYTOPIC`
@@ -507,7 +508,7 @@ Expected status codes:
     - 404: Topic specified does not exist.
     - 422: Semantically invalid request.
 
-##### Example
+##### Update topic configuration example
 {: #topic_update_example_api}
 
 The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
@@ -568,10 +569,12 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-## Create an IAM service credential by using the resource controller API
+## Create an IAM service credential by using the API
 {: #create_credential_api}
 {: step}
 {: api}
+
+**How do you create this via the API?**
 
 ## Produce data using the console
 {: #produce_data_ui}
@@ -658,7 +661,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI]({#consume_data_cli}) or [API]({#consume_data_cli}).
+You cannot consume data by using the console. You can consume data only using the [CLI]({#consume_data_cli}) or [API]({#consume_data_api}).
 
 ## Consume data using the CLI
 {: #consume_data_cli}
