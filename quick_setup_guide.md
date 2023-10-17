@@ -29,7 +29,7 @@ completion-time: 60m
 This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
-Test lead-in sentence: {: ui}
+Complete the following steps: {: ui}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui)
@@ -43,7 +43,7 @@ Test lead-in sentence: {: ui}
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
-Test lead-in sentence: {: cli}
+Complete the following steps: {: cli}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
@@ -57,7 +57,7 @@ Test lead-in sentence: {: cli}
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
-Test lead-in sentence: {: api}
+Complete the following steps: {: api}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
@@ -166,7 +166,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: step}
 {: api}
 
-**Which API should we focus on?**
+**Which API should we focus on? How do you provision an instance via the API?**
 
 
 ## Create a topic and select number of partitions by using the console
@@ -384,30 +384,32 @@ Expected HTTP status codes:
 * 403: Not authorized to create topic.
 * 422: Semantically invalid request.
 
-If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails then a HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
-Example
+If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, a HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
 
-The REST endpoint for creating a Kafka topic can be exercised using the following snippet of curl. You need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+### Example
+{: #create_topic_api_example}
 
-    ```
-    curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
-    ```
-    {: codeblock}
+You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+
+```
+curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
+```
+{: codeblock}
 
 
 ### Working with topics
 {: #work_topic_api}
 {: api}
 
-After you create topics, you can use the API to 
+After you create topics, you can use the API to list and delete topics and update topic configuration.
 
 #### List Kafka topics
 {: #topic_list_api}
 
-You can list all of your Kafka topics by issuing a GET request to the
+You can list all your Kafka topics by issuing a GET request to the
 `/admin/topics` path. 
 
-Expected status codes:
+Expected status code:
 
   - 200: the topic list is returned as JSON in the following format:
 
@@ -428,8 +430,7 @@ Expected status codes:
 ```
 
 A successful response will have HTTP status code 200 (OK) and contain an
-array of JSON objects, where each object represents a Kafka topic and has the
-following properties:
+array of JSON objects, where each object represents a Kafka topic and has the following properties:
 
 | Property name     | Description                                             |
 |-------------------|---------------------------------------------------------|
@@ -452,8 +453,7 @@ curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}'
 #### Delete a Kafka topic
 {: #topic_delete_api}
 
-To delete a Kafka topic, issue a DELETE request to the `/admin/topics/TOPICNAME`
-path (where TOPICNAME is the name of the Kafka topic that you want to delete).
+To delete a Kafka topic, issue a DELETE request to the `/admin/topics/TOPICNAME`path (where TOPICNAME is the name of the Kafka topic that you want to delete).
 
 Expected return codes:
 - 202: Topic deletion request was accepted.
@@ -466,8 +466,7 @@ rejected. If a delete request is rejected, the body of the HTTP response contain
 provides additional information about why the request was rejected.
 
 Kafka deletes topics asynchronously. Deleted topics can still appear in the
-response to a [list topics request](#listing-kafka-topics) for a short period
-of time after the completion of a REST request to delete the topic.
+response to a [list topics request](#listing-kafka-topics) for a short period of time after the completion of a REST request to delete the topic.
 
 ##### Example
 {: #topic_delete_example_api}
@@ -482,7 +481,7 @@ curl -i -H 'Content-Type: application/json' -X DELETE -H 'Authorization: Bearer 
 #### Updating a Kafka topic's configuration
 {: #topic_update_api}
 
-To increase a topic's partition number or to update a topic's configuration, issue an
+To increase a topic's partition number or to update a topic's configuration, issue a
 `PATCH` request to `/admin/topics/{topic}` with the following body:
 
 ```json
