@@ -26,7 +26,7 @@ completion-time: 60m
 {: toc-services="eventstreams"}
 {: toc-completion-time="60m"}
 
-This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 Complete the following steps: {: ui}
@@ -392,7 +392,7 @@ If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted)
 
 You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You need to supply your own API key or token and specify the correct endpoint for ADMIN API.
 
-```
+```sh
 curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
 ```
 {: codeblock}
@@ -447,7 +447,7 @@ array of JSON objects, where each object represents a Kafka topic and has the fo
 
 You can use the following curl command to list all your Kafka topics:
 
-```bash
+```sh
 curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics
 ```
 {: codeblock}
@@ -475,7 +475,7 @@ response to a [list topics request](#listing-kafka-topics) for a short period of
 
 The following curl command deletes a topic called `MYTOPIC`:
 
-```bash
+```sh
 curl -i -H 'Content-Type: application/json' -X DELETE -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics/MYTOPIC
 ```
 {: codeblock}
@@ -513,7 +513,7 @@ Expected status codes:
 
 The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
 
-```bash
+```sh
 curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{"new_total_partition_count": 4,"configs":[{"name":"cleanup.policy","value":"compact"}]}' ${ADMIN_URL}/admin/topics/MYTOPIC
 ```
 {: codeblock}
