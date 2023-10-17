@@ -29,7 +29,7 @@ completion-time: 60m
 This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
-Test lead-in sentence:
+Test lead-in sentence: {: ui}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui)
@@ -43,7 +43,7 @@ Test lead-in sentence:
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
-Test lead-in sentence:
+Test lead-in sentence: {: cli}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
@@ -57,7 +57,7 @@ Test lead-in sentence:
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
-Test lead-in sentence:
+Test lead-in sentence: {: api}
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
