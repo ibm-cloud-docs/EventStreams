@@ -445,7 +445,7 @@ array of JSON objects, where each object represents a Kafka topic and has the fo
 ##### List topics example
 {: #topic_list_example_api}
 
-You can use the following curl command to list all your Kafka topics.
+You can use the following curl command to list all your Kafka topics:
 
 ```bash
 curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics
@@ -473,18 +473,17 @@ response to a [list topics request](#listing-kafka-topics) for a short period of
 ##### Delete topic example
 {: #topic_delete_example_api}
 
-The following curl command deletes a topic called `MYTOPIC`
+The following curl command deletes a topic called `MYTOPIC`:
 
 ```bash
 curl -i -H 'Content-Type: application/json' -X DELETE -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics/MYTOPIC
 ```
 {: codeblock}
 
-#### Updating a Kafka topic's configuration
+#### Update a topic's configuration
 {: #topic_update_api}
 
-To increase a topic's partition number or to update a topic's configuration, issue a
-`PATCH` request to `/admin/topics/{topic}` with the following body:
+To increase a topic's partition number or to update a topic's configuration, issue a`PATCH` request to `/admin/topics/{topic}` with the following body:
 
 ```json
 {
@@ -499,8 +498,9 @@ To increase a topic's partition number or to update a topic's configuration, iss
 ```
 {: codeblock}
 
-Supported configuration keys are 'cleanup.policy', 'retention.ms', 'retention.bytes', 'segment.bytes', 'segment.ms', 'segment.index.bytes'.
-The partition number can only be increased, not decreased.
+The following configuration keys are supported: 'cleanup.policy', 'retention.ms', 'retention.bytes', 'segment.bytes', 'segment.ms', and 'segment.index.bytes'.
+
+You can only increase the partition number, not decrease it.
 
 Expected status codes:
     - 202: Update topic request was accepted.
