@@ -24,7 +24,7 @@ If you need help from the {{site.data.keyword.messagehub}} team, gather all the 
 
 1. What is the CRN ID of the {{site.data.keyword.messagehub}} service that you use? You can provide this ID by pasting the full {{site.data.keyword.Bluemix_notm}} console URL after you click the service, or by pasting the output from the following CLI command:
 2. 
-    ```text
+    ```sh
     ibmcloud resource service-instance NAME
     ```
     {: codeblock}

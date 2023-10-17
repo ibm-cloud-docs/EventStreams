@@ -69,14 +69,14 @@ Clone the following two repositories that contain the required files:
 
     To create a secret, run the following command: 
 
-    ```text
+    ```go
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
 
     To create a configmap, run the following command:
     
-    ```text
+    ```go
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
     {: codeblock}
@@ -87,7 +87,7 @@ Clone the following two repositories that contain the required files:
 
 Apply the configuration in the `kafka-connect.yaml` file by running the following command:
 
-```text
+```go
 kubectl apply -f ./kafka-connect.yaml
 ```
 {: codeblock}
@@ -98,7 +98,7 @@ kubectl apply -f ./kafka-connect.yaml
 
 To validate that Kafka Connect is running, port forward to the kafkaconnect-service on port 8083, as in the following example.
 
-```text
+```go
 kubectl port-forward service/kafkaconnect-service 8083
 ```
 {: codeblock}
@@ -142,7 +142,7 @@ CONNECTION_NAME_LIST
 
 Run the following command to start the IBM MQ Connector with the configuration that you provided in the previous step.
 
-```text
+```sh
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./mq-source.json"
 ```
 {: codeblock}

@@ -34,7 +34,7 @@ Use the `user` and `api_key` properties of the objects as the username and passw
 
 To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
-```text
+```sh
 ibmcloud iam oauth-tokens
 ```
 {: codeblock}

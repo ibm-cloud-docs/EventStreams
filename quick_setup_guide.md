@@ -131,7 +131,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
     Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
 
-    ```text
+    ```sh
     ibmcloud login -a cloud.ibm.com
     ```
     {: codeblock}
@@ -143,7 +143,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
 
-        ```text
+        ```sh
         ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
         ```
         {: codeblock}
@@ -153,7 +153,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
     * To create an instance from the CLI on the Standard plan, run the following command:
 
-        ```text
+        ```sh
         ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
         ```
         {: codeblock}

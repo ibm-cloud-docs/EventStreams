@@ -204,7 +204,7 @@ The endpoint information for your service instance is specific to the network ty
 
 You can retrieve the endpoint information for the required network type by using the `--service-endpoint` option of the `service-key-create` CLI command as follows:
 
-```text
+```sh
 ibmcloud resource service-key-create <private-key-name> <role> --instance-name <instance-name> --service-endpoint private
 ```
 {: codeblock}

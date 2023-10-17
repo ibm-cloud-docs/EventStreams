@@ -134,13 +134,13 @@ Scale this service instance to a configuration of a base capacity unit, one extr
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
-      ```text
+      ```sh
       ibmcloud login
       ```
 
 3. Get the resource name of your {{site.data.keyword.messagehub}} service instance.
   
-      ```text
+      ```sh
       ibmcloud resource service-instances
       ```
      
@@ -152,7 +152,7 @@ Scale this service instance to a configuration of a base capacity unit, one extr
     
     Use the following command to display the current capacity configuration:
   
-      ```text
+      ```sh
       ibmcloud es init  --instance-name  "Event Streams resource instance name"
       ```
 
@@ -168,14 +168,14 @@ Scale this service instance to a configuration of a base capacity unit, one extr
     
     a. Run the following command from the CLI.
     
-      ```text
+      ```sh
       ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"throughput":"300","storage_size":"8192"}' 
       ```
 
     b. If you have an issue when you run the ibmcloud resource service-instance-update command and requires contacting IBM Support for assistance, 
     run the following command and include the output when you contact support.
 
-      ```text
+      ```sh
       ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
       ```
 
@@ -185,7 +185,7 @@ Scale this service instance to a configuration of a base capacity unit, one extr
     
     You can get the current service instance information by using the following command.
     
-      ```text
+      ```sh
       ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
       ```
         
@@ -197,7 +197,7 @@ Scale this service instance to a configuration of a base capacity unit, one extr
   
     Display the capacity configuration with the following command.
     
-      ```text
+      ```sh
       ibmcloud es init  --instance-name  "Event Streams resource instance name" 
       ```
         
