@@ -144,7 +144,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     * To create an instance from the CLI on the Enterprise plan, run the following command:
 
         ```sh
-        ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
+        ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise-3nodes-2tb <REGION>
         ```
         {: codeblock}
    
