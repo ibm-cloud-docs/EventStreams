@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-16"
+lastupdated: "2023-10-17"
 
 keywords: quick setup guide
 
@@ -29,58 +29,47 @@ completion-time: 60m
 This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.monitoringshort}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
+Test lead-in sentence:
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
-* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui){: ui}
-* [Step 3: Create a topic and partitions using the console](#create_topic_ui){: ui} 
-* [Step 4: Create an IAM service credential using the console](#create_credential_ui){: ui}
-* [Step 5: Produce data using the console](#produce_data_ui){: ui}
-* [Step 6: Consume data using the console](#consume_data_ui){: ui}
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui){: ui}
-* [Step 8: Connect Activity Tracker](#activity_tracker_ui){: ui}
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui)
+* [Step 3: Create a topic and partitions using the console](#create_topic_ui)
+* [Step 4: Create an IAM service credential using the console](#create_credential_ui)
+* [Step 5: Produce data using the console](#produce_data_ui)
+* [Step 6: Consume data using the console](#consume_data_ui)
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui)
+* [Step 8: Connect Activity Tracker](#activity_tracker_ui)
 * [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
+Test lead-in sentence:
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
-* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli){: cli}
-* [Step 3: Create a topic and partitions using the CLI](#create_topic_cli){: cli}
-* [Step 4: Create an IAM service credential using the CLI](#create_credential_cli){: cli}
-* [Step 5: Produce data using the CLI](#produce_data_cli){: cli}
-* [Step 6: Consume data using the CLI](#consume_data_cli){: cli}
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli){: cli}
-* [Step 8: Connect Activity Tracker](#activity_tracker_cli){: cli}
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
+* [Step 3: Create a topic and partitions using the CLI](#create_topic_cli)
+* [Step 4: Create an IAM service credential using the CLI](#create_credential_cli)
+* [Step 5: Produce data using the CLI](#produce_data_cli)
+* [Step 6: Consume data using the CLI](#consume_data_cli)
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli)
+* [Step 8: Connect Activity Tracker](#activity_tracker_cli)
 * [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
+Test lead-in sentence:
 * [Prerequisites](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
-* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api){: api}
-* [Step 3: Create a topic and partitions using the API](#create_topic_api){: api}
-* [Step 4: Create an IAM service credential using the API](#create_credential_api){: api}
-* [Step 5: Produce data using the API](#produce_data_api){: api}
-* [Step 6: Consume data using the API](#consume_data_api){: api}
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api){: api}
-* [Step 8: Connect Activity Tracker](#activity_tracker_api){: api}
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
+* [Step 3: Create a topic and partitions using the API](#create_topic_api)
+* [Step 4: Create an IAM service credential using the API](#create_credential_api)
+* [Step 5: Produce data using the API](#produce_data_api)
+* [Step 6: Consume data using the API](#consume_data_api)
+* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api)
+* [Step 8: Connect Activity Tracker](#activity_tracker_api)
 * [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: api}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -597,14 +586,10 @@ You cannot produce data by using the console. You can produce data only using th
 {: step}
 {: cli}
 
-_Config and properties files the same?_
-_What is property file name and where is it stored?_
 
-You can use the Kafka console producer tool with {{site.data.keyword.messagehub}} to produce data. The console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can use the {{site.data.keyword.messagehub}}Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
-You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials.
-
-To provide the SASL credentials to this tool, create a properties file based on the following example:
+You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
 
 ```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
@@ -678,9 +663,10 @@ You cannot consume data by using the console. You can consume data only using th
 {: step}
 {: cli}
 
-You can use the Kafka console consumer tool with {{site.data.keyword.messagehub}}. 
 
-These console tools are in the `bin` directory of your Kafka download. You can download a client from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can use the {{site.data.keyword.messagehub}} Kafka console consumer tool to consume data. 
+
+The console tools are in the `bin` directory of your Kafka client download.
 
 You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
 
