@@ -355,8 +355,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 {: step}
 {: api}
 
-For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
-
+{{site.data.keyword.messagehub}} provides a REST API for administration that you can use to create, delete, list, and update topics.
 
 You can create a Kafka topic by issuing a POST request to the `/admin/topics` path. The body of the request must contain a JSON document. For example:
 
@@ -376,6 +375,8 @@ You can create a Kafka topic by issuing a POST request to the `/admin/topics` pa
 The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified, the topic is created with a single partition.
 
 You can also specify an optional `configs` object within the request. This allows the specification of the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
+
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
 Expected HTTP status codes:
 
@@ -401,7 +402,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: #work_topic_api}
 {: api}
 
-After you create topics, you can use the API to list and delete topics and update topic configuration.
+After you create topics, you can use the Admin REST API to list and delete topics and update topic configuration.
 
 #### List Kafka topics
 {: #topic_list_api}
@@ -636,6 +637,8 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: api}
 
+**How do you produce data using the API?**
+
 ### Configuration settings
 {: #producer_config_api}
 {: api}
@@ -698,6 +701,8 @@ _Highlight the most important kafka settings for consumers are here including co
 {: #consume_data_api}
 {: step}
 {: api}
+
+**How do you consume data using the API?**
 
 ### Configuration settings
 {: #consumer_config_api}
