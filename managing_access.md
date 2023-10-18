@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-10-18"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -86,25 +86,7 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 ### Cluster actions
 {: #cluster_actions}
 
-With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the Cluster resource group is instance.
-
-| Cluster actions | Reader  | Writer  | Manager  |
-| --- | --- | --- | --- |
-| Allow an app or user to create or delete topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect to the cluster. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to produce to any topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Delete consumer group.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Use Kafka Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-{: caption="Table 2. Cluster actions" caption-side="bottom"}
+With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the Cluster resource group is instance. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
 
 ### Topic actions
 {: #topic_actions}
