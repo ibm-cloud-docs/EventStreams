@@ -88,14 +88,24 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 
 With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the Cluster resource group is instance. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
 
-### Topic actions
-{: #topic_actions}
+### Producer actions
+{: #producing_actions}
 
-With topic actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
+With producer actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
 
-| Topic actions | Reader  | Writer  | Manager  |
+| Producer actions | Topic | TransactionId |
 | --- | --- | --- | --- |
-| Allow an app to produce to a specific topic. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
+| Allow an app to produce to a specific topic. |  |  |
+| Allow an app to produce to any topic. |  | |  |
+| Allow an app to produce to a topic transactionally. |  |  |  |
+| Use Kafka Streams.  |  |  | |
+{: caption="Table 3. Producing actions" caption-side="bottom"}
+
+
+OLD:
+| Producer actions | Topic | TransactionId | Reader  | Writer  | 
+| --- | --- | --- | --- |
+| Allow an app to produce to a specific topic. |  |  |  |  |  |
 | Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
 | Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
 | Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
