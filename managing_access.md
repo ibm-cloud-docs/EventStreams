@@ -119,7 +119,7 @@ With consumer actions, you can control an application's ability to join a consum
 | Allow an app to connect and consume from \n any topic (no consumer group). | Reader |  |
 | Use Kafka Streams. | Manager | Reader |  |
 | Delete consumer group. |  | Manager |  |
-| Assign. |  | Reader [^tabletext1] |  |
+| Assign. |  | Reader [^tabletext2] |  |
 | Commit async. | Reader | Reader |  |
 | Commit sync.| Reader | Reader |  |
 | Enforce rebalance. |  | Reader |  |
@@ -128,7 +128,7 @@ With consumer actions, you can control an application's ability to join a consum
 | Unsubscribe. |  | Reader |  |
 {: caption="Table 3. Consumer actions" caption-side="bottom"}
 
-[^tabletext1]: Reader on group is only required if the assign causes the consumer to leave its current group.
+[^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
 
 ### Administration actions
 {: #administration_actions}
