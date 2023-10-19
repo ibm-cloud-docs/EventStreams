@@ -69,6 +69,10 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 - The resource to be secured. Specify for resources of type `topic`, `group`, `schema`, and `txnid`. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance.
 - The role that is assigned to the user. For example, Reader, Writer, or Manager.
 
+For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
+
+For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
+
 ## What are the default security settings?
 {: #default_settings }
 
@@ -193,10 +197,6 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Delete a specific version of the schema \n registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Delete the specified subject-level compatibility level \n config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
-
-For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
-
-For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
 
 ## Wildcarding
 {: #wildcarding }
