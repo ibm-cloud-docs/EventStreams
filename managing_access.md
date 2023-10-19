@@ -194,21 +194,6 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Delete the specified subject-level compatibility level \n config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
-### TransactionId actions 
-{: #transactionId_actions}
-
-With TransactionId actions (txnid), you can control the ability to use the transactional producer capability in Kafka (that is, single, atomic writes across multiple partitions). TransactionId actions are also referred to as *producer transactions*.
-
-| TransactionId actions | Reader  | Writer  | Manager  |
-| --- | --- | --- | --- |
-| Create transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| Initialize producerId transaction. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| Add partitions to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| Add offsets to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| End transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| Transaction offset commit. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-{: caption="Table 6. TransactionId actions" caption-side="bottom"}
-
 For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 
 For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
