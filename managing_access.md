@@ -113,8 +113,8 @@ With consumer actions, you can control an application's ability to join a consum
 | --- | --- | --- | --- |
 | Allow an app to consume a topic (consumer group). | Reader | Reader |  |
 | Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
-| Allow an app to connect and consume from /n a specific topic (no consumer group). | Reader |  |  |
-| Allow an app to connect and consume from /n any topic (no consumer group). | Reader |  |
+| Allow an app to connect and consume from \n a specific topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from \n any topic (no consumer group). | Reader |  |
 | Use Kafka Streams. | Manager | Reader |  |
 | Delete consumer group. |  | Manager |  |
 {: caption="Table 3. Consumer actions" caption-side="bottom"}
