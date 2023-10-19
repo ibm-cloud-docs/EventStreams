@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-10-18"
+lastupdated: "2023-10-19"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -93,11 +93,15 @@ With cluster actions, you can determine which applications and users can connect
 
 With producer actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
 
-| Producer actions | Topic | Group | TransactionId |
+| Producer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
 | Allow an app to produce to a specific topic. | Writer |  |  |
 | Allow an app to produce to any topic. | Writer |  |  |
 | Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
+| Abort a transaction. |  |  | Writer |
+| Commit a transaction. | Writer |  | Writer |
+| Initialize a transaction. | Writer |  | Writer |
+| Send. | Writer |  | Writer |
 {: caption="Table 2. Producer actions" caption-side="bottom"}
 
 ### Consumer actions
@@ -107,12 +111,12 @@ With consumer actions, you can control an application's ability to join a consum
 
 | Consumer actions | Topic  | Group  | TransactionId |
 | --- | --- | --- | --- |
-| Allow an app to consume a topic (consumer group).   | Reader | Reader |  |
+| Allow an app to consume a topic (consumer group). | Reader | Reader |  |
 | Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | Reader |  |  |
-| Allow an app to connect and consume from any topic (no consumer group). | Reader |  |
-| Use Kafka Streams.  | Manager | Reader |  |
-| Delete consumer group.  |  | Manager |  |
+| Allow an app to connect and consume from /n a specific topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from /n any topic (no consumer group). | Reader |  |
+| Use Kafka Streams. | Manager | Reader |  |
+| Delete consumer group. |  | Manager |  |
 {: caption="Table 3. Consumer actions" caption-side="bottom"}
 
 ### Administration actions
