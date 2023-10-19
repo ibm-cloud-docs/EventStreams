@@ -86,51 +86,47 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 ### Cluster actions
 {: #cluster_actions}
 
-With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the Cluster resource group is instance. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
+With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the cluster resource group is instance. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
 
 ### Producer actions
 {: #producing_actions}
 
 With producer actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
 
-| Producer actions | Topic | TransactionId |
+| Producer actions | Topic | Group | TransactionId |
 | --- | --- | --- | --- |
-| Allow an app to produce to a specific topic. |  |  |
-| Allow an app to produce to any topic. |  | |  |
+| Allow an app to produce to a specific topic. | Writer |  |  |
+| Allow an app to produce to any topic. | Writer |  |  |
+| Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
+{: caption="Table 2. Producer actions" caption-side="bottom"}
+
+### Consumer actions
+{: #consumer_actions}
+
+With consumer actions, you can control an application's ability to join a consumer group.
+
+| Consumer actions | Topic  | Group  | TransactionId |
+| --- | --- | --- | --- |
+| Allow an app to consume a topic (consumer group).   | Reader | Reader |  |
+| Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
+| Allow an app to connect and consume from a specific topic (no consumer group).  | Reader |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | Reader |  |
+| Use Kafka Streams.  | Manager | Reader |  |
+| Delete consumer group.  |  | Manager |  |
+{: caption="Table 3. Consumer actions" caption-side="bottom"}
+
+### Administration actions
+{: #administration_actions}
+
+| Administration actions | Topic  | Group  | TransactionId |
+| --- | --- | --- | --- |
+| Alter client quotas. |  |  |  |
 | Allow an app to produce to a topic transactionally. |  |  |  |
-| Use Kafka Streams.  |  |  | |
-{: caption="Table 3. Producing actions" caption-side="bottom"}
-
-
-OLD:
-| Producer actions | Topic | TransactionId | Reader  | Writer  | 
-| --- | --- | --- | --- |
-| Allow an app to produce to a specific topic. |  |  |  |  |  |
-| Allow an app to connect and consume from any topic (no consumer group). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to produce to any topic. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
-| Use Kafka Streams.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Allow an app to connect and consume from a specific topic (no consumer group).  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-{: caption="Table 3. Topic actions" caption-side="bottom"}
-
-### Consumer group actions
-{: #consumer_group_actions}
-
-With consumer group actions, you can control an application's ability to join a consumer group.
-
-| Consumer group actions | Reader  | Writer  | Manager  |
-| --- | --- | --- | --- |
-| Allow an app to consume a topic (consumer group).   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Allow an app to produce to a topic transactionally. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Use Kafka Streams.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |  |
-| Delete consumer group.  |  |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-{: caption="Table 4. Consumer group actions" caption-side="bottom"}
+| Allow an app to connect and consume from a specific topic (no consumer group).  |  |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). |  |  |
+| Use Kafka Streams.  |  |  |  |
+| Delete consumer group.  |  |  |  |
+{: caption="Table 4. Administration actions" caption-side="bottom"}
 
 ### Schema Registry actions
 {: #schema_registry_actions}
