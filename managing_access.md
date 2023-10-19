@@ -95,7 +95,7 @@ With producer actions, you can control the ability of users and applications to 
 
 | Producer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
-| Allow an app to produce to a specific topic. | Writer |  |  |
+| Allow an app to produce to a specific topic. | Writer [^tabletext1] |  |  |
 | Allow an app to produce to any topic. | Writer |  |  |
 | Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
 | Initialize a transaction. |  |  | Writer |
@@ -104,6 +104,8 @@ With producer actions, you can control the ability of users and applications to 
 | Send. | Writer |  | Writer |
 | Send offsets to a transaction. |  | Reader | Writer |
 {: caption="Table 2. Producer actions" caption-side="bottom"}
+
+[^tabletext1]: Writer on txnid is only required for transactional produce.
 
 ### Consumer actions
 {: #consumer_actions}
@@ -117,7 +119,7 @@ With consumer actions, you can control an application's ability to join a consum
 | Allow an app to connect and consume from \n any topic (no consumer group). | Reader |  |
 | Use Kafka Streams. | Manager | Reader |  |
 | Delete consumer group. |  | Manager |  |
-| Assign. |  | Reader |  |
+| Assign. |  | Reader [^tabletext1] |  |
 | Commit async. | Reader | Reader |  |
 | Commit sync.| Reader | Reader |  |
 | Enforce rebalance. |  | Reader |  |
@@ -126,11 +128,14 @@ With consumer actions, you can control an application's ability to join a consum
 | Unsubscribe. |  | Reader |  |
 {: caption="Table 3. Consumer actions" caption-side="bottom"}
 
+[^tabletext1]: Reader on group is only required if the assign causes the consumer to leave its current group.
+
 ### Administration actions
 {: #administration_actions}
 
 | Administration actions | Topic  | Group  | Txnid |
 | --- | --- | --- | --- |
+| Alter topic configurations. | Manager |  |  |
 | Alter consumer group offsets. | Reader | Reader |  |
 | Create partitions. | Manager |  |  |
 | Create partitions. | Manager |  |  |
@@ -141,7 +146,7 @@ With consumer actions, you can control an application's ability to join a consum
 | Delete topics. |  | Manager |  |
 | Describe producers. | Reader |  |  |
 | Fence producers. |  |  | Writer |
-| Alter topic configurations. | Manager |  |  |
+| Incrementally alter topic configurations. | Manager |  |  |
 | Remove members from consumer group. |  | Reader |  |
 {: caption="Table 4. Administration actions" caption-side="bottom"}
 
