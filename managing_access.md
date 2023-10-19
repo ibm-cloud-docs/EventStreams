@@ -98,10 +98,11 @@ With producer actions, you can control the ability of users and applications to 
 | Allow an app to produce to a specific topic. | Writer |  |  |
 | Allow an app to produce to any topic. | Writer |  |  |
 | Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
-| Abort a transaction. |  |  | Writer |
+| Initialize a transaction. |  |  | Writer |
 | Commit a transaction. | Writer |  | Writer |
-| Initialize a transaction. | Writer |  | Writer |
+| Abort a transaction. |  |  | Writer |
 | Send. | Writer |  | Writer |
+| Send offsets to a transaction. |  | Reader | Writer |
 {: caption="Table 2. Producer actions" caption-side="bottom"}
 
 ### Consumer actions
@@ -109,27 +110,39 @@ With producer actions, you can control the ability of users and applications to 
 
 With consumer actions, you can control an application's ability to join a consumer group.
 
-| Consumer actions | Topic  | Group  | TransactionId |
+| Consumer actions | Topic  | Group  | Txnid |
 | --- | --- | --- | --- |
 | Allow an app to consume a topic (consumer group). | Reader | Reader |  |
-| Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
 | Allow an app to connect and consume from \n a specific topic (no consumer group). | Reader |  |  |
 | Allow an app to connect and consume from \n any topic (no consumer group). | Reader |  |
 | Use Kafka Streams. | Manager | Reader |  |
 | Delete consumer group. |  | Manager |  |
+| Assign. |  | Reader |  |
+| Commit async. | Reader | Reader |  |
+| Commit sync.| Reader | Reader |  |
+| Enforce rebalance. |  | Reader |  |
+| Poll. |  | Reader |  |
+| Subscribe. |  | Reader |  |
+| Unsubscribe. |  | Reader |  |
 {: caption="Table 3. Consumer actions" caption-side="bottom"}
 
 ### Administration actions
 {: #administration_actions}
 
-| Administration actions | Topic  | Group  | TransactionId |
+| Administration actions | Topic  | Group  | Txnid |
 | --- | --- | --- | --- |
-| Alter client quotas. |  |  |  |
-| Allow an app to produce to a topic transactionally. |  |  |  |
-| Allow an app to connect and consume from a specific topic (no consumer group).  |  |  |  |
-| Allow an app to connect and consume from any topic (no consumer group). |  |  |
-| Use Kafka Streams.  |  |  |  |
-| Delete consumer group.  |  |  |  |
+| Alter consumer group offsets. | Reader | Reader |  |
+| Create partitions. | Manager |  |  |
+| Create partitions. | Manager |  |  |
+| Create topics. | Manager |  |  |
+| Delete consumer group offsets. | Reader | Manager |  |
+| Delete consumer groups. |  | Manager |  |
+| Delete records. |  | Manager |  |
+| Delete topics. |  | Manager |  |
+| Describe producers. | Reader |  |  |
+| Fence producers. |  |  | Writer |
+| Alter topic configurations. | Manager |  |  |
+| Remove members from consumer group. |  | Reader |  |
 {: caption="Table 4. Administration actions" caption-side="bottom"}
 
 ### Schema Registry actions
@@ -148,17 +161,17 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Get the schema string identified by the input ID.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Retrieve only the schema identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get the subject-version pairs identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get a list of versions registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a list of versions registered under the \n specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get artifact compatibility rule. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get a specific version of the schema registered under this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a specific version of the schema registered \n under this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get the schema for the specified version of this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Register a new schema under the specified subject (if version already exists). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Check if a schema has already been registered under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get a list of IDs of schemas that reference the schema with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Test input schema against a particular version of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Perform a compatibility check on the schema against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Register a new schema under the specified subject \n (if version already exists). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Check if a schema has already been registered \n under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Get a list of IDs of schemas that reference the schema \n with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Test input schema against a particular version \n of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
+| Perform a compatibility check on the schema \n against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
 | Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Register a new schema under the specified subject (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
+| Register a new schema under the specified subject \n (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Create artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
 | Update artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |  
 | Disable artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   | 
@@ -171,9 +184,9 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Update artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Update compatibility level for the specified subject. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 | Delete artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Deletes the specified subject and its associated compatibility level if registered. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Delete a specific version of the schema registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Delete the specified subject-level compatibility level config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Deletes the specified subject and its associated \n compatibility level if registered. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete a specific version of the schema \n registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Delete the specified subject-level compatibility level \n config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
 ### TransactionId actions 
@@ -183,9 +196,8 @@ With TransactionId actions (txnid), you can control the ability to use the trans
 
 | TransactionId actions | Reader  | Writer  | Manager  |
 | --- | --- | --- | --- |
-| Allow an app to produce to a topic transactionally. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 | Create transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
-| InitProducerId transaction. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
+| Initialize producerId transaction. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 | Add partitions to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 | Add offsets to transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
 | End transactionId. |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |  |
