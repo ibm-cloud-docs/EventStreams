@@ -87,21 +87,21 @@ Message audit events can be enabled on a per topic basis. To do so, complete the
 
 1. Install {{site.data.keyword.messagehub}} CLI plug-in v2.3 or later:
 
-   ```text
+   ```sh
    ibmcloud plugin install event-streams
    ```
    {: pre}
 
 2. Enable message audit on an existing topic:
 
-   ```text
+   ```sh
    ibmcloud es topic-update <topic-name> --config message.audit.enable=true
    ```
    {: pre}
 
    Or create a new topic with message audit enabled:
 
-   ```text
+   ```sh
    ibmcloud es topic-create <topic-name> --partitions <number-of-partitions> --config message.audit.enable=true
    ```
    {: pre}

@@ -60,7 +60,7 @@ The following example shows how to use the command line to configure service-to-
 In this command we are using IAM source and target definitions, which are the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
 {: note}
 
-```text
+```sh
 ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account id>] --target-service-instance-id <instance id of the mirroring source cluster>
 ```
 {: codeblock}
@@ -85,7 +85,7 @@ To enable mirroring, you need to run a **service-instance-update** command again
 ### Example CLI command
 {: #example_cli_command}
 
-```text
+```sh
 ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}}'
 ```
 {: codeblock}
@@ -98,14 +98,14 @@ If the cluster is provisioned with or scaled up to a throughput higher than the 
 
 You can get the current service instance information by running the following command:
 
-```text
+```sh
 ibmcloud resource service-instance "Event Streams resource instance name" --output=json
 ```
 {: codeblock}
 
 Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or the sync succeeded.
 
-```text
+```sh
 "last_operation": {
   "type": "update",
   "state": "in progress",
@@ -118,7 +118,7 @@ Review the **last operation** section of the output. The information is continu
 
 Run the command again until success is indicated as follows:
 
-```text
+```sh
 "last_operation": {
   "type": "update",
   "state": "succeeded",

@@ -41,7 +41,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 
 Initialize the {{site.data.keyword.messagehub}} plug-in.
 
-```bash
+```sh
 ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_URL]
 ```
 {: codeblock}
@@ -61,7 +61,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
 
 Display the details of a broker.
 
-```bash
+```sh
 ibmcloud es broker [--broker] ID [--json]
 ```
 {: codeblock}
@@ -81,7 +81,7 @@ ibmcloud es broker [--broker] ID [--json]
 
 Display the configuration of a broker.
 
-```bash
+```sh
 ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 ```
 {: codeblock}
@@ -107,7 +107,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 
 Display the details of the cluster, including the Kafka version.
 
-```bash
+```sh
 ibmcloud es cluster [--json]
 ```
 {: codeblock}
@@ -124,7 +124,7 @@ ibmcloud es cluster [--json]
 
 Display the details of a topic.
 
-```bash
+```sh
 ibmcloud es topic [--name] TOPIC_NAME [--json]
 ```
 {: codeblock}
@@ -144,7 +144,7 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
 
 Create a new topic.
 
-```bash
+```sh
 ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config KEY=VALUE[;KEY=VALUE]* ]*
 ```
 {: codeblock}
@@ -175,7 +175,7 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 
 Delete a topic.
 
-```bash
+```sh
 ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 ```
 {: codeblock}
@@ -195,7 +195,7 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 
 Delete records from a topic for a given offset.
 
-```bash
+```sh
 ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITION:OFFSET[;PARTITION:OFFSET]* ]* [--force]
 ```
 {: codeblock}
@@ -219,7 +219,7 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 
 Set the partitions for a topic.
 
-```bash
+```sh
 ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 ```
 {: codeblock}
@@ -239,7 +239,7 @@ ibmcloud es topic-partitions-set [--name] TOPIC_NAME --partitions PARTITIONS
 
 Update the configuration for a topic.
 
-```bash
+```sh
 ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
 ```
 {: codeblock}
@@ -270,7 +270,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 List topics.
 
-```bash
+```sh
 ibmcloud es topics [--filter FILTER] [--json]
 ```
 {: codeblock}
@@ -290,7 +290,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 
 Display details of a consumer group.
 
-```bash
+```sh
 ibmcloud es group [--group] GROUP_ID [--json]
 ```
 {: codeblock}
@@ -310,7 +310,7 @@ ibmcloud es group [--group] GROUP_ID [--json]
 
 Reset the offsets for a consumer group.
 
-```bash
+```sh
 ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] --mode MODE --value VALUE [--dry-run] [--execute] [--json]
 ```
 {: codeblock}
@@ -349,7 +349,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 
 List consumer groups.
 
-```bash
+```sh
 ibmcloud es groups [--filter FILTER] [--json]
 ```
 {: codeblock}
@@ -370,7 +370,7 @@ ibmcloud es groups [--filter FILTER] [--json]
 
 Delete a consumer group.
 
-```bash
+```sh
 ibmcloud es group-delete [--group] GROUP_ID [--force]
 ```
 {: codeblock}
@@ -390,7 +390,7 @@ ibmcloud es group-delete [--group] GROUP_ID [--force]
 
 List mirroring topic selection.
 
-```bash
+```sh
 ibmcloud es mirroring-topic-selection [--json]
 ```
 {: codeblock}
@@ -407,7 +407,7 @@ ibmcloud es mirroring-topic-selection [--json]
 
 Replace mirroring topic selection.
 
-```bash
+```sh
 ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) [--force]
 ```
 {: codeblock}

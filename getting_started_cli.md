@@ -31,7 +31,7 @@ For more information about how to install the CLI, see [Getting started with the
 {: #step2_login}
 
 Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
-```text
+```sh
 ibmcloud login -a cloud.ibm.com
 ```
 {: codeblock}
@@ -47,7 +47,7 @@ Select one of the following methods:
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog](https://cloud.ibm.com/catalog/event-streams){: external}.
 
 * To create an instance from the CLI on the Enterprise plan, run the following command:
-   ```text
+   ```sh
    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
    ```
    {: codeblock}
@@ -57,7 +57,7 @@ Select one of the following methods:
 
 * To create an instance from the CLI on the Standard plan, run the following command:
 
-    ```text
+    ```sh
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
     ```
     {: codeblock}
@@ -72,7 +72,7 @@ Optionally, you can create a service API key. Valid values for `ROLE_NAME` are M
 * To create an API key from the {{site.data.keyword.Bluemix_notm}} console, enter the Service credentials from the instance page, and click **New Credentials**.
 
 * To create an API key from the CLI, run this command:
-    ```text
+    ```sh
     ibmcloud resource service-key-create <KEY_NAME> <ROLE_NAME> --instance-name <INSTANCE_NAME>
     ```
     {: codeblock}
@@ -81,7 +81,7 @@ Optionally, you can create a service API key. Valid values for `ROLE_NAME` are M
 {: #step5_es_cli}
 
 Run the following command:
-```text
+```sh
 ibmcloud plugin install event-streams
 ```
 {: codeblock}
@@ -91,7 +91,7 @@ ibmcloud plugin install event-streams
 
 Before you can run any of the {{site.data.keyword.messagehub}} CLI commands, you must first initialize the plug-in. Run the following command then select your {{site.data.keyword.messagehub}} instance:
 
-```text
+```sh
 ibmcloud es init
 ```
 {: codeblock}

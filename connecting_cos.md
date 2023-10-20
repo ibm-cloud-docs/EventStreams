@@ -67,13 +67,13 @@ Clone the following two repositories that contain the required files:
 2. Then, run the following commands:
 
     Run the following command to create a secret: 
-    ```text
+    ```go
     kubectl create secret generic connect-distributed-config --from-file=connect-distributed.properties
     ```
     {: codeblock}
 
     Run the following command to create a configmap:
-    ```text
+    ```go
     kubectl create configmap connect-log4j-config --from-file=connect-log4j.properties
     ```
     {: codeblock}
@@ -84,7 +84,7 @@ Clone the following two repositories that contain the required files:
 
 Apply the configuration in the `kafka-connect.yaml` file by running the following command:
 
-```text
+```go
 kubectl apply -f ./kafka-connect.yaml
 ```
 {: codeblock}
@@ -95,7 +95,7 @@ kubectl apply -f ./kafka-connect.yaml
 
 To validate that Kafka Connect is running, port forward to the kafkaconnect-service on port 8083, as in the following example:
 
-```text
+```go
 kubectl port-forward service/kafkaconnect-service 8083
 ```
 {: codeblock}
@@ -147,7 +147,7 @@ cos.object.records | Optional. The maximum number of Kafka records to combine in
 
 Run the following command to start the {{site.data.keyword.cos_short}} connector with the configuration that you provided in the previous step.
 
-```text
+```sh
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./cos-sink.json"
 ```
 {: codeblock}
@@ -166,7 +166,7 @@ If the state of the connector is not running, restart the connector.
 
 You can use the following command to delete a connector. 
 
-```text
+```sh
 curl -X DELETE 
 http://localhost:8083/connectors/cos-sink
 ```

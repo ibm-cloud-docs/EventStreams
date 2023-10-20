@@ -36,7 +36,7 @@ The URL for the API's endpoint is provided in the ```kafka_http_url``` property.
 
 The supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
 
-```text
+```sh
 ibmcloud iam oauth-tokens
 ```
 {: codeblock}
@@ -48,9 +48,9 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 
 Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
-The following code shows an example of sending a message of `text` type by using curl:
+The following code shows an example of sending a message of `sh` type by using curl:
 
-```text
+```sh
 curl -v -X POST \
 -H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
 -d '{
@@ -90,7 +90,7 @@ The following schema naming strategies are allowed:
 
 The following code shows an example of sending a message that conforms to a schema that is specified under the `schema` field by using curl:
 
-```text
+```sh
 curl -v -X POST \
 -H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
 -d '{
