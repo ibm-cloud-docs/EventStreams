@@ -159,43 +159,43 @@ With consumer actions, you can control an application's ability to join a consum
 
 With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). Note that *artifact* is the general Kafka term for schemas, and they can also be referred to as *subjects*. For more information, see [Using Event Streams Schema Registry](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
-| Schema Registry actions | Reader  | Writer  | Manager  |
-| --- | --- | --- | --- |
-| Get latest artifact. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |   |
-| List versions. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get version. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get metadata by content. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |   |
-| Get metadata. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get version metadata. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get the schema string identified by the input ID.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Retrieve only the schema identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get the subject-version pairs identified by the input ID. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get a list of versions registered under the \n specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get artifact compatibility rule. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get a specific version of the schema registered \n under this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get the schema for the specified version of this subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Register a new schema under the specified subject \n (if version already exists). | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Check if a schema has already been registered \n under the specified subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get a list of IDs of schemas that reference the schema \n with the given subject and version.  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Test input schema against a particular version \n of a subject’s schema for compatibility. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Perform a compatibility check on the schema \n against one or more versions in the subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Get compatibility level for a subject. | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |   |   |
-| Register a new schema under the specified subject \n (if version is to be created). |  | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
-| Create artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
-| Update artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |  
-| Disable artifact. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   | 
-| Create version. |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |   |
-| Delete version. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Update artifact state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
-| Update version state. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Delete artifact. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available")  |
-| Create artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Update artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Update compatibility level for the specified subject. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Delete artifact compatibility rule. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Deletes the specified subject and its associated \n compatibility level if registered. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Delete a specific version of the schema \n registered under this subject. |  |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
-| Delete the specified subject-level compatibility level \n config and reverts to the global default. |   |   | ![Checkmark icon.](images/checkmark-icon.svg "Feature available") |
+| Schema Registry actions | Schema  |
+| --- | --- |
+| Get latest artifact. | Reader |
+| List versions. | Reader |
+| Get version. | Reader |
+| Get metadata by content. | Reader  |
+| Get metadata. | Reader |
+| Get version metadata. | Reader |
+| Get the schema string identified by the input ID.  | Reader |
+| Retrieve only the schema identified by the input ID. | Reader |
+| Get the subject-version pairs identified by the input ID. | Reader |
+| Get a list of versions registered under the \n specified subject. | Reader |
+| Get artifact compatibility rule. | Reader |
+| Get a specific version of the schema registered \n under this subject. | Reader |
+| Get the schema for the specified version of this subject. | Reader |
+| Register a new schema under the specified subject \n (if version already exists). | Reader |
+| Check if a schema has already been registered \n under the specified subject. | Reader|
+| Get a list of IDs of schemas that reference the schema \n with the given subject and version.  | Reader |
+| Test input schema against a particular version \n of a subject’s schema for compatibility. | Reader |
+| Perform a compatibility check on the schema \n against one or more versions in the subject. | Reader |
+| Get compatibility level for a subject. | Reader |
+| Register a new schema under the specified subject \n (if version is to be created). | Writer |
+| Create artifact. | Writer  |
+| Update artifact. | Writer  |
+| Disable artifact. |  Writer |
+| Create version. | Writer  |
+| Delete version. | Manager  |
+| Update artifact state. | Manager  |
+| Update version state. | Manager  |
+| Delete artifact. | Manager  |
+| Create artifact compatibility rule. | Manager  |
+| Update artifact compatibility rule. | Manager  |
+| Update compatibility level for the specified subject. | Manager  |
+| Delete artifact compatibility rule. | Manager  |
+| Deletes the specified subject and its associated \n compatibility level if registered. | Manager  |
+| Delete a specific version of the schema \n registered under this subject. | Manager |
+| Delete the specified subject-level compatibility level \n config and reverts to the global default. | Manager  |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
 ## Wildcarding
