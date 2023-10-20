@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-10-20"
 
 keywords: cli, api key, cli plug-in
 
@@ -47,10 +47,10 @@ Select one of the following methods:
 * To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog](https://cloud.ibm.com/catalog/event-streams){: external}.
 
 * To create an instance from the CLI on the Enterprise plan, run the following command:
-   ```sh
-   ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise <REGION>
-   ```
-   {: codeblock}
+    ```sh
+    ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise-3nodes-2tb <REGION>
+        ```
+    {: codeblock}
    
    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
 
