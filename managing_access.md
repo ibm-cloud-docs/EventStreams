@@ -170,17 +170,17 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Get the schema string identified by the input ID.  | Reader |
 | Retrieve only the schema identified by the input ID. | Reader |
 | Get the subject-version pairs identified by the input ID. | Reader |
-| Get a list of versions registered under the \n specified subject. | Reader |
+| Get a list of versions registered under the specified subject. | Reader |
 | Get artifact compatibility rule. | Reader |
-| Get a specific version of the schema registered \n under this subject. | Reader |
+| Get a specific version of the schema registered under this subject. | Reader |
 | Get the schema for the specified version of this subject. | Reader |
-| Register a new schema under the specified subject \n (if version already exists). | Reader |
-| Check if a schema has already been registered \n under the specified subject. | Reader|
-| Get a list of IDs of schemas that reference the schema \n with the given subject and version.  | Reader |
-| Test input schema against a particular version \n of a subject’s schema for compatibility. | Reader |
-| Perform a compatibility check on the schema \n against one or more versions in the subject. | Reader |
+| Register a new schema under the specified subject (if version already exists). | Reader |
+| Check if a schema has already been registered under the specified subject. | Reader|
+| Get a list of IDs of schemas that reference the schema with the given subject and version.  | Reader |
+| Test input schema against a particular version of a subject’s schema for compatibility. | Reader |
+| Perform a compatibility check on the schema against one or more versions in the subject. | Reader |
 | Get compatibility level for a subject. | Reader |
-| Register a new schema under the specified subject \n (if version is to be created). | Writer |
+| Register a new schema under the specified subject (if version is to be created). | Writer |
 | Create artifact. | Writer  |
 | Update artifact. | Writer  |
 | Disable artifact. |  Writer |
@@ -193,9 +193,9 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Update artifact compatibility rule. | Manager  |
 | Update compatibility level for the specified subject. | Manager  |
 | Delete artifact compatibility rule. | Manager  |
-| Deletes the specified subject and its associated \n compatibility level if registered. | Manager  |
-| Delete a specific version of the schema \n registered under this subject. | Manager |
-| Delete the specified subject-level compatibility level \n config and reverts to the global default. | Manager  |
+| Deletes the specified subject and its associated compatibility level if registered. | Manager  |
+| Delete a specific version of the schema registered under this subject. | Manager |
+| Delete the specified subject-level compatibility level config and reverts to the global default. | Manager  |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
 ## Wildcarding
