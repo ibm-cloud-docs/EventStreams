@@ -661,7 +661,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI]({#consume_data_cli}) or [API]({#consume_data_api}).
+You cannot consume data by using the console. You can consume data only using the [CLI](#consume_data_cli) or [API](#consume_data_api).
 
 ## Consume data using the CLI
 {: #consume_data_cli}
@@ -728,12 +728,12 @@ _Highlight the most important kafka settings for consumers are here including co
 
 Use {{site.data.keyword.mon_full_notm}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
-For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see
+For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see:
 * [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics)  
 * [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics)
 * [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics)
-* [View details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
-* [Metrics cost information](/docs-draft/EventStreams?topic=EventStreams-metrics#metric_costs)
+* [Viewing details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
+* [Understanding metrics cost information](/docs-draft/EventStreams?topic=EventStreams-metrics#metric_costs)
 
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
@@ -756,9 +756,9 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 {: step}
 {: ui}
 
-{{site.data.keyword.atracker_short}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations.
+{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations.
 
-{{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
+{{site.data.keyword.atracker_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
 [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
