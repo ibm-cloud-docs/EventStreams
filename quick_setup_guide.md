@@ -581,7 +581,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: ui}
 
-You cannot produce data by using the console. You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
+You cannot produce data by using the console. You can produce data only using the [CLI](#produce_data_cli) or [API](#produce_data_cli).
 
 
 ## Produce data using the CLI
@@ -726,17 +726,14 @@ _Highlight the most important kafka settings for consumers are here including co
 {: step}
 {: ui}
 
-_(a. via UI only - walk through steps ), (Explain benefits)_
+Use {{site.data.keyword.mon_full_notm}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
-Use {{site.data.keyword.monitoringshort}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-
-Offers visibility into the performance and health of your infrastructure and apps, with in-depth troubleshooting and alerting.
-
-For more information how to opt in and enable metrics for {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see
-* [Opting in to to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics) and 
+For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see
+* [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics)  
 * [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics)
 * [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics)
 * [View details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
+* [Metrics cost information](/docs-draft/EventStreams?topic=EventStreams-metrics#metric_costs)
 
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
@@ -744,14 +741,14 @@ For more information how to opt in and enable metrics for {{site.data.keyword.mo
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console]({#connect_monitoring_ui}) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](#connect_monitoring_ui) to complete this task.
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console]({#connect_monitoring_ui}) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](#connect_monitoring_ui) to complete this task.
 
 
 ## Connect {{site.data.keyword.at_full}} to audit service activity (using the console only - walk through steps ), (Explain benefits)
@@ -770,14 +767,14 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console]({#activity_tracker_ui}) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](#activity_tracker_ui) to complete this task.
 
 ## Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console]({#activity_tracker_ui}) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](#activity_tracker_ui) to complete this task.
 
 
 ## (Optional) Using Kafka Connect or kSQLdb
