@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-22"
 
 keywords: quick setup guide
 
@@ -728,12 +728,15 @@ _Highlight the most important kafka settings for consumers are here including co
 
 _(a. via UI only - walk through steps ), (Explain benefits)_
 
-Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-To find out more, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+Use {{site.data.keyword.monitoringshort}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
-After creating an instance
-Resource list - select instance- Actions-> Add monitoring
+Offers visibility into the performance and health of your infrastructure and apps, with in-depth troubleshooting and alerting.
 
+For more information how to opt in and enable metrics for {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see
+* [Opting in to to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics) and 
+* [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics)
+* [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics)
+* [View details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
 
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
