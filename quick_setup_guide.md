@@ -196,7 +196,7 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [??view details about your cluster](#ibmcloud_es_cluster_cli).
 
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
@@ -581,7 +581,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: ui}
 
-You cannot produce data by using the console. You can produce data only using the [CLI](#produce_data_cli) or [API](#produce_data_cli).
+You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
 
 
 ## Produce data using the CLI
@@ -661,7 +661,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI](#consume_data_cli) or [API](#consume_data_api).
+You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_api).
 
 ## Consume data using the CLI
 {: #consume_data_cli}
@@ -777,14 +777,14 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## (Optional) Using Kafka Connect or kSQLdb
