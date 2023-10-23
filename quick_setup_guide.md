@@ -741,20 +741,22 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
-## Connect {{site.data.keyword.at_full}} to audit service activity (using the console only - walk through steps ), (Explain benefits)
+## Connect {{site.data.keyword.at_full}} to audit service activity 
 {: #activity_tracker_ui}
 {: step}
 {: ui}
+
+_UI only - walk through steps, explain benefits_
 
 {{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations.
 
