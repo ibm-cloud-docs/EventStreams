@@ -661,7 +661,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_api).
+You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#consume_data_api).
 
 ## Consume data using the CLI
 {: #consume_data_cli}
@@ -733,7 +733,7 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 * [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics)
 * [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics)
 * [Viewing details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
-* [Understanding metrics cost information](/docs-draft/EventStreams?topic=EventStreams-metrics#metric_costs)
+* [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs)
 
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
@@ -741,14 +741,14 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
 ## Connect {{site.data.keyword.at_full}} to audit service activity 
@@ -768,21 +768,27 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 
 {{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
+For more information about events specific to {{site.data.keyword.messagehub}}, see:
 [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
+
+* [where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui)
+* [topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events)
+* [message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events)
+* [other events](/docs/EventStreams?topic=EventStreams-at_events#other-events)
 
 ## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
 {: #activity_tracker_cli}
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs-draft/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## (Optional) Using Kafka Connect or kSQLdb
