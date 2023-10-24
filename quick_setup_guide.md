@@ -17,9 +17,6 @@ subcollection: EventStreams
 
 # Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
-{: toc-content-type="tutorial"}
-{: toc-services="eventstreams"}
-{: toc-completion-time="60m"}
 
 This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
@@ -759,12 +756,13 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 
 For more information about events specific to {{site.data.keyword.messagehub}}, see:
 
-* [where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui)
-* [topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events)
-* [message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events)
-* [other events](/docs/EventStreams?topic=EventStreams-at_events#other-events)
+* [Where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui)
+* [Topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events)
+* [Message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events)
+* [Other events](/docs/EventStreams?topic=EventStreams-at_events#other-events)
 
 Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
+
 
 ## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
 {: #activity_tracker_cli}
