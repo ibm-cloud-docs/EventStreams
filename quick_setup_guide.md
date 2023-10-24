@@ -758,23 +758,20 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 
 _UI only - walk through steps, explain benefits_
 
-{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations.
+{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
 
-Use the {{site.data.keyword.at_short}} service to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans in {{site.data.keyword.Bluemix_notm}}.
-
-The {{site.data.keyword.at_short}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started){: external}.
-
-Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
+{{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To find out how to get started, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
 
 {{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
 For more information about events specific to {{site.data.keyword.messagehub}}, see:
-[{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 * [where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui)
 * [topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events)
 * [message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events)
 * [other events](/docs/EventStreams?topic=EventStreams-at_events#other-events)
+
+Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
 
 ## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
 {: #activity_tracker_cli}
@@ -824,8 +821,4 @@ For a general overview of how to get help with {{site.data.keyword.messagehub}} 
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
 
-
-
-
-For Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
 
