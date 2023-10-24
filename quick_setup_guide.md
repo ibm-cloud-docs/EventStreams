@@ -8,11 +8,6 @@ keywords: quick setup guide
 
 subcollection: EventStreams
 
-content-type: tutorial
-services: eventstreams
-account-plan:
-completion-time: 60m
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -755,8 +750,6 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 {: #activity_tracker_ui}
 {: step}
 {: ui}
-
-_UI only - walk through steps, explain benefits_
 
 {{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
 
