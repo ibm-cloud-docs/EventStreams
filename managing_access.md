@@ -200,7 +200,7 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Update the global compatibility level. | N/A [^tabletext3]  |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
-[^tabletext2]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
+[^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 
 ## Wildcarding
 {: #wildcarding }
