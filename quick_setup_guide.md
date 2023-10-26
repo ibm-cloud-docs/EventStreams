@@ -2,16 +2,11 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-24"
 
 keywords: quick setup guide
 
 subcollection: EventStreams
-
-content-type: tutorial
-services: eventstreams
-account-plan:
-completion-time: 60m
 
 ---
 
@@ -22,9 +17,6 @@ completion-time: 60m
 
 # Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
-{: toc-content-type="tutorial"}
-{: toc-services="eventstreams"}
-{: toc-completion-time="60m"}
 
 This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
@@ -196,7 +188,7 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [??view details about your cluster](#ibmcloud_es_cluster_cli).
 
 
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
@@ -581,7 +573,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: step}
 {: ui}
 
-You cannot produce data by using the console. You can produce data only using the [CLI]({#produce_data_cli}) or [API]({#produce_data_cli}).
+You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
 
 
 ## Produce data using the CLI
@@ -661,7 +653,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: step}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI]({#consume_data_cli}) or [API]({#consume_data_api}).
+You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#consume_data_api).
 
 ## Consume data using the CLI
 {: #consume_data_cli}
@@ -726,14 +718,14 @@ _Highlight the most important kafka settings for consumers are here including co
 {: step}
 {: ui}
 
-_(a. via UI only - walk through steps ), (Explain benefits)_
+Use {{site.data.keyword.mon_full_notm}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
-Use {{site.data.keyword.monitoringshort}} to gain operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.monitoringshort}} offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
-To find out more, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
-
-After creating an instance
-Resource list - select instance- Actions-> Add monitoring
-
+For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see:
+* [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics)  
+* [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics)
+* [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics)
+* [Viewing details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
+* [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs)
 
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
@@ -741,40 +733,50 @@ Resource list - select instance- Actions-> Add monitoring
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console]({#connect_monitoring_ui}) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 ## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console]({#connect_monitoring_ui}) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
-## Connect {{site.data.keyword.at_full}} to audit service activity (using the console only - walk through steps ), (Explain benefits)
+## Connect {{site.data.keyword.at_full}} to audit service activity 
 {: #activity_tracker_ui}
 {: step}
 {: ui}
 
-{{site.data.keyword.atracker_short}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations.
+{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
 
-{{site.data.keyword.at_full_notm}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_full_notm}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
+{{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To find out how to get started, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
 
-[{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
+{{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
+
+For more information about events specific to {{site.data.keyword.messagehub}}, see:
+
+* [Where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui)
+* [Topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events)
+* [Message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events)
+* [Other events](/docs/EventStreams?topic=EventStreams-at_events#other-events)
+
+Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
+
 
 ## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
 {: #activity_tracker_cli}
 {: step}
 {: cli}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console]({#activity_tracker_ui}) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: step}
 {: api}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console]({#activity_tracker_ui}) to complete this task.
+You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## (Optional) Using Kafka Connect or kSQLdb
@@ -810,8 +812,4 @@ For a general overview of how to get help with {{site.data.keyword.messagehub}} 
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
 
-
-
-
-For Info to gather if having a problem, Add suggestions for what they need to do if having a problem - or directly link to this page. Include links to FAQ page, Ticket info, slack channel?
 

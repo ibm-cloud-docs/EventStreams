@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-23"
 
 keywords: managed kafka, kafka as a service, managed apache kafka, kafka on cloud
 
@@ -17,6 +17,8 @@ subcollection: EventStreams
 
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. This managed Kafka service is optimized for event ingestion into {{site.data.keyword.cloud}} and event stream distribution between your services and applications. {{site.data.keyword.messagehub}} was previously known as Message Hub.
 {: shortdesc}
+
+![Leverage Kafka to build intelligent applications with IBM Cloud Event Streams](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_g98laaak){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 You can use {{site.data.keyword.messagehub}} to complete the following tasks:
 

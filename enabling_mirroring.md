@@ -40,8 +40,6 @@ Because mirroring is unidirectional, decide which direction of mirroring you wan
 
 Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
 
-For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
-
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
 ## Step 2: Enable service-to-service bindings
@@ -90,8 +88,15 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 ```
 {: codeblock}
 
-If the cluster is provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "thoughput":"_current throughput value_" in the update parameter body.
+If the cluster is provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "throughput":"_current throughput value_" in the update parameter body.
 {: note}
+### Example CLI command with throughput
+{: #example_cli_command_with_throughput}
+
+```sh
+ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"source_crn":"<source_crn>", "source_alias":"<source_alias>", "target_alias":"<target_alias>"}, "throughput":"<current throughput value>"}'
+```
+{: codeblock}
 
 ## Step 4: Validation
 {: #step4_validation}
@@ -129,5 +134,27 @@ Run the command again until success is indicated as follows:
 ```
 {: screen}
 
-When the service instance update has completed, the target cluster shows the topics that have been selected for mirroring using the [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls) suffixed with the source cluster's alias. The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
+The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
+
+## Step 5: Select topics
+{: #step5_selecttopics}
+
+When the service instance update has completed, we will want to select some topics from the source cluster to mirror. Topic selection can be in the form of a regex pattern.
+
+The following command selects all topics to be mirrored:
+```sh
+ibmcloud es mirroring-topic-selection-set --select '.*'
+```
+{: codeblock}
+
+You can select topics by listing the topics you want to mirror as follows:
+
+```sh
+ibmcloud es mirroring-topic-selection-set --select topic1, topic2, topic3
+```
+{: codeblock}
+
+For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
+
+After the topic selection has been made, the target cluster shows the topics that have been selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
 

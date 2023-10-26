@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-10-26"
 
 keywords: stand-alone, source connector, sink connector, distributed worker
 
@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Using Kafka Connect with {{site.data.keyword.messagehub}}
 {: #kafka_connect}
 
-Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime that can run connectors to copy data to and from a cluster. Its main characteristics are:
+Kafka Connect is part of the Apache Kafka project and allows connecting external systems to Kafka. It consists of a runtime that can run [connectors](https://ibm.github.io/event-automation/connectors/) to copy data to and from a cluster. Its main characteristics are:
 {: shortdesc}
 
 - Scalability: It can easily scale from a single worker to many. 
