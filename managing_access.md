@@ -197,10 +197,11 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Delete a specific version of the schema registered under this subject. | Manager |
 | Delete the specified subject-level compatibility level config and reverts to the global default. | Manager  |
 | Update the global compatibility rule. | N/A [^tabletext3]  |
-| Update the global compatibility level. | N/A [^tabletext3]  |
+| Update the global compatibility level. | N/A [^tabletext4]  |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
 [^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
+[^tabletext4]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 
 ## Wildcarding
 {: #wildcarding }
