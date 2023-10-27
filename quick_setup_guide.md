@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-24"
+lastupdated: "2023-10-27"
 
 keywords: quick setup guide
 
@@ -64,17 +64,15 @@ Complete the following steps: {: api}
 {: api}
 
 
-
 ## Prerequisites
 {: #prereqs}
-{: step}
 
 Before you get started, we highly recommend you read the following information to better understand Apache Kafka, which {{site.data.keyword.messagehub}} is built on:
 * [Apache Kafka concepts](/docs/EventStreams?topic=EventStreams-apache_kafka)
 * [Apache Kafka fundamentals](https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=event%20streams)
 
 
-## Choose your plan 
+## Step 1: Choose your plan 
 {: #choose_plan}
 {: step}
 
@@ -86,7 +84,7 @@ Before you get started, we highly recommend you read the following information t
 
 * The Enterprise plan offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
-## Provision an {{site.data.keyword.messagehub}} instance by using the console
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
 {: step}
 {: ui}
@@ -104,7 +102,7 @@ Before you get started, we highly recommend you read the following information t
 6. When your instance has been created, click on the instance name to view more information.
 
 
-## Provision an {{site.data.keyword.messagehub}} instance by using the CLI
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the CLI
 {: #provision_instance_cli}
 {: step}
 {: cli}
@@ -153,7 +151,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
 
 
-## Provision an {{site.data.keyword.messagehub}} instance by using the API
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the API
 {: #provision_instance_api}
 {: step}
 {: api}
@@ -161,7 +159,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 **Which API should we focus on? How do you provision an instance via the API?**
 
 
-## Create a topic and select number of partitions by using the console
+## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
 {: step}
 {: ui}
@@ -212,7 +210,7 @@ From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https:/
 From the **Topics page**, click the three dots to the right of the topic name and click **Delete this topic**. 
 
 
-## Create a topic and select number of partitions by using the CLI 
+## Step 3: Create a topic and select number of partitions by using the CLI 
 {: #create_topic_cli}
 {: step}
 {: cli}
@@ -342,7 +340,7 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 
 
-## Create a topic and select number of partitions by using the Admin REST API
+## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
 {: step}
 {: api}
@@ -514,7 +512,7 @@ curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer $
 _Talk about Creating, listing, updating, and deleting topics, Describing the cluster._
 _Bring in information like suggested topic naming strategies_
 
-## Create an IAM service credential by using the console
+## Step 4: Create an IAM service credential by using the console
 {: #create_credential_ui}
 {: step}
 {: ui}
@@ -528,7 +526,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
 6. Click this credential by using **View Credentials** to reveal the details in JSON format.
 
-## Create an IAM service credential by using the CLI
+## Step 4: Create an IAM service credential by using the CLI
 {: #create_credential_cli}
 {: step}
 {: cli}
@@ -561,7 +559,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-## Create an IAM service credential by using the API
+## Step 4: Create an IAM service credential by using the API
 {: #create_credential_api}
 {: step}
 {: api}
@@ -748,9 +746,9 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 {: step}
 {: ui}
 
-{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
+{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations by recording user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
 
-{{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To find out how to get started, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
+To find out how to get started, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
 
 {{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
