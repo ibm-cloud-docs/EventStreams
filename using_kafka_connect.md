@@ -22,7 +22,7 @@ Kafka Connect is part of the Apache Kafka project and allows connecting external
 - Reliability: It automatically manages offsets and the lifecycle of connectors.
 - Extensibility: The community built connectors for most popular systems. IBM has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
  
-You can use Kafka Connect with {{site.data.keyword.messagehub_full}} and can run the workers inside or outside {{site.data.keyword.cloud}}. {{site.data.keyword.IBM&reg}} has an extensive list of over 50 connectors that are supported either by {{site.data.keyword.IBM_notm}} or the community. You find these connectors in the [connector catalog](https://ibm.github.io/event-automation/connectors/).
+You can use Kafka Connect with {{site.data.keyword.messagehub_full}} and can run the workers inside or outside {{site.data.keyword.cloud}}. {{site.data.keyword.IBM&reg;}} has an extensive list of over 50 connectors that are supported either by {{site.data.keyword.IBM_notm}} or the community. You find these connectors in the [connector catalog](https://ibm.github.io/event-automation/connectors/).
 
 Kafka Connect can run in either stand-alone or distributed mode. Stand-alone mode is intended for testing and temporary connections between systems. Distributed mode is more appropriate for production use. The configuration required to use {{site.data.keyword.messagehub}} with these two modes is slightly different.
 
