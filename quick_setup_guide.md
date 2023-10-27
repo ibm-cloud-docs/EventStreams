@@ -74,7 +74,6 @@ Before you get started, we highly recommend you read the following information t
 
 ## Step 1: Choose your plan 
 {: #choose_plan}
-{: step}
 
 {{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external} for more information.
 
@@ -86,7 +85,6 @@ Before you get started, we highly recommend you read the following information t
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
-{: step}
 {: ui}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console.
@@ -104,7 +102,6 @@ Before you get started, we highly recommend you read the following information t
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the CLI
 {: #provision_instance_cli}
-{: step}
 {: cli}
 
 To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
@@ -153,7 +150,6 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the API
 {: #provision_instance_api}
-{: step}
 {: api}
 
 **Which API should we focus on? How do you provision an instance via the API?**
@@ -161,7 +157,6 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
-{: step}
 {: ui}
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
@@ -212,7 +207,6 @@ From the **Topics page**, click the three dots to the right of the topic name an
 
 ## Step 3: Create a topic and select number of partitions by using the CLI 
 {: #create_topic_cli}
-{: step}
 {: cli}
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
@@ -342,7 +336,6 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
-{: step}
 {: api}
 
 {{site.data.keyword.messagehub}} provides a REST API for administration that you can use to create, delete, list, and update topics.
@@ -514,7 +507,6 @@ _Bring in information like suggested topic naming strategies_
 
 ## Step 4: Create an IAM service credential by using the console
 {: #create_credential_ui}
-{: step}
 {: ui}
 
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
@@ -528,7 +520,6 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 
 ## Step 4: Create an IAM service credential by using the CLI
 {: #create_credential_cli}
-{: step}
 {: cli}
 
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps.
@@ -561,7 +552,6 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 
 ## Step 4: Create an IAM service credential by using the API
 {: #create_credential_api}
-{: step}
 {: api}
 
 **How do you create this via the API?**
@@ -746,9 +736,9 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the
 {: step}
 {: ui}
 
-{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations by recording user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
+{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. {{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
 
-To find out how to get started, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
+To get up and running with {{site.data.keyword.at_short}}, see [Getting Started with {{site.data.keyword.at_short}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
 
 {{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
