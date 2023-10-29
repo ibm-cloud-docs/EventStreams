@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-27"
+lastupdated: "2023-10-29"
 
 keywords: quick setup guide
 
@@ -556,19 +556,16 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 
 **How do you create this via the API?**
 
-## Produce data using the console
+## Step 5: Produce data using the console
 {: #produce_data_ui}
-{: step}
 {: ui}
 
 You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
 
 
-## Produce data using the CLI
+## Step 5: Produce data using the CLI
 {: #produce_data_cli}
-{: step}
 {: cli}
-
 
 You can use the {{site.data.keyword.messagehub}}Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
@@ -615,9 +612,8 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Produce data using the API
+## Step 5: Produce data using the API
 {: #produce_data_api}
-{: step}
 {: api}
 
 **How do you produce data using the API?**
@@ -636,18 +632,15 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Consume data using the console
+## Step 6: Consume data using the console
 {: #consume_data_ui}
-{: step}
 {: ui}
 
 You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#consume_data_api).
 
-## Consume data using the CLI
+## Step 6: Consume data using the CLI
 {: #consume_data_cli}
-{: step}
 {: cli}
-
 
 You can use the {{site.data.keyword.messagehub}} Kafka console consumer tool to consume data. 
 
@@ -680,9 +673,8 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Consume data using the API 
+## Step 6: Consume data using the API 
 {: #consume_data_api}
-{: step}
 {: api}
 
 **How do you consume data using the API?**
@@ -701,9 +693,8 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
 {: #connect_monitoring_ui}
-{: step}
 {: ui}
 
 Use {{site.data.keyword.mon_full_notm}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
@@ -716,16 +707,14 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 * [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs)
 
 
-## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
 {: #connect_monitoring_cli}
-{: step}
 {: cli}
 
 You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
-## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
-{: step}
 {: api}
 
 You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
