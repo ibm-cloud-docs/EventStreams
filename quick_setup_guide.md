@@ -75,7 +75,7 @@ Before you get started, we highly recommend you read the following information t
 ## Step 1: Choose your plan 
 {: #choose_plan}
 
-{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external} for more information.
+{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
 * The Lite plan offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
 
@@ -181,10 +181,9 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [??view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the console to [??view details about your cluster](#ibmcloud_es_cluster_cli).
 
 
-_Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
 #### List topics
@@ -385,7 +384,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: #work_topic_api}
 {: api}
 
-After you create topics, you can use the Admin REST API to list and delete topics and update topic configuration.
+After you create topics, you can use the Admin REST API to [list topics](#topic_list_api) and [delete topics](#topic_delete_api) and [update topic configuration](#topic_update_api).
 
 #### List Kafka topics
 {: #topic_list_api}
@@ -502,7 +501,7 @@ curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer $
 {: codeblock}
 
 
-_Talk about Creating, listing, updating, and deleting topics, Describing the cluster._
+_Talk about describing the cluster._
 _Bring in information like suggested topic naming strategies_
 
 ## Step 4: Create an IAM service credential by using the console
@@ -687,7 +686,7 @@ For details of settings that you can configure for the consumer, for example ```
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 
-b. via CLI c. via API - support different languages - show Java library_
+_b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
