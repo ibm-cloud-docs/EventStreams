@@ -697,7 +697,7 @@ _Highlight the most important kafka settings for consumers are here including co
 {: #connect_monitoring_ui}
 {: ui}
 
-Use {{site.data.keyword.mon_full_notm}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+You can use {{site.data.keyword.mon_full_notm}} to get operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
 For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see:
 * [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics)  
@@ -720,9 +720,8 @@ You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the
 You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
-## Connect {{site.data.keyword.at_full}} to audit service activity 
+## Step 8: Connect {{site.data.keyword.at_full}} to audit service activity 
 {: #activity_tracker_ui}
-{: step}
 {: ui}
 
 {{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. {{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
@@ -741,26 +740,22 @@ For more information about events specific to {{site.data.keyword.messagehub}}, 
 Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
 
 
-## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
+## Step 8: Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
 {: #activity_tracker_cli}
-{: step}
 {: cli}
 
 You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
-## Connect {{site.data.keyword.at_full}} using the API to audit service activity
+## Step 8: Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
-{: step}
 {: api}
 
 You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
-## (Optional) Using Kafka Connect or kSQLdb
+## Step 9: (Optional) Using Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
-{: step} 
 
-_Link to additional docs page content, highlight that this is not part of the managed service_
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
 
@@ -778,10 +773,8 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site
 [Using ksqlDB with Event Streams](/docs/EventStreams?topic=EventStreams-ksql_using)
 
 
-
-## Getting help
+## Step 10: Getting help
 {: #getting_help}
-{: step}
 
 For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp).
 
