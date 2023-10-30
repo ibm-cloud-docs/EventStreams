@@ -110,6 +110,16 @@ Kafka achieves its availability and durability by replicating the messages it re
 
 Although all messages are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. As of Kafka 3.0 the default client setting is `acks=all` (prior to this it was `acks=1`). `acks=all` means that the producer returns success as soon as both the broker it is connected to and at least one further broker in the cluster has acknowledged receiving the message. We recommend using `acks=all` as this offers the highest level of durability and hence protection against the loss of message data.
 
+#### In-sync replicas
+In the configuration that {{site.data.keyword.messagehub}} uses, Kafka chooses one broker to be the leader for each partition replica, and two other brokers to be followers. Message data from clients is sent to the leader for the partition, and is replicated to the followers. If the followers are keeping up with the leader they are consider "in-sync" replicas. The leader, by definition, is always considered to be in-sync.
+
+If the leader for a partition becomes unavailable, perhaps due to maintenance being applied to the broker, then Kafka automatically elects one of the other in-sync replicas to become the new leader. This process occurs swiftly and is automatically handled by Kafka clients.
+
+#### Unclean leader elections
+{{site.data.keyword.messagehub}} disables unclean leader elections. This setting cannot be changed.
+
+The term "unclean leader election" describes how Kafka responds in a situation where all the in-sync replica for a partition becomes unavailable. When unclean leader elections are enabled Kafka will recover by making the first replica to become available the leader for the partition, regardless of whether it is in-sync. This can cause message data to be lost if the replica picked to be leader has not replicated all of the message data from the previous leader. When unclean leader elections are disabled (as is the case for {{site.data.keyword.messagehub}}) Kafka waits for an in-sync replica to become available and elects it to be the new leader for the partition. This avoids the potential for message data loss that can occur when unclean leader elections are enabled. The trade-off is that recovery can take longer as Kafka may have to wait for a specific broker to be brought back on-line before a partition is available for clients to produce and consume message data to/from.
+
 ## Single zone location deployments
 {: #sla_szr}
 
