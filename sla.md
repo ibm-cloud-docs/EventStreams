@@ -108,7 +108,7 @@ Kafka achieves its availability and durability by replicating the messages it re
 #### Producer `acks` mode
 {: #sla_acks}
 
-Although all messages are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. The default setting is `acks=1`, which means that the producer returns success as soon as the node it's connected to acknowledges receiving the message, but before replication has completed. The most assured setting is `acks=all` where the producer only returns success after the message has been copied to all replicas. This ensures the replicas are kept in step, which prevents message loss if a failure causes a switch to a replica.
+Although all messages are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. As of Kafka 3.0 the default client setting is `acks=all` (prior to this it was `acks=1`). `acks=all` means that the producer returns success as soon as both the broker it is connected to and at least one further broker in the cluster has acknowledged receiving the message. We recommend using `acks=all` as this offers the highest level of durability and hence protection against the loss of message data.
 
 ## Single zone location deployments
 {: #sla_szr}
