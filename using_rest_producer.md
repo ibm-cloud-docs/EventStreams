@@ -48,7 +48,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 
 Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
-The following code shows an example of sending a message of `sh` type by using curl:
+The following code shows an example of sending a message of `text` type by using curl:
 
 ```sh
 curl -v -X POST \
