@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-29"
+lastupdated: "2023-10-31"
 
 keywords: quick setup guide
 
@@ -31,7 +31,7 @@ Complete the following steps: {: ui}
 * [Step 6: Consume data using the console](#consume_data_ui)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui)
 * [Step 8: Connect Activity Tracker](#activity_tracker_ui)
-* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
@@ -45,7 +45,7 @@ Complete the following steps: {: cli}
 * [Step 6: Consume data using the CLI](#consume_data_cli)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli)
 * [Step 8: Connect Activity Tracker](#activity_tracker_cli)
-* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
@@ -59,7 +59,7 @@ Complete the following steps: {: api}
 * [Step 6: Consume data using the API](#consume_data_api)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api)
 * [Step 8: Connect Activity Tracker](#activity_tracker_api)
-* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: api}
 
@@ -752,9 +752,11 @@ You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [
 You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
-## Step 9: (Optional) Using Kafka Connect or kSQLdb
+## Step 9: (Optional) Use Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
 
+### Kafka Connect
+{: #kafka_connect}
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
 
@@ -762,17 +764,20 @@ Its key benefits are as follows:
 
 * Scalability: it can easily scale from a single worker to many.
 * Reliability: it automatically manages offsets and the lifecycle of connectors
-* Extensibility: the community has built connectors for most popular systems.
+* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
 
-For more information about how to use it, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
+For more information, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
+
+### kSQLdb
+{: #ksql}
 
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
 [Using ksqlDB with Event Streams](/docs/EventStreams?topic=EventStreams-ksql_using)
 
 
-## Step 10: Getting help
+## Step 10: Get help
 {: #getting_help}
 
 For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp).
