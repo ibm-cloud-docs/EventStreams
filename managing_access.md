@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-10-26"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -69,6 +69,10 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 - The resource to be secured. Specify for resources of type `topic`, `group`, `schema`, and `txnid`. If you do not specify the resource, the policy then applies to all resources of the type specified in the service instance.
 - The role that is assigned to the user. For example, Reader, Writer, or Manager.
 
+For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
+
+For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
+
 ## What are the default security settings?
 {: #default_settings }
 
@@ -78,31 +82,126 @@ You can then apply more policies to extend access to other users. You can either
 
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
-## Common scenarios
-{: #security_scenarios}
+## Common actions
+{: #common_actions}
 
-The following table summarizes some common {{site.data.keyword.messagehub}} scenarios and the access that you need to assign.
+The following tables summarize some common {{site.data.keyword.messagehub}} actions and the access that you need to assign.
 
-| Action | Reader role | Writer role | Manager role |
+### Cluster actions
+{: #cluster_actions}
+
+With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the cluster resource group is instance. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
+
+### Producer actions
+{: #producing_actions}
+
+With producer actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
+
+| Producer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
-| Allow full access to all resources. | Not applicable  | Not applicable  | Service instance: <your_service_instance> |
-| Allow an app or user to create or delete topic. | Resource type: `cluster` |Not applicable  |Resource type: topic  Optional: Resource ID: <name_of_topic> |
-| List groups, topics, and offsets.  \n  Describe group, topic, and broker configurations. | Resource type: `cluster` | Not applicable  | Not applicable |
-| Allow an app to connect to the cluster.  | Resource type: `cluster`| Not applicable | Not applicable |
-| Allow an app to produce to any topic.  | Resource type: `cluster`|Resource type: `topic` | Not applicable |
-| Allow an app to produce to a specific topic.  | Resource type: `cluster`| Resource type: `topic` Resource ID: <name_of_topic> | Not applicable |
-| Allow an app to connect and consume from any topic (no consumer group).  | Resource type: `cluster`  \n Resource type: `topic` | Not applicable | Not applicable |
-| Allow an app to connect and consume from a specific topic (no consumer group).  | Resource type: `cluster` Resource type: `topic` Resource ID: <name_of_topic> |Not applicable | Not applicable |
-| Allow an app to consume a topic (consumer group). | Resource type: `cluster`  \n Resource type: `topic`  \n Resource type: `group` | Not applicable |Not applicable |
-| Allow an app to produce to a topic transactionally.  | Resource type: `cluster` Resource type: `group` | Resource type: `topic`  Resource ID: <name_of_topic> Resource type: `txnid` | Not applicable |
-| Delete consumer group. | Resource type: `cluster` | Not applicable  | Resource type: `group` Resource ID: <group_ID> |
-| To use Streams. | Resource type: `cluster`  \n Resource type: `group`| Not applicable  |Resource type: `topic` |
-| Delete records. | Not applicable | Not applicable | Resource type: `topic` Resource ID: <name_of_topic> |
-{: caption="Table 2. Access for common scenarios" caption-side="bottom"}
+| Allow an app to produce to a specific topic. | Writer [^tabletext1] |  |  |
+| Allow an app to produce to any topic. | Writer |  |  |
+| Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
+| Initialize a transaction. |  |  | Writer |
+| Commit a transaction. | Writer |  | Writer |
+| Abort a transaction. |  |  | Writer |
+| Send. | Writer |  | Writer |
+| Send offsets to a transaction. |  | Reader | Writer |
+{: caption="Table 2. Producer actions" caption-side="bottom"}
 
-For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
+[^tabletext1]: Writer on txnid is only required for transactional produce.
 
-For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
+### Consumer actions
+{: #consumer_actions}
+
+With consumer actions, you can control an application's ability to join a consumer group.
+
+| Consumer actions | Topic  | Group  | Txnid |
+| --- | --- | --- | --- |
+| Allow an app to consume a topic (consumer group). | Reader | Reader |  |
+| Allow an app to connect and consume from \n a specific topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from \n any topic (no consumer group). | Reader |  |
+| Use Kafka Streams. | Manager | Reader |  |
+| Delete consumer group. |  | Manager |  |
+| Assign. |  | Reader [^tabletext2] |  |
+| Commit async. | Reader | Reader |  |
+| Commit sync.| Reader | Reader |  |
+| Enforce rebalance. |  | Reader |  |
+| Poll. |  | Reader |  |
+| Subscribe. |  | Reader |  |
+| Unsubscribe. |  | Reader |  |
+{: caption="Table 3. Consumer actions" caption-side="bottom"}
+
+[^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
+
+### Administration actions
+{: #administration_actions}
+
+| Administration actions | Topic  | Group  | Txnid |
+| --- | --- | --- | --- |
+| Alter topic configurations. | Manager |  |  |
+| Alter consumer group offsets. | Reader | Reader |  |
+| Create partitions. | Manager |  |  |
+| Create partitions. | Manager |  |  |
+| Create topics. | Manager |  |  |
+| Delete consumer group offsets. | Reader | Manager |  |
+| Delete consumer groups. |  | Manager |  |
+| Delete records. |  | Manager |  |
+| Delete topics. |  | Manager |  |
+| Describe producers. | Reader |  |  |
+| Fence producers. |  |  | Writer |
+| Incrementally alter topic configurations. | Manager |  |  |
+| Remove members from consumer group. |  | Reader |  |
+{: caption="Table 4. Administration actions" caption-side="bottom"}
+
+### Schema Registry actions
+{: #schema_registry_actions}
+
+With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). Note that *artifact* is the general Kafka term for schemas, and they can also be referred to as *subjects*. For more information, see [Using Event Streams Schema Registry](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+
+| Schema Registry actions | Schema  |
+| --- | --- |
+| Get latest artifact. | Reader |
+| List versions. | Reader |
+| Get version. | Reader |
+| Get metadata by content. | Reader  |
+| Get metadata. | Reader |
+| Get version metadata. | Reader |
+| Get the schema string identified by the input ID.  | Reader |
+| Retrieve only the schema identified by the input ID. | Reader |
+| Get the subject-version pairs identified by the input ID. | Reader |
+| Get a list of versions registered under the specified subject. | Reader |
+| Get artifact compatibility rule. | Reader |
+| Get a specific version of the schema registered under this subject. | Reader |
+| Get the schema for the specified version of this subject. | Reader |
+| Register a new schema under the specified subject (if version already exists). | Reader |
+| Check if a schema has already been registered under the specified subject. | Reader|
+| Get a list of IDs of schemas that reference the schema with the given subject and version.  | Reader |
+| Test input schema against a particular version of a subject’s schema for compatibility. | Reader |
+| Perform a compatibility check on the schema against one or more versions in the subject. | Reader |
+| Get compatibility level for a subject. | Reader |
+| Register a new schema under the specified subject (if version is to be created). | Writer |
+| Create artifact. | Writer  |
+| Update artifact. | Writer  |
+| Disable artifact. |  Writer |
+| Create version. | Writer  |
+| Delete version. | Manager  |
+| Update artifact state. | Manager  |
+| Update version state. | Manager  |
+| Delete artifact. | Manager  |
+| Create artifact compatibility rule. | Manager  |
+| Update artifact compatibility rule. | Manager  |
+| Update compatibility level for the specified subject. | Manager  |
+| Delete artifact compatibility rule. | Manager  |
+| Deletes the specified subject and its associated compatibility level if registered. | Manager  |
+| Delete a specific version of the schema registered under this subject. | Manager |
+| Delete the specified subject-level compatibility level config and reverts to the global default. | Manager  |
+| Update the global compatibility rule. | N/A [^tabletext3]  |
+| Update the global compatibility level. | N/A [^tabletext4]  |
+{: caption="Table 5. Schema Registry actions" caption-side="bottom"}
+
+[^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
+[^tabletext4]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 
 ## Wildcarding
 {: #wildcarding }

@@ -20,7 +20,7 @@ Use the {{site.data.keyword.cloudaccesstrailfull}} service to track how users an
 
 The {{site.data.keyword.cloudaccesstrailfull_notm}} service records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. For more information, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started){: external}.
 
-Events are formatted according to the Cloud Auditing Data Federation (CADF) standard, further details of the information they include can be found [here](https://cloud.ibm.com/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-event).
+Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
 
 ## Topic events
 {: #topic-events}
@@ -87,21 +87,21 @@ Message audit events can be enabled on a per topic basis. To do so, complete the
 
 1. Install {{site.data.keyword.messagehub}} CLI plug-in v2.3 or later:
 
-   ```text
+   ```sh
    ibmcloud plugin install event-streams
    ```
    {: pre}
 
 2. Enable message audit on an existing topic:
 
-   ```text
+   ```sh
    ibmcloud es topic-update <topic-name> --config message.audit.enable=true
    ```
    {: pre}
 
    Or create a new topic with message audit enabled:
 
-   ```text
+   ```sh
    ibmcloud es topic-create <topic-name> --partitions <number-of-partitions> --config message.audit.enable=true
    ```
    {: pre}

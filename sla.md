@@ -38,6 +38,8 @@ When the {{site.data.keyword.messagehub}} service is run in a non-highly availab
 
 The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}}  plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, with the correct IaaS configurations, the {{site.data.keyword.messagehub}} service can be distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
+For customer-managed infrastructure, Tier 1 SLA (99.9%) applies for the service layer of {{site.data.keyword.messagehub}} on {{site.data.keyword.Bluemix_notm}} Satellite. For more details, see [section 7.3 of IBM Terms](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en). 
+
 
 ## How do we measure it?
 {: #sla_measure}

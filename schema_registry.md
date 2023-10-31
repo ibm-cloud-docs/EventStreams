@@ -146,15 +146,6 @@ When you use the SerDes to create the new schema in the order Schema 1, Schema 2
 When you create schemas by using the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you want Schema 3 to be a different schema.
 {: note}
 
-## State and deletion of schemas
-{: #state_deletion_schema}
-
-Deletion of schemas is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
-
-The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
-
-An artifact or version that has been disabled can be discovered via a ‘state’ property that is returned by operations that lists artifacts or versions or gets the details of an artifact or version.
-
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
 
@@ -177,7 +168,7 @@ You can also authenticate by using an API key that was granted from a service ID
 
 The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the Kafka HTTP URL property of the service credentials):
 
-```text
+```sh
 curl -i -u token:$APIKEY $URL/artifacts
 ```
 
@@ -209,7 +200,7 @@ For actions that alter the schema version, such as create, update, or delete art
 
 As already described, you can authenticate to the Schema Registry by using an API key. This is supplied as the password portion of an HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this, specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token), as in the following example.
 
-```text
+```sh
 curl -H "Authorization: Bearer $TOKEN" ...
 ```
 
@@ -240,7 +231,7 @@ This endpoint is used to set the state of a schema in the registry to either `EN
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/state -d '{"state": "DISABLED"}'
 ```
 
@@ -255,7 +246,7 @@ This endpoint is used to set the state of a schema version in the registry to ei
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY –X PUT $URL/artifacts/my-schema/versions/1/state -d '{"state": "DISABLED"}'
 ```
 
@@ -270,7 +261,7 @@ This endpoint is used to store a schema in the registry. The schema data is sent
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -H 'Content-Type: application/json' -H 'X-Registry-ArtifactId: my-schema' $URL/artifacts -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
 ```
 
@@ -294,13 +285,13 @@ You can generate a list of the IDs of all the schemas that are stored in the reg
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts
 ```
 
 or
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts?jsonformat=$jsonformat
 ```
 
@@ -320,6 +311,15 @@ Listing schemas requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
+### State and deletion of schemas
+{: #state_deletion_schema}
+
+Schema deletion is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
+
+The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
+
+An artifact or version that has been disabled can be discovered using a ‘state’ property that is returned by operations that list artifacts or versions, or get the details of an artifact or version. Disabled schemas count towards the schema quota and a maximum of 1000 schemas can be stored in an Enterprise instance. 
+
 ### Delete a schema
 {: #delete_schema}
 
@@ -327,7 +327,7 @@ Schemas are deleted from the registry by issuing a DELETE request to the `/artif
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -X DELETE $URL/artifacts/my-schema
 ```
 
@@ -347,7 +347,7 @@ If the request is successful, the new schema version is created as the new lates
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -H 'Content-Type: application/json' $URL/artifacts/my-schema/versions -d '{"type":"record","name":"Citizen","fields":[{"name": "firstName","type":"string"},{"name":"lastName","type":"string"},{"name":"age","type":"int"},{"name":"phoneNumber","type":"string"}]}'
 ```
 
@@ -371,7 +371,7 @@ To retrieve the latest version of a particular schema, make a GET request to the
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/my-schema
 ```
 
@@ -393,7 +393,7 @@ To retrieve a specific version of a schema, make a GET request to the `/artifact
 
 Example curl request
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions/3
 ```
 
@@ -415,13 +415,13 @@ To list all versions of a schema currently stored in the registry, make a GET re
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions
 ```
 
 or
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/my-schema/versions?jsonformat=$jsonformat
 ```
 
@@ -449,7 +449,7 @@ Schema versions are deleted from the registry by issuing a DELETE request to the
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -X DELETE $URL/artifacts/my-schema/versions/3
 ```
 
@@ -469,7 +469,7 @@ To retrieve a specific global unique ID of a schema version, make a GET request 
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/9030f450-45fb-4750-bb37-771ad49ee0e8/versions/1/meta
 ```
 
@@ -499,7 +499,7 @@ Config | Must be set to one of the following values: NONE, BACKWARD, BACKWARD_TR
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -X PUT $URL/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
@@ -522,7 +522,7 @@ The current value of a global rule is retrieved by issuing a GET request to the 
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/rules/COMPATIBILITY
 ```
 
@@ -543,7 +543,7 @@ Rules can be applied to a specific schema, overriding any global rules that were
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/my-schema/rules -d '{"type":"COMPATIBILITY","config":"FORWARD"}'
 ```
 
@@ -561,7 +561,7 @@ To retrieve the current value of a type of rule that is applied to a specific sc
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 
@@ -583,7 +583,7 @@ The rules applied to a specific schema are modified by making a PUT request to t
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -X PUT $URL/artifacts/my-schema/rules/COMPATIBILITY -d '{"type":"COMPATIBILITY","config":"BACKWARD"}'
 ```
 
@@ -607,7 +607,7 @@ The rules applied to a specific schema are deleted by making a DELETE request to
 
 Example curl request:
 
-```text
+```sh
 curl -u token:$APIKEY -X DELETE $URL/artifacts/my-schema/rules/COMPATIBILITY
 ```
 

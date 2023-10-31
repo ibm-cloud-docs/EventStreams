@@ -155,13 +155,13 @@ With well-structured topic names, such as adding a prefix to topics that are par
 
 The first example shows enabling by using the CLI.
 
-```text
+```sh
 ibmcloud es mirroring-topic-selection-set --select ^accounting.*,^hr.* 
 ```
 
 The second example shows how to make the same selection by using the Administration REST API.
 
-```text
+```sh
 curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["^accounting.*", "^hr.*"]}'
 ```
 
@@ -181,13 +181,13 @@ Updating a topic selection replaces the current set of patterns.
 
 You can also disable mirroring on previously enabled topics.
 
-```text
+```sh
 ibmcloud es mirroring-topic-selection-set --none
 ```
 To selectively disable mirroring, re-apply the topic selection leaving out the topic that you want to disable.
 For example, when topic1, topic2, topic3 are currently being mirrored, the following command disables mirroring for topic2 but leaves the other two enabled.
 
-```text
+```sh
 ibmcloud es mirroring-topic-selection-set --select topic1,topic3 
 ```
 
@@ -198,13 +198,13 @@ You can retrieve the mirroring selection by using the following interfaces:
 
 CLI:
 
-```text
+```sh
 ibmcloud es mirroring-topic-selection
 ```
 
 REST API:
 
-```text
+```sh
 curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection
 ```
 
@@ -215,13 +215,13 @@ You can retrieve the topics that are being actively mirrored by using the follow
 
 CLI:
 
-```text
+```sh
 ibmcloud es mirroring-active-topics
 ```
 
 REST API:
 
-```text
+```sh
 curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/active-topics
 ```
 

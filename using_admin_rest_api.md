@@ -34,12 +34,12 @@ Use the `user` and `api_key` properties of the objects as the username and passw
 
 To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud then run the following command: 
 
-    ```text
-    ibmcloud iam oauth-tokens
-    ```
-    {: codeblock}
+```sh
+ibmcloud iam oauth-tokens
+```
+{: codeblock}
 
-    Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
+Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
     
 ## Authenticate by using the api_key
 {: #admin_api_api_key}
