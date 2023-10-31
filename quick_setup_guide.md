@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-24"
+lastupdated: "2023-10-31"
 
 keywords: quick setup guide
 
@@ -31,7 +31,7 @@ Complete the following steps: {: ui}
 * [Step 6: Consume data using the console](#consume_data_ui)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui)
 * [Step 8: Connect Activity Tracker](#activity_tracker_ui)
-* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
@@ -45,7 +45,7 @@ Complete the following steps: {: cli}
 * [Step 6: Consume data using the CLI](#consume_data_cli)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli)
 * [Step 8: Connect Activity Tracker](#activity_tracker_cli)
-* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
@@ -59,26 +59,23 @@ Complete the following steps: {: api}
 * [Step 6: Consume data using the API](#consume_data_api)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api)
 * [Step 8: Connect Activity Tracker](#activity_tracker_api)
-* [Step 9: (Optional) Using Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: api}
 
 
-
 ## Prerequisites
 {: #prereqs}
-{: step}
 
 Before you get started, we highly recommend you read the following information to better understand Apache Kafka, which {{site.data.keyword.messagehub}} is built on:
 * [Apache Kafka concepts](/docs/EventStreams?topic=EventStreams-apache_kafka)
 * [Apache Kafka fundamentals](https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=event%20streams)
 
 
-## Choose your plan 
+## Step 1: Choose your plan 
 {: #choose_plan}
-{: step}
 
-{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external} for more information.
+{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
 * The Lite plan offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
 
@@ -86,9 +83,8 @@ Before you get started, we highly recommend you read the following information t
 
 * The Enterprise plan offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
-## Provision an {{site.data.keyword.messagehub}} instance by using the console
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
-{: step}
 {: ui}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console.
@@ -104,9 +100,8 @@ Before you get started, we highly recommend you read the following information t
 6. When your instance has been created, click on the instance name to view more information.
 
 
-## Provision an {{site.data.keyword.messagehub}} instance by using the CLI
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the CLI
 {: #provision_instance_cli}
-{: step}
 {: cli}
 
 To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
@@ -153,17 +148,15 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
 
 
-## Provision an {{site.data.keyword.messagehub}} instance by using the API
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the API
 {: #provision_instance_api}
-{: step}
 {: api}
 
 **Which API should we focus on? How do you provision an instance via the API?**
 
 
-## Create a topic and select number of partitions by using the console
+## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
-{: step}
 {: ui}
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
@@ -188,10 +181,9 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [??view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the console to [??view details about your cluster](#ibmcloud_es_cluster_cli).
 
 
-_Talk about Creating, listing, updating, and deleting topics, Describing the cluster_
 _Bring in information like suggested topic naming strategies_
 
 #### List topics
@@ -212,9 +204,8 @@ From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https:/
 From the **Topics page**, click the three dots to the right of the topic name and click **Delete this topic**. 
 
 
-## Create a topic and select number of partitions by using the CLI 
+## Step 3: Create a topic and select number of partitions by using the CLI 
 {: #create_topic_cli}
-{: step}
 {: cli}
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
@@ -342,9 +333,8 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 
 
 
-## Create a topic and select number of partitions by using the Admin REST API
+## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
-{: step}
 {: api}
 
 {{site.data.keyword.messagehub}} provides a REST API for administration that you can use to create, delete, list, and update topics.
@@ -394,7 +384,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: #work_topic_api}
 {: api}
 
-After you create topics, you can use the Admin REST API to list and delete topics and update topic configuration.
+After you create topics, you can use the Admin REST API to [list topics](#topic_list_api) and [delete topics](#topic_delete_api) and [update topic configuration](#topic_update_api).
 
 #### List Kafka topics
 {: #topic_list_api}
@@ -511,12 +501,11 @@ curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer $
 {: codeblock}
 
 
-_Talk about Creating, listing, updating, and deleting topics, Describing the cluster._
+_Talk about describing the cluster._
 _Bring in information like suggested topic naming strategies_
 
-## Create an IAM service credential by using the console
+## Step 4: Create an IAM service credential by using the console
 {: #create_credential_ui}
-{: step}
 {: ui}
 
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
@@ -528,9 +517,8 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
 6. Click this credential by using **View Credentials** to reveal the details in JSON format.
 
-## Create an IAM service credential by using the CLI
+## Step 4: Create an IAM service credential by using the CLI
 {: #create_credential_cli}
-{: step}
 {: cli}
 
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps.
@@ -561,26 +549,22 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-## Create an IAM service credential by using the API
+## Step 4: Create an IAM service credential by using the API
 {: #create_credential_api}
-{: step}
 {: api}
 
 **How do you create this via the API?**
 
-## Produce data using the console
+## Step 5: Produce data using the console
 {: #produce_data_ui}
-{: step}
 {: ui}
 
 You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
 
 
-## Produce data using the CLI
+## Step 5: Produce data using the CLI
 {: #produce_data_cli}
-{: step}
 {: cli}
-
 
 You can use the {{site.data.keyword.messagehub}}Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
@@ -627,9 +611,8 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Produce data using the API
+## Step 5: Produce data using the API
 {: #produce_data_api}
-{: step}
 {: api}
 
 **How do you produce data using the API?**
@@ -648,18 +631,15 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Consume data using the console
+## Step 6: Consume data using the console
 {: #consume_data_ui}
-{: step}
 {: ui}
 
 You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#consume_data_api).
 
-## Consume data using the CLI
+## Step 6: Consume data using the CLI
 {: #consume_data_cli}
-{: step}
 {: cli}
-
 
 You can use the {{site.data.keyword.messagehub}} Kafka console consumer tool to consume data. 
 
@@ -692,9 +672,8 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Consume data using the API 
+## Step 6: Consume data using the API 
 {: #consume_data_api}
-{: step}
 {: api}
 
 **How do you consume data using the API?**
@@ -707,18 +686,17 @@ For details of settings that you can configure for the consumer, for example ```
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 
-b. via CLI c. via API - support different languages - show Java library_
+_b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
 {: #connect_monitoring_ui}
-{: step}
 {: ui}
 
-Use {{site.data.keyword.mon_full_notm}} for operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
+You can use {{site.data.keyword.mon_full_notm}} to get operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
 For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see:
 * [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics)  
@@ -728,29 +706,26 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 * [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs)
 
 
-## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
 {: #connect_monitoring_cli}
-{: step}
 {: cli}
 
 You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
-## Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
-{: step}
 {: api}
 
 You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
-## Connect {{site.data.keyword.at_full}} to audit service activity 
+## Step 8: Connect {{site.data.keyword.at_full}} to audit service activity 
 {: #activity_tracker_ui}
-{: step}
 {: ui}
 
-{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
+{{site.data.keyword.at_full_notm}} allows you to view, manage, and audit service activity to comply with corporate policies and industry regulations. {{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. Use {{site.data.keyword.at_short}} to track how users and applications interact with the {{site.data.keyword.messagehub}} service on the Standard and Enterprise plans.
 
-{{site.data.keyword.at_short}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. To find out how to get started, see [{{site.data.keyword.cloudaccesstrailshort}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
+To get up and running with {{site.data.keyword.at_short}}, see [Getting Started with {{site.data.keyword.at_short}}](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_objectives){: external}.
 
 {{site.data.keyword.at_short}} can have only one instance per location. To view events, you must access the web UI of the {{site.data.keyword.at_short}} service in the same location where your service instance is available. For more information, see [Launch the web UI](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step4){: external}.
 
@@ -764,26 +739,24 @@ For more information about events specific to {{site.data.keyword.messagehub}}, 
 Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
 
 
-## Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
+## Step 8: Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
 {: #activity_tracker_cli}
-{: step}
 {: cli}
 
 You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
-## Connect {{site.data.keyword.at_full}} using the API to audit service activity
+## Step 8: Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
-{: step}
 {: api}
 
 You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
-## (Optional) Using Kafka Connect or kSQLdb
+## Step 9: (Optional) Use Kafka Connect or kSQLdb
 {: #kafka_connect_ksql}
-{: step} 
 
-_Link to additional docs page content, highlight that this is not part of the managed service_
+### Kafka Connect
+{: #kafka_connect}
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
 
@@ -791,20 +764,21 @@ Its key benefits are as follows:
 
 * Scalability: it can easily scale from a single worker to many.
 * Reliability: it automatically manages offsets and the lifecycle of connectors
-* Extensibility: the community has built connectors for most popular systems.
+* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
 
-For more information about how to use it, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
+For more information, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
+
+### kSQLdb
+{: #ksql}
 
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
 [Using ksqlDB with Event Streams](/docs/EventStreams?topic=EventStreams-ksql_using)
 
 
-
-## Getting help
+## Step 10: Get help
 {: #getting_help}
-{: step}
 
 For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp).
 

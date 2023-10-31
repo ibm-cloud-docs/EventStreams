@@ -314,11 +314,11 @@ Listing schemas requires at least:
 ### State and deletion of schemas
 {: #state_deletion_schema}
 
-Deletion of schemas is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
+Schema deletion is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
 
 The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
 
-An artifact or version that has been disabled can be discovered via a ‘state’ property that is returned by operations that lists artifacts or versions or gets the details of an artifact or version. Disabled schemas count towards the schema quota, a maximum of 1000 schemas can be stored in an Enterprise instance. 
+An artifact or version that has been disabled can be discovered using a ‘state’ property that is returned by operations that list artifacts or versions, or get the details of an artifact or version. Disabled schemas count towards the schema quota and a maximum of 1000 schemas can be stored in an Enterprise instance. 
 
 ### Delete a schema
 {: #delete_schema}
