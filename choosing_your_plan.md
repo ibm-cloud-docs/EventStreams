@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-10-31"
 
 keywords: plan, Enterprise, Standard, Lite, pricing, Satellite, throughput, partitions, tenancy, compliance
 
