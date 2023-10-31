@@ -139,9 +139,10 @@ The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messageh
 ## Step 5: Select topics
 {: #step5_selecttopics}
 
-When the service instance update has completed, we will want to select some topics from the source cluster to mirror. Topic selection can be in the form of a regex pattern.
+When the service instance update has completed, we want to select some topics from the source cluster to mirror. Topic selection can be in the form of a regex pattern.
 
 The following command selects all topics to be mirrored:
+
 ```sh
 ibmcloud es mirroring-topic-selection-set --select '.*'
 ```
@@ -156,5 +157,5 @@ ibmcloud es mirroring-topic-selection-set --select topic1, topic2, topic3
 
 For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-After the topic selection has been made, the target cluster shows the topics that have been selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
+After the topic selection is completed, the target cluster shows the topics that are selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
 
