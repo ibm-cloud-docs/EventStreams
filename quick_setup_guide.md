@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-31"
+lastupdated: "2023-11-02"
 
 keywords: quick setup guide
 
@@ -169,11 +169,10 @@ For guidance about the settings that you can modify when creating topics, see [t
 
     Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-    _Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
-    Bring in information like suggested topic naming strategies_
+    _Can you updating topics via the UI? Can you view cluster info via the UI?_
+    _Bring in information like suggested topic naming strategies_
 
-4. Set the message retention period. This is how long messages are retained before they are deleted.
-    If your messages are not read by a consumer within this time, they will be missed.
+4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed.
 
     Click **Create topic**.
 
@@ -181,7 +180,7 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the console to [??view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the console to [list topics](#list_topic_ui) and [delete topics](#delete_topic_ui).
 
 
 _Bring in information like suggested topic naming strategies_
