@@ -775,10 +775,12 @@ Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} servic
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
 {: shortdesc}
 
-The quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
+Complete these [setup steps](/docs/EventStreams?topic=EventStreams-ksql_using) then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
 Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting, you can use only ksqlDB with the Enterprise plan.
 {: important}
+
+
 
 
 

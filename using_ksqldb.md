@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-11-06"
 
 keywords: ksqlDB, ksql
 
@@ -23,7 +23,9 @@ The quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}}
 Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting, you can use only ksqlDB with the Enterprise plan.
 {: important}
 
-1. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called `_confluent-ksql-default__command_topic` with a single partition and the default retention period.{: #kqsldbsteps}
+Complete the following steps to get set up before moving on to the ksqlDB Quick Start Guide: {: #kqsldbsteps}
+
+1. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called `_confluent-ksql-default__command_topic` with a single partition and the default retention period.
 
 2. If you want to run ksqlDB in docker container, follow these steps:
    
@@ -119,4 +121,4 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ./bin/ksql
     ```
 
-When you completed these steps, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}.
+When you complete these steps, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}.
