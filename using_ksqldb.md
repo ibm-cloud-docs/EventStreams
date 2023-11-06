@@ -23,7 +23,7 @@ The quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}}
 Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting, you can use only ksqlDB with the Enterprise plan.
 {: important}
 
-Complete the following steps to get set up before moving on to the ksqlDB Quick Start Guide: {: #kqsldbsteps}
+Complete the following steps to get set up. When complete, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}. {: #kqsldbsteps}
 
 1. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called `_confluent-ksql-default__command_topic` with a single partition and the default retention period.
 
