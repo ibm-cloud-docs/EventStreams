@@ -188,6 +188,6 @@ When you use the REST producer API, a limitation exists on the maximum size of t
 ## API reference
 {: #rest_api_reference}
 
-* For more information about the API reference of v2 endpoint, see the [{{site.data.keyword.messagehub}} REST Producer v2 API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: external}.
+For full details of the v2 endpoint API, see[{{site.data.keyword.messagehub}} REST Producer v2 API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: external}.
 
-* For more information about the API reference of existing endpoint, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.
+For full details of the existing endpoint API, see [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams){: external}.

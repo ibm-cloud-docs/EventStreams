@@ -618,6 +618,39 @@ _Highlight the most important kafka settings for producers are here including de
 
 **How do you produce data using the API?**
 
+## Producing messages by using the REST producer API
+{: #rest_produce_messages}
+
+Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
+
+The following code shows an example of sending a message of `text` type by using curl:
+
+```sh
+curl -v -X POST \
+-H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
+-d '{
+  "headers": [
+    {
+      "name": "colour",
+      "value": "YmxhY2s="
+    }
+  ],
+  "key": {
+    "type": "text",
+    "data": "Test Key"
+  },
+  "value": {
+    "type": "text",
+    "data": "Test Value"
+  }
+}' \
+"$kafka_http_url/v2/topics/$topic_name/records"
+```
+{: codeblock}
+
+For more information about the API, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
+
+
 ### Configuration settings
 {: #producer_config_api}
 {: api}
