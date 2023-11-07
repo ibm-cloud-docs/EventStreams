@@ -565,7 +565,7 @@ You cannot produce data by using the console. You can produce data only using th
 {: #produce_data_cli}
 {: cli}
 
-You can use the {{site.data.keyword.messagehub}}Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
 
@@ -581,6 +581,8 @@ You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and 
 
 Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
+{{site.data.keyword.messagehub}} provides example `producer.properties` and `consumer.properties` files for the [Java client](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample/resources).
+
 After you create the properties file, you can run the console producer in a terminal as follows:
 
 ```bash
@@ -593,7 +595,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper.For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 
 
@@ -601,7 +603,7 @@ You can use many of the other options of this tool, except for those that requir
 {: #producer_config_cli}
 {: cli}
 
-For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+For details of settings that you can configure for the producer, for example `acks` and `retries`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
 
 _b. via CLI support different languages - show Java library_
@@ -620,7 +622,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: #producer_config_api}
 {: api}
 
-For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+For details of settings that you can configure for the producer, for example `acks` and `retries`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
 
 
@@ -662,7 +664,7 @@ You can use many of the other options of this tool, except for those that requir
 {: #consumer_config_cli}
 {: cli}
 
-For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+For details of settings that you can configure for the consumer, for example `group.id` and `enable.auto.commit`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 _b. via CLI c. via API - support different languages - show Java library_
@@ -681,7 +683,7 @@ _Highlight the most important kafka settings for consumers are here including co
 {: #consumer_config_api}
 {: api}
 
-For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+For details of settings that you can configure for the consumer, for example `group.id` and `enable.auto.commit`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 
@@ -773,9 +775,9 @@ Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} servic
 {: #ksql}
 
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with the {{site.data.keyword.messagehub}} Enterprise plan for stream processing. 
+{: shortdesc}
 
 ksqlDB is a purpose-built database for event streaming. Use it to build end-to-end event streaming applications quickly with a purpose-built stream processing database for Apache Kafka.
-{: shortdesc}
 
 First complete these setup [steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
