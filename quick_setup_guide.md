@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-31"
+lastupdated: "2023-11-07"
 
 keywords: quick setup guide
 
@@ -169,11 +169,10 @@ For guidance about the settings that you can modify when creating topics, see [t
 
     Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-    _Talk about Creating, listing, updating, and deleting topics, Describing the cluster.
-    Bring in information like suggested topic naming strategies_
+    _Can you updating topics via the UI? Can you view cluster info via the UI?_
+    _Bring in information like suggested topic naming strategies_
 
-4. Set the message retention period. This is how long messages are retained before they are deleted.
-    If your messages are not read by a consumer within this time, they will be missed.
+4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed.
 
     Click **Create topic**.
 
@@ -181,7 +180,7 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list](#list_topic_ui), [delete](#delete_topic_ui), and [??update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the console to [??view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the console to [list topics](#list_topic_ui) and [delete topics](#delete_topic_ui).
 
 
 _Bring in information like suggested topic naming strategies_
@@ -566,7 +565,7 @@ You cannot produce data by using the console. You can produce data only using th
 {: #produce_data_cli}
 {: cli}
 
-You can use the {{site.data.keyword.messagehub}}Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
 
@@ -582,6 +581,8 @@ You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and 
 
 Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
+{{site.data.keyword.messagehub}} provides example `producer.properties` and `consumer.properties` files for the [Java client](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample/resources).
+
 After you create the properties file, you can run the console producer in a terminal as follows:
 
 ```bash
@@ -594,7 +595,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper.For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 
 
@@ -602,7 +603,7 @@ You can use many of the other options of this tool, except for those that requir
 {: #producer_config_cli}
 {: cli}
 
-For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+For details of settings that you can configure for the producer, for example `acks` and `retries`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
 
 _b. via CLI support different languages - show Java library_
@@ -617,11 +618,44 @@ _Highlight the most important kafka settings for producers are here including de
 
 **How do you produce data using the API?**
 
+## Producing messages by using the REST producer API
+{: #rest_produce_messages}
+
+Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
+
+The following code shows an example of sending a message of `text` type by using curl:
+
+```sh
+curl -v -X POST \
+-H "Authorization: Bearer $token" -H "Content-Type: application/json" -H "Accept: application/json" \
+-d '{
+  "headers": [
+    {
+      "name": "colour",
+      "value": "YmxhY2s="
+    }
+  ],
+  "key": {
+    "type": "text",
+    "data": "Test Key"
+  },
+  "value": {
+    "type": "text",
+    "data": "Test Value"
+  }
+}' \
+"$kafka_http_url/v2/topics/$topic_name/records"
+```
+{: codeblock}
+
+For more information about the API, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
+
+
 ### Configuration settings
 {: #producer_config_api}
 {: api}
 
-For details of settings that you can configure for the producer, for example ```acks``` and ```retries```, see
+For details of settings that you can configure for the producer, for example `acks` and `retries`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
 
 
@@ -663,7 +697,7 @@ You can use many of the other options of this tool, except for those that requir
 {: #consumer_config_cli}
 {: cli}
 
-For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+For details of settings that you can configure for the consumer, for example `group.id` and `enable.auto.commit`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 _b. via CLI c. via API - support different languages - show Java library_
@@ -682,7 +716,7 @@ _Highlight the most important kafka settings for consumers are here including co
 {: #consumer_config_api}
 {: api}
 
-For details of settings that you can configure for the consumer, for example ```group.id``` and ```enable.auto.commit```, see
+For details of settings that you can configure for the consumer, for example `group.id` and `enable.auto.commit`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
 
 
@@ -773,8 +807,12 @@ Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} servic
 ### kSQLdb
 {: #ksql}
 
-You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
-[Using ksqlDB with Event Streams](/docs/EventStreams?topic=EventStreams-ksql_using)
+You can use [KSQL](https://github.com/confluentinc/ksql){: external} with the {{site.data.keyword.messagehub}} Enterprise plan for stream processing. 
+{: shortdesc}
+
+ksqlDB is a purpose-built database for event streaming. Use it to build end-to-end event streaming applications quickly with a purpose-built stream processing database for Apache Kafka.
+
+First complete these setup [steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
 
 ## Step 10: Get help
