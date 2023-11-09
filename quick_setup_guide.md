@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-07"
+lastupdated: "2023-11-09"
 
 keywords: quick setup guide
 
@@ -552,7 +552,17 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: #create_credential_api}
 {: api}
 
-**How do you create this via the API?**
+## Authentication
+{: #rest_produce_authenticate}
+
+The supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
+
+```sh
+ibmcloud iam oauth-tokens
+```
+{: codeblock}
+
+Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
 
 ## Step 5: Produce data using the console
 {: #produce_data_ui}
@@ -612,14 +622,9 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Step 5: Produce data using the API
+## Step 5: Produce data using the REST producer API
 {: #produce_data_api}
 {: api}
-
-**How do you produce data using the API?**
-
-## Producing messages by using the REST producer API
-{: #rest_produce_messages}
 
 Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
