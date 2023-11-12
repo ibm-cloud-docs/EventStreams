@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-12"
 
 keywords: quick setup guide
 
@@ -77,11 +77,11 @@ Before you get started, we highly recommend you read the following information t
 
 {{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
-* The Lite plan offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
+* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
 
-* The Standard plan offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
+* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
 
-* The Enterprise plan offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
@@ -161,22 +161,24 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
-3. Select the number of partitions. Click **Next**.
+3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
     Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-    _Can you updating topics via the UI? Can you view cluster info via the UI?_
+    Click **Next**.
+
+    _Can you update topics via the UI? Can you view cluster info via the UI?_
     _Bring in information like suggested topic naming strategies_
 
 4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed.
 
     Click **Create topic**.
 
-### Working with topics
+### Working with topics using the console
 {: #work_topic_ui}
 {: ui}
 
@@ -507,6 +509,8 @@ _Bring in information like suggested topic naming strategies_
 {: #create_credential_ui}
 {: ui}
 
+(/docs/EventStreams?topic=EventStreams-security#what_secure) 
+
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 
 1. Locate your {{site.data.keyword.messagehub}} service in the **Resource list**.
@@ -551,9 +555,6 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 ## Step 4: Create an IAM service credential by using the API
 {: #create_credential_api}
 {: api}
-
-## Authentication
-{: #rest_produce_authenticate}
 
 The supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
 
