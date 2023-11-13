@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-12"
+lastupdated: "2023-11-13"
 
 keywords: quick setup guide
 
@@ -148,12 +148,18 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
 
 
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the API
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the resource controller API
 {: #provision_instance_api}
 {: api}
 
-**Which API should we focus on? How do you provision an instance via the API?**
 
+{{site.data.keyword.messagehub}} offers several APIs. This tutorial uses the Resource Controller API to provision an instance, the Admin REST API to work with topics and the REST Producer API to produce messages.
+
+```sh
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
+-d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
+```
+{: codeblock}
 
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
@@ -381,7 +387,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: codeblock}
 
 
-### Working with topics
+### Working with topics using the Admin REST API
 {: #work_topic_api}
 {: api}
 
@@ -552,7 +558,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-## Step 4: Create an IAM service credential by using the API
+## Step 4: Create an IAM service credential by using the CLI and API
 {: #create_credential_api}
 {: api}
 
@@ -675,7 +681,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: #consume_data_ui}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#consume_data_api).
+You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
 ## Step 6: Consume data using the CLI
 {: #consume_data_cli}
@@ -716,7 +722,9 @@ _Highlight the most important kafka settings for consumers are here including co
 {: #consume_data_api}
 {: api}
 
-**How do you consume data using the API?**
+You cannot consume data using the {{site.data.keyword.messagehub}} API althought consumption of data from Kafka is possible using the native Kafka libraries.
+
+As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
 ### Configuration settings
 {: #consumer_config_api}
