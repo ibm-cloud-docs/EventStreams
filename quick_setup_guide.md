@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-14"
 
 keywords: quick setup guide
 
@@ -153,7 +153,9 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: api}
 
 
-{{site.data.keyword.messagehub}} offers several APIs. This tutorial uses the Resource Controller API to provision an instance, the Admin REST API to work with topics and the REST Producer API to produce messages.
+You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the resource controller API to provision an instance, the Admin REST API to work with topics, and the REST Producer API to produce messages.
+
+The preferred method to provision an instance is to use the [CLI](#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance), run the following command to create an Enterprise instance in US South:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
