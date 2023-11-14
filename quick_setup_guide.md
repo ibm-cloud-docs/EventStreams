@@ -155,7 +155,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the resource controller API to provision an instance, the Admin REST API to work with topics, and the REST Producer API to produce messages.
 
-The preferred method to provision an instance is to use the [CLI](#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance), run the following command to create an Enterprise instance in US South:
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run the following command to create an Enterprise instance in US South:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
@@ -577,7 +577,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 {: #produce_data_ui}
 {: ui}
 
-You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
+You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [REST Producer API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
 
 
 ## Step 5: Produce data using the CLI
@@ -635,7 +635,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: #produce_data_api}
 {: api}
 
-Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
+Use the v2 endpoint of the REST producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of `text` type by using curl:
 
@@ -662,7 +662,7 @@ curl -v -X POST \
 ```
 {: codeblock}
 
-For more information about the API, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
+For more information, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
 
 
 ### Configuration settings
@@ -720,11 +720,11 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Step 6: Consume data using the API 
+## Step 6: Consume data using an API 
 {: #consume_data_api}
 {: api}
 
-You cannot consume data using the {{site.data.keyword.messagehub}} API althought consumption of data from Kafka is possible using the native Kafka libraries.
+You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries.
 
 As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
