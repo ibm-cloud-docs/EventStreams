@@ -114,15 +114,23 @@ The following table describes the role and resource requirements that are needed
 
 The following table describes the role and resource requirements that are needed by a user or application that consumes messages from {{site.data.keyword.messagehub}}.In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
-| Consumer actions | Topic  | Group  |
+| Consumer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
-| Assign. |  | Reader [^tabletext2] |
-| Commit. | Reader | Reader |
-| Enforce a rebalance. |  | Reader |
-| Poll. |  | Reader |
-| Subscribe. |  | Reader |
-| Unsubscribe. |  | Reader |
-{: caption="Table 3. Consumer actions" caption-side="bottom"}
+| Allow an app to consume a topic (consumer group). | Reader | Reader |  [^tabletext2] |
+| Allow an app to connect and consume from
+a specific topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from
+any topic (no consumer group). | Reader |  |  |
+| Use Kafka Streams. | Manager | Reader |  |
+| Delete consumer group. |  | Manager |  |
+| Assign. |  | Manager |  |
+| Commit async. | Reader | Reader |  |
+| Commit sync. | Reader | Reader |  |
+| Enforce rebalance |  | Reader |  |
+| Poll |  | Reader |  |
+| Subscribe |  | Reader |  |
+| Unsubscrube |  | Reader | Writer |
+{: caption="Table 2. Producer actions" caption-side="bottom"}
 
 [^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
 
