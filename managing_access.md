@@ -127,7 +127,7 @@ The following table describes the role and resource requirements that are needed
 | Enforce rebalance. |  | Reader |  |
 | Poll. |  | Reader |  |
 | Subscribe. |  | Reader |  |
-| Unsubscrube. |  | Reader | Writer |
+| Unsubscribe. |  | Reader | Writer |
 {: caption="Table 2. Producer actions" caption-side="bottom"}
 
 [^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
