@@ -117,13 +117,11 @@ The following table describes the role and resource requirements that are needed
 | Consumer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
 | Allow an app to consume a topic (consumer group). | Reader | Reader |  [^tabletext2] |
-| Allow an app to connect and consume from
-a specific topic (no consumer group). | Reader |  |  |
-| Allow an app to connect and consume from
-any topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from a specific topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | Reader |  |  |
 | Use Kafka Streams. | Manager | Reader |  |
 | Delete consumer group. |  | Manager |  |
-| Assign. |  | Manager |  |
+| Assign. |  | Reader |  |
 | Commit async. | Reader | Reader |  |
 | Commit sync. | Reader | Reader |  |
 | Enforce rebalance |  | Reader |  |
