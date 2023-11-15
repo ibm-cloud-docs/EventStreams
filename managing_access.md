@@ -127,7 +127,9 @@ The following table describes the role and resource requirements that are needed
 [^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
 
 ### Administration actions
-{: #administration_actions} In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
+{: #administration_actions} 
+
+In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Administration actions | Topic  | Group  | Txnid |
 | --- | --- | --- | --- |
