@@ -90,7 +90,7 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 ### Cluster requirements
 {: #cluster_actions}
 
-By controlling access to the cluster resource, you can determine which applications and users can connect to the service. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
+By controlling access to the cluster resource, you can determine which applications and users can connect to the service. In addition to the policies required for the resource types below, Access to 'ResourceType: Cluster' and a 'Role: Reader, Writer, Manager' is required. 
 
 ### Producer actions
 {: #producing_actions}
