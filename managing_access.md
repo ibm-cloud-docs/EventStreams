@@ -90,12 +90,12 @@ The following tables summarize some common {{site.data.keyword.messagehub}} acti
 ### Cluster requirements
 {: #cluster_actions}
 
-By controlling access to the cluster resource, you can determine which applications and users can connect to the service. In addition to the policies required for the resource types below, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required. 
+By controlling access to the cluster resource, you can determine which applications and users can connect to the service. In addition to the policies required for the resource types below, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required. 
 
 ### Producer actions
 {: #producing_actions}
 
-The following table describes the role and resource requirements that are needed by a user or an application that produces messages to {{site.data.keyword.messagehub}}. In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
+The following table describes the role and resource requirements that are needed by a user or an application that produces messages to {{site.data.keyword.messagehub}}. In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Producer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
@@ -112,7 +112,7 @@ The following table describes the role and resource requirements that are needed
 ### Consumer actions
 {: #consumer_actions}
 
-The following table describes the role and resource requirements that are needed by a user or application that consumes messages from {{site.data.keyword.messagehub}}.In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
+The following table describes the role and resource requirements that are needed by a user or application that consumes messages from {{site.data.keyword.messagehub}}.In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Consumer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
@@ -135,7 +135,7 @@ The following table describes the role and resource requirements that are needed
 ### Administration actions
 {: #administration_actions} 
 
-In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
+In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Administration actions | Topic  | Group  | Txnid |
 | --- | --- | --- | --- |
@@ -156,7 +156,7 @@ In addition to the policies required for this resource type, Access to `Resource
 ### Schema Registry actions
 {: #schema_registry_actions} 
 
-With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). *Artifact* is the term that {{site.data.keyword.messagehub}} uses to describe related schemas, often associated with and used by a particular Kafka topic. The term *subject* is often used to describe the same concept. For more information, see [Using Event Streams Schema Registry](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry). In addition to the policies required for this resource type, Access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
+With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). *Artifact* is the term that {{site.data.keyword.messagehub}} uses to describe related schemas, often associated with and used by a particular Kafka topic. The term *subject* is often used to describe the same concept. For more information, see [Using Event Streams Schema Registry](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry). In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Schema Registry actions | Schema  |
 | --- | --- |
