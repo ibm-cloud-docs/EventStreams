@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-11-16"
 
 keywords: producer, producing messages, message ordering, batching, throttling, compression
 
@@ -39,7 +39,7 @@ Many configuration settings exist for the producer. You can control aspects of t
 |----------|---------|----------|---------|
 |key.serializer     | The class used to serialize keys. | Java class that implements Serializer interface, such as org.apache.kafka.common.serialization.StringSerializer. |No default - you must specify a value.|
 |value.serializer     | The class used to serialize values. | Java class that implements Serializer interface, such as org.apache.kafka.common.serialization.StringSerializer.  | No default - you must specify a value. |
-|acks     | The number of servers required to acknowledge each message published. This controls the durability guarantees that the producer requires. | 0, 1, all (or -1)  | all (Kafka 3.0 and later) 1 (prior to Kafka 3.0) |
+|acks     | The number of servers required to acknowledge each message published. This controls the durability guarantees that the producer requires. | 0, 1, all (or -1)  | all (Kafka 3.0 and later) 1 (earlier than Kafka 3.0) |
 |retries     | The number of times that the client resends a message when the send encounters an error. | 0,...  | 0 |
 |max.block.ms     | The number of milliseconds that a send or metadata request can block waiting. | 0,...  | 60000 (1 minute) |
 |max.in.flight.requests.per.connection     | The maximum number of unacknowledged requests that the client sends on a connection before it blocks further requests.| 1,...  | 5 |

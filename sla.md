@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-16"
 
 keywords: sla, service level agreement, connectivity, throughput
 
@@ -108,7 +108,7 @@ Kafka achieves its availability and durability by replicating the messages it re
 #### Producer `acks` mode
 {: #sla_acks}
 
-Although all messages are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. With Kafka 3.0, the default client setting is `acks=all` (prior to this version it was `acks=1`). The setting `acks=all` means that the producer returns success, as soon as both the broker it is connected to and at least one further broker in the cluster, has acknowledged receiving the message. The advantage of using `acks=all` is that it offers the highest level of durability and hence protection against the loss of message data.
+Although all messages are replicated, applications can control how robustly the messages they produce are transferred to the service by using the producer's `acks` mode property. This property provides a choice between speed and the risk of message loss. With Kafka 3.0, the default client setting is `acks=all` (before this version it was `acks=1`). The setting `acks=all` means that the producer returns success, as soon as both the broker it is connected to and at least one further broker in the cluster, has acknowledged receiving the message. The advantage of using `acks=all` is that it offers the highest level of durability and hence protection against the loss of message data.
 
 #### In-sync replicas
 {: #insync_replicas}
