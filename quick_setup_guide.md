@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-11-18"
 
 keywords: quick setup guide
 
@@ -83,6 +83,17 @@ Before you get started, we highly recommend you read the following information t
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
+Using APIs
+{: #using_apis}
+{: api}
+
+You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
+
+* the resource controller API to provision an instance 
+* the Admin REST API to work with topics 
+* the REST Producer API to produce messages.
+
+
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
 {: ui}
@@ -151,7 +162,6 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the resource controller API
 {: #provision_instance_api}
 {: api}
-
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the resource controller API to provision an instance, the Admin REST API to work with topics, and the REST Producer API to produce messages.
 
