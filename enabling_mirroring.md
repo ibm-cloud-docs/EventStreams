@@ -90,6 +90,7 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 
 If the cluster is provisioned with or scaled up to a throughput higher than the default value of 150, the **service-instance-update** command must also include "throughput":"_current throughput value_" in the update parameter body.
 {: note}
+
 ### Example CLI command with throughput
 {: #example_cli_command_with_throughput}
 

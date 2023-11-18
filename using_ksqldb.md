@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-11-07"
 
 keywords: ksqlDB, ksql
 
@@ -18,10 +18,14 @@ subcollection: EventStreams
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with {{site.data.keyword.messagehub}} for stream processing. 
 {: shortdesc}
 
+ksqlDB is a purpose-built database for event streaming. Use it to build end-to-end event streaming applications quickly with a purpose-built stream processing database for Apache Kafka.
+
 The quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
 Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting, you can use only ksqlDB with the Enterprise plan.
 {: important}
+
+Complete the following steps to get set up. When complete, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}. {: #kqsldbsteps}
 
 1. Use the {{site.data.keyword.messagehub}} dashboard in the {{site.data.keyword.Bluemix_notm}} console to create a topic called `_confluent-ksql-default__command_topic` with a single partition and the default retention period.
 
@@ -119,4 +123,4 @@ Because ksqlDB needs to create a topic with an unlimited `retention.ms` setting,
     ./bin/ksql
     ```
 
-When you completed these steps, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}.
+When you complete these steps, you can run all queries that are listed in the [ksqlDB Quick Start Guide](https://ksqldb.io/quickstart.html#quickstart-content){: external}.

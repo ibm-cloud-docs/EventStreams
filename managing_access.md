@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-10-26"
+lastupdated: "2023-11-18"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -15,7 +15,8 @@ subcollection: EventStreams
 # Managing authentication to your {{site.data.keyword.messagehub}} instances
 {: #security}
 
-{{site.data.keyword.messagehub}} supports 2 [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)(Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
+{{site.data.keyword.messagehub}} supports two
+ [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)(Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
 {: shortdesc}
 
 Kafka client configured with SASL PLAIN uses IAM API key as a plain text password in the authentication process, {{site.data.keyword.messagehub}} sends API key to IAM for verification. Once authenticated, this client will keep connected and will not require re-authentication until it is disconnected and wants to re-connect.
@@ -87,25 +88,23 @@ Only users with an administration role for an account can assign policies to use
 
 The following tables summarize some common {{site.data.keyword.messagehub}} actions and the access that you need to assign.
 
-### Cluster actions
+### Cluster requirements
 {: #cluster_actions}
 
-With cluster actions, you can determine which applications and users can connect to the service. Another common Kafka term for the cluster resource group is instance. You must have at least Reader role access to the cluster resource to do anything with {{site.data.keyword.messagehub}}. For most actions, access to another resource is necessary in addition.
+By controlling access to the cluster resource, you can determine which applications and users can connect to the service. In addition to the policies required for the resource types below, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required. 
 
 ### Producer actions
 {: #producing_actions}
 
-With producer actions, you can control the ability of users and applications to create, delete, read, and write to a topic.
+The following table describes the role and resource requirements that are needed by a user or an application that produces messages to {{site.data.keyword.messagehub}}. In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Producer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
-| Allow an app to produce to a specific topic. | Writer [^tabletext1] |  |  |
-| Allow an app to produce to any topic. | Writer |  |  |
+| Send a message to a topic. | Writer |  | Writer [^tabletext1] |
 | Allow an app to produce to a topic transactionally. | Writer | Reader | Writer |
 | Initialize a transaction. |  |  | Writer |
 | Commit a transaction. | Writer |  | Writer |
 | Abort a transaction. |  |  | Writer |
-| Send. | Writer |  | Writer |
 | Send offsets to a transaction. |  | Reader | Writer |
 {: caption="Table 2. Producer actions" caption-side="bottom"}
 
@@ -114,34 +113,35 @@ With producer actions, you can control the ability of users and applications to 
 ### Consumer actions
 {: #consumer_actions}
 
-With consumer actions, you can control an application's ability to join a consumer group.
+The following table describes the role and resource requirements that are needed by a user or application that consumes messages from {{site.data.keyword.messagehub}}. In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
-| Consumer actions | Topic  | Group  | Txnid |
+| Consumer actions | Topic | Group | Txnid |
 | --- | --- | --- | --- |
-| Allow an app to consume a topic (consumer group). | Reader | Reader |  |
-| Allow an app to connect and consume from \n a specific topic (no consumer group). | Reader |  |  |
-| Allow an app to connect and consume from \n any topic (no consumer group). | Reader |  |
+| Allow an app to consume a topic (consumer group). | Reader | Reader [^tabletext2] |   |
+| Allow an app to connect and consume from a specific topic (no consumer group). | Reader |  |  |
+| Allow an app to connect and consume from any topic (no consumer group). | Reader |  |  |
 | Use Kafka Streams. | Manager | Reader |  |
 | Delete consumer group. |  | Manager |  |
-| Assign. |  | Reader [^tabletext2] |  |
+| Assign. |  | Reader |  |
 | Commit async. | Reader | Reader |  |
-| Commit sync.| Reader | Reader |  |
+| Commit sync. | Reader | Reader |  |
 | Enforce rebalance. |  | Reader |  |
 | Poll. |  | Reader |  |
 | Subscribe. |  | Reader |  |
-| Unsubscribe. |  | Reader |  |
-{: caption="Table 3. Consumer actions" caption-side="bottom"}
+| Unsubscribe. |  | Reader | Writer |
+{: caption="Table 2. Consumer actions" caption-side="bottom"}
 
 [^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
 
 ### Administration actions
-{: #administration_actions}
+{: #administration_actions} 
+
+In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Administration actions | Topic  | Group  | Txnid |
 | --- | --- | --- | --- |
 | Alter topic configurations. | Manager |  |  |
 | Alter consumer group offsets. | Reader | Reader |  |
-| Create partitions. | Manager |  |  |
 | Create partitions. | Manager |  |  |
 | Create topics. | Manager |  |  |
 | Delete consumer group offsets. | Reader | Manager |  |
@@ -155,9 +155,9 @@ With consumer actions, you can control an application's ability to join a consum
 {: caption="Table 4. Administration actions" caption-side="bottom"}
 
 ### Schema Registry actions
-{: #schema_registry_actions}
+{: #schema_registry_actions} 
 
-With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). Note that *artifact* is the general Kafka term for schemas, and they can also be referred to as *subjects*. For more information, see [Using Event Streams Schema Registry](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+With Schema Registry actions, you can alter the schema version, such as create, update, and delete artifact or artifact versions (Enterprise plan only). *Artifact* is the term that {{site.data.keyword.messagehub}} uses to describe related schemas, often associated with and used by a particular Kafka topic. The term *subject* is often used to describe the same concept. For more information, see [Using Event Streams Schema Registry](/docs/EventStreams?topic=EventStreams-ES_schema_registry). In addition to the policies required for this resource type, access to `ResourceType: Cluster` and a `Role: Reader, Writer, Manager` is required.
 
 | Schema Registry actions | Schema  |
 | --- | --- |
@@ -196,8 +196,8 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Deletes the specified subject and its associated compatibility level if registered. | Manager  |
 | Delete a specific version of the schema registered under this subject. | Manager |
 | Delete the specified subject-level compatibility level config and reverts to the global default. | Manager  |
-| Update the global compatibility rule. | N/A [^tabletext3]  |
-| Update the global compatibility level. | N/A [^tabletext4]  |
+| Update the global compatibility rule.   | [^tabletext3] |
+| Update the global compatibility level.   | [^tabletext4] |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
 [^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
