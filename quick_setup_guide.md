@@ -83,7 +83,7 @@ Before you get started, we highly recommend you read the following information t
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
-Using APIs
+### Using APIs
 {: #using_apis}
 {: api}
 
