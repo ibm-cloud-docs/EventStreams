@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-07"
+lastupdated: "2023-11-14"
 
 keywords: quick setup guide
 
@@ -77,11 +77,11 @@ Before you get started, we highly recommend you read the following information t
 
 {{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
-* The Lite plan offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
+* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
 
-* The Standard plan offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
+* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
 
-* The Enterprise plan offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
 {: #provision_instance_ui}
@@ -148,12 +148,20 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
 
 
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the API
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the resource controller API
 {: #provision_instance_api}
 {: api}
 
-**Which API should we focus on? How do you provision an instance via the API?**
 
+You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the resource controller API to provision an instance, the Admin REST API to work with topics, and the REST Producer API to produce messages.
+
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run the following command to create an Enterprise instance in US South:
+
+```sh
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
+-d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
+```
+{: codeblock}
 
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
@@ -161,22 +169,24 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
-3. Select the number of partitions. Click **Next**.
+3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
     Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-    _Can you updating topics via the UI? Can you view cluster info via the UI?_
+    Click **Next**.
+
+    _Can you update topics via the UI? Can you view cluster info via the UI?_
     _Bring in information like suggested topic naming strategies_
 
 4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed.
 
     Click **Create topic**.
 
-### Working with topics
+### Working with topics using the console
 {: #work_topic_ui}
 {: ui}
 
@@ -379,7 +389,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: codeblock}
 
 
-### Working with topics
+### Working with topics using the Admin REST API
 {: #work_topic_api}
 {: api}
 
@@ -507,6 +517,8 @@ _Bring in information like suggested topic naming strategies_
 {: #create_credential_ui}
 {: ui}
 
+(/docs/EventStreams?topic=EventStreams-security#what_secure) 
+
 To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 
 1. Locate your {{site.data.keyword.messagehub}} service in the **Resource list**.
@@ -548,17 +560,24 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-## Step 4: Create an IAM service credential by using the API
+## Step 4: Create an IAM service credential by using the CLI and API
 {: #create_credential_api}
 {: api}
 
-**How do you create this via the API?**
+The supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
+
+```sh
+ibmcloud iam oauth-tokens
+```
+{: codeblock}
+
+Place this token in the Authorization header of the HTTP request in the form `Bearer<token>`. Both API key or JWT tokens are supported. 
 
 ## Step 5: Produce data using the console
 {: #produce_data_ui}
 {: ui}
 
-You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
+You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [REST Producer API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
 
 
 ## Step 5: Produce data using the CLI
@@ -612,16 +631,11 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Step 5: Produce data using the API
+## Step 5: Produce data using the REST producer API
 {: #produce_data_api}
 {: api}
 
-**How do you produce data using the API?**
-
-## Producing messages by using the REST producer API
-{: #rest_produce_messages}
-
-Use the v2 endpoint of the producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
+Use the v2 endpoint of the REST producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of `text` type by using curl:
 
@@ -648,7 +662,7 @@ curl -v -X POST \
 ```
 {: codeblock}
 
-For more information about the API, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
+For more information, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
 
 
 ### Configuration settings
@@ -669,7 +683,7 @@ _Highlight the most important kafka settings for producers are here including de
 {: #consume_data_ui}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or [API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#consume_data_api).
+You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
 ## Step 6: Consume data using the CLI
 {: #consume_data_cli}
@@ -706,11 +720,13 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
-## Step 6: Consume data using the API 
+## Step 6: Consume data using an API 
 {: #consume_data_api}
 {: api}
 
-**How do you consume data using the API?**
+You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries.
+
+As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
 ### Configuration settings
 {: #consumer_config_api}
