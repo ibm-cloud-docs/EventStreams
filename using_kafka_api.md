@@ -31,7 +31,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |   |Enterprise plan   |Standard plan   |Lite plan |
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
-|**Minimum client versions recommended**  |  Kafka 2.6.0, or later | Kafka 2.6.0, or later   | Kafka 2.6.0, or later  |
+|**Minimum Kafka client version recommended**  |  Kafka 2.6.0, or later | Kafka 2.6.0, or later   | Kafka 2.6.0, or later  |
 |**Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
