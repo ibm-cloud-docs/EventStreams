@@ -31,6 +31,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |   |Enterprise plan   |Standard plan   |Lite plan |
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
+|**Minimum Kafka client version recommended**  |  Kafka 2.6.0, or later | Kafka 2.6.0, or later   | Kafka 2.6.0, or later  |
 |**Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
@@ -51,7 +52,7 @@ For other languages, run one of the following clients, all of which are tested w
 | Client  | Language   | Recommended version   |Minimum version supported [^tabletext1] |  Link to sample|
 |---|---|---|---|---|
 |**Official Apache Kafka client:**         |   |   |   |    |
-| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | Latest  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
+| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | 2.6.0, or later  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
 |**Third-party clients:**   |   |   |   |    |
 |[node-rdkafka](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
 |[confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
