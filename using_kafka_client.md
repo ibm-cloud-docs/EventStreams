@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-11-21"
 
 keywords: java client, api, admin api, liberty, migrate client, sasl.jaas.config property
 
@@ -17,6 +17,8 @@ subcollection: EventStreams
 
 The Java&trade; Kafka API sample is an example producer and consumer that is written in Java, which directly uses the Kafka API. You can run this sample locally or in {{site.data.keyword.Bluemix_short}}.
 {: shortdesc}
+
+For optimal performance with the Java client, you are recommended to use version 2.6.0, or later. For more information, see [known restriction about Java Kafka calls](/docs/EventStreams?topic=EventStreams-restrictions#calls_timeout_problem).
 
 The sample code is in the [event-streams-samples GitHub project](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: external}. Although the sample uses the Kafka API to send and receive messages, the sample uses the {{site.data.keyword.messagehub}} Administration API to create the topic it sends messages to and receives messages from.
 

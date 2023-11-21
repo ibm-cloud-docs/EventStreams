@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-11-21"
 
 keywords: restrictions, failover, jvm ttl, creating topic, deleting topic
 
@@ -75,7 +75,7 @@ Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is 
 
 Retry your calls after you wait long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address is returned from the DNS query. 
 
-A Kafka Improvement Proposal (KIP) #302 (available from Kafka 2.1.1) ensures that Kafka clients try all available broker IP addresses 
+A Kafka Improvement Proposal (KIP) #302 (available as an option from Kafka 2.1.1 and included by default from 2.6.0) ensures that Kafka clients try all available broker IP addresses 
 and not a subset, so a failure in a single IP address does not cause a failure. 
 
 You need to opt into this functionality by using one of the following methods:
