@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-18"
+lastupdated: "2023-11-21"
 
 keywords: quick setup guide
 
@@ -18,11 +18,11 @@ subcollection: EventStreams
 # Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
-This tutorial guides you through the steps to start using {{site.data.keyword.messagehub}} quickly by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
-Complete the following steps: {: ui}
-* [Prerequisites](#prereqs)
+
+* [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui)
 * [Step 3: Create a topic and partitions using the console](#create_topic_ui)
@@ -36,7 +36,7 @@ Complete the following steps: {: ui}
 {: ui}
 
 Complete the following steps: {: cli}
-* [Prerequisites](#prereqs)
+* [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
 * [Step 3: Create a topic and partitions using the CLI](#create_topic_cli)
@@ -50,7 +50,7 @@ Complete the following steps: {: cli}
 {: cli}
 
 Complete the following steps: {: api}
-* [Prerequisites](#prereqs)
+* [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
 * [Step 3: Create a topic and partitions using the API](#create_topic_api)
@@ -64,7 +64,7 @@ Complete the following steps: {: api}
 {: api}
 
 
-## Prerequisites
+## Before you begin
 {: #prereqs}
 
 Before you get started, we highly recommend you read the following information to better understand Apache Kafka, which {{site.data.keyword.messagehub}} is built on:
