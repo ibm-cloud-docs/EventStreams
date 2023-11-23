@@ -26,7 +26,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Private networking in SZR
-:   This capability means that any data that you publish or consume from the Event Streams service is over the private network and not public interfaces.Private endpoints are now supported across all regions (MZR and SZR) in the Enterprise Plan 
+:   This capability means that any data that you publish or consume from the Event Streams service is over the private network and not public interfaces.Private endpoints are now supported across all regions (MZR and SZR) in the Enterprise Plan. 
 
 
 ## October 2023
