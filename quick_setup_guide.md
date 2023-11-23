@@ -35,7 +35,6 @@ This tutorial guides you through the steps to quickly start using {{site.data.ke
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
-Complete the following steps: {: cli}
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
@@ -49,7 +48,6 @@ Complete the following steps: {: cli}
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
-Complete the following steps: {: api}
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
@@ -89,9 +87,9 @@ Before you get started, we highly recommend you read the following information t
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* the resource controller API to provision an instance 
-* the Admin REST API to work with topics 
-* the REST Producer API to produce messages.
+* The resource controller API to [provision an instance](#provision_instance_api). 
+* The Admin REST API to [work with topics](#work_topic_api). 
+* The REST Producer API to [produce messages](#produce_data_api).
 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
@@ -529,7 +527,7 @@ _Bring in information like suggested topic naming strategies_
 
 (/docs/EventStreams?topic=EventStreams-security#what_secure) 
 
-To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
+Create a service key by using the {{site.data.keyword.Bluemix_notm}} console so that you can connect to your {{site.data.keyword.messagehub}} instance:
 
 1. Locate your {{site.data.keyword.messagehub}} service in the **Resource list**.
 2. Click your service tile.
@@ -542,7 +540,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 {: #create_credential_cli}
 {: cli}
 
-To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps.
+Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so that you can connect to your {{site.data.keyword.messagehub}} instance:
 
 1. Locate your service: 
     ```bash
@@ -574,7 +572,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: #create_credential_api}
 {: api}
 
-The supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
+To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
 
 ```sh
 ibmcloud iam oauth-tokens
