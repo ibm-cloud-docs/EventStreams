@@ -18,7 +18,7 @@ content-type: release-note
 # Release notes for {{site.data.keyword.messagehub}}
 {: #event-streams-relnotes}
 
-Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
+Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month. Release notes are available for a minimum of three years.
 {: shortdesc}
 
 ## November 2023
