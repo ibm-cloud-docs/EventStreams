@@ -206,7 +206,7 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 [^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 [^tabletext4]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 
-## Schema Registry compatibility actions
+### Schema Registry compatibility actions
 {: #schema_registry_compatibility_actions}
 
 | Schema Registry compatibility actions | Schema  |
