@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-11-18"
+lastupdated: "2023-11-28"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -199,12 +199,41 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Deletes the specified subject and its associated compatibility level if registered. | Manager  |
 | Delete a specific version of the schema registered under this subject. | Manager |
 | Delete the specified subject-level compatibility level config and reverts to the global default. | Manager  |
-| Update the global compatibility rule.   | [^tabletext3] |
-| Update the global compatibility level.   | [^tabletext4] |
+| Update the global compatibility rule. [^tabletext3] |  |
+| Update the global compatibility level. [^tabletext4] |  |
 {: caption="Table 5. Schema Registry actions" caption-side="bottom"}
 
 [^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 [^tabletext4]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
+
+## Schema Registry compatibility actions
+{: #schema_registry_compatibility_actions}
+
+| Schema Registry compatibility actions | Schema  |
+| --- | --- |
+| Get the schema string identified by the input ID. | Reader |
+| Retrieves only the schema identified by the input ID. | Reader |
+| Get the schema types that are registered with Schema Registry. |  |
+| Get the subject-version pairs identified by the input ID. | Reader |
+| Get a list of registered subjects. |  |
+| Get a list of versions registered under the specified subject. | Reader |
+| Deletes the specified subject and its associated compatibility level if registered. | Manager |
+| Get a specific version of the schema registered under this subject. | Reader |
+| Get the schema for the specified version of this subject. | Reader |
+| Register a new schema under the specified subject. | Reader/Writer [^tabletext5] |
+| Check if a schema has already been registered under the specified subject. | Reader |
+| Deletes a specific version of the schema registered under this subject. | Manager |
+| Get a list of IDs of schemas that reference the schema with the given subject and version. | Reader |
+| Test input schema against a particular version of a subject’s schema for compatibility. | Reader |
+| Perform a compatibility check on the schema against one or more versions in the subject. | Reader |
+| Update global compatibility level. [^tabletext6] |  |
+| Get global compatibility level. |  |
+| Update compatibility level for the specified subject. | Manager |
+| Get compatibility level for a subject. | Reader |
+| Deletes the specified subject-level compatibility level config and reverts to the global default. | Manager |
+
+[^tabletext5]: Reader if the version already exists, Writer if the version is to be created by the API call.
+[^tabletext6]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 
 ## Wildcarding
 {: #wildcarding }
@@ -216,10 +245,10 @@ You can take advantage of the IAM wildcarding facility to set policies for group
 
 For more information about how to get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
-## Managing access to the schema registry
+## Managing access to the Schema Registry
 {: #managing_access_schemas}
 
-The authorization model for the schema registry used the same style of policies that are described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document.
+The authorization model for the Schema Registry used the same style of policies that are described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document.
 
 ### IAM resources
 {: #iam_resources}
@@ -231,12 +260,12 @@ With the new `schema` IAM resource type, it is possible to create policies that 
 - All of the schemas stored by an instance of IBM {{site.data.keyword.messagehub}}.
 - All of the schemas stored by all of the instances of IBM {{site.data.keyword.messagehub}} in an account.
 
-{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type is also applied to the schema registry whereby a minimum role of Reader is required to access the registry.
+{{site.data.keyword.messagehub}} already has the concept of a cluster resource type. It is used to control all access to the service instance, with the minimum role of Reader being required to access any Kafka or HTTPS endpoint. This use of the cluster resource type is also applied to the Schema Registry whereby a minimum role of Reader is required to access the registry.
 
 ### Example authorization scenarios
 {: #example_authorization_scenarios}
 
-The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} schema registry, together with the roles that are required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application that connects to the registry.
+The following table describes some examples of scenarios for interacting with the {{site.data.keyword.messagehub}} Schema Registry, together with the roles that are required by the actors involved. The process of managing schemas is handled separately to deploying applications. So policies are required for both the service ID that manages schemas in the registry and the application that connects to the registry.
 
 Scenario | Person or process role | Person or process resource| Application role | Application resource
 --- | --- | --- | --- | ---
