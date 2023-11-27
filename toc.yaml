@@ -96,7 +96,7 @@ toc:
         - reserved_disk.md
         - setting_up_app_vpn.md
         - topicgroup:
-            label: API reference
+            label: API and CLI reference
             topics:
             - topic: api_overview.md
             - link:
@@ -108,7 +108,7 @@ toc:
             - link:
                 label: IBM Event Streams Admin REST API
                 href: https://{DomainName}/apidocs/event-streams/adminrest
-        - eventstreams-cli.md
+            - eventstreams-cli.md
         - topicgroup:
               label: Related links
               topics:
