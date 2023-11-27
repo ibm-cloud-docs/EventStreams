@@ -42,6 +42,7 @@ toc:
               navtitle: Managing encryption
             - scaling_capacity.md
             - enabling_mirroring.md
+            - disabling_mirroring.md
             - enabling_kafka_quotas.md
         - topicgroup:
             label: Developing apps with Event Streams
