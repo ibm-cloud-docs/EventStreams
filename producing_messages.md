@@ -21,8 +21,8 @@ A producer is an application that publishes streams of messages to Kafka topics.
 In the programming interfaces, a message is called a record. For example, the Java class org.apache.kafka.clients.producer.ProducerRecord is used to represent a message from the point of view of the producer API. The terms _record_ and _message_ can be used interchangeably, but essentially a record is used to represent a message.
 
 When a producer connects to Kafka, it makes an initial bootstrap connection. This connection can be to any of the servers in the cluster. The producer requests the partition and leadership information about the topic that it wants to publish to. Then, the producer establishes another connection to the partition leader and can publish messages. These actions happen automatically internally when your producer connects to the Kafka cluster.
- 
-When a message is sent to the partition leader, that message is not immediately available to consumers. The leader appends the record for the message to the partition, assigning it the next offset number for that partition. After all the followers for the in-sync replicas replicated the record and acknowledged that they wrote the record to their replicas, the record is now *committed* and becomes available for consumers.
+
+To ensure availability, the kafka brokers replicate messages so that if one broker is unavailable, the others can still receive messages from producers and send them to consumers. {{site.data.keyword.messagehub}} uses a replication factor of 3, meaning that each message is stored on three brokers. When a message is sent to the partition leader, that message is not immediately available to consumers. The leader appends the record for the message to the partition, assigning it the next offset number for that partition. After all the followers for the in-sync replicas replicated the record and acknowledged that they wrote the record to their replicas, the record is now *committed* and becomes available for consumers.
 
 Each message is represented as a record that comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it is best to put all of the message data in the value and  use the key for partitioning or log compaction. Do not rely on everything that reads from Kafka to use the key.
 
@@ -134,7 +134,9 @@ To enable *exactly once* semantics, you must use the idempotent or transactional
 
 These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user and password authentication, so you need these properties at a minimum. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
+To connect a consumer to {{site.data.keyword.messagehub}}, you will need to create service credentials. For information about how to get these credentials, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+
+In the producer code, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user and password authentication, so you need these properties at a minimum. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with those from your own service credentials:
 
 ```text
 Properties props = new Properties();
@@ -154,7 +156,9 @@ To send messages, you also need to specify serializers for the keys and values, 
  props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 ```
 
-Then, use a KafkaProducer to send messages, where each message is represented by a ProducerRecord. Don't forget to close the KafkaProducer when you're finished. This code just sends the message but it doesn't wait to see whether the send succeeded.
+These serializers must match the deserializers used by the consumers.
+
+Then, use a KafkaProducer to send messages, where each message is represented by a ProducerRecord. Don't forget to close the KafkaProducer when you're finished. This code just sends the message but it doesn't wait to see whether the send succeeded. The message is sent to topic `T1`, with key the string `key` and value the string `value`.
 
 ```text
  Producer<String, String> producer = new KafkaProducer<>(props);
