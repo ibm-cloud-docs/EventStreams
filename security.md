@@ -46,7 +46,7 @@ The Enterprise plan meets HIPAA requirements.
 
 {{site.data.keyword.messagehub}} is ISO 27001, 27017, 27018, and ISO 27701 certified. ISO 27001 (International Organisation for Standardisation) is an international standard for information security. ISO 27017/27018 is an information security framework for Cloud service providers. ISO 27701 is a privacy add on and requires developing and managing a privacy information management system (PIMS). 
 
-The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance/global).
+The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance).
 
 The Enterprise, Standard, and Satellite plans ISO 27001, 27017, 27018, and ISO 27701 certified.
 
