@@ -182,7 +182,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
 1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** using the menu on the left.
-2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
+2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 200 characters.
 3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
@@ -243,7 +243,7 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 **Command options**:
 
 --name value
-:   Topic name. Topic names are restricted to a maximum of 100 characters.
+:   Topic name. Topic names are restricted to a maximum of 200 characters.
 
 --partitions value
 :   Set the number of partitions for the topic.
