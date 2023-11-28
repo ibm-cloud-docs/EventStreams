@@ -79,7 +79,7 @@ The following steps show you how to scale up throughput and storage capacity for
 
 Currently, scaling up an {{site.data.keyword.messagehub}} service instance capacity requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
 
-To install this tool, see [install devtools](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
+To install this tool, see [install devtools](/docs/cli?topic=cli-install-ibmcloud-cli).
 
 The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to issue the **service-instance-** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
@@ -110,11 +110,11 @@ Valid combinations and values for the "throughput" and "storage_size" are listed
 ### Example
 {: #scaleup_example}
 
-Deploy a service instance configured with a base capacity unit:
+This example shows how to first deploy a service instance configured with a base capacity unit (the default):
 * 150 MB/s of throughput capacity.
 * 2 TB of storage capacity for data retention.
 
-Scale this service instance to a configuration of a base capacity unit, one extra capacity unit, and 4 TB of extra storage to provide:
+Then scale this service instance to a configuration of a base capacity unit, one extra capacity unit, and 4 TB of extra storage to provide:
 * 300 MB/s of throughput capacity.
 * 8 TB of storage capacity for data retention.
 
@@ -181,7 +181,7 @@ Scale this service instance to a configuration of a base capacity unit, one extr
 
 6. Monitor the update of the service instance.
 
-    The scale-up process might take several minutes to complete depending on what new resources need to be allocated to the service instance.
+    The scale-up process might take from several minutes to three hours to complete depending on what new resources need to be allocated to the service instance.
     
     You can get the current service instance information by using the following command.
     
