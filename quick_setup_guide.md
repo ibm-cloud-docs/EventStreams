@@ -18,7 +18,7 @@ subcollection: EventStreams
 # Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
-This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 Follow these steps to complete the tutorial: {: ui}
@@ -122,22 +122,21 @@ To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting
 
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI
-{: #step1_install_cli}
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+{: #step1_install_cli_qsg}
 
-    For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+    
 
-2. Log in to {{site.data.keyword.Bluemix_notm}} 
-{: #step2_login}
-
-    Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+2. Log in to {{site.data.keyword.Bluemix_notm}} by running the following command:
+{: #step2_login_qsg}
+    
 
     ```sh
     ibmcloud login -a cloud.ibm.com
     ```
     {: codeblock}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans.
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
      
     Select one of the following methods:
@@ -149,7 +148,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         ```
         {: codeblock}
    
-        Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
+        Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
 
 
     * To create an instance from the CLI on the Standard plan, run the following command:
@@ -257,7 +256,7 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 {: #work_topic_cli}
 {: cli}
 
-After you create topics, you can use the CLI to [list](#ibmcloud_es_topic_list_cli), [delete](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the CLI to [list topics](#ibmcloud_es_topic_list_cli), [delete topics](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also [view details about your cluster](#ibmcloud_es_cluster_cli) using the CLI.
 
 
 _Bring in information like suggested topic naming strategies_
@@ -303,24 +302,6 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 :   Delete without confirmation.
 
 
-#### Display cluster details using the **ibmcloud es cluster** command
-{: #ibmcloud_es_cluster_cli}
-
-Run the **ibmcloud es cluster** command to display the details of the cluster, including the Kafka version.
-
-```bash
-ibmcloud es cluster [--json]
-```
-{: codeblock}
-
-**Prerequisites**: None
-
-**Command options**:
-
---json (optional)
-:   Output format in JSON.
-
-
 
 #### Update the configuration of a topic using the **ibmcloud es topic-update** command
 {: #ibmcloud_es_topic_update_cli}
@@ -353,7 +334,22 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 --default, -d  (optional)
 :   Reset each configuration parameter that is specified by using '--config' to its default value.
 
+#### Display cluster details using the **ibmcloud es cluster** command
+{: #ibmcloud_es_cluster_cli}
 
+Run the **ibmcloud es cluster** command to display the details of the cluster, including the Kafka version.
+
+```bash
+ibmcloud es cluster [--json]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--json (optional)
+:   Output format in JSON.
 
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
@@ -531,7 +527,7 @@ _Bring in information like suggested topic naming strategies_
 {: ui}
 
 
-Create a service key by using the {{site.data.keyword.Bluemix_notm}} console so that you can connect to your {{site.data.keyword.messagehub}} instance:
+To allow you to connect to your {{site.data.keyword.messagehub}} instance, create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 
 1. Locate your {{site.data.keyword.messagehub}} service in the **Resource list**.
 2. Click your service tile.
@@ -564,7 +560,7 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
     ```
     {: codeblock}
 
-    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command, as in the following example. 
+    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter to the previous **service-key-create** CLI command. For example: 
     {: note}
 
     ```bash
@@ -626,7 +622,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 
 
@@ -705,7 +701,7 @@ You can use the {{site.data.keyword.messagehub}} Kafka console consumer tool to 
 
 The console tools are in the `bin` directory of your Kafka client download.
 
-You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
+You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data using the CLI](#produce_data_cli), run the console consumer in a terminal as follows:
 
 ```bash
    kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
@@ -717,7 +713,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 ### Configuration settings
 {: #consumer_config_cli}
