@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-27"
+lastupdated: "2023-11-28 "
 
 keywords: quick setup guide
 
@@ -18,10 +18,10 @@ subcollection: EventStreams
 # Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
-This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
-Complete the following steps: {: ui}
+Follow these steps to complete the tutorial: {: ui}
 
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
@@ -36,7 +36,8 @@ Complete the following steps: {: ui}
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
-Complete the following steps: {: cli}
+Follow these steps to complete the tutorial: {: cli}
+
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
@@ -50,7 +51,7 @@ Complete the following steps: {: cli}
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
-Complete the following steps: {: api}
+Follow these steps to complete the tutorial: {: api}
 
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
@@ -77,11 +78,11 @@ Before you get started, we highly recommend you read the following information t
 ## Step 1: Choose your plan 
 {: #choose_plan}
 
-{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
+{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one best suits your needs, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
-* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
+* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
 
-* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
+* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service that seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
@@ -529,16 +530,15 @@ _Bring in information like suggested topic naming strategies_
 {: #create_credential_ui}
 {: ui}
 
-(/docs/EventStreams?topic=EventStreams-security#what_secure) 
 
 Create a service key by using the {{site.data.keyword.Bluemix_notm}} console so that you can connect to your {{site.data.keyword.messagehub}} instance:
 
 1. Locate your {{site.data.keyword.messagehub}} service in the **Resource list**.
 2. Click your service tile.
-3. Click **Service Credentials**.
-4. Click **New Credential**. 
+3. Click **Service credentials**.
+4. Click **New credential**. 
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Click this credential by using **View Credentials** to reveal the details in JSON format.
+6. Click the chevron next to the new credential to reveal the details in JSON format.
 
 ## Step 4: Create an IAM service credential by using the CLI
 {: #create_credential_cli}
@@ -840,7 +840,7 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with the {{
 
 ksqlDB is a purpose-built database for event streaming. Use it to build end-to-end event streaming applications quickly with a purpose-built stream processing database for Apache Kafka.
 
-First complete these setup [steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
+First complete these [setup steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
 
 ## Step 10: Get help
