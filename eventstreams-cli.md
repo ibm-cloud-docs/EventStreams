@@ -424,3 +424,38 @@ ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) 
 
 --force
 :   Optional. Replace mirroring topic selection without confirmation.
+
+## ibmcloud es mirroring-active-topics
+{: #ibmcloud_es_mirroring_active_topics}
+
+Get topics that are being actively mirrored.
+
+```sh
+ibmcloud es mirroring-active-topics [--json]
+```
+{: codeblock}
+
+**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
+
+**Command options**:
+
+--json (optional)
+:   Format output in JSON.
+
+## ibmcloud es help
+{: #ibmcloud_es_help}
+
+Show help for a command, or list all commands.
+
+```sh
+ibmcloud es help [COMMAND]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+COMMAND (optional)
+:   Show help for a command.
+
