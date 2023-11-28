@@ -118,7 +118,7 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 {: #provision_instance_cli}
 {: cli}
 
-To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
+To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/cli?topic=cli-getting-started).
 
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
@@ -801,13 +801,13 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 {: #activity_tracker_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Step 8: Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: api}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## Step 9: (Optional) Use Kafka Connect or kSQLdb

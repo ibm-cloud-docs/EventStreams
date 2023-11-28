@@ -25,7 +25,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Lite, Stan
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-getting-started){: external}.
 
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
