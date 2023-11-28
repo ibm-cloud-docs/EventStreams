@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-11-28"
 
 keywords: producer, producing messages, message ordering, batching, throttling, compression
 
@@ -22,7 +22,7 @@ In the programming interfaces, a message is called a record. For example, the Ja
 
 When a producer connects to Kafka, it makes an initial bootstrap connection. This connection can be to any of the servers in the cluster. The producer requests the partition and leadership information about the topic that it wants to publish to. Then, the producer establishes another connection to the partition leader and can publish messages. These actions happen automatically internally when your producer connects to the Kafka cluster.
 
-To ensure availability, the kafka brokers replicate messages so that if one broker is unavailable, the others can still receive messages from producers and send them to consumers. {{site.data.keyword.messagehub}} uses a replication factor of 3, meaning that each message is stored on three brokers. When a message is sent to the partition leader, that message is not immediately available to consumers. The leader appends the record for the message to the partition, assigning it the next offset number for that partition. After all the followers for the in-sync replicas replicated the record and acknowledged that they wrote the record to their replicas, the record is now *committed* and becomes available for consumers.
+To ensure availability, the Kafka brokers replicate messages, so that if one broker is unavailable, the others can still receive messages from producers and send them to consumers. {{site.data.keyword.messagehub}} uses a replication factor of 3, meaning that each message is stored on three brokers. When a message is sent to the partition leader, that message is not immediately available to consumers. The leader appends the record for the message to the partition, assigning it the next offset number for that partition. After all the followers for the in-sync replicas replicated the record and acknowledged that they wrote the record to their replicas, the record is now *committed* and becomes available for consumers.
 
 Each message is represented as a record that comprises two parts: key and value. The key is commonly used for data about the message and the value is the body of the message. Because many tools in the Kafka ecosystem (such as connectors to other systems) use only the value and ignore the key, it is best to put all of the message data in the value and  use the key for partitioning or log compaction. Do not rely on everything that reads from Kafka to use the key.
 
@@ -134,7 +134,7 @@ To enable *exactly once* semantics, you must use the idempotent or transactional
 
 These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect a consumer to {{site.data.keyword.messagehub}}, you will need to create service credentials. For information about how to get these credentials, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+To connect a consumer to {{site.data.keyword.messagehub}}, you must create service credentials. For more information, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 In the producer code, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user and password authentication, so you need these properties at a minimum. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with those from your own service credentials:
 
