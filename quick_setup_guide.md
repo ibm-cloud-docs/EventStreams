@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-11-27"
 
 keywords: quick setup guide
 
@@ -21,6 +21,7 @@ subcollection: EventStreams
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
+Complete the following steps: {: ui}
 
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
@@ -35,6 +36,7 @@ This tutorial guides you through the steps to quickly start using {{site.data.ke
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
+Complete the following steps: {: cli}
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
@@ -47,6 +49,8 @@ This tutorial guides you through the steps to quickly start using {{site.data.ke
 * [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: cli}
+
+Complete the following steps: {: api}
 
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
