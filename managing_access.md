@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-11-29"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -15,8 +15,7 @@ subcollection: EventStreams
 # Managing authentication to your {{site.data.keyword.messagehub}} instances
 {: #security}
 
-{{site.data.keyword.messagehub}} supports two
- [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) (Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
+{{site.data.keyword.messagehub}} supports two [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) (Simple Authentication and Security Layer) mechanisms as the authentication methods to {{site.data.keyword.messagehub}} instances by default: PLAIN and OAUTHBEARER.
 {: shortdesc}
 
 Kafka client configured with SASL PLAIN uses an IAM API key as a plain text password in the authentication process, {{site.data.keyword.messagehub}} sends the API key to IAM for verification. When authenticated, this client will keep connected and will not require re-authentication until it is disconnected and wants to re-connect.
@@ -38,7 +37,6 @@ ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":
 {: #security_resources}
 
 You can secure your {{site.data.keyword.messagehub}} resources in a fine-grained manner to manage the access that you want to grant each user to each resource.
-{: shortdesc}
 
 When you change IAM policies and permissions, they can sometimes take several minutes to be reflected in the underlying service.
 {: important}
@@ -208,6 +206,8 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 
 ### Schema Registry compatibility actions
 {: #schema_registry_compatibility_actions}
+
+For interoperation with existing applications, the {{site.data.keyword.messagehub}} Schema Registry supports a subset of the [Confluent Schema Registry API V7.2](https://docs.confluent.io/platform/current/schema-registry/develop/api.html). To perform these actions, you need the following resource level access.
 
 | Schema Registry compatibility actions | Schema  |
 | --- | --- |
