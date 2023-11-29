@@ -207,7 +207,7 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 ### Schema Registry compatibility actions
 {: #schema_registry_compatibility_actions}
 
-For interoperation with existing applications, the {{site.data.keyword.messagehub}} Schema Registry supports a subset of the [Confluent Schema Registry API V7.2](https://docs.confluent.io/platform/current/schema-registry/develop/api.html). To perform these actions, you need the following resource level access.
+For interoperation with existing applications, the {{site.data.keyword.messagehub}} Schema Registry supports a subset of the [Confluent Schema Registry API v7.2](https://docs.confluent.io/platform/current/schema-registry/develop/api.html). To perform these actions, you need the following resource level access.
 
 | Schema Registry compatibility actions | Schema  |
 | --- | --- |
