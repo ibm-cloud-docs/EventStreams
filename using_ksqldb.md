@@ -62,8 +62,7 @@ Complete the following steps to get set up. When complete, you can run all queri
           - ksqldb-server
         entrypoint: /bin/sh
         tty: true
-    
-       ```
+    ```
     
     Where BOOTSTRAP_SERVERS and PASSWORD are the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in {{site.data.keyword.Bluemix_notm}}.
 
