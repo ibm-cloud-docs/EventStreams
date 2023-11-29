@@ -62,9 +62,11 @@ A consuming application then uses a deserializer to consume messages that were s
 
 This process provides an efficient way of ensuring that data in messages conforms to the required structure.
 
-The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer). ![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
+The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer).
 
-![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
+![Serialization and deserialization diagram.](schema_registry4.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
+
+![Compatibility and versions diagram.](schema_registry5.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
 
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
