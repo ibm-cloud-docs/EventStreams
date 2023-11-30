@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-28 "
+lastupdated: "2023-11-30"
 
 keywords: quick setup guide
 
@@ -55,11 +55,11 @@ Follow these steps to complete the tutorial: {: api}
 
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
-* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
-* [Step 3: Create a topic and partitions using the API](#create_topic_api)
-* [Step 4: Create an IAM service credential using the API](#create_credential_api)
-* [Step 5: Produce data using the API](#produce_data_api)
-* [Step 6: Consume data using the API](#consume_data_api)
+* [Step 2: Provision an {{site.data.keyword.messagehub}} instance using an API](#provision_instance_api)
+* [Step 3: Create a topic and partitions using an API](#create_topic_api)
+* [Step 4: Create an IAM service credential using the CLI and an API](#create_credential_api)
+* [Step 5: Produce data using an API](#produce_data_api)
+* [Step 6: Consume data using an API](#consume_data_api)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api)
 * [Step 8: Connect Activity Tracker](#activity_tracker_api)
 * [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
@@ -70,7 +70,7 @@ Follow these steps to complete the tutorial: {: api}
 ## Before you begin
 {: #prereqs}
 
-Before you get started, we highly recommend you read the following information to better understand Apache Kafka, which {{site.data.keyword.messagehub}} is built on:
+Before you get started, we highly recommend that you read the following information to better understand Apache Kafka, which {{site.data.keyword.messagehub}} is built on:
 * [Apache Kafka concepts](/docs/EventStreams?topic=EventStreams-apache_kafka)
 * [Apache Kafka fundamentals](https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=event%20streams)
 
@@ -82,9 +82,9 @@ Before you get started, we highly recommend you read the following information t
 
 * The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
 
-* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service that seamlessly autoscales as you increase the number of partitions you are using for your workload.
+* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
-* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, and increased retention are important considerations. 
 
 ### Using APIs
 {: #using_apis}
@@ -165,9 +165,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #provision_instance_api}
 {: api}
 
-You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the resource controller API to provision an instance, the Admin REST API to work with topics, and the REST Producer API to produce messages.
-
-The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run the following command to create an Enterprise instance in US South:
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
@@ -374,23 +372,27 @@ You can create a Kafka topic by issuing a POST request to the `/admin/topics` pa
 
 The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified, the topic is created with a single partition.
 
-You can also specify an optional `configs` object within the request. This allows the specification of the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. Note that the value of the `retentionMs` property must be specified in a whole number of hours (for example, multiples of 3600000).
+One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
+
+Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+
+You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000).
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-Expected HTTP status codes:
+The expected HTTP status codes are as follows:
 
 * 202: Topic creation request was accepted.
 * 400: Invalid request JSON.
 * 403: Not authorized to create topic.
 * 422: Semantically invalid request.
 
-If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, a HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
+If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, a HTTP status code of 422 (Unprocessable Entity) is returned, and a [JSON object](#information-returned-when-a-request-fails) containing additional information about the failure is returned as the body of the response.
 
 ### Example
 {: #create_topic_api_example}
 
-You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API.
 
 ```sh
 curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
@@ -404,15 +406,15 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 
 After you create topics, you can use the Admin REST API to [list topics](#topic_list_api) and [delete topics](#topic_delete_api) and [update topic configuration](#topic_update_api).
 
-#### List Kafka topics
+#### List topics
 {: #topic_list_api}
 
 You can list all your Kafka topics by issuing a GET request to the
 `/admin/topics` path. 
 
-Expected status code:
+The expected status code is:
 
-* 200: the topic list is returned as JSON in the following format:
+* 200: The topic list is returned as JSON in the following format:
 
 ```json
 [
@@ -452,19 +454,19 @@ curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}'
 ```
 {: codeblock}
 
-#### Delete a Kafka topic
+#### Delete a topic
 {: #topic_delete_api}
 
-To delete a Kafka topic, issue a DELETE request to the `/admin/topics/TOPICNAME`path (where TOPICNAME is the name of the Kafka topic that you want to delete).
+To delete a topic, issue a DELETE request to the `/admin/topics/TOPICNAME`path (where TOPICNAME is the name of the Kafka topic that you want to delete).
 
-Expected return codes:
+The expected return codes are as follows:
+
 - 202: Topic deletion request was accepted.
 - 403: Not authorized to delete topic.
 - 404: Topic does not exist.
   
 A 202 (Accepted) status code is returned if the REST API accepts the delete
-request or status code 422 (Unprocessable Entity) if the delete request is
-rejected. If a delete request is rejected, the body of the HTTP response contains a [JSON object](#information-returned-when-a-request-fails) which
+request. A status code 422 (Unprocessable Entity) is returned if the delete request is rejected. If a delete request is rejected, the body of the HTTP response contains a [JSON object](#information-returned-when-a-request-fails) which
 provides additional information about why the request was rejected.
 
 Kafka deletes topics asynchronously. Deleted topics can still appear in the
@@ -502,16 +504,16 @@ The following configuration keys are supported: 'cleanup.policy', 'retention.ms'
 
 You can only increase the partition number, not decrease it.
 
-Expected status codes:
+The expected status codes are as follows:
     - 202: Update topic request was accepted.
-    - 400: Invalid request JSON/number of partitions is invalid.
+    - 400: Invalid request JSON or number of partitions is invalid.
     - 404: Topic specified does not exist.
     - 422: Semantically invalid request.
 
 ##### Update topic configuration example
 {: #topic_update_example_api}
 
-The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
+The following curl command updates a topic called `MYTOPIC`, sets its `partitions` to 4 and its `cleanup.policy` to be `compact`.
 
 ```sh
 curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{"new_total_partition_count": 4,"configs":[{"name":"cleanup.policy","value":"compact"}]}' ${ADMIN_URL}/admin/topics/MYTOPIC
