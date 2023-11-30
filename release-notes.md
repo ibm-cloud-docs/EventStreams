@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-11-23"
 
 keywords: release notes
 
@@ -18,23 +18,23 @@ content-type: release-note
 # Release notes for {{site.data.keyword.messagehub}}
 {: #event-streams-relnotes}
 
-Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by date. Release notes are available for a minimum of three years.
+Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month. Release notes are available for a minimum of three years.
 {: shortdesc}
 
 ## November 2023
-{: #EventStreams-sep2023}
+{: #EventStreams-nov2023}
 {: release-note}
 
 Private networking in SZR
-:   This capability means that any data that you publish or consume from the Event Streams service is over the private network and not public interfaces.Private endpoints are now supported across all regions (MZR and SZR) in the Enterprise Plan 
+:   This capability means that any data that you publish or consume from the {{site.data.keyword.messagehub}} service is over the private network and not public interfaces. Private endpoints are now supported across all regions (MZR and SZR) in the Enterprise plan. 
 
 
 ## October 2023
-{: #EventStreams-sep2023}
+{: #EventStreams-oct2023}
 {: release-note}
 
-Event Streams is available in Madrid
-:   Event Streams is now supported in a new region: Madrid (eu-es).
+{{site.data.keyword.messagehub}} is available in Madrid
+:   {{site.data.keyword.messagehub}} is now supported in a new region: Madrid (eu-es).
 
 ## September 2023
 {: #EventStreams-sep2023}
@@ -44,7 +44,7 @@ Self-service mirroring enablement
 :   You can enable mirroring by running a **service-instance-update** CLI command against your target cluster, instead of raising a support ticket. To find out more, see [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
 ## August 2023
-{: #EventStreams-sep2023}
+{: #EventStreams-aug2023}
 {: release-note}
 
 UI Enhancements  

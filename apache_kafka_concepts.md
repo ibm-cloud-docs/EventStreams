@@ -27,7 +27,7 @@ The following list defines some Apache Kafka concepts:
 
 Apache Kafka is a distributed messaging system. A Kafka cluster consists of a set of brokers. A cluster has a minimum of three brokers.
 
-![Brokers diagram.](concepts_brokers.png "Diagram that shows an example broker."){: caption="Figure 2. Diagram that shows an example broker." caption-side="bottom"}
+![Brokers diagram.](concepts_brokers.png "Diagram that shows an example cluster with three brokers."){: caption="Figure 2. Diagram that shows an example cluster with three brokers." caption-side="bottom"}
 
 ## Messages
 {: #kafka_messages}
@@ -66,7 +66,7 @@ If the partition leader fails, another leader is chosen from the followers. All 
 ## Producers
 {: #kafka_producers}
 
-A producer publishes messages to one or more topics. A producer can publish to one or more topics and can optionally choose the partition that stores the data.
+A producer is a client application that publishes messages to one or more topics. A producer can publish to one or more topics and can optionally choose the partition that stores the data.
 
 You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgment the producer receives for messages it publishes.
 
@@ -77,7 +77,7 @@ For more information, see [Producing messages](/docs/EventStreams?topic=EventStr
 ## Consumers
 {: #kafka_consumers}
 
-A consumer reads messages from one or more topics and processes them. The difference between a consumer's current position and the newest message on a partition is known as the offset lag.
+A consumer is a client application that reads messages from one or more topics and processes them. The difference between a consumer's current position and the newest message on a partition is known as the offset lag.
 
 If the lag increases over time, it is a sign that the consumer is not able to keep up. Over the short term, this is not an issue but eventually the consumer might miss messages if the retention period is exceeded.
 
@@ -88,7 +88,7 @@ For more information, see [Consuming messages](/docs/EventStreams?topic=EventStr
 ## Consumer groups
 {: #kafka_consumer_groups}
 
-A consumer group contains one or more consumers that work together to process the messages. The messages from a single partition are processed by one consumer in each group.
+A consumer group contains one or more consumers that work together to process the messages of a topic. The messages from a single partition are processed by one consumer in each group.
 
 At any time, each partition is assigned to only one consumer in the group. This assignment ensures that the messages on each partition are processed in order.
 

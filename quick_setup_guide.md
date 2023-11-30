@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-11-28 "
 
 keywords: quick setup guide
 
@@ -18,9 +18,10 @@ subcollection: EventStreams
 # Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
-This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}} and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
+Follow these steps to complete the tutorial: {: ui}
 
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
@@ -35,7 +36,8 @@ This tutorial guides you through the steps to quickly start using {{site.data.ke
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
-Complete the following steps: {: cli}
+Follow these steps to complete the tutorial: {: cli}
+
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
@@ -49,7 +51,8 @@ Complete the following steps: {: cli}
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
-Complete the following steps: {: api}
+Follow these steps to complete the tutorial: {: api}
+
 * [Before you begin](#prereqs)
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the API](#provision_instance_api)
@@ -75,11 +78,11 @@ Before you get started, we highly recommend you read the following information t
 ## Step 1: Choose your plan 
 {: #choose_plan}
 
-{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one to choose, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
+{{site.data.keyword.messagehub}} offers three different plans. To help you decide which one best suits your needs, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
-* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	
+* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
 
-* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go access to the multi-tenant {{site.data.keyword.messagehub}} service. It's charged on a per partition-hour basis with an additional per GB charge for outbound data consumption.
+* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service that seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. 
 
@@ -89,9 +92,9 @@ Before you get started, we highly recommend you read the following information t
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* the resource controller API to provision an instance 
-* the Admin REST API to work with topics 
-* the REST Producer API to produce messages.
+* The resource controller API to [provision an instance](#provision_instance_api). 
+* The Admin REST API to [work with topics](#work_topic_api). 
+* The REST Producer API to [produce messages](#produce_data_api).
 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
@@ -115,26 +118,25 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 {: #provision_instance_cli}
 {: cli}
 
-To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
+To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/cli?topic=cli-getting-started).
 
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI
-{: #step1_install_cli}
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+{: #step1_install_cli_qsg}
 
-    For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+    
 
-2. Log in to {{site.data.keyword.Bluemix_notm}} 
-{: #step2_login}
-
-    Run the following command to log in to {{site.data.keyword.Bluemix_notm}}:
+2. Log in to {{site.data.keyword.Bluemix_notm}} by running the following command:
+{: #step2_login_qsg}
+    
 
     ```sh
     ibmcloud login -a cloud.ibm.com
     ```
     {: codeblock}
 
-3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} by using the Lite, Standard, or Enterprise plans.
+3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
      
     Select one of the following methods:
@@ -146,7 +148,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         ```
         {: codeblock}
    
-        Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
+        Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
 
 
     * To create an instance from the CLI on the Standard plan, run the following command:
@@ -254,7 +256,7 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 {: #work_topic_cli}
 {: cli}
 
-After you create topics, you can use the CLI to [list](#ibmcloud_es_topic_list_cli), [delete](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also use the CLI to [view details about your cluster](#ibmcloud_es_cluster_cli).
+After you create topics, you can use the CLI to [list topics](#ibmcloud_es_topic_list_cli), [delete topics](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also [view details about your cluster](#ibmcloud_es_cluster_cli) using the CLI.
 
 
 _Bring in information like suggested topic naming strategies_
@@ -300,24 +302,6 @@ ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
 :   Delete without confirmation.
 
 
-#### Display cluster details using the **ibmcloud es cluster** command
-{: #ibmcloud_es_cluster_cli}
-
-Run the **ibmcloud es cluster** command to display the details of the cluster, including the Kafka version.
-
-```bash
-ibmcloud es cluster [--json]
-```
-{: codeblock}
-
-**Prerequisites**: None
-
-**Command options**:
-
---json (optional)
-:   Output format in JSON.
-
-
 
 #### Update the configuration of a topic using the **ibmcloud es topic-update** command
 {: #ibmcloud_es_topic_update_cli}
@@ -350,7 +334,22 @@ ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]*
 --default, -d  (optional)
 :   Reset each configuration parameter that is specified by using '--config' to its default value.
 
+#### Display cluster details using the **ibmcloud es cluster** command
+{: #ibmcloud_es_cluster_cli}
 
+Run the **ibmcloud es cluster** command to display the details of the cluster, including the Kafka version.
+
+```bash
+ibmcloud es cluster [--json]
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--json (optional)
+:   Output format in JSON.
 
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
@@ -527,22 +526,21 @@ _Bring in information like suggested topic naming strategies_
 {: #create_credential_ui}
 {: ui}
 
-(/docs/EventStreams?topic=EventStreams-security#what_secure) 
 
-To create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
+To allow you to connect to your {{site.data.keyword.messagehub}} instance, create a service key by using the {{site.data.keyword.Bluemix_notm}} console:
 
 1. Locate your {{site.data.keyword.messagehub}} service in the **Resource list**.
 2. Click your service tile.
-3. Click **Service Credentials**.
-4. Click **New Credential**. 
+3. Click **Service credentials**.
+4. Click **New credential**. 
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Click this credential by using **View Credentials** to reveal the details in JSON format.
+6. Click the chevron next to the new credential to reveal the details in JSON format.
 
 ## Step 4: Create an IAM service credential by using the CLI
 {: #create_credential_cli}
 {: cli}
 
-To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps.
+Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so that you can connect to your {{site.data.keyword.messagehub}} instance:
 
 1. Locate your service: 
     ```bash
@@ -562,7 +560,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
     ```
     {: codeblock}
 
-    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter the previous CLI command, as in the following example. 
+    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter to the previous **service-key-create** CLI command. For example: 
     {: note}
 
     ```bash
@@ -574,7 +572,7 @@ To create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, com
 {: #create_credential_api}
 {: api}
 
-The supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
+To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
 
 ```sh
 ibmcloud iam oauth-tokens
@@ -624,7 +622,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 
 
@@ -703,7 +701,7 @@ You can use the {{site.data.keyword.messagehub}} Kafka console consumer tool to 
 
 The console tools are in the `bin` directory of your Kafka client download.
 
-You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data](#produce_data_cli), run the console consumer in a terminal as follows:
+You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data using the CLI](#produce_data_cli), run the console consumer in a terminal as follows:
 
 ```bash
    kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
@@ -715,7 +713,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console. 
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information about this tool, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
 ### Configuration settings
 {: #consumer_config_cli}
@@ -803,13 +801,13 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 {: #activity_tracker_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Step 8: Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: api}
 
-You cannot connect {{site.data.keyword.atracker_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## Step 9: (Optional) Use Kafka Connect or kSQLdb
@@ -838,7 +836,7 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with the {{
 
 ksqlDB is a purpose-built database for event streaming. Use it to build end-to-end event streaming applications quickly with a purpose-built stream processing database for Apache Kafka.
 
-First complete these setup [steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
+First complete these [setup steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
 
 
 ## Step 10: Get help
