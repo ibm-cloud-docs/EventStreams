@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-11-27"
 
-keywords: api, rest api
+keywords: api, rest api, cli
 
 subcollection: EventStreams
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# API overview
+# API and CLI overview
 {: #api_reference}
 
 {{site.data.keyword.messagehub_full}} provides a REST API to help connect your existing systems to your {{site.data.keyword.messagehub}} Kafka cluster. Using the API, you can 
