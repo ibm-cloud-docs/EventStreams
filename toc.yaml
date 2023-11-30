@@ -24,7 +24,8 @@ toc:
         - topic: use_cases.md
           navtitle: Apache Kafka use cases
         - choosing_your_plan.md
-        - quick_setup_guide.md
+        - topic: quick_setup_guide.md
+          navtitle: Quick setup guide
     - navgroup:
         id: howto
         topics:

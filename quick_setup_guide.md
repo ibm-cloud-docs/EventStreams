@@ -15,7 +15,7 @@ subcollection: EventStreams
 {:cli: .ph data-hd-interface="cli"}
 {:api: .ph data-hd-interface="api"}
 
-# Quick Setup Guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
+# Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
@@ -504,7 +504,7 @@ The following configuration keys are supported: 'cleanup.policy', 'retention.ms'
 
 You can only increase the partition number, not decrease it.
 
-The expected status codes are as follows:
+The expected status codes are as:
     - 202: Update topic request was accepted.
     - 400: Invalid request JSON or number of partitions is invalid.
     - 404: Topic specified does not exist.
@@ -513,7 +513,7 @@ The expected status codes are as follows:
 ##### Update topic configuration example
 {: #topic_update_example_api}
 
-The following curl command updates a topic called `MYTOPIC`, sets its `partitions` to 4 and its `cleanup.policy` to be `compact`.
+The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
 
 ```sh
 curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{"new_total_partition_count": 4,"configs":[{"name":"cleanup.policy","value":"compact"}]}' ${ADMIN_URL}/admin/topics/MYTOPIC
