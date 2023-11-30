@@ -80,11 +80,11 @@ Before you get started, we highly recommend that you read the following informat
 
 {{site.data.keyword.messagehub}} offers three different plans. To help you decide which one best suits your needs, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose){: external}.
 
-* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite) offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
+* The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite){: external} offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
 
-* The [Standard plan](docs/EventStreams?topic=EventStreams-plan_choose#plan_standard) offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
+* The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
-* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, and increased retention are important considerations. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, and increased retention are important considerations. 
 
 ### Using APIs
 {: #using_apis}
@@ -179,7 +179,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-1. From your newly provisioned instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** using the menu on the left.
+1. From your newly provisioned instance, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
 3. Select the number of partitions. 
 
@@ -201,15 +201,14 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: ui}
 
 After you create topics, you can use the console to [list topics](#list_topic_ui) and [delete topics](#delete_topic_ui).
+/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui
 
-
-_Bring in information like suggested topic naming strategies_
 
 #### List topics
 {: #list_topic_ui}
 {: ui}
 
-From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+From your {{site.data.keyword.messagehub}} instance, navigate to **Topics** from the menu on the left.
 
 From the **Topics page**, you can view the following information about your topics: 
 **Name**, **Partitions**, **Retention time**, **Retention size**, **Cleanup policy**, and **Stream landing**.
@@ -218,7 +217,7 @@ From the **Topics page**, you can view the following information about your topi
 {: #delete_topic_ui}
 {: ui}
 
-From your {{site.data.keyword.messagehub}} instance in the [**Catalog**](https://cloud.ibm.com/catalog/event-streams){: external}, navigate to **Topics** from the menu on the left.
+From your {{site.data.keyword.messagehub}} instance, navigate to **Topics** from the menu on the left.
 
 From the **Topics page**, click the three dots to the right of the topic name and click **Delete this topic**. 
 
@@ -387,7 +386,7 @@ The expected HTTP status codes are as follows:
 * 403: Not authorized to create topic.
 * 422: Semantically invalid request.
 
-If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, a HTTP status code of 422 (Unprocessable Entity) is returned, and a [JSON object](#information-returned-when-a-request-fails) containing additional information about the failure is returned as the body of the response.
+If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, an HTTP status code of 422 (Unprocessable Entity) is returned, and a [JSON object](#information-returned-when-a-request-fails) containing additional information about the failure is returned as the body of the response.
 
 ### Example
 {: #create_topic_api_example}
@@ -522,7 +521,6 @@ curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer $
 
 
 _Talk about describing the cluster._
-_Bring in information like suggested topic naming strategies_
 
 ## Step 4: Create an IAM service credential by using the console
 {: #create_credential_ui}
@@ -574,7 +572,7 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
 {: #create_credential_api}
 {: api}
 
-To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is to use a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
+To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is using a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
 
 ```sh
 ibmcloud iam oauth-tokens
@@ -641,11 +639,11 @@ _Include connection details and sample code to connect to the event streams inst
 
 _Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 
-## Step 5: Produce data using the REST producer API
+## Step 5: Produce data using the REST Producer API
 {: #produce_data_api}
 {: api}
 
-Use the v2 endpoint of the REST producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
+Use the v2 endpoint of the REST Producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of `text` type by using curl:
 
@@ -759,11 +757,11 @@ _Highlight the most important kafka settings for consumers are here including co
 You can use {{site.data.keyword.mon_full_notm}} to get operational visibility into the performance and health of your applications, services, and platforms. {{site.data.keyword.mon_full_notm}} provides administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 
 For more information about how to use {{site.data.keyword.monitoringshort}} with {{site.data.keyword.messagehub}}, see:
-* [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics)  
-* [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics)
-* [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics)
-* [Viewing details of metrics available](/docs/EventStreams?topic=EventStreams-metrics#metric_details)
-* [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs)
+* [Opting in to metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_metrics){: external}  
+* [Enabling default metrics](/docs/EventStreams?topic=EventStreams-metrics#enabling_default_metrics){: external}
+* [Enabling enhanced metrics](/docs/EventStreams?topic=EventStreams-metrics#opt_in_enhanced_metrics){: external}
+* [Viewing details of available metrics](/docs/EventStreams?topic=EventStreams-metrics#metric_details){: external}
+* [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs){: external}
 
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
@@ -791,12 +789,12 @@ To get up and running with {{site.data.keyword.at_short}}, see [Getting Started 
 
 For more information about events specific to {{site.data.keyword.messagehub}}, see:
 
-* [Where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui)
-* [Topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events)
-* [Message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events)
-* [Other events](/docs/EventStreams?topic=EventStreams-at_events#other-events)
+* [Where to view events](/docs/EventStreams?topic=EventStreams-at_events#ui){: external}
+* [Topic events](/docs/EventStreams?topic=EventStreams-at_events#topic-events){: external}
+* [Message audit events](/docs/EventStreams?topic=EventStreams-at_events#message-events){: external}
+* [Other events](/docs/EventStreams?topic=EventStreams-at_events#other-events){: external}
 
-Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard).
+Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard){: external}.
 
 
 ## Step 8: Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
@@ -824,9 +822,9 @@ Its key benefits are as follows:
 
 * Scalability: it can easily scale from a single worker to many.
 * Reliability: it automatically manages offsets and the lifecycle of connectors
-* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector) and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector).
+* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector){: external} and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector){: external}.
 
-For more information, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect).
+For more information, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect){: external}.
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
 
@@ -838,16 +836,16 @@ You can use [KSQL](https://github.com/confluentinc/ksql){: external} with the {{
 
 ksqlDB is a purpose-built database for event streaming. Use it to build end-to-end event streaming applications quickly with a purpose-built stream processing database for Apache Kafka.
 
-First complete these [setup steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps). Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html). 
+First complete these [setup steps](/docs/EventStreams?topic=EventStreams-ksql_using##kqsldbsteps){: external}. Then the quickest and easiest way to run ksqlDB with {{site.data.keyword.messagehub}} is to use a docker container as described in [ksqlDB quickstart](https://ksqldb.io/quickstart.html){: external}. 
 
 
 ## Step 10: Get help
 {: #getting_help}
 
-For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp).
+For a general overview of how to get help with {{site.data.keyword.messagehub}} and where to get support, see [Getting help and support](/docs/EventStreams?topic=EventStreams-gettinghelp){: external}.
 
-[FAQs](/docs/EventStreams?topic=EventStreams-faqs) details answers to some of the common questions about {{site.data.keyword.messagehub}}.
+[FAQs](/docs/EventStreams?topic=EventStreams-faqs){: external} details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
-If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
+If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise){: external}.
 
 
