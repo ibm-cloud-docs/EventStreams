@@ -71,8 +71,8 @@ Follow these steps to complete the tutorial: {: api}
 {: #prereqs}
 
 Before you get started, we highly recommend that you read the following information to better understand Apache Kafka, which {{site.data.keyword.messagehub}} is built on:
-* [Apache Kafka concepts](/docs/EventStreams?topic=EventStreams-apache_kafka)
-* [Apache Kafka fundamentals](https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=event%20streams)
+* [Apache Kafka concepts](/docs/EventStreams?topic=EventStreams-apache_kafka){: external}
+* [Apache Kafka fundamentals](https://developer.ibm.com/articles/event-streams-kafka-fundamentals/?mhsrc=ibmsearch_a&mhq=event%20streams){: external}
 
 
 ## Step 1: Choose your plan 
@@ -118,11 +118,11 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 {: #provision_instance_cli}
 {: cli}
 
-To use the {{site.data.keyword.messagehub}} CLI for the first time, see [Getting started with the CLI](/docs/cli?topic=cli-getting-started).
+If it's the first time you've used the CLI, see [Getting started with the CLI](/docs/cli?topic=cli-getting-started){: external}.
 
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/cli?topic=cli-getting-started#step1-install-idt){: external}.
 {: #step1_install_cli_qsg}
 
     
@@ -177,7 +177,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 {: #create_topic_ui}
 {: ui}
 
-For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}.
 
 1. From your newly provisioned instance, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
@@ -228,7 +228,7 @@ From the **Topics page**, click the three dots to the right of the topic name an
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
 
-Run the following [**ibmcloud es topic-create** command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es) to create a new topic with one partition: 
+Run the following [**ibmcloud es topic-create**](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es){: external} command to create a new topic with one partition: 
 
 ```bash
 ibmcloud es topic-create [--name] topic1 [--partitions 1] 
@@ -608,7 +608,7 @@ You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and 
 
 Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 
-{{site.data.keyword.messagehub}} provides example `producer.properties` and `consumer.properties` files for the [Java client](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample/resources).
+{{site.data.keyword.messagehub}} provides example `producer.properties` and `consumer.properties` files for the [Java client](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample/resources){: external}.
 
 After you create the properties file, you can run the console producer in a terminal as follows:
 
@@ -622,7 +622,7 @@ Replace the following variables in the example with your own values:
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
 
-You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
+You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools){: external}.
 
 
 
@@ -631,7 +631,7 @@ You can use many of the other options of this tool, except for those that requir
 {: cli}
 
 For details of settings that you can configure for the producer, for example `acks` and `retries`, see
-[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}.
 
 _b. via CLI support different languages - show Java library_
 
@@ -678,7 +678,7 @@ For more information, see the [{{site.data.keyword.messagehub}} REST Producer AP
 {: api}
 
 For details of settings that you can configure for the producer, for example `acks` and `retries`, see
-[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings).
+[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}.
 
 
 _b. via CLI c. via API - support different languages - show Java library)_
@@ -847,5 +847,4 @@ For a general overview of how to get help with {{site.data.keyword.messagehub}} 
 [FAQs](/docs/EventStreams?topic=EventStreams-faqs){: external} details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise){: external}.
-
 
