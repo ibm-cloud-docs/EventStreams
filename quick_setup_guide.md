@@ -94,7 +94,7 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 
 * The resource controller API to [provision an instance](#provision_instance_api). 
 * The Admin REST API to [work with topics](#work_topic_api). 
-* The REST Producer API to [produce messages](#produce_data_api).
+* The REST Producer API to [create an IAM service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
@@ -568,7 +568,7 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
     ```
     {: codeblock}
 
-## Step 4: Create an IAM service credential by using the CLI and API
+## Step 4: Create an IAM service credential by using the CLI and the REST producer API
 {: #create_credential_api}
 {: api}
 
