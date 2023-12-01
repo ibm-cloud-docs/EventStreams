@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-01"
 
 keywords: quick setup guide
 
@@ -226,7 +226,7 @@ From the **Topics page**, click the three dots to the right of the topic name an
 {: #create_topic_cli}
 {: cli}
 
-For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}.
 
 Run the following [**ibmcloud es topic-create**](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es){: external} command to create a new topic with one partition: 
 
@@ -377,7 +377,7 @@ Partitions are distributed across the brokers to increase the scalability of you
 
 You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000).
 
-For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api{: external}).
 
 The expected HTTP status codes are as follows:
 
@@ -386,7 +386,7 @@ The expected HTTP status codes are as follows:
 * 403: Not authorized to create topic.
 * 422: Semantically invalid request.
 
-If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, an HTTP status code of 422 (Unprocessable Entity) is returned, and a [JSON object](#information-returned-when-a-request-fails) containing additional information about the failure is returned as the body of the response.
+If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted) is returned. If the operation fails, an HTTP status code of 422 (Unprocessable Entity) is returned, and a JSON object containing additional information about the failure is returned as the body of the response.
 
 ### Example
 {: #create_topic_api_example}
@@ -465,11 +465,11 @@ The expected return codes are as follows:
 - 404: Topic does not exist.
   
 A 202 (Accepted) status code is returned if the REST API accepts the delete
-request. A status code 422 (Unprocessable Entity) is returned if the delete request is rejected. If a delete request is rejected, the body of the HTTP response contains a [JSON object](#information-returned-when-a-request-fails) which
+request. A status code 422 (Unprocessable Entity) is returned if the delete request is rejected. If a delete request is rejected, the body of the HTTP response contains a JSON object, which
 provides additional information about why the request was rejected.
 
 Kafka deletes topics asynchronously. Deleted topics can still appear in the
-response to a [list topics request](#listing-kafka-topics) for a short period of time after the completion of a REST request to delete the topic.
+response to a list topics request for a short period of time after the completion of a REST request to delete the topic.
 
 ##### Delete topic example
 {: #topic_delete_example_api}
@@ -503,11 +503,11 @@ The following configuration keys are supported: 'cleanup.policy', 'retention.ms'
 
 You can only increase the partition number, not decrease it.
 
-The expected status codes are as:
-    - 202: Update topic request was accepted.
-    - 400: Invalid request JSON or number of partitions is invalid.
-    - 404: Topic specified does not exist.
-    - 422: Semantically invalid request.
+The expected status codes are as follows:
+* 202: Update topic request was accepted.
+* 400: Invalid request JSON or number of partitions is invalid.
+* 404: Topic specified does not exist.
+* 422: Semantically invalid request.
 
 ##### Update topic configuration example
 {: #topic_update_example_api}
@@ -822,7 +822,7 @@ Its key benefits are as follows:
 
 * Scalability: it can easily scale from a single worker to many.
 * Reliability: it automatically manages offsets and the lifecycle of connectors
-* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector){: external} and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector){: external}.
+* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM_notm}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector){: external} and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector){: external}.
 
 For more information, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect){: external}.
 
