@@ -26,6 +26,8 @@ The {{site.data.keyword.Bluemix_notm}} CLI uses the **service-instance-update** 
 The time required to disable mirroring for the {{site.data.keyword.messagehub}} service instance varies, but under normal circumstances it does not exceed 2 hours.
 
 ## Step 1: Disable mirroring
+{: #step1_command}
+
 
 To disable mirroring, you need to run a **service-instance-update** command against your target cluster by using the CLI. Run the following command:
 

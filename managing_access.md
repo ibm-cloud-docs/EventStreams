@@ -231,6 +231,7 @@ For interoperation with existing applications, the {{site.data.keyword.messagehu
 | Update compatibility level for the specified subject. | Manager |
 | Get compatibility level for a subject. | Reader |
 | Deletes the specified subject-level compatibility level config and reverts to the global default. | Manager |
+{: caption="Table 1. Compatibility actions table" caption-side="bottom"}
 
 [^tabletext5]: Reader if the version already exists, Writer if the version is to be created by the API call.
 [^tabletext6]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
