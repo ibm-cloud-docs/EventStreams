@@ -18,11 +18,12 @@ subcollection: EventStreams
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
-_Can you update topics via the UI? Can you view cluster info via the UI?_
-_What are our suggested topic naming strategies?_
-_How do you describe the cluster?_
-_CLI and API - support for different languages - show Java library_
-_Include connection details and sample code to connect to the event streams instance_
+Questions and to do:
+* Can you update topics via the UI? Can you view cluster info via the UI?
+* What are our suggested topic naming strategies?
+* How do you describe the cluster?
+* CLI and API - support for different languages - show Java library
+* Include connection details and sample code to connect to the Event Streams instance
 {: note}
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
@@ -729,7 +730,7 @@ For details of some of the most important settings that you can configure for th
 * [Consumer groups](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_groups){: external}
 * [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics){: external}
 * [Managing offsets](/docs/EventStreams?topic=EventStreams-consuming_messages#managing_offsets){: external}
-[Handling consumer rebalancing](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_rebalancing){: external}
+* [Handling consumer rebalancing](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_rebalancing){: external}
 
 
 ## Step 6: Consume data using an API 
