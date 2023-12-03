@@ -18,13 +18,12 @@ subcollection: EventStreams
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
-Questions and to do:
-* Can you update topics via the UI? Can you view cluster info via the UI?
-* What are our suggested topic naming strategies?
-* How do you describe the cluster?
-* CLI and API - support for different languages - show Java library
-* Include connection details and sample code to connect to the Event Streams instance
-{: note}
+**Questions and to do:**
+* _Can you update topics via the UI? Can you view cluster info via the UI?_
+* _What are the suggested topic naming strategies?_
+* _How do you describe the cluster?_
+* _Produce and consume data. Support for different languages - show Java library_
+* _Produce and consume data. Include connection details and sample code to connect to the Event Streams instance_
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
@@ -525,8 +524,6 @@ curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer $
 {: codeblock}
 
 
-_Talk about describing the cluster._
-
 ## Step 4: Create an IAM service credential by using the console
 {: #create_credential_ui}
 {: ui}
@@ -565,9 +562,7 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
     ```
     {: codeblock}
 
-    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. 
-    
-    If you want details for the private network, you must add the `--service-endpoint private` parameter to the previous **service-key-create** CLI command. For example: 
+    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter to the previous **service-key-create** CLI command. For example: 
     {: note}
 
     ```bash
@@ -639,12 +634,8 @@ You can use many of the other options of this tool, except for those that requir
 
 For details of some of the most important settings that you can configure for the producer, see the following information:
 
-* [General configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings)
-* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
-
-_b. via CLI support different languages - show Java library_
-
-_Include connection details and sample code to connect to the event streams instance_
+* [General configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}
+* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics){: external}
 
 
 ## Step 5: Produce data using the REST Producer API
