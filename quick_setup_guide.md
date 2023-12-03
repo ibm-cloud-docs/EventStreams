@@ -18,6 +18,24 @@ subcollection: EventStreams
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick-setup-guide}
 
+_Can you update topics via the UI? Can you view cluster info via the UI?_
+_Bring in information like suggested topic naming strategies_
+_Talk about describing the cluster._
+_b. via CLI support different languages - show Java library_
+
+_Include connection details and sample code to connect to the event streams instance_
+
+_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+
+_b. via CLI c. via API - support different languages - show Java library)_
+
+_Include connection details and sample code to connect to the event streams instance_
+
+_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+{: note}
+
+
+
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
