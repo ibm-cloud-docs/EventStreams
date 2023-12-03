@@ -19,9 +19,9 @@ subcollection: EventStreams
 {: #quick-setup-guide}
 
 _Can you update topics via the UI? Can you view cluster info via the UI?_
-_Bring in information like suggested topic naming strategies_
-_Talk about describing the cluster._
-_b. via CLI and API - support different languages - show Java library_
+_What are our suggested topic naming strategies?_
+_How do you describe the cluster?_
+_CLI and API - support for different languages - show Java library_
 _Include connection details and sample code to connect to the event streams instance_
 {: note}
 
@@ -120,6 +120,8 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 
 6. When your instance has been created, click on the instance name to view more information.
 
+7. Optional. You can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app. 
+
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the CLI
 {: #provision_instance_cli}
@@ -196,8 +198,6 @@ For guidance about the settings that you can modify when creating topics, see [t
 
     Click **Next**.
 
-    _Can you update topics via the UI? Can you view cluster info via the UI?_
-    _Bring in information like suggested topic naming strategies_
 
 4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed.
 
@@ -208,7 +208,6 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: ui}
 
 After you create topics, you can use the console to [list topics](#list_topic_ui) and [delete topics](#delete_topic_ui).
-/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui
 
 
 #### List topics
@@ -262,8 +261,6 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 
 After you create topics, you can use the CLI to [list topics](#ibmcloud_es_topic_list_cli), [delete topics](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also [view details about your cluster](#ibmcloud_es_cluster_cli) using the CLI.
 
-
-_Bring in information like suggested topic naming strategies_
 
 #### List a topic using the **ibmcloud es topics** command
 {: #ibmcloud_es_topic_list_cli}
@@ -567,7 +564,9 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
     ```
     {: codeblock}
 
-    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. If you want details for the private network, you must add the `--service-endpoint private` parameter to the previous **service-key-create** CLI command. For example: 
+    A single set of endpoint details are contained in each service key. For service instances configured to be connected to a single network type, either the {{site.data.keyword.Bluemix_notm}} Public network (the default) or the {{site.data.keyword.Bluemix_notm}} Private network, the service key contains the details relevant to that network type. For instances configured to support both the private and public networks, details for the public network are returned. 
+    
+    If you want details for the private network, you must add the `--service-endpoint private` parameter to the previous **service-key-create** CLI command. For example: 
     {: note}
 
     ```bash
@@ -637,18 +636,15 @@ You can use many of the other options of this tool, except for those that requir
 {: #producer_config_cli}
 {: cli}
 
-For details of settings that you can configure for the producer, for example `acks` and `retries`, see
-[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}.
+For details of some of the most important settings that you can configure for the producer, see the following information:
 
-For details of settings related to the following
+* [General configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings)
 * [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
-* [Configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings)
 
 _b. via CLI support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for producers are here including delivery semantics done, acknowledgements done, number of retries done
 
 ## Step 5: Produce data using the REST Producer API
 {: #produce_data_api}
@@ -688,14 +684,10 @@ For more information, see the [{{site.data.keyword.messagehub}} REST Producer AP
 {: #producer_config_api}
 {: api}
 
-For details of settings that you can configure for the producer, for example `acks` and `retries`, see
-[configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}.
+For details of some of the most important settings that you can configure for the producer, see the following information:
 
-
-_b. via CLI c. via API - support different languages - show Java library)_
-
-_Include connection details and sample code to connect to the event streams instance_
-
+* [General configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}
+* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics){: external}
 
 
 ## Step 6: Consume data using the console
@@ -732,19 +724,12 @@ You can use many of the other options of this tool, except for those that requir
 
 For details of some of the most important settings that you can configure for the consumer, see the following information:
 
-* [General configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
-* [Consumer liveness](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_liveness)
-* [Consumer groups](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_groups)
-* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
-* [Managing offsets](/docs/EventStreams?topic=EventStreams-consuming_messages#managing_offsets)
-* heartbeat interval (consuming),
- 
-, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
-
-
-_b. via CLI c. via API - support different languages - show Java library_
-
-_Include connection details and sample code to connect to the event streams instance_
+* [General configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties){: external}
+* [Consumer liveness](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_liveness){: external}
+* [Consumer groups](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_groups){: external}
+* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics){: external}
+* [Managing offsets](/docs/EventStreams?topic=EventStreams-consuming_messages#managing_offsets){: external}
+[Handling consumer rebalancing](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_rebalancing){: external}
 
 
 ## Step 6: Consume data using an API 
@@ -754,24 +739,6 @@ _Include connection details and sample code to connect to the event streams inst
 You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries.
 
 As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
-
-### Configuration settings
-{: #consumer_config_api}
-{: api}
-
-For details of some of the most important settings that you can configure for the consumer, see the following information:
-
-* [General configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
-* [Consumer liveness](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_liveness)
-* [Consumer groups](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_groups)
-* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
-* [Managing offsets](/docs/EventStreams?topic=EventStreams-consuming_messages#managing_offsets)
-
-
-_b. via CLI c. via API - support different languages - show Java library_
-
-_Include connection details and sample code to connect to the event streams instance_
-
 
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
