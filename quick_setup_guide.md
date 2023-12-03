@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-03"
 
 keywords: quick setup guide
 
@@ -21,20 +21,9 @@ subcollection: EventStreams
 _Can you update topics via the UI? Can you view cluster info via the UI?_
 _Bring in information like suggested topic naming strategies_
 _Talk about describing the cluster._
-_b. via CLI support different languages - show Java library_
-
+_b. via CLI and API - support different languages - show Java library_
 _Include connection details and sample code to connect to the event streams instance_
-
-_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
-
-_b. via CLI c. via API - support different languages - show Java library)_
-
-_Include connection details and sample code to connect to the event streams instance_
-
-_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
 {: note}
-
-
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
@@ -651,11 +640,15 @@ You can use many of the other options of this tool, except for those that requir
 For details of settings that you can configure for the producer, for example `acks` and `retries`, see
 [configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings){: external}.
 
+For details of settings related to the following
+* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
+* [Configuration settings](/docs/EventStreams?topic=EventStreams-producing_messages#config_settings)
+
 _b. via CLI support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+_Highlight the most important kafka settings for producers are here including delivery semantics done, acknowledgements done, number of retries done
 
 ## Step 5: Produce data using the REST Producer API
 {: #produce_data_api}
@@ -703,7 +696,7 @@ _b. via CLI c. via API - support different languages - show Java library)_
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for producers are here including delivery semantics, acknowledgements, number of retries, session timeout, heartbeat interval, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+
 
 ## Step 6: Consume data using the console
 {: #consume_data_ui}
@@ -737,14 +730,22 @@ You can use many of the other options of this tool, except for those that requir
 {: #consumer_config_cli}
 {: cli}
 
-For details of settings that you can configure for the consumer, for example `group.id` and `enable.auto.commit`, see
-[configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+For details of some of the most important settings that you can configure for the consumer, see the following information:
+
+* [General configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+* [Consumer liveness](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_liveness)
+* [Consumer groups](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_groups)
+* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
+* [Managing offsets](/docs/EventStreams?topic=EventStreams-consuming_messages#managing_offsets)
+* heartbeat interval (consuming),
+ 
+, rebalance strategy (JAVA API supports multiple strategies to reduce rebalance)_
+
 
 _b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
 
 ## Step 6: Consume data using an API 
 {: #consume_data_api}
@@ -758,15 +759,20 @@ As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-set
 {: #consumer_config_api}
 {: api}
 
-For details of settings that you can configure for the consumer, for example `group.id` and `enable.auto.commit`, see
-[configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+For details of some of the most important settings that you can configure for the consumer, see the following information:
+
+* [General configuration settings](/docs/EventStreams?topic=EventStreams-consuming_messages#configuring_consumer_properties).
+* [Consumer liveness](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_liveness)
+* [Consumer groups](/docs/EventStreams?topic=EventStreams-consuming_messages#consumer_groups)
+* [Delivery semantics](/docs/EventStreams?topic=EventStreams-producing_messages#delivery_semantics)
+* [Managing offsets](/docs/EventStreams?topic=EventStreams-consuming_messages#managing_offsets)
 
 
 _b. via CLI c. via API - support different languages - show Java library_
 
 _Include connection details and sample code to connect to the event streams instance_
 
-_Highlight the most important kafka settings for consumers are here including commit offsets, exactly once semantics, consumer groups and liveness_
+
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
 {: #connect_monitoring_ui}
