@@ -15,6 +15,8 @@ toc:
         id: learn
         topics:
         - getting-started.md
+        - topic: quick_setup_guide.md
+          navtitle: Quick setup guide
         - topic: overview.md
           navtitle: Overview
         - topic: release-notes.md
@@ -24,8 +26,6 @@ toc:
         - topic: use_cases.md
           navtitle: Apache Kafka use cases
         - choosing_your_plan.md
-        - topic: quick_setup_guide.md
-          navtitle: Quick setup guide
     - navgroup:
         id: howto
         topics:
