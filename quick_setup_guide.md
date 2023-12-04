@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-03"
+lastupdated: "2023-12-04"
 
 keywords: quick setup guide
 
@@ -16,14 +16,14 @@ subcollection: EventStreams
 {:api: .ph data-hd-interface="api"}
 
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
-{: #quick-setup-guide}
+{: #quick_setup_guide}
 
 **Questions and to do:**
 * _Can you update topics via the UI? Can you view cluster info via the UI?_
 * _What are the suggested topic naming strategies?_
 * _How do you describe the cluster?_
 * _Produce and consume data. Support for different languages - show Java library_
-* _Produce and consume data. Include connection details and sample code to connect to the Event Streams instance_
+
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
@@ -131,7 +131,7 @@ If it's the first time you've used the CLI, see [Getting started with the CLI](/
 
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/cli?topic=cli-getting-started#step1-install-idt){: external}.
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-getting-started#step1-install-idt){: external}.
 {: #step1_install_cli_qsg}
 
     
@@ -628,7 +628,7 @@ You can use many of the other options of this tool, except for those that requir
 
 
 
-### Configuration settings
+### Producer configuration settings
 {: #producer_config_cli}
 {: cli}
 
@@ -672,7 +672,7 @@ curl -v -X POST \
 For more information, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
 
 
-### Configuration settings
+### Producer configuration settings
 {: #producer_config_api}
 {: api}
 
@@ -710,7 +710,7 @@ Replace the following variables in the example with your own values:
 
 You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools).
 
-### Configuration settings
+### Consumer configuration settings
 {: #consumer_config_cli}
 {: cli}
 
