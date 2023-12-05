@@ -62,9 +62,9 @@ Each consumer group has a server in the cluster that is called the _coordinator_
 
 When a consumer joins a consumer group, it discovers the coordinator for the group. The consumer then tells the coordinator that it wants to join the group and the coordinator starts a rebalance of the partitions across the group to include the new member.
 
-The messages from a single partition are processed by only one consumer in each group. This mechanism ensures that the messages on each partition are processed in order. See the following diagram for an example where a consumer group contains three consumers, and each consumer handles one topic partition that is produced to a topic. 
+The messages from a single partition are processed by only one consumer in each group. This mechanism ensures that the messages on each partition are processed in order. See the following diagram for an example where a topic contains three partitions, and a consumer group which is consuming that topic contains two consumers. One consumer in the group is assigned two partitions, and the other consumer is assigned one partition.
 
-![Consumer groups diagram.](consumer_groups.png "Diagram that shows an example consumer group. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by a consumer group with 3 consumers each processing one partition."){: caption="Figure 1. Consumer group example" caption-side="bottom"}
+![Consumer groups diagram.](consumer_groups.png "Diagram that shows an example consumer group. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by a consumer group with 2 consumers. One consumer receives messages from 2 partitions, and the other receives messages from 1 partition."){: caption="Figure 1. Consumer group example" caption-side="bottom"}
 
 When one of the following changes takes place in a consumer group, the group rebalances by shifting the assignment of partitions to the group members to accommodate the change:
 
@@ -72,8 +72,6 @@ When one of the following changes takes place in a consumer group, the group reb
 * A consumer leaves the group.
 * A consumer is considered as no longer live by the coordinator.
 * New partitions are added to an existing topic.
-
-For each consumer group, Kafka remembers the committed offset for each partition that is consumed.
 
 If you have a consumer group that is rebalanced, be aware that any consumer that has left the group has its commits that are rejected until it rejoins the group. In this case, the consumer needs to rejoin the group, where it might be assigned a different partition to the one it was previously consuming from.
 
@@ -106,7 +104,7 @@ the setting of the `auto.offset.reset` property as follows:
 
 * `latest` (the default): Your consumer receives and consumes only messages that arrive after you subscribe. 
     Your consumer has no knowledge of messages that were sent before it subscribed, therefore don't expect that all messages are consumed from a topic.
-* `earliest`: Your consumer consumes all messages from the beginning because it is aware of all messages that were sent.
+* `earliest`: Your consumer consumes all messages from the beginning.
 
 If a consumer fails after processing a message but before committing its offset, the committed offset information does not reflect the processing of the message. 
 This means that the message is processed again by the next consumer in that group to be assigned the partition.
@@ -116,7 +114,7 @@ When committed offsets are saved in Kafka and the consumers are restarted, consu
 ### Committing offsets automatically
 {: #committing_offsets}
 
-The easiest way to commit offsets is to have the Kafka consumer do it automatically. It is simple but it does give less control than committing manually. By default, a consumer automatically commits offsets every 5 seconds. This default commit happens every 5 seconds, regardless of the progress the consumer is making toward processing the messages. In addition, when the consumer calls `poll()`, this also causes the latest offset returned from the previous call to `poll()` to be committed (because it was probably processed).
+The easiest way to commit offsets is to have the Kafka consumer do it automatically. It is simple but it does give less control than committing manually. By default, a consumer automatically commits offsets every 5 seconds. This default commit happens every 5 seconds, regardless of the progress the consumer is making toward processing the messages. In addition, when the consumer calls `poll()`, this also causes the latest offset returned from the previous call to `poll()` to be committed (because it is assumed the previous messages were all processed).
 
 If the committed offset overtakes the processing of the messages and a consumer failure exists, it's possible that some messages are not processed. This is because processing restarts at the committed offset, which is later than the last message to be processed before the failure. For this reason, if reliability is more important than simplicity, it's usually best to commit offsets manually.
 
@@ -130,8 +128,8 @@ The committed offset is the offset of the messages from which processing is resu
 ### Consumer lag
 {: #consumer_lag}
 
-The consumer lag for a partition is the difference between the offset of the most recently published message and the consumer's committed offset. 
-Although it's usual to have natural variations in the produce and consume rates, the consume rate is not to be slower than the produce rate for an extended period.
+The consumer lag for a partition is the difference between the offset of the most recently published message and the consumer's committed offset. In other words, it is the difference between the number of records that have been produced, and the number which have been consumed.
+Although it's usual to have natural variations in the produce and consume rates, the consume rate should not be slower than the produce rate for an extended period.
 
 If you observe that a consumer is processing messages successfully but occasionally appears to jump over a group of messages, it can be a sign that the consumer is not able to keep up. For topics that are not using log compaction, the amount of log space is managed by periodically deleting old log segments. 
 If a consumer fell so far behind that it is consuming messages in a log segment that is deleted, it will suddenly jump forwards to the start of the next log segment. If it is important that the consumer processes all of the messages, this behavior indicates message loss from the point of view of this consumer.
@@ -155,7 +153,9 @@ If you are notified with the "on partitions revoked" callback, use a ConsumerReb
 
 These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect to {{site.data.keyword.messagehub}}, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user-password authentication, so you need at least these properties. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with your own service credentials:
+To connect a consumer to {{site.data.keyword.messagehub}}, you will need to create service credentials. For information about how to get these credentials, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+
+In the consumer code, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user-password authentication, so you need at least these properties. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with those from your own service credentials:
 
 ```text
 Properties props = new Properties();
@@ -175,15 +175,17 @@ To consume messages, you also need to specify deserializers for the keys and val
  props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 ```
 
+These deserializers must match the serializers used by the producers.
+
 Then, use a KafkaConsumer to consume messages, where each message is represented by a ConsumerRecord. The most common way to consume messages is to put the consumer in a consumer group by setting the group ID, and then call `subscribe()` for a list of topics. 
 The consumer is assigned some partitions to consume, although if more consumers exist in the group than partitions in the topic, the consumer might not be assigned any partitions. Next, call `poll()` in a loop, receiving a batch of messages to process, where each message is represented by a ConsumerRecord.
 
 ```text
 props.put("group.id", "G1");
 Consumer<String, String> consumer = new KafkaConsumer<>(props);
-consumer.subscribe(Arrays.asList("T1"));
+consumer.subscribe(Arrays.asList("T1"));  // T1 is the topic name
 while (true) {
-   ConsumerRecords<String, String> records = consumer.poll(100);
+   ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
    for (ConsumerRecord<String, String> record : records)
      System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
 }
@@ -200,7 +202,7 @@ Consumer<String, String> consumer = new KafkaConsumer<>(props);
 consumer.subscribe(Arrays.asList("T1"));
 try {
   while (true) {
-    ConsumerRecords<String, String> records = consumer.poll(100);
+    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
     for (TopicPartition tp : records.partitions()) {
       List<ConsumerRecord<String, String>> partRecords = records.records(tp);
       long lastOffset = 0;
@@ -208,7 +210,7 @@ try {
         System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
         lastOffset = record.offset();
       }
-
+      // having processed all the records in the above loop, we commit the partition's offset to 1 more than the last offset 
       consumer.commitSync(Collections.singletonMap(tp, new OffsetAndMetadata(lastOffset + 1)));
     }
   }
