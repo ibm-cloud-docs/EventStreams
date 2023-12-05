@@ -84,10 +84,17 @@ The Standard plan provides a Public Service with Public endpoints. The Standard 
 
 The Standard plan uses Shared Block Storage and achieves tenant isolation through separation of files and access controls.
 
+### Lite plan
+{: #data_isolation_lite}
+
+The Lite plan provides a Public Service with Public endpoints. The Lite plan creates a tenant instance on a Shared Kubernetes cluster on shared hardware (VSI isolation). The Lite plan provides Public endpoints only.
+
+The Lite plan uses Shared Block Storage and achieves tenant isolation through separation of files and access controls.
+
 ## Data retention and reclamation
 {: #data_retention_reclamation}
 
-On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. It is scheduled for reclamation and {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both, topics and messages that are written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that is not yet reclaimed.
+On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. It is scheduled for reclamation and {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both topics and messages that are written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that is not yet reclaimed.
 
 You can check the status of a reclamation, and force or cancel a scheduled reclamation by using [the IBM Cloud Platform CLI](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).
 
