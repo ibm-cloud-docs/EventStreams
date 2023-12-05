@@ -153,7 +153,7 @@ If you are notified with the "on partitions revoked" callback, use a ConsumerReb
 
 These code snippets are at a high level to illustrate the concepts involved. For complete examples, see the {{site.data.keyword.messagehub}} samples in [GitHub](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-To connect a consumer to {{site.data.keyword.messagehub}}, you will need to create service credentials. For information about how to get these credentials, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
+To connect a consumer to {{site.data.keyword.messagehub}}, you need to create service credentials. For information about how to get these credentials, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 In the consumer code, you first need to build the set of configuration properties. All connections to {{site.data.keyword.messagehub}} are secured by using TLS and user-password authentication, so you need at least these properties. Replace BOOTSTRAP_ENDPOINTS, USER, and PASSWORD with those from your own service credentials:
 

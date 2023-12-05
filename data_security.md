@@ -70,26 +70,26 @@ For information about compliance on each of the {{site.data.keyword.messagehub}}
 ### Enterprise plan
 {: #data_isolation_enterprise}
 
-The Enterprise plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain. The Enterprise plan creates a single tenant instance on a dedicated Kubernetes cluster on shared hardware (VSI isolation). By default, the Enterprise plan provides public endpoints, but it also supports Cloud service endpoints to enable private endpoints for further network isolation on request. The Enterprise plan creates single tenant Block Storage for each new instance.
+The Enterprise plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain. The Enterprise plan creates a single tenant instance on a dedicated Kubernetes cluster on shared hardware (VSI isolation). By default, the Enterprise plan provides public endpoints, but it also supports Cloud service endpoints to enable private endpoints for further network isolation on request. The Enterprise plan creates single tenant {{site.data.keyword.blockstorageshort}} for each new instance.
 
 ### Satellite plan
 {: #data_isolation_satellite}
 
-The Satellite plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain and is based on the Enterprise plan. The Satellite plan creates a single tenant instance on a dedicated Kubernetes cluster by using hosts (physical and virtual) that you provided and attached to your Satellite location. The Satellite plan creates single tenant Block Storage for each new instance by using the Block Storage configuration that you specified for your storage provider.
+The Satellite plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain and is based on the Enterprise plan. The Satellite plan creates a single tenant instance on a dedicated Kubernetes cluster by using hosts (physical and virtual) that you provided and attached to your Satellite location. The Satellite plan creates single tenant {{site.data.keyword.blockstorageshort}} for each new instance by using the {{site.data.keyword.blockstorageshort}} configuration that you specified for your storage provider.
 
 ### Standard plan
 {: #data_isolation_standard}
 
 The Standard plan provides a public service with public endpoints. The Standard plan creates a tenant instance on a shared Kubernetes cluster on shared hardware (VSI isolation). The Standard plan provides public endpoints only.
 
-The Standard plan uses shared Block Storage and achieves tenant isolation through separation of files and access controls.
+The Standard plan uses shared {{site.data.keyword.blockstorageshort}} and achieves tenant isolation through separation of files and access controls.
 
 ### Lite plan
 {: #data_isolation_lite}
 
 The Lite plan provides a public service with public endpoints. The Lite plan creates a tenant instance on a shared Kubernetes cluster on shared hardware (VSI isolation). The Lite plan provides public endpoints only.
 
-The Lite plan uses shared Block Storage and achieves tenant isolation through separation of files and access controls.
+The Lite plan uses shared {{site.data.keyword.blockstorageshort}} and achieves tenant isolation through separation of files and access controls.
 
 ## Data retention and reclamation
 {: #data_retention_reclamation}
