@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-12-05"
 
 keywords: messages, consumer, record, offset, rebalancing, consumer group, consumer properties
 

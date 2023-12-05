@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-08-15"
+lastupdated: "2023-12-05"
 
 keywords: cli reference
 
@@ -34,7 +34,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.3.1 |  21 January 2021 |  - Added support for Satellite plan.  |
 | v2.3.2 |  5 May 2022 |  - Added support for Mac OS X M1/ARM. \n - init: Display Object Storage bucket if parameter `cos_bucket_crn` is specified in provisioning. |
 | v2.4.0 |  28 Feb 2023 |  - Added Kafka version to `ibmcloud es cluster`. \n - Updated Go to 1.9.6. |
-| v2.4.1 |  05 Dec 2023 |  - Added `mirroring-active-topics`` and `help` commands. |
+| v2.4.1 |  05 Dec 2023 |  - Added `mirroring-active-topics` and `help` commands. |
 {: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
@@ -396,7 +396,7 @@ ibmcloud es mirroring-topic-selection [--json]
 ```
 {: codeblock}
 
-**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
+**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. {{site.data.keyword.messagehub}} plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 
 **Command options**:
 
@@ -413,7 +413,7 @@ ibmcloud es mirroring-topic-selection-set (--select pattern1,pattern2 | --none) 
 ```
 {: codeblock}
 
-**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
+**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. {{site.data.keyword.messagehub}} plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 
 **Command options**:
 
@@ -436,7 +436,7 @@ ibmcloud es mirroring-active-topics [--json]
 ```
 {: codeblock}
 
-**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. ES plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
+**Prerequisites**: Mirroring enabled on {{site.data.keyword.messagehub}} instance. {{site.data.keyword.messagehub}} plug-in configured to connect to the mirroring target cluster through `ibmcloud es init`.
 
 **Command options**:
 
