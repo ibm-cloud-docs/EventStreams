@@ -25,7 +25,7 @@ subcollection: EventStreams
 * _Produce and consume data. Support for different languages - show Java library_
 
 
-This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 Follow these steps to complete the tutorial: {: ui}
@@ -37,7 +37,7 @@ Follow these steps to complete the tutorial: {: ui}
 * [Step 4: Create an IAM service credential using the console](#create_credential_ui)
 * [Step 5: Produce data using the console](#produce_data_ui)
 * [Step 6: Consume data using the console](#consume_data_ui)
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui)
+* [Step 7: Connect {{site.data.keyword.monitoringshort}}](#connect_monitoring_ui)
 * [Step 8: Connect Activity Tracker](#activity_tracker_ui)
 * [Step 9: (Optional) Use Kafka Connect or ksqlDB](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
@@ -52,7 +52,7 @@ Follow these steps to complete the tutorial: {: cli}
 * [Step 4: Create an IAM service credential using the CLI](#create_credential_cli)
 * [Step 5: Produce data using the CLI](#produce_data_cli)
 * [Step 6: Consume data using the CLI](#consume_data_cli)
-* [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli)
+* [Step 7: Connect {{site.data.keyword.monitoringshort}}](#connect_monitoring_cli)
 * [Step 8: Connect Activity Tracker](#activity_tracker_cli)
 * [Step 9: (Optional) Use Kafka Connect or ksqlDB](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
@@ -92,6 +92,10 @@ Before you get started, we highly recommend that you read the following informat
 * The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, and increased retention are important considerations. 
+
+* The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external}
+The Satellite plan offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service. This plan is appropriate if you want to deploy an Enterprise plan into Satellite locations of your own choice. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+	
 
 ### Using APIs
 {: #using_apis}
@@ -174,7 +178,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #provision_instance_api}
 {: api}
 
-The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
@@ -189,7 +193,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}.
 
 1. From your newly provisioned instance, navigate to **Topics** using the menu on the left.
-2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 100 characters.
+2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 200 characters.
 3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
@@ -246,7 +250,7 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
 **Command options**:
 
 --name value
-:   Topic name. Topic names are restricted to a maximum of 100 characters.
+:   Topic name. Topic names are restricted to a maximum of 200 characters.
 
 --partitions value
 :   Set the number of partitions for the topic.
@@ -373,7 +377,7 @@ You can create a Kafka topic by issuing a POST request to the `/admin/topics` pa
 {: codeblock}
 
 
-The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified, the topic is created with a single partition.
+The JSON document must contain a `name` attribute, specifying the name of the Kafka topic to create. Topic names are restricted to a maximum of 200 characters.The JSON can also specify the number of partitions to assign to the topic (using the `partitions` property). If the number of partitions is not specified, the topic is created with a single partition.
 
 One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
@@ -524,7 +528,7 @@ curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer $
 {: codeblock}
 
 
-## Step 4: Create an IAM service credential by using the console
+## Step 4: Create a service credential by using the console
 {: #create_credential_ui}
 {: ui}
 
@@ -538,7 +542,7 @@ To allow you to connect to your {{site.data.keyword.messagehub}} instance, creat
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
 6. Click the chevron next to the new credential to reveal the details in JSON format.
 
-## Step 4: Create an IAM service credential by using the CLI
+## Step 4: Create a service credential by using the CLI
 {: #create_credential_cli}
 {: cli}
 
@@ -570,11 +574,11 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
     ```
     {: codeblock}
 
-## Step 4: Create an IAM service credential by using the CLI and the REST producer API
+## Step 4: Create a service credential by using the CLI and the REST producer API
 {: #create_credential_api}
 {: api}
 
-To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is using a bearer token. To obtain your token by using the IBM Cloud CLI, first log in to IBM Cloud and then run the following command: 
+To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is using a bearer token. To obtain your token by using the {{site.data.keyword.Bluemix_notm}} CLI, first log in to {{site.data.keyword.Bluemix_notm}} and then run the following command: 
 
 ```sh
 ibmcloud iam oauth-tokens
@@ -587,7 +591,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 {: #produce_data_ui}
 {: ui}
 
-You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
+You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
 
 
 ## Step 5: Produce data using the CLI
@@ -686,7 +690,7 @@ For details of some of the most important settings that you can configure for th
 {: #consume_data_ui}
 {: ui}
 
-You cannot consume data by using the console. You can consume data using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
+You cannot consume data by using the console. You can consume data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
 
 ## Step 6: Consume data using the CLI
 {: #consume_data_cli}
@@ -730,7 +734,7 @@ For details of some of the most important settings that you can configure for th
 
 You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries. For more information, see [Kafka consumer API](https://kafka.apache.org/documentation/#consumerapi).
 
-As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
+As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli).
 
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
@@ -751,13 +755,13 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 {: #connect_monitoring_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
 {: #connect_monitoring_api}
 {: api}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
 ## Step 8: Connect {{site.data.keyword.at_full}} to audit service activity 
@@ -784,13 +788,13 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 {: #activity_tracker_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Step 8: Connect {{site.data.keyword.at_full}} using the API to audit service activity
 {: #activity_tracker_api}
 {: api}
 
-You cannot connect {{site.data.keyword.at_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## Step 9: (Optional) Use Kafka Connect or ksqlDB
