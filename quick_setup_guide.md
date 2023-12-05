@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-04"
+lastupdated: "2023-12-05"
 
 keywords: quick setup guide
 
@@ -587,7 +587,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 {: #produce_data_ui}
 {: ui}
 
-You cannot produce data by using the console. You can produce data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli) or [REST Producer API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api).
+You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
 
 
 ## Step 5: Produce data using the CLI
@@ -686,7 +686,7 @@ For details of some of the most important settings that you can configure for th
 {: #consume_data_ui}
 {: ui}
 
-You cannot consume data by using the console. You can consume data only using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
+You cannot consume data by using the console. You can consume data using the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
 
 ## Step 6: Consume data using the CLI
 {: #consume_data_cli}
@@ -728,7 +728,7 @@ For details of some of the most important settings that you can configure for th
 {: #consume_data_api}
 {: api}
 
-You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries.
+You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries. For more information, see [Kafka consumer API](https://kafka.apache.org/documentation/#consumerapi)
 
 As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
