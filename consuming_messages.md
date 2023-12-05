@@ -62,7 +62,7 @@ Each consumer group has a server in the cluster that is called the _coordinator_
 
 When a consumer joins a consumer group, it discovers the coordinator for the group. The consumer then tells the coordinator that it wants to join the group and the coordinator starts a rebalance of the partitions across the group to include the new member.
 
-The messages from a single partition are processed by only one consumer in each group. This mechanism ensures that the messages on each partition are processed in order. See the following diagram for an example where a topic contains three partitions, and a consumer group which is consuming that topic contains two consumers. One consumer in the group is assigned two partitions, and the other consumer is assigned one partition.
+The messages from a single partition are processed by only one consumer in each group. This mechanism ensures that the messages on each partition are processed in order. See the following diagram for an example where a topic contains three partitions and a consumer group, which is consuming that topic, contains two consumers. One consumer in the group is assigned two partitions, and the other consumer is assigned one partition.
 
 ![Consumer groups diagram.](consumer_groups.png "Diagram that shows an example consumer group. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by a consumer group with 2 consumers. One consumer receives messages from 2 partitions, and the other receives messages from 1 partition."){: caption="Figure 1. Consumer group example" caption-side="bottom"}
 
@@ -128,7 +128,7 @@ The committed offset is the offset of the messages from which processing is resu
 ### Consumer lag
 {: #consumer_lag}
 
-The consumer lag for a partition is the difference between the offset of the most recently published message and the consumer's committed offset. In other words, it is the difference between the number of records that have been produced, and the number which have been consumed.
+The consumer lag for a partition is the difference between the offset of the most recently published message and the consumer's committed offset. In other words, it is the difference between the number of records that have been produced, and the number that have been consumed.
 Although it's usual to have natural variations in the produce and consume rates, the consume rate should not be slower than the produce rate for an extended period.
 
 If you observe that a consumer is processing messages successfully but occasionally appears to jump over a group of messages, it can be a sign that the consumer is not able to keep up. For topics that are not using log compaction, the amount of log space is managed by periodically deleting old log segments. 

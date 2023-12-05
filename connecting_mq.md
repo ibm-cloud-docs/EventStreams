@@ -16,13 +16,13 @@ subcollection: EventStreams
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Connecting IBM MQ to {{site.data.keyword.messagehub}} by using the Kubernetes Service
+# Connecting {{site.data.keyword.IBM}} MQ to {{site.data.keyword.messagehub}} by using the Kubernetes Service
 {: #mq_connector}
 
-Get the Kafka Connect runtime to run in an {{site.data.keyword.containerlong}} cluster. Then, start the IBM MQ Source Connector to copy messages from an IBM MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}.
+Get the Kafka Connect runtime to run in an {{site.data.keyword.containerlong}} cluster. Then, start the {{site.data.keyword.IBM_notm}} MQ Source Connector to copy messages from an {{site.data.keyword.IBM_notm}} MQ source queue to a destination Kafka topic in {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
-The IBM MQ Source Connector connects to an IBM MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
+The {{site.data.keyword.IBM_notm}} MQ Source Connector connects to an {{site.data.keyword.IBM_notm}} MQ queue manager and consumes MQ message data from an MQ queue. The Connector converts each MQ message into a Kafka record and sends the message to an {{site.data.keyword.messagehub}} Kafka topic.
 
 
 ## Step 1. Install the prerequisites
@@ -31,11 +31,11 @@ The IBM MQ Source Connector connects to an IBM MQ queue manager and consumes MQ 
 Ensure you have the following software and services installed:
 
 * An {{site.data.keyword.messagehub}} instance - Standard or Enterprise plan. 
-* An instance of [IBM MQ on Cloud](docs/mqcloud?topic=mqcloud-getting_started){: external} or [IBM MQ Version 8](https://www.ibm.com/support/pages/downloading-ibm-mq-80){: external}, or later. 
+* An instance of [{{site.data.keyword.IBM_notm}} MQ on Cloud](/docs/mqcloud?topic=mqcloud-getting_started){: external} or [{{site.data.keyword.IBM_notm}} MQ Version 8](https://www.ibm.com/support/pages/downloading-ibm-mq-80){: external}, or later. 
    
-   You can configure the IBM MQ Connector to authenticate with IBM MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
-   * CONNECT authority. The IBM MQ Connector must be able to connect to the MQ queue manager.
-   * GET authority for the queue that the IBM MQ Connector is configured to consume from.
+   You can configure the {{site.data.keyword.IBM_notm}} MQ Connector to authenticate with {{site.data.keyword.IBM_notm}} MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
+   * CONNECT authority. The {{site.data.keyword.IBM_notm}} MQ Connector must be able to connect to the MQ queue manager.
+   * GET authority for the queue that the {{site.data.keyword.IBM_notm}} MQ Connector is configured to consume from.
 * An {{site.data.keyword.containerfull}} cluster. You can provision one for testing purposes at no cost. 
 
     You also need CLI access to your cluster. For more information, see
@@ -108,7 +108,7 @@ Keep the terminal that you used for port forwarding open, and use another termin
 The Connect REST API is then available at `http://localhost:8083`. If you want more information about the API, see
 [Kafka Connect REST Interface](http://kafka.apache.org/documentation/#connect_rest){: external}.
 
-So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the IBM MQ Connector.
+So, you now have the Kafka Connect runtime that is deployed and running in {{site.data.keyword.containershort}}. Next, let's configure and start the {{site.data.keyword.IBM_notm}} MQ Connector.
 
 
 ## Step 6. Configure the mq-source JSON file
@@ -140,7 +140,7 @@ CONNECTION_NAME_LIST
 ## Step 7. Start the connector with its configuration
 {: #step7_start_connector_mq}
 
-Run the following command to start the IBM MQ Connector with the configuration that you provided in the previous step.
+Run the following command to start the {{site.data.keyword.IBM_notm}} MQ Connector with the configuration that you provided in the previous step.
 
 ```sh
 curl -X POST -H "Content-Type: application/json" http://localhost:8083/connectors --data "@./mq-source.json"
