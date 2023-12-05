@@ -25,7 +25,7 @@ subcollection: EventStreams
 * _Produce and consume data. Support for different languages - show Java library_
 
 
-This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or kSQLdb. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
+This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full_notm}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
 Follow these steps to complete the tutorial: {: ui}
@@ -39,7 +39,7 @@ Follow these steps to complete the tutorial: {: ui}
 * [Step 6: Consume data using the console](#consume_data_ui)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_ui)
 * [Step 8: Connect Activity Tracker](#activity_tracker_ui)
-* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or ksqlDB](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: ui}
 
@@ -54,7 +54,7 @@ Follow these steps to complete the tutorial: {: cli}
 * [Step 6: Consume data using the CLI](#consume_data_cli)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_cli)
 * [Step 8: Connect Activity Tracker](#activity_tracker_cli)
-* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or ksqlDB](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: cli}
 
@@ -69,7 +69,7 @@ Follow these steps to complete the tutorial: {: api}
 * [Step 6: Consume data using an API](#consume_data_api)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api)
 * [Step 8: Connect Activity Tracker](#activity_tracker_api)
-* [Step 9: (Optional) Use Kafka Connect or kSQLdb](#kafka_connect_ksql)
+* [Step 9: (Optional) Use Kafka Connect or ksqlDB](#kafka_connect_ksql)
 * [Step 10: If you need more help](#getting_help)
 {: api}
 
@@ -728,7 +728,7 @@ For details of some of the most important settings that you can configure for th
 {: #consume_data_api}
 {: api}
 
-You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries. For more information, see [Kafka consumer API](https://kafka.apache.org/documentation/#consumerapi)
+You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries. For more information, see [Kafka consumer API](https://kafka.apache.org/documentation/#consumerapi).
 
 As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=cli#consume_data_cli).
 
@@ -793,7 +793,7 @@ You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [consol
 You cannot connect {{site.data.keyword.at_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick-setup-guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
-## Step 9: (Optional) Use Kafka Connect or kSQLdb
+## Step 9: (Optional) Use Kafka Connect or ksqlDB
 {: #kafka_connect_ksql}
 
 ### Kafka Connect
@@ -811,8 +811,8 @@ For more information, see [Using Kafka Connect with Event Streams](/docs/EventSt
 
 Kafka Connect is not part of the managed {{site.data.keyword.messagehub}} service.
 
-### kSQLdb
-{: #ksql}
+### ksqlDB
+{: #ksqldb}
 
 You can use [KSQL](https://github.com/confluentinc/ksql){: external} with the {{site.data.keyword.messagehub}} Enterprise plan for stream processing. 
 {: shortdesc}
