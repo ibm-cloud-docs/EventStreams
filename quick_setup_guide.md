@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-05"
+lastupdated: "2023-12-07"
 
 keywords: quick setup guide
 
@@ -34,7 +34,7 @@ Follow these steps to complete the tutorial: {: ui}
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the console](#provision_instance_ui)
 * [Step 3: Create a topic and partitions using the console](#create_topic_ui)
-* [Step 4: Create an IAM service credential using the console](#create_credential_ui)
+* [Step 4: Create a service credential using the console](#create_credential_ui)
 * [Step 5: Produce data using the console](#produce_data_ui)
 * [Step 6: Consume data using the console](#consume_data_ui)
 * [Step 7: Connect {{site.data.keyword.monitoringshort}}](#connect_monitoring_ui)
@@ -49,7 +49,7 @@ Follow these steps to complete the tutorial: {: cli}
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
 * [Step 3: Create a topic and partitions using the CLI](#create_topic_cli)
-* [Step 4: Create an IAM service credential using the CLI](#create_credential_cli)
+* [Step 4: Create a service credential using the CLI](#create_credential_cli)
 * [Step 5: Produce data using the CLI](#produce_data_cli)
 * [Step 6: Consume data using the CLI](#consume_data_cli)
 * [Step 7: Connect {{site.data.keyword.monitoringshort}}](#connect_monitoring_cli)
@@ -64,7 +64,7 @@ Follow these steps to complete the tutorial: {: api}
 * [Step 1: Choose your plan](#choose_plan)
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using an API](#provision_instance_api)
 * [Step 3: Create a topic and partitions using an API](#create_topic_api)
-* [Step 4: Create an IAM service credential using the CLI and an API](#create_credential_api)
+* [Step 4: Create a service credential using the CLI and an API](#create_credential_api)
 * [Step 5: Produce data using an API](#produce_data_api)
 * [Step 6: Consume data using an API](#consume_data_api)
 * [Step 7: Connect IBM Cloud Monitoring](#connect_monitoring_api)
@@ -91,7 +91,7 @@ Before you get started, we highly recommend that you read the following informat
 
 * The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
-* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, and increased retention are important considerations. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, increased retention, and Schema Registry are important considerations. 
 
 * The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external}
 The Satellite plan offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service. This plan is appropriate if you want to deploy an Enterprise plan into Satellite locations of your own choice. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
@@ -593,6 +593,8 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 
 You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
 
+However, you can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
+
 
 ## Step 5: Produce data using the CLI
 {: #produce_data_cli}
@@ -691,6 +693,8 @@ For details of some of the most important settings that you can configure for th
 {: ui}
 
 You cannot consume data by using the console. You can consume data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
+
+However, you can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
 
 ## Step 6: Consume data using the CLI
 {: #consume_data_cli}
