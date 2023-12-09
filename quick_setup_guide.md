@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-09"
 
 keywords: quick setup guide
 
@@ -91,10 +91,9 @@ Before you get started, we highly recommend that you read the following informat
 
 * The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
 
-* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, increased retention, and Schema Registry are important considerations. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, increased retention, and a Schema Registry are important considerations. 
 
-* The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external}
-The Satellite plan offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service. This plan is appropriate if you want to deploy an Enterprise plan into Satellite locations of your own choice. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
+* The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external} offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service by deploying functionality similar to the Enterprise plan into your chosen Satellite locations. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 	
 
 ### Using APIs
@@ -105,7 +104,7 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 
 * The resource controller API to [provision an instance](#provision_instance_api). 
 * The Admin REST API to [work with topics](#work_topic_api). 
-* The REST Producer API to [create an IAM service credential](#create_credential_api) and [produce messages](#produce_data_api).
+* The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
 
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
@@ -593,7 +592,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 
 You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
 
-However, you can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
+However, you can complete the steps for the console in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
 
 
 ## Step 5: Produce data using the CLI
