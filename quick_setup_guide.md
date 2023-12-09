@@ -89,9 +89,11 @@ Before you get started, we highly recommend that you read the following informat
 
 * The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite){: external} offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
 
-* The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload.
+* The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload. The Standard plan has a limit of 100 topic partitions per instance.
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, increased retention, and a Schema Registry are important considerations. 
+
+In addition to a selection of throughput and storage options, this plan also offers user-managed encryption, private endpoints, and meets a higher number of regulatory compliance standards. The Enterprise plan is the best choice if data isolation, guaranteed performance, and increased retention are important considerations.
 
 * The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external} offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service by deploying functionality similar to the Enterprise plan into your chosen Satellite locations. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 	
@@ -191,8 +193,10 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}.
 
+
 1. From your newly provisioned instance, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 200 characters.
+The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
@@ -257,6 +261,8 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
     Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+
+The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
 ### Working with topics
 {: #work_topic_cli}
@@ -760,11 +766,11 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 
 You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
 
-## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the API
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using an API
 {: #connect_monitoring_api}
 {: api}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using an API. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
 ## Step 8: Connect {{site.data.keyword.at_full}} to audit service activity 
@@ -793,11 +799,11 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 
 You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
 
-## Step 8: Connect {{site.data.keyword.at_full}} using the API to audit service activity
+## Step 8: Connect {{site.data.keyword.at_full}} using an API to audit service activity
 {: #activity_tracker_api}
 {: api}
 
-You cannot connect {{site.data.keyword.at_short}} using the API. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using an API. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
 
 
 ## Step 9: (Optional) Use Kafka Connect or ksqlDB
@@ -807,12 +813,6 @@ You cannot connect {{site.data.keyword.at_short}} using the API. Use the [consol
 {: #kafka_connect}
 
 Kafka Connect is part of the Apache Kafka project and allows you to connect external systems to Kafka. It consists of a runtime  that can run connectors to copy data to and from a cluster.
-
-Its key benefits are as follows:
-
-* Scalability: it can easily scale from a single worker to many.
-* Reliability: it automatically manages offsets and the lifecycle of connectors
-* Extensibility: the community has built connectors for most popular systems. {{site.data.keyword.IBM_notm}} has connectors for [MQ](/docs/EventStreams?topic=EventStreams-mq_connector){: external} and [Cloud Object Storage](/docs/EventStreams?topic=EventStreams-cos_connector){: external}.
 
 For more information, see [Using Kafka Connect with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_connect){: external}.
 
