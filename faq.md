@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-12-05"
 
 keywords: api, frequently asked questions, consumer group, log retention, message size, replication settings
 
@@ -106,7 +106,7 @@ You are strongly recommended not to attempt to manage the topic in any way. You 
 After consumers have left, a group continues to exist only if it has offsets. Consumer offsets are deleted after 7 days of inactivity. Consequently, a consumer group is deleted when the last committed offset for that group expires.
 
 If you want to explicitly delete a group at a time you choose, you can use the 
-[deleteConsumerGroups() API](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection){: external}.
+[deleteConsumerGroups() API](http://kafka.apache.org/23/javadoc/org/apache/kafka/clients/admin/AdminClient.html#deleteConsumerGroups-java.util.Collection){: external}, or the [ibmcloud es group-delete command](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es_group_delete).
 
 
 ## How long are messages retained?
@@ -159,7 +159,7 @@ The following configuration settings apply to all topics and cannot be changed:
 {: faq}
 {: support}
 
-*  Topic names are restricted to a maximum of 100 characters.
+*  Topic names are restricted to a maximum of 200 characters.
 *  The default number of partitions for a topic is one.
 *  Each {{site.data.keyword.Bluemix_notm}} space has a limit of 100 partitions. To create
    more partitions, you must use a new {{site.data.keyword.Bluemix_notm}} space.
@@ -207,22 +207,11 @@ To find out more information about the different {{site.data.keyword.messagehub}
 Currently, it is the responsibility of the user to manage their own {{site.data.keyword.messagehub}} disaster recovery. {{site.data.keyword.messagehub}} data can be replicated between an {{site.data.keyword.messagehub}} instance in one location (region) and another instance in a different location. However, the user is responsible for provisioning a remote {{site.data.keyword.messagehub}} instance and managing the replication. 
 
 We suggest a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
-[{{site.data.keyword.messagehub}} kafka-mirrormaker repository](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: external}.
+[{{site.data.keyword.messagehub}} kafka-mirrormaker repository](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: external}. For an example of the recovery process, see [Using mirroring in a disaster recovery scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) .
 
 The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
 
 Topic names are backed up by {{site.data.keyword.messagehub}}, although it is recommended good practice for users to back up topic names and the configuration data for those topics.
 
 If you have configured your {{site.data.keyword.messagehub}} instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend that users do plan for such circumstances. If a user's instance is no longer available because of a disaster (and a remote DR instance is not already set up), the user should consider configuring a new instance in a new region and restoring their topics and data from backup if available. Applications can then be pointed at the new instance.
-
-
-
-
-
-
-
-
-
-
-
 

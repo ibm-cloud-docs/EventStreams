@@ -25,7 +25,7 @@ To install and set up the {{site.data.keyword.messagehub}} CLI on the Lite, Stan
 ## Step 1. Install the {{site.data.keyword.Bluemix_notm}} CLI
 {: #step1_install_cli}
 
-For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-getting-started){: external}.
+For more information about how to install the CLI, see [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-getting-started){: external}.
 
 ## Step 2. Log in to {{site.data.keyword.Bluemix_notm}} 
 {: #step2_login}
@@ -49,7 +49,7 @@ Select one of the following methods:
 * To create an instance from the CLI on the Enterprise plan, run the following command:
     ```sh
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise-3nodes-2tb <REGION>
-        ```
+    ```
     {: codeblock}
    
    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.

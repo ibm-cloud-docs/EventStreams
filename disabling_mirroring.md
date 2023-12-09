@@ -19,13 +19,15 @@ This information describes how to disable a {{site.data.keyword.messagehub}} mir
 
 Currently, disabling mirroring for an {{site.data.keyword.messagehub}} service instance requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
 
-To install the CLI, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-install-devtools-manually#install-devtools-manually).
+To install the CLI, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
 The {{site.data.keyword.Bluemix_notm}} CLI uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to run the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [Required access for creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
 The time required to disable mirroring for the {{site.data.keyword.messagehub}} service instance varies, but under normal circumstances it does not exceed 2 hours.
 
 ## Step 1: Disable mirroring
+{: #step1_command}
+
 
 To disable mirroring, you need to run a **service-instance-update** command against your target cluster by using the CLI. Run the following command:
 
