@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-12-10"
 
 keywords: scaling capacity, throughput, storage, scaling
 
@@ -110,11 +110,11 @@ Valid combinations and values for the "throughput" and "storage_size" are listed
 ### Example
 {: #scaleup_example}
 
-This example shows how to first deploy a service instance configured with a base capacity unit (the default):
+This example shows how to first deploy a service instance configured with a base capacity unit, which is the default:
 * 150 MB/s of throughput capacity.
 * 2 TB of storage capacity for data retention.
 
-Then scale this service instance to a configuration of a base capacity unit, one extra capacity unit, and 4 TB of extra storage to provide:
+The example then shows how to scale this service instance to a configuration of a base capacity unit, one extra capacity unit, and 4 TB of extra storage to provide:
 * 300 MB/s of throughput capacity.
 * 8 TB of storage capacity for data retention.
 
@@ -148,7 +148,7 @@ Then scale this service instance to a configuration of a base capacity unit, one
 
 4. View the current capacity configuration by using the {{site.data.keyword.messagehub}} CLI.
     
-    To install and use the CLI plug-in, refer to [cli reference](/docs/EventStreams?topic=EventStreams-cli_reference).
+    To install and use the CLI plug-in, refer to [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
     
     Use the following command to display the current capacity configuration:
   
@@ -181,7 +181,7 @@ Then scale this service instance to a configuration of a base capacity unit, one
 
 6. Monitor the update of the service instance.
 
-    The scale-up process might take from several minutes to three hours to complete depending on what new resources need to be allocated to the service instance.
+    The scale-up process can take from several minutes to three hours to complete depending on what new resources need to be allocated to the service instance.
     
     You can get the current service instance information by using the following command.
     
@@ -189,7 +189,7 @@ Then scale this service instance to a configuration of a base capacity unit, one
       ibmcloud resource service-instance "Event Streams resource instance name" --output=json 
       ```
         
-    Review the Last Operation section of the output. The information is continuously updated as the update proceeds. When the scale-up process completed, the last operation information indicates update succeeded or sync succeeded.
+    Review the `Last Operation` section of the output. The information is continuously updated as the update proceeds. When the scale-up process completed, the last operation information indicates update succeeded or sync succeeded.
 
     Run the command again until success is indicated.
 
