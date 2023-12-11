@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-09"
+lastupdated: "2023-12-11"
 
 keywords: quick setup guide
 
@@ -91,9 +91,8 @@ Before you get started, we highly recommend that you read the following informat
 
 * The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload. The Standard plan has a limit of 100 topic partitions per instance.
 
-* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant {{site.data.keyword.messagehub}} service. This plan also offers user-managed encryption, private endpoints, and a selection of throughput and storage options. The Enterprise plan your best choice if data isolation, guaranteed performance, increased retention, and a Schema Registry are important considerations. 
+* The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant Event Streams service. In addition to a selection of throughput and storage options, this plan also offers user-managed encryption private endpoints, schema registry support, and meets a higher number of regulatory compliance standards. The Enterprise plan is the best choice if data isolation, guaranteed performance, and increased retention are important considerations.
 
-In addition to a selection of throughput and storage options, this plan also offers user-managed encryption, private endpoints, and meets a higher number of regulatory compliance standards. The Enterprise plan is the best choice if data isolation, guaranteed performance, and increased retention are important considerations.
 
 * The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external} offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service by deploying functionality similar to the Enterprise plan into your chosen Satellite locations. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
 	
