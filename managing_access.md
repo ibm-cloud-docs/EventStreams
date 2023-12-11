@@ -22,8 +22,8 @@ Kafka client configured with SASL PLAIN uses an IAM API key as a plain text pass
 
 Kafka client configured with SASL OAUTHBEARER uses IAM access token in the authentication process, {{site.data.keyword.messagehub}} verifies the token via IAM public key. Because an IAM access token has an expiration time (usually at 1 hour), Kafka client is required to re-generate a new token and go through the authentication process again when previous token is approaching expiration time. This approach provides better security comparing to SASL PLAIN in two ways: 
 
-    1. The API key always stays at client side to generate access token and is no longer sent to Kafka brokers over network, this removes the risk of API key exposure. 
-    2. The authentication process happens on a regular basis when the access token is expiring and this minimizes the risk of token exposure.
+1. The API key always stays at client side to generate access token and is no longer sent to Kafka brokers over network, this removes the risk of API key exposure. 
+2. The authentication process happens on a regular basis when the access token is expiring and this minimizes the risk of token exposure.
 
 For more secure authentication, SASL OAUTHBEARER is the only recommended authentication method for Kafka clients. See [Configuring your Kafka API client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client) how to configure SASL OAUTHBEARER in Kafka clients.
 
@@ -32,6 +32,11 @@ Enterprise users have the option to disable SASL PLAIN in their Enterprise insta
 ```sh
 ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":true}'
 ```
+
+### Connecting to {{site.data.keyword.messagehub}}
+{: #connect_message_enterprise }
+
+For more information about how to get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
 
 ## Managing authorization to your {{site.data.keyword.messagehub}} resources
 {: #security_resources}
@@ -75,12 +80,17 @@ For more information about IAM, see [IBM Cloud Identity and Access Management](/
 
 For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
 
+### Wildcarding
+{: #wildcarding }
+
+You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics that are called `Dept1_*` and these policies are applied to all topics with that prefix. For more information, see [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard){: external}.
+
 ## What are the default security settings?
 {: #default_settings }
 
-By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances' in the same account also has full access.
+By default, when {{site.data.keyword.messagehub}} is provisioned, the user who provisioned it is granted the manager role to all the instance's resources. Additionally, any user who has a manager role for either 'All' services or 'All' {{site.data.keyword.messagehub}} service instances in the same account also has full access.
 
-You can then apply more policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common scenarios](#security_scenarios).
+You can then apply more policies to extend access to other users. You can either scope a policy to apply to {{site.data.keyword.messagehub}} as a whole or to individual resources within {{site.data.keyword.messagehub}}. For more information, see [Common actions](#common_actions).
 
 Only users with an administration role for an account can assign policies to users. Assign policies either by using IBM Cloud dashboard or by using the **ibmcloud** commands.
 
@@ -236,20 +246,10 @@ For interoperation with existing applications, the {{site.data.keyword.messagehu
 [^tabletext5]: Reader if the version already exists, Writer if the version is to be created by the API call.
 [^tabletext6]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 
-## Wildcarding
-{: #wildcarding }
-
-You can take advantage of the IAM wildcarding facility to set policies for groups of resources on {{site.data.keyword.messagehub}}. For example, if you give all your topics names like `Dept1_Topic1` and `Dept1_Topic2`, you can set policies for topics that are called `Dept1_*` and these policies are applied to all topics with that prefix. For more information, see [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard){: external}.
-
-## Connecting to {{site.data.keyword.messagehub}}
-{: #connect_message_enterprise }
-
-For more information about how to get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
-
 ## Managing access to the Schema Registry
 {: #managing_access_schemas}
 
-The authorization model for the Schema Registry used the same style of policies that are described in the [Managing Access To {{site.data.keyword.messagehub}} Resources](#security) section of this document.
+The authorization model for the Schema Registry used the same style of policies that are described in the [Managing authorization to your {{site.data.keyword.messagehub}} resources](#security_resources) section of this document.
 
 ### IAM resources
 {: #iam_resources}
@@ -274,4 +274,4 @@ Scenario | Person or process role | Person or process resource| Application role
 Adding a schema to the registry needs to specify a nondefault rule that controls how versions of the schema are allowed to evolve. |`Reader`  \n `Manager` | `cluster`  \n `schema` | Not applicable |  Not applicable
 Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point that an application tries to use the new schema version. | Not applicable | Not applicable | `Reader`  \n `Writer`| `cluster`  \n `schema`
 The global default rule that controls schema evolution is changed. | `Manager` | `cluster` | Not applicable | Not applicable
-{: caption="Table 3. Examples authorization scenarios" caption-side="bottom"}
+{: caption="Table 3. Examples of authorization scenarios" caption-side="bottom"}
