@@ -241,7 +241,7 @@ From the **Topics page**, click the three dots to the right of the topic name an
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}.
 
-Run the following [**ibmcloud es topic-create**](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es){: external} command to create a new topic with one partition: 
+Use the following [**ibmcloud es topic-create**](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es){: external} command to create a new topic with your chosen number of partitions: 
 
 ```sh
 ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config KEY=VALUE[;KEY=VALUE]* ]*
@@ -264,7 +264,7 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 
 --config KEY=VALUE, -c KEY=VALUE(optional)
 :   Set a configuration option for the topic as a KEY=VALUE pair. 
-:   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
+:   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows the valid configuration keys:
   
     - cleanup.policy
     - retention.ms
@@ -273,40 +273,8 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
     - segment.ms
     - segment.index.bytes
 
-The default retention period for messages as defined by the 'retention.ms` key is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
+The default retention period for messages as specified by the `retention.ms` key is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
------
-```bash
-ibmcloud es topic-create [--name] topic1 [--partitions 1] 
-```
-{: codeblock}
-
-**Prerequisites**: None
-
-**Command options**:
-
---name value
-:   Topic name. Topic names are restricted to a maximum of 200 characters.
-
---partitions value
-:   Set the number of partitions for the topic.
-
-    One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
-
-    Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
-
---config KEY=VALUE, -c KEY=VALUE(optional)
-:   Set a configuration option for the topic as a KEY=VALUE pair. 
-:   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
-  
-    - cleanup.policy
-    - retention.ms
-    - retention.bytes
-    - segment.bytes
-    - segment.ms
-    - segment.index.bytes
-
-The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
 ### Working with topics
 {: #work_topic_cli}
@@ -434,7 +402,7 @@ Partitions are distributed across the brokers to increase the scalability of you
 
 You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000). The default retention period for messages as defined by the 'retention.ms` key is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
-For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api{: external}).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}).
 
 The expected HTTP status codes are as follows:
 
@@ -589,7 +557,7 @@ To allow you to connect to your {{site.data.keyword.messagehub}} instance, creat
 3. Click **Service credentials**.
 4. Click **New credential**. 
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Expand the new credential section to reveal the details in JSON format.
+6. Expand the new credential's section to reveal the details in JSON format.
  
 
 ## Step 4: Create a service credential by using the CLI
