@@ -195,8 +195,6 @@ For guidance about the settings that you can modify when creating topics, see [t
 
 1. From your newly provisioned instance, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 200 characters.
-
-    The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
@@ -206,7 +204,7 @@ For guidance about the settings that you can modify when creating topics, see [t
     Click **Next**.
 
 
-4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed.
+4. Set the message retention period. This is how long messages are retained before they are deleted. If your messages are not read by a consumer within this time, they will be missed. The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
     Click **Create topic**.
 
@@ -400,9 +398,9 @@ One or more partitions make up a topic. A partition is an ordered list of messag
 
 Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000). The default retention period for messages as defined by the 'retention.ms` key is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
+You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000). The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. 
 
-For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}).
+For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api){: external}.
 
 The expected HTTP status codes are as follows:
 
@@ -524,7 +522,7 @@ To increase a topic's partition number or to update a topic's configuration, iss
 ```
 {: codeblock}
 
-The following configuration keys are supported: 'cleanup.policy', 'retention.ms', 'retention.bytes', 'segment.bytes', 'segment.ms', and 'segment.index.bytes'.
+The following configuration keys are supported: `cleanup.policy`, `retention.ms`, `retention.bytes`, `segment.bytes`, `segment.ms`, and `segment.index.bytes`.
 
 You can only increase the partition number, not decrease it.
 
