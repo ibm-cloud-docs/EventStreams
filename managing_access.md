@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-11"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -22,7 +22,7 @@ Kafka client configured with SASL PLAIN uses an IAM API key as a plain text pass
 
 Kafka client configured with SASL OAUTHBEARER uses IAM access token in the authentication process, {{site.data.keyword.messagehub}} verifies the token via IAM public key. Because an IAM access token has an expiration time (usually at 1 hour), Kafka client is required to re-generate a new token and go through the authentication process again when previous token is approaching expiration time. This approach provides better security comparing to SASL PLAIN in two ways: 
 
-1. The API key always stays at client side to generate access token and is no longer sent to Kafka brokers over network, this removes the risk of API key exposure. 
+1. The API key always stays at client side to generate the access token and is no longer sent to Kafka brokers over the network, which removes the risk of API key exposure. 
 2. The authentication process happens on a regular basis when the access token is expiring and this minimizes the risk of token exposure.
 
 For more secure authentication, SASL OAUTHBEARER is the only recommended authentication method for Kafka clients. See [Configuring your Kafka API client](/docs/EventStreams?topic=EventStreams-kafka_using#kafka_api_client) how to configure SASL OAUTHBEARER in Kafka clients.
@@ -249,7 +249,7 @@ For interoperation with existing applications, the {{site.data.keyword.messagehu
 ## Managing access to the Schema Registry
 {: #managing_access_schemas}
 
-The authorization model for the Schema Registry used the same style of policies that are described in the [Managing authorization to your {{site.data.keyword.messagehub}} resources](#security_resources) section of this document.
+The authorization model for the Schema Registry uses the same style of policies that are described in the [Managing authorization to your {{site.data.keyword.messagehub}} resources](#security_resources) section of this document.
 
 ### IAM resources
 {: #iam_resources}
