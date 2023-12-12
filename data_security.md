@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-20"
+lastupdated: "2023-12-05"
 
 keywords: protocols, encryption, data isolation, data retention, data isolation model
 
@@ -53,8 +53,7 @@ For TLS v1.3:
 ## Encryption of message payloads, topic names, and consumer groups
 {: #encryption_payloads}
 
-Message data is encrypted for transmission between {{site.data.keyword.messagehub}} and clients as a result of TLS. {{site.data.keyword.messagehub}} stores message data
-at rest and message logs on encrypted disks.
+Message data is encrypted for transmission between {{site.data.keyword.messagehub}} and clients as a result of TLS. {{site.data.keyword.messagehub}} stores message data at rest and message logs on encrypted disks.
 
 Topic names and consumer groups are encrypted for transmission between {{site.data.keyword.messagehub}} and clients as a result of TLS. However, {{site.data.keyword.messagehub}} does not encrypt these values at rest. Therefore, do not use confidential information in your topic names.
 
@@ -70,25 +69,32 @@ For information about compliance on each of the {{site.data.keyword.messagehub}}
 ### Enterprise plan
 {: #data_isolation_enterprise}
 
-The Enterprise plan provides a tenant-specific service in the IBM Service domain. The Enterprise plan creates a single tenant instance on a Dedicated Kubernetes cluster on Shared Hardware (VSI isolation). By default, the Enterprise plan provides Public endpoints, but it also supports Cloud Service Endpoints to enable Private Endpoints for further network isolation on request. The Enterprise plan creates single tenant Block Storage for each new instance.
+The Enterprise plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain. The Enterprise plan creates a single tenant instance on a dedicated Kubernetes cluster on shared hardware (VSI isolation). By default, the Enterprise plan provides public endpoints, but it also supports Cloud service endpoints to enable private endpoints for further network isolation on request. The Enterprise plan creates single tenant {{site.data.keyword.blockstorageshort}} for each new instance.
 
 ### Satellite plan
 {: #data_isolation_satellite}
 
-The Satellite plan provides a tenant-specific service in the IBM Service domain and is based on the Enterprise plan. The Satellite plan creates a single tenant instance on a Dedicated Kubernetes cluster by using hosts (physical and virtual) that you provided and attached to your Satellite location. The Satellite plan creates single tenant Block Storage for each new instance by using the Block Storage configuration that you specified for your storage provider.
+The Satellite plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain and is based on the Enterprise plan. The Satellite plan creates a single tenant instance on a dedicated Kubernetes cluster by using hosts (physical and virtual) that you provided and attached to your Satellite location. The Satellite plan creates single tenant {{site.data.keyword.blockstorageshort}} for each new instance by using the {{site.data.keyword.blockstorageshort}} configuration that you specified for your storage provider.
 
 ### Standard plan
 {: #data_isolation_standard}
 
-The Standard plan provides a Public Service with Public endpoints. The Standard plan creates a tenant instance on a Shared Kubernetes cluster on shared hardware (VSI isolation). The Standard plan provides Public endpoints only.
+The Standard plan provides a public service with public endpoints. The Standard plan creates a tenant instance on a shared Kubernetes cluster on shared hardware (VSI isolation). The Standard plan provides public endpoints only.
 
-The Standard plan uses Shared Block Storage and achieves tenant isolation through separation of files and access controls.
+The Standard plan uses shared {{site.data.keyword.blockstorageshort}} and achieves tenant isolation through separation of files and access controls.
+
+### Lite plan
+{: #data_isolation_lite}
+
+The Lite plan provides a public service with public endpoints. The Lite plan creates a tenant instance on a shared Kubernetes cluster on shared hardware (VSI isolation). The Lite plan provides public endpoints only.
+
+The Lite plan uses shared {{site.data.keyword.blockstorageshort}} and achieves tenant isolation through separation of files and access controls.
 
 ## Data retention and reclamation
 {: #data_retention_reclamation}
 
-On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. It is scheduled for reclamation and {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both, topics and messages that are written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that is not yet reclaimed.
+On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. It is scheduled for reclamation and {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both topics and messages that are written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that is not yet reclaimed.
 
-You can check the status of a reclamation, and force or cancel a scheduled reclamation by using [the IBM Cloud Platform CLI](https://cloud.ibm.com/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).
+You can check the status of a reclamation, and force or cancel a scheduled reclamation by using [the {{site.data.keyword.IBM_notm}} Cloud CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).
 
 On the Satellite plan, data retention and reclamation are determined by how you configured them on your chosen storage provider.

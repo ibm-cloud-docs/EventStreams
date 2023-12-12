@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-10"
+lastupdated: "2023-12-12"
 
 keywords: network access, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -65,7 +65,7 @@ You have a number of options for selecting the network configuration of your Ent
 
 1. Use the {{site.data.keyword.Bluemix_notm}} public network. Endpoints are accessible on the public internet. This is the default.
 
-2. Use the {{site.data.keyword.Bluemix_notm}} Private network. Endpoints are not visible on the public internet.
+2. Use the {{site.data.keyword.Bluemix_notm}} private network. Endpoints are not visible on the public internet.
 
 3. Use the {{site.data.keyword.Bluemix_notm}} public and private network. Endpoints are visible on both the public internet and internally within the {{site.data.keyword.Bluemix_notm}}.
 
@@ -76,25 +76,23 @@ Alternatively, if you want to use the CLI to provision an {{site.data.keyword.me
 * To enable public endpoints (the default):
 
     ```bash
-    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public
+    ibmcloud resource service-instance-create <instance-name> messagehub ibm.message.hub.enterprise.3nodes.2tb <region> --service-endpoints public
     ```
     {: codeblock}
 
 * To enable private only endpoints:
 
     ```bash
-    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints private
+    ibmcloud resource service-instance-create <instance-name> messagehub ibm.message.hub.enterprise.3nodes.2tb <region> --service-endpoints private
     ```
     {: codeblock}
 
 * To enable both private and public endpoints:
 
     ```bash
-    ibmcloud resource service-instance-create <instance-name> <plan-name> <region> --service-endpoints public-and-private
+    ibmcloud resource service-instance-create <instance-name> messagehub ibm.message.hub.enterprise.3nodes.2tb <region> --service-endpoints public-and-private
     ```
     {: codeblock}
-
-    use plan-name = **messagehub ibm.message.hub.enterprise.3nodes.2tb**
 
 ### Updating the network configuration
 {: #update_endpoints}
@@ -125,7 +123,7 @@ ibmcloud resource service-instance-update <instance-name> --service-endpoints pr
 Switching directly from public to private endpoints or from private to public endpoints is **not supported**. The switch disables all public endpoints and your applications loses access to the cluster. To avoid this, first enable both public and private endpoints, then reconfigure applications to use private endpoints, and finally switch to private only endpoints.
 {: important}
 
-For example, to migrate directly from public to public-and-private endpoints:
+For example, to migrate from public to private endpoints:
 
 First, enable both public and private endpoints:
 
@@ -141,7 +139,7 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 ```
 {: codeblock}
 
-Then, update any applications that use the instance with the new endpoint details.
+Then, update any applications that use the instance with the new service key and endpoint details.
 
 Finally, after applications are migrated to the private endpoints, run the following command to turn off the public endpoints:
 
@@ -163,7 +161,7 @@ ibmcloud resource service-instance-create <instance-name> <plan-name> <region> -
 ```
 {: codeblock}
 
-where CIDR1, 2 are IP addresses of the form a.b.c.d/e
+where CIDR1, CIDR2 are IP addresses of the form a.b.c.d/e. The array of CIDRs can have any number of elements.
 
 Alternatively, to update the IP allowlist for an existing service instance, complete the following steps:
 
@@ -187,7 +185,7 @@ Alternatively, to update the IP allowlist for an existing service instance, comp
     ```
     {: codeblock}
 
-    where CIDR1, 2 are IP addresses of the form a.b.c.d/e
+    where CIDR1, CIDR2 are IP addresses of the form a.b.c.d/e
 
 If the private endpoint is enabled by using the CLI, the next time you update the private IP allowlist, you can omit  `--service-endpoints private`.
 {: note}
