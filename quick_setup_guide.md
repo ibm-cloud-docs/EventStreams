@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-12"
 
 keywords: quick setup guide
 
@@ -89,7 +89,7 @@ Before you get started, we highly recommend that you read the following informat
 
 * The [Lite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_lite){: external} offers access to a single partition in a multi-tenant {{site.data.keyword.messagehub}} cluster free of charge.	Use the Lite plan to try out {{site.data.keyword.messagehub}} or build a proof-of-concept. 
 
-* The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload. The Standard plan has a limit of 100 topic partitions per instance.
+* The [Standard plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_standard){: external} offers pay-as-you-go shared access to the multi-tenant {{site.data.keyword.messagehub}} service. This service seamlessly autoscales as you increase the number of partitions you are using for your workload. The Standard plan has a limit of 100 partitions per instance.
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant Event Streams service. In addition to a selection of throughput and storage options, this plan also offers user-managed encryption private endpoints, schema registry support, and meets a higher number of regulatory compliance standards. The Enterprise plan is the best choice if data isolation, guaranteed performance, and increased retention are important considerations.
 
@@ -195,7 +195,8 @@ For guidance about the settings that you can modify when creating topics, see [t
 
 1. From your newly provisioned instance, navigate to **Topics** using the menu on the left.
 2. Click the **Create topic** button and an enter a topic name. Click **Next**. Topic names are restricted to a maximum of 200 characters.
-The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
+
+    The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 3. Select the number of partitions. 
 
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
@@ -242,6 +243,39 @@ For guidance about the settings that you can modify when creating topics, see [t
 
 Run the following [**ibmcloud es topic-create**](/docs/EventStreams?topic=EventStreams-cli_reference#ibmcloud_es){: external} command to create a new topic with one partition: 
 
+```sh
+ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config KEY=VALUE[;KEY=VALUE]* ]*
+```
+{: codeblock}
+
+**Prerequisites**: None
+
+**Command options**:
+
+--name value, -n value
+:   Topic name. Topic names are restricted to a maximum of 200 characters.
+
+--partitions value, -p value
+:   Set the number of partitions for the topic.
+
+    One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
+
+    Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+
+--config KEY=VALUE, -c KEY=VALUE(optional)
+:   Set a configuration option for the topic as a KEY=VALUE pair. 
+:   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
+  
+    - cleanup.policy
+    - retention.ms
+    - retention.bytes
+    - segment.bytes
+    - segment.ms
+    - segment.index.bytes
+
+The default retention period for messages as defined by the 'retention.ms` key is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
+
+-----
 ```bash
 ibmcloud es topic-create [--name] topic1 [--partitions 1] 
 ```
@@ -260,6 +294,17 @@ ibmcloud es topic-create [--name] topic1 [--partitions 1]
     One or more partitions make up a topic. A partition is an ordered list of messages. 1 partition is sufficient for getting started, but production systems often have more.
 
     Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
+
+--config KEY=VALUE, -c KEY=VALUE(optional)
+:   Set a configuration option for the topic as a KEY=VALUE pair. 
+:   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
+  
+    - cleanup.policy
+    - retention.ms
+    - retention.bytes
+    - segment.bytes
+    - segment.ms
+    - segment.index.bytes
 
 The default retention period for messages is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
@@ -387,7 +432,7 @@ One or more partitions make up a topic. A partition is an ordered list of messag
 
 Partitions are distributed across the brokers to increase the scalability of your topic. You can also use them to distribute messages across the members of a consumer group.
 
-You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000).
+You can also specify an optional `configs` object within the request. This allows you to specify the `retentionMs` property, which controls how long (in milliseconds) Kafka retains messages published to the topic. After this time elapses the messages are automatically deleted to free space. You must specify the value of the `retentionMs` property in a whole number of hours (for example, multiples of 3600000). The default retention period for messages as defined by the 'retention.ms` key is 24 hours. The minimum is 1 hour and the maximum is 30 days. Specify this value as multiples of hours.
 
 For guidance about the settings that you can modify when creating topics, see [topic configuration](/docs/EventStreams?topic=EventStreams-kafka_java_api{: external}).
 
@@ -544,7 +589,8 @@ To allow you to connect to your {{site.data.keyword.messagehub}} instance, creat
 3. Click **Service credentials**.
 4. Click **New credential**. 
 5. Complete the details for your new credential like a name and role and click **Add**. A new credential appears in the credentials list.
-6. Click the chevron next to the new credential to reveal the details in JSON format.
+6. Expand the new credential section to reveal the details in JSON format.
+ 
 
 ## Step 4: Create a service credential by using the CLI
 {: #create_credential_cli}
