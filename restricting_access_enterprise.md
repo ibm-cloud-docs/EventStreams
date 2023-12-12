@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-10"
+lastupdated: "2023-12-12"
 
 keywords: network access, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
