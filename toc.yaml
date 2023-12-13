@@ -141,5 +141,7 @@ toc:
                 navtitle: Getting help and support
               - topic: known_restrictions.md
                 navtitle: Known restrictions
-              - reporting_problem.md
+              - troubleshooting.md
+              - topic: reporting_problem.md
+                navtitle: Reporting a problem
               
