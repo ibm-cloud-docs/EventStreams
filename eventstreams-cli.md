@@ -35,6 +35,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.3.2 |  5 May 2022 |  - Added support for Mac OS X M1/ARM. \n - init: Display Object Storage bucket if parameter `cos_bucket_crn` is specified in provisioning. |
 | v2.4.0 |  28 Feb 2023 |  - Added Kafka version to `ibmcloud es cluster`. \n - Updated Go to 1.9.6. |
 | v2.4.1 |  05 Dec 2023 |  - Added `mirroring-active-topics` and `help` commands. |
+| v2.5.0 |  15 Dec 2023 |  - Added `schema-import` commands. |
 {: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
@@ -459,4 +460,21 @@ ibmcloud es help [COMMAND]
 
 COMMAND (optional)
 :   Show help for a command.
+
+## ibmcloud es schema-import
+{: #ibmcloud_es_schema_import}
+
+Import a set of schemas into the registry from a zip file.
+
+```sh
+ibmcloud es schema-import [--file] ZIP_FILE_PATH
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas
+
+**Command options**:
+
+--file value, -f value
+:  Zip file path.
 
