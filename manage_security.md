@@ -33,7 +33,7 @@ As a security or compliance focal, use the *Event Streams* [goals](#x2117978){: 
 All of the goals for {{site.data.keyword.messagehub}} are added to the {{site.data.keyword.cloud_notm}} Control Library but can also be mapped to other profiles.
 {: note}
 
-To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic-security-compliance-getting-started).
+To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic=security-compliance-getting-started).
 
 ### Available goals for Event Streams
 {: #eventstreams-available-goals}
@@ -57,4 +57,4 @@ As a security or compliance focal, use the {{site.data.keyword.compliance_short}
 | Instance | private_access_allowlist | ips_in_range | - | If private networking is enabled, this property indicates whether access to a {{site.data.keyword.messagehub}} instance should be restricted to a specific range of private IP CIDR formatted subnets. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.messagehub}}" caption-side="bottom"}
 
-To learn more about config rules, check out [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-governance)
+To learn more about defining config rules, check out [Defining custom rules](/docs/security-compliance?topic=security-compliance-rules-define).
