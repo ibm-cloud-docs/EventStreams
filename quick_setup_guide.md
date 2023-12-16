@@ -775,7 +775,9 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 {: #connect_monitoring_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
+old: You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
+
+new: You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](#connect_monitoring_ui) to complete this task.
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using an API
 {: #connect_monitoring_api}
