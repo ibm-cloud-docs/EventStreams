@@ -33,7 +33,7 @@ Enterprise users have the option to disable SASL PLAIN in their Enterprise insta
 ibmcloud resource service-instance-update <instance-name> -p '{"iam_token_only":true}'
 ```
 
-### Connecting to {{site.data.keyword.messagehub}}
+## Connecting to {{site.data.keyword.messagehub}}
 {: #connect_message_enterprise }
 
 For more information about how to get a security key credential for an external application, see [Connecting to {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-connecting).
