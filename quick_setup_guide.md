@@ -186,6 +186,8 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: codeblock}
 
+_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
+
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
 {: ui}
@@ -310,6 +312,8 @@ ibmcloud es cluster [--json]
 --json (optional)
 :   Output format in JSON.
 
+For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs-draft/EventStreams?topic=EventStreams-cli_reference).
+
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
 {: api}
@@ -365,7 +369,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: #work_topic_api}
 {: api}
 
-After you create topics, you can use the Admin REST API to [list topics](#topic_list_api).
+After you create topics, you can use the Admin REST API to [list topics](#topic_list_api). For information about other topic-related commands you can run, see [Admin REST API methods](/apidocs/event-streams/adminrest#listtopics).
 
 #### List topics
 {: #topic_list_api}
@@ -481,7 +485,7 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 {: #produce_data_ui}
 {: ui}
 
-You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
+You cannot produce data by using the console. You can produce data using the [command line](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
 
 However, you can complete the steps for the console in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
 
@@ -538,6 +542,8 @@ For details of some of the most important settings that you can configure for th
 {: #produce_data_api}
 {: api}
 
+_additional explanation needed. For example, as a new user I might need info around: what are headers, are they optional, the value of colour doesn't look binary - explaining its base 64 and how to do that...etc_
+
 Use the v2 endpoint of the REST Producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of `text` type by using curl:
@@ -582,7 +588,7 @@ For details of some of the most important settings that you can configure for th
 {: #consume_data_ui}
 {: ui}
 
-You cannot consume data by using the console. You can consume data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
+You cannot consume data by using the console. You can consume data using the [command line](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
 
 However, you can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
 
@@ -649,7 +655,7 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 {: #connect_monitoring_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI or command line. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
 
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using an API
@@ -683,7 +689,7 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 {: #activity_tracker_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the CLI or command line. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Step 8: Connect {{site.data.keyword.at_full}} using an API to audit service activity
 {: #activity_tracker_api}
