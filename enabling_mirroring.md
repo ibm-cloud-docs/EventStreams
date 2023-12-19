@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-12-19"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -140,7 +140,9 @@ The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messageh
 ## Step 5: Select topics
 {: #step5_selecttopics}
 
-When the service instance update has completed, we want to select some topics from the source cluster to mirror. Topic selection can be in the form of a regex pattern.
+When the service instance update has completed, we want to select some topics from the source cluster to mirror. This is done with the CLI by using the **ibmcloud es mirroring-topic-selection-set** command.
+
+Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
 
 The following command selects all topics to be mirrored:
 
@@ -152,7 +154,7 @@ ibmcloud es mirroring-topic-selection-set --select '.*'
 You can select topics by listing the topics you want to mirror as follows:
 
 ```sh
-ibmcloud es mirroring-topic-selection-set --select topic1, topic2, topic3
+ibmcloud es mirroring-topic-selection-set --select topic1,topic2,topic3
 ```
 {: codeblock}
 
