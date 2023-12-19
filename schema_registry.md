@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-12-19"
 
 keywords: schema registry, schema
 
@@ -158,7 +158,7 @@ The Schema Registry is not available for other {{site.data.keyword.messagehub}} 
 ## Accessing the Schema Registry
 {: #accessing_schema_registry}
 
-To access the Schema Registry, you need the URL of the Schema Registry. You can find this by inspecting the service credentials of your service. To view these credentials in the UI, click your service instance, select **Service Credentials** in the left navigation pane, then click the **View Credentials** link located next to one of the service credentials listed in the table:
+To access the Schema Registry, you need the URL of the Schema Registry, which is in the service credentials of your service. To view these credentials in the UI, click your service instance, select **Service Credentials** in the left navigation pane, then click the **View Credentials** link located next to one of the service credentials listed in the table:
 
 ![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
