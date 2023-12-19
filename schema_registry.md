@@ -167,12 +167,12 @@ The value of `kafka_http_url` is also the URL of the Schema Registry.
 ### Authentication
 {: #authentication}
 
-To access the Schema Registry, you also need a set of credentials that can be used to authenticate with the registry. There are two options here, basic authentication with an API key, or bearer token authentication.
+To access the Schema Registry, you also need a set of credentials that can be used to authenticate with the registry. There are two options, basic authentication with an API key, or bearer token authentication.
 
-The examples later in this document show use of the API key, but either option can be used.
+The examples in this document show use of the API key, but either option can be used.
 {: note}
 
-#### Authentication with API Key
+#### Authentication with API key
 {: #authentication_with_api_key}
 
 The service credentials have an `apikey` that you can use as the credential for authenticating with the Schema Registry.
@@ -187,17 +187,16 @@ The curl command to use is as follows, where $APIKEY is substituted with your AP
 curl -u token:$APIKEY ...
 ```
 
-#### Authentication with Bearer Token
+#### Authentication with bearer token
 {: #authentication_with_bearer_token}
 
-It is also possible to use a bearer token for a system ID or user as a credential. This is generally a more secure approach, as it has less potential for exposing the API key, and the bearer token will automatically expire after some time.
+It is also possible to use a bearer token for a system ID or user as a credential. This is generally a more secure approach, as it has less potential for exposing the API key, and the bearer token automatically expires after some time.
 
 To obtain a token, use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate the token. Include this token in an HTTP header in the format “Authorization: Bearer $TOKEN”, where $TOKEN is the bearer token:
 
 ```sh
 curl -H "Authorization: Bearer $TOKEN" ...
 ```
-
 
 ## Schema Registry REST endpoints
 {: #schema_registry_rest_endpoints}
