@@ -38,13 +38,13 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 
 1. Provision a {{site.data.keyword.satelliteshort}} location.
 
-    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#satellite-loc-manual-create).
 
        IBM Cloud {{site.data.keyword.satelliteshort}} provides Quick Start templates to help with the provisioning of a {{site.data.keyword.satelliteshort}} location and initial set of host instances. However, the templates only provision one type (size) of host instance. {{site.data.keyword.messagehub}} requires more than one type of host instance. The recommendation to use the manual steps to create your {{site.data.keyword.satelliteshort}} location lets you provide multiple types of host instances. Optionally, use the quick start template to create hosts for the {{site.data.keyword.satelliteshort}} location's control plane and part of the {{site.data.keyword.messagehub}} requirement, then use the manual steps to add extra host types required by {{site.data.keyword.messagehub}}.
        {: important}
 
     2. {{site.data.keyword.messagehub}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
-    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual) information, the names of the zones that are specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
+    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#satellite-loc-manual-create) information, the names of the zones that are specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
 2. Before you proceed to the next step, ensure that the following criteria are met:
 
@@ -96,7 +96,7 @@ The hosts requirement is for a single {{site.data.keyword.messagehub}} {{site.da
 {: #satellite-provision-es-instance}
 {: step}
 
-After you prepare your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching extra hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
+After preparing your {{site.data.keyword.satelliteshort}} location, granting service authorization, and attaching extra hosts, you can provision a {{site.data.keyword.messagehub}} service instance: 
 
 1. Go to the catalog, by clicking **Catalog** in the navigation bar.
 2. Look for the **Event Streams** tile in the **Integration** section and select it.
@@ -113,7 +113,7 @@ location. You can verify the start of the deployment of the service cluster with
 3. Select **Services**.
 4. Verify that a service named **messagehub** is listed. If it is not yet listed, refresh the page until it is listed before you move to the next step.
 
-While the service instance and cluster are provisioned, create the storage assignment. Proceed to the next step and complete the instructions.
+While the service instance and cluster are being provisioned, create the storage assignment. Proceed to the next step and complete the instructions.
 {: important}
 
 ## Create the block storage configuration assignment (by using {{site.data.keyword.satelliteshort}} Storage UI)
@@ -139,7 +139,7 @@ After the storage assignment is created, allow up to 60 minutes for the {{site.d
 {: #satellite-enable-schema-registry}
 {: step}
 
-The schema registry API is not automatically enabled when you provision an {{site.data.keyword.messagehub}} Satellite instance. 
+The [schema registry API](/docs/EventStreams?topic=EventStreams-ES_schema_registry) is not automatically enabled when you provision an {{site.data.keyword.messagehub}} Satellite instance. 
 You must provide an {{site.data.keyword.cos_full_notm}} bucket as the backend storage for schema registry to enable this API. You are responsible for managing this bucket, including but not limited to: data encryption, data backup, and disaster recovery.
 
 1. Create a Cloud {{site.data.keyword.cos_short}} instance either on {{site.data.keyword.Bluemix_notm}} or on a Satellite location.
