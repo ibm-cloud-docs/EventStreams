@@ -17,10 +17,19 @@ subcollection: EventStreams
 
 Use the troubleshooting tips to learn how to troubleshoot issues with {{site.data.keyword.messagehub_full}}.
 
+If you experience a problem with {{site.data.keyword.messagehub}}, first check the [{{site.data.keyword.Bluemix_notm}} status page](https://cloud.ibm.com/status){: external}. If you like help from the {{site.data.keyword.messagehub}} team, ensure that you gather all the information that is required as detailed in [Reporting a problem to the {{site.data.keyword.messagehub}} team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise#report_problem_enterprise).
+{: shortdesc}
+
 ## Timeouts when connecting or producing to a topic
 {: #timeouts}
 
 If you have an Apache Kafka application that is unable to connect to a topic or unable to produce to a topic due to a timeout excpetion, check whether the producer has network problems by using the following command: `nc -zv <broker-hostname> 9093` (for example, `nc -zv broker-3-abc.kafka.svc01.us-east.eventstreams.cloud.ibm.com 9093`).
+
+*  [{{site.data.keyword.messagehub}} Java Kafka sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-console-sample){: external}
+*  [Apache Kafka documentation](http://kafka.apache.org/documentation.html){: external}
+*  [Apache Kafka 2.2.0 client](https://archive.apache.org/dist/kafka/2.2.0/kafka-2.2.0-src.tgz){: external}
+*  [Apache Kafka 3.4.1 client](https://www.apache.org/dyn/closer.cgi?path=/kafka/3.4.1/kafka-3.4.1-src.tgz){: external}
+*  [{{site.data.keyword.Bluemix_notm}} pricing information](/docs/billing-usage?topic=billing-usage-cost){: external}
 
 During regular updates, it is normal for individual brokers and IP endpoints to go down for a short period of time while updates are applied and the system is restarted. These timeouts are likely a result of a broker that was temporarily offline. In some cases, your apps might have some impact as the cluster reassigns resources. Write your apps to be resilient to these changes and to be able to reconnect and retry operations.
 
