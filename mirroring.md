@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-12-19"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring
 
@@ -28,7 +28,6 @@ The current features are:
 
 The current limitations are:
 
-- Enablement and disablement are by using a support ticket.
 - Unidirectional.
 
 Before you start mirroring, consider the following points:
@@ -40,13 +39,13 @@ To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventS
 ## Mirroring overview
 {: #mirroring_overview}
 
-Mirroring of selected topics happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. In this document, the source cluster is named `A` and the target cluster is named `B`. These cluster aliases are configurable when mirroring is enabled, so for example, they could be "us-south" and "us-east".
+Mirroring of selected topics happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. Each cluster has a mirroring alias. In this document, `A` is used for the source cluster alias and `B` for the target cluster alias. The aliases are configurable when mirroring is enabled, so for example, they could be "us-south" and "us-east".
 
-A topic called `mytopic` from the source cluster (A) appears on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote cluster. In contrast, any topics that are directly created on a cluster by users are called _local topics_.
+A topic called `mytopic` from the source cluster (A) appears on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote (source) cluster. In contrast, any topics that are directly created on the target cluster by users are called _local topics_.
 
 To select which topics are mirrored, a regular expression pattern can be configured by using [Mirroring User Controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `<ALIAS>.checkpoints.internal`, where `<ALIAS>` is the alias of the remote cluster. For example, `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
+To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `A.checkpoints.internal`, where `A` is the alias of the source cluster. For example, `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
 
 Finally, because of the naming of remote topics, avoid using cluster aliases as part of the Kafka resource names.
 
@@ -79,19 +78,19 @@ The numbers indicate:
 - **Max total throughput**: The maximum total MB/s that can be mirrored across all selected topics. 
 - **Max per-partition throughput**: The maximum MB/s that can be mirrored within a single partition. Select the number of partitions that are configured for the source topics to ensure the per partition load remains within this limit.
 
-Exceeding the limits results in an increasing time lag between the data in the source and target instances. Having a large data lag can result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring).
+Exceeding the limits results in an increasing lag between the data in the source and target instances. Having a large data lag can result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring).
 
 ### Deleting redundant target topics
 {: #delete_redundant}
 
-To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created, more disk and partition allowance can be consumed in the target cluster. The usage can be monitored with the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). You can delete topics that are no longer required by using the UI or admin interfaces.
+To avoid accidental deletion of data in the target instance, topics are not automatically deleted from the target instance when they are deleted from the source. It is the user's responsibility to delete the topics on the target instance. If mirrored topics are frequently deleted and created, more disk and partition allowance can be consumed in the target cluster. The usage can be monitored with the monitoring dashboard in the target cluster, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics). You can delete topics that are no longer required by using the CLI, UI, or admin interfaces.
 
 ## IAM access policies for mirroring
 {: #iam_mirroring}
 
 Because applications need access to the source and destination clusters, IAM access policies must be set up on both clusters, and use the API key from the service ID that the policies are attached to. We can use the IAM wildcarding features [Assigning access by using wildcard policies](/docs/account?topic=account-wildcard) to simplify the access policies that control access to the mirrored resources.
 
-If you are new to IAM access policies, see [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview) and [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security) for more details.
+If you are new to IAM access policies, see [How IBM Cloud IAM works](/docs/account?topic=account-iamoverview) and [Managing authentication to your {{site.data.keyword.messagehub}} instances](/docs/EventStreams?topic=EventStreams-security) for more details.
 
 Define the following IAM access policies on **both** clusters, where &lt;ALIAS&gt; is the alias for the other cluster. For example, on cluster B, the resource ID is `A.checkpoints.internal`.
 
@@ -149,46 +148,58 @@ You can configure mirroring by using the [CLI](/docs/EventStreams?topic=EventStr
 ### Setting the topic selection
 {: #setting_topic_selection}
 
-The mirroring selection is made based on the topic names on the source cluster by using patterns. Choose the names of the topics on your source cluster carefully, by considering the advice from the [Considerations when you share clusters between multiple entities](#sharing_clusters) section.
+The mirroring selection is made based on the topic names on the source cluster by using regular expression (regex) patterns. Choose the names of the topics on your source cluster carefully, by considering the advice from the [Considerations when you share clusters between multiple entities](#sharing_clusters) section.
 
-With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics that match the pattern are automatically mirrored without the need for more changes. The topic selection is in the form of a list of regex patterns. While more complex regex is supported, the following examples show enabling mirroring for all topics whose name has the prefix `accounting` or `hr`.
+With well-structured topic names, such as adding a prefix to topics that are part of the same group or application, it is easy to control mirroring. With such a naming convention in place, any future topics that match the pattern are automatically mirrored without the need for more changes.
 
-The first example shows enabling by using the CLI.
-
-```sh
-ibmcloud es mirroring-topic-selection-set --select ^accounting.*,^hr.* 
-```
-
-The second example shows how to make the same selection by using the Administration REST API.
-
-```sh
-curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["^accounting.*", "^hr.*"]}'
-```
+The topic selection is given in the form of a list of one or more regex patterns. A topic is selected if it matches any of the patterns in the list.
 
 Some examples of patterns to select topics for mirroring:
 
 Example Patterns | Explanation
 ------------ | -------------
-`"^aaa.*", "^bbb.*"` | Match on the prefix of topic names.
-`^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names.
-`"topic1", "topic2"` | Full topic names.
-`".*"` | Mirror all source topics.
-`""` (by Administration REST API)  `--none` (by CLI) | Mirror no source topics.
+`^topic1$` | Full topic names. \n This matches only the single topic named `topic1`.
+`^topic1$,^topic2$` | List of patterns matching full topic names. \n This matches the two topics named `topic1` and `topic2`.
+`^aaa.*` | Match on the prefix. \n This matches any topic name that starts with `aaa`.
+`^aaa.*,^bbb.*` | List of patterns matching on the prefix. \n This matches any topic name that starts with `aaa` or `bbb`.
+`^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names. \n This matches any topic name that starts with `branch_`, followed by exactly 3 digits, followed by `_` and any number of lowercase letters.
+`.*` | Mirror all source topics.
 {: caption="Table 5. Example patterns" caption-side="bottom"}
+
+When using the CLI, the patterns are given as a comma-separated list. For example, the following command will select all topics whose name has the prefix `accounting` or `hr`.
+
+```sh
+ibmcloud es mirroring-topic-selection-set --select '^accounting.*,^hr.*'
+```
+
+The following command shows how to make the same selection by using the Administration REST API. The patterns are in the form of a JSON array named `"includes"`.
+
+```sh
+curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["^accounting.*", "^hr.*"]}'
+```
 
 Updating a topic selection replaces the current set of patterns.
 {: note}
 
-You can also disable mirroring on previously enabled topics.
+To remove the selection so that no topics are mirrored, use the `--none` option with the CLI, or an empty pattern with the Administration REST API, as follows.
 
 ```sh
 ibmcloud es mirroring-topic-selection-set --none
 ```
-To selectively disable mirroring, re-apply the topic selection leaving out the topic that you want to disable.
-For example, when topic1, topic2, topic3 are currently being mirrored, the following command disables mirroring for topic2 but leaves the other two enabled.
 
 ```sh
-ibmcloud es mirroring-topic-selection-set --select topic1,topic3 
+curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":[""]}'
+```
+
+To selectively disable mirroring, re-apply the topic selection leaving out the patterns that you want to disable.
+For example, when topic1, topic2, topic3 are currently being mirrored, the following commands disable mirroring for topic2 but leaves the other two enabled.
+
+```sh
+ibmcloud es mirroring-topic-selection-set --select '^topic1$,^topic3$'
+```
+
+```sh
+curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["^topic1$","^topic3$"]}'
 ```
 
 ### Retrieving the topic selection
