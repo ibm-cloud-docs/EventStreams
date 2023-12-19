@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-12-19"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring
 
@@ -39,7 +39,7 @@ To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventS
 ## Mirroring overview
 {: #mirroring_overview}
 
-Mirroring of selected topics happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. Each cluster has a mirroring alias. In this document, we use `A` for the source cluster alias and `B` for the target cluster alias. The aliases are configurable when mirroring is enabled, so for example, they could be "us-south" and "us-east".
+Mirroring of selected topics happens between two clusters and is unidirectional, meaning data is mirrored in one direction from a single source cluster to a single target cluster. Each cluster has a mirroring alias. In this document, `A` is used for the source cluster alias and `B` for the target cluster alias. The aliases are configurable when mirroring is enabled, so for example, they could be "us-south" and "us-east".
 
 A topic called `mytopic` from the source cluster (A) appears on the target cluster (B) as `mytopic.A` indicating it originates from `A`. This type of topic is called a _remote topic_ because it originates from the remote (source) cluster. In contrast, any topics that are directly created on the target cluster by users are called _local topics_.
 
@@ -166,13 +166,13 @@ Example Patterns | Explanation
 `.*` | Mirror all source topics.
 {: caption="Table 5. Example patterns" caption-side="bottom"}
 
-When using the CLI, the patterns are given as a comma-separated list. For example the following will select all topics whose name has the prefix `accounting` or `hr`.
+When using the CLI, the patterns are given as a comma-separated list. For example, the following command will select all topics whose name has the prefix `accounting` or `hr`.
 
 ```sh
 ibmcloud es mirroring-topic-selection-set --select '^accounting.*,^hr.*'
 ```
 
-The following shows how to make the same selection by using the Administration REST API. The patterns are in the form of a JSON array named `"includes"`.
+The following command shows how to make the same selection by using the Administration REST API. The patterns are in the form of a JSON array named `"includes"`.
 
 ```sh
 curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer token>" <admin url>/admin/mirroring/topic-selection -d '{"includes":["^accounting.*", "^hr.*"]}'
@@ -181,7 +181,7 @@ curl -s -X POST -H "Content-Type: application/json" -H "Authorization: <bearer t
 Updating a topic selection replaces the current set of patterns.
 {: note}
 
-To remove the selection so that no topics are mirrored, use the `--none` option with the CLI, or an empty pattern with the Administration REST API:
+To remove the selection so that no topics are mirrored, use the `--none` option with the CLI, or an empty pattern with the Administration REST API, as follows.
 
 ```sh
 ibmcloud es mirroring-topic-selection-set --none
