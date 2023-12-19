@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-12-19"
 
 keywords: schema registry, schema
 
@@ -154,7 +154,7 @@ Schema deletion is a two-stage process. The first stage of deletion preserves th
 
 The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
 
-An artifact or version that has been disabled can be discovered using a ‘state’ property that is returned by operations that list artifacts or versions, or by getting the details of an artifact or version. Disabled schemas count towards the schema quota of 1000 schemas per Enterprise instance. 
+An artifact or version that was disabled can be discovered using a ‘state’ property that is returned by operations that list artifacts or versions, or by getting the details of an artifact or version. Disabled schemas count towards the schema quota of 1000 schemas per Enterprise instance. 
 
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
@@ -291,7 +291,7 @@ An activity tracker event is generated to report the action. For more informatio
 ### List schemas
 {: #list_schemas}
 
-You can generate a list of the IDs of all the schemas that are stored in the registry by making a GET request to the `/artifacts` endpoint. You can format the response using the jsonformat parameter (only `string` and `object` formats are supported). The string format is the default and it returns an array of artifact IDs (strings). Only enabled artifacts are included in the array when this options is set. The object format returns a JSON object containing an array where each entry in the array corresponds to an artifact in the registry. Both enabled and disabled artifacts are returned when this option is set.
+You can generate a list of the IDs of all the schemas that are stored in the registry by making a GET request to the `/artifacts` endpoint. You can format the response using the jsonformat parameter (only `string` and `object` formats are supported). The string format is the default and it returns an array of artifact IDs (strings). Only enabled artifacts are included in the array when this options is set. The object format returns a JSON object that contains an array where each entry in the array corresponds to an artifact in the registry. Both enabled and disabled artifacts are returned when this option is set.
 
 Example curl request:
 
@@ -418,7 +418,7 @@ Getting the latest version of a schema requires at least both:
 ### Listing all of the versions of a schema
 {: #list_schema_versions}
 
-To list all versions of a schema currently stored in the registry, make a GET request to the `/artifacts/{schema-id}/versions` endpoint (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response. You can format the response by using the jsonformat parameter (only `number` and `object` formats are supported). If you specify ‘number’ (the default), the response is an array of numeric values that correspond to enabled versions of the artifact (disabled versions are omitted). It is the same format as the endpoint currently generates. If you specifiy ‘object’, the response is a JSON object that contains an array of JSON objects representing versions of the artifact. Both enabled and disabled versions are included in the array.
+To list all versions of a schema that are currently stored in the registry, make a GET request to the `/artifacts/{schema-id}/versions` endpoint (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response. You can format the response by using the jsonformat parameter (only `number` and `object` formats are supported). If you specify ‘number’ (the default), the response is an array of numeric values that correspond to enabled versions of the artifact (disabled versions are omitted). It is the same format as the endpoint currently generates. If you specifiy ‘object’, the response is a JSON object that contains an array of JSON objects representing versions of the artifact. Both enabled and disabled versions are included in the array.
 
 Example curl request:
 
@@ -698,7 +698,7 @@ The *normalize* option for schema lookups and registration is not supported.
 ## Using the Schema Registry with tools that use the Confluent registry API
 {: #using_schema_registry_confluent}
 
-The Schema Registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that has been designed to work with the Confluent Schema Registry. Only the HTTP REST endpoint with the following paths are implemented:
+The Schema Registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that was designed to work with the Confluent Schema Registry. Only the HTTP REST endpoint with the following paths are implemented:
 
 * compatibility
 * config
