@@ -170,29 +170,44 @@ The Schema Registry is not available for other {{site.data.keyword.messagehub}} 
 ## Accessing the Schema Registry
 {: #accessing_schema_registry}
 
-To access the Schema Registry, you need the URL of the Schema Registry and a set of credentials that can be used to authenticate with the registry. You can find both  by inspecting the service credentials of your service. To view these credentials in the UI, click your service instance, select **Service Credentials** in the left  navigation pane, then click the **View Credentials** link located next to one of the service credentials listed in the table:
+To access the Schema Registry, you need the URL of the Schema Registry, which is in the service credentials of your service. To view these credentials in the UI, click your service instance, select **Service Credentials** in the left navigation pane, then click the **View Credentials** link located next to one of the service credentials listed in the table:
 
 ![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
-You need the value of `kafka_http_url`, which is also the URL of the Schema Registry, and the value of `apikey` that you can use as the credential for authenticating with the Schema Registry.
+The value of `kafka_http_url` is also the URL of the Schema Registry.
+
+### Authentication
+{: #authentication}
+
+To access the Schema Registry, you also need a set of credentials that can be used to authenticate with the registry. There are two options, basic authentication with an API key, or bearer token authentication.
+
+The examples in this document show use of the API key, but either option can be used.
+{: note}
+
+#### Authentication with API key
+{: #authentication_with_api_key}
+
+The service credentials have an `apikey` that you can use as the credential for authenticating with the Schema Registry.
 
 You can also authenticate by using an API key that was granted from a service ID, providing the service ID has a policy that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security) help topic for more details.
 
-The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the Kafka HTTP URL property of the service credentials):
+The API key is supplied as the password portion of an HTTP basic authentication header. The username portion of the header is the word "token".
+
+The curl command to use is as follows, where $APIKEY is substituted with your API key:
 
 ```sh
-curl -i -u token:$APIKEY $URL/artifacts
+curl -u token:$APIKEY ...
 ```
 
-Assuming you did not already use the Schema Registry, you should see the following output that indicates that no schemas are stored in the registry.
+#### Authentication with bearer token
+{: #authentication_with_bearer_token}
 
-```text
-HTTP/1.1 200 OK
-Date: Thu, 16 Jan 2020 15:45:26 GMT
-Content-Type: application/json
-Content-Length: 11
-Connection: keep-alive
-[]
+It is also possible to use a bearer token for a system ID or user as a credential. This is generally a more secure approach, as it has less potential for exposing the API key, and the bearer token automatically expires after some time.
+
+To obtain a token, use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate the token. Include this token in an HTTP header in the format “Authorization: Bearer $TOKEN”, where $TOKEN is the bearer token:
+
+```sh
+curl -H "Authorization: Bearer $TOKEN" ...
 ```
 
 ## Importing data from other schema registries
@@ -222,15 +237,6 @@ The REST API offers four main capabilities:
 4. Creating, reading, updating, and deleting compatibility rules that apply to individual schemas.
 
 For actions that alter the schema version, such as create, update, or delete artifact, artifact versions and rules, an activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
-
-### Authentication
-{: #authentication}
-
-As already described, you can authenticate to the Schema Registry by using an API key. This is supplied as the password portion of an HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this, specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token), as in the following example.
-
-```sh
-curl -H "Authorization: Bearer $TOKEN" ...
-```
 
 ### Errors
 {: #errors}
