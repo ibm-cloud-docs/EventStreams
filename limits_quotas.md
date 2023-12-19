@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-07-14"
+lastupdated: "2023-12-10"
 
 keywords: limits, quotas, network throughput, retention, consumer groups, schema
 
@@ -66,7 +66,7 @@ The throughput is measured separately for producers and consumers. When exceeded
 ### Partitions
 {: #standard_partitions}
 
-Hundred partitions for each service instance.
+One hundred partitions for each service instance.
 
 ### Retention
 {: #standard_retention}
@@ -103,7 +103,7 @@ Network throughput capacity is based on the peak maximum. Each peak maximum has
 |450 MB/s (225 MB/s producing and 225 MB/s consuming)|300 MB/s (150 MB/s producing and 150 MB/s consuming)|
 {: caption="Table 1. Network throughput capacity on Enterprise" caption-side="top"}
 
-Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. The throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
+Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. The peak maximum throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
 
 Throughput capacity cannot be scaled down. To move to a lower throughput capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
 
@@ -124,8 +124,6 @@ It is a hard limit for the Enterprise plan. If you reach this limit, you can no 
 The storage capacity can be selected when the service instance is created, and later scaled as demands increase. Storage capacity is dependent upon the configured throughput capacity. For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity) on storage capacity options.
 
 Storage capacity cannot be scaled down. To move to a lower storage capacity would require creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
-
-For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
 ### Schema Registry
 {: #enterprise_schema_registry}

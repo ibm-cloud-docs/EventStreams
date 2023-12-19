@@ -63,9 +63,11 @@ A consuming application then uses a deserializer to consume messages that were s
 
 This process provides an efficient way of ensuring that data in messages conforms to the required structure.
 
-The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer). ![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
+The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer).
 
-![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
+![Serialization and deserialization diagram.](schema_registry4.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
+
+![Compatibility and versions diagram.](schema_registry5.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
 
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
@@ -192,6 +194,22 @@ Content-Length: 11
 Connection: keep-alive
 []
 ```
+
+## Importing data from other schema registries
+{: #importing_data_from_other_schema_registries}
+
+You can import data into the Schema Registry that has been exported from other schema registries. When data is imported, the global ID associated with each artifact version is preserved. This means that you can continue to use data that is already stored in Kafka using the same schema global ID values.
+
+The {{site.data.keyword.messagehub}} CLI supports importing data using the import/export format of the Apicurio registry.
+For example:
+
+```sh
+ibmcloud es schema-import import.zip
+```
+
+You can generate the data to be imported using the Apicurio registry [exportConfluent](https://github.com/Apicurio/apicurio-registry/tree/main/utils/exportConfluent){: external} utility, which exports data from a Confluent schema registry.
+
+If the {{site.data.keyword.messagehub}} Schema Registry already has a entry with the same global ID as an artifact version that is being imported, the import operation fails and you are prompted to remove the artifact version if you want to continue.
 
 ## Schema Registry REST endpoints
 {: #schema_registry_rest_endpoints}

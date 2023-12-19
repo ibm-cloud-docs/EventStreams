@@ -49,7 +49,7 @@ Select one of the following methods:
 * To create an instance from the CLI on the Enterprise plan, run the following command:
     ```sh
     ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise-3nodes-2tb <REGION>
-        ```
+    ```
     {: codeblock}
    
    Because Enterprise has its own dedicated resources for each cluster, it requires more time for provisioning so a new Enterprise instance might take up to 3 hours.
