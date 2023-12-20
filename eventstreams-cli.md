@@ -471,7 +471,7 @@ ibmcloud es schema-import [--file] ZIP_FILE_PATH
 ```
 {: codeblock}
 
-**Prerequisites**: This operation is permitted only on enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
 
 **Command options**:
 
