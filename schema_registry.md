@@ -215,8 +215,7 @@ curl -H "Authorization: Bearer $TOKEN" ...
 
 You can import data into the Schema Registry that has been exported from other schema registries. When data is imported, the global ID associated with each artifact version is preserved. This means that you can continue to use data that is already stored in Kafka using the same schema global ID values.
 
-The {{site.data.keyword.messagehub}} CLI supports importing data using the import/export format of the Apicurio registry.
-For example:
+The {{site.data.keyword.messagehub}} CLI supports importing data using the import and export format of the Apicurio registry, as in the following example.
 
 ```sh
 ibmcloud es schema-import import.zip
@@ -224,7 +223,7 @@ ibmcloud es schema-import import.zip
 
 You can generate the data to be imported using the Apicurio registry [exportConfluent](https://github.com/Apicurio/apicurio-registry/tree/main/utils/exportConfluent){: external} utility, which exports data from a Confluent schema registry.
 
-If the {{site.data.keyword.messagehub}} Schema Registry already has a entry with the same global ID as an artifact version that is being imported, the import operation fails and you are prompted to remove the artifact version if you want to continue.
+If the {{site.data.keyword.messagehub}} Schema Registry already has an entry with the same global ID as an artifact version that is being imported, the import operation fails and you are prompted to remove the artifact version if you want to continue.
 
 ## Schema Registry REST endpoints
 {: #schema_registry_rest_endpoints}
