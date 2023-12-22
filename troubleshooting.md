@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-21"
+lastupdated: "2023-12-22"
 
 keywords: troubleshooting, question, problem
 
@@ -55,7 +55,13 @@ If you have an Apache Kafka application that is unable to connect to a topic or 
   Connection to broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com port 9093 [tcp/*] succeeded!
   ```
   
-An nc command timeout means the the network where your client application is running could not connect to the broker addresses. It could be caused by a number of reasons, such as firewall rules, calico network policies, and service mesh setup. Work with your network administrator to get netcat working. If the service instance is on the Enterprise plan and the cluster has a private-only service endpoint, check if your client applications IPs were added to the IP allowlist or CBR rules. Refer to  If nc command timeout, it means the the network where your client application is running in could not connect to the broker addresses.  It could be caused by a number of reasons: firewall rules, calico network policies, service mesh setup, etc.  Work with your network administrator to get netcat working.If the service instance is on Enterprise plan and the cluster has private-only service endpoint, check if your client application’s IPs have been added to the IP allowlist or CBR rules. For more information, see [Restricting network access](/docs/EventStreams?topic=EventStreams-restrict_access).
+  An nc command timeout means that the network where your client application is running could not connect to the broker addresses. It could be caused by a  number of reasons, such as firewall rules, calico network policies, and service mesh setup. Work with your network administrator to get netcat working. If the service instance is on the Enterprise plan and the cluster has a private-only service endpoint, check if your client application’s IPs were added to the IP allowlist or CBR rules. For more information, see [Restricting network access](/docs/EventStreams?topic=EventStreams-restrict_access).
+  
+- Connection reset or client disconnected. This may not necessarily be a network issue, rather than an application level issue. 
+
+During the maintenance window, brokers and proxies are restarted in a rolling manner and the Kafka client may see disconnect exception. With the correct configuration, the Kafka client reconnects to a different broker immediately, so that availability is not affected. If your application experiences a disconnect for an extended period of time, share your Kafka client library version, client configuration, and logs with debug enabled, and we will review and suggest appropriate values to configure the client to be resilient to broker restart. For supported Kafka client libraries, refer to the [list of recommended clients](/docs/EventStreams?topic=EventStreams-kafka_java_using). 
+
+If the issue still persist, raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise) for further investigation.
 
 ## HTTP error codes for Kafka and how to fix them
 {: #http_error_codes}
