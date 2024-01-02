@@ -30,7 +30,7 @@ The time required to disable mirroring for the {{site.data.keyword.messagehub}} 
 To disable mirroring, you need to run a **service-instance-update** command against your target cluster by using the CLI. Run the following command:
 
 ```sh
-ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"disable":"true"}}'
+ibmcloud resource service-instance-update "Event Streams resource instance name" -p '{"mirroring":{"disable":true}}'
 ```
 {: codeblock}
 
