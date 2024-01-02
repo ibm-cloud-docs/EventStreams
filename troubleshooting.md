@@ -21,7 +21,7 @@ Use the troubleshooting tips to learn how to troubleshoot issues with {{site.dat
 ## Network related issues
 {: #network_related}
 
-If you have an Apache Kafka application that is unable to connect to a topic or unable to consumer from or produce to a topic due to network issues, it could be manifested in following different ways.
+If you have an Apache Kafka application that is unable to connect to a topic or unable to consume from or produce to a topic due to network issues, it could be manifested in following different ways.
 
 - Unable to resolve host. Use nslookup or dig to check if the broker address could be resolved. If nslookup or dig fails, check your DNS server. Normally the public endpoint resolves to three public IPs, as in the following examples.
     - $ nslookup broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com
