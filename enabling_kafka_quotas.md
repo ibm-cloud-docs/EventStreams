@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-12-05"
 
 keywords: quotas, quota implementation, mapping quotas, authorization, client metrics
 
@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Setting Kafka quotas
 {: #enabling_kafka_quotas}
 
-Kafka quotas enforce limits on produce and fetch requests to control the broker resources used by clients. Kafka quotas enable an administrator to enforce limits on the network throughput that can be consumed by individual producer and consumer applications.
+Kafka quotas enforce limits on produce and consume requests to control the broker resources used by clients. Kafka quotas enable an administrator to enforce limits on the network throughput that can be consumed by individual producer and consumer applications.
 {: shortdesc}
 
 ## About Kafka quotas
@@ -52,7 +52,7 @@ The Java client also exposes throttling information with the following per-broke
 ## Setting client quotas
 {: #setting_quotas}
 
-The {{site.data.keyword.messagehub_full}} Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters. For more information, see the [Quota Operations section](https://cloud.ibm.com/apidocs/event-streams/adminrest#create-quotas) of the {{site.data.keyword.messagehub_full}} Admin REST API.
+The {{site.data.keyword.messagehub_full}} Enterprise plan allows the use of the Kafka API to set and describe quotas on Kafka V3.1.x clusters. For more information, see the [Quota Operations section](https://cloud.ibm.com/apidocs/event-streams/adminrest#create-quota) of the {{site.data.keyword.messagehub_full}} Admin REST API.
 
 With reference to the [Kafka documentation on quotas](https://kafka.apache.org/documentation/#quotas), only throughput quota types ("producer_byte_rate" and "consumer_byte_rate" quota types) applied to the "user" entity (or the "default user") are supported. 
 
@@ -216,11 +216,15 @@ class Snippet {
 
     public static void main(String[] args) throws Exception {
 
-        // Kafka client configuration properties
+        // Kafka client configuration properties.
+
+        String mybootstrap = "...";   // from the bootstrap_endpoints of the service credentials
+
+        String myapikey = "...";      // from the apikey of the service credentials
 
         Properties properties = new Properties();
 
-        properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, "kafka-0....cloud:9093"); // set mybootstrap
+        properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, mybootstrap);
 
         properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "sasl_ssl");
 
@@ -234,9 +238,7 @@ class Snippet {
 
                 "org.apache.kafka.common.security.plain.PlainLoginModule " +
 
-                        "required username=\"token\" password=\"" +
-
-                        "myapikey" + "\";"); // set myapikey
+                        "required username=\"token\" password=\"" + myapikey + "\";");
 
         AdminClient admin = AdminClient.create(properties);
 
