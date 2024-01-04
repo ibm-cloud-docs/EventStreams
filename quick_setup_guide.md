@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-18"
 
 keywords: quick setup guide
 
@@ -50,8 +50,8 @@ Follow these steps to complete the tutorial: {: cli}
 * [Step 2: Provision an {{site.data.keyword.messagehub}} instance using the CLI](#provision_instance_cli)
 * [Step 3: Create a topic and partitions using the CLI](#create_topic_cli)
 * [Step 4: Create a service credential using the CLI](#create_credential_cli)
-* [Step 5: Produce data using the CLI](#produce_data_cli)
-* [Step 6: Consume data using the CLI](#consume_data_cli)
+* [Step 5: Produce data using the command line](#produce_data_cli)
+* [Step 6: Consume data using the command line](#consume_data_cli)
 * [Step 7: Connect {{site.data.keyword.monitoringshort}}](#connect_monitoring_cli)
 * [Step 8: Connect Activity Tracker](#activity_tracker_cli)
 * [Step 9: (Optional) Use Kafka Connect or ksqlDB](#kafka_connect_ksql)
@@ -186,6 +186,8 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: codeblock}
 
+_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
+
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
 {: ui}
@@ -212,7 +214,7 @@ For guidance about the settings that you can modify when creating topics, see [t
 {: #work_topic_ui}
 {: ui}
 
-After you create topics, you can use the console to [list topics](#list_topic_ui) and [delete topics](#delete_topic_ui).
+After you create topics, you can use the console to [list topics](#list_topic_ui).
 
 
 #### List topics
@@ -223,14 +225,6 @@ From your {{site.data.keyword.messagehub}} instance, navigate to **Topics** from
 
 From the **Topics page**, you can view the following information about your topics: 
 **Name**, **Partitions**, **Retention time**, **Retention size**, **Cleanup policy**, and **Stream landing**.
-
-#### Delete a topic
-{: #delete_topic_ui}
-{: ui}
-
-From your {{site.data.keyword.messagehub}} instance, navigate to **Topics** from the menu on the left.
-
-From the **Topics page**, click the three dots to the right of the topic name and click **Delete this topic**. 
 
 
 ## Step 3: Create a topic and select number of partitions by using the CLI 
@@ -278,7 +272,7 @@ The default retention period for messages as specified by the `retention.ms` key
 {: #work_topic_cli}
 {: cli}
 
-After you create topics, you can use the CLI to [list topics](#ibmcloud_es_topic_list_cli), [delete topics](#ibmcloud_es_topic_delete_cli), and [update the configuration of topics](#ibmcloud_es_topic_update_cli). You can also [view details about your cluster](#ibmcloud_es_cluster_cli) using the CLI.
+After you create topics, you can use the CLI to [list topics](#ibmcloud_es_topic_list_cli) and [view details about your cluster](#ibmcloud_es_cluster_cli).
 
 
 #### List a topic using the **ibmcloud es topics** command
@@ -301,59 +295,6 @@ ibmcloud es topics [--filter FILTER] [--json]
 --json (optional)
 :   Format output in JSON. Up to 1000 topics are returned.
 
-#### Delete a topic using the **ibmcloud es topic-delete** command
-{: #ibmcloud_es_topic_delete_cli}
-
-Run the **ibmcloud es topic-delete** command to delete a topic.
-
-```bash
-ibmcloud es topic-delete [--name] TOPIC_NAME [--force]
-```
-{: codeblock}
-
-**Prerequisites**: None
-
-**Command options**:
-
---name value, -n value
-:   Topic name.
-
---force, -f (optional)
-:   Delete without confirmation.
-
-
-
-#### Update the configuration of a topic using the **ibmcloud es topic-update** command
-{: #ibmcloud_es_topic_update_cli}
-
-Run the **ibmcloud es topic-update** command to update the configuration of a topic.
-
-```bash
-ibmcloud es topic-update [--name] TOPIC_NAME --config KEY[=VALUE][;KEY[=VALUE]]* [--default]
-```
-{: codeblock}
-
-**Prerequisites**: None
-
-**Command options**:
-
---name value, -n value
-:   Topic name.
-
---config KEY[=VALUE], -c KEY[=VALUE]
-:   Set a configuration option for the topic as a KEY[=VALUE] pair.
-:   If VALUE is not given, the '--default' flag is to be specified to indicate resetting the configuration value back to the default. Multiple '--config' options can be specified. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
-
-    - cleanup.policy
-    - retention.ms
-    - retention.bytes
-    - segment.bytes
-    - segment.ms
-    - segment.index.bytes
-
---default, -d  (optional)
-:   Reset each configuration parameter that is specified by using '--config' to its default value.
-
 #### Display cluster details using the **ibmcloud es cluster** command
 {: #ibmcloud_es_cluster_cli}
 
@@ -371,11 +312,13 @@ ibmcloud es cluster [--json]
 --json (optional)
 :   Output format in JSON.
 
+For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs-draft/EventStreams?topic=EventStreams-cli_reference).
+
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
 {: api}
 
-{{site.data.keyword.messagehub}} provides a REST API for administration that you can use to create, delete, list, and update topics.
+{{site.data.keyword.messagehub}} provides a REST API for administration that you can use to create and list topics.
 
 You can create a Kafka topic by issuing a POST request to the `/admin/topics` path. The body of the request must contain a JSON document. For example:
 
@@ -426,7 +369,7 @@ curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json
 {: #work_topic_api}
 {: api}
 
-After you create topics, you can use the Admin REST API to [list topics](#topic_list_api) and [delete topics](#topic_delete_api) and [update topic configuration](#topic_update_api).
+After you create topics, you can use the Admin REST API to [list topics](#topic_list_api). For information about other topic-related commands you can run, see [Admin REST API methods](/apidocs/event-streams/adminrest#listtopics).
 
 #### List topics
 {: #topic_list_api}
@@ -476,71 +419,6 @@ curl -i -X GET -H 'Accept: application/json' -H 'Authorization: Bearer ${TOKEN}'
 ```
 {: codeblock}
 
-#### Delete a topic
-{: #topic_delete_api}
-
-To delete a topic, issue a DELETE request to the `/admin/topics/TOPICNAME`path (where TOPICNAME is the name of the Kafka topic that you want to delete).
-
-The expected return codes are as follows:
-
-- 202: Topic deletion request was accepted.
-- 403: Not authorized to delete topic.
-- 404: Topic does not exist.
-  
-A 202 (Accepted) status code is returned if the REST API accepts the delete
-request. A status code 422 (Unprocessable Entity) is returned if the delete request is rejected. If a delete request is rejected, the body of the HTTP response contains a JSON object, which
-provides additional information about why the request was rejected.
-
-Kafka deletes topics asynchronously. Deleted topics can still appear in the
-response to a list topics request for a short period of time after the completion of a REST request to delete the topic.
-
-##### Delete topic example
-{: #topic_delete_example_api}
-
-The following curl command deletes a topic called `MYTOPIC`:
-
-```sh
-curl -i -H 'Content-Type: application/json' -X DELETE -H 'Authorization: Bearer ${TOKEN}' ${ADMIN_URL}/admin/topics/MYTOPIC
-```
-{: codeblock}
-
-#### Update a topic's configuration
-{: #topic_update_api}
-
-To increase a topic's partition number or to update a topic's configuration, issue a`PATCH` request to `/admin/topics/{topic}` with the following body:
-
-```json
-{
-  "new_total_partition_count": 4,
-  "configs": [
-    {
-      "name": "cleanup.policy",
-      "value": "compact"
-    }
-  ]
-}
-```
-{: codeblock}
-
-The following configuration keys are supported: `cleanup.policy`, `retention.ms`, `retention.bytes`, `segment.bytes`, `segment.ms`, and `segment.index.bytes`.
-
-You can only increase the partition number, not decrease it.
-
-The expected status codes are as follows:
-* 202: Update topic request was accepted.
-* 400: Invalid request JSON or number of partitions is invalid.
-* 404: Topic specified does not exist.
-* 422: Semantically invalid request.
-
-##### Update topic configuration example
-{: #topic_update_example_api}
-
-The following curl command updates a topic called `MYTOPIC`, set its `partitions` to 4 and its `cleanup.policy` to be `compact`.
-
-```sh
-curl -i -X PATCH -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{"new_total_partition_count": 4,"configs":[{"name":"cleanup.policy","value":"compact"}]}' ${ADMIN_URL}/admin/topics/MYTOPIC
-```
-{: codeblock}
 
 
 ## Step 4: Create a service credential by using the console
@@ -607,16 +485,16 @@ Place this token in the Authorization header of the HTTP request in the form `Be
 {: #produce_data_ui}
 {: ui}
 
-You cannot produce data by using the console. You can produce data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
+You cannot produce data by using the console. You can produce data using the [command line](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#produce_data_cli), the [REST Producer API](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=api#produce_data_api), or the [Kafka API](https://kafka.apache.org/documentation/#producerapi).
 
 However, you can complete the steps for the console in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
 
 
-## Step 5: Produce data using the CLI
+## Step 5: Produce data using the command line
 {: #produce_data_cli}
 {: cli}
 
-You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}.
+You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwardly compatible with the version of Kafka on the server.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
 
@@ -664,6 +542,8 @@ For details of some of the most important settings that you can configure for th
 {: #produce_data_api}
 {: api}
 
+_additional explanation needed. For example, as a new user I might need info around: what are headers, are they optional, the value of colour doesn't look binary - explaining its base 64 and how to do that...etc_
+
 Use the v2 endpoint of the REST Producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
 The following code shows an example of sending a message of `text` type by using curl:
@@ -708,11 +588,11 @@ For details of some of the most important settings that you can configure for th
 {: #consume_data_ui}
 {: ui}
 
-You cannot consume data by using the console. You can consume data using the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
+You cannot consume data by using the console. You can consume data using the [command line](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli) or the [Kafka API](https://kafka.apache.org/documentation/#consumerapi).
 
 However, you can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app and see messages flowing through a topic. 
 
-## Step 6: Consume data using the CLI
+## Step 6: Consume data using the command line
 {: #consume_data_cli}
 {: cli}
 
@@ -720,7 +600,7 @@ You can use the {{site.data.keyword.messagehub}} Kafka console consumer tool to 
 
 The console tools are in the `bin` directory of your Kafka client download.
 
-You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data using the CLI](#produce_data_cli), run the console consumer in a terminal as follows:
+You must provide a list of brokers and SASL credentials. After you create the properties file as described in [produce data using the command line](#produce_data_cli), run the console consumer in a terminal as follows:
 
 ```bash
    kafka-console-consumer.sh --bootstrap-server BOOTSTRAP_ENDPOINTS --consumer.config CONFIG_FILE --topic TOPIC_NAME 
@@ -754,7 +634,7 @@ For details of some of the most important settings that you can configure for th
 
 You cannot consume data using an {{site.data.keyword.messagehub}} API although consumption of data from Kafka is possible using the native Kafka libraries. For more information, see [Kafka consumer API](https://kafka.apache.org/documentation/#consumerapi).
 
-As an alternative, use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli).
+As an alternative, use the [command line](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#consume_data_cli).
 
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the console 
@@ -775,7 +655,8 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 {: #connect_monitoring_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
+You cannot connect {{site.data.keyword.mon_full_notm}} by using the CLI or command line. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#connect_monitoring_ui) to complete this task.
+
 
 ## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using an API
 {: #connect_monitoring_api}
@@ -808,7 +689,7 @@ Events are formatted according to the Cloud Auditing Data Federation (CADF) stan
 {: #activity_tracker_cli}
 {: cli}
 
-You cannot connect {{site.data.keyword.at_short}} using the CLI. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
+You cannot connect {{site.data.keyword.at_short}} using the CLI or command line. Use the [console](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=ui#activity_tracker_ui) to complete this task.
 
 ## Step 8: Connect {{site.data.keyword.at_full}} using an API to audit service activity
 {: #activity_tracker_api}

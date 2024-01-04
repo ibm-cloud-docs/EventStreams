@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-12-19"
 
 keywords: schema registry, schema
 
@@ -37,6 +37,7 @@ It is common for all of the messages on a topic to use the same schema. The key 
 
 Schemas are stored in the {{site.data.keyword.messagehub}} Schema Registry. In addition to storing a versioned history of schemas, it provides an interface for retrieving them.
 Each Enterprise plan {{site.data.keyword.messagehub}} instance has its own Schema Registry.
+A maximum of 1000 schemas can be stored in an Enterprise instance. 
 
 Producers and consumers validate the data against the specified schema that is stored in the Schema Registry (in addition to going through Kafka brokers). The schemas do not need to be transferred in the messages this way, meaning the messages can be smaller.
 
@@ -62,9 +63,11 @@ A consuming application then uses a deserializer to consume messages that were s
 
 This process provides an efficient way of ensuring that data in messages conforms to the required structure.
 
-The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer). ![Serialization and deserialization diagram.](schema_registry3.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
+The {{site.data.keyword.messagehub}} Schema Registry supports the [Kafka AVRO serializer and deserializer](https://github.com/confluentinc/schema-registry/tree/master/avro-serializer).
 
-![Compatibility and versions diagram.](schema_registry4.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
+![Serialization and deserialization diagram.](schema_registry4.svg "Diagram showing a representation of where a serializer and deserializer fit into the {{site.data.keyword.messagehub}} architecture"){: caption="Serializer and deserializer" caption-side="bottom"}
+
+![Compatibility and versions diagram.](schema_registry5.svg "Diagram showing a representation of schema versions"){: caption="Compatibility and versions" caption-side="bottom"}
 
 ## Versions and compatibility
 {: #ES_versions_and_compatibility}
@@ -141,10 +144,19 @@ As an example, consider the following three schemas.
 
 Schema 1 and Schema 2 are distinct schemas and the registry stores them as separate schemas. They cannot be used interchangeably because they list the `author` and `title` fields in a different order. Data encoded with Schema 1 would not be decoded correctly if the decoding process used Schema 2.
 
-When you use the SerDes to create the new schema in the order Schema 1, Schema 2, and Schema 3, the result would be two new schemas. Schema 1 and Schema 2 are different but Schema 3 is the equivalent of Schema 2.
+When you use the [SerDes](#using_schema_registry_serdes) to create the new schema in the order Schema 1, Schema 2, and Schema 3, the result would be two new schemas. Schema 1 and Schema 2 are different but Schema 3 is the equivalent of Schema 2.
 
 When you create schemas by using the REST API, schemas are considered matching only if they are textually the same, including all attribute ordering and descriptive fields. This is to allow for the case where you want Schema 3 to be a different schema.
 {: note}
+
+### State and deletion of schemas
+{: #state_deletion_schema}
+
+Schema deletion is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
+
+The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
+
+An artifact or version that was disabled can be discovered using a ‘state’ property that is returned by operations that list artifacts or versions, or by getting the details of an artifact or version. Disabled schemas count towards the schema quota of 1000 schemas per Enterprise instance. 
 
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
@@ -158,30 +170,60 @@ The Schema Registry is not available for other {{site.data.keyword.messagehub}} 
 ## Accessing the Schema Registry
 {: #accessing_schema_registry}
 
-To access the Schema Registry, you need the URL of the Schema Registry and a set of credentials that can be used to authenticate with the registry. You can find both  by inspecting the service credentials of your service. To view these credentials in the UI, click your service instance, select **Service Credentials** in the left  navigation pane, then click the **View Credentials** link located next to one of the service credentials listed in the table:
+To access the Schema Registry, you need the URL of the Schema Registry, which is in the service credentials of your service. To view these credentials in the UI, click your service instance, select **Service Credentials** in the left navigation pane, then click the **View Credentials** link located next to one of the service credentials listed in the table:
 
 ![Service credentials diagram.](schema_registry8.png "Diagram showing a representation of the required credential fields for accessing {{site.data.keyword.messagehub}} Schema Registry"){: caption="Kafka credentials block" caption-side="bottom"}
 
-You need the value of `kafka_http_url`, which is also the URL of the Schema Registry, and the value of `apikey` that you can use as the credential for authenticating with the Schema Registry.
+The value of `kafka_http_url` is also the URL of the Schema Registry.
+
+### Authentication
+{: #authentication}
+
+To access the Schema Registry, you also need a set of credentials that can be used to authenticate with the registry. There are two options, basic authentication with an API key, or bearer token authentication.
+
+The examples in this document show use of the API key, but either option can be used.
+{: note}
+
+#### Authentication with API key
+{: #authentication_with_api_key}
+
+The service credentials have an `apikey` that you can use as the credential for authenticating with the Schema Registry.
 
 You can also authenticate by using an API key that was granted from a service ID, providing the service ID has a policy that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security) help topic for more details.
 
-The curl command to use is as follows (where $APIKEY is substituted with your API key, and $URL is substituted with the URL from the Kafka HTTP URL property of the service credentials):
+The API key is supplied as the password portion of an HTTP basic authentication header. The username portion of the header is the word "token".
+
+The curl command to use is as follows, where $APIKEY is substituted with your API key:
 
 ```sh
-curl -i -u token:$APIKEY $URL/artifacts
+curl -u token:$APIKEY ...
 ```
 
-Assuming you did not already use the Schema Registry, you should see the following output that indicates that no schemas are stored in the registry.
+#### Authentication with bearer token
+{: #authentication_with_bearer_token}
 
-```text
-HTTP/1.1 200 OK
-Date: Thu, 16 Jan 2020 15:45:26 GMT
-Content-Type: application/json
-Content-Length: 11
-Connection: keep-alive
-[]
+It is also possible to use a bearer token for a system ID or user as a credential. This is generally a more secure approach, as it has less potential for exposing the API key, and the bearer token automatically expires after some time.
+
+To obtain a token, use the {{site.data.keyword.Bluemix_notm}} CLI `ibmcloud iam oauth-tokens` command to generate the token. Include this token in an HTTP header in the format “Authorization: Bearer $TOKEN”, where $TOKEN is the bearer token:
+
+```sh
+curl -H "Authorization: Bearer $TOKEN" ...
 ```
+
+## Importing data from other schema registries
+{: #importing_data_from_other_schema_registries}
+
+You can import data into the Schema Registry that has been exported from other schema registries. When data is imported, the global ID associated with each artifact version is preserved. This means that you can continue to use data that is already stored in Kafka using the same schema global ID values.
+
+The {{site.data.keyword.messagehub}} CLI supports importing data using the import and export format of the Apicurio registry, as in the following example.
+
+```sh
+ibmcloud es schema-import import.zip
+```
+
+You can generate the data to be imported using the Apicurio registry [exportConfluent](https://github.com/Apicurio/apicurio-registry/tree/main/utils/exportConfluent){: external} utility, which exports data from a Confluent schema registry.
+
+If the {{site.data.keyword.messagehub}} Schema Registry already has an entry with the same global ID as an artifact version that is being imported, the import operation fails and you are prompted to remove the artifact version if you want to continue.
 
 ## Schema Registry REST endpoints
 {: #schema_registry_rest_endpoints}
@@ -194,15 +236,6 @@ The REST API offers four main capabilities:
 4. Creating, reading, updating, and deleting compatibility rules that apply to individual schemas.
 
 For actions that alter the schema version, such as create, update, or delete artifact, artifact versions and rules, an activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
-
-### Authentication
-{: #authentication}
-
-As already described, you can authenticate to the Schema Registry by using an API key. This is supplied as the password portion of an HTTP basic authentication header. Set the username portion of this header to the word “token”. It is also possible to grant a bearer token for a system ID or user and supply this as a credential. To do this, specify an HTTP header in the format: “Authorization: Bearer $TOKEN” (where $TOKEN is the bearer token), as in the following example.
-
-```sh
-curl -H "Authorization: Bearer $TOKEN" ...
-```
 
 ### Errors
 {: #errors}
@@ -281,7 +314,7 @@ An activity tracker event is generated to report the action. For more informatio
 ### List schemas
 {: #list_schemas}
 
-You can generate a list of the IDs of all the schemas that are stored in the registry by making a GET request to the `/artifacts` endpoint. You can query the response using the jsonformat parameter (only `string` and `object` formats are supported). The string format is the default and it returns an array of artifact IDs (strings), as is the current behavior for this endpoint. Only enabled artifacts are included in the array when this options is set. The object format returns a JSON object containing an array where each entry in the array corresponds to an artifact in the registry. Both, enabled and disabled artifacts are returned when this option is set.
+You can generate a list of the IDs of all the schemas that are stored in the registry by making a GET request to the `/artifacts` endpoint. You can format the response using the jsonformat parameter (only `string` and `object` formats are supported). The string format is the default and it returns an array of artifact IDs (strings). Only enabled artifacts are included in the array when this options is set. The object format returns a JSON object that contains an array where each entry in the array corresponds to an artifact in the registry. Both enabled and disabled artifacts are returned when this option is set.
 
 Example curl request:
 
@@ -292,33 +325,30 @@ curl -u token:$APIKEY $URL/artifacts
 or
 
 ```sh
-curl -u token:$APIKEY $URL/artifacts?jsonformat=$jsonformat
+curl -u token:$APIKEY $URL/artifacts?jsonformat=string
 ```
 
-Example response where string jsonformat is default:
+or
+
+```sh
+curl -u token:$APIKEY $URL/artifacts?jsonformat=object
+```
+
+Example response when jsonformat is string, or not provided (defaulting to string):
 
 ```text
-["my-schema"]
+["my-schema-2","my-schema-4"]
 ```
 
 Example response when jsonformat is object:
 
 ```text
-{"artifacts":[{"id":"my-schema","state":"DISABLED"},{"id":"my-schema-2","state":"ENABLED"},{"id":"my-schema-3","state":"ENABLED"},{"id":"my-schema-4","state":"ENABLED"}],"count":4}
+{"artifacts":[{"id":"my-schema","state":"DISABLED"},{"id":"my-schema-2","state":"ENABLED"},{"id":"my-schema-3","state":"DISABLED"},{"id":"my-schema-4","state":"ENABLED"}],"count":4}
 ```
 
 Listing schemas requires at least:
 
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
-
-### State and deletion of schemas
-{: #state_deletion_schema}
-
-Schema deletion is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. The second stage permanently removes the schema, but can only be applied after the first stage. The two-stage deletion process applies at the artifact level and also at the version level. 
-
-The two stages of deletion are done by having an enabled or disabled status associated with both artifacts and versions (first stage), and deleting APIs for resources and versions (second stage). 
-
-An artifact or version that has been disabled can be discovered using a ‘state’ property that is returned by operations that list artifacts or versions, or get the details of an artifact or version. Disabled schemas count towards the schema quota and a maximum of 1000 schemas can be stored in an Enterprise instance. 
 
 ### Delete a schema
 {: #delete_schema}
@@ -343,7 +373,7 @@ An activity tracker event is generated to report the action. For more informatio
 
 To create a new version of a schema, make a POST request to the `/artifacts/{schema-id}/versions` endpoint, (where {schema-id} is the ID of the schema). The body of the request must contain the new version of the schema.
 
-If the request is successful, the new schema version is created as the new latest version of the schema, with an appropriate version number, and a response with status code 200 (OK), and a payload that contains metadata describing the new version (including the version number), is returned.
+If the request is successful, the new schema is created as the latest version of the schema, with an appropriate version number, and a response with status code 200 (OK), and a payload that contains metadata describing the new version (including the version number), is returned.
 
 Example curl request:
 
@@ -411,7 +441,7 @@ Getting the latest version of a schema requires at least both:
 ### Listing all of the versions of a schema
 {: #list_schema_versions}
 
-To list all versions of a schema currently stored in the registry, make a GET request to the `/artifacts/{schema-id}/versions` endpoint (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response. You can query the response by using the jsonformat parameter (only `number` and `object` formats are supported). If you specify ‘number’ (the default), the response is an array of numeric values that correspond to enabled versions of the artifact (disabled versions are omitted). It is the same format as the endpoint currently generates. If you specifiy ‘object’, the response is a JSON object that contains an array of JSON objects representing versions of the artifact. Both, enabled and disabled versions are included in the array.
+To list all versions of a schema that are currently stored in the registry, make a GET request to the `/artifacts/{schema-id}/versions` endpoint (where {schema-id} is the ID of the schema). If successful, a list of all current version numbers for the schema is returned in the payload of the response. You can format the response by using the jsonformat parameter (only `number` and `object` formats are supported). If you specify ‘number’ (the default), the response is an array of numeric values that correspond to enabled versions of the artifact (disabled versions are omitted). It is the same format as the endpoint currently generates. If you specifiy ‘object’, the response is a JSON object that contains an array of JSON objects representing versions of the artifact. Both enabled and disabled versions are included in the array.
 
 Example curl request:
 
@@ -422,13 +452,19 @@ curl -u token:$APIKEY $URL/artifacts/my-schema/versions
 or
 
 ```sh
-curl -u token:$APIKEY $URL/artifacts/my-schema/versions?jsonformat=$jsonformat
+curl -u token:$APIKEY $URL/artifacts/my-schema/versions?jsonformat=number
 ```
 
-Example response when number jsonformat is default:
+or
+
+```sh
+curl -u token:$APIKEY $URL/artifacts/my-schema/versions?jsonformat=object
+```
+
+Example response when jsonformat is number, or not provided (defaulting to number):
 
 ```text
-[1,2,3,5,6,8,100]
+[1,3,4,6,7]
 ```
 
 Example response when jsonformat is object:
@@ -662,13 +698,7 @@ To configure the Confluent SerDes to use the Schema Registry, you need to specif
 
 Property name | Value
 --- | ---
-SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of ```/confluent```. For example, if ```$APIKEY``` is the API key to use and ```$HOST``` is the host from the ```kafka_http_url``` field in the **Service Credentials** tab, the value has the form:
-
-```text
-https://token:{$APIKEY}@{$HOST}/{confluent}
-```
-{: screen}
-
+SCHEMA_REGISTRY_URL_CONFIG | Set this to the URL of the Schema Registry, including your credentials as basic authentication, and with a path of ```/confluent```. For example, if ```$APIKEY``` is the API key to use and ```$HOST``` is the host from the ```kafka_http_url``` field in the **Service Credentials** tab, the value has the form: `https://token:{$APIKEY}@{$HOST}/{confluent}`
 BASIC_AUTH_CREDENTIALS_SOURCE | Set to ```URL```. This instructs the SerDes to use HTTP basic authentication using the credentials supplied in the Schema Registry URL.
 
 You can also optionally provide the following properties to control the schema selection (subject naming strategy):
@@ -691,7 +721,7 @@ The *normalize* option for schema lookups and registration is not supported.
 ## Using the Schema Registry with tools that use the Confluent registry API
 {: #using_schema_registry_confluent}
 
-The Schema Registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that has been designed to work with the Confluent Schema Registry. Only the HTTP REST endpoint with the following paths are implemented:
+The Schema Registry supports a subset of the API provided by version 7.2 of the Confluent Schema Registry. This is intended to provide limited compatibility with tooling that was designed to work with the Confluent Schema Registry. Only the HTTP REST endpoint with the following paths are implemented:
 
 * compatibility
 * config
@@ -707,7 +737,7 @@ https://token:{$APIKEY}@{$HOST}/{confluent}
 
 where:
 * `$APIKEY` is the API key to use from the **Service Credentials** tab
-* `$HOST` is the host from the `kafka_http_ur`l field in the **Service Credentials** tab
+* `$HOST` is the host from the `kafka_http_url` field in the **Service Credentials** tab
 
 
 ## Using the Schema Registry with third-party tools
