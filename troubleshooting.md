@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-11"
 
 keywords: troubleshooting, question, problem
 
@@ -23,30 +23,30 @@ Use the troubleshooting tips to learn how to troubleshoot issues with {{site.dat
 
 If you have an Apache Kafka application that is unable to connect to a topic or unable to consume from or produce to a topic due to network issues, it could be manifested in following different ways.
 
-- Unable to resolve host. Use nslookup or dig to check if the broker address could be resolved. If nslookup or dig fails, check your DNS server. Normally the public endpoint resolves to three public IPs, as in the following examples.
-    - $ nslookup broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com
-    Server:		172.31.255.241
-    Address:	172.31.255.241#53
+- Unable to resolve host. Use nslookup or dig to check if the broker address could be resolved. If nslookup or dig fails, check your DNS server. Normally, the public endpoint resolves to three public IPs, as in the following examples.
 
-    - Non-authoritative answer:
-
-      ´´´
-      broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com	canonical name = kafka.svc08.us-south.eventstreams.cloud.ibm.com.
-      Name:	kafka.svc08.us-south.eventstreams.cloud.ibm.com
-      Address: 169.48.243.82
-      Name:	kafka.svc08.us-south.eventstreams.cloud.ibm.com
-      Address: 169.61.217.150
-      Name:	kafka.svc08.us-south.eventstreams.cloud.ibm.com
-      Address: 52.117.238.34
-      ```
-
-    - Private endpoint resolves to three private IPs that start with 166.9.
     - 
     ```
-    $ nslookup kafka-0-mh-int-pipe-mzr-cse-kjh.private.us-south.messagehub.test.appdomain.cloud
+    $ nslookup broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com
     Server:		172.31.255.241
     Address:	172.31.255.241#53
+    Non-authoritative answer:
+    broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com	canonical name = kafka.svc08.us-south.eventstreams.cloud.ibm.com.
+    Name:	kafka.svc08.us-south.eventstreams.cloud.ibm.com
+    Address: 169.48.243.82
+    Name:	kafka.svc08.us-south.eventstreams.cloud.ibm.com
+    Address: 169.61.217.150
+    Name:	kafka.svc08.us-south.eventstreams.cloud.ibm.com
+    Address: 52.117.238.34
     ```
+
+    - Private endpoint resolves to three private IPs that start with 166.9.
+    
+      ```
+      $ nslookup kafka-0-mh-int-pipe-mzr-cse-kjh.private.us-south.messagehub.test.appdomain.cloud
+      Server:		172.31.255.241
+      Address:	172.31.255.241#53
+      ```
 
 -  Connection timeout. Use netcat (nc) to check the connectivity to the broker.
 
@@ -63,7 +63,7 @@ During the maintenance window, brokers and proxies are restarted in a rolling ma
 
 If the issue still persist, raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise) for further investigation.
 
-## HTTP error codes for Kafka and how to fix them
+## HTTP error codes for REST APIs and how to fix them
 {: #http_error_codes}
 
 HTTP error codes apply to REST APIs, including [Admin REST](/apidocs/event-streams/adminrest), [REST Producer](/apidocs/event-streams/schemaregistry), and [Schema Registry](/apidocs/event-streams/restproducer_v2).
@@ -76,7 +76,7 @@ HTTP error codes apply to REST APIs, including [Admin REST](/apidocs/event-strea
 | 415 |  | Unsupported media type. |  |
 | 422 | Semantically invalid request. You have a malformed request. If you receive this error when you try to create a new topic, it might be due to the maximum number of allowed partitions for your plan. For more information, see [How Event Streams uses limits and quotas for verifying the limits](/docs/EventStreams?topic=EventStreams-kafka_quotas). |  |  |
 | 503 | Service unavailable. The request failed due to {{site.data.keyword.messagehub}} brokers being unavailable. An error occurred while handling the request. The service is unavailable. If you receive this error when creating a new topic fails, verify the [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas). |Service unavailable. The request failed due to {{site.data.keyword.messagehub}} brokers being unavailable.  |  |
-{: caption="Table 1. HTTP error codes for Kafka and how to fix them" caption-side="bottom"}
+{: caption="Table 1. HTTP error codes for REST APIs and how to fix them" caption-side="bottom"}
 
 The Kafka API is a TCP-based API. For more information, refer to its [protocol guide](https://kafka.apache.org/protocol.html#protocol_error_codes) regarding the error codes.
   
