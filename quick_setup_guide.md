@@ -22,6 +22,8 @@ subcollection: EventStreams
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
 {: shortdesc}
 
+Select your interface using the tabs at the start of the page.
+
 Follow these steps to complete the tutorial: {: ui}
 
 * [Before you begin](#prereqs)
@@ -488,7 +490,7 @@ However, you can complete the steps for the console in the [Getting started tuto
 {: #produce_data_cli}
 {: cli}
 
-You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwardly compatible with the version of Kafka on the server.
+You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
 
@@ -645,7 +647,7 @@ For more information about how to use {{site.data.keyword.monitoringshort}} with
 * [Understanding metrics cost information](/docs/EventStreams?topic=EventStreams-metrics#metric_costs){: external}
 
 
-## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI 
+## Step 7: Connect {{site.data.keyword.mon_full_notm}} for operational visibility by using the CLI or command line
 {: #connect_monitoring_cli}
 {: cli}
 
@@ -679,7 +681,7 @@ For more information about events specific to {{site.data.keyword.messagehub}}, 
 Events are formatted according to the Cloud Auditing Data Federation (CADF) standard. For further details of the information they include, see [CADF standard](/docs/activity-tracker?topic=activity-tracker-about#cadf_standard){: external}.
 
 
-## Step 8: Connect {{site.data.keyword.at_full}} using the CLI to audit service activity
+## Step 8: Connect {{site.data.keyword.at_full}} using the CLI or command line to audit service activity
 {: #activity_tracker_cli}
 {: cli}
 
