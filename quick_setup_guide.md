@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-18"
+  years: 2023, 2024
+lastupdated: "2024-01-11"
 
 keywords: quick setup guide
 
@@ -17,12 +17,6 @@ subcollection: EventStreams
 
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick_setup_guide}
-
-**Questions and to do:**
-* _Can you update topics via the UI? Can you view cluster info via the UI?_
-* _What are the suggested topic naming strategies?_
-* _How do you describe the cluster?_
-* _Produce and consume data. Support for different languages - show Java library_
 
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
