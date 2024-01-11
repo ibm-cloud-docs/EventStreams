@@ -25,7 +25,6 @@ If you have an Apache Kafka application that is unable to connect to a topic or 
 
 - Unable to resolve host. Use nslookup or dig to check if the broker address could be resolved. If nslookup or dig fails, check your DNS server. Normally, the public endpoint resolves to three public IPs, as in the following examples.
 
-    - 
     ```
     $ nslookup broker-0-93g2bbjd0pz8ghkj.kafka.svc08.us-south.eventstreams.cloud.ibm.com
     Server:		172.31.255.241
@@ -40,13 +39,13 @@ If you have an Apache Kafka application that is unable to connect to a topic or 
     Address: 52.117.238.34
     ```
 
-    - Private endpoint resolves to three private IPs that start with 166.9.
+    Private endpoint resolves to three private IPs that start with 166.9.
     
-      ```
-      $ nslookup kafka-0-mh-int-pipe-mzr-cse-kjh.private.us-south.messagehub.test.appdomain.cloud
-      Server:		172.31.255.241
-      Address:	172.31.255.241#53
-      ```
+    ```
+    $ nslookup kafka-0-mh-int-pipe-mzr-cse-kjh.private.us-south.messagehub.test.appdomain.cloud
+    Server:		172.31.255.241
+    Address:	172.31.255.241#53
+    ```
 
 -  Connection timeout. Use netcat (nc) to check the connectivity to the broker.
 
@@ -59,9 +58,9 @@ If you have an Apache Kafka application that is unable to connect to a topic or 
   
 - Connection reset or client disconnected. This may not necessarily be a network issue, rather than an application level issue. 
 
-During the maintenance window, brokers and proxies are restarted in a rolling manner and the Kafka client may see disconnect exception. With the correct configuration, the Kafka client reconnects to a different broker immediately, so that availability is not affected. If your application experiences a disconnect for an extended period of time, share your Kafka client library version, client configuration, and logs with debug enabled, and we will review and suggest appropriate values to configure the client to be resilient to broker restart. For supported Kafka client libraries, refer to the [list of recommended clients](/docs/EventStreams?topic=EventStreams-kafka_java_using). 
+   During the maintenance window, brokers and proxies are restarted in a rolling manner and the Kafka client may see disconnect exception. With the correct configuration, the Kafka client reconnects to a different broker immediately, so that availability is not affected. If your application experiences a disconnect for an extended period of time, share your Kafka client library version, client configuration, and logs with debug enabled, and we will review and suggest appropriate values to configure the client to be resilient to broker restart. For supported Kafka client libraries, refer to the [list of recommended clients](/docs/EventStreams?topic=EventStreams-kafka_java_using). 
 
-If the issue still persist, raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise) for further investigation.
+   If the issue still persist, raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise) for further investigation.
 
 ## HTTP error codes for REST APIs and how to fix them
 {: #http_error_codes}
