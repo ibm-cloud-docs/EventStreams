@@ -32,7 +32,7 @@ Services that are provisioned by using the Lite, Standard, Enterprise, or Satell
 
 All plans use [IAM](/docs/account?topic=account-overview){: external} for authentication. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security). To complete the following steps and be authorized to create topics, your application or Service Key must have a Manager access role. By default, the owner of the account that contains the service instance has this role.
 
-By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.cloud_short}} public network, so they are accessible over the public internet. If required, you can restrict this access by selecting an alternative networking type or restricting the location that connections are accepted from. For more information, see [Restricting Network Access](/docs/EventStreams?topic=EventStreams-restrict_access).
+By default, {{site.data.keyword.messagehub}} instances are configured to use the {{site.data.keyword.cloud}} public network, so they are accessible over the public internet. If required, you can restrict this access by selecting an alternative networking type or restricting the location that connections are accepted from. For more information, see [Restricting Network Access](/docs/EventStreams?topic=EventStreams-restrict_access).
 
 ## Connection information
 {: #connection_information}
