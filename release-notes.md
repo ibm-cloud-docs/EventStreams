@@ -18,7 +18,7 @@ content-type: release-note
 # Release notes for {{site.data.keyword.messagehub}}
 {: #event-streams-relnotes}
 
-Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month. Release notes are available for a minimum of three years.
+Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
 
 ## November 2023
@@ -93,7 +93,7 @@ ISMAP and C5 Certification
 :   {{site.data.keyword.messagehub}} Standard and Enteprise plans were certified by the [ISMAP (Information System Security Management and Assessment Program)](/docs/EventStreams?topic=EventStreams-compliance#ismap), the Japanese government program for assessing the security of public cloud services. {{site.data.keyword.messagehub}} Standard and Enterprise plans were audited and certified to [C5 (Cloud Computing Compliance Controls Catalogue)](/docs/EventStreams?topic=EventStreams-compliance#c5) and meet the requirements for cloud security and the adoption of public cloud solutions by German government agencies.
 
 Kafka version by using the CLI and console
-:   You can now check the version of Kafka by using through the command line and console.
+:   You can now check the version of Kafka by using the command line and console.
 
 ## January 2023
 {: #EventStreams-jan2023}
@@ -196,14 +196,14 @@ Apache Kafka upgrade
 {: #EventStreams-sep2020}
 {: release-note}
 
-Scaling support for Enterprise Plan
+Scaling support for Enterprise plan
 :   [Scale your Enterprise Plan clusters](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise) to allow for greater throughput and higher retention.
 
 ## August 2020
 {: #EventStreams-aug2020}
 {: release-note}
 
-Mirroring support for Enterprise Plan
+Mirroring support for Enterprise plan
 :   [Mirroring](/docs/EventStreams?topic=EventStreams-mirroring) enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily.
 
 Terraform support
