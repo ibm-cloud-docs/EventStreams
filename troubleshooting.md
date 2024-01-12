@@ -60,7 +60,7 @@ If you have an Apache Kafka application that is unable to connect to a topic or 
 
    During the maintenance window, brokers and proxies are restarted in a rolling manner and the Kafka client may see disconnect exception. With the correct configuration, the Kafka client reconnects to a different broker immediately, so that availability is not affected. If your application experiences a disconnect for an extended period of time, share your Kafka client library version, client configuration, and logs with debug enabled, and we will review and suggest appropriate values to configure the client to be resilient to broker restart. For supported Kafka client libraries, refer to the [list of recommended clients](/docs/EventStreams?topic=EventStreams-kafka_java_using). 
 
-   If the issue still persist, raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise) for further investigation.
+   If the issue still persists, raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise) for further investigation.
 
 ## HTTP error codes for REST APIs and how to fix them
 {: #http_error_codes}
