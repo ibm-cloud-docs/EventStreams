@@ -131,7 +131,7 @@ For workloads deployed in an {{site.data.keyword.Bluemix_notm}} VPC to be able t
 ### Accessing an Enterprise instance over the private network from outside the {{site.data.keyword.Bluemix_notm}}
 {: #private_network_outside_cloud}
 
-Solutions such as [Direct Link 2.0](https://cloud.ibm.com/docs/dl){: external} can be utilized to establish a connection between an external network, such as an on-premise data center, and the {{site.data.keyword.Bluemix_notm}} IBM Cloud private network. However, when dealing with workloads operating on an external network, it is essential to consider additional factors to ensure a successful connection to Kafka. Note, these considerations do not apply to HTTP workloads.
+Solutions such as [Direct Link 2.0](https://cloud.ibm.com/docs/dl){: external} can be utilized to establish a connection between an external network, such as an on-premise data center, and the {{site.data.keyword.Bluemix_notm}} private network. However, when dealing with workloads operating on an external network, it is essential to consider additional factors to ensure a successful connection to Kafka. Note, these considerations do not apply to HTTP workloads.
 
 The private endpoint details allocated to your instance (as described in the service key) must be resolvable and routable from the network that the workload is running in. It is not possible to specify alternative hostname entries in the workload's `bootstrap.servers` properties as a way to route traffic from the external network.
 
