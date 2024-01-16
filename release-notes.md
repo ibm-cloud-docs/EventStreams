@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-11-23"
+  years: 2022, 2024
+lastupdated: "2024-01-16"
 
 keywords: release notes
 
@@ -20,6 +20,14 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## January 2024
+{: #EventStreams-jan2024}
+{: release-note}
+
+Deprecation of {{site.data.keyword.sqlquery_short}}
+: {{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.sqlquery_short}}](/sql-query?topic=sql-query-deprecation).
+
 
 ## November 2023
 {: #EventStreams-nov2023}
