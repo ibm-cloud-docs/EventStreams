@@ -31,7 +31,7 @@ The time required to enable mirroring for the {{site.data.keyword.messagehub}} s
 ## Step 1: Setup 
 {: #step1_setup}
 
-Mirroring is not supported for an Enterprise single-zone-region cluster or a Satellite cluster, therefore neither can be a source nor a target cluster.
+Mirroring is not supported for a Satellite cluster, therefore neither can be a source nor a target cluster.
 {: note}
 
 Ensure that you provision two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have service-to-service bindings (see [Step 2](#step2_bindings) for more information).
@@ -41,6 +41,9 @@ Because mirroring is unidirectional, decide which direction of mirroring you wan
 Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
+
+Although mirroring from a Enterprise multi-zone-region cluster to a Enterprise single-zone-region cluster and vice versa is allowed. We do not recommend this configuration unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of a Enterprise multi-zone-region cluster to a Enterprise single-zone-region cluster might be lower or vice versa. 
+{: important}
 
 ## Step 2: Enable service-to-service bindings
 {: #step2_bindings}

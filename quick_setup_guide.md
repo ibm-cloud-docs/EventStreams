@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-01-16"
 
 keywords: quick setup guide
 
@@ -183,6 +183,113 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 {: codeblock}
 
 _This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
+
+### Retrieving an access token with the API
+{: #retrieve-token-api}
+
+You can also retrieve your access token programmatically by first creating a
+[service ID API key](/docs/account?topic=account-serviceidapikeys){: external}
+for your application, and then exchanging your API key for an
+{{site.data.keyword.cloud_notm}} IAM token.
+
+1. Log in to {{site.data.keyword.cloud_notm}} with the
+    [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started){: external}.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+    If the login fails, run the `ibmcloud login --sso` command to try again. The
+    `--sso` parameter is required when you log in with a federated ID. If this
+    option is used, go to the link listed in the CLI output to generate a
+    one-time passcode.
+    {: note}
+
+2. Select the account, region, and resource group that contain your provisioned
+    instance of {{site.data.keyword.keymanagementserviceshort}}.
+
+3. Create a
+    [service ID](/docs/account?topic=account-serviceids){: external} for your application.
+
+    ```sh
+    ibmcloud iam service-id-create SERVICE_ID_NAME
+                [-d, --description DESCRIPTION]
+    ```
+    {: pre}
+
+4. [Managing access to resources](/docs/account?topic=account-assign-access-resources){: external}
+    for the service ID.
+
+    You can assign access permissions for your service ID
+    [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
+    To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
+    specific {{site.data.keyword.keymanagementserviceshort}} service actions,
+    see
+    [Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles).
+    {: tip}
+
+5. Create a
+    [service ID API key](/docs/account?topic=account-serviceidapikeys){: external}.
+
+    ```sh
+    ibmcloud iam service-api-key-create API_KEY_NAME SERVICE_ID_NAME
+                [-d, --description DESCRIPTION]
+                [--file FILE_NAME]
+    ```
+    {: pre}
+
+    Replace `<service_ID_name>` with the unique alias that you assigned to your
+    service ID in the previous step. Save your API key by downloading it to a
+    secure location.
+
+6. Call the
+    [IAM Identity Services API](/apidocs/iam-identity-token-api){: external}
+    to retrieve your access token.
+
+    ```sh
+    $ curl -X POST \
+        "https://iam.cloud.ibm.com/identity/token" \
+        -H "content-type: application/x-www-form-urlencoded" \
+        -H "accept: application/json" \
+        -d 'grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<API_KEY>' > token.json
+    ```
+    {: codeblock}
+
+    In the request, replace `<API_KEY>` with the API key that you created in the
+    previous step. The following truncated example shows the contents of the
+    `token.json` file:
+
+    ```json
+    {
+        "access_token": "b3VyIGZhdGhlc...",
+        "expiration": 1512161390,
+        "expires_in": 3600,
+        "refresh_token": "dGhpcyBjb250a...",
+        "token_type": "Bearer"
+    }
+    ```
+    {: screen}
+
+    Use the full `access_token` value, prefixed by the _Bearer_ token type, to
+    programmatically manage keys for your service using the
+    {{site.data.keyword.keymanagementserviceshort}} API. To see an example
+    {{site.data.keyword.keymanagementserviceshort}} API request, check out
+    [Forming your API request](/docs/key-protect?topic=key-protect-set-up-api#form-api-request).
+
+    Access tokens are valid for 1 hour, but you can regenerate them as needed.
+    To maintain access to the service, regenerate the access token for your API
+    key on a regular basis by calling the
+    [IAM Identity Services API](/apidocs/iam-identity-token-api){: external}.
+    {: note }
+
+    - Use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
+        tokens to make authenticated requests to IBM Watson services without
+        embedding service credentials in every call.
+
+    - IAM authentication uses access tokens for authentication, which you acquire
+        by sending a request with an API key.
+
 
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
