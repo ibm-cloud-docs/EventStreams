@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-01-18"
 
 keywords: plan, Enterprise, Standard, Lite, pricing, Satellite, throughput, partitions, tenancy, compliance
 
@@ -64,7 +64,7 @@ The following table summarizes what is supported by the plans:
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
 | **Kafka version on cluster**  | Kafka 3.3 | Kafka 3.3  | Kafka 3.3 |  Kafka 3.3   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
-| **Stream to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}** [^tabletext12]  | No |  Yes | Yes  |   No  |
+| **Stream to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}** [^tabletext12]  | No |  Yes (deprecated) | Yes (deprecated)  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
 | **Customer-managed encryption**  | No  |  No |  Yes [^tabletext4]  |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes  |  Yes   |
