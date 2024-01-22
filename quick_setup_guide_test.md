@@ -107,31 +107,21 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 ## Step 2: Provision an {{site.data.keyword.messagehub}} instance 
 {: #provision_instance}
 
-1. Log in to the {{site.data.keyword.cloud_notm}} console.
-  
-2. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
-  
-3. Select the **Lite plan**, **Standard plan**, or **Enterprise plan** from the **Select a pricing plan** section.
-  
+1. Log in to the {{site.data.keyword.cloud_notm}} console. 
+2. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**. 
+3. Select the **Lite plan**, **Standard plan**, or **Enterprise plan** from the **Select a pricing plan** section. 
 4. Enter a name for your service. You can use the default value.
-  
 5. Click **Create**. The {{site.data.keyword.messagehub}} **Resource list** page opens. 
-
 6. When your instance has been created, click on the instance name to view more information.
-
 7. Optional. You can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app.
 {: ui} 
 
 
 If it's the first time you've used the CLI, see [Getting started with the CLI](/docs/cli?topic=cli-getting-started){: external}.
-
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-getting-started#step1-install-idt){: external}.
 {: #step1_install_cli_qsg}
-
-    
-
 2. Log in to {{site.data.keyword.Bluemix_notm}} by running the following command:
 {: #step2_login_qsg}
     
