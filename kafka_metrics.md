@@ -31,28 +31,31 @@ Monitoring your {{site.data.keyword.messagehub_full}} instance is crucial to ens
 {: #general-metrics}
 
 | Metric | Use case |
-| ... | ... |
+| --- | --- |
 | throughput | If you stream data on a regular basis, a drop in throughput might indicate an anomaly. |
+{: caption="Table 1. General metrics" caption-side="bottom"}
 
 ### Producer metrics
 {: #producer-metrics}
 
 | Metric | Use case |
-| ... | ... |
+| --- | --- |
 | reccord-error-rate | The total number of record sends that resulted in errors. |
 | request-latency-avg and request-size-avg |  |
 | error-rate |  |
 | throughput |  |
 | compression |  |
+{: caption="Table 2. Producer metrics" caption-side="bottom"}
 
 ### Consumer metrics
 {: #consumer-metrics}
 
 | Metric | Use case |
-| ... | ... |
+| --- | --- |
 | fetch-rate |  |
 | commit-latency-avg |  |
 | error-rate |  |
+{: caption="Table 3. Consumer metrics" caption-side="bottom"}
 
 These selected metrics cover a wide variety of applications and use cases, however {{site.data.keyword.messagehub}} provides a [rich set of metrics](/docs/EventStreams?topic=EventStreams-metrics) that provide further useful insights depending on the domain of your application. For more information, see [Event Streams for IBM Cloud](/docs/EventStreams?topic=EventStreams-about).
 
