@@ -96,6 +96,7 @@ toc:
         - topic: data_security.md
           navtitle: Data security and privacy
         - activity_tracker_events.md
+        - kafka_metrics.md
         - monitoring.md
         - disaster_recovery.md
         - reserved_disk.md
