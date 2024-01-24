@@ -19,6 +19,7 @@ toc:
           navtitle: Quick setup guide
         - topic: quick_setup_guide_test.md
           navtitle: Test quick setup guide
+        - topic: attach-detach-tags.md
         - topic: overview.md
           navtitle: Overview
         - topic: release-notes.md

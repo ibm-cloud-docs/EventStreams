@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-01-24"
 
 keywords: quick setup guide
 
@@ -14,6 +14,18 @@ subcollection: EventStreams
 {:ui: .ph data-hd-interface="ui"}
 {:cli: .ph data-hd-interface="cli"}
 {:api: .ph data-hd-interface="api"}
+{:java: .ph data-hd-programlang="java"}
+{:ruby: .ph data-hd-programlang="ruby"}
+{:c#: .ph data-hd-programlang="c#"}
+{:objectc: .ph data-hd-programlang="Objective C"}
+{:python: .ph data-hd-programlang="python"}
+{:javascript: .ph data-hd-programlang="javascript"}
+{:php: .ph data-hd-programlang="PHP"}
+{:swift: .ph data-hd-programlang="swift"}
+{:curl: .ph data-hd-programlang="curl"}
+{:dotnet-standard: .ph data-hd-programlang="dotnet-standard"}
+{:go: .ph data-hd-programlang="go"}
+{:unity: .ph data-hd-programlang="unity"}
 
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick_setup_guide}
