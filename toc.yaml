@@ -39,11 +39,6 @@ toc:
             - using_admin_kafka_api.md
             - using_kafka_console.md
             - getting_started_cli.md
-            - managing_access.md
-            - restricting_access_iam.md
-            - restricting_access_enterprise.md
-            - topic: managing_encryption.md
-              navtitle: Managing encryption
             - scaling_capacity.md
             - enabling_mirroring.md
             - disabling_mirroring.md
@@ -82,6 +77,11 @@ toc:
               navtitle: Understanding security and compliance
             - topic: manage_security.md
               navtitle: Managing security and compliance
+            - topic: managing_encryption.md
+              navtitle: Managing encryption
+            - managing_access.md
+            - restricting_access_enterprise.md
+            - restricting_access_iam.md
         - using_kafka_client.md
         - link:
              label: Asynchronous data processing using object storage and pub/sub messaging tutorial
