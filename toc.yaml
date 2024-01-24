@@ -79,9 +79,11 @@ toc:
               navtitle: Managing security and compliance
             - topic: managing_encryption.md
               navtitle: Managing encryption
-            - managing_access.md
+            - topic: managing_access.md
+              navtitle: Managing encryption
             - restricting_access_enterprise.md
-            - restricting_access_iam.md
+            - topic: restricting_access_iam.md
+              navtitle: Using IAM IP address access restrictions
         - using_kafka_client.md
         - link:
              label: Asynchronous data processing using object storage and pub/sub messaging tutorial
