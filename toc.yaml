@@ -80,7 +80,7 @@ toc:
             - topic: managing_encryption.md
               navtitle: Managing encryption
             - topic: managing_access.md
-              navtitle: Managing encryption
+              navtitle: Managing authentication
             - restricting_access_enterprise.md
             - topic: restricting_access_iam.md
               navtitle: Using IAM IP address access restrictions
