@@ -27,7 +27,7 @@ Monitoring your {{site.data.keyword.messagehub_full}} instance is crucial to ens
 ## Which metrics to monitor
 {: #what-monitor}
 
-### General mertrics
+### General metrics
 {: #general-metrics}
 
 | Metric | Use case |
