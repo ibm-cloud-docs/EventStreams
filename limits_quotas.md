@@ -116,7 +116,7 @@ For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/Event
 
 The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150 MB/s, 6000 for 300 MB/s and 9000 for 450 MB/s in Enterprise. 
 
-If you want to adjust the number of partitions, you can use the self-service option as described in [Scaling Enterprise plan capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity). The 3000 partition limit per 2Tb storage, with a maximum limit of 18000 partitions with a 12Tb option which cannot be exceeded.
+If you want to adjust the number of partitions, you can use the self-service option as described in [Scaling Enterprise plan capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity#ES_how_to_scale_capacity). There is a 3000 partition limit per 2 TB storage, with a maximum limit of 18000 partitions with a 12 TB option, which cannot be exceeded.
 
 ### Retention
 {: #enterprise_retention}
