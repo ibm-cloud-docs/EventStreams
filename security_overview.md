@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Security overview
+# Security and compliance overview
 {: #security_overview}
 
 {{site.data.keyword.messagehub_full}} is built on the best industry standards and provides tools and options to manage security, compliance, encryption, authentication, and restrictions that might be required.
