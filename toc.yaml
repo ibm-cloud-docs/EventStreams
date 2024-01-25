@@ -76,7 +76,7 @@ toc:
             topics:
             - security_overview.md
             - topic: security.md
-              navtitle: Understanding security and compliance
+              navtitle: Understanding compliance
             - topic: manage_security.md
               navtitle: Managing security and compliance
             - topic: managing_encryption.md
