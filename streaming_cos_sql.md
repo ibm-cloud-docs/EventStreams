@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Streaming to Cloud {{site.data.keyword.cos_short}} by using {{site.data.keyword.sqlquery_short}}
 {: #streaming_cos_sql}
 
-{{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs-draft/sql-query?topic=sql-query-deprecation).
+{{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs/sql-query?topic=sql-query-deprecation).
 {: deprecated}
 
 Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed by using the fully managed {{site.data.keyword.sqlquery_short}} service. All data is stored in Parquet format, making it easy to manage and process.
