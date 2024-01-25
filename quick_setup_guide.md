@@ -415,7 +415,7 @@ ibmcloud es cluster [--json]
 --json (optional)
 :   Output format in JSON.
 
-For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs-draft/EventStreams?topic=EventStreams-cli_reference).
+For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
 
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}

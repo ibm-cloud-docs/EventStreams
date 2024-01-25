@@ -109,6 +109,6 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext11]: All compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}.
 
-[^tabletext12]: {{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs-draft/sql-query?topic=sql-query-deprecation).
+[^tabletext12]: {{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs/sql-query?topic=sql-query-deprecation).
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
