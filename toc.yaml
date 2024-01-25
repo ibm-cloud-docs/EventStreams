@@ -74,6 +74,7 @@ toc:
         - topicgroup:
             label: Enhancing security
             topics:
+            - security_overview.md
             - topic: security.md
               navtitle: Understanding security and compliance
             - topic: manage_security.md
