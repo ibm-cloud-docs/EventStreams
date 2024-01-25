@@ -142,6 +142,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     ibmcloud login -a cloud.ibm.com
     ```
     {: codeblock}
+    {: cli}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
@@ -154,6 +155,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise-3nodes-2tb <REGION>
         ```
         {: codeblock}
+        {: cli}
    
         Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
 
@@ -164,6 +166,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
         ```
         {: codeblock}
+        {: cli}
 
         Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
 {: cli}
@@ -176,6 +179,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 -d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
 ```
 {: codeblock}
+{: api}
 
 _This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
 
@@ -194,6 +198,7 @@ for your application, and then exchanging your API key for an
     ibmcloud login
     ```
     {: pre}
+    {: api}
 
     If the login fails, run the `ibmcloud login --sso` command to try again. The
     `--sso` parameter is required when you log in with a federated ID. If this
@@ -212,6 +217,7 @@ for your application, and then exchanging your API key for an
                 [-d, --description DESCRIPTION]
     ```
     {: pre}
+    {: api}
 
 4. [Managing access to resources](/docs/account?topic=account-assign-access-resources){: external}
     for the service ID.
@@ -233,6 +239,7 @@ for your application, and then exchanging your API key for an
                 [--file FILE_NAME]
     ```
     {: pre}
+    {: api}
 
     Replace `<service_ID_name>` with the unique alias that you assigned to your
     service ID in the previous step. Save your API key by downloading it to a
@@ -250,6 +257,7 @@ for your application, and then exchanging your API key for an
         -d 'grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<API_KEY>' > token.json
     ```
     {: codeblock}
+    {: api}
 
     In the request, replace `<API_KEY>` with the API key that you created in the
     previous step. The following truncated example shows the contents of the
@@ -265,6 +273,7 @@ for your application, and then exchanging your API key for an
     }
     ```
     {: screen}
+    {: api}
 
     Use the full `access_token` value, prefixed by the _Bearer_ token type, to
     programmatically manage keys for your service using the
