@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-01-25"
 
 keywords: plan, Enterprise, Standard, Lite, pricing, Satellite, throughput, partitions, tenancy, compliance
 
@@ -97,7 +97,7 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext5]: If you migrate from the Lite to the Standard plan, allow a few minutes for the cached limit of one partition to clear. You can then take advantage of the 100 partition limit for the Standard plan.
 
-[^tabletext6]: This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions beyond the maximum, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
+[^tabletext6]: This value scales relative to the maximum throughput. For example, if you have a throughput of 150 MB/s the maximum partitions would be 3000, for a throughput of 300 MB/s, 6000 and for 450 MB/s, 9000. This limit is a hard limit for partitions on the Enterprise plan. If you reach this limit, you can no longer create topics. If you want to adjust the number of partitions, you can use the self-service option described in [Scaling Enterprise plan capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity#ES_how_to_scale_capacity){: external}. There is a 3000 partition limit per 2 TB storage with a maximum limit of 18000 partitions with a 12 TB option, which cannot be exceeded.
 
 [^tabletext7]: Maximum message retention (storage) can be specified when the service instance is created. Storage can be later scaled independently as demands increase. The minimum usable storage available is dependent upon the number of capacity units that are configured for the service instance. For more information about capacity options, see [Scaling Event Streams capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
 
@@ -109,6 +109,6 @@ The following table summarizes what is supported by the plans:
 
 [^tabletext11]: All compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}.
 
-[^tabletext12]: {{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs-draft/sql-query?topic=sql-query-deprecation).
+[^tabletext12]: {{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs/sql-query?topic=sql-query-deprecation).
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).

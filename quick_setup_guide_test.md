@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-21"
+lastupdated: "2024-01-24"
 
 keywords: quick setup guide
 
@@ -11,9 +11,6 @@ subcollection: EventStreams
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-{:ui: .ph data-hd-interface="ui"}
-{:cli: .ph data-hd-interface="cli"}
-{:api: .ph data-hd-interface="api"}
 
 # Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
 {: #quick_setup_guide}
@@ -104,38 +101,24 @@ You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tu
 * The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
 
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the console
-{: #provision_instance_ui}
-{: ui}
+## Step 2: Provision an {{site.data.keyword.messagehub}} instance 
+{: #provision_instance}
 
-1. Log in to the {{site.data.keyword.cloud_notm}} console.
-  
-2. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
-  
-3. Select the **Lite plan**, **Standard plan**, or **Enterprise plan** from the **Select a pricing plan** section.
-  
+1. Log in to the {{site.data.keyword.cloud_notm}} console. 
+2. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**. 
+3. Select the **Lite plan**, **Standard plan**, or **Enterprise plan** from the **Select a pricing plan** section. 
 4. Enter a name for your service. You can use the default value.
-  
 5. Click **Create**. The {{site.data.keyword.messagehub}} **Resource list** page opens. 
-
 6. When your instance has been created, click on the instance name to view more information.
+7. Optional. You can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app.
+{: ui} 
 
-7. Optional. You can complete the steps in the [Getting started tutorial](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_steps){: external} to run a sample starter app. 
-
-
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the CLI
-{: #provision_instance_cli}
-{: cli}
 
 If it's the first time you've used the CLI, see [Getting started with the CLI](/docs/cli?topic=cli-getting-started){: external}.
-
 To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with the {{site.data.keyword.cloud_notm}} CLI, complete the following steps:
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI by completing the steps in [Getting started with the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cli-getting-started#step1-install-idt){: external}.
 {: #step1_install_cli_qsg}
-
-    
-
 2. Log in to {{site.data.keyword.Bluemix_notm}} by running the following command:
 {: #step2_login_qsg}
     
@@ -144,6 +127,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
     ibmcloud login -a cloud.ibm.com
     ```
     {: codeblock}
+    {: cli}
 
 3. Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluemix_notm}} using the Lite, Standard, or Enterprise plans.
 {: #step3_es_instance}
@@ -156,6 +140,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub enterprise-3nodes-2tb <REGION>
         ```
         {: codeblock}
+        {: cli}
    
         Because the Enterprise plan has its own dedicated resources for each cluster, it requires more time for provisioning, so a new Enterprise instance might take up to 3 hours.
 
@@ -166,13 +151,11 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
         ibmcloud resource service-instance-create <INSTANCE_NAME> messagehub standard <REGION>
         ```
         {: codeblock}
+        {: cli}
 
         Provisioning a new Standard plan instance is instantaneous because the underlying resources are already set up.
+{: cli}
 
-
-## Step 2: Provision an {{site.data.keyword.messagehub}} instance by using the resource controller API
-{: #provision_instance_api}
-{: api}
 
 The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
 
@@ -181,6 +164,7 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 -d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
 ```
 {: codeblock}
+{: api}
 
 _This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
 
@@ -199,6 +183,7 @@ for your application, and then exchanging your API key for an
     ibmcloud login
     ```
     {: pre}
+    {: api}
 
     If the login fails, run the `ibmcloud login --sso` command to try again. The
     `--sso` parameter is required when you log in with a federated ID. If this
@@ -217,6 +202,7 @@ for your application, and then exchanging your API key for an
                 [-d, --description DESCRIPTION]
     ```
     {: pre}
+    {: api}
 
 4. [Managing access to resources](/docs/account?topic=account-assign-access-resources){: external}
     for the service ID.
@@ -238,6 +224,7 @@ for your application, and then exchanging your API key for an
                 [--file FILE_NAME]
     ```
     {: pre}
+    {: api}
 
     Replace `<service_ID_name>` with the unique alias that you assigned to your
     service ID in the previous step. Save your API key by downloading it to a
@@ -255,6 +242,7 @@ for your application, and then exchanging your API key for an
         -d 'grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<API_KEY>' > token.json
     ```
     {: codeblock}
+    {: api}
 
     In the request, replace `<API_KEY>` with the API key that you created in the
     previous step. The following truncated example shows the contents of the
@@ -270,6 +258,7 @@ for your application, and then exchanging your API key for an
     }
     ```
     {: screen}
+    {: api}
 
     Use the full `access_token` value, prefixed by the _Bearer_ token type, to
     programmatically manage keys for your service using the
@@ -289,7 +278,7 @@ for your application, and then exchanging your API key for an
 
     - IAM authentication uses access tokens for authentication, which you acquire
         by sending a request with an API key.
-
+{: api}
 
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
@@ -415,7 +404,7 @@ ibmcloud es cluster [--json]
 --json (optional)
 :   Output format in JSON.
 
-For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
+For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs-draft/EventStreams?topic=EventStreams-cli_reference).
 
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
