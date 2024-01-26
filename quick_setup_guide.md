@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-21"
+lastupdated: "2024-01-26"
 
 keywords: quick setup guide
 
@@ -207,7 +207,7 @@ for your application, and then exchanging your API key for an
     {: note}
 
 2. Select the account, region, and resource group that contain your provisioned
-    instance of {{site.data.keyword.keymanagementserviceshort}}.
+    instance of {{site.data.keyword.messagehub}}.
 
 3. Create a
     [service ID](/docs/account?topic=account-serviceids){: external} for your application.
@@ -599,7 +599,9 @@ However, you can complete the steps for the console in the [Getting started tuto
 
 You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
 
-You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
+You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. 
+**Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.**
+To provide the SASL credentials to this tool, create a properties file based on the following example:
 
 ```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
@@ -626,6 +628,8 @@ Replace the following variables in the example with your own values:
 
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
+* Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.
+* Use the `<user>` field from the service key as the username and the `<api_key>` field from the service key as the password. Ensure that your application parses the details.
 
 You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools){: external}.
 
