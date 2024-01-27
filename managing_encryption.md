@@ -106,7 +106,7 @@ To remove access permanently, delete the key. However, you must take extreme cau
 
 In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
+The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times even after deleting the service instance. Event Streams will continue to need the service to service policy in place in order to deregister the key. In order to determine when it is safe to remove the service to service policy, check the associated resources on the KMS root key. If the root key is still associated with the Event Streams instance, please leave the policy in place. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
 {: note}
 
 You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you chose to prevent access to your data.
