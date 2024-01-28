@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-01-28"
 
 keywords: quick setup guide
 
@@ -99,7 +99,8 @@ Before you get started, we highly recommend that you read the following informat
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* The resource controller API to [provision an instance](#provision_instance_api). 
+* The resource controller API to [provision an instance](#provision_instance_api) and [retrieve an access token]
+{#retrieve-token-api}. 
 * The Admin REST API to [work with topics](#work_topic_api). 
 * The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
@@ -174,20 +175,14 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #provision_instance_api}
 {: api}
 
-The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. You first need to retrieving an access token with the API. 
 
-```sh
-curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
--d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
-```
-{: codeblock}
-
-_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
+_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this_
 
 ### Retrieving an access token with the API
 {: #retrieve-token-api}
 
-You can also retrieve your access token programmatically by first creating a
+You can retrieve your access token programmatically by first creating a
 [service ID API key](/docs/account?topic=account-serviceidapikeys){: external}
 for your application, and then exchanging your API key for an
 {{site.data.keyword.cloud_notm}} IAM token.
@@ -289,6 +284,17 @@ for your application, and then exchanging your API key for an
 
     - IAM authentication uses access tokens for authentication, which you acquire
         by sending a request with an API key.
+
+### Create an instance
+{: #create_instance_api}
+
+Then run a command like the following to create an Enterprise instance in US South:
+
+```sh
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
+-d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
+```
+{: codeblock}
 
 
 ## Step 3: Create a topic and select number of partitions by using the console
