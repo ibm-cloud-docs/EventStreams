@@ -99,8 +99,8 @@ Before you get started, we highly recommend that you read the following informat
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* The resource controller API to [provision an instance](#provision_instance_api) and [retrieve an access token]
-{#retrieve-token-api}. 
+* The resource controller API to [provision an instance](#provision_instance_api) and to [retrieve an access token]
+(#retrieve-token-api). 
 * The Admin REST API to [work with topics](#work_topic_api). 
 * The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
@@ -175,11 +175,11 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #provision_instance_api}
 {: api}
 
-The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. You first need to retrieving an access token with the API. 
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). 
 
-_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this_
+Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) with the resource controller API, then run the command with the access token to [create the instance](#create_instance_api) using the resource controller API. 
 
-### Retrieving an access token with the API
+### Retrieve an access token with the resource controller API
 {: #retrieve-token-api}
 
 You can retrieve your access token programmatically by first creating a
@@ -466,7 +466,7 @@ If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted)
 ### Example
 {: #create_topic_api_example}
 
-You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API. For more information, see [Retrieve an access token with the API](#retrieve-token-api)
 
 ```sh
 curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
