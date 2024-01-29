@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-21"
+lastupdated: "2024-01-28"
 
 keywords: quick setup guide
 
@@ -99,7 +99,8 @@ Before you get started, we highly recommend that you read the following informat
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* The resource controller API to [provision an instance](#provision_instance_api). 
+* The resource controller API to [provision an instance](#provision_instance_api) and to [retrieve an access token]
+(#retrieve-token-api). 
 * The Admin REST API to [work with topics](#work_topic_api). 
 * The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
@@ -174,20 +175,14 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #provision_instance_api}
 {: api}
 
-The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). 
 
-```sh
-curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
--d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
-```
-{: codeblock}
+Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) with the resource controller API, then run the command with the access token to [create the instance](#create_instance_api) using the resource controller API. 
 
-_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
-
-### Retrieving an access token with the API
+### Retrieve an access token with the resource controller API
 {: #retrieve-token-api}
 
-You can also retrieve your access token programmatically by first creating a
+You can retrieve your access token programmatically by first creating a
 [service ID API key](/docs/account?topic=account-serviceidapikeys){: external}
 for your application, and then exchanging your API key for an
 {{site.data.keyword.cloud_notm}} IAM token.
@@ -207,7 +202,7 @@ for your application, and then exchanging your API key for an
     {: note}
 
 2. Select the account, region, and resource group that contain your provisioned
-    instance of {{site.data.keyword.keymanagementserviceshort}}.
+    instance of {{site.data.keyword.messagehub}}.
 
 3. Create a
     [service ID](/docs/account?topic=account-serviceids){: external} for your application.
@@ -289,6 +284,17 @@ for your application, and then exchanging your API key for an
 
     - IAM authentication uses access tokens for authentication, which you acquire
         by sending a request with an API key.
+
+### Create an instance
+{: #create_instance_api}
+
+Then run a command like the following to create an Enterprise instance in US South:
+
+```sh
+curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
+-d '{ "name": "JG-test-curl", "target": "us-south", "resource_group":"9eba3cff1b0540b9ab7fb93829911da0", "resource_plan_id": "ibm.message.hub.enterprise.3nodes.2tb", "parameters":{"service-endpoints":"public","throughput":"150"}}'
+```
+{: codeblock}
 
 
 ## Step 3: Create a topic and select number of partitions by using the console
@@ -460,7 +466,7 @@ If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted)
 ### Example
 {: #create_topic_api_example}
 
-You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API. For more information, see [Retrieve an access token with the API](#retrieve-token-api)
 
 ```sh
 curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
@@ -599,7 +605,9 @@ However, you can complete the steps for the console in the [Getting started tuto
 
 You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
 
-You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
+You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. 
+**Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.**
+To provide the SASL credentials to this tool, create a properties file based on the following example:
 
 ```config
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
@@ -626,6 +634,8 @@ Replace the following variables in the example with your own values:
 
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
+* Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.
+* Use the `<user>` field from the service key as the username and the `<api_key>` field from the service key as the password. Ensure that your application parses the details.
 
 You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools){: external}.
 

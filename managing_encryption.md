@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-24"
+  years: 2015, 2024
+lastupdated: "2024-01-27"
 
 keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
@@ -79,7 +79,7 @@ If you want to update your existing {{site.data.keyword.messagehub}} instance to
    - The CRN of the root key that you want to use in your key management service instance.
    - The CRN of your {{site.data.keyword.messagehub}} service instance.
 
-   You find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after you click the {{site.data.keyword.messagehub}} service in the console. 
+   You find this CRN by copying and pasting the full {{site.data.keyword.Bluemix_notm}} console URL after you click the {{site.data.keyword.messagehub}} service in the console. 
    Alternatively, paste in the output from the following CLI command:
 
    ```bash
@@ -87,7 +87,7 @@ If you want to update your existing {{site.data.keyword.messagehub}} instance to
    ```
    {: codeblock}
 
-   The {{site.data.keyword.messagehub}} Operations team responds to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
+   The {{site.data.keyword.messagehub}} Operations team responds to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix_notm}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
 
 This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
 {: important}
@@ -104,12 +104,12 @@ To temporarily prevent access, disable your root key. As a consequence, {{site.d
 
 To remove access permanently, delete the key. However, you must take extreme caution because this operation is non-recoverable. You lose access to any data that is stored in your {{site.data.keyword.messagehub}} instance. It is not possible to recover this data.
 
-In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An {{site.data.keyword.cloudaccesstrailshort}} event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
+The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times even after deleting the service instance. {{site.data.keyword.messagehub}} will continue to need the service to service policy in place to deregister the key. To determine when it is safe to remove the service-to-service policy, check the associated resources on the KMS root key. If the root key is still associated with the {{site.data.keyword.messagehub}} instance, leave the policy in place. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
 {: note}
 
-You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you chose to prevent access to your data.
+You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix_notm}} console or CLI. These charges are still applied even if you chose to prevent access to your data.
 {: important}
 
 ### Restoring access to data

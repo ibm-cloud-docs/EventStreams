@@ -12,8 +12,8 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
-{: #quick_setup_guide}
+# Test quick setup guide for {{site.data.keyword.messagehub}} for {{site.data.keyword.cloud_notm}}
+{: #quick_setup_guide_test}
 
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
@@ -166,6 +166,8 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 {: codeblock}
 {: api}
 
+For information about how to retrieve an API access token, see 
+
 _This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
 
 ### Retrieving an access token with the API
@@ -192,7 +194,7 @@ for your application, and then exchanging your API key for an
     {: note}
 
 2. Select the account, region, and resource group that contain your provisioned
-    instance of {{site.data.keyword.keymanagementserviceshort}}.
+    instance of {{site.data.keyword.messagehub}}.
 
 3. Create a
     [service ID](/docs/account?topic=account-serviceids){: external} for your application.
