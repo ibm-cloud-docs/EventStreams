@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-28"
+lastupdated: "2024-02-04"
 
 keywords: quick setup guide
 
@@ -177,9 +177,9 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). 
 
-Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) with the resource controller API, then run the command with the access token to [create the instance](#create_instance_api) using the resource controller API. 
+Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) with the resource controller API, then run the resource controller API command with the access token to [create the instance](#create_instance_api). 
 
-### Retrieve an access token with the resource controller API
+### Step 2a: Retrieve an access token with the resource controller API
 {: #retrieve-token-api}
 
 You can retrieve your access token programmatically by first creating a
@@ -220,8 +220,9 @@ for your application, and then exchanging your API key for an
     [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
     To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
     specific {{site.data.keyword.keymanagementserviceshort}} service actions,
+    {{site.data.keyword.messagehub}} resources, 
     see
-    [Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles).
+    [Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles) [What can I secure?](/docs/EventStreams?topic=EventStreams-security#what_secure).
     {: tip}
 
 5. Create a
@@ -272,6 +273,12 @@ for your application, and then exchanging your API key for an
     {{site.data.keyword.keymanagementserviceshort}} API request, check out
     [Forming your API request](/docs/key-protect?topic=key-protect-set-up-api#form-api-request).
 
+    Use the full `access_token` value, prefixed by the _Bearer_ token type, to
+    programmatically manage keys for your service using the
+    Administration REST API. To see an example
+    {{site.data.keyword.keymanagementserviceshort}} API request, check out
+    [Forming your API request](/docs/key-protect?topic=key-protect-set-up-api#form-api-request)
+
     Access tokens are valid for 1 hour, but you can regenerate them as needed.
     To maintain access to the service, regenerate the access token for your API
     key on a regular basis by calling the
@@ -285,10 +292,10 @@ for your application, and then exchanging your API key for an
     - IAM authentication uses access tokens for authentication, which you acquire
         by sending a request with an API key.
 
-### Create an instance
+### Step 2b: Create an instance
 {: #create_instance_api}
 
-Then run a command like the following to create an Enterprise instance in US South:
+Run a command like the following to create an Enterprise instance in US South:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
