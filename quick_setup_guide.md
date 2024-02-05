@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-04"
+lastupdated: "2024-02-05"
 
 keywords: quick setup guide
 
@@ -219,10 +219,15 @@ for your application, and then exchanging your API key for an
     You can assign access permissions for your service ID
     [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
     To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
-    specific {{site.data.keyword.keymanagementserviceshort}} service actions,
+    specific {{site.data.keyword.keymanagementserviceshort}} service actions, see [Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles).
+    {: tip}
+
+    You can assign access permissions for your service ID
+    [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
+    To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
+    specific,
     {{site.data.keyword.messagehub}} resources, 
-    see
-    [Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles) [What can I secure?](/docs/EventStreams?topic=EventStreams-security#what_secure).
+    see [What can I secure?](/docs/EventStreams?topic=EventStreams-security#what_secure).
     {: tip}
 
 5. Create a
