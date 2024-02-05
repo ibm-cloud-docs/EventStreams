@@ -276,8 +276,8 @@ for your application, and then exchanging your API key for an
     Use the full `access_token` value, prefixed by the _Bearer_ token type, to
     programmatically manage keys for your service using the
     Administration REST API. To see an example
-    {{site.data.keyword.keymanagementserviceshort}} API request, check out
-    [Forming your API request](/docs/key-protect?topic=key-protect-set-up-api#form-api-request)
+    {{site.data.keyword.messagehub}} API request, check out
+    [Authenticate by using a bearer token](/docs/EventStreams?topic=EventStreams-admin_api#admin_api_bearer_token)
 
     Access tokens are valid for 1 hour, but you can regenerate them as needed.
     To maintain access to the service, regenerate the access token for your API
