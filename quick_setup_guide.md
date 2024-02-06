@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-05"
+lastupdated: "2024-02-06"
 
 keywords: quick setup guide
 
@@ -177,7 +177,7 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 
 The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). 
 
-Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) with the resource controller API, then run the resource controller API command with the access token to [create the instance](#create_instance_api). 
+Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) then run a resource controller API command with the access token to [create the instance](#create_instance_api). 
 
 ### Step 2a: Retrieve an access token with the resource controller API
 {: #retrieve-token-api}
@@ -213,21 +213,21 @@ for your application, and then exchanging your API key for an
     ```
     {: pre}
 
-4. [Managing access to resources](/docs/account?topic=account-assign-access-resources){: external}
-    for the service ID.
+4. Refer to [Managing access to resources](/docs/account?topic=account-assign-access-resources){: external}
+    for information about the service ID.
 
     You can assign access permissions for your service ID
     [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
     To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
-    specific {{site.data.keyword.keymanagementserviceshort}} service actions, see [Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles).
+    specific {{site.data.keyword.keymanagementserviceshort}} service actions, see y[Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles).
     {: tip}
 
     You can assign access permissions for your service ID
     [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
     To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
-    specific,
+    user access to
     {{site.data.keyword.messagehub}} resources, 
-    see [What can I secure?](/docs/EventStreams?topic=EventStreams-security#what_secure).
+    see [What can I secure?](/docs/EventStreams?topic=EventStreams-security#what_secure)
     {: tip}
 
 5. Create a
@@ -277,12 +277,6 @@ for your application, and then exchanging your API key for an
     {{site.data.keyword.keymanagementserviceshort}} API. To see an example
     {{site.data.keyword.keymanagementserviceshort}} API request, check out
     [Forming your API request](/docs/key-protect?topic=key-protect-set-up-api#form-api-request).
-
-    Use the full `access_token` value, prefixed by the _Bearer_ token type, to
-    programmatically manage keys for your service using the
-    Administration REST API. To see an example
-    {{site.data.keyword.messagehub}} API request, check out
-    [Authenticate by using a bearer token](/docs/EventStreams?topic=EventStreams-admin_api#admin_api_bearer_token)
 
     Access tokens are valid for 1 hour, but you can regenerate them as needed.
     To maintain access to the service, regenerate the access token for your API
@@ -478,7 +472,7 @@ If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted)
 ### Example
 {: #create_topic_api_example}
 
-You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API. For more information, see [Retrieve an access token with the API](#retrieve-token-api)
+You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API. For more information about obtaining a key or a token, see [Retrieve an access token with the API](#retrieve-token-api).
 
 ```sh
 curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
