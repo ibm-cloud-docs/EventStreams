@@ -84,9 +84,6 @@ toc:
             - topic: restricting_access_iam.md
               navtitle: Using IAM IP address access restrictions
         - using_kafka_client.md
-        - link:
-             label: Asynchronous data processing using object storage and pub/sub messaging tutorial
-             href: https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging
     - navgroup:
         id: reference
         topics:
