@@ -609,7 +609,7 @@ However, you can complete the steps for the console in the [Getting started tuto
 {: #produce_data_cli}
 {: cli}
 
-You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
+You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommend that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. 
 **Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.**
