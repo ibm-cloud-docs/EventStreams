@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-02-13"
 
 keywords: quick setup guide
 
@@ -612,11 +612,11 @@ However, you can complete the steps for the console in the [Getting started tuto
 You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommend that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
 
 You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. 
-**Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.**
+
 To provide the SASL credentials to this tool, create a properties file based on the following example:
 
 ```config
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="<user>" password="<api_key>";
     security.protocol=SASL_SSL
     sasl.mechanism=PLAIN
     ssl.protocol=TLSv1.2
@@ -625,7 +625,8 @@ To provide the SASL credentials to this tool, create a properties file based on 
 ```
 {: codeblock}
 
-Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+Use the `<user>` field from the service key as the username and the `<api_key>` field from the service key as the password. You can find these values in the {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+ 
 
 {{site.data.keyword.messagehub}} provides example `producer.properties` and `consumer.properties` files for the [Java client](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample/resources){: external}.
 
