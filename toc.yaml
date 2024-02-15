@@ -123,7 +123,7 @@ toc:
                   href: https://kafka.apache.org/downloads
               - link:
                   label: IBM Event Streams on ibm.com
-                  href: https://www.ibm.com/cloud/event-streams
+                  href: https://www.ibm.com/products/event-streams
               - link:
                   label: IBM Cloud pricing information
                   href: https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost#cost
