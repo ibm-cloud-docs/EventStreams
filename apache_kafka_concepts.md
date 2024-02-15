@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-14"
+  years: 2015, 2024
+lastupdated: "2024-02-15"
 
 keywords: brokers, messages, topics, partitions, replication, replica, producer, consumer, consumer group
 
@@ -81,7 +81,7 @@ A consumer is a client application that reads messages from one or more topics a
 
 If the lag increases over time, it is a sign that the consumer is not able to keep up. Over the short term, this is not an issue but eventually the consumer might miss messages if the retention period is exceeded.
 
-For more information, see [Consuming messages](/docs/EventStreams?topic=EventStreams-consuming_messages#consuming_messages).
+For more information, see [Consuming messages](/docs/EventStreams?topic=EventStreams-consuming_messages).
 
 ![Consumers diagram.](concepts_consumers.png "The diagram shows a consumer processing messages from one topic across three brokers."){: caption="Figure 7. The diagram shows a consumer processing messages from one topic across three brokers." caption-side="bottom"}
 
