@@ -41,7 +41,7 @@ Each topic is a named stream of messages. A topic is made up of one or more part
 
 If a topic has more than one partition, it allows data to be fed through in parallel to increase throughput by distributing the partitions across the cluster. The number of partitions also influences the balancing of workload among consumers.
 
-For more information, see [Partition leadership](/docs/EventStreams?topic=EventStreams-partition_leadership#partition_leadership).
+For more information, see [Partition leadership](/docs/EventStreams?topic=EventStreams-partition_leadership).
 
 ![Topics and partitions diagram.](concepts_topics_and_partitions.png "The diagram shows one topic with three partitions that are spread across three brokers."){: caption="Figure 3. The diagram shows one topic with three partitions that are spread across three brokers." caption-side="bottom"}
 
@@ -70,7 +70,7 @@ A producer is a client application that publishes messages to one or more topics
 
 You can also configure your producer to prioritize speed or reliability by choosing the level of acknowledgment the producer receives for messages it publishes.
 
-For more information, see [Producing messages](/docs/EventStreams?topic=EventStreams-producing_messages#producing_messages).
+For more information, see [Producing messages](/docs/EventStreams?topic=EventStreams-producing_messages).
 
 ![Producers diagram.](concepts_producers.png "The diagram shows a producer publishing messages to one topic across three brokers."){: caption="Figure 6. The diagram shows a producer publishing messages to one topic across three brokers." caption-side="bottom"}
 
