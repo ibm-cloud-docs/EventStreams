@@ -23,4 +23,4 @@ Connecting {{site.data.keyword.messagehub}} to {{site.data.keyword.iot_short_not
 
 A common pattern is to use the {{site.data.keyword.iot_short_notm}} bridge, {{site.data.keyword.messagehub}}, and the {{site.data.keyword.cos_full}} bridge to create an end-to-end pipeline, which makes real-time and batch interactions easier.
 
-For more information about to how to create this bridge, see [Connecting and configuring a historian connector to use {{site.data.keyword.messagehub}}](https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/platform/reference/dsc/eventstreams.html){: external}.
+For more information about to how to create this bridge, see [Connecting and configuring a historian connector to use {{site.data.keyword.messagehub}}](https://www.ibm.com/docs/en/mapms/1_cloud?topic=connectors-data-store-connector-event-streams){: external}.
