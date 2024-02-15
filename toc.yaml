@@ -15,6 +15,8 @@ toc:
         id: learn
         topics:
         - getting-started.md
+        - topic: quick_setup_guide.md
+          navtitle: Quick setup guide
         - topic: overview.md
           navtitle: Overview
         - topic: release-notes.md
@@ -35,11 +37,6 @@ toc:
             - using_admin_kafka_api.md
             - using_kafka_console.md
             - getting_started_cli.md
-            - managing_access.md
-            - restricting_access_iam.md
-            - restricting_access_enterprise.md
-            - topic: managing_encryption.md
-              navtitle: Managing encryption
             - scaling_capacity.md
             - enabling_mirroring.md
             - disabling_mirroring.md
@@ -74,14 +71,21 @@ toc:
         - topicgroup:
             label: Enhancing security
             topics:
+            - security_overview.md
+            - topic: data_security.md
+              navtitle: Data security and privacy
             - topic: security.md
-              navtitle: Understanding security and compliance
+              navtitle: Understanding compliance
             - topic: manage_security.md
               navtitle: Managing security and compliance
+            - topic: managing_encryption.md
+              navtitle: Managing encryption
+            - topic: managing_access.md
+              navtitle: Managing authentication
+            - restricting_access_enterprise.md
+            - topic: restricting_access_iam.md
+              navtitle: Using IAM IP address access restrictions
         - using_kafka_client.md
-        - link:
-             label: Asynchronous data processing using object storage and pub/sub messaging tutorial
-             href: https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-pub-sub-object-storage#asynchronous-data-processing-using-object-storage-and-pub-sub-messaging
     - navgroup:
         id: reference
         topics:
@@ -89,8 +93,6 @@ toc:
         - responsibilities.md
         - topic: limits_quotas.md
           navtitle: Limits and quotas
-        - topic: data_security.md
-          navtitle: Data security and privacy
         - activity_tracker_events.md
         - monitoring.md
         - disaster_recovery.md
@@ -121,7 +123,7 @@ toc:
                   href: https://kafka.apache.org/downloads
               - link:
                   label: IBM Event Streams on ibm.com
-                  href: https://www.ibm.com/cloud/event-streams
+                  href: https://www.ibm.com/products/event-streams
               - link:
                   label: IBM Cloud pricing information
                   href: https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost#cost

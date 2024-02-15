@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-24"
+  years: 2015, 2024
+lastupdated: "2024-01-27"
 
 keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
@@ -15,9 +15,9 @@ subcollection: EventStreams
 # Managing encryption in {{site.data.keyword.messagehub}}
 {: #managing_encryption}
 
-By default, message payload data in {{site.data.keyword.messagehub}} is encrypted at rest by using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption with the following IBM Cloud® Key Management Services:
+By default, message payload data in {{site.data.keyword.messagehub_full}} is encrypted at rest by using a randomly generated key. Although this default encryption model provides at-rest security, you might need a higher level of control. For these use cases, {{site.data.keyword.messagehub}} supports customer-managed encryption with the following {{site.data.keyword.cloud}} key management services:
 
-- {{site.data.keyword.keymanagementservicefull}} (Bring Your Own Key - BYOK) helps you provision encrypted keys for apps across IBM Cloud services. As you manage the lifecycle of your keys, you benefit from knowing that your keys are secured by FIPS 140-2 Level three certified cloud-based hardware security modules (HSMs) that protect against the theft of information. For more information about using {{site.data.keyword.keymanagementserviceshort}}, see the [Getting Started tutorial](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external}.
+- {{site.data.keyword.keymanagementservicefull}} (Bring Your Own Key - BYOK) helps you provision encrypted keys for apps across {{site.data.keyword.cloud_notm}} services. As you manage the lifecycle of your keys, you benefit from knowing that your keys are secured by FIPS 140-2 Level three certified cloud-based hardware security modules (HSMs) that protect against the theft of information. For more information about using {{site.data.keyword.keymanagementserviceshort}}, see the [Getting Started tutorial](/docs/key-protect?topic=key-protect-getting-started-tutorial){: external}.
 - {{site.data.keyword.hscrypto}} (Keep Your Own Key - KYOK) is a single-tenant, dedicated HSM that is controlled by you. The service is built on FIPS 140-2 Level 4-certified hardware, the highest offered by any cloud provider in the industry. For more information about using {{site.data.keyword.hscrypto}}, see the [Getting Started tutorial](/docs/hs-crypto?topic=hs-crypto-get-started){: external}.
 
 These services allow the use of a customer-provided key to control encryption. By disabling or deleting this key, you can prevent any further access to the data that is stored by the service, because it is no longer possible to decrypt it.
@@ -79,7 +79,7 @@ If you want to update your existing {{site.data.keyword.messagehub}} instance to
    - The CRN of the root key that you want to use in your key management service instance.
    - The CRN of your {{site.data.keyword.messagehub}} service instance.
 
-   You find this CRN by copying and pasting the full {{site.data.keyword.Bluemix}} console URL after you click the {{site.data.keyword.messagehub}} service in the console. 
+   You find this CRN by copying and pasting the full {{site.data.keyword.Bluemix_notm}} console URL after you click the {{site.data.keyword.messagehub}} service in the console. 
    Alternatively, paste in the output from the following CLI command:
 
    ```bash
@@ -87,7 +87,7 @@ If you want to update your existing {{site.data.keyword.messagehub}} instance to
    ```
    {: codeblock}
 
-   The {{site.data.keyword.messagehub}} Operations team responds to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
+   The {{site.data.keyword.messagehub}} Operations team responds to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix_notm}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
 
 This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
 {: important}
@@ -104,12 +104,12 @@ To temporarily prevent access, disable your root key. As a consequence, {{site.d
 
 To remove access permanently, delete the key. However, you must take extreme caution because this operation is non-recoverable. You lose access to any data that is stored in your {{site.data.keyword.messagehub}} instance. It is not possible to recover this data.
 
-In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An {{site.data.keyword.cloudaccesstrailshort}} event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
 
-The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
+The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times even after deleting the service instance. {{site.data.keyword.messagehub}} will continue to need the service to service policy in place to deregister the key. To determine when it is safe to remove the service-to-service policy, check the associated resources on the KMS root key. If the root key is still associated with the {{site.data.keyword.messagehub}} instance, leave the policy in place. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
 {: note}
 
-You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix}} console or CLI. These charges are still applied even if you chose to prevent access to your data.
+You are charged for your instance of {{site.data.keyword.messagehub}} until you deprovision it using the {{site.data.keyword.Bluemix_notm}} console or CLI. These charges are still applied even if you chose to prevent access to your data.
 {: important}
 
 ### Restoring access to data

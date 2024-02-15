@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-02-13"
 
 keywords: quick setup guide
 
@@ -99,7 +99,8 @@ Before you get started, we highly recommend that you read the following informat
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* The resource controller API to [provision an instance](#provision_instance_api). 
+* The resource controller API to [provision an instance](#provision_instance_api) and to [retrieve an access token]
+(#retrieve-token-api). 
 * The Admin REST API to [work with topics](#work_topic_api). 
 * The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
@@ -174,7 +175,126 @@ To provision an instance of {{site.data.keyword.messagehub}} Standard Plan with 
 {: #provision_instance_api}
 {: api}
 
-The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli) but if you want use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}, run a command like the following to create an Enterprise instance in US South:
+The preferred method to provision an instance is to use the [CLI](/docs/EventStreams?topic=EventStreams-quick_setup_guide&interface=cli#provision_instance_cli). 
+
+Alternatively, you can use the [resource controller API](/apidocs/resource-controller/resource-controller#create-resource-instance){: external}. First, [retrieve an access token](#retrieve-token-api) then run a resource controller API command with the access token to [create the instance](#create_instance_api). 
+
+### Step 2a: Retrieve an access token with the resource controller API
+{: #retrieve-token-api}
+
+You can retrieve your access token programmatically by first creating a
+[service ID API key](/docs/account?topic=account-serviceidapikeys){: external}
+for your application, and then exchanging your API key for an
+{{site.data.keyword.cloud_notm}} IAM token.
+
+1. Log in to {{site.data.keyword.cloud_notm}} with the
+    [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started){: external}.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+    If the login fails, run the `ibmcloud login --sso` command to try again. The
+    `--sso` parameter is required when you log in with a federated ID. If this
+    option is used, go to the link listed in the CLI output to generate a
+    one-time passcode.
+    {: note}
+
+2. Select the account, region, and resource group that contain your provisioned
+    instance of {{site.data.keyword.messagehub}}.
+
+3. Create a
+    [service ID](/docs/account?topic=account-serviceids){: external} for your application.
+
+    ```sh
+    ibmcloud iam service-id-create SERVICE_ID_NAME
+                [-d, --description DESCRIPTION]
+    ```
+    {: pre}
+
+4. Refer to [Managing access to resources](/docs/account?topic=account-assign-access-resources){: external}
+    for information about the service ID.
+
+    You can assign access permissions for your service ID
+    [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
+    To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
+    specific {{site.data.keyword.keymanagementserviceshort}} service actions, see y[Roles and permissions](/docs/key-protect?topic=key-protect-manage-access#manage-access-roles).
+    {: tip}
+
+    You can assign access permissions for your service ID
+    [by using the {{site.data.keyword.cloud_notm}} console](/docs/account?topic=account-assign-access-resources#assign-new-access){: external}.
+    To learn how the _Manager_, _Writer_, and _Reader_ access roles map to
+    user access to
+    {{site.data.keyword.messagehub}} resources, 
+    see [What can I secure?](/docs/EventStreams?topic=EventStreams-security#what_secure)
+    {: tip}
+
+5. Create a
+    [service ID API key](/docs/account?topic=account-serviceidapikeys){: external}.
+
+    ```sh
+    ibmcloud iam service-api-key-create API_KEY_NAME SERVICE_ID_NAME
+                [-d, --description DESCRIPTION]
+                [--file FILE_NAME]
+    ```
+    {: pre}
+
+    Replace `<service_ID_name>` with the unique alias that you assigned to your
+    service ID in the previous step. Save your API key by downloading it to a
+    secure location.
+
+6. Call the
+    [IAM Identity Services API](/apidocs/iam-identity-token-api){: external}
+    to retrieve your access token.
+
+    ```sh
+    $ curl -X POST \
+        "https://iam.cloud.ibm.com/identity/token" \
+        -H "content-type: application/x-www-form-urlencoded" \
+        -H "accept: application/json" \
+        -d 'grant_type=urn%3Aibm%3Aparams%3Aoauth%3Agrant-type%3Aapikey&apikey=<API_KEY>' > token.json
+    ```
+    {: codeblock}
+
+    In the request, replace `<API_KEY>` with the API key that you created in the
+    previous step. The following truncated example shows the contents of the
+    `token.json` file:
+
+    ```json
+    {
+        "access_token": "b3VyIGZhdGhlc...",
+        "expiration": 1512161390,
+        "expires_in": 3600,
+        "refresh_token": "dGhpcyBjb250a...",
+        "token_type": "Bearer"
+    }
+    ```
+    {: screen}
+
+    Use the full `access_token` value, prefixed by the _Bearer_ token type, to
+    programmatically manage keys for your service using the
+    {{site.data.keyword.keymanagementserviceshort}} API. To see an example
+    {{site.data.keyword.keymanagementserviceshort}} API request, check out
+    [Forming your API request](/docs/key-protect?topic=key-protect-set-up-api#form-api-request).
+
+    Access tokens are valid for 1 hour, but you can regenerate them as needed.
+    To maintain access to the service, regenerate the access token for your API
+    key on a regular basis by calling the
+    [IAM Identity Services API](/apidocs/iam-identity-token-api){: external}.
+    {: note }
+
+    - Use {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)
+        tokens to make authenticated requests to IBM Watson services without
+        embedding service credentials in every call.
+
+    - IAM authentication uses access tokens for authentication, which you acquire
+        by sending a request with an API key.
+
+### Step 2b: Create an instance
+{: #create_instance_api}
+
+Run a command like the following to create an Enterprise instance in US South:
 
 ```sh
 curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H "Authorization: ${token}" -H "Content-Type: application/json" \
@@ -182,7 +302,6 @@ curl -X POST https://resource-controller.cloud.ibm.com/v2/resource_instances -H 
 ```
 {: codeblock}
 
-_This step shows ${token} in the example, and step 3 the same (ish) but wasn't clear if this was actually defined in the env? I suspect we'll need to walk the user through how to get this in a similar to what key protect did here: https://cloud.ibm.com/docs/key-protect?topic=key-protect-retrieve-access-token#retrieve-token-cli (but we shouldn't point at this page, more use for inspiration if needed)_
 
 ## Step 3: Create a topic and select number of partitions by using the console
 {: #create_topic_ui}
@@ -308,7 +427,7 @@ ibmcloud es cluster [--json]
 --json (optional)
 :   Output format in JSON.
 
-For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs-draft/EventStreams?topic=EventStreams-cli_reference).
+For information about other {{site.data.keyword.messagehub}} CLI commands for topics, see [CLI reference](/docs/EventStreams?topic=EventStreams-cli_reference).
 
 ## Step 3: Create a topic and select number of partitions by using the Admin REST API
 {: #create_topic_api}
@@ -353,7 +472,7 @@ If the request to create a Kafka topic succeeds, HTTP status code 202 (Accepted)
 ### Example
 {: #create_topic_api_example}
 
-You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API.
+You can exercise the REST endpoint for creating a Kafka topic using the following snippet of curl. You'll need to supply your own API key or token and specify the correct endpoint for ADMIN API. For more information about obtaining a key or a token, see [Retrieve an access token with the API](#retrieve-token-api).
 
 ```sh
 curl -i -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' -H 'Authorization: Bearer ${TOKEN}' --data '{ "name": "newtopic", "partitions": 1}' ${ADMIN_URL}/admin/topics
@@ -490,12 +609,14 @@ However, you can complete the steps for the console in the [Getting started tuto
 {: #produce_data_cli}
 {: cli}
 
-You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommended that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
+You can use the {{site.data.keyword.messagehub}} Kafka console producer tool to produce data. The console tools are in the `bin` directory of your Kafka client download, which you can download from [Apache Kafka downloads](http://kafka.apache.org/downloads){: external}. We recommend that you download the latest available stable binary version. Kafka client versions are backwards compatible with the version of Kafka on the server.
 
-You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. To provide the SASL credentials to this tool, create a properties file based on the following example:
+You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and SASL credentials. 
+
+To provide the SASL credentials to this tool, create a properties file based on the following example:
 
 ```config
-    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="USER" password="PASSWORD";
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="<user>" password="<api_key>";
     security.protocol=SASL_SSL
     sasl.mechanism=PLAIN
     ssl.protocol=TLSv1.2
@@ -504,7 +625,8 @@ You must provide a list of brokers (using the BOOTSTRAP_ENDPOINTS property) and 
 ```
 {: codeblock}
 
-Replace USER and PASSWORD with the values from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+Use the `<user>` field from the service key as the username and the `<api_key>` field from the service key as the password. You can find these values in the {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
+ 
 
 {{site.data.keyword.messagehub}} provides example `producer.properties` and `consumer.properties` files for the [Java client](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample/resources){: external}.
 
@@ -519,6 +641,8 @@ Replace the following variables in the example with your own values:
 
 - BOOTSTRAP_ENDPOINTS with the value from your {{site.data.keyword.messagehub}} **Service Credentials** tab in the {{site.data.keyword.Bluemix_notm}} console.
 - CONFIG_FILE with the path of the configuration file. 
+* Use the `<bootstrap_endpoints>` field from the service key as the `bootstrap.servers` property of your Kafka application.
+* Use the `<user>` field from the service key as the username and the `<api_key>` field from the service key as the password. Ensure that your application parses the details.
 
 You can use many of the other options of this tool, except for those that require access to ZooKeeper. For more information, see [Using Kafka console tools with Event Streams](/docs/EventStreams?topic=EventStreams-kafka_console_tools){: external}.
 

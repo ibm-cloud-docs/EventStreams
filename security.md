@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-08-21"
+  years: 2023, 2024
+lastupdated: "2024-01-25"
 
 keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, irap
 
@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding security and compliance for {{site.data.keyword.messagehub}}
+# Understanding compliance for {{site.data.keyword.messagehub}}
 {: #compliance}
 
 {{site.data.keyword.messagehub_full}} is a secure and highly available message bus that is built with Apache Kafka. The service is built on the following best industry standards.

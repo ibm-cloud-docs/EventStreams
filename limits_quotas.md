@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-10"
+  years: 2015, 2024
+lastupdated: "2024-01-25"
 
 keywords: limits, quotas, network throughput, retention, consumer groups, schema
 
@@ -116,7 +116,7 @@ For more information, see [Scaling {{site.data.keyword.messagehub}}](/docs/Event
 
 The maximum number of partitions increases in line with the number of capacity units, so 3000 for 150 MB/s, 6000 for 300 MB/s and 9000 for 450 MB/s in Enterprise. 
 
-It is a hard limit for the Enterprise plan. If you reach this limit, you can no longer create topics. To increase the number of partitions, [contact IBM](/docs/get-support?topic=get-support-open-case&interface=ui#creating-support-case){: external}.
+If you want to adjust the number of partitions, you can use the self-service option as described in [Scaling Enterprise plan capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity#ES_how_to_scale_capacity). There is a 3000 partition limit per 2 TB storage with a maximum limit of 18000 partitions with a 12 TB option, which cannot be exceeded.
 
 ### Retention
 {: #enterprise_retention}

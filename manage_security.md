@@ -28,7 +28,7 @@ With the {{site.data.keyword.compliance_short}}, you can do the following:
 ## Monitoring security and compliance posture with {{site.data.keyword.messagehub}}
 {: #monitor-eventstreams}
 
-As a security or compliance focal, use the *Event Streams* [goals](#x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, identify potential issues as they arise.
+As a security or compliance focal, use the *Event Streams* goals to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](#x2034950){: term}, identify potential issues as they arise.
 
 All of the goals for {{site.data.keyword.messagehub}} are added to the {{site.data.keyword.cloud_notm}} Control Library but can also be mapped to other profiles.
 {: note}

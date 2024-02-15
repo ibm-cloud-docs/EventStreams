@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-10"
+  years: 2020, 2024
+lastupdated: "2024-02-15"
 
 keywords: scaling capacity, throughput, storage, scaling
 
@@ -130,7 +130,7 @@ The example then shows how to scale this service instance to a configuration of 
         
     e. Enter a name for your service instance. You can use the default value.
     
-    f. Click Create. (For information about the amount of time needed to create the service instance, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-choosing-your-plan#what-is-supported)).
+    f. Click Create. (For information about the amount of time needed to create the service instance, see [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported)).
 
 2. Log in to the **{{site.data.keyword.Bluemix_notm}} CLI**.
  
