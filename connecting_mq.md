@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-18"
+  years: 2015, 2024
+lastupdated: "2024-02-15"
 
 keywords: MQ bridge, connect configuration
 
@@ -39,7 +39,7 @@ Ensure you have the following software and services installed:
 * An {{site.data.keyword.container_notm}} cluster. You can provision one for testing purposes at no cost. 
 
     You also need CLI access to your cluster. For more information, see
- [Setting up the CLI and API](/docs/containers?topic=containers-cs_cli_install).
+ [Setting up the CLI and API](/docs/containers?topic=containers-cli-install).
 * A recent version of kubectl
 * [Git](https://git-scm.com/downloads){: external}
 

@@ -72,6 +72,8 @@ toc:
             label: Enhancing security
             topics:
             - security_overview.md
+            - topic: data_security.md
+              navtitle: Data security and privacy
             - topic: security.md
               navtitle: Understanding compliance
             - topic: manage_security.md
@@ -91,8 +93,6 @@ toc:
         - responsibilities.md
         - topic: limits_quotas.md
           navtitle: Limits and quotas
-        - topic: data_security.md
-          navtitle: Data security and privacy
         - activity_tracker_events.md
         - monitoring.md
         - disaster_recovery.md
@@ -123,7 +123,7 @@ toc:
                   href: https://kafka.apache.org/downloads
               - link:
                   label: IBM Event Streams on ibm.com
-                  href: https://www.ibm.com/cloud/event-streams
+                  href: https://www.ibm.com/products/event-streams
               - link:
                   label: IBM Cloud pricing information
                   href: https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-cost#cost
