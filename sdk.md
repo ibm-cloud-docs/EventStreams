@@ -4,7 +4,7 @@ copyright:
   years: 2024
 lastupdated: "2024-02-19"
 
-keywords: python sdk, python, go, golang, java server sdk, java, go admin sdk, npm, node sdk, integrate sdk, sdk, 
+keywords: python sdk, python, go, golang, java server sdk, java, go admin sdk, node sdk, sdk
 
 subcollection: EventStreams
 
