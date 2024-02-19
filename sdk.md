@@ -22,7 +22,7 @@ Following is the list of {{site.data.keyword.messagehub}} server SDKs that are a
 and technical concepts, see the readme file in the SDK documentation.
 {: shortdesc}
 
-|Server SDKs | SDK Documentation |
+|Server SDKs | SDK documentation |
 |------- |   -------- |
 |[Go SDK](https://github.com/IBM/eventstreams-go-sdk){: external} | [Go SDK documentation](https://github.com/IBM/eventstreams-go-sdk/blob/main/README.md){: external} |
 |[Java SDK](https://github.com/IBM/eventstreams-java-sdk){: external} | [Java SDK documentation](https://github.com/IBM/eventstreams-java-sdk/blob/main/README.md){: external} |
