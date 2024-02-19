@@ -15,12 +15,11 @@ subcollection: EventStreams
 # {{site.data.keyword.messagehub}} SDKs
 {: #eventstreams-sdks}
 
-{{site.data.keyword.messagehub_full}} simplifies application development by abstracting much of the complexity of deploying application environments. 
-{{site.data.keyword.messagehub}} SDKs are provided in multiple programming languages to assist application developers to integrate {{site.data.keyword.messagehub}} 
-`IaC` operations into continuous integration and continuous delivery (**CI**/**CD**) tools and pipelines.
+{{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. It is optimized for event ingestion into IBM Cloud and event stream distribution between your services and applications. 
+{{site.data.keyword.messagehub}} SDK client library includes a library of functions used to access an {{site.data.keyword.messagehub}} service instance and allows developers to programmatically interact with the Admin Rest API and Schema Registry.
 
-Following are the list of {{site.data.keyword.messagehub}} server SDKs that are available for Node, Python, Go, and Java. For more information about installation 
-and technical concepts, see readme file in the SDK documentation.
+Following is the list of {{site.data.keyword.messagehub}} server SDKs that are available for Node, Python, Go, and Java. For more information about installation 
+and technical concepts, see the readme file in the SDK documentation.
 {: shortdesc}
 
 |Server SDKs | SDK Documentation |
