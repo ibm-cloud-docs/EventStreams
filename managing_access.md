@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-11"
+  years: 2015, 2024
+lastupdated: "2024-02-20"
 
 keywords: client, wildcarding, wildcard, policies
 
@@ -78,7 +78,7 @@ Cloud Identity and Access Management (IAM) policies are attached to the resource
 
 For more information about IAM, see [IBM Cloud Identity and Access Management](/docs/account?topic=account-iamoverview).
 
-For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/cloud/blog/introducing-ibm-cloud-iam-service-ids-api-keys){: external}.
+For an example of how to set policies, see [IBM Cloud IAM Service IDs and API Keys](https://www.ibm.com/blog/introducing-ibm-cloud-iam-service-ids-api-keys/){: external}.
 
 ### Wildcarding
 {: #wildcarding }
