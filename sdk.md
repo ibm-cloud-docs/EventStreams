@@ -18,7 +18,7 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub_full}} is a high-throughput message bus that is built with Apache Kafka. It is optimized for event ingestion into IBM Cloud and event stream distribution between your services and applications. 
 The {{site.data.keyword.messagehub}} SDK client library includes a library of functions that is used to access an {{site.data.keyword.messagehub}} service instance and allows developers to programmatically interact with the Admin Rest API and Schema Registry.
 
-Following is the list of {{site.data.keyword.messagehub}} server SDKs that are available for Node, Python, Go, and Java. For more information about installation 
+Following is the list of {{site.data.keyword.messagehub}} SDKs that are available for Node, Python, Go, and Java. For more information about installation 
 and technical concepts, see the readme file in the SDK documentation.
 {: shortdesc}
 
