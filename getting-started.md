@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-08-02"
+  years: 2015, 2024
+lastupdated: "2024-02-20"
 
 keywords: event streams, message hub
 
@@ -31,7 +31,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 
    a. Log in to the {{site.data.keyword.cloud_notm}} console.
   
-   b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
+   b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/eventstreams-provisioning/6a7f4e38-f218-48ef-9dd2-df408747568e/create){: external} in the **Catalog**.
   
    c. Select the **Lite plan** on the service instance page.
   

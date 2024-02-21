@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-11-16"
+  years: 2015, 2024
+lastupdated: "2024-02-20"
 
 keywords: sla, service level agreement, connectivity, throughput
 
@@ -22,16 +22,16 @@ The {{site.data.keyword.messagehub}} Standard Plan provides a highly available a
 {: shortdesc}
 
 The {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Standard Plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix}}, see
-[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document){: external}.
+[Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en){: external}.
 
 ## Enterprise plan
 {: #sla_enterprise}
 
 The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, the Event Streams service is distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
 
-In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)]([https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en)){: external}.
+In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en){: external}.
 
-When the {{site.data.keyword.messagehub}} service is run in a non-highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non-highly availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)]([https://www.ibm.com/support/customer/csol/terms?id=i126-9268&lc=en#detail-document](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en)){: external}.
+When the {{site.data.keyword.messagehub}} service is run in a non-highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non-highly availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en){: external}.
 
 ## Satellite plan
 {: #sla_satellite}
