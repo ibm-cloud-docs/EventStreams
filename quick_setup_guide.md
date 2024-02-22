@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-02-13"
+  years: 2024
+lastupdated: "2024-02-21"
 
 keywords: quick setup guide
 
@@ -587,6 +587,8 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
 {: #create_credential_api}
 {: api}
 
+_Step 4 in the API path shows a. bit of an awkwardness in the auth story. The REST API take tokens, so this is all that's mentioned in this step. But when get to the 'now use the Command line to produce/consume' , the command line apps use an api_key from a service credential (which hasn't been created on this path). We may need to do more scene setting in this path to explain the difference and choices in the type of credential types on offer and used in different places (can give some help on this)_
+
 To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is using a bearer token. To obtain your token by using the {{site.data.keyword.Bluemix_notm}} CLI, first log in to {{site.data.keyword.Bluemix_notm}} and then run the following command: 
 
 ```sh
@@ -691,7 +693,7 @@ curl -v -X POST \
 ```
 {: codeblock}
 
-For more information, see the [{{site.data.keyword.messagehub}} REST Producer API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer){: external}.
+For more information, see the [{{site.data.keyword.messagehub}} REST Producer v2 endpoint API reference](https://cloud.ibm.com/apidocs/event-streams/restproducer_v2){: external}.
 
 
 ### Producer configuration settings
