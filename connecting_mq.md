@@ -36,7 +36,7 @@ Ensure you have the following software and services installed:
    You can configure the {{site.data.keyword.IBM_notm}} MQ Connector to authenticate with {{site.data.keyword.IBM_notm}} MQ by using a user identifier and password. We recommend that you grant the following permissions only to the identity associated with an instance of the MQ bridge:
    * CONNECT authority. The {{site.data.keyword.IBM_notm}} MQ Connector must be able to connect to the MQ queue manager.
    * GET authority for the queue that the {{site.data.keyword.IBM_notm}} MQ Connector is configured to consume from.
-* An {{site.data.keyword.container_notm}} cluster. You can provision one for testing purposes at no cost. 
+* An {{site.data.keyword.containershort}} cluster. You can provision one for testing purposes at no cost. 
 
     You also need CLI access to your cluster. For more information, see
  [Setting up the CLI and API](/docs/containers?topic=containers-cli-install).
