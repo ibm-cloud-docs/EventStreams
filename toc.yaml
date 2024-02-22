@@ -16,7 +16,7 @@ toc:
         topics:
         - getting-started.md
         - topic: quick_setup_guide.md
-          title: Quick Setup Guide
+          navtitle: Quick Setup Guide
         - topic: overview.md
           navtitle: Overview
         - topic: release-notes.md
