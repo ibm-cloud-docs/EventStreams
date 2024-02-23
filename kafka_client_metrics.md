@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-02-23"
 
 keywords: monitoring, metrics
 
@@ -12,19 +12,19 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting started with Kafka metrics
+# Getting started with Kafka client metrics
 {: #getting-started-metrics}
 
 When it comes to Kafka, monitoring typically involves various metrics related to topics, partitions, brokers, and consumer groups. Standard Kafka metrics include information on throughput, latency, replication, and disk usage. Refer to the [Kafka documentation](https://kafka.apache.org/documentation/) and relevant monitoring tools to understand the specific metrics available for your version of Kafka and how to interpret them effectively.
 
-## Why is it important to monitor Kafka?
+## Why is it important to monitor Kafka clients?
 {: #why-monitor}
 
 Monitoring your {{site.data.keyword.messagehub_full}} instance is crucial to ensure optimal functionality and overall health of your data pipeline. Monitoring your Kafka clients helps to identify early signs of application failure, such as high resource usage and lagging consumers and bottlenecks. Identifying these warning signs early enables proactive response to potential issues that minimize downtime and prevent any disruption to business operations.
 
-Kafka clients (producers and consumers) have their own set of metrics to monitor their performance and health. {{site.data.keyword.messagehub}} supports a rich set of metrics for both clients and is exposed in the official Java client. For more information, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
+Kafka clients (producers and consumers) have their own set of metrics to monitor their performance and health. In addition, the {{site.data.keyword.messagehub}} service supports a rich set of metrics produced from the server. For more information, see [Monitoring Event Streams metrics by using IBM Cloud Monitoring](/docs/EventStreams?topic=EventStreams-metrics).
 
-## Which metrics to monitor
+## Client metrics to monitor
 {: #what-monitor}
 
 ### Producer metrics

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-08-15"
+  years: 2015, 2024
+lastupdated: "2024-02-23"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -12,18 +12,20 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Monitoring {{site.data.keyword.messagehub}} metrics by using {{site.data.keyword.mon_full_notm}}
+# Monitoring {{site.data.keyword.messagehub}} service metrics by using {{site.data.keyword.mon_full_notm}}
 {: #metrics}
 
 [{{site.data.keyword.mon_full}}](/docs/monitoring?topic=monitoring-getting-started) is a third-party cloud-native, and container-intelligence management system that you can include as part of your {{site.data.keyword.cloud_notm}} architecture. Use it to gain operational visibility into the performance and health of your applications, services, and platforms. It offers administrators, DevOps teams, and developers full stack telemetry with advanced features to monitor and troubleshoot, define alerts, and design custom dashboards.
 {: shortdesc}
 
-## Opting in to and enabling {{site.data.keyword.messagehub}} metrics
+While you monitor service metrics with {{site.data.keyword.mon_full_notm}}, Kafka clients (producers and consumers) have their own set of [metrics](/docs-draft/EventStreams?topic=EventStreams-getting-started-metrics) ato monitor their performance and health.
+
+## Opting in to and enabling {{site.data.keyword.messagehub}} service metrics
 {: #opt_in_metrics}
 
-{{site.data.keyword.messagehub}} metrics can broadly be categorized into two different groups: **Default** and **Enhanced**.
+{{site.data.keyword.messagehub}} service metrics can broadly be categorized into two different groups: **Default** and **Enhanced**.
 
-### Enabling default {{site.data.keyword.messagehub}} metrics
+### Enabling default {{site.data.keyword.messagehub}} service metrics
 {: #enabling_default_metrics}
 
 Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in, and then enable platform metrics by completing the following steps:
@@ -64,7 +66,7 @@ To opt out of enhanced metrics, run the following command:
 Dashboards are available only after metrics started to be recorded; it might take a few minutes to initialize.
 {: note}
 
-## {{site.data.keyword.messagehub}} metrics cost information
+## {{site.data.keyword.messagehub}} service metrics cost information
 {: #metric_costs}
 
 Before you opt in to using {{site.data.keyword.monitoringshort}} metrics, be aware of the cost of doing so. The estimated cost depends on the following considerations:
@@ -80,43 +82,43 @@ Enabling mirroring for Enterprise clusters introduces one more global gauge metr
 For more information, see [{{site.data.keyword.monitoringshort}} pricing](/docs/monitoring?topic=monitoring-pricing_plans).
 
 
-## {{site.data.keyword.messagehub}} metrics details
+## {{site.data.keyword.messagehub}} service metrics details
 {: #metric_details}
 
 The following tables describe the specific metrics that are provided by {{site.data.keyword.messagehub}} for each plan.
 
-## Metrics available by service plan
+## Service metrics available by service plan
 {: #metrics-by-plan}
 
-| Metric name |Enterprise|Lite|Standard|
+| Metric name | Enterprise | Lite | Standard |
 |-----------|--------|--------|--------|
-| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Connected clients software name and version](#ibm_eventstreams_connected_clients_software_name_and_version) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
+| [Authentication failures](#ibm_eventstreams_kafka_authentication_failure_total) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
+| [Connected clients software name and version](#ibm_eventstreams_connected_clients_software_name_and_version) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  | |
+| [Consume message conversion time](#ibm_eventstreams_instance_consume_conversions_time_quantile) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
 | [Estimated connected clients percentage](#ibm_eventstreams_kafka_recommended_max_connected_clients_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
-| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
+| [Inactive consumer groups](#ibm_eventstreams_instance_inactive_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
 | [Instance bytes in per second](#ibm_eventstreams_instance_bytes_in_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [Instance bytes out per second](#ibm_eventstreams_instance_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
-| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
+| [Missing SNI connections](#ibm_eventstreams_kafka_missing_sni_host_total) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
 | [Number of offline partitions](#ibm_eventstreams_kafka_offline_partitions) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
 | [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [Number of under in-sync replica partitions](#ibm_eventstreams_kafka_under_minisr_partitions) |  ![Checkmark icon](../icons/checkmark-icon.svg) | |  |
-| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Rest-producer requests per second](#ibm_eventstreams_instance_rest_producer_requests_per_sec) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
+| [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
+| [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
+| [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
+| [Rest-producer requests per second](#ibm_eventstreams_instance_rest_producer_requests_per_sec) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
 | [Schema greatest version percentage](#ibm_eventstreams_instance_schema_registry_schema_versions_greatest_percentage) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Schema used percentage](#ibm_eventstreams_instance_schema_registry_schemas_used_percentage) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
-| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
+| [Schema used percentage](#ibm_eventstreams_instance_schema_registry_schemas_used_percentage) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
+| [Stable consumer groups](#ibm_eventstreams_instance_stable_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |
 | [Topic bytes in per second](#ibm_eventstreams_instance_topic_bytes_in_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
-| [IAM ID bytes in per second](#ibm_eventstreams_iam_id_bytes_in_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |  |
-| [IAM ID bytes out per second](#ibm_eventstreams_iam_id_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |    |  |
-| [Used disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |   /n 
+| [IAM ID bytes in per second](#ibm_eventstreams_iam_id_bytes_in_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
+| [IAM ID bytes out per second](#ibm_eventstreams_iam_id_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
+| [Used disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  /n 
 {: caption="Table 1. Metrics Available by Plan Names" caption-side="top"}
 
-## Metrics available with mirroring enabled
+## Service metrics available with mirroring enabled
 {: #metrics-mirroring}
 
 | Metric name |Enterprise|Lite|Standard|
@@ -125,7 +127,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Mirroring latency](#ibm_eventstreams_instance_mirroring_latency) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |   |  |
 {: caption="Table 2. Metrics available for mirroring" caption-side="bottom"}
 
-## Enhanced metrics available with topic enabled
+## Enhanced service metrics available with topic enabled
 {: #metrics-topic}
 
 | Metric name |Enterprise|Lite|Standard|
@@ -134,8 +136,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  | |
 {: caption="Table 3. Metrics available for topic" caption-side="bottom"}
 
-
-## Enhanced metrics available with consumers enabled
+## Enhanced service metrics available with consumers enabled
 {: #metrics-consumers}
 
 | Metric name |Enterprise|Lite|Standard|
@@ -143,7 +144,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Consumer groups lag](#ibm_eventstreams_instance_consumer_groups_lag) |  ![Checkmark icon](../icons/checkmark-icon.svg)  | | |
 {: caption="Table 4. Metrics available for consumers" caption-side="bottom"}
 
-## Enhanced metrics available with partitions enabled
+## Enhanced service metrics available with partitions enabled
 {: #metrics-partition}
 
 | Metric name |Enterprise|Lite|Standard|
@@ -153,7 +154,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 
 This information is useful for detecting if the distribution of message activity across the partitions in a topic is unbalanced and if the number of partitions a topic is scaled appropriately.
 
-## Metrics available with quotas enabled
+## Service metrics available with quotas enabled
 {: #metrics-quotas}
 
 | Metric name |Enterprise|Lite|Standard|
