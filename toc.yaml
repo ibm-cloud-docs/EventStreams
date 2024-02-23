@@ -94,7 +94,7 @@ toc:
         - topic: limits_quotas.md
           navtitle: Limits and quotas
         - activity_tracker_events.md
-        - kafka_metrics.md
+        - kafka_client_metrics.md
         - monitoring.md
         - disaster_recovery.md
         - reserved_disk.md
