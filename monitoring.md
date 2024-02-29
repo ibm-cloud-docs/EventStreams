@@ -115,7 +115,8 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [IAM ID bytes in per second](#ibm_eventstreams_iam_id_bytes_in_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
 | [IAM ID bytes out per second](#ibm_eventstreams_iam_id_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
-| [Used disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  /n 
+| [Used disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  
+| [Instance utilization](#ibm_eventstreams_instance_utilization) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  /n 
 {: caption="Table 1. Metrics Available by Plan Names" caption-side="top"}
 
 ## Service metrics available with mirroring enabled
@@ -647,6 +648,19 @@ Total disk size of all partitions of a topic.
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 38. Topic size metric metadata" caption-side="bottom"}
+
+### Instance utilization
+{: #ibm_eventstreams_instance_utilization}
+
+Instance utilization. 0 reflects an utilization under 80%, 1 over 80% and under 95% and 2 over 95%.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_utilization`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `int` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 39. Instance utilization" caption-side="bottom"}
 
 ## Attributes for segmentation
 {: #attributes}
