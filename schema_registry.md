@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-02-29"
 
 keywords: schema registry, schema
 
@@ -19,7 +19,7 @@ subcollection: EventStreams
 Schema Registry provides a centralized repository for managing and validating schemas. Schemas in a Schema Registry provide the explicit contract that a program generating an event provides to other programs that are consuming those events.
 {: shortdesc}
 
-![Supporting Kafka with Schema Registry](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_9024gxsq){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Supporting Kafka with Schema Registry](https://cdnapisec.kaltura.com/html5/html5lib/v2.101/mwEmbedFrame.php/p/1773841/uiconf_id/27941801/entry_id/1_9024gxsq?wid=_1773841&iframeembed=true&entry_id=1_9024gxsq){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Schemas overview
 {: #ES_overview}
@@ -189,7 +189,7 @@ The examples in this document show use of the API key, but either option can be 
 
 The service credentials have an `apikey` that you can use as the credential for authenticating with the Schema Registry.
 
-You can also authenticate by using an API key that was granted from a service ID, providing the service ID has a policy that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/services/EventStreams?topic=eventstreams-security) help topic for more details.
+You can also authenticate by using an API key that was granted from a service ID, providing the service ID has a policy that permits it at least “reader” role access to the {{site.data.keyword.messagehub}} instance. This approach is more flexible and is a better choice if you are granting access to multiple other people or teams. See the [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security#security_resources) help topic for more details.
 
 The API key is supplied as the password portion of an HTTP basic authentication header. The username portion of the header is the word "token".
 
@@ -235,7 +235,7 @@ The REST API offers four main capabilities:
 3. Reading and updating the global compatibility rule for the registry.
 4. Creating, reading, updating, and deleting compatibility rules that apply to individual schemas.
 
-For actions that alter the schema version, such as create, update, or delete artifact, artifact versions and rules, an activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+For actions that alter the schema version, such as create, update, or delete artifact, artifact versions and rules, an activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Errors
 {: #errors}
@@ -309,7 +309,7 @@ Creating a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Writer role access to the schema resource that matches the schema that is created.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### List schemas
 {: #list_schemas}
@@ -366,7 +366,7 @@ Deleting a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Manager role access to the schema resource that matches the schema that is deleted.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Create a new version of a schema
 {: #new_schema}
@@ -392,7 +392,7 @@ Creating a new version of a schema requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Writer role access to the schema resource that matches the schema that gets a new version.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Get the latest version of a schema
 {: #latest_schema}
@@ -494,7 +494,7 @@ Deleting a schema version requires at least both:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Manager role access to the schema resource that matches the schema that is deleted.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 
 
@@ -549,7 +549,7 @@ Updating a global rule configuration requires at least:
 
 - Manager role access to the {{site.data.keyword.messagehub}} cluster resource type.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Getting the current value of a global rule
 {: #value_global_rule}
@@ -588,7 +588,7 @@ Creating per-schema rules requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Manager role access to the schema resource for which the rule applies.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
  
 ### Getting a per-schema rule
 {: #get_rule}
@@ -634,7 +634,7 @@ Updating a per-schema rule requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Manager role access to the schema resource to which the rule applies.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Deleting a per-schema rule
 {: #delete_rule}
@@ -652,7 +652,7 @@ Deleting a per-schema rule requires at least:
 - Reader role access to the {{site.data.keyword.messagehub}} cluster resource type.
 - Manager role access to the schema resource to which the rule applies.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ## Applying compatibility rules to new versions of schemas
 {: #applying_compatibility_rules}
@@ -681,7 +681,7 @@ By default, the registry has a global compatibility rule setting of `NONE`. Per-
 
 For a description of the REST API with examples, see [{{site.data.keyword.messagehub}} schema-registry-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/schema-registry-api){: external}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: external}. To view the Swagger file, use Swagger tools, for example [Swagger editor](http://editor.swagger.io){: external}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Schema Registry REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/schema-registry-api/openapi.yaml){: external}. To view the Swagger file, use Swagger tools, for example [Swagger editor](https://editor.swagger.io:443/){: external}.
 
 For more information about accessing the Schema Registry using an SDK, see [{{site.data.keyword.messagehub}} Schema Registry REST API](https://github.com/IBM/eventstreams-go-sdk/blob/main/schema_operations.md){: external}.
 

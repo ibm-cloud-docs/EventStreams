@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-01-27"
+lastupdated: "2024-02-29"
 
 keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
@@ -104,7 +104,7 @@ To temporarily prevent access, disable your root key. As a consequence, {{site.d
 
 To remove access permanently, delete the key. However, you must take extreme caution because this operation is non-recoverable. You lose access to any data that is stored in your {{site.data.keyword.messagehub}} instance. It is not possible to recover this data.
 
-In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An {{site.data.keyword.cloudaccesstrailshort}} event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](docs/EventStreams?topic=EventStreams-at_events).
+In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An {{site.data.keyword.cloudaccesstrailshort}} event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times even after deleting the service instance. {{site.data.keyword.messagehub}} will continue to need the service to service policy in place to deregister the key. To determine when it is safe to remove the service-to-service policy, check the associated resources on the KMS root key. If the root key is still associated with the {{site.data.keyword.messagehub}} instance, leave the policy in place. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
 {: note}
@@ -117,7 +117,7 @@ You are charged for your instance of {{site.data.keyword.messagehub}} until you 
 
 Access can be restored only if the key was not deleted. To restore access, re-enable your root key. After a short period of initialization, your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. All data is retained, subject to the normal retention limits configured in your instance.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](docs/EventStreams?topic=EventStreams-at_events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Rotating the key
 {: #rotating_key}
