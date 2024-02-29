@@ -9,7 +9,7 @@ toc:
     label: Event Streams
     version: 2
     console-page: /catalog/services/event-streams
-    product-page: https://www.ibm.com/cloud/event-streams
+    product-page: https://www.ibm.com/products/event-streams
   entries:
     - navgroup:
         id: learn
