@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-12"
+  years: 2015, 2024
+lastupdated: "2024-03-01"
 
 keywords: network access, service endpoints, VSIs, VPC, CSE, disruptive, context-based restrictions
 
@@ -226,7 +226,7 @@ When context-based restrictions rules are defined, the following rules apply:
 
 Creating context-based restrictions rules is a two-step process:
 
-1. Create a network zone with list of allowed IP addresses, allowed VPCs, or reference a service. For more information, see [Creating network zones](/docs/account?topic=account-context-restrictions-create#network-zones-create){: external}.
+1. Create a network zone with list of allowed IP addresses, allowed VPCs, or reference a service. For more information, see [Creating network zones](/docs/account?topic=account-context-restrictions-create&interface=ui#network-zones-create){: external}.
 
 2. Create rules that specify one or more network zones against the {{site.data.keyword.messagehub}} resource. For more information about rule creation, see [Creating rules](/docs/account?topic=account-context-restrictions-create&interface=ui#context-restrictions-create-rules){: external}.
 
