@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-11"
+lastupdated: "2024-03-01"
 
 keywords: troubleshooting, question, problem
 
@@ -65,7 +65,7 @@ If you have an Apache Kafka application that is unable to connect to a topic or 
 ## HTTP error codes for REST APIs and how to fix them
 {: #http_error_codes}
 
-HTTP error codes apply to REST APIs, including [Admin REST](/apidocs/event-streams/adminrest), [REST Producer](/apidocs/event-streams/schemaregistry), and [Schema Registry](/apidocs/event-streams/restproducer_v2).
+HTTP error codes apply to REST APIs, including [Admin REST](/apidocs/event-streams/adminrest), [REST Producer](/apidocs/event-streams/restproducer), and [Schema Registry](/apidocs/event-streams/restproducer_v2).
 
 | HTTP error code  | Admin REST  | REST Producer  | Schema Registry  |
 | --- | --- | --- |--- |
