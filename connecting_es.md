@@ -76,7 +76,7 @@ To create a service key by using the {{site.data.keyword.cloud_notm}} CLI, compl
     ```
     {: codeblock}
 
-For more information, see [Network types](/docs/EventStreams?topic=EventStreams-restrict_access#network_type).
+For more information, see [Network types](/docs/EventStreams?topic=EventStreams-restrict_access).
 
 ## Establishing a connection
 {: #establishing_connection}
