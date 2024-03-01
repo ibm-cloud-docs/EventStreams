@@ -24,10 +24,11 @@ These services allow the use of a customer-provided key to control encryption. B
 {: shortdesc}
 
 Consider to use customer-managed keys, if you require the following features:
+{: #considerations_keys}
+{: notoc}
 
 - Encryption of data at rest controlled by your own key.
 - Explicit control of the lifecycle of data that is stored at rest.
-{: #considerations_keys notoc}
 
 Customer-managed keys are available on the Enterprise plan and only on clusters that were created after October 2019.
 {: note}
