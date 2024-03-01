@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-11-21"
+  years: 2015, 2024
+lastupdated: "2024-03-01"
 
 keywords: restrictions, failover, jvm ttl, creating topic, deleting topic
 
@@ -66,12 +66,14 @@ See the following example from the `java.security` file:
 {: #calls_timeout_kafka}
 
 ### Problem
-{: #calls_timeout_problem notoc}
+{: #calls_timeout_problem}
+{: notoc}
 
 Sometimes a Kafka Java client call fails to find Kafka. The cause of failure is that the Kafka client determined the same failing IP address for each of the bootstrap servers. The Kafka client tries each broker’s IP address (which is the same failing IP address) and incorrectly determines that Kafka is down. The Kafka client uses the first IP address that is returned in the list if multiple IP addresses are returned in the DNS query.
 
 ### Workaround
-{: #calls_timeout_workaround notoc}
+{: #calls_timeout_workaround}
+{: notoc}
 
 Retry your calls after you wait long enough for the JVM DNS cache for the broker URLs to expire. On subsequent Kafka calls, a working broker IP address is returned from the DNS query. 
 
