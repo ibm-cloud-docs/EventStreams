@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-03-03"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -652,7 +652,7 @@ Total disk size of all partitions of a topic.
 ### Instance utilization
 {: #ibm_eventstreams_instance_utilization}
 
-Instance utilization. 0 reflects an utilization under 80%, 1 over 80% and under 95% and 2 over 95%.
+Instance utilization. 0 indicates an utilization of under 80%, 1 indicates an utilization of over 80% and under 95%, and 2 indicates an utilization of over 95%.
 
 | Metadata | Description |
 |----------|-------------|
