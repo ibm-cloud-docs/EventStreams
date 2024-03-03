@@ -668,6 +668,10 @@ _additional explanation needed. For example, as a new user I might need info aro
 
 Use the v2 endpoint of the REST Producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
+- What are headers? Are they optional?
+You see headers in the message body. That’s the chunk of data that includes everything in the request or response. The headers usually come after the request line or response line.
+Value of colour is base64 - how to do that?
+
 The following code shows an example of sending a message of `text` type by using curl:
 
 ```sh
