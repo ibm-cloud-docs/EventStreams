@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-07-13"
+  years: 2020, 2024
+lastupdated: "2024-03-03"
 
 keywords: reserved disk usage, store data, storage
 
@@ -15,10 +15,10 @@ subcollection: EventStreams
 # Understanding reserved disk usage
 {: #ES_understanding_reserved_disk_usage}
 
-Learn how the usable storage of an Event Streams instance is used by the topics and partitions that are created and the configuration settings that you apply.
+Learn how the usable storage of an {{site.data.keyword.messagehub}} instance is used by the topics and partitions that are created and the configuration settings that you apply.
 {: shortdesc}
 
-First of all, it's important to note that the defined storage of an Event Streams instance is usable storage. That means that you do not need to worry about storage used by replicas (as all topics have their replication factor set to 3) that is not taken from the usable storage. This keeps things simple and you can plan how to map the retention 
+First of all, it's important to note that the defined storage of an {{site.data.keyword.messagehub}} instance is usable storage. That means that you do not need to worry about storage used by replicas (as all topics have their replication factor set to 3) that is not taken from the usable storage. This keeps things simple and you can plan how to map the retention 
 of those messages to storage usage.
 
 ## Understanding how Kafka stores data
@@ -53,9 +53,9 @@ Where
 ## Managing storage with {{site.data.keyword.messagehub}}
 {: #ES_managing_storage_with_event_streams}     
 
-When doing topic administration operations, such as creating topics, creating partitions, or changing topic configurations, Event Streams ensures that enough storage is available to satisfy the operation. To do this, for each topic, Event Streams computes the "reserved size" per topic by using the following method.
+When doing topic administration operations, such as creating topics, creating partitions, or changing topic configurations, {{site.data.keyword.messagehub}} ensures that enough storage is available to satisfy the operation. To do this, for each topic, {{site.data.keyword.messagehub}} computes the "reserved size" for each topic by using the following method.
 
-For topic that have a `cleanup.policy` setting of `compact` the reserved size consumed per partition is always 1GB
+For topics that have a `cleanup.policy` setting of `compact` the reserved size consumed per partition is always 1 GB
 
 For topics that have a `cleanup.policy` setting of `delete`, or `compact, delete` the reserve size consumed per partition is calculated as follows:
 
