@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-03-03"
+lastupdated: "2024-03-04"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -652,7 +652,10 @@ Total disk size of all partitions of a topic.
 ### Instance utilization
 {: #ibm_eventstreams_instance_utilization}
 
-Instance utilization. 0 indicates an utilization of under 80%, 1 indicates an utilization of over 80% and under 95%, and 2 indicates an utilization of over 95%.
+Instance utilization. 
+* 0 indicates an utilization of under 80% 
+* 1 indicates an utilization of over 80% and under 95%
+* 2 indicates an utilization of over 95%
 
 | Metadata | Description |
 |----------|-------------|
@@ -681,7 +684,7 @@ The following attributes are available for segmenting all of the listed metrics.
 | `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created. |
-{: caption="Table 39. Global attributes" caption-side="bottom"}
+{: caption="Table 40. Global attributes" caption-side="bottom"}
 
 ### More attributes
 {: #additional-attributes}
@@ -698,6 +701,6 @@ The following attributes are available for segmenting one or more attributes. Se
 | `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value that depends on the name that is provided by the user. |
-{: caption="Table 40. More attributes" caption-side="bottom"}
+{: caption="Table 41. More attributes" caption-side="bottom"}
 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/monitoring?topic=monitoring-monitoring){: external}.
