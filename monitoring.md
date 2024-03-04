@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-03-04"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -115,7 +115,8 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Topic bytes out per second](#ibm_eventstreams_instance_topic_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [IAM ID bytes in per second](#ibm_eventstreams_iam_id_bytes_in_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
 | [IAM ID bytes out per second](#ibm_eventstreams_iam_id_bytes_out_per_second) |  ![Checkmark icon](../icons/checkmark-icon.svg) |  |  |
-| [Used disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  /n 
+| [Used disk space percentage](#ibm_eventstreams_instance_utilised_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  
+| [Instance utilization](#ibm_eventstreams_instance_utilization) |  ![Checkmark icon](../icons/checkmark-icon.svg)  |  |  |  /n 
 {: caption="Table 1. Metrics Available by Plan Names" caption-side="top"}
 
 ## Service metrics available with mirroring enabled
@@ -648,6 +649,22 @@ Total disk size of all partitions of a topic.
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
 {: caption="Table 38. Topic size metric metadata" caption-side="bottom"}
 
+### Instance utilization
+{: #ibm_eventstreams_instance_utilization}
+
+Instance utilization. 
+* 0 indicates an utilization of under 80% 
+* 1 indicates an utilization of over 80% and under 95%
+* 2 indicates an utilization of over 95%
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_utilization`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `int` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 39. Instance utilization" caption-side="bottom"}
+
 ## Attributes for segmentation
 {: #attributes}
 
@@ -667,7 +684,7 @@ The following attributes are available for segmenting all of the listed metrics.
 | `Resource` | `ibm_resource` | The resource that is measured by the service - typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Resource group` | `ibm_resource_group_name` | The resource group name where the service instance was created. |
-{: caption="Table 39. Global attributes" caption-side="bottom"}
+{: caption="Table 40. Global attributes" caption-side="bottom"}
 
 ### More attributes
 {: #additional-attributes}
@@ -684,6 +701,6 @@ The following attributes are available for segmenting one or more attributes. Se
 | `Quantile` | `ibm_quantile` | The quantile represented when a metric supports segmenting by quantile. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
 | `Service instance name` | `ibm_service_instance_name` | The service instance name provides the user-provided name of the service instance, which isn't necessarily a unique value that depends on the name that is provided by the user. |
-{: caption="Table 40. More attributes" caption-side="bottom"}
+{: caption="Table 41. More attributes" caption-side="bottom"}
 
 For more information about enabling platform metrics from the {{site.data.keyword.messagehub}} dashboard and viewing metrics, see [Monitoring {{site.data.keyword.messagehub}} metrics](/docs/monitoring?topic=monitoring-monitoring){: external}.
