@@ -130,7 +130,7 @@ The following steps use the Storage user interface for {{site.data.keyword.satel
 4. Look for the acknowledgment window.
 
    1. Complete the storage configuration setup.
-   2. You might be prompted for the **Optional: Configure autoupdate** step.  It is recommended that the storage assignment autoupdate is enabled for the {{site.data.keyword.messagehub}} cluster.  This will help keep the storage templates updated automatically with the latest revision level available.
+   2. You might be prompted for the **Optional: Configure autoupdate** step.  You are recommended to enable the storage assignment autoupdate for the {{site.data.keyword.messagehub}} cluster.  This will help keep the storage templates automatically updated with the latest revision level available.
    3. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
 
 After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
