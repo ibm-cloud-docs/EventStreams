@@ -42,11 +42,11 @@ See the following examples.
      log.segment.size = 512 MB
      Kafka needs approximately 1 GB per partition for the topic storage.
 
-More storage is needed per partition for indexes. For each log segment, Kafka also stores two indexes. Their sizes are defined by segment.index.size, which is also configurable and has a default of 10 MB. For reference, the storage that is used by indexes is calculated as follows.
+More storage is needed per partition for indexes. For each log segment, Kafka also stores two indexes. Their sizes are defined by segment.index.size, which is also configurable and has a default of 10 MB. For reference, the storage that is used by indexes is calculated as follows:
 
      2 x number.of.log.segments x segment.index.size
 
-Where 
+where 
 
      number.of.log.segments = floor(retention.bytes/log.segment.size) + 1
      
@@ -61,7 +61,7 @@ For topics that have a `cleanup.policy` setting of `delete`, or `compact, delete
 
      Reserved size = retention.bytes + log.segment.size + (2 x segment.index.size x number.of.log.segments)
 
-Where 
+where 
 
      number.of.log.segments = floor(retention.bytes/log.segment.size) + 1
 
@@ -76,7 +76,7 @@ The reserved size calculation can change in the future if Kafka storage requirem
 ## Examples
 {: #ES_managing_storage_with_event_streams_examples}  
 
-A nonobvious effect is that Kafka can reserve more storage than expected depending on your topic configurations. See the following examples.
+A non-obvious effect is that Kafka can reserve more storage than expected depending on your topic configurations. See the following examples.
 
 1. A topic with retention.bytes of 1 GB, and with a log segment size of 512 MB:
 
