@@ -654,7 +654,7 @@ Total disk size of all partitions of a topic.
 
 Instance utilization. The level of utilization of an {{site.data.keyword.messagehub}} instance. This is a numeric value between zero and two (inclusive):
 * `0` indicates that the workload being processed by this instance is within the capacity of the instance. More precisely, the utilization level is under 80%.
-* `1` indicates that the workload being processed by this instance is approaching the capacity limit for the instance. Review whether it is appropriate to scale the service instance. More precisely, the utilization level is above 80% and under 95%.
+* `1` indicates that the workload being processed by this instance is approaching the capacity limit for the instance. Review whether it is appropriate to scale the service instance. More precisely, the utilization level is over 80% and under 95%.
 * `2` indicates the workload being processed by this instance is at the capacity limit for the instance. As a result of this, messaging latency might increase. Review whether it is appropriate to scale the service instance. More precisely, the utilization level is over 95%.
 
 
