@@ -55,7 +55,7 @@ where
 
 When doing topic administration operations, such as creating topics, creating partitions, or changing topic configurations, {{site.data.keyword.messagehub}} ensures that enough storage is available to satisfy the operation. To do this, for each topic, {{site.data.keyword.messagehub}} computes the "reserved size" for each topic by using the following method.
 
-For topics that have a `cleanup.policy` setting of `compact`, the reserved size consumed for each partition is always 1 GB
+For topics that have a `cleanup.policy` setting of `compact`, the reserved size consumed for each partition is always 1 GB. When the `cleanup.policy` for a topic is set to `compact` any values used for the `retention.bytes` or `retention.ms` topic settings are ignored.
 
 For topics that have a `cleanup.policy` setting of `delete`, or `compact, delete`, the reserved size consumed for each partition is calculated as follows:
 
