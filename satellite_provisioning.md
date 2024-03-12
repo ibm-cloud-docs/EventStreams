@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-07-24"
+  years: 2024
+lastupdated: "2024-03-04"
 
 keywords: provision satellite, satellite location, extra hosts, grant authorization, block storage, enable schema registry
 
@@ -38,13 +38,13 @@ The following steps guide you through provisioning a {{site.data.keyword.satelli
 
 1. Provision a {{site.data.keyword.satelliteshort}} location.
 
-    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#satellite-loc-manual-create).
+    1. Refer to [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). Complete the steps in [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-loc-manual-create).
 
        IBM Cloud {{site.data.keyword.satelliteshort}} provides Quick Start templates to help with the provisioning of a {{site.data.keyword.satelliteshort}} location and initial set of host instances. However, the templates only provision one type (size) of host instance. {{site.data.keyword.messagehub}} requires more than one type of host instance. The recommendation to use the manual steps to create your {{site.data.keyword.satelliteshort}} location lets you provide multiple types of host instances. Optionally, use the quick start template to create hosts for the {{site.data.keyword.satelliteshort}} location's control plane and part of the {{site.data.keyword.messagehub}} requirement, then use the manual steps to add extra host types required by {{site.data.keyword.messagehub}}.
        {: important}
 
     2. {{site.data.keyword.messagehub}} supports {{site.data.keyword.satelliteshort}} locations that are managed by several different regions. Refer to the plan comparison table in [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for the list of supported regions.
-    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#satellite-loc-manual-create) information, the names of the zones that are specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
+    3. As noted in the [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-loc-manual-create) information, the names of the zones that are specified in the {{site.data.keyword.satelliteshort}} location zone fields must exactly match the names of the corresponding zones in your infrastructure provider, where you plan to create hosts.
 
 2. Before you proceed to the next step, ensure that the following criteria are met:
 
@@ -130,7 +130,8 @@ The following steps use the Storage user interface for {{site.data.keyword.satel
 4. Look for the acknowledgment window.
 
    1. Complete the storage configuration setup.
-   2. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
+   2. You might be prompted for the **Optional: Configure autoupdate** step.  You are recommended to enable the storage assignment autoupdate for the {{site.data.keyword.messagehub}} cluster.  This will help keep the storage templates automatically updated with the latest revision level available.
+   3. Complete assignment of the storage configuration to the {{site.data.keyword.messagehub}} service cluster.
 
 After the storage assignment is created, allow up to 60 minutes for the {{site.data.keyword.messagehub}} service instance to be ready for use.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-10-20"
+  years: 2015, 2024
+lastupdated: "2024-02-20"
 
 keywords: cli, api key, cli plug-in
 
@@ -44,7 +44,7 @@ Create an {{site.data.keyword.messagehub}} instance on {{site.data.keyword.Bluem
 
 Select one of the following methods:
 
-* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog](https://cloud.ibm.com/catalog/event-streams){: external}.
+* To create an instance from the {{site.data.keyword.Bluemix_notm}} console, go to the {{site.data.keyword.messagehub}} entry in the [catalog](https://cloud.ibm.com/eventstreams-provisioning/6a7f4e38-f218-48ef-9dd2-df408747568e/create){: external}.
 
 * To create an instance from the CLI on the Enterprise plan, run the following command:
     ```sh

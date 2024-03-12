@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-07-13"
+  years: 2020, 2024
+lastupdated: "2024-03-03"
 
 keywords: reserved disk usage, store data, storage
 
@@ -15,10 +15,10 @@ subcollection: EventStreams
 # Understanding reserved disk usage
 {: #ES_understanding_reserved_disk_usage}
 
-Learn how the usable storage of an Event Streams instance is used by the topics and partitions that are created and the configuration settings that you apply.
+Learn how the usable storage of an {{site.data.keyword.messagehub}} instance is used by the topics and partitions that are created and the configuration settings that you apply.
 {: shortdesc}
 
-First of all, it's important to note that the defined storage of an Event Streams instance is usable storage. That means that you do not need to worry about storage used by replicas (as all topics have their replication factor set to 3) that is not taken from the usable storage. This keeps things simple and you can plan how to map the retention 
+First of all, it's important to note that the defined storage of an {{site.data.keyword.messagehub}} instance is usable storage. That means that you do not need to worry about storage used by replicas (because all topics have their replication factor set to 3) that is not taken from the usable storage. This keeps things simple and you can plan how to map the retention 
 of those messages to storage usage.
 
 ## Understanding how Kafka stores data
@@ -42,22 +42,26 @@ See the following examples.
      log.segment.size = 512 MB
      Kafka needs approximately 1 GB per partition for the topic storage.
 
-More storage is needed per partition for indexes. For each log segment, Kafka also stores two indexes. Their sizes are defined by segment.index.size, which is also configurable and has a default of 10 MB. For reference, the storage that is used by indexes is calculated as follows.
+More storage is needed per partition for indexes. For each log segment, Kafka also stores two indexes. Their sizes are defined by segment.index.size, which is also configurable and has a default of 10 MB. For reference, the storage that is used by indexes is calculated as follows:
 
      2 x number.of.log.segments x segment.index.size
 
-Where 
+where 
 
      number.of.log.segments = floor(retention.bytes/log.segment.size) + 1
      
 ## Managing storage with {{site.data.keyword.messagehub}}
 {: #ES_managing_storage_with_event_streams}     
 
-When doing topic administration operations, such as creating topics, creating partitions, or changing topic configurations, Event Streams ensures that enough storage is available to satisfy the operation. To do this, for each topic, Event Streams computes the "reserved size" per topic by using the following method.
+When doing topic administration operations, such as creating topics, creating partitions, or changing topic configurations, {{site.data.keyword.messagehub}} ensures that enough storage is available to satisfy the operation. To do this, for each topic, {{site.data.keyword.messagehub}} computes the "reserved size" for each topic by using the following method.
+
+For topics that have a `cleanup.policy` setting of `compact`, the reserved size consumed for each partition is always 1 GB
+
+For topics that have a `cleanup.policy` setting of `delete`, or `compact, delete`, the reserved size consumed for each partition is calculated as follows:
 
      Reserved size = retention.bytes + log.segment.size + (2 x segment.index.size x number.of.log.segments)
 
-Where 
+where 
 
      number.of.log.segments = floor(retention.bytes/log.segment.size) + 1
 
@@ -72,7 +76,7 @@ The reserved size calculation can change in the future if Kafka storage requirem
 ## Examples
 {: #ES_managing_storage_with_event_streams_examples}  
 
-A nonobvious effect is that Kafka can reserve more storage than expected depending on your topic configurations. See the following examples.
+A non-obvious effect is that Kafka can reserve more storage than expected depending on your topic configurations. See the following examples.
 
 1. A topic with retention.bytes of 1 GB, and with a log segment size of 512 MB:
 

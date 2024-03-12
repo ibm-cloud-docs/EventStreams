@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-01-27"
+lastupdated: "2024-03-01"
 
 keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
@@ -24,10 +24,11 @@ These services allow the use of a customer-provided key to control encryption. B
 {: shortdesc}
 
 Consider to use customer-managed keys, if you require the following features:
+{: #considerations_keys}
+{: notoc}
 
 - Encryption of data at rest controlled by your own key.
 - Explicit control of the lifecycle of data that is stored at rest.
-{: #considerations_keys notoc}
 
 Customer-managed keys are available on the Enterprise plan and only on clusters that were created after October 2019.
 {: note}
@@ -104,7 +105,7 @@ To temporarily prevent access, disable your root key. As a consequence, {{site.d
 
 To remove access permanently, delete the key. However, you must take extreme caution because this operation is non-recoverable. You lose access to any data that is stored in your {{site.data.keyword.messagehub}} instance. It is not possible to recover this data.
 
-In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An {{site.data.keyword.cloudaccesstrailshort}} event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+In both cases, the {{site.data.keyword.messagehub}} instance shuts down and no longer accepts or processes connections. An {{site.data.keyword.cloudaccesstrailshort}} event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 The authorization is to be left in place between your {{site.data.keyword.messagehub}} and the key management service instance at all times even after deleting the service instance. {{site.data.keyword.messagehub}} will continue to need the service to service policy in place to deregister the key. To determine when it is safe to remove the service-to-service policy, check the associated resources on the KMS root key. If the root key is still associated with the {{site.data.keyword.messagehub}} instance, leave the policy in place. While removing this authorization prevents {{site.data.keyword.messagehub}} from future access to your data, already in-use data continues to be available for a period of time.
 {: note}
@@ -117,14 +118,14 @@ You are charged for your instance of {{site.data.keyword.messagehub}} until you 
 
 Access can be restored only if the key was not deleted. To restore access, re-enable your root key. After a short period of initialization, your {{site.data.keyword.messagehub}} instance is restarted and starts accepting connections again. All data is retained, subject to the normal retention limits configured in your instance.
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events).
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events).
 
 ### Rotating the key
 {: #rotating_key}
 
 {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.hscrypto}} support the rotation of root keys, either on demand or on a schedule. When rotating the key, {{site.data.keyword.messagehub}} adopts the new key by rewrapping the DEK as described previously in [how customer-managed encryption works](/docs/EventStreams?topic=EventStreams-managing_encryption#encryption_how). 
 
-An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#events). 
+An activity tracker event is generated to report the action. For more information, see [{{site.data.keyword.cloudaccesstrailshort}} events](/docs/EventStreams?topic=EventStreams-at_events#other-events). 
 
 ## Disabling customer-managed encryption
 {: #stop_customer_encryption}

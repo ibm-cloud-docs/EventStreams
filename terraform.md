@@ -213,7 +213,7 @@ The following examples show queries that you can use to get different usage repo
    ```
    {: codeblock}
    
-   Changing the name of a {{site.data.keywords.registryshort}} namespace cannot be done without deleting the old namespace and re-creating the namespace with a new name. Make sure that you backed up and removed any images that you stored in your namespace before you proceed. 
+   Changing the name of a {{site.data.keyword.registryshort}} namespace cannot be done without deleting the old namespace and re-creating the namespace with a new name. Make sure that you backed up and removed any images that you stored in your namespace before you proceed. 
    {: important}
    
 3. Create a Terraform execution plan.

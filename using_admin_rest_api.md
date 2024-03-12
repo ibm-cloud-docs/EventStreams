@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-03-01"
 
 keywords: admin rest api, administration, api, basic auth, bearer token, authenticate, api key
 
@@ -51,4 +51,4 @@ Place the key directly as the value of the `X-Auth-Token` HTTP header.
 
 For a description of the API with examples, see [{{site.data.keyword.messagehub}} admin-rest](https://github.com/ibm-messaging/event-streams-docs/tree/master/admin-rest-api){: external}.
 
-You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: external}. To view the swagger file, use Swagger tools, for example [Swagger editor](http://editor.swagger.io){: external}.
+You can download the full specification for the API from the [{{site.data.keyword.messagehub}} Admin REST API YAML file](https://github.com/ibm-messaging/event-streams-docs/blob/master/admin-rest-api/admin-rest-api.yaml){: external}. To view the swagger file, use Swagger tools, for example [Swagger editor](https://editor.swagger.io:443/){: external}.

@@ -18,7 +18,7 @@ subcollection: EventStreams
 {{site.data.keyword.messagehub_full}} provides a number of API to help use and configure your {{site.data.keyword.messagehub}} Kafka cluster.
 {: shortdesc}
 
-![Apache Kafka API and CLI](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_18293q1v){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Apache Kafka API and CLI](https://cdnapisec.kaltura.com/html5/html5lib/v2.101/mwEmbedFrame.php/p/1773841/uiconf_id/27941801/entry_id/1_18293q1v?wid=_1773841&iframeembed=true&entry_id=1_18293q1v){: video output="iframe" data-script="none" id="mediacenterplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 The following API versions are available:
 

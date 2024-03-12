@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-08-02"
+  years: 2015, 2024
+lastupdated: "2024-02-20"
 
 keywords: event streams, message hub
 
@@ -22,7 +22,7 @@ To understand more about how {{site.data.keyword.messagehub}} works, see [{{site
 
 To access {{site.data.keyword.messagehub}} samples, see our primary sample repository at [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.  Other {{site.data.keyword.messagehub}} samples, including samples for Node.js and Python, are available at the previous [{{site.data.keyword.messagehub}} repository](https://github.com/ibm-messaging/event-streams-samples){: external}.
 
-![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/channel/23952663/video/event-streams-intro){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Get started with {{site.data.keyword.messagehub_full}}](https://video.ibm.com/embed/recorded/131695471){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## Prerequisites
 {: #getting_started_prereqs}
@@ -31,7 +31,7 @@ To access {{site.data.keyword.messagehub}} samples, see our primary sample repos
 
    a. Log in to the {{site.data.keyword.cloud_notm}} console.
   
-   b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/catalog/event-streams){: external} in the **Catalog**.
+   b. Click the [**{{site.data.keyword.messagehub}} service**](https://cloud.ibm.com/eventstreams-provisioning/6a7f4e38-f218-48ef-9dd2-df408747568e/create){: external} in the **Catalog**.
   
    c. Select the **Lite plan** on the service instance page.
   

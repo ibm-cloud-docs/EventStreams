@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-06"
+  years: 2015, 2024
+lastupdated: "2024-03-01"
 
 keywords: cli reference
 
@@ -142,7 +142,7 @@ ibmcloud es topic [--name] TOPIC_NAME [--json]
 :   Output format of JSON.
 
 ## ibmcloud es topic-create
-{: #ibmcloud_es _topic-create}
+{: #ibmcloud_es_topic-create}
 
 Create a new topic.
 

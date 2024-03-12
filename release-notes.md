@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-02-22"
 
 keywords: release notes
 
@@ -88,7 +88,7 @@ Apache Kafka upgrade
 {: release-note}
 
 {{site.data.keyword.messagehub}} Enterprise plan is certified IRAP Protected
-:   The Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of {{site.data.keyword.messagehub}} and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM). The {{site.data.keyword.messagehub_full_notm}} Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, see [IBM Cloud compliance: IRAP (Australia)](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA).
+:   The Information Security (InfoSec) Registered Assessors Program (IRAP) outlines a framework for assessing the implementation and effectiveness of {{site.data.keyword.messagehub}} and IBM Cloud's security controls against the Australian government's Information Security Manual (ISM). The {{site.data.keyword.messagehub}} Enterprise plan has been assessed as compliant with IRAP Protected. For reports, documentation and further details on IBM Cloud IRAP Protected Offerings, see [IBM Cloud compliance: IRAP (Australia)](https://www.ibm.com/cloud/compliance/irap-australia?_gl=1*nwr26q*_ga*OTk4NjUzOTE2LjE2OTI4OTA4MDA.*_ga_FYECCCS21D*MTY5Mjg5MDgwMC4xLjEuMTY5Mjg5MjcyNC4wLjAuMA).
 
 ## March 2023
 {: #EventStreams-mar2023}
