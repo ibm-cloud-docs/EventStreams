@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-11-21"
+  years: 2015, 2024
+lastupdated: "2024-03-15"
 
 keywords: api, consumer, producer, admin, streams, connect, client
 

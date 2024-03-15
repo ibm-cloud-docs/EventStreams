@@ -67,9 +67,9 @@ where
 
 The total reserved storage percentage is also displayed in {{site.data.keyword.mon_full_notm}} by the [ibm_eventstreams_instance_reserved_disk_space_percent metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_reserved_disk_space_percent).
 
-Requests to create a new topic, or add partitions to an existing topic are rejected if they would result in the total amount of reserved storage exceeding 90%[^footnote1] of the storage configured for the {{site.data.keyword.messagehub}} instance. Rejected requests receive a PolicyViolation error explaining that the reserved storage limit for the instance has been reached. If the reserved storage limit is reached, you need to either delete topics or increase the amount of storage configured for the instance before further topics can be created.
+Requests to create a new topic, or add partitions to an existing topic are rejected if they would result in the total amount of reserved storage exceeding 90% [^footnote1] of the storage configured for the {{site.data.keyword.messagehub}} instance. Rejected requests receive a PolicyViolation error explaining that the reserved storage limit for the instance has been reached. If the reserved storage limit is reached, you need to either delete topics or increase the amount of storage configured for the instance before further topics can be created.
 
-[^footnote1] {{site.data.keyword.messagehub}} uses some of the storage assigned to an instance for both internal management functions and as an operational reserve for log segments that are eligible for deletion.
+[^footnote1]: {{site.data.keyword.messagehub}} uses some of the storage assigned to an instance for both internal management functions and as an operational reserve for log segments that are eligible for deletion.
 
 
 The reserved size calculation can change in the future if Kafka storage requirements are updated.
