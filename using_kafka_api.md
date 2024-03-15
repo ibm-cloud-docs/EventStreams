@@ -32,7 +32,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
 |**Minimum recommended Kafka client version**  |  Kafka 2.6.0, or later | Kafka 2.6.0, or later   | Kafka 2.6.0, or later  |
-|**Supported client versions**  |  Kafka 0.10.x, or later | Kafka 0.10.x, or later   | Kafka 0.10.x, or later  |
+|**Supported client versions**  |  See Table 2  |
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported**   |  Yes |  No|  No |
@@ -52,13 +52,13 @@ For other languages, run one of the following clients, all of which are tested w
 | Client  | Language   | Recommended version   |Minimum version supported [^tabletext1] |  Link to sample|
 |---|---|---|---|---|
 |**Official Apache Kafka client:**         |   |   |   |    |
-| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | 2.6.0, or later  | 0.10.2 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
+| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | 3.3.0, or later  | 2.5.0 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
 |**Third-party clients:**   |   |   |   |    |
-|[node-rdkafka](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.2.2 | [Node.js sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
-|[confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  0.11.0 | [Kafka Python sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
-| [confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go) |  Go | Latest  |  0.11.0  |   |
-| [librdkafka](https://github.com/confluentinc/librdkafka) |  C or C++ | Latest  |  0.11.0  |   |
-| [sarama](https://github.com/IBM/sarama) | Go | Latest | 1.18.0 | [Sarama examples](https://github.com/IBM/sarama/tree/v1.41.1/examples) |
+|[node-rdkafka](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.8.0 | [Node.js sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
+|[confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  1.4.0 | [Kafka Python sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
+| [confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go) |  Go | Latest  |  1.4.0  |   |
+| [librdkafka](https://github.com/confluentinc/librdkafka) |  C or C++ | Latest  |  1.4.0  |   |
+| [sarama](https://github.com/IBM/sarama) | Go | Latest | 1.26.3 | [Sarama examples](https://github.com/IBM/sarama/tree/v1.41.1/examples) |
 {: caption="Table 2. Client support summary" caption-side="bottom"}
 
 [^tabletext1]: The earliest version that was validated in continual testing. Typically, it is the initial version available within the last 12 months, or newer if significant issues are known to exist. If you can't run any of the clients that are listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka](https://github.com/confluentinc/librdkafka){: external}). 1. Supports Kafka 0.10, or later. 2. Can connect and authenticate by using SASL PLAIN with TLSv1.2. 3. Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake. 4. Supports elliptic curve cryptography. In all cases, use the latest version of the client.
