@@ -27,7 +27,7 @@ Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.6. New deployments of Event Streams are now on Kafka version 3.6.
 
 Instance utilization metric available
-:     You can monitor CPU usage of an Event Streams instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization) 
+:    You can monitor CPU usage of an Event Streams instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization) 
 
 Health Metric now available via CLI and API
 :   A service administrator can quickly assess the health and availability status of their kafka cluster with a single metric via the CLI and API. Find out more, see [get status](https://cloud.ibm.com/apidocs/event-streams/adminrest#getstatus). 
