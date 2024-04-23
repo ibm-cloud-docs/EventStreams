@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-03-30"
 
 keywords: release notes
 
@@ -20,24 +20,26 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
 ## March 2024
 {: #EventStreams-mar2024}
 {: release-note}
+
 Apache Kafka upgrade
-:   Upgrade to Apache Kafka version 3.6. New deployments of Event Streams are now on Kafka version 3.6.
+:   Upgrade to Apache Kafka version 3.6. New deployments of {{site.data.keyword.messagehub}} are now on Kafka version 3.6.
 
 Instance utilization metric available
-:    You can monitor CPU usage of an Event Streams instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization). 
+:    You can monitor CPU usage of an {{site.data.keyword.messagehub}} instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization). 
 
 Health Metric now available via CLI and API
-:   A service administrator can quickly assess the health and availability status of their kafka cluster with a single metric via the CLI and API. Find out more, see [get status](https://cloud.ibm.com/apidocs/event-streams/adminrest#getstatus). 
+:   A service administrator can quickly assess the health and availability status of their Kafka cluster with a single metric using the CLI and API. To find out more, see [get status](/apidocs/event-streams/adminrest#getstatus). 
 
 ## February 2024
 {: #EventStreams-feb2024}
 {: release-note}
 
-Mirroring for Single Zone Regions 
-:   Event Streams now support mirroring for single zone regions. A kafka user can now mirror messages from one cluster in a single-zone region to another. To find out more, see [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup).
+Mirroring for single-zone regions 
+:   {{site.data.keyword.messagehub}} now supports mirroring for single-zone regions. A Kafka user can now mirror messages from one cluster in a single-zone region to another. To find out more, see [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
 ## January 2024
 {: #EventStreams-jan2024}
