@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-11-21"
+  years: 2015, 2024
+lastupdated: "2024-03-15"
 
 keywords: api, consumer, producer, admin, streams, connect, client
 
@@ -32,7 +32,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |---|---|---|---|
 |**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
 |**Minimum recommended Kafka client version**  |  Kafka 2.6.0, or later | Kafka 2.6.0, or later   | Kafka 2.6.0, or later  |
-|**Supported client versions**  |  See Table 2  |
+|**Supported client versions**  |  See [Support summary for all recommended clients](/docs/EventStreams?topic=EventStreams-kafka_using#client_summary)|
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported**   |  Yes |  No|  No |
