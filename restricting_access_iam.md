@@ -76,6 +76,6 @@ Find the `extensions.virtual_private_endpoints.endpoints.ip_address` section fro
 
 This action is required for private connections because the source IP address that {{site.data.keyword.messagehub}} receives is the IP address of the {{site.data.keyword.cloud_notm}} service endpoint and not the IP from where the request originated.
 
-You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance through the Private IP allowlist. For more information, see [Restricting network access by using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access).
+You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance using context-based restrictions. For more information, see [Restricting network access by using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access#configuring_cbr).
 {: note}
 
