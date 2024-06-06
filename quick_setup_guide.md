@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-06-06"
 
 keywords: quick setup guide
 
@@ -99,8 +99,7 @@ Before you get started, we highly recommend that you read the following informat
 
 You can use multiple APIs to work with {{site.data.keyword.messagehub}}. This tutorial uses the following APIs:
 
-* The resource controller API to [provision an instance](#provision_instance_api) and to [retrieve an access token]
-(#retrieve-token-api). 
+* The resource controller API to [provision an instance](#provision_instance_api) and to [retrieve an access token](#retrieve-token-api). 
 * The Admin REST API to [work with topics](#work_topic_api). 
 * The REST Producer API to [create a service credential](#create_credential_api) and [produce messages](#produce_data_api).
 
@@ -587,7 +586,7 @@ Create a service key by using the {{site.data.keyword.Bluemix_notm}} CLI, so tha
 {: #create_credential_api}
 {: api}
 
-_Step 4 in the API path shows a. bit of an awkwardness in the auth story. The REST API take tokens, so this is all that's mentioned in this step. But when get to the 'now use the Command line to produce/consume' , the command line apps use an api_key from a service credential (which hasn't been created on this path). We may need to do more scene setting in this path to explain the difference and choices in the type of credential types on offer and used in different places (can give some help on this)_
+<!--_Step 4 in the API path shows a. bit of an awkwardness in the auth story. The REST API take tokens, so this is all that's mentioned in this step. But when get to the 'now use the Command line to produce/consume' , the command line apps use an api_key from a service credential (which hasn't been created on this path). We may need to do more scene setting in this path to explain the difference and choices in the type of credential types on offer and used in different places (can give some help on this)_ -->
 
 To connect to your {{site.data.keyword.messagehub}} instance, the supported authentication mechanism is using a bearer token. To obtain your token by using the {{site.data.keyword.Bluemix_notm}} CLI, first log in to {{site.data.keyword.Bluemix_notm}} and then run the following command: 
 
@@ -664,7 +663,7 @@ For details of some of the most important settings that you can configure for th
 {: #produce_data_api}
 {: api}
 
-_additional explanation needed. For example, as a new user I might need info around: what are headers, are they optional, the value of colour doesn't look binary - explaining its base 64 and how to do that...etc_
+<!--_additional explanation needed. For example, as a new user I might need info around: what are headers, are they optional, the value of colour doesn't look binary - explaining its base 64 and how to do that...etc_ -->
 
 Use the v2 endpoint of the REST Producer API to send messages of type `text`, `binary`, `JSON`, or `avro` to topics. With the v2 endpoint you can use the {{site.data.keyword.messagehub}} schema registry by specifying the schema for the avro data type.
 
