@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-11"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -17,7 +17,7 @@ subcollection: EventStreams
 
 When you are building a solution involving mirroring in {{site.data.keyword.messagehub}}, consider how your solution will deal with the following two scenarios:
 **1. Data loss**: mirroring is asynchronous. That is, before messages can be committed, they must be successfully produced to the source cluster before being mirrored to the target cluster. If a failure occurs on the source cluster before those messages are mirrored, applications will need to deal with the loss of those messages.
-**2. At least once**: message duplication can occur in the mirroring process. Consumer group offsets committed in the source cluster might not be converted to checkpoints in the target cluster might not always be accurately translated. At failover, a consumer client might need to reprocess messages already consumed and committed on the source cluster
+**2. At least once**: message duplication can occur in the mirroring process. Consumer group offsets committed in the source cluster might not be converted to checkpoints in the target cluster and might not always be accurately translated. At failover, a consumer client might need to reprocess messages already consumed and committed on the source cluster.
 {: important}
 
 This information describes how to set up two {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
