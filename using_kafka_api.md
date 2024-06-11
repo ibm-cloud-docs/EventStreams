@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-05-13"
 
 keywords: api, consumer, producer, admin, streams, connect, client
 
@@ -30,7 +30,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 
 |   |Enterprise plan   |Standard plan   |Lite plan |
 |---|---|---|---|
-|**Kafka version on cluster**  | Kafka 3.3  |  Kafka 3.3 | Kafka 3.3  |
+|**Kafka version on cluster**  | Kafka 3.6  |  Kafka 3.6 | Kafka 3.6  |
 |**Minimum recommended Kafka client version**  |  Kafka 2.6.0, or later | Kafka 2.6.0, or later   | Kafka 2.6.0, or later  |
 |**Supported client versions**  |  See [Support summary for all recommended clients](/docs/EventStreams?topic=EventStreams-kafka_using#client_summary)|
 |**Kafka Connect supported**   |  Yes |  Yes |  No |
@@ -42,7 +42,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
 
-The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 3.3](https://kafka.apache.org/33/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 3.3](https://kafka.apache.org/33/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}.
+The official client for the Kafka API is written in Java, and as such contains the latest features and bug fixes. For more information about this API, see [Kafka Producer API 3.6](https://kafka.apache.org/36/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html){: external} and [Kafka Consumer API 3.6](https://kafka.apache.org/36/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html){: external}.
 
 For other languages, run one of the following clients, all of which are tested with {{site.data.keyword.messagehub}}.
 
@@ -52,7 +52,7 @@ For other languages, run one of the following clients, all of which are tested w
 | Client  | Language   | Recommended version   |Minimum version supported [^tabletext1] |  Link to sample|
 |---|---|---|---|---|
 |**Official Apache Kafka client:**         |   |   |   |    |
-| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | 3.3.0, or later  | 2.5.0 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
+| [Apache Kafka client](http://kafka.apache.org/downloads)  |  Java   | 3.6.2, or later  | 2.5.0 | [Java console sample](/docs/EventStreams?topic=EventStreams-kafka_java_using)  \n  \n  [Liberty sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-java-liberty-sample) |
 |**Third-party clients:**   |   |   |   |    |
 |[node-rdkafka](https://github.com/Blizzard/node-rdkafka)   |  Node.js |  Latest|  2.8.0 | [Node.js sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-nodejs-console-sample)|
 |[confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)|  Python |  Latest|  1.4.0 | [Kafka Python sample](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-python-console-sample) |
