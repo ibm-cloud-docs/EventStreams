@@ -21,7 +21,7 @@ This information describes how to set up two {{site.data.keyword.messagehub}} En
 When you are building a solution involving mirroring in {{site.data.keyword.messagehub}}, consider how your solution will deal with the following two scenarios:
 
 Data loss
-:  Mirroring is asynchronous. That is, messages must be successfully produced before being mirrored to the target cluster. If a failure occurs on the source cluster before those messages are mirrored, applications will need to deal with the loss of those messages.
+:  Mirroring is asynchronous. That is, messages must be successfully produced to the source cluster before being mirrored to the target cluster. If a failure occurs on the source cluster before those messages are mirrored, applications will need to deal with the loss of those messages.
 
 At least once
 :  Message duplication can occur in the mirroring process. Consumer group offsets committed in the source cluster might not be converted to checkpoints in the target cluster. At failover, a consumer might need to reprocess messages already consumed and committed on the source cluster.
