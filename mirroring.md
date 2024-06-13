@@ -257,7 +257,7 @@ When you consume both local and remote topics, check if the application requires
 While consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when they switch cluster.
 {: note}
 
-The RemoteClusterUtils package allows to easily make these changes. <!--Such logic is demonstrated in [ConsumerRunnable.java](https://github.ibm.com/messagehub/event-streams-samples/blob/mm2/kafka-java-console-sample/src/main/java/com/eventstreams/samples/ConsumerRunnable.java#L68-L119).-->
+The RemoteClusterUtils package allows to easily make these changes. 
 
 ## Monitoring mirroring
 {: #monitoring_mirroring}
