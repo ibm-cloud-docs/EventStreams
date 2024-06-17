@@ -15,7 +15,7 @@ subcollection: EventStreams
 # Using mirroring in a disaster recovery example scenario 
 {: #disaster_recovery_scenario}
 
-This end-to-end disaster recovery scenario demonstrates how to use mirroring to provide increased availability and keep applications working in a major incident that affects a full region.
+This end-to-end disaster recovery scenario demonstrates how to use mirroring to provide increased availability and keep applications working should a major incident affects a full IBM Cloud region.
 {: shortdesc}
 
 Two clusters were provisioned in different regions and configured for mirroring (following the information in [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup)) by using A and B as cluster aliases. A producer publishes records to a topic called `accounting.invoices` and a consumer reads the messages from that topic in cluster A.
@@ -37,8 +37,8 @@ It is the responsibility of the {{site.data.keyword.messagehub}} instance owner 
 Perform the following steps to fail over:
 
 1. Stop the producers that were pointing to cluster A.
-2. Restart the producers to point to cluster B's endpoints.
-3. If cluster A and the link from A to cluster B is still operational, ensure that all data was mirrored by checking that the lag on those topics on cluster B is zero.
+2. If cluster A and the link from A to cluster B is still operational, ensure that as much data as possible is mirrored by checking that the lag on those topics on cluster B is zero.
+3. Restart the producers to point to cluster B's endpoints.
 4. Disable any mirroring that is still enabled on topics from cluster A to cluster B. This can be done by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
 ![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Figure 3. Producer switched to cluster B." caption-side="bottom"}
@@ -50,8 +50,9 @@ The producer is now switched to cluster B and sends messages to a new local topi
 
 Perform the following steps to fail over:
 
-1. Stop the consumers that were pointing to cluster A.
-2. Restart the consumers to point to cluster B's endpoints.
+1. If cluster A and the link from A to cluster B is still operational, allow the consumers to read all the message data in the topics on cluster A, and commit their offsets at the end of the topic.
+2. Stop the consumers that were pointing to cluster A.
+3. Restart the consumers to point to cluster B's endpoints.
 
 ![Consumer on cluster B diagram.](disaster4.png "Diagram that shows the consumer continuing to consume the existing messages."){: caption="Figure 4. The consumer continues to consume the existing messages." caption-side="bottom"}
 
@@ -94,7 +95,7 @@ Do not mirror back the original target topic on cluster B as that would cause an
 
 The decision to fail back is again owned by the {{site.data.keyword.messagehub}} instance owner. The service instance owner must coordinate the failback of applications including their reconfiguration, redeployment, and restart if necessary.
 
-Unlike the failover case, in this case there was no disaster on cluster B. Therefore, failback is a controlled operation and can be achieved without data loss. 
+Unlike the failover case, in this case there was no disaster on cluster B. Therefore, failback is a controlled operation and can be achieved with minimal data loss or reprocessing of data.
 
 ![Mirroring switched back to the original configuration diagram.](disaster6.png "Diagram that shows mirroring has now switched back to the original configuration."){: caption="Figure 6. Mirroring switched back to the original configuration." caption-side="bottom"}
 
