@@ -15,24 +15,27 @@ subcollection: EventStreams
 # Using mirroring 
 {: #mirroring}
 
-Mirroring enables messages in one service instance to be copied continually to a second instance, allowing disaster recovery scenarios to be implemented easily. This feature improves resilience because if a service instance becomes unavailable, applications can, without change, reconnect to the second instance and continue their normal operation, by using the same credentials, authorizations, and topic definitions. This feature is provided as a fully managed capability.
+Mirroring enables messages in one {{site.data.keyword.messagehub}} service instance to be continuously copied to a second instance.
+Application resilience can be improved by using mirroring as if the first service instance becomes unavailable, applications can reconnect to the second instance and continue their normal operation.
 {: shortdesc}
 
-This feature is only available for service instances that use the Enterprise plan.
+This feature can only be used between service instances that use the {{site.data.keyword.messagehub}} Enterprise plan.
 
-The current features are:
+Features of mirroring:
 
-- Mirror topics and consumer groups between two {{site.data.keyword.messagehub}} service instances.
+- Mirror topics, message data, and consumer group offsets between two {{site.data.keyword.messagehub}} service instances, which can be provisioned in different IBM Cloud accounts.
 - SLA of 99.99% availability, consistent with the {{site.data.keyword.messagehub}} service.
-- Monitoring by using {{site.data.keyword.mon_full}}.
+- Can be monitored using {{site.data.keyword.mon_full}}.
 
-The current limitations are:
+Limitations of mirroring:
 
-- Unidirectional.
+- Unidirectional. Data can only be mirrored in one direction at a time between a pair of service instances. This means that mirroring offers a "active-passive" style of high availability, not "active-active".
+- Asynchronous. Messages must be successfully produced to the source instance before they can be mirrored to the target instance. This means that when a failure occurs some message data may be lost.
+- At-least-once message consumption. When a consumer moves between instances it may need to reprocess messages that it has already processed.
 
 Before you start mirroring, consider the following points:
-- For seamless switchover, applications are to follow the coding guidelines.
-- [Capacity planning](#capacity_planning)
+- Applications may need to be [modified to best take advantage of mirroring](#building_apps).
+- Ensure there is [sufficient capacity available](#capacity_planning) for the network traffic used to mirror data between instances.
 
 To enable mirroring, see [Mirroring setup guide](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
@@ -45,9 +48,14 @@ A topic called `mytopic` from the source cluster (A) appears on the target clust
 
 To select which topics are mirrored, a regular expression pattern can be configured by using [Mirroring User Controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-To allow consumer groups to switch between clusters, special topics are used to mirror consumer group offsets. These topics are named `A.checkpoints.internal`, where `A` is the alias of the source cluster. For example, `us-east.checkpoints.internal`. Consumers need to access these topics to seamlessly switch between clusters.
+Mirroring automatically translates consumer offsets between the source and target instances. 
+In previous versions of {{site.data.keyword.messagehub}}, consumers had to use a special topic called `A.checkpoints.internal` (where `A` is the alias of the source cluster).
+This is no longer necessary, however the checkpoint topic continues to be created and updated by the mirroring process for backwards compatibility with existing applications.
+Applications that wish to make use of the checkpoints topic can use the [Kafka MirrorClient](https://kafka.apache.org/36/javadoc/org/apache/kafka/connect/mirror/MirrorClient.html){: external} to simplify access to the data held on this topic
 
-Finally, because of the naming of remote topics, avoid using cluster aliases as part of the Kafka resource names.
+Finally, because of the naming of remote topics:
+- Avoid using cluster aliases as part of the Kafka resource names.
+- Ensure that the remote topic name (e.g. source topic and source cluster alias) does not exceed the length limit for Kafka topics (249 characters). If a remote topic name exceeds this limit, messages will not be mirrored for the topic.
 
 ## Capacity planning
 {: #capacity_planning}
@@ -64,7 +72,7 @@ The network bandwidth needed to mirror the selected topics must be considered in
 
 As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput that can be achieved between the source and target instances. Place the target service instances in as geographically close location as possible to the source.
 
-The following table provides guidance for the achievable throughputs:
+The following table provides guidance for the achievable throughput:
 
 | Regions | Max per-partition throughput | Max total throughput |
 | ------- |:------:|:------:|
@@ -78,7 +86,13 @@ The numbers indicate:
 - **Max total throughput**: The maximum total MB/s that can be mirrored across all selected topics. 
 - **Max per-partition throughput**: The maximum MB/s that can be mirrored within a single partition. Select the number of partitions that are configured for the source topics to ensure the per partition load remains within this limit.
 
-Exceeding the limits results in an increasing lag between the data in the source and target instances. Having a large data lag can result in significant data loss. The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring).
+Exceeding the limits results in an increasing lag between the data in the source and target instances.
+Having a large data lag can result in a larger amount of message data being lost if the source instance fails.
+Even if the lag between instances is zero, as mirroring is asynchronous, you should anticipate that some data may be lost if the source instance fails.
+The monitoring dashboards can be used to determine the latency for each topic. For more information, see [Monitoring mirroring](#monitoring_mirroring).
+
+The guidance on achievable throughput was generated using 100K messages produced across 50 topic partitions. If your workload uses smaller message sizes (for example, under 1K), or fewer partitions, then mirroring may not attain these levels of throughput.
+{: note}
 
 ### Deleting redundant target topics
 {: #delete_redundant}
@@ -242,7 +256,8 @@ curl -s -X GET -H "Authorization: <bearer token>" <admin url>/admin/mirroring/ac
 ### Producers
 {: #producers}
 
-We recommend producers to produce to local topics only, hence they should not require changes when they switch between clusters.
+We recommend that producers only produce to local topics.
+Switching a producer between instances will typically require a configuration change, so that the producer uses the correct endpoints and credentials to connect.
 
 ### Consumers
 {: #consumers}
@@ -254,8 +269,26 @@ When you consume both local and remote topics, check if the application requires
 ### Consumer offsets
 {: #consumer_offsets}
 
-Consumer groups offsets are replicated between clusters.
-When a consumer switches cluster it can pick up from one of the replicated consumer offset positions.
+When message data is mirrored between two instances, there are a number of reasons why the offsets assigned to the message in the source instance may not match the offset used in the target instance. For example:
+- Deleting and re-creating a topic with the same name in the source instance.
+- Mirroring topics with a compact cleanup policy.
+- Producing messages using transactions.
+
+Part of the message mirroring process tracks which offsets in the source instance are equivalent to which offsets in the target instance.
+For efficiency, only a small number of equivalent offsets are tracked, with locations near the head of the topic being favored.
+When offsets are committed for consumer groups in the source instance, they are translated to the nearest equivalent offset in the target instance, and a corresponding offset is committed for the group in the target instance.
+This translation is intended to ensure that a consumer that switches to the target cluster does not skip over any messages that have been mirrored.
+However, as not every equivalent offset is tracked by the mirroring process, when a consumer switches to the target instance is likely to reprocess data that it has already consumed in the source instance.
+
+When writing applications that track consumer progress by committing offsets, consider the following:
+- Consumer offsets are only mirrored if the corresponding consumer group is not being actively used in the target instance.
+- Expect to re-process some message data when the consumer moves to the target instance.
+- The further behind the head of the topic a consumer is when it moves to the target instance, the more data it will potentially need to re-consume.
+- If you want to minimize the amount of data re-consumed, and can carefully manage switching applications between instances then the recommended set of steps to achieve this is:
+    1. Stop producing messages to the source instance.
+    2. Wait until the consumer catches up to the head of the topic.
+    3. Commit an offset at this location.
+    4. Switch the consumer to the target instance.
 
 ## Monitoring mirroring
 {: #monitoring_mirroring}
@@ -289,9 +322,11 @@ Test failing over and back when you made your applications mirroring aware. Comp
 ## Deleting and re-creating topics with the same name on the source cluster
 {: #delete_recreate_topics}
 
-When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. If you delete a topic on the source cluster and then re-create a topic of the same name, replication of topic might not start immediately. Therefore, if you intend to re-create the source topic, delete the corresponding topic on the target cluster before you re-create the topic on the source cluster. Do not delete and then re-create topics with the same name.
+When topics are deleted on the source cluster, the corresponding topic on the target cluster is not automatically deleted. 
+If you subsequently re-create the topic on the source cluster, data from the new topic in the source cluster will be appended to the end of the existing topic in the target cluster.
 
 ## Considerations for Kafka Streams and Kafka Connect
 {: #kafka_considerations}
 
-Kafka Streams and Kafka Connect rely on internal topics with specific names to store state and configuration. When these topics are mirrored, they are renamed on the target cluster. For this reason, Kafka Streams and Kafka Connect applications cannot failover and failback seamlessly between clusters. Consider this when you plan disaster recovery of such applications.
+Kafka Streams and Kafka Connect rely on internal topics with specific names to store state and configuration. When these topics are mirrored, they are renamed on the target cluster. For this reason, Kafka Streams and Kafka Connect applications cannot failover and fail-back between clusters. Consider this when you plan disaster recovery of such applications.
+
