@@ -254,10 +254,8 @@ When you consume both local and remote topics, check if the application requires
 ### Consumer offsets
 {: #consumer_offsets}
 
-While consumer groups offsets are replicated between clusters, they must be explicitly used by consumers to reset their position when they switch cluster.
-{: note}
-
-The RemoteClusterUtils package allows to easily make these changes. 
+Consumer groups offsets are replicated between clusters.
+When a consumer switches cluster it can pick up from one of the replicated consumer offset positions.
 
 ## Monitoring mirroring
 {: #monitoring_mirroring}
