@@ -19,7 +19,7 @@ Mirroring enables messages in one {{site.data.keyword.messagehub}} service insta
 Application resilience can be improved by using mirroring as if the first service instance becomes unavailable, applications can reconnect to the second instance and continue their normal operation.
 {: shortdesc}
 
-This feature can only be used between service instances that use the {{site.data.keyword.messagehub}} Enterprise plan.
+This feature is part of the fully managed service and can only be used between service instances that use the {{site.data.keyword.messagehub}} Enterprise plan.
 
 Features of mirroring:
 
@@ -29,9 +29,9 @@ Features of mirroring:
 
 Limitations of mirroring:
 
-- Unidirectional. Data can only be mirrored in one direction at a time between a pair of service instances. This means that mirroring offers a "active-passive" style of high availability, not "active-active".
-- Asynchronous. Messages must be successfully produced to the source instance before they can be mirrored to the target instance. This means that when a failure occurs some message data may be lost.
-- At-least-once message consumption. When a consumer moves between instances it may need to reprocess messages that it has already processed.
+- Unidirectional: Data can only be mirrored in one direction at a time between a pair of service instances. This means that mirroring offers a "active-passive" style of high availability, not "active-active".
+- Asynchronous: Messages must be successfully produced to the source instance before they can be mirrored to the target instance. This means that when a failure occurs, some message data may be lost.
+- At-least-once message consumption: When a consumer moves between instances, it may need to reprocess messages that it has already processed.
 
 Before you start mirroring, consider the following points:
 - Applications may need to be [modified to best take advantage of mirroring](#building_apps).
