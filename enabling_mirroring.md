@@ -58,21 +58,34 @@ Although mirroring from a Enterprise multi-zone-region cluster to a Enterprise s
 
 You must configure a service-to-service binding between both instances to allow both instances to communicate. To configure, complete the following steps:
 
-1. Navigate to the **Authorizations** panel in IAM and click **Create**. 
-2. **From the point of view of IAM, the source and target services are the opposite of mirroring**. Select both clusters, assign the **Reader** role, and click **Authorize**.
+When creating a service-to-service binding, IAM uses the terminology 'source' and 'target' in the opposite way to that of {{site.data.keyword.messagehub}}. In that the IAM Source account contains the {{site.data.keyword.messagehub}} mirroring target instance, and vice-versa.
+{: note}
+
+1. Select the IBM Cloud account containing the {{site.data.keyword.messagehub}} mirroring source service instance.
+2. Navigate to the **Authorizations** panel in IAM and click **Create**. 
+3. For the **Source** section:
+    - If you are mirroring to a target instance in a different account, select "another account" under the Source heading, then pick the account containing the mirroring target instance. If you a mirroring between service instances in the same account, you can leave the default of "this account" selected.
+    - Select the mirroring target {{site.data.keyword.messagehub}} instance as the IAM source service instance.
+4. For the **Target** selection, select the mirroring source {{site.data.keyword.messagehub}} instance as the IAM target service instance.
+5. Assign the **Reader** role and click **Authorize**.
 
 If your requirement is to fail back, you also need the service-to-service binding in the opposite direction.
 {: important}
 
 The following example shows how to use the command line to configure service-to-service binding. 
 
-In this command we are using IAM source and target definitions, which are the opposite to that of mirroring. That is, IAM Source cluster is the mirroring target cluster.
-{: note}
+1. Login to the IBM Cloud account containing the {{site.data.keyword.messagehub}} instance that you want to act as the mirroring source instance:
+    ```sh
+    ibmcloud login -c <account containing mirroring source instance>
+     ```
+    {: codeblock}
 
-```sh
-ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account id>] --target-service-instance-id <instance id of the mirroring source cluster>
-```
-{: codeblock}
+2. Setup an authorization policy, as follows:
+    ```sh
+    ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account containing mirroring target instance>] --target-service-instance-id <instance id of the mirroring source cluster>
+    ```
+    {: codeblock}
+    Note that the `--source-service-account` option can be omitted if you are setting up mirroring between two {{site.data.keyword.messagehub}} instances in the same IBM Cloud account.
 
 For more information about service-to-service bindings, see [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
 
