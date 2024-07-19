@@ -213,6 +213,7 @@ ibmcloud es schema-import import.zip
 ```
 
 You can generate the data to be imported using the Apicurio registry [exportConfluent](https://github.com/Apicurio/apicurio-registry/tree/main/utils/exportConfluent){: external} utility, which exports data from a Confluent schema registry.
+{{site.data.keyword.messagehub}} has been tested with version 2.6.x of this utility.
 
 If the {{site.data.keyword.messagehub}} Schema Registry already has an entry with the same global ID as an artifact version that is being imported, the import operation fails and you are prompted to remove the artifact version if you want to continue.
 
