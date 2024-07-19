@@ -562,6 +562,21 @@ Number of requests per second made to the REST Producer API.
 
 This is for information to help you monitor usage of the REST Producer API, including use of schema encoders.
 
+### Request rate [HTTP Serdes] per second
+{: #ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec}
+
+Total number of requests made to any HTTP SerDes endpoint per second.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Table 33: Request rate [HTTP Serdes] per second metadata" caption-side="top"}
+
+This is for information to help you monitor the serialization and deserialization rates on your schema registry..
+
 ### Mirroring throughput
 {: #ibm_eventstreams_instance_mirroring_throughput}
 
@@ -573,7 +588,7 @@ The bytes per second of mirroring throughput from the source {{site.data.keyword
 | `Metric Type` | `gauge` |
 | `Value Type`  | `bytes_per_second` |
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
-{: caption="Table 33. Mirroring throughput" caption-side="bottom"}
+{: caption="Table 34. Mirroring throughput" caption-side="bottom"}
 
 This is useful to see whether mirroring is active and for capacity planning.
 
@@ -588,7 +603,7 @@ The per-topic mirroring latency in seconds from the source {{site.data.keyword.m
 | `Metric Type` | `gauge` |
 | `Value Type`  | `seconds` |
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
-{: caption="Table 34. Mirroring latency" caption-side="bottom"}
+{: caption="Table 35. Mirroring latency" caption-side="bottom"}
 
 This is useful to determine how far behind a topic on the target cluster is.
 
@@ -603,7 +618,7 @@ Lag for each consumer group for each topic-partition in an {{site.data.keyword.m
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance name, IBM {{site.data.keyword.messagehub}} consumer groups, IBM {{site.data.keyword.messagehub}} Kafka topic, IBM {{site.data.keyword.messagehub}} Kafka partitions` |
-{: caption="Table 35. Consumer group lag metric metadata" caption-side="bottom"}
+{: caption="Table 36. Consumer group lag metric metadata" caption-side="bottom"}
 
 An increasing lag might highlight that the consumers in the group are not keeping pace with the rate that messages are being produced. This might require you to scale the number of consumers that process messages for the group.
 
@@ -621,7 +636,7 @@ The rate of change of this metric gives the message per second that is incoming 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance name, IBM {{site.data.keyword.messagehub}} Kafka topic, IBM {{site.data.keyword.messagehub}} Kafka partitions` |
-{: caption="Table 36. Message rate per partition metric metadata" caption-side="bottom"}
+{: caption="Table 37. Message rate per partition metric metadata" caption-side="bottom"}
 
 ### Maximum partition retention percentage
 {: #ibm_eventstreams_instance_max_partition_retention_percent}
@@ -647,7 +662,7 @@ Total disk size of all partitions of a topic.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
-{: caption="Table 38. Topic size metric metadata" caption-side="bottom"}
+{: caption="Table 37. Topic size metric metadata" caption-side="bottom"}
 
 ### Instance utilization
 {: #ibm_eventstreams_instance_utilization}
