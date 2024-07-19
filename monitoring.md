@@ -575,7 +575,7 @@ Total number of requests made to any HTTP SerDes endpoint per second.
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Table 33: Request rate [HTTP Serdes] per second metadata" caption-side="top"}
 
-This is for information to help you monitor the serialization and deserialization rates on your schema registry..
+This is for information to help you monitor the serialization and deserialization rates on your schema registry.
 
 ### Mirroring throughput
 {: #ibm_eventstreams_instance_mirroring_throughput}
