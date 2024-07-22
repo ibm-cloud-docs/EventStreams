@@ -21,6 +21,14 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
 
+## July 2024
+{: #EventStreams-jul2024}
+{: release-note}
+
+Schema Registry request rate metric available
+:  You can now monitor the serialization and deserialization rates on your schema registry with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Schema registry request rate](/docs/EventStreamstopic=EventStreamsmetrics#ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec). 
+
+
 ## March 2024
 {: #EventStreams-mar2024}
 {: release-note}
