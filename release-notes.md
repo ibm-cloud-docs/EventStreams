@@ -26,7 +26,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: release-note}
 
 Schema Registry request rate metric available
-:  You can now monitor the serialization and deserialization rates on your schema registry with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Schema registry request rate](/docs/EventStreamstopic?=EventStreamsmetrics#ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec). 
+:  You can now monitor the serialization and deserialization rates on your schema registry with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Schema registry request rate](/docs//EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec). 
 
 
 ## March 2024
