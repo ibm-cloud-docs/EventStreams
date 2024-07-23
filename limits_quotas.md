@@ -83,7 +83,7 @@ A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SI
 
 * Maximum message size: 1 MB
 * Maximum concurrently active Kafka clients: 500
-* Maximum concurrent connections: 500
+* Maximum concurrent connections: 3,000
 * Maximum request rate [HTTP Produce API]: 100 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
 * Maximum record key size when you use REST Producer API is 4 K. 
@@ -132,7 +132,7 @@ Storage capacity cannot be scaled down. To move to a lower storage capacity woul
 #### Schemas
 {: #schemas}
 
-* Maximum number of schemas that can be stored: 1000
+* Maximum number of schemas that can be stored: 1,000
 * Maximum number of schema versions for each schema that can be stored: 100
 * Maximum schema size: 64 kB
 
@@ -146,8 +146,8 @@ Storage capacity cannot be scaled down. To move to a lower storage capacity woul
 {: #enterprise_limits}
 
 * Maximum message size: 1 MB
-* Maximum concurrently active Kafka clients: 10000
-* Maximum concurrent connections: 100000
+* Maximum concurrently active Kafka clients: 10,000
+* Maximum concurrent connections: 100,000
 * Maximum record key size when you use REST Producer API is 4 K.
 * Maximum record value size when you use REST Producer API is 64 K.
 * Maximum messages per second when you use REST Producer API is 200.
@@ -194,4 +194,5 @@ The Schema Registry is not supported on the Satellite plan.
 {: #satellite_limits}
 
 * Maximum message size: 1 MB
-* Maximum concurrently active Kafka clients: 10000
+* Maximum concurrently active Kafka clients: 10,000
+* Maximum concurrent connections: 100,000
