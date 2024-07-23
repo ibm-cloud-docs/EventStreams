@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-01-25"
+lastupdated: "2024-07-23"
 
 keywords: limits, quotas, network throughput, retention, consumer groups, schema
 
@@ -83,7 +83,7 @@ A maximum of 1000 consumer groups. When the limit is exceeded, the `GROUP_MAX_SI
 
 * Maximum message size: 1 MB
 * Maximum concurrently active Kafka clients: 500
-* Maximum concurrent connections: 3,000
+* Maximum concurrent connections: 3000
 * Maximum request rate [HTTP Produce API]: 100 per second
 * Maximum request rate [HTTP Admin API]: 10 per second
 * Maximum record key size when you use REST Producer API is 4 K. 
@@ -132,7 +132,7 @@ Storage capacity cannot be scaled down. To move to a lower storage capacity woul
 #### Schemas
 {: #schemas}
 
-* Maximum number of schemas that can be stored: 1,000
+* Maximum number of schemas that can be stored: 1000
 * Maximum number of schema versions for each schema that can be stored: 100
 * Maximum schema size: 64 kB
 
