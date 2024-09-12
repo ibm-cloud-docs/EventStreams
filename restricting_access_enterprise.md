@@ -207,7 +207,10 @@ ibmcloud resource service-key-create <private-key-name> <role> --instance-name <
 ### Accessing the IBM {{site.data.keyword.messagehub}} console
 {: #access_console}
 
-The console continues to be accessible if private only networking is selected.
+The console continues to be accessible if public networking is available for the instance, including both public and public-and-private.
+
+The console will not be accessiable if private only network is selected and context-based restriction is setup due to technical limitation. 
+CLI is recommended to perform any administrative operations. eg. `ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config KEY=VALUE[;KEY=VALUE]* ]*`
 
 ## Configuring context-based restrictions
 {: #configuring_cbr}
@@ -259,5 +262,3 @@ If both context-based restrictions rules and IP allowlists are defined against t
 {: #cbr_migrating}
 
 The customer is responsible for migration. You can create IP allowlist definitions again as context-based restrictions network zones and apply them to the service instance by creating a context-based restrictions rule. You can then delete the previous private IP allowlist.
-
-
