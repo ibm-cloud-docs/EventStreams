@@ -36,6 +36,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.4.0 |  28 Feb 2023 |  - Added Kafka version to `ibmcloud es cluster`. \n - Updated Go to 1.9.6. |
 | v2.4.1 |  05 Dec 2023 |  - Added `mirroring-active-topics` and `help` commands. |
 | v2.5.0 |  15 Dec 2023 |  - Added `schema-import` commands. |
+| v2.6.0 |  29 Aug 2024 |  - Added `schemas`, `schema-create`, `schema`, `schema-update`, `schema-delete`, `schema-versions`, `schema-version-create`, `schema-version`, `schema-version-update`, `schema-version-delete`, `schema-compatibility-rule-create`, `schema-compatibility-rule`, `schema-compatibility-rule-update`, and `schema-compatibility-rule-delete` commands. |
 {: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
@@ -478,3 +479,328 @@ ibmcloud es schema-import [--file] ZIP_FILE_PATH
 --file value, -f value
 :  Zip file path.
 
+
+## ibmcloud es schemas
+{: #ibmcloud_es_schemas}
+ 
+List the schemas in the registry.
+
+```sh
+ibmcloud es schemas [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema-create
+{: #ibmcloud_es_schema_create}
+ 
+Create a schema.
+
+```sh
+ibmcloud es schema-create [--artifact-id SCHEMA_ID] --file PATH_TO_FILE [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--artifact-id value
+:   Optional. ID of the schema artifact to be created. If not provided, an ID is generated.
+
+--file value
+:   Path to a file containing the JSON definition of the schema to be created.
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema
+{: #ibmcloud_es_schema}
+ 
+Display information about a schema.
+
+```sh
+ibmcloud es schema [--artifact-id] SCHEMA_ID [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema.
+
+--json
+:   Optional. Format output in JSON.
+
+
+
+
+## ibmcloud es schema-update
+{: #ibmcloud_es_schema_update}
+ 
+Change the state of a schema.
+
+```sh
+ibmcloud es schema-update [--artifact-id] SCHEMA_ID --set ENABLED|DISABLED
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema.
+
+--set value
+:   New state of the schema, must be 'ENABLED' or 'DISABLED'.
+
+
+## ibmcloud es schema-delete
+{: #ibmcloud_es_schema_delete}
+ 
+Delete a schema.
+
+```sh
+ibmcloud es schema-delete [--artifact-id] SCHEMA_ID [--force]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.  The schema must be in DISABLED state.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema.
+
+--force
+:   Optional. Delete the schema without confirmation.
+
+
+## ibmcloud es schema-versions
+{: #ibmcloud_es_schema_versions}
+ 
+Display versions of a schema.
+
+```sh
+ibmcloud es schema-versions [--artifact-id] SCHEMA_ID [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema.
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema-version-create
+{: #ibmcloud_es_schema_version_create}
+ 
+Create a new version of a schema.
+
+```sh
+ibmcloud es schema-version-create [--artifact-id] SCHEMA_ID --file PATH_TO_FILE [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema artifact for which the new version is to be created.
+
+--file value
+:   Path to a file containing the JSON definition of the schema version to be created.
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema-version
+{: #ibmcloud_es_schema_version}
+ 
+Display information about a schema version.
+
+```sh
+ibmcloud es schema-version [--artifact-id SCHEMA_ID --version VERSION] [--global-id GLOBAL_ID] [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas. Use either the `--artifact-id` and `--version` flags, or the `--global-id` flag.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema artifact.
+
+--version value
+:   Version to be displayed.
+
+--global-id value
+:   Global ID of the schema version to be displayed.
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema-version-update
+{: #ibmcloud_es_schema_version_update}
+ 
+Change the state of a schema version.
+
+```sh
+ibmcloud es schema-version-update [--artifact-id] SCHEMA_ID --version VERSION --set ENABLED|DISABLED
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema artifact.
+
+--version value
+:   Version to be updated.
+
+--set value
+:   New state of the schema version, must be either 'ENABLED' or 'DISABLED'.
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema-version-delete
+{: #ibmcloud_es_schema_version_delete}
+ 
+Delete a version of a schema.
+
+```sh
+ibmcloud es schema-version-delete [--artifact-id] SCHEMA_ID --version VERSION [--force]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas. The schema version must be in DISABLED state.
+
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema artifact.
+
+--version value
+:   Version to be deleted.
+
+--force
+:   Optional. Delete the schema version without confirmation.
+
+
+## ibmcloud es schema-compatibility-rule-create
+{: #ibmcloud_es_schema_compatibility_rule_create}
+ 
+Create schema compatibility rule.
+
+```sh
+ibmcloud es schema-compatibility-rule-create [--artifact-id] SCHEMA_ID --set RULE
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema.
+
+--set value
+:   The value of the compatibility rule. Allowed values are "NONE", "FULL", "FULL_TRANSITIVE", "FORWARD", "FORWARD_TRANSITIVE", "BACKWARD", and "BACKWARD_TRANSITIVE".
+
+
+
+## ibmcloud es schema-compatibility-rule
+{: #ibmcloud_es_schema_compatibility_rule}
+ 
+Display schema or global compatibility rule.
+
+```sh
+ibmcloud es es schema-compatibility-rule [ [--artifact-id] SCHEMA_ID | --global ]  [--json]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas. Use either the `--artifact-id` or the `--global` flag.
+
+
+**Command options**:
+
+--artifact-id value
+:   Optional. ID of the schema.
+
+--global
+:   Optional. Display the global compatibility rule.
+
+--json
+:   Optional. Format output in JSON.
+
+
+## ibmcloud es schema-compatibility-rule-update
+{: #ibmcloud_es_schema_compatibility_rule_update}
+ 
+Change schema or global compatibility rule.
+
+```sh
+ibmcloud es schema-compatibility-rule-update [ [--artifact-id] SCHEMA_ID | --global ] --set RULE
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas. Use either the `--artifact-id` or the `--global` flag.
+
+
+**Command options**:
+
+--artifact-id value
+:   Optional. ID of the schema.
+
+--global
+:   Optional. Change the global compatibility rule.
+
+--set value
+:   The value of the compatibility rule. Allowed values are "NONE", "FULL", "FULL_TRANSITIVE", "FORWARD", "FORWARD_TRANSITIVE", "BACKWARD", and "BACKWARD_TRANSITIVE".
+
+
+## ibmcloud es schema-compatibility-rule-delete
+{: #ibmcloud_es_schema_compatibility_rule_delete}
+ 
+Delete schema compatibility rule.
+
+```sh
+ibmcloud es schema-compatibility-rule-delete [--artifact-id] SCHEMA_ID [--force]
+```
+{: codeblock}
+
+**Prerequisites**: This operation is permitted only on Enterprise instances as only the Enterprise plan includes a Schema Registry for using and managing schemas.
+
+
+**Command options**:
+
+--artifact-id value
+:   ID of the schema.
+
+--force
+:   Optional. Delete the compatibility rule without confirmation.
