@@ -110,6 +110,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
+| [Reserved disk space percentage per topic](#ibm_eventstreams_instance_reserved_disk_space_per_topic_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Rest-producer requests per second](#ibm_eventstreams_instance_rest_producer_requests_per_sec) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Schema Registry request rate](#ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Schema greatest version percentage](#ibm_eventstreams_instance_schema_registry_schema_versions_greatest_percentage) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
@@ -135,6 +136,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | Metric name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
 | [Maximum partition retention percentage](#ibm_eventstreams_instance_max_partition_retention_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) | | |
+| [Reserved disk space percentage per topic](#ibm_eventstreams_instance_reserved_disk_space_per_topic_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) | | |
 | [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../icons/checkmark-icon.svg) | | |
 {: caption="Table 3. Metrics available for topic" caption-side="bottom"}
 
@@ -550,6 +552,21 @@ The percentage of reserved disk space that is required for all allocated partiti
 
 Shows the percentage of disk space that would be used if your topics were filled to the extent of their configured retention size.
 
+### Reserved disk space percentage per topic
+{: #ibm_eventstreams_instance_reserved_disk_space_per_topic_percent}
+
+The percentage of reserved disk space that is required for each topic if all of the topics allocated partitions are fully used.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_reserved_disk_space_per_topic_percent`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `percent` |
+| `Segment By` | `Service instance, Service instance name, topic` |
+{: caption="Table 32. Reserved disk space percentage per topic metric metadata" caption-side="bottom"}
+
+Shows the percentage of disk space that would be used if your topics were filled to the extent of their configured retention size.
+
 ### Rest-producer requests per second
 {: #ibm_eventstreams_instance_rest_producer_requests_per_sec}
 
@@ -561,7 +578,7 @@ Number of requests per second made to the rest-producer API.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 32. Rest-producer requests per second metric metadata" caption-side="bottom"}
+{: caption="Table 33. Rest-producer requests per second metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor usage of the REST Producer API, including use of schema encoders.
 
@@ -576,7 +593,7 @@ Total number of requests made to any HTTP SerDes endpoint per second.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 33. Schema Registry request rate metric metadata" caption-side="bottom"}
+{: caption="Table 34. Schema Registry request rate metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor the serialization and deserialization rates on your schema registry.
 
@@ -591,7 +608,7 @@ The percentage of schema version capacity used for the schema with the greatest 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 34. Schema greatest version percentage metric metadata" caption-side="bottom"}
+{: caption="Table 35. Schema greatest version percentage metric metadata" caption-side="bottom"}
 
 ### Schema used percentage
 {: #ibm_eventstreams_instance_schema_registry_schemas_used_percentage}
@@ -604,7 +621,7 @@ The percentage of schema capacity used in the schema registry.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 35. Schema used percentage metric metadata" caption-side="bottom"}
+{: caption="Table 36. Schema used percentage metric metadata" caption-side="bottom"}
 
 ### Stable consumer groups
 {: #ibm_eventstreams_instance_stable_consumergroups}
@@ -617,7 +634,7 @@ The number of stable consumer groups in an {{site.data.keyword.messagehub}} inst
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 36. Stable consumer groups metric metadata" caption-side="bottom"}
+{: caption="Table 37. Stable consumer groups metric metadata" caption-side="bottom"}
 
 Use along with rebalancing consumer groups. If this is consistently zero and rebalancing high, then it indicates a cluster problem. If this is nonzero and rebalancing high, it indicates a consumer group issue.
 
@@ -632,7 +649,7 @@ The number of bytes produced per second to a topic.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
-{: caption="Table 37. Topic bytes in per second metric metadata" caption-side="bottom"}
+{: caption="Table 38. Topic bytes in per second metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any topics are producing unusual throughput, which is more or less than expected.
 
@@ -647,7 +664,7 @@ The number of bytes consumed per second from a topic.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
 | `Segment By` | `Service instance, IBM {{site.data.keyword.messagehub}} Kafka topic, Service instance name` |
-{: caption="Table 38. Topic bytes out per second metric metadata" caption-side="bottom"}
+{: caption="Table 39. Topic bytes out per second metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage, particularly if any topics are consuming unusually more or less throughput than expected.
 
@@ -662,7 +679,7 @@ Total disk size of all partitions of this topic.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, IBM {{site.data.keyword.messagehub}} Kafka topic` |
-{: caption="Table 39. Topic size metric metadata" caption-side="bottom"}
+{: caption="Table 40. Topic size metric metadata" caption-side="bottom"}
 
 ### Used disk space percentage
 {: #ibm_eventstreams_instance_utilised_disk_space_percent}
@@ -675,7 +692,7 @@ The percentage of currently used disk space.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `percent` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Table 40. Used disk space percentage metric metadata" caption-side="bottom"}
+{: caption="Table 41. Used disk space percentage metric metadata" caption-side="bottom"}
 
 This is for information to help you monitor trends in your usage. Refer to [{{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-plan_choose){: external} to determine what the recommended limits are for your plan and instance.
 
