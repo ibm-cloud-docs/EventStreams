@@ -21,6 +21,16 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
 
+## September 2024
+{: #EventStreams-sep2024}
+{: release-note}
+
+Schema Registry commands in CLI plugin v2.6.0
+:  Manage schema related tasks using the event streams CLI plugin v2.6.0. To find out more, see [Event Streams CLI reference](/docs/cli?topic=cli-cli_reference).
+
+Reserved disk space percentage per topic metric available
+:  You can now monitor the reserved disk space percentage per topic with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Reserved disk space percentage per topic](/docs//EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_reserved_disk_space_per_topic_percent). 
+
 ## July 2024
 {: #EventStreams-jul2024}
 {: release-note}
