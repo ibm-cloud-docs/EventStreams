@@ -381,7 +381,7 @@ The level of utilization of an {{site.data.keyword.messagehub}} instance. This i
 ### Maximum partition retention percentage
 {: #ibm_eventstreams_instance_max_partition_retention_percent}
 
-Maximum percentage of the retention size used for partitions of a topic.
+Maximum partition retention percentage indicates the percentage of the configured retention size that is used by the partition with the most data in the topic. For example, if a topic has a retention size of 10GB, one partition has 4GB and another partition has 6GB, this metric will report 60%. This helps you monitor if a single partition within a topic is approaching its retention size which could trigger a log segment deletion or impact performance. 
 
 | Metadata | Description |
 |----------|-------------|
@@ -555,7 +555,7 @@ Shows the percentage of disk space that would be used if your topics were filled
 ### Reserved disk space percentage per topic
 {: #ibm_eventstreams_instance_reserved_disk_space_per_topic_percent}
 
-The percentage of reserved disk space that is required for each topic if all of the topics allocated partitions are fully used.
+The percentage of reserved disk space that is required for each topic if all of the topics allocated partitions are fully used. You can use this metric to plan your disk space requirements for Event Streams and also identify misconfigured topics that are reserving an unnecessarily large amount of disk space. 
 
 | Metadata | Description |
 |----------|-------------|
@@ -671,7 +671,7 @@ This is for information to help you monitor trends in your usage, particularly i
 ### Topic size
 {: #ibm_eventstreams_instance_topic_size}
 
-Total disk size of all partitions of this topic.
+Total disk size currently being used by partitions of a topic e.g if a topic has two partitions, one with 2MB of data and one with 4MB of data, the metric will report the size as 6MB. This can be used to monitor storage usage and optimise partitioning. 
 
 | Metadata | Description |
 |----------|-------------|
