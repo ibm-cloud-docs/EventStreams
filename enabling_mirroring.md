@@ -221,7 +221,7 @@ Example CLI Command
 
 Here, you apply a topic name transformation with the topic_name_transform type set to "use_alias". With this configuration, a topic called "app1-topic" in the source cluster will be mirrored to a topic called "app1-topic.source" in the target cluster, because the source alias specified in the configuration is "source". 
 
-** Example CLI command
+Example CLI command
 {: #example_cli_command}
 ```
 {
@@ -262,7 +262,7 @@ Example CLI command
 
 
 ### Step 5.2: Renaming Corresponding Consumer Group ID's 
-{: #renamegroupid_1}
+{: #renamegroupid}
 
 You can translate consumer offset's between your source and target instance with mirror maker using two scenarios outlined below.  
 
