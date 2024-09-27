@@ -179,7 +179,7 @@ After the topic selection is completed, the target cluster shows the topics that
 {: #renametopics}
 You can replicate data between topics with different names using three scenarios outlined below.  
 
-####Scenario 1: Renaming topics by removing the old prefix and/or suffix and adding a new prefix and/or suffix*
+###Scenario 1: Renaming topics by removing the old prefix and/or suffix and adding a new prefix and/or suffix*
 {: #renametopic_1}
 
 Here, you have to configure four additional parameters. 
@@ -216,7 +216,7 @@ Example CLI Command
 }
 ```
 
-*Scenario 2.  Adding the source alias as a suffix to mirrored topics*
+###Scenario 2.  Adding the source alias as a suffix to mirrored topics*
 {: #renametopic_2}
 
 Here, you apply a topic name transformation with the topic_name_transform type set to "use_alias". With this configuration, a topic called "app1-topic" in the source cluster will be mirrored to a topic called "app1-topic.source" in the target cluster, because the source alias specified in the configuration is "source". 
@@ -238,7 +238,7 @@ Here, you apply a topic name transformation with the topic_name_transform type s
 }
 ```
 
-*Scenario 3: Topics are mirrored with their names unchanged*
+###Scenario 3: Topics are mirrored with their names unchanged*
 {: #renametopic_3}
 
 In this scenario, you also apply the topic_name_transform with the type set to none. With this configuration, a topic called "app1-topic" in the source cluster will be mirrored to a topic called "app1-topic" in the target cluster. 
@@ -266,7 +266,7 @@ Example CLI command
 
 You can translate consumer offset's between your source and target instance with mirror maker using two scenarios outlined below.  
 
-*Scenario 1: Renaming group id by removing the old prefix and/or suffix and adding a new prefix and/or suffix*
+###Scenario 1: Renaming group id by removing the old prefix and/or suffix and adding a new prefix and/or suffix*
 {: #renamegroupid_1}
 
 Here, you have to configure four additional parameters. 
@@ -297,7 +297,7 @@ Example CLI command
 }
 ```
 
-*Scenario 2: Consumer group ids are mirrored with their names unchanged*
+###Scenario 2: Consumer group ids are mirrored with their names unchanged*
 {: #renamegroupid_2}
 
 In this scenario, you also apply the topic_name_transform with the type set to none. With this configuration, a topic called "aaa-group-id" in the source cluster will be mirrored to a topic called "aaa-group-id" in the target cluster. 
