@@ -179,7 +179,7 @@ After the topic selection is completed, the target cluster shows the topics that
 {: #renametopics}
 You can replicate data between topics with different names using three scenarios outlined below.  
 
-*Scenario 1: Renaming topics by removing the old prefix and/or suffix and adding a new prefix and/or suffix*
+####Scenario 1: Renaming topics by removing the old prefix and/or suffix and adding a new prefix and/or suffix*
 {: #renametopic_1}
 
 Here, you have to configure four additional parameters. 
