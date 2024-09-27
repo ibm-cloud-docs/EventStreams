@@ -216,7 +216,7 @@ Example CLI Command
 }
 ```
 
-### Scenario 2.  Adding the source alias as a suffix to mirrored topics
+### Scenario 2: Adding the source alias as a suffix to mirrored topics
 {: #renametopic_2}
 
 Here, you apply a topic name transformation with the topic_name_transform type set to "use_alias". With this configuration, a topic called "app1-topic" in the source cluster will be mirrored to a topic called "app1-topic.source" in the target cluster, because the source alias specified in the configuration is "source". 
