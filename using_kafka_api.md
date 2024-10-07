@@ -111,23 +111,23 @@ If Maven is used in build system, add the following information to the file `pom
 
 ```xml
 <dependency>
-    <groupId>com.ibm.eventstreams</groupId>
+    <groupId>com.ibm.cloud.eventstreams</groupId>
     <artifactId>oauth-client</artifactId>
-    <version>0.1.2</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
 If Gradle is used in build system, add the following information to the file `build.gradle` in the dependencies section.
 
 ```gradle
-implementation com.ibm.eventstreams:oauth-client:0.1.2
+implementation com.ibm.cloud.eventstreams:oauth-client:1.3.1
 ```
 
  Use the following strings and properties.
 
 - Use the `bootstrap_endpoints` string as the list of bootstrap servers and pass this string of host and port pairs to your Kafka client.
 - Use the `api_key` string as the API key.
-- The `IAMOAuthBearerLoginCallbackHandler` is provided by the jar package `com.ibm.eventstreams:oauth-client:+`.
+- The `IAMOAuthBearerLoginCallbackHandler` is provided by the jar package `com.ibm.cloud.eventstreams:oauth-client:+`.
 - The {{site.data.keyword.iamlong}}'s token endpoint `https://iam.cloud.ibm.com/identity/token` is configured to generate token from the API key by using specified grant type in jaas config. It is done on client side, thus the API key is never sent to the server side and provides better security than a long-lived API key.
 - The {{site.data.keyword.iamshort}}'s key endpoint `https://iam.cloud.ibm.com/identity/keys` is configured to validate the token.
 
@@ -146,7 +146,7 @@ ssl.enabled.protocols=TLSv1.2
 ssl.endpoint.identification.algorithm=HTTPS
 ```
 
-The sample code refers to the [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-samples){: external}.
+The sample code refers to the [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-java-sdk){: external}.
 
 For other Kafka client libaries, refer to their documentation about how to implement OAUTHBEARER support. For example:.
 
