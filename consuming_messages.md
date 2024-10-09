@@ -49,7 +49,7 @@ Many configuration settings exist for the consumer that control aspects of its b
 |max.poll.records | The maximum number of records returned in a call to poll(). | 1,... | 500 |
 |session.timeout.ms | The number of milliseconds within which a consumer heartbeat must be received to maintain a consumer's membership of a consumer group. | 6000-300000 | 10000 (10 seconds) |
 |max.poll.interval.ms |The maximum time interval between polls before the consumer leaves the group. | 1,... | 300000 (5 minutes) |
-{: caption="Table 1. Configuring consumer properties" caption-side="top"}
+{: caption="Configuring consumer properties" caption-side="top"}
 
 Many more configuration settings are available, but read the [Apache Kafka documentation](http://kafka.apache.org/documentation/){: external} before you start to experiment with them.
 
@@ -64,7 +64,7 @@ When a consumer joins a consumer group, it discovers the coordinator for the gro
 
 The messages from a single partition are processed by only one consumer in each group. This mechanism ensures that the messages on each partition are processed in order. See the following diagram for an example where a topic contains three partitions and a consumer group, which is consuming that topic, contains two consumers. One consumer in the group is assigned two partitions, and the other consumer is assigned one partition.
 
-![Consumer groups diagram.](consumer_groups.png "Diagram that shows an example consumer group. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by a consumer group with 2 consumers. One consumer receives messages from 2 partitions, and the other receives messages from 1 partition."){: caption="Figure 1. Consumer group example" caption-side="bottom"}
+![Consumer groups diagram.](consumer_groups.png "Diagram that shows an example consumer group. A producer is feeding into a Kafka topic over 3 partitions and the messages are then being subscribed to by a consumer group with 2 consumers. One consumer receives messages from 2 partitions, and the other receives messages from 1 partition."){: caption="Consumer group example" caption-side="bottom"}
 
 When one of the following changes takes place in a consumer group, the group rebalances by shifting the assignment of partitions to the group members to accommodate the change:
 
@@ -247,4 +247,3 @@ Thrown as a result of `Consumer.commitSync(...)` when an unrecoverable error occ
 {: #timeout_exception}
 
 Thrown by `Producer.send(...),  Consumer.listTopics()` if the metadata cannot be retrieved. The exception is also seen in the send callback (or the returned Future) when the requested acknowledgment does not come back within `request.timeout.ms`. The client can retry the operation, but the effect of a repeated operation depends on the specific operation. For example, if sending a message is retried, the message is possibly duplicated.
-

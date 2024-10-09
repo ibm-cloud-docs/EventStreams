@@ -37,7 +37,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.4.1 |  05 Dec 2023 |  - Added `mirroring-active-topics` and `help` commands. |
 | v2.5.0 |  15 Dec 2023 |  - Added `schema-import` commands. |
 | v2.6.0 |  29 Aug 2024 |  - Added `schemas`, `schema-create`, `schema`, `schema-update`, `schema-delete`, `schema-versions`, `schema-version-create`, `schema-version`, `schema-version-update`, `schema-version-delete`, `schema-compatibility-rule-create`, `schema-compatibility-rule`, `schema-compatibility-rule-update`, and `schema-compatibility-rule-delete` commands. |
-{: caption="Table 1. Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
+{: caption="Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
 {: #ibmcloud_es_init}

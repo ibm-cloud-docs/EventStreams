@@ -34,7 +34,7 @@ The following table lists the topic events:
 | event-streams.topic.create | An event is created when you create a topic.|
 | event-streams.topic.delete | An event is created when you delete a topic.|
 | event-streams.topic.update | An event is created when you update a topic's configuration or increase partitions.|
-{: caption="Table 1. {{site.data.keyword.messagehub}} topic events" caption-side="top"}
+{: caption="{{site.data.keyword.messagehub}} topic events" caption-side="top"}
 
 Additional information about topic configuration is logged in the update and delete events,  for example partitions, `retentionMs`, and `segmentMs`.
 
@@ -51,7 +51,7 @@ The following table lists the message audit events:
 | event-streams.message.read | An event is created when message audit is enabled on a topic and a consumer is reading data from the topic.|
 | event-streams.message.write | An event is created when message audit is enabled on a topic and a producer is writing data to the topic.|
 | event-streams.message.delete | An event is created when message audit is enabled on a topic and records are deleted from the topic. Records deletion because of retention policy does not generate.|
-{: caption="Table 2. {{site.data.keyword.messagehub}} message events" caption-side="top"}
+{: caption="{{site.data.keyword.messagehub}} message events" caption-side="top"}
 
 {{site.data.keyword.messagehub}} can sustain high request rates, so not every request triggers an event. Instead, events are aggregated by initiator (user ID or service ID), host (IP address), operation (read, write, delete), outcome (success or failure), and topic over a 1-hour period.
 
@@ -69,7 +69,7 @@ The following table lists the message audit events:
 | event-streams.schema-rule.create | A new rule or global rule was created in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.update | An existing rule or global rule was updated in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
 | event-streams.schema-rule.delete | A rule was deleted in the {{site.data.keyword.messagehub}} schema registry for the enterprise instance.|
-{: caption="Table 3. {{site.data.keyword.messagehub}} events" caption-side="top"}
+{: caption="{{site.data.keyword.messagehub}} events" caption-side="top"}
 
 ## Where to view the events
 {: #ui}

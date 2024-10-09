@@ -62,7 +62,7 @@ The following table lists valid throughput and storage capacity unit combination
 |150 MB per second (75 MB/s producing, 75 MB/s consuming)|2 TB, 4 TB, 6 TB, 8 TB, 10 TB, 12 TB|
 |300 MB per second (150 MB/s producing, 150 MB/s consuming)|4 TB, 8 TB, 12 TB|
 |450 MB per second (225 MB/s producing, 225 MB/s consuming)|6 TB, 12 TB|
-{: caption="Table 1. Valid throughput and storage capacity unit combinations" caption-side="top"}
+{: caption="Valid throughput and storage capacity unit combinations" caption-side="top"}
 
 For more information about capacity limitations, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas#limits_enterprise).
 
@@ -105,7 +105,7 @@ Valid combinations and values for the "throughput" and "storage_size" are listed
 | | |12 TB|12288|
 |3  (450 MB/s)|450|6 TB|6144|
 | | |12 TB|12288|
-{: caption="Table 2. Valid combinations and values for 'throughput' and 'storage_size'" caption-side="top"}
+{: caption="Valid combinations and values for 'throughput' and 'storage_size'" caption-side="top"}
 
 ### Example
 {: #scaleup_example}
@@ -208,4 +208,3 @@ The example then shows how to scale this service instance to a configuration of 
        Service endpoints:    public
        Storage size:         8192 GB
        Throughput:           300 MB/s
-

@@ -85,7 +85,7 @@ The following table summarizes what is supported by the plans:
 | **IAM address restrictions** | No | Yes | Yes | No |
 | **IAM token authentication only** | No | No | Yes | Yes |
 | **Mirroring** | No | No | Yes | No |
-{: caption="Table 1. Plan comparison table" caption-side="bottom"}
+{: caption="Plan comparison table" caption-side="bottom"}
 
 [^tabletext1]: After 30 days of inactivity, your instance is deleted. (Inactivity is defined as a zero bytes_out metric, even though you might create a partition or produced messages.)
 

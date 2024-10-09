@@ -18,7 +18,7 @@ subcollection: EventStreams
 To connect applications that run outside Amazon Web Services (AWS) with VPN access to the Satellite location to an {{site.data.keyword.messagehub}} instance, complete the following set of steps.
 {: shortdesc}
 
-![VPN diagram](satellite_vpn.png "VPN"){: caption="Figure 1. Diagram showing an app that connects to clients by using a VPN endpoint." caption-side="bottom"}
+![VPN diagram](satellite_vpn.png "VPN"){: caption="Diagram showing an app that connects to clients by using a VPN endpoint." caption-side="bottom"}
 
 ## Set up the Satellite plan for {{site.data.keyword.messagehub_full}} in a Satellite location by using AWS
 {: #prepare-satellite-aws}

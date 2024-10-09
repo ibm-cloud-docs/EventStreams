@@ -99,7 +99,7 @@ To enable mirroring, you need to run a **service-instance-update** command again
 | source_crn | The crn of the source cluster to be mirrored |
 | source_alias | The alias used for the source cluster | 
 | target_alias | The alias used for the target cluster | 
-{: caption="Table 1. Required parameters when enabling mirroring" caption-side="bottom"}
+{: caption="Required parameters when enabling mirroring" caption-side="bottom"}
 
 - The `source_crn` is in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
 - The `source_alias` and the `target_alias` are the aliases that you want to configure for each of the two service instances when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".

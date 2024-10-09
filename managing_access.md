@@ -63,7 +63,7 @@ The levels of access (also known as a role) that you can assign to a user to eac
 |  Reader | Perform read-only actions within {{site.data.keyword.messagehub}} such as viewing resources. | Allow an app to connect to a cluster by assigning read access to cluster resource type. |
 | Writer | Writers have permissions beyond the reader role, including editing {{site.data.keyword.messagehub}} resources. | Allow an app to produce to topics by assigning write access to topic resource and topic name types. |
 | Manager | Managers have permissions beyond the writer role to complete privileged actions. In addition, you can create and edit {{site.data.keyword.messagehub}} resources. | Allow full access to all resources by assigning manage access to the {{site.data.keyword.messagehub}} instance.
-{: caption="Table 1. Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="bottom"}
+{: caption="Example {{site.data.keyword.messagehub}} user roles and actions" caption-side="bottom"}
 
 ## How do I assign access?
 {: #assign_access }
@@ -117,7 +117,7 @@ The following table describes the role and resource requirements that are needed
 | Commit a transaction. | Writer |  | Writer |
 | Abort a transaction. |  |  | Writer |
 | Send offsets to a transaction. |  | Reader | Writer |
-{: caption="Table 2. Producer actions" caption-side="bottom"}
+{: caption="Producer actions" caption-side="bottom"}
 
 [^tabletext1]: Writer on txnid is only required for transactional produce.
 
@@ -140,7 +140,7 @@ The following table describes the role and resource requirements that are needed
 | Poll. |  | Reader |  |
 | Subscribe. |  | Reader |  |
 | Unsubscribe. |  | Reader | Writer |
-{: caption="Table 2. Consumer actions" caption-side="bottom"}
+{: caption="Consumer actions" caption-side="bottom"}
 
 [^tabletext2]: Reader on group is only required if the assign causes the consumer to leave its current group.
 
@@ -163,7 +163,7 @@ In addition to the policies required for this resource type, access to `Resource
 | Fence producers. |  |  | Writer |
 | Incrementally alter topic configurations. | Manager |  |  |
 | Remove members from consumer group. |  | Reader |  |
-{: caption="Table 4. Administration actions" caption-side="bottom"}
+{: caption="Administration actions" caption-side="bottom"}
 
 ### Schema Registry actions
 {: #schema_registry_actions} 
@@ -209,7 +209,7 @@ With Schema Registry actions, you can alter the schema version, such as create, 
 | Delete the specified subject-level compatibility level config and reverts to the global default. | Manager  |
 | Update the global compatibility rule. [^tabletext3] |  |
 | Update the global compatibility level. [^tabletext4] |  |
-{: caption="Table 5. Schema Registry actions" caption-side="bottom"}
+{: caption="Schema Registry actions" caption-side="bottom"}
 
 [^tabletext3]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
 [^tabletext4]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
@@ -241,7 +241,7 @@ For interoperation with existing applications, the {{site.data.keyword.messagehu
 | Update compatibility level for the specified subject. | Manager |
 | Get compatibility level for a subject. | Reader |
 | Deletes the specified subject-level compatibility level config and reverts to the global default. | Manager |
-{: caption="Table 1. Compatibility actions table" caption-side="bottom"}
+{: caption="Compatibility actions table" caption-side="bottom"}
 
 [^tabletext5]: Reader if the version already exists, Writer if the version is to be created by the API call.
 [^tabletext6]: You do not need access to the schema resource, instead Manager access on the cluster resource is required.
@@ -274,4 +274,4 @@ Scenario | Person or process role | Person or process resource| Application role
 Adding a schema to the registry needs to specify a nondefault rule that controls how versions of the schema are allowed to evolve. |`Reader`  \n `Manager` | `cluster`  \n `schema` | Not applicable |  Not applicable
 Schemas are managed alongside the application code that uses the schema. New schema versions are created at the point that an application tries to use the new schema version. | Not applicable | Not applicable | `Reader`  \n `Writer`| `cluster`  \n `schema`
 The global default rule that controls schema evolution is changed. | `Manager` | `cluster` | Not applicable | Not applicable
-{: caption="Table 3. Examples of authorization scenarios" caption-side="bottom"}
+{: caption="Examples of authorization scenarios" caption-side="bottom"}
