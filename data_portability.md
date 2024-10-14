@@ -14,7 +14,7 @@ subcollection: EventStreams
 
 
 
-# Understanding data portability for {{site.data.keyword._service-name_notm}}
+# Understanding data portability for {{site.data.keyword.messagehub}}
 {: #data-portability}
 
 
@@ -46,15 +46,15 @@ For more information about your responsibilities when using {{site.data.keyword.
 ## Data export procedures
 {: #data-portability-procedures}
 
-{{site.data.keyword._service-name_notm}} provides mechanisms to export your content that has been uploaded, stored, and processed using the service.
+{{site.data.keyword.messagehub}} provides mechanisms to export your content that has been uploaded, stored, and processed using the service.
 
 
 
 All data available within the service can be accessed using the Apache Kafka APIs as described in [Using the Kafka API](/docs/EventStreams?topic=EventStreams-kafka_using). Any data that has exceeded the configured retention will have been deleted and will not be available, as per [Limits and Quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
 
-To export the configuration of your topics defined within {{site.data.keyword._service-name_notm}}, use the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api).
+To export the configuration of your topics defined within {{site.data.keyword.messagehub}}, use the [Administration REST API](/docs/EventStreams?topic=EventStreams-admin_api).
 
-To export the configuration of your schemas defined within {{site.data.keyword._service-name_notm}}, use the [Schema Registry REST API](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
+To export the configuration of your schemas defined within {{site.data.keyword.messagehub}}, use the [Schema Registry REST API](/docs/EventStreams?topic=EventStreams-ES_schema_registry).
 
 
 
@@ -70,5 +70,3 @@ The format of topic and schema registry configuration is as defined by the respe
 ## Data ownership
 
 All exported data are classified as Customer content and therefore apply to them the full customer ownership and licensing rights, as stated in [IBM Cloud Service Agreement](https://www.ibm.com/terms/?id=Z126-6304_WS).
-
-
