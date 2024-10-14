@@ -80,7 +80,7 @@ The following table provides guidance for the achievable throughput:
 | eu-gb <-> eu-de | 2.5 MB/s | 35 MB/s |
 | au-syd <-> jp-tok | 0.4 MB/s| 12 MB/s|
 | within same region eu-gb <-> eu-gb | 2.5 MB/s| 35 MB/s|
-{: caption="Table 1. Throughput guidance" caption-side="bottom"}
+{: caption="Throughput guidance" caption-side="bottom"}
 
 The numbers indicate:
 - **Max total throughput**: The maximum total MB/s that can be mirrored across all selected topics. 
@@ -115,7 +115,7 @@ Define the following IAM access policies on **both** clusters, where &lt;ALIAS&g
 |topic     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |txnid     | &lt;RESOURCE_NAME&gt;.* |As required by the application |
 |topic (specific to the checkpoint topic)    | &lt;ALIAS&gt;.checkpoints.internal | Reader |
-{: caption="Table 2. Access policies" caption-side="bottom"}
+{: caption="Access policies" caption-side="bottom"}
 
 Grant fine-grained access policies to individual applications. For example, for applications simply consuming grant only Reader access.
 
@@ -124,7 +124,7 @@ For mirroring user controls, you must have the following permissions on the targ
 | Resource type | Resource ID| Role|
 |----------|---------|---------|
 |cluster |  |Manager |
-{: caption="Table 3. Target cluster permissions" caption-side="bottom"}
+{: caption="Target cluster permissions" caption-side="bottom"}
 
 ## Considerations when you share clusters between multiple entities
 {: #sharing_clusters}
@@ -150,7 +150,7 @@ The required access policies must be adjusted. For example, for the accounting b
 |topic     | accounting.* |As required by the application |
 |txnid     | accounting.* |As required by the application |
 |topic (note, this is specific to the checkpoint topic)    | A.checkpoints.internal | Reader |
-{: caption="Table 4. Access policies needed on cluster B" caption-side="bottom"}
+{: caption="Access policies needed on cluster B" caption-side="bottom"}
 
 Cluster A must have the same access policies apart from the last one that must be on `B.checkpoints.internal`.
 
@@ -178,7 +178,7 @@ Example Patterns | Explanation
 `^aaa.*,^bbb.*` | List of patterns matching on the prefix. \n This matches any topic name that starts with `aaa` or `bbb`.
 `^branch_[0-9]{3}_[a-z]*$` | More complex regex pattern to match topic names. \n This matches any topic name that starts with `branch_`, followed by exactly 3 digits, followed by `_` and any number of lowercase letters.
 `.*` | Mirror all source topics.
-{: caption="Table 5. Example patterns" caption-side="bottom"}
+{: caption="Example patterns" caption-side="bottom"}
 
 When using the CLI, the patterns are given as a comma-separated list. For example, the following command will select all topics whose name has the prefix `accounting` or `hr`.
 
@@ -329,4 +329,3 @@ If you subsequently re-create the topic on the source cluster, data from the new
 {: #kafka_considerations}
 
 Kafka Streams and Kafka Connect rely on internal topics with specific names to store state and configuration. When these topics are mirrored, they are renamed on the target cluster. For this reason, Kafka Streams and Kafka Connect applications cannot failover and fail-back between clusters. Consider this when you plan disaster recovery of such applications.
-

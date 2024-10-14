@@ -521,7 +521,7 @@ array of JSON objects, where each object represents a Kafka topic and has the fo
 | partitions        | The number of partitions assigned to the Kafka topic.   |
 | retentionsMs      | The retention period for messages on the topic (in ms). |
 | cleanupPolicy     | The cleanup policy of the Kafka topic.        |
-{: caption="Table 1. {{site.data.keyword.messagehub}} topic properties" caption-side="top"}               
+{: caption="{{site.data.keyword.messagehub}} topic properties" caption-side="top"}               
 
 ##### List topics example
 {: #topic_list_example_api}
@@ -854,4 +854,3 @@ For a general overview of how to get help with {{site.data.keyword.messagehub}} 
 [FAQs](/docs/EventStreams?topic=EventStreams-faqs){: external} details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise){: external}.
-

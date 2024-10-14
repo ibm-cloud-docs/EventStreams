@@ -21,7 +21,7 @@ subcollection: EventStreams
 Extend your data pipeline to Cloud {{site.data.keyword.cos_full}} to easily archive data for long-term storage or to gain insight by leveraging interactive queries or big data analytics. From the {{site.data.keyword.messagehub}} UI, topics can be selected and linked to Cloud {{site.data.keyword.cos_short}} buckets, with data automatically and securely streamed by using the fully managed {{site.data.keyword.sqlquery_short}} service. All data is stored in Parquet format, making it easy to manage and process.
 {: shortdesc}
 
-![Streaming to Cloud Object Storage by using{{site.data.keyword.sqlquery_short}}](ES_streams_landing.svg){: caption="Figure 1. Diagram showing streaming to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}" caption-side="bottom"}
+![Streaming to Cloud Object Storage by using{{site.data.keyword.sqlquery_short}}](ES_streams_landing.svg){: caption="Diagram showing streaming to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}" caption-side="bottom"}
 
 The following task walks you through:
 

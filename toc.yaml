@@ -113,6 +113,7 @@ toc:
                 label: IBM Event Streams Admin REST API
                 href: https://{DomainName}/apidocs/event-streams/adminrest
             - eventstreams-cli.md
+        - eventstreams-terraform.md    
         - sdk.md
         - topicgroup:
               label: Related links

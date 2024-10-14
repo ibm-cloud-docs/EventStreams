@@ -102,7 +102,7 @@ Network throughput capacity is based on the peak maximum. Each peak maximum has
 |150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
 |300 MB/s (150 MB/s producing and 150 MB/s consuming)|200/s (100 MB/s producing and 100 MB/s consuming) |
 |450 MB/s (225 MB/s producing and 225 MB/s consuming)|300 MB/s (150 MB/s producing and 150 MB/s consuming)|
-{: caption="Table 1. Network throughput capacity on Enterprise" caption-side="top"}
+{: caption="Network throughput capacity on Enterprise" caption-side="top"}
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. The peak maximum throughput capacity can be selected when the service instance is created, and later scaled as demands increase. 
 
@@ -163,7 +163,7 @@ Network throughput capacity is based on the peak maximum. Each peak maximum has 
 | Peak Maximum | Recommended maximum | 
 |--------------|-----------------------|
 |150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
-{: caption="Table 2. Network throughput capacity on Satellite" caption-side="top"}
+{: caption="Network throughput capacity on Satellite" caption-side="top"}
 
 Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
 

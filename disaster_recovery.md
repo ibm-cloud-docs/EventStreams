@@ -20,14 +20,14 @@ This end-to-end disaster recovery scenario demonstrates how to use mirroring to 
 
 Two clusters were provisioned in different regions and configured for mirroring (following the information in [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup)) by using A and B as cluster aliases. A producer publishes records to a topic called `accounting.invoices` and a consumer reads the messages from that topic in cluster A.
 
-![Mirroring overview diagram.](disaster1.png "Diagram that shows a producer publishing messages to a topic. The consumer reads the messages from that topic."){: caption="Figure 1. Mirroring overview" caption-side="bottom"}
+![Mirroring overview diagram.](disaster1.png "Diagram that shows a producer publishing messages to a topic. The consumer reads the messages from that topic."){: caption="Mirroring overview" caption-side="bottom"}
 
 ## Source cluster becomes unavailable 
 {: #source_cluster_unavailable}
 
 Let's consider what happens if a disaster occurs on the source cluster's region.
 
-![Disaster on source cluster diagram.](disaster2.png "Diagram showing a disaster occurring in the source cluster's region."){: caption="Figure 2. Disaster in source cluster's region" caption-side="bottom"}
+![Disaster on source cluster diagram.](disaster2.png "Diagram showing a disaster occurring in the source cluster's region."){: caption="Disaster in source cluster's region" caption-side="bottom"}
 
 It is the responsibility of the {{site.data.keyword.messagehub}} instance owner to determine whether the impact of the event is such as to declare a disaster. The service instance owner must coordinate the failover of applications including their reconfiguration, redeployment, and restart if necessary.
 
@@ -41,7 +41,7 @@ Perform the following steps to fail over:
 3. Restart the producers to point to cluster B's endpoints.
 4. Disable any mirroring that is still enabled on topics from cluster A to cluster B. This can be done by using the [User controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Figure 3. Producer switched to cluster B." caption-side="bottom"}
+![Producer on target cluster B overview diagram.](disaster3.png "Diagram that shows the producer switched to cluster B and sending messages to a new local topic"){: caption="Producer switched to cluster B." caption-side="bottom"}
 
 The producer is now switched to cluster B and sends messages to a new local topic with the same name as the original.
 
@@ -54,7 +54,7 @@ Perform the following steps to fail over:
 2. Stop the consumers that were pointing to cluster A.
 3. Restart the consumers to point to cluster B's endpoints.
 
-![Consumer on cluster B diagram.](disaster4.png "Diagram that shows the consumer continuing to consume the existing messages."){: caption="Figure 4. The consumer continues to consume the existing messages." caption-side="bottom"}
+![Consumer on cluster B diagram.](disaster4.png "Diagram that shows the consumer continuing to consume the existing messages."){: caption="The consumer continues to consume the existing messages." caption-side="bottom"}
 
 The consumer is now able to continue to consume the existing messages from the `accounting.invoices.A` topic from cluster B while new messages come from `accounting.invoices`.
 
@@ -85,7 +85,7 @@ Before failing back, mirroring must be enabled in the opposite direction:
   
 Next, make sure that data is being replicated into cluster A by examining the topics from cluster B appearing on cluster A. These topics have the suffix from the new source cluster, B.
 
-![Mirroring enabled in opposite direction diagram.](disaster5.png "Diagram that shows mirroring is now enabled in the opposite direction."){: caption="Figure 5. Mirroring enabled in opposite direction." caption-side="bottom"}
+![Mirroring enabled in opposite direction diagram.](disaster5.png "Diagram that shows mirroring is now enabled in the opposite direction."){: caption="Mirroring enabled in opposite direction." caption-side="bottom"}
 
 Do not mirror back the original target topic on cluster B as that would cause an undesirable cyclic effect. As shown in the diagram, we mirror accounting.invoices from cluster B to cluster A, not accounting.invoices.A. 
 {:note: .note}
@@ -97,7 +97,7 @@ The decision to fail back is again owned by the {{site.data.keyword.messagehub}}
 
 Unlike the failover case, in this case there was no disaster on cluster B. Therefore, failback is a controlled operation and can be achieved with minimal data loss or reprocessing of data.
 
-![Mirroring switched back to the original configuration diagram.](disaster6.png "Diagram that shows mirroring has now switched back to the original configuration."){: caption="Figure 6. Mirroring switched back to the original configuration." caption-side="bottom"}
+![Mirroring switched back to the original configuration diagram.](disaster6.png "Diagram that shows mirroring has now switched back to the original configuration."){: caption="Mirroring switched back to the original configuration." caption-side="bottom"}
 
 Finally, switch the mirroring back to the original configuration, which means that cluster A is again the source and cluster B resumes as the target. 
 - Ensure that cluster A and cluster B are fully operational.

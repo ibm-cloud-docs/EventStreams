@@ -37,7 +37,7 @@ The following table summarizes what you can use with {{site.data.keyword.message
 |**Kafka Streams supported**   |  Yes |  Yes |  No |
 |**ksqlDB supported**   |  Yes |  No|  No |
 |**Authentication requirements**   |  Client must support authentication by using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol. | Client must support authentication by using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol.|  Client must support authentication by using the SASL Plain mechanism and use the Server Name Indication (SNI) extension to the TLSv1.2 protocol. |
-{: caption="Table 1. Kafka client support in Standard, Enterprise, and Lite plans." caption-side="bottom"}
+{: caption="Kafka client support in Standard, Enterprise, and Lite plans." caption-side="bottom"}
 
 ## Choosing a Kafka client to use with {{site.data.keyword.messagehub}}
 {: #kafka_clients}
@@ -59,7 +59,7 @@ For other languages, run one of the following clients, all of which are tested w
 | [confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go) |  Go | Latest  |  1.4.0  |   |
 | [librdkafka](https://github.com/confluentinc/librdkafka) |  C or C++ | Latest  |  1.4.0  |   |
 | [sarama](https://github.com/IBM/sarama) | Go | Latest | 1.26.3 | [Sarama examples](https://github.com/IBM/sarama/tree/v1.41.1/examples) |
-{: caption="Table 2. Client support summary" caption-side="bottom"}
+{: caption="Client support summary" caption-side="bottom"}
 
 [^tabletext1]: The earliest version that was validated in continual testing. Typically, it is the initial version available within the last 12 months, or newer if significant issues are known to exist. If you can't run any of the clients that are listed, you can use other third-party clients that meet the following minimum requirements (for example, [librdkafka](https://github.com/confluentinc/librdkafka){: external}). 1. Supports Kafka 1.40, or later. 2. Can connect and authenticate by using SASL PLAIN with TLSv1.2. 3. Supports the SNI extensions for TLS where the server's hostname is includes in the TLS handshake. 4. Supports elliptic curve cryptography. In all cases, use the latest version of the client.
 

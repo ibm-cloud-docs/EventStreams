@@ -70,7 +70,7 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
         | Message data retention | 2 TB x 3 replicas/availability zones | 6 TB total |
         | Message data management | 250 GB x 3 replicas/availability zones | 750 GB total |
         | Service instance monitoring | 125 GB x 3 replicas/availability zones | 375 GB total |
-        {: caption="Table 1. Block storage usage" caption-side="bottom"}
+        {: caption="Block storage usage" caption-side="bottom"}
 
         The information regarding the amount of storage is for a single {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} service instance. If multiple {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} instances are required, the information applies to each instance of {{site.data.keyword.messagehub}}.
 {: note}
@@ -78,9 +78,3 @@ To deploy {{site.data.keyword.messagehub}} into a {{site.data.keyword.satellites
 To provision {{site.data.keyword.messagehub}}, complete the steps in [Provisioning {{site.data.keyword.messagehub}} for {{site.data.keyword.satelliteshort}}](/docs/EventStreams?topic=EventStreams-satellite-provisioning).
 
 For an example how to connect your provider to {{site.data.keyword.satelliteshort}}, see [Connecting applications running outside AWS with VPN access to the {{site.data.keyword.satelliteshort}} location](/docs/EventStreams?topic=EventStreams-satellite_vpn).
-
-
-
-
-
-

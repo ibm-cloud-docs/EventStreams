@@ -75,7 +75,7 @@ HTTP error codes apply to REST APIs, including [Admin REST](/apidocs/event-strea
 | 415 |  | Unsupported media type. |  |
 | 422 | Semantically invalid request. You have a malformed request. If you receive this error when you try to create a new topic, it might be due to the maximum number of allowed partitions for your plan. For more information, see [How Event Streams uses limits and quotas for verifying the limits](/docs/EventStreams?topic=EventStreams-kafka_quotas). |  |  |
 | 503 | Service unavailable. The request failed due to {{site.data.keyword.messagehub}} brokers being unavailable. An error occurred while handling the request. The service is unavailable. If you receive this error when creating a new topic fails, verify the [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas). |Service unavailable. The request failed due to {{site.data.keyword.messagehub}} brokers being unavailable.  |  |
-{: caption="Table 1. HTTP error codes for REST APIs and how to fix them" caption-side="bottom"}
+{: caption="HTTP error codes for REST APIs and how to fix them" caption-side="bottom"}
 
 The Kafka API is a TCP-based API. For more information, refer to its [protocol guide](https://kafka.apache.org/protocol.html#protocol_error_codes) regarding the error codes.
   

@@ -133,7 +133,7 @@ In addition, Kafka Connect in distributed mode uses three topics internally. The
 | `config.storage.topic`      | Connector configuration topic                                       |
 | `status.storage.topic`      | Connector status topic                                              |
 | `status.storage.partitions` | Number of partitions for connector status topic (default 5)         |
-{: caption="Table 1. Topics in Kafka Connect" caption-side="bottom"}
+{: caption="Topics in Kafka Connect" caption-side="bottom"}
 
 For example, you can use the following key-value pairs in your properties file:
 

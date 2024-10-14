@@ -129,7 +129,7 @@ cos.endpoint.visibility | Optional. Specify *public* to connect to the Cloud {{s
 cos.object.deadline.seconds | Optional. The number of seconds (as measured wall clock time for the Connect Task instance) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object. This property can be useful in situations that have long pauses between Kafka records being produced to a topic. It ensures that any records that are received by this connector are always written into {{site.data.keyword.cos_short}} within the specified time.
 cos.object.interval.seconds | Optional. The number of seconds (as measured by the timestamps in Kafka records) between reading the first record from Kafka, and writing all of the records read so far into a Cloud {{site.data.keyword.cos_short}} object.
 cos.object.records | Optional. The maximum number of Kafka records to combine into an object.
-{: caption="Table 1. cos-sink.json file properties" caption-side="bottom"}
+{: caption="cos-sink.json file properties" caption-side="bottom"}
  
 ### Get {{site.data.keyword.cos_short}} credentials that use the {{site.data.keyword.Bluemix_notm}} console
 {: #connect_enterprise_console}
