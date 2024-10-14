@@ -91,6 +91,7 @@ toc:
         topics:
         - sla.md
         - responsibilities.md
+        - data_portability.md
         - topic: limits_quotas.md
           navtitle: Limits and quotas
         - activity_tracker_events.md
