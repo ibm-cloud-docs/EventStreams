@@ -41,7 +41,7 @@ To find out more about responsibility ownership for using {{site.data.keyword.cl
 
 
 
-For more information about your responsibilities when using {{site.data.keyword._service-name_notm}}, see [Shared responsibilities for {{site.data.keyword._service-name_notm}}](/docs/EventStreams?topic=EventStreams-event_streams_responsibilities).
+For more information about your responsibilities when using {{site.data.keyword.messagehub}}, see [Shared responsibilities for {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-event_streams_responsibilities).
 
 ## Data export procedures
 {: #data-portability-procedures}

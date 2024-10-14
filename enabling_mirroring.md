@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-09-27"
+lastupdated: "2024-10-14"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -150,7 +150,7 @@ Run the command again until success is indicated as follows:
 
 The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
 
-## Step 5: Select topics and Consumer Groups 
+## Step 5: Select topics and consumer groups 
 {: #step5_selecttopics}
 
 When the service instance update has completed, we want to select some topics from the source cluster to mirror. This is done with the CLI by using the **ibmcloud es mirroring-topic-selection-set** command.
@@ -175,27 +175,29 @@ For more information about making the selection, see [Mirroring user controls](/
 
 After the topic selection is completed, the target cluster shows the topics that are selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
 
-### Step 5.1: Renaming Select Topics with Mirror Maker 
+### Step 5.1: Renaming select topics with Mirror Maker 
 {: #renametopics}
 You can replicate data between topics with different names using three scenarios outlined below.  
 
-### Scenario 1: Renaming topics by removing the old prefix and/or suffix and adding a new prefix and/or suffix
+### Scenario 1: Renaming topics by removing the old prefix/suffix and adding a new prefix/suffix
 {: #renametopic_1}
 
-Here, you have to configure four additional parameters. 
-Required Parameters for Topic renaming | Description
--- | --
-remove_prefix | the prefix to remove from topic names in the source cluster​
-remove_suffix | the suffix to remove from topic names in the source cluster​
-add_prefix | the prefix to add to topic names in the target cluster​
-add_suffix | the suffix to add to topic names in the target cluster
+Configure the following four additional parameters.
 
-When these options e.g remove_prefix and/or remove_suffix options are specified, only topics with the matching prefixes/suffixes will be eligible for mirroring. For example, if I have a remove_prefix of "app1-", and specify a topic selection of "abc.*" then only topics that start "app1-abc" will be mirrored.
+| Required parameters for topic renaming | Description | 
+| -- | -- |
+| remove_prefix | the prefix to remove from topic names in the source cluster |
+| remove_suffix | the suffix to remove from topic names in the source cluster |
+| add_prefix | the prefix to add to topic names in the target cluster |
+| add_suffix | the suffix to add to topic names in the target cluster |
 
-If neither add_prefix or add_suffix options are specified then the default behavior to add the source cluster alias followed by a dot as the prefix will occur as shown in [Mirroring user controls ](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The JSON parameters need to be specified via the `-p` command line argument. 
+When these options are specified, only topics with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a remove_prefix of `app1-`, and specify a topic selection of `abc.*`, only topics that start with "app1-abc" will be mirrored.
 
-Example CLI Command 
-```
+If neither `add_prefix` nor `add_suffix` options are specified, the default behavior to add the source cluster alias followed by a dot as the prefix is as shown in [Mirroring user controls](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The JSON parameters need to be specified via the `-p` command line argument.
+
+See the following CLI command example:
+
+```sh
 {
   "mirroring": {
     "source_crn": "crn:v1:...",
@@ -215,15 +217,16 @@ Example CLI Command
   }
 }
 ```
+{: pre}
 
 ### Scenario 2: Adding the source alias as a suffix to mirrored topics
 {: #renametopic_2}
 
-Here, you apply a topic name transformation with the topic_name_transform type set to "use_alias". With this configuration, a topic called "app1-topic" in the source cluster will be mirrored to a topic called "app1-topic.source" in the target cluster, because the source alias specified in the configuration is "source". 
+Apply a topic name transformation with the topic_name_transform type set to `use_alias`. With this configuration, a topic called `app1-topic` in the source cluster will be mirrored to a topic called `app1-topic.source` in the target cluster, because the source alias specified in the configuration is `source`.
 
-Example CLI command
-{: #example_cli_command}
-```
+See the following CLI command example:
+
+```sh
 {
   "mirroring": {
     "source_crn": "crn:v1:...",
@@ -237,15 +240,16 @@ Example CLI command
   }
 }
 ```
+{: pre}
 
 ### Scenario 3: Topics are mirrored with their names unchanged
 {: #renametopic_3}
 
-In this scenario, you also apply the topic_name_transform with the type set to none. With this configuration, a topic called "app1-topic" in the source cluster will be mirrored to a topic called "app1-topic" in the target cluster. 
+In this scenario, you also apply the `topic_name_transform` with the type set to none. With this configuration, a topic called `app1-topic` in the source cluster will be mirrored to a topic called `app1-topic` in the target cluster.
 
-Example CLI command
-{: #example_cli_command}
-```
+See the following CLI command example:
+
+```sh
 {
   "mirroring": {
     "source_crn": "crn:v1:...",
@@ -259,31 +263,32 @@ Example CLI command
   }
 }
 ```
+{: pre}
 
-
-### Step 5.2: Renaming Corresponding Consumer Group ID's 
+### Step 5.2: Renaming corresponding consumer group IDs
 {: #renamegroupid}
 
-You can translate consumer offset's between your source and target instance with mirror maker using two scenarios outlined below.  
+You can translate consumer offsets between your source and target instance with Mirror Maker using two scenarios.
 
-### Scenario 1: Renaming group id by removing the old prefix and/or suffix and adding a new prefix and/or suffix
+### Scenario 1: Renaming group ID by removing the old prefix/suffix and adding a new prefix/suffix
 {: #renamegroupid_1}
 
-Here, you have to configure four additional parameters. 
-Required Parameters for group id renaming | Description
--- | --
-remove_prefix | the prefix to remove from group id in the source cluster​
-remove_suffix | the suffix to remove from group id in the source cluster​
-add_prefix | the prefix to add to group id in the target cluster​
-add_suffix | the suffix to add to group id in the target cluster
+Configure the following four additional parameters.
 
-When these options e.g remove_prefix and/or remove_suffix options are specified, only group id's with the matching prefixes/suffixes will be eligible for mirroring. For example, if I have a remove_prefix of "aaa", add_prefix of "bbb" then consumer groups that start "aaa-group-id" in the source cluster will be mirrored to "bbb-group-id" in the target cluster.
+| Required parameters for group ID renaming | Description |
+| -- | -- |
+| remove_prefix | the prefix to remove from group id in the source cluster |
+| remove_suffix | the suffix to remove from group id in the source cluster |
+| add_prefix | the prefix to add to group id in the target cluster |
+| add_suffix | the suffix to add to group id in the target cluster |
 
-If neither add_prefix or add_suffix options are specified then the default behavior to add the source cluster alias followed by a dot as the prefix will occur as shown in [Mirroring user controls ](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The JSON parameters need to be specified via the `-p` command line argument. 
+When these options are specified, only group IDs with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of "aaa" and `add_prefix` of "bbb", consumer groups that start with `aaa-group-id` in the source cluster will be mirrored to `bbb-group-id` in the target cluster.
 
-Example CLI command
+If neither `add_prefix-` nor `add_suffix` options are specified, the default behavior to add the source cluster alias followed by a dot as the prefix is as shown in [Mirroring user controls](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The JSON parameters need to be specified via the `-p` command line argument.
 
-```
+See the following CLI command example:
+
+```sh
 {
   "group_id_transform": {
     "type": "rename",
@@ -296,15 +301,18 @@ Example CLI command
   }
 }
 ```
+{: pre}
 
-### Scenario 2: Consumer group ids are mirrored with their names unchanged
+### Scenario 2: Consumer group IDs are mirrored with their names unchanged
 {: #renamegroupid_2}
 
-In this scenario, you also apply the topic_name_transform with the type set to none. With this configuration, a topic called "aaa-group-id" in the source cluster will be mirrored to a topic called "aaa-group-id" in the target cluster. 
+In this scenario, you also apply the `topic_name_transform` with the type set to none. With this configuration, a topic called "aaa-group-id" in the source cluster will be mirrored to a topic called "aaa-group-id" in the target cluster.
 
-Example CLI command
-```
+See the following CLI command example:
+
+```sh
 "group_id_transform": {
   "type": "none"
 }
 ```
+{: pre}
