@@ -23,7 +23,7 @@ completion-time: 15m
 {: toc-services="messagehub"}
 {: toc-completion-time="15m"}
 
-Before proceeding with the steps below, request access to provision an {{site.data.keyword.messagehub}} Satellite plan by [creating a support case](/unifiedsupport/cases/form).  In the case details, provide information about the use case and workload capacity for the satellite deployment in the Details tab. In the Subject field, enter "Event Streams Satellite Deployment request for 'Customer Name'_'AccountID'.
+Before proceeding with the steps below, request access to provision an {{site.data.keyword.messagehub}} Satellite plan by [creating a support case](/unifiedsupport/cases/form).  In the case details, provide information about the use case and workload capacity for the satellite deployment in the Details tab. In the Subject field, enter "Event Streams Satellite Deployment request for 'Customer Name'_'AccountID'".
        {: important} 
        
 ## Overview
