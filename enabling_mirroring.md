@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-10-14"
+lastupdated: "2024-10-16"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -36,8 +36,9 @@ The {{site.data.keyword.Bluemix_notm}} CLI uses the **service-instance-update** 
 
 The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance varies, but under normal circumstances it does not exceed 2 hours.
 
-## Step 1: Setup 
+## Setup 
 {: #step1_setup}
+{: step}
 
 Mirroring is not supported for a Satellite cluster, therefore neither can be a source nor a target cluster.
 {: note}
@@ -53,8 +54,9 @@ Consider your bandwidth requirements; is there enough bandwidth available in the
 Although mirroring from a Enterprise multi-zone-region cluster to a Enterprise single-zone-region cluster and vice versa is allowed. We do not recommend this configuration unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of a Enterprise multi-zone-region cluster to a Enterprise single-zone-region cluster might be lower or vice versa. 
 {: important}
 
-## Step 2: Enable service-to-service bindings
+## Enable service-to-service bindings
 {: #step2_bindings}
+{: step}
 
 You must configure a service-to-service binding between both instances to allow both instances to communicate. To configure, complete the following steps:
 
@@ -89,8 +91,9 @@ The following example shows how to use the command line to configure service-to-
 
 For more information about service-to-service bindings, see [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
 
-## Step 3: Enable mirroring
+## Enable mirroring
 {: #step3_enable}
+{: step}
 
 To enable mirroring, you need to run a **service-instance-update** command against your target cluster by using the CLI with the following required parameters:
 
@@ -112,8 +115,9 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 ```
 {: codeblock}
 
-## Step 4: Validation
+## Validation
 {: #step4_validation}
+{: step}
 
 You can get the current service instance information by running the following command:
 
@@ -150,8 +154,9 @@ Run the command again until success is indicated as follows:
 
 The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
 
-## Step 5: Select topics and consumer groups 
+## Select topics and consumer groups 
 {: #step5_selecttopics}
+{: step}
 
 When the service instance update has completed, we want to select some topics from the source cluster to mirror. This is done with the CLI by using the **ibmcloud es mirroring-topic-selection-set** command.
 
