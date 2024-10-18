@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-30"
+lastupdated: "2024-10-18" 
 
 keywords: release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## October 2024
+{: #EventStreams-oct2024}
+{: release-note}
+
+Terraform Updates
+:  More user capabilities are supported via Terraform including obtaining the kafka version. To find out more, check out the [Event Streams Terraform Module](https://github.com/terraform-ibm-modules/terraform-ibm-event-streams) as part of [Event Streams Terraform reference](/docs/EventStreams?topic=EventStreams-eventstreams-terraform).
 
 ## September 2024
 {: #EventStreams-sep2024}
