@@ -108,7 +108,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 ## ibmcloud es cluster
 {: #ibmcloud_es_cluster}
 
-Display the details of the cluster, including details of brokers and the Kafka version.
+Display the details of the cluster, including details of all brokers and the Kafka version.
 
 ```sh
 ibmcloud es cluster [--json]
