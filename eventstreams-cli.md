@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-03-01"
+lastupdated: "2024-10-24"
 
 keywords: cli reference
 
@@ -62,7 +62,7 @@ ibmcloud es init [-i|--instance-name INSTANCE_NAME] [-a|--api-url API_ENDPOINT_U
 ## ibmcloud es broker
 {: #ibmcloud_es_broker}
 
-Display the details of a broker.
+Display the details of a specific broker.
 
 ```sh
 ibmcloud es broker [--broker] ID [--json]
@@ -108,7 +108,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 ## ibmcloud es cluster
 {: #ibmcloud_es_cluster}
 
-Display the details of the cluster, including the Kafka version.
+Display the details of the cluster, including details of brokers and the Kafka version.
 
 ```sh
 ibmcloud es cluster [--json]
