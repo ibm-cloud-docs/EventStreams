@@ -29,7 +29,7 @@ All Event Streams plans (excluding satellite) can recover a deleted instance wit
 
 Applying these parameters to your applications can significantly improve resiliency and optimize resource usage. These settings are a guidance and ultimately should be traded off against your application needs. The [open source Apache Kafka documentation](https://kafka.apache.org/documentation/) provides a more detailed explanation into these parameters and their importance.  
 
-| Setting | {{site.data.keyword.IBM_notm}} Explanation |
+| Setting | Explanation |
 |----------|-----------------------|
 |‘fetch.min.bytes=1 fetch.max.wait.ms=500’  |  Empty fetch requests are wasteful because they consume server resources without actually retrieving meaningful data. The default value of 500ms is recommended for fetch.max.wait.ms however, if your application is experiencing high CPU , then consider running less clients, or increasing this.|
 |‘enable.idempotence=true retries=Integer.MAX_VALUE’   |  Idempotent producers enable retries and prevent duplicate messages, ensuring exactly-once semantics during data production and improving data durability.  |
