@@ -47,7 +47,7 @@
       "title": "SiB Solutions Case Study",
       "description": "SiB Solutions uses Kafka and AI to enable flawless logistics",
       "href": "https://www.ibm.com/case-studies/sib-solutions",
-      "type": "blog"
+      "type": "case study"
     }
   ],
   "section_devtools": {
@@ -59,19 +59,19 @@
     "view_more": "/docs/EventStreams?topic=EventStreams-event-streams-relnotes",
     "tiles": [
       {
-        "date": "October 2024",
+        "date": "1 October 2024",
         "title": "Terraform Updates"
       },
       {
-        "date": "September 2024",
+        "date": "2 September 2024",
         "title": "Schema Registry commands in CLI plugin v2.6.0"
       },
       {
-        "date": "September 2024",
+        "date": "15 September 2024",
         "title": "Reserved disk space percentage per topic metric available"
       },
       {
-        "date": "March 2024",
+        "date": "18 March 2024",
         "title": "Apache Kafka update"
       }
     ]
