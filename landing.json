@@ -47,13 +47,13 @@
       "title": "SiB Solutions Case Study",
       "description": "SiB Solutions uses Kafka and AI to enable flawless logistics",
       "href": "https://www.ibm.com/case-studies/sib-solutions",
-      "type": "case study"
+      "type": "blog"
     }
   ],
   "section_devtools": {
     "api": "/apidocs/event-streams/adminrest", 
     "cli": "/docs/EventStreams?topic=EventStreams-cli_reference", 
-    "terraform": "/docs/EventStreams?topic=EventStreams-eventstreams-terraform"
+    "terraform": "https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-eventstreams-terraform"
     },
   "section_updates": {
     "view_more": "/docs/EventStreams?topic=EventStreams-event-streams-relnotes",
