@@ -1,78 +1,78 @@
 {
   "version": 2,
-  "title": "IBM Cloud® Databases for PostgreSQL",
-  "introduction": "PostgreSQL is a powerful, open source object-relational database that is highly customizable.",
-  "product_page": "https://www.ibm.com/products/databases-for-postgresql",
-  "console_page": "/databases/databases-for-postgresql/create",
+  "title": "IBM® Event Streams for IBM Cloud®",
+  "introduction": "Event Streams for IBM Cloud® is a fully managed Kafka service, optimized to help you build intelligent applications that react to events in real time.",
+  "product_page": "https://www.ibm.com/products/event-streams",
+  "console_page": "/eventstreams-provisioning/6a7f4e38-f218-48ef-9dd2-df408747568e/create",
    "section_topics": {
     "links": [
       {
         "title": "Getting started",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-getting-started&interface=ui"
+        "href": "/docs/EventStreams?topic=EventStreams-getting-started"
       },
       {
-        "title": "Upgrading to a new major version",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-upgrading&interface=ui"
+        "title": "Overview",
+        "href": "/docs/EventStreams?topic=EventStreams-about"
       },
       {
-        "title": "The read-only replica",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-read-only-replicas&interface=ui"
+        "title": "Restricting network access",
+        "href": "/docs/EventStreams?topic=EventStreams-restrict_access"
       },
       {
-        "title": "Scaling and switching hosting models",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling&interface=ui"
+        "title": "Connecting to Event Streams",
+        "href": "/docs/EventStreams?topic=EventStreams-connecting"
       },
       {
-        "title": "Changing your Databases for PostgreSQL configuration",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-changing-configuration&interface=cli"
+        "title": "Managing encryption",
+        "href": "/docs/EventStreams?topic=EventStreams-managing_encryption"
       },
       {
-        "title": "Connecting an external application to your PostgreSQL deployment",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-external-app"
+        "title": "Using the Kafka API",
+        "href": "/docs/EventStreams?topic=EventStreams-kafka_using"
       },
       {
-        "title": "Connecting with psql",
-        "href": "/docs/databases-for-postgresql?topic=databases-for-postgresql-connecting-psql"
+        "title": "Consuming messages",
+        "href": "/docs/EventStreams?topic=EventStreams-consuming_messages"
       }
     ]
   },
   "section_highlights": [
     {
-      "title": "IBM named a leader for cloud database management systems",
-      "description": "Gartner named IBM a leader in Gartner Magic Quadrant for 2021 Cloud Database Management Systems.",
-      "href": "https://www.ibm.com/blog/ibm-is-named-a-leader-in-the-2021-gartner-magic-quadrant-for-cloud-database-management-systems-dbms/",
+      "title": "Norsk Tipping Case Study",
+      "description": "Improving the gaming experience with event streaming technology.",
+      "href": "https://www.ibm.com/case-studies/norsk-tipping",
       "type": "blog"
     },
     {
-      "title": "IBM Training - Cloud",
-      "description": "Includes Power Virtual Server, SAP, VMware, Advocate, Architect, Developer, and Site Reliability Engineer, and more",
-      "href": "https://www.ibm.com/training/cloud",
-      "type": "training"
+      "title": "SiB Solutions Case Study",
+      "description": "SiB Solutions uses Kafka and AI to enable flawless logistics",
+      "href": "https://www.ibm.com/case-studies/sib-solutions",
+      "type": "case study"
     }
   ],
   "section_devtools": {
-    "api": "/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction", 
-    "cli": "/docs/databases-cli-plugin", 
-    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
+    "api": "/apidocs/event-streams/adminrest", 
+    "cli": "/docs/EventStreams?topic=EventStreams-cli_reference", 
+    "terraform": "/docs/EventStreams?topic=EventStreams-eventstreams-terraform"
     },
   "section_updates": {
-    "view_more": "/docs/databases-for-postgresql?topic=databases-for-postgresql-postgresql-relnotes",
+    "view_more": "/docs/EventStreams?topic=EventStreams-event-streams-relnotes",
     "tiles": [
       {
-        "date": "22 October 2024",
-        "title": "Databases for PostgreSQL end-of-life procedure change"
+        "date": "October 2024",
+        "title": "Terraform Updates"
       },
       {
-        "date": "27 September 2024",
-        "title": "Databases for PostgreSQL version 13 End of life on October 22, 2025"
+        "date": "September 2024",
+        "title": "Schema Registry commands in CLI plugin v2.6.0"
       },
       {
-        "date": "16 September 2024",
-        "title": "Private endpoints as new default"
+        "date": "September 2024",
+        "title": "Reserved disk space percentage per topic metric available"
       },
       {
-        "date": "1 May 2024",
-        "title": "New hosting models"
+        "date": "March 2024",
+        "title": "Apache Kafka update"
       }
     ]
   }
