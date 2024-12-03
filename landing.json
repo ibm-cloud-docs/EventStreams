@@ -56,7 +56,7 @@
     "terraform": "/docs/EventStreams?topic=EventStreams-eventstreams-terraform"
     },
   "section_updates": {
-    "view_more": "https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-event-streams-relnotes",
+    "view_more": "/docs/EventStreams?topic=EventStreams-event-streams-relnotes",
     "tiles": [
       {
         "date": "October 2024",
