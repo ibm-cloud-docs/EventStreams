@@ -91,6 +91,7 @@ toc:
         topics:
         - sla.md
         - responsibilities.md
+        - resiliency.md
         - data_portability.md
         - topic: limits_quotas.md
           navtitle: Limits and quotas
