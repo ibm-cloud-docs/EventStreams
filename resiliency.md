@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-12-02" 
+lastupdated: "2024-12-04" 
 
 keywords: resiliency, cluster resiliency, availability, data corruption, deletion, data management, disaster recovery, responsibilities
 
@@ -56,8 +56,8 @@ Throughput/Capacity management: Similar to CPU Utilization, Event Streams recomm
 
 Event Streams recommend using Terraform which enables you to rapidly and predictably create and change your instance following Infrastructure as Code (IaC) principles. You must store all terraform configurations in a safe and easily accessibly repository as part of a comprehensive disaster recovery plan.  
 
-### 4. Use Schema Registry
-{: #resiliency_schemas}
+### 5. Use the Event Streams Schema Registry
+{: #resiliency_schema-registry}
 
 Event Streams provide a schema registry as part of the enterprise plan which works as a layer of re-enforcement in your Kafka cluster, ensuring data is validated between producers and consumers and reducing the likelihood of un-processable data entering the system. Learn more about using the Event Streams schema registry here.  
 
@@ -80,5 +80,3 @@ To maximize topic resiliency, the retention period should be configured for pote
 {: #resiliency_disable_schema}
 
 Schema deletion is a two-stage process. The first stage of deletion preserves the schema in the registry, but hides it from some operations. In the event of accidentally deleting a schema, it can be recovered by enabling the disabled schema. Find out more [here](docs/EventStreams?topic=EventStreams-ES_schema_registry#set_schema_state).
-
-
