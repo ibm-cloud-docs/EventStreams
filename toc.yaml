@@ -91,6 +91,7 @@ toc:
         topics:
         - sla.md
         - responsibilities.md
+        - ha-dr.md
         - resiliency.md
         - data_portability.md
         - topic: limits_quotas.md
@@ -99,6 +100,7 @@ toc:
         - monitoring.md
         - kafka_client_metrics.md
         - disaster_recovery.md
+        - service-dependency.md
         - reserved_disk.md
         - setting_up_app_vpn.md
         - topicgroup:

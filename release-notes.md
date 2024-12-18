@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-18" 
+lastupdated: "2024-12-17" 
 
 keywords: release notes
 
@@ -27,6 +27,9 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 
 Terraform Updates
 :  More user capabilities are supported via Terraform including obtaining the kafka version. To find out more, check out the [Event Streams Terraform Module](https://github.com/terraform-ibm-modules/terraform-ibm-event-streams) as part of [Event Streams Terraform reference](/docs/EventStreams?topic=EventStreams-eventstreams-terraform).
+
+Mirror Maker Enhancements
+: Migrating between two instances of event streams is easier and faster with renaming topics and consumer groups now supported with Event Streams mirror maker. See [select topics and consumer groups](/docs/EventStreams?topic=EventStreams-mirroring_setup#step5_selecttopics).
 
 ## September 2024
 {: #EventStreams-sep2024}
