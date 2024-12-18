@@ -91,6 +91,7 @@ toc:
         topics:
         - sla.md
         - responsibilities.md
+        - ha-dr.md
         - resiliency.md
         - data_portability.md
         - topic: limits_quotas.md
