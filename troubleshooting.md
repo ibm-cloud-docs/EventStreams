@@ -86,3 +86,14 @@ If you are not able to create topics, it might be due to the following reasons:
 
 - You do not have the [Administration role on the cluster](/docs/EventStreams?topic=EventStreams-security#security_resources).
 - There is insufficient disk space. Check how the [disk space is reserved according to the topic configuration](/docs/EventStreams?topic=EventStreams-ES_understanding_reserved_disk_usage). To solve this issue, delete unused topics and update topic's config `retention.ms` and `retention.bytes` to be smaller. For the Enterprise instance, scale the clusters. For more information see [Scaling Enterprise plan capacity](/docs/EventStreams?topic=EventStreams-ES_scaling_capacity).
+
+## Error "Failed to send message"
+{: #error_failed_send_message}
+
+An Event Streams target returns an error, and you are unable to send events to it.  When you view the logs, the error is "Failed to send message", and the entry contains information such as the following:
+
+> "Failed to send message","error":"kafka server: Request was for a topic or partition that does not exist on this broker","reason":"invalid_or_unreachable_topic"
+
+The error can occur if the topic has not been created or has been deleted, or if you are sending data to a broker that is not the current leader for the topic partition. Leadership of topic partitions can change over time, because if a broker if offline for any reason, leadership of its partitions gets moved to other brokers until it recovers.
+
+To resolve the problem, verify that the topic exists. With the correct configuration, the Kafka client refreshes the metadata or reconnects to a different broker quickly, so that this type of error situation often recovers on its own. If the issue is persistent, [contact Cloud Support](/docs/EventStreams?topic=EventStreams-gettinghelp) for problem investigation.
