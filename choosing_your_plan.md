@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2024-05-13"
+  years: 2015, 2025
+lastupdated: "2025-01-17"
 
 keywords: plan, Enterprise, Standard, Lite, pricing, Satellite, throughput, partitions, tenancy, compliance
 
@@ -64,7 +64,6 @@ The following table summarizes what is supported by the plans:
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |  Not applicable    |
 | **Kafka version on cluster**  | Kafka 3.6 | Kafka 3.6  | Kafka 3.6 |  Kafka 3.6   |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |   Yes  |
-| **Stream to Cloud Object Storage by using {{site.data.keyword.sqlquery_short}}** [^tabletext12]  | No |  Yes (deprecated) | Yes (deprecated)  |   No  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |  Yes [^tabletext3]  |
 | **Customer-managed encryption**  | No  |  No |  Yes [^tabletext4]  |  No   |
 | **Fine-grained access control**  | Yes  |  Yes |  Yes  |  Yes   |
@@ -108,7 +107,5 @@ The following table summarizes what is supported by the plans:
 [^tabletext10]: The Schema Registry API is not automatically enabled on the Satellite plan. For information about how to enable it, see [Enable the schema registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
 
 [^tabletext11]: All compliance certifications available on the Standard and Enterprise plans are currently not available on the {{site.data.keyword.satelliteshort}} plan. Adding the same certifications to the {{site.data.keyword.satelliteshort}} plan is in process. For general {{site.data.keyword.satelliteshort}} compliance standards information, see [Platform compliance and certification](/docs/satellite?topic=satellite-compliance) and [Compliance standards FAQ](/docs/satellite?topic=satellite-faqs#standards){: external}.
-
-[^tabletext12]: {{site.data.keyword.sqlquery_full}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of Data Engine](/docs/sql-query?topic=sql-query-deprecation).
 
 For more information about limits, see [limits and quotas](/docs/EventStreams?topic=EventStreams-kafka_quotas).
