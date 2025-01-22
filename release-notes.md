@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-12-17" 
+  years: 2022, 2025
+lastupdated: "2025-01-22" 
 
 keywords: release notes
 
@@ -74,7 +74,7 @@ Mirroring for single-zone regions
 {: release-note}
 
 Deprecation of {{site.data.keyword.sqlquery_short}}
-: {{site.data.keyword.messagehub}} uses {{site.data.keyword.sqlquery_full}} for streaming. {{site.data.keyword.sqlquery_short}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted. For more information, see [Deprecation of {{site.data.keyword.sqlquery_short}}](/sql-query?topic=sql-query-deprecation).
+: {{site.data.keyword.messagehub}} uses {{site.data.keyword.sqlquery_full}} for streaming. {{site.data.keyword.sqlquery_short}} is deprecated. As of 18 February 2024 you can't create new instances, and access to free instances will be removed. Existing Standard plan instances are supported until 18 January 2025. Any instances that still exist on that date will be deleted.
 
 
 ## November 2023
