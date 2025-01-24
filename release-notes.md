@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-22" 
+lastupdated: "2025-01-24" 
 
 keywords: release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## January 2025
+{: #EventStreams-jan2025}
+{: release-note}
+
+Apache Kafka upgrade
+:   Upgrade to Apache Kafka version 3.8. New deployments of {{site.data.keyword.messagehub}} are now on Kafka version 3.8.
 
 ## October 2024
 {: #EventStreams-oct2024}
@@ -54,7 +61,7 @@ Schema Registry request rate metric available
 {: release-note}
 
 Apache Kafka upgrade
-:   Upgrade to Apache Kafka version 3.6. New deployments of {{site.data.keyword.messagehub}} are now on Kafka version 3.6.
+:   Upgrade to Apache Kafka version 3.6.
 
 Instance utilization metric available
 :    You can monitor CPU usage of an {{site.data.keyword.messagehub}} instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization). 
