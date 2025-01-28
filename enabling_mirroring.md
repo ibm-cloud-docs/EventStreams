@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-10-16"
+lastupdated: "2025-01-28"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -91,7 +91,7 @@ The following example shows how to use the command line to configure service-to-
 
 For more information about service-to-service bindings, see [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
 
-## Enable mirroring
+## Enable mirroring and select the topics to mirror
 {: #step3_enable}
 {: step}
 
@@ -115,50 +115,11 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 ```
 {: codeblock}
 
-## Validation
-{: #step4_validation}
+### Select the topics to mirror
 {: step}
 
-You can get the current service instance information by running the following command:
-
-```sh
-ibmcloud resource service-instance "Event Streams resource instance name" --output=json
-```
-{: codeblock}
-
-Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or the sync succeeded.
-
-```sh
-"last_operation": {
-  "type": "update",
-  "state": "in progress",
-  "description": "Update in progress.",
-  "updated_at": null,
-  "cancelable": false
-}
-```
-{: screen}
-
-Run the command again until success is indicated as follows:
-
-```sh
-"last_operation": {
-  "type": "update",
-  "state": "succeeded",
-  "description": "Update succeeded.",
-  "updated_at": null,
-  "cancelable": false
-}
-```
-{: screen}
-
-The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
-
-## Select topics and consumer groups 
-{: #step5_selecttopics}
-{: step}
-
-When the service instance update has completed, we want to select some topics from the source cluster to mirror. This is done with the CLI by using the **ibmcloud es mirroring-topic-selection-set** command.
+When the service instance update has completed, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the **ibmcloud es mirroring-topic-selection-set** command.
+Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
 
 Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
 
@@ -180,9 +141,13 @@ For more information about making the selection, see [Mirroring user controls](/
 
 After the topic selection is completed, the target cluster shows the topics that are selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
 
-### Step 5.1: Renaming select topics with Mirror Maker 
+
+### Step 3.1: Specify how topic and group names are transformed
 {: #renametopics}
-You can replicate data between topics with different names using three scenarios outlined below.  
+You can specify transformation rules that allow you to mirror data into topics with different names in the target cluster. The following three scenarios describe possible transformations, and explain the use-cases for each.
+
+You can specify which topics/consumer groups are mirrored at anytime once mirroring has been enabled however topic/group renaming is only possible at the point mirroring is enabled. If mirroring is already enabled, it will need to be disabled first before a subsequent enable request is made to specify topic/group renaming.
+{: note}
 
 ### Scenario 1: Renaming topics by removing the old prefix/suffix and adding a new prefix/suffix
 {: #renametopic_1}
@@ -198,7 +163,7 @@ Configure the following four additional parameters.
 
 When these options are specified, only topics with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a remove_prefix of `app1-`, and specify a topic selection of `abc.*`, only topics that start with "app1-abc" will be mirrored.
 
-If neither `add_prefix` nor `add_suffix` options are specified, the default behavior to add the source cluster alias followed by a dot as the prefix is as shown in [Mirroring user controls](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The JSON parameters need to be specified via the `-p` command line argument.
+If neither `add_prefix` nor `add_suffix` options are specified, the default behavior to add the source cluster alias followed by a dot as the prefix is as shown in [Mirroring user controls](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The 'ibmcloud resource service-instance-update' command needs to be specified via the '-p' command line argument.
 
 See the following CLI command example:
 
@@ -270,10 +235,9 @@ See the following CLI command example:
 ```
 {: pre}
 
-### Step 5.2: Renaming corresponding consumer group IDs
+### Step 3.2: Renaming corresponding consumer group IDs
 {: #renamegroupid}
-
-You can translate consumer offsets between your source and target instance with Mirror Maker using two scenarios.
+By default, Mirror maker will not modify consumer group IDs when mirroring to the target cluster. However Event Streams allows you to modify group IDs data using two scenarios outlined below. Group ID patterns are applied after the any prefix / suffix has been removed and before any prefix / suffix has been added.  
 
 ### Scenario 1: Renaming group ID by removing the old prefix/suffix and adding a new prefix/suffix
 {: #renamegroupid_1}
@@ -321,3 +285,42 @@ See the following CLI command example:
 }
 ```
 {: pre}
+
+## Validation
+{: #step4_validation}
+{: step}
+
+You can get the current service instance information by running the following command:
+
+```sh
+ibmcloud resource service-instance "Event Streams resource instance name" --output=json
+```
+{: codeblock}
+
+Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or the sync succeeded.
+
+```sh
+"last_operation": {
+  "type": "update",
+  "state": "in progress",
+  "description": "Update in progress.",
+  "updated_at": null,
+  "cancelable": false
+}
+```
+{: screen}
+
+Run the command again until success is indicated as follows:
+
+```sh
+"last_operation": {
+  "type": "update",
+  "state": "succeeded",
+  "description": "Update succeeded.",
+  "updated_at": null,
+  "cancelable": false
+}
+```
+{: screen}
+
+The {{site.data.keyword.mon_full_notm}} dashboard **{{site.data.keyword.messagehub}} Mirroring** shows the state of mirroring.
