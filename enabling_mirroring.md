@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2025-01-28"
+lastupdated: "2025-01-30"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -47,7 +47,7 @@ Ensure that you provision two Enterprise plan clusters. Both clusters must have 
 
 Because mirroring is unidirectional, decide which direction of mirroring you want. One cluster is the source and the other cluster is the target.
 
-Decide which topics from your source cluster that you want to mirror. By default no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
+Decide which topics from your source cluster that you want to mirror. By default, no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
@@ -95,7 +95,7 @@ For more information about service-to-service bindings, see [**Manage authorizat
 {: #step3_enable}
 {: step}
 
-To enable mirroring, you need to run a **service-instance-update** command against your target cluster by using the CLI with the following required parameters:
+To enable mirroring, you need to run a **`service-instance-update`** command against your target cluster by using the CLI with the following required parameters:
 
 | Required Parameters | Description |
 | ---------- | ----------- |
@@ -104,7 +104,7 @@ To enable mirroring, you need to run a **service-instance-update** command again
 | target_alias | The alias used for the target cluster | 
 {: caption="Required parameters when enabling mirroring" caption-side="bottom"}
 
-- The `source_crn` is in this format: "crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::"
+- The `source_crn` is in this format: `crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::`
 - The `source_alias` and the `target_alias` are the aliases that you want to configure for each of the two service instances when you enable mirroring. The aliases appear in topic names. Choose short and descriptive names. For example, "us-south" and "us-east".
 
 ### Example CLI command
@@ -118,7 +118,7 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 ### Select the topics to mirror
 {: step}
 
-When the service instance update has completed, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the **ibmcloud es mirroring-topic-selection-set** command.
+When the service instance update has completed, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command.
 Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
 
 Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
@@ -146,11 +146,11 @@ After the topic selection is completed, the target cluster shows the topics that
 {: #renametopics}
 You can specify transformation rules that allow you to mirror data into topics with different names in the target cluster. The following three scenarios describe possible transformations, and explain the use-cases for each.
 
-You can specify which topics/consumer groups are mirrored at anytime once mirroring has been enabled however topic/group renaming is only possible at the point mirroring is enabled. If mirroring is already enabled, it will need to be disabled first before a subsequent enable request is made to specify topic/group renaming.
+You can specify which topics/consumer groups are mirrored at anytime once mirroring has been enabled however topic/group transformation is only possible at the point mirroring is enabled. If mirroring is already enabled, it will need to be disabled first before a subsequent enable request is made to specify topic/group transformation.
 {: note}
 
-### Scenario 1: Renaming topics by removing the old prefix/suffix and adding a new prefix/suffix
-{: #renametopic_1}
+### Scenario 1: Transforming topics by removing the old prefix/suffix and adding a new prefix/suffix
+{: #transformtopic_1}
 
 Configure the following four additional parameters.
 
@@ -161,9 +161,9 @@ Configure the following four additional parameters.
 | add_prefix | the prefix to add to topic names in the target cluster |
 | add_suffix | the suffix to add to topic names in the target cluster |
 
-When these options are specified, only topics with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a remove_prefix of `app1-`, and specify a topic selection of `abc.*`, only topics that start with "app1-abc" will be mirrored.
+The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument. When these options are specified, only topics with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `app1-`, and specify a topic selection of `abc.*`, only topics that start with `app1-abc` will be mirrored.
 
-If neither `add_prefix` nor `add_suffix` options are specified, the default behavior to add the source cluster alias followed by a dot as the prefix is as shown in [Mirroring user controls](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The 'ibmcloud resource service-instance-update' command needs to be specified via the '-p' command line argument.
+If you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix`,`add_suffix`, the mirrored topic in the target cluster will have these parameters removed. Topic patterns are applied to the topic name after any source prefix / suffix has been removed and before any prefix / suffix has been added.
 
 See the following CLI command example:
 
@@ -190,7 +190,7 @@ See the following CLI command example:
 {: pre}
 
 ### Scenario 2: Adding the source alias as a suffix to mirrored topics
-{: #renametopic_2}
+{: #transformtopic_2}
 
 Apply a topic name transformation with the topic_name_transform type set to `use_alias`. With this configuration, a topic called `app1-topic` in the source cluster will be mirrored to a topic called `app1-topic.source` in the target cluster, because the source alias specified in the configuration is `source`.
 
@@ -213,9 +213,9 @@ See the following CLI command example:
 {: pre}
 
 ### Scenario 3: Topics are mirrored with their names unchanged
-{: #renametopic_3}
+{: #transformtopic_3}
 
-In this scenario, you also apply the `topic_name_transform` with the type set to none. With this configuration, a topic called `app1-topic` in the source cluster will be mirrored to a topic called `app1-topic` in the target cluster.
+In this scenario, you also apply the `topic_name_transform` with the type set to `none`. With this configuration, a topic called `app1-topic` in the source cluster will be mirrored to a topic called `app1-topic` in the target cluster.
 
 See the following CLI command example:
 
@@ -235,12 +235,14 @@ See the following CLI command example:
 ```
 {: pre}
 
-### Step 3.2: Renaming corresponding consumer group IDs
-{: #renamegroupid}
-By default, Mirror maker will not modify consumer group IDs when mirroring to the target cluster. However Event Streams allows you to modify group IDs data using two scenarios outlined below. Group ID patterns are applied after the any prefix / suffix has been removed and before any prefix / suffix has been added.  
+### Step 3.2: Transforming corresponding consumer group IDs
+{: #transformgroupid}
+By default, Mirror maker will not modify consumer group IDs when mirroring to the target cluster. However Event Streams allows you to modify group IDs data using two scenarios outlined below. Similar to topics, group ID patterns are applied after any source prefix / suffix has been removed and before any prefix / suffix has been added and if you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix`,`add_suffix`, the mirrored group ID in the target cluster will have these parameters removed.
 
-### Scenario 1: Renaming group ID by removing the old prefix/suffix and adding a new prefix/suffix
-{: #renamegroupid_1}
+The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument.
+
+### Scenario 1: Transform group ID by removing the old prefix/suffix and adding a new prefix/suffix
+{: #transformgroupid_1}
 
 Configure the following four additional parameters.
 
@@ -251,9 +253,7 @@ Configure the following four additional parameters.
 | add_prefix | the prefix to add to group id in the target cluster |
 | add_suffix | the suffix to add to group id in the target cluster |
 
-When these options are specified, only group IDs with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of "aaa" and `add_prefix` of "bbb", consumer groups that start with `aaa-group-id` in the source cluster will be mirrored to `bbb-group-id` in the target cluster.
-
-If neither `add_prefix-` nor `add_suffix` options are specified, the default behavior to add the source cluster alias followed by a dot as the prefix is as shown in [Mirroring user controls](https://cloud.ibm.com/docs/EventStreams?topic=EventStreams-mirroring#user_controls). The JSON parameters need to be specified via the `-p` command line argument.
+When these options are specified, only group IDs with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `aaa` and `add_prefix` of `bbb`, consumer groups that start with `aaa-group-id` in the source cluster will be mirrored to `bbb-group-id` in the target cluster.
 
 See the following CLI command example:
 
@@ -275,7 +275,7 @@ See the following CLI command example:
 ### Scenario 2: Consumer group IDs are mirrored with their names unchanged
 {: #renamegroupid_2}
 
-In this scenario, you also apply the `topic_name_transform` with the type set to none. With this configuration, a topic called "aaa-group-id" in the source cluster will be mirrored to a topic called "aaa-group-id" in the target cluster.
+In this scenario, you also apply the `topic_name_transform` with the type set to `none`. With this configuration, a topic called `aaa-group-id` in the source cluster will be mirrored to a topic called `aaa-group-id` in the target cluster.
 
 See the following CLI command example:
 
