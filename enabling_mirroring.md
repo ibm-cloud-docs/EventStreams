@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2024
+  years: 2015, 2025
 lastupdated: "2025-01-30"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
@@ -18,7 +18,7 @@ subcollection: EventStreams
 This information describes how to set up two {{site.data.keyword.messagehub}} Enterprise clusters as a mirrored pair. Use cases include disaster recovery, backups, and geo-replication.
 {: shortdesc}
 
-When you are building a solution involving mirroring in {{site.data.keyword.messagehub}}, consider how your solution will deal with the following two scenarios:
+When you build a solution involving mirroring in {{site.data.keyword.messagehub}}, consider how your solution will deal with the following two scenarios:
 
 Data loss
 :  Mirroring is asynchronous. That is, messages must be successfully produced to the source cluster before being mirrored to the target cluster. If a failure occurs on the source cluster before those messages are mirrored, applications will need to deal with the loss of those messages.
@@ -28,11 +28,11 @@ At least once
 
 Using mirroring with {{site.data.keyword.messagehub}} incurs an extra charge for each mirroring capacity unit hour. For more information, go to the [Catalog](https://cloud.ibm.com/catalog#services) and search for `Event Streams`. You can then view pricing plans.
 
-Currently, enabling mirroring for an {{site.data.keyword.messagehub}} service instance requires the use of the {{site.data.keyword.Bluemix_notm}} CLI.
+Currently, enabling mirroring for an {{site.data.keyword.messagehub}} service instance requires the use of the {{site.data.keyword.cloud_notm}} CLI.
 
 To install the CLI, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
-The {{site.data.keyword.Bluemix_notm}} CLI uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to run the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [Required access for creating resources](/docs/account?topic=account-manage_resource#creating-resources).
+The {{site.data.keyword.cloud_notm}} CLI uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to run the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [Required access for creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
 The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance varies, but under normal circumstances it does not exceed 2 hours.
 
@@ -47,11 +47,11 @@ Ensure that you provision two Enterprise plan clusters. Both clusters must have 
 
 Because mirroring is unidirectional, decide which direction of mirroring you want. One cluster is the source and the other cluster is the target.
 
-Decide which topics from your source cluster that you want to mirror. By default, no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
+Decide which topics from your source cluster you want to mirror. By default, no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
-Although mirroring from a Enterprise multi-zone-region cluster to a Enterprise single-zone-region cluster and vice versa is allowed. We do not recommend this configuration unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of a Enterprise multi-zone-region cluster to a Enterprise single-zone-region cluster might be lower or vice versa. 
+Although mirroring from an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster and vice versa is allowed, this configuration is not recommended unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster might be lower or vice versa. 
 {: important}
 
 ## Enable service-to-service bindings
@@ -60,13 +60,13 @@ Although mirroring from a Enterprise multi-zone-region cluster to a Enterprise s
 
 You must configure a service-to-service binding between both instances to allow both instances to communicate. To configure, complete the following steps:
 
-When creating a service-to-service binding, IAM uses the terminology 'source' and 'target' in the opposite way to that of {{site.data.keyword.messagehub}}. In that the IAM Source account contains the {{site.data.keyword.messagehub}} mirroring target instance, and vice-versa.
+When you create a service-to-service binding, IAM uses the terminology 'source' and 'target' in the opposite way to that of {{site.data.keyword.messagehub}}. In that the IAM source account contains the {{site.data.keyword.messagehub}} mirroring target instance, and vice-versa.
 {: note}
 
 1. Select the IBM Cloud account containing the {{site.data.keyword.messagehub}} mirroring source service instance.
 2. Navigate to the **Authorizations** panel in IAM and click **Create**. 
 3. For the **Source** section:
-    - If you are mirroring to a target instance in a different account, select "another account" under the Source heading, then pick the account containing the mirroring target instance. If you a mirroring between service instances in the same account, you can leave the default of "this account" selected.
+    - If you are mirroring to a target instance in a different account, select "another account" under the source heading, then pick the account containing the mirroring target instance. If you a mirroring between service instances in the same account, you can leave the default of "this account" selected.
     - Select the mirroring target {{site.data.keyword.messagehub}} instance as the IAM source service instance.
 4. For the **Target** selection, select the mirroring source {{site.data.keyword.messagehub}} instance as the IAM target service instance.
 5. Assign the **Reader** role and click **Authorize**.
@@ -76,20 +76,23 @@ If your requirement is to fail back, you also need the service-to-service bindin
 
 The following example shows how to use the command line to configure service-to-service binding. 
 
-1. Login to the IBM Cloud account containing the {{site.data.keyword.messagehub}} instance that you want to act as the mirroring source instance:
+1. Log in to the IBM Cloud account containing the {{site.data.keyword.messagehub}} instance that you want to act as the mirroring source instance:
+   
     ```sh
     ibmcloud login -c <account containing mirroring source instance>
      ```
     {: codeblock}
 
-2. Setup an authorization policy, as follows:
+3. Set up an authorization policy, as follows:
+   
     ```sh
     ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account containing mirroring target instance>] --target-service-instance-id <instance id of the mirroring source cluster>
     ```
     {: codeblock}
+   
     Note that the `--source-service-account` option can be omitted if you are setting up mirroring between two {{site.data.keyword.messagehub}} instances in the same IBM Cloud account.
 
-For more information about service-to-service bindings, see [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
+For more information about service-to-service bindings, see the [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
 
 ## Enable mirroring and select the topics to mirror
 {: #step3_enable}
@@ -97,7 +100,7 @@ For more information about service-to-service bindings, see [**Manage authorizat
 
 To enable mirroring, you need to run a **`service-instance-update`** command against your target cluster by using the CLI with the following required parameters:
 
-| Required Parameters | Description |
+| Required parameters | Description |
 | ---------- | ----------- |
 | source_crn | The crn of the source cluster to be mirrored |
 | source_alias | The alias used for the source cluster | 
@@ -116,11 +119,10 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 {: codeblock}
 
 ### Select the topics to mirror
+{: #select_topics}
 {: step}
 
-When the service instance update has completed, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command.
-Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
-
+When the service instance update is completed, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command. Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
 Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
 
 The following command selects all topics to be mirrored:
@@ -141,15 +143,15 @@ For more information about making the selection, see [Mirroring user controls](/
 
 After the topic selection is completed, the target cluster shows the topics that are selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
 
-
 ### Step 3.1: Specify how topic and group names are transformed
 {: #renametopics}
+
 You can specify transformation rules that allow you to mirror data into topics with different names in the target cluster. The following three scenarios describe possible transformations, and explain the use-cases for each.
 
-You can specify which topics/consumer groups are mirrored at anytime once mirroring has been enabled however topic/group transformation is only possible at the point mirroring is enabled. If mirroring is already enabled, it will need to be disabled first before a subsequent enable request is made to specify topic/group transformation.
+You can specify which topics or consumer groups are mirrored at anytime once mirroring has been enabled, however topic or group transformation is only possible at the point mirroring is enabled. If mirroring is already enabled, it will need to be disabled first before a subsequent enable request is made to specify topic or group transformation.
 {: note}
 
-### Scenario 1: Transforming topics by removing the old prefix/suffix and adding a new prefix/suffix
+### Scenario 1: Transforming topics by removing the old prefix or suffix and adding a new prefix or suffix
 {: #transformtopic_1}
 
 Configure the following four additional parameters.
@@ -161,9 +163,9 @@ Configure the following four additional parameters.
 | add_prefix | the prefix to add to topic names in the target cluster |
 | add_suffix | the suffix to add to topic names in the target cluster |
 
-The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument. When these options are specified, only topics with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `app1-`, and specify a topic selection of `abc.*`, only topics that start with `app1-abc` will be mirrored.
+The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument. When these options are specified, only topics with the matching prefixes or suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `app1-`, and specify a topic selection of `abc.*`, only topics that start with `app1-abc` will be mirrored.
 
-If you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix`,`add_suffix`, the mirrored topic in the target cluster will have these parameters removed. Topic patterns are applied to the topic name after any source prefix / suffix has been removed and before any prefix / suffix has been added.
+If you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix` or `add_suffix`, the mirrored topic in the target cluster will have these parameters removed. Topic patterns are applied to the topic name after any source prefix or suffix was removed and before any prefix or suffix was added.
 
 See the following CLI command example:
 
@@ -237,11 +239,12 @@ See the following CLI command example:
 
 ### Step 3.2: Transforming corresponding consumer group IDs
 {: #transformgroupid}
-By default, Mirror maker will not modify consumer group IDs when mirroring to the target cluster. However Event Streams allows you to modify group IDs data using two scenarios outlined below. Similar to topics, group ID patterns are applied after any source prefix / suffix has been removed and before any prefix / suffix has been added and if you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix`,`add_suffix`, the mirrored group ID in the target cluster will have these parameters removed.
+
+By default, Mirror Maker will not modify consumer group IDs when mirroring to the target cluster. However, {{site.data.keyword.messagehub}} allows you to modify group IDs' data, as outlined in the following two scenarios. Similar to topics, group ID patterns are applied after removing any source prefix or suffix and before adding any prefix or suffix. If you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix` or `add_suffix`, the mirrored group ID in the target cluster will have these parameters removed.
 
 The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument.
 
-### Scenario 1: Transform group ID by removing the old prefix/suffix and adding a new prefix/suffix
+### Scenario 1: Transform group ID by removing the old prefix or suffix and adding a new prefix or suffix
 {: #transformgroupid_1}
 
 Configure the following four additional parameters.
@@ -253,7 +256,7 @@ Configure the following four additional parameters.
 | add_prefix | the prefix to add to group id in the target cluster |
 | add_suffix | the suffix to add to group id in the target cluster |
 
-When these options are specified, only group IDs with the matching prefixes/suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `aaa` and `add_prefix` of `bbb`, consumer groups that start with `aaa-group-id` in the source cluster will be mirrored to `bbb-group-id` in the target cluster.
+When these options are specified, only group IDs with the matching prefixes or suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `aaa` and `add_prefix` of `bbb`, consumer groups that start with `aaa-group-id` in the source cluster will be mirrored to `bbb-group-id` in the target cluster.
 
 See the following CLI command example:
 
@@ -297,7 +300,7 @@ ibmcloud resource service-instance "Event Streams resource instance name" --outp
 ```
 {: codeblock}
 
-Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process has completed, the last operation information indicates whether the update succeeded or the sync succeeded.
+Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process is completed, the last operation information indicates whether the update succeeded or the sync succeeded.
 
 ```sh
 "last_operation": {
