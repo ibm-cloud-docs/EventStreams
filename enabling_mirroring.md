@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-01-31"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -122,7 +122,7 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 {: #select_topics}
 {: step}
 
-When the service instance update is completed, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command. Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
+When the service instance update is complete, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command. Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
 Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
 
 The following command selects all topics to be mirrored:
@@ -141,7 +141,7 @@ ibmcloud es mirroring-topic-selection-set --select topic1,topic2,topic3
 
 For more information about making the selection, see [Mirroring user controls](/docs/EventStreams?topic=EventStreams-mirroring#user_controls).
 
-After the topic selection is completed, the target cluster shows the topics that are selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
+After topic selection is complete, the target cluster shows the topics that are selected for mirroring using the **Mirroring user controls** suffixed with the source cluster's alias.
 
 ### Step 3.1: Specify how topic and group names are transformed
 {: #renametopics}
@@ -165,7 +165,7 @@ Configure the following four additional parameters.
 
 The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument. When these options are specified, only topics with the matching prefixes or suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `app1-`, and specify a topic selection of `abc.*`, only topics that start with `app1-abc` will be mirrored.
 
-If you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix` or `add_suffix`, the mirrored topic in the target cluster will have these parameters removed. Topic patterns are applied to the topic name after any source prefix or suffix was removed and before any prefix or suffix was added.
+If you specify the "rename" type of transformation and don't specify either the parameters for `add_prefix` or `add_suffix`, the mirrored topic in the target cluster will have these parameters removed. Topic patterns are applied to the topic name after any source prefix or suffix is removed and before any prefix or suffix has been added.
 
 See the following CLI command example:
 
@@ -300,7 +300,7 @@ ibmcloud resource service-instance "Event Streams resource instance name" --outp
 ```
 {: codeblock}
 
-Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process is completed, the last operation information indicates whether the update succeeded or the sync succeeded.
+Review the **last operation** section of the output. The information is continuously updated as the update proceeds. When the mirroring enablement process is complete, the last operation information indicates whether the update succeeded or the sync succeeded.
 
 ```sh
 "last_operation": {
