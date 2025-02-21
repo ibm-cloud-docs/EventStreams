@@ -75,28 +75,13 @@ ibmcloud resource service-instance-create EVENT-STREAMS-INSTANCE-NAME messagehub
 ```
 {: codeblock}
 
-If you want to update your existing {{site.data.keyword.messagehub}} instance to use a customer-managed key, open a [support ticket](/docs/get-support?topic=get-support-open-case){: external} on {{site.data.keyword.messagehub}} that contains the following information:
-
-   - The CRN of the root key that you want to use in your key management service instance.
-   - The CRN of your {{site.data.keyword.messagehub}} service instance.
-
-   You find this CRN by copying and pasting the full {{site.data.keyword.Bluemix_notm}} console URL after you click the {{site.data.keyword.messagehub}} service in the console. 
-   Alternatively, paste in the output from the following CLI command:
-
-   ```bash
-   ibmcloud resource service-instance NAME
-   ```
-   {: codeblock}
-
-   The {{site.data.keyword.messagehub}} Operations team responds to your support ticket to confirm that your instance of {{site.data.keyword.Bluemix_notm}} is now using a customer-managed key. Expect the enablement to be completed in one business day.
-
-This operation is destructive and results in the loss of all message and topic definitions. For more information, see [deciding to enable customer-managed keys](/docs/EventStreams?topic=EventStreams-managing_encryption#considerations_keys).
+An existing cluster without a customer-managed key cannot be updated because this is a destructive operation that will result in the loss of all message and topic definitions. You must delete and recreate your instance with an encryption key.
 {: important}
 
 ## Using a customer-managed key
 {: #using_encryption}
 
-After a customer-managed key is enabled, the cluster operates as normal, but with the following additional capabilities.
+After provisioning an instance of Event Streams with a customer-managed key, it operates with the following additional capabilities.
 
 ### Preventing access to data
 {: #preventing_access}
