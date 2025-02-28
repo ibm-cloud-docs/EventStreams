@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-19"
+  years: 2015, 2025
+lastupdated: "2025-02-28"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring
 
@@ -72,7 +72,7 @@ The network bandwidth needed to mirror the selected topics must be considered in
 
 As with any networking, the maximum achievable throughput is a factor of the distance over which the data is transmitted (due to the increasing latency and packet loss). This affects the maximum throughput that can be achieved between the source and target instances. Place the target service instances in as geographically close location as possible to the source.
 
-The following table provides guidance for the achievable throughput:
+The following table provides guidance for the achievable throughput when mirroring from a source instance with a 150 MB/s capacity.
 
 | Regions | Max per-partition throughput | Max total throughput |
 | ------- |:------:|:------:|
