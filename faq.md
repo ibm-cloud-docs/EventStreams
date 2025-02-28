@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-05"
+  years: 2015, 2025
+lastupdated: "2025-02-28"
 
 keywords: api, frequently asked questions, consumer group, log retention, message size, replication settings
 
@@ -209,9 +209,6 @@ Currently, it is the responsibility of the user to manage their own {{site.data.
 We suggest a tool like Kafka MirrorMaker to replicate data between clusters. For information about how to run MirrorMaker, see 
 [{{site.data.keyword.messagehub}} kafka-mirrormaker repository](https://github.com/ibm-messaging/event-streams-samples/tree/master/kafka-mirrormaker){: external}. For an example of the recovery process, see [Using mirroring in a disaster recovery scenario](/docs/EventStreams?topic=EventStreams-disaster_recovery_scenario) .
 
-The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. 
-
-Topic names are backed up by {{site.data.keyword.messagehub}}, although it is recommended good practice for users to back up topic names and the configuration data for those topics.
+The user is also responsible for the backup of message payload data. Although this data is replicated across multiple Kafka brokers within a cluster, which protects against the majority of failures, this replication does not cover a location-wide failure. It is recommended good practice for users to back up topic names and the configuration data for those topics.
 
 If you have configured your {{site.data.keyword.messagehub}} instance in a Multi-Zone Region, a regional disaster is very unlikely. However, we recommend that users do plan for such circumstances. If a user's instance is no longer available because of a disaster (and a remote DR instance is not already set up), the user should consider configuring a new instance in a new region and restoring their topics and data from backup if available. Applications can then be pointed at the new instance.
-
