@@ -30,7 +30,7 @@ Features of mirroring:
 Limitations of mirroring:
 
 - Unidirectional: Data can only be mirrored in one direction at a time between a pair of service instances. This means that mirroring offers a "active-passive" style of high availability, not "active-active".
-- Asynchronous: Messages must be successfully produced to the source instance before they can be mirrored to the target instance. This means that when a failure occurs, the target cluster may not have all messages up to the exact point of failure due to replication lag and some message data may be lost.
+- Asynchronous: Messages must be successfully produced to the source instance before they can be mirrored to the target instance. This means that when a failure occurs, the target cluster may not have all messages up to the exact point of failure due to replication lag and some message data may be lost. 
 - At-least-once message consumption: When a consumer moves between instances, it may need to reprocess messages that it has already processed.
 
 Before you start mirroring, consider the following points:
