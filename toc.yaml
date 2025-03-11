@@ -56,11 +56,6 @@ toc:
             - using_rest_producer.md
             - mirroring.md
         - topicgroup:
-            label: Using IBM Cloud Satellite
-            topics:
-            - satellite_about.md
-            - satellite_provisioning.md
-        - topicgroup:
             label: Integrating with other services
             topics:
             - connecting_cos.md

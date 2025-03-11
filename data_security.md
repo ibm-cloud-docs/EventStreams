@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-05"
+  years: 2015, 2025
+lastupdated: "2025-03-11"
 
 keywords: protocols, encryption, data isolation, data retention, data isolation model
 
@@ -10,11 +10,7 @@ subcollection: EventStreams
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:codeblock: .codeblock}
-{:pre: .pre}
+{{site.data.keyword.attribute-definition-list}}
 
 # Data security and privacy in {{site.data.keyword.messagehub}}
 {: #data_security}
@@ -57,9 +53,7 @@ Message data is encrypted for transmission between {{site.data.keyword.messagehu
 
 Topic names and consumer groups are encrypted for transmission between {{site.data.keyword.messagehub}} and clients as a result of TLS. However, {{site.data.keyword.messagehub}} does not encrypt these values at rest. Therefore, do not use confidential information in your topic names.
 
-On the Satellite plan, all encryption is determined by the options that you specify on your chosen storage provider.
-
-For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see [What's supported by the Lite, Standard, Enterprise, and Satellite plans](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported).
+For information about compliance on each of the {{site.data.keyword.messagehub}} plans, see [What's supported by the Lite, Standard, and Enterprise plans](/docs/EventStreams?topic=EventStreams-plan_choose#what_is_supported).
 
 ## Data isolation model
 {: #data_isolation}
@@ -70,11 +64,6 @@ For information about compliance on each of the {{site.data.keyword.messagehub}}
 {: #data_isolation_enterprise}
 
 The Enterprise plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain. The Enterprise plan creates a single tenant instance on a dedicated Kubernetes cluster on shared hardware (VSI isolation). By default, the Enterprise plan provides public endpoints, but it also supports Cloud service endpoints to enable private endpoints for further network isolation on request. The Enterprise plan creates single tenant {{site.data.keyword.blockstorageshort}} for each new instance.
-
-### Satellite plan
-{: #data_isolation_satellite}
-
-The Satellite plan provides a tenant-specific service in the {{site.data.keyword.IBM_notm}} service domain and is based on the Enterprise plan. The Satellite plan creates a single tenant instance on a dedicated Kubernetes cluster by using hosts (physical and virtual) that you provided and attached to your Satellite location. The Satellite plan creates single tenant {{site.data.keyword.blockstorageshort}} for each new instance by using the {{site.data.keyword.blockstorageshort}} configuration that you specified for your storage provider.
 
 ### Standard plan
 {: #data_isolation_standard}
@@ -93,8 +82,6 @@ The Lite plan uses shared {{site.data.keyword.blockstorageshort}} and achieves t
 ## Data retention and reclamation
 {: #data_retention_reclamation}
 
-On all plans, except for Satellite, when a service instance is deleted, the data is not deleted immediately. It is scheduled for reclamation and {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both topics and messages that are written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that is not yet reclaimed.
+On all plans, when a service instance is deleted, the data is not deleted immediately. It is scheduled for reclamation and {{site.data.keyword.messagehub}} sets this retention period to three days, after which the data (both topics and messages that are written to the topics) is irreversibly destroyed. It is also possible to restore a deleted instance that is not yet reclaimed.
 
 You can check the status of a reclamation, and force or cancel a scheduled reclamation by using [the {{site.data.keyword.IBM_notm}} Cloud CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).
-
-On the Satellite plan, data retention and reclamation are determined by how you configured them on your chosen storage provider.

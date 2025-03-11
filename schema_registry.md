@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-02-29"
+  years: 2020, 2025
+lastupdated: "2025-03-11"
 
 keywords: schema registry, schema
 
@@ -152,11 +152,7 @@ When you create schemas by using the REST API, schemas are considered matching o
 ## Enabling the Schema Registry
 {: #enabling_schema_registry}
 
-The Schema Registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances.
-
-The Schema Registry is not automatically enabled for {{site.data.keyword.messagehub}} Satellite plan service instances. For information about how to enable it for the Satellite plan, see [Enable the Schema Registry API](/docs/EventStreams?topic=EventStreams-satellite-provisioning#satellite-enable-schema-registry).
-
-The Schema Registry is not available for other {{site.data.keyword.messagehub}} plans.
+The Schema Registry is enabled by default for {{site.data.keyword.messagehub}} Enterprise plan service instances. The Schema Registry is not available for other {{site.data.keyword.messagehub}} plans.
 
 ## Accessing the Schema Registry
 {: #accessing_schema_registry}
