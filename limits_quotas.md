@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2024-07-23"
+  years: 2015, 2025
+lastupdated: "2025-03-11"
 
 keywords: limits, quotas, network throughput, retention, consumer groups, schema
 
@@ -15,7 +15,7 @@ subcollection: EventStreams
 # How {{site.data.keyword.messagehub}} uses limits and quotas
 {: #kafka_quotas}
 
-{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you use the Lite, Standard, Enterprise, or Satellite plan.
+{{site.data.keyword.messagehub}} uses quotas to control the resources, such as network bandwidth, that a service can consume. The types and levels of quotas depend on whether you use the Lite, Standard, or Enterprise plan.
 {: shortdesc}
 
 ## Lite plan
@@ -151,48 +151,3 @@ Storage capacity cannot be scaled down. To move to a lower storage capacity woul
 * Maximum record key size when you use REST Producer API is 4 K.
 * Maximum record value size when you use REST Producer API is 64 K.
 * Maximum messages per second when you use REST Producer API is 200.
-
-## Satellite plan
-{: #limits_satellite}
-
-### Network throughput
-{: #satellite_throughput}
-
-Network throughput capacity is based on the peak maximum. Each peak maximum has a recommended maximum for typical production workloads.
-
-| Peak Maximum | Recommended maximum | 
-|--------------|-----------------------|
-|150 MB/s (75 MB/s producing and 75 MB/s consuming)| 100 MB/s (50 MB/s producing and 50 MB/s consuming) |
-{: caption="Network throughput capacity on Satellite" caption-side="top"}
-
-Throughput is expressed as the number of bytes per second that can be both sent and received in a service instance. 
-
-Throughput capacity cannot be scaled down. To move to a lower throughput capacity, requires creating a new {{site.data.keyword.messagehub}} service instance at the lower capacity unit.
-
-**The following figures are not verified. They are guidelines only.**
-
-The recommended maximum figure is based on a typical workload and considers the possible impact of operational actions such as internal updates or failure modes, like the loss of an availability zone. If the average throughput exceeds the recommended figure, a loss in performance might be experienced during these conditions. It is recommended to plan your maximum throughput capacity as two-thirds of the peak maximum. For example, two-thirds of the 150 MB/s peak maximum with one capacity unit are 100 MB/s.
-
-### Partitions
-{: #satellite_partitions}
-
-The maximum number of partitions is related to the number of capacity units, so 3000 for 150 MB/s in Satellite. 
-
-It is a hard limit for the Satellite plan. If you reach this limit, you can no longer create topics. 
-
-### Retention
-{: #satellite_retention}
-
-You must implement mechanisms to back up your data to meet your retention requirements.
-
-### Schema Registry
-{: #satellite_schema_registry}
-
-The Schema Registry is not supported on the Satellite plan.
-
-### Other limits
-{: #satellite_limits}
-
-* Maximum message size: 1 MB
-* Maximum concurrently active Kafka clients: 10,000
-* Maximum concurrent connections: 100,000
