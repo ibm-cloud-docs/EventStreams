@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-07-24"
+  years: 2021, 2025
+lastupdated: "2025-03-12"
 
 keywords: service endpoints, VSIs, VPC, CSE, disruptive, iam ip address, granting access
 
@@ -17,9 +17,6 @@ subcollection: EventStreams
 
 If you want to enable [IAM IP address access restrictions](/docs/account?topic=account-ips), you must ensure that the {{site.data.keyword.iamshort}} (IAM) IP allowlist is configured so that the {{site.data.keyword.messagehub}} authentication and authorization service, which is used to authenticate and authorize the Kafka client, can still function.
 {: shortdesc}
-
-Using the {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan with the IP address restrictions is not yet supported. Although you can enable IP address restrictions in your account, {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan clusters do not accept messages. Support for co-existence is in plan. As a workaround, provision {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan clusters from a separate account.
-{: note}
 
 ## Granting access if you use {{site.data.keyword.messagehub}} over the public network
 {: #restricting_access_iam_public}
@@ -78,4 +75,3 @@ This action is required for private connections because the source IP address th
 
 You can also restrict access on the {{site.data.keyword.messagehub}} Enterprise instance using context-based restrictions. For more information, see [Restricting network access by using the Enterprise plan](/docs/EventStreams?topic=EventStreams-restrict_access#configuring_cbr).
 {: note}
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-25"
+  years: 2023, 2025
+lastupdated: "2025-03-12"
 
 keywords: security, gdpr, hipaa, compliance, personal data, personal information, privacy policy, iso, financial services, ismap, c5, soc 2, type 2, pci, irap
 
@@ -32,7 +32,7 @@ The GDPR seeks to create a harmonized data protection law framework across the E
 
 With the [General Data Protection Regulation](https://gdpr.eu/), {{site.data.keyword.messagehub}} customers can rely on the {{site.data.keyword.messagehub}} team's understanding and compliance with emerging data privacy standards and legislation. Customers can also rely on IBM's wider ability to provide a comprehensive suite of solutions to assist businesses of all sizes with their own internal data governance requirements.
 
-The Enterprise, Standard, and Satellite plans are GDPR certified.
+The Enterprise and Standard plans are GDPR certified.
 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 {: #hipaa}
@@ -48,7 +48,7 @@ The Enterprise plan meets HIPAA requirements.
 
 The certificates and the certified cloud products listing can be found in the [IBM Trust Center](https://www.ibm.com/trust) in section [IBM Cloud Compliance Programs - Global](https://www.ibm.com/cloud/compliance).
 
-The Enterprise, Standard, and Satellite plans ISO 27001, 27017, 27018, and ISO 27701 certified.
+The Enterprise and Standard plans are ISO 27001, 27017, 27018, and ISO 27701 certified.
 
 ## Information System Security Management and Assessment Program (ISMAP) 
 {: #ismap}

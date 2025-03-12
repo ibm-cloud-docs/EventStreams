@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-06-06"
+  years: 2024, 2025
+lastupdated: "2025-03-12"
 
 keywords: quick setup guide
 
@@ -89,9 +89,6 @@ Before you get started, we highly recommend that you read the following informat
 
 * The [Enterprise plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_enterprise){: external} offers pay-as-you-go access to an isolated single-tenant Event Streams service. In addition to a selection of throughput and storage options, this plan also offers user-managed encryption private endpoints, schema registry support, and meets a higher number of regulatory compliance standards. The Enterprise plan is the best choice if data isolation, guaranteed performance, and increased retention are important considerations.
 
-
-* The [Satellite plan](/docs/EventStreams?topic=EventStreams-plan_choose#plan_satellite){: external} offers pay-as-you-go access to an {{site.data.keyword.messagehub}} service by deploying functionality similar to the Enterprise plan into your chosen Satellite locations. You can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud.
-	
 
 ### Using APIs
 {: #using_apis}

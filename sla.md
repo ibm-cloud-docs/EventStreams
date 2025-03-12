@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2024-02-20"
+  years: 2015, 2025
+lastupdated: "2025-03-12"
 
 keywords: sla, service level agreement, connectivity, throughput
 
@@ -32,14 +32,6 @@ The {{site.data.keyword.messagehub}} Enterprise Plan provides a highly available
 In a multi-zone region deployment the {{site.data.keyword.messagehub}} service is provided with availability of 99.99% on the Enterprise plan. For more information about the SLA for high availability services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en){: external}.
 
 When the {{site.data.keyword.messagehub}} service is run in a non-highly available configuration, such as [single zone locations](#sla_szr), the availability is 99.9%. For more information about the SLA for non-highly availabile services in {{site.data.keyword.Bluemix_notm}}, see [Service Level Agreements for {{site.data.keyword.Bluemix_notm}} (Public Cloud)](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en){: external}.
-
-## Satellite plan
-{: #sla_satellite}
-
-The {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}}  plan provides a highly available architecture by multi-zone region deployment. In a multi-zone location, with the correct IaaS configurations, the {{site.data.keyword.messagehub}} service can be distributed across three availability zones, which means that the cluster is resilient to the failure of a single zone or any component within that zone.
-
-For customer-managed infrastructure, Tier 1 SLA (99.9%) applies for the service layer of {{site.data.keyword.messagehub}} on {{site.data.keyword.Bluemix_notm}} Satellite. For more details, see [section 7.3 of IBM Terms](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en). 
-
 
 ## How do we measure it?
 {: #sla_measure}
@@ -84,11 +76,6 @@ For throughput guidance information, see [Limits and quotas - Standard](/docs/Ev
 {: #sla_enterprise_specifics}
 
 For throughput guidance information, see [Limits and quotas - Enterprise](/docs/EventStreams?topic=EventStreams-kafka_quotas#enterprise_throughput).
-
-#### Specific guidance for the Satellite plan
-{: #sla_satellite_specifics}
-
-For throughput guidance information, see [Limits and quotas - Satellite](/docs/EventStreams?topic=EventStreams-kafka_quotas#satellite_throughput).
 
 #### Measurement
 {: #sla_measurement}
