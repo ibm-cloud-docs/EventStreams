@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-03-11"
+lastupdated: "2025-03-12"
 
 keywords: plan, Enterprise, Standard, Lite, pricing, throughput, partitions, tenancy, compliance
 
@@ -50,7 +50,7 @@ The architecture is highly available when you choose to deploy into a multi-zone
 The following table summarizes what is supported by the plans:
 
 |   | Lite plan  |  Standard plan |  Enterprise plan  |
-|---|---|---|---|---|
+|---|---|---|---|
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |

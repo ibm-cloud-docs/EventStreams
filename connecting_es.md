@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-13"
+  years: 2015, 2025
+lastupdated: "2025-03-12"
 
 keywords: connections, endpoints, cli, vpc, create service key
 
@@ -28,7 +28,7 @@ To connect to your {{site.data.keyword.messagehub}} instance, you need the endpo
 ## Overview
 {: #connect_enterprise}
 
-Services that are provisioned by using the Lite, Standard, Enterprise, or Satellite plans are grouped in the dashboard under the heading **Services**. 
+Services that are provisioned by using the Lite, Standard, or Enterprise plans are grouped in the dashboard under the heading **Services**. 
 
 All plans use [IAM](/docs/account?topic=account-overview){: external} for authentication. You don't need to understand IAM to get started but some knowledge is recommended if you want to secure your {{site.data.keyword.messagehub}} service. For more information, see [Managing access to your {{site.data.keyword.messagehub}} resources](/docs/EventStreams?topic=EventStreams-security). To complete the following steps and be authorized to create topics, your application or Service Key must have a Manager access role. By default, the owner of the account that contains the service instance has this role.
 
@@ -101,9 +101,6 @@ To call an HTTP API, complete the following tasks.
 ## Network connectivity
 {: #network_connectivity}
 
-For the Satellite plan, the network connectivity depends on the infrastructure that is used and is therefore the responsibility of the user.
-{: note}
-
 By default, Lite, Standard, and Enterprise instances are configured to be accessible over the public internet. If you're using the Enterprise plan, you can restrict connectivity as follows:
 
 Private networking
@@ -127,7 +124,6 @@ For workloads deployed in an {{site.data.keyword.cloud_notm}} VPC to be able to 
 2. Create a VPE for your {{site.data.keyword.messagehub}} instance by using the guidance in [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe){: external}. 
 3. After you create your VPE, it might take a few minutes for the new VPE and pDNS to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway&interface=ui){: external} of the VPE. 
 
-
 ### Accessing an Enterprise instance over the private network from outside the {{site.data.keyword.cloud_notm}}
 {: #private_network_outside_cloud}
 
@@ -139,10 +135,7 @@ The reason for this behavior is Kafka's two-step connection process. In the init
 
 For more information, see [Accessing private API endpoints from an on-premises network by using IBM Cloud Direct Link](https://cloud.ibm.com/docs/vpc?topic=vpc-end-to-end-private-connectivity-vpe&interface=cli){: external}.
 
-
 ## What to do next
 {: #after_connecting}
 
 Now you have connection and credential information, you can choose a Kafka client. For more information, see [Using the Kafka API](/docs/EventStreams?topic=EventStreams-kafka_using).
-
-

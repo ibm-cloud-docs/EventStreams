@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2025-02-25"
+  years: 2015, 2025
+lastupdated: "2025-03-12"
 
 keywords: cli reference
 
@@ -31,7 +31,6 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.2.0  | 3 August 2020  |  - Added support for the Mirroring feature.  |
 | v2.2.1 | 7 August 2020 |  - init: Refined the display of IP allowlist.   |
 | v2.3 |  9 November 2020 |  - Added support for configuring message audit on topic. \n - init: Display encryption key if parameter kms_key_crn is specified in provisioning.  |
-| v2.3.1 |  21 January 2021 |  - Added support for Satellite plan.  |
 | v2.3.2 |  5 May 2022 |  - Added support for Mac OS X M1/ARM. \n - init: Display Object Storage bucket if parameter `cos_bucket_crn` is specified in provisioning. |
 | v2.4.0 |  28 Feb 2023 |  - Added Kafka version to `ibmcloud es cluster`. \n - Updated Go to 1.9.6. |
 | v2.4.1 |  05 Dec 2023 |  - Added `mirroring-active-topics` and `help` commands. |

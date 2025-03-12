@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2025
-lastupdated: "2025-01-31"
+  years: 2015
+lastupdated: "2025-03-12"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -39,9 +39,6 @@ The time required to enable mirroring for the {{site.data.keyword.messagehub}} s
 ## Setup 
 {: #step1_setup}
 {: step}
-
-Mirroring is not supported for a Satellite cluster, therefore neither can be a source nor a target cluster.
-{: note}
 
 Ensure that you provision two Enterprise plan clusters. Both clusters must have the same throughput and storage capacity and have service-to-service bindings (see [Step 2](#step2_bindings) for more information).
 

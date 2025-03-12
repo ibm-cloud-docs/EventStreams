@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-12-04" 
+  years: 2024, 2025
+lastupdated: "2025-03-12" 
 
 keywords: resiliency, cluster resiliency, availability, data corruption, deletion, data management, disaster recovery, responsibilities
 
@@ -25,7 +25,7 @@ If a disaster recovery plan including Event Streams on IBM Cloud is required, th
 ### 1. Instance deletion recovery
 {: #instance_deletion_recovery}
 
-All Event Streams plans (excluding satellite) can recover a deleted instance within reclamation period of three days, after which the data is irreversibly destroyed.  You can check the status of a reclamation, and force or cancel a scheduled reclamation by using  the [IBM Cloud CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).   
+All Event Streams plans can recover a deleted instance within reclamation period of three days, after which the data is irreversibly destroyed.  You can check the status of a reclamation, and force or cancel a scheduled reclamation by using  the [IBM Cloud CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations).   
 
 ### 2. Application/client configuration
 {: #resiliency_clientconfig}
