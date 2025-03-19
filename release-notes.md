@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-24" 
+lastupdated: "2025-03-19" 
 
 keywords: release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## March 2025
+{: #EventStreams-mar2025}
+{: release-note}
+
+IBM Cloud® Event Streams for IBM Cloud Satellite® is deprecated
+:   {{site.data.keyword.messagehub}} for Satellite is a managed Kafka service that can be deployed on {{site.data.keyword.satellitelong}} for clients to store data closer to their applications and data sources, whether on-premises, at the edge, or in a multi-cloud environment. This service is now deprecated due to changes in market expectations, client fit, and lack of adoption. As of March 10 2025, all documentation relating to Satellite has been removed, as well as the ability to select {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan in the Cloud console.
 
 ## January 2025
 {: #EventStreams-jan2025}
