@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-03-12"
+lastupdated: "2025-05-01"
 
 keywords: cli reference
 
@@ -39,6 +39,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.6.1 |  01 Nov 2024 |  - Vulnerability fixes. |
 | v2.6.2 |  01 Feb 2025 |  - Vulnerability fixes. |
 | v2.7.0 |  25 Feb 2025 |  - Error messages returned from the kafka server are translated.\n - Fix `broker-config` printing settings twice. |
+| v2.7.1 |  01 May 2025 |  - Vulnerability fixes. |
 {: caption="Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
