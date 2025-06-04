@@ -61,7 +61,7 @@ toc:
             - connecting_cos.md
             - connecting_mq.md
             - watson_platform.md
-            - streaming_log_analysis.md
+            - streaming_cloud_logs.md
         - topicgroup:
             label: Enhancing security
             topics:
