@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-06-05"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring
 
@@ -125,6 +125,24 @@ For mirroring user controls, you must have the following permissions on the targ
 |----------|---------|---------|
 |cluster |  |Manager |
 {: caption="Target cluster permissions" caption-side="bottom"}
+
+## Context-based restrictions and network security controls with Mirroring
+{: #cbr_mirroring}
+
+Mirroring follows a pull-based model where the target cluster initiates the connection to pull data from the source cluster. This pull-based model in mirroring enforces network controls at the source cluster, ensuring that only the authorized target cluster can access the source cluster’s data.
+
+When network security controls, such as context based restriction (CBR) or CSE allowlisting is enabled, a secure path at the network and security identity level is defined by adding a service endpoint allowlist to the source cluster, which includes the mirroring pod IP of the target cluster. This setup enforces fine grained access control at the infrastructure level, allowing only the authorized mirroring endpoint (the target cluster) to pull data from the source cluster.
+
+The credentials shared between the source and target cluster are strictly for the mirroring process and do not grant access to any other resources between any {{site.data.keyword.messagehub}} deployments. This means that the mirroring process is isolated and secure, preventing unauthorized access to other resources. 
+
+These network security controls must be enabled before mirroring setup. If context-based restrictions are applied post-mirroring setup, mirroring will not initiate until the cluster is updated. 
+
+If CBR is enabled after mirroring:
+
+1. Raise a [support ticket](/docs/EventStreams?topic=EventStreams-report_problem_enterprise).
+2. Wait until the next cluster update cycle (at least 24 hours) for changes to take effect.
+3. Include your mirror node addresses in your CBR rules.
+4. Disable and re-enable mirroring in the target cluster. 
 
 ## Considerations when you share clusters between multiple entities
 {: #sharing_clusters}
