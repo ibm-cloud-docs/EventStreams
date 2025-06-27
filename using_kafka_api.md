@@ -124,30 +124,60 @@ If Gradle is used in build system, add the following information to the file `bu
 implementation com.ibm.cloud.eventstreams:oauth-client:1.4.0
 ```
 
+{{site.data.keyword.iamlong}} Identity Service supports multiple ways to generate bearer token, two of which are supported by this oauth client library.
+
+- API key.
+- Trusted profile and compute resource token.
+
+#### Using SASL OAUTHBEARER with API key
  Use the following strings and properties.
 
-- Use the `bootstrap_endpoints` string as the list of bootstrap servers and pass this string of host and port pairs to your Kafka client.
-- Use the `api_key` string as the API key.
+- Use the `BOOTSTRAP_ENDPOINTS` string as the list of bootstrap servers and pass this string of host and port pairs to your Kafka client.
 - The `IAMOAuthBearerLoginCallbackHandler` is provided by the jar package `com.ibm.cloud.eventstreams:oauth-client:+`.
 - The {{site.data.keyword.iamlong}}'s token endpoint `https://iam.cloud.ibm.com/identity/token` is configured to generate token from the API key by using specified grant type in jaas config. It is done on client side, thus the API key is never sent to the server side and provides better security than a long-lived API key.
 - The {{site.data.keyword.iamshort}}'s key endpoint `https://iam.cloud.ibm.com/identity/keys` is configured to validate the token.
+- `grant_type` in `sasl.jaas.config` is `urn:ibm:params:oauth:grant-type:apikey`
+- `apikey` in `sasl.jaas.config` is the API key used to generate bearer token at client side. It can be either from a user or service Id.
 
 For a Java client, the following example shows the minimum set of properties, where `${BOOTSTRAP_ENDPOINTS}`, and `${APIKEY}` are to be replaced by the values that you retrieved previously.
 
 ```config
 bootstrap.servers=${BOOTSTRAP_ENDPOINTS}
+security.protocol=SASL_SSL
 sasl.mechanism=OAUTHBEARER
-sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type="urn:ibm:params:oauth:grant-type:apikey" apikey="${APIKEY}";
-sasl.login.callback.handler.class=com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
 sasl.oauthbearer.token.endpoint.url=https://iam.cloud.ibm.com/identity/token
 sasl.oauthbearer.jwks.endpoint.url=https://iam.cloud.ibm.com/identity/keys
-security.protocol=SASL_SSL
-ssl.protocol=TLSv1.2
-ssl.enabled.protocols=TLSv1.2
-ssl.endpoint.identification.algorithm=HTTPS
+sasl.login.callback.handler.class=com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type="urn:ibm:params:oauth:grant-type:apikey" apikey="${APIKEY}";
 ```
 
-The sample code refers to the [{{site.data.keyword.messagehub}} samples](https://github.com/IBM/eventstreams-java-sdk){: external}.
+#### Using SASL OAUTHBEARER with trusted profile and compute resource token
+
+All the properties are the same with API key except the `sasl.jaas.config` is different.
+
+- `grant_type` in `sasl.jaas.config` is `urn:ibm:params:oauth:grant-type:cr-token`.
+- `profile_id` in `sasl.jaas.config` is a file location storing trusted profile ID. This file can be mounted to a Kubernetes pod running Kafka client code as a read-only volume and made available to the Kafka client code.
+- `cr_token` in `sasl.jaas.config` is a file location storing service account token from a Kubernetes pod running Kafka client code. See [What is a service account token](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#launch-a-pod-using-service-account-token-projection){: external}.
+
+See below example
+```config
+bootstrap.servers=${BOOTSTRAP_ENDPOINTS}
+security.protocol=SASL_SSL
+sasl.mechanism=OAUTHBEARER
+sasl.oauthbearer.token.endpoint.url=https://iam.cloud.ibm.com/identity/token
+sasl.oauthbearer.jwks.endpoint.url=https://iam.cloud.ibm.com/identity/keys
+sasl.login.callback.handler.class=com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type="urn:ibm:params:oauth:grant-type:cr-token" profile_id="${TRUSTED_PROFILE_ID_FILE_PATH}" cr_token="${SERVICE_ACCOUNT_TOKEN_FILE_PATH}";
+```
+
+More details on [How to setup trusted profile](https://cloud.ibm.com/docs/account?group=administering-trusted-profiles)
+
+
+The source code of oauth client refer to the [{{site.data.keyword.messagehub}} Java SDK](https://github.com/IBM/eventstreams-java-sdk/tree/main/modules/oauth-client){: external}.
+
+
+The sample client code refer to [{{site.data.keyword.messagehub}} Sample](https://github.com/IBM/eventstreams-samples){: external}.
+
 
 For other Kafka client libaries, refer to their documentation about how to implement OAUTHBEARER support. For example:.
 
