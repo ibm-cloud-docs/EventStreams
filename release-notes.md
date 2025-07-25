@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-04-14" 
+lastupdated: "2025-07-25" 
 
 keywords: release notes
 
@@ -29,7 +29,7 @@ Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.8 complete. All deployments {{site.data.keyword.messagehub}} are now on Kafka version 3.8.
 
 IBM Cloud® Event Streams for IBM Cloud Satellite® is deprecated
-:   {{site.data.keyword.messagehub}} for Satellite is a managed Kafka service that can be deployed on {{site.data.keyword.satellitelong}} for clients to store data closer to their applications and data sources, whether on-premises, at the edge, or in a multi-cloud environment. This service is now deprecated due to changes in market expectations, client fit, and lack of adoption. As of March 10 2025, all documentation relating to Satellite has been removed, as well as the ability to select {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan in the Cloud console.
+:   {{site.data.keyword.messagehub}} for Satellite is deprecated. As of March 10 2025, all documentation relating to {{site.data.keyword.messagehub}} for Satellite has been removed, as well as the ability to select {{site.data.keyword.messagehub}} {{site.data.keyword.satelliteshort}} plan in the Cloud console.
 
 ## January 2025
 {: #EventStreams-jan2025}
