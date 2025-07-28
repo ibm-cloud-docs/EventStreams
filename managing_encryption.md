@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2024-03-01"
+  years: 2015, 2025
+lastupdated: "2025-07-28" 
 
 keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
@@ -35,6 +35,15 @@ Customer-managed keys are available on the Enterprise plan and only on clusters 
 
 Deletion of the customer-managed key is unrecoverable and results in the loss of any data that is stored in your {{site.data.keyword.messagehub}} instance.
 {: important}
+
+## Message-level encryption for compliance
+{: #message_level_encryption_}
+
+Some regulatory standards, such as [PCI DSS](/docs/EventStreams?topic=EventStreams-compliance), require that sensitive messsage data (such as cardholder information) is encrypted throughout its lifecycle - at rest, in motion, and in use. 
+
+The file systems used by {{site.data.keyword.messagehub}} to store message data are encrypted, protecting against unauthorized access. However, as messages pass through the transport layer, {{site.data.keyword.messagehub}} must decrypt these file systems to process the messages. This meanss the message payload data itself is not encrypted end-to-end. 
+
+To ensure that sensitive data remains unreadable to anyone other than the intended recipients, clients must encrypt the message itself at the application level before sending it to {{site.data.keyword.messagehub}} - a practice known as message-level encryption.
 
 ## What is not covered by customer-managed encryption
 {: #encryption_what}
