@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-07-28" 
+lastupdated: "2025-07-29" 
 
 keywords: BYOK, encryption, customer-managed encryption, customer-managed key, access to data, rotating key, rotate key
 
@@ -41,7 +41,7 @@ Deletion of the customer-managed key is unrecoverable and results in the loss of
 
 Some regulatory standards, such as [PCI DSS](/docs/EventStreams?topic=EventStreams-compliance), require that sensitive messsage data (such as cardholder information) is encrypted throughout its lifecycle - at rest, in motion, and in use. 
 
-The file systems used by {{site.data.keyword.messagehub}} to store message data are encrypted, protecting against unauthorized access. However, as messages pass through the transport layer, {{site.data.keyword.messagehub}} must decrypt these file systems to process the messages. While this means that message payloads are not encrypted end-to-end, encryption in transit and at rest ensures strong protection throughout the message lifecycle, in line with industry best practises.
+The file systems used by {{site.data.keyword.messagehub}} to store message data are encrypted, protecting against unauthorized access. However, as messages pass through the transport layer, {{site.data.keyword.messagehub}} must decrypt these file systems to process the messages. While this means that message payloads are not encrypted end-to-end, encryption in transit and at rest ensures strong protection throughout the message lifecycle, in line with industry best practices.
 
 To ensure that sensitive data remains unreadable to anyone other than the intended recipients, clients must encrypt the message itself at the application level before sending it to {{site.data.keyword.messagehub}} - a practice known as message-level encryption.
 
