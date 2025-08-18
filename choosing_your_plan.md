@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-03-12"
+lastupdated: "2025-08-07"
 
 keywords: plan, Enterprise, Standard, Lite, pricing, throughput, partitions, tenancy, compliance
 
@@ -54,7 +54,7 @@ The following table summarizes what is supported by the plans:
 | **Tenancy**  |Multi-tenant   | Multi-tenant  | Single tenant |
 | **Availability zones**   |  3  |   3  |3    \n   (1 in single zone locations)   |
 | **Availability**  |  99.99% [^tabletext1] |  99.99% | 99.99%  (99.9% in single zone locations) [^tabletext2]  |
-| **Kafka version on cluster**  | Kafka 3.6 | Kafka 3.6  | Kafka 3.6 |
+| **Kafka version on cluster**  | Kafka 3.8 | Kafka 3.8  | Kafka 3.8 |
 | **Kafka Connect and Kafka Streams supported**  | No |  Yes | Yes  |
 | **Managed Schema Registry supported**  | No |  No |  Yes |
 | **Customer-managed encryption**  | No  |  No |  Yes [^tabletext4]  |
