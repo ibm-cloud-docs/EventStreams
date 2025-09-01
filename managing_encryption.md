@@ -50,7 +50,7 @@ To ensure that sensitive data remains unreadable to anyone other than the intend
 
 If customer-managed encryption feature is selected, be aware that **only** message payload data is covered by this encryption. {{site.data.keyword.messagehub}} encrypts at rest other data that is related to the use of the service. However, although encrypted, non-message payload data **is not** encrypted with the customer-managed encryption. Examples are client metadata such as topic names, topic configuration data, schemas stored in the schema registry and metadata that is stored in relation to the configuration of the Enterprise instance. 
 
-Therefore, do not use confidential information in such client metadata.
+The file systems where message data is stored by Event Streams are encrypted at rest, protecting them from unauthorised access. Event Streams must decrypt these file systems to process the messages, so the message payload data is not encrypted end to end. To ensure that message data cannot be read by anyone outside intended recipients, Clients need to encrypt the message itself at application level prior to sending to Event Streams (specifically message level encryption in this case).
 {: important}
 
 ## How customer-managed encryption works
