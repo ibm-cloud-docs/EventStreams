@@ -295,7 +295,7 @@ Event Streams provide two approaches to schema migration, each utilising a diffe
 
 1. Bulk Schema Import/Export Tool: This method preserves schema IDs exactly as they exist in the source cluster.  Use this approach where no transformations are taking place between the source and target clusters or for straight forward lift and shift scenarios where schema compatability must be maintained end to end. [Find out more.](/docs/EventStreams?topic=EventStreams-ES_schema_registry#importing_data_from_other_schema_registries) 
 
-2. Schema Sync via Mirroring with ID Transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema migration), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
+2. Schema Sync via Mirroring with ID Transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
 
 ## Schema Synchronization via Mirroring with ID Transformation
 {: #schema migration}
@@ -311,16 +311,15 @@ two registries – this would be in the order of a few hours or less.
 Confluent Avro Serdes because the subject associated with a schema can be derived from
 the topic name (E.g., for topic and topic/record subject naming strategies).
 3. Mirroring S2S authorization must be uninterrupted; disabling s2s authorization or mirroring will prevent schema registry requests from being forwarded.
-disabling mirroring will prevent schema registry requests from being forwarded. 
-4. If transformation is required, the target instance schema registry must be configured with topic renaming rules before any migration takes place. Also, rules should not be altered until migration is complete. Making changes during migration will result in inconsistencies between registries.
-any migration takes place and the renaming rule cannot be changed until migration is
-complete, to avoid potential inconsistencies in Schema ID.
+4. If transformation is required, the target instance schema registry must be configured with topic renaming rules before any migration takes place.
+5. Renaming rules cannot be changed until migration is complete. Making changes during migration will result in inconsistencies between registries.
+
 
 ### Instructions
 {: #schemamigration_caution}
 The following instructions outline how you can use schema registry mirroring to move schemas between two instances.
 
-Note: an export utility has not yet been added to the CLI.
+An export utility has not yet been added to the CLI.
 {: note}
 
 #### Permitted schemas values 
@@ -378,8 +377,7 @@ For more detailed information, see the [Confluent
 documentation](https://docs.confluent.io/platform/current/schema-registry/sr-client-configs.html). 
 
 Note: the Event Streams CLI requires that schema imports have a `v1` `exportVersion` value.
-1. Download latest `v2.x.x` source code, e.g: https://github.com/Apicurio/apicurio-
-registry/archive/refs/tags/2.6.13.Final.zip.
+1. Download latest `v2.x.x` source code, e.g: https://github.com/Apicurio/apicurio-registry/archive/refs/tags/2.6.13.Final.zip.
 2. Build the export client: `mvn -pl utils/exportConfluent -am -DskipTests -Pprod package`
 3. Run the exporter (saves output to confluent-schema-registry-export.zip):
 ```sh 
