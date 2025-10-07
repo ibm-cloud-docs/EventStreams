@@ -288,17 +288,17 @@ See the following CLI command example:
 
 
 ## Schema Migration Approaches in Event Streams
-{: #schema migration}
+{: #schema_approach}
 {: step}
 
 Event Streams provide two approaches to schema migration, each utilising a different strategy. 
 
 1. Bulk Schema Import/Export Tool: This method preserves schema IDs exactly as they exist in the source cluster.  Use this approach where no transformations are taking place between the source and target clusters or for straight forward lift and shift scenarios where schema compatability must be maintained end to end. [Find out more.](/docs/EventStreams?topic=EventStreams-ES_schema_registry#importing_data_from_other_schema_registries) 
 
-2. Schema Sync via Mirroring with ID Transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
+2. Schema Sync via Mirroring with ID Transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema_sync), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
 
 ## Schema Synchronization via Mirroring with ID Transformation
-{: #schema migration}
+{: #schema_sync}
 
 Schema sync via mirroring works by forwarding schema registry requests from one instance to another. This enables users to read from and write to a source instance through the target instance, as the target schema registry operates in a special "mirroring mode" - transparently proxying schema-related requests to the source registry and applying ID transformations as needed. This approach simplifies cross-instance data access and supports seamless schema synchronization across environments.
 
@@ -316,7 +316,7 @@ the topic name (E.g., for topic and topic/record subject naming strategies).
 
 
 ### Instructions
-{: #schemamigration_caution}
+{: #schemasync_caution}
 The following instructions outline how you can use schema registry mirroring to move schemas between two instances.
 
 An export utility has not yet been added to the CLI.
@@ -327,7 +327,7 @@ An export utility has not yet been added to the CLI.
 | -- | -- |
 | proxied | Requests are forwarded from the target instance to the source instance. |
 | read-only | Requests requiring the Reader IAM role are permitted. All others are rejected (403). |
-| inactive/omitted | Request forwarding is disabled. Default. |
+| inactive/omitted | Request forwarding is disabled. This is the Default. |
 
 #### Example request
 
@@ -348,7 +348,7 @@ ibmcloud resource service-instance-update \
 {: pre}
 
 ### Topic Name Transformation 
-{: #schemamigration_topicnametransformation}
+{: #schemasync_topicnametransformation}
 
 Topic names can be transformed during forwarding. For example, with the right rules,`old-my-topic` could become `new-my-topic`. When enabled, the source instance only recognises the
 original name, whilst the target instance only recognises the new/transformed topic name. All
@@ -359,7 +359,7 @@ in Event Streams. To forward without changing topic names, [use `topic_name_tran
 Transformation is configured using the [existing CLI transformation fields](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_1).
 
 ### Migration Flow 
-{: #schemamigration_migration flow}
+{: #schemasync_migration flow}
 When migrating between two Event Streams instances, the following flow is suggested.
 1. Enable mirroring between two instances, specifying `schemas: proxied`.
 2. Update your applications to use the target schema registry.
