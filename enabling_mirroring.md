@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-07"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -30,7 +30,7 @@ Using mirroring with {{site.data.keyword.messagehub}} incurs an extra charge for
 
 Currently, enabling mirroring for an {{site.data.keyword.messagehub}} service instance requires the use of the {{site.data.keyword.cloud_notm}} CLI.
 
-To install the CLI, see [Extending IBM Cloud CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
+To install the CLI, see [Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/cli?topic=cli-plug-ins).
 
 The {{site.data.keyword.cloud_notm}} CLI uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to run the **service-instance-update** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [Required access for creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
@@ -46,7 +46,7 @@ Because mirroring is unidirectional, decide which direction of mirroring you wan
 
 Decide which topics from your source cluster you want to mirror. By default, no topics are mirrored and you can enable mirroring by using the user controls after mirroring is enabled as shown in [step 4](#step4_validation). You must specify the selection as one or more patterns.
 
-Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [Event Streams metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
+Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [{{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
 Although mirroring from an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster and vice versa is allowed, this configuration is not recommended unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster might be lower or vice versa. 
 {: important}
@@ -73,7 +73,7 @@ If your requirement is to fail back, you also need the service-to-service bindin
 
 The following example shows how to use the command line to configure service-to-service binding. 
 
-1. Log in to the IBM Cloud account containing the {{site.data.keyword.messagehub}} instance that you want to act as the mirroring source instance:
+1. Log in to the {{site.data.keyword.cloud}} account containing the {{site.data.keyword.messagehub}} instance that you want to act as the mirroring source instance:
    
     ```sh
     ibmcloud login -c <account containing mirroring source instance>
@@ -119,8 +119,7 @@ ibmcloud resource service-instance-update "Event Streams resource instance name"
 {: #select_topics}
 {: step}
 
-When the service instance update is complete, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command. Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster.
-Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
+When the service instance update is complete, you must select which topics will be mirrored from the source to the target cluster. This is done with the CLI by using the 'ibmcloud es mirroring-topic-selection-set' command. Any consumer groups used to consume from these selected topics will be mirrored from the source to the target cluster. Topic selection is in the form of a regex pattern, or comma-separated list of such patterns.
 
 The following command selects all topics to be mirrored:
 
@@ -155,10 +154,11 @@ Configure the following four additional parameters.
 
 | Required parameters for topic renaming | Description | 
 | -- | -- |
-| remove_prefix | the prefix to remove from topic names in the source cluster |
-| remove_suffix | the suffix to remove from topic names in the source cluster |
-| add_prefix | the prefix to add to topic names in the target cluster |
-| add_suffix | the suffix to add to topic names in the target cluster |
+| remove_prefix | The prefix to remove from topic names in the source cluster. |
+| remove_suffix | The suffix to remove from topic names in the source cluster. |
+| add_prefix | The prefix to add to topic names in the target cluster. |
+| add_suffix | The suffix to add to topic names in the target cluster. |
+{: caption="Required parameters for topic renaming" caption-side="bottom"}
 
 The `ibmcloud resource service-instance-update` command needs to be specified via the `-p` command line argument. When these options are specified, only topics with the matching prefixes or suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `app1-`, and specify a topic selection of `abc.*`, only topics that start with `app1-abc` will be mirrored.
 
@@ -248,10 +248,11 @@ Configure the following four additional parameters.
 
 | Required parameters for group ID renaming | Description |
 | -- | -- |
-| remove_prefix | the prefix to remove from group id in the source cluster |
-| remove_suffix | the suffix to remove from group id in the source cluster |
-| add_prefix | the prefix to add to group id in the target cluster |
-| add_suffix | the suffix to add to group id in the target cluster |
+| remove_prefix | The prefix to remove from group id in the source cluster. |
+| remove_suffix | The suffix to remove from group id in the source cluster. |
+| add_prefix | The prefix to add to group id in the target cluster. |
+| add_suffix | The suffix to add to group id in the target cluster. |
+{: caption="Required parameters for group ID renaming" caption-side="bottom"}
 
 When these options are specified, only group IDs with the matching prefixes or suffixes will be eligible for mirroring. For example, if you have a `remove_prefix` of `aaa` and `add_prefix` of `bbb`, consumer groups that start with `aaa-group-id` in the source cluster will be mirrored to `bbb-group-id` in the target cluster.
 
@@ -286,48 +287,49 @@ See the following CLI command example:
 ```
 {: pre}
 
-
-## Schema Migration Approaches in Event Streams
+## Schema migration approaches in {{site.data.keyword.messagehub}}
 {: #schema_approach}
 {: step}
 
-Event Streams provide two approaches to schema migration, each utilising a different strategy. 
+{{site.data.keyword.messagehub}} provides two approaches to schema migration, each utilizing a different strategy. 
 
-1. Bulk Schema Import/Export Tool: This method preserves schema IDs exactly as they exist in the source cluster.  Use this approach where no transformations are taking place between the source and target clusters or for straight forward lift and shift scenarios where schema compatability must be maintained end to end. [Find out more.](/docs/EventStreams?topic=EventStreams-ES_schema_registry#importing_data_from_other_schema_registries) 
+1. Bulk schema import/export tool: This method preserves schema IDs exactly as they exist in the source cluster. Use this approach where no transformations are taking place between the source and target clusters or for straight forward lift and shift scenarios where schema compatability must be maintained end to end. For more information, see [Importing data from other schema registries](/docs/EventStreams?topic=EventStreams-ES_schema_registry#importing_data_from_other_schema_registries).
 
-2. Schema Sync via Mirroring with ID Transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema_sync), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
+2. Schema sync via mirroring with ID transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema_sync), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
 
-## Schema Synchronization via Mirroring with ID Transformation
+## Schema synchronization via mirroring with ID transformation
 {: #schema_sync}
 
 Schema sync via mirroring works by forwarding schema registry requests from one instance to another. This enables users to read from and write to a source instance through the target instance, as the target schema registry operates in a special "mirroring mode" - transparently proxying schema-related requests to the source registry and applying ID transformations as needed. This approach simplifies cross-instance data access and supports seamless schema synchronization across environments.
 
 ### Cautions
 {: #schemamigration_caution}
+
 Before synchronizing schemas using mirroring, review the following precautions:
-1. A maintenance window is required while schemas are bulk exported/imported between the
-two registries – this would be in the order of a few hours or less.
-2. For topic renaming to work, schemas must use Confluent Avro Serdes, so the subject can be derived from the topic name. 
-Confluent Avro Serdes because the subject associated with a schema can be derived from
-the topic name (E.g., for topic and topic/record subject naming strategies).
+
+1. A maintenance window is required while schemas are bulk exported/imported between the two registries – this would be in the order of a few hours or less.
+2. For topic renaming to work, schemas must use Confluent Avro Serdes, so the subject can be derived from the topic name. Confluent Avro Serdes because the subject associated with a schema can be derived from the topic name (for example, for topic and topic/record subject naming strategies).
 3. Mirroring S2S authorization must be uninterrupted; disabling s2s authorization or mirroring will prevent schema registry requests from being forwarded.
 4. If transformation is required, the target instance schema registry must be configured with topic renaming rules before any migration takes place.
 5. Renaming rules cannot be changed until migration is complete. Making changes during migration will result in inconsistencies between registries.
 
-
 ### Instructions
-{: #schemasync_caution}
+{: #schemasync_instructions}
+
 The following instructions outline how you can use schema registry mirroring to move schemas between two instances.
 
 An export utility has not yet been added to the CLI.
 {: note}
 
-#### Permitted schemas values 
+#### Permitted schema values
+{: #schemasync_permitted_values}
+
 | Value | Description | 
 | -- | -- |
 | proxied | Requests are forwarded from the target instance to the source instance. |
 | read-only | Requests requiring the Reader IAM role are permitted. All others are rejected (403). |
-| inactive/omitted | Request forwarding is disabled. This is the Default. |
+| inactive/omitted | Request forwarding is disabled. This is the default. |
+{: caption="Permitted schema values" caption-side="bottom"}
 
 #### Example request
 
@@ -347,57 +349,59 @@ ibmcloud resource service-instance-update \
 ```
 {: pre}
 
-### Topic Name Transformation 
+### Topic name transformation 
 {: #schemasync_topicnametransformation}
 
-Topic names can be transformed during forwarding. For example, with the right rules,`old-my-topic` could become `new-my-topic`. When enabled, the source instance only recognises the
-original name, whilst the target instance only recognises the new/transformed topic name. All
-results returned are transformed accordingly.
+Topic names can be transformed during forwarding. For example, with the right rules,`old-my-topic` could become `new-my-topic`. When enabled, the source instance only recognizes the original name, whilst the target instance only recognizes the new (transformed) topic name. All results returned are transformed accordingly.
 
-If no transformation rules are supplied, `use_alias` is used, in line with existing mirroring behaviour
-in Event Streams. To forward without changing topic names, [use `topic_name_transform` type `none`](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_3).
-Transformation is configured using the [existing CLI transformation fields](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_1).
+If no transformation rules are supplied, `use_alias` is used, in line with existing mirroring behaviour in {{site.data.keyword.messagehub}}. To forward without changing topic names, use [`topic_name_transform` type `none`](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_3). Transformation is configured using the [existing CLI transformation fields](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_1).
 
-### Migration Flow 
+### Migration flow 
 {: #schemasync_migration flow}
-When migrating between two Event Streams instances, the following flow is suggested.
+
+When migrating between two {{site.data.keyword.messagehub}} instances, the following flow is suggested.
+
 1. Enable mirroring between two instances, specifying `schemas: proxied`.
 2. Update your applications to use the target schema registry.
-3. Block any writes to the target registry by switching to `schemas: read-only`. Before
-making this change, mirroring must be disabled momentarily.
+3. Block any writes to the target registry by switching to `schemas: read-only`. Before making this change, mirroring must be disabled momentarily.
 4. Export all schemas from the source instance.
-5. Import all schemas exported from the source instance into the target. This can be done
-using the IBM Cloud CLI: `ibmcloud [...]`
-6. Disable mirroring. Complete.
+5. Import all schemas exported from the source instance into the target. This can be done using the {{site.data.keyword.cloud}} CLI: `ibmcloud [...]`.
+6. Disable mirroring.
 
 ### Exporting schemas
 {: #schemamigration_export}
 
-For more detailed information, see the [Confluent
-documentation](https://docs.confluent.io/platform/current/schema-registry/sr-client-configs.html). 
+For more detailed information, see the [Confluent documentation](https://docs.confluent.io/platform/current/schema-registry/sr-client-configs.html). 
 
-Note: the Event Streams CLI requires that schema imports have a `v1` `exportVersion` value.
-1. Download latest `v2.x.x` source code, e.g: https://github.com/Apicurio/apicurio-registry/archive/refs/tags/2.6.13.Final.zip.
-2. Build the export client: `mvn -pl utils/exportConfluent -am -DskipTests -Pprod package`
+The {{site.data.keyword.messagehub}} CLI requires that schema imports have a `v1` `exportVersion` value.
+{: note}
+
+1. Download latest `v2.x.x` source code, for example, https://github.com/Apicurio/apicurio-registry/archive/refs/tags/2.6.13.Final.zip.
+2. Build the export client: `mvn -pl utils/exportConfluent -am -DskipTests -Pprod package`.
 3. Run the exporter (saves output to confluent-schema-registry-export.zip):
-```sh 
-java -jar utils/exportConfluent/target/apicurio-registry-utils-exportConfluent-2.6.13.Final.jar \
-"https://token:<password>@<my-event-streams-instance.com>/confluent" \
---client-props basic.auth.credentials.source=URL
-``` 
+
+  ```sh 
+  java -jar utils/exportConfluent/target/apicurio-registry-utils-exportConfluent-2.6.13.Final.jar \
+  "https://token:<password>@<my-event-streams-instance.com>/confluent" \
+  --client-props basic.auth.credentials.source=URL
+  ```
+  {: pre}
 
 ### Importing schemas
 {: #schemamigration_import}
 
-Schemas can be imported using the IBM Cloud CLI.
-1. Ensure you have the `event-streams[es]` plugin installed: `ibmcloud plugin list`
-2. Login to IBM Cloud: `ibmcloud login [...]`
-3. Initialize the Event Streams instance you'd like to import in to: `ibmcloud es init`
+Schemas can be imported using the {{site.data.keyword.messagehub}} CLI.
+
+1. Ensure you have the `event-streams[es]` plugin installed: `ibmcloud plugin list`.
+2. Log in to {{site.data.keyword.cloud}}: `ibmcloud login [...]`.
+3. Initialize the {{site.data.keyword.messagehub}} instance you'd like to import in to: `ibmcloud es init`.
 4. Import the schema:
-``` sh 
-ibmcloud es schema-import \
--f confluent-schema-registry-export.zip
-```
+   
+  ``` sh 
+  ibmcloud es schema-import \
+  -f confluent-schema-registry-export.zip
+  ```
+  {: pre}
 
 ## Validation
 {: #step5_validation}
