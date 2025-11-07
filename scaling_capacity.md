@@ -87,9 +87,8 @@ The number of Kafka brokers can change as throughput is scaled. Clients automati
 
 However, be aware of the following: 
 
-    - If an application connects from outside of {{site.data.keyword.cloud}} using a custom networking solution (connection via a proxy, firewall or a private DNS), that requires the full list of Kafka broker hostnames to be predeclared, the hostnames for 'kafka-0 to kafka-8' should be declared with the same domain assigned to your service instance and using the same IPv4 IPs.
-    - If an application is connecting from a VPC using a VPE, and the VPE was created before December 2024, it must be recreated. Once recreated, no further action is needed for future scaling events.
-
+- If an application connects from outside of {{site.data.keyword.cloud}} using a custom networking solution (connection via a proxy, firewall or a private DNS), that requires the full list of Kafka broker hostnames to be predeclared, the hostnames for 'kafka-0 to kafka-8' should be declared with the same domain assigned to your service instance and using the same IPv4 IPs.
+- If an application is connecting from a VPC using a VPE, and the VPE was created before December 2024, it must be recreated. Once recreated, no further action is needed for future scaling events.
 
 ### During the scale-up process
 {: #scaleup_process}
