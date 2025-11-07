@@ -82,10 +82,11 @@ To install this tool, see [install devtools](/docs/cli?topic=cli-install-ibmclou
 
 The {{site.data.keyword.Bluemix_notm}} CLI command uses the **service-instance-update** command to update your {{site.data.keyword.messagehub}} service instance resource. The user ID in the account used to issue the **service-instance-** command must be assigned the same access policies that are needed when you create resources. For information about access requirements, see [creating resources](/docs/account?topic=account-manage_resource#creating-resources).
 
-The number of Kafka brokers can change as throughput is scaled. Clients automatically utilize these additional brokers without configuration changes or restarting, the list of bootstrap servers does not need to changed. However, be aware of the following:
-- If an application connects from outside of {{site.data.keyword.cloud}} using a custom networking solution (connection via a proxy, firewall or a private DNS), that requires the full list of Kafka broker hostnames to be predeclared, the hostnames for 'kafka-0 to kafka-8' should be declared with the same domain assigned to your service instance and using the same IPv4 IPs.
-- If an application is connecting from a VPC using a VPE, and the VPE was created before December 2024, it must be recreated. Once recreated, no further action is needed for future scaling events.
-{: important}
+The number of Kafka brokers can change as throughput is scaled. Clients automatically utilize these additional brokers without configuration changes or restarting, the list of bootstrap servers does not need to be changed. However, be aware of the following: {: important}
+
+    - If an application connects from outside of {{site.data.keyword.cloud}} using a custom networking solution (connection via a proxy, firewall or a private DNS), that requires the full list of Kafka broker hostnames to be predeclared, the hostnames for 'kafka-0 to kafka-8' should be declared with the same domain assigned to your service instance and using the same IPv4 IPs.
+    - If an application is connecting from a VPC using a VPE, and the VPE was created before December 2024, it must be recreated. Once recreated, no further action is needed for future scaling events.
+    {: important}
 
 ### During the scale-up process
 {: #scaleup_process}
