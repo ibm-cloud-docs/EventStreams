@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-07-19"
+  years: 2026
+lastupdated: "2026-01-14"
 
 keywords: HA for Event Streams, DR for Event Streams, Event Streams recovery time objective, high availability, disaster recovery
 
@@ -33,6 +33,8 @@ subcollection: content-kit
 
 
 
+![Architecture](images/EventStreams_high_availability.svg){: caption="Event Streams architecture" caption-side="bottom"}
+
 ### High availability features
 {: #ha-features}
 
@@ -51,6 +53,8 @@ subcollection: content-kit
 {: #disaster-recovery-intro}
 
 
+
+![Architecture](images/EventStreams_disaster_recovery.svg){: caption="Event Streams restore architecture" caption-side="bottom"}
 
 
 
