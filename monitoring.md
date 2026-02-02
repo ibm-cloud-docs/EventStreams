@@ -30,7 +30,7 @@ While you monitor service metrics with {{site.data.keyword.mon_full_notm}}, Kafk
 
 Before you can start to use {{site.data.keyword.messagehub}} {{site.data.keyword.mon_full_notm}} metrics, you must first opt in, and then enable platform metrics by completing the following steps:
 
-1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}. 
+1. Enable platform metrics for {{site.data.keyword.messagehub}}. For more information, see [Enabling platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_enabling){: external}.
 
    The owner of the account has full access to this metrics data. For more information about managing access for other users, see [Getting started with {{site.data.keyword.mon_full_notm}} - manage user access](/docs/monitoring?topic=monitoring-getting-started#getting-started-step1){: external}.
 
@@ -48,7 +48,7 @@ Enabling enhanced metrics introduces more global gauge metrics and therefore inc
 Before you can start to use enhanced {{site.data.keyword.messagehub}} metrics, you must first enable them by completing the following step:
 
 * Run the following command to update the service instance to start using enhanced metrics:
-   
+
    ```bash
    ibmcloud resource service-instance-update <instance-name> -p '{"metrics":["topic","partition","consumers"]}'
    ```
@@ -135,6 +135,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 
 | Metric name |Enterprise|Lite|Standard|
 |-----------|--------|--------|--------|
+| [Available disk space for topic operations](#ibm_eventstreams_instance_minimum_available_disk_space) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Maximum partition retention percentage](#ibm_eventstreams_instance_max_partition_retention_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) | | |
 | [Reserved disk space percentage per topic](#ibm_eventstreams_instance_reserved_disk_space_per_topic_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) | | |
 | [Topic size](#ibm_eventstreams_instance_topic_size) |  ![Checkmark icon](../icons/checkmark-icon.svg) | | |
@@ -183,6 +184,21 @@ Incrementing count of the number of authentication failures.
 {: caption="Authentication failures metric metadata" caption-side="bottom"}
 
 Ideally zero. A nonzero value on this indicates that clients attempt to connect by using invalid credentials. Ensure that all clients are using valid credentials.
+
+### Available disk space for topic operations
+{: #ibm_eventstreams_instance_minimum_available_disk_space}
+
+The amount of disk space available for creating topics, creating partitions, or changing topic configurations.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_instance_minimum_available_disk_space`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `byte` |
+| `Segment By` | `Service instance, Service instance name`,`IBM {{site.data.keyword.messagehub}} Kafka topic` |
+{: caption="Available disk space for topic operations metadata" caption-side="bottom"}
+
+This value is the amount of disk space available when Event Streams calculates the reserved size needed when performing topic administration operations.
 
 ### Connected clients software name and version
 {: #ibm_eventstreams_instance_connected_clients_software_name_and_version}
@@ -381,7 +397,7 @@ The level of utilization of an {{site.data.keyword.messagehub}} instance. This i
 ### Maximum partition retention percentage
 {: #ibm_eventstreams_instance_max_partition_retention_percent}
 
-Maximum partition retention percentage indicates the percentage of the configured retention size that is used by the partition with the most data in the topic. For example, if a topic has a retention size of 10GB, one partition has 4GB and another partition has 6GB, this metric will report 60%. This helps you monitor if a single partition within a topic is approaching its retention size which could trigger a log segment deletion or impact performance. 
+Maximum partition retention percentage indicates the percentage of the configured retention size that is used by the partition with the most data in the topic. For example, if a topic has a retention size of 10GB, one partition has 4GB and another partition has 6GB, this metric will report 60%. This helps you monitor if a single partition within a topic is approaching its retention size which could trigger a log segment deletion or impact performance.
 
 | Metadata | Description |
 |----------|-------------|
@@ -555,7 +571,7 @@ Shows the percentage of disk space that would be used if your topics were filled
 ### Reserved disk space percentage per topic
 {: #ibm_eventstreams_instance_reserved_disk_space_per_topic_percent}
 
-The percentage of reserved disk space that is required for each topic if all of the topics allocated partitions are fully used. You can use this metric to plan your disk space requirements for Event Streams and also identify misconfigured topics that are reserving an unnecessarily large amount of disk space. 
+The percentage of reserved disk space that is required for each topic if all of the topics allocated partitions are fully used. You can use this metric to plan your disk space requirements for Event Streams and also identify misconfigured topics that are reserving an unnecessarily large amount of disk space.
 
 | Metadata | Description |
 |----------|-------------|
@@ -671,7 +687,7 @@ This is for information to help you monitor trends in your usage, particularly i
 ### Topic size
 {: #ibm_eventstreams_instance_topic_size}
 
-Total disk size currently being used by partitions of a topic e.g if a topic has two partitions, one with 2MB of data and one with 4MB of data, the metric will report the size as 6MB. This can be used to monitor storage usage and optimise partitioning. 
+Total disk size currently being used by partitions of a topic e.g if a topic has two partitions, one with 2MB of data and one with 4MB of data, the metric will report the size as 6MB. This can be used to monitor storage usage and optimise partitioning.
 
 | Metadata | Description |
 |----------|-------------|
