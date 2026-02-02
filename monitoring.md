@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2024-07-19"
+  years: 2026
+lastupdated: "2026-02-02"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -198,7 +198,7 @@ The amount of disk space available for creating topics, creating partitions, or 
 | `Segment By` | `Service instance, Service instance name`,`IBM {{site.data.keyword.messagehub}} Kafka topic` |
 {: caption="Available disk space for topic operations metadata" caption-side="bottom"}
 
-This value is the amount of disk space available when Event Streams calculates the reserved size needed when performing topic administration operations.
+This value is the amount of disk space available when {{site.data.keyword.messagehub}} calculates the reserved size needed when performing topic administration operations.
 
 ### Connected clients software name and version
 {: #ibm_eventstreams_instance_connected_clients_software_name_and_version}
