@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-02"
+lastupdated: "2026-02-08"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -195,7 +195,7 @@ The amount of disk space available for creating topics, creating partitions, or 
 | `Metric Name` | `ibm_eventstreams_instance_minimum_available_disk_space`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `byte` |
-| `Segment By` | `Service instance, Service instance name`,`IBM {{site.data.keyword.messagehub}} Kafka topic` |
+| `Segment By` | `Service instance, Service instance name` |
 {: caption="Available disk space for topic operations metadata" caption-side="bottom"}
 
 This value is the amount of disk space available when {{site.data.keyword.messagehub}} calculates the reserved size needed when performing topic administration operations.
