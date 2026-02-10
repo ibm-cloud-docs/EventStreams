@@ -2,11 +2,12 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-02"
+lastupdated: "2026-02-10"
 
 keywords:
 
 subcollection: EventStreams
+
 
 ---
 
@@ -78,6 +79,17 @@ The following dependencies apply to the following deployment locations: Dallas (
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
+| ServiceNow| Change management, Operations | No | Both |  external  |
+{: row-headers}
+{: caption="IBM Event Streams for IBM Cloud - Data and Control plane deployment service dependency information - Medium dependencies" caption-side="top"}
+{: tab-title="Medium dependencies"}
+{: tab-group="service-dependency-data-for-messagehub-Data-and-Control-plane-deployment"}
+{: class="comparison-tab-table"}
+{: #medium-deps-data-and-control-plane-deployment}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
 | Slack| Operations | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.atracker_full}}| Security compliance | No | Both |  Same region  |
 | IBM Log Analysis and IBM Cloud Activity Tracker| Operations, Security compliance | No | Both |  Same region  |
@@ -115,6 +127,8 @@ The following dependencies apply to the following deployment locations: Montreal
 
 ## Understanding service dependency data
 {: #understand-dependency-data}
+
+
 
 If you have any questions about the service dependency data as you review the service dependency information in the tables, you can refer to the following FAQ:
 
