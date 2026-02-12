@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-08"
+lastupdated: "2026-02-12"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -198,7 +198,7 @@ The amount of disk space available for creating topics, creating partitions, or 
 | `Segment By` | `Service instance, Service instance name` |
 {: caption="Available disk space for topic operations metadata" caption-side="bottom"}
 
-This value is the amount of disk space available when {{site.data.keyword.messagehub}} calculates the reserved size needed when performing topic administration operations.
+This value is the lowest amount of disk space available across all storage volumes in your Event Streams instance. It provides a safe indication of how much additional data or configuration change your cluster can support before more storage is required.
 
 ### Connected clients software name and version
 {: #ibm_eventstreams_instance_connected_clients_software_name_and_version}
