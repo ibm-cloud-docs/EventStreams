@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-07-25" 
+  years: 2022, 2026
+lastupdated: "2026-02-17" 
 
 keywords: release notes
 
@@ -15,7 +15,7 @@ content-type: release-note
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Release notes for {{site.data.keyword.messagehub}}
+# Release notes Gen 1
 {: #event-streams-relnotes}
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
