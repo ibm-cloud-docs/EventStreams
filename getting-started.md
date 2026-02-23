@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-17"
+lastupdated: "2026-02-18"
 
 keywords: quick setup guide
 
@@ -15,7 +15,7 @@ subcollection: EventStreams
 {:cli: .ph data-hd-interface="cli"}
 {:api: .ph data-hd-interface="api"}
 
-# Getting started Gen 1
+# Getting started with {{site.data.keyword.messagehub}} Gen 1
 {: #quick_setup_guide}
 
 This tutorial guides you through the steps to quickly start using {{site.data.keyword.messagehub}} by provisioning an instance, creating a topic and a credential, and then producing and consuming data. Additionally, you'll learn how to connect {{site.data.keyword.mon_full}} and {{site.data.keyword.at_full}}, and optionally how to use Kafka Connect or ksqlDB. Finally, you'll also find out how to get help with {{site.data.keyword.messagehub}}.
@@ -850,4 +850,3 @@ For a general overview of how to get help with {{site.data.keyword.messagehub}} 
 [FAQs](/docs/EventStreams?topic=EventStreams-faqs){: external} details answers to some of the common questions about {{site.data.keyword.messagehub}}.
 
 If you're experiencing a problem with {{site.data.keyword.messagehub}}, here's a list of the information you need to gather before you open a case [Reporting a problem to the Event Streams team - Standard and Enterprise plans](/docs/EventStreams?topic=EventStreams-report_problem_enterprise){: external}.
-
