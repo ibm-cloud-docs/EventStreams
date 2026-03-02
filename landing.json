@@ -31,8 +31,8 @@
         "href": "/docs/EventStreams?topic=EventStreams-kafka_using"
       },
       {
-        "title": "Consuming messages",
-        "href": "/docs/EventStreams?topic=EventStreams-consuming_messages"
+        "title": "Gen 2 docs",
+        "href": "/docs/EventStreams-gen2"
       }
     ]
   },
