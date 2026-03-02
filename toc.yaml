@@ -6,7 +6,7 @@ toc:
     audience: service
     href: /docs/EventStreams/
     path: EventStreams
-    label: Event Streams
+    label: Event Streams Gen 1
     version: 2
     console-page: /catalog/services/event-streams
     product-page: https://www.ibm.com/products/event-streams
@@ -26,6 +26,9 @@ toc:
       - topic: use_cases.md
         navtitle: Apache Kafka use cases
       - choosing_your_plan.md
+      - link:
+          label: Gen 2 docs
+          href: https://cloud.ibm.com/docs/EventStreams-gen2
   - navgroup:
       id: howto
       topics:
