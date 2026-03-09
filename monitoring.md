@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-03-09"
 
 keywords: monitoring, metrics, cost, billing, opting in
 
@@ -107,6 +107,7 @@ The following tables describe the specific metrics that are provided by {{site.d
 | [Number of partitions](#ibm_eventstreams_instance_partitions) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [Number of topics](#ibm_eventstreams_instance_topics) |  ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
 | [Number of under in-sync replica partitions](#ibm_eventstreams_kafka_under_minisr_partitions) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
+| [Oversized request drop total](#ibm_eventstreams_kafka_oversize_request_drop_total) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Produce message conversion time](#ibm_eventstreams_instance_produce_conversions_time_quantile) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Rebalancing consumer groups](#ibm_eventstreams_instance_rebalancing_consumergroups) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
 | [Reserved disk space percentage](#ibm_eventstreams_instance_reserved_disk_space_percent) |  ![Checkmark icon](../icons/checkmark-icon.svg) |   |   |
@@ -522,6 +523,19 @@ The number of partitions with fewer than two in-sync replicas.
 {: caption="Number of under in-sync replica partitions metric metadata" caption-side="bottom"}
 
 Ideally this value should be zero. A nonzero value might highlight a temporary issue with the cluster.
+
+### Oversize request drop total
+{: #ibm_eventstreams_kafka_oversize_request_drop_total}
+
+Total number of dropped oversized kafka requests
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_eventstreams_kafka_oversize_request_drop_total`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name` |
+{: caption="Total number of dropped oversized kafka requests" caption-side="bottom"}
 
 ### Produce message conversion time
 {: #ibm_eventstreams_instance_produce_conversions_time_quantile}
