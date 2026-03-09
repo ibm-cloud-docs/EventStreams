@@ -527,7 +527,7 @@ Ideally this value should be zero. A nonzero value might highlight a temporary i
 ### Oversize request drop total
 {: #ibm_eventstreams_kafka_oversize_request_drop_total}
 
-Total number of dropped oversized kafka requests
+Total number of oversized Kafka requests that are dropped.
 
 | Metadata | Description |
 |----------|-------------|
@@ -535,7 +535,7 @@ Total number of dropped oversized kafka requests
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name` |
-{: caption="Total number of dropped oversized kafka requests" caption-side="bottom"}
+{: caption="Total number of dropped oversized Kafka requests" caption-side="bottom"}
 
 ### Produce message conversion time
 {: #ibm_eventstreams_instance_produce_conversions_time_quantile}

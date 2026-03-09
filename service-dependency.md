@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-10"
+lastupdated: "2026-03-09"
 
 keywords:
 
@@ -49,7 +49,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.cloudantfull}} | Availability, Change management, Disaster recovery, Instance control | No | Both |  Same region  |
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same region  |
 | {{site.data.keyword.cos_full}} | Availability, Change management, Disaster recovery, Instance control | No | Both |  Same region  |
-| {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  ca-mon  |
+| {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Instance control, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
 | IBM Cloud Service Endpoints | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Both |  Same data center  |
 {: row-headers}
@@ -103,25 +103,6 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-group="service-dependency-data-for-messagehub-Data-and-Control-plane-deployment"}
 {: class="comparison-tab-table"}
 {: #minimal-deps-data-and-control-plane-deployment}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
-
-## Data plane for VPC
-{: #data-plane-for-vpc}
-
-The following dependencies apply to the following deployment locations: Montreal (ca-mon).
-
-
-|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
-|:---|:---|:---|:---|:---|
-| {{site.data.keyword.iamlong}} | Access management, Availability, Change management, Instance control, Security compliance | No | vpc-data-plane |  ca-mon  |
-| vpc-block-storage | Availability | No | vpc-data-plane |  ca-mon  |
-| Common Data Platform | Availability, Change management, configuration-management, Instance control, Operations, Security compliance | No | vpc-data-plane |  ca-mon  |
-{: row-headers}
-{: caption="IBM Event Streams for IBM Cloud - Data plane for VPC service dependency information - Critical dependencies" caption-side="top"}
-{: tab-title="Critical dependencies"}
-{: tab-group="service-dependency-data-for-messagehub-Data-plane-for-VPC"}
-{: class="comparison-tab-table"}
-{: #critical-deps-data-plane-for-vpc}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 
