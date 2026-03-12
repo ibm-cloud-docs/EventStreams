@@ -397,11 +397,11 @@ Schemas can be imported using the {{site.data.keyword.messagehub}} CLI.
 3. Initialize the {{site.data.keyword.messagehub}} instance you'd like to import in to: `ibmcloud es init`.
 4. Import the schema:
 
-  ``` sh
-  ibmcloud es schema-import \
-  -f confluent-schema-registry-export.zip
-  ```
-  {: pre}
+    ``` sh
+    ibmcloud es schema-import \
+    -f confluent-schema-registry-export.zip
+    ```
+    {: codeblock}
 
 ## Validation
 {: #step5_validation}
