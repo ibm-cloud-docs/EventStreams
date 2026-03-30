@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-02-18" 
+lastupdated: "2026-03-19"
 
 keywords: release notes
 
@@ -20,6 +20,14 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## 19 March 2026
+{: #EventStreams-19mar2026}
+{: release-note}
+
+Deprecation of {{site.data.keyword.hscrypto}}
+: {{site.data.keyword.cloud}} is changing dedicated key management services from {{site.data.keyword.hscrypto}} to {{site.data.keyword.keymanagementservicelong}} Dedicated. {{site.data.keyword.hscrypto}} (HPCS) will reach End of Life (EOL) in Q1 2027 and will no longer be supported for use with this service after that time. For more information on how to migrate your encryption keys, see [Migrating from Hyper Protect Crypto Services (HPCS) to Key Protect Dedicated (KP-ST)](/docs/EventStreams-gen2?topic=EventStreams-gen2-managing_encryption#migrating_hpcs_to_kp).
+
 
 ## March 2025
 {: #EventStreams-mar2025}
@@ -56,14 +64,14 @@ Schema Registry commands in CLI plugin v2.6.0
 :  Manage schema related tasks using the event streams CLI plugin v2.6.0. To find out more, see [Event Streams CLI reference](/docs/cli?topic=cli-cli_reference).
 
 Reserved disk space percentage per topic metric available
-:  You can now monitor the reserved disk space percentage per topic with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Reserved disk space percentage per topic](/docs//EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_reserved_disk_space_per_topic_percent). 
+:  You can now monitor the reserved disk space percentage per topic with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Reserved disk space percentage per topic](/docs//EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_reserved_disk_space_per_topic_percent).
 
 ## July 2024
 {: #EventStreams-jul2024}
 {: release-note}
 
 Schema Registry request rate metric available
-:  You can now monitor the serialization and deserialization rates on your schema registry with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Schema registry request rate](/docs//EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec). 
+:  You can now monitor the serialization and deserialization rates on your schema registry with the {{site.data.keyword.messagehub}} enterprise plan. To find out more, see [Schema registry request rate](/docs//EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_schema_registry_serdes_requests_per_sec).
 
 
 ## March 2024
@@ -74,16 +82,16 @@ Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.6.
 
 Instance utilization metric available
-:    You can monitor CPU usage of an {{site.data.keyword.messagehub}} instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization). 
+:    You can monitor CPU usage of an {{site.data.keyword.messagehub}} instance to plan capacity or be alerted in a timely manner if your service starts to consume all CPU capacity. To find out more, see [Instance utilization](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_utilization).
 
 Health Metric now available via CLI and API
-:   A service administrator can quickly assess the health and availability status of their Kafka cluster with a single metric using the CLI and API. To find out more, see [get status](/apidocs/event-streams/adminrest#getstatus). 
+:   A service administrator can quickly assess the health and availability status of their Kafka cluster with a single metric using the CLI and API. To find out more, see [get status](/apidocs/event-streams/adminrest#getstatus).
 
 ## February 2024
 {: #EventStreams-feb2024}
 {: release-note}
 
-Mirroring for single-zone regions 
+Mirroring for single-zone regions
 :   {{site.data.keyword.messagehub}} now supports mirroring for single-zone regions. A Kafka user can now mirror messages from one cluster in a single-zone region to another. To find out more, see [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
 ## January 2024
@@ -99,7 +107,7 @@ Deprecation of {{site.data.keyword.sqlquery_short}}
 {: release-note}
 
 Private networking in SZR
-:   This capability means that any data that you publish or consume from the {{site.data.keyword.messagehub}} service is over the private network and not public interfaces. Private endpoints are now supported across all regions (MZR and SZR) in the Enterprise plan. 
+:   This capability means that any data that you publish or consume from the {{site.data.keyword.messagehub}} service is over the private network and not public interfaces. Private endpoints are now supported across all regions (MZR and SZR) in the Enterprise plan.
 
 
 ## October 2023
@@ -113,14 +121,14 @@ Private networking in SZR
 {: #EventStreams-sep2023}
 {: release-note}
 
-Self-service mirroring enablement 
+Self-service mirroring enablement
 :   You can enable mirroring by running a **service-instance-update** CLI command against your target cluster, instead of raising a support ticket. To find out more, see [Enabling mirroring](/docs/EventStreams?topic=EventStreams-mirroring_setup).
 
 ## August 2023
 {: #EventStreams-aug2023}
 {: release-note}
 
-UI Enhancements  
+UI Enhancements
 :   Topics Page Upgrade - Users interacting the UI now have improved topic overview page with core components redesigned including topic details and streamlanding wizard
 :   Topic Editing - Users can configure their topics directly from the GUI
 :   Topics Pagination - Topic overview page now paginates topics, providing users with a better layout and easier navigation of the UI.
@@ -130,20 +138,20 @@ UI Enhancements
 {: release-note}
 
 Additional topic partition metrics
-:   The message rate per partition is now available. For more information, see [Message rate per partition metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition). 
+:   The message rate per partition is now available. For more information, see [Message rate per partition metric](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_instance_message_rate_per_partition).
 
 Usage quotas per user available
 :   Kafka administrators can now use metrics to identify users who are consuming unexpectedly large amounts of bandwidth and then apply a quota. Kafka users with a quota have visibility of how much capacity they have left before throttling starts. For more information, see [IAM ID bytes](/docs/EventStreams?topic=EventStreams-metrics#ibm_eventstreams_iam_id_bytes_in_per_second).
- 
+
 ## May 2023
 {: #EventStreams-may2023}
 {: release-note}
 
 Schema registry endpoints
-:   An {{site.data.keyword.messagehub}} user can use a larger subset of the Confluent Schema Registry REST API to manage their schema registry. 
+:   An {{site.data.keyword.messagehub}} user can use a larger subset of the Confluent Schema Registry REST API to manage their schema registry.
 
 Lenses.io integration
-: {{site.data.keyword.messagehub}} now integrates with Lenses, a third party DataOps platform for Apache Kafka. To find out how to install Lenses with {{site.data.keyword.messagehub}}, see [Getting started with {{site.data.keyword.messagehub}}](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/). 
+: {{site.data.keyword.messagehub}} now integrates with Lenses, a third party DataOps platform for Apache Kafka. To find out how to install Lenses with {{site.data.keyword.messagehub}}, see [Getting started with {{site.data.keyword.messagehub}}](https://docs.lenses.io/5.2/installation/getting-started/managed/ibm/).
 
 Apache Kafka upgrade
 :   Upgrade to Apache Kafka version 3.3.
@@ -234,8 +242,8 @@ New region support
 {: #EventStreams-jun2021}
 {: release-note}
 
-Streaming to {{site.data.keyword.cos_full}}  by using {{site.data.keyword.sqlquery_full}} 
-:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to {{site.data.keyword.cos_full}}  buckets, and stream data automatically and securely by using the fully managed {{site.data.keyword.sqlquery_short}} service. 
+Streaming to {{site.data.keyword.cos_full}}  by using {{site.data.keyword.sqlquery_full}}
+:   [Event Streaming general availability](/docs/EventStreams?topic=EventStreams-streaming_cos_sql). From the {{site.data.keyword.messagehub}} UI, select and link topics to {{site.data.keyword.cos_full}}  buckets, and stream data automatically and securely by using the fully managed {{site.data.keyword.sqlquery_short}} service.
 
 ## May 2021
 {: #EventStreams-may2021}

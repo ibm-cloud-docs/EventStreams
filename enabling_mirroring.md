@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015
-lastupdated: "2025-10-07"
+lastupdated: "2026-03-12"
 
 keywords: replication, failover, scenario, disaster recovery, mirroring, setup, backup, geo-replication, bindings
 
@@ -36,7 +36,7 @@ The {{site.data.keyword.cloud_notm}} CLI uses the **service-instance-update** co
 
 The time required to enable mirroring for the {{site.data.keyword.messagehub}} service instance varies, but under normal circumstances it does not exceed 2 hours.
 
-## Setup 
+## Setup
 {: #step1_setup}
 {: step}
 
@@ -48,7 +48,7 @@ Decide which topics from your source cluster you want to mirror. By default, no 
 
 Consider your bandwidth requirements; is there enough bandwidth available in the source cluster? Your source cluster needs to have some headroom to run mirroring. See [Choosing your plan](/docs/EventStreams?topic=EventStreams-plan_choose) for cluster bandwidth limits and use [{{site.data.keyword.messagehub}} metrics](/docs/EventStreams?topic=EventStreams-metrics) to determine how busy your source cluster is and whether it has the headroom for mirroring.
 
-Although mirroring from an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster and vice versa is allowed, this configuration is not recommended unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster might be lower or vice versa. 
+Although mirroring from an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster and vice versa is allowed, this configuration is not recommended unless you have specific residency requirements and are aware of the implications. The Service Level Agreement (SLA) policy of an Enterprise multi-zone-region cluster to an Enterprise single-zone-region cluster might be lower or vice versa.
 {: important}
 
 ## Enable service-to-service bindings
@@ -71,22 +71,22 @@ When you create a service-to-service binding, IAM uses the terminology 'source' 
 If your requirement is to fail back, you also need the service-to-service binding in the opposite direction.
 {: important}
 
-The following example shows how to use the command line to configure service-to-service binding. 
+The following example shows how to use the command line to configure service-to-service binding.
 
 1. Log in to the {{site.data.keyword.cloud}} account containing the {{site.data.keyword.messagehub}} instance that you want to act as the mirroring source instance:
-   
+
     ```sh
     ibmcloud login -c <account containing mirroring source instance>
      ```
     {: codeblock}
 
 3. Set up an authorization policy, as follows:
-   
+
     ```sh
     ibmcloud iam authorization-policy-create messagehub messagehub Reader --source-service-instance-id <instance id of the mirroring target cluster> [--source-service-account <account containing mirroring target instance>] --target-service-instance-id <instance id of the mirroring source cluster>
     ```
     {: codeblock}
-   
+
     Note that the `--source-service-account` option can be omitted if you are setting up mirroring between two {{site.data.keyword.messagehub}} instances in the same IBM Cloud account.
 
 For more information about service-to-service bindings, see the [**Manage authorizations** panel](https://cloud.ibm.com/iam/authorizations) and [Using authorizations to grant access between services](/docs/account?topic=account-serviceauth).
@@ -100,8 +100,8 @@ To enable mirroring, you need to run a **`service-instance-update`** command aga
 | Required parameters | Description |
 | ---------- | ----------- |
 | source_crn | The crn of the source cluster to be mirrored |
-| source_alias | The alias used for the source cluster | 
-| target_alias | The alias used for the target cluster | 
+| source_alias | The alias used for the source cluster |
+| target_alias | The alias used for the target cluster |
 {: caption="Required parameters when enabling mirroring" caption-side="bottom"}
 
 - The `source_crn` is in this format: `crn:v1:bluemix:public:messagehub:us-south:a/aaa:aaaa::`
@@ -152,7 +152,7 @@ You can specify which topics or consumer groups are mirrored at anytime once mir
 
 Configure the following four additional parameters.
 
-| Required parameters for topic renaming | Description | 
+| Required parameters for topic renaming | Description |
 | -- | -- |
 | remove_prefix | The prefix to remove from topic names in the source cluster. |
 | remove_suffix | The suffix to remove from topic names in the source cluster. |
@@ -291,11 +291,11 @@ See the following CLI command example:
 {: #schema_approach}
 {: step}
 
-{{site.data.keyword.messagehub}} provides two approaches to schema migration, each utilizing a different strategy. 
+{{site.data.keyword.messagehub}} provides two approaches to schema migration, each utilizing a different strategy.
 
 1. Bulk schema import/export tool: This method preserves schema IDs exactly as they exist in the source cluster. Use this approach where no transformations are taking place between the source and target clusters or for straight forward lift and shift scenarios where schema compatability must be maintained end to end. For more information, see [Importing data from other schema registries](/docs/EventStreams?topic=EventStreams-ES_schema_registry#importing_data_from_other_schema_registries).
 
-2. Schema sync via mirroring with ID transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema_sync), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later. 
+2. Schema sync via mirroring with ID transformation. This method, [outlined below](/docs/EventStreams?topic=EventStreams-mirroring_setup#schema_sync), transforms schema IDs during migration from source to target cluster. Use this approach for phased migrations, or where transformations are necessary. This method ensures schemas are in sync between registry clusters, meaning consumers on the target cluster can read messages immediately. It also allows new schemas to be registered without risk of ID collisions with schemas that might be migrated later.
 
 ## Schema synchronization via mirroring with ID transformation
 {: #schema_sync}
@@ -324,7 +324,7 @@ An export utility has not yet been added to the CLI.
 #### Permitted schema values
 {: #schemasync_permitted_values}
 
-| Value | Description | 
+| Value | Description |
 | -- | -- |
 | proxied | Requests are forwarded from the target instance to the source instance. |
 | read-only | Requests requiring the Reader IAM role are permitted. All others are rejected (403). |
@@ -349,14 +349,14 @@ ibmcloud resource service-instance-update \
 ```
 {: pre}
 
-### Topic name transformation 
+### Topic name transformation
 {: #schemasync_topicnametransformation}
 
 Topic names can be transformed during forwarding. For example, with the right rules,`old-my-topic` could become `new-my-topic`. When enabled, the source instance only recognizes the original name, whilst the target instance only recognizes the new (transformed) topic name. All results returned are transformed accordingly.
 
 If no transformation rules are supplied, `use_alias` is used, in line with existing mirroring behaviour in {{site.data.keyword.messagehub}}. To forward without changing topic names, use [`topic_name_transform` type `none`](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_3). Transformation is configured using the [existing CLI transformation fields](/docs/EventStreams?topic=EventStreams-mirroring_setup#transformtopic_1).
 
-### Migration flow 
+### Migration flow
 {: #schemasync_migration flow}
 
 When migrating between two {{site.data.keyword.messagehub}} instances, the following flow is suggested.
@@ -371,21 +371,21 @@ When migrating between two {{site.data.keyword.messagehub}} instances, the follo
 ### Exporting schemas
 {: #schemamigration_export}
 
-For more detailed information, see the [Confluent documentation](https://docs.confluent.io/platform/current/schema-registry/sr-client-configs.html). 
+For more detailed information, see the [Confluent documentation](https://docs.confluent.io/platform/current/schema-registry/sr-client-configs.html).
 
 The {{site.data.keyword.messagehub}} CLI requires that schema imports have a `v1` `exportVersion` value.
 {: note}
 
-1. Download latest `v2.x.x` source code, for example, https://github.com/Apicurio/apicurio-registry/archive/refs/tags/2.6.13.Final.zip.
+1. Download the latest `v2.x.x` source code, for example, https://github.com/Apicurio/apicurio-registry/archive/refs/tags/2.6.13.Final.zip.
 2. Build the export client: `mvn -pl utils/exportConfluent -am -DskipTests -Pprod package`.
 3. Run the exporter (saves output to confluent-schema-registry-export.zip):
 
-  ```sh 
-  java -jar utils/exportConfluent/target/apicurio-registry-utils-exportConfluent-2.6.13.Final.jar \
-  "https://token:<password>@<my-event-streams-instance.com>/confluent" \
-  --client-props basic.auth.credentials.source=URL
-  ```
-  {: pre}
+    ```sh
+    java -jar utils/exportConfluent/target/apicurio-registry-utils-exportConfluent-2.6.13.Final.jar \
+    "https://token:<password>@<my-event-streams-instance.com>/confluent" \
+    --client-props basic.auth.credentials.source=URL
+    ```
+    {: codeblock}
 
 ### Importing schemas
 {: #schemamigration_import}
@@ -396,12 +396,12 @@ Schemas can be imported using the {{site.data.keyword.messagehub}} CLI.
 2. Log in to {{site.data.keyword.cloud}}: `ibmcloud login [...]`.
 3. Initialize the {{site.data.keyword.messagehub}} instance you'd like to import in to: `ibmcloud es init`.
 4. Import the schema:
-   
-  ``` sh 
-  ibmcloud es schema-import \
-  -f confluent-schema-registry-export.zip
-  ```
-  {: pre}
+
+    ``` sh
+    ibmcloud es schema-import \
+    -f confluent-schema-registry-export.zip
+    ```
+    {: codeblock}
 
 ## Validation
 {: #step5_validation}
