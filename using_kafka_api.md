@@ -147,7 +147,7 @@ security.protocol=SASL_SSL
 sasl.mechanism=OAUTHBEARER
 sasl.oauthbearer.token.endpoint.url=https://iam.cloud.ibm.com/identity/token
 sasl.oauthbearer.jwks.endpoint.url=https://iam.cloud.ibm.com/identity/keys
-sasl.login.callback.handler.class=com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
+sasl.login.callback.handler.class=com.ibm.cloud.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
 sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type="urn:ibm:params:oauth:grant-type:apikey" apikey="${APIKEY}";
 ```
 
