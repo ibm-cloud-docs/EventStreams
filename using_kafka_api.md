@@ -105,7 +105,7 @@ If you use a Kafka client earlier than version 0.10.2.1, the `sasl.jaas.config` 
 
 Before configuring the SASL mechanism for Java client, there are two prerequisites.
 
-- The minimum supported Kafka Java client version is 3.1.0.
+- The minimum supported Kafka Java client version is 3.4 (3.6.+ preferable)
 - Additional jar package needs to be downloaded from Maven Central and made available in the classpath.
 
 If Maven is used in build system, add the following information to the file `pom.xml` in the dependencies section.
