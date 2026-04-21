@@ -1,8 +1,7 @@
 ---
-
 copyright:
-  years: 2015, 2024
-lastupdated: "2024-05-13"
+  years: 2015, 2026
+lastupdated: "2026-04-21"
 
 keywords: api, consumer, producer, admin, streams, connect, client
 
@@ -18,12 +17,12 @@ subcollection: EventStreams
 Kafka provides a rich set of APIs and clients across a broad range of languages. APIs include core API, Streams API, and Connect API.
 {: shortdesc}
 
-- **Kafka's core API (Consumer, Producer, and Admin API)**  
+- **Kafka's core API (Consumer, Producer, and Admin API)**
     Use to send and receive messages directly from one or more Kafka topics.
     The Kafka Admin client provides a simple interface through the Kafka API for managing Kafka resources. You can create, delete, and manage topics. You can also use the Admin client to manage consumer groups and configurations.
-- **Streams API**  
+- **Streams API**
     A higher-level stream processing API to easily consume, transform, and produce events between topics.
-- **Connect API**  
+- **Connect API**
     A framework that allows reusable or standard integrations to stream events into and out of external systems, such as databases.
 
 The following table summarizes what you can use with {{site.data.keyword.messagehub}}:
@@ -105,7 +104,7 @@ If you use a Kafka client earlier than version 0.10.2.1, the `sasl.jaas.config` 
 
 Before configuring the SASL mechanism for Java client, there are two prerequisites.
 
-- The minimum supported Kafka Java client version is 3.1.0.
+- The minimum supported Kafka Java client version is 3.4 (3.6 or higher is preferable).
 - Additional jar package needs to be downloaded from Maven Central and made available in the classpath.
 
 If Maven is used in build system, add the following information to the file `pom.xml` in the dependencies section.
@@ -147,7 +146,7 @@ security.protocol=SASL_SSL
 sasl.mechanism=OAUTHBEARER
 sasl.oauthbearer.token.endpoint.url=https://iam.cloud.ibm.com/identity/token
 sasl.oauthbearer.jwks.endpoint.url=https://iam.cloud.ibm.com/identity/keys
-sasl.login.callback.handler.class=com.ibm.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
+sasl.login.callback.handler.class=com.ibm.cloud.eventstreams.oauth.client.IAMOAuthBearerLoginCallbackHandler
 sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required grant_type="urn:ibm:params:oauth:grant-type:apikey" apikey="${APIKEY}";
 ```
 
