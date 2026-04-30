@@ -40,7 +40,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.6.2 |  01 Feb 2025 |  - Vulnerability fixes. |
 | v2.7.0 |  25 Feb 2025 |  - Error messages returned from the kafka server are translated.\n - Fix `broker-config` printing settings twice. |
 | v2.7.1 |  01 May 2025 |  - Vulnerability fixes. |
-| v2.7.3 |  29 Apr 2026 |  - Vulnerability fixes.\n - Minor change to invalid parameter handling. If the optional parameter is not specified, invalid parameters might be ignored instead of returning an error. |
+| v2.7.3 |  29 Apr 2026 |  - Vulnerability fixes.\n - Minor change to invalid parameter handling. If the optional parameter is not specified, invalid parameters might be ignored instead of an error being returned. |
 {: caption="Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init

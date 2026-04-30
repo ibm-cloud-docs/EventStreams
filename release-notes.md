@@ -25,8 +25,8 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #EventStreams-29apr2026}
 {: release-note}
 
-Minor change to invalid parameter handling.
-: From v2.7.3 of the {{site.data.keyword.messagehub}} CLI, if you do not specify an optional parameter, invalid parameters might be ignored instead of returning an error.
+Minor change to invalid parameter handling
+: From v2.7.3 of the [{{site.data.keyword.messagehub}} CLI](/docs/EventStreams?topic=EventStreams-cli_reference#es_cli_changelog), if you do not specify an optional parameter, invalid parameters might be ignored instead of an error being returned.
 
 ## 27 March 2026
 {: #EventStreams-27mar2026}
