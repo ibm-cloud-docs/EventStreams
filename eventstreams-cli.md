@@ -12,7 +12,7 @@ subcollection: EventStreams
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.messagehub}} CLI reference 
+# {{site.data.keyword.messagehub}} CLI reference
 {: #cli_reference}
 
 If you want information about how to install the CLI for {{site.data.keyword.messagehub}}, see [Getting started with the {{site.data.keyword.messagehub}} CLI](/docs/EventStreams?topic=EventStreams-cli#cli).
@@ -40,7 +40,7 @@ If you want information about how to install the CLI for {{site.data.keyword.mes
 | v2.6.2 |  01 Feb 2025 |  - Vulnerability fixes. |
 | v2.7.0 |  25 Feb 2025 |  - Error messages returned from the kafka server are translated.\n - Fix `broker-config` printing settings twice. |
 | v2.7.1 |  01 May 2025 |  - Vulnerability fixes. |
-| v2.7.3 |  29 Apr 2026 |  - Vulnerability fixes.\n - Minor change to the invalid parameter handling. If the optional flag is not specified, invalid parameters may be ignored instead of returning an error. |
+| v2.7.3 |  29 Apr 2026 |  - Vulnerability fixes.\n - Minor change to invalid parameter handling. If the optional parameter is not specified, invalid parameters might be ignored instead of returning an error. |
 {: caption="Changelog for the {{site.data.keyword.messagehub}} CLI plug-in" caption-side="bottom"}
 
 ## ibmcloud es init
@@ -79,10 +79,10 @@ ibmcloud es broker [--broker] ID [--json]
 
 --broker value, -b value
 :   Broker ID, you can specify with or without a preceding '--broker' flag.
-          
+
 --json (optional)
 :   Output format in JSON.
-          
+
 ## ibmcloud es broker-config
 {: #ibmcloud_es_broker_config}
 
@@ -108,7 +108,7 @@ ibmcloud es broker-config [--broker] ID [--filter FILTER] [--verbose] [--json]
 
 --json (optional)
 :   Output format in JSON.
-          
+
 ## ibmcloud es cluster
 {: #ibmcloud_es_cluster}
 
@@ -167,9 +167,9 @@ ibmcloud es topic-create [--name] TOPIC_NAME [--partitions PARTITIONS] [--config
 :   Set the number of partitions for the topic.
 
 --config KEY=VALUE, -c KEY=VALUE(optional)
-:   Set a configuration option for the topic as a KEY=VALUE pair. 
+:   Set a configuration option for the topic as a KEY=VALUE pair.
 :   You can specify multiple --config options. Each '--config' option can specify a semicolon-delimited list of assignments. The following list shows valid configuration keys:
-  
+
     - cleanup.policy
     - retention.ms
     - retention.bytes
@@ -215,9 +215,9 @@ ibmcloud es topic-delete-records [--name] TOPIC_NAME [--partition-offset PARTITI
 :   Topic name.
 
 --partition-offset PARTITION:OFFSET, -p PARTITION:OFFSET
-:   The partition and offset to delete records from in PARTITION:OFFSET format. 
+:   The partition and offset to delete records from in PARTITION:OFFSET format.
 :   You can specify multiple --partition-offset options or you can specify multiple PARTITION:OFFSET pairs with semicolon delimiters and surrounded with quotations: 'PARTITION1:OFFSET1;PARTITION2:OFFSET2;PARTITION3:OFFSET3'.
-  
+
 --force, -f (optional)
 :   Delete records without confirmation.
 
@@ -288,7 +288,7 @@ ibmcloud es topics [--filter FILTER] [--json]
 
 --filter value, -f value (optional)
 :   Topic name.
-  
+
 --json (optional)
 :   Format output in JSON. Up to 1000 topics are returned.
 
@@ -308,9 +308,9 @@ ibmcloud es group [--group] GROUP_ID [--json]
 
 --group value, -g value
 :   Consumer group ID.
-  
+
 --json (optional)
-:   Format output in JSON. 
+:   Format output in JSON.
 
 ## ibmcloud es group-reset
 {: #ibmcloud_es_group_reset}
@@ -330,10 +330,10 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 :   Consumer group ID
 
 --topic value, -t value
-:   Topic name. Apply to just this topic. Omit if '--all-topics' flag was supplied. 
+:   Topic name. Apply to just this topic. Omit if '--all-topics' flag was supplied.
 
 --all-topics, -a
-:   Apply to all topics assigned to the group. Omit if '--topic' flag was supplied. 
+:   Apply to all topics assigned to the group. Omit if '--topic' flag was supplied.
 
 --mode value, -m value
 :   One of the following values: 'earliest', 'latest' or 'datetime'.
@@ -349,7 +349,7 @@ ibmcloud es group-reset [--group] GROUP_ID [--topic TOPIC_NAME] [--all-topics] -
 :   Execute the changes to the offsets.
 
 --json (optional)
-:   Format output in JSON. 
+:   Format output in JSON.
 
 ## ibmcloud es groups
 {: #ibmcloud_es_groups}
@@ -486,7 +486,7 @@ ibmcloud es schema-import [--file] ZIP_FILE_PATH
 
 ## ibmcloud es schemas
 {: #ibmcloud_es_schemas}
- 
+
 List the schemas in the registry.
 
 ```sh
@@ -504,7 +504,7 @@ ibmcloud es schemas [--json]
 
 ## ibmcloud es schema-create
 {: #ibmcloud_es_schema_create}
- 
+
 Create a schema.
 
 ```sh
@@ -528,7 +528,7 @@ ibmcloud es schema-create [--artifact-id SCHEMA_ID] --file PATH_TO_FILE [--json]
 
 ## ibmcloud es schema
 {: #ibmcloud_es_schema}
- 
+
 Display information about a schema.
 
 ```sh
@@ -551,7 +551,7 @@ ibmcloud es schema [--artifact-id] SCHEMA_ID [--json]
 
 ## ibmcloud es schema-update
 {: #ibmcloud_es_schema_update}
- 
+
 Change the state of a schema.
 
 ```sh
@@ -572,7 +572,7 @@ ibmcloud es schema-update [--artifact-id] SCHEMA_ID --set ENABLED|DISABLED
 
 ## ibmcloud es schema-delete
 {: #ibmcloud_es_schema_delete}
- 
+
 Delete a schema.
 
 ```sh
@@ -593,7 +593,7 @@ ibmcloud es schema-delete [--artifact-id] SCHEMA_ID [--force]
 
 ## ibmcloud es schema-versions
 {: #ibmcloud_es_schema_versions}
- 
+
 Display versions of a schema.
 
 ```sh
@@ -614,7 +614,7 @@ ibmcloud es schema-versions [--artifact-id] SCHEMA_ID [--json]
 
 ## ibmcloud es schema-version-create
 {: #ibmcloud_es_schema_version_create}
- 
+
 Create a new version of a schema.
 
 ```sh
@@ -638,7 +638,7 @@ ibmcloud es schema-version-create [--artifact-id] SCHEMA_ID --file PATH_TO_FILE 
 
 ## ibmcloud es schema-version
 {: #ibmcloud_es_schema_version}
- 
+
 Display information about a schema version.
 
 ```sh
@@ -665,7 +665,7 @@ ibmcloud es schema-version [--artifact-id SCHEMA_ID --version VERSION] [--global
 
 ## ibmcloud es schema-version-update
 {: #ibmcloud_es_schema_version_update}
- 
+
 Change the state of a schema version.
 
 ```sh
@@ -692,7 +692,7 @@ ibmcloud es schema-version-update [--artifact-id] SCHEMA_ID --version VERSION --
 
 ## ibmcloud es schema-version-delete
 {: #ibmcloud_es_schema_version_delete}
- 
+
 Delete a version of a schema.
 
 ```sh
@@ -717,7 +717,7 @@ ibmcloud es schema-version-delete [--artifact-id] SCHEMA_ID --version VERSION [-
 
 ## ibmcloud es schema-compatibility-rule-create
 {: #ibmcloud_es_schema_compatibility_rule_create}
- 
+
 Create schema compatibility rule.
 
 ```sh
@@ -740,7 +740,7 @@ ibmcloud es schema-compatibility-rule-create [--artifact-id] SCHEMA_ID --set RUL
 
 ## ibmcloud es schema-compatibility-rule
 {: #ibmcloud_es_schema_compatibility_rule}
- 
+
 Display schema or global compatibility rule.
 
 ```sh
@@ -765,7 +765,7 @@ ibmcloud es es schema-compatibility-rule [ [--artifact-id] SCHEMA_ID | --global 
 
 ## ibmcloud es schema-compatibility-rule-update
 {: #ibmcloud_es_schema_compatibility_rule_update}
- 
+
 Change schema or global compatibility rule.
 
 ```sh
@@ -790,7 +790,7 @@ ibmcloud es schema-compatibility-rule-update [ [--artifact-id] SCHEMA_ID | --glo
 
 ## ibmcloud es schema-compatibility-rule-delete
 {: #ibmcloud_es_schema_compatibility_rule_delete}
- 
+
 Delete schema compatibility rule.
 
 ```sh
