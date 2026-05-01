@@ -2,11 +2,13 @@
 
 copyright:
   years: 2015, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-01"
 
 keywords: cli reference
 
 subcollection: EventStreams
+
+content-type: cli-docs
 
 ---
 
