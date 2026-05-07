@@ -123,7 +123,7 @@ If Gradle is used in the build system, add the following information to the `bui
 implementation com.ibm.cloud.eventstreams:oauth-client:1.4.0
 ```
 
-{{site.data.keyword.iamlong}} Identity Service supports multiple ways to generate a bearer token, two of which are supported by this oauth client library.
+{{site.data.keyword.iamlong}} Identity Service supports multiple ways to generate a bearer token, two of which are supported by this oauth client library:
 
 - API key
 - Trusted profile and compute resource token
@@ -201,7 +201,7 @@ If Gradle is used in the build system, add the following information to the `bui
 implementation com.ibm.cloud.eventstreams:oauth-client:2.0.+
 ```
 
-The {{site.data.keyword.iamlong}} Identity Service supports multiple ways to generate a bearer token, two of which are supported by this oauth client library.
+The {{site.data.keyword.iamlong}} Identity Service supports multiple ways to generate a bearer token, two of which are supported by this oauth client library:
 
 - API key
 - Trusted profile and compute resource token
@@ -209,7 +209,7 @@ The {{site.data.keyword.iamlong}} Identity Service supports multiple ways to gen
 #### Using SASL OAUTHBEARER with API key
 {: #using_sasl_oauthbearer_api}
 
-Use the following strings and properties in addition to the mandatory `bootstrap.servers` property and any specific producer, consumer, and admin setting.
+Use the following strings and properties in addition to the mandatory `bootstrap.servers` property and any specific producer, consumer, and admin settings.
 
 ```properties
 security.protocol=SASL_SSL
