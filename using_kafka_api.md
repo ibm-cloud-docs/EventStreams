@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2015, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-05-07"
 
 keywords: api, consumer, producer, admin, streams, connect, client
 
@@ -99,7 +99,7 @@ ssl.endpoint.identification.algorithm=HTTPS
 If you use a Kafka client earlier than version 0.10.2.1, the `sasl.jaas.config` property isn't supported, and you must instead provide the client configuration in a JAAS configuration file.
 {: note}
 
-### Using SASL OAUTHBEARER
+### Using SASL OAUTHBEARER With Java clients v 3.4 - 4.0
 {: #using_sasl_oauthbearer}
 
 Before configuring the SASL mechanism for Java client, there are two prerequisites.
@@ -177,6 +177,79 @@ The source code of oauth client refer to the [{{site.data.keyword.messagehub}} J
 
 The sample client code refer to [{{site.data.keyword.messagehub}} Sample](https://github.com/IBM/eventstreams-samples){: external}.
 
+
+### Using SASL OAUTHBEARER With Java clients v 4.1 and later
+
+Using a Kafka Java client from v.4.1 onward, the client needs to use a newer version of the IBM Event Streams oauth client, which relies on Kafka's default callback handler and an appropriate Token Retriever.
+
+If Maven is used in build system, add the following information to the file `pom.xml` in the dependencies section.
+
+```xml
+<dependency>
+    <groupId>com.ibm.cloud.eventstreams</groupId>
+    <artifactId>oauth-client</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
+If Gradle is used in build system, add the following information to the file `build.gradle` in the dependencies section.
+
+```gradle
+implementation com.ibm.cloud.eventstreams:oauth-client:2.0.+
+```
+
+{{site.data.keyword.iamlong}} Identity Service supports multiple ways to generate bearer token, two of which are supported by this oauth client library.
+
+- API key.
+- Trusted profile and compute resource token.
+
+#### Using SASL OAUTHBEARER with API key
+
+Use the following strings and properties in addition to the mandatory `bootstrap.servers` and any specific producer/consumer/admin setting.
+
+```properties
+security.protocol=SASL_SSL
+sasl.mechanism=OAUTHBEARER
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required \
+    grant_type="urn:ibm:params:oauth:grant-type:apikey" \
+    apikey="${YOUR_IBM_CLOUD_API_KEY}";
+sasl.login.callback.handler.class=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler
+sasl.oauthbearer.jwt.retriever.class=com.ibm.cloud.eventstreams.oauth.client.IAMTokenRetriever
+sasl.oauthbearer.token.endpoint.url=https://private.iam.cloud.ibm.com/identity/token
+sasl.oauthbearer.jwks.endpoint.url=https://private.iam.cloud.ibm.com/identity/keys
+```
+
+
+#### Using SASL OAUTHBEARER with trusted profile and compute resource token in containerized environments
+
+See [IBM Cloud docs](https://cloud.ibm.com/docs/iam?topic=iam-trusted-profile-iam-token)
+
+```properties
+security.protocol=SASL_SSL
+sasl.mechanism=OAUTHBEARER
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required \
+    grant_type="urn:ibm:params:oauth:grant-type:cr-token" \
+    cr_token="/path/to/cr-token-file" \
+    profile_id="/path/to/profile-id-file";
+sasl.login.callback.handler.class=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler
+sasl.oauthbearer.jwt.retriever.class=com.ibm.cloud.eventstreams.oauth.client.IAMTokenRetriever
+sasl.oauthbearer.token.endpoint.url=https://private.iam.cloud.ibm.com/identity/token
+sasl.oauthbearer.jwks.endpoint.url=https://private.iam.cloud.ibm.com/identity/keys
+```
+
+#### System Property `org.apache.kafka.sasl.oauthbearer.allowed.urls`
+
+Since Kafka 4.0, the client requires a system property to set the allowed URLs of SASL OAUTHBEARER token and jwks endpoints.
+
+See https://kafka.apache.org/42/configuration/system-properties/
+
+When using the CLI client shell scripts provided by the Apache Kafka distribution, the system property can also be set using the `KAFKA_OPTS` environment variable.
+
+```bash
+export KAFKA_OPTS="-Dorg.apache.kafka.sasl.oauthbearer.allowed.urls=https://private.iam.cloud.ibm.com/identity/keys,https://private.iam.cloud.ibm.com/identity/token,https://api.metadata.cloud.ibm.com/identity/v1/iam_tokens"
+```
+
+### Using SASL OAUTHBEARER With non Java clients
 
 For other Kafka client libaries, refer to their documentation about how to implement OAUTHBEARER support. For example:.
 
