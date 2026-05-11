@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2015, 2026
-lastupdated: "2026-05-07"
+lastupdated: "2026-05-11"
 
 keywords: api, consumer, producer, admin, streams, connect, client
 
@@ -107,7 +107,7 @@ Before configuring the SASL mechanism for Java client, there are two prerequisit
 - The minimum supported Kafka Java client version is 3.4 (3.6 or higher is preferable).
 - An additional jar package needs to be downloaded from Maven Central and made available in the classpath.
 
-If Maven is used in the build system, add the following information to the `pom.xml` file in the dependencies section.
+If Maven is used in the build system, add the following information to the `pom.xml` file in the dependencies section:
 
 ```xml
 <dependency>
@@ -117,7 +117,7 @@ If Maven is used in the build system, add the following information to the `pom.
 </dependency>
 ```
 
-If Gradle is used in the build system, add the following information to the `build.gradle` file in the dependencies section.
+If Gradle is used in the build system, add the following information to the `build.gradle` file in the dependencies section:
 
 ```gradle
 implementation com.ibm.cloud.eventstreams:oauth-client:1.4.0
@@ -185,7 +185,7 @@ The sample client code refers to the [{{site.data.keyword.messagehub}} sample](h
 
 When using a Kafka Java client at v4.1 or higher, the client needs to use a newer version of the {{site.data.keyword.messagehub}} oauth client, which relies on Kafka's default callback handler and an appropriate Token Retriever.
 
-If Maven is used in the build system, add the following information to the `pom.xml` file in the dependencies section.
+If Maven is used in the build system, add the following information to the `pom.xml` file in the dependencies section:
 
 ```xml
 <dependency>
@@ -195,7 +195,7 @@ If Maven is used in the build system, add the following information to the `pom.
 </dependency>
 ```
 
-If Gradle is used in the build system, add the following information to the `build.gradle` file in the dependencies section.
+If Gradle is used in the build system, add the following information to the `build.gradle` file in the dependencies section:
 
 ```gradle
 implementation com.ibm.cloud.eventstreams:oauth-client:2.0.+
@@ -263,4 +263,4 @@ For other Kafka client libaries, refer to their documentation about how to imple
 - [sarama](https://github.com/IBM/sarama): an implementation of `AccessTokenProvider` interface is required.
 - [librdkafka](https://github.com/confluentinc/librdkafka): an implementation of `oauthbearer_token_refresh_cb` callback is required.
 
-For information about how to generate an {{site.data.keyword.Bluemix_notm}} IAM token by using an API key, see {{site.data.keyword.iamlong}}'s [document](https://cloud.ibm.com/docs/account?topic=account-iamtoken_from_apikey).
+For information about how to generate an {{site.data.keyword.Bluemix_notm}} IAM token by using an API key, see {{site.data.keyword.iamlong}}'s [document](/docs/account?topic=account-iamtoken_from_apikey).
