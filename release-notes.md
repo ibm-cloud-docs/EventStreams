@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-30"
 
 keywords: release notes
 
@@ -20,6 +20,13 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.messagehub_full}} that are grouped by month and year. Release notes are available for a minimum of three years.
 {: shortdesc}
+
+## 29 April 2026
+{: #EventStreams-29apr2026}
+{: release-note}
+
+Minor change to invalid parameter handling
+: From v2.7.3 of the [{{site.data.keyword.messagehub}} CLI](/docs/EventStreams?topic=EventStreams-cli_reference#es_cli_changelog), if you do not specify an optional parameter, invalid parameters might be ignored instead of an error being returned.
 
 ## 27 March 2026
 {: #EventStreams-27mar2026}
