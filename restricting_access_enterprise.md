@@ -240,6 +240,9 @@ Next, note the following considerations:
 * After context-based restrictions are applied, they are only enforced for clients that authenticate after the rule has been created. Existing clients should reauthenticate for restriction rules to be enforced.
 {: important}
 
+*Report-only* is not available for {{site.data.keyword.messagehub}}.
+{: important}
+
 ### Supporting connections between services (service-to-service) with context-based restrictions
 {: #services_cbr}
 
